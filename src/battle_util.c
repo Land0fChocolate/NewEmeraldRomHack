@@ -9116,7 +9116,7 @@ bool32 CanMegaEvolve(u8 battlerId)
 #ifdef ITEM_EXPANSION
     // Check if Player has a Mega Ring
     if ((GetBattlerPosition(battlerId) == B_POSITION_PLAYER_LEFT || (!(gBattleTypeFlags & BATTLE_TYPE_MULTI) && GetBattlerPosition(battlerId) == B_POSITION_PLAYER_RIGHT))
-     && !CheckBagHasItem(ITEM_MEGA_RING, 1))
+     && !CheckBagHasItem(ITEM_MEGA_BRACELET, 1))
         return FALSE;
 #endif
 

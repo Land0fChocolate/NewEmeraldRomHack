@@ -3170,11 +3170,6 @@ void SetMoveEffect(bool32 primary, u32 certain)
                         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
                     }
                     else if (gBattleMons[gBattlerAttacker].item != 0
-                    #ifdef ITEM_EXPANSION
-                        || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY_E_READER
-                    #else
-                        || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY
-                    #endif
                         || gBattleMons[gBattlerTarget].item == 0)
                     {
                         gBattlescriptCurrInstr++;
@@ -13386,17 +13381,7 @@ static void Cmd_handleballthrow(void)
         else
             catchRate = catchRate + ballAddition;
 
-        #ifdef POKEMON_EXPANSION
-        }
-        #endif
-
-        // catchRate is unsigned, which means that it may potentially overflow if sum is applied directly.
-        if (catchRate < 21 && ballAddition == -20)
-            catchRate = 1;
-        else
-            catchRate = catchRate + ballAddition;
-
-        odds = ((catchRate) * ballMultiplier / 10)
+        odds = (catchRate * ballMultiplier / 10)
             * (gBattleMons[gBattlerTarget].maxHP * 3 - gBattleMons[gBattlerTarget].hp * 2)
             / (3 * gBattleMons[gBattlerTarget].maxHP);
 

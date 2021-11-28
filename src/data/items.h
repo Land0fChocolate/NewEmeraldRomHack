@@ -3254,20 +3254,12 @@ const struct Item gItems[] =
 
     [ITEM_POWER_WEIGHT] =
     {
-<<<<<<< HEAD
         .name = _("Power Weight"),
         .itemId = ITEM_POWER_WEIGHT,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_POWER_ITEM,
         .holdEffectParam = 8,
         .description = sPowerWeightDesc,
-=======
-        .name = _("STICK"),
-        .itemId = ITEM_STICK,
-        .price = 200,
-        .holdEffect = HOLD_EFFECT_LEEK,
-        .description = sStickDesc,
->>>>>>> 3ac480076c051000e8d8286ad3883679e84a1a08
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -3431,7 +3423,7 @@ const struct Item gItems[] =
         .name = _("Leek"),
         .itemId = ITEM_STICK,
         .price = 1000,
-        .holdEffect = HOLD_EFFECT_STICK,
+        .holdEffect = HOLD_EFFECT_LEEK,
         .description = sStickDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
