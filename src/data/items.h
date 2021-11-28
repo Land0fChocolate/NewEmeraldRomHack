@@ -2619,8 +2619,8 @@ const struct Item gItems[] =
     {
         .name = _("Mental Herb"),
         .itemId = ITEM_MENTAL_HERB,
-        .price = 4000,
-        .holdEffect = HOLD_EFFECT_CURE_ATTRACT,
+        .price = 100,
+        .holdEffect = HOLD_EFFECT_MENTAL_HERB,
         .description = sMentalHerbDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -3161,8 +3161,8 @@ const struct Item gItems[] =
     {
         .name = _("Upgrade"),
         .itemId = ITEM_UP_GRADE,
-        .price = 2000,
-        .holdEffect = HOLD_EFFECT_UP_GRADE,
+        .price = 2100,
+        .holdEffect = HOLD_EFFECT_UPGRADE,
         .description = sUpGradeDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -3254,12 +3254,20 @@ const struct Item gItems[] =
 
     [ITEM_POWER_WEIGHT] =
     {
+<<<<<<< HEAD
         .name = _("Power Weight"),
         .itemId = ITEM_POWER_WEIGHT,
         .price = 3000,
         .holdEffect = HOLD_EFFECT_POWER_ITEM,
         .holdEffectParam = 8,
         .description = sPowerWeightDesc,
+=======
+        .name = _("STICK"),
+        .itemId = ITEM_STICK,
+        .price = 200,
+        .holdEffect = HOLD_EFFECT_LEEK,
+        .description = sStickDesc,
+>>>>>>> 3ac480076c051000e8d8286ad3883679e84a1a08
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
