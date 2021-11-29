@@ -59,7 +59,6 @@ static bool32 TryRemoveScreens(u8 battler);
 static bool32 IsUnnerveAbilityOnOpposingSide(u8 battlerId);
 
 extern const u8 *const gBattleScriptsForMoveEffects[];
-extern const u8 *const gBattlescriptsForBallThrow[];
 extern const u8 *const gBattlescriptsForRunningByItem[];
 extern const u8 *const gBattlescriptsForUsingItem[];
 extern const u8 *const gBattlescriptsForSafariActions[];
@@ -518,7 +517,7 @@ void HandleAction_UseItem(void)
 
     if (gLastUsedItem <= LAST_BALL) // is ball
     {
-        gBattlescriptCurrInstr = gBattlescriptsForBallThrow[gLastUsedItem];
+        gBattlescriptCurrInstr = BattleScript_BallThrow;
     }
     else if (gLastUsedItem == ITEM_POKE_DOLL || gLastUsedItem == ITEM_FLUFFY_TAIL)
     {
@@ -606,7 +605,7 @@ bool8 TryRunFromBattle(u8 battler)
     u8 pyramidMultiplier;
     u8 speedVar;
 
-    if (gBattleMons[battler].item == ITEM_ENIGMA_BERRY)
+    if (gBattleMons[battler].item == ITEM_ENIGMA_BERRY_E_READER)
         holdEffect = gEnigmaBerries[battler].holdEffect;
     else
         holdEffect = ItemId_GetHoldEffect(gBattleMons[battler].item);
@@ -750,7 +749,7 @@ void HandleAction_SafariZoneBallThrow(void)
     gBattle_BG0_Y = 0;
     gNumSafariBalls--;
     gLastUsedItem = ITEM_SAFARI_BALL;
-    gBattlescriptCurrInstr = gBattlescriptsForBallThrow[ITEM_SAFARI_BALL];
+    gBattlescriptCurrInstr = BattleScript_SafariBallThrow;
     gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
 }
 
@@ -1760,6 +1759,11 @@ u8 CheckMoveLimitations(u8 battlerId, u8 unusableMoves, u8 check)
     u8 holdEffect = GetBattlerHoldEffect(battlerId, TRUE);
     u16 *choicedMove = &gBattleStruct->choicedMove[battlerId];
     s32 i;
+
+    if (gBattleMons[battlerId].item == ITEM_ENIGMA_BERRY_E_READER)
+        holdEffect = gEnigmaBerries[battlerId].holdEffect;
+    else
+        holdEffect = ItemId_GetHoldEffect(gBattleMons[battlerId].item);
 
     gPotentialItemEffectBattler = battlerId;
 
@@ -4517,12 +4521,30 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     if (gProtectStructs[gBattlerAttacker].notFirstStrike)
                         gBattlescriptCurrInstr = BattleScript_MoveHPDrain;
                     else
+<<<<<<< HEAD
                         gBattlescriptCurrInstr = BattleScript_MoveHPDrain_PPLoss;
 
                     gBattleMoveDamage = gBattleMons[battler].maxHP / 4;
                     if (gBattleMoveDamage == 0)
                         gBattleMoveDamage = 1;
                     gBattleMoveDamage *= -1;
+=======
+                        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_NORMALIZED_STATUS;
+                    gBattleMons[battlerId].status1 = 0;
+                    gBattleMons[battlerId].status2 &= ~(STATUS2_CONFUSION);
+                    BattleScriptExecute(BattleScript_BerryCureChosenStatusEnd2);
+                    effect = ITEM_STATUS_CHANGE;
+                }
+                break;
+            case HOLD_EFFECT_MENTAL_HERB:
+                if (gBattleMons[battlerId].status2 & STATUS2_INFATUATION)
+                {
+                    gBattleMons[battlerId].status2 &= ~(STATUS2_INFATUATION);
+                    StringCopy(gBattleTextBuff1, gStatusConditionString_LoveJpn);
+                    BattleScriptExecute(BattleScript_BerryCureChosenStatusEnd2);
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CURED_PROBLEM;
+                    effect = ITEM_EFFECT_OTHER;
+>>>>>>> 31d77194299a72d6bf13e707042c68ad0181bcda
                 }
             }
             else if (effect == 2) // Boost Stat ability;
@@ -5782,6 +5804,16 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                     gBattleMons[battlerId].status2 &= ~(STATUS2_CONFUSION);
                     BattleScriptExecute(BattleScript_BerryCureChosenStatusEnd2);
                     effect = ITEM_STATUS_CHANGE;
+                }
+                break;
+            case HOLD_EFFECT_MENTAL_HERB:
+                if (gBattleMons[battlerId].status2 & STATUS2_INFATUATION)
+                {
+                    gBattleMons[battlerId].status2 &= ~(STATUS2_INFATUATION);
+                    StringCopy(gBattleTextBuff1, gStatusConditionString_LoveJpn);
+                    BattleScriptExecute(BattleScript_BerryCureChosenStatusEnd2);
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CURED_PROBLEM;
+                    effect = ITEM_EFFECT_OTHER;
                 }
                 break;
             case HOLD_EFFECT_RESTORE_HP:
