@@ -2335,11 +2335,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpeed     = 60,
         .baseSpAttack  = 58,
         .baseSpDefense = 62,
-        #if P_UPDATED_STATS >= GEN_7
-            .baseAttack    = 90,
-        #else
-            .baseAttack    = 65,
-        #endif
+        .baseAttack    = 90,
         .type1 = TYPE_NORMAL,
         .type2 = TYPE_FLYING,
         .catchRate = 45,
@@ -2397,11 +2393,7 @@ const struct BaseStats gBaseStats[] =
         .baseDefense   = 70,
         .baseSpAttack  = 60,
         .baseSpDefense = 60,
-        #if P_UPDATED_STATS >= GEN_7
-            .baseSpeed     = 110,
-        #else
-            .baseSpeed     = 100,
-        #endif
+        .baseSpeed     = 100,
         .type1 = TYPE_NORMAL,
         .type2 = TYPE_FLYING,
         .catchRate = 45,
@@ -2432,7 +2424,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 45,
         .baseSpDefense = 70,
         .type1 = TYPE_WATER,
-        .type2 = TYPE_WATER,
+        .type2 = TYPE_ICE,
         .catchRate = 190,
         .expYield = 65,
         .evYield_SpDefense = 1,
@@ -20452,8 +20444,8 @@ const struct BaseStats gBaseStats[] =
         .baseHP        = 78,
         .baseAttack    = 107,
         .baseDefense   = 75,
-        .baseSpeed     = 70,
-        .baseSpAttack  = 100,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 90,
         .baseSpDefense = 100,
         .type1 = TYPE_GRASS,
         .type2 = TYPE_GHOST,
