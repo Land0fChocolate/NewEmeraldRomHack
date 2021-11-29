@@ -1760,11 +1760,6 @@ u8 CheckMoveLimitations(u8 battlerId, u8 unusableMoves, u8 check)
     u16 *choicedMove = &gBattleStruct->choicedMove[battlerId];
     s32 i;
 
-    if (gBattleMons[battlerId].item == ITEM_ENIGMA_BERRY_E_READER)
-        holdEffect = gEnigmaBerries[battlerId].holdEffect;
-    else
-        holdEffect = ItemId_GetHoldEffect(gBattleMons[battlerId].item);
-
     gPotentialItemEffectBattler = battlerId;
 
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -4521,30 +4516,12 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     if (gProtectStructs[gBattlerAttacker].notFirstStrike)
                         gBattlescriptCurrInstr = BattleScript_MoveHPDrain;
                     else
-<<<<<<< HEAD
                         gBattlescriptCurrInstr = BattleScript_MoveHPDrain_PPLoss;
 
                     gBattleMoveDamage = gBattleMons[battler].maxHP / 4;
                     if (gBattleMoveDamage == 0)
                         gBattleMoveDamage = 1;
                     gBattleMoveDamage *= -1;
-=======
-                        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_NORMALIZED_STATUS;
-                    gBattleMons[battlerId].status1 = 0;
-                    gBattleMons[battlerId].status2 &= ~(STATUS2_CONFUSION);
-                    BattleScriptExecute(BattleScript_BerryCureChosenStatusEnd2);
-                    effect = ITEM_STATUS_CHANGE;
-                }
-                break;
-            case HOLD_EFFECT_MENTAL_HERB:
-                if (gBattleMons[battlerId].status2 & STATUS2_INFATUATION)
-                {
-                    gBattleMons[battlerId].status2 &= ~(STATUS2_INFATUATION);
-                    StringCopy(gBattleTextBuff1, gStatusConditionString_LoveJpn);
-                    BattleScriptExecute(BattleScript_BerryCureChosenStatusEnd2);
-                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CURED_PROBLEM;
-                    effect = ITEM_EFFECT_OTHER;
->>>>>>> 31d77194299a72d6bf13e707042c68ad0181bcda
                 }
             }
             else if (effect == 2) // Boost Stat ability;
@@ -6245,7 +6222,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                     effect = ITEM_EFFECT_OTHER;
                 }
                 break;
-            case HOLD_EFFECT_CURE_ATTRACT:
+            case HOLD_EFFECT_MENTAL_HERB:
                 if (gBattleMons[battlerId].status2 & STATUS2_INFATUATION)
                 {
                     gBattleMons[battlerId].status2 &= ~(STATUS2_INFATUATION);
