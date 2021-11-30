@@ -4,6 +4,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 # TODO
 
+-Make updates according to the latest PRs (after 17th August) of the pokeemerald-expansion. 
+
 - Allow Pokemon to have up to 3 abilities at once
 	- Including remaking ability base stats and adding new abilities
 	- Updating the Pokemon status menu to show 3 abilities
@@ -16,3 +18,5 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 # Credits
 
 - DizzyEggg
+- LOuroboros
+- BuffelSaft
