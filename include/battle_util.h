@@ -151,6 +151,7 @@ void SortBattlersBySpeed(u8 *battlers, bool8 slowToFast);
 bool32 CompareStat(u8 battlerId, u8 statId, u8 cmpTo, u8 cmpKind);
 bool32 TryRoomService(u8 battlerId);
 void BufferStatChange(u8 battlerId, u8 statId, u8 stringId);
+void DoBurmyFormChange(u32 monId);
 
 // ability checks
 bool32 IsRolePlayBannedAbilityAtk(u16 ability);
@@ -160,5 +161,13 @@ bool32 IsWorrySeedBannedAbility(u16 ability);
 bool32 IsGastroAcidBannedAbility(u16 ability);
 bool32 IsEntrainmentBannedAbilityAttacker(u16 ability);
 bool32 IsEntrainmentTargetOrSimpleBeamBannedAbility(u16 ability);
+
+bool32 CanSleep(u8 battlerId);
+bool32 CanBePoisoned(u8 battlerId);
+bool32 CanBeBurned(u8 battlerId);
+bool32 CanBeParalyzed(u8 battlerId);
+bool32 CanBeFrozen(u8 battlerId);
+bool32 CanBeConfused(u8 battlerId);
+bool32 IsBattlerTerrainAffected(u8 battlerId, u32 terrainFlag);
 
 #endif // GUARD_BATTLE_UTIL_H
