@@ -21,3 +21,4 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - LOuroboros
 - BuffelSaft
 - Blackforest92
+- ExpoSeed
