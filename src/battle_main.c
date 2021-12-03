@@ -3086,6 +3086,7 @@ void FaintClearSetData(void)
     gProtectStructs[gActiveBattler].usedGravityPreventedMove = 0;
     gProtectStructs[gActiveBattler].usedThroatChopPreventedMove = 0;
     gProtectStructs[gActiveBattler].statRaised = 0;
+    gProtectStructs[gActiveBattler].statFell = 0;
 
     gDisableStructs[gActiveBattler].isFirstTurn = 2;
 
@@ -3676,7 +3677,7 @@ u8 IsRunningFromBattleImpossible(void)
         return 0;
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
         return 0;
-    if (gBattleMons[gActiveBattler].ability == ABILITY_RUN_AWAY)
+    if (GetBattlerAbility(gActiveBattler) == ABILITY_RUN_AWAY)
         return 0;
 
     if ((i = IsAbilityPreventingEscape(gActiveBattler)))

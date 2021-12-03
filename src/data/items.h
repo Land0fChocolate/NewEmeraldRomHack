@@ -1504,6 +1504,7 @@ const struct Item gItems[] =
         #ifdef POKEMON_EXPANSION
             .type = ITEM_USE_PARTY_MENU,
             .fieldUseFunc = ItemUseOutOfBattle_FormChange_ConsumedOnUse,
+            .secondaryId = FORM_ITEM_USE,
         #else
             .type = ITEM_USE_BAG_MENU,
             .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -1521,6 +1522,7 @@ const struct Item gItems[] =
         #ifdef POKEMON_EXPANSION
             .type = ITEM_USE_PARTY_MENU,
             .fieldUseFunc = ItemUseOutOfBattle_FormChange_ConsumedOnUse,
+            .secondaryId = FORM_ITEM_USE,
         #else
             .type = ITEM_USE_BAG_MENU,
             .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -1538,6 +1540,7 @@ const struct Item gItems[] =
         #ifdef POKEMON_EXPANSION
             .type = ITEM_USE_PARTY_MENU,
             .fieldUseFunc = ItemUseOutOfBattle_FormChange_ConsumedOnUse,
+            .secondaryId = FORM_ITEM_USE,
         #else
             .type = ITEM_USE_BAG_MENU,
             .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -1555,6 +1558,7 @@ const struct Item gItems[] =
         #ifdef POKEMON_EXPANSION
             .type = ITEM_USE_PARTY_MENU,
             .fieldUseFunc = ItemUseOutOfBattle_FormChange_ConsumedOnUse,
+            .secondaryId = FORM_ITEM_USE,
         #else
             .type = ITEM_USE_BAG_MENU,
             .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -1852,8 +1856,8 @@ const struct Item gItems[] =
         .name = _("Sitrus Berry"),
         .itemId = ITEM_SITRUS_BERRY,
         .price = 20,
-        .holdEffect = HOLD_EFFECT_RESTORE_HP,
-        .holdEffectParam = 30,
+        .holdEffect = HOLD_EFFECT_RESTORE_PCT_HP,
+        .holdEffectParam = 25,
         .description = sSitrusBerryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
@@ -5355,6 +5359,7 @@ const struct Item gItems[] =
         #ifdef POKEMON_EXPANSION
             .type = ITEM_USE_PARTY_MENU,
             .fieldUseFunc = ItemUseOutOfBattle_FormChange,
+            .secondaryId = FORM_ITEM_USE_TIME,
         #else
             .type = ITEM_USE_BAG_MENU,
             .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
