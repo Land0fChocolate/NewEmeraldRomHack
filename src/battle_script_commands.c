@@ -7924,13 +7924,14 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr += 7;
         return;
     case VARIOUS_SET_SIMPLE_BEAM:
-        if (IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gActiveBattler].ability))
+        if (IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gBattlerTarget].ability)
+            || gBattleMons[gBattlerTarget].ability == ABILITY_SIMPLE)
         {
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
         }
         else
         {
-            gBattleMons[gActiveBattler].ability = ABILITY_SIMPLE;
+            gBattleMons[gBattlerTarget].ability = ABILITY_SIMPLE;
             gBattlescriptCurrInstr += 7;
             break;
         }
