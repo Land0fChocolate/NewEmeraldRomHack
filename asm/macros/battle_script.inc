@@ -1816,6 +1816,10 @@
 	various BS_ATTACKER, VARIOUS_REMOVE_TERRAIN
 	.endm
 
+	.macro trytoclearprimalweather
+	various BS_ATTACKER, VARIOUS_TRY_TO_CLEAR_PRIMAL_WEATHER
+	.endm
+
 	.macro jumpifpranksterblocked battler:req, ptr:req
 	various \battler, VARIOUS_JUMP_IF_PRANKSTER_BLOCKED
 	.4byte \ptr
