@@ -832,19 +832,15 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             if (!BattlerStatCanRise(battlerAtk, AI_DATA->atkAbility, STAT_ATK) || !HasMoveWithSplit(battlerAtk, SPLIT_PHYSICAL))
                 score -= 10;
             break;
-        case EFFECT_DEFENSE_UP_2:
-            if (move == MOVE_STUFF_CHEEKS && ItemId_GetPocket(gBattleMons[battlerAtk].item) != POCKET_BERRIES)
-                score -= 10;
+        case EFFECT_STUFF_CHEEKS:
+            if (ItemId_GetPocket(gBattleMons[battlerAtk].item) != POCKET_BERRIES)
+                return 0;   // cannot even select
             //fallthrough
         case EFFECT_DEFENSE_UP:
+        case EFFECT_DEFENSE_UP_2:
         case EFFECT_DEFENSE_UP_3:
         case EFFECT_DEFENSE_CURL:
             if (!BattlerStatCanRise(battlerAtk, AI_DATA->atkAbility, STAT_DEF))
-                score -= 10;
-            break;
-        case EFFECT_SPEED_UP:
-        case EFFECT_SPEED_UP_2:
-            if (!BattlerStatCanRise(battlerAtk, AI_DATA->atkAbility, STAT_SPEED))
                 score -= 10;
             break;
         case EFFECT_SPECIAL_ATTACK_UP:
@@ -3339,7 +3335,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_TRAP:
     case EFFECT_MEAN_LOOK:
         if (HasMoveEffect(battlerDef, EFFECT_RAPID_SPIN)
-          || IS_BATTLER_OF_TYPE(battlerDef, TYPE_GHOST)
+          || (B_GHOSTS_ESCAPE >= GEN_6 && IS_BATTLER_OF_TYPE(battlerDef, TYPE_GHOST))
           || gBattleMons[battlerDef].status2 & STATUS2_WRAPPED)
         {
             break; // in this case its a bad attacking move
