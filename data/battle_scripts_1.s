@@ -5763,6 +5763,9 @@ BattleScript_DoSwitchOut::
 	hidepartystatussummary BS_ATTACKER
 	switchinanim BS_ATTACKER, FALSE
 	waitstate
+	jumpifcantreverttoprimal BattleScript_DoSwitchOut2
+	call BattleScript_PrimalReversionRet
+BattleScript_DoSwitchOut2:
 	switchineffects BS_ATTACKER
 	moveendcase MOVEEND_STATUS_IMMUNITY_ABILITIES
 	moveendcase MOVEEND_MIRROR_MOVE
@@ -6775,6 +6778,33 @@ BattleScript_MegaEvolution::
 	waitmessage B_WAIT_TIME_LONG
 	switchinabilities BS_ATTACKER
 	end2
+
+BattleScript_PrimalReversion::
+	printstring STRINGID_EMPTYSTRING3
+	waitmessage 1
+	setbyte gIsCriticalHit, 0
+	handleprimalreversion BS_ATTACKER, 0
+	handleprimalreversion BS_ATTACKER, 1
+	playanimation BS_ATTACKER, B_ANIM_PRIMAL_REVERSION, NULL
+	waitanimation
+	handleprimalreversion BS_ATTACKER, 2
+	printstring STRINGID_PKMNREVERTEDTOPRIMAL
+	waitmessage B_WAIT_TIME_LONG
+	switchinabilities BS_ATTACKER
+	end2
+
+BattleScript_PrimalReversionRet::
+	printstring STRINGID_EMPTYSTRING3
+	waitmessage 1
+	setbyte gIsCriticalHit, 0
+	handleprimalreversion BS_ATTACKER, 0
+	handleprimalreversion BS_ATTACKER, 1
+	playanimation BS_ATTACKER, B_ANIM_PRIMAL_REVERSION, NULL
+	waitanimation
+	handleprimalreversion BS_ATTACKER, 2
+	printstring STRINGID_PKMNREVERTEDTOPRIMAL
+	waitmessage B_WAIT_TIME_LONG
+	return
 
 BattleScript_WishMegaEvolution::
 	printstring STRINGID_FERVENTWISHREACHED
