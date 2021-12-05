@@ -228,7 +228,7 @@ static const u8 sText_InDoubles[] = _("In Doubles");
 static const u8 sText_HpAware[] = _("HP aware");
 static const u8 sText_Unknown[] = _("Unknown");
 static const u8 sText_InLove[] = _("In Love");
-static const u8 sText_AIMovePts[] = _("AI Move Pts");
+static const u8 sText_AIMovePts[] = _("AI Pts/Dmg");
 static const u8 sText_AiKnowledge[] = _("AI Info");
 static const u8 sText_EffectOverride[] = _("Effect Override");
 
@@ -713,6 +713,12 @@ static void PutMovesPointsText(struct BattleDebugMenu *data)
                                        gBattleStruct->aiFinalScore[data->aiBattlerId][gSprites[data->aiIconSpriteIds[j]].data[0]][i],
                                        STR_CONV_MODE_RIGHT_ALIGN, 3);
             AddTextPrinterParameterized(data->aiMovesWindowId, 1, text, 83 + count * 54, i * 15, 0, NULL);
+
+            ConvertIntToDecimalStringN(text,
+                                       gBattleStruct->aiSimulatedDamage[data->aiBattlerId][gSprites[data->aiIconSpriteIds[j]].data[0]][i],
+                                       STR_CONV_MODE_RIGHT_ALIGN, 3);
+            AddTextPrinterParameterized(data->aiMovesWindowId, 1, text, 110 + count * 54, i * 15, 0, NULL);
+
             count++;
         }
     }
@@ -780,7 +786,7 @@ static void Task_ShowAiPoints(u8 taskId)
         break;
     // Put text
     case 1:
-        winTemplate = CreateWindowTemplate(1, 0, 4, 27, 14, 15, 0x200);
+        winTemplate = CreateWindowTemplate(1, 0, 4, 30, 14, 15, 0x200);
         data->aiMovesWindowId = AddWindow(&winTemplate);
         PutWindowTilemap(data->aiMovesWindowId);
         PutMovesPointsText(data);
@@ -1951,7 +1957,7 @@ static const u8 sText_HoldEffectAbsorbBulb[] = _("Absorb Bulb");
 static const u8 sText_HoldEffectCellBattery[] = _("Cell Battery");
 static const u8 sText_HoldEffectFairyPower[] = _("Fairy Power");
 static const u8 sText_HoldEffectMegaStone[] = _("Mega Stone");
-static const u8 sText_HoldEffectSafetyGoogles[] = _("Safety Googles");
+static const u8 sText_HoldEffectSafetyGoggles[] = _("Safety Goggles");
 static const u8 sText_HoldEffectLuminousMoss[] = _("Luminous Moss");
 static const u8 sText_HoldEffectSnowball[] = _("Snowball");
 static const u8 sText_HoldEffectWeaknessPolicy[] = _("Weakness Policy");
@@ -2091,7 +2097,7 @@ static const u8 *const sHoldEffectNames[] =
     [HOLD_EFFECT_CELL_BATTERY] = sText_HoldEffectCellBattery,
     [HOLD_EFFECT_FAIRY_POWER] = sText_HoldEffectFairyPower,
     [HOLD_EFFECT_MEGA_STONE] = sText_HoldEffectMegaStone,
-    [HOLD_EFFECT_SAFETY_GOOGLES] = sText_HoldEffectSafetyGoogles,
+    [HOLD_EFFECT_SAFETY_GOGGLES] = sText_HoldEffectSafetyGoggles,
     [HOLD_EFFECT_LUMINOUS_MOSS] = sText_HoldEffectLuminousMoss,
     [HOLD_EFFECT_SNOWBALL] = sText_HoldEffectSnowball,
     [HOLD_EFFECT_WEAKNESS_POLICY] = sText_HoldEffectWeaknessPolicy,
