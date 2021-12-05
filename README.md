@@ -24,3 +24,4 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - ExpoSeed
 - SBird1337
 - aarant
+- SonikkuA-DatH
