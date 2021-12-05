@@ -5703,6 +5703,7 @@ static u8 HealConfuseBerry(u32 battlerId, u32 itemId, u8 flavorId, bool32 end2)
             gBattlerAbility = battlerId;
         }
 
+        gBattleScripting.battler = battlerId;
         if (end2)
         {
             if (GetFlavorRelationByPersonality(gBattleMons[battlerId].personality, flavorId) < 0)
