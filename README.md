@@ -26,4 +26,3 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - aarant
 - SonikkuA-DatH
 - Xavion3
-- PikalaxALT
