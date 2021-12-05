@@ -2222,7 +2222,7 @@ u8 DoFieldEndTurnEffects(void)
             break;
         case ENDTURN_ELECTRIC_TERRAIN:
             if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN
-              && ((!gFieldStatuses & STATUS_FIELD_TERRAIN_PERMANENT) && --gFieldTimers.electricTerrainTimer == 0))
+              && (!(gFieldStatuses & STATUS_FIELD_TERRAIN_PERMANENT) && --gFieldTimers.electricTerrainTimer == 0))
             {
                 gFieldStatuses &= ~(STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_TERRAIN_PERMANENT);
                 BattleScriptExecute(BattleScript_ElectricTerrainEnds);
@@ -2232,7 +2232,7 @@ u8 DoFieldEndTurnEffects(void)
             break;
         case ENDTURN_MISTY_TERRAIN:
             if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN
-              && ((!gFieldStatuses & STATUS_FIELD_TERRAIN_PERMANENT) && --gFieldTimers.mistyTerrainTimer == 0))
+              && (!(gFieldStatuses & STATUS_FIELD_TERRAIN_PERMANENT) && --gFieldTimers.mistyTerrainTimer == 0))
             {
                 gFieldStatuses &= ~(STATUS_FIELD_MISTY_TERRAIN);
                 BattleScriptExecute(BattleScript_MistyTerrainEnds);
@@ -2254,7 +2254,7 @@ u8 DoFieldEndTurnEffects(void)
             break;
         case ENDTURN_PSYCHIC_TERRAIN:
             if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN
-              && ((!gFieldStatuses & STATUS_FIELD_TERRAIN_PERMANENT) && --gFieldTimers.psychicTerrainTimer == 0))
+              && (!(gFieldStatuses & STATUS_FIELD_TERRAIN_PERMANENT) && --gFieldTimers.psychicTerrainTimer == 0))
             {
                 gFieldStatuses &= ~(STATUS_FIELD_PSYCHIC_TERRAIN);
                 BattleScriptExecute(BattleScript_PsychicTerrainEnds);
