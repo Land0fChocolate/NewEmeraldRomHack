@@ -380,6 +380,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHit                     @ EFFECT_SNIPE_SHOT
 	.4byte BattleScript_EffectTripleHit               @ EFFECT_TRIPLE_HIT
 	.4byte BattleScript_EffectRecoilHP25              @ EFFECT_RECOIL_HP_25
+	.4byte BattleScript_EffectDefenseDownHit          @ EFFECT_GRAV_APPLE
 
 BattleScript_EffectDecorate:
 	attackcanceler
