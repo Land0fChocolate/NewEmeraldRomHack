@@ -1586,6 +1586,10 @@
 	various \battler, VARIOUS_ABILITY_POPUP
 	.endm
 
+	.macro updateabilitypopup battler:req
+	various \battler, VARIOUS_UPDATE_ABILITY_POPUP
+	.endm
+
 	.macro defogclear battler:req, clear:req, ptr:req
 	various \battler, VARIOUS_DEFOG
 	.byte \clear
