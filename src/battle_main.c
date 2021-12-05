@@ -3696,6 +3696,10 @@ u8 IsRunningFromBattleImpossible(void)
 
     if (holdEffect == HOLD_EFFECT_CAN_ALWAYS_RUN)
         return 0;
+#if B_GHOSTS_ESCAPE >= GEN_6
+    if (IS_BATTLER_OF_TYPE(gActiveBattler, TYPE_GHOST))
+            return 0;
+#endif
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
         return 0;
     if (GetBattlerAbility(gActiveBattler) == ABILITY_RUN_AWAY)
@@ -4209,7 +4213,7 @@ static void HandleTurnActionSelectionState(void)
             // (if we have chosen throw ball with first, second's is already skipped)
             gChosenActionByBattler[B_POSITION_PLAYER_LEFT] = B_ACTION_NOTHING_FAINTED;
         }
-        
+
         gBattleMainFunc = SetActionsAndBattlersTurnOrder;
 
         if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)
