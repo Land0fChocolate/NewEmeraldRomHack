@@ -9274,6 +9274,7 @@ extern const u32 gBattleAnimBgTilemap_SpacialRendOpponent[];
 extern const u32 gBattleAnimBgImage_SpacialRendPlayer[];
 extern const u32 gBattleAnimBgPalette_SpacialRendPlayer[];
 extern const u32 gBattleAnimBgTilemap_SpacialRendPlayer[];
+extern const u32 gBattleAnimBgImage_DarkVoid[];
 extern const u32 gBattleAnimBgPalette_DarkVoid[];
 extern const u32 gBattleAnimBgTilemap_DarkVoid[];
 extern const u32 gBattleAnimBgPalette_Dark[];
