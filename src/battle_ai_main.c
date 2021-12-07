@@ -578,6 +578,21 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         {
             switch (AI_DATA->defAbility)
             {
+            case ABILITY_MAGIC_GUARD:
+                switch (moveEffect)
+                {
+                case EFFECT_POISON:
+                case EFFECT_WILL_O_WISP:
+                case EFFECT_TOXIC:
+                case EFFECT_LEECH_SEED:
+                    score -= 5;
+                    break;
+                case EFFECT_CURSE:
+                    if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GHOST)) // Don't use Curse if you're a ghost type vs a Magic Guard user, they'll take no damage.
+                        score -= 5;
+                    break;
+                }
+                break;
             case ABILITY_VOLT_ABSORB:
             case ABILITY_MOTOR_DRIVE:
             case ABILITY_LIGHTNING_ROD:
@@ -1530,7 +1545,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 10;
             break;
         case EFFECT_RECYCLE:
-            if (gBattleStruct->usedHeldItems[battlerAtk] == 0 || gBattleMons[battlerAtk].item != 0)
+            if (GetUsedHeldItem(battlerAtk) == 0 || gBattleMons[battlerAtk].item != 0)
                 score -= 10;
             break;
         case EFFECT_IMPRISON:
@@ -1951,7 +1966,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 10;
             break;
         case EFFECT_BELCH:
-            if (ItemId_GetPocket(gBattleStruct->usedHeldItems[battlerAtk]) != POCKET_BERRIES)
+            if (ItemId_GetPocket(GetUsedHeldItem(battlerAtk)) != POCKET_BERRIES)
                 score -= 10; // attacker has not consumed a berry
             break;
         case EFFECT_YAWN:
@@ -2949,7 +2964,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         }
     }
     
-    // ability checks
+    // attacker ability checks
     switch (AI_DATA->atkAbility)
     {
     case ABILITY_MOXIE:
@@ -2958,21 +2973,6 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         {
             if (CanAttackerFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 0))
                 score += 8; // prioritize killing target for stat boost
-        }
-        break;
-    case ABILITY_MAGIC_GUARD:
-        switch (moveEffect)
-        {
-        case EFFECT_POISON:
-        case EFFECT_WILL_O_WISP:
-        case EFFECT_TOXIC:
-        case EFFECT_LEECH_SEED:
-            score -= 5;
-            break;
-        case EFFECT_CURSE:
-            if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GHOST))
-                score -= 5;
-            break;
         }
         break;
     } // ability checks    
@@ -4097,9 +4097,9 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score += 3;
         break;
     case EFFECT_RECYCLE:
-        if (gBattleStruct->usedHeldItems[battlerAtk] != ITEM_NONE)
+        if (GetUsedHeldItem(battlerAtk) != ITEM_NONE)
             score++;
-        if (IsRecycleEncouragedItem(gBattleStruct->usedHeldItems[battlerAtk]))
+        if (IsRecycleEncouragedItem(GetUsedHeldItem(battlerAtk)))
             score++;
         break;
     case EFFECT_BRICK_BREAK:
