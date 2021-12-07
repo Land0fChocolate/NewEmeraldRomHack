@@ -5324,6 +5324,9 @@ const struct Item gItems[] =
         .name = _("Adamant Orb"),
         .itemId = ITEM_ADAMANT_ORB,
         .price = 0,
+        #if defined(BATTLE_ENGINE)
+            .holdEffectParam = 20,
+        #endif
         .holdEffect = HOLD_EFFECT_ADAMANT_ORB,
         .description = sAdamantOrbDesc,
         .pocket = POCKET_ITEMS,
@@ -5336,6 +5339,9 @@ const struct Item gItems[] =
         .name = _("Lustrous Orb"),
         .itemId = ITEM_LUSTROUS_ORB,
         .price = 0,
+        #if defined(BATTLE_ENGINE)
+            .holdEffectParam = 20,
+        #endif
         .holdEffect = HOLD_EFFECT_LUSTROUS_ORB,
         .description = sLustrousOrbDesc,
         .pocket = POCKET_ITEMS,
@@ -5348,6 +5354,9 @@ const struct Item gItems[] =
         .name = _("Griseous Orb"),
         .itemId = ITEM_GRISEOUS_ORB,
         .price = 0,
+        #if defined(BATTLE_ENGINE)
+            .holdEffectParam = 20,
+        #endif
         .holdEffect = HOLD_EFFECT_GRISEOUS_ORB,
         .description = sGriseousOrbDesc,
         .pocket = POCKET_ITEMS,
