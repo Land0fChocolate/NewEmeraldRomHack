@@ -366,6 +366,7 @@ extern const u8 BattleScript_PerishBodyActivates[];
 extern const u8 BattleScript_ActivateAsOne[];
 extern const u8 BattleScript_RaiseStatOnFaintingTarget[];
 extern const u8 BattleScript_QuickClawActivation[];
+extern const u8 BattleScript_QuickDrawActivation[];
 extern const u8 BattleScript_CustapBerryActivation[];
 extern const u8 BattleScript_MicleBerryActivateEnd2[];
 extern const u8 BattleScript_MicleBerryActivateRet[];
@@ -410,5 +411,6 @@ extern const u8 BattleScript_PastelVeilActivates[];
 extern const u8 BattleScript_MimicryActivatesEnd3[];
 extern const u8 BattleScript_ApplyMimicry[];
 extern const u8 BattleScript_AttackerFormChangeEnd3NoPopup[];
+extern const u8 BattleScript_AttackerFormChangeMoveEffect[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

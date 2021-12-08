@@ -151,6 +151,7 @@ struct ProtectStruct
     u32 disableEjectPack:1;
     u32 statFell:1;
     u32 pranksterElevated:1;
+    u32 quickDraw:1;
     u32 physicalDmg;
     u32 specialDmg;
     u8 physicalBattlerId;
@@ -360,7 +361,7 @@ struct BattleResults
     u16 caughtMonSpecies;     // 0x28
     u8 caughtMonNick[POKEMON_NAME_LENGTH + 1];     // 0x2A
     u8 filler35;           // 0x35
-    u8 catchAttempts[POKEBALL_COUNT - 1];     // 0x36 Doesn't include Master ball
+    u8 catchAttempts[POKEBALL_COUNT];     // 0x36
 };
 
 struct BattleTv_Side
@@ -928,5 +929,6 @@ extern u8 gBattleControllerData[MAX_BATTLERS_COUNT];
 extern bool8 gHasFetchedBall;
 extern u8 gLastUsedBall;
 extern u16 gLastThrownBall;
+extern bool8 gSwapDamageCategory; // Photon Geyser, Shell Side Arm, Light That Burns the Sky
 
 #endif // GUARD_BATTLE_H
