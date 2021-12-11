@@ -3176,7 +3176,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
                         RecordAbilityBattle(gBattlerTarget, gLastUsedAbility);
                     }
                     else if (gBattleMons[gBattlerAttacker].item != 0
-                        || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY_E_READER
+                        || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY
                         || gBattleMons[gBattlerTarget].item == 0)
                     {
                         gBattlescriptCurrInstr++;
@@ -3866,7 +3866,7 @@ static void Cmd_getexp(void)
 
                 item = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
 
-                if (item == ITEM_ENIGMA_BERRY_E_READER)
+                if (item == ITEM_ENIGMA_BERRY)
                     holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
                 else
                     holdEffect = ItemId_GetHoldEffect(item);
@@ -3915,7 +3915,7 @@ static void Cmd_getexp(void)
         {
             item = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_HELD_ITEM);
 
-            if (item == ITEM_ENIGMA_BERRY_E_READER)
+            if (item == ITEM_ENIGMA_BERRY)
                 holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
             else
                 holdEffect = ItemId_GetHoldEffect(item);
