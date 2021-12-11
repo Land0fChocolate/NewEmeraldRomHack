@@ -2710,7 +2710,7 @@ static const u8 sStarfBerryDesc[] = _(
     "sharply boosts a\n"
     "stat in a pinch.");
 
-static const u8 sEnigmaBerryDesc[] = _( // Todo
+static const u8 sEnigmaBerryNewDesc[] = _( // Todo
     "?????");
 
 static const u8 sMicleBerryDesc[] = _(

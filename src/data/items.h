@@ -7211,12 +7211,12 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_ENIGMA_BERRY] = // Todo
+    [ITEM_ENIGMA_BERRY_NEW] = // Todo
     {
         .name = _("????????"),
         .itemId = ITEM_NONE,
         .price = 0,
-        .description = sDummyDesc,
+        .description = sEnigmaBerryNewDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -7296,7 +7296,7 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_ENIGMA_BERRY_E_READER] =
+    [ITEM_ENIGMA_BERRY] =
     {
         .name = _("Enigma Berry"),
         .itemId = ITEM_ENIGMA_BERRY,

@@ -212,7 +212,7 @@ u8 BattleAI_ChooseMoveOrAction(void)
 
     // Clear protect structures, some flags may be set during AI calcs
     // e.g. pranksterElevated from GetMovePriority
-    memset(&gProtectStructs[gActiveBattler], 0, sizeof(struct ProtectStruct));
+    memset(&gProtectStructs, 0, MAX_BATTLERS_COUNT * sizeof(struct ProtectStruct));
 
     gCurrentMove = savedCurrentMove;
     return ret;
@@ -1215,6 +1215,10 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 10;
             break;
         case EFFECT_OHKO:
+            if (B_SHEER_COLD_IMMUNITY >= GEN_7
+              && move == MOVE_SHEER_COLD
+              && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
+                return 0;
             if (!ShouldTryOHKO(battlerAtk, battlerDef, AI_DATA->atkAbility, AI_DATA->defAbility, accuracy, move))
                 score -= 10;
             break;
