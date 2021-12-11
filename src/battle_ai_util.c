@@ -438,6 +438,11 @@ static const u16 sOtherMoveCallingMoves[] =
     MOVE_SLEEP_TALK,
 };
 
+bool32 WillAIStrikeFirst(void)
+{
+    return (AI_WhoStrikesFirst(sBattler_AI, gBattlerTarget) == AI_IS_FASTER);
+}
+
 // Functions
 bool32 AI_RandLessThan(u8 val)
 {
@@ -630,7 +635,7 @@ bool32 IsTruantMonVulnerable(u32 battlerAI, u32 opposingBattler)
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         u32 move = gBattleResources->battleHistory->usedMoves[opposingBattler][i];
-        if (gBattleMoves[move].effect == EFFECT_PROTECT && move != MOVE_ENDURE)
+        if (gBattleMoves[move].effect == EFFECT_SEMI_INVULNERABLE && AI_WhoStrikesFirst(battlerAI, opposingBattler) == AI_IS_SLOWER)
             return TRUE;
         if (gBattleMoves[move].effect == EFFECT_SEMI_INVULNERABLE && GetWhoStrikesFirst(battlerAI, opposingBattler, TRUE) == 1)
             return TRUE;
@@ -980,48 +985,43 @@ u8 AI_GetMoveEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef)
     return damageVar;
 }
 
-// AI_CHECK_FASTER: is user(ai) faster
-// AI_CHECK_SLOWER: is target faster
-bool32 IsAiFaster(u8 battler)
+/* Checks to see if AI will move ahead of another battler
+ * Output:
+    * AI_IS_FASTER: is user(ai) faster
+    * AI_IS_SLOWER: is target faster
+*/
+u8 AI_WhoStrikesFirst(u8 battlerAI, u8 battler2)
 {
     u32 fasterAI = 0, fasterPlayer = 0, i;
-    s8 prioAI, prioPlayer;
+    s8 prioAI = 0;
+    s8 prioPlayer = 0;
 
     // Check move priorities first.
-    prioAI = GetMovePriority(sBattler_AI, AI_THINKING_STRUCT->moveConsidered);
-    SaveBattlerData(gBattlerTarget);
-    SetBattlerData(gBattlerTarget);
+    prioAI = GetMovePriority(battlerAI, AI_THINKING_STRUCT->moveConsidered);
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        if (gBattleMons[gBattlerTarget].moves[i] == 0 || gBattleMons[gBattlerTarget].moves[i] == 0xFFFF)
+        if (gBattleMons[battler2].moves[i] == 0 || gBattleMons[battler2].moves[i] == 0xFFFF)
             continue;
 
-        prioPlayer = GetMovePriority(gBattlerTarget, gBattleMons[gBattlerTarget].moves[i]);
+        prioPlayer = GetMovePriority(battler2, gBattleMons[battler2].moves[i]);
         if (prioAI > prioPlayer)
             fasterAI++;
         else if (prioPlayer > prioAI)
             fasterPlayer++;
     }
-    RestoreBattlerData(gBattlerTarget);
 
     if (fasterAI > fasterPlayer)
     {
-        if (battler == 0)   // is user (ai) faster
-            return TRUE;
-        else
-            return FALSE;
+        return AI_IS_FASTER;
     }
     else if (fasterAI < fasterPlayer)
     {
-        if (battler == 1)   // is target (player) faster
-            return TRUE;
-        else
-            return FALSE;
+        return AI_IS_SLOWER;
     }
     else
     {
         // Priorities are the same(at least comparing to moves the AI is aware of), decide by speed.
-        if (GetWhoStrikesFirst(sBattler_AI, gBattlerTarget, TRUE) == battler)
+        if (GetWhoStrikesFirst(battlerAI, battler2, TRUE) == 0)
             return TRUE;
         else
             return FALSE;
@@ -1089,12 +1089,16 @@ bool32 CanTargetFaintAiWithMod(u8 battlerDef, u8 battlerAtk, s32 hpMod, s32 dmgM
 {
     u32 i;
     u32 unusable = CheckMoveLimitations(battlerDef, 0, 0xFF);
+    s32 dmg;
     u16 *moves = gBattleResources->battleHistory->usedMoves[battlerDef];
+    u32 hpCheck = gBattleMons[battlerAtk].hp + hpMod;
+
+    if (hpCheck > gBattleMons[battlerAtk].maxHP)
+        hpCheck = gBattleMons[battlerAtk].maxHP;
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        u32 dmg = AI_CalcDamage(moves[i], battlerDef, battlerAtk);
-        u32 hpCheck = gBattleMons[battlerAtk].hp + hpMod;
+        dmg = AI_THINKING_STRUCT->simulatedDmg[battlerAtk][battlerDef][i];
         if (dmgMod)
             dmg *= dmgMod;
 
@@ -1705,7 +1709,7 @@ u32 CountNegativeStatStages(u8 battlerId)
 
 bool32 ShouldLowerAttack(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 {
-    if (IsAiFaster(AI_CHECK_FASTER) && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
+    if (WillAIStrikeFirst() && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
         return FALSE; // Don't bother lowering stats if can kill enemy.
 
     if (gBattleMons[battlerDef].statStages[STAT_ATK] > 4
@@ -1721,7 +1725,7 @@ bool32 ShouldLowerAttack(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 
 bool32 ShouldLowerDefense(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 {
-    if (IsAiFaster(AI_CHECK_FASTER) && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
+    if (WillAIStrikeFirst() && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
         return FALSE; // Don't bother lowering stats if can kill enemy.
 
     if (gBattleMons[battlerDef].statStages[STAT_DEF] > 4
@@ -1737,10 +1741,10 @@ bool32 ShouldLowerDefense(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 
 bool32 ShouldLowerSpeed(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 {
-    if (IsAiFaster(AI_CHECK_FASTER) && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
+    if (WillAIStrikeFirst() && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
         return FALSE; // Don't bother lowering stats if can kill enemy.
 
-    if (IsAiFaster(AI_CHECK_SLOWER)
+    if (!WillAIStrikeFirst()
       && defAbility != ABILITY_CONTRARY
       && defAbility != ABILITY_CLEAR_BODY
       && defAbility != ABILITY_FULL_METAL_BODY
@@ -1751,7 +1755,7 @@ bool32 ShouldLowerSpeed(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 
 bool32 ShouldLowerSpAtk(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 {
-    if (IsAiFaster(AI_CHECK_FASTER) && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
+    if (WillAIStrikeFirst() && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
         return FALSE; // Don't bother lowering stats if can kill enemy.
 
     if (gBattleMons[battlerDef].statStages[STAT_SPATK] > 4
@@ -1766,7 +1770,7 @@ bool32 ShouldLowerSpAtk(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 
 bool32 ShouldLowerSpDef(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 {
-    if (IsAiFaster(AI_CHECK_FASTER) && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
+    if (WillAIStrikeFirst() && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
         return FALSE; // Don't bother lowering stats if can kill enemy.
 
     if (gBattleMons[battlerDef].statStages[STAT_SPDEF] > 4
@@ -1781,7 +1785,7 @@ bool32 ShouldLowerSpDef(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 
 bool32 ShouldLowerAccuracy(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 {
-    if (IsAiFaster(AI_CHECK_FASTER) && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
+    if (WillAIStrikeFirst() && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
         return FALSE; // Don't bother lowering stats if can kill enemy.
 
     if (defAbility != ABILITY_CONTRARY
@@ -1795,7 +1799,7 @@ bool32 ShouldLowerAccuracy(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 
 bool32 ShouldLowerEvasion(u8 battlerAtk, u8 battlerDef, u16 defAbility)
 {
-    if (IsAiFaster(AI_CHECK_FASTER) && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
+    if (WillAIStrikeFirst() && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
         return FALSE; // Don't bother lowering stats if can kill enemy.
 
     if (gBattleMons[battlerDef].statStages[STAT_EVASION] > DEFAULT_STAT_STAGE
@@ -2469,7 +2473,7 @@ bool32 ShouldPivot(u8 battlerAtk, u8 battlerDef, u16 defAbility, u16 move, u8 mo
         /*if (IsPredictedToSwitch(battlerDef, battlerAtk) && !hasStatBoost)
             return PIVOT; // Try pivoting so you can switch to a better matchup to counter your new opponent*/
 
-        if (GetWhoStrikesFirst(battlerAtk, battlerDef, TRUE) == 0) // Attacker goes first
+        if (AI_WhoStrikesFirst(battlerAtk, battlerDef) == AI_IS_FASTER) // Attacker goes first
         {
             if (!CanAIFaintTarget(battlerAtk, battlerDef, 0)) // Can't KO foe otherwise
             {
@@ -2828,7 +2832,7 @@ u32 ShouldTryToFlinch(u8 battlerAtk, u8 battlerDef, u16 atkAbility, u16 defAbili
 {
     if (defAbility == ABILITY_INNER_FOCUS
       || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
-      || GetWhoStrikesFirst(battlerAtk, battlerDef, TRUE) == 1) // opponent goes first
+      || AI_WhoStrikesFirst(battlerAtk, battlerDef) == AI_IS_SLOWER) // Opponent goes first
     {
         return 0;   // don't try to flinch
     }
@@ -2952,7 +2956,7 @@ bool32 ShouldUseRecoilMove(u8 battlerAtk, u8 battlerDef, u32 recoilDmg, u8 moveI
 
 bool32 ShouldAbsorb(u8 battlerAtk, u8 battlerDef, u16 move, s32 damage)
 {
-    if (move == 0xFFFF || GetWhoStrikesFirst(battlerAtk, gBattlerTarget, TRUE) == 0)
+    if (move == 0xFFFF || AI_WhoStrikesFirst(battlerAtk, battlerDef) == AI_IS_FASTER)
     {
         // using item or user goes first
         u8 healPercent = (gBattleMoves[move].argument == 0) ? 50 : gBattleMoves[move].argument;
@@ -2979,7 +2983,7 @@ bool32 ShouldAbsorb(u8 battlerAtk, u8 battlerDef, u16 move, s32 damage)
 
 bool32 ShouldRecover(u8 battlerAtk, u8 battlerDef, u16 move, u8 healPercent)
 {
-    if (move == 0xFFFF || GetWhoStrikesFirst(battlerAtk, gBattlerTarget, TRUE) == 0)
+    if (move == 0xFFFF || AI_WhoStrikesFirst(battlerAtk, battlerDef) == AI_IS_FASTER)
     {
         // using item or user going first
         s32 damage = AI_THINKING_STRUCT->simulatedDmg[battlerAtk][battlerDef][AI_THINKING_STRUCT->movesetIndex];
@@ -3469,7 +3473,7 @@ void IncreaseStatUpScore(u8 battlerAtk, u8 battlerDef, u8 statId, s16 *score)
         }
         break;
     case STAT_SPEED:
-        if (IsAiFaster(AI_CHECK_SLOWER))
+        if (!WillAIStrikeFirst())
         {
             if (gBattleMons[battlerAtk].statStages[STAT_SPEED] < STAT_UP_2_STAGE)
                 *score += 2;
