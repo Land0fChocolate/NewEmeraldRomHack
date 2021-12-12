@@ -10,7 +10,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- Including remaking ability base stats and adding new abilities
 	- Updating the Pokemon status menu to show 3 abilities
 - Add physical/special tag to Pokemon moves in menus (If it isn't in already)
-- Fix the sound delay bug
+- New Pokemon moves
 - Add credits of people whos tutorials and work you have used in the game
 
 - End goal: Completely new Pokemon world
