@@ -8,6 +8,8 @@
 #include "constants/map_groups.h"
 
 #define GET_BASE_SPECIES_ID(speciesId) (GetFormSpeciesId(speciesId, 0))
+#define DAY_START 4
+#define NIGHT_START 18
 
 struct PokemonSubstruct0
 {
