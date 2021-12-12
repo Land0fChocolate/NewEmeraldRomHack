@@ -890,7 +890,7 @@ static u8 GetBikeCollisionAt(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 d
 
 bool8 RS_IsRunningDisallowed(u8 tile)
 {
-    if (IsRunningDisallowedByMetatile(metatile) == TRUE)
+    if (IsRunningDisallowedByMetatile(tile) == TRUE)
         return TRUE;
     else
         return FALSE;
