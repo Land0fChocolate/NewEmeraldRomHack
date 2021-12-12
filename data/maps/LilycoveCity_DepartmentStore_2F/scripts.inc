@@ -61,7 +61,11 @@ LilycoveCity_DepartmentStore_2F_Pokemart2:
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_WAVE_MAIL
+	.2byte ITEM_HARBOR_MAIL
 	.2byte ITEM_MECH_MAIL
+	.2byte ITEM_ORANGE_MAIL
+	.2byte ITEM_WOOD_MAIL
+	.2byte ITEM_SHADOW_MAIL
 	.2byte ITEM_NONE
 	release
 	end

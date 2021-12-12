@@ -5,6 +5,7 @@ struct ScriptContext;
 
 typedef bool8 (*ScrCmdFunc)(struct ScriptContext *);
 typedef u8 Script[];
+extern const u8 gText_ThrowInPremierBalls[];
 
 struct ScriptContext
 {
