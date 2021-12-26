@@ -1087,7 +1087,7 @@ static const u8 sTrickDescription[] = _(
 
 static const u8 sRolePlayDescription[] = _(
     "Mimics the target and\n"
-    "copies its special ability.");
+    "copies its abilities.");
 
 static const u8 sWishDescription[] = _(
     "A wish that restores HP.\n"
@@ -1519,7 +1519,7 @@ static const u8 sPOWER_TRICKDescription[] = _(
 
 static const u8 sGASTRO_ACIDDescription[] = _(
     "Stomach acid suppresses\n"
-    "the foe's ability.");
+    "the foe's abilities.");
 
 static const u8 sLUCKY_CHANTDescription[] = _(
     "Prevents the foe from\n"
@@ -1939,11 +1939,11 @@ static const u8 sFOUL_PLAYDescription[] = _(
 
 static const u8 sSIMPLE_BEAMDescription[] = _(
     "A beam that changes the\n"
-    "foe's ability to Simple.");
+    "foe's abilities to Simple.");
 
 static const u8 sENTRAINMENTDescription[] = _(
-    "Makes the foe mimic the\n"
-    "user, gaining its ability.");
+    "Makes foe mimic the user,\n"
+    "gaining its abilities.");
 
 static const u8 sAFTER_YOUDescription[] = _(
     "Helps out the foe, letting\n"
@@ -2519,7 +2519,7 @@ static const u8 sREVELATION_DANCEDescription[] = _(
 
 static const u8 sCORE_ENFORCERDescription[] = _(
     "Hits with a ray that\n"
-    "nullifies the foe's ability.");
+    "nullifies foe's abilities.");
 
 static const u8 sTROP_KICKDescription[] = _(
     "An intense kick from the\n"

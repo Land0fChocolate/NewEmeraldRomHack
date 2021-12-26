@@ -4401,7 +4401,7 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
 #define tMonId      data[3]
 #define tOldFunc    4
 
-void Task_AbilityCapsule(u8 taskId)
+void Task_AbilityCapsule(u8 taskId) //TODO: this is going to be useless now with multi ability
 {
     static const u8 askText[] = _("Would you like to change {STR_VAR_1}'s\nability to {STR_VAR_2}?");
     static const u8 doneText[] = _("{STR_VAR_1}'s ability became\n{STR_VAR_2}!{PAUSE_UNTIL_PRESS}");

@@ -76,13 +76,15 @@ static bool8 ShouldSwitchIfWonderGuard(void)
     s32 lastId; // + 1
     struct Pokemon *party = NULL;
     u16 move;
+    u16 abilities[NUM_ABILITY_SLOTS];
 
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
         return FALSE;
 
     opposingPosition = BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler));
+    abilities = GetBattlerAbilities(GetBattlerAtPosition(opposingPosition));
 
-    if (GetBattlerAbility(GetBattlerAtPosition(opposingPosition)) != ABILITY_WONDER_GUARD)
+    if (!HasAbility(ABILITY_WONDER_GUARD, abilities))
         return FALSE;
 
     // Check if Pokemon has a super effective move.
@@ -142,7 +144,7 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
     s32 firstId;
     s32 lastId; // + 1
     struct Pokemon *party;
-    s32 i;
+    s32 i, x;
 
     if (HasSuperEffectiveMoveAgainstOpponents(TRUE) && Random() % 3 != 0)
         return FALSE;
@@ -176,7 +178,8 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
     else
         return FALSE;
 
-    if (AI_GetAbility(gActiveBattler) == absorbingTypeAbility)
+    abilities = AI_GetAbilities(gActiveBattler);
+    if (HasAbility(absorbingTypeAbility, abilities))
         return FALSE;
 
     GetAIPartyIndexes(gActiveBattler, &firstId, &lastId);
@@ -207,17 +210,17 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
             continue;
 
         species = GetMonData(&party[i], MON_DATA_SPECIES);
-        if (GetMonData(&party[i], MON_DATA_ABILITY_NUM) != 0)
-            monAbility = gBaseStats[species].abilities[1];
-        else
-            monAbility = gBaseStats[species].abilities[0];
+        monAbilities = gBaseStats[species].abilities;
 
-        if (absorbingTypeAbility == monAbility && Random() & 1)
+        for (x = 0; x < NUM_ABILITY_SLOTS; x++)
         {
-            // we found a mon.
-            *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = i;
-            BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
-            return TRUE;
+            if (absorbingTypeAbility == monAbilities[x] && Random() & 1)
+            {
+                // we found a mon.
+                *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = i;
+                BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
+                return TRUE;
+            }
         }
     }
 
@@ -228,7 +231,7 @@ static bool8 ShouldSwitchIfNaturalCure(void)
 {
     if (!(gBattleMons[gActiveBattler].status1 & STATUS1_SLEEP))
         return FALSE;
-    if (AI_GetAbility(gActiveBattler) != ABILITY_NATURAL_CURE)
+    if (!HasAbility(ABILITY_NATURAL_CURE, AI_GetAbilities(gActiveBattler)))
         return FALSE;
     if (gBattleMons[gActiveBattler].hp < gBattleMons[gActiveBattler].maxHP / 2)
         return FALSE;
@@ -388,12 +391,9 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
             continue;
 
         species = GetMonData(&party[i], MON_DATA_SPECIES);
-        if (GetMonData(&party[i], MON_DATA_ABILITY_NUM) != 0)
-            monAbility = gBaseStats[species].abilities[1];
-        else
-            monAbility = gBaseStats[species].abilities[0];
+        monAbilities = gBaseStats[species].abilities;
 
-        CalcPartyMonTypeEffectivenessMultiplier(gLastLandedMoves[gActiveBattler], species, monAbility);
+        CalcPartyMonTypeEffectivenessMultiplier(gLastLandedMoves[gActiveBattler], species, monAbilities);
         if (gMoveResultFlags & flags)
         {
             battlerIn1 = gLastHitBy[gActiveBattler];
@@ -745,7 +745,7 @@ u8 GetMostSuitableMonToSwitchInto(void)
             || gBattlerPartyIndexes[battlerIn2] == i
             || i == *(gBattleStruct->monToSwitchIntoId + battlerIn1)
             || i == *(gBattleStruct->monToSwitchIntoId + battlerIn2)
-            || (GetMonAbility(&party[i]) == ABILITY_TRUANT && IsTruantMonVulnerable(gActiveBattler, opposingBattler))) // While not really invalid per say, not really wise to switch into this mon.
+            || (HasAbility(ABILITY_TRUANT, GetMonAbility(&party[i])) && IsTruantMonVulnerable(gActiveBattler, opposingBattler))) // While not really invalid per say, not really wise to switch into this mon.
             invalidMons |= gBitTable[i];
         else
             aliveCount++;

@@ -836,6 +836,7 @@ static const u8 *const sAiInfoItemNames[] =
     sText_HeldItem,
     sText_HoldEffect,
 };
+
 static void PutAiInfoText(struct BattleDebugMenu *data)
 {
     u32 i, j, count;
@@ -854,11 +855,11 @@ static void PutAiInfoText(struct BattleDebugMenu *data)
     {
         if (GET_BATTLER_SIDE(i) == B_SIDE_PLAYER && IsBattlerAlive(i))
         {
-            u16 ability = AI_GetAbility(i);
+            u16 abilities = AI_GetAbilities(i);
             u16 holdEffect = AI_GetHoldEffect(i);
             u16 item = gBattleMons[i].item;
             u8 x = (i == B_POSITION_PLAYER_LEFT) ? 83 + (i) * 75 : 83 + (i-1) * 75;
-            AddTextPrinterParameterized(data->aiMovesWindowId, 0, gAbilityNames[ability], x, 0, 0, NULL);
+            AddTextPrinterParameterized(data->aiMovesWindowId, 0, gAbilityNames[abilities], x, 0, 0, NULL);
             AddTextPrinterParameterized(data->aiMovesWindowId, 0, ItemId_GetName(item), x, 15, 0, NULL);
             AddTextPrinterParameterized(data->aiMovesWindowId, 0, GetHoldEffectName(holdEffect), x, 30, 0, NULL);
         }
@@ -1296,7 +1297,7 @@ static void PrintSecondaryEntries(struct BattleDebugMenu *data)
         }
         break;
     case LIST_ITEM_ABILITY:
-        PadString(gAbilityNames[gBattleMons[data->battlerId].ability], text);
+        PadString(gAbilityNames[gBattleMons[data->battlerId].abilities], text);
         printer.currentY = printer.y = sSecondaryListTemplate.upText_Y;
         AddTextPrinter(&printer, 0, NULL);
         break;
@@ -1630,9 +1631,9 @@ static void SetUpModifyArrows(struct BattleDebugMenu *data)
         data->modifyArrows.minValue = 0;
         data->modifyArrows.maxValue = ABILITIES_COUNT_GEN8 - 1;
         data->modifyArrows.maxDigits = 3;
-        data->modifyArrows.modifiedValPtr = &gBattleMons[data->battlerId].ability;
+        data->modifyArrows.modifiedValPtr = &gBattleMons[data->battlerId].abilities;
         data->modifyArrows.typeOfVal = VAL_U16;
-        data->modifyArrows.currValue = gBattleMons[data->battlerId].ability;
+        data->modifyArrows.currValue = gBattleMons[data->battlerId].abilities;
         break;
     case LIST_ITEM_MOVES:
         data->modifyArrows.minValue = 0;

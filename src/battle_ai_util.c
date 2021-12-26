@@ -498,12 +498,12 @@ void RecordKnownMove(u8 battlerId, u32 move)
     }
 }
 
-void RecordAbilityBattle(u8 battlerId, u16 abilityId)
+void RecordAbilityBattle(u8 battlerId, u16 abilityId) //TODO: this func may be redundant now.
 {
     BATTLE_HISTORY->abilities[battlerId] = abilityId;
 }
 
-void ClearBattlerAbilityHistory(u8 battlerId)
+void ClearBattlerAbilityHistory(u8 battlerId) //TODO: this func may be redundant now.
 {
     BATTLE_HISTORY->abilities[battlerId] = ABILITY_NONE;
 }
@@ -524,7 +524,7 @@ void SaveBattlerData(u8 battlerId)
     {
         u32 i;
 
-        AI_THINKING_STRUCT->saved[battlerId].ability = gBattleMons[battlerId].ability;
+        AI_THINKING_STRUCT->saved[battlerId].abilities = gBattleMons[battlerId].abilities;
         AI_THINKING_STRUCT->saved[battlerId].heldItem = gBattleMons[battlerId].item;
         AI_THINKING_STRUCT->saved[battlerId].species = gBattleMons[battlerId].species;
         for (i = 0; i < 4; i++)
@@ -532,7 +532,7 @@ void SaveBattlerData(u8 battlerId)
     }
 }
 
-void SetBattlerData(u8 battlerId)
+void SetBattlerData(u8 battlerId) //TODO: update for multi ability
 {
     if (!IsBattlerAIControlled(battlerId))
     {
@@ -541,7 +541,7 @@ void SetBattlerData(u8 battlerId)
 
         // Use the known battler's ability.
         if (BATTLE_HISTORY->abilities[battlerId] != ABILITY_NONE)
-            gBattleMons[battlerId].ability = BATTLE_HISTORY->abilities[battlerId];
+            gBattleMons[battlerId].abilities = BATTLE_HISTORY->abilities[battlerId];
         // Check if mon can only have one ability.
         else if (gBaseStats[gBattleMons[battlerId].species].abilities[1] == ABILITY_NONE
                  || gBaseStats[gBattleMons[battlerId].species].abilities[1] == gBaseStats[gBattleMons[battlerId].species].abilities[0])
@@ -1118,7 +1118,7 @@ bool32 AI_IsAbilityOnSide(u32 battlerId, u32 ability)
 }
 
 // does NOT include ability suppression checks
-s32 AI_GetAbility(u32 battlerId)
+s32 AI_GetAbility(u32 battlerId) //TODO: update this for multi ability
 {
     u32 knownAbility = GetBattlerAbility(battlerId);
 
@@ -2695,7 +2695,8 @@ static bool32 AI_CanBePoisoned(u8 battlerAtk, u8 battlerDef)
      || AI_IsAbilityOnSide(battlerDef, ABILITY_PASTEL_VEIL)
      || gBattleMons[battlerDef].status1 & STATUS1_ANY
      || IsAbilityStatusProtected(battlerDef)
-     || AI_IsTerrainAffected(battlerDef, STATUS_FIELD_MISTY_TERRAIN))        return FALSE;
+     || AI_IsTerrainAffected(battlerDef, STATUS_FIELD_MISTY_TERRAIN))
+        return FALSE;
     return TRUE;
 }
 

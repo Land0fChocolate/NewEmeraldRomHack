@@ -92,7 +92,7 @@ enum {
 // Dynamic fields for the Pokemon Info page
 #define PSS_DATA_WINDOW_INFO_ORIGINAL_TRAINER 0
 #define PSS_DATA_WINDOW_INFO_ID 1
-#define PSS_DATA_WINDOW_INFO_ABILITY 2
+#define PSS_DATA_WINDOW_INFO_ABILITY 2 //TODO: more ability windows?
 #define PSS_DATA_WINDOW_INFO_MEMO 3
 
 // Dynamic fields for the Pokemon Skills page
@@ -142,7 +142,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
         u8 level; // 0x5
         u8 ribbonCount; // 0x6
         u8 ailment; // 0x7
-        u8 abilityNum; // 0x8
+        //u8 abilityNum; // 0x8 //TODO: make sure we've properly updated this struct for multi ability
         u8 metLocation; // 0x9
         u8 metLevel; // 0xA
         u8 metGame; // 0xB
@@ -591,7 +591,7 @@ static const struct WindowTemplate sPageInfoTemplate[] =
         .paletteNum = 6,
         .baseBlock = 471,
     },
-    [PSS_DATA_WINDOW_INFO_ABILITY] = {
+    [PSS_DATA_WINDOW_INFO_ABILITY] = { //TODO: update for multi ability? add 2 more windows?
         .bg = 0,
         .tilemapLeft = 11,
         .tilemapTop = 9,
@@ -1476,7 +1476,6 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         sum->species2 = GetMonData(mon, MON_DATA_SPECIES2);
         sum->exp = GetMonData(mon, MON_DATA_EXP);
         sum->level = GetMonData(mon, MON_DATA_LEVEL);
-        sum->abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM);
         sum->item = GetMonData(mon, MON_DATA_HELD_ITEM);
         sum->pid = GetMonData(mon, MON_DATA_PERSONALITY);
         sum->sanity = GetMonData(mon, MON_DATA_SANITY_IS_BAD_EGG);
@@ -3160,15 +3159,15 @@ static void PrintMonOTID(void)
     }
 }
 
-static void PrintMonAbilityName(void)
+static void PrintMonAbilityName(void) //TODO: finish update for multi ability
 {
-    u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
+    u16 abilities = GetAbilitiesBySpecies(sMonSummaryScreen->summary.species);
     PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilityNames[ability], 0, 1, 0, 1);
 }
 
-static void PrintMonAbilityDescription(void)
+static void PrintMonAbilityDescription(void) //TODO: finish update for multi ability
 {
-    u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
+    u16 abilities = GetAbilitiesBySpecies(sMonSummaryScreen->summary.species);
     PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilityDescriptionPointers[ability], 0, 17, 0, 0);
 }
 

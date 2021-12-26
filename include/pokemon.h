@@ -159,9 +159,9 @@ struct BattlePokemon
     /*0x15*/ u32 speedIV:5;
     /*0x16*/ u32 spAttackIV:5;
     /*0x17*/ u32 spDefenseIV:5;
-    /*0x17*/ u32 abilityNum:2;
+    /*0x17*/ u32 abilityNum:2; //TODO: is this useless now?
     /*0x18*/ s8 statStages[NUM_BATTLE_STATS];
-    /*0x20*/ u16 ability;
+    /*0x20*/ u16 abilities[NUM_ABILITY_SLOTS];
     /*0x22*/ u8 type1;
     /*0x23*/ u8 type2;
     /*0x24*/ u8 type3;

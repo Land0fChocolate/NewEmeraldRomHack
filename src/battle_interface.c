@@ -3162,7 +3162,7 @@ void CreateAbilityPopUp(u8 battlerId, u32 ability, bool32 isDoubleBattle)
     RestoreOverwrittenPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
 }
 
-void UpdateAbilityPopup(u8 battlerId)
+void UpdateAbilityPopup(u8 battlerId) //TODO: update for multi ability, should only pop up the relevant ability. Maybe pass ability in?
 {
     u8 spriteId1 = gBattleStruct->abilityPopUpSpriteIds[battlerId][0];
     u8 spriteId2 = gBattleStruct->abilityPopUpSpriteIds[battlerId][1];

@@ -1281,7 +1281,7 @@ void UpdateAmbientCry(s16 *state, u16 *delayCounter)
         for (i = 0; i < monsCount; i++)
         {
             if (!GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_EGG)
-                && GetMonAbility(&gPlayerParty[0]) == ABILITY_SWARM)
+                && HasAbility(ABILITY_SWARM, GetMonAbilities(&gPlayerParty[0])))
             {
                 divBy = 2;
                 break;

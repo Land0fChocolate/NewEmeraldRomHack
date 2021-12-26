@@ -809,31 +809,31 @@ static void HealMon(struct Pokemon *mon)
     SetMonData(mon, MON_DATA_STATUS, data);
 }
 
-static bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
+static bool8 HasAbilityPreventStatus(struct Pokemon *mon, u32 status)
 {
-    u16 ability = GetMonAbility(mon);
+    u16 abilities = GetMonAbilities(mon);
     bool8 ret = FALSE;
 
     switch (status)
     {
     case STATUS1_FREEZE:
-        if (ability == ABILITY_MAGMA_ARMOR)
+        if (HasAbility(ABILITY_MAGMA_ARMOR, abilities))
             ret = TRUE;
         break;
     case STATUS1_BURN:
-        if (ability == ABILITY_WATER_VEIL || ability == ABILITY_WATER_BUBBLE)
+        if (HasAbility(ABILITY_WATER_VEIL, abilities) || HasAbility(ABILITY_WATER_BUBBLE, abilities))
             ret = TRUE;
         break;
     case STATUS1_PARALYSIS:
-        if (ability == ABILITY_LIMBER)
+        if (HasAbility(ABILITY_LIMBER, abilities))
             ret = TRUE;
         break;
     case STATUS1_SLEEP:
-        if (ability == ABILITY_INSOMNIA || ability == ABILITY_VITAL_SPIRIT)
+        if (HasAbility(ABILITY_INSOMNIA, abilities) || HasAbility(ABILITY_VITAL_SPIRIT, abilities))
             ret = TRUE;
         break;
     case STATUS1_TOXIC_POISON:
-        if (ability == ABILITY_IMMUNITY)
+        if (HasAbility(ABILITY_IMMUNITY, abilities))
             ret = TRUE;
         break;
     }
@@ -972,7 +972,7 @@ static bool8 TryInflictRandomStatus(void)
         {
             j++;
             species = GetMonData(mon, MON_DATA_SPECIES);
-            if (!DoesAbilityPreventStatus(mon, sStatusFlags) && !DoesTypePreventStatus(species, sStatusFlags))
+            if (!HasAbilityPreventStatus(mon, sStatusFlags) && !DoesTypePreventStatus(species, sStatusFlags))
                 SetMonData(mon, MON_DATA_STATUS, &sStatusFlags);
         }
         if (j == count)
@@ -1113,7 +1113,6 @@ bool32 TryGenerateBattlePikeWildMon(bool8 checkKeenEyeIntimidate)
     u8 headerId = GetBattlePikeWildMonHeaderId();
     u32 lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
     const struct PikeWildMon *const *const wildMons = sWildMons[lvlMode];
-    u32 abilityNum;
     s32 pikeMonId = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL);
     pikeMonId = SpeciesToPikeMonId(pikeMonId);
 
@@ -1143,11 +1142,6 @@ bool32 TryGenerateBattlePikeWildMon(bool8 checkKeenEyeIntimidate)
                MON_DATA_EXP,
                &gExperienceTables[gBaseStats[wildMons[headerId][pikeMonId].species].growthRate][monLevel]);
 
-    if (gBaseStats[wildMons[headerId][pikeMonId].species].abilities[1])
-        abilityNum = Random() % 2;
-    else
-        abilityNum = 0;
-    SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &abilityNum);
     for (i = 0; i < MAX_MON_MOVES; i++)
         SetMonMoveSlot(&gEnemyParty[0], wildMons[headerId][pikeMonId].moves[i], i);
 
@@ -1627,8 +1621,8 @@ static bool8 CanEncounterWildMon(u8 enemyMonLevel)
 {
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
     {
-        u16 monAbility = GetMonAbility(&gPlayerParty[0]);
-        if (monAbility == ABILITY_KEEN_EYE || monAbility == ABILITY_INTIMIDATE)
+        u16 monAbilities = GetMonAbilities(&gPlayerParty[0]);
+        if (HasAbility(ABILITY_KEEN_EYE, monAbilities) || HasAbility(ABILITY_INTIMIDATE, monAbilities))
         {
             u8 playerMonLevel = GetMonData(&gPlayerParty[0], MON_DATA_LEVEL);
             if (playerMonLevel > 5 && enemyMonLevel <= playerMonLevel - 5 && Random() % 2 == 0)
