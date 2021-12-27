@@ -246,7 +246,7 @@ struct WishFutureKnock
 
 struct AI_SavedBattleMon
 {
-    u16 ability;
+    u16 abilities[NUM_ABILITY_SLOTS];
     u16 moves[MAX_MON_MOVES];
     u16 heldItem;
     u16 species;
@@ -255,13 +255,13 @@ struct AI_SavedBattleMon
 struct AiLogicData
 {
     //attacker data
-    u16 atkAbility;
+    u16 atkAbilities[NUM_ABILITY_SLOTS];
     u16 atkItem;
     u16 atkHoldEffect;
     u8 atkParam;
     u16 atkSpecies;
     // target data
-    u16 defAbility;
+    u16 defAbilities[NUM_ABILITY_SLOTS];
     u16 defItem;
     u16 defHoldEffect;
     u8 defParam;
@@ -269,12 +269,12 @@ struct AiLogicData
     // attacker partner data
     u8 battlerAtkPartner;
     u16 partnerMove;
-    u16 atkPartnerAbility;
+    u16 atkPartnerAbilities[NUM_ABILITY_SLOTS];
     u16 atkPartnerHoldEffect;
     bool32 targetSameSide;
     // target partner data
     u8 battlerDefPartner;
-    u16 defPartnerAbility;
+    u16 defPartnerAbilities[NUM_ABILITY_SLOTS];
     u16 defPartnerHoldEffect;
 };
 
@@ -851,7 +851,7 @@ extern s32 gBattleMoveDamage;
 extern s32 gHpDealt;
 extern s32 gTakenDmg[MAX_BATTLERS_COUNT];
 extern u16 gLastUsedItem;
-extern u16 gLastUsedAbility;
+extern u16 gLastUsedAbility; //TODO: probably remove for multi ability
 extern u8 gBattlerAttacker;
 extern u8 gBattlerTarget;
 extern u8 gBattlerFainted;
@@ -916,7 +916,7 @@ extern u16 gMoveToLearn;
 extern u8 gBattleMonForms[MAX_BATTLERS_COUNT];
 extern u32 gFieldStatuses;
 extern struct FieldTimer gFieldTimers;
-extern u8 gBattlerAbility;
+extern u8 gBattlerAbility; //TODO: update for multi ability
 extern u16 gPartnerSpriteId;
 extern struct TotemBoost gTotemBoosts[MAX_BATTLERS_COUNT];
 

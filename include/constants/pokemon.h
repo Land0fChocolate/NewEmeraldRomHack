@@ -139,7 +139,7 @@
 #define MON_DATA_SPATK_IV          43
 #define MON_DATA_SPDEF_IV          44
 #define MON_DATA_IS_EGG            45
-#define MON_DATA_ABILITY_NUM       46
+#define MON_DATA_ABILITY_NUM       46 //no longer being used
 #define MON_DATA_TOUGH             47
 #define MON_DATA_SHEEN             48
 #define MON_DATA_OT_GENDER         49
