@@ -4266,7 +4266,7 @@ static union PokemonSubstruct *GetSubstruct(struct BoxPokemon *boxMon, u32 perso
     return substruct;
 }
 
-u32 GetMonData(struct Pokemon *mon, s32 field, u8* data) //TODO: removed AbilityNum for multi ability. Make sure Pokemon abilities are get wherever this is used.
+u32 GetMonData(struct Pokemon *mon, s32 field, u8* data)
 {
     u32 ret;
 
@@ -5117,7 +5117,7 @@ u8 GetMonsStateToDoubles_2(void)
 u16 GetMonAbilities(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
-    return GetAbilitiesBySpecies(species); //TODO: update GetAbilityBySpecies for multi ability
+    return GetAbilitiesBySpecies(species);
 }
 
 void CreateSecretBaseEnemyParty(struct SecretBase *secretBaseRecord)
@@ -7431,7 +7431,7 @@ void BoxMonRestorePP(struct BoxPokemon *boxMon)
 
 void SetMonPreventsSwitchingString(void)
 {
-    gLastUsedAbility = gBattleStruct->abilityPreventingSwitchout; //TODO: update for multi ability
+    gLastUsedAbility = gBattleStruct->abilityPreventingSwitchout;
 
     gBattleTextBuff1[0] = B_BUFF_PLACEHOLDER_BEGIN;
     gBattleTextBuff1[1] = B_BUFF_MON_NICK_WITH_PREFIX;
@@ -8010,7 +8010,7 @@ u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg)
                         targetSpecies = formChanges[i].targetSpecies;
                     break;
                 case FORM_ITEM_HOLD_ABILITY:
-                    if (heldItem == formChanges[i].param1 && HasAbility(formChanges[i].param2, abilities)) //TODO: make sure this is properly updated for multi ability
+                    if (heldItem == formChanges[i].param1 && HasAbility(formChanges[i].param2, abilities))
                         targetSpecies = formChanges[i].targetSpecies;
                     break;
                 case FORM_ITEM_USE_TIME:

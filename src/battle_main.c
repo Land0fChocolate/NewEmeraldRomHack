@@ -1903,7 +1903,6 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
             switch (gTrainers[trainerNum].partyFlags)
             {
             case 0:
-            { //TODO: why does this have brackets?
                 const struct TrainerMonNoItemDefaultMoves *partyData = gTrainers[trainerNum].party.NoItemDefaultMoves;
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
@@ -1913,9 +1912,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                 fixedIV = partyData[i].iv * MAX_PER_STAT_IVS / 255;
                 CreateMon(&party[i], partyData[i].species, partyData[i].lvl, fixedIV, TRUE, personalityValue, OT_ID_RANDOM_NO_SHINY, 0);
                 break;
-            }
             case F_TRAINER_PARTY_CUSTOM_MOVESET:
-            { //TODO: why does this have brackets?
                 const struct TrainerMonNoItemCustomMoves *partyData = gTrainers[trainerNum].party.NoItemCustomMoves;
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
@@ -1931,9 +1928,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                     SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
                 }
                 break;
-            }
             case F_TRAINER_PARTY_HELD_ITEM:
-            { //TODO: why does this have brackets?
                 const struct TrainerMonItemDefaultMoves *partyData = gTrainers[trainerNum].party.ItemDefaultMoves;
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
@@ -1945,9 +1940,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
                 SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
                 break;
-            }
             case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
-            { //TODO: why does this have brackets?
                 const struct TrainerMonItemCustomMoves *partyData = gTrainers[trainerNum].party.ItemCustomMoves;
 
                 for (j = 0; gSpeciesNames[partyData[i].species][j] != EOS; j++)
@@ -1965,7 +1958,6 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
                     SetMonData(&party[i], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
                 }
                 break;
-            }
             }
             for (j = 0; gTrainerBallTable[j].classId != 0xFF; j++)
             {
@@ -3114,7 +3106,7 @@ void SwitchInClearSetData(void)
     gSpecialStatuses[gActiveBattler].specialDmg = 0;
 
     ClearBattlerMoveHistory(gActiveBattler);
-    ClearBattlerAbilityHistory(gActiveBattler); //TODO: is ClearBattlerAbilityHistory going to be relevant?
+    ClearBattlerAbilityHistory(gActiveBattler);
     ClearBattlerItemEffectHistory(gActiveBattler);
 }
 
@@ -3786,7 +3778,7 @@ u8 IsRunningFromBattleImpossible(void)
     if (HasAbility(ABILITY_RUN_AWAY, gBattleMons[gActiveBattler].abilities))
         return 0;
 
-    if ((i = IsAbilityPreventingEscape(gActiveBattler))) //TODO: update for multi ability, IsAbilityPreventingEscape should loop through all the battler's abilities
+    if ((i = IsAbilityPreventingEscape(gActiveBattler)))
     {
         gBattleScripting.battler = i - 1;
         gLastUsedAbilities = gBattleMons[i - 1].abilities;
@@ -3970,10 +3962,11 @@ static void HandleTurnActionSelectionState(void)
                     break;
                 case B_ACTION_SWITCH:
                     *(gBattleStruct->field_58 + gActiveBattler) = gBattlerPartyIndexes[gActiveBattler];
+                    u16 bcAbilities[] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE};
                     if (gBattleTypeFlags & BATTLE_TYPE_ARENA
                         || !CanBattlerEscape(gActiveBattler))
                     {
-                        BtlController_EmitChoosePokemon(0, PARTY_ACTION_CANT_SWITCH, PARTY_SIZE, ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
+                        BtlController_EmitChoosePokemon(0, PARTY_ACTION_CANT_SWITCH, PARTY_SIZE, bcAbilities, gBattleStruct->field_60[gActiveBattler]);
                     }
                     else if ((i = IsAbilityPreventingEscape(gActiveBattler)))
                     {
@@ -3982,11 +3975,11 @@ static void HandleTurnActionSelectionState(void)
                     else
                     {
                         if (gActiveBattler == 2 && gChosenActionByBattler[0] == B_ACTION_SWITCH)
-                            BtlController_EmitChoosePokemon(0, PARTY_ACTION_CHOOSE_MON, *(gBattleStruct->monToSwitchIntoId + 0), ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
+                            BtlController_EmitChoosePokemon(0, PARTY_ACTION_CHOOSE_MON, *(gBattleStruct->monToSwitchIntoId + 0), bcAbilities, gBattleStruct->field_60[gActiveBattler]);
                         else if (gActiveBattler == 3 && gChosenActionByBattler[1] == B_ACTION_SWITCH)
-                            BtlController_EmitChoosePokemon(0, PARTY_ACTION_CHOOSE_MON, *(gBattleStruct->monToSwitchIntoId + 1), ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
+                            BtlController_EmitChoosePokemon(0, PARTY_ACTION_CHOOSE_MON, *(gBattleStruct->monToSwitchIntoId + 1), bcAbilities, gBattleStruct->field_60[gActiveBattler]);
                         else
-                            BtlController_EmitChoosePokemon(0, PARTY_ACTION_CHOOSE_MON, PARTY_SIZE, ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
+                            BtlController_EmitChoosePokemon(0, PARTY_ACTION_CHOOSE_MON, PARTY_SIZE, bcAbilities, gBattleStruct->field_60[gActiveBattler]);
                     }
                     MarkBattlerForControllerExec(gActiveBattler);
                     break;
@@ -4827,7 +4820,6 @@ static void CheckQuickClaw_CustapBerryActivation(void)
                     gProtectStructs[gActiveBattler].quickDraw = FALSE;
                     gLastUsedAbilities = gBattleMons[gActiveBattler].abilities;
                     PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbilities);
-                    RecordAbilityBattle(gActiveBattler, gLastUsedAbilities);
                     BattleScriptExecute(BattleScript_QuickDrawActivation);
                 }
                 return;

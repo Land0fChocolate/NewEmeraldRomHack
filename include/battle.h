@@ -851,7 +851,8 @@ extern s32 gBattleMoveDamage;
 extern s32 gHpDealt;
 extern s32 gTakenDmg[MAX_BATTLERS_COUNT];
 extern u16 gLastUsedItem;
-extern u16 gLastUsedAbility; //TODO: probably remove for multi ability
+extern u16 gLastUsedAbility;
+extern u16 gLastUsedAbilities[NUM_ABILITY_SLOTS];
 extern u8 gBattlerAttacker;
 extern u8 gBattlerTarget;
 extern u8 gBattlerFainted;
@@ -916,7 +917,7 @@ extern u16 gMoveToLearn;
 extern u8 gBattleMonForms[MAX_BATTLERS_COUNT];
 extern u32 gFieldStatuses;
 extern struct FieldTimer gFieldTimers;
-extern u8 gBattlerAbility; //TODO: update for multi ability
+extern u8 gBattlerAbility; //TODO: probably don't need to update for multi ability. Confusing name. Look into it anyway.
 extern u16 gPartnerSpriteId;
 extern struct TotemBoost gTotemBoosts[MAX_BATTLERS_COUNT];
 

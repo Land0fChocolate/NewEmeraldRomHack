@@ -12,7 +12,7 @@ struct StatFractions
     u8 divisor;
 };
 
-s32 CalcCritChanceStage(u8 battlerAtk, u8 battlerDef, u32 move, bool32 recordAbility); //TODO: remove recordAbility for multi ability?
+s32 CalcCritChanceStage(u8 battlerAtk, u8 battlerDef, u32 move);
 s8 GetInverseCritChance(u8 battlerAtk, u8 battlerDef, u32 move);
 u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move);
 u8 GetBattlerTurnOrderNum(u8 battlerId);

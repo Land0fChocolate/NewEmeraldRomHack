@@ -216,6 +216,268 @@ static const u16 sEntrainmentTargetSimpleBeamBannedAbilities[] =
     ABILITY_GULP_MISSILE,
 };
 
+static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
+{
+    [ABILITY_ADAPTABILITY] = 4,
+    [ABILITY_AFTERMATH] = 3,
+    [ABILITY_AERILATE] = 3,
+    [ABILITY_AIR_LOCK] = 3,
+    [ABILITY_ANALYTIC] = 3,
+    [ABILITY_ANGER_POINT] = 2,
+    [ABILITY_ANTICIPATION] = 2,
+    [ABILITY_ARENA_TRAP] = 5,
+    [ABILITY_AROMA_VEIL] = 3,
+    [ABILITY_AURA_BREAK] = 1,
+    [ABILITY_BAD_DREAMS] = 2,
+    [ABILITY_BATTERY] = 2,
+    [ABILITY_BATTLE_ARMOR] = 1,
+    [ABILITY_BATTLE_BOND] = 0,
+    [ABILITY_BEAST_BOOST] = 4,
+    [ABILITY_BERSERK] = 4,
+    [ABILITY_BIG_PECKS] = 1,
+    [ABILITY_BLAZE] = 2,
+    [ABILITY_BULLETPROOF] = 4,
+    [ABILITY_CHEEK_POUCH] = 2,
+    [ABILITY_CHLOROPHYLL] = 4,
+    [ABILITY_CLEAR_BODY] = 3,
+    [ABILITY_CLOUD_NINE] = 3,
+    [ABILITY_COLOR_CHANGE] = 3,
+    [ABILITY_COMATOSE] = 0,
+    [ABILITY_COMPETITIVE] = 4,
+    [ABILITY_COMPOUND_EYES] = 3,
+    [ABILITY_CONTRARY] = 1,
+    [ABILITY_CORROSION] = 1,
+    [ABILITY_CURSED_BODY] = 2,
+    [ABILITY_CUTE_CHARM] = 2,
+    [ABILITY_DAMP] = 2,
+    [ABILITY_DANCER] = 0,
+    [ABILITY_DARK_AURA] = 1,
+    [ABILITY_DAZZLING] = 3,
+    [ABILITY_DEFEATIST] = 0,
+    [ABILITY_DEFIANT] = 2,
+    [ABILITY_DELTA_STREAM] = 2,
+    [ABILITY_DESOLATE_LAND] = 2,
+    [ABILITY_DISGUISE] = 0,
+    [ABILITY_DOWNLOAD] = 4,
+    [ABILITY_DRIZZLE] = 2,
+    [ABILITY_DROUGHT] = 2,
+    [ABILITY_DRY_SKIN] = 2,
+    [ABILITY_EARLY_BIRD] = 1,
+    [ABILITY_EFFECT_SPORE] = 2,
+    [ABILITY_ELECTRIC_SURGE] = 2,
+    [ABILITY_EMERGENCY_EXIT] = 3,
+    [ABILITY_FAIRY_AURA] = 1,
+    [ABILITY_FILTER] = 4,
+    [ABILITY_FLAME_BODY] = 2,
+    [ABILITY_FLARE_BOOST] = 3,
+    [ABILITY_FLASH_FIRE] = 4,
+    [ABILITY_FLOWER_GIFT] = 0,
+    [ABILITY_FLOWER_VEIL] = 4,
+    [ABILITY_FLUFFY] = 4,
+    [ABILITY_FORECAST] = 0,
+    [ABILITY_FOREWARN] = 3,
+    [ABILITY_FRIEND_GUARD] = 3,
+    [ABILITY_FRISK] = 2,
+    [ABILITY_FULL_METAL_BODY] = 3,
+    [ABILITY_FUR_COAT] = 5,
+    [ABILITY_GALE_WINGS] = 2,
+    [ABILITY_GALVANIZE] = 3,
+    [ABILITY_GLUTTONY] = 2,
+    [ABILITY_GOOEY] = 4,
+    [ABILITY_GRASS_PELT] = 2,
+    [ABILITY_GRASSY_SURGE] = 2,
+    [ABILITY_GUTS] = 3,
+    [ABILITY_HARVEST] = 2,
+    [ABILITY_HEALER] = 2,
+    [ABILITY_HEATPROOF] = 4,
+    [ABILITY_HEAVY_METAL] = 1,
+    [ABILITY_HONEY_GATHER] = 1,
+    [ABILITY_HUGE_POWER] = 4,
+    [ABILITY_HUSTLE] = 1,
+    [ABILITY_HYDRATION] = 3,
+    [ABILITY_HYPER_CUTTER] = 2,
+    [ABILITY_ICE_BODY] = 3,
+    [ABILITY_ILLUMINATE] = 1,
+    [ABILITY_ILLUSION] = 0,
+    [ABILITY_IMMUNITY] = 2,
+    [ABILITY_IMPOSTER] = 0,
+    [ABILITY_INFILTRATOR] = 4,
+    [ABILITY_INNARDS_OUT] = 3,
+    [ABILITY_INNER_FOCUS] = 1,
+    [ABILITY_INSOMNIA] = 2,
+    [ABILITY_INTIMIDATE] = 4,
+    [ABILITY_IRON_BARBS] = 3,
+    [ABILITY_IRON_FIST] = 2,
+    [ABILITY_JUSTIFIED] = 4,
+    [ABILITY_KEEN_EYE] = 1,
+    [ABILITY_KLUTZ] = 1,
+    [ABILITY_LEAF_GUARD] = 2,
+    [ABILITY_LEVITATE] = 5,
+    [ABILITY_LIGHT_METAL] = 1,
+    [ABILITY_LIGHTNING_ROD] = 5,
+    [ABILITY_LIMBER] = 2,
+    [ABILITY_LIQUID_OOZE] = 2,
+    [ABILITY_LIQUID_VOICE] = 4,
+    [ABILITY_LONG_REACH] = 3,
+    [ABILITY_MAGIC_BOUNCE] = 5,
+    [ABILITY_MAGIC_GUARD] = 5,
+    [ABILITY_MAGICIAN] = 2,
+    [ABILITY_MAGMA_ARMOR] = 1,
+    [ABILITY_MAGNET_PULL] = 5,
+    [ABILITY_MARVEL_SCALE] = 3,
+    [ABILITY_MEGA_LAUNCHER] = 3,
+    [ABILITY_MERCILESS] = 2,
+    [ABILITY_MINUS] = 1,
+    [ABILITY_MISTY_SURGE] = 2,
+    [ABILITY_MOLD_BREAKER] = 3,
+    [ABILITY_MOODY] = 4,
+    [ABILITY_MOTOR_DRIVE] = 3,
+    [ABILITY_MOXIE] = 3,
+    [ABILITY_MULTISCALE] = 4,
+    [ABILITY_MULTITYPE] = 0,
+    [ABILITY_MUMMY] = 2,
+    [ABILITY_NATURAL_CURE] = 2,
+    [ABILITY_NEUROFORCE] = 5,
+    [ABILITY_NO_GUARD] = 3,
+    [ABILITY_NORMALIZE] = 1,
+    [ABILITY_OBLIVIOUS] = 2,
+    [ABILITY_OVERCOAT] = 3,
+    [ABILITY_OVERGROW] = 2,
+    [ABILITY_OWN_TEMPO] = 2,
+    [ABILITY_PARENTAL_BOND] = 0,
+    [ABILITY_PICKUP] = 1,
+    [ABILITY_PICKPOCKET] = 3,
+    [ABILITY_PIXILATE] = 2,
+    [ABILITY_PLUS] = 1,
+    [ABILITY_POISON_HEAL] = 3,
+    [ABILITY_POISON_POINT] = 2,
+    [ABILITY_POISON_TOUCH] = 2,
+    //[ABILITY_PORTAL_POWER] = 8,
+    [ABILITY_POWER_CONSTRUCT] = 0,
+    [ABILITY_POWER_OF_ALCHEMY] = 0,
+    [ABILITY_PRANKSTER] = 4,
+    [ABILITY_PRESSURE] = 1,
+    [ABILITY_PRIMORDIAL_SEA] = 2,
+    [ABILITY_PRISM_ARMOR] = 4,
+    [ABILITY_PROTEAN] = 4,
+    [ABILITY_PSYCHIC_SURGE] = 2,
+    [ABILITY_PURE_POWER] = 4,
+    [ABILITY_QUEENLY_MAJESTY] = 3,
+    [ABILITY_QUICK_FEET] = 3,
+    [ABILITY_RAIN_DISH] = 2,
+    [ABILITY_RATTLED] = 3,
+    [ABILITY_RECEIVER] = 0,
+    [ABILITY_RECKLESS] = 3,
+    [ABILITY_REFRIGERATE] = 3,
+    [ABILITY_REGENERATOR] = 3,
+    [ABILITY_RIVALRY] = 2,
+    [ABILITY_RKS_SYSTEM] = 0,
+    [ABILITY_ROCK_HEAD] = 2,
+    [ABILITY_ROUGH_SKIN] = 3,
+    [ABILITY_RUN_AWAY] = 1,
+    [ABILITY_SAND_FORCE] = 2,
+    [ABILITY_SAND_RUSH] = 2,
+    [ABILITY_SAND_STREAM] = 2,
+    [ABILITY_SAND_VEIL] = 2,
+    [ABILITY_SAP_SIPPER] = 3,
+    [ABILITY_SCHOOLING] = 0,
+    [ABILITY_SCRAPPY] = 3,
+    [ABILITY_SERENE_GRACE] = 4,
+    [ABILITY_SHADOW_SHIELD] = 4,
+    [ABILITY_SHADOW_TAG] = 5,
+    [ABILITY_SHED_SKIN] = 3,
+    [ABILITY_SHEER_FORCE] = 4,
+    [ABILITY_SHELL_ARMOR] = 1,
+    [ABILITY_SHIELD_DUST] = 2,
+    [ABILITY_SHIELDS_DOWN] = 0,
+    [ABILITY_SIMPLE] = 4,
+    [ABILITY_SKILL_LINK] = 3,
+    [ABILITY_SLOW_START] = 0,
+    [ABILITY_SLUSH_RUSH] = 2,
+    [ABILITY_SNIPER] = 3,
+    [ABILITY_SNOW_CLOAK] = 2,
+    [ABILITY_SNOW_WARNING] = 2,
+    [ABILITY_SOLAR_POWER] = 2,
+    [ABILITY_SOLID_ROCK] = 4,
+    [ABILITY_SOUL_HEART] = 4,
+    [ABILITY_SOUNDPROOF] = 5,
+    [ABILITY_SPEED_BOOST] = 5,
+    [ABILITY_STAKEOUT] = 3,
+    [ABILITY_STALL] = 0,
+    [ABILITY_STAMINA] = 3,
+    [ABILITY_STANCE_CHANGE] = 0,
+    [ABILITY_STATIC] = 2,
+    [ABILITY_STEADFAST] = 1,
+    [ABILITY_STEELWORKER] = 3,
+    [ABILITY_STENCH] = 1,
+    [ABILITY_STICKY_HOLD] = 1,
+    [ABILITY_STORM_DRAIN] = 5,
+    [ABILITY_STRONG_JAW] = 3,
+    [ABILITY_STURDY] = 4,
+    [ABILITY_SUCTION_CUPS] = 1,
+    [ABILITY_SUPER_LUCK] = 2,
+    [ABILITY_SURGE_SURFER] = 2,
+    [ABILITY_SWARM] = 2,
+    [ABILITY_SWEET_VEIL] = 3,
+    [ABILITY_SWIFT_SWIM] = 3,
+    [ABILITY_SYMBIOSIS] = 1,
+    [ABILITY_SYNCHRONIZE] = 2,
+    [ABILITY_TANGLED_FEET] = 2,
+    [ABILITY_TANGLING_HAIR] = 3,
+    [ABILITY_TECHNICIAN] = 4,
+    [ABILITY_TELEPATHY] = 3,
+    [ABILITY_TERAVOLT] = 4,
+    [ABILITY_THICK_FAT] = 4,
+    [ABILITY_TINTED_LENS] = 4,
+    [ABILITY_TORRENT] = 2,
+    [ABILITY_TOXIC_BOOST] = 3,
+    [ABILITY_TOUGH_CLAWS] = 3,
+    [ABILITY_TRACE] = 0,
+    [ABILITY_TRIAGE] = 3,
+    [ABILITY_TRUANT] = 0,
+    [ABILITY_TURBOBLAZE] = 4,
+    [ABILITY_UNAWARE] = 4,
+    [ABILITY_UNBURDEN] = 3,
+    [ABILITY_UNNERVE] = 2,
+    [ABILITY_VICTORY_STAR] = 5,
+    [ABILITY_VITAL_SPIRIT] = 2,
+    [ABILITY_VOLT_ABSORB] = 5,
+    [ABILITY_WATER_ABSORB] = 5,
+    [ABILITY_WATER_BUBBLE] = 3,
+    [ABILITY_WATER_COMPACTION] = 3,
+    [ABILITY_WATER_VEIL] = 2,
+    [ABILITY_WEAK_ARMOR] = 1,
+    [ABILITY_WHITE_SMOKE] = 3,
+    [ABILITY_WIMP_OUT] = 3,
+    [ABILITY_WONDER_GUARD] = 5,
+    [ABILITY_WONDER_SKIN] = 2,
+    [ABILITY_ZEN_MODE] = 0,
+    [ABILITY_INTREPID_SWORD] = 5,
+    [ABILITY_DAUNTLESS_SHIELD] = 5,
+    [ABILITY_BALL_FETCH] = 1,
+    [ABILITY_COTTON_DOWN] = 4,
+    [ABILITY_MIRROR_ARMOR] = 4,
+    [ABILITY_GULP_MISSILE] = 0,
+    [ABILITY_STALWART] = 3,
+    [ABILITY_PROPELLER_TAIL] = 3,
+    [ABILITY_STEAM_ENGINE] = 5,
+    [ABILITY_PUNK_ROCK] = 3,
+    [ABILITY_SAND_SPIT] = 3,
+    [ABILITY_ICE_SCALES] = 5,
+    [ABILITY_RIPEN] = 2,
+    [ABILITY_ICE_FACE] = 0,
+    [ABILITY_POWER_SPOT] = 3,
+    [ABILITY_MIMICRY] = 3,
+    [ABILITY_SCREEN_CLEANER] = 2,
+    [ABILITY_NEUTRALIZING_GAS] = 3,
+    [ABILITY_HUNGER_SWITCH] = 0,
+    [ABILITY_PASTEL_VEIL] = 3,
+    [ABILITY_STEELY_SPIRIT] = 2,
+    [ABILITY_PERISH_BODY] = 3,
+    [ABILITY_WANDERING_SPIRIT] = 3,
+    [ABILITY_GORILLA_TACTICS] = 3,
+};
+
 bool32 IsAffectedByFollowMe(u32 battlerAtk, u32 defSide, u32 move)
 {
     u16 abilities[] = GetBattlerAbilities(battlerAtk);
@@ -391,7 +653,6 @@ void HandleAction_UseMove(void)
         else
         {
             gActiveBattler = gBattlerByTurnOrder[var];
-            RecordAbilityBattle(gActiveBattler, gBattleMons[gActiveBattler].ability); //TODO: probably remove for multi ability
             abilities = GetBattlerAbilities(gActiveBattler);
             if (HasAbility(ABILITY_LIGHTNING_ROD, abilities))
                 gSpecialStatuses[gActiveBattler].lightningRodRedirected = TRUE;
@@ -1279,7 +1540,7 @@ u8 GetBattlerForBattleScript(u8 caseId)
         ret = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
         break;
     case BS_ABILITY_BATTLER:
-        ret = gBattlerAbilities; //TODO: make sure this is properly updated for multi ability
+        ret = gBattlerAbilities;
         break;
     }
     return ret;
@@ -2477,12 +2738,11 @@ s32 GetDrainedBigRootHp(u32 battler, s32 hp)
     return hp * -1;
 }
 
-#define MAGIC_GUARD_CHECK \ //TODO: does this need to be updated for multi ability?
-if (ability == ABILITY_MAGIC_GUARD) \
+#define MAGIC_GUARD_CHECK \
+if (HasAbility(ABILITY_MAGIC_GUARD, abilities) \
 {\
-    RecordAbilityBattle(gActiveBattler, ability);\
     gBattleStruct->turnEffectsTracker++;\
-            break;\
+    break;\
 }
 
 
@@ -2636,8 +2896,6 @@ u8 DoBattlerEndTurnEffects(void)
                 gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / (B_BURN_DAMAGE >= GEN_7 ? 16 : 8);
                 if (HasAbility(ABILITY_HEATPROOF, abilities))
                 {
-                    if (gBattleMoveDamage > (gBattleMoveDamage / 2) + 1) // Record ability if the burn takes less damage than it normally would.
-                        RecordAbilityBattle(gActiveBattler, ABILITY_HEATPROOF);
                     gBattleMoveDamage /= 2;
                 }
                 if (gBattleMoveDamage == 0)
@@ -3320,7 +3578,7 @@ u8 AtkCanceller_UnableToUseMove(void)
                 CancelMultiTurnMoves(gBattlerAttacker);
                 gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_LOAFING;
-                gBattlerAbility = gBattlerAttacker; //TODO: update for multi ability
+                gBattlerAbility = gBattlerAttacker;
                 gBattlescriptCurrInstr = BattleScript_TruantLoafingAround;
                 gMoveResultFlags |= MOVE_RESULT_MISSED;
                 effect = 1;
@@ -3520,7 +3778,7 @@ u8 AtkCanceller_UnableToUseMove(void)
                 if ((B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS))
                     || HasAbility(ABILITY_OVERCOAT, GetBattlerAbilities(gBattlerTarget)))
                 {
-                    gBattlerAbility = gBattlerTarget; //TODO: update for multi ability
+                    gBattlerAbility = gBattlerTarget;
                     effect = 1;
                 }
                 else if (GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_SAFETY_GOGGLES)
@@ -4723,7 +4981,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
         {
             if (!(gBattleTypeFlags & BATTLE_TYPE_DOUBLE) || !(gBattleMoves[move].target & (MOVE_TARGET_BOTH | MOVE_TARGET_FOES_AND_ALLY)))
                 CancelMultiTurnMoves(gBattlerAttacker); // Don't cancel moves that can hit two targets bc one target might not be protected
-            gBattleScripting.battler = gBattlerAbility = gBattlerTarget; //TODO: update for multi ability
+            gBattleScripting.battler = gBattlerAbility = gBattlerTarget;
             gBattlescriptCurrInstr = BattleScript_DarkTypePreventsPrankster;
             effect = 1;
         }
@@ -5015,14 +5273,12 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                         case ABILITY_ZEN_MODE:
                             break;
                         default:
-                            //if (not a Wandering Spirit banned ability on the defender) //TODO: update for multi ability
+                            //if (not a Wandering Spirit banned ability on the defender) //TODO: update for multi ability (check defender)
                             //{
                                 battlerAbilities[x] = gBattleMons[gBattlerAttacker].abilities[x];
                                 gBattleMons[gBattlerAttacker].abilities[x] = gBattleMons[gBattlerTarget].abilities[x];
                                 gBattleMons[gBattlerTarget].abilities[x] = battlerAbilities[x];
                             //}
-                            RecordAbilityBattle(gBattlerAttacker, gBattleMons[gBattlerAttacker].ability);
-                            RecordAbilityBattle(gBattlerTarget, gBattleMons[gBattlerTarget].ability);
                             BattleScriptPushCursor();
                             gBattlescriptCurrInstr = BattleScript_WanderingSpiritActivates;
                             effect++;
@@ -5070,7 +5326,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 {
                     SET_STATCHANGER(STAT_SPEED, 1, TRUE);
                     gBattleScripting.moveEffect = MOVE_EFFECT_SPD_MINUS_1;
-                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility); //TODO: update for multi ability, replace gLastUsedAbility with battlerAbilities?
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_GooeyActivates;
                     gHitMarker |= HITMARKER_IGNORE_SAFEGUARD;
@@ -5092,7 +5348,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     #endif
                     if (gBattleMoveDamage == 0)
                         gBattleMoveDamage = 1;
-                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility); //TODO: update for multi ability, replace gLastUsedAbility with battlerAbilities?
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_RoughSkinActivates;
                     effect++;
@@ -5144,7 +5400,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                      && (Random() % 3) == 0)
                     {
                         gBattleScripting.moveEffect = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_SLEEP;
-                        PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility); //TODO: update for multi ability, replace gLastUsedAbility with battlerAbilities?
+                        PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
                         gHitMarker |= HITMARKER_IGNORE_SAFEGUARD;
@@ -5163,7 +5419,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                  && (Random() % 3) == 0)
                 {
                     gBattleScripting.moveEffect = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_POISON;
-                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility); //TODO: update for multi ability, replace gLastUsedAbility with battlerAbilities?
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
                     gHitMarker |= HITMARKER_IGNORE_SAFEGUARD;
@@ -5407,7 +5663,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     gSpecialStatuses[battler].dancerUsedMove = TRUE;
                     gSpecialStatuses[battler].dancerOriginalTarget = *(gBattleStruct->moveTarget + battler) | 0x4;
                     gBattleStruct->atkCancellerTracker = 0;
-                    gBattlerAttacker = gBattlerAbility = battler; //TODO: update for multi ability
+                    gBattlerAttacker = gBattlerAbility = battler;
                     gCalledMove = gCurrentMove;
     
                         // Set the target to the original target of the mon that first used a Dance move
@@ -5513,7 +5769,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     break;
                 }
 
-                gBattleScripting.battler = gActiveBattler = gBattlerAbility = battler; //TODO: update for multi ability
+                gBattleScripting.battler = gActiveBattler = gBattlerAbility = battler;
                 BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gActiveBattler].status1);
                 MarkBattlerForControllerExec(gActiveBattler);
                 return effect;
@@ -5550,7 +5806,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 #endif
 
                 gBattleScripting.moveEffect = gBattleStruct->synchronizeMoveEffect + MOVE_EFFECT_AFFECTS_USER;
-                gBattleScripting.battler = gBattlerAbility = gBattlerTarget; //TODO: update for multi ability
+                gBattleScripting.battler = gBattlerAbility = gBattlerTarget;
                 PREPARE_ABILITY_BUFFER(gBattleTextBuff1, ABILITY_SYNCHRONIZE);
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_SynchronizeActivates;
@@ -5571,7 +5827,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     gBattleStruct->synchronizeMoveEffect = MOVE_EFFECT_POISON;
 
                 gBattleScripting.moveEffect = gBattleStruct->synchronizeMoveEffect;
-                gBattleScripting.battler = gBattlerAbility = gBattlerAttacker; //TODO: update for multi ability
+                gBattleScripting.battler = gBattlerAbility = gBattlerAttacker;
                 PREPARE_ABILITY_BUFFER(gBattleTextBuff1, ABILITY_SYNCHRONIZE);
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_SynchronizeActivates;
@@ -5586,7 +5842,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
         {
             if (HasAbility(ABILITY_INTIMIDATE, GetBattlerAbilities(i)) && gBattleResources->flags->flags[i] & RESOURCE_FLAG_INTIMIDATED)
             {
-                gLastUsedAbility = ABILITY_INTIMIDATE; //TODO: remove with the RecordAbilityBattle stuff
+                gLastUsedAbility = ABILITY_INTIMIDATE;
                 gBattleResources->flags->flags[i] &= ~(RESOURCE_FLAG_INTIMIDATED);
                 if (caseID == ABILITYEFFECT_INTIMIDATE1)
                 {
@@ -5597,7 +5853,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_IntimidateActivates;
                 }
-                battler = gBattlerAbility = gBattleStruct->intimidateBattler = i; //TODO: update for multi ability
+                battler = gBattlerAbility = gBattleStruct->intimidateBattler = i;
                 effect++;
                 break;
             }
@@ -5632,7 +5888,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
 
                 if (effect)
                 {
-                    if (caseID == ABILITYEFFECT_TRACE1)
+                    if (caseID == ABILITYEFFECT_TRACE1) //TODO: update Trace for multi ability
                     {
                         BattleScriptPushCursorAndCallback(BattleScript_TraceActivatesEnd3);
                     }
@@ -5671,10 +5927,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
         break;
     }
 
-    if (effect && gLastUsedAbility != 0xFF) //TODO: remove along with RecordAbilityBattle
-        RecordAbilityBattle(battler, gLastUsedAbility);
     if (effect && caseID <= ABILITYEFFECT_MOVE_END)
-        gBattlerAbility = battler; //TODO: update for multi ability
+        gBattlerAbility = battler;
 
     return effect;
 }
@@ -6000,7 +6254,6 @@ bool32 HasEnoughHpToEatBerry(u32 battlerId, u32 hpFraction, u32 itemId)
     if (hpFraction <= 4 && HasAbility(ABILITY_GLUTTONY, abilities) && isBerry
          && gBattleMons[battlerId].hp <= gBattleMons[battlerId].maxHP / 2)
     {
-        RecordAbilityBattle(battlerId, ABILITY_GLUTTONY);
         return TRUE;
     }
 
@@ -6025,7 +6278,7 @@ static u8 HealConfuseBerry(u32 battlerId, u32 itemId, u8 flavorId, bool32 end2)
         if (HasAbility(ABILITY_RIPEN, abilities))
         {
             gBattleMoveDamage *= 2;
-            gBattlerAbility = battlerId; //TODO: update for multi ability
+            gBattlerAbility = battlerId;
         }
 
         gBattleScripting.battler = battlerId;
@@ -6225,7 +6478,7 @@ static u8 ItemHealHp(u32 battlerId, u32 itemId, bool32 end2, bool32 percentHeal)
         if (ItemId_GetPocket(itemId) == POCKET_BERRIES && HasAbility(ABILITY_RIPEN, abilities))
             gBattleMoveDamage *= 2;
 
-        gBattlerAbility = battlerId;    // in SWSH, berry juice shows ability pop up but has no effect. This is mimicked here //TODO: update for multi ability?
+        gBattlerAbility = battlerId;    // in SWSH, berry juice shows ability pop up but has no effect. This is mimicked here
         if (end2)
         {
             BattleScriptExecute(BattleScript_ItemHealHP_RemoveItemEnd2);
@@ -6604,7 +6857,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                         if (HasAbility(ABILITY_RIPEN, abilities))
                         {
                             ppRestored *= 2;
-                            gBattlerAbility = battlerId; //TODO: update for multi ability?
+                            gBattlerAbility = battlerId;
                         }
                         if (changedPP + ppRestored > maxPP)
                             changedPP = maxPP;
@@ -7433,7 +7686,6 @@ u32 GetMoveTarget(u16 move, u8 setTarget)
                 && HasAbility(ABILITY_LIGHTNING_ROD, abilities))
             {
                 targetBattler ^= BIT_FLANK;
-                RecordAbilityBattle(targetBattler, gBattleMons[targetBattler].ability);
                 gSpecialStatuses[targetBattler].lightningRodRedirected = TRUE;
             }
             else if (gBattleMoves[move].type == TYPE_WATER
@@ -7441,7 +7693,6 @@ u32 GetMoveTarget(u16 move, u8 setTarget)
                 && HasAbility(ABILITY_STORM_DRAIN, abilities))
             {
                 targetBattler ^= BIT_FLANK;
-                RecordAbilityBattle(targetBattler, gBattleMons[targetBattler].ability);
                 gSpecialStatuses[targetBattler].stormDrainRedirected = TRUE;
             }
         }
@@ -8338,8 +8589,6 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             if (moveType == TYPE_FIRE)
             {
                 MulModifier(&modifier, UQ_4_12(0.5));
-                if (updateFlags)
-                    RecordAbilityBattle(battlerDef, abilities[x]);
             }
             break;
         case ABILITY_DRY_SKIN:
@@ -8350,8 +8599,6 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             if (IsMoveMakingContact(move, battlerAtk))
             {
                 MulModifier(&modifier, UQ_4_12(0.5));
-                if (updateFlags)
-                    RecordAbilityBattle(battlerDef, abilities[x]);
             }
             if (moveType == TYPE_FIRE)
                 MulModifier(&modifier, UQ_4_12(2.0));
@@ -8636,8 +8883,6 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
             if (moveType == TYPE_FIRE || moveType == TYPE_ICE)
             {
                 MulModifier(&modifier, UQ_4_12(0.5));
-                if (updateFlags)
-                    RecordAbilityBattle(battlerDef, ABILITY_THICK_FAT);
             }
             break;
         case ABILITY_ICE_SCALES:
@@ -8775,24 +9020,18 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
             if (gBattleMons[battlerDef].status1 & STATUS1_ANY && usesDefStat)
             {
                 MulModifier(&modifier, UQ_4_12(1.5));
-                if (updateFlags)
-                    RecordAbilityBattle(battlerDef, ABILITY_MARVEL_SCALE);
             }
             break;
         case ABILITY_FUR_COAT:
             if (usesDefStat)
             {
                 MulModifier(&modifier, UQ_4_12(2.0));
-                if (updateFlags)
-                    RecordAbilityBattle(battlerDef, ABILITY_FUR_COAT);
             }
             break;
         case ABILITY_GRASS_PELT:
             if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN && usesDefStat)
             {
                 MulModifier(&modifier, UQ_4_12(1.5));
-                if (updateFlags)
-                    RecordAbilityBattle(battlerDef, ABILITY_GRASS_PELT);
             }
             break;
         case ABILITY_FLOWER_GIFT:
@@ -9092,8 +9331,6 @@ static void MulByTypeEffectiveness(u16 *modifier, u16 move, u8 moveType, u8 batt
     else if ((moveType == TYPE_FIGHTING || moveType == TYPE_NORMAL) && defType == TYPE_GHOST && HasScrappy(abilities) && mod == UQ_4_12(0.0))
     {
         mod = UQ_4_12(1.0);
-        if (recordAbilities)
-            RecordAbilityBattle(battlerAtk, ABILITY_SCRAPPY);
     }
 
     if (moveType == TYPE_PSYCHIC && defType == TYPE_DARK && gStatuses3[battlerDef] & STATUS3_MIRACLE_EYED && mod == UQ_4_12(0.0))
@@ -9136,7 +9373,7 @@ static void UpdateMoveResultFlags(u16 modifier)
     }
 }
 
-static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 battlerAtk, u8 battlerDef, bool32 recordAbilities, u16 modifier)
+static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 battlerAtk, u8 battlerDef, bool32 recordAbilities, u16 modifier) //TODO: remove recordAbilities for multi ability?
 {
     u16 abilities[] = GetBattlerAbilities(battlerDef);
 
@@ -9152,11 +9389,10 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
         modifier = UQ_4_12(0.0);
         if (recordAbilities && HasAbility(ABILITY_LEVITATE, abilities))
         {
-            gLastUsedAbility = ABILITY_LEVITATE; //TODO: update for multi ability?
+            gLastUsedAbility = ABILITY_LEVITATE;
             gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
             gLastLandedMoves[battlerDef] = 0;
             gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
-            RecordAbilityBattle(battlerDef, ABILITY_LEVITATE);
         }
     }
     else if (B_SHEER_COLD_IMMUNITY >= GEN_7 && move == MOVE_SHEER_COLD && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
@@ -9178,18 +9414,20 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
         modifier = UQ_4_12(0.0);
         if (recordAbilities)
         {
-            gLastUsedAbility = gBattleMons[battlerDef].ability; //TODO: update for multi ability?
+            if (HasAbility(ABILITY_WONDER_GUARD, abilities))
+                gLastUsedAbility = ABILITY_WONDER_GUARD;
+            if (HasAbility(ABILITY_TELEPATHY, abilities))
+                gLastUsedAbility = ABILITY_TELEPATHY;
             gMoveResultFlags |= MOVE_RESULT_MISSED;
             gLastLandedMoves[battlerDef] = 0;
             gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_DMG;
-            RecordAbilityBattle(battlerDef, gBattleMons[battlerDef].ability);
         }
     }
 
     return modifier;
 }
 
-u16 CalcTypeEffectivenessMultiplier(u16 move, u8 moveType, u8 battlerAtk, u8 battlerDef, bool32 recordAbilities)
+u16 CalcTypeEffectivenessMultiplier(u16 move, u8 moveType, u8 battlerAtk, u8 battlerDef, bool32 recordAbilities) //TODO: remove recordAbilities for multi ability?
 {
     u16 modifier = UQ_4_12(1.0);
 
@@ -10078,4 +10316,26 @@ bool32 HasAbility(u16 ability, u16 *abilities)
     }
 
     return FALSE;
+}
+
+bool32 AbilitiesMatch(u16 abilities1[], u16 abilities2[])
+{
+    u16 x, y, match = 0;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        for (y = 0; y < NUM_ABILITY_SLOTS; y++)
+        {
+            if (abilities1[x] == abilities2[y])
+            {
+                match++;
+                break;
+            }
+        }
+    }
+
+    if (match >= NUM_ABILITY_SLOTS)
+        return TRUE;
+
+    return FALSE
 }

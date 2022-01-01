@@ -58,7 +58,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_DANCER] = 5,
     [ABILITY_DARK_AURA] = 6,
     [ABILITY_DAZZLING] = 5,
-    [ABILITY_DEFEATIST] = -1,
+    [ABILITY_DEFEATIST] = -10,
     [ABILITY_DEFIANT] = 5,
     [ABILITY_DELTA_STREAM] = 10,
     [ABILITY_DESOLATE_LAND] = 10,
@@ -197,7 +197,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SHIELDS_DOWN] = 6,
     [ABILITY_SIMPLE] = 8,
     [ABILITY_SKILL_LINK] = 7,
-    [ABILITY_SLOW_START] = -2,
+    [ABILITY_SLOW_START] = -10,
     [ABILITY_SLUSH_RUSH] = 5,
     [ABILITY_SNIPER] = 3,
     [ABILITY_SNOW_CLOAK] = 3,
@@ -239,7 +239,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_TOUGH_CLAWS] = 7,
     [ABILITY_TRACE] = 6,
     [ABILITY_TRIAGE] = 7,
-    [ABILITY_TRUANT] = -2,
+    [ABILITY_TRUANT] = -10,
     [ABILITY_TURBOBLAZE] = 7,
     [ABILITY_UNAWARE] = 6,
     [ABILITY_UNBURDEN] = 7,
@@ -498,12 +498,7 @@ void RecordKnownMove(u8 battlerId, u32 move)
     }
 }
 
-void RecordAbilityBattle(u8 battlerId, u16 abilityId) //TODO: this func may be redundant now.
-{
-    BATTLE_HISTORY->abilities[battlerId] = abilityId;
-}
-
-void ClearBattlerAbilityHistory(u8 battlerId) //TODO: this func may be redundant now.
+void ClearBattlerAbilityHistory(u8 battlerId) //TODO: this func may not be needed, if so remove usages.
 {
     BATTLE_HISTORY->abilities[battlerId] = ABILITY_NONE;
 }
@@ -663,7 +658,7 @@ static bool32 AI_GetIfCrit(u32 move, u8 battlerAtk, u8 battlerDef)
 {
     bool32 isCrit;
 
-    switch (CalcCritChanceStage(battlerAtk, battlerDef, move, FALSE))
+    switch (CalcCritChanceStage(battlerAtk, battlerDef, move))
     {
     case -1:
     case 0:
@@ -765,7 +760,7 @@ s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef)
 // Checks if one of the moves has side effects or perks
 static u32 WhichMoveBetter(u32 move1, u32 move2)
 {
-    s32 defAbilities = AI_GetAbility(gBattlerTarget);
+    s32 defAbilities = AI_GetAbilities(gBattlerTarget);
 
     // Check if physical moves hurt.
     if (AI_GetHoldEffect(sBattler_AI) != HOLD_EFFECT_PROTECTIVE_PADS
@@ -1094,16 +1089,16 @@ bool32 CanTargetFaintAiWithMod(u8 battlerDef, u8 battlerAtk, s32 hpMod, s32 dmgM
 
 bool32 AI_IsAbilityOnSide(u32 battlerId, u32 ability) //singular ability
 {
-    if (IsBattlerAlive(battlerId) && AI_GetAbility(battlerId) == ability)
+    if (IsBattlerAlive(battlerId) && HasAbility(ability, AI_GetAbilities(battlerId)))
         return TRUE;
-    else if (IsBattlerAlive(BATTLE_PARTNER(battlerId)) && AI_GetAbility(BATTLE_PARTNER(battlerId)) == ability)
+    else if (IsBattlerAlive(BATTLE_PARTNER(battlerId)) && HasAbility(ability, AI_GetAbilities(BATTLE_PARTNER(battlerId))))
         return TRUE;
     else
         return FALSE;
 }
 
 // does NOT include ability suppression checks
-s32 AI_GetAbility(u32 battlerId)
+s32 AI_GetAbilities(u32 battlerId)
 {
     return GetBattlerAbilities(battlerId);
 }
@@ -1551,7 +1546,7 @@ void ProtectChecks(u8 battlerAtk, u8 battlerDef, u16 move, u16 predictedMove, s1
 {
     // TODO more sophisticated logic
     u16 predictedEffect = gBattleMoves[predictedMove].effect;
-    u8 defAbilities = AI_GetAbilities(battlerDef); //TODO: why are we declaring abilities here? It isn't being used.
+    //u8 defAbilities = AI_GetAbilities(battlerDef); //why are we declaring abilities here? It isn't being used.
     u32 uses = gDisableStructs[battlerAtk].protectUses;
 
     /*if (GetMoveResultFlags(predictedMove) & (MOVE_RESULT_NO_EFFECT | MOVE_RESULT_MISSED))
@@ -2332,7 +2327,7 @@ bool32 BattlerWillFaintFromWeather(u8 battler, u16 abilities[])
     return FALSE;
 }
 
-bool32 BattlerWillFaintFromSecondaryDamage(u8 battler) //TODO: update calls of BattlerWillFaintFromSecondaryDamage for multi ability (remove ability pass)
+bool32 BattlerWillFaintFromSecondaryDamage(u8 battler)
 {
     if (GetBattlerSecondaryDamage(battler) != 0
       && gBattleMons[battler].hp <= gBattleMons[battler].maxHP / 16)
@@ -2454,7 +2449,7 @@ bool32 ShouldPivot(u8 battlerAtk, u8 battlerDef, u16 defAbilities[], u16 move, u
                     if (gSideStatuses[battlerAtk] & SIDE_STATUS_SPIKES && switchScore >= SWITCHING_INCREASE_CAN_REMOVE_HAZARDS)
                         return PIVOT;*/
 
-                    /*if (BattlerWillFaintFromSecondaryDamage(battlerAtk, AI_DATA->atkAbility) && switchScore >= SWITCHING_INCREASE_WALLS_FOE)
+                    /*if (BattlerWillFaintFromSecondaryDamage(battlerAtk) && switchScore >= SWITCHING_INCREASE_WALLS_FOE)
                         return PIVOT;*/
 
                     /*if (IsClassDamager(class) && switchScore >= SWITCHING_INCREASE_HAS_SUPER_EFFECTIVE_MOVE)
@@ -2497,7 +2492,7 @@ bool32 ShouldPivot(u8 battlerAtk, u8 battlerDef, u16 defAbilities[], u16 move, u
             {
                 if (CanAIFaintTarget(battlerAtk, battlerDef, 0))
                 {
-                    if (!BattlerWillFaintFromSecondaryDamage(battlerAtk, AI_DATA->atkAbilities))
+                    if (!BattlerWillFaintFromSecondaryDamage(battlerAtk))
                         return CAN_TRY_PIVOT; // Use this move to KO if you must
                 }
                 else // Can't KO the foe
@@ -2509,7 +2504,7 @@ bool32 ShouldPivot(u8 battlerAtk, u8 battlerDef, u16 defAbilities[], u16 move, u
             {
                 if (CanAIFaintTarget(battlerAtk, battlerDef, 0))
                 {
-                    if (!BattlerWillFaintFromSecondaryDamage(battlerAtk, AI_DATA->atkAbilities) // This is the only move that can KO
+                    if (!BattlerWillFaintFromSecondaryDamage(battlerAtk) // This is the only move that can KO
                       && !hasStatBoost) //You're not wasting a valuable stat boost
                     {
                         return CAN_TRY_PIVOT;
@@ -3317,9 +3312,16 @@ bool32 IsAbilityOfRating(u16 ability, s8 rating) //singular ability
     return FALSE;
 }
 
-s8 GetAbilityRating(u16 ability) //singular ability
+s8 GetAbilityRating(u16 abilities)
 {
-    return sAiAbilityRatings[ability];
+    u16 x, rating;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        rating += sAiAbilityRatings[abilities[x]]
+    }
+
+    return rating;
 }
 
 static const u16 sRecycleEncouragedItems[] =

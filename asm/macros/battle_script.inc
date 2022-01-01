@@ -631,11 +631,6 @@
 	.byte \battler
 	.endm
 
-	.macro recordability battler:req
-	.byte 0x70
-	.byte \battler
-	.endm
-
 	.macro buffermovetolearn
 	.byte 0x71
 	.endm
@@ -1480,8 +1475,8 @@
 	.4byte \ptr
 	.endm
 
-	.macro setlastusedability battler:req
-	various \battler, VARIOUS_SET_LAST_USED_ABILITY
+	.macro setlastusedabilities battler:req
+	various \battler, VARIOUS_SET_LAST_USED_ABILITIES
 	.endm
 
 	.macro tryhealpulse battler:req, ptr:req

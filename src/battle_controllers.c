@@ -1097,7 +1097,7 @@ void BtlController_EmitPrintString(u8 bufferId, u16 stringID)
     stringInfo->currentMove = gCurrentMove;
     stringInfo->originallyUsedMove = gChosenMove;
     stringInfo->lastItem = gLastUsedItem;
-    stringInfo->lastAbilities = gLastUsedAbilities;
+    stringInfo->lastAbility = gLastUsedAbility; //TODO: update for multi ability?
     stringInfo->scrActive = gBattleScripting.battler;
     stringInfo->unk1605E = gBattleStruct->field_52;
     stringInfo->hpScale = gBattleStruct->hpScale;
@@ -1187,18 +1187,18 @@ void BtlController_EmitChooseItem(u8 bufferId, u8 *arg1)
     PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 4);
 }
 
-void BtlController_EmitChoosePokemon(u8 bufferId, u8 caseId, u8 slotId, u16 abilityId, u8 *arg4) //TODO: update for multi ability?
+void BtlController_EmitChoosePokemon(u8 bufferId, u8 caseId, u8 slotId, u16 abilities[], u8 *arg4) //TODO: make sure this works properly for multi ability
 {
     s32 i;
 
     sBattleBuffersTransferData[0] = CONTROLLER_CHOOSEPOKEMON;
     sBattleBuffersTransferData[1] = caseId;
     sBattleBuffersTransferData[2] = slotId;
-    sBattleBuffersTransferData[3] = abilityId & 0xFF;
-    sBattleBuffersTransferData[7] = (abilityId >> 8) & 0xFF;
+    sBattleBuffersTransferData[3] = abilities & 0xFF;
+    sBattleBuffersTransferData[7] = (abilities >> 8) & 0xFF;
     for (i = 0; i < 3; i++)
         sBattleBuffersTransferData[4 + i] = arg4[i];
-    PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 8);  // Only 7 bytes were written.
+    PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 8);
 }
 
 void BtlController_EmitCmd23(u8 bufferId)
