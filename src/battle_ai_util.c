@@ -519,7 +519,7 @@ void SaveBattlerData(u8 battlerId)
     {
         u32 i;
 
-        AI_THINKING_STRUCT->saved[battlerId].abilities = gBattleMons[battlerId].abilities;
+        memcpy(AI_THINKING_STRUCT->saved[battlerId].abilities, gBattleMons[battlerId].abilities, sizeof(AI_THINKING_STRUCT->saved[battlerId].abilities));
         AI_THINKING_STRUCT->saved[battlerId].heldItem = gBattleMons[battlerId].item;
         AI_THINKING_STRUCT->saved[battlerId].species = gBattleMons[battlerId].species;
         for (i = 0; i < 4; i++)
@@ -534,13 +534,13 @@ void SetBattlerData(u8 battlerId)
         struct Pokemon *illusionMon;
         u32 i;
 
-        gBattleMons[battlerId].abilities = gBaseStats[gBattleMons[battlerId].species].abilities;
+        memcpy(gBattleMons[battlerId].abilities, gBaseStats[gBattleMons[battlerId].species].abilities, sizeof(gBattleMons[battlerId].abilities));
 
         // Simulate Illusion
         if ((illusionMon = GetIllusionMonPtr(battlerId)) != NULL)
         {
             gBattleMons[battlerId].species = GetMonData(illusionMon, MON_DATA_SPECIES2);
-            gBattleMons[battlerId].abilities = GetAbilitiesBySpecies(gBaseStats[gBattleMons[battlerId].species]);
+            memcpy(gBattleMons[battlerId].abilities, GetAbilitiesBySpecies(gBaseStats[gBattleMons[battlerId].species]), sizeof(gBattleMons[battlerId].abilities));
         }
     }
 }
@@ -551,7 +551,7 @@ void RestoreBattlerData(u8 battlerId)
     {
         u32 i;
 
-        gBattleMons[battlerId].abilities = AI_THINKING_STRUCT->saved[battlerId].abilities;
+        memcpy(gBattleMons[battlerId].abilities, AI_THINKING_STRUCT->saved[battlerId].abilities, sizeof(gBattleMons[battlerId].abilities));
         gBattleMons[battlerId].item = AI_THINKING_STRUCT->saved[battlerId].heldItem;
         gBattleMons[battlerId].species = AI_THINKING_STRUCT->saved[battlerId].species;
         for (i = 0; i < 4; i++)
@@ -619,7 +619,7 @@ bool32 IsTruantMonVulnerable(u32 battlerAI, u32 opposingBattler)
 }
 
 // move checks
-bool32 IsAffectedByPowder(u8 battler, u16 abilities, u16 holdEffect)
+bool32 IsAffectedByPowder(u8 battler, u16 abilities[], u16 holdEffect)
 {
     if ((B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GRASS))
       || HasAbility(ABILITY_OVERCOAT, abilities)
@@ -760,7 +760,7 @@ s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef)
 // Checks if one of the moves has side effects or perks
 static u32 WhichMoveBetter(u32 move1, u32 move2)
 {
-    s32 defAbilities = AI_GetAbilities(gBattlerTarget);
+    s32 *defAbilities = AI_GetAbilities(gBattlerTarget);
 
     // Check if physical moves hurt.
     if (AI_GetHoldEffect(sBattler_AI) != HOLD_EFFECT_PROTECTIVE_PADS
@@ -1097,8 +1097,7 @@ bool32 AI_IsAbilityOnSide(u32 battlerId, u32 ability) //singular ability
         return FALSE;
 }
 
-// does NOT include ability suppression checks
-s32 AI_GetAbilities(u32 battlerId)
+u16 *AI_GetAbilities(u32 battlerId)
 {
     return GetBattlerAbilities(battlerId);
 }
@@ -1161,7 +1160,7 @@ bool32 AI_IsBattlerGrounded(u8 battlerId)
         return TRUE;
 }
 
-bool32 DoesBattlerIgnoreAbilityChecks(u16 atkAbilities, u16 move)
+bool32 DoesBattlerIgnoreAbilityChecks(u16 atkAbilities[], u16 move)
 {
     u32 i;
 
@@ -1284,7 +1283,7 @@ bool32 IsHazardMoveEffect(u16 moveEffect)
     }
 }
 
-bool32 IsMoveRedirectionPrevented(u16 move, u16 atkAbilities)
+bool32 IsMoveRedirectionPrevented(u16 move, u16 atkAbilities[])
 {
     if (AI_THINKING_STRUCT->aiFlags & AI_FLAG_NEGATE_UNAWARE)
         return FALSE;
@@ -2270,7 +2269,7 @@ static bool32 BattlerAffectedByHail(u8 battlerId, u16 abilities[])
 
 static u32 GetWeatherDamage(u8 battlerId)
 {
-    u32 abilities = AI_GetAbilities(battlerId);
+    u16 *abilities = AI_GetAbilities(battlerId);
     u32 holdEffect = AI_GetHoldEffect(battlerId);
     u32 damage = 0;
     if (!AI_WeatherHasEffect())
@@ -2375,7 +2374,7 @@ struct Pokemon *GetPartyBattlerPartyData(u8 battlerId, u8 switchBattler)
 static bool32 PartyBattlerShouldAvoidHazards(u8 currBattler, u8 switchBattler)
 {
     struct Pokemon *mon = GetPartyBattlerPartyData(currBattler, switchBattler);
-    u16 abilities = GetMonAbilities(mon);   // we know our own party data
+    u16 *abilities = GetMonAbilities(mon);   // we know our own party data
     u16 holdEffect = GetBattlerHoldEffect(GetMonData(mon, MON_DATA_HELD_ITEM), TRUE);
     u32 flags = gSideStatuses[GetBattlerSide(currBattler)] & (SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK | SIDE_STATUS_STICKY_WEB | SIDE_STATUS_TOXIC_SPIKES);
 
@@ -2610,8 +2609,8 @@ bool32 IsBattlerIncapacitated(u8 battler, u16 abilities[])
 
 bool32 AI_CanSleep(u8 battler, u16 abilities[])
 {
-    if (HasAbilities(ABILITY_INSOMNIA, abilities)
-      || HasAbilities(ABILITY_VITAL_SPIRIT, abilities)
+    if (HasAbility(ABILITY_INSOMNIA, abilities)
+      || HasAbility(ABILITY_VITAL_SPIRIT, abilities)
       || gBattleMons[battler].status1 & STATUS1_ANY
       || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD
       || (gFieldStatuses & (STATUS_FIELD_MISTY_TERRAIN | STATUS_FIELD_ELECTRIC_TERRAIN))
@@ -2637,7 +2636,7 @@ static bool32 AI_CanPoisonType(u8 battlerAttacker, u8 battlerTarget)
 
 static bool32 AI_CanBePoisoned(u8 battlerAtk, u8 battlerDef)
 {
-    u16 abilities = AI_GetAbilities(battlerDef);
+    u16 *abilities = AI_GetAbilities(battlerDef);
 
     if (!(AI_CanPoisonType(battlerAtk, battlerDef))
      || gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD
@@ -2740,7 +2739,7 @@ bool32 AI_CanBeBurned(u8 battler, u16 abilities[])
 
 bool32 ShouldBurnSelf(u8 battler, u16 abilities[])
 {
-    if (AI_CanBeBurned(battler, ability) && (
+    if (AI_CanBeBurned(battler, abilities) && (
      HasAbility(ABILITY_QUICK_FEET, abilities)
       || HasAbility(ABILITY_HEATPROOF, abilities)
       || HasAbility(ABILITY_MAGIC_GUARD, abilities)
@@ -3312,7 +3311,7 @@ bool32 IsAbilityOfRating(u16 ability, s8 rating) //singular ability
     return FALSE;
 }
 
-s8 GetAbilityRating(u16 abilities)
+s8 GetAbilityRating(u16 abilities[])
 {
     u16 x, rating;
 

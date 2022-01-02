@@ -875,7 +875,7 @@ u8 GetEggCyclesToSubtract(void)
     {
         if (!GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_EGG))
         {
-            u16 abilities[] = GetMonAbilities(&gPlayerParty[i]);
+            u16 *abilities = GetMonAbilities(&gPlayerParty[i]);
             if (HasAbility(ABILITY_MAGMA_ARMOR, abilities) || HasAbility(ABILITY_FLAME_BODY, abilities))
                 return 2;
         }

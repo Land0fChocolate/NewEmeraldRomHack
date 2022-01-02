@@ -2986,9 +2986,9 @@ static void PrintAbilityOnAbilityPopUp(u32 ability, u8 spriteId1, u8 spriteId2)
                         7, 9, 1);
 }
 
-static void PrintAbilitiesOnAbilityPopUp(u16 abilities[], u8 spriteId1, u8 spriteId2) //TODO: update for multi ability
+static void PrintAbilitiesOnAbilityPopUp(u16 abilities[], u8 spriteId1, u8 spriteId2) //TODO: update for multi ability (going to figure this out as I test it)
 {
-    PrintOnAbilityPopUp(gAbilityNames[ability],
+    PrintOnAbilityPopUp(gAbilityNames[abilities[0]],
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32) + 256,
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 256,
                         7, 1,
@@ -3187,13 +3187,13 @@ void CreateMultiAbilityPopUp(u8 battlerId, bool32 isDoubleBattle) //TODO: update
 {
     const s16 (*coords)[2];
     u8 spriteId1, spriteId2, battlerPosition, taskId;
-    u16 abilities = gLastUsedAbilities;
+    u16 *abilities = gLastUsedAbilities;
 
     if (!B_ABILITY_POP_UP)
         return;
 
-    if (gBattleScripting.abilityPopupOverwrite != 0)
-        ability = gBattleScripting.abilityPopupOverwrite;
+    // if (gBattleScripting.abilityPopupOverwrite != 0)
+    //     ability = gBattleScripting.abilityPopupOverwrite;
 
     if (!gBattleStruct->activeAbilityPopUps)
     {
@@ -3258,11 +3258,11 @@ void CreateMultiAbilityPopUp(u8 battlerId, bool32 isDoubleBattle) //TODO: update
     RestoreOverwrittenPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
 }
 
-void UpdateAbilityPopup(u8 battlerId)
+void UpdateMultiAbilityPopup(u8 battlerId) //TODO: update for multi ability
 {
     u8 spriteId1 = gBattleStruct->abilityPopUpSpriteIds[battlerId][0];
     u8 spriteId2 = gBattleStruct->abilityPopUpSpriteIds[battlerId][1];
-    u16 abilities = GetAbilities(battlerId);
+    u16 *abilities = GetAbilities(battlerId);
 
     PrintAbilitiesOnAbilityPopUp(abilities, spriteId1, spriteId2);
     RestoreOverwrittenPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));

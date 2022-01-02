@@ -3159,16 +3159,16 @@ static void PrintMonOTID(void)
     }
 }
 
-static void PrintMonAbilityName(void) //TODO: finish update for multi ability
+static void PrintMonAbilityName(void)
 {
-    u16 abilities = GetAbilitiesBySpecies(sMonSummaryScreen->summary.species);
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilityNames[ability], 0, 1, 0, 1);
+    u16 *abilities = GetAbilitiesBySpecies(sMonSummaryScreen->summary.species);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilityNames[abilities[0]], 0, 1, 0, 1); //TODO: temporary patch placed, update properly for multi ability (print all abilities)
 }
 
-static void PrintMonAbilityDescription(void) //TODO: finish update for multi ability
+static void PrintMonAbilityDescription(void)
 {
-    u16 abilities = GetAbilitiesBySpecies(sMonSummaryScreen->summary.species);
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilityDescriptionPointers[ability], 0, 17, 0, 0);
+    u16 *abilities = GetAbilitiesBySpecies(sMonSummaryScreen->summary.species);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilityDescriptionPointers[abilities[0]], 0, 17, 0, 0); //TODO: temporary patch placed, update properly for multi ability (print all abilities)
 }
 
 static void BufferMonTrainerMemo(void)

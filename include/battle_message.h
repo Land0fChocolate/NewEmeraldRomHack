@@ -216,7 +216,7 @@ struct BattleMsgData
     u8 hpScale;
     u8 itemEffectBattler;
     u8 moveType;
-    u16 abilities[MAX_BATTLERS_COUNT];
+    u16 abilities[MAX_BATTLERS_COUNT]; // this is a collection of all battler abilities //TODO: find a way to implement multi ability here
     u8 textBuffs[3][TEXT_BUFF_ARRAY_COUNT];
 };
 

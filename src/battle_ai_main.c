@@ -221,13 +221,13 @@ u8 BattleAI_ChooseMoveOrAction(void)
 static void GetAiLogicData(u8 battlerAtk, u8 battlerDef)
 {
     // attacker data
-    AI_DATA->atkAbilities = AI_GetAbilities(battlerAtk);
+    memcpy(AI_DATA->atkAbilities, AI_GetAbilities(battlerAtk), sizeof(AI_DATA->atkAbilities));
     AI_DATA->atkItem = gBattleMons[battlerAtk].item;
     AI_DATA->atkHoldEffect = AI_GetHoldEffect(battlerAtk);
     AI_DATA->atkParam = GetBattlerHoldEffectParam(battlerAtk);
     AI_DATA->atkSpecies = gBattleMons[battlerAtk].species;
     // target data
-    AI_DATA->defAbilities = AI_GetAbilities(battlerDef);
+    memcpy(AI_DATA->defAbilities, AI_GetAbilities(battlerDef), sizeof(AI_DATA->defAbilities));
     AI_DATA->defItem = (AI_GetHoldEffect(battlerDef) == HOLD_EFFECT_NONE) ? ITEM_NONE : gBattleMons[battlerDef].item;
     AI_DATA->defHoldEffect = AI_GetHoldEffect(battlerDef);
     AI_DATA->defParam = GetBattlerHoldEffectParam(battlerDef);
@@ -235,11 +235,11 @@ static void GetAiLogicData(u8 battlerAtk, u8 battlerDef)
     // attacker partner data
     AI_DATA->battlerAtkPartner = BATTLE_PARTNER(battlerAtk);
     AI_DATA->partnerMove = GetAllyChosenMove();
-    AI_DATA->atkPartnerAbilities = AI_GetAbilities(AI_DATA->battlerAtkPartner);
+    memcpy(AI_DATA->atkPartnerAbilities, AI_GetAbilities(AI_DATA->battlerAtkPartner), sizeof(AI_DATA->atkPartnerAbilities));
     AI_DATA->atkPartnerHoldEffect = AI_GetHoldEffect(AI_DATA->battlerAtkPartner);
     // target partner data
     AI_DATA->battlerDefPartner = BATTLE_PARTNER(battlerDef);
-    AI_DATA->defPartnerAbilities = AI_GetAbilities(AI_DATA->battlerDefPartner);
+    memcpy(AI_DATA->defPartnerAbilities, AI_GetAbilities(AI_DATA->battlerDefPartner), sizeof(AI_DATA->defPartnerAbilities));
     AI_DATA->defPartnerHoldEffect = AI_GetHoldEffect(AI_DATA->battlerDefPartner);
 }
 
@@ -250,7 +250,6 @@ static u8 ChooseMoveOrAction_Singles(void)
     u32 numOfBestMoves;
     s32 i, id;
     u32 flags = AI_THINKING_STRUCT->aiFlags;
-    u16 abilities[NUM_BATTLE_STATS];
 
     RecordLastUsedMoveByTarget();
     GetAiLogicData(sBattler_AI, gBattlerTarget);
@@ -305,9 +304,9 @@ static u8 ChooseMoveOrAction_Singles(void)
             }
         }
 
+        u16 *abilities = GetBattlerAbilities(sBattler_AI);
         // Consider switching if your mon with truant is bodied by Protect spam.
         // Or is using a double turn semi invulnerable move(such as Fly) and is faster.
-        abilities = GetBattlerAbilities(sBattler_AI);
         if (HasAbility(ABILITY_TRUANT, abilities)
             && IsTruantMonVulnerable(sBattler_AI, gBattlerTarget)
             && gDisableStructs[sBattler_AI].truantCounter
@@ -716,11 +715,11 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     switch (AI_DATA->defPartnerAbilities[x])
                     {
                     case ABILITY_LIGHTNING_ROD:
-                        if (moveType == TYPE_ELECTRIC && !IsMoveRedirectionPrevented(move, AI_DATA->atkAbility))
+                        if (moveType == TYPE_ELECTRIC && !IsMoveRedirectionPrevented(move, AI_DATA->atkAbilities))
                             RETURN_SCORE_MINUS(20);
                         break;
                     case ABILITY_STORM_DRAIN:
-                        if (moveType == TYPE_WATER && !IsMoveRedirectionPrevented(move, AI_DATA->atkAbility))
+                        if (moveType == TYPE_WATER && !IsMoveRedirectionPrevented(move, AI_DATA->atkAbilities))
                             RETURN_SCORE_MINUS(20);
                         break;
                     case ABILITY_MAGIC_BOUNCE:
@@ -957,7 +956,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 8;
             break;
         case EFFECT_SHELL_SMASH:
-            if (HasAbilities(ABILITY_CONTRARY, AI_DATA->atkAbilities))
+            if (HasAbility(ABILITY_CONTRARY, AI_DATA->atkAbilities))
             {
                 if (!BattlerStatCanRise(battlerAtk, AI_DATA->atkAbilities, STAT_DEF))
                     score -= 10;
@@ -1020,7 +1019,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
 
             if (isDoubleBattle)
             {
-                if (HasAbility(ABILITY_PLUS, AI_DATA->atkPartnerAbilities) ||  == HasAbility(ABILITY_MINUS, AI_DATA->atkPartnerAbilities))
+                if (HasAbility(ABILITY_PLUS, AI_DATA->atkPartnerAbilities) || HasAbility(ABILITY_MINUS, AI_DATA->atkPartnerAbilities))
                 {
                     if ((!BattlerStatCanRise(AI_DATA->battlerAtkPartner, AI_DATA->atkPartnerAbilities, STAT_ATK) || !HasMoveWithSplit(battlerAtk, SPLIT_PHYSICAL))
                       && (!BattlerStatCanRise(AI_DATA->battlerAtkPartner, AI_DATA->atkPartnerAbilities, STAT_SPATK) || !HasMoveWithSplit(battlerAtk, SPLIT_SPECIAL)))
@@ -1051,7 +1050,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
 
             if (isDoubleBattle)
             {
-                if (HasAbility(ABILITY_PLUS, AI_DATA->atkPartnerAbilities) ||  == HasAbilities(ABILITY_MINUS, AI_DATA->atkPartnerAbilities))
+                if (HasAbility(ABILITY_PLUS, AI_DATA->atkPartnerAbilities) || HasAbilities(ABILITY_MINUS, AI_DATA->atkPartnerAbilities))
                 {
                     if (!BattlerStatCanRise(AI_DATA->battlerAtkPartner, AI_DATA->atkPartnerAbilities, STAT_DEF))
                         score -= 10;
@@ -2546,7 +2545,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     u16 target = gBattleMoves[move].target;
     // ally data
     u8 battlerAtkPartner = AI_DATA->battlerAtkPartner;
-    u16 atkPartnerAbilities = AI_DATA->atkPartnerAbilities;
+    u16 *atkPartnerAbilities = AI_DATA->atkPartnerAbilities;
     u16 atkPartnerHoldEffect = AI_DATA->atkPartnerHoldEffect;
     bool32 partnerProtecting = (gBattleMoves[AI_DATA->partnerMove].effect == EFFECT_PROTECT);
     bool32 attackerHasBadAbilities = (GetAbilityRating(AI_DATA->atkAbilities) < 0);

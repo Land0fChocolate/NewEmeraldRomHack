@@ -1831,7 +1831,7 @@ static bool8 Fishing_CheckForBite(struct Task *task)
     {
         if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         {
-            u16 abilities = GetMonAbilities(&gPlayerParty[0]);
+            u16 *abilities = GetMonAbilities(&gPlayerParty[0]);
             if (HasAbility(ABILITY_SUCTION_CUPS, abilities) || HasAbility(ABILITY_STICKY_HOLD, abilities))
             {
                 if (Random() % 100 > 14)

@@ -2742,17 +2742,17 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int arg2)
     int defType1, defType2, moveType;
     int i = 0;
     int typePower = TYPE_x1;
-    u16 abilities[NUM_ABILITY_SLOTS];
+    u16 *abilities;
 
     if (move == MOVE_NONE || move == 0xFFFF || gBattleMoves[move].power == 0)
         return 0;
 
     defType1 = gBaseStats[targetSpecies].type1;
     defType2 = gBaseStats[targetSpecies].type2;
-    defAbilities = gBaseStats[targetSpecies].abilities;
+    abilities = gBaseStats[targetSpecies].abilities;
     moveType = gBattleMoves[move].type;
 
-    if (HasAbility(ABILITY_LEVITATE, defAbilities) && moveType == TYPE_GROUND)
+    if (HasAbility(ABILITY_LEVITATE, abilities) && moveType == TYPE_GROUND)
     {
         if (arg2 == 1)
             typePower = 8;
@@ -2766,7 +2766,7 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int arg2)
         if (defType2 != defType1)
             typePower = (typeEffectiveness2 * typePower) / 10;
 
-        if (HasAbility(ABILITY_WONDER_GUARD, defAbilities) && typeEffectiveness1 != 20 && typeEffectiveness2 != 20)
+        if (HasAbility(ABILITY_WONDER_GUARD, abilities) && typeEffectiveness1 != 20 && typeEffectiveness2 != 20)
             typePower = 0;
     }
 
@@ -5164,14 +5164,13 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
                 u32 personality = 0;
                 u32 targetSpecies = 0;
                 u32 typeMultiplier = 0;
-                u16 targetAbilities[NUM_ABILITY_SLOTS];
+                u16 *targetAbilities = gBaseStats[targetSpecies].abilities;
                 do
                 {
                     personality = Random32();
                 } while (gFacilityTrainerMons[DOME_MONS[loserTournamentId][k]].nature != GetNatureFromPersonality(personality));
 
                 targetSpecies = gFacilityTrainerMons[DOME_MONS[loserTournamentId][k]].species;
-                targetAbilities = gBaseStats[targetSpecies].abilities;
 
                 typeMultiplier = CalcPartyMonTypeEffectivenessMultiplier(moveIds[i * 4 + j], targetSpecies, targetAbilities);
                 if (typeMultiplier == UQ_4_12(0))

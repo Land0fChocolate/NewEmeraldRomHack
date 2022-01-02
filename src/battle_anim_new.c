@@ -1277,7 +1277,7 @@ const struct SpriteTemplate gPetalBlizzardTwister1Template =
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimMoveTwisterParticle
 };
-static const u16 sPetalBlizzardFlowerOam[] = {0x0, 0x2000,0x0800,0x0};  //todo: convert to oam data
+static const u16 sPetalBlizzardFlowerOam[] = {0x0, 0x2000,0x0800,0x0};  //todo convert to oam data
 static const union AnimCmd sAnimCmd_PetalBlizzard2_0[] = 
 {
     ANIMCMD_FRAME(0, 4),

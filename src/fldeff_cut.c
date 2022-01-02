@@ -140,7 +140,6 @@ bool8 SetUpFieldMove_Cut(void)
     s16 x, y;
     u8 i, j;
     u8 tileBehavior;
-    u16 userAbilities;
     bool8 cutTiles[CUT_NORMAL_AREA];
     bool8 ret;
 
@@ -154,8 +153,8 @@ bool8 SetUpFieldMove_Cut(void)
     else
     {
         PlayerGetDestCoords(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
-        userAbilities = GetMonAbilities(&gPlayerParty[GetCursorSelectionMonId()]);
-        if (HasAbility(ABILITY_HYPER_CUTTER, userAbilities))
+        u16 *abilities = GetMonAbilities(&gPlayerParty[GetCursorSelectionMonId()]);
+        if (HasAbility(ABILITY_HYPER_CUTTER, abilities))
         {
             sCutSquareSide = CUT_HYPER_SIDE;
             sTileCountFromPlayer_X = 2;
@@ -209,7 +208,7 @@ bool8 SetUpFieldMove_Cut(void)
             }
         }
 
-        if (!HasAbility(ABILITY_HYPER_CUTTER, userAbilities))
+        if (!HasAbility(ABILITY_HYPER_CUTTER, abilities))
         {
             if (ret == TRUE)
             {

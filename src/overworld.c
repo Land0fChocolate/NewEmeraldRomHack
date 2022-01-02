@@ -1278,10 +1278,12 @@ void UpdateAmbientCry(s16 *state, u16 *delayCounter)
     case 2:
         divBy = 1;
         monsCount = CalculatePlayerPartyCount();
+        u16 *abilities = GetMonAbilities(&gPlayerParty[0]);
+        
         for (i = 0; i < monsCount; i++)
         {
             if (!GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_EGG)
-                && HasAbility(ABILITY_SWARM, GetMonAbilities(&gPlayerParty[0])))
+                && HasAbility(ABILITY_SWARM, abilities))
             {
                 divBy = 2;
                 break;

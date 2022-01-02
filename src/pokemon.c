@@ -5114,7 +5114,7 @@ u8 GetMonsStateToDoubles_2(void)
     return (aliveCount > 1) ? PLAYER_HAS_TWO_USABLE_MONS : PLAYER_HAS_ONE_USABLE_MON;
 }
 
-u16 GetMonAbilities(struct Pokemon *mon)
+u16 *GetMonAbilities(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     return GetAbilitiesBySpecies(species);
@@ -5261,7 +5261,7 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     dst->type1 = gBaseStats[dst->species].type1;
     dst->type2 = gBaseStats[dst->species].type2;
     dst->type3 = TYPE_MYSTERY;
-    dst->abilities = GetAbilitiesBySpecies(dst->species);
+    memcpy(dst->abilities, GetAbilitiesBySpecies(dst->species), sizeof(dst->abilities));
     GetMonData(src, MON_DATA_NICKNAME, nickname);
     StringCopy10(dst->nickname, nickname);
     GetMonData(src, MON_DATA_OT_NAME, dst->otName);
@@ -7463,10 +7463,11 @@ void SetWildMonHeldItem(void)
     if (gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_TRAINER | BATTLE_TYPE_PYRAMID | BATTLE_TYPE_PIKE))
         return;
 
+    u16 *abilities = GetMonAbilities(&gPlayerParty[0]);
     count = (WILD_DOUBLE_BATTLE) ? 2 : 1;
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG, 0)
-        && (HasAbility(ABILITY_COMPOUND_EYES, GetMonAbilities(&gPlayerParty[0]))
-            || HasAbility(ABILITY_SUPER_LUCK, GetMonAbilities(&gPlayerParty[0]))))
+        && (HasAbility(ABILITY_COMPOUND_EYES, abilities)
+            || HasAbility(ABILITY_SUPER_LUCK, abilities)))
     {
         var1 = 20;
         var2 = 80;
@@ -7980,16 +7981,14 @@ u8 GetFormIdFromFormSpeciesId(u16 formSpeciesId)
 u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg) 
 {
     u32 i;
-    u16 targetSpecies = SPECIES_NONE;
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     const struct FormChange *formChanges = gFormChangeTablePointers[species];
-    u16 heldItem;
-    u32 abilities[NUM_ABILITY_SLOTS];
 
     if (formChanges != NULL)
     {
-        heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
-        abilities = GetAbilitiesBySpecies(species);
+        u16 targetSpecies = SPECIES_NONE;
+        u16 heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
+        u16 *abilities = GetAbilitiesBySpecies(species);
 
         for (i = 0; formChanges[i].method != FORM_CHANGE_END; i++)
         {

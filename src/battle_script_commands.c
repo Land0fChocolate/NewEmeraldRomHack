@@ -1417,8 +1417,8 @@ static void Cmd_attackcanceler(void)
     if (AtkCanceller_UnableToUseMove())
         return;
 
+    u16 *abilities = GetBattlerAbilities(gBattlerAttacker);
     // Check Protean activation.
-    abilities = GetBattlerAbilities(gBattlerAttacker);
     if ((HasAbility(ABILITY_PROTEAN, abilities) || HasAbility(ABILITY_LIBERO, abilities))
         && (gBattleMons[gBattlerAttacker].type1 != moveType || gBattleMons[gBattlerAttacker].type2 != moveType ||
             (gBattleMons[gBattlerAttacker].type3 != moveType && gBattleMons[gBattlerAttacker].type3 != TYPE_MYSTERY))
@@ -1494,7 +1494,7 @@ static void Cmd_attackcanceler(void)
         }
         return;
     }
-    else if (HasAbility(ABILITY_MAGIC_BOUNCE, GetBattlerAbility(gBattlerTarget))
+    else if (HasAbility(ABILITY_MAGIC_BOUNCE, GetBattlerAbilities(gBattlerTarget))
              && gBattleMoves[gCurrentMove].flags & FLAG_MAGIC_COAT_AFFECTED
              && !gProtectStructs[gBattlerAttacker].usesBouncedMove)
     {
@@ -1600,7 +1600,7 @@ bool8 JumpIfMoveAffectedByProtect(u16 move)
 
 static bool32 AccuracyCalcHelper(u16 move)
 {
-    u16 abilities[] = GetBattlerAbilities(gBattlerAttacker);
+    u16 *abilities = GetBattlerAbilities(gBattlerAttacker);
 
     if (gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
     {
@@ -1653,13 +1653,11 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move)
 {
     u32 calc, moveAcc, atkHoldEffect, atkParam, defHoldEffect, defParam;
     s8 buff, accStage, evasionStage;
-    u16 atkAbilities[NUM_ABILITY_SLOTS], defAbilities[NUM_ABILITY_SLOTS];
+    u16 *atkAbilities = GetBattlerAbilities(battlerAtk), *defAbilities = GetBattlerAbilities(battlerDef);
 
-    atkAbilities = GetBattlerAbilities(battlerAtk);
     atkHoldEffect = GetBattlerHoldEffect(battlerAtk, TRUE);
     atkParam = GetBattlerHoldEffectParam(battlerAtk);
 
-    defAbilities = GetBattlerAbilities(battlerDef);
     defHoldEffect = GetBattlerHoldEffect(battlerDef, TRUE);
     defParam = GetBattlerHoldEffectParam(battlerDef);
     gPotentialItemEffectBattler = battlerDef;
@@ -1866,8 +1864,8 @@ static void Cmd_ppreduce(void)
 s32 CalcCritChanceStage(u8 battlerAtk, u8 battlerDef, u32 move)
 {
     s32 critChance = 0;
-    u32 atkAbilities = GetBattlerAbilities(gBattlerAttacker);
-    u32 defAbilities = GetBattlerAbilities(gBattlerTarget);
+    u32 *atkAbilities = GetBattlerAbilities(gBattlerAttacker);
+    u32 *defAbilities = GetBattlerAbilities(gBattlerTarget);
     u32 holdEffectAtk = GetBattlerHoldEffect(battlerAtk, TRUE);
 
     if (gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT
@@ -2627,9 +2625,9 @@ void SetMoveEffect(bool32 primary, u32 certain)
     bool32 statusChanged = FALSE;
     bool32 mirrorArmorReflected = (HasAbility(ABILITY_MIRROR_ARMOR, GetBattlerAbilities(gBattlerTarget)));
     u32 flags = 0;
-    u16 battlerAbilities[NUM_ABILITY_SLOTS] = GetBattlerAbilities(gEffectBattler);
-    u16 attackerAbilities[NUM_ABILITY_SLOTS] = GetBattlerAbilities(gBattlerAttacker);
-    u16 targetAbilities[NUM_ABILITY_SLOTS] = GetBattlerAbilities(gBattlerTarget);
+    u16 *battlerAbilities = GetBattlerAbilities(gEffectBattler);
+    u16 *attackerAbilities = GetBattlerAbilities(gBattlerAttacker);
+    u16 *targetAbilities = GetBattlerAbilities(gBattlerTarget);
 
     switch (gBattleScripting.moveEffect) // Set move effects which happen later on
     {
@@ -2738,10 +2736,14 @@ void SetMoveEffect(bool32 primary, u32 certain)
         case STATUS1_BURN:
             if (gCurrentMove == MOVE_BURNING_JEALOUSY && !gProtectStructs[gEffectBattler].statRaised)
                 break;
-            if ((HasAbility(ABILITY_WATER_VEIL, battlerAbilities) || HasAbility(ABILITY_WATER_BUBBLE, battlerAbilities))
+            bool32 hasWaterVeil = HasAbility(ABILITY_WATER_VEIL, battlerAbilities), hasWaterBubble = HasAbility(ABILITY_WATER_BUBBLE, battlerAbilities);
+            if ((hasWaterVeil || hasWaterBubble)
                 && (primary == TRUE || certain == MOVE_EFFECT_CERTAIN))
             {
-                gLastUsedAbility = GetBattlerAbility(gEffectBattler);
+                if (hasWaterVeil)
+                    gLastUsedAbility = ABILITY_WATER_VEIL;
+                if (hasWaterBubble)
+                    gLastUsedAbility = ABILITY_WATER_BUBBLE;
 
                 BattleScriptPush(gBattlescriptCurrInstr + 1);
                 gBattlescriptCurrInstr = BattleScript_BRNPrevention;
@@ -4108,7 +4110,8 @@ static void Cmd_getexp(void)
         {
             // not sure why gf clears the item and ability here
             gBattleMons[gBattlerFainted].item = 0;
-            gBattleMons[gBattlerFainted].abilities = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE}; //TODO: make sure these array assignments are properly updated for multi ability
+            u16 blankAbilities[NUM_ABILITY_SLOTS] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE};
+            memcpy(gBattleMons[gBattlerFainted].abilities, blankAbilities, sizeof(gBattleMons[gBattlerFainted].abilities));
             gBattlescriptCurrInstr += 2;
         }
         break;
@@ -4763,7 +4766,7 @@ static void Cmd_setgraphicalstatchangevalues(void)
 
 static void Cmd_playstatchangeanimation(void)
 {
-    u32 abilities[NUM_ABILITY_SLOTS];
+    u32 *abilities = GetBattlerAbilities(gActiveBattler);
     u32 currStat = 0;
     u32 statAnimId = 0;
     u32 changeableStatsCount = 0;
@@ -4772,7 +4775,6 @@ static void Cmd_playstatchangeanimation(void)
     u32 flags = gBattlescriptCurrInstr[3];
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
-    abilities = GetBattlerAbilities(gActiveBattler);
     statsToCheck = gBattlescriptCurrInstr[2];
 
     // Handle Contrary and Simple
@@ -5558,7 +5560,7 @@ static void Cmd_switchindataupdate(void)
     gBattleMons[gActiveBattler].type1 = gBaseStats[gBattleMons[gActiveBattler].species].type1;
     gBattleMons[gActiveBattler].type2 = gBaseStats[gBattleMons[gActiveBattler].species].type2;
     gBattleMons[gActiveBattler].type3 = TYPE_MYSTERY;
-    gBattleMons[gActiveBattler].abilities = gBaseStats[gBattleMons[gActiveBattler].species].abilities;
+    memcpy(gBattleMons[gActiveBattler].abilities, gBaseStats[gBattleMons[gActiveBattler].species].abilities, sizeof(gBattleMons[gActiveBattler].abilities));
 
     // check knocked off item
     i = GetBattlerSide(gActiveBattler);
@@ -5793,7 +5795,7 @@ static void ChooseMonToSendOut(u8 slotId)
     *(gBattleStruct->field_58 + gActiveBattler) = gBattlerPartyIndexes[gActiveBattler];
     *(gBattleStruct->monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
     gBattleStruct->field_93 &= ~(gBitTable[gActiveBattler]);
-    u16 bcAbilities[] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE};
+    u16 bcAbilities[NUM_ABILITY_SLOTS] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE};
 
     BtlController_EmitChoosePokemon(0, PARTY_ACTION_SEND_OUT, slotId, bcAbilities, gBattleStruct->field_60[gActiveBattler]);
     MarkBattlerForControllerExec(gActiveBattler);
@@ -6051,7 +6053,7 @@ static void Cmd_openpartyscreen(void)
             *(gBattleStruct->field_58 + gActiveBattler) = gBattlerPartyIndexes[gActiveBattler];
             *(gBattleStruct->monToSwitchIntoId + gActiveBattler) = 6;
             gBattleStruct->field_93 &= ~(gBitTable[gActiveBattler]);
-            u16 bcAbilities[] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE};
+            u16 bcAbilities[NUM_ABILITY_SLOTS] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE};
 
             BtlController_EmitChoosePokemon(0, hitmarkerFaintBits, *(gBattleStruct->monToSwitchIntoId + (gActiveBattler ^ 2)), bcAbilities, gBattleStruct->field_60[gActiveBattler]);
             MarkBattlerForControllerExec(gActiveBattler);
@@ -6170,10 +6172,9 @@ static void SetDmgHazardsBattlescript(u8 battlerId, u8 multistringId)
 static void Cmd_switchineffects(void)
 {
     s32 i;
-    u16 abilities[NUM_ABILITY_SLOTS];
+    u16 *abilities GetBattlerAbilities(gActiveBattler);
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
-    abilities = GetBattlerAbilities(gActiveBattler);
     UpdateSentPokesToOpponentValue(gActiveBattler);
 
     gHitMarker &= ~(HITMARKER_FAINTED(gActiveBattler));
@@ -7493,7 +7494,7 @@ static void RecalcBattlerStats(u32 battler, struct Pokemon *mon)
     gBattleMons[battler].speed = GetMonData(mon, MON_DATA_SPEED);
     gBattleMons[battler].spAttack = GetMonData(mon, MON_DATA_SPATK);
     gBattleMons[battler].spDefense = GetMonData(mon, MON_DATA_SPDEF);
-    gBattleMons[battler].abilities = GetMonAbilities(mon);
+    memcpy(gBattleMons[battler].abilities, GetMonAbilities(mon), sizeof(gBattleMons[battler].abilities));
     gBattleMons[battler].type1 = gBaseStats[gBattleMons[battler].species].type1;
     gBattleMons[battler].type2 = gBaseStats[gBattleMons[battler].species].type2;
 }
@@ -7998,7 +7999,7 @@ static void Cmd_various(void)
         MarkBattlerForControllerExec(gActiveBattler);
         break;
     case VARIOUS_TRY_ACTIVATE_MOXIE:    // and chilling neigh + as one ice rider
-        battlerAbilities = GetBattlerAbilities(gActiveBattler);
+        memcpy(battlerAbilities, GetBattlerAbilities(gActiveBattler), sizeof(battlerAbilities));
         if ((HasAbility(ABILITY_MOXIE, battlerAbilities)
          || HasAbility(ABILITY_CHILLING_NEIGH, battlerAbilities)
          || HasAbility(ABILITY_AS_ONE_ICE_RIDER, battlerAbilities))
@@ -8021,7 +8022,7 @@ static void Cmd_various(void)
         }
         break;
     case VARIOUS_TRY_ACTIVATE_GRIM_NEIGH:   // and as one shadow rider
-        battlerAbilities = GetBattlerAbilities(gActiveBattler);
+        memcpy(battlerAbilities, GetBattlerAbilities(gActiveBattler), sizeof(battlerAbilities));
         if ((HasAbility(ABILITY_GRIM_NEIGH, battlerAbilities)
          || HasAbility(ABILITY_AS_ONE_SHADOW_RIDER, battlerAbilities))
           && HasAttackerFaintedTarget()
@@ -8044,9 +8045,9 @@ static void Cmd_various(void)
         break;
     case VARIOUS_TRY_ACTIVATE_RECEIVER: // Partner gets fainted's ally ability
         gBattlerAbility = BATTLE_PARTNER(gActiveBattler);
-        abilities = GetBattlerAbilities(gBattlerAbility);
+        memcpy(battlerAbilities, GetBattlerAbilities(gBattlerAbility), sizeof(battlerAbilities));
         if (IsBattlerAlive(gBattlerAbility)
-            && (HasAbility(ABILITY_RECEIVER, abilities) || HasAbility(ABILITY_POWER_OF_ALCHEMY, abilities)))
+            && (HasAbility(ABILITY_RECEIVER, battlerAbilities) || HasAbility(ABILITY_POWER_OF_ALCHEMY, battlerAbilities)))
         {
             u16 ability, battlerAbility, abilityRating = -1;
             for (x = 0; x < NUM_ABILITY_SLOTS; x++)
@@ -8199,7 +8200,7 @@ static void Cmd_various(void)
         }
         return;
     case VARIOUS_SET_LAST_USED_ABILITIES: // entrainment //TODO: make sure this is properly updated for multi ability (use it in MultiAbilityPopUp)
-        gLastUsedAbilities = gBattleMons[gActiveBattler].abilities;
+        memcpy(gLastUsedAbilities, gBattleMons[gActiveBattler].abilities, sizeof(gLastUsedAbilities));
         break;
     case VARIOUS_TRY_HEAL_PULSE:
         if (BATTLER_MAX_HP(gActiveBattler))
@@ -8614,10 +8615,10 @@ static void Cmd_various(void)
         return;
     case VARIOUS_PSYCHO_SHIFT:
         i = TRUE;
-        abilities = GetBattlerAbilities(gBattlerTarget);
+        memcpy(battlerAbilities, GetBattlerAbilities(gBattlerTarget), sizeof(battlerAbilities));
         if (gBattleMons[gBattlerAttacker].status1 & STATUS1_PARALYSIS)
         {
-            if (HasAbility(ABILITY_LIMBER, abilities))
+            if (HasAbility(ABILITY_LIMBER, battlerAbilities))
             {
                 gBattlerAbility = gBattlerTarget;
                 BattleScriptPush(T1_READ_PTR(gBattlescriptCurrInstr + 3));
@@ -8637,7 +8638,7 @@ static void Cmd_various(void)
         }
         else if (gBattleMons[gBattlerAttacker].status1 & STATUS1_PSN_ANY)
         {
-            if (HasAbility(ABILITY_IMMUNITY, abilities))
+            if (HasAbility(ABILITY_IMMUNITY, battlerAbilities))
             {
                 gBattlerAbility = gBattlerTarget;
                 BattleScriptPush(T1_READ_PTR(gBattlescriptCurrInstr + 3));
@@ -8660,8 +8661,8 @@ static void Cmd_various(void)
         }
         else if (gBattleMons[gBattlerAttacker].status1 & STATUS1_BURN)
         {
-            if (HasAbility(ABILITY_WATER_VEIL, abilities)
-             || HasAbility(ABILITY_WATER_BUBBLE, abilities))
+            if (HasAbility(ABILITY_WATER_VEIL, battlerAbilities)
+             || HasAbility(ABILITY_WATER_BUBBLE, battlerAbilities))
             {
                 gBattlerAbility = gBattlerTarget;
                 BattleScriptPush(T1_READ_PTR(gBattlescriptCurrInstr + 3));
@@ -8681,7 +8682,7 @@ static void Cmd_various(void)
         }
         else if (gBattleMons[gBattlerAttacker].status1 & STATUS1_SLEEP)
         {
-            if (HasAbility(ABILITY_INSOMNIA, abilities) || HasAbility(ABILITY_VITAL_SPIRIT, abilities))
+            if (HasAbility(ABILITY_INSOMNIA, battlerAbilities) || HasAbility(ABILITY_VITAL_SPIRIT, battlerAbilities))
             {
                 gBattlerAbility = gBattlerTarget;
                 // BattleScriptPush(T1_READ_PTR(gBattlescriptCurrInstr + 3));
@@ -9052,7 +9053,7 @@ static void Cmd_various(void)
 
         for (i = 0; i < gBattlersCount; i++)
         {
-            u32 abilities = GetBattlerAbilities(i);
+            u32 *abilities = GetBattlerAbilities(i);
             if (((HasAbilities(ABILITY_DESOLATE_LAND, abilities) && gBattleWeather & WEATHER_SUN_PRIMAL)
              || (HasAbilities(ABILITY_PRIMORDIAL_SEA, abilities) && gBattleWeather & WEATHER_RAIN_PRIMAL)
              || (HasAbilities(ABILITY_DELTA_STREAM, abilities) && gBattleWeather & WEATHER_STRONG_WINDS))
@@ -9754,7 +9755,7 @@ bool8 UproarWakeUpCheck(u8 battlerId)
 static void Cmd_jumpifcantmakeasleep(void)
 {
     const u8 *jumpPtr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
-    u32 abilities = GetBattlerAbilities(gBattlerTarget);
+    u32 *abilities = GetBattlerAbilities(gBattlerTarget);
     bool32 hasInsomnia = HasAbility(ABILITY_INSOMNIA, abilities), hasVitalSpirit = HasAbility(ABILITY_VITAL_SPIRIT, abilities);
 
     if (UproarWakeUpCheck(gBattlerTarget))
@@ -9991,7 +9992,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
 
     if (statValue <= -1) // Stat decrease.
     {
-        u16 battlerAbilities = GetBattlerAbilities(gActiveBattler);
+        u16 *battlerAbilities = GetBattlerAbilities(gActiveBattler);
 
         if (gSideTimers[GET_BATTLER_SIDE(gActiveBattler)].mistTimer
             && !certain && gCurrentMove != MOVE_CURSE
@@ -10728,7 +10729,7 @@ static void Cmd_setsandstorm(void)
 
 static void Cmd_weatherdamage(void)
 {
-    u32 abilities[] = GetBattlerAbilities(gBattlerAttacker);
+    u32 *abilities = GetBattlerAbilities(gBattlerAttacker);
 
     gBattleMoveDamage = 0;
     if (IsBattlerAlive(gBattlerAttacker) && WEATHER_HAS_EFFECT && !HasAbility(ABILITY_MAGIC_GUARD, abiliies))
@@ -10802,7 +10803,7 @@ static void Cmd_tryinfatuating(void)
     speciesTarget = GetMonData(monTarget, MON_DATA_SPECIES);
     personalityTarget = GetMonData(monTarget, MON_DATA_PERSONALITY);
 
-    if (HasABility(ABILITY_OBLIVIOUS, GetBattlerAbilities(gBattlerTarget)))
+    if (HasAbility(ABILITY_OBLIVIOUS, GetBattlerAbilities(gBattlerTarget)))
     {
         gBattlescriptCurrInstr = BattleScript_NotAffectedAbilityPopUp;
         gLastUsedAbility = ABILITY_OBLIVIOUS;
@@ -11467,7 +11468,7 @@ static void Cmd_healpartystatus(void)
         else
             party = gEnemyParty;
 
-        if (!HasAbility(ABILITY_SOUNDPROOF, GetBattlerAbility(gBattlerAttacker)))
+        if (!HasAbility(ABILITY_SOUNDPROOF, GetBattlerAbilities(gBattlerAttacker)))
         {
             gBattleMons[gBattlerAttacker].status1 = 0;
             gBattleMons[gBattlerAttacker].status2 &= ~(STATUS2_NIGHTMARE);
@@ -11504,13 +11505,13 @@ static void Cmd_healpartystatus(void)
                 u16 abilities[NUM_ABILITY_SLOTS];
 
                 if (gBattlerPartyIndexes[gBattlerAttacker] == i)
-                    abilities = GetBattlerAbilities(gBattlerAttacker);
+                    memcpy(abilities, GetBattlerAbilities(gBattlerAttacker), sizeof(abilities));
                 else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
                          && gBattlerPartyIndexes[gActiveBattler] == i
                          && !(gAbsentBattlerFlags & gBitTable[gActiveBattler]))
-                    abilities = GetBattlerAbilities(gBattlerAttacker);
+                    memcpy(abilities, GetBattlerAbilities(gBattlerAttacker), sizeof(abilities));
                 else
-                    abilities = GetAbilitiesBySpecies(species);
+                    memcpy(abilities, GetAbilitiesBySpecies(species), sizeof(abilities));
 
                 if (!HasAbility(ABILITY_SOUNDPROOF, abilities))
                     toHeal |= (1 << i);
@@ -12382,10 +12383,10 @@ static void Cmd_tryswapitems(void) // trick
 
 static void Cmd_trycopyability(void) // role play
 {
-    u16 defAbilities = gBattleMons[gBattlerTarget].abilities, x;
+    u16 *defAbilities = gBattleMons[gBattlerTarget].abilities, x;
 
     if (DoAbilitiesMatch(gBattleMons[gBattlerAttacker].abilities, defAbilities)
-      || defAbilities == {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE})
+      || DoAbilitiesMatch(defAbilities, {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE}))
     {
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
     }
@@ -12398,7 +12399,7 @@ static void Cmd_trycopyability(void) // role play
                 gBattleMons[gBattlerAttacker].abilities[x] = defAbilities[x];
             }
         }
-        gLastUsedAbilities = defAbilities;
+        memcpy(gLastUsedAbilities, defAbilities, sizeof(gLastUsedAbilities));
         gBattlescriptCurrInstr += 5;
     }
 }
@@ -12571,7 +12572,7 @@ static void Cmd_tryswapabilities(void) // skill swap
     else
     {
         u8 x;
-        u16 atkAbilities = gBattleMons[gBattlerAttacker].abilities;
+        u16 *atkAbilities = gBattleMons[gBattlerAttacker].abilities;
 
         for (x = 0; x < NUM_ABILITY_SLOTS; x++)
         {
@@ -12792,43 +12793,32 @@ static void Cmd_trygetintimidatetarget(void) //TODO: make sure this is properly 
 
 static void Cmd_switchoutabilities(void)
 {
-    u16 x;
+    u16 x, *abilities = GetBattlerAbilities(gActiveBattler);
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
 
-    if (HasAbility(ABILITY_NEUTRALIZING_GAS, gBattleMons[gActiveBattler].abilities))
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {
-    gBattleMons[gActiveBattler].abilities = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE};
-        BattleScriptPush(gBattlescriptCurrInstr);
-        gBattlescriptCurrInstr = BattleScript_NeutralizingGasExits;
-    }
-    else
-    {
-        abilities = GetBattlerAbilities(gActiveBattler);
-
-        for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+        switch (abilities[x]) //TODO: make sure this is properly updated for multi ability
         {
-            switch (abilities[x]) //TODO: make sure this is properly updated for multi ability
-            {
-            case ABILITY_NATURAL_CURE:
-                gBattleMons[gActiveBattler].status1 = 0;
-                BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, gBitTable[*(gBattleStruct->field_58 + gActiveBattler)], 4, &gBattleMons[gActiveBattler].status1);
-                MarkBattlerForControllerExec(gActiveBattler);
-                break;
-            case ABILITY_REGENERATOR:
-                gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / 3;
-                gBattleMoveDamage += gBattleMons[gActiveBattler].hp;
-                if (gBattleMoveDamage > gBattleMons[gActiveBattler].maxHP)
-                    gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP;
-                BtlController_EmitSetMonData(0, REQUEST_HP_BATTLE, gBitTable[*(gBattleStruct->field_58 + gActiveBattler)], 2, &gBattleMoveDamage);
-                MarkBattlerForControllerExec(gActiveBattler);
-                break;
-            }
+        case ABILITY_NATURAL_CURE:
+            gBattleMons[gActiveBattler].status1 = 0;
+            BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, gBitTable[*(gBattleStruct->field_58 + gActiveBattler)], 4, &gBattleMons[gActiveBattler].status1);
+            MarkBattlerForControllerExec(gActiveBattler);
+            break;
+        case ABILITY_REGENERATOR:
+            gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / 3;
+            gBattleMoveDamage += gBattleMons[gActiveBattler].hp;
+            if (gBattleMoveDamage > gBattleMons[gActiveBattler].maxHP)
+                gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP;
+            BtlController_EmitSetMonData(0, REQUEST_HP_BATTLE, gBitTable[*(gBattleStruct->field_58 + gActiveBattler)], 2, &gBattleMoveDamage);
+            MarkBattlerForControllerExec(gActiveBattler);
+            break;
         }
-
-        gBattlescriptCurrInstr += 2;
     }
-}
+
+    gBattlescriptCurrInstr += 2;
+    }
 
 static void Cmd_jumpifhasnohp(void)
 {
@@ -12968,7 +12958,7 @@ static void Cmd_pickup(void)
             species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2);
             heldItem = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
 
-            abilities = gBaseStats[species].abilities;
+            memcpy(abilities, gBaseStats[species].abilities;, sizeof(abilities));
 
             if (HasAbility(ABILITY_PICKUP, abilities)
                 && species != 0
@@ -13004,7 +12994,7 @@ static void Cmd_pickup(void)
             if (lvlDivBy10 > 9)
                 lvlDivBy10 = 9;
 
-            abilities = gBaseStats[species].abilities
+            memcpy(abilities, gBaseStats[species].abilities, sizeof(abilities));
 
             if (HasAbility(ABILITY_PICKUP, abilities)
                 && species != 0
@@ -13815,7 +13805,7 @@ static void Cmd_trygetbaddreamstarget(void)
 
 static void Cmd_tryworryseed(void)
 {
-    u16 abilities[] = gBattleMons[gBattlerTarget].abilities;
+    u16 *abilities = gBattleMons[gBattlerTarget].abilities;
     u8 x;
 
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
