@@ -532,15 +532,24 @@ void SetBattlerData(u8 battlerId)
     if (!IsBattlerAIControlled(battlerId))
     {
         struct Pokemon *illusionMon;
-        u32 i;
+        u16 i;
 
-        memcpy(gBattleMons[battlerId].abilities, gBaseStats[gBattleMons[battlerId].species].abilities, sizeof(gBattleMons[battlerId].abilities));
+        if (BATTLE_HISTORY->itemEffects[battlerId] == 0)
+            gBattleMons[battlerId].item = 0;
+
+        for (i = 0; i < 4; i++)
+        {
+            if (BATTLE_HISTORY->usedMoves[battlerId][i] == 0)
+                gBattleMons[battlerId].moves[i] = 0;
+        }
 
         // Simulate Illusion
         if ((illusionMon = GetIllusionMonPtr(battlerId)) != NULL)
         {
             gBattleMons[battlerId].species = GetMonData(illusionMon, MON_DATA_SPECIES2);
-            memcpy(gBattleMons[battlerId].abilities, GetAbilitiesBySpecies(gBaseStats[gBattleMons[battlerId].species]), sizeof(gBattleMons[battlerId].abilities));
+            //TODO: check if we need these lines
+            //u16 *speciesAbilities = GetAbilitiesBySpecies(gBaseStats[gBattleMons[battlerId].species]);
+            //memcpy(gBattleMons[battlerId].abilities, speciesAbilities, sizeof(gBattleMons[battlerId].abilities));
         }
     }
 }
@@ -717,7 +726,7 @@ s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef)
     {
     case EFFECT_LEVEL_DAMAGE:
     case EFFECT_PSYWAVE:
-        dmg = gBattleMons[battlerAtk].level * (HasAbility(ABILITY_PARENTAL_BOND, AI_DATA->atkAbilities) ? 2 : 1);
+        dmg = gBattleMons[battlerAtk].level * (HasAbility(ABILITY_PARENTAL_BOND, AI_DATA->atkAbilities) ? 2 : 1); //TODO: pointer here?
         break;
     case EFFECT_DRAGON_RAGE:
         dmg = 40 * (HasAbility(ABILITY_PARENTAL_BOND, AI_DATA->atkAbilities) ? 2 : 1);
@@ -760,7 +769,7 @@ s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef)
 // Checks if one of the moves has side effects or perks
 static u32 WhichMoveBetter(u32 move1, u32 move2)
 {
-    s32 *defAbilities = AI_GetAbilities(gBattlerTarget);
+    u16 *defAbilities = AI_GetAbilities(gBattlerTarget);
 
     // Check if physical moves hurt.
     if (AI_GetHoldEffect(sBattler_AI) != HOLD_EFFECT_PROTECTIVE_PADS
@@ -3311,13 +3320,14 @@ bool32 IsAbilityOfRating(u16 ability, s8 rating) //singular ability
     return FALSE;
 }
 
-s8 GetAbilityRating(u16 abilities[])
+s16 GetTotalAbilityRating(u16 abilities[])
 {
-    u16 x, rating;
+    u16 x;
+    s16 rating;
 
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {
-        rating += sAiAbilityRatings[abilities[x]]
+        rating += sAiAbilityRatings[abilities[x]];
     }
 
     return rating;
@@ -3572,7 +3582,7 @@ void IncreaseConfusionScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
     }
 }
 
-bool32 AI_MoveMakesContact(u32 abilities[], u32 holdEffect, u16 move)
+bool32 AI_MoveMakesContact(u16 abilities[], u32 holdEffect, u16 move)
 {
     if (TestMoveFlags(move, FLAG_MAKES_CONTACT)
       && !HasAbility(ABILITY_LONG_REACH, abilities)

@@ -2749,7 +2749,7 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int arg2)
 
     defType1 = gBaseStats[targetSpecies].type1;
     defType2 = gBaseStats[targetSpecies].type2;
-    abilities = gBaseStats[targetSpecies].abilities;
+    memcpy(abilities, gBaseStats[targetSpecies].abilities, sizeof(abilities));
     moveType = gBattleMoves[move].type;
 
     if (HasAbility(ABILITY_LEVITATE, abilities) && moveType == TYPE_GROUND)

@@ -923,7 +923,7 @@ static bool8 IsAbilityAllowingEncounter(u8 level)
     if (GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         return TRUE;
 
-    u16 *abilities = GetMonAbility(&gPlayerParty[0]);
+    u16 *abilities = GetMonAbilities(&gPlayerParty[0]);
     if (HasAbility(ABILITY_KEEN_EYE, abilities) || HasAbility(ABILITY_INTIMIDATE, abilities))
     {
         u8 playerMonLevel = GetMonData(&gPlayerParty[0], MON_DATA_LEVEL);

@@ -6000,7 +6000,7 @@ u16 *GetBattlerAbilities(u8 battlerId)
     static u16 abilities[NUM_ABILITY_SLOTS] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE}, attackerAbility, x, y;
 
     if (gBattleMoves[gCurrentMove].flags & FLAG_TARGET_ABILITY_IGNORED)
-        return abilities; //TODO: make sure ignoring typically banned abilities like Illusion is fine.
+        return abilities;
 
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {
@@ -10014,6 +10014,84 @@ bool32 IsEntrainmentTargetOrSimpleBeamBannedAbility(u16 ability)
         if (ability == sEntrainmentTargetSimpleBeamBannedAbilities[i])
             return TRUE;
     }
+    return FALSE;
+}
+
+bool32 ViableRolePlayTarget(u16 abilities[])
+{
+    u16 x;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        if (!IsRolePlayBannedAbility(abilities[x]))
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool32 ViableSkillSwapTarget(u16 abilities[])
+{
+    u16 x;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        if (!IsSkillSwapBannedAbility(abilities[x]))
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool32 ViableWorrySeedTarget(u16 abilities[])
+{
+    u16 x;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        if (!IsWorrySeedBannedAbility(abilities[x]))
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool32 ViableGastroAcidTarget(u16 abilities[])
+{
+    u16 x;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        if (!IsGastroAcidBannedAbility(abilities[x]))
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool32 ViableEntrainmentTarget(u16 abilities[])
+{
+    u16 x;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        if (!IsEntrainmentBannedAbilityAttacker(abilities[x]))
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool32 ViableEntrainmentOrSimpleBeamTarget(u16 abilities[])
+{
+    u16 x;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        if (!IsEntrainmentTargetOrSimpleBeamBannedAbility(abilities[x]))
+            return TRUE;
+    }
+
     return FALSE;
 }
 

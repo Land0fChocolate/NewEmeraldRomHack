@@ -3262,7 +3262,7 @@ void UpdateMultiAbilityPopup(u8 battlerId) //TODO: update for multi ability
 {
     u8 spriteId1 = gBattleStruct->abilityPopUpSpriteIds[battlerId][0];
     u8 spriteId2 = gBattleStruct->abilityPopUpSpriteIds[battlerId][1];
-    u16 *abilities = GetAbilities(battlerId);
+    u16 *abilities = gLastUsedAbilities;
 
     PrintAbilitiesOnAbilityPopUp(abilities, spriteId1, spriteId2);
     RestoreOverwrittenPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));

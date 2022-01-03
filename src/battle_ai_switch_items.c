@@ -75,13 +75,13 @@ static bool8 ShouldSwitchIfWonderGuard(void)
     s32 firstId;
     s32 lastId; // + 1
     struct Pokemon *party = NULL;
-    u16 *abilities, move;
+    u16 abilities[NUM_ABILITY_SLOTS], move;
 
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
         return FALSE;
 
     opposingPosition = BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler));
-    abilities = GetBattlerAbilities(GetBattlerAtPosition(opposingPosition));
+    memcpy(abilities, (u16 *) GetBattlerAbilities(GetBattlerAtPosition(opposingPosition)), sizeof(abilities));
 
     if (!HasAbility(ABILITY_WONDER_GUARD, abilities))
         return FALSE;
@@ -139,7 +139,7 @@ static bool8 ShouldSwitchIfWonderGuard(void)
 static bool8 FindMonThatAbsorbsOpponentsMove(void)
 {
     u8 battlerIn1, battlerIn2;
-    u16 absorbingTypeAbility;
+    u16 absorbingTypeAbility, abilities[NUM_ABILITY_SLOTS];
     s32 firstId;
     s32 lastId; // + 1
     struct Pokemon *party;
@@ -177,7 +177,7 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
     else
         return FALSE;
 
-    u16 *abilities = AI_GetAbilities(gActiveBattler);
+    memcpy(abilities, AI_GetAbilities(gActiveBattler), sizeof(abilities));
     if (HasAbility(absorbingTypeAbility, abilities))
         return FALSE;
 
@@ -227,7 +227,7 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
 
 static bool8 ShouldSwitchIfNaturalCure(void)
 {
-    u16 *abilities = AI_GetAbilities(gActiveBattler);
+    u16 *abilities = (u16 *) AI_GetAbilities(gActiveBattler);
 
     if (!(gBattleMons[gActiveBattler].status1 & STATUS1_SLEEP))
         return FALSE;
@@ -391,7 +391,7 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
             continue;
 
         species = GetMonData(&party[i], MON_DATA_SPECIES);
-        abilities = gBaseStats[species].abilities;
+        memcpy(abilities, gBaseStats[species].abilities, sizeof(abilities));
 
         CalcPartyMonTypeEffectivenessMultiplier(gLastLandedMoves[gActiveBattler], species, abilities);
         if (gMoveResultFlags & flags)

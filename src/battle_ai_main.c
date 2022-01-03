@@ -250,6 +250,7 @@ static u8 ChooseMoveOrAction_Singles(void)
     u32 numOfBestMoves;
     s32 i, id;
     u32 flags = AI_THINKING_STRUCT->aiFlags;
+    u16 abilities[NUM_ABILITY_SLOTS];
 
     RecordLastUsedMoveByTarget();
     GetAiLogicData(sBattler_AI, gBattlerTarget);
@@ -304,7 +305,7 @@ static u8 ChooseMoveOrAction_Singles(void)
             }
         }
 
-        u16 *abilities = GetBattlerAbilities(sBattler_AI);
+        memcpy(abilities, GetBattlerAbilities(sBattler_AI), sizeof(abilities));
         // Consider switching if your mon with truant is bodied by Protect spam.
         // Or is using a double turn semi invulnerable move(such as Fly) and is faster.
         if (HasAbility(ABILITY_TRUANT, abilities)
@@ -1050,7 +1051,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
 
             if (isDoubleBattle)
             {
-                if (HasAbility(ABILITY_PLUS, AI_DATA->atkPartnerAbilities) || HasAbilities(ABILITY_MINUS, AI_DATA->atkPartnerAbilities))
+                if (HasAbility(ABILITY_PLUS, AI_DATA->atkPartnerAbilities) || HasAbility(ABILITY_MINUS, AI_DATA->atkPartnerAbilities))
                 {
                     if (!BattlerStatCanRise(AI_DATA->battlerAtkPartner, AI_DATA->atkPartnerAbilities, STAT_DEF))
                         score -= 10;
@@ -1245,7 +1246,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 10;
             break;
         case EFFECT_PARALYZE:
-            if (!AI_CanParalyze(battlerAtk, battlerDef, AI_DATA->defAbility, move, AI_DATA->partnerMove))
+            if (!AI_CanParalyze(battlerAtk, battlerDef, AI_DATA->defAbilities, move, AI_DATA->partnerMove))
                 score -= 10;
             break;
         case EFFECT_SUBSTITUTE:
@@ -1755,8 +1756,8 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         case EFFECT_LOCK_ON:
             if (gStatuses3[battlerDef] & STATUS3_ALWAYS_HITS
-              || HasAbility(ABILITY_NO_GUARD, AI_DATA->atkAbility)
-              || HasAbility(ABILITY_NO_GUARD, AI_DATA->defAbility)
+              || HasAbility(ABILITY_NO_GUARD, AI_DATA->atkAbilities)
+              || HasAbility(ABILITY_NO_GUARD, AI_DATA->defAbilities)
               || DoesPartnerHaveSameMoveEffect(AI_DATA->battlerAtkPartner, battlerDef, move, AI_DATA->partnerMove))
                 score -= 10;
             break;
@@ -1957,9 +1958,10 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         case EFFECT_ROLE_PLAY:
             if (AbilitiesMatch(AI_DATA->atkAbilities, AI_DATA->defAbilities)
-              || HasAbility(ABILITY_NONE, AI_DATA->defAbilities))
+              || HasAbility(ABILITY_NONE, AI_DATA->defAbilities)
+              || !ViableRolePlayTarget(AI_DATA->atkAbilities) || !ViableRolePlayTarget(AI_DATA->defAbilities))
                 score -= 10;
-            else if (IsAbilityOfRating(AI_DATA->atkAbilities, 5))
+            else if (GetTotalAbilityRating(AI_DATA->atkAbilities) <= 10)
                 score -= 4;
             break;
         case EFFECT_WISH:
@@ -1986,30 +1988,30 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         case EFFECT_SKILL_SWAP:
             if (HasAbility(ABILITY_NONE, AI_DATA->atkAbilities) || HasAbility(ABILITY_NONE, AI_DATA->defAbilities)
-              || IsSkillSwapBannedAbility(AI_DATA->atkAbilities) || IsSkillSwapBannedAbility(AI_DATA->defAbilities))
+              || !ViableSkillSwapTarget(AI_DATA->atkAbilities) || !ViableSkillSwapTarget(AI_DATA->defAbilities))
                 score -= 10;
             break;
         case EFFECT_WORRY_SEED:
             if (HasAbility(ABILITY_INSOMNIA, AI_DATA->defAbilities)
-              || IsWorrySeedBannedAbility(AI_DATA->defAbilities))
+              || !ViableWorrySeedTarget(AI_DATA->defAbilities))
                 score -= 10;
             break;
         case EFFECT_GASTRO_ACID:
             if (gStatuses3[battlerDef] & STATUS3_GASTRO_ACID
-              || IsGastroAcidBannedAbility(AI_DATA->defAbilities))
+              || !ViableGastroAcidTarget(AI_DATA->defAbilities))
                 score -= 10;
             break;
         case EFFECT_ENTRAINMENT:
             if (HasAbility(ABILITY_NONE, AI_DATA->atkAbilities)
-              || IsEntrainmentBannedAbilityAttacker(AI_DATA->atkAbilities)
-              || IsEntrainmentTargetOrSimpleBeamBannedAbility(AI_DATA->defAbilities))
+              || ViableEntrainmentTarget(AI_DATA->atkAbilities)
+              || ViableEntrainmentOrSimpleBeamTarget(AI_DATA->defAbilities))
                 score -= 10;
             break;
         case EFFECT_CORE_ENFORCER:
             break;
         case EFFECT_SIMPLE_BEAM:
             if (HasAbility(ABILITY_SIMPLE, AI_DATA->defAbilities)
-              || IsEntrainmentTargetOrSimpleBeamBannedAbility(AI_DATA->defAbilities))
+              || ViableEntrainmentOrSimpleBeamTarget(AI_DATA->defAbilities))
                 score -= 10;
             break;
         case EFFECT_SNATCH:
@@ -2548,8 +2550,8 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     u16 *atkPartnerAbilities = AI_DATA->atkPartnerAbilities;
     u16 atkPartnerHoldEffect = AI_DATA->atkPartnerHoldEffect;
     bool32 partnerProtecting = (gBattleMoves[AI_DATA->partnerMove].effect == EFFECT_PROTECT);
-    bool32 attackerHasBadAbilities = (GetAbilityRating(AI_DATA->atkAbilities) < 0);
-    bool32 partnerHasBadAbilities = (GetAbilityRating(atkPartnerAbilities) < 0);
+    bool32 attackerHasBadAbilities = (GetTotalAbilityRating(AI_DATA->atkAbilities) < 10);
+    bool32 partnerHasBadAbilities = (GetTotalAbilityRating(atkPartnerAbilities) < 10);
     u16 predictedMove = gLastMoves[battlerDef]; //for now
     u16 x;
 
@@ -2650,7 +2652,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         if (GetMoveDamageResult(move) == MOVE_POWER_OTHER)
         {
             // partner ability checks
-            if (!partnerProtecting && gBattleMoves[move].target != MOVE_TARGET_BOTH && !DoesBattlerIgnoreAbilityChecks(AI_DATA->atkAbility, move))
+            if (!partnerProtecting && gBattleMoves[move].target != MOVE_TARGET_BOTH && !DoesBattlerIgnoreAbilityChecks(AI_DATA->atkAbilities, move))
             {
                 for (x = 0; x < NUM_ABILITY_SLOTS; x++)
                 {
@@ -2774,7 +2776,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case EFFECT_SWAGGER:
                 if (gBattleMons[battlerAtkPartner].statStages[STAT_ATK] < MAX_STAT_STAGE
                  && HasMoveWithSplit(battlerAtkPartner, SPLIT_PHYSICAL)
-                 && (!AI_CanBeConfused(battlerAtkPartner, TRUE)
+                 && (!AI_CanBeConfused(battlerAtkPartner, atkPartnerAbilities)
                   || atkPartnerHoldEffect == HOLD_EFFECT_CURE_CONFUSION
                   || atkPartnerHoldEffect == HOLD_EFFECT_CURE_STATUS))
                 {
@@ -2784,7 +2786,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case EFFECT_FLATTER:
                 if (gBattleMons[battlerAtkPartner].statStages[STAT_SPATK] < MAX_STAT_STAGE
                  && HasMoveWithSplit(battlerAtkPartner, SPLIT_SPECIAL)
-                 && (!AI_CanBeConfused(battlerAtkPartner, TRUE)
+                 && (!AI_CanBeConfused(battlerAtkPartner, atkPartnerAbilities)
                   || atkPartnerHoldEffect == HOLD_EFFECT_CURE_CONFUSION
                   || atkPartnerHoldEffect == HOLD_EFFECT_CURE_STATUS))
                 {
@@ -2803,7 +2805,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 }
                 break;
             case EFFECT_SKILL_SWAP:
-                if (!AbilitiesMatch(AI_DATA->atkAbilities, AI_DATA->atkPartnerAbilities) && !attackerHasBadAbility)
+                if (!AbilitiesMatch(AI_DATA->atkAbilities, AI_DATA->atkPartnerAbilities) && !attackerHasBadAbilities)
                 {
                     if (HasAbility(ABILITY_TRUANT, AI_DATA->atkPartnerAbilities))
                     {
@@ -2818,14 +2820,14 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                         RETURN_SCORE_PLUS(10);
                     }
                     else if (HasAbility(ABILITY_COMPOUND_EYES, AI_DATA->atkAbilities)
-                     && HasMoveWithLowAccuracy(battlerAtkPartner, FOE(battlerAtkPartner), 90, TRUE, atkPartnerAbility, AI_GetAbilities(FOE(battlerAtkPartner)), atkPartnerHoldEffect, AI_GetHoldEffect(FOE(battlerAtkPartner))))
+                     && HasMoveWithLowAccuracy(battlerAtkPartner, FOE(battlerAtkPartner), 90, TRUE, atkPartnerAbilities, AI_GetAbilities(FOE(battlerAtkPartner)), atkPartnerHoldEffect, AI_GetHoldEffect(FOE(battlerAtkPartner))))
                     {
                         RETURN_SCORE_PLUS(3);
                     }
                 }
                 break;
             case EFFECT_ROLE_PLAY:
-                if (attackerHasBadAbility && !partnerHasBadAbility)
+                if (attackerHasBadAbilities && !partnerHasBadAbilities)
                 {
                     RETURN_SCORE_PLUS(1);
                 }
@@ -2833,13 +2835,13 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case EFFECT_WORRY_SEED:
             case EFFECT_GASTRO_ACID:
             case EFFECT_SIMPLE_BEAM:
-                if (partnerHasBadAbility)
+                if (partnerHasBadAbilities)
                 {
                     RETURN_SCORE_PLUS(2);
                 }
                 break;
             case EFFECT_ENTRAINMENT:
-                if (partnerHasBadAbility && IsAbilityOfRating(AI_DATA->atkAbilities, 0))
+                if (partnerHasBadAbilities && !attackerHasBadAbilities)
                 {
                     RETURN_SCORE_PLUS(1);
                 }
@@ -2891,7 +2893,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_SKILL_SWAP:
             if (HasAbility(ABILITY_TRUANT, AI_DATA->atkAbilities))
                 score += 5;
-            else if (IsAbilityOfRating(AI_DATA->atkAbilities, 0) || IsAbilityOfRating(AI_DATA->defAbilities, 10))
+            else if (GetTotalAbilityRating(AI_DATA->defAbilities) > GetTotalAbilityRating(AI_DATA->atkAbilities))
                 score += 2; // we want to transfer our bad abilities or take their awesome abilities
             break;
         case EFFECT_EARTHQUAKE:
@@ -2924,7 +2926,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     u8 atkPriority = GetMovePriority(battlerAtk, move);
     u16 predictedMove = gLastMoves[battlerDef]; //for now
     bool32 isDoubleBattle = IsValidDoubleBattle(battlerAtk);
-    u32 i;
+    u16 i, x;
     u8 atkHpPercent = GetHealthPercentage(battlerAtk);
     u8 defHpPercent = GetHealthPercentage(battlerDef);
     
@@ -3458,7 +3460,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
           || gStatuses3[battlerDef] & STATUS3_LEECHSEED
           || HasMoveEffect(battlerDef, EFFECT_RAPID_SPIN)
           || HasAbility(ABILITY_LIQUID_OOZE, AI_DATA->defAbilities)
-          || HasAbility(ABILITY_MAGIC_GUARD, AI_DATA->defAbilities)
+          || HasAbility(ABILITY_MAGIC_GUARD, AI_DATA->defAbilities))
             break;
         score += 3;
         if (!HasDamagingMove(battlerDef) || IsBattlerTrapped(battlerDef, FALSE))
@@ -3586,7 +3588,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
               && CanBattlerGetOrLoseItem(battlerDef, AI_DATA->defItem)
               && CanBattlerGetOrLoseItem(battlerAtk, AI_DATA->defItem)
               && !HasMoveEffect(battlerAtk, EFFECT_ACROBATICS)
-              && !HasAbility(ABILITY_STICKY_HOLD, AI_DATA->defAbility))
+              && !HasAbility(ABILITY_STICKY_HOLD, AI_DATA->defAbilities))
             {
                 switch (AI_DATA->defHoldEffect)
                 {
@@ -3746,7 +3748,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score += 3;
         break;
     case EFFECT_SANDSTORM:
-        if (ShouldSetSandstorm(battlerAtk, AI_DATA->atkHoldEffect, AI_DATA->atkHoldEffect))
+        if (ShouldSetSandstorm(battlerAtk, AI_DATA->atkAbilities, AI_DATA->atkHoldEffect))
         {
             score++;
             if (AI_DATA->atkHoldEffect == HOLD_EFFECT_SMOOTH_ROCK)
@@ -3800,7 +3802,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         }
         break;
     case EFFECT_ATTACK_UP_HIT:
-        if (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->atkAbilities)
+        if (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->atkAbilities))
             IncreaseStatUpScore(battlerAtk, battlerDef, STAT_ATK, &score);
         break;
     case EFFECT_FELL_STINGER:
@@ -4112,8 +4114,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         }
         break;
     case EFFECT_ROLE_PLAY:
-        if (!IsAbilityOfRating(AI_DATA->atkAbilities, 5)
-          && IsAbilityOfRating(AI_DATA->defAbilities, 5))
+        if (GetTotalAbilityRating(AI_DATA->atkAbilities) < GetTotalAbilityRating(AI_DATA->defAbilities))
             score += 2;
         break;
     case EFFECT_INGRAIN:
@@ -4124,7 +4125,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         break;
     case EFFECT_SUPERPOWER:
     case EFFECT_OVERHEAT:
-        if (HasAbility(ABILITY_CONTRARY, AI_DATA->atkAbilities)
+        if (HasAbility(ABILITY_CONTRARY, AI_DATA->atkAbilities))
             score += 10;
         break;
     case EFFECT_MAGIC_COAT:
@@ -4176,17 +4177,17 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         }
         break;
     case EFFECT_SKILL_SWAP:
-        if (GetAbilityRating(AI_DATA->defAbilities) > GetAbilityRating(AI_DATA->atkAbilities))
+        if (GetTotalAbilityRating(AI_DATA->defAbilities) > GetTotalAbilityRating(AI_DATA->atkAbilities))
             score++;
         break;
     case EFFECT_WORRY_SEED:
     case EFFECT_GASTRO_ACID:
     case EFFECT_SIMPLE_BEAM:
-        if (IsAbilityOfRating(AI_DATA->defAbilities, 5))
+        if (GetTotalAbilityRating(AI_DATA->defAbilities) > 10)
             score += 2;
         break;
     case EFFECT_ENTRAINMENT:
-        if (IsAbilityOfRating(AI_DATA->defAbilities, 5) || GetAbilityRating(AI_DATA->atkAbilities) <= 0)
+        if (GetTotalAbilityRating(AI_DATA->defAbilities) > GetTotalAbilityRating(AI_DATA->atkAbilities))
         {
             if (!AbilitiesMatch(AI_DATA->defAbilities, AI_DATA->atkAbilities) && !(gStatuses3[battlerDef] & STATUS3_GASTRO_ACID))
                 score += 2;
@@ -4409,8 +4410,8 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         break;
     case EFFECT_ION_DELUGE:
         if ((HasAbility(ABILITY_VOLT_ABSORB, AI_DATA->atkAbilities)
-          || HasAbility(ABILITY_MOTOR_DRIVE, AI_DATA->atkAbilitites)
-          || HasAbility(ABILITY_LIGHTNING_ROD, AI_DATA->atkAbilities)
+          || HasAbility(ABILITY_MOTOR_DRIVE, AI_DATA->atkAbilities)
+          || HasAbility(ABILITY_LIGHTNING_ROD, AI_DATA->atkAbilities))
           && gBattleMoves[predictedMove].type == TYPE_NORMAL)
             score += 2;
         break;

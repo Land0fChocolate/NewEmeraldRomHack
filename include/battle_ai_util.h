@@ -29,7 +29,7 @@ bool32 IsAiFaster(u8 battler);
 bool32 CanTargetFaintAi(u8 battlerDef, u8 battlerAtk);
 bool32 CanMoveFaintBattler(u16 move, u8 battlerDef, u8 battlerAtk, u8 nHits);
 bool32 CanTargetFaintAiWithMod(u8 battlerDef, u8 battlerAtk, s32 hpMod, s32 dmgMod);
-s32 AI_GetAbilities(u32 battlerId);
+u16 *AI_GetAbilities(u32 battlerId);
 u16 AI_GetHoldEffect(u32 battlerId);
 u32 AI_GetMoveAccuracy(u8 battlerAtk, u8 battlerDef, u16 atkAbilities[], u16 defAbilities[], u8 atkHoldEffect, u8 defHoldEffect, u16 move);
 bool32 DoesBattlerIgnoreAbilityChecks(u16 atkAbilities[], u16 move);
@@ -55,9 +55,9 @@ bool32 ShouldRestoreHpBerry(u8 battlerAtk, u16 item);
 bool32 IsStatBoostingBerry(u16 item);
 bool32 CanKnockOffItem(u8 battler, u16 item);
 bool32 IsAbilityOfRating(u16 ability, s8 rating); //singular ability
-s8 GetAbilityRating(u16 abilities);
+s16 GetTotalAbilityRating(u16 abilities[]);
 bool32 AI_IsAbilityOnSide(u32 battlerId, u32 ability); //singular ability
-bool32 AI_MoveMakesContact(u32 abilities[], u32 holdEffect, u16 move);
+bool32 AI_MoveMakesContact(u16 abilities[], u32 holdEffect, u16 move);
 
 // stat stage checks
 bool32 AnyStatIsRaised(u8 battlerId);
@@ -91,7 +91,7 @@ bool32 HasMoveWithSplit(u32 battler, u32 split);
 bool32 HasMoveWithType(u32 battler, u8 type);
 bool32 HasMoveWithTypeAndSplit(u32 battler, u8 type, u8 split);
 bool32 HasMoveEffect(u32 battlerId, u16 moveEffect);
-bool32 HasMoveWithLowAccuracy(u8, u8, u8, bool32, u16, u16, u16, u16);
+bool32 HasMoveWithLowAccuracy(u8 battlerAtk, u8 battlerDef, u8 accCheck, bool32 ignoreStatus, u16 atkAbilities[], u16 defAbilities[], u16 atkHoldEffect, u16 defHoldEffect);
 bool32 TestMoveFlagsInMoveset(u8 battler, u32 flags);
 bool32 IsAromaVeilProtectedMove(u16 move);
 bool32 IsNonVolatileStatusMoveEffect(u16 moveEffect);

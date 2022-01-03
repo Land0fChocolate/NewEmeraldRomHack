@@ -658,7 +658,7 @@ static void SetBattlePartyIds(void)
     }
 }
 
-static void PrepareBufferDataTransfer(u8 bufferId, u8 *data, u16 size)
+static void PrepareBufferDataTransfer(u8 bufferId, u8 *data, u16 size) //TODO: make sure this works properly for multi ability?
 {
     s32 i;
 
@@ -1194,11 +1194,29 @@ void BtlController_EmitChoosePokemon(u8 bufferId, u8 caseId, u8 slotId, u16 abil
     sBattleBuffersTransferData[0] = CONTROLLER_CHOOSEPOKEMON;
     sBattleBuffersTransferData[1] = caseId;
     sBattleBuffersTransferData[2] = slotId;
-    sBattleBuffersTransferData[3] = abilities & 0xFF;
-    sBattleBuffersTransferData[7] = (abilities >> 8) & 0xFF;
+    //old
+    // sBattleBuffersTransferData[3] = abilities & 0xFF; //what is the point of binary AND on 1111 1111? Wouldn't it be the same as before?
+    // for (i = 0; i < 3; i++)
+    //     sBattleBuffersTransferData[4 + i] = arg4[i];
+    // sBattleBuffersTransferData[7] = (abilities >> 8) & 0xFF;
+    // PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 8);
+
+    //solution 1
+    // for (i = 0; i < NUM_ABILITY_SLOTS; i++)
+    //     sBattleBuffersTransferData[3 + i] = abilities[i] & 0xFF;
+    // for (i = 0; i < 3; i++)
+    //     sBattleBuffersTransferData[6 + i] = arg4[i];
+    // for (i = 0; i < NUM_ABILITY_SLOTS; i++)
+    //     sBattleBuffersTransferData[9 + i] = (abilities[i] >> 8) & 0xFF;
+    // PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 12);
+
+    //solution 2
+    memcpy(&sBattleBuffersTransferData[3], abilities, sizeof(abilities));
     for (i = 0; i < 3; i++)
         sBattleBuffersTransferData[4 + i] = arg4[i];
-    PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 8);
+    sBattleBuffersTransferData[7] = (abilities >> 8) & 0xFF;
+
+    PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 8 + sizeof(abilities));
 }
 
 void BtlController_EmitCmd23(u8 bufferId)

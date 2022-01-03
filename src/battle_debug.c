@@ -859,7 +859,7 @@ static void PutAiInfoText(struct BattleDebugMenu *data)
             u16 holdEffect = AI_GetHoldEffect(i);
             u16 item = gBattleMons[i].item;
             u8 x = (i == B_POSITION_PLAYER_LEFT) ? 83 + (i) * 75 : 83 + (i-1) * 75;
-            AddTextPrinterParameterized(data->aiMovesWindowId, 0, gAbilityNames[abilities], x, 0, 0, NULL);
+            AddTextPrinterParameterized(data->aiMovesWindowId, 0, gAbilityNames[abilities[x]], x, 0, 0, NULL); //TODO: temporary patch, update properly for multi ability
             AddTextPrinterParameterized(data->aiMovesWindowId, 0, ItemId_GetName(item), x, 15, 0, NULL);
             AddTextPrinterParameterized(data->aiMovesWindowId, 0, GetHoldEffectName(holdEffect), x, 30, 0, NULL);
         }
