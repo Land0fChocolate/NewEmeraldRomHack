@@ -22,6 +22,7 @@
 #include "constants/field_effects.h"
 #include "constants/songs.h"
 #include "constants/metatile_labels.h"
+#include "battle_util.h"
 
 extern struct MapPosition gPlayerFacingPosition;
 
@@ -152,8 +153,8 @@ bool8 SetUpFieldMove_Cut(void)
     }
     else
     {
-        PlayerGetDestCoords(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
         u16 *abilities = GetMonAbilities(&gPlayerParty[GetCursorSelectionMonId()]);
+        PlayerGetDestCoords(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
         if (HasAbility(ABILITY_HYPER_CUTTER, abilities))
         {
             sCutSquareSide = CUT_HYPER_SIDE;

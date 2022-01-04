@@ -7459,11 +7459,12 @@ static s32 GetWildMonTableIdInAlteringCave(u16 species)
 
 void SetWildMonHeldItem(void)
 {
-    u16 rnd, species, var1, var2, i, count;
+    u16 rnd, species, var1, var2, i, count, abilities[NUM_ABILITY_SLOTS];
+
     if (gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_TRAINER | BATTLE_TYPE_PYRAMID | BATTLE_TYPE_PIKE))
         return;
 
-    u16 *abilities = GetMonAbilities(&gPlayerParty[0]);
+    memcpy(abilities, GetMonAbilities(&gPlayerParty[0]), sizeof(abilities));
     count = (WILD_DOUBLE_BATTLE) ? 2 : 1;
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG, 0)
         && (HasAbility(ABILITY_COMPOUND_EYES, abilities)

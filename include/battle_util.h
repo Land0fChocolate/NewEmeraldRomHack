@@ -172,7 +172,7 @@ bool32 IsRolePlayBannedAbility(u16 ability);
 bool32 IsSkillSwapBannedAbility(u16 ability);
 bool32 IsWorrySeedBannedAbility(u16 ability);
 bool32 IsGastroAcidBannedAbility(u16 ability);
-bool32 IsEntrainmentBannedAbilityAttacker(u16 abilities[]);
+bool32 IsEntrainmentBannedAbilityAttacker(u16 ability);
 bool32 IsEntrainmentTargetOrSimpleBeamBannedAbility(u16 ability);
 bool32 ViableRolePlayTarget(u16 abilities[]);
 bool32 ViableSkillSwapTarget(u16 abilities[]);

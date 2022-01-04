@@ -81,7 +81,7 @@ static bool8 ShouldSwitchIfWonderGuard(void)
         return FALSE;
 
     opposingPosition = BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler));
-    memcpy(abilities, (u16 *) GetBattlerAbilities(GetBattlerAtPosition(opposingPosition)), sizeof(abilities));
+    memcpy(abilities, GetBattlerAbilities(GetBattlerAtPosition(opposingPosition)), sizeof(abilities));
 
     if (!HasAbility(ABILITY_WONDER_GUARD, abilities))
         return FALSE;
@@ -227,7 +227,7 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
 
 static bool8 ShouldSwitchIfNaturalCure(void)
 {
-    u16 *abilities = (u16 *) AI_GetAbilities(gActiveBattler);
+    u16 *abilities = AI_GetAbilities(gActiveBattler);
 
     if (!(gBattleMons[gActiveBattler].status1 & STATUS1_SLEEP))
         return FALSE;

@@ -3320,10 +3320,10 @@ bool32 IsAbilityOfRating(u16 ability, s8 rating) //singular ability
     return FALSE;
 }
 
-s16 GetTotalAbilityRating(u16 abilities[])
+s8 GetTotalAbilityRating(u16 abilities[])
 {
     u16 x;
-    s16 rating;
+    s8 rating = 0;
 
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {

@@ -55,7 +55,7 @@ bool32 ShouldRestoreHpBerry(u8 battlerAtk, u16 item);
 bool32 IsStatBoostingBerry(u16 item);
 bool32 CanKnockOffItem(u8 battler, u16 item);
 bool32 IsAbilityOfRating(u16 ability, s8 rating); //singular ability
-s16 GetTotalAbilityRating(u16 abilities[]);
+s8 GetTotalAbilityRating(u16 abilities[]);
 bool32 AI_IsAbilityOnSide(u32 battlerId, u32 ability); //singular ability
 bool32 AI_MoveMakesContact(u16 abilities[], u32 holdEffect, u16 move);
 
