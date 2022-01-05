@@ -599,7 +599,7 @@ struct BattleStruct
     u8 lastMoveFailed; // as bits for each battler, for the sake of Stomping Tantrum
     u8 lastMoveTarget[MAX_BATTLERS_COUNT]; // The last target on which each mon used a move, for the sake of Instruct
     u8 debugHoldEffects[MAX_BATTLERS_COUNT]; // These override actual items' hold effects.
-    u16 tracedAbility[MAX_BATTLERS_COUNT];
+    u16 tracedAbilities[NUM_ABILITY_SLOTS];
     u16 hpBefore[MAX_BATTLERS_COUNT]; // Hp of battlers before using a move. For Berserk
     bool8 spriteIgnore0Hp;
     struct Illusion illusion[MAX_BATTLERS_COUNT];
@@ -917,7 +917,7 @@ extern u16 gMoveToLearn;
 extern u8 gBattleMonForms[MAX_BATTLERS_COUNT];
 extern u32 gFieldStatuses;
 extern struct FieldTimer gFieldTimers;
-extern u8 gBattlerAbility; //TODO: probably don't need to update for multi ability. Confusing name. Look into it anyway.
+extern u8 gBattlerAbility; //TODO: probably don't need to update for multi ability. Confusing name.
 extern u16 gPartnerSpriteId;
 extern struct TotemBoost gTotemBoosts[MAX_BATTLERS_COUNT];
 

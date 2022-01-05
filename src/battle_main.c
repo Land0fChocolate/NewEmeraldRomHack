@@ -164,7 +164,7 @@ EWRAM_DATA s32 gHpDealt = 0;
 EWRAM_DATA s32 gTakenDmg[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gLastUsedItem = 0;
 EWRAM_DATA u16 gLastUsedAbility = 0;
-EWRAM_DATA u16 gLastUsedAbilities[NUM_ABILITY_SLOTS] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE};
+EWRAM_DATA static u16 gLastUsedAbilities[NUM_ABILITY_SLOTS] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE};
 EWRAM_DATA u8 gBattlerAttacker = 0;
 EWRAM_DATA u8 gBattlerTarget = 0;
 EWRAM_DATA u8 gBattlerFainted = 0;
@@ -4353,8 +4353,10 @@ void SwapTurnOrder(u8 id1, u8 id2)
 u32 GetBattlerTotalSpeedStat(u8 battlerId)
 {
     u32 speed = gBattleMons[battlerId].speed;
-    u32 *abilities = GetBattlerAbilities(battlerId);
+    u16 abilities[NUM_ABILITY_SLOTS];
     u32 holdEffect = GetBattlerHoldEffect(battlerId, TRUE);
+
+    memcpy(abilities, GetBattlerAbilities(battlerId), sizeof(abilities));
 
     // weather abilities
     if (WEATHER_HAS_EFFECT)
@@ -4423,7 +4425,7 @@ s8 GetMovePriority(u32 battlerId, u16 move)
     u16 *abilities = GetBattlerAbilities(battlerId);
 
     priority = gBattleMoves[move].priority;
-    if (HasAbilities(ABILITY_GALE_WINGS, abilities)
+    if (HasAbility(ABILITY_GALE_WINGS, abilities)
         && gBattleMoves[move].type == TYPE_FLYING
         && (B_GALE_WINGS <= GEN_6 || BATTLER_MAX_HP(battlerId)))
     {
@@ -4826,8 +4828,8 @@ static void CheckQuickClaw_CustapBerryActivation(void)
                 else if (gProtectStructs[gActiveBattler].quickDraw)
                 {
                     gProtectStructs[gActiveBattler].quickDraw = FALSE;
-                    gLastUsedAbilities = gBattleMons[gActiveBattler].abilities;
-                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbilities);
+                    gLastUsedAbility = ABILITY_QUICK_DRAW;
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                     BattleScriptExecute(BattleScript_QuickDrawActivation);
                 }
                 return;

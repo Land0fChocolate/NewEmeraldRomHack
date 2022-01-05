@@ -1540,7 +1540,7 @@ u8 GetBattlerForBattleScript(u8 caseId)
         ret = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
         break;
     case BS_ABILITY_BATTLER:
-        ret = gBattlerAbility; //TODO: update for multi ability?
+        ret = gBattlerAbility;
         break;
     }
     return ret;
@@ -2739,7 +2739,7 @@ s32 GetDrainedBigRootHp(u32 battler, s32 hp)
 }
 
 #define MAGIC_GUARD_CHECK \
-if (HasAbility(ABILITY_MAGIC_GUARD, abilities) \
+if (HasAbility(ABILITY_MAGIC_GUARD, abilities)) \
 {\
     gBattleStruct->turnEffectsTracker++;\
     break;\
@@ -4225,12 +4225,12 @@ static u8 ForewarnChooseMove(u32 battler)
 }
 
 u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 moveArg) //TODO: make sure this func is properly updated for multi ability
-{ //TODO: ability variable passed in but not used?
+{ //TODO: ability variable passed in but not really used?
     u8 effect = 0;
     u32 speciesAtk, speciesDef;
     u32 pidAtk, pidDef;
     u32 moveType, move;
-    u16 i, j, x, y;
+    u16 abilityRating = -1, i, j, x, y;
 
     if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
         return 0;
@@ -4778,7 +4778,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                          && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
                         {
                             BattleScriptPushCursorAndCallback(BattleScript_RainDishActivates);
-                            gBattleMoveDamage = gBattleMons[battler].maxHP / (HasAbility(ABILITY_RAIN_DISH, gLastUsedAbilities[x]) ? 16 : 8);
+                            gBattleMoveDamage = gBattleMons[battler].maxHP / (HasAbility(ABILITY_RAIN_DISH, gLastUsedAbilities) ? 16 : 8);
                             if (gBattleMoveDamage == 0)
                                 gBattleMoveDamage = 1;
                             gBattleMoveDamage *= -1;
@@ -4954,7 +4954,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
         break;
     case ABILITYEFFECT_MOVES_BLOCK: // 2 //continue from here
         if ((HasAbility(ABILITY_SOUNDPROOF, gLastUsedAbilities) && gBattleMoves[move].flags & FLAG_SOUND && !(gBattleMoves[move].target & MOVE_TARGET_USER))
-            || (HasAbilities(ABILITY_BULLETPROOF, gLastUsedAbilities) && gBattleMoves[move].flags & FLAG_BALLISTIC))
+            || (HasAbility(ABILITY_BULLETPROOF, gLastUsedAbilities) && gBattleMoves[move].flags & FLAG_BALLISTIC))
         {
             if (gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS)
                 gHitMarker |= HITMARKER_NO_PPDEDUCT;
@@ -5858,7 +5858,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
         break;
     case ABILITYEFFECT_TRACE1:
     case ABILITYEFFECT_TRACE2:
-        u16 abilityRating = -1, ability;
         for (i = 0; i < gBattlersCount; i++)
         {
             if (HasAbility(ABILITY_TRACE, gBattleMons[i].abilities) && (gBattleResources->flags->flags[i] & RESOURCE_FLAG_TRACED))
@@ -5919,7 +5918,14 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                         gBattlescriptCurrInstr = BattleScript_TraceActivates;
                     }
                     gBattleResources->flags->flags[i] &= ~(RESOURCE_FLAG_TRACED);
-                    gBattleStruct->tracedAbility[i] = gLastUsedAbility = ability;
+                    gLastUsedAbility = ability;
+                    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+                    {
+                        if (gBattleMons[i].abilities[x] == ABILITY_TRACE)
+                            gBattleStruct->tracedAbilities[x] = ability;
+                        else
+                            gBattleStruct->tracedAbilities[x] = gBattleMons[i].abilities[x];
+                    }
                     battler = gBattlerAbility = gBattleScripting.battler = i;
 
                     PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gActiveBattler, gBattlerPartyIndexes[gActiveBattler])
@@ -5954,7 +5960,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
     return effect;
 }
 
-bool32 IsNeutralizingGasBannedAbility(u32 ability)
+bool32 IsNeutralizingGasBannedAbility(u16 ability)
 {
     switch (ability)
     {
@@ -5980,15 +5986,12 @@ bool32 IsNeutralizingGasBannedAbility(u32 ability)
 bool32 IsNeutralizingGasOnField(u8 battlerId)
 {
     u32 i;
-    u16 abilities[NUM_ABILITY_SLOTS];
 
     for (i = 0; i < gBattlersCount; i++)
     {
-        memcpy(abilities, GetBattlerAbilities(gBattleMons[i]), sizeof(abilities));
-
-        if (IsBattlerAlive(i) && HasAbility(ABILITY_NEUTRALIZING_GAS, abilities) 
+        if (IsBattlerAlive(i) && HasAbility(ABILITY_NEUTRALIZING_GAS, gBattleMons[i].abilities) 
             && !(gStatuses3[i] & STATUS3_GASTRO_ACID)
-            && battlerId != gBattleMons[i]) // battler does not inflict neutralizing gas debuff on itself
+            && i != battlerId) // neutralizing gas doesn't nullify abilities of the user
             return TRUE;
     }
 
@@ -6007,8 +6010,9 @@ u16 *GetBattlerAbilities(u8 battlerId)
         if ((gStatuses3[battlerId] & STATUS3_GASTRO_ACID) && !IsGastroAcidBannedAbility(gBattleMons[battlerId].abilities[x]))
             continue;
 
-        if (IsNeutralizingGasOnField(battlerId) && !IsNeutralizingGasBannedAbility(gBattleMons[battlerId].abilities[x]))
-            continue
+        if (IsNeutralizingGasOnField(battlerId) 
+            && !IsNeutralizingGasBannedAbility(gBattleMons[battlerId].abilities[x]))
+            continue;
 
         abilities[x] = gBattleMons[battlerId].abilities[x];
 
@@ -6029,10 +6033,10 @@ u16 *GetBattlerAbilities(u8 battlerId)
         }
     }
 
-    return abilities
+    return abilities;
 }
 
-u32 IsAbilityOnSide(u32 battlerId, u32 ability) // Check that a Pokemon on one side has this ability
+u32 IsAbilityOnSide(u32 battlerId, u16 ability) // Check that a Pokemon on one side has this ability
 {
     u16 *abilities = GetBattlerAbilities(battlerId);
     u16 *partnerAbilities = GetBattlerAbilities(BATTLE_PARTNER(battlerId));
@@ -6040,7 +6044,7 @@ u32 IsAbilityOnSide(u32 battlerId, u32 ability) // Check that a Pokemon on one s
 
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {
-        if (IsBattlerAlive(battlerId) && abilities[x] = ability)
+        if (IsBattlerAlive(battlerId) && abilities[x] == ability)
             return battlerId + 1;
         else if (IsBattlerAlive(BATTLE_PARTNER(battlerId)) && partnerAbilities[x] == ability)
             return BATTLE_PARTNER(battlerId) + 1;
@@ -6049,12 +6053,12 @@ u32 IsAbilityOnSide(u32 battlerId, u32 ability) // Check that a Pokemon on one s
     return 0;
 }
 
-u32 IsAbilityOnOpposingSide(u32 battlerId, u32 ability)
+u32 IsAbilityOnOpposingSide(u32 battlerId, u16 ability)
 {
     return IsAbilityOnSide(BATTLE_OPPOSITE(battlerId), ability);
 }
 
-u32 IsAbilityOnField(u32 ability) // Check if any battlers have this ability
+u32 IsAbilityOnField(u16 ability) // Check if any battlers have this ability
 {
     u32 i, x;
     u16 abilities[NUM_ABILITY_SLOTS];
@@ -6068,7 +6072,7 @@ u32 IsAbilityOnField(u32 ability) // Check if any battlers have this ability
             for (x = 0; x < NUM_ABILITY_SLOTS; x++)
             {
                 if (abilities[x] == ability)
-                return i + 1;
+                    return i + 1;
             }
         }
     }
@@ -6076,7 +6080,7 @@ u32 IsAbilityOnField(u32 ability) // Check if any battlers have this ability
     return 0;
 }
 
-u32 IsAbilityOnFieldExcept(u32 battlerId, u32 ability) // Check if any battlers have this ability except for the specific battler
+u32 IsAbilityOnFieldExcept(u32 battlerId, u16 ability) // Check if any battlers have this ability except for the specific battler
 {
     u32 i, x;
     u16 abilities[NUM_ABILITY_SLOTS];
@@ -6379,7 +6383,7 @@ static u8 RandomStatRaiseBerry(u32 battlerId, u32 itemId, bool32 end2)
 
         memcpy(abilities, GetBattlerAbilities(battlerId), sizeof(abilities));
 
-        stringId = (HasContrary(abilities)) ? STRINGID_STATFELL : STRINGID_STATROSE;
+        stringId = (HasAbility(ABILITY_CONTRARY, abilities)) ? STRINGID_STATFELL : STRINGID_STATROSE;
         gBattleTextBuff2[0] = B_BUFF_PLACEHOLDER_BEGIN;
         gBattleTextBuff2[1] = B_BUFF_STRING;
         gBattleTextBuff2[2] = STRINGID_STATSHARPLY;
@@ -8989,8 +8993,8 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
     bool32 usesDefStat;
     u8 defStage;
     u32 defStat, def, spDef;
-    u16 modifier;
-    u16 *abilities = GetBattlerAbilities(battlerAtk)
+    u16 modifier, x, abilities[NUM_ABILITY_SLOTS];
+    memcpy(abilities, GetBattlerAbilities(battlerAtk), sizeof(abilities));
 
     if (gFieldStatuses & STATUS_FIELD_WONDER_ROOM) // the defense stats are swapped
     {
@@ -9129,11 +9133,12 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
 static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, u16 typeEffectivenessModifier, bool32 isCrit, bool32 updateFlags)
 {
     u32 percentBoost;
-    u32 *atkAbilities = GetBattlerAbilities(battlerAtk);
-    u32 *defAbilities = GetBattlerAbilities(battlerDef);
+    u16 *atkAbilities = GetBattlerAbilities(battlerAtk);
+    u16 *defAbilities = GetBattlerAbilities(battlerDef);
     u32 defSide = GET_BATTLER_SIDE(battlerDef);
     u16 finalModifier = UQ_4_12(1.0);
     u16 itemDef = gBattleMons[battlerDef].item;
+    u16 x;
 
     // check multiple targets in double battle
     if (GetMoveTargetCount(move, battlerAtk, battlerDef) >= 2)
@@ -9351,7 +9356,7 @@ static void MulByTypeEffectiveness(u16 *modifier, u16 move, u8 moveType, u8 batt
     {
         mod = UQ_4_12(1.0);
     }
-    else if ((moveType == TYPE_FIGHTING || moveType == TYPE_NORMAL) && defType == TYPE_GHOST && HasScrappy(abilities) && mod == UQ_4_12(0.0))
+    else if ((moveType == TYPE_FIGHTING || moveType == TYPE_NORMAL) && defType == TYPE_GHOST && HasAbility(ABILITY_SCRAPPY, abilities) && mod == UQ_4_12(0.0))
     {
         mod = UQ_4_12(1.0);
     }
@@ -9794,7 +9799,7 @@ bool32 SetIllusionMon(struct Pokemon *mon, u32 battlerId)
 {
     struct Pokemon *party, *partnerMon;
     s32 i, id;
-    u16 *abilities = GetMonAbilities(mon)
+    u16 *abilities = GetMonAbilities(mon);
 
     gBattleStruct->illusion[battlerId].set = 1;
     if (HasAbility(ABILITY_ILLUSION, abilities))
@@ -10241,7 +10246,7 @@ bool32 CompareStat(u8 battlerId, u8 statId, u8 cmpTo, u8 cmpKind)
 
     // Because this command is used as a way of checking if a stat can be lowered/raised,
     // we need to do some modification at run-time.
-    if (HasContrary(abilities))
+    if (HasAbility(ABILITY_CONTRARY, abilities))
     {
         if (cmpKind == CMP_GREATER_THAN)
             cmpKind = CMP_LESS_THAN;
@@ -10287,7 +10292,7 @@ bool32 CompareStat(u8 battlerId, u8 statId, u8 cmpTo, u8 cmpKind)
 
 void BufferStatChange(u8 battlerId, u8 statId, u8 stringId)
 {
-    bool8 hasContrary = HasContrary(battlerId);
+    bool8 hasContrary = HasAbility(ABILITY_CONTRARY, gBattleMons[battlerId].abilities);
 
     PREPARE_STAT_BUFFER(gBattleTextBuff1, statId);
     if (stringId == STRINGID_STATFELL)
@@ -10410,6 +10415,8 @@ u16 GetUsedHeldItem(u8 battler)
 
 bool32 HasAbility(u16 ability, u16 abilities[])
 {
+    u16 x;
+
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {
         if (abilities[x] == ability)
@@ -10438,5 +10445,5 @@ bool32 AbilitiesMatch(u16 abilities1[], u16 abilities2[])
     if (match >= NUM_ABILITY_SLOTS)
         return TRUE;
 
-    return FALSE
+    return FALSE;
 }

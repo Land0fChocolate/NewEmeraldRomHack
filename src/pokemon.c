@@ -5114,6 +5114,12 @@ u8 GetMonsStateToDoubles_2(void)
     return (aliveCount > 1) ? PLAYER_HAS_TWO_USABLE_MONS : PLAYER_HAS_ONE_USABLE_MON;
 }
 
+u16 *GetAbilitiesBySpecies(u16 species)
+{
+    memcpy(gLastUsedAbilities, gBaseStats[species].abilities, sizeof(gLastUsedAbilities));
+    return gLastUsedAbilities;
+}
+
 u16 *GetMonAbilities(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
@@ -7982,12 +7988,11 @@ u8 GetFormIdFromFormSpeciesId(u16 formSpeciesId)
 u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg) 
 {
     u32 i;
-    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL), targetSpecies = SPECIES_NONE;
     const struct FormChange *formChanges = gFormChangeTablePointers[species];
 
     if (formChanges != NULL)
     {
-        u16 targetSpecies = SPECIES_NONE;
         u16 heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
         u16 *abilities = GetAbilitiesBySpecies(species);
 

@@ -24,6 +24,7 @@
 #include "constants/layouts.h"
 #include "constants/maps.h"
 #include "constants/weather.h"
+#include "battle_util.h"
 
 extern const u8 EventScript_RepelWoreOff[];
 
@@ -920,10 +921,12 @@ static bool8 IsWildLevelAllowedByRepel(u8 wildLevel)
 
 static bool8 IsAbilityAllowingEncounter(u8 level)
 {
+    u16 abilities[NUM_ABILITY_SLOTS];
+    
     if (GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG))
         return TRUE;
 
-    u16 *abilities = GetMonAbilities(&gPlayerParty[0]);
+    memcpy(abilities, GetMonAbilities(&gPlayerParty[0]), sizeof(abilities));
     if (HasAbility(ABILITY_KEEN_EYE, abilities) || HasAbility(ABILITY_INTIMIDATE, abilities))
     {
         u8 playerMonLevel = GetMonData(&gPlayerParty[0], MON_DATA_LEVEL);

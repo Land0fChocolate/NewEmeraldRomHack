@@ -1,5 +1,6 @@
 #include "global.h"
 #include "main.h"
+#include "battle_util.h"
 #include "bike.h"
 #include "event_data.h"
 #include "event_object_movement.h"
