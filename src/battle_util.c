@@ -6000,7 +6000,7 @@ bool32 IsNeutralizingGasOnField(u8 battlerId)
 
 u16 *GetBattlerAbilities(u8 battlerId)
 {
-    static u16 abilities[NUM_ABILITY_SLOTS] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE}, attackerAbility, x, y;
+    static u16 abilities[NUM_ABILITY_SLOTS], attackerAbility, x, y;
 
     if (gBattleMoves[gCurrentMove].flags & FLAG_TARGET_ABILITY_IGNORED)
         return abilities;
