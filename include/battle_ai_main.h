@@ -24,6 +24,12 @@ void BattleAI_SetupItems(void);
 void BattleAI_SetupFlags(void);
 void BattleAI_SetupAIData(u8 defaultScoreMoves);
 u8 BattleAI_ChooseMoveOrAction(void);
+bool32 ViableRolePlayTarget(u16 abilities[]);
+bool32 ViableSkillSwapTarget(u16 abilities[]);
+bool32 ViableWorrySeedTarget(u16 abilities[]);
+bool32 ViableGastroAcidTarget(u16 abilities[]);
+bool32 ViableEntrainmentTarget(u16 abilities[]);
+bool32 ViableEntrainmentOrSimpleBeamTarget(u16 abilities[]);
 
 extern u8 sBattler_AI;
 

@@ -5086,3 +5086,81 @@ static s16 AI_FirstBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
 
     return score;
 }
+
+bool32 ViableRolePlayTarget(u16 abilities[])
+{
+    u16 x;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        if (!IsRolePlayBannedAbility(abilities[x]))
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool32 ViableSkillSwapTarget(u16 abilities[])
+{
+    u16 x;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        if (!IsSkillSwapBannedAbility(abilities[x]))
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool32 ViableWorrySeedTarget(u16 abilities[])
+{
+    u16 x;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        if (!IsWorrySeedBannedAbility(abilities[x]))
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool32 ViableGastroAcidTarget(u16 abilities[])
+{
+    u16 x;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        if (!IsGastroAcidBannedAbility(abilities[x]))
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool32 ViableEntrainmentTarget(u16 abilities[])
+{
+    u16 x;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        if (!IsEntrainmentBannedAbilityAttacker(abilities[x]))
+            return TRUE;
+    }
+
+    return FALSE;
+}
+
+bool32 ViableEntrainmentOrSimpleBeamTarget(u16 abilities[])
+{
+    u16 x;
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        if (!IsEntrainmentTargetOrSimpleBeamBannedAbility(abilities[x]))
+            return TRUE;
+    }
+
+    return FALSE;
+}

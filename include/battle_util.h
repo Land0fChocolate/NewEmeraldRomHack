@@ -174,12 +174,6 @@ bool32 IsWorrySeedBannedAbility(u16 ability);
 bool32 IsGastroAcidBannedAbility(u16 ability);
 bool32 IsEntrainmentBannedAbilityAttacker(u16 ability);
 bool32 IsEntrainmentTargetOrSimpleBeamBannedAbility(u16 ability);
-bool32 ViableRolePlayTarget(u16 abilities[]);
-bool32 ViableSkillSwapTarget(u16 abilities[]);
-bool32 ViableWorrySeedTarget(u16 abilities[]);
-bool32 ViableGastroAcidTarget(u16 abilities[]);
-bool32 ViableEntrainmentTarget(u16 abilities[]);
-bool32 ViableEntrainmentOrSimpleBeamTarget(u16 abilities[]);
 
 bool32 CanSleep(u8 battlerId);
 bool32 CanBePoisoned(u8 battlerAttacker, u8 battlerTarget);

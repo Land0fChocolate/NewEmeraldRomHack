@@ -303,7 +303,6 @@ static bool8 sub_804F344(void);
 static void PutMonIconOnLvlUpBox(void);
 static void PutLevelAndGenderOnLvlUpBox(void);
 static bool32 CriticalCapture(u32 odds);
-static bool32 DoAbilitiesMatch(u16 atkAbilities[], u16 defAbilities[]);
 static bool32 IsValidSimpleBeamTarget(u16 abilities[]);
 static bool32 IsValidEntrainmentPair(u16 attackerAbilities[], u16 targetAbilities[]);
 
@@ -12370,8 +12369,8 @@ static void Cmd_trycopyability(void) // role play
 {
     u16 *defAbilities = gBattleMons[gBattlerTarget].abilities, noAbilities[NUM_ABILITY_SLOTS] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE}, x;
 
-    if (DoAbilitiesMatch(gBattleMons[gBattlerAttacker].abilities, defAbilities)
-      || DoAbilitiesMatch(defAbilities, noAbilities))
+    if (AbilitiesMatch(gBattleMons[gBattlerAttacker].abilities, defAbilities)
+      || AbilitiesMatch(defAbilities, noAbilities))
     {
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
     }
@@ -13846,27 +13845,6 @@ static bool32 CriticalCapture(u32 odds)
     #else
         return FALSE;
     #endif
-}
-
-static bool32 DoAbilitiesMatch(u16 atkAbilities[], u16 defAbilities[])
-{
-    int x, y, counter;
-
-    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
-    {
-        for (y = 0; y < NUM_ABILITY_SLOTS; y++)
-        {
-            if (atkAbilities[x] == defAbilities[y])
-            {
-                counter++;
-            }
-        }
-    }
-
-    if (counter >= NUM_ABILITY_SLOTS)
-        return TRUE;
-
-    return FALSE;
 }
 
 static bool32 IsValidSimpleBeamTarget(u16 abilities[])
