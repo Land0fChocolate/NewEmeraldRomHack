@@ -3555,7 +3555,7 @@ static void TryDoEventsBeforeFirstTurn(void)
         }
     }
 
-    if (gBattleStruct->switchInAbilitiesCounter == 0)
+    if (gBattleStruct->switchInAbilitiesCounter == 0) //TODO: investigate for posible bug in multi ability
     {
         for (i = 0; i < gBattlersCount; i++)
             gBattlerByTurnOrder[i] = i;
@@ -3758,6 +3758,7 @@ void BattleTurnPassed(void)
 u8 IsRunningFromBattleImpossible(void)
 {
     u32 holdEffect, i;
+    u16 ability;
 
     if (gBattleMons[gActiveBattler].item == ITEM_ENIGMA_BERRY)
         holdEffect = gEnigmaBerries[gActiveBattler].holdEffect;
@@ -3790,7 +3791,13 @@ u8 IsRunningFromBattleImpossible(void)
     if ((i = IsAbilityPreventingEscape(gActiveBattler)))
     {
         gBattleScripting.battler = i - 1;
-        memcpy(gLastUsedAbilities, gBattleMons[i - 1].abilities, sizeof(gLastUsedAbilities));
+        if (HasAbility(ABILITY_ARENA_TRAP, gBattleMons[i - 1].abilities))
+            ability = ABILITY_ARENA_TRAP;
+        else if (HasAbility(ABILITY_SHADOW_TAG, gBattleMons[i - 1].abilities))
+            ability = ABILITY_SHADOW_TAG;
+        else if (HasAbility(ABILITY_MAGNET_PULL, gBattleMons[i - 1].abilities))
+            ability = ABILITY_MAGNET_PULL;
+        gLastUsedAbility = ability;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PREVENTS_ESCAPE;
         return 2;
     }

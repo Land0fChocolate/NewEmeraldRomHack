@@ -6960,8 +6960,8 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        //.abilities = {ABILITY_BLAZE, ABILITY_INNER_FOCUS, ABILITY_NONE},
-        .abilities = {ABILITY_INTIMIDATE, ABILITY_SPEED_BOOST, ABILITY_SOUNDPROOF}, //TODO: for testing multi ability, remove later
+        .abilities = {ABILITY_BLAZE, ABILITY_INNER_FOCUS, ABILITY_SPEED_BOOST},
+        //.abilities = {ABILITY_INTIMIDATE, ABILITY_SPEED_BOOST, ABILITY_DROUGHT}, //TODO: for testing multi ability, remove later
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },

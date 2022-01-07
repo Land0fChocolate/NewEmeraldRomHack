@@ -2656,108 +2656,106 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             {
                 for (x = 0; x < NUM_ABILITY_SLOTS; x++)
                 {
-
-                }
-
-                switch (atkPartnerAbilities[x])
-                {
-                case ABILITY_VOLT_ABSORB:
-                    if (!(AI_THINKING_STRUCT->aiFlags & AI_FLAG_HP_AWARE))
+                    switch (atkPartnerAbilities[x])
                     {
+                    case ABILITY_VOLT_ABSORB:
+                        if (!(AI_THINKING_STRUCT->aiFlags & AI_FLAG_HP_AWARE))
+                        {
+                            RETURN_SCORE_MINUS(10);
+                        }
+                        break;  // handled in AI_HPAware
+                    case ABILITY_MOTOR_DRIVE:
+                        if (moveType == TYPE_ELECTRIC && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_SPEED))
+                        {
+                            RETURN_SCORE_PLUS(1);
+                        }
+                        break;
+                    case ABILITY_LIGHTNING_ROD:
+                        if (moveType == TYPE_ELECTRIC
+                          && HasMoveWithSplit(battlerAtkPartner, SPLIT_SPECIAL)
+                          && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_SPATK))
+                        {
+                            RETURN_SCORE_PLUS(1);
+                        }
+                        break;
+                    case ABILITY_WATER_ABSORB:
+                    case ABILITY_DRY_SKIN:
+                        if (!(AI_THINKING_STRUCT->aiFlags & AI_FLAG_HP_AWARE))
+                        {
+                            RETURN_SCORE_MINUS(10);
+                        }
+                        break;  // handled in AI_HPAware
+                    case ABILITY_STORM_DRAIN:
+                        if (moveType == TYPE_WATER
+                          && HasMoveWithSplit(battlerAtkPartner, SPLIT_SPECIAL)
+                          && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_SPATK))
+                        {
+                            RETURN_SCORE_PLUS(1);
+                        }
+                        break;
+                    case ABILITY_WATER_COMPACTION:
+                        if (moveType == TYPE_WATER && GetMoveDamageResult(move) == MOVE_POWER_WEAK)
+                        {
+                            RETURN_SCORE_PLUS(1);   // only mon with this ability is weak to water so only make it okay if we do very little damage
+                        }
                         RETURN_SCORE_MINUS(10);
+                        break;
+                    case ABILITY_FLASH_FIRE:
+                        if (moveType == TYPE_FIRE
+                          && HasMoveWithType(battlerAtkPartner, TYPE_FIRE)
+                          && !(gBattleResources->flags->flags[battlerAtkPartner] & RESOURCE_FLAG_FLASH_FIRE))
+                        {
+                            RETURN_SCORE_PLUS(1);
+                        }
+                        break;
+                    case ABILITY_SAP_SIPPER:
+                        if (moveType == TYPE_GRASS
+                          && HasMoveWithSplit(battlerAtkPartner, SPLIT_PHYSICAL)
+                          && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_ATK))
+                        {
+                            RETURN_SCORE_PLUS(1);
+                        }
+                        break;
+                    case ABILITY_JUSTIFIED:
+                        if (moveType == TYPE_DARK
+                          && !IS_MOVE_STATUS(move)
+                          && HasMoveWithSplit(battlerAtkPartner, SPLIT_PHYSICAL)
+                          && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_ATK)
+                          && !CanIndexMoveFaintTarget(battlerAtk, battlerAtkPartner, AI_THINKING_STRUCT->movesetIndex, 1))
+                        {
+                            RETURN_SCORE_PLUS(1);
+                        }
+                        break;
+                    case ABILITY_RATTLED:
+                        if (!IS_MOVE_STATUS(move)
+                          && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG)
+                          && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_SPEED)
+                          && !CanIndexMoveFaintTarget(battlerAtk, battlerAtkPartner, AI_THINKING_STRUCT->movesetIndex, 1))
+                        {
+                            RETURN_SCORE_PLUS(1);
+                        }
+                        break;
+                    case ABILITY_CONTRARY:
+                        if (IsStatLoweringEffect(effect))
+                        {
+                            RETURN_SCORE_PLUS(2);
+                        }
+                        break;
+                    case ABILITY_DEFIANT:
+                        if (IsStatLoweringEffect(effect)
+                          && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_ATK))
+                        {
+                            RETURN_SCORE_PLUS(1);
+                        }
+                        break;
+                    case ABILITY_COMPETITIVE:
+                        if (IsStatLoweringEffect(effect)
+                          && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_SPATK))
+                        {
+                            RETURN_SCORE_PLUS(1);
+                        }
+                        break;            
                     }
-                    break;  // handled in AI_HPAware
-                case ABILITY_MOTOR_DRIVE:
-                    if (moveType == TYPE_ELECTRIC && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_SPEED))
-                    {
-                        RETURN_SCORE_PLUS(1);
-                    }
-                    break;
-                case ABILITY_LIGHTNING_ROD:
-                    if (moveType == TYPE_ELECTRIC
-                      && HasMoveWithSplit(battlerAtkPartner, SPLIT_SPECIAL)
-                      && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_SPATK))
-                    {
-                        RETURN_SCORE_PLUS(1);
-                    }
-                    break;
-                case ABILITY_WATER_ABSORB:
-                case ABILITY_DRY_SKIN:
-                    if (!(AI_THINKING_STRUCT->aiFlags & AI_FLAG_HP_AWARE))
-                    {
-                        RETURN_SCORE_MINUS(10);
-                    }
-                    break;  // handled in AI_HPAware
-                case ABILITY_STORM_DRAIN:
-                    if (moveType == TYPE_WATER
-                      && HasMoveWithSplit(battlerAtkPartner, SPLIT_SPECIAL)
-                      && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_SPATK))
-                    {
-                        RETURN_SCORE_PLUS(1);
-                    }
-                    break;
-                case ABILITY_WATER_COMPACTION:
-                    if (moveType == TYPE_WATER && GetMoveDamageResult(move) == MOVE_POWER_WEAK)
-                    {
-                        RETURN_SCORE_PLUS(1);   // only mon with this ability is weak to water so only make it okay if we do very little damage
-                    }
-                    RETURN_SCORE_MINUS(10);
-                    break;
-                case ABILITY_FLASH_FIRE:
-                    if (moveType == TYPE_FIRE
-                      && HasMoveWithType(battlerAtkPartner, TYPE_FIRE)
-                      && !(gBattleResources->flags->flags[battlerAtkPartner] & RESOURCE_FLAG_FLASH_FIRE))
-                    {
-                        RETURN_SCORE_PLUS(1);
-                    }
-                    break;
-                case ABILITY_SAP_SIPPER:
-                    if (moveType == TYPE_GRASS
-                      && HasMoveWithSplit(battlerAtkPartner, SPLIT_PHYSICAL)
-                      && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_ATK))
-                    {
-                        RETURN_SCORE_PLUS(1);
-                    }
-                    break;
-                case ABILITY_JUSTIFIED:
-                    if (moveType == TYPE_DARK
-                      && !IS_MOVE_STATUS(move)
-                      && HasMoveWithSplit(battlerAtkPartner, SPLIT_PHYSICAL)
-                      && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_ATK)
-                      && !CanIndexMoveFaintTarget(battlerAtk, battlerAtkPartner, AI_THINKING_STRUCT->movesetIndex, 1))
-                    {
-                        RETURN_SCORE_PLUS(1);
-                    }
-                    break;
-                case ABILITY_RATTLED:
-                    if (!IS_MOVE_STATUS(move)
-                      && (moveType == TYPE_DARK || moveType == TYPE_GHOST || moveType == TYPE_BUG)
-                      && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_SPEED)
-                      && !CanIndexMoveFaintTarget(battlerAtk, battlerAtkPartner, AI_THINKING_STRUCT->movesetIndex, 1))
-                    {
-                        RETURN_SCORE_PLUS(1);
-                    }
-                    break;
-                case ABILITY_CONTRARY:
-                    if (IsStatLoweringEffect(effect))
-                    {
-                        RETURN_SCORE_PLUS(2);
-                    }
-                    break;
-                case ABILITY_DEFIANT:
-                    if (IsStatLoweringEffect(effect)
-                      && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_ATK))
-                    {
-                        RETURN_SCORE_PLUS(1);
-                    }
-                    break;
-                case ABILITY_COMPETITIVE:
-                    if (IsStatLoweringEffect(effect)
-                      && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_SPATK))
-                    {
-                        RETURN_SCORE_PLUS(1);
-                    }
-                    break;            
                 }
             } // ability checks
         } // move power check

@@ -4397,7 +4397,7 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
 
 #define tState      data[0]
 #define tSpecies    data[1]
-//#define tAbilityNum data[2]
+#define tAbilityNum data[2] //TODO: unused
 #define tMonId      data[3]
 #define tOldFunc    4
 
@@ -4413,7 +4413,7 @@ void ItemUseCB_AbilityCapsule(u8 taskId, TaskFunc task)
 
 #undef tState
 #undef tSpecies
-//#undef tAbilityNum
+#undef tAbilityNum //TODO: unused
 #undef tMonId
 #undef tOldFunc
 

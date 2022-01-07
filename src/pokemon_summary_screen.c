@@ -142,7 +142,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
         u8 level; // 0x5
         u8 ribbonCount; // 0x6
         u8 ailment; // 0x7
-        //u8 abilityNum; // 0x8 //TODO: make sure we've properly updated this struct for multi ability
+        u8 abilityNum; // 0x8 //TODO: make sure we've properly updated this struct for multi ability
         u8 metLocation; // 0x9
         u8 metLevel; // 0xA
         u8 metGame; // 0xB

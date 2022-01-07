@@ -420,6 +420,7 @@ static void Cmd_drawlvlupbox(void);
 static void Cmd_resetsentmonsvalue(void);
 static void Cmd_setatktoplayer0(void);
 static void Cmd_makevisible(void);
+static void Cmd_recordability(void);
 static void Cmd_buffermovetolearn(void);
 static void Cmd_jumpifplayerran(void);
 static void Cmd_hpthresholds(void);
@@ -678,7 +679,7 @@ void (* const gBattleScriptingCommandsTable[])(void) =
     Cmd_resetsentmonsvalue,                      //0x6D
     Cmd_setatktoplayer0,                         //0x6E
     Cmd_makevisible,                             //0x6F
-    //Cmd_recordability,                         //0x70
+    Cmd_recordability,                           //0x70 //not used
     Cmd_buffermovetolearn,                       //0x71
     Cmd_jumpifplayerran,                         //0x72
     Cmd_hpthresholds,                            //0x73
@@ -1429,6 +1430,7 @@ static void Cmd_attackcanceler(void)
     {
         PREPARE_TYPE_BUFFER(gBattleTextBuff1, moveType);
         SET_BATTLER_TYPE(gBattlerAttacker, moveType);
+        gBattlerAbility = gBattlerAttacker;
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_ProteanActivates;
         return;
@@ -2390,9 +2392,7 @@ static void Cmd_resultmessage(void)
     if (gMoveResultFlags & MOVE_RESULT_MISSED && (!(gMoveResultFlags & MOVE_RESULT_DOESNT_AFFECT_FOE) || gBattleCommunication[MISS_TYPE] > B_MSG_AVOIDED_ATK))
     {
         if (gBattleCommunication[MISS_TYPE] > B_MSG_AVOIDED_ATK) // Wonder Guard or Levitate - show the ability pop-up
-        {
             CreateAbilityPopUp(gBattlerTarget, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0);
-        }
         stringId = gMissStringIds[gBattleCommunication[MISS_TYPE]];
         gBattleCommunication[MSG_DISPLAY] = 1;
     }
@@ -7253,6 +7253,11 @@ static void Cmd_makevisible(void)
     gBattlescriptCurrInstr += 2;
 }
 
+static void Cmd_recordability(void)
+{
+    return;
+}
+
 void BufferMoveToLearnIntoBattleTextBuff2(void)
 {
     PREPARE_MOVE_BUFFER(gBattleTextBuff2, gMoveToLearn);
@@ -7987,12 +7992,12 @@ static void Cmd_various(void)
             SET_STATCHANGER(STAT_ATK, 1, FALSE);
             PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_ATK);
             BattleScriptPush(gBattlescriptCurrInstr + 3);
-            gLastUsedAbility = ABILITY_MOXIE;
+            if (HasAbility(ABILITY_MOXIE, battlerAbilities))
+                gLastUsedAbility = ABILITY_MOXIE;
+            if (HasAbility(ABILITY_CHILLING_NEIGH, battlerAbilities))
+                gLastUsedAbility = ABILITY_CHILLING_NEIGH;
             if (HasAbility(ABILITY_AS_ONE_ICE_RIDER, battlerAbilities))
-            {
                 gLastUsedAbility = ABILITY_AS_ONE_ICE_RIDER;
-                gBattleScripting.abilityPopupOverwrite = ABILITY_CHILLING_NEIGH;
-            }
             gBattlescriptCurrInstr = BattleScript_RaiseStatOnFaintingTarget;
             return;
         }
@@ -8009,12 +8014,10 @@ static void Cmd_various(void)
             SET_STATCHANGER(STAT_SPATK, 1, FALSE);
             PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_SPATK);
             BattleScriptPush(gBattlescriptCurrInstr + 3);
-            gLastUsedAbility = ABILITY_GRIM_NEIGH;
+            if (HasAbility(ABILITY_GRIM_NEIGH, battlerAbilities))
+                gLastUsedAbility = ABILITY_GRIM_NEIGH;
             if (HasAbility(ABILITY_AS_ONE_SHADOW_RIDER, battlerAbilities))
-            {
                 gLastUsedAbility = ABILITY_AS_ONE_SHADOW_RIDER;
-                gBattleScripting.abilityPopupOverwrite = ABILITY_GRIM_NEIGH;
-            }
             gBattlescriptCurrInstr = BattleScript_RaiseStatOnFaintingTarget;
             return;
         }
@@ -8142,11 +8145,8 @@ static void Cmd_various(void)
 
             for (x = 0; x < NUM_ABILITY_SLOTS; x++)
             {
-                if (!IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gBattlerTarget].abilities[x]) 
-                    || gBattleMons[gBattlerTarget].abilities[x] != ABILITY_SIMPLE)
-                {
+                if (!IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gBattlerTarget].abilities[x]))
                     gBattleMons[gBattlerTarget].abilities[x] = ABILITY_SIMPLE;
-                }
             }
             gBattlescriptCurrInstr += 7;
             break;
@@ -9737,22 +9737,19 @@ static void Cmd_jumpifcantmakeasleep(void)
 {
     const u8 *jumpPtr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
     u16 abilities[NUM_ABILITY_SLOTS];
-    bool32 hasInsomnia, hasVitalSpirit;
     memcpy(abilities, GetBattlerAbilities(gBattlerTarget), sizeof(abilities));
-    hasInsomnia = HasAbility(ABILITY_INSOMNIA, abilities);
-    hasVitalSpirit = HasAbility(ABILITY_VITAL_SPIRIT, abilities);
 
     if (UproarWakeUpCheck(gBattlerTarget))
     {
         gBattlescriptCurrInstr = jumpPtr;
     }
-    else if (hasInsomnia)
+    else if (HasAbility(ABILITY_INSOMNIA, abilities))
     {
         gLastUsedAbility = ABILITY_INSOMNIA;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STAYED_AWAKE_USING;
         gBattlescriptCurrInstr = jumpPtr;
     }
-    else if (hasVitalSpirit)
+    else if (HasAbility(ABILITY_VITAL_SPIRIT, abilities))
     {
         gLastUsedAbility = ABILITY_VITAL_SPIRIT;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STAYED_AWAKE_USING;
@@ -12777,7 +12774,7 @@ static void Cmd_switchoutabilities(void)
     }
 
     gBattlescriptCurrInstr += 2;
-    }
+}
 
 static void Cmd_jumpifhasnohp(void)
 {

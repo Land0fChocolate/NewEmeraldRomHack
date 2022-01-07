@@ -498,6 +498,8 @@ void RecordKnownMove(u8 battlerId, u32 move)
     }
 }
 
+void RecordAbilityBattle(u8 battlerId, u16 abilityId) {}
+
 void ClearBattlerAbilityHistory(u8 battlerId) //TODO: this func may not be needed, if so remove usages.
 {
     BATTLE_HISTORY->abilities[battlerId] = ABILITY_NONE;
@@ -534,6 +536,8 @@ void SetBattlerData(u8 battlerId)
         struct Pokemon *illusionMon;
         u16 i;
 
+        memcpy(gBattleMons[battlerId].abilities, GetAbilitiesBySpecies(gBattleMons[battlerId].species), sizeof(gBattleMons[battlerId].abilities));
+
         if (BATTLE_HISTORY->itemEffects[battlerId] == 0)
             gBattleMons[battlerId].item = 0;
 
@@ -545,12 +549,7 @@ void SetBattlerData(u8 battlerId)
 
         // Simulate Illusion
         if ((illusionMon = GetIllusionMonPtr(battlerId)) != NULL)
-        {
             gBattleMons[battlerId].species = GetMonData(illusionMon, MON_DATA_SPECIES2);
-            //TODO: check if we need these lines
-            //u16 *speciesAbilities = GetAbilitiesBySpecies(gBaseStats[gBattleMons[battlerId].species]);
-            //memcpy(gBattleMons[battlerId].abilities, speciesAbilities, sizeof(gBattleMons[battlerId].abilities));
-        }
     }
 }
 
