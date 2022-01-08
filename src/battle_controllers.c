@@ -1187,16 +1187,19 @@ void BtlController_EmitChooseItem(u8 bufferId, u8 *arg1)
     PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 4);
 }
 
-void BtlController_EmitChoosePokemon(u8 bufferId, u8 caseId, u8 slotId, u8 *arg4) //TODO: make sure this works properly for multi ability
+void BtlController_EmitChoosePokemon(u8 bufferId, u8 caseId, u8 slotId, u8 *data) //TODO: make sure this works properly for multi ability
 {
     s32 i;
+    u16 ability = ABILITY_NONE; // we are using this dummy so the game doesn't get screwed up. 
 
     sBattleBuffersTransferData[0] = CONTROLLER_CHOOSEPOKEMON;
     sBattleBuffersTransferData[1] = caseId;
     sBattleBuffersTransferData[2] = slotId;
+    sBattleBuffersTransferData[3] = ability & 0xFF;
+    sBattleBuffersTransferData[7] = (ability >> 8) & 0xFF;
     for (i = 0; i < 3; i++)
-        sBattleBuffersTransferData[3 + i] = arg4[i];
-    PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 6);
+        sBattleBuffersTransferData[4 + i] = data[i];
+    PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 8);  // Only 7 bytes were written.
 }
 
 void BtlController_EmitCmd23(u8 bufferId)

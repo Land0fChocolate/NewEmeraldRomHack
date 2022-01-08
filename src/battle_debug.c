@@ -1631,7 +1631,7 @@ static void SetUpModifyArrows(struct BattleDebugMenu *data)
         data->modifyArrows.minValue = 0;
         data->modifyArrows.maxValue = ABILITIES_COUNT_GEN8 - 1;
         data->modifyArrows.maxDigits = 3;
-        data->modifyArrows.modifiedValPtr = &gBattleMons[data->battlerId].abilities;
+        data->modifyArrows.modifiedValPtr = &gBattleMons[data->battlerId].abilities[0]; //TODO: temporary patch placed. Update properly for multi ability.
         //memcpy(data->modifyArrows.modifiedValPtr, &gBattleMons[data->battlerId].abilities, sizeof(data->modifyArrows.modifiedValPtr)); //TODO: do we need this line instead of the one above?
         data->modifyArrows.typeOfVal = VAL_U16;
         data->modifyArrows.currValue = gBattleMons[data->battlerId].abilities[0]; //TODO: temporary patch placed. Update properly for multi ability.
