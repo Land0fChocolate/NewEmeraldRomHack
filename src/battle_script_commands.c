@@ -12695,7 +12695,7 @@ static void Cmd_trysetsnatch(void) // snatch
     }
 }
 
-static void Cmd_trygetintimidatetarget(void) //TODO: make sure this is properly updated for multi ability
+static void Cmd_trygetintimidatetarget(void)
 {
     u8 side;
     u16 ability = ABILITY_NONE, x;
@@ -12755,7 +12755,7 @@ static void Cmd_switchoutabilities(void)
 
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {
-        switch (abilities[x]) //TODO: make sure this is properly updated for multi ability
+        switch (abilities[x])
         {
         case ABILITY_NATURAL_CURE:
             gBattleMons[gActiveBattler].status1 = 0;

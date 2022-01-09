@@ -4220,8 +4220,8 @@ static u8 ForewarnChooseMove(u32 battler)
     free(data);
 }
 
-u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg) //TODO: make sure this func is properly updated for multi ability
-{ //TODO: ability variable passed in but not really used?
+u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
+{
     u8 effect = 0;
     u32 speciesAtk, speciesDef;
     u32 pidAtk, pidDef;
@@ -4857,7 +4857,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg) //TODO: 
                     {
                         gLastUsedAbility = ABILITY_RAIN_DISH;
                         BattleScriptPushCursorAndCallback(BattleScript_RainDishActivates);
-                        gBattleMoveDamage = gBattleMons[battler].maxHP / (HasAbility(ABILITY_RAIN_DISH, gLastUsedAbilities) ? 16 : 8); //TODO: isn't the Rain Dish check here redundant?
+                        gBattleMoveDamage = gBattleMons[battler].maxHP / (HasAbility(ABILITY_RAIN_DISH, gLastUsedAbilities) ? 16 : 8);
                         if (gBattleMoveDamage == 0)
                             gBattleMoveDamage = 1;
                         gBattleMoveDamage *= -1;
@@ -5612,8 +5612,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg) //TODO: 
                  && (IsMoveMakingContact(move, gBattlerAttacker))
                  && TARGET_TURN_DAMAGED
                  && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_FIRE)
-                 && !HasAbility(ABILITY_WATER_VEIL, GetBattlerAbilities(gBattlerAttacker)) //TODO: CanBeBurned already checks abilities? Possible redundancy.
-                 && !HasAbility(ABILITY_WATER_BUBBLE, GetBattlerAbilities(gBattlerAttacker)) //TODO: CanBeBurned already checks abilities? Possible redundancy.
                  && !(gBattleMons[gBattlerAttacker].status1 & STATUS1_ANY)
                  && CanBeBurned(gBattlerAttacker)
                  && (Random() % 3) == 0)

@@ -3555,7 +3555,7 @@ static void TryDoEventsBeforeFirstTurn(void)
         }
     }
 
-    if (gBattleStruct->switchInAbilitiesCounter == 0) //TODO: investigate for posible bug in multi ability
+    if (gBattleStruct->switchInAbilitiesCounter == 0)
     {
         for (i = 0; i < gBattlersCount; i++)
             gBattlerByTurnOrder[i] = i;

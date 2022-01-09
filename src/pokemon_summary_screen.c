@@ -3163,6 +3163,8 @@ static void PrintMonAbilityName(void)
 {
     u16 *abilities = GetAbilitiesBySpecies(sMonSummaryScreen->summary.species);
     PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY), gAbilityNames[abilities[0]], 0, 1, 0, 1); //TODO: temporary patch placed, update properly for multi ability (print all abilities)
+
+    //print a window for each ability (if ability = ABILITY_NONE don't print window, if no ability in slot window sizes of existing abilities should expand)
 }
 
 static void PrintMonAbilityDescription(void)

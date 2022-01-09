@@ -725,7 +725,7 @@ s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef)
     {
     case EFFECT_LEVEL_DAMAGE:
     case EFFECT_PSYWAVE:
-        dmg = gBattleMons[battlerAtk].level * (HasAbility(ABILITY_PARENTAL_BOND, AI_DATA->atkAbilities) ? 2 : 1); //TODO: pointer here?
+        dmg = gBattleMons[battlerAtk].level * (HasAbility(ABILITY_PARENTAL_BOND, AI_DATA->atkAbilities) ? 2 : 1);
         break;
     case EFFECT_DRAGON_RAGE:
         dmg = 40 * (HasAbility(ABILITY_PARENTAL_BOND, AI_DATA->atkAbilities) ? 2 : 1);

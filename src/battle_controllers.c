@@ -1105,7 +1105,7 @@ void BtlController_EmitPrintString(u8 bufferId, u16 stringID)
     stringInfo->moveType = gBattleMoves[gCurrentMove].type;
 
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
-        stringInfo->abilities[i] = gBattleMons[i].abilities[0]; //TODO: find a way to implement multi ability here (a temporary patch is made)
+        stringInfo->abilities[i] = gLastUsedAbility; //TODO: check this works properly for multi ability
     for (i = 0; i < TEXT_BUFF_ARRAY_COUNT; i++)
     {
         stringInfo->textBuffs[0][i] = gBattleTextBuff1[i];
@@ -1134,7 +1134,7 @@ void BtlController_EmitPrintSelectionString(u8 bufferId, u16 stringID)
     stringInfo->unk1605E = gBattleStruct->field_52;
 
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
-        stringInfo->abilities[i] = gBattleMons[i].abilities[0]; //TODO: find a way to implement multi ability here (a temporary patch is made)
+        stringInfo->abilities[i] = gLastUsedAbility; //TODO: check this works properly for multi ability
     for (i = 0; i < TEXT_BUFF_ARRAY_COUNT; i++)
     {
         stringInfo->textBuffs[0][i] = gBattleTextBuff1[i];
