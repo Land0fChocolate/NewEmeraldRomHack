@@ -62,7 +62,8 @@ static const u8 sColorChangeDescription[] = _(
 	"foe's last used move.");
 
 static const u8 sImmunityDescription[] = _(
-	"Grants poison immunity.");
+	"Grants poison status\n"
+	"immunity.");
 
 static const u8 sFlashFireDescription[] = _(
 	"Fire moves power up by\n"
@@ -106,8 +107,8 @@ static const u8 sLevitateDescription[] = _(
 
 static const u8 sEffectSporeDescription[] = _(
 	"Attackers who make contact\n"
-	"may become poisoned, asleep\n"
-	"or paralyzed.");
+	"may become poisoned,\n"
+	"asleep or paralyzed.");
 
 static const u8 sSynchronizeDescription[] = _(
 	"If inflicted by status,\n"
@@ -124,7 +125,7 @@ static const u8 sNaturalCureDescription[] = _(
 	"upon switching out.");
 
 static const u8 sLightningRodDescription[] = _(
-	"Draws electric moves. Gives\n"
+	"Draws electric moves. Has\n"
 	"electric immunity. Sp.Atk\n"
 	"boost when activated.");
 
@@ -209,7 +210,7 @@ static const u8 sPickupDescription[] = _(
 	"battle.");
 
 static const u8 sTruantDescription[] = _(
-	"Moves only every other"
+	"Moves only every other\n"
 	"turn.");
 
 static const u8 sHustleDescription[] = _(
@@ -222,14 +223,14 @@ static const u8 sCuteCharmDescription[] = _(
 	"may become attracted.");
 
 static const u8 sPlusDescription[] = _(
-	"Increases special attack by\n"
-	"50% when paired with Minus"
-	"or another Plus.");
+	"Increases special attack\n"
+	"by 50% when paired with\n"
+	"Minus or another Plus.");
 
 static const u8 sMinusDescription[] = _(
-	"Increases special attack by\n"
-	"50% when paired with Plus"
-	"or another Minus.");
+	"Increases special attack\n"
+	"by 50% when paired with\n"
+	"Plus or another Minus.");
 
 static const u8 sForecastDescription[] = _(
 	"Changes form with the\n"
@@ -240,7 +241,7 @@ static const u8 sStickyHoldDescription[] = _(
 	"user's held item.");
 
 static const u8 sShedSkinDescription[] = _(
-	"Chance to heal status at."
+	"Chance to heal status at.\n"
 	"the end of turn of 33%.");
 
 static const u8 sGutsDescription[] = _(
@@ -252,28 +253,28 @@ static const u8 sMarvelScaleDescription[] = _(
 	"if affected by status.");
 
 static const u8 sLiquidOozeDescription[] = _(
-	"Draining moves used on user\n"
-	"damage attacker rather than\n"
-	"heal.");
+	"Draining moves used on\n"
+	"user damage attacker\n"
+	"rather than heal.");
 
 static const u8 sOvergrowDescription[] = _(
-	"Grass moves power up by 50%\n"
-	"if user has less than" 
+	"Grass moves power up by\n"
+	"50% if user has less than\n" 
 	"1/3 HP.");
 
 static const u8 sBlazeDescription[] = _(
 	"Fire moves power up by 50%\n"
-	"if user has less than" 
+	"if user has less than\n" 
 	"1/3 HP.");
 
 static const u8 sTorrentDescription[] = _(
-	"Water moves power up by 50%\n"
-	"if user has less than" 
+	"Water moves power up by\n"
+	"50% if user has less than\n" 
 	"1/3 HP.");
 
 static const u8 sSwarmDescription[] = _(
 	"Bug moves power up by 50%\n"
-	"if user has less than" 
+	"if user has less than\n" 
 	"1/3 HP.");
 
 static const u8 sRockHeadDescription[] = _(
@@ -281,7 +282,7 @@ static const u8 sRockHeadDescription[] = _(
 
 static const u8 sDroughtDescription[] = _(
 	"Summons strong sunlight in\n"
-	"battle that lasts for 5"
+	"battle that lasts for 5\n"
 	"turns.");
 
 static const u8 sArenaTrapDescription[] = _(
@@ -311,8 +312,8 @@ static const u8 sTangledFeetDescription[] = _(
 
 static const u8 sMotorDriveDescription[] = _(
 	"Raises speed by 50%\n"
-	"if hit by an electric move."
-	"Grants electric immunity.");
+	"if hit by an electric move,\n"
+	"grants electric immunity.");
 
 static const u8 sRivalryDescription[] = _(
 	"Move power increased by\n"
@@ -336,7 +337,8 @@ static const u8 sAngerPointDescription[] = _(
 
 static const u8 sUnburdenDescription[] = _(
 	"When hold item is used or\n"
-	"lost, user speed is doubled.");
+	"lost, user speed is\n"
+	"doubled.");
 
 static const u8 sHeatproofDescription[] = _(
 	"Halves damage from fire\n"
@@ -347,13 +349,13 @@ static const u8 sSimpleDescription[] = _(
 	"doubled.");
 
 static const u8 sDrySkinDescription[] = _(
-	"Heals 1/8 hp in rain, 1/4 hp\n"
-	"from water moves. Loses 1/8\n"
-	"hp in strong sunlight.");
+	"Heals 1/8 hp in rain, 1/4\n"
+	"hp from water moves. Loses\n"
+	"1/8 hp in strong sunlight.");
 
 static const u8 sDownloadDescription[] = _(
-	"Raises Atk or Sp.Atk by one\n"
-	"stage depending on foe's"
+	"Raises Atk or Sp.Atk one\n"
+	"stage depending on foe's\n"
 	"lowest defensive stat.");
 
 static const u8 sIronFistDescription[] = _(
@@ -369,7 +371,8 @@ static const u8 sAdaptabilityDescription[] = _(
 	"deal 50% more damage.");
 
 static const u8 sSkillLinkDescription[] = _(
-	"Multi-hit moves hit 5 times.");
+	"Multi-hit moves always hit\n"
+	"5 times.");
 
 static const u8 sHydrationDescription[] = _(
 	"Cures status in rain.");
@@ -383,21 +386,22 @@ static const u8 sQuickFeetDescription[] = _(
 	"if affected by status.");
 
 static const u8 sNormalizeDescription[] = _(
-	"All moves become Normal-type\n"
-	"and increase in power by\n"
-	"20%.");
+	"All moves become Normal\n"
+	"type and increase in power\n"
+	"by 20%.");
 
 static const u8 sSniperDescription[] = _(
-	"Critical hits triple damage\n"
-	"instead of double.");
+	"Critical hits triple\n"
+	"damage instead of double.");
 
 static const u8 sMagicGuardDescription[] = _(
 	"Only damaged by attacks,\n"
 	"confusion and self harm.");
 
 static const u8 sNoGuardDescription[] = _(
-	"All moves used by or against\n"
-	"this Pokemon cannot miss.");
+	"All moves used by or\n"
+	"against this Pokemon\n"
+	"cannot miss.");
 
 static const u8 sStallDescription[] = _(
 	"Always moves last.");
@@ -411,15 +415,16 @@ static const u8 sLeafGuardDescription[] = _(
 	"in strong sunlight.");
 
 static const u8 sKlutzDescription[] = _(
-	"Prevents the effect of held\n"
-	"items.");
+	"Prevents the effect of\n"
+	"held items.");
 
 static const u8 sMoldBreakerDescription[] = _(
-	"Moves hit through abilities.");
+	"Moves hit through\n"
+	"abilities.");
 
 static const u8 sSuperLuckDescription[] = _(
-	"Critical hit ratio increased\n"
-	"by one stage.");
+	"Critical hit ratio\n"
+	"increased by one stage.");
 
 static const u8 sAftermathDescription[] = _(
 	"If user faints due to a\n"
@@ -451,8 +456,8 @@ static const u8 sSlowStartDescription[] = _(
 
 static const u8 sScrappyDescription[] = _(
 	"Allows user normal and\n"
-	"fighting moves to hit ghost\n"
-	"types.");
+	"fighting moves to hit\n"
+	"ghost types.");
 
 static const u8 sStormDrainDescription[] = _(
 	"Draws water moves. Gives\n"
@@ -482,8 +487,8 @@ static const u8 sMultitypeDescription[] = _(
 	"Changes type to its Plate."); //TODO: scheduled for update
 
 static const u8 sFlowerGiftDescription[] = _(
-	"Raises Atk and Sp.Def by\n"
-	"one stage in harsh sunlight.\n"
+	"Raises Atk and Sp.Def one\n"
+	"stage in harsh sunlight.\n"
 	"Cherrim also changes form.");
 
 static const u8 sBadDreamsDescription[] = _(
@@ -506,7 +511,8 @@ static const u8 sUnnerveDescription[] = _(
 
 static const u8 sDefiantDescription[] = _(
 	"If user stats are reduced\n"
-	"attack stat rises one stage.");
+	"attack stat rises one\n"
+	"stage.");
 
 static const u8 sDefeatistDescription[] = _(
 	"Atk and Sp.Atk halved when\n"
@@ -517,7 +523,7 @@ static const u8 sCursedBodyDescription[] = _(
 
 static const u8 sHealerDescription[] = _(
 	"User has 30% chance of\n"
-	"curing ally's status every"
+	"curing ally's status every\n"
 	"turn.");
 
 static const u8 sFriendGuardDescription[] = _(
@@ -525,7 +531,7 @@ static const u8 sFriendGuardDescription[] = _(
 	"damage.");
 
 static const u8 sWeakArmorDescription[] = _(
-	"If user is hit by a physical\n"
+	"If user hit by a physical\n"
 	"move, Def lowers one stage\n"
 	"and Speed rises two stages.");
 
@@ -540,23 +546,24 @@ static const u8 sMultiscaleDescription[] = _(
 	"full HP.");
 
 static const u8 sToxicBoostDescription[] = _(
-	"Ups user Attack by one stage\n"
-	"if poisoned.");
+	"Ups user Attack by one\n"
+	"stage if poisoned.");
 
 static const u8 sFlareBoostDescription[] = _(
-	"Ups user Sp.Atk by one stage\n"
-	"if burned.");
+	"Ups user Sp.Atk by one\n"
+	"stage if burned.");
 
 static const u8 sHarvestDescription[] = _(
 	"50% chance to recycle a\n"
 	"used Berry every turn.");
 
 static const u8 sTelepathyDescription[] = _(
-	"Can't be damaged by an ally.");
+	"Can't be damaged by an\n"
+	"ally.");
 
 static const u8 sMoodyDescription[] = _(
-	"Randomly raises a stat by\n"
-	"two stages and drops a stat\n"
+	"Randomly raises a stat two\n"
+	"stages and drops a stat\n"
 	"by one stage every turn.");
 
 static const u8 sOvercoatDescription[] = _(
@@ -571,7 +578,8 @@ static const u8 sSandRushDescription[] = _(
 
 static const u8 sWonderSkinDescription[] = _(
 	"Status moves are much more\n"
-	"likely to miss against user.");
+	"likely to miss against\n"
+	"user.");
 
 static const u8 sAnalyticDescription[] = _(
 	"Moving last boosts move\n"
@@ -579,7 +587,7 @@ static const u8 sAnalyticDescription[] = _(
 
 static const u8 sIllusionDescription[] = _(
 	"Comes out disguised as the\n"
-	"Pokemon in the back of the"
+	"Pokemon in the back of the\n"
 	"party.");
 
 static const u8 sImposterDescription[] = _(
@@ -587,8 +595,9 @@ static const u8 sImposterDescription[] = _(
 	"on switch.");
 
 static const u8 sInfiltratorDescription[] = _(
-	"Passes through barriers like\n"
-	"Reflect and Light SCreen.");
+	"Passes through barriers\n"
+	"like Reflect and Light\n"
+	"Screen.");
 
 static const u8 sMummyDescription[] = _(
 	"All opponent abilities are\n"
@@ -596,8 +605,8 @@ static const u8 sMummyDescription[] = _(
 	"contact.");
 
 static const u8 sMoxieDescription[] = _(
-	"KOs raise user Attack by one\n"
-	"stage.");
+	"KOs raise user Attack by\n"
+	"one stage.");
 
 static const u8 sJustifiedDescription[] = _(
 	"Hits by dark moves raise\n"
@@ -622,9 +631,9 @@ static const u8 sPranksterDescription[] = _(
 	"Status moves have priority.");
 
 static const u8 sSandForceDescription[] = _(
-	"Rock, ground and steel moves\n"
-	"power up by 30% during\n"
-	"sandstorm.");
+	"Rock, ground and steel\n"
+	"moves power up by 30%\n"
+	"during sandstorm.");
 
 static const u8 sZenModeDescription[] = _(
 	"Transforms at half HP");
@@ -642,19 +651,19 @@ static const u8 sFlowerVeilDescription[] = _(
 	"status affliction.");
 
 static const u8 sCheekPouchDescription[] = _(
-	"Eating Berries restores 1/3\n"
-	"HP.");
+	"Eating Berries restores\n"
+	"1/3 HP.");
 
 static const u8 sProteanDescription[] = _(
-	"Changes user type to that of\n"
-	"used move.");
+	"Changes user type to that\n"
+	"of used move.");
 
 static const u8 sFurCoatDescription[] = _(
 	"Doubles user defense stat.");
 
 static const u8 sBulletproofDescription[] = _(
-	"Protects user from ball and\n"
-	"bomb moves.");
+	"Protects user from ball\n"
+	"and bomb moves.");
 
 static const u8 sCompetitiveDescription[] = _(
 	"If user stats are reduced\n"
@@ -665,8 +674,9 @@ static const u8 sStrongJawDescription[] = _(
 	"moves by 50%.");
 
 static const u8 sRefrigerateDescription[] = _(
-	"Normal moves become Ice and\n"
-	"increase in power by 20%.");
+	"Normal moves become Ice\n"
+	"and increase in power by\n"
+	"20%.");
 
 static const u8 sSweetVeilDescription[] = _(
 	"Prevents allies from sleep.");
@@ -679,8 +689,8 @@ static const u8 sGaleWingsDescription[] = _(
 	"Flying moves have priority.");
 
 static const u8 sMegaLauncherDescription[] = _(
-	"Powers aura and pulse moves\n"
-	"by 50%.");
+	"Powers aura and pulse\n"
+	"moves by 50%.");
 
 static const u8 sGrassPeltDescription[] = _(
 	"Defense increased by 50%\n"
@@ -688,8 +698,8 @@ static const u8 sGrassPeltDescription[] = _(
 
 static const u8 sSymbiosisDescription[] = _(
 	"Passes its item to an ally\n"
-	"when an ally's item has been\n"
-	"consumed.");
+	"when an ally's item has\n"
+	"been consumed.");
 
 static const u8 sToughClawsDescription[] = _(
 	"Power of contact moves is\n"
@@ -702,8 +712,8 @@ static const u8 sPixilateDescription[] = _(
 
 static const u8 sGooeyDescription[] = _(
 	"Attackers who make contact\n"
-	"have their speed reduced by\n"
-	"one stage.");
+	"have their speed reduced\n"
+	"by one stage.");
 
 static const u8 sAerilateDescription[] = _(
 	"Normal moves become Flying\n"
@@ -747,12 +757,12 @@ static const u8 sWimpOutDescription[] = _(
 	"HP.");
 
 static const u8 sWaterCompactionDescription[] = _(
-	"Defense rises 2 stages when\n"
-	"hit by a water move.");
+	"Defense rises 2 stages\n"
+	"when hit by a water move.");
 
 static const u8 sMercilessDescription[] = _(
-	"Always crits versus poisoned\n"
-	"targets.");
+	"Always crits versus\n"
+	"poisoned targets.");
 
 static const u8 sShieldsDownDescription[] = _(
 	"Shell breaks at half HP.");
@@ -782,23 +792,26 @@ static const u8 sLongReachDescription[] = _(
 	"contact.");
 
 static const u8 sLiquidVoiceDescription[] = _(
-	"Sound moves type changed to\n"
-	"water.");
+	"Sound moves type changed\n"
+	"to water.");
 
 static const u8 sTriageDescription[] = _(
-	"Healing moves have priority.");
+	"Healing moves have\n"
+	"priority.");
 
 static const u8 sGalvanizeDescription[] = _(
-	"Normal moves become Electric\n"
-	"and increase in power by\n"
-	"20%.");
+	"Normal moves become\n"
+	"Electric and increase in\n"
+	"power by 20%.");
 
 static const u8 sSurgeSurferDescription[] = _(
-	"Doubles speed while electric\n"
-	"terrain is active.");
+	"Doubles speed while\n"
+	"electric terrain is active.");
 
 static const u8 sSchoolingDescription[] = _(
-	"Forms a school when strong.");
+	"Forms a school when level\n"
+	"20 or higher and above\n"
+	"25% HP.");
 
 static const u8 sDisguiseDescription[] = _(
 	"Decoy protects it once.");
@@ -833,9 +846,9 @@ static const u8 sBatteryDescription[] = _(
 	"one stage.");
 
 static const u8 sFluffyDescription[] = _(
-	"User takes half damage from\n"
-	"contact moves but double\n"
-	"from fire.");
+	"User takes half damage\n"
+	"from contact moves but\n"
+	"double from fire.");
 
 static const u8 sSoulHeartDescription[] = _(
 	"KOs raise user Sp.Atk by\n"
@@ -843,8 +856,8 @@ static const u8 sSoulHeartDescription[] = _(
 
 static const u8 sTanglingHairDescription[] = _(
 	"Attackers who make contact\n"
-	"have their speed reduced by\n"
-	"one stage.");
+	"have their speed reduced\n"
+	"by one stage.");
 
 static const u8 sReceiverDescription[] = _(
 	"Copies fainted ally's\n"
@@ -876,8 +889,8 @@ static const u8 sFullMetalBodyDescription[] = _(
 	"opponent.");
 
 static const u8 sNeuroforceDescription[] = _(
-	"User supereffective moves do\n"
-	"25% more damage.");
+	"User supereffective moves\n"
+	"do 25% more damage.");
 
 static const u8 sIntrepidSwordDescription[] = _(
 	"Increases attack by one\n"
@@ -888,8 +901,8 @@ static const u8 sDauntlessShieldDescription[] = _(
 	"stage on entry.");
 
 static const u8 sLiberoDescription[] = _(
-	"Changes user type to that of\n"
-	"used move.");
+	"Changes user type to that\n"
+	"of used move.");
 
 static const u8 sBallFetchDescription[] = _(
 	"Fetches failed Poké Ball.");
@@ -899,21 +912,22 @@ static const u8 sCottonDownDescription[] = _(
 	"stage when hit.");
 
 static const u8 sPropellerTailDescription[] = _(
-	"Ignores redirection effects\n"
-	"from target's moves and\n"
-	"abilities.");
+	"Ignores redirection\n"
+	"effects from target's\n"
+	"moves and abilities.");
 
 static const u8 sMirrorArmorDescription[] = _(
 	"Reflect stat decreases\n"
 	"to the attacker.");
 
 static const u8 sGulpMissileDescription[] = _(
-	"If hit, spits prey from sea.");
+	"If hit, spits prey from\n"
+	"sea.");
 
 static const u8 sStalwartDescription[] = _(
-	"Ignores redirection effects\n"
-	"from target's moves and\n"
-	"abilities.");
+	"Ignores redirection\n"
+	"effects from target's\n"
+	"moves and abilities.");
 
 static const u8 sSteamEngineDescription[] = _(
 	"User speed increases six\n"
@@ -921,8 +935,8 @@ static const u8 sSteamEngineDescription[] = _(
 	"or water move.");
 
 static const u8 sPunkRockDescription[] = _(
-	"User sound moves are powered\n"
-	"up by 30%. Also takes half\n"
+	"User sound moves power up\n"
+	"by 30%. Also takes half\n"
 	"damage from sound moves.");
 
 static const u8 sSandSpitDescription[] = _(
@@ -936,7 +950,8 @@ static const u8 sRipenDescription[] = _(
 	"Doubles effect of Berries.");
 
 static const u8 sIceFaceDescription[] = _(
-	"Take a free hit. Hail renews.");
+	"Take a free hit.\n"
+	"Hail renews.");
 
 static const u8 sPowerSpotDescription[] = _(
 	"Powers up ally moves by\n"
@@ -966,11 +981,12 @@ static const u8 sGorillaTacticsDescription[] = _(
 	"but locked to one move.");
 
 static const u8 sNeutralizingGasDescription[] = _(
-	"Other Pokemon abilities are\n"
-	"nullified.");
+	"Other Pokemon abilities\n"
+	"are nullified.");
 
 static const u8 sPastelVeilDescription[] = _(
-	"Protects allies from poison.");
+	"Protects allies from\n"
+	"poison.");
 
 static const u8 sHungerSwitchDescription[] = _(
 	"Changes form each turn.");
@@ -993,21 +1009,21 @@ static const u8 sDragonsMawDescription[] = _(
 	"powered up by 50%.");
 
 static const u8 sChillingNeighDescription[] = _(
-	"KOs raise user Attack by one\n"
-	"stage.");
+	"KOs raise user Attack by\n"
+	"one stage.");
 
 static const u8 sGrimNeighDescription[] = _(
-	"KOs raise user Sp.Atk by one\n"
-	"stage.");
+	"KOs raise user Sp.Atk by\n"
+	"one stage.");
 
 static const u8 sAsOneIceRiderDescription[] = _(
-	"KOs raise user Attack by one\n"
-	"stage."
+	"KOs raise user Attack by\n"
+	"one stage."
 	"Foes can't eat Berries.");
 
 static const u8 sAsOneShadowRiderDescription[] = _(
-	"KOs raise user Sp.Atk by one\n"
-	"stage."
+	"KOs raise user Sp.Atk by\n"
+	"one stage."
 	"Foes can't eat Berries.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
