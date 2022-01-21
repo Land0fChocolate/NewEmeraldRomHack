@@ -437,15 +437,15 @@ static const struct WindowTemplate sSummaryTemplate[] =
         .paletteNum = 6,
         .baseBlock = 67,
     },
-    // [PSS_LABEL_WINDOW_PROMPT_CANCEL] = {
-    //     .bg = 0,
-    //     .tilemapLeft = 22,
-    //     .tilemapTop = 0,
-    //     .width = 8,
-    //     .height = 2,
-    //     .paletteNum = 7,
-    //     .baseBlock = 89,
-    // },
+    [PSS_LABEL_WINDOW_PROMPT_CANCEL] = {
+        .bg = 0,
+        .tilemapLeft = 22,
+        .tilemapTop = 0,
+        .width = 8,
+        .height = 2,
+        .paletteNum = 7,
+        .baseBlock = 89,
+    },
     [PSS_LABEL_WINDOW_PROMPT_INFO] = {
         .bg = 0,
         .tilemapLeft = 22,
@@ -1634,9 +1634,7 @@ static void Task_HandleInput(u8 taskId) //TODO: update for abilities
             {
                 if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO) // abilities
                 {
-                    //StopPokemonAnimations();
                     PlaySE(SE_SELECT);
-                    //BeginCloseSummaryScreen(taskId);
                     SwitchToAbilitySelection(taskId);
                 }
                 else // Contest or Battle Moves
@@ -1720,7 +1718,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
         DestroySpriteAndFreeResources(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]]);
         break;
     case 2:
-        DestroySpriteAndFreeResources(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_BALL]]);
+        DestroySpriteAndFreeResources(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_BALL]]); //TODO: do one of these for the mon type
         break;
     case 3:
         CopyMonToSummaryStruct(&sMonSummaryScreen->currentMon);
@@ -1972,7 +1970,7 @@ static void SwitchToAbilitySelection(u8 taskId) //TODO:
         //ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS);
     HandleAbilityTilemap(9, -3);
     ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_INFO);
-    PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_SWITCH);
+    PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_CANCEL);
     //TilemapFiveMovesDisplay(sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][0], 3, FALSE);
     //TilemapFiveMovesDisplay(sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_CONTEST_MOVES][0], 1, FALSE);
     PrintMonAbilityDescription(ability); //replacing PrintMoveDetails()
@@ -2037,11 +2035,9 @@ static void ChangeSelectedAbility(s16 *taskData, s8 direction, u8 *abilityIndexP
 static void CloseAbilitySelectMode(u8 taskId) //TODO:
 {
     DestroyMoveSelectorSprites(SPRITE_ARR_ID_MOVE_SELECTOR1);
-    ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_SWITCH);
+    ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_CANCEL);
     PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_INFO);
     ClearWindowTilemap(PSS_DATA_WINDOW_INFO_MEMO);
-    BufferMonTrainerMemo();
-    PrintMonTrainerMemo();
     PrintMonAbilityDescription(0);
     //TilemapFiveMovesDisplay(sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][0], 3, TRUE);
     //TilemapFiveMovesDisplay(sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_CONTEST_MOVES][0], 1, TRUE);
@@ -2054,6 +2050,8 @@ static void CloseAbilitySelectMode(u8 taskId) //TODO:
     //     HandlePowerAccTilemap(0, 3);
     //     HandleAppealJamTilemap(0, 3, 0);
     // }
+    BufferMonTrainerMemo();
+    PrintMonTrainerMemo();
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(1);
     ScheduleBgCopyTilemapToVram(2);
@@ -2067,6 +2065,8 @@ static void SwitchToMoveSelection(u8 taskId)
     sMonSummaryScreen->firstMoveIndex = 0;
     move = sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex];
     ClearWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_SPECIES);
+    SetSpriteInvisibility(SPRITE_ARR_ID_MON_TYPE1, TRUE);
+    SetSpriteInvisibility(SPRITE_ARR_ID_MON_TYPE2, TRUE);
     //if (!gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_STATUS]].invisible)
         //ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS);
     HandlePowerAccTilemap(9, -3);
@@ -2233,6 +2233,8 @@ static void CloseMoveSelectMode(u8 taskId)
     DestroyMoveSelectorSprites(SPRITE_ARR_ID_MOVE_SELECTOR1);
     ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_SWITCH);
     PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_INFO);
+    SetSpriteInvisibility(SPRITE_ARR_ID_MON_TYPE1, FALSE);
+    SetSpriteInvisibility(SPRITE_ARR_ID_MON_TYPE2, FALSE);
     PrintMoveDetails(0);
     TilemapFiveMovesDisplay(sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][0], 3, TRUE);
     TilemapFiveMovesDisplay(sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_CONTEST_MOVES][0], 1, TRUE);
@@ -2639,7 +2641,7 @@ static void ChangeTilemap(const struct TilemapCtrl *unkStruct, u16 *dest, u8 c, 
     Free(alloced);
 }
 
-static void HandleAbilityTilemap(u16 a, s16 b) //TODO:
+static void HandleAbilityTilemap(u16 a, s16 b) //TODO: print description over trainer memo label
 {
     // if (b > sBattleMoveTilemapCtrl.field_6)
     //     b = sBattleMoveTilemapCtrl.field_6;
@@ -2675,7 +2677,7 @@ static void HandlePowerAccTilemap(u16 a, s16 b)
     }
 }
 
-static void Task_ShowPowerAccWindow(u8 taskId) //TODO: do something like this for abilities
+static void Task_ShowPowerAccWindow(u8 taskId) //TODO: do a similar window for ability description label?
 {
     s16 *data = gTasks[taskId].data;
     data[1] += data[0];
@@ -2781,7 +2783,7 @@ static void HandleStatusTilemap(u16 a, s16 b) //TODO: probably change
     // }
 }
 
-static void Task_ShowStatusWindow(u8 taskId) //TODO: probably change
+static void Task_ShowStatusWindow(u8 taskId) //TODO:
 {
     // s16 *data = gTasks[taskId].data;
     // data[1] += data[0];
@@ -2830,7 +2832,7 @@ static void TilemapFiveMovesDisplay(u16 *dst, u16 palette, bool8 remove)
     }
 }
 
-static void DrawPokerusCuredSymbol(struct Pokemon *mon) // This checks if the mon has been cured of pokerus //TODO: probably change
+static void DrawPokerusCuredSymbol(struct Pokemon *mon) // This checks if the mon has been cured of pokerus
 {
     if (!CheckPartyPokerus(mon, 0) && CheckPartyHasHadPokerus(mon, 0)) // If yes it draws the cured symbol
     {
@@ -3061,8 +3063,8 @@ static void PrintPageNamesAndStats(void)
     iconXPos = stringXPos - 16;
     if (iconXPos < 0)
         iconXPos = 0;
-    //PrintAOrBButtonIcon(PSS_LABEL_WINDOW_PROMPT_CANCEL, FALSE, iconXPos);
-    //PrintTextOnWindow(PSS_LABEL_WINDOW_PROMPT_CANCEL, gText_Cancel2, stringXPos, 1, 0, 0);
+    PrintAOrBButtonIcon(PSS_LABEL_WINDOW_PROMPT_CANCEL, FALSE, iconXPos);
+    PrintTextOnWindow(PSS_LABEL_WINDOW_PROMPT_CANCEL, gText_Cancel2, stringXPos, 1, 0, 0);
 
     stringXPos = GetStringRightAlignXOffset(1, gText_Info, 62);
     iconXPos = stringXPos - 16;
@@ -4309,7 +4311,7 @@ static void CreateSetStatusSprite(void) //TODO: may need tweaking, added ailment
     }
 }
 
-static void CreateMoveSelectorSprites(u8 idArrayStart) //TODO: copy some code here for abilities?
+static void CreateMoveSelectorSprites(u8 idArrayStart) //TODO:
 {
     u8 i;
     u8 *spriteIds = &sMonSummaryScreen->spriteIds[idArrayStart];
@@ -4344,7 +4346,7 @@ static void CreateMoveSelectorSprites(u8 idArrayStart) //TODO: copy some code he
 
         for (i = 0; i < MOVE_SELECTOR_SPRITES_COUNT; i++)
         {
-            spriteIds[i] = CreateSprite(&sMoveSelectorSpriteTemplate, i * 16 + 89, 40, subpriority);
+            spriteIds[i] = CreateSprite(&sMoveSelectorSpriteTemplate, i * 16 + 89, 64, subpriority);
             if (i == 0)
                 StartSpriteAnim(&gSprites[spriteIds[i]], 4); // left
             else if (i == 9)
