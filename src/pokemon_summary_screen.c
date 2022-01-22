@@ -123,6 +123,8 @@ enum
     SPRITE_ARR_ID_COUNT = SPRITE_ARR_ID_MOVE_SELECTOR2 + MOVE_SELECTOR_SPRITES_COUNT, // 30 to 39
 };
 
+u8 MemoWindow;
+
 #define TILE_EMPTY_APPEAL_HEART  0x1039
 #define TILE_FILLED_APPEAL_HEART 0x103A
 #define TILE_FILLED_JAM_HEART    0x103C
@@ -241,6 +243,7 @@ static void ShowCantForgetHMsWindow(u8 taskId);
 static void Task_HandleInputCantForgetHMsMoves(u8 taskId);
 static void DrawPagination(void);
 static void HandleAbilityDescriptionLabelTilemap(u16 a, s16 b);
+static void Task_ShowAbilityDescriptionLabelWindow(u8 taskId);
 static void HandlePowerAccTilemap(u16 a, s16 b);
 static void Task_ShowPowerAccWindow(u8 taskId);
 static void HandleAppealJamTilemap(u16 a, s16 b, u16 c);
@@ -381,14 +384,18 @@ struct TilemapCtrl
     u8 field_9;
 };
 
-static const u16 sStatusTilemap[] = INCBIN_U16("graphics/interface/status_tilemap.bin");
-static const struct TilemapCtrl sStatusTilemapCtrl1 =
+static const u16 sStatusTilemap[] = INCBIN_U16("graphics/interface/status_tilemap.bin"); //TODO: no longer used, remove
+static const struct TilemapCtrl sStatusTilemapCtrl1 = //TODO: no longer used, remove
 {
     sStatusTilemap, 1, 10, 2, 0, 18
 };
-static const struct TilemapCtrl sStatusTilemapCtrl2 =
+static const struct TilemapCtrl sStatusTilemapCtrl2 = //TODO: no longer used, remove
 {
     sStatusTilemap, 1, 10, 2, 0, 50
+};
+static const struct TilemapCtrl sAbilityDescriptionLabelTilemapCtrl =
+{
+    gSummaryScreenWindow_Tilemap, 1, 10, 2, 0, 50
 };
 static const struct TilemapCtrl sBattleMoveTilemapCtrl =
 {
@@ -1965,7 +1972,7 @@ static void SwitchToAbilitySelection(u8 taskId)
 
     sMonSummaryScreen->firstAbilityIndex = 0;
     ability = sMonSummaryScreen->summary.abilities[sMonSummaryScreen->firstAbilityIndex];
-    HandleAbilityDescriptionLabelTilemap(9, -3);
+    HandleAbilityDescriptionLabelTilemap(9, -3); //TODO: configure this
     ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_INFO);
     PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_CANCEL);
     PrintMonAbilityDescription(ability);
@@ -1976,7 +1983,7 @@ static void SwitchToAbilitySelection(u8 taskId)
     gTasks[taskId].func = Task_HandleInput_AbilitySelect;
 }
 
-static void ChangeSelectedAbility(s16 *taskData, s8 direction, u8 *abilityIndexPtr) //TODO: location of bug?
+static void ChangeSelectedAbility(s16 *taskData, s8 direction, u8 *abilityIndexPtr)
 {
     s8 i, newAbilityIndex;
     u16 ability;
@@ -2005,16 +2012,29 @@ static void ChangeSelectedAbility(s16 *taskData, s8 direction, u8 *abilityIndexP
         KeepMoveSelectorVisible(SPRITE_ARR_ID_MOVE_SELECTOR1);
 }
 
+static u8 AddWindowFromTemplateList(const struct WindowTemplate *template, u8 templateId)
+{
+    u8 *windowIdPtr = &sMonSummaryScreen->windowIds[templateId];
+    if (*windowIdPtr == WINDOW_NONE)
+    {
+        *windowIdPtr = AddWindow(&template[templateId]);
+        FillWindowPixelBuffer(*windowIdPtr, PIXEL_FILL(0));
+    }
+    return *windowIdPtr;
+}
+
 static void CloseAbilitySelectMode(u8 taskId)
 {
+    u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO);
+
+    //TODO: close AbilityDescriptionLabel here
     DestroyMoveSelectorSprites(SPRITE_ARR_ID_MOVE_SELECTOR1);
     ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_CANCEL);
     PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_INFO);
-    //ClearWindowTilemap(PSS_DATA_WINDOW_INFO_MEMO);
+    ClearWindowTilemap(windowId);
     //PrintMonAbilityDescription(0);
-    //AddAndFillMoveNamesWindow(); // This function seems to have no effect.
     BufferMonTrainerMemo();
-    PrintMonTrainerMemo();
+    PrintMonTrainerMemo(); //TODO: BUGFIX: get this to reprint memo
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(1);
     ScheduleBgCopyTilemapToVram(2);
@@ -2610,20 +2630,55 @@ static void ChangeTilemap(const struct TilemapCtrl *unkStruct, u16 *dest, u8 c, 
 
 static void HandleAbilityDescriptionLabelTilemap(u16 a, s16 b) //TODO: print description over trainer memo label
 {
-    // if (b > sBattleMoveTilemapCtrl.field_6)
-    //     b = sBattleMoveTilemapCtrl.field_6;
-    // if (b == 0 || b == sBattleMoveTilemapCtrl.field_6)
-    // {
-    //     ChangeTilemap(&sBattleMoveTilemapCtrl, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][0], b, TRUE);
-    // }
-    // else
-    // {
-    //     u8 taskId = FindTaskIdByFunc(Task_ShowPowerAccWindow);
-    //     if (taskId == TASK_NONE)
-    //         taskId = CreateTask(Task_ShowPowerAccWindow, 8);
-    //     gTasks[taskId].data[0] = b;
-    //     gTasks[taskId].data[1] = a;
-    // }
+    if (b > sAbilityDescriptionLabelTilemapCtrl.field_6)
+        b = sAbilityDescriptionLabelTilemapCtrl.field_6;
+    if (b == 0 || b == sAbilityDescriptionLabelTilemapCtrl.field_6)
+    {
+        ChangeTilemap(&sAbilityDescriptionLabelTilemapCtrl, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0], b, TRUE);
+    }
+    else
+    {
+        u8 taskId = FindTaskIdByFunc(Task_ShowAbilityDescriptionLabelWindow);
+        if (taskId == TASK_NONE)
+            taskId = CreateTask(Task_ShowAbilityDescriptionLabelWindow, 8);
+        gTasks[taskId].data[0] = b;
+        gTasks[taskId].data[1] = a;
+    }
+}
+
+static void Task_ShowAbilityDescriptionLabelWindow(u8 taskId) //TODO:
+{
+    u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO);
+    s16 *data = gTasks[taskId].data;
+    data[1] += data[0];
+    if (data[1] < 0)
+    {
+        data[1] = 0;
+    }
+    else if (data[1] > sAbilityDescriptionLabelTilemapCtrl.field_6)
+    {
+        data[1] = sAbilityDescriptionLabelTilemapCtrl.field_6;
+    }
+    ChangeTilemap(&sAbilityDescriptionLabelTilemapCtrl, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0], data[1], TRUE);
+    if (data[1] <= 0 || data[1] >= sAbilityDescriptionLabelTilemapCtrl.field_6)
+    {
+        // if (data[0] < 0)
+        // {
+        //     if (sMonSummaryScreen->currPageIndex == 2)
+        //         PutWindowTilemap(PSS_LABEL_WINDOW_MOVES_POWER_ACC);
+        // }
+        // else
+        // {
+        //     //if (!gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_STATUS]].invisible)
+        //         //PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS);
+        //     PutWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_SPECIES);
+        // }
+        PutWindowTilemap(windowId);
+        ScheduleBgCopyTilemapToVram(0);
+        DestroyTask(taskId);
+    }
+    ScheduleBgCopyTilemapToVram(1);
+    ScheduleBgCopyTilemapToVram(2);
 }
 
 static void HandlePowerAccTilemap(u16 a, s16 b)
@@ -2644,7 +2699,7 @@ static void HandlePowerAccTilemap(u16 a, s16 b)
     }
 }
 
-static void Task_ShowPowerAccWindow(u8 taskId) //TODO: do a similar window for ability description label?
+static void Task_ShowPowerAccWindow(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     data[1] += data[0];
@@ -3176,17 +3231,6 @@ static void ClearPageWindowTilemaps(u8 page)
     ScheduleBgCopyTilemapToVram(0);
 }
 
-static u8 AddWindowFromTemplateList(const struct WindowTemplate *template, u8 templateId)
-{
-    u8 *windowIdPtr = &sMonSummaryScreen->windowIds[templateId];
-    if (*windowIdPtr == WINDOW_NONE)
-    {
-        *windowIdPtr = AddWindow(&template[templateId]);
-        FillWindowPixelBuffer(*windowIdPtr, PIXEL_FILL(0));
-    }
-    return *windowIdPtr;
-}
-
 static void RemoveWindowByIndex(u8 windowIndex)
 {
     u8 *windowIdPtr = &sMonSummaryScreen->windowIds[windowIndex];
@@ -3292,24 +3336,21 @@ static void PrintMonOTID(void)
 static void PrintMonAbilityName(void)
 {
     u16 *abilities = sMonSummaryScreen->summary.abilities;
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITIES), gAbilityNames[abilities[0]], 0, 1, 0, 1);
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITIES), gAbilityNames[abilities[1]], 0, 16, 0, 1); //TODO: can I change text colour so it isn't printing white on white background?
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITIES), gAbilityNames[abilities[2]], 0, 31, 0, 1);
+
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITIES), gAbilityNames[abilities[0]], 0, 1, 0, 9);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITIES), gAbilityNames[abilities[1]], 0, 16, 0, 9);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITIES), gAbilityNames[abilities[2]], 0, 31, 0, 9);
 }
 
 static void PrintMonAbilityDescription(u16 ability)
 {
-    u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO); //rewrite the memo
-    //ClearWindowTilemap(windowId);
+    u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO);
+
     FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
     if (ability != ABILITY_NONE)
     {
         PrintTextOnWindow(windowId, gAbilityDescriptionPointers[ability], 1, 1, 0, 0);
         PutWindowTilemap(windowId);
-    }
-    else
-    {
-        ClearWindowTilemap(windowId);
     }
 
     ScheduleBgCopyTilemapToVram(0);
@@ -4275,7 +4316,7 @@ static void CreateSetStatusSprite(void) //TODO: may need tweaking, added ailment
     }
 }
 
-static void CreateMoveSelectorSprites(u8 idArrayStart) //TODO: clean up, dupe code
+static void CreateMoveSelectorSprites(u8 idArrayStart)
 {
     u8 i;
     u8 *spriteIds = &sMonSummaryScreen->spriteIds[idArrayStart];
