@@ -80,7 +80,7 @@ struct InGameTrade {
     /*0x00*/ u8 nickname[POKEMON_NAME_LENGTH + 1];
     /*0x0C*/ u16 species;
     /*0x0E*/ u8 ivs[NUM_STATS];
-    /*0x14*/ u8 abilityNum;
+    /*0x14*/ u8 abilityNum; //TODO: make sure that this is properly removed for multi ability
     /*0x18*/ u32 otId;
     /*0x1C*/ u8 conditions[CONTEST_CATEGORIES_COUNT];
     /*0x24*/ u32 personality;
@@ -4529,7 +4529,6 @@ static void _CreateInGameTradePokemon(u8 whichPlayerMon, u8 whichInGameTrade)
     SetMonData(pokemon, MON_DATA_NICKNAME, inGameTrade->nickname);
     SetMonData(pokemon, MON_DATA_OT_NAME, inGameTrade->otName);
     SetMonData(pokemon, MON_DATA_OT_GENDER, &inGameTrade->otGender);
-    SetMonData(pokemon, MON_DATA_ABILITY_NUM, &inGameTrade->abilityNum);
     SetMonData(pokemon, MON_DATA_BEAUTY, &inGameTrade->conditions[1]);
     SetMonData(pokemon, MON_DATA_CUTE, &inGameTrade->conditions[2]);
     SetMonData(pokemon, MON_DATA_COOL, &inGameTrade->conditions[0]);

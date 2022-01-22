@@ -4,14 +4,13 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 # TODO
 
-- Allow Pokemon to have up to 3 abilities at once
-	- Including remaking ability base stats and adding new abilities
-	- Updating the Pokemon status menu to show 3 abilities
-- Add physical/special tag to Pokemon moves in menus (If it isn't in already)
-- New Pokemon moves
-- Add credits of people whos tutorials and work you have used in the game
+- implement ability description label in the summary screen.
+- Include ORAS dex Pokemon like Budew and Dusknoir.
+- New Pokemon moves.
+- New Pokemon abilities.
+- Add credits of people whos tutorials and work you have used in the game.
 
-- End goal: Completely new Pokemon world
+- End goal: Completely new Pokemon world.
 
 # Credits
 
@@ -24,3 +23,4 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - aarant
 - SonikkuA-DatH
 - Xavion3
+- GriffinR

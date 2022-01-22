@@ -48,6 +48,7 @@
 	.include "src/sound.o"
 	.include "src/battle_anim.o"
 	.include "src/battle_anim_mons.o"
+	.include "src/battle_util.o"
 
 	.space 0xC
 	.include "src/field_weather.o"

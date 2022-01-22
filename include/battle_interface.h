@@ -95,12 +95,15 @@ void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elem
 s32 MoveBattleBar(u8 battler, u8 healthboxSpriteId, u8 whichBar, u8 arg3);
 u8 GetScaledHPFraction(s16 hp, s16 maxhp, u8 scale);
 u8 GetHPBarLevel(s16 hp, s16 maxhp);
-void CreateAbilityPopUp(u8 battlerId, u32 ability, bool32 isDoubleBattle);
+void CreateAbilityPopUp(u8 battlerId, bool32 isDoubleBattle);
+void UpdateAbilityPopup(u8 battlerId);
 void DestroyAbilityPopUp(u8 battlerId);
+void CreateMultiAbilityPopUp(u8 battlerId, bool32 isDoubleBattle);
+void UpdateMultiAbilityPopup(u8 battlerId);
+void DestroyMultiAbilityPopUp(u8 battlerId); //TODO: could I just use DestroyAbilityPopUp for the multi ability pop-up? 
 bool32 CanThrowLastUsedBall(void);
 void TryHideLastUsedBall(void);
 void TryRestoreLastUsedBall(void);
 void TryAddLastUsedBallItemSprites(void);
-void UpdateAbilityPopup(u8 battlerId);
 
 #endif // GUARD_BATTLE_INTERFACE_H

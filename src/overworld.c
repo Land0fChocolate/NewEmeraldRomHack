@@ -2,6 +2,7 @@
 #include "overworld.h"
 #include "battle_pyramid.h"
 #include "battle_setup.h"
+#include "battle_util.h"
 #include "berry.h"
 #include "bg.h"
 #include "cable_club.h"
@@ -1262,6 +1263,7 @@ static void PlayAmbientCry(void)
 void UpdateAmbientCry(s16 *state, u16 *delayCounter)
 {
     u8 i, monsCount, divBy;
+    u16 abilities[NUM_ABILITY_SLOTS];
 
     switch (*state)
     {
@@ -1278,10 +1280,12 @@ void UpdateAmbientCry(s16 *state, u16 *delayCounter)
     case 2:
         divBy = 1;
         monsCount = CalculatePlayerPartyCount();
+        memcpy(abilities, GetMonAbilities(&gPlayerParty[0]), sizeof(abilities));
+        
         for (i = 0; i < monsCount; i++)
         {
             if (!GetMonData(&gPlayerParty[i], MON_DATA_SANITY_IS_EGG)
-                && GetMonAbility(&gPlayerParty[0]) == ABILITY_SWARM)
+                && HasAbility(ABILITY_SWARM, abilities))
             {
                 divBy = 2;
                 break;

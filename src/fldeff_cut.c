@@ -22,6 +22,7 @@
 #include "constants/field_effects.h"
 #include "constants/songs.h"
 #include "constants/metatile_labels.h"
+#include "battle_util.h"
 
 extern struct MapPosition gPlayerFacingPosition;
 
@@ -140,7 +141,6 @@ bool8 SetUpFieldMove_Cut(void)
     s16 x, y;
     u8 i, j;
     u8 tileBehavior;
-    u16 userAbility;
     bool8 cutTiles[CUT_NORMAL_AREA];
     bool8 ret;
 
@@ -153,9 +153,9 @@ bool8 SetUpFieldMove_Cut(void)
     }
     else
     {
+        u16 *abilities = GetMonAbilities(&gPlayerParty[GetCursorSelectionMonId()]);
         PlayerGetDestCoords(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
-        userAbility = GetMonAbility(&gPlayerParty[GetCursorSelectionMonId()]);
-        if (userAbility == ABILITY_HYPER_CUTTER)
+        if (HasAbility(ABILITY_HYPER_CUTTER, abilities))
         {
             sCutSquareSide = CUT_HYPER_SIDE;
             sTileCountFromPlayer_X = 2;
@@ -209,7 +209,7 @@ bool8 SetUpFieldMove_Cut(void)
             }
         }
 
-        if (userAbility != ABILITY_HYPER_CUTTER)
+        if (!HasAbility(ABILITY_HYPER_CUTTER, abilities))
         {
             if (ret == TRUE)
             {

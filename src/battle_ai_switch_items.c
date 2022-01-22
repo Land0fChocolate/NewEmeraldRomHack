@@ -75,14 +75,15 @@ static bool8 ShouldSwitchIfWonderGuard(void)
     s32 firstId;
     s32 lastId; // + 1
     struct Pokemon *party = NULL;
-    u16 move;
+    u16 abilities[NUM_ABILITY_SLOTS], move;
 
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
         return FALSE;
 
     opposingPosition = BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler));
+    memcpy(abilities, GetBattlerAbilities(GetBattlerAtPosition(opposingPosition)), sizeof(abilities));
 
-    if (GetBattlerAbility(GetBattlerAtPosition(opposingPosition)) != ABILITY_WONDER_GUARD)
+    if (!HasAbility(ABILITY_WONDER_GUARD, abilities))
         return FALSE;
 
     // Check if Pokemon has a super effective move.
@@ -138,11 +139,11 @@ static bool8 ShouldSwitchIfWonderGuard(void)
 static bool8 FindMonThatAbsorbsOpponentsMove(void)
 {
     u8 battlerIn1, battlerIn2;
-    u16 absorbingTypeAbility;
+    u16 absorbingTypeAbility, abilities[NUM_ABILITY_SLOTS];
     s32 firstId;
     s32 lastId; // + 1
     struct Pokemon *party;
-    s32 i;
+    s32 i, x;
 
     if (HasSuperEffectiveMoveAgainstOpponents(TRUE) && Random() % 3 != 0)
         return FALSE;
@@ -176,7 +177,8 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
     else
         return FALSE;
 
-    if (AI_GetAbility(gActiveBattler) == absorbingTypeAbility)
+    memcpy(abilities, AI_GetAbilities(gActiveBattler), sizeof(abilities));
+    if (HasAbility(absorbingTypeAbility, abilities))
         return FALSE;
 
     GetAIPartyIndexes(gActiveBattler, &firstId, &lastId);
@@ -207,17 +209,16 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
             continue;
 
         species = GetMonData(&party[i], MON_DATA_SPECIES);
-        if (GetMonData(&party[i], MON_DATA_ABILITY_NUM) != 0)
-            monAbility = gBaseStats[species].abilities[1];
-        else
-            monAbility = gBaseStats[species].abilities[0];
 
-        if (absorbingTypeAbility == monAbility && Random() & 1)
+        for (x = 0; x < NUM_ABILITY_SLOTS; x++)
         {
-            // we found a mon.
-            *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = i;
-            BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
-            return TRUE;
+            if (absorbingTypeAbility == gBaseStats[species].abilities[x] && Random() & 1)
+            {
+                // we found a mon.
+                *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = i;
+                BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
+                return TRUE;
+            }
         }
     }
 
@@ -226,9 +227,11 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
 
 static bool8 ShouldSwitchIfNaturalCure(void)
 {
+    u16 *abilities = AI_GetAbilities(gActiveBattler);
+
     if (!(gBattleMons[gActiveBattler].status1 & STATUS1_SLEEP))
         return FALSE;
-    if (AI_GetAbility(gActiveBattler) != ABILITY_NATURAL_CURE)
+    if (!HasAbility(ABILITY_NATURAL_CURE, abilities))
         return FALSE;
     if (gBattleMons[gActiveBattler].hp < gBattleMons[gActiveBattler].maxHP / 2)
         return FALSE;
@@ -335,7 +338,7 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
     s32 lastId; // + 1
     struct Pokemon *party;
     s32 i, j;
-    u16 move;
+    u16 move, *abilities;
 
     if (gLastLandedMoves[gActiveBattler] == 0)
         return FALSE;
@@ -388,12 +391,9 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
             continue;
 
         species = GetMonData(&party[i], MON_DATA_SPECIES);
-        if (GetMonData(&party[i], MON_DATA_ABILITY_NUM) != 0)
-            monAbility = gBaseStats[species].abilities[1];
-        else
-            monAbility = gBaseStats[species].abilities[0];
+        memcpy(abilities, gBaseStats[species].abilities, sizeof(abilities));
 
-        CalcPartyMonTypeEffectivenessMultiplier(gLastLandedMoves[gActiveBattler], species, monAbility);
+        CalcPartyMonTypeEffectivenessMultiplier(gLastLandedMoves[gActiveBattler], species, abilities);
         if (gMoveResultFlags & flags)
         {
             battlerIn1 = gLastHitBy[gActiveBattler];
@@ -704,6 +704,7 @@ u8 GetMostSuitableMonToSwitchInto(void)
     struct Pokemon *party;
     s32 i, j, aliveCount = 0;
     u8 invalidMons = 0;
+    u16 *abilities = GetMonAbilities(&party[i]);
 
     if (*(gBattleStruct->monToSwitchIntoId + gActiveBattler) != PARTY_SIZE)
         return *(gBattleStruct->monToSwitchIntoId + gActiveBattler);
@@ -745,7 +746,7 @@ u8 GetMostSuitableMonToSwitchInto(void)
             || gBattlerPartyIndexes[battlerIn2] == i
             || i == *(gBattleStruct->monToSwitchIntoId + battlerIn1)
             || i == *(gBattleStruct->monToSwitchIntoId + battlerIn2)
-            || (GetMonAbility(&party[i]) == ABILITY_TRUANT && IsTruantMonVulnerable(gActiveBattler, opposingBattler))) // While not really invalid per say, not really wise to switch into this mon.
+            || (HasAbility(ABILITY_TRUANT, abilities) && IsTruantMonVulnerable(gActiveBattler, opposingBattler))) // While not really invalid per say, not really wise to switch into this mon.
             invalidMons |= gBitTable[i];
         else
             aliveCount++;

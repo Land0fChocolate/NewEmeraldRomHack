@@ -1105,7 +1105,7 @@ void BtlController_EmitPrintString(u8 bufferId, u16 stringID)
     stringInfo->moveType = gBattleMoves[gCurrentMove].type;
 
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
-        stringInfo->abilities[i] = gBattleMons[i].ability;
+        stringInfo->abilities[i] = gLastUsedAbility; //TODO: check this works properly for multi ability
     for (i = 0; i < TEXT_BUFF_ARRAY_COUNT; i++)
     {
         stringInfo->textBuffs[0][i] = gBattleTextBuff1[i];
@@ -1134,7 +1134,7 @@ void BtlController_EmitPrintSelectionString(u8 bufferId, u16 stringID)
     stringInfo->unk1605E = gBattleStruct->field_52;
 
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
-        stringInfo->abilities[i] = gBattleMons[i].ability;
+        stringInfo->abilities[i] = gLastUsedAbility; //TODO: check this works properly for multi ability
     for (i = 0; i < TEXT_BUFF_ARRAY_COUNT; i++)
     {
         stringInfo->textBuffs[0][i] = gBattleTextBuff1[i];
@@ -1187,17 +1187,18 @@ void BtlController_EmitChooseItem(u8 bufferId, u8 *arg1)
     PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 4);
 }
 
-void BtlController_EmitChoosePokemon(u8 bufferId, u8 caseId, u8 slotId, u16 abilityId, u8 *arg4)
+void BtlController_EmitChoosePokemon(u8 bufferId, u8 caseId, u8 slotId, u8 *data) //TODO: make sure this works properly for multi ability
 {
     s32 i;
+    u16 ability = ABILITY_NONE; // we are using this dummy so the game doesn't get screwed up. 
 
     sBattleBuffersTransferData[0] = CONTROLLER_CHOOSEPOKEMON;
     sBattleBuffersTransferData[1] = caseId;
     sBattleBuffersTransferData[2] = slotId;
-    sBattleBuffersTransferData[3] = abilityId & 0xFF;
-    sBattleBuffersTransferData[7] = (abilityId >> 8) & 0xFF;
+    sBattleBuffersTransferData[3] = ability & 0xFF;
+    sBattleBuffersTransferData[7] = (ability >> 8) & 0xFF;
     for (i = 0; i < 3; i++)
-        sBattleBuffersTransferData[4 + i] = arg4[i];
+        sBattleBuffersTransferData[4 + i] = data[i];
     PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 8);  // Only 7 bytes were written.
 }
 

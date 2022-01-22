@@ -111,7 +111,7 @@
 #define VARIOUS_SUCKER_PUNCH_CHECK              38
 #define VARIOUS_SET_SIMPLE_BEAM                 39
 #define VARIOUS_TRY_ENTRAINMENT                 40
-#define VARIOUS_SET_LAST_USED_ABILITY           41
+#define VARIOUS_SET_LAST_USED_ABILITIES         41
 #define VARIOUS_TRY_HEAL_PULSE                  42
 #define VARIOUS_TRY_QUASH                       43
 #define VARIOUS_INVERT_STAT_STAGES              44

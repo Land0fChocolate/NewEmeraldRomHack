@@ -2739,19 +2739,20 @@ static int SelectOpponentMonsFromParty(int *partyMovePoints, bool8 allowRandom)
 // arg2 is either 2, a personality, or an OTID
 static int GetTypeEffectivenessPoints(int move, int targetSpecies, int arg2)
 {
-    int defType1, defType2, defAbility, moveType;
+    int defType1, defType2, moveType;
     int i = 0;
     int typePower = TYPE_x1;
+    u16 *abilities;
 
     if (move == MOVE_NONE || move == 0xFFFF || gBattleMoves[move].power == 0)
         return 0;
 
     defType1 = gBaseStats[targetSpecies].type1;
     defType2 = gBaseStats[targetSpecies].type2;
-    defAbility = gBaseStats[targetSpecies].abilities[0];
+    memcpy(abilities, gBaseStats[targetSpecies].abilities, sizeof(abilities));
     moveType = gBattleMoves[move].type;
 
-    if (defAbility == ABILITY_LEVITATE && moveType == TYPE_GROUND)
+    if (HasAbility(ABILITY_LEVITATE, abilities) && moveType == TYPE_GROUND)
     {
         if (arg2 == 1)
             typePower = 8;
@@ -2765,7 +2766,7 @@ static int GetTypeEffectivenessPoints(int move, int targetSpecies, int arg2)
         if (defType2 != defType1)
             typePower = (typeEffectiveness2 * typePower) / 10;
 
-        if (defAbility == ABILITY_WONDER_GUARD && typeEffectiveness1 != 20 && typeEffectiveness2 != 20)
+        if (HasAbility(ABILITY_WONDER_GUARD, abilities) && typeEffectiveness1 != 20 && typeEffectiveness2 != 20)
             typePower = 0;
     }
 
@@ -5162,8 +5163,8 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
             {
                 u32 personality = 0;
                 u32 targetSpecies = 0;
-                u32 targetAbility = 0;
                 u32 typeMultiplier = 0;
+                u16 *targetAbilities = gBaseStats[targetSpecies].abilities;
                 do
                 {
                     personality = Random32();
@@ -5171,12 +5172,7 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
 
                 targetSpecies = gFacilityTrainerMons[DOME_MONS[loserTournamentId][k]].species;
 
-                if (personality & 1)
-                    targetAbility = gBaseStats[targetSpecies].abilities[1];
-                else
-                    targetAbility = gBaseStats[targetSpecies].abilities[0];
-
-                typeMultiplier = CalcPartyMonTypeEffectivenessMultiplier(moveIds[i * 4 + j], targetSpecies, targetAbility);
+                typeMultiplier = CalcPartyMonTypeEffectivenessMultiplier(moveIds[i * 4 + j], targetSpecies, targetAbilities);
                 if (typeMultiplier == UQ_4_12(0))
                     moveScores[i * MAX_MON_MOVES + j] += 0;
                 else if (typeMultiplier >= UQ_4_12(2))
