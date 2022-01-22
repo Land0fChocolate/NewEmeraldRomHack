@@ -2027,14 +2027,13 @@ static void CloseAbilitySelectMode(u8 taskId)
 {
     u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO);
 
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
     //TODO: close AbilityDescriptionLabel here
     DestroyMoveSelectorSprites(SPRITE_ARR_ID_MOVE_SELECTOR1);
     ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_CANCEL);
     PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_INFO);
-    ClearWindowTilemap(windowId);
-    //PrintMonAbilityDescription(0);
     BufferMonTrainerMemo();
-    PrintMonTrainerMemo(); //TODO: BUGFIX: get this to reprint memo
+    PrintMonTrainerMemo();
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(1);
     ScheduleBgCopyTilemapToVram(2);
