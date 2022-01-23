@@ -108,9 +108,9 @@ static const u8 sHeavyBallDesc[] = _(
     "Pokémon.");
 
 static const u8 sDreamBallDesc[] = _(
-    "A Poké Ball used in\n"
-    "the Entree Forest.\n"
-    "It doesn't fail.");
+    "A Ball that works\n"
+    "well on sleeping\n"
+    "Pokémon.");
 
 static const u8 sSafariBallDesc[] = _(
     "A special Ball that\n"
@@ -178,7 +178,7 @@ static const u8 sFreshWaterDesc[] = _(
 static const u8 sSodaPopDesc[] = _(
     "A fizzy soda drink\n"
     "that restores HP\n"
-    "by 50 points.");
+    "by 60 points.");
 
 static const u8 sLemonadeDesc[] = _(
     "A very sweet drink\n"
@@ -527,34 +527,34 @@ static const u8 sEscapeRopeDesc[] = _(
 
 // Battle items
 static const u8 sXAttackDesc[] = _(
-    "Raises the stat\n"
-    "Attack during one\n"
-    "battle.");
+    "Sharply raises stat\n"
+    "Attack during\n"
+    "one battle.");
 
 static const u8 sXDefenseDesc[] = _(
-    "Raises the stat\n"
-    "Defense during one\n"
-    "battle.");
+    "Sharply raises stat\n"
+    "Defense during\n"
+    "one battle.");
 
 static const u8 sXSpAtkDesc[] = _(
-    "Raises the stat\n"
-    "Sp. Atk during one\n"
-    "battle.");
+    "Sharply raises stat\n"
+    "Sp. Atk during\n"
+    "one battle.");
 
 static const u8 sXSpDefDesc[] = _(
-    "Raises the stat\n"
-    "Sp. Def during one\n"
-    "battle.");
+    "Sharply raises stat\n"
+    "Sp. Def during\n"
+    "one battle.");
 
 static const u8 sXSpeedDesc[] = _(
-    "Raises the stat\n"
-    "Speed during one\n"
-    "battle.");
+    "Sharply raises stat\n"
+    "Speed during\n"
+    "one battle.");
 
 static const u8 sXAccuracyDesc[] = _(
-    "Raises accuracy\n"
-    "of attack moves\n"
-    "during one battle.");
+    "Sharply raises move\n"
+    "accuracy during\n"
+    "one battle.");
 
 static const u8 sDireHitDesc[] = _(
     "Raises the\n"
@@ -1835,9 +1835,9 @@ static const u8 sDeepSeaToothDesc[] = _(
     "of Clamperl.");
 
 static const u8 sSoulDewDesc[] = _(
-    "Hold item: raises\n"
-    "Sp. Atk & Sp. Def of\n"
-    "Latios & Latias.");
+    "Powers up Latios' &\n"
+    "Latias' Psychic and\n"
+    "Dragon-type moves.");
 
 static const u8 sAdamantOrbDesc[] = _(
     "Boosts the power of\n"
@@ -2457,8 +2457,8 @@ static const u8 sLumBerryDesc[] = _(
 
 static const u8 sSitrusBerryDesc[] = _(
     "A hold item that\n"
-    "restores 30 HP in\n"
-    "battle.");
+    "restores the user's\n"
+    "HP a little.");
 
 static const u8 sFigyBerryDesc[] = _(
     "A hold item that\n"
