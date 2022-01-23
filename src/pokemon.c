@@ -8035,13 +8035,19 @@ u8 GetFormIdFromFormSpeciesId(u16 formSpeciesId)
 // returns SPECIES_NONE if no form change is possible
 u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg) 
 {
+    return GetFormChangeTargetSpeciesBoxMon(&mon->box, method, arg);
+}
+
+// Returns SPECIES_NONE if no form change is possible
+u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *mon, u16 method, u32 arg) 
+{
     u32 i;
-    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL), targetSpecies = SPECIES_NONE;
+    u16 species = GetBoxMonData(mon, MON_DATA_SPECIES, NULL), targetSpecies = SPECIES_NONE;
     const struct FormChange *formChanges = gFormChangeTablePointers[species];
 
     if (formChanges != NULL)
     {
-        u16 heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
+        u16 heldItem = GetBoxMonData(mon, MON_DATA_HELD_ITEM, NULL);
         u16 *abilities = GetAbilitiesBySpecies(species);
 
         for (i = 0; formChanges[i].method != FORM_CHANGE_END; i++)
@@ -8051,7 +8057,7 @@ u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg)
                 switch (method)
                 {
                 case FORM_ITEM_HOLD:
-                    if (heldItem == formChanges[i].param1)
+                    if (heldItem == formChanges[i].param1 || formChanges[i].param1 == ITEM_NONE)
                         targetSpecies = formChanges[i].targetSpecies;
                     break;
                 case FORM_ITEM_USE:
@@ -8059,11 +8065,12 @@ u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg)
                         targetSpecies = formChanges[i].targetSpecies;
                     break;
                 case FORM_MOVE:
-                    if (MonKnowsMove(mon, formChanges[i].param1) != formChanges[i].param2)
+                    if (BoxMonKnowsMove(mon, formChanges[i].param1) != formChanges[i].param2)
                         targetSpecies = formChanges[i].targetSpecies;
                     break;
                 case FORM_ITEM_HOLD_ABILITY:
-                    if (heldItem == formChanges[i].param1 && HasAbility(formChanges[i].param2, abilities))
+                    if ((heldItem == formChanges[i].param1 || formChanges[i].param1 == ITEM_NONE)
+                        && HasAbility(formChanges[i].param2, abilities))
                         targetSpecies = formChanges[i].targetSpecies;
                     break;
                 case FORM_ITEM_USE_TIME:

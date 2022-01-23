@@ -44,12 +44,12 @@ bool8 IsBGMPausedOrStopped(void);
 void FadeInBGM(u8 speed);
 void FadeOutBGM(u8 speed);
 bool8 IsBGMStopped(void);
-void PlayCry1(u16 species, s8 pan);
-void PlayCry2(u16 species, s8 pan, s8 volume, u8 priority);
-void PlayCry3(u16 species, s8 pan, u8 mode);
-void PlayCry4(u16 species, s8 pan, u8 mode);
-void PlayCry5(u16 species, u8 mode);
-void PlayCry6(u16 species, s8 pan, u8 mode);
+void PlayCry1(u16 species, s8 pan); //normal
+void PlayCry2(u16 species, s8 pan, s8 volume, u8 priority); //normal no ducking
+void PlayCry3(u16 species, s8 pan, u8 mode); // by mode
+void PlayCry4(u16 species, s8 pan, u8 mode);// release double
+void PlayCry5(u16 species, u8 mode); // script
+void PlayCry6(u16 species, s8 pan, u8 mode); // duck no restore
 void PlayCryInternal(u16 species, s8 pan, s8 volume, u8 priority, u8 mode);
 bool8 IsCryFinished(void);
 void StopCryAndClearCrySongs(void);
