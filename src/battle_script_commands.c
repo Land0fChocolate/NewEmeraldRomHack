@@ -12393,6 +12393,7 @@ static void Cmd_trycopyability(void) // role play
             if (!IsRolePlayBannedAbility(defAbilities[x]) && IsRolePlayBannedAbilityAtk(gBattleMons[gBattlerAttacker].abilities[x]))
                 gBattleMons[gBattlerAttacker].abilities[x] = defAbilities[x];
         }
+        //gBattleScripting.abilityPopupOverwrite = gBattleMons[gBattlerAttacker].ability; //TODO: do I need this line?
         memcpy(gLastUsedAbilities, defAbilities, sizeof(gLastUsedAbilities));
         gBattlescriptCurrInstr += 5;
     }
