@@ -2994,6 +2994,7 @@ static void BattleStartClearSetData(void)
     gBattleStruct->mega.triggerSpriteId = 0xFF;
 
     gBattleStruct->stickyWebUser = 0xFF;
+    gBattleStruct->appearedInBattle = 0;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -3632,6 +3633,9 @@ static void TryDoEventsBeforeFirstTurn(void)
         *(gBattleStruct->monToSwitchIntoId + i) = PARTY_SIZE;
         gChosenActionByBattler[i] = B_ACTION_NONE;
         gChosenMoveByBattler[i] = MOVE_NONE;
+        // Record party slots of player's mons that appeared in battle
+        if (!IsBattlerAIControlled(i))
+            gBattleStruct->appearedInBattle |= gBitTable[gBattlerPartyIndexes[i]];
     }
     TurnValuesCleanUp(FALSE);
     SpecialStatusesClear();

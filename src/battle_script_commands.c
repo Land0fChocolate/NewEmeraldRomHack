@@ -6183,6 +6183,9 @@ static void Cmd_switchineffects(void)
     gHitMarker &= ~(HITMARKER_FAINTED(gActiveBattler));
     gSpecialStatuses[gActiveBattler].flag40 = 0;
 
+    if (!IsBattlerAIControlled(gActiveBattler))
+        gBattleStruct->appearedInBattle |= gBitTable[gBattlerPartyIndexes[gActiveBattler]];
+
     // Neutralizing Gas announces itself before hazards
     if (HasAbility(ABILITY_NEUTRALIZING_GAS, gBattleMons[gActiveBattler].abilities) && gSpecialStatuses[gActiveBattler].announceNeutralizingGas == 0)
     {
