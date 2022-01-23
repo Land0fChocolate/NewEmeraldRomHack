@@ -3051,7 +3051,6 @@ void SwitchInClearSetData(void)
         gBattleMons[gActiveBattler].status2 = 0;
         gStatuses3[gActiveBattler] = 0;
     }
-
     gStatuses4[gActiveBattler] = 0;
 
     for (i = 0; i < gBattlersCount; i++)
