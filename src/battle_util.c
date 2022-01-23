@@ -2970,9 +2970,9 @@ u8 DoBattlerEndTurnEffects(void)
             gBattleStruct->turnEffectsTracker++;
             break;
         case ENDTURN_OCTOLOCK:
-            if (gDisableStructs[gActiveBattler].octolock 
-             && !(HasAbility(ABILITY_CLEAR_BODY, abilities) 
-                  || HasAbility(ABILITY_FULL_METAL_BODY, abilities) 
+            if (gDisableStructs[gActiveBattler].octolock
+             && !(HasAbility(ABILITY_CLEAR_BODY, abilities)
+                  || HasAbility(ABILITY_FULL_METAL_BODY, abilities)
                   || HasAbility(ABILITY_WHITE_SMOKE, abilities)))
             {
                 gBattlerTarget = gActiveBattler;
@@ -6027,10 +6027,11 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
     case ABILITYEFFECT_INTIMIDATE2:
         for (i = 0; i < gBattlersCount; i++)
         {
-            if (HasAbility(ABILITY_INTIMIDATE, GetBattlerAbilities(i)) && gBattleResources->flags->flags[i] & RESOURCE_FLAG_INTIMIDATED)
+            if (HasAbility(ABILITY_INTIMIDATE, GetBattlerAbilities(i)) && gBattleResources->flags->flags[i] & RESOURCE_FLAG_INTIMIDATED
+                && (IsBattlerAlive(BATTLE_OPPOSITE(i)) || IsBattlerAlive(BATTLE_PARTNER(BATTLE_OPPOSITE(i))))) // At least one opposing mon has to be alive.
             {
-                gLastUsedAbility = ABILITY_INTIMIDATE;
                 gBattleResources->flags->flags[i] &= ~(RESOURCE_FLAG_INTIMIDATED);
+                gLastUsedAbility = ABILITY_INTIMIDATE;
                 if (caseID == ABILITYEFFECT_INTIMIDATE1)
                 {
                     BattleScriptPushCursorAndCallback(BattleScript_IntimidateActivatesEnd3);
@@ -8960,6 +8961,10 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
     if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN && moveType == TYPE_PSYCHIC && IsBattlerGrounded(battlerAtk) && !(gStatuses3[battlerAtk] & STATUS3_SEMI_INVULNERABLE))
         MulModifier(&modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8) ? UQ_4_12(1.3) : UQ_4_12(1.5));
 
+    if ((gFieldStatuses & STATUS_FIELD_MUDSPORT && moveType == TYPE_ELECTRIC)
+         || (gFieldStatuses & STATUS_FIELD_WATERSPORT && moveType == TYPE_FIRE))
+        MulModifier(&modifier, UQ_4_12(0.23));
+
     return ApplyModifier(modifier, basePower);
 }
 
@@ -8968,9 +8973,11 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
     u8 atkStage;
     u32 atkStat;
     u16 modifier;
+    u16 atkBaseSpeciesId;
     u16 *abilities = GetBattlerAbilities(battlerDef);
     u8 x, y;
 
+    atkBaseSpeciesId = GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species);
     if (gBattleMoves[move].effect == EFFECT_FOUL_PLAY)
     {
         if (IS_MOVE_PHYSICAL(move))
@@ -9140,7 +9147,7 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
             MulModifier(&modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_LIGHT_BALL:
-        if (gBattleMons[battlerAtk].species == SPECIES_PIKACHU)
+        if (atkBaseSpeciesId == SPECIES_PIKACHU)
             MulModifier(&modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_CHOICE_BAND:
@@ -10447,13 +10454,13 @@ bool32 TryRoomService(u8 battlerId)
 void DoBurmyFormChange(u32 monId)
 {
     u16 newSpecies, currSpecies;
-    s32 sentIn;
     struct Pokemon *party = gPlayerParty;
 
-    sentIn = gSentPokesToOpponent[(gBattlerFainted & 2) >> 1];
     currSpecies = GetMonData(&party[monId], MON_DATA_SPECIES, NULL);
 
-    if ((GET_BASE_SPECIES_ID(currSpecies) == SPECIES_BURMY) && (gBitTable[monId] & sentIn))
+    if ((GET_BASE_SPECIES_ID(currSpecies) == SPECIES_BURMY) 
+        && (gBattleStruct->appearedInBattle & gBitTable[monId]) // Burmy appeared in battle
+        && GetMonData(&party[monId], MON_DATA_HP, NULL) != 0) // Burmy isn't fainted
     {
         switch (gBattleTerrain)
         {  

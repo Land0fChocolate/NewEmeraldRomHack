@@ -6400,7 +6400,8 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, u
                 break;
             case EVO_LEVEL_RAIN:
                 j = GetCurrentWeather();
-                if (j == WEATHER_RAIN || j == WEATHER_RAIN_THUNDERSTORM || j == WEATHER_DOWNPOUR)
+                if (gEvolutionTable[species][i].param <= level
+                 && (j == WEATHER_RAIN || j == WEATHER_RAIN_THUNDERSTORM || j == WEATHER_DOWNPOUR))
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_MAPSEC:
@@ -6411,6 +6412,53 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, u
                 currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
                 if (currentMap == gEvolutionTable[species][i].param)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                break;
+            case EVO_LEVEL_NATURE_AMPED:
+                if (gEvolutionTable[species][i].param <= level)
+                {
+                    u8 nature = GetNature(mon);
+                    switch (nature)
+                    {
+                        case NATURE_HARDY:
+                        case NATURE_BRAVE:
+                        case NATURE_ADAMANT:
+                        case NATURE_NAUGHTY:
+                        case NATURE_DOCILE:
+                        case NATURE_IMPISH:
+                        case NATURE_LAX:
+                        case NATURE_HASTY:
+                        case NATURE_JOLLY:
+                        case NATURE_NAIVE:
+                        case NATURE_RASH:
+                        case NATURE_SASSY:
+                        case NATURE_QUIRKY:
+                            targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                            break;
+                    }
+                }
+                break;
+            case EVO_LEVEL_NATURE_LOW_KEY:
+                if (gEvolutionTable[species][i].param <= level)
+                {
+                    u8 nature = GetNature(mon);
+                    switch (nature)
+                    {
+                        case NATURE_LONELY:
+                        case NATURE_BOLD:
+                        case NATURE_RELAXED:
+                        case NATURE_TIMID:
+                        case NATURE_SERIOUS:
+                        case NATURE_MODEST:
+                        case NATURE_MILD:
+                        case NATURE_QUIET:
+                        case NATURE_BASHFUL:
+                        case NATURE_CALM:
+                        case NATURE_GENTLE:
+                        case NATURE_CAREFUL:
+                            targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                            break;
+                    }
+                }
                 break;
             }
         }
@@ -8041,4 +8089,30 @@ u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg)
     }
     
     return species != targetSpecies ? targetSpecies : SPECIES_NONE;
+}
+
+u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove)
+{
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u8 level = GetMonData(mon, MON_DATA_LEVEL, NULL);
+
+    // Since you can learn more than one move per level,
+    // the game needs to know whether you decided to
+    // learn it or keep the old set to avoid asking
+    // you to learn the same move over and over again.
+    if (firstMove)
+    {
+        sLearningMoveTableID = 0;
+    }
+    while(gLevelUpLearnsets[species][sLearningMoveTableID].move != LEVEL_UP_END)
+    {
+        while (gLevelUpLearnsets[species][sLearningMoveTableID].level == 0 || gLevelUpLearnsets[species][sLearningMoveTableID].level == level)
+        {
+            gMoveToLearn = gLevelUpLearnsets[species][sLearningMoveTableID].move;
+            sLearningMoveTableID++;
+            return GiveMoveToMon(mon, gMoveToLearn);
+        }
+        sLearningMoveTableID++;
+    }
+    return 0;
 }
