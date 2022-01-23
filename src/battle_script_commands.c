@@ -3943,7 +3943,8 @@ static void Cmd_getexp(void)
                 gBattleScripting.getexpState = 5;
                 gBattleMoveDamage = 0; // used for exp
             }
-            else if (GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) == MAX_LEVEL)
+            else if ((gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && gBattleStruct->expGetterMonId >= 3)
+                || GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) == MAX_LEVEL)
             {
                 *(&gBattleStruct->sentInPokes) >>= 1;
                 gBattleScripting.getexpState = 5;
@@ -4135,6 +4136,28 @@ static void Cmd_getexp(void)
     }
 }
 
+#ifdef B_MULTI_BATTLE_WHITEOUT >= GEN_4
+static bool32 NoAliveMonsForPlayerAndPartner(void)
+{
+    u32 i;
+    u32 HP_count = 0;
+
+    if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && (gPartnerTrainerId == TRAINER_STEVEN_PARTNER || gPartnerTrainerId >= TRAINER_CUSTOM_PARTNER))
+    {
+        for (i = 0; i < PARTY_SIZE; i++)
+        {
+            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)
+             && (!(gBattleTypeFlags & BATTLE_TYPE_ARENA) || !(gBattleStruct->arenaLostPlayerMons & gBitTable[i])))
+            {
+                HP_count += GetMonData(&gPlayerParty[i], MON_DATA_HP);
+            }
+        }
+    }
+
+    return (HP_count == 0);
+}
+#endif
+
 static bool32 NoAliveMonsForPlayer(void)
 {
     u32 i;
@@ -4190,8 +4213,22 @@ static void Cmd_unknown_24(void)
     if (gBattleControllerExecFlags)
         return;
 
+#ifdef B_MULTI_BATTLE_WHITEOUT >= GEN_4
+    if (gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER))
+    {
+        if (NoAliveMonsForPlayerAndPartner())
+            gBattleOutcome |= B_OUTCOME_LOST;
+    }
+    else
+    {
+        if (NoAliveMonsForPlayer())
+            gBattleOutcome |= B_OUTCOME_LOST;
+    }
+#else
+
     if (NoAliveMonsForPlayer())
         gBattleOutcome |= B_OUTCOME_LOST;
+#endif
     if (NoAliveMonsForOpponent())
         gBattleOutcome |= B_OUTCOME_WON;
 
