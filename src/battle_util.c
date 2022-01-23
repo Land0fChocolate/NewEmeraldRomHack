@@ -2970,9 +2970,9 @@ u8 DoBattlerEndTurnEffects(void)
             gBattleStruct->turnEffectsTracker++;
             break;
         case ENDTURN_OCTOLOCK:
-            if (gDisableStructs[gActiveBattler].octolock 
-             && !(HasAbility(ABILITY_CLEAR_BODY, abilities) 
-                  || HasAbility(ABILITY_FULL_METAL_BODY, abilities) 
+            if (gDisableStructs[gActiveBattler].octolock
+             && !(HasAbility(ABILITY_CLEAR_BODY, abilities)
+                  || HasAbility(ABILITY_FULL_METAL_BODY, abilities)
                   || HasAbility(ABILITY_WHITE_SMOKE, abilities)))
             {
                 gBattlerTarget = gActiveBattler;
@@ -6027,10 +6027,11 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
     case ABILITYEFFECT_INTIMIDATE2:
         for (i = 0; i < gBattlersCount; i++)
         {
-            if (HasAbility(ABILITY_INTIMIDATE, GetBattlerAbilities(i)) && gBattleResources->flags->flags[i] & RESOURCE_FLAG_INTIMIDATED)
+            if (HasAbility(ABILITY_INTIMIDATE, GetBattlerAbilities(i)) && gBattleResources->flags->flags[i] & RESOURCE_FLAG_INTIMIDATED
+                && (IsBattlerAlive(BATTLE_OPPOSITE(i)) || IsBattlerAlive(BATTLE_PARTNER(BATTLE_OPPOSITE(i))))) // At least one opposing mon has to be alive.
             {
-                gLastUsedAbility = ABILITY_INTIMIDATE;
                 gBattleResources->flags->flags[i] &= ~(RESOURCE_FLAG_INTIMIDATED);
+                gLastUsedAbility = ABILITY_INTIMIDATE;
                 if (caseID == ABILITYEFFECT_INTIMIDATE1)
                 {
                     BattleScriptPushCursorAndCallback(BattleScript_IntimidateActivatesEnd3);
