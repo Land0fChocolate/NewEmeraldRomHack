@@ -8969,9 +8969,11 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
     u8 atkStage;
     u32 atkStat;
     u16 modifier;
+    u16 atkBaseSpeciesId;
     u16 *abilities = GetBattlerAbilities(battlerDef);
     u8 x, y;
 
+    atkBaseSpeciesId = GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species);
     if (gBattleMoves[move].effect == EFFECT_FOUL_PLAY)
     {
         if (IS_MOVE_PHYSICAL(move))
@@ -9141,7 +9143,7 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
             MulModifier(&modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_LIGHT_BALL:
-        if (gBattleMons[battlerAtk].species == SPECIES_PIKACHU)
+        if (atkBaseSpeciesId == SPECIES_PIKACHU)
             MulModifier(&modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_CHOICE_BAND:
