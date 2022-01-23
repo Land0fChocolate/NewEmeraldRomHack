@@ -2860,15 +2860,15 @@ static const struct SpriteTemplate sSpriteTemplate_AbilityPopUp2 =
 static const s16 sAbilityPopUpCoordsDoubles[MAX_BATTLERS_COUNT][2] =
 {
     {29, 80}, // player left
-    {204, 19}, // opponent left
+    {186, 19}, // opponent left
     {29, 97}, // player right
-    {204, 36}, // opponent right
+    {186, 36}, // opponent right
 };
 
 static const s16 sAbilityPopUpCoordsSingles[MAX_BATTLERS_COUNT][2] =
 {
-    {29, 93}, // player
-    {204, 23}, // opponent
+    {29, 97}, // player
+    {186, 57}, // opponent
 };
 
 static u8* AddTextPrinterAndCreateWindowOnAbilityPopUp(const u8 *str, u32 x, u32 y, u32 color1, u32 color2, u32 color3, u32 *windowId)
@@ -2879,7 +2879,7 @@ static u8* AddTextPrinterAndCreateWindowOnAbilityPopUp(const u8 *str, u32 x, u32
     winTemplate.height = 2;
 
     *windowId = AddWindow(&winTemplate);
-    FillWindowPixelBuffer(*windowId, (color1 << 4) | (color1));
+    FillWindowPixelBuffer(*windowId, PIXEL_FILL(color1));
 
     AddTextPrinterParameterized4(*windowId, 0, x, y, 0, 0, color, -1, str);
     return (u8*)(GetWindowAttribute(*windowId, WINDOW_TILE_DATA));
@@ -2908,10 +2908,10 @@ static void PrintOnAbilityPopUp(const u8 *str, u8 *spriteTileData1, u8 *spriteTi
 {
     u32 windowId, i;
     u8 *windowTileData;
-    u8 text1[MAX_CHARS_PRINTED + 2];
-    u8 text2[MAX_CHARS_PRINTED + 2];
+    u8 text1[MAX_CHARS_PRINTED];
+    u8 text2[MAX_CHARS_PRINTED];
 
-    for (i = 0; i < MAX_CHARS_PRINTED + 1; i++)
+    for (i = 0; i < MAX_CHARS_PRINTED; i++)
     {
         text1[i] = str[i];
         if (text1[i] == EOS)
@@ -2923,7 +2923,7 @@ static void PrintOnAbilityPopUp(const u8 *str, u8 *spriteTileData1, u8 *spriteTi
     TextIntoAbilityPopUp(spriteTileData1, windowTileData, 8, (y == 0));
     RemoveWindow(windowId);
 
-    if (i == MAX_CHARS_PRINTED + 1)
+    if (i == MAX_CHARS_PRINTED)
     {
         for (i = 0; i < MAX_CHARS_PRINTED; i++)
         {
@@ -2934,9 +2934,20 @@ static void PrintOnAbilityPopUp(const u8 *str, u8 *spriteTileData1, u8 *spriteTi
         text2[i] = EOS;
 
         windowTileData = AddTextPrinterAndCreateWindowOnAbilityPopUp(text2, x2, y, color1, color2, color3, &windowId);
-        TextIntoAbilityPopUp(spriteTileData2, windowTileData, 1, (y == 0));
+        TextIntoAbilityPopUp(spriteTileData2, windowTileData, 3, (y == 0));
         RemoveWindow(windowId);
     }
+}
+
+static const u8 sText_Space16[]= _("                ");
+static void ClearAbilityName(u8 spriteId1, u8 spriteId2)
+{
+    PrintOnAbilityPopUp(sText_Space16,
+                        (void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32) + 256,
+                        (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 256,
+                        6, 1,
+                        4,
+                        7, 9, 1);
 }
 
 static void PrintBattlerOnAbilityPopUp(u8 battlerId, u8 spriteId1, u8 spriteId2)
@@ -2981,7 +2992,7 @@ static void PrintAbilityOnAbilityPopUp(u32 ability, u8 spriteId1, u8 spriteId2)
     PrintOnAbilityPopUp(gAbilityNames[ability],
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32) + 256,
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 256,
-                        7, 1,
+                        6, 1,
                         4,
                         7, 9, 1);
 }
@@ -3052,6 +3063,20 @@ static const u16 sOverwrittenPixelsTable[][2] =
     {PIXEL_COORDS_TO_OFFSET(0, 24), 3},
     {PIXEL_COORDS_TO_OFFSET(0, 25), 3},
     {PIXEL_COORDS_TO_OFFSET(0, 26), 3},
+
+    //Second Row Of Image
+    {PIXEL_COORDS_TO_OFFSET(0, 45), 8},
+    {PIXEL_COORDS_TO_OFFSET(0, 46), 8},
+    {PIXEL_COORDS_TO_OFFSET(0, 47), 8},
+    //{PIXEL_COORDS_TO_OFFSET(0, 48), 8}, // cuts off the top of the 'G' in Neutralizing Gas
+    {PIXEL_COORDS_TO_OFFSET(8, 45), 8},
+    {PIXEL_COORDS_TO_OFFSET(8, 46), 8},
+    {PIXEL_COORDS_TO_OFFSET(8, 47), 8},
+    {PIXEL_COORDS_TO_OFFSET(8, 48), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 45), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 46), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 47), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 48), 8},
 };
 
 static inline void CopyPixels(u8 *dest, const u8 *src, u32 pixelCount)
@@ -3179,6 +3204,7 @@ void UpdateAbilityPopup(u8 battlerId)
     u8 spriteId2 = gBattleStruct->abilityPopUpSpriteIds[battlerId][1];
     u16 ability = gLastUsedAbility;
 
+    ClearAbilityName(spriteId1, spriteId2);
     PrintAbilityOnAbilityPopUp(ability, spriteId1, spriteId2);
     RestoreOverwrittenPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
 }
