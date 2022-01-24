@@ -3766,7 +3766,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_GRASS,
-        .abilities = {ABILITY_OVERGROW, ABILITY_LEAF_GUARD, ABILITY_NONE}, //TODO: create ABILITY_MIRACLE_BLOSSOM
+        .abilities = {ABILITY_OVERGROW, ABILITY_LEAF_GUARD, ABILITY_MIRACLE_BLOSSOM},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
     },
@@ -3791,7 +3791,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_GRASS,
-        .abilities = {ABILITY_OVERGROW, ABILITY_LEAF_GUARD, ABILITY_NONE}, //TODO: create ABILITY_MIRACLE_BLOSSOM
+        .abilities = {ABILITY_OVERGROW, ABILITY_LEAF_GUARD, ABILITY_MIRACLE_BLOSSOM},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
     },
@@ -3840,7 +3840,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_BLAZE, ABILITY_FLASH_FIRE, ABILITY_NONE}, //TODO: create ABILITY_WILDFIRE
+        .abilities = {ABILITY_BLAZE, ABILITY_FLASH_FIRE, ABILITY_WILDFIRE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },
@@ -3864,7 +3864,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_BLAZE, ABILITY_FLASH_FIRE, ABILITY_NONE}, //TODO: create ABILITY_WILDFIRE
+        .abilities = {ABILITY_BLAZE, ABILITY_FLASH_FIRE, ABILITY_WILDFIRE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },
@@ -5349,7 +5349,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_MAGMA_ARMOR, ABILITY_FLAME_BODY, ABILITY_NONE}, //TODO: create ABILITY_LAVA_BODY
+        .abilities = {ABILITY_MAGMA_ARMOR, ABILITY_LAVA_BODY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -5373,7 +5373,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_MAGMA_ARMOR, ABILITY_FLAME_BODY, ABILITY_AFTERMATH}, //TODO: create ABILITY_LAVA_BODY
+        .abilities = {ABILITY_MAGMA_ARMOR, ABILITY_LAVA_BODY, ABILITY_AFTERMATH},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = TRUE,
     },
@@ -6260,7 +6260,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_BLAZE, ABILITY_INNER_FOCUS, ABILITY_NONE},
+        .abilities = {ABILITY_BLAZE, ABILITY_INNER_FOCUS, ABILITY_MIRACLE_BLOSSOM},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -7243,7 +7243,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_SOUNDPROOF, ABILITY_VOLUME_UP, ABILITY_SCRAPPY}, //TODO: create ABILITY_VOLUME_UP
+        .abilities = {ABILITY_SOUNDPROOF, ABILITY_VOLUME_UP, ABILITY_SCRAPPY},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -7267,7 +7267,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_SOUNDPROOF, ABILITY_VOLUME_UP, ABILITY_SCRAPPY}, //TODO: create ABILITY_VOLUME_UP
+        .abilities = {ABILITY_SOUNDPROOF, ABILITY_VOLUME_UP, ABILITY_SCRAPPY},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -8843,7 +8843,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_LEVITATE, ABILITY_SOUNDPROOF, ABILITY_MAGIC_GUARD}, //TODO: create ABILITY_VOLUME_UP
+        .abilities = {ABILITY_LEVITATE, ABILITY_SOUNDPROOF, ABILITY_MAGIC_GUARD},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },

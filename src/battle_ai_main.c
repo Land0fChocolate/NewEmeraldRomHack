@@ -1852,7 +1852,8 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 {
                     if (GetBattlerSecondaryDamage(battlerAtk) >= gBattleMons[battlerAtk].hp
                       && !HasAbility(ABILITY_MOXIE, AI_DATA->defAbilities)
-                      && !HasAbility(ABILITY_BEAST_BOOST, AI_DATA->defAbilities))
+                      && !HasAbility(ABILITY_BEAST_BOOST, AI_DATA->defAbilities)
+                      && !HasAbility(ABILITY_WILDFIRE, AI_DATA->defAbilities))
                     {
                         score -= 10; //Don't protect if you're going to faint after protecting
                     }
@@ -3026,6 +3027,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case ABILITY_GRIM_NEIGH:
         case ABILITY_AS_ONE_ICE_RIDER:
         case ABILITY_AS_ONE_SHADOW_RIDER:
+        case ABILITY_WILDFIRE:
             if (GetWhoStrikesFirst(battlerAtk, battlerDef, TRUE) == 0) // attacker should go first
             {
                 if (CanIndexMoveFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 0))

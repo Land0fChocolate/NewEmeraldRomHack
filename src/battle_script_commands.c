@@ -7767,6 +7767,34 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr += 7;
         }
         return;
+    case VARIOUS_CHECK_IF_MIRACLE_BLOSSOM_HEALS:
+        if ((BATTLER_MAX_HP(gActiveBattler) //TODO: is this check redundant?
+            || !gBattleMons[gActiveBattler].hp)
+            && (!IsBattlerAlive(BATTLE_PARTNER(gActiveBattler)) || BATTLER_MAX_HP(BATTLE_PARTNER(gActiveBattler))))
+        {
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
+        }
+        else
+        {
+            if (!BATTLER_MAX_HP(gActiveBattler))
+            {
+                gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / 8;
+                if (gBattleMoveDamage == 0)
+                    gBattleMoveDamage = 1;
+                gBattleMoveDamage *= -1;
+            }
+
+            if (!BATTLER_MAX_HP(BATTLE_PARTNER(gActiveBattler)))
+            {
+                gBattleMoveDamage = gBattleMons[BATTLE_PARTNER(gActiveBattler)].maxHP / 8;
+                if (gBattleMoveDamage == 0)
+                    gBattleMoveDamage = 1;
+                gBattleMoveDamage *= -1;
+            }
+
+            gBattlescriptCurrInstr += 7;
+        }
+        return;
     case VARIOUS_GRAVITY_ON_AIRBORNE_MONS:
         if (gStatuses3[gActiveBattler] & STATUS3_ON_AIR)
             CancelMultiTurnMoves(gActiveBattler);
@@ -8055,7 +8083,8 @@ static void Cmd_various(void)
     case VARIOUS_TRY_ACTIVATE_GRIM_NEIGH:   // and as one shadow rider
         memcpy(battlerAbilities, GetBattlerAbilities(gActiveBattler), sizeof(battlerAbilities));
         if ((HasAbility(ABILITY_GRIM_NEIGH, battlerAbilities)
-         || HasAbility(ABILITY_AS_ONE_SHADOW_RIDER, battlerAbilities))
+         || HasAbility(ABILITY_AS_ONE_SHADOW_RIDER, battlerAbilities)
+         || HasAbility(ABILITY_WILDFIRE, battlerAbilities))
           && HasAttackerFaintedTarget()
           && !NoAliveMonsForEitherParty()
           && CompareStat(gBattlerAttacker, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN))
@@ -8068,6 +8097,8 @@ static void Cmd_various(void)
                 gLastUsedAbility = ABILITY_GRIM_NEIGH;
             if (HasAbility(ABILITY_AS_ONE_SHADOW_RIDER, battlerAbilities))
                 gLastUsedAbility = ABILITY_AS_ONE_SHADOW_RIDER;
+            if (HasAbility(ABILITY_WILDFIRE, battlerAbilities))
+                gLastUsedAbility = ABILITY_WILDFIRE;
             gBattlescriptCurrInstr = BattleScript_RaiseStatOnFaintingTarget;
             return;
         }
@@ -8095,7 +8126,7 @@ static void Cmd_various(void)
                 case ABILITY_RKS_SYSTEM:        case ABILITY_TRACE:
                     break;
                 default:
-                    gBattleStruct->tracedAbilities[x] = ability; // TODO: currently picking any ability. Update to use sTraceAbilityRatings.
+                    gBattleStruct->tracedAbilities[x] = ability; //TODO: currently picking any ability. Update to use sTraceAbilityRatings.
                     gBattleScripting.battler = gActiveBattler;
                     BattleScriptPush(gBattlescriptCurrInstr + 3);
                     gBattlescriptCurrInstr = BattleScript_ReceiverActivates;

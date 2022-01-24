@@ -1662,6 +1662,11 @@
 	.4byte \ptr
 	.endm
 
+	.macro checkmiracleblossomheal battler:req, ptr:req
+	various \battler, VARIOUS_CHECK_IF_MIRACLE_BLOSSOM_HEALS
+	.4byte \ptr
+	.endm
+
 	.macro jumpifnotberry battler:req, ptr:req
 	various \battler, VARIOUS_JUMP_IF_NOT_BERRY
 	.4byte \ptr

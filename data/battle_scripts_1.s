@@ -5797,7 +5797,7 @@ BattleScript_FaintTarget::
 	tryactivatereceiver BS_TARGET
 	tryactivatemoxie BS_ATTACKER		@ and chilling neigh, as one ice rider
 	tryactivatebeastboost BS_ATTACKER
-	tryactivategrimneigh BS_ATTACKER	@ and as one shadow rider
+	tryactivategrimneigh BS_ATTACKER	@ and as one shadow rider, wildfire
 	tryactivatebattlebond BS_ATTACKER
 	trytrainerslidefirstdownmsg BS_TARGET
 	return
@@ -8206,6 +8206,26 @@ BattleScript_GrassyTerrainLoopEnd::
 	jumpifword CMP_COMMON_BITS, gFieldStatuses, STATUS_FIELD_TERRAIN_PERMANENT, BattleScript_GrassyTerrainHealEnd
 	jumpifbyte CMP_EQUAL, gFieldTimers + 5, 0, BattleScript_GrassyTerrainEnds
 BattleScript_GrassyTerrainHealEnd:
+	end2
+
+BattleScript_MiracleBlossomHeals::
+	setbyte gBattleCommunication, 0
+	call BattleScript_AbilityPopUp
+BattleScript_MiracleBlossomLoop:
+	copyarraywithindex gBattlerAttacker, gBattlerByTurnOrder, gBattleCommunication, 1
+	checkmiracleblossomheal BS_ATTACKER, BattleScript_MiracleBlossomLoopIncrement
+	printstring STRINGID_MIRACLEBLOSSOMHEALS
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_MiracleBlossomHpChange:
+	orword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+BattleScript_MiracleBlossomLoopIncrement::
+	addbyte gBattleCommunication, 1
+	jumpifbytenotequal gBattleCommunication, gBattlersCount, BattleScript_MiracleBlossomLoop
+BattleScript_MiracleBlossomLoopEnd::
+	bicword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+BattleScript_MiracleBlossomHealEnd:
 	end2
 
 BattleScript_AbilityNoSpecificStatLoss::
