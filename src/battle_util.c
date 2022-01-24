@@ -574,7 +574,7 @@ void HandleAction_UseMove(void)
         && gBattleMoves[gCurrentMove].target == MOVE_TARGET_SELECTED
         && GetBattlerSide(gBattlerAttacker) != GetBattlerSide(gSideTimers[side].followmeTarget))
     {
-        gBattlerTarget = gSideTimers[side].followmeTarget;
+        gBattleStruct->moveTarget[gBattlerAttacker] = gBattlerTarget = gSideTimers[side].followmeTarget;
     }
     else if ((gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
            && gSideTimers[side].followmeTimer == 0
