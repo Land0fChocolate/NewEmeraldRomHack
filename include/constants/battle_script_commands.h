@@ -246,7 +246,6 @@
 
 #define PARTY_SCREEN_OPTIONAL (1 << 7) // Flag for first argument to openpartyscreen
 
-// cases for Cmd_moveend
 #define MOVEEND_PROTECT_LIKE_EFFECT               0
 #define MOVEEND_RAGE                              1
 #define MOVEEND_DEFROST                           2
@@ -265,18 +264,20 @@
 #define MOVEEND_ITEM_EFFECTS_ALL                  15
 #define MOVEEND_KINGSROCK                         16    // These item effects will occur each strike of a multi-hit move
 #define MOVEEND_SUBSTITUTE                        17
-#define MOVEEND_UPDATE_LAST_MOVES                 18
-#define MOVEEND_MIRROR_MOVE                       19
-#define MOVEEND_NEXT_TARGET                       20    // Everything up until here is handled for each strike of a multi-hit move
-#define MOVEEND_EJECT_BUTTON                      21
-#define MOVEEND_RED_CARD                          22
-#define MOVEEND_EJECT_PACK                        23
-#define MOVEEND_LIFEORB_SHELLBELL                 24    // Includes shell bell, throat spray, etc
-#define MOVEEND_PICKPOCKET                        25
-#define MOVEEND_DANCER                            26
-#define MOVEEND_EMERGENCY_EXIT                    27
-#define MOVEEND_CLEAR_BITS                        28
-#define MOVEEND_COUNT                             29
+#define MOVEEND_SKY_DROP_CONFUSE                  18
+#define MOVEEND_UPDATE_LAST_MOVES                 19
+#define MOVEEND_MIRROR_MOVE                       20
+#define MOVEEND_NEXT_TARGET                       21    // Everything up until here is handled for each strike of a multi-hit move
+#define MOVEEND_MAGICIAN                          22    // Occurs after final multi-hit strike, and after other items/abilities would activate
+#define MOVEEND_EJECT_BUTTON                      23
+#define MOVEEND_RED_CARD                          24
+#define MOVEEND_EJECT_PACK                        25
+#define MOVEEND_LIFEORB_SHELLBELL                 26    // Includes shell bell, throat spray, etc
+#define MOVEEND_PICKPOCKET                        27
+#define MOVEEND_DANCER                            28
+#define MOVEEND_EMERGENCY_EXIT                    29
+#define MOVEEND_CLEAR_BITS                        30
+#define MOVEEND_COUNT                             31
 
 // switch cases
 #define B_SWITCH_NORMAL     0
