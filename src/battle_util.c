@@ -4840,6 +4840,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                      && ItemId_GetPocket(GetUsedHeldItem(battler)) == POCKET_BERRIES)
                     {
                         gLastUsedAbility = ABILITY_HARVEST;
+                        gLastUsedItem = GetUsedHeldItem(battler);
                         BattleScriptPushCursorAndCallback(BattleScript_HarvestActivates);
                         effect++;
                     }
