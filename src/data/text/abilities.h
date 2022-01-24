@@ -1032,8 +1032,9 @@ static const u8 sVolumeUpDescription[] = _(
 	"powered up by 33%.");
 
 static const u8 sLavaBodyDescription[] = _(
-	"Attackers who make contact\n"
-	"will become burned.");
+	"Attackers who make\n"
+	"contact will become\n"
+	"burned.");
 
 static const u8 sWildFireDescription[] = _(
 	"KOs raise user Sp. Atk by\n"
@@ -1041,7 +1042,7 @@ static const u8 sWildFireDescription[] = _(
 
 static const u8 sMiracleBlossomDescription[] = _(
 	"User and ally heals 1/8 HP\n"
-	"every turn.");
+	"at the end of every turn.");
 
 static const u8 sScorchingHeartDescription[] = _(
 	"Fire moves increase in\n"
@@ -1408,29 +1409,29 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_AS_ONE_SHADOW_RIDER] = _("As One"),
     [ABILITY_VOLUME_UP] = _("Volume Up"),
     [ABILITY_LAVA_BODY] = _("Lava Body"),
-    [ABILITY_WILDFIRE] = ("Wildfire"),
-    [ABILITY_MIRACLE_BLOSSOM] = "Miracle Blossom",
-    [ABILITY_SCORCHING_HEART] = "Scorching Heart",
-    [ABILITY_ICE_AFFINITY] = "Ice Affinity",
-    [ABILITY_AQUATIC] = "Aquatic",
-    [ABILITY_GARDENER] = "Gardener",
-    [ABILITY_PRICKLY_THORNS] = "Prickly Thorns",
-    [ABILITY_AURA_SENSE] = "Aura Sense",
-    [ABILITY_SOUL_SIPHON] = "Soul Siphon",
-    [ABILITY_BAD_LUCK] = "Bad Luck",
-    [ABILITY_WICKEDNESS] = "Wickedness",
-    [ABILITY_SPINNING_BODY] = "Spinning Body",
-    [ABILITY_EVERGREEN] = "Evergreen",
-    [ABILITY_EMPEROR] = "Emperor",
-    [ABILITY_HEMATOPHAGY] = "Hematophagy",
-    [ABILITY_SWORDMASTER] = "Swordmaster",
-    [ABILITY_SUPERCOOLED] = "Supercooled",
-    [ABILITY_KINGS_MIGHT] = "King's Might",
-    [ABILITY_PLEASANT_DREAMS] = "Pleasant Dreams",
-    [ABILITY_ORIGIN] = "Origin",
-    [ABILITY_TIME_TRAVELLER] = "Time Traveller",
-    [ABILITY_WISH_MAKER] = "Wish Maker",
-    [ABILITY_HEART_SWAP] = "Heart Swap",
+    [ABILITY_WILDFIRE] = _("Wildfire"),
+    [ABILITY_MIRACLE_BLOSSOM] = _("Miracle Blossom"),
+    [ABILITY_SCORCHING_HEART] = _("Scorching Heart"),
+    [ABILITY_ICE_AFFINITY] = _("Ice Affinity"),
+    [ABILITY_AQUATIC] = _("Aquatic"),
+    [ABILITY_GARDENER] = _("Gardener"),
+    [ABILITY_PRICKLY_THORNS] = _("Prickly Thorns"),
+    [ABILITY_AURA_SENSE] = _("Aura Sense"),
+    [ABILITY_SOUL_SIPHON] = _("Soul Siphon"),
+    [ABILITY_BAD_LUCK] = _("Bad Luck"),
+    [ABILITY_WICKEDNESS] = _("Wickedness"),
+    [ABILITY_SPINNING_BODY] = _("Spinning Body"),
+    [ABILITY_EVERGREEN] = _("Evergreen"),
+    [ABILITY_EMPEROR] = _("Emperor"),
+    [ABILITY_HEMATOPHAGY] = _("Hematophagy"),
+    [ABILITY_SWORDMASTER] = _("Swordmaster"),
+    [ABILITY_SUPERCOOLED] = _("Supercooled"),
+    [ABILITY_KINGS_MIGHT] = _("King's Might"),
+    [ABILITY_PLEASANT_DREAMS] = _("Pleasant Dreams"),
+    [ABILITY_ORIGIN] = _("Origin"),
+    [ABILITY_TIME_TRAVELLER] = _("Time Traveller"),
+    [ABILITY_WISH_MAKER] = _("Wish Maker"),
+    [ABILITY_HEART_SWAP] = _("Heart Swap"),
 };
 #else   // 12 characters
 

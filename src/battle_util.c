@@ -469,11 +469,11 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_WATER_COMPACTION] = 3,
     [ABILITY_WATER_VEIL] = 2,
     [ABILITY_WEAK_ARMOR] = 1,
+    [ABILITY_WHITE_SMOKE] = 3,
     [ABILITY_WICKEDNESS] = 5,
     [ABILITY_WIMP_OUT] = 3,
     [ABILITY_WILDFIRE] = 5,
     [ABILITY_WISH_MAKER] = 0,
-    [ABILITY_WHITE_SMOKE] = 3,
     [ABILITY_WONDER_GUARD] = 5,
     [ABILITY_WONDER_SKIN] = 2,
     [ABILITY_ZEN_MODE] = 0,
@@ -5112,14 +5112,17 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 case ABILITY_MIRACLE_BLOSSOM:
                     if ((gBattleMons[battler].hp != 0
                         || gBattleMons[battler].hp != gBattleMons[battler].maxHP)
-                        && (gBattleMons[BATTLE_PARTNER(battler)].hp != 0 
-                            || gBattleMons[BATTLE_PARTNER(battler)].hp != gBattleMons[BATTLE_PARTNER(battler)].maxHP))
-                        return FALSE;
+                        || (gBattleMons[battler].hp != 0
+                            && (gBattleMons[BATTLE_PARTNER(battler)].hp != 0 
+                                || gBattleMons[BATTLE_PARTNER(battler)].hp != gBattleMons[BATTLE_PARTNER(battler)].maxHP)))
+                    {
+                        gLastUsedAbility = ABILITY_MIRACLE_BLOSSOM;
+                        gBattleScripting.battler = gBattlerAttacker;
+                        BattleScriptExecute(BattleScript_MiracleBlossomHeals);
 
-                    gLastUsedAbility = ABILITY_MIRACLE_BLOSSOM;
-                    gBattleScripting.battler = gBattlerAttacker;
+                        effect++;
+                    }
 
-                    BattleScriptExecute(BattleScript_MiracleBlossomHeals);
                     break;
                 }
             }
