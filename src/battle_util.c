@@ -5559,16 +5559,20 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 }
                 break;
             case ABILITY_ROUGH_SKIN:
-                gLastUsedAbility = ABILITY_ROUGH_SKIN;
             case ABILITY_IRON_BARBS:
+            case ABILITY_PRICKLY_THORNS:
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                  && gBattleMons[gBattlerAttacker].hp != 0
                  && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
                  && TARGET_TURN_DAMAGED
                  && IsMoveMakingContact(move, gBattlerAttacker))
                 {
+                    if (gLastUsedAbilities[x] == ABILITY_ROUGH_SKIN)
+                        gLastUsedAbility = ABILITY_ROUGH_SKIN;
                     if (gLastUsedAbilities[x] == ABILITY_IRON_BARBS)
                         gLastUsedAbility = ABILITY_IRON_BARBS;
+                    if (gLastUsedAbilities[x] == ABILITY_PRICKLY_THORNS)
+                        gLastUsedAbility = ABILITY_PRICKLY_THORNS;
                     gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 8;
                     if (gBattleMoveDamage == 0)
                         gBattleMoveDamage = 1;
