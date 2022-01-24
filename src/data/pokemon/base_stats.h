@@ -7219,7 +7219,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_SOUNDPROOF, ABILITY_RATTLED, ABILITY_NONE},
+        .abilities = {ABILITY_SOUNDPROOF, ABILITY_RATTLED, ABILITY_SCRAPPY},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
     },
@@ -7243,7 +7243,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_SOUNDPROOF, ABILITY_PUNK_ROCK, ABILITY_SCRAPPY}, //TODO: create ABILITY_VOLUME_UP
+        .abilities = {ABILITY_SOUNDPROOF, ABILITY_VOLUME_UP, ABILITY_SCRAPPY}, //TODO: create ABILITY_VOLUME_UP
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -7267,7 +7267,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_SOUNDPROOF, ABILITY_PUNK_ROCK, ABILITY_SCRAPPY}, //TODO: create ABILITY_VOLUME_UP
+        .abilities = {ABILITY_SOUNDPROOF, ABILITY_VOLUME_UP, ABILITY_SCRAPPY}, //TODO: create ABILITY_VOLUME_UP
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -8843,7 +8843,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_LEVITATE, ABILITY_PUNK_ROCK, ABILITY_MAGIC_GUARD}, //TODO: create ABILITY_VOLUME_UP
+        .abilities = {ABILITY_LEVITATE, ABILITY_SOUNDPROOF, ABILITY_MAGIC_GUARD}, //TODO: create ABILITY_VOLUME_UP
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },

@@ -442,6 +442,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_VICTORY_STAR] = 5,
     [ABILITY_VITAL_SPIRIT] = 2,
     [ABILITY_VOLT_ABSORB] = 5,
+    [ABILITY_VOLUME_UP] = 3,
     [ABILITY_WATER_ABSORB] = 5,
     [ABILITY_WATER_BUBBLE] = 3,
     [ABILITY_WATER_COMPACTION] = 3,
@@ -8731,6 +8732,10 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
         case ABILITY_TOUGH_CLAWS:
             if (IsMoveMakingContact(move, battlerAtk))
                MulModifier(&modifier, UQ_4_12(1.3));
+            break;
+        case ABILITY_VOLUME_UP:
+            if (gBattleMoves[move].flags & FLAG_SOUND)
+               MulModifier(&modifier, UQ_4_12(1.33));
             break;
         case ABILITY_STRONG_JAW:
             if (gBattleMoves[move].flags & FLAG_STRONG_JAW_BOOST)
