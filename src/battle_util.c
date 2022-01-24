@@ -8810,6 +8810,22 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             if (moveType == TYPE_STEEL)
                MulModifier(&modifier, UQ_4_12(1.5));
             break;
+        case ABILITY_SCORCHING_HEART:
+            if (moveType == TYPE_FIRE)
+               MulModifier(&modifier, UQ_4_12(1.5));
+            break;
+        case ABILITY_ICE_AFFINITY:
+            if (moveType == TYPE_ICE)
+               MulModifier(&modifier, UQ_4_12(1.5));
+            break;
+        case ABILITY_AQUATIC:
+            if (moveType == TYPE_WATER)
+               MulModifier(&modifier, UQ_4_12(1.5));
+            break;
+        case ABILITY_GARDENER:
+            if (moveType == TYPE_GRASS)
+               MulModifier(&modifier, UQ_4_12(1.5));
+            break;
         case ABILITY_PIXILATE:
             if (moveType == TYPE_FAIRY && gBattleStruct->ateBoost[battlerAtk])
                 MulModifier(&modifier, UQ_4_12(1.2));

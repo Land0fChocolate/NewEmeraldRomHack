@@ -8317,7 +8317,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_MINERAL,
         .eggGroup2 = EGG_GROUP_MINERAL,
-        .abilities = {ABILITY_LEVITATE, ABILITY_SAND_FORCE, ABILITY_REFRIGERATE},
+        .abilities = {ABILITY_LEVITATE, ABILITY_SAND_FORCE, ABILITY_ICE_AFFINITY},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },
@@ -8343,7 +8343,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_MINERAL,
         .eggGroup2 = EGG_GROUP_MINERAL,
-        .abilities = {ABILITY_LEVITATE, ABILITY_SAND_FORCE, ABILITY_FLASH_FIRE},
+        .abilities = {ABILITY_LEVITATE, ABILITY_SAND_FORCE, ABILITY_SCORCHING_HEART},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -8520,7 +8520,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroup1 = EGG_GROUP_WATER_3,
         .eggGroup2 = EGG_GROUP_WATER_3,
-        .abilities = {ABILITY_SUCTION_CUPS, ABILITY_STORM_DRAIN, ABILITY_NONE},
+        .abilities = {ABILITY_SUCTION_CUPS, ABILITY_STORM_DRAIN, ABILITY_LEAF_GUARD},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
     },
@@ -8571,7 +8571,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroup1 = EGG_GROUP_WATER_3,
         .eggGroup2 = EGG_GROUP_WATER_3,
-        .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_SWIFT_SWIM, ABILITY_NONE},
+        .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_SWIFT_SWIM, ABILITY_TECHNICIAN},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
     },
@@ -9712,7 +9712,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_DEFIANT}, //TODO: create ABILITY_ICE_AFINITY
+        .abilities = {ABILITY_TORRENT, ABILITY_ICE_AFFINITY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -9736,7 +9736,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_DEFIANT}, //TODO: create ABILITY_ICE_AFINITY and ABILITY_EMPEROR
+        .abilities = {ABILITY_TORRENT, ABILITY_ICE_AFFINITY, ABILITY_DEFIANT}, //TODO: create ABILITY_EMPEROR
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -9760,7 +9760,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_TORRENT, ABILITY_NONE, ABILITY_DEFIANT}, //TODO: create ABILITY_ICE_AFINITY and ABILITY_EMPEROR
+        .abilities = {ABILITY_TORRENT, ABILITY_ICE_AFFINITY, ABILITY_DEFIANT}, //TODO: create ABILITY_EMPEROR
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -16486,7 +16486,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_NONE}, //TODO: create ABILITY_GARDENER
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_GARDENER},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -16510,7 +16510,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_NONE}, //TODO: create ABILITY_GARDENER
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_GARDENER},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -19197,7 +19197,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_MINERAL,
         .eggGroup2 = EGG_GROUP_MINERAL,
-        .abilities = {ABILITY_STEELWORKER, ABILITY_NONE, ABILITY_NONE}, //TODO: create ABILITY_AQUATIC and ABILITY_SOUL_SIPHON
+        .abilities = {ABILITY_STEELWORKER, ABILITY_AQUATIC, ABILITY_NONE}, //TODO: create ABILITY_SOUL_SIPHON
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
     },
@@ -19441,7 +19441,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_FULL_METAL_BODY, ABILITY_NONE, ABILITY_NONE}, //TODO: create ABILITY_SCORCHING_HEART
+        .abilities = {ABILITY_FULL_METAL_BODY, ABILITY_SCORCHING_HEART, ABILITY_NONE},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -20927,7 +20927,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_LIMBER, ABILITY_TECHNICIAN, ABILITY_NONE}, //TODO: create ABILITY_AQUATIC
+        .abilities = {ABILITY_LIMBER, ABILITY_TECHNICIAN, ABILITY_AQUATIC},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },
@@ -20951,7 +20951,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_LIMBER, ABILITY_TECHNICIAN, ABILITY_NONE}, //TODO: create ABILITY_AQUATIC
+        .abilities = {ABILITY_LIMBER, ABILITY_TECHNICIAN, ABILITY_AQUATIC},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -27310,7 +27310,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_NONE}, //TODO: create ABILITY_GARDENER
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_GARDENER},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -27334,7 +27334,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_NONE}, //TODO: create ABILITY_GARDENER
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_GARDENER},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -27358,7 +27358,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_NONE}, //TODO: create ABILITY_GARDENER
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_GARDENER},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -27382,7 +27382,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_NONE}, //TODO: create ABILITY_GARDENER
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_GARDENER},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -27406,7 +27406,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_NONE}, //TODO: create ABILITY_GARDENER
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_GARDENER},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -27430,7 +27430,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_NONE}, //TODO: create ABILITY_GARDENER
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_GARDENER},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -27454,7 +27454,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_NONE}, //TODO: create ABILITY_GARDENER
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_GARDENER},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -27478,7 +27478,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_NONE}, //TODO: create ABILITY_GARDENER
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_GARDENER},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
@@ -27502,7 +27502,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_NONE}, //TODO: create ABILITY_GARDENER
+        .abilities = {ABILITY_FLOWER_VEIL, ABILITY_SYMBIOSIS, ABILITY_GARDENER},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
