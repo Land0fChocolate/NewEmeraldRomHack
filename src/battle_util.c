@@ -4511,10 +4511,14 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                     break;
                 case ABILITY_ANTICIPATION:
+                case ABILITY_AURA_SENSE:
                     if (!gSpecialStatuses[battler].switchInAbilityDone)
                     {
                         u32 side = GetBattlerSide(battler);
-                        gLastUsedAbility = ABILITY_ANTICIPATION;
+                        if (gLastUsedAbilities[x] == ABILITY_ANTICIPATION)
+                            gLastUsedAbility = ABILITY_ANTICIPATION;
+                        if (gLastUsedAbilities[x] == ABILITY_AURA_SENSE)
+                            gLastUsedAbility = ABILITY_AURA_SENSE;
     
                         for (i = 0; i < MAX_BATTLERS_COUNT; i++)
                         {

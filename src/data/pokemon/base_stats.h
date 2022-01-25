@@ -6261,7 +6261,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         //.abilities = {ABILITY_BLAZE, ABILITY_INNER_FOCUS, ABILITY_NONE},
-        .abilities = {ABILITY_WILDFIRE, ABILITY_LAVA_BODY, ABILITY_MIRACLE_BLOSSOM},
+        .abilities = {ABILITY_AURA_SENSE, ABILITY_LAVA_BODY, ABILITY_MIRACLE_BLOSSOM},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -11038,7 +11038,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_STEADFAST, ABILITY_INNER_FOCUS, ABILITY_PRANKSTER}, //TODO: create ABILITY_AURA_SENSE
+        .abilities = {ABILITY_STEADFAST, ABILITY_AURA_SENSE, ABILITY_PRANKSTER},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -11063,7 +11063,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_STEADFAST, ABILITY_INNER_FOCUS, ABILITY_JUSTIFIED}, //TODO: create ABILITY_AURA_SENSE
+        .abilities = {ABILITY_STEADFAST, ABILITY_AURA_SENSE, ABILITY_JUSTIFIED},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -23083,7 +23083,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_ADAPTABILITY, ABILITY_INNER_FOCUS, ABILITY_JUSTIFIED}, //TODO: create ABILITY_AURA_SENSE
+        .abilities = {ABILITY_ADAPTABILITY, ABILITY_AURA_SENSE, ABILITY_JUSTIFIED},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },

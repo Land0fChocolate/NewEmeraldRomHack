@@ -34,7 +34,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_ARENA_TRAP] = 9,
     [ABILITY_AROMA_VEIL] = 3,
     [ABILITY_AURA_BREAK] = 3,
-    [ABILITY_AURA_SENSE] = 5,
+    [ABILITY_AURA_SENSE] = 8,
     [ABILITY_BAD_DREAMS] = 4,
     [ABILITY_BAD_LUCK] = 5,
     [ABILITY_BATTERY] = 0,
@@ -1338,7 +1338,7 @@ u32 AI_GetMoveAccuracy(u8 battlerAtk, u8 battlerDef, u16 atkAbilities[], u16 def
     gPotentialItemEffectBattler = battlerDef;
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
-    if (HasAbility(ABILITY_UNAWARE, atkAbilities))
+    if (HasAbility(ABILITY_UNAWARE, atkAbilities) || HasAbility(ABILITY_AURA_SENSE, atkAbilities))
         evasionStage = DEFAULT_STAT_STAGE;
     if (gBattleMoves[move].flags & FLAG_STAT_STAGES_IGNORED)
         evasionStage = DEFAULT_STAT_STAGE;

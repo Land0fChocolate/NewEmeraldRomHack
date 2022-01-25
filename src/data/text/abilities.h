@@ -1065,8 +1065,9 @@ static const u8 sPricklyThornsDescription[] = _(
 	"contact for 1/8 HP.");
 
 static const u8 sAuraSenseDescription[] = _(
-	"Grants foresight effect\n"
-	"for the user.");
+	"User shudders if opponent\n"
+	"has super-effectve move.\n"
+	"Also ignores evasiveness.");
 
 static const u8 sSoulSiphonDescription[] = _(
 	"Contact with user steals\n"
