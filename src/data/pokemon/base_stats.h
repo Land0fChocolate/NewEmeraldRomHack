@@ -10597,7 +10597,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_LEVITATE, ABILITY_MAGICIAN, ABILITY_NONE}, //TODO: create ABILITY_WICKEDNESS
+        .abilities = {ABILITY_LEVITATE, ABILITY_MAGICIAN, ABILITY_WICKEDNESS},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
     },
@@ -16099,7 +16099,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_BLAZE, ABILITY_MAGICIAN, ABILITY_NONE}, //TODO: create ABILITY_WICKEDNESS
+        .abilities = {ABILITY_BLAZE, ABILITY_MAGICIAN, ABILITY_WICKEDNESS},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -16123,7 +16123,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_BLAZE, ABILITY_MAGICIAN, ABILITY_NONE}, //TODO: create ABILITY_WICKEDNESS
+        .abilities = {ABILITY_BLAZE, ABILITY_MAGICIAN, ABILITY_WICKEDNESS},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
