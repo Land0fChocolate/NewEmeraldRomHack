@@ -1070,9 +1070,9 @@ static const u8 sAuraSenseDescription[] = _(
 	"Also ignores evasiveness.");
 
 static const u8 sSoulSiphonDescription[] = _(
-	"Contact with user steals\n"
-	"1/10 HP from the target\n"
-	"and heals the same amount.");
+	"Contact from user steals\n"
+	"1/8 HP from the target and\n"
+	"heals user the same amount.");
 
 static const u8 sBadLuckDescription[] = _(
 	"Opponent cannot land crits\n"

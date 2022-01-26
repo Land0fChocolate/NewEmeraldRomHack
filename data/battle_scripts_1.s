@@ -8210,23 +8210,31 @@ BattleScript_GrassyTerrainHealEnd:
 
 BattleScript_MiracleBlossomHeals::
 	setbyte gBattleCommunication, 0
+	checkmiracleblossomheal BS_ATTACKER, BattleScript_MiracleBlossomHealEnd
 	call BattleScript_AbilityPopUp
-BattleScript_MiracleBlossomLoop:
-	copyarraywithindex gBattlerAttacker, gBattlerByTurnOrder, gBattleCommunication, 1
-	checkmiracleblossomheal BS_ATTACKER, BattleScript_MiracleBlossomLoopIncrement
 	printstring STRINGID_MIRACLEBLOSSOMHEALS
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_MiracleBlossomHpChange:
 	orword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
-BattleScript_MiracleBlossomLoopIncrement::
-	addbyte gBattleCommunication, 1
-	jumpifbytenotequal gBattleCommunication, gBattlersCount, BattleScript_MiracleBlossomLoop
-BattleScript_MiracleBlossomLoopEnd::
-	bicword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 BattleScript_MiracleBlossomHealEnd:
 	end2
+
+BattleScript_EffectSoulSiphon::
+	call BattleScript_AbilityPopUp
+	orword gHitMarker, HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	tryfaintmon BS_TARGET, FALSE, NULL
+	printstring STRINGID_PKMNSOULSIPHON
+	checksoulsiphonheal BS_ATTACKER, BattleScript_SoulSiphonHeal
+BattleScript_SoulSiphonHeal:
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+BattleScript_SoulSiphonEnd:
+	waitmessage B_WAIT_TIME_LONG
+	return
 
 BattleScript_AbilityNoSpecificStatLoss::
 	pause B_WAIT_TIME_SHORT

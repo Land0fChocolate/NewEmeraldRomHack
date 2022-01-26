@@ -6261,7 +6261,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         //.abilities = {ABILITY_BLAZE, ABILITY_INNER_FOCUS, ABILITY_NONE},
-        .abilities = {ABILITY_AURA_SENSE, ABILITY_LAVA_BODY, ABILITY_MIRACLE_BLOSSOM},
+        .abilities = {ABILITY_AURA_SENSE, ABILITY_MIRACLE_BLOSSOM, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -8768,7 +8768,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_LEVITATE, ABILITY_FRISK, ABILITY_NONE}, //TODO: create ABILITY_SOUL_SIPHON
+        .abilities = {ABILITY_LEVITATE, ABILITY_FRISK, ABILITY_SOUL_SIPHON},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
     },
@@ -8794,7 +8794,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_PRESSURE, ABILITY_FRISK, ABILITY_CURSED_BODY}, //TODO: create ABILITY_SOUL_SIPHON
+        .abilities = {ABILITY_PRESSURE, ABILITY_FRISK, ABILITY_SOUL_SIPHON},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
     },
@@ -11780,7 +11780,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_PRESSURE, ABILITY_FRISK, ABILITY_NONE}, //TODO: create ABILITY_SOUL_SIPHON
+        .abilities = {ABILITY_PRESSURE, ABILITY_FRISK, ABILITY_SOUL_SIPHON},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
     },
@@ -18926,7 +18926,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_WATER_COMPACTION, ABILITY_SAND_VEIL, ABILITY_NONE}, //TODO: create ABILITY_SOUL_SIPHON
+        .abilities = {ABILITY_WATER_COMPACTION, ABILITY_SAND_VEIL, ABILITY_SOUL_SIPHON},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },
@@ -19197,7 +19197,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_MINERAL,
         .eggGroup2 = EGG_GROUP_MINERAL,
-        .abilities = {ABILITY_STEELWORKER, ABILITY_AQUATIC, ABILITY_NONE}, //TODO: create ABILITY_SOUL_SIPHON
+        .abilities = {ABILITY_STEELWORKER, ABILITY_AQUATIC, ABILITY_SOUL_SIPHON},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
     },
@@ -24047,7 +24047,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_WATER_3,
-        .abilities = {ABILITY_WEAK_ARMOR, ABILITY_NONE, ABILITY_CURSED_BODY}, //TODO: create ABILITY_SOUL_SIPHON
+        .abilities = {ABILITY_WEAK_ARMOR, ABILITY_SOUL_SIPHON, ABILITY_CURSED_BODY},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,

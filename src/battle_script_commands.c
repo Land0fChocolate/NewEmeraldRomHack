@@ -7768,11 +7768,10 @@ static void Cmd_various(void)
         }
         return;
     case VARIOUS_CHECK_IF_MIRACLE_BLOSSOM_HEALS:
-        if ((BATTLER_MAX_HP(gActiveBattler) //TODO: is this check redundant?
+        if ((BATTLER_MAX_HP(gActiveBattler) && BATTLER_MAX_HP(BATTLE_PARTNER(gActiveBattler)))
             || !gBattleMons[gActiveBattler].hp)
-            && (!IsBattlerAlive(BATTLE_PARTNER(gActiveBattler)) || BATTLER_MAX_HP(BATTLE_PARTNER(gActiveBattler))))
         {
-            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 2);
         }
         else
         {
@@ -7784,13 +7783,28 @@ static void Cmd_various(void)
                 gBattleMoveDamage *= -1;
             }
 
-            if (!BATTLER_MAX_HP(BATTLE_PARTNER(gActiveBattler)))
+            if (!BATTLER_MAX_HP(BATTLE_PARTNER(gActiveBattler)) && IsBattlerAlive(BATTLE_PARTNER(gActiveBattler)))
             {
                 gBattleMoveDamage = gBattleMons[BATTLE_PARTNER(gActiveBattler)].maxHP / 8;
                 if (gBattleMoveDamage == 0)
                     gBattleMoveDamage = 1;
                 gBattleMoveDamage *= -1;
             }
+
+            gBattlescriptCurrInstr += 7;
+        }
+        return;
+    case VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS:
+        if (!gBattleMons[gActiveBattler].hp)
+        {
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 2);
+        }
+        else
+        {
+            if (BATTLER_MAX_HP(gActiveBattler))
+                gBattleMoveDamage = 0;
+            else
+                gBattleMoveDamage *= -1;
 
             gBattlescriptCurrInstr += 7;
         }

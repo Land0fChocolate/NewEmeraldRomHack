@@ -5114,11 +5114,9 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                     break;
                 case ABILITY_MIRACLE_BLOSSOM:
-                    if ((gBattleMons[battler].hp != 0
-                        || gBattleMons[battler].hp != gBattleMons[battler].maxHP)
-                        || (gBattleMons[battler].hp != 0
-                            && (gBattleMons[BATTLE_PARTNER(battler)].hp != 0 
-                                || gBattleMons[BATTLE_PARTNER(battler)].hp != gBattleMons[BATTLE_PARTNER(battler)].maxHP)))
+                    if ((gBattleMons[battler].hp != 0) 
+                        && (gBattleMons[battler].hp != gBattleMons[battler].maxHP 
+                            || gBattleMons[BATTLE_PARTNER(battler)].hp != gBattleMons[BATTLE_PARTNER(battler)].maxHP))
                     {
                         gLastUsedAbility = ABILITY_MIRACLE_BLOSSOM;
                         gBattleScripting.battler = gBattlerAttacker;
@@ -5908,6 +5906,23 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     gLastUsedAbility = ABILITY_GULP_MISSILE;
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_AttackerFormChange;
+                    effect++;
+                }
+                break;
+            case ABILITY_SOUL_SIPHON:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                 && gBattleMons[gBattlerTarget].hp != 0
+                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && IsMoveMakingContact(move, gBattlerAttacker)
+                 && !(gSideStatuses[gBattlerTarget] & SIDE_STATUS_SAFEGUARD)
+                 && TARGET_TURN_DAMAGED) // Need to actually hit the target
+                {
+                    gLastUsedAbility = ABILITY_SOUL_SIPHON;
+                    gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 8;
+                    if (gBattleMoveDamage == 0)
+                        gBattleMoveDamage = 1;
+                    BattleScriptPushCursor();
+                    BattleScriptExecute(BattleScript_EffectSoulSiphon);
                     effect++;
                 }
                 break;
