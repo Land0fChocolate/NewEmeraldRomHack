@@ -1252,10 +1252,12 @@ static const u8 sMovesNotAffectedByStench[] =
 
 static const u8 sAbilitiesAffectedByMoldBreaker[] =
 {
+    [ABILITY_BAD_LUCK] = 1,
     [ABILITY_BATTLE_ARMOR] = 1,
     [ABILITY_CLEAR_BODY] = 1,
     [ABILITY_DAMP] = 1,
     [ABILITY_DRY_SKIN] = 1,
+    [ABILITY_EVERGREEN] = 1,
     [ABILITY_FILTER] = 1,
     [ABILITY_FLASH_FIRE] = 1,
     [ABILITY_FLOWER_GIFT] = 1,

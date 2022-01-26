@@ -1361,7 +1361,8 @@ u32 AI_GetMoveAccuracy(u8 battlerAtk, u8 battlerDef, u16 atkAbilities[], u16 def
         && (gBattleMoves[move].effect == EFFECT_THUNDER || gBattleMoves[move].effect == EFFECT_HURRICANE))
         moveAcc = 50;
     // Check Wonder Skin.
-    if (HasAbility(ABILITY_WONDER_SKIN, defAbilities) && gBattleMoves[move].power == 0)
+    if ((HasAbility(ABILITY_WONDER_SKIN, defAbilities) && gBattleMoves[move].power == 0) 
+        || (HasAbility(ABILITY_BAD_LUCK, defAbilities) && gBattleMoves[move].power == 0))
         moveAcc = 50;
 
     calc = gAccuracyStageRatios[buff].dividend * moveAcc;

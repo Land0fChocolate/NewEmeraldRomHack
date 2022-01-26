@@ -6261,7 +6261,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         //.abilities = {ABILITY_BLAZE, ABILITY_INNER_FOCUS, ABILITY_NONE},
-        .abilities = {ABILITY_AURA_SENSE, ABILITY_MIRACLE_BLOSSOM, ABILITY_NONE},
+        .abilities = {ABILITY_AURA_SENSE, ABILITY_MIRACLE_BLOSSOM, ABILITY_BAD_LUCK},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -10916,7 +10916,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_PRESSURE, ABILITY_INFILTRATOR, ABILITY_NONE}, //TODO: create ABILITY_BAD_LUCK
+        .abilities = {ABILITY_PRESSURE, ABILITY_INFILTRATOR, ABILITY_BAD_LUCK},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
     },
@@ -13886,7 +13886,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_MINERAL,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_MUMMY, ABILITY_SAND_VEIL, ABILITY_NONE}, //TODO: create ABILITY_BAD_LUCK
+        .abilities = {ABILITY_MUMMY, ABILITY_SAND_VEIL, ABILITY_BAD_LUCK},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },

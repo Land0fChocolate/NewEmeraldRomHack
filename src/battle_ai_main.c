@@ -722,6 +722,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     if (IsShieldsDownProtected(battlerAtk) && IsNonVolatileStatusMoveEffect(moveEffect))
                         RETURN_SCORE_MINUS(10);
                     break;
+                case ABILITY_BAD_LUCK:
                 case ABILITY_WONDER_SKIN:
                     if (IS_MOVE_STATUS(move))
                         accuracy = 50;
@@ -1791,7 +1792,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_LASER_FOCUS:
             if (gStatuses3[battlerAtk] & STATUS3_LASER_FOCUS)
                 score -= 10;
-            else if (HasAbility(ABILITY_SHELL_ARMOR, AI_DATA->defAbilities) || HasAbility(ABILITY_BATTLE_ARMOR, AI_DATA->defAbilities))
+            else if (HasAbility(ABILITY_SHELL_ARMOR, AI_DATA->defAbilities) || HasAbility(ABILITY_BATTLE_ARMOR, AI_DATA->defAbilities) || HasAbility(ABILITY_BAD_LUCK, AI_DATA->defAbilities))
                 score -= 8;
             break;
         case EFFECT_SKETCH:

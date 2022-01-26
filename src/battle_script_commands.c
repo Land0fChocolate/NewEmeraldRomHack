@@ -1667,7 +1667,8 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move)
       && (gBattleMoves[move].effect == EFFECT_THUNDER || gBattleMoves[move].effect == EFFECT_HURRICANE))
         moveAcc = 50;
     // Check Wonder Skin.
-    if (HasAbility(ABILITY_WONDER_SKIN, defAbilities) && gBattleMoves[move].power == 0)
+    if ((HasAbility(ABILITY_WONDER_SKIN, defAbilities) && gBattleMoves[move].power == 0)
+        || (HasAbility(ABILITY_BAD_LUCK, defAbilities) && gBattleMoves[move].power == 0))
         moveAcc = 50;
 
     calc = gAccuracyStageRatios[buff].dividend * moveAcc;
@@ -1853,7 +1854,7 @@ s32 CalcCritChanceStage(u8 battlerAtk, u8 battlerDef, u32 move)
     {
         critChance = -1;
     }
-    else if (HasAbility(ABILITY_BATTLE_ARMOR, defAbilities) || HasAbility(ABILITY_SHELL_ARMOR, defAbilities))
+    else if (HasAbility(ABILITY_BATTLE_ARMOR, defAbilities) || HasAbility(ABILITY_SHELL_ARMOR, defAbilities) || HasAbility(ABILITY_BAD_LUCK, defAbilities))
     {
         critChance = -1;
     }
