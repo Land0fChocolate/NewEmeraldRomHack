@@ -3049,7 +3049,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
         break;
 	case EFFECT_ABSORB:
-        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT)
+        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT || HasAbility(ABILITY_HEMATOPHAGY, AI_DATA->atkAbilities))
             score++;
         if (effectiveness <= AI_EFFECTIVENESS_x0_5 && AI_RandLessThan(50))
             score -= 3;
@@ -3350,7 +3350,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_MOONLIGHT:
         if (ShouldRecover(battlerAtk, battlerDef, move, 50))
             score += 3;
-        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT)
+        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT || HasAbility(ABILITY_HEMATOPHAGY, AI_DATA->atkAbilities))
             score++;
         break;
     case EFFECT_TOXIC:
@@ -4146,7 +4146,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score += 2;
         break;
     case EFFECT_INGRAIN:
-        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT)
+        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT || HasAbility(ABILITY_HEMATOPHAGY, AI_DATA->atkAbilities))
             score += 3;
         else
             score++;

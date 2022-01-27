@@ -239,6 +239,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_BERSERK] = 4,
     [ABILITY_BIG_PECKS] = 1,
     [ABILITY_BLAZE] = 2,
+    [ABILITY_BUBBLE_SHIELD] = 0,
     [ABILITY_BULLETPROOF] = 4,
     [ABILITY_CHEEK_POUCH] = 2,
     [ABILITY_CHLOROPHYLL] = 4,
@@ -352,7 +353,6 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_NO_GUARD] = 3,
     [ABILITY_NORMALIZE] = 1,
     [ABILITY_OBLIVIOUS] = 2,
-    [ABILITY_ORIGIN] = 0,
     [ABILITY_OVERCOAT] = 3,
     [ABILITY_OVERGROW] = 2,
     [ABILITY_OWN_TEMPO] = 2,
@@ -2784,6 +2784,16 @@ s32 GetDrainedBigRootHp(u32 battler, s32 hp)
 {
     if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_BIG_ROOT)
         hp = (hp * 1300) / 1000;
+    if (hp == 0)
+        hp = 1;
+
+    return hp * -1;
+}
+
+s32 GetDrainedHematophagyHp(u32 battler, s32 hp)
+{
+    if (HasAbility(ABILITY_HEMATOPHAGY, GetBattlerAbilities(battler)))
+        hp = (hp * 1500) / 1000;
     if (hp == 0)
         hp = 1;
 

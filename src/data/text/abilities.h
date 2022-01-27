@@ -1115,9 +1115,10 @@ static const u8 sPleasantDreamsDescription[] = _(
 	"Heals sleeping Pokémon\n"
 	"of 1/4 HP per turn.");
 
-static const u8 sOriginDescription[] = _( //TODO: ability for Mew
-	"\n"
-	"");
+static const u8 sBubbleShieldDescription[] = _(
+	"Immunity to status moves\n"
+	"and the first hit while\n"
+	"the shield is up.");
 
 static const u8 sTimeTravellerDescription[] = _(
 	"If user is about to faint\n"
@@ -1424,7 +1425,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SUPERCOOLED] = _("Supercooled"),
     [ABILITY_KINGS_MIGHT] = _("King's Might"),
     [ABILITY_PLEASANT_DREAMS] = _("Pleasant Dreams"),
-    [ABILITY_ORIGIN] = _("Origin"),
+    [ABILITY_BUBBLE_SHIELD] = _("Bubble Shield"),
     [ABILITY_TIME_TRAVELLER] = _("Time Traveller"),
     [ABILITY_WISH_MAKER] = _("Wish Maker"),
     [ABILITY_HEART_SWAP] = _("Heart Swap"),
@@ -1721,7 +1722,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SUPERCOOLED] = "Supercooled",
     [ABILITY_KINGS_MIGHT] = "King's Might",
     [ABILITY_PLEASANT_DREAMS] = "PlesantDrems",
-    [ABILITY_ORIGIN] = "Origin",
+    [ABILITY_BUBBLE_SHIELD] = "BubbleShield",
     [ABILITY_TIME_TRAVELLER] = "TimeTravellr",
     [ABILITY_WISH_MAKER] = "Wish Maker",
     [ABILITY_HEART_SWAP] = "Heart Swap",
@@ -2018,7 +2019,7 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SUPERCOOLED] = sSupercooledDescription,
     [ABILITY_KINGS_MIGHT] = sKingsMightDescription,
     [ABILITY_PLEASANT_DREAMS] = sPleasantDreamsDescription,
-    [ABILITY_ORIGIN] = sOriginDescription,
+    [ABILITY_BUBBLE_SHIELD] = sBubbleShieldDescription,
     [ABILITY_TIME_TRAVELLER] = sTimeTravellerDescription,
     [ABILITY_WISH_MAKER] = sWishMakerDescription,
     [ABILITY_HEART_SWAP] = sHeartSwapDescription,
