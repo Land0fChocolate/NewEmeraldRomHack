@@ -9732,7 +9732,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_TORRENT, ABILITY_ICE_AFFINITY, ABILITY_DEFIANT}, //TODO: create ABILITY_EMPEROR
+        .abilities = {ABILITY_TORRENT, ABILITY_ICE_AFFINITY, ABILITY_COMPETITIVE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -9756,7 +9756,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_TORRENT, ABILITY_ICE_AFFINITY, ABILITY_DEFIANT}, //TODO: create ABILITY_EMPEROR
+        .abilities = {ABILITY_TORRENT, ABILITY_ICE_AFFINITY, ABILITY_COMPETITIVE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },

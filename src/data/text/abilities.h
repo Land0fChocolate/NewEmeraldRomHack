@@ -1093,11 +1093,6 @@ static const u8 sEvergreenDescription[] = _(
 	"ice moves and is immune to\n"
 	"hail.");
 
-static const u8 sEmperorDescription[] = _(
-	"If user stats are reduced\n"
-	"Sp. Atk stat rises one\n"
-	"stage.");
-
 static const u8 sHematophagyDescription[] = _(
 	"Healing effect from drain\n"
 	"move increased by 50%.");
@@ -1424,7 +1419,6 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_WICKEDNESS] = _("Wickedness"),
     [ABILITY_SPINNING_BODY] = _("Spinning Body"),
     [ABILITY_EVERGREEN] = _("Evergreen"),
-    [ABILITY_EMPEROR] = _("Emperor"),
     [ABILITY_HEMATOPHAGY] = _("Hematophagy"),
     [ABILITY_SWORDMASTER] = _("Swordmaster"),
     [ABILITY_SUPERCOOLED] = _("Supercooled"),
@@ -1722,7 +1716,6 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_WICKEDNESS] = "Wickedness",
     [ABILITY_SPINNING_BODY] = "SpinningBody",
     [ABILITY_EVERGREEN] = "Evergreen",
-    [ABILITY_EMPEROR] = "Emperor",
     [ABILITY_HEMATOPHAGY] = "Hematophagy",
     [ABILITY_SWORDMASTER] = "Swordmaster",
     [ABILITY_SUPERCOOLED] = "Supercooled",
@@ -2020,7 +2013,6 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_WICKEDNESS] = sWickednessDescription,
     [ABILITY_SPINNING_BODY] = sSpinningBodyDescription,
     [ABILITY_EVERGREEN] = sEvergreenDescription,
-    [ABILITY_EMPEROR] = sEmperorDescription,
     [ABILITY_HEMATOPHAGY] = sHematophagyDescription,
     [ABILITY_SWORDMASTER] = sSwordmasterDescription,
     [ABILITY_SUPERCOOLED] = sSupercooledDescription,
