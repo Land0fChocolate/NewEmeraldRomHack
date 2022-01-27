@@ -1099,7 +1099,7 @@ static const u8 sHematophagyDescription[] = _(
 
 static const u8 sSwordmasterDescription[] = _(
 	"Power of sword/blade moves\n"
-	"is increased by 50%.");
+	"is increased by 30%.");
 
 static const u8 sSupercooledDescription[] = _(
 	"User's ice moves are\n"

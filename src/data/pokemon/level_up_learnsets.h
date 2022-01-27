@@ -10187,6 +10187,7 @@ static const struct LevelUpMove sDewottLevelUpLearnset[] = {
 static const struct LevelUpMove sSamurottLevelUpLearnset[] = {
     //LEVEL_UP_MOVE( 0, MOVE_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_SLASH),
+    LEVEL_UP_MOVE( 1, MOVE_SACRED_SWORD),
     LEVEL_UP_MOVE( 1, MOVE_MEGAHORN),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),

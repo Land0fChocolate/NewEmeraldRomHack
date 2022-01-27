@@ -8841,6 +8841,10 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             if (IsMoveMakingContact(move, battlerAtk))
                MulModifier(&modifier, UQ_4_12(1.3));
             break;
+        case ABILITY_SWORDMASTER:
+            if (gBattleMoves[move].flags & FLAG_SWORDMASTER_BOOST)
+               MulModifier(&modifier, UQ_4_12(1.3));
+            break;
         case ABILITY_VOLUME_UP:
             if (gBattleMoves[move].flags & FLAG_SOUND)
                MulModifier(&modifier, UQ_4_12(1.33));
