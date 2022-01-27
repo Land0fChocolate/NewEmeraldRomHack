@@ -5031,7 +5031,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
-        .abilities = {ABILITY_STURDY, ABILITY_OVERCOAT, ABILITY_STEELWORKER},
+        .abilities = {ABILITY_STURDY, ABILITY_OVERCOAT, ABILITY_SPINNING_BODY},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
     },
@@ -8511,9 +8511,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 45,
         .expYield = 71,
         .evYield_SpDefense = 1,
-        #ifdef ITEM_EXPANSION
-            .item2 = ITEM_BIG_ROOT,
-        #endif
+        .item2 = ITEM_BIG_ROOT,
         .genderRatio = PERCENT_FEMALE(12.5),
         .eggCycles = 30,
         .friendship = 70,
@@ -8538,9 +8536,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 45,
         .expYield = 173,
         .evYield_SpDefense = 2,
-        #ifdef ITEM_EXPANSION
-            .item2 = ITEM_BIG_ROOT,
-        #endif
+        .item2 = ITEM_BIG_ROOT,
         .genderRatio = PERCENT_FEMALE(12.5),
         .eggCycles = 30,
         .friendship = 70,
@@ -9588,7 +9584,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_GRASS,
-        .abilities = {ABILITY_OVERGROW, ABILITY_SHELL_ARMOR, ABILITY_NONE}, //TODO: create ABILITY_EVERGREEN
+        .abilities = {ABILITY_OVERGROW, ABILITY_SHELL_ARMOR, ABILITY_EVERGREEN},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
     },
@@ -9613,7 +9609,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_GRASS,
-        .abilities = {ABILITY_OVERGROW, ABILITY_SHELL_ARMOR, ABILITY_NONE}, //TODO: create ABILITY_EVERGREEN
+        .abilities = {ABILITY_OVERGROW, ABILITY_SHELL_ARMOR, ABILITY_EVERGREEN},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
     },
@@ -16534,7 +16530,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_SAP_SIPPER, ABILITY_GRASS_PELT, ABILITY_NONE},
+        .abilities = {ABILITY_SAP_SIPPER, ABILITY_GRASS_PELT, ABILITY_EVERGREEN},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },
@@ -16558,7 +16554,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_SAP_SIPPER, ABILITY_GRASS_PELT, ABILITY_CHLOROPHYLL},
+        .abilities = {ABILITY_SAP_SIPPER, ABILITY_GRASS_PELT, ABILITY_EVERGREEN},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },

@@ -1513,6 +1513,7 @@ bool32 ShouldSetHail(u8 battler, u16 abilities[], u16 holdEffect)
       || HasAbility(ABILITY_SLUSH_RUSH, abilities)
       || HasAbility(ABILITY_MAGIC_GUARD, abilities)
       || HasAbility(ABILITY_OVERCOAT, abilities)
+      || HasAbility(ABILITY_EVERGREEN, abilities)
       || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
       || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
       || HasMove(battler, MOVE_BLIZZARD)
@@ -2296,7 +2297,8 @@ static bool32 BattlerAffectedByHail(u8 battlerId, u16 abilities[])
     if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_ICE)
       && !HasAbility(ABILITY_SNOW_CLOAK, abilities)
       && !HasAbility(ABILITY_OVERCOAT, abilities)
-      && !HasAbility(ABILITY_ICE_BODY, abilities))
+      && !HasAbility(ABILITY_ICE_BODY, abilities)
+      && !HasAbility(ABILITY_EVERGREEN, abilities))
         return TRUE;
     return FALSE;
 }

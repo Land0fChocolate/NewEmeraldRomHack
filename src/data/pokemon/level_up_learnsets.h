@@ -4050,6 +4050,7 @@ static const struct LevelUpMove sPinecoLevelUpLearnset[] = {
 static const struct LevelUpMove sForretressLevelUpLearnset[] = {
     //LEVEL_UP_MOVE( 0, MOVE_MIRROR_SHOT),
     //LEVEL_UP_MOVE( 0, MOVE_AUTOTOMIZE),
+    LEVEL_UP_MOVE( 1, MOVE_IRON_HEAD),
     LEVEL_UP_MOVE( 1, MOVE_MIRROR_SHOT),
     LEVEL_UP_MOVE( 1, MOVE_AUTOTOMIZE),
     LEVEL_UP_MOVE( 1, MOVE_HEAVY_SLAM),
