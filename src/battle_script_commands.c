@@ -3111,10 +3111,13 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 }
                 break;
             case MOVE_EFFECT_RECHARGE:
-                gBattleMons[gEffectBattler].status2 |= STATUS2_RECHARGE;
-                gDisableStructs[gEffectBattler].rechargeTimer = 2;
-                gLockedMoves[gEffectBattler] = gCurrentMove;
-                gBattlescriptCurrInstr++;
+                if (!HasAbility(ABILITY_KINGS_MIGHT, attackerAbilities))
+                {
+                    gBattleMons[gEffectBattler].status2 |= STATUS2_RECHARGE;
+                    gDisableStructs[gEffectBattler].rechargeTimer = 2;
+                    gLockedMoves[gEffectBattler] = gCurrentMove;
+                    gBattlescriptCurrInstr++;
+                }
                 break;
             case MOVE_EFFECT_RAGE:
                 gBattleMons[gBattlerAttacker].status2 |= STATUS2_RAGE;
