@@ -5928,6 +5928,23 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     effect++;
                 }
                 break;
+            case ABILITY_SPINNING_BODY:
+                if (IS_MOVE_PHYSICAL(gCurrentMove))
+                {
+                    BattleScriptPushCursor();
+                    BattleScriptExecute(BattleScript_RapidSpinAway);
+                    if (CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN) && gDisableStructs[battler].isFirstTurn != 2)
+                    {
+                        gLastUsedAbility = ABILITY_SPINNING_BODY;
+                        gBattleMons[battler].statStages[STAT_SPEED]++;
+                        gBattleScripting.animArg1 = 14 + STAT_SPEED;
+                        gBattleScripting.animArg2 = 0;
+                        BattleScriptPushCursor();
+                        BattleScriptExecute(BattleScript_SpeedBoostActivates);
+                        effect++;
+                    }
+                }
+                break;
             }
         }
         break;
@@ -5959,8 +5976,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         gHitMarker &= ~(HITMARKER_ATTACKSTRING_PRINTED);
                         BattleScriptExecute(BattleScript_DancerActivates);
                         effect++;
-                    }
-                    break;
+                }
+                break;
             }
         }  
         break;

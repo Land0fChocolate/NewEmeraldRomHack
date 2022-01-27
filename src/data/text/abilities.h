@@ -1085,7 +1085,8 @@ static const u8 sWickednessDescription[] = _(
 
 static const u8 sSpinningBodyDescription[] = _(
 	"User's physical moves\n"
-	"remove field hazards.");
+	"remove field hazards and\n"
+	"increase speed one stage.");
 
 static const u8 sEvergreenDescription[] = _(
 	"User take half damage from\n"
