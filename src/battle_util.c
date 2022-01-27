@@ -9728,6 +9728,8 @@ static void MulByTypeEffectiveness(u16 *modifier, u16 move, u8 moveType, u8 batt
         mod = UQ_4_12(1.0);
     if (gBattleMoves[move].effect == EFFECT_FREEZE_DRY && defType == TYPE_WATER)
         mod = UQ_4_12(2.0);
+    if (HasAbility(ABILITY_SUPERCOOLED, abilities) && (moveType == TYPE_ICE) && (defType == TYPE_WATER))
+        mod = UQ_4_12(2.0);
     if (moveType == TYPE_FIRE && gDisableStructs[battlerDef].tarShot)
         mod = UQ_4_12(2.0);
 

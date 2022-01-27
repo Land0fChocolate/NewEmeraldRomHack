@@ -6261,7 +6261,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         //.abilities = {ABILITY_BLAZE, ABILITY_INNER_FOCUS, ABILITY_NONE},
-        .abilities = {ABILITY_SPINNING_BODY, ABILITY_MIRACLE_BLOSSOM, ABILITY_BAD_LUCK},
+        .abilities = {ABILITY_SUPERCOOLED, ABILITY_MIRACLE_BLOSSOM, ABILITY_BAD_LUCK},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -11628,7 +11628,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_SNOW_CLOAK, ABILITY_SNOW_CLOAK, ABILITY_ICE_BODY}, //TODO: create ABILITY_SUPERCOOLED
+        .abilities = {ABILITY_SUPERCOOLED, ABILITY_SNOW_CLOAK, ABILITY_ICE_BODY},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -17182,7 +17182,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_MONSTER,
-        .abilities = {ABILITY_REFRIGERATE, ABILITY_SNOW_WARNING, ABILITY_NONE}, //TODO: create ABILITY_SUPERCOOLED
+        .abilities = {ABILITY_REFRIGERATE, ABILITY_SNOW_WARNING, ABILITY_SUPERCOOLED},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
