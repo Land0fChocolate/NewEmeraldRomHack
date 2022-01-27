@@ -9725,6 +9725,12 @@ static void Cmd_manipulatedamage(void)
         if (gBattleMoveDamage == 0)
             gBattleMoveDamage = 1;
         break;
+    case HEAL_1_8_TARGET_HP:
+        gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 8;
+        if (gBattleMoveDamage == 0)
+            gBattleMoveDamage = 1;
+        gBattleMoveDamage *= -1;
+        break;
     case DMG_FULL_ATTACKER_HP:
         gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP;
         break;

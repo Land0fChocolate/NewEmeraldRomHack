@@ -8046,6 +8046,22 @@ BattleScript_BadDreamsIncrement:
 BattleScript_BadDreamsEnd:
 	end3
 
+BattleScript_PleasantDreamsActivates::
+	setbyte gBattlerTarget, 0
+	call BattleScript_AbilityPopUp
+BattleScript_PleasantDreamsLoop:
+	trygetbaddreamstarget BattleScript_PleasantDreamsEnd
+	heal_1_8_targethp
+	printstring STRINGID_PLEASANTDREAMSHEAL
+	waitmessage B_WAIT_TIME_LONG
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+BattleScript_PleasantDreamsIncrement:
+	addbyte gBattlerTarget, 1
+	goto BattleScript_PleasantDreamsLoop
+BattleScript_PleasantDreamsEnd:
+	end3
+
 BattleScript_TookAttack::
 	attackstring
 	pause B_WAIT_TIME_SHORT

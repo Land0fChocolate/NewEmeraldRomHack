@@ -613,8 +613,9 @@
 #define STRINGID_PLAYERPAIDPRIZEMONEY                 610
 #define STRINGID_MIRACLEBLOSSOMHEALS                  611
 #define STRINGID_PKMNSOULSIPHON                       612
+#define STRINGID_PLEASANTDREAMSHEAL                   613
 
-#define BATTLESTRINGS_COUNT                           613
+#define BATTLESTRINGS_COUNT                           614
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.

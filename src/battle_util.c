@@ -5035,6 +5035,17 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         effect++;
                     }
                     break;
+                case ABILITY_PLEASANT_DREAMS:
+                    if (gBattleMons[battler].status1 & STATUS1_SLEEP
+                        || gBattleMons[BATTLE_OPPOSITE(battler)].status1 & STATUS1_SLEEP
+                        || HasAbility(ABILITY_COMATOSE, GetBattlerAbilities(battler))
+                        || HasAbility(ABILITY_COMATOSE, GetBattlerAbilities(BATTLE_OPPOSITE(battler))))
+                    {
+                        gLastUsedAbility = ABILITY_PLEASANT_DREAMS;
+                        BattleScriptPushCursorAndCallback(BattleScript_PleasantDreamsActivates);
+                        effect++;
+                    }
+                    break;
                 SOLAR_POWER_HP_DROP:
                 case ABILITY_SOLAR_POWER:
                      if (IsBattlerWeatherAffected(battler, WEATHER_SUN_ANY))
