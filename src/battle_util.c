@@ -5974,6 +5974,20 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                 }
                 break;
+            case ABILITY_HEART_SWAP:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                 && gBattleMons[gBattlerTarget].hp != 0
+                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && IsMoveMakingContact(move, gBattlerAttacker)
+                 && !(gSideStatuses[gBattlerTarget] & SIDE_STATUS_SAFEGUARD)
+                 && TARGET_TURN_DAMAGED) // Need to actually hit the target
+                {
+                    gLastUsedAbility = ABILITY_HEART_SWAP;
+                    BattleScriptPushCursor();
+                    BattleScriptExecute(BattleScript_HeartSwapAbilityActivates);
+                    effect++;
+                }
+                break;
             }
         }
         break;

@@ -274,6 +274,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectPowerSwap               @ EFFECT_POWER_SWAP
 	.4byte BattleScript_EffectGuardSwap               @ EFFECT_GUARD_SWAP
 	.4byte BattleScript_EffectHeartSwap               @ EFFECT_HEART_SWAP
+	.4byte BattleScript_HeartSwapAbilityActivates     @ EFFECT_HEART_SWAP
 	.4byte BattleScript_EffectPowerSplit              @ EFFECT_POWER_SPLIT
 	.4byte BattleScript_EffectGuardSplit              @ EFFECT_GUARD_SPLIT
 	.4byte BattleScript_EffectStickyWeb               @ EFFECT_STICKY_WEB
@@ -2326,6 +2327,19 @@ BattleScript_EffectHeartSwap:
 	printstring STRINGID_PKMNSWITCHEDSTATCHANGES
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
+
+BattleScript_HeartSwapAbilityActivates::
+	call BattleScript_AbilityPopUp
+	swapstatstages STAT_ATK
+	swapstatstages STAT_DEF
+	swapstatstages STAT_SPEED
+	swapstatstages STAT_SPATK
+	swapstatstages STAT_SPDEF
+	swapstatstages STAT_EVASION
+	swapstatstages STAT_ACC
+	printstring STRINGID_PKMNSWITCHEDSTATCHANGES
+	waitmessage B_WAIT_TIME_LONG
+	return
 
 BattleScript_EffectPowerSwap:
 	attackcanceler

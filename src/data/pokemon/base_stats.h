@@ -6261,7 +6261,7 @@ const struct BaseStats gBaseStats[] =
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
         //.abilities = {ABILITY_BLAZE, ABILITY_INNER_FOCUS, ABILITY_NONE},
-        .abilities = {ABILITY_SUPERCOOLED, ABILITY_WISH_MAKER, ABILITY_BAD_LUCK},
+        .abilities = {ABILITY_SUPERCOOLED, ABILITY_HEART_SWAP, ABILITY_WILDFIRE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -12093,7 +12093,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_HYDRATION, ABILITY_NONE, ABILITY_NONE}, //TODO: create ABILITY_HEART_SWAP
+        .abilities = {ABILITY_HEART_SWAP, ABILITY_HYDRATION, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
