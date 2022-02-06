@@ -9327,3 +9327,10 @@ BattleScript_MagicianActivates::
 	call BattleScript_AbilityPopUp
 	call BattleScript_ItemSteal
 	return
+
+BattleScript_WishMaker::
+	call BattleScript_AbilityPopUp
+	trywish 0, BattleScript_ButItFailed
+	printstring STRINGID_PKMNMADEWISH
+	waitmessage B_WAIT_TIME_LONG
+	end3

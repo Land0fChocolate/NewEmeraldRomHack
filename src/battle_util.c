@@ -418,7 +418,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SOUL_SIPHON] = 2,
     [ABILITY_SOUNDPROOF] = 5,
     [ABILITY_SPEED_BOOST] = 5,
-    [ABILITY_SPINNING_BODY] = 2,
+    [ABILITY_SPINNING_BODY] = 4,
     [ABILITY_STAKEOUT] = 3,
     [ABILITY_STALL] = 0,
     [ABILITY_STAMINA] = 3,
@@ -4889,6 +4889,15 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         effect++;
                     }
                     break;
+                case ABILITY_WISH_MAKER:
+                if (!gSpecialStatuses[battler].switchInAbilityDone)
+                {
+                    gLastUsedAbility = ABILITY_WISH_MAKER;
+                    gLastUsedMove = MOVE_WISH;
+                    BattleScriptPushCursorAndCallback(BattleScript_WishMaker);
+                    effect++;
+                    break;
+                }
             }
         }
         break;
