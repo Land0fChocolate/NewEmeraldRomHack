@@ -208,6 +208,8 @@
 #define VARIOUS_SET_OCTOLOCK                    135
 #define VARIOUS_CUT_1_3_HP_RAISE_STATS          136
 #define VARIOUS_TRY_END_NEUTRALIZING_GAS        137
+#define VARIOUS_CHECK_IF_MIRACLE_BLOSSOM_HEALS  138
+#define VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS      139
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
@@ -219,6 +221,8 @@
 #define DMG_BIG_ROOT               6
 #define DMG_1_2_ATTACKER_HP        7
 #define DMG_RECOIL_FROM_IMMUNE     8 // Used to calculate recoil for the Gen 4 version of Jump Kick
+#define DMG_HEMATOPHAGY            9
+#define HEAL_1_8_TARGET_HP         10
 
 // Cmd_jumpifcantswitch
 #define SWITCH_IGNORE_ESCAPE_PREVENTION   (1 << 7)

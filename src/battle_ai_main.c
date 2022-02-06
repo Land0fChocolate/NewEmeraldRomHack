@@ -722,6 +722,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     if (IsShieldsDownProtected(battlerAtk) && IsNonVolatileStatusMoveEffect(moveEffect))
                         RETURN_SCORE_MINUS(10);
                     break;
+                case ABILITY_BAD_LUCK:
                 case ABILITY_WONDER_SKIN:
                     if (IS_MOVE_STATUS(move))
                         accuracy = 50;
@@ -1791,7 +1792,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_LASER_FOCUS:
             if (gStatuses3[battlerAtk] & STATUS3_LASER_FOCUS)
                 score -= 10;
-            else if (HasAbility(ABILITY_SHELL_ARMOR, AI_DATA->defAbilities) || HasAbility(ABILITY_BATTLE_ARMOR, AI_DATA->defAbilities))
+            else if (HasAbility(ABILITY_SHELL_ARMOR, AI_DATA->defAbilities) || HasAbility(ABILITY_BATTLE_ARMOR, AI_DATA->defAbilities) || HasAbility(ABILITY_BAD_LUCK, AI_DATA->defAbilities))
                 score -= 8;
             break;
         case EFFECT_SKETCH:
@@ -1852,7 +1853,8 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 {
                     if (GetBattlerSecondaryDamage(battlerAtk) >= gBattleMons[battlerAtk].hp
                       && !HasAbility(ABILITY_MOXIE, AI_DATA->defAbilities)
-                      && !HasAbility(ABILITY_BEAST_BOOST, AI_DATA->defAbilities))
+                      && !HasAbility(ABILITY_BEAST_BOOST, AI_DATA->defAbilities)
+                      && !HasAbility(ABILITY_WILDFIRE, AI_DATA->defAbilities))
                     {
                         score -= 10; //Don't protect if you're going to faint after protecting
                     }
@@ -3026,6 +3028,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case ABILITY_GRIM_NEIGH:
         case ABILITY_AS_ONE_ICE_RIDER:
         case ABILITY_AS_ONE_SHADOW_RIDER:
+        case ABILITY_WILDFIRE:
             if (GetWhoStrikesFirst(battlerAtk, battlerDef, TRUE) == 0) // attacker should go first
             {
                 if (CanIndexMoveFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 0))
@@ -3046,7 +3049,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
         break;
 	case EFFECT_ABSORB:
-        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT)
+        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT || HasAbility(ABILITY_HEMATOPHAGY, AI_DATA->atkAbilities))
             score++;
         if (effectiveness <= AI_EFFECTIVENESS_x0_5 && AI_RandLessThan(50))
             score -= 3;
@@ -3347,7 +3350,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_MOONLIGHT:
         if (ShouldRecover(battlerAtk, battlerDef, move, 50))
             score += 3;
-        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT)
+        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT || HasAbility(ABILITY_HEMATOPHAGY, AI_DATA->atkAbilities))
             score++;
         break;
     case EFFECT_TOXIC:
@@ -4143,7 +4146,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score += 2;
         break;
     case EFFECT_INGRAIN:
-        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT)
+        if (AI_DATA->atkHoldEffect == HOLD_EFFECT_BIG_ROOT || HasAbility(ABILITY_HEMATOPHAGY, AI_DATA->atkAbilities))
             score += 3;
         else
             score++;

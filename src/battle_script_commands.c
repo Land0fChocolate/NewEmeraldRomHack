@@ -1644,7 +1644,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move)
 
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
-    if (HasAbility(ABILITY_UNAWARE, atkAbilities) || HasAbility(ABILITY_KEEN_EYE, atkAbilities))
+    if (HasAbility(ABILITY_UNAWARE, atkAbilities) || HasAbility(ABILITY_KEEN_EYE, atkAbilities) || HasAbility(ABILITY_AURA_SENSE, atkAbilities))
         evasionStage = 6;
     if (gBattleMoves[move].flags & FLAG_STAT_STAGES_IGNORED)
         evasionStage = 6;
@@ -1667,7 +1667,8 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move)
       && (gBattleMoves[move].effect == EFFECT_THUNDER || gBattleMoves[move].effect == EFFECT_HURRICANE))
         moveAcc = 50;
     // Check Wonder Skin.
-    if (HasAbility(ABILITY_WONDER_SKIN, defAbilities) && gBattleMoves[move].power == 0)
+    if ((HasAbility(ABILITY_WONDER_SKIN, defAbilities) && gBattleMoves[move].power == 0)
+        || (HasAbility(ABILITY_BAD_LUCK, defAbilities) && gBattleMoves[move].power == 0))
         moveAcc = 50;
 
     calc = gAccuracyStageRatios[buff].dividend * moveAcc;
@@ -1853,7 +1854,7 @@ s32 CalcCritChanceStage(u8 battlerAtk, u8 battlerDef, u32 move)
     {
         critChance = -1;
     }
-    else if (HasAbility(ABILITY_BATTLE_ARMOR, defAbilities) || HasAbility(ABILITY_SHELL_ARMOR, defAbilities))
+    else if (HasAbility(ABILITY_BATTLE_ARMOR, defAbilities) || HasAbility(ABILITY_SHELL_ARMOR, defAbilities) || HasAbility(ABILITY_BAD_LUCK, defAbilities))
     {
         critChance = -1;
     }
@@ -3110,10 +3111,13 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 }
                 break;
             case MOVE_EFFECT_RECHARGE:
-                gBattleMons[gEffectBattler].status2 |= STATUS2_RECHARGE;
-                gDisableStructs[gEffectBattler].rechargeTimer = 2;
-                gLockedMoves[gEffectBattler] = gCurrentMove;
-                gBattlescriptCurrInstr++;
+                if (!HasAbility(ABILITY_KINGS_MIGHT, attackerAbilities))
+                {
+                    gBattleMons[gEffectBattler].status2 |= STATUS2_RECHARGE;
+                    gDisableStructs[gEffectBattler].rechargeTimer = 2;
+                    gLockedMoves[gEffectBattler] = gCurrentMove;
+                    gBattlescriptCurrInstr++;
+                }
                 break;
             case MOVE_EFFECT_RAGE:
                 gBattleMons[gBattlerAttacker].status2 |= STATUS2_RAGE;
@@ -7767,6 +7771,48 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr += 7;
         }
         return;
+    case VARIOUS_CHECK_IF_MIRACLE_BLOSSOM_HEALS:
+        if ((BATTLER_MAX_HP(gActiveBattler) && BATTLER_MAX_HP(BATTLE_PARTNER(gActiveBattler)))
+            || !gBattleMons[gActiveBattler].hp)
+        {
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 2);
+        }
+        else
+        {
+            if (!BATTLER_MAX_HP(gActiveBattler))
+            {
+                gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / 8;
+                if (gBattleMoveDamage == 0)
+                    gBattleMoveDamage = 1;
+                gBattleMoveDamage *= -1;
+            }
+
+            if (!BATTLER_MAX_HP(BATTLE_PARTNER(gActiveBattler)) && IsBattlerAlive(BATTLE_PARTNER(gActiveBattler)))
+            {
+                gBattleMoveDamage = gBattleMons[BATTLE_PARTNER(gActiveBattler)].maxHP / 8;
+                if (gBattleMoveDamage == 0)
+                    gBattleMoveDamage = 1;
+                gBattleMoveDamage *= -1;
+            }
+
+            gBattlescriptCurrInstr += 7;
+        }
+        return;
+    case VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS:
+        if (!gBattleMons[gActiveBattler].hp)
+        {
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 2);
+        }
+        else
+        {
+            if (BATTLER_MAX_HP(gActiveBattler))
+                gBattleMoveDamage = 0;
+            else
+                gBattleMoveDamage *= -1;
+
+            gBattlescriptCurrInstr += 7;
+        }
+        return;
     case VARIOUS_GRAVITY_ON_AIRBORNE_MONS:
         if (gStatuses3[gActiveBattler] & STATUS3_ON_AIR)
             CancelMultiTurnMoves(gActiveBattler);
@@ -8055,7 +8101,8 @@ static void Cmd_various(void)
     case VARIOUS_TRY_ACTIVATE_GRIM_NEIGH:   // and as one shadow rider
         memcpy(battlerAbilities, GetBattlerAbilities(gActiveBattler), sizeof(battlerAbilities));
         if ((HasAbility(ABILITY_GRIM_NEIGH, battlerAbilities)
-         || HasAbility(ABILITY_AS_ONE_SHADOW_RIDER, battlerAbilities))
+         || HasAbility(ABILITY_AS_ONE_SHADOW_RIDER, battlerAbilities)
+         || HasAbility(ABILITY_WILDFIRE, battlerAbilities))
           && HasAttackerFaintedTarget()
           && !NoAliveMonsForEitherParty()
           && CompareStat(gBattlerAttacker, STAT_SPATK, MAX_STAT_STAGE, CMP_LESS_THAN))
@@ -8068,6 +8115,8 @@ static void Cmd_various(void)
                 gLastUsedAbility = ABILITY_GRIM_NEIGH;
             if (HasAbility(ABILITY_AS_ONE_SHADOW_RIDER, battlerAbilities))
                 gLastUsedAbility = ABILITY_AS_ONE_SHADOW_RIDER;
+            if (HasAbility(ABILITY_WILDFIRE, battlerAbilities))
+                gLastUsedAbility = ABILITY_WILDFIRE;
             gBattlescriptCurrInstr = BattleScript_RaiseStatOnFaintingTarget;
             return;
         }
@@ -8095,7 +8144,7 @@ static void Cmd_various(void)
                 case ABILITY_RKS_SYSTEM:        case ABILITY_TRACE:
                     break;
                 default:
-                    gBattleStruct->tracedAbilities[x] = ability; // TODO: currently picking any ability. Update to use sTraceAbilityRatings.
+                    gBattleStruct->tracedAbilities[x] = ability; //TODO: currently picking any ability. Update to use sTraceAbilityRatings.
                     gBattleScripting.battler = gActiveBattler;
                     BattleScriptPush(gBattlescriptCurrInstr + 3);
                     gBattlescriptCurrInstr = BattleScript_ReceiverActivates;
@@ -9676,6 +9725,12 @@ static void Cmd_manipulatedamage(void)
         if (gBattleMoveDamage == 0)
             gBattleMoveDamage = 1;
         break;
+    case HEAL_1_8_TARGET_HP:
+        gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 8;
+        if (gBattleMoveDamage == 0)
+            gBattleMoveDamage = 1;
+        gBattleMoveDamage *= -1;
+        break;
     case DMG_FULL_ATTACKER_HP:
         gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP;
         break;
@@ -9684,6 +9739,9 @@ static void Cmd_manipulatedamage(void)
         break;
     case DMG_BIG_ROOT:
         gBattleMoveDamage = GetDrainedBigRootHp(gBattlerAttacker, gBattleMoveDamage);
+        break;
+    case DMG_HEMATOPHAGY:
+        gBattleMoveDamage = GetDrainedHematophagyHp(gBattlerAttacker, gBattleMoveDamage);
         break;
     case DMG_1_2_ATTACKER_HP:
         gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 2;

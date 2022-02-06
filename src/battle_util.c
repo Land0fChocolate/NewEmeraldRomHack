@@ -225,10 +225,13 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_ANALYTIC] = 3,
     [ABILITY_ANGER_POINT] = 2,
     [ABILITY_ANTICIPATION] = 2,
+    [ABILITY_AQUATIC] = 1,
     [ABILITY_ARENA_TRAP] = 5,
     [ABILITY_AROMA_VEIL] = 3,
     [ABILITY_AURA_BREAK] = 1,
+    [ABILITY_AURA_SENSE] = 2,
     [ABILITY_BAD_DREAMS] = 2,
+    [ABILITY_BAD_LUCK] = 3,
     [ABILITY_BATTERY] = 2,
     [ABILITY_BATTLE_ARMOR] = 1,
     [ABILITY_BATTLE_BOND] = 0,
@@ -236,6 +239,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_BERSERK] = 4,
     [ABILITY_BIG_PECKS] = 1,
     [ABILITY_BLAZE] = 2,
+    [ABILITY_BUBBLE_SHIELD] = 0,
     [ABILITY_BULLETPROOF] = 4,
     [ABILITY_CHEEK_POUCH] = 2,
     [ABILITY_CHLOROPHYLL] = 4,
@@ -266,6 +270,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_EFFECT_SPORE] = 2,
     [ABILITY_ELECTRIC_SURGE] = 2,
     [ABILITY_EMERGENCY_EXIT] = 3,
+    [ABILITY_EVERGREEN] = 4,
     [ABILITY_FAIRY_AURA] = 1,
     [ABILITY_FILTER] = 4,
     [ABILITY_FLAME_BODY] = 2,
@@ -282,6 +287,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_FUR_COAT] = 5,
     [ABILITY_GALE_WINGS] = 2,
     [ABILITY_GALVANIZE] = 3,
+    [ABILITY_GARDENER] = 1,
     [ABILITY_GLUTTONY] = 2,
     [ABILITY_GOOEY] = 4,
     [ABILITY_GRASS_PELT] = 2,
@@ -289,13 +295,16 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_GUTS] = 3,
     [ABILITY_HARVEST] = 2,
     [ABILITY_HEALER] = 2,
+    [ABILITY_HEART_SWAP] = 0,
     [ABILITY_HEATPROOF] = 4,
     [ABILITY_HEAVY_METAL] = 1,
+    [ABILITY_HEMATOPHAGY] = 1,
     [ABILITY_HONEY_GATHER] = 1,
     [ABILITY_HUGE_POWER] = 4,
     [ABILITY_HUSTLE] = 1,
     [ABILITY_HYDRATION] = 3,
     [ABILITY_HYPER_CUTTER] = 2,
+    [ABILITY_ICE_AFFINITY] = 2,
     [ABILITY_ICE_BODY] = 3,
     [ABILITY_ILLUMINATE] = 1,
     [ABILITY_ILLUSION] = 0,
@@ -310,7 +319,9 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_IRON_FIST] = 2,
     [ABILITY_JUSTIFIED] = 4,
     [ABILITY_KEEN_EYE] = 1,
+    [ABILITY_KINGS_MIGHT] = 1,
     [ABILITY_KLUTZ] = 1,
+    [ABILITY_LAVA_BODY] = 4,
     [ABILITY_LEAF_GUARD] = 2,
     [ABILITY_LEVITATE] = 5,
     [ABILITY_LIGHT_METAL] = 1,
@@ -328,6 +339,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_MEGA_LAUNCHER] = 3,
     [ABILITY_MERCILESS] = 2,
     [ABILITY_MINUS] = 1,
+    [ABILITY_MIRACLE_BLOSSOM] = 5,
     [ABILITY_MISTY_SURGE] = 2,
     [ABILITY_MOLD_BREAKER] = 3,
     [ABILITY_MOODY] = 4,
@@ -348,6 +360,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_PICKUP] = 1,
     [ABILITY_PICKPOCKET] = 3,
     [ABILITY_PIXILATE] = 2,
+    [ABILITY_PLEASANT_DREAMS] = 1,
     [ABILITY_PLUS] = 1,
     [ABILITY_POISON_HEAL] = 3,
     [ABILITY_POISON_POINT] = 2,
@@ -357,6 +370,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_POWER_OF_ALCHEMY] = 0,
     [ABILITY_PRANKSTER] = 4,
     [ABILITY_PRESSURE] = 1,
+    [ABILITY_PRICKLY_THORNS] = 3,
     [ABILITY_PRIMORDIAL_SEA] = 2,
     [ABILITY_PRISM_ARMOR] = 4,
     [ABILITY_PROTEAN] = 4,
@@ -381,6 +395,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SAND_VEIL] = 2,
     [ABILITY_SAP_SIPPER] = 3,
     [ABILITY_SCHOOLING] = 0,
+    [ABILITY_SCORCHING_HEART] = 1,
     [ABILITY_SCRAPPY] = 3,
     [ABILITY_SERENE_GRACE] = 4,
     [ABILITY_SHADOW_SHIELD] = 4,
@@ -400,8 +415,10 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SOLAR_POWER] = 2,
     [ABILITY_SOLID_ROCK] = 4,
     [ABILITY_SOUL_HEART] = 4,
+    [ABILITY_SOUL_SIPHON] = 2,
     [ABILITY_SOUNDPROOF] = 5,
     [ABILITY_SPEED_BOOST] = 5,
+    [ABILITY_SPINNING_BODY] = 4,
     [ABILITY_STAKEOUT] = 3,
     [ABILITY_STALL] = 0,
     [ABILITY_STAMINA] = 3,
@@ -416,10 +433,12 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_STURDY] = 4,
     [ABILITY_SUCTION_CUPS] = 1,
     [ABILITY_SUPER_LUCK] = 2,
+    [ABILITY_SUPERCOOLED] = 1,
     [ABILITY_SURGE_SURFER] = 2,
     [ABILITY_SWARM] = 2,
     [ABILITY_SWEET_VEIL] = 3,
     [ABILITY_SWIFT_SWIM] = 3,
+    [ABILITY_SWORDMASTER] = 3,
     [ABILITY_SYMBIOSIS] = 1,
     [ABILITY_SYNCHRONIZE] = 2,
     [ABILITY_TANGLED_FEET] = 2,
@@ -428,6 +447,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_TELEPATHY] = 3,
     [ABILITY_TERAVOLT] = 4,
     [ABILITY_THICK_FAT] = 4,
+    [ABILITY_TIME_TRAVELLER] = 0,
     [ABILITY_TINTED_LENS] = 4,
     [ABILITY_TORRENT] = 2,
     [ABILITY_TOXIC_BOOST] = 3,
@@ -449,7 +469,10 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_WATER_VEIL] = 2,
     [ABILITY_WEAK_ARMOR] = 1,
     [ABILITY_WHITE_SMOKE] = 3,
+    [ABILITY_WICKEDNESS] = 5,
     [ABILITY_WIMP_OUT] = 3,
+    [ABILITY_WILDFIRE] = 5,
+    [ABILITY_WISH_MAKER] = 0,
     [ABILITY_WONDER_GUARD] = 5,
     [ABILITY_WONDER_SKIN] = 2,
     [ABILITY_ZEN_MODE] = 0,
@@ -1228,10 +1251,12 @@ static const u8 sMovesNotAffectedByStench[] =
 
 static const u8 sAbilitiesAffectedByMoldBreaker[] =
 {
+    [ABILITY_BAD_LUCK] = 1,
     [ABILITY_BATTLE_ARMOR] = 1,
     [ABILITY_CLEAR_BODY] = 1,
     [ABILITY_DAMP] = 1,
     [ABILITY_DRY_SKIN] = 1,
+    [ABILITY_EVERGREEN] = 1,
     [ABILITY_FILTER] = 1,
     [ABILITY_FLASH_FIRE] = 1,
     [ABILITY_FLOWER_GIFT] = 1,
@@ -2759,6 +2784,16 @@ s32 GetDrainedBigRootHp(u32 battler, s32 hp)
 {
     if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_BIG_ROOT)
         hp = (hp * 1300) / 1000;
+    if (hp == 0)
+        hp = 1;
+
+    return hp * -1;
+}
+
+s32 GetDrainedHematophagyHp(u32 battler, s32 hp)
+{
+    if (HasAbility(ABILITY_HEMATOPHAGY, GetBattlerAbilities(battler)))
+        hp = (hp * 1500) / 1000;
     if (hp == 0)
         hp = 1;
 
@@ -4487,10 +4522,14 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                     break;
                 case ABILITY_ANTICIPATION:
+                case ABILITY_AURA_SENSE:
                     if (!gSpecialStatuses[battler].switchInAbilityDone)
                     {
                         u32 side = GetBattlerSide(battler);
-                        gLastUsedAbility = ABILITY_ANTICIPATION;
+                        if (gLastUsedAbilities[x] == ABILITY_ANTICIPATION)
+                            gLastUsedAbility = ABILITY_ANTICIPATION;
+                        if (gLastUsedAbilities[x] == ABILITY_AURA_SENSE)
+                            gLastUsedAbility = ABILITY_AURA_SENSE;
     
                         for (i = 0; i < MAX_BATTLERS_COUNT; i++)
                         {
@@ -4850,6 +4889,15 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         effect++;
                     }
                     break;
+                case ABILITY_WISH_MAKER:
+                if (!gSpecialStatuses[battler].switchInAbilityDone)
+                {
+                    gLastUsedAbility = ABILITY_WISH_MAKER;
+                    gLastUsedMove = MOVE_WISH;
+                    BattleScriptPushCursorAndCallback(BattleScript_WishMaker);
+                    effect++;
+                    break;
+                }
             }
         }
         break;
@@ -4996,6 +5044,17 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         effect++;
                     }
                     break;
+                case ABILITY_PLEASANT_DREAMS:
+                    if (gBattleMons[battler].status1 & STATUS1_SLEEP
+                        || gBattleMons[BATTLE_OPPOSITE(battler)].status1 & STATUS1_SLEEP
+                        || HasAbility(ABILITY_COMATOSE, GetBattlerAbilities(battler))
+                        || HasAbility(ABILITY_COMATOSE, GetBattlerAbilities(BATTLE_OPPOSITE(battler))))
+                    {
+                        gLastUsedAbility = ABILITY_PLEASANT_DREAMS;
+                        BattleScriptPushCursorAndCallback(BattleScript_PleasantDreamsActivates);
+                        effect++;
+                    }
+                    break;
                 SOLAR_POWER_HP_DROP:
                 case ABILITY_SOLAR_POWER:
                      if (IsBattlerWeatherAffected(battler, WEATHER_SUN_ANY))
@@ -5084,6 +5143,19 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         }
                         effect++;
                     }
+                    break;
+                case ABILITY_MIRACLE_BLOSSOM:
+                    if ((gBattleMons[battler].hp != 0) 
+                        && (gBattleMons[battler].hp != gBattleMons[battler].maxHP 
+                            || gBattleMons[BATTLE_PARTNER(battler)].hp != gBattleMons[BATTLE_PARTNER(battler)].maxHP))
+                    {
+                        gLastUsedAbility = ABILITY_MIRACLE_BLOSSOM;
+                        gBattleScripting.battler = gBattlerAttacker;
+                        BattleScriptExecute(BattleScript_MiracleBlossomHeals);
+
+                        effect++;
+                    }
+
                     break;
                 }
             }
@@ -5520,16 +5592,20 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 }
                 break;
             case ABILITY_ROUGH_SKIN:
-                gLastUsedAbility = ABILITY_ROUGH_SKIN;
             case ABILITY_IRON_BARBS:
+            case ABILITY_PRICKLY_THORNS:
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                  && gBattleMons[gBattlerAttacker].hp != 0
                  && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
                  && TARGET_TURN_DAMAGED
                  && IsMoveMakingContact(move, gBattlerAttacker))
                 {
+                    if (gLastUsedAbilities[x] == ABILITY_ROUGH_SKIN)
+                        gLastUsedAbility = ABILITY_ROUGH_SKIN;
                     if (gLastUsedAbilities[x] == ABILITY_IRON_BARBS)
                         gLastUsedAbility = ABILITY_IRON_BARBS;
+                    if (gLastUsedAbilities[x] == ABILITY_PRICKLY_THORNS)
+                        gLastUsedAbility = ABILITY_PRICKLY_THORNS;
                     gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 8;
                     if (gBattleMoveDamage == 0)
                         gBattleMoveDamage = 1;
@@ -5647,6 +5723,24 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                  && (Random() % 3) == 0)
                 {
                     gLastUsedAbility = ABILITY_FLAME_BODY;
+                    gBattleScripting.moveEffect = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_BURN;
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
+                    gHitMarker |= HITMARKER_IGNORE_SAFEGUARD;
+                    effect++;
+                }
+                break;
+            case ABILITY_LAVA_BODY:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                 && gBattleMons[gBattlerAttacker].hp != 0
+                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && (IsMoveMakingContact(move, gBattlerAttacker))
+                 && TARGET_TURN_DAMAGED
+                 && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_FIRE)
+                 && !(gBattleMons[gBattlerAttacker].status1 & STATUS1_ANY)
+                 && CanBeBurned(gBattlerAttacker))
+                {
+                    gLastUsedAbility = ABILITY_LAVA_BODY;
                     gBattleScripting.moveEffect = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_BURN;
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
@@ -5846,6 +5940,54 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     effect++;
                 }
                 break;
+            case ABILITY_SOUL_SIPHON:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                 && gBattleMons[gBattlerTarget].hp != 0
+                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && IsMoveMakingContact(move, gBattlerAttacker)
+                 && !(gSideStatuses[gBattlerTarget] & SIDE_STATUS_SAFEGUARD)
+                 && TARGET_TURN_DAMAGED) // Need to actually hit the target
+                {
+                    gLastUsedAbility = ABILITY_SOUL_SIPHON;
+                    gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP / 8;
+                    if (gBattleMoveDamage == 0)
+                        gBattleMoveDamage = 1;
+                    BattleScriptPushCursor();
+                    BattleScriptExecute(BattleScript_EffectSoulSiphon);
+                    effect++;
+                }
+                break;
+            case ABILITY_SPINNING_BODY:
+                if (IS_MOVE_PHYSICAL(gCurrentMove))
+                {
+                    BattleScriptPushCursor();
+                    BattleScriptExecute(BattleScript_RapidSpinAway);
+                    if (CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN) && gDisableStructs[battler].isFirstTurn != 2)
+                    {
+                        gLastUsedAbility = ABILITY_SPINNING_BODY;
+                        gBattleMons[battler].statStages[STAT_SPEED]++;
+                        gBattleScripting.animArg1 = 14 + STAT_SPEED;
+                        gBattleScripting.animArg2 = 0;
+                        BattleScriptPushCursor();
+                        BattleScriptExecute(BattleScript_SpeedBoostActivates);
+                        effect++;
+                    }
+                }
+                break;
+            case ABILITY_HEART_SWAP:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                 && gBattleMons[gBattlerTarget].hp != 0
+                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && IsMoveMakingContact(move, gBattlerAttacker)
+                 && !(gSideStatuses[gBattlerTarget] & SIDE_STATUS_SAFEGUARD)
+                 && TARGET_TURN_DAMAGED) // Need to actually hit the target
+                {
+                    gLastUsedAbility = ABILITY_HEART_SWAP;
+                    BattleScriptPushCursor();
+                    BattleScriptExecute(BattleScript_HeartSwapAbilityActivates);
+                    effect++;
+                }
+                break;
             }
         }
         break;
@@ -5877,8 +6019,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         gHitMarker &= ~(HITMARKER_ATTACKSTRING_PRINTED);
                         BattleScriptExecute(BattleScript_DancerActivates);
                         effect++;
-                    }
-                    break;
+                }
+                break;
             }
         }  
         break;
@@ -8733,6 +8875,10 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             if (IsMoveMakingContact(move, battlerAtk))
                MulModifier(&modifier, UQ_4_12(1.3));
             break;
+        case ABILITY_SWORDMASTER:
+            if (gBattleMoves[move].flags & FLAG_SWORDMASTER_BOOST)
+               MulModifier(&modifier, UQ_4_12(1.3));
+            break;
         case ABILITY_VOLUME_UP:
             if (gBattleMoves[move].flags & FLAG_SOUND)
                MulModifier(&modifier, UQ_4_12(1.33));
@@ -8751,6 +8897,22 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             break;
         case ABILITY_STEELWORKER:
             if (moveType == TYPE_STEEL)
+               MulModifier(&modifier, UQ_4_12(1.5));
+            break;
+        case ABILITY_SCORCHING_HEART:
+            if (moveType == TYPE_FIRE)
+               MulModifier(&modifier, UQ_4_12(1.5));
+            break;
+        case ABILITY_ICE_AFFINITY:
+            if (moveType == TYPE_ICE)
+               MulModifier(&modifier, UQ_4_12(1.5));
+            break;
+        case ABILITY_AQUATIC:
+            if (moveType == TYPE_WATER)
+               MulModifier(&modifier, UQ_4_12(1.5));
+            break;
+        case ABILITY_GARDENER:
+            if (moveType == TYPE_GRASS)
                MulModifier(&modifier, UQ_4_12(1.5));
             break;
         case ABILITY_PIXILATE:
@@ -9147,6 +9309,10 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
             if (IS_MOVE_SPECIAL(move))
                 MulModifier(&modifier, UQ_4_12(0.5));
             break;
+        case ABILITY_EVERGREEN:
+            if (moveType == TYPE_ICE)
+                MulModifier(&modifier, UQ_4_12(0.5));
+            break;
         }
     }
 
@@ -9439,6 +9605,7 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
                 MulModifier(&finalModifier, UQ_4_12(1.5));
             break;
         case ABILITY_NEUROFORCE:
+        case ABILITY_WICKEDNESS:
             if (typeEffectivenessModifier >= UQ_4_12(2.0))
                 MulModifier(&finalModifier, UQ_4_12(1.25));
             break;
@@ -9594,6 +9761,8 @@ static void MulByTypeEffectiveness(u16 *modifier, u16 move, u8 moveType, u8 batt
     if (moveType == TYPE_PSYCHIC && defType == TYPE_DARK && gStatuses3[battlerDef] & STATUS3_MIRACLE_EYED && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);
     if (gBattleMoves[move].effect == EFFECT_FREEZE_DRY && defType == TYPE_WATER)
+        mod = UQ_4_12(2.0);
+    if (HasAbility(ABILITY_SUPERCOOLED, abilities) && (moveType == TYPE_ICE) && (defType == TYPE_WATER))
         mod = UQ_4_12(2.0);
     if (moveType == TYPE_FIRE && gDisableStructs[battlerDef].tarShot)
         mod = UQ_4_12(2.0);

@@ -274,6 +274,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectPowerSwap               @ EFFECT_POWER_SWAP
 	.4byte BattleScript_EffectGuardSwap               @ EFFECT_GUARD_SWAP
 	.4byte BattleScript_EffectHeartSwap               @ EFFECT_HEART_SWAP
+	.4byte BattleScript_HeartSwapAbilityActivates     @ EFFECT_HEART_SWAP
 	.4byte BattleScript_EffectPowerSplit              @ EFFECT_POWER_SPLIT
 	.4byte BattleScript_EffectGuardSplit              @ EFFECT_GUARD_SPLIT
 	.4byte BattleScript_EffectStickyWeb               @ EFFECT_STICKY_WEB
@@ -1016,6 +1017,7 @@ BattleScript_StrengthSapTryHp:
 BattleScript_StrengthSapHp:
 	jumpiffullhp BS_ATTACKER, BattleScript_MoveEnd
 	manipulatedamage DMG_BIG_ROOT
+	manipulatedamage DMG_HEMATOPHAGY
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 	printstring STRINGID_PKMNENERGYDRAINED
@@ -2326,6 +2328,19 @@ BattleScript_EffectHeartSwap:
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_HeartSwapAbilityActivates::
+	call BattleScript_AbilityPopUp
+	swapstatstages STAT_ATK
+	swapstatstages STAT_DEF
+	swapstatstages STAT_SPEED
+	swapstatstages STAT_SPATK
+	swapstatstages STAT_SPDEF
+	swapstatstages STAT_EVASION
+	swapstatstages STAT_ACC
+	printstring STRINGID_PKMNSWITCHEDSTATCHANGES
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_EffectPowerSwap:
 	attackcanceler
 	attackstring
@@ -2847,6 +2862,7 @@ BattleScript_EffectAbsorb::
 	waitmessage B_WAIT_TIME_LONG
 	setdrainedhp
 	manipulatedamage DMG_BIG_ROOT
+	manipulatedamage DMG_HEMATOPHAGY
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE
 	jumpifability BS_TARGET, ABILITY_LIQUID_OOZE, BattleScript_AbsorbLiquidOoze
 	setbyte cMULTISTRING_CHOOSER, B_MSG_ABSORB
@@ -2972,6 +2988,7 @@ BattleScript_DreamEaterWorked:
 	waitmessage B_WAIT_TIME_LONG
 	setdrainedhp
 	manipulatedamage DMG_BIG_ROOT
+	manipulatedamage DMG_HEMATOPHAGY
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
@@ -5797,7 +5814,7 @@ BattleScript_FaintTarget::
 	tryactivatereceiver BS_TARGET
 	tryactivatemoxie BS_ATTACKER		@ and chilling neigh, as one ice rider
 	tryactivatebeastboost BS_ATTACKER
-	tryactivategrimneigh BS_ATTACKER	@ and as one shadow rider
+	tryactivategrimneigh BS_ATTACKER	@ and as one shadow rider, wildfire
 	tryactivatebattlebond BS_ATTACKER
 	trytrainerslidefirstdownmsg BS_TARGET
 	return
@@ -6361,6 +6378,7 @@ BattleScript_LeechSeedTurnDrain::
 	setbyte cMULTISTRING_CHOOSER, B_MSG_LEECH_SEED_DRAIN
 	jumpifstatus3 BS_TARGET, STATUS3_HEAL_BLOCK, BattleScript_LeechSeedHealBlock
 	manipulatedamage DMG_BIG_ROOT
+	manipulatedamage DMG_HEMATOPHAGY
 	goto BattleScript_LeechSeedTurnPrintAndUpdateHp
 BattleScript_LeechSeedTurnPrintLiquidOoze::
 	copybyte gBattlerAbility, gBattlerAttacker
@@ -8042,6 +8060,22 @@ BattleScript_BadDreamsIncrement:
 BattleScript_BadDreamsEnd:
 	end3
 
+BattleScript_PleasantDreamsActivates::
+	setbyte gBattlerTarget, 0
+	call BattleScript_AbilityPopUp
+BattleScript_PleasantDreamsLoop:
+	trygetbaddreamstarget BattleScript_PleasantDreamsEnd
+	heal_1_8_targethp
+	printstring STRINGID_PLEASANTDREAMSHEAL
+	waitmessage B_WAIT_TIME_LONG
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+BattleScript_PleasantDreamsIncrement:
+	addbyte gBattlerTarget, 1
+	goto BattleScript_PleasantDreamsLoop
+BattleScript_PleasantDreamsEnd:
+	end3
+
 BattleScript_TookAttack::
 	attackstring
 	pause B_WAIT_TIME_SHORT
@@ -8207,6 +8241,34 @@ BattleScript_GrassyTerrainLoopEnd::
 	jumpifbyte CMP_EQUAL, gFieldTimers + 5, 0, BattleScript_GrassyTerrainEnds
 BattleScript_GrassyTerrainHealEnd:
 	end2
+
+BattleScript_MiracleBlossomHeals::
+	setbyte gBattleCommunication, 0
+	checkmiracleblossomheal BS_ATTACKER, BattleScript_MiracleBlossomHealEnd
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_MIRACLEBLOSSOMHEALS
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_MiracleBlossomHpChange:
+	orword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+BattleScript_MiracleBlossomHealEnd:
+	end2
+
+BattleScript_EffectSoulSiphon::
+	call BattleScript_AbilityPopUp
+	orword gHitMarker, HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	tryfaintmon BS_TARGET, FALSE, NULL
+	printstring STRINGID_PKMNSOULSIPHON
+	checksoulsiphonheal BS_ATTACKER, BattleScript_SoulSiphonHeal
+BattleScript_SoulSiphonHeal:
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+BattleScript_SoulSiphonEnd:
+	waitmessage B_WAIT_TIME_LONG
+	return
 
 BattleScript_AbilityNoSpecificStatLoss::
 	pause B_WAIT_TIME_SHORT
@@ -9279,3 +9341,10 @@ BattleScript_MagicianActivates::
 	call BattleScript_AbilityPopUp
 	call BattleScript_ItemSteal
 	return
+
+BattleScript_WishMaker::
+	call BattleScript_AbilityPopUp
+	trywish 0, BattleScript_ButItFailed
+	printstring STRINGID_PKMNMADEWISH
+	waitmessage B_WAIT_TIME_LONG
+	end3

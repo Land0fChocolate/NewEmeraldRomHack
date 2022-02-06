@@ -126,7 +126,7 @@ static const u8 sNaturalCureDescription[] = _(
 
 static const u8 sLightningRodDescription[] = _(
 	"Draws electric moves. Has\n"
-	"electric immunity. Sp.Atk\n"
+	"electric immunity. Sp. Atk\n"
 	"boost when activated.");
 
 static const u8 sSereneGraceDescription[] = _(
@@ -354,7 +354,7 @@ static const u8 sDrySkinDescription[] = _(
 	"1/8 hp in strong sunlight.");
 
 static const u8 sDownloadDescription[] = _(
-	"Raises Atk or Sp.Atk one\n"
+	"Raises Atk or Sp. Atk one\n"
 	"stage depending on foe's\n"
 	"lowest defensive stat.");
 
@@ -378,7 +378,7 @@ static const u8 sHydrationDescription[] = _(
 	"Cures status in rain.");
 
 static const u8 sSolarPowerDescription[] = _(
-	"User Sp.Atk increased 50%\n"
+	"User Sp. Atk increased 50%\n"
 	"during strong sunlight.");
 
 static const u8 sQuickFeetDescription[] = _(
@@ -461,7 +461,7 @@ static const u8 sScrappyDescription[] = _(
 
 static const u8 sStormDrainDescription[] = _(
 	"Draws water moves. Gives\n"
-	"water immunity. Sp.Atk\n"
+	"water immunity. Sp. Atk\n"
 	"boost when activated.");
 
 static const u8 sIceBodyDescription[] = _(
@@ -515,8 +515,9 @@ static const u8 sDefiantDescription[] = _(
 	"stage.");
 
 static const u8 sDefeatistDescription[] = _(
-	"Atk and Sp.Atk halved when\n"
-	"user HP is halved or less.");
+	"Atk and Sp. Atk halved\n"
+	"when user HP is halved or\n"
+	"less.");
 
 static const u8 sCursedBodyDescription[] = _(
 	"Disables moves on contact."); //TODO: scheduled for update
@@ -550,7 +551,7 @@ static const u8 sToxicBoostDescription[] = _(
 	"stage if poisoned.");
 
 static const u8 sFlareBoostDescription[] = _(
-	"Ups user Sp.Atk by one\n"
+	"Ups user Sp. Atk by one\n"
 	"stage if burned.");
 
 static const u8 sHarvestDescription[] = _(
@@ -667,7 +668,7 @@ static const u8 sBulletproofDescription[] = _(
 
 static const u8 sCompetitiveDescription[] = _(
 	"If user stats are reduced\n"
-	"Sp.Atk rises one stage.");
+	"Sp. Atk rises one stage.");
 
 static const u8 sStrongJawDescription[] = _(
 	"Increases power of biting\n"
@@ -781,7 +782,7 @@ static const u8 sSteelworkerDescription[] = _(
 	"power by 50%.");
 
 static const u8 sBerserkDescription[] = _(
-	"Sp.Atk rises two stages\n"
+	"Sp. Atk rises two stages\n"
 	"at half HP or less.");
 
 static const u8 sSlushRushDescription[] = _(
@@ -842,7 +843,7 @@ static const u8 sDancerDescription[] = _(
 	"Dances along with others.");
 
 static const u8 sBatteryDescription[] = _(
-	"Boosts ally's Sp.Atk by\n"
+	"Boosts ally's Sp. Atk by\n"
 	"one stage.");
 
 static const u8 sFluffyDescription[] = _(
@@ -851,7 +852,7 @@ static const u8 sFluffyDescription[] = _(
 	"double from fire.");
 
 static const u8 sSoulHeartDescription[] = _(
-	"KOs raise user Sp.Atk by\n"
+	"KOs raise user Sp. Atk by\n"
 	"one stage.");
 
 static const u8 sTanglingHairDescription[] = _(
@@ -1013,7 +1014,7 @@ static const u8 sChillingNeighDescription[] = _(
 	"one stage.");
 
 static const u8 sGrimNeighDescription[] = _(
-	"KOs raise user Sp.Atk by\n"
+	"KOs raise user Sp. Atk by\n"
 	"one stage.");
 
 static const u8 sAsOneIceRiderDescription[] = _(
@@ -1022,13 +1023,116 @@ static const u8 sAsOneIceRiderDescription[] = _(
 	"Foes can't eat Berries.");
 
 static const u8 sAsOneShadowRiderDescription[] = _(
-	"KOs raise user Sp.Atk by\n"
+	"KOs raise user Sp. Atk by\n"
 	"one stage."
 	"Foes can't eat Berries.");
 
 static const u8 sVolumeUpDescription[] = _(
 	"sound based moves are\n"
 	"powered up by 33%.");
+
+static const u8 sLavaBodyDescription[] = _(
+	"Attackers who make\n"
+	"contact will become\n"
+	"burned.");
+
+static const u8 sWildFireDescription[] = _(
+	"KOs raise user Sp. Atk by\n"
+	"one stage.");
+
+static const u8 sMiracleBlossomDescription[] = _(
+	"User and ally heals 1/8 HP\n"
+	"at the end of every turn.");
+
+static const u8 sScorchingHeartDescription[] = _(
+	"Fire moves increase in\n"
+	"power by 50%.");
+
+static const u8 sIceAffinityDescription[] = _(
+	"Ice moves increase in\n"
+	"power by 50%.");
+
+static const u8 sAquaticDescription[] = _(
+	"Water moves increase in\n"
+	"power by 50%.");
+
+static const u8 sGardenerDescription[] = _(
+	"Grass moves increase in\n"
+	"power by 50%.");
+
+static const u8 sPricklyThornsDescription[] = _(
+	"Damages attackers who make\n"
+	"contact for 1/8 HP.");
+
+static const u8 sAuraSenseDescription[] = _(
+	"User shudders if opponent\n"
+	"has super-effectve move.\n"
+	"Also ignores evasiveness.");
+
+static const u8 sSoulSiphonDescription[] = _(
+	"Contact from user steals\n"
+	"1/8 HP from the target and\n"
+	"heals user the same amount.");
+
+static const u8 sBadLuckDescription[] = _(
+	"Opponent cannot land crits\n"
+	"and less likely to land\n"
+	"status moves against user.");
+
+static const u8 sWickednessDescription[] = _(
+	"User supereffective moves\n"
+	"do 25% more damage.");
+
+static const u8 sSpinningBodyDescription[] = _(
+	"User's physical moves\n"
+	"remove field hazards and\n"
+	"increase speed one stage.");
+
+static const u8 sEvergreenDescription[] = _(
+	"User take half damage from\n"
+	"ice moves and is immune to\n"
+	"hail.");
+
+static const u8 sHematophagyDescription[] = _(
+	"Healing effect from drain\n"
+	"move increased by 50%.");
+
+static const u8 sSwordmasterDescription[] = _(
+	"Power of sword/blade moves\n"
+	"is increased by 30%.");
+
+static const u8 sSupercooledDescription[] = _(
+	"User's ice moves are\n"
+	"super-effective against\n"
+	"water types.");
+
+static const u8 sKingsMightDescription[] = _(
+	"User doesn't need to\n"
+	"recharge on moves like\n"
+	"Hyper Beam.");
+
+static const u8 sPleasantDreamsDescription[] = _(
+	"Heals sleeping Pokémon\n"
+	"of 1/4 HP per turn.");
+
+static const u8 sBubbleShieldDescription[] = _(
+	"Immunity to status moves\n"
+	"and the first hit while\n"
+	"the shield is up.");
+
+static const u8 sTimeTravellerDescription[] = _(
+	"If user is about to faint\n"
+	"revert to previous state\n"
+	"two turns before.");
+
+static const u8 sWishMakerDescription[] = _(
+	"User creates a wish when\n"
+	"it enters battle.");
+
+static const u8 sHeartSwapDescription[] = _(
+	"If user makes contact with\n"
+	"opponent, stat changes are\n"
+	"swapped.");
 
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
@@ -1302,6 +1406,29 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_AS_ONE_ICE_RIDER] = _("As One"),
     [ABILITY_AS_ONE_SHADOW_RIDER] = _("As One"),
     [ABILITY_VOLUME_UP] = _("Volume Up"),
+    [ABILITY_LAVA_BODY] = _("Lava Body"),
+    [ABILITY_WILDFIRE] = _("Wildfire"),
+    [ABILITY_MIRACLE_BLOSSOM] = _("Miracle Blossom"),
+    [ABILITY_SCORCHING_HEART] = _("Scorching Heart"),
+    [ABILITY_ICE_AFFINITY] = _("Ice Affinity"),
+    [ABILITY_AQUATIC] = _("Aquatic"),
+    [ABILITY_GARDENER] = _("Gardener"),
+    [ABILITY_PRICKLY_THORNS] = _("Prickly Thorns"),
+    [ABILITY_AURA_SENSE] = _("Aura Sense"),
+    [ABILITY_SOUL_SIPHON] = _("Soul Siphon"),
+    [ABILITY_BAD_LUCK] = _("Bad Luck"),
+    [ABILITY_WICKEDNESS] = _("Wickedness"),
+    [ABILITY_SPINNING_BODY] = _("Spinning Body"),
+    [ABILITY_EVERGREEN] = _("Evergreen"),
+    [ABILITY_HEMATOPHAGY] = _("Hematophagy"),
+    [ABILITY_SWORDMASTER] = _("Swordmaster"),
+    [ABILITY_SUPERCOOLED] = _("Supercooled"),
+    [ABILITY_KINGS_MIGHT] = _("King's Might"),
+    [ABILITY_PLEASANT_DREAMS] = _("Pleasant Dreams"),
+    [ABILITY_BUBBLE_SHIELD] = _("Bubble Shield"),
+    [ABILITY_TIME_TRAVELLER] = _("Time Traveller"),
+    [ABILITY_WISH_MAKER] = _("Wish Maker"),
+    [ABILITY_HEART_SWAP] = _("Heart Swap"),
 };
 #else   // 12 characters
 
@@ -1576,6 +1703,29 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_AS_ONE_ICE_RIDER] = _("As One"),
     [ABILITY_AS_ONE_SHADOW_RIDER] = _("As One"),
     [ABILITY_VOLUME_UP] = _("Volume Up"),
+    [ABILITY_LAVA_BODY] = _("Lava Body"),
+    [ABILITY_WILDFIRE] = ("Wildfire"),
+    [ABILITY_MIRACLE_BLOSSOM] = "MiraclBlossm",
+    [ABILITY_SCORCHING_HEART] = "ScorchngHert",
+    [ABILITY_ICE_AFFINITY] = "Ice Affinity",
+    [ABILITY_AQUATIC] = "Aquatic",
+    [ABILITY_GARDENER] = "Gardener",
+    [ABILITY_PRICKLY_THORNS] = "PriklyThorns",
+    [ABILITY_AURA_SENSE] = "Aura Sense",
+    [ABILITY_SOUL_SIPHON] = "Soul Siphon",
+    [ABILITY_BAD_LUCK] = "Bad Luck",
+    [ABILITY_WICKEDNESS] = "Wickedness",
+    [ABILITY_SPINNING_BODY] = "SpinningBody",
+    [ABILITY_EVERGREEN] = "Evergreen",
+    [ABILITY_HEMATOPHAGY] = "Hematophagy",
+    [ABILITY_SWORDMASTER] = "Swordmaster",
+    [ABILITY_SUPERCOOLED] = "Supercooled",
+    [ABILITY_KINGS_MIGHT] = "King's Might",
+    [ABILITY_PLEASANT_DREAMS] = "PlesantDrems",
+    [ABILITY_BUBBLE_SHIELD] = "BubbleShield",
+    [ABILITY_TIME_TRAVELLER] = "TimeTravellr",
+    [ABILITY_WISH_MAKER] = "Wish Maker",
+    [ABILITY_HEART_SWAP] = "Heart Swap",
 };
 #endif
 
@@ -1850,4 +2000,27 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_AS_ONE_ICE_RIDER] = sAsOneIceRiderDescription,
     [ABILITY_AS_ONE_SHADOW_RIDER] = sAsOneShadowRiderDescription,
     [ABILITY_VOLUME_UP] = sVolumeUpDescription,
+    [ABILITY_LAVA_BODY] = sLavaBodyDescription,
+    [ABILITY_WILDFIRE] = sWildFireDescription,
+    [ABILITY_MIRACLE_BLOSSOM] = sMiracleBlossomDescription,
+    [ABILITY_SCORCHING_HEART] = sScorchingHeartDescription,
+    [ABILITY_ICE_AFFINITY] = sIceAffinityDescription,
+    [ABILITY_AQUATIC] = sAquaticDescription,
+    [ABILITY_GARDENER] = sGardenerDescription,
+    [ABILITY_PRICKLY_THORNS] = sPricklyThornsDescription,
+    [ABILITY_AURA_SENSE] = sAuraSenseDescription,
+    [ABILITY_SOUL_SIPHON] = sSoulSiphonDescription,
+    [ABILITY_BAD_LUCK] = sBadLuckDescription,
+    [ABILITY_WICKEDNESS] = sWickednessDescription,
+    [ABILITY_SPINNING_BODY] = sSpinningBodyDescription,
+    [ABILITY_EVERGREEN] = sEvergreenDescription,
+    [ABILITY_HEMATOPHAGY] = sHematophagyDescription,
+    [ABILITY_SWORDMASTER] = sSwordmasterDescription,
+    [ABILITY_SUPERCOOLED] = sSupercooledDescription,
+    [ABILITY_KINGS_MIGHT] = sKingsMightDescription,
+    [ABILITY_PLEASANT_DREAMS] = sPleasantDreamsDescription,
+    [ABILITY_BUBBLE_SHIELD] = sBubbleShieldDescription,
+    [ABILITY_TIME_TRAVELLER] = sTimeTravellerDescription,
+    [ABILITY_WISH_MAKER] = sWishMakerDescription,
+    [ABILITY_HEART_SWAP] = sHeartSwapDescription,
 };

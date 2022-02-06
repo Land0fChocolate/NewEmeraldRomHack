@@ -30,10 +30,13 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_ANALYTIC] = 5,
     [ABILITY_ANGER_POINT] = 4,
     [ABILITY_ANTICIPATION] = 2,
+    [ABILITY_AQUATIC] = 6,
     [ABILITY_ARENA_TRAP] = 9,
     [ABILITY_AROMA_VEIL] = 3,
     [ABILITY_AURA_BREAK] = 3,
+    [ABILITY_AURA_SENSE] = 8,
     [ABILITY_BAD_DREAMS] = 4,
+    [ABILITY_BAD_LUCK] = 5,
     [ABILITY_BATTERY] = 0,
     [ABILITY_BATTLE_ARMOR] = 2,
     [ABILITY_BATTLE_BOND] = 6,
@@ -41,6 +44,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_BERSERK] = 5,
     [ABILITY_BIG_PECKS] = 1,
     [ABILITY_BLAZE] = 5,
+    [ABILITY_BUBBLE_SHIELD] = 0,
     [ABILITY_BULLETPROOF] = 7,
     [ABILITY_CHEEK_POUCH] = 4,
     [ABILITY_CHLOROPHYLL] = 6,
@@ -71,6 +75,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_EFFECT_SPORE] = 4,
     [ABILITY_ELECTRIC_SURGE] = 8,
     [ABILITY_EMERGENCY_EXIT] = 3,
+    [ABILITY_EVERGREEN] = 6,
     [ABILITY_FAIRY_AURA] = 6,
     [ABILITY_FILTER] = 6,
     [ABILITY_FLAME_BODY] = 4,
@@ -87,6 +92,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_FUR_COAT] = 7,
     [ABILITY_GALE_WINGS] = 6,
     [ABILITY_GALVANIZE] = 8,
+    [ABILITY_GARDENER] = 6,
     [ABILITY_GLUTTONY] = 3,
     [ABILITY_GOOEY] = 5,
     [ABILITY_GRASS_PELT] = 2,
@@ -96,11 +102,14 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_HEALER] = 0,
     [ABILITY_HEATPROOF] = 5,
     [ABILITY_HEAVY_METAL] = -1,
+    [ABILITY_HEMATOPHAGY] = 4,
+    [ABILITY_HEART_SWAP] = 6,
     [ABILITY_HONEY_GATHER] = 0,
     [ABILITY_HUGE_POWER] = 10,
     [ABILITY_HUSTLE] = 7,
     [ABILITY_HYDRATION] = 4,
     [ABILITY_HYPER_CUTTER] = 3,
+    [ABILITY_ICE_AFFINITY] = 6,
     [ABILITY_ICE_BODY] = 3,
     [ABILITY_ILLUMINATE] = 0,
     [ABILITY_ILLUSION] = 8,
@@ -115,7 +124,9 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_IRON_FIST] = 6,
     [ABILITY_JUSTIFIED] = 4,
     [ABILITY_KEEN_EYE] = 1,
+    [ABILITY_KINGS_MIGHT] = 4,
     [ABILITY_KLUTZ] = -1,
+    [ABILITY_LAVA_BODY] = 7,
     [ABILITY_LEAF_GUARD] = 2,
     [ABILITY_LEVITATE] = 7,
     [ABILITY_LIGHT_METAL] = 2,
@@ -133,6 +144,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_MEGA_LAUNCHER] = 7,
     [ABILITY_MERCILESS] = 4,
     [ABILITY_MINUS] = 0,
+    [ABILITY_MIRACLE_BLOSSOM] = 7,
     [ABILITY_MISTY_SURGE] = 8,
     [ABILITY_MOLD_BREAKER] = 7,
     [ABILITY_MOODY] = 10,
@@ -153,6 +165,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_PICKUP] = 1,
     [ABILITY_PICKPOCKET] = 3,
     [ABILITY_PIXILATE] = 8,
+    [ABILITY_PLEASANT_DREAMS] = 4,
     [ABILITY_PLUS] = 0,
     [ABILITY_POISON_HEAL] = 8,
     [ABILITY_POISON_POINT] = 4,
@@ -162,6 +175,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_POWER_OF_ALCHEMY] = 0,
     [ABILITY_PRANKSTER] = 8,
     [ABILITY_PRESSURE] = 5,
+    [ABILITY_PRICKLY_THORNS] = 6,
     [ABILITY_PRIMORDIAL_SEA] = 10,
     [ABILITY_PRISM_ARMOR] = 6,
     [ABILITY_PROTEAN] = 8,
@@ -186,6 +200,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SAND_VEIL] = 3,
     [ABILITY_SAP_SIPPER] = 7,
     [ABILITY_SCHOOLING] = 6,
+    [ABILITY_SCORCHING_HEART] = 6,
     [ABILITY_SCRAPPY] = 6,
     [ABILITY_SERENE_GRACE] = 8,
     [ABILITY_SHADOW_SHIELD] = 8,
@@ -205,8 +220,10 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SOLAR_POWER] = 3,
     [ABILITY_SOLID_ROCK] = 6,
     [ABILITY_SOUL_HEART] = 7,
+    [ABILITY_SOUL_SIPHON] = 8,
     [ABILITY_SOUNDPROOF] = 4,
     [ABILITY_SPEED_BOOST] = 9,
+    [ABILITY_SPINNING_BODY] = 8,
     [ABILITY_STAKEOUT] = 6,
     [ABILITY_STALL] = -1,
     [ABILITY_STAMINA] = 6,
@@ -221,10 +238,12 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_STURDY] = 6,
     [ABILITY_SUCTION_CUPS] = 2,
     [ABILITY_SUPER_LUCK] = 3,
+    [ABILITY_SUPERCOOLED] = 5,
     [ABILITY_SURGE_SURFER] = 4,
     [ABILITY_SWARM] = 5,
     [ABILITY_SWEET_VEIL] = 4,
     [ABILITY_SWIFT_SWIM] = 6,
+    [ABILITY_SWORDMASTER] = 6,
     [ABILITY_SYMBIOSIS] = 0,
     [ABILITY_SYNCHRONIZE] = 4,
     [ABILITY_TANGLED_FEET] = 2,
@@ -233,6 +252,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_TELEPATHY] = 0,
     [ABILITY_TERAVOLT] = 7,
     [ABILITY_THICK_FAT] = 7,
+    [ABILITY_TIME_TRAVELLER] = 9,
     [ABILITY_TINTED_LENS] = 7,
     [ABILITY_TORRENT] = 5,
     [ABILITY_TOXIC_BOOST] = 6,
@@ -254,7 +274,10 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_WATER_VEIL] = 4,
     [ABILITY_WEAK_ARMOR] = 2,
     [ABILITY_WHITE_SMOKE] = 4,
+    [ABILITY_WICKEDNESS] = 6,
+    [ABILITY_WILDFIRE] = 7,
     [ABILITY_WIMP_OUT] = 3,
+    [ABILITY_WISH_MAKER] = 9,
     [ABILITY_WONDER_GUARD] = 10,
     [ABILITY_WONDER_SKIN] = 4,
     [ABILITY_ZEN_MODE] = -1,
@@ -1314,7 +1337,7 @@ u32 AI_GetMoveAccuracy(u8 battlerAtk, u8 battlerDef, u16 atkAbilities[], u16 def
     gPotentialItemEffectBattler = battlerDef;
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
-    if (HasAbility(ABILITY_UNAWARE, atkAbilities))
+    if (HasAbility(ABILITY_UNAWARE, atkAbilities) || HasAbility(ABILITY_AURA_SENSE, atkAbilities))
         evasionStage = DEFAULT_STAT_STAGE;
     if (gBattleMoves[move].flags & FLAG_STAT_STAGES_IGNORED)
         evasionStage = DEFAULT_STAT_STAGE;
@@ -1337,7 +1360,8 @@ u32 AI_GetMoveAccuracy(u8 battlerAtk, u8 battlerDef, u16 atkAbilities[], u16 def
         && (gBattleMoves[move].effect == EFFECT_THUNDER || gBattleMoves[move].effect == EFFECT_HURRICANE))
         moveAcc = 50;
     // Check Wonder Skin.
-    if (HasAbility(ABILITY_WONDER_SKIN, defAbilities) && gBattleMoves[move].power == 0)
+    if ((HasAbility(ABILITY_WONDER_SKIN, defAbilities) && gBattleMoves[move].power == 0) 
+        || (HasAbility(ABILITY_BAD_LUCK, defAbilities) && gBattleMoves[move].power == 0))
         moveAcc = 50;
 
     calc = gAccuracyStageRatios[buff].dividend * moveAcc;
@@ -1488,6 +1512,7 @@ bool32 ShouldSetHail(u8 battler, u16 abilities[], u16 holdEffect)
       || HasAbility(ABILITY_SLUSH_RUSH, abilities)
       || HasAbility(ABILITY_MAGIC_GUARD, abilities)
       || HasAbility(ABILITY_OVERCOAT, abilities)
+      || HasAbility(ABILITY_EVERGREEN, abilities)
       || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
       || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
       || HasMove(battler, MOVE_BLIZZARD)
@@ -2271,7 +2296,8 @@ static bool32 BattlerAffectedByHail(u8 battlerId, u16 abilities[])
     if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_ICE)
       && !HasAbility(ABILITY_SNOW_CLOAK, abilities)
       && !HasAbility(ABILITY_OVERCOAT, abilities)
-      && !HasAbility(ABILITY_ICE_BODY, abilities))
+      && !HasAbility(ABILITY_ICE_BODY, abilities)
+      && !HasAbility(ABILITY_EVERGREEN, abilities))
         return TRUE;
     return FALSE;
 }
