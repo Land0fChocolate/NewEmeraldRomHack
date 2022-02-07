@@ -685,7 +685,9 @@ static const u8 sRefrigerateDescription[] = _(
 	"20%.");
 
 static const u8 sSweetVeilDescription[] = _(
-	"Prevents allies from sleep.");
+	"Prevents allies from sleep\n"
+	"and allies ignore opoonent\n"
+	"evasion boosts.");
 
 static const u8 sStanceChangeDescription[] = _(
 	"Aegislash transforms into\n"

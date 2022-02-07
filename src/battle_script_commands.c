@@ -1644,7 +1644,11 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move)
 
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
-    if (HasAbility(ABILITY_UNAWARE, atkAbilities) || HasAbility(ABILITY_KEEN_EYE, atkAbilities) || HasAbility(ABILITY_AURA_SENSE, atkAbilities))
+    if (HasAbility(ABILITY_UNAWARE, atkAbilities) 
+        || HasAbility(ABILITY_KEEN_EYE, atkAbilities) 
+        || HasAbility(ABILITY_AURA_SENSE, atkAbilities)
+        || HasAbility(ABILITY_SWEET_VEIL, atkAbilities)
+        || HasAbility(ABILITY_SWEET_VEIL, BATTLE_PARTNER(atkAbilities)))
         evasionStage = 6;
     if (gBattleMoves[move].flags & FLAG_STAT_STAGES_IGNORED)
         evasionStage = 6;

@@ -12,6 +12,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 # Changelog
 
+- Many post gen 3 features from pokeemerald Expansion are in this ROM.
+
 - Pokemon can have up to 3 active abilities. Many Pokemon have had their ability set updated.
 - New ability: Volume Up. Power of sound based moves have increased by 33%. Used by Loudred/Exploud.
 - New ability: Lava Body. Attackers who make contact will get inflicted with burn. Used by Slugma/Magargo.
@@ -21,15 +23,15 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - New ability: Ice Affinity. Power of Ice type moves increased by 50%. Used by Lunatone/Kyogre/Piplup/Prinplup/Empoleon/Lunala.
 - New ability: Aquatic. Power of Water type moves increased by 50%. Used by Dhelmise/Clobbopus/Grapploct.
 - New ability: Gardener. Power of Grass type moves increased by 50%. Used by Floette/Florges.
-- New ability: Prickly Thorns. Effectively like Rough Skin. Used by Canea/Cacturne.
-- New ability: Aura Sense. User shudders if opponent has super-effective move. Also ignores evasiveness. Used by Riolu/Lucario.
+- New ability: Prickly Thorns. Effectively like Rough Skin. Used by Cacnea/Cacturne.
+- New ability: Aura Sense. User shudders if opponent has super-effective move. Also ignores evasive boosts from target. Used by Riolu/Lucario.
 - New ability: Soul Siphon. Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir/Palossand/Dhelmise/Corsola(Galarian).
 - New ability: Bad Luck. Opponent cannot land crits and less likely to land status moves against user. Used by Spiritomb/Cofagrigus.
 - New ability: Wickedness. User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius/Braixen/Delphox.
-- New ability: Spinning Body. User's physical moves remove field hazards and raiser speed one stage. Used by Pineco/Forretress/Hitmontop.
+- New ability: Spinning Body. User's physical moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop.
 - New ability: Evergreen. User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
 - New ability: Hematophagy. Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
-- New ability: Swordmaster. Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis.
+- New ability: Swordmaster. Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
 - New ability: Supercooled. User's Ice type moves are super-effective against Water types. Used by Lapras/Glaceon/Aurorus.
 - New ability: Kings Might. User doesn't need to recharge on moves like Hyper Beam and Giga Impact. Used by Slaking.
 - New ability: Pleasant Dreams. Heals sleeping Pokemon 1/4 HP every turn. Used by Cresselia.
@@ -39,6 +41,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Ability update: Shell Armor/Battle Armor. Also reduces damage of neutral effective moves by 25%.
 - Ability update: Sand Veil. Increases Sp.Def instead of evasion by one stage.
 - Ability update: Snow Cloak. Increases Defense instead of evasion by one stage.
+- Ability update: Slow Start. Timer tuned down to 1 turn from 5.
+- Ability update: Sweet Veil. Also ignores evasion boosts from target.
 
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.

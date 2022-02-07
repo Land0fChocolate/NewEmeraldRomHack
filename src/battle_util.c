@@ -4460,7 +4460,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     if (!gSpecialStatuses[battler].switchInAbilityDone)
                     {
                         gLastUsedAbility = ABILITY_SLOW_START;
-                        gDisableStructs[battler].slowStartTimer = 5;
+                        gDisableStructs[battler].slowStartTimer = 1;
                         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_SLOWSTART;
                         gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                         BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
