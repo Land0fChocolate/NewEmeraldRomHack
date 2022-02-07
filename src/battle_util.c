@@ -9616,11 +9616,15 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
     {
         switch (defAbilities[x])
         {
-            case ABILITY_MULTISCALE:
+        case ABILITY_MULTISCALE:
         case ABILITY_SHADOW_SHIELD:
             if (BATTLER_MAX_HP(battlerDef))
                 MulModifier(&finalModifier, UQ_4_12(0.5));
             break;
+        case ABILITY_SHELL_ARMOR:
+        case ABILITY_BATTLE_ARMOR:
+            if (!(typeEffectivenessModifier <= UQ_4_12(0.5) || typeEffectivenessModifier >= UQ_4_12(2.0)))
+                MulModifier(&finalModifier, UQ_4_12(0.8));
         case ABILITY_FILTER:
         case ABILITY_SOLID_ROCK:
         case ABILITY_PRISM_ARMOR:
