@@ -645,7 +645,8 @@ static const u8 sZenModeDescription[] = _(
 	"Transforms at half HP");
 
 static const u8 sVictoryStarDescription[] = _(
-	"Raises party accuracy.");
+	"User and ally accuracy\n"
+	"is 100%.");
 
 static const u8 sAromaVeilDescription[] = _(
 	"Prevents limiting of moves\n"

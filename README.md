@@ -44,6 +44,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Ability update: Slow Start. Timer tuned down to 1 turn from 5.
 - Ability update: Sweet Veil. Also ignores evasion boosts from target.
 - Ability update: Corrosion. Also makes user's poison moves super effective against steel types.
+- Ability update: Victory Star. User and ally accuracy set to 100%.
 
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.

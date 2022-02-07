@@ -1648,7 +1648,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move)
         || HasAbility(ABILITY_KEEN_EYE, atkAbilities)
         || HasAbility(ABILITY_AURA_SENSE, atkAbilities)
         || HasAbility(ABILITY_SWEET_VEIL, atkAbilities)
-        || HasAbility(ABILITY_SWEET_VEIL, GetBattlerAbilities(BATTLE_PARTNER(battlerAtk))))
+        || (IsBattlerAlive(BATTLE_PARTNER(battlerAtk)) && HasAbility(ABILITY_SWEET_VEIL, GetBattlerAbilities(BATTLE_PARTNER(battlerAtk)))))
         evasionStage = 6;
     if (gBattleMoves[move].flags & FLAG_STAT_STAGES_IGNORED)
         evasionStage = 6;
@@ -1680,13 +1680,6 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move)
 
     if (HasAbility(ABILITY_COMPOUND_EYES, atkAbilities))
         calc = (calc * 130) / 100; // 1.3 compound eyes boost
-    else if (HasAbility(ABILITY_VICTORY_STAR, atkAbilities))
-        calc = (calc * 110) / 100; // 1.1 victory star boost
-    if (IsBattlerAlive(BATTLE_PARTNER(battlerAtk)) && HasAbility(ABILITY_VICTORY_STAR, GetBattlerAbilities(BATTLE_PARTNER(battlerAtk))))
-        calc = (calc * 110) / 100; // 1.1 ally's victory star boost
-
-    if (HasAbility(ABILITY_SNOW_CLOAK, defAbilities) && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_HAIL_ANY)
-        calc = (calc * 80) / 100; // 1.2 snow cloak loss
     else if (HasAbility(ABILITY_TANGLED_FEET, defAbilities) && gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
         calc = (calc * 50) / 100; // 1.5 tangled feet loss
 
@@ -1712,6 +1705,10 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move)
 
     if (gFieldStatuses & STATUS_FIELD_GRAVITY)
         calc = (calc * 5) / 3; // 1.66 Gravity acc boost
+
+    if (HasAbility(ABILITY_VICTORY_STAR, atkAbilities)
+        || IsBattlerAlive(BATTLE_PARTNER(battlerAtk)) && HasAbility(ABILITY_VICTORY_STAR, GetBattlerAbilities(BATTLE_PARTNER(battlerAtk))))
+        calc = 100;
 
     return calc;
 }
