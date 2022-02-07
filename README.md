@@ -43,6 +43,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Ability update: Snow Cloak. Increases Defense instead of evasion by one stage.
 - Ability update: Slow Start. Timer tuned down to 1 turn from 5.
 - Ability update: Sweet Veil. Also ignores evasion boosts from target.
+- Ability update: Corrosion. Also makes user's poison moves super effective against steel types.
 
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.

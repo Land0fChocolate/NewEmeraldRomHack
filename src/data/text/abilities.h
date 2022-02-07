@@ -831,7 +831,9 @@ static const u8 sPowerConstructDescription[] = _(
 	"Cells aid it when weakened.");
 
 static const u8 sCorrosionDescription[] = _(
-	"Poisons any type."); //TODO: scheduled for update
+	"User's poison moves are\n"
+	"super-effective vs steel\n"
+	"and can poison them.");
 
 static const u8 sComatoseDescription[] = _(
 	"Always asleep. Cannot\n"
