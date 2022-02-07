@@ -36,9 +36,14 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - New ability: Wish Maker. User creates a wish on entry. Used by Jirachi.
 - New ability: Heart Swap. If user makes contact with target, stat changes are swapped. Used by Manaphy.
 
+- Ability update: Shell Armor/Battle Armor. Also reduces damage of neutral effective moves by 25%.
+- Ability update: Sand Veil. Increases Sp.Def instead of evasion by one stage.
+- Ability update: Snow Cloak. Increases Defense instead of evasion by one stage.
+
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.
 - TMs have infinite use.
+- Ice types have their special defense boosted by 50% in hail.
 
 # Credits
 

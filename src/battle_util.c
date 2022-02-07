@@ -9390,7 +9390,7 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
     bool32 usesDefStat;
     u8 defStage;
     u32 defStat, def, spDef;
-    u16 modifier, x, * abilities = GetBattlerAbilities(battlerAtk);
+    u16 modifier, x, *abilities = GetBattlerAbilities(battlerAtk);
 
     if (gFieldStatuses & STATUS_FIELD_WONDER_ROOM) // the defense stats are swapped
     {
@@ -9512,8 +9512,18 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
 #endif
     }
 
-    // sandstorm sp.def boost for rock types
-    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK) && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SANDSTORM_ANY && !usesDefStat)
+    // sandstorm sp.def boost for rock types and sand veil
+    if ((IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK) || HasAbility(ABILITY_SAND_VEIL, GetBattlerAbilities(battlerDef)))
+        && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SANDSTORM_ANY && !usesDefStat)
+        MulModifier(&modifier, UQ_4_12(1.5));
+
+    // hail sp.def boost for ice types
+     if ((IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
+        && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_HAIL_ANY && !usesDefStat)
+        MulModifier(&modifier, UQ_4_12(1.5));
+
+    if (HasAbility(ABILITY_SNOW_CLOAK, GetBattlerAbilities(battlerDef))
+        && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_HAIL_ANY && usesDefStat)
         MulModifier(&modifier, UQ_4_12(1.5));
 
     // The defensive stats of a Player's Pokémon are boosted by x1.1 (+10%) if they have the 5th badge and 7th badges.
@@ -9624,7 +9634,7 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
         case ABILITY_SHELL_ARMOR:
         case ABILITY_BATTLE_ARMOR:
             if (!(typeEffectivenessModifier <= UQ_4_12(0.5) || typeEffectivenessModifier >= UQ_4_12(2.0)))
-                MulModifier(&finalModifier, UQ_4_12(0.8));
+                MulModifier(&finalModifier, UQ_4_12(0.75));
         case ABILITY_FILTER:
         case ABILITY_SOLID_ROCK:
         case ABILITY_PRISM_ARMOR:

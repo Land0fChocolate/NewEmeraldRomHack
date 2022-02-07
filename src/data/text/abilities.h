@@ -16,7 +16,9 @@ static const u8 sSpeedBoostDescription[] = _(
 	"turn.");
 
 static const u8 sBattleArmorDescription[] = _(
-	"Blocks critical hits."); //TODO: scheduled for update
+	"Blocks critical hits and\n"
+	"reduces damage from neutral\n"
+	"effective moves by 25%.");
 
 static const u8 sSturdyDescription[] = _(
 	"If at full health, survive\n"
@@ -29,7 +31,8 @@ static const u8 sLimberDescription[] = _(
 	"Grants paralysis immunity.");
 
 static const u8 sSandVeilDescription[] = _(
-	"Ups evasion in a sandstorm."); //TODO: scheduled for update
+	"Ups Sp.Def in a sandstorm\n"
+	"by 50%.");
 
 static const u8 sStaticDescription[] = _(
 	"Attackers who make contact\n"
@@ -301,7 +304,9 @@ static const u8 sPurePowerDescription[] = _(
 	"Doubles attack stat.");
 
 static const u8 sShellArmorDescription[] = _(
-	"Blocks critical hits."); //TODO: scheduled for update
+	"Blocks critical hits and\n"
+	"reduces damage from neutral\n"
+	"effective moves by 25%.");
 
 static const u8 sAirLockDescription[] = _(
 	"Negates weather effects.");
@@ -325,7 +330,7 @@ static const u8 sSteadfastDescription[] = _(
 	"raises by one stage.");
 
 static const u8 sSnowCloakDescription[] = _(
-	"Ups evasion in Hail."); //TODO: scheduled for update
+	"Ups Defense in Hail by 50%.");
 
 static const u8 sGluttonyDescription[] = _(
 	"Eats Berries at 50% health.\n");

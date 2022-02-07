@@ -1681,9 +1681,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move)
     if (IsBattlerAlive(BATTLE_PARTNER(battlerAtk)) && HasAbility(ABILITY_VICTORY_STAR, GetBattlerAbilities(BATTLE_PARTNER(battlerAtk))))
         calc = (calc * 110) / 100; // 1.1 ally's victory star boost
 
-    if (HasAbility(ABILITY_SAND_VEIL, defAbilities) && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SANDSTORM_ANY)
-        calc = (calc * 80) / 100; // 1.2 sand veil loss
-    else if (HasAbility(ABILITY_SNOW_CLOAK, defAbilities) && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_HAIL_ANY)
+    if (HasAbility(ABILITY_SNOW_CLOAK, defAbilities) && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_HAIL_ANY)
         calc = (calc * 80) / 100; // 1.2 snow cloak loss
     else if (HasAbility(ABILITY_TANGLED_FEET, defAbilities) && gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
         calc = (calc * 50) / 100; // 1.5 tangled feet loss
