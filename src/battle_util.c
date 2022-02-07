@@ -4925,7 +4925,11 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     if (IsBattlerWeatherAffected(battler, WEATHER_SUN_ANY))
                     {
                         gLastUsedAbility = ABILITY_DRY_SKIN;
-                        goto SOLAR_POWER_HP_DROP;
+                        BattleScriptPushCursorAndCallback(BattleScript_SolarPowerActivates);
+                        gBattleMoveDamage = gBattleMons[battler].maxHP / 8;
+                        if (gBattleMoveDamage == 0)
+                            gBattleMoveDamage = 1;
+                        effect++;
                     }
                 // Dry Skin works similarly to Rain Dish in Rain
                 case ABILITY_RAIN_DISH:
@@ -4933,7 +4937,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                      && !BATTLER_MAX_HP(battler)
                      && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
                     {
-                        gLastUsedAbility = ABILITY_RAIN_DISH;
+                        if (gLastUsedAbilities[x] == ABILITY_RAIN_DISH)
+                            gLastUsedAbility = ABILITY_RAIN_DISH;
                         BattleScriptPushCursorAndCallback(BattleScript_RainDishActivates);
                         gBattleMoveDamage = gBattleMons[battler].maxHP / (HasAbility(ABILITY_RAIN_DISH, gLastUsedAbilities) ? 16 : 8);
                         if (gBattleMoveDamage == 0)
@@ -5052,18 +5057,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     {
                         gLastUsedAbility = ABILITY_PLEASANT_DREAMS;
                         BattleScriptPushCursorAndCallback(BattleScript_PleasantDreamsActivates);
-                        effect++;
-                    }
-                    break;
-                SOLAR_POWER_HP_DROP:
-                case ABILITY_SOLAR_POWER:
-                     if (IsBattlerWeatherAffected(battler, WEATHER_SUN_ANY))
-                    {
-                        gLastUsedAbility = ABILITY_SOLAR_POWER;
-                        BattleScriptPushCursorAndCallback(BattleScript_SolarPowerActivates);
-                        gBattleMoveDamage = gBattleMons[battler].maxHP / 8;
-                        if (gBattleMoveDamage == 0)
-                            gBattleMoveDamage = 1;
                         effect++;
                     }
                     break;
