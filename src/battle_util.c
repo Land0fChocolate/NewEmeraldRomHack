@@ -4925,7 +4925,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     if (IsBattlerWeatherAffected(battler, WEATHER_SUN_ANY))
                     {
                         gLastUsedAbility = ABILITY_DRY_SKIN;
-                        BattleScriptPushCursorAndCallback(BattleScript_SolarPowerActivates);
+                        BattleScriptPushCursorAndCallback(BattleScript_DrySkinActivates);
                         gBattleMoveDamage = gBattleMons[battler].maxHP / 8;
                         if (gBattleMoveDamage == 0)
                             gBattleMoveDamage = 1;
@@ -8876,6 +8876,10 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             if (gBattleMoves[move].flags & FLAG_SOUND)
                MulModifier(&modifier, UQ_4_12(1.33));
             break;
+        case ABILITY_LIQUID_VOICE:
+            if (gBattleMoves[move].flags & FLAG_SOUND)
+               MulModifier(&modifier, UQ_4_12(1.20));
+            break;
         case ABILITY_STRONG_JAW:
             if (gBattleMoves[move].flags & FLAG_STRONG_JAW_BOOST)
                MulModifier(&modifier, UQ_4_12(1.5));
@@ -8926,7 +8930,7 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             break;
         case ABILITY_NORMALIZE:
             if (moveType == TYPE_NORMAL && gBattleStruct->ateBoost[battlerAtk])
-                MulModifier(&modifier, UQ_4_12(1.2));
+                MulModifier(&modifier, UQ_4_12(1.3));
             break;
         case ABILITY_PUNK_ROCK:
             if (gBattleMoves[move].flags & FLAG_SOUND)
@@ -9230,7 +9234,7 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
             break;
         case ABILITY_SOLAR_POWER:
             if (IS_MOVE_SPECIAL(move) && IsBattlerWeatherAffected(battlerAtk, WEATHER_SUN_ANY))
-                MulModifier(&modifier, UQ_4_12(1.5));
+                MulModifier(&modifier, UQ_4_12(1.25));
             break;
         case ABILITY_DEFEATIST:
             if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 2))
@@ -9574,7 +9578,7 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
     // check stab
     if (IS_BATTLER_OF_TYPE(battlerAtk, moveType) && move != MOVE_STRUGGLE)
     {
-        if (HasAbility(ABILITY_ADAPTABILITY, atkAbilities))
+        if (HasAbility(ABILITY_ADAPTABILITY, atkAbilities) || HasAbility(ABILITY_MULTITYPE, atkAbilities))
             MulModifier(&finalModifier, UQ_4_12(2.0));
         else
             MulModifier(&finalModifier, UQ_4_12(1.5));
@@ -9631,6 +9635,7 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
         case ABILITY_FILTER:
         case ABILITY_SOLID_ROCK:
         case ABILITY_PRISM_ARMOR:
+        case ABILITY_MULTITYPE:
             if (typeEffectivenessModifier >= UQ_4_12(2.0))
                 MulModifier(&finalModifier, UQ_4_12(0.75));
             break;

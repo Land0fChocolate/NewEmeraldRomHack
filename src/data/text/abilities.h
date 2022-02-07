@@ -383,8 +383,9 @@ static const u8 sHydrationDescription[] = _(
 	"Cures status in rain.");
 
 static const u8 sSolarPowerDescription[] = _(
-	"User Sp. Atk increased 50%\n"
-	"during strong sunlight.");
+	"User's special moves power\n"
+	"up 25% during strong\n"
+	"sunlight.");
 
 static const u8 sQuickFeetDescription[] = _(
 	"Speed stat raised by 50%\n"
@@ -393,7 +394,7 @@ static const u8 sQuickFeetDescription[] = _(
 static const u8 sNormalizeDescription[] = _(
 	"All moves become Normal\n"
 	"type and increase in power\n"
-	"by 20%.");
+	"by 30%.");
 
 static const u8 sSniperDescription[] = _(
 	"Critical hits triple\n"
@@ -457,7 +458,8 @@ static const u8 sFilterDescription[] = _(
 	"25%.");
 
 static const u8 sSlowStartDescription[] = _(
-	"Takes a while to get going."); //TODO: scheduled for update
+	"Attack and speed is halved\n"
+	"for the first turn.");
 
 static const u8 sScrappyDescription[] = _(
 	"Allows user normal and\n"
@@ -489,7 +491,9 @@ static const u8 sRecklessDescription[] = _(
 	"in damage by 20%.");
 
 static const u8 sMultitypeDescription[] = _(
-	"Changes type to its Plate."); //TODO: scheduled for update
+	"Changes type to its Plate\n"
+	"and has in-built Filter\n"
+	"and Adaptability effects.");
 
 static const u8 sFlowerGiftDescription[] = _(
 	"Raises Atk and Sp.Def one\n"
@@ -797,12 +801,13 @@ static const u8 sSlushRushDescription[] = _(
 	"Doubles Speed in hail.");
 
 static const u8 sLongReachDescription[] = _(
-	"User moves don't make\n"
+	"User's moves don't make\n"
 	"contact.");
 
 static const u8 sLiquidVoiceDescription[] = _(
 	"Sound moves type changed\n"
-	"to water.");
+	"to water and powered up\n"
+	"by 20%.");
 
 static const u8 sTriageDescription[] = _(
 	"Healing moves have\n"

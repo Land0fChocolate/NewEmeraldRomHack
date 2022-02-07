@@ -7799,7 +7799,7 @@ BattleScript_HarvestActivates::
 BattleScript_HarvestActivatesEnd:
 	end3
 
-BattleScript_SolarPowerActivates::
+BattleScript_DrySkinActivates::
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	call BattleScript_AbilityPopUp
 	healthbarupdate BS_ATTACKER
