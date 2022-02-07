@@ -5433,12 +5433,11 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                  && gDisableStructs[gBattlerAttacker].disabledMove == MOVE_NONE
                  && IsBattlerAlive(gBattlerAttacker)
                  && !IsAbilityOnSide(gBattlerAttacker, ABILITY_AROMA_VEIL)
-                 && gBattleMons[gBattlerAttacker].pp[gChosenMovePos] != 0
-                 && (Random() % 3) == 0)
+                 && gBattleMons[gBattlerAttacker].pp[gChosenMovePos] != 0)
                 {
                     gLastUsedAbility = ABILITY_CURSED_BODY;
                     gDisableStructs[gBattlerAttacker].disabledMove = gChosenMove;
-                    gDisableStructs[gBattlerAttacker].disableTimer = 4;
+                    gDisableStructs[gBattlerAttacker].disableTimer = 2;
                     PREPARE_MOVE_BUFFER(gBattleTextBuff1, gChosenMove);
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_CursedBodyActivates;

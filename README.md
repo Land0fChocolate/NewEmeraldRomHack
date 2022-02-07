@@ -49,6 +49,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Ability update: Normalize. Buffed to 30% from 20%.
 - Ability update: Liquid Voice. Now powers up sound moves by 20%.
 - Ability update: Multitype. Now includes Adaptability and Filter effects.
+- Ability update: Cursed Body. Now always disables the move for just the next turn.
 
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.

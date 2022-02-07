@@ -529,7 +529,9 @@ static const u8 sDefeatistDescription[] = _(
 	"less.");
 
 static const u8 sCursedBodyDescription[] = _(
-	"Disables moves on contact."); //TODO: scheduled for update
+	"If contact, opponent has\n"
+	"their move disabled on the\n"
+	"next turn.");
 
 static const u8 sHealerDescription[] = _(
 	"User has 30% chance of\n"
