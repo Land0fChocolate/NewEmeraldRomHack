@@ -7,12 +7,12 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - implement ability description label in the summary screen.
 - Include ORAS dex Pokemon like Budew and Dusknoir.
 - New Pokemon moves.
-- New Pokemon abilities.
 - Add credits of people whos tutorials and work you have used in the game.
 
 # Changelog
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
+
 
 - Pokemon can have up to 3 active abilities. Many Pokemon have had their ability set updated.
 - New ability: Volume Up. Power of sound based moves have increased by 33%. Used by Loudred/Exploud.
@@ -54,6 +54,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Ability update: Keen Eye. Also increases move accuracy by 30%.
 - Ability update: Illuminate. Also ignores opponent evasion boosts.
 - Ability update: Damp. Also grants user immunity to powder based moves and abilities.
+
 
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.
