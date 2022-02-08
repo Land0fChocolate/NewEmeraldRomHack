@@ -655,6 +655,7 @@ bool32 IsAffectedByPowder(u8 battler, u16 abilities[], u16 holdEffect)
 {
     if ((B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(battler, TYPE_GRASS))
       || HasAbility(ABILITY_OVERCOAT, abilities)
+      || HasAbility(ABILITY_DAMP, abilities)
       || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES)
         return FALSE;
     return TRUE;

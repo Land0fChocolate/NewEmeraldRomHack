@@ -3838,7 +3838,8 @@ u8 AtkCanceller_UnableToUseMove(void)
             if ((gBattleMoves[gCurrentMove].flags & FLAG_POWDER) && (gBattlerAttacker != gBattlerTarget))
             {
                 if ((B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS))
-                    || HasAbility(ABILITY_OVERCOAT, GetBattlerAbilities(gBattlerTarget)))
+                    || HasAbility(ABILITY_OVERCOAT, GetBattlerAbilities(gBattlerTarget))
+                    || HasAbility(ABILITY_DAMP, GetBattlerAbilities(gBattlerTarget)))
                 {
                     gBattlerAbility = gBattlerTarget;
                     effect = 1;
@@ -5638,6 +5639,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
             case ABILITY_EFFECT_SPORE:
                 if (!IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GRASS)
                  && !HasAbility(ABILITY_OVERCOAT, GetBattlerAbilities(gBattlerAttacker))
+                 && !HasAbility(ABILITY_DAMP, GetBattlerAbilities(gBattlerAttacker))
                  && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES)
                 {
                     gLastUsedAbility = ABILITY_EFFECT_SPORE;

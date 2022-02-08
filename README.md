@@ -51,6 +51,9 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Ability update: Multitype. Also includes Adaptability and Filter effects.
 - Ability update: Cursed Body. Now always disables the move for just the next turn.
 - Ability update: Suction Cups. Also traps target when user strikes it with a contact move.
+- Ability update: Keen Eye. Also increases move accuracy by 30%.
+- Ability update: Illuminate. Also ignores opponent evasion boosts.
+- Ability update: Damp. Also grants user immunity to powder based moves and abilities.
 
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.
