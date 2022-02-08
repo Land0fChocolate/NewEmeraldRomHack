@@ -404,6 +404,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectOctolock                @ EFFECT_OCTOLOCK
 	.4byte BattleScript_EffectClangorousSoul          @ EFFECT_CLANGOROUS_SOUL
 	.4byte BattleScript_EffectHit                     @ EFFECT_BOLT_BEAK
+	.4byte BattleScript_SuctionCupsActivates          @ EFFECT_SUCTION_CUPS
 
 BattleScript_EffectShellSideArm:
 	shellsidearmcheck
@@ -9348,3 +9349,11 @@ BattleScript_WishMaker::
 	printstring STRINGID_PKMNMADEWISH
 	waitmessage B_WAIT_TIME_LONG
 	end3
+
+BattleScript_SuctionCupsActivates::
+	call BattleScript_AbilityPopUp
+	setmoveeffect MOVE_EFFECT_PREVENT_ESCAPE
+	seteffectprimary
+	printstring STRINGID_TARGETCANTESCAPENOW
+	waitmessage B_WAIT_TIME_LONG
+	return

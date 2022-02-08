@@ -422,5 +422,6 @@ extern const u8 BattleScript_MiracleBlossomHeals[];
 extern const u8 BattleScript_EffectSoulSiphon[];
 extern const u8 BattleScript_WishMaker[];
 extern const u8 BattleScript_HeartSwapAbilityActivates[];
+extern const u8 BattleScript_SuctionCupsActivates[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

@@ -82,8 +82,9 @@ static const u8 sOwnTempoDescription[] = _(
 	"Grants confusion immunity.\n");
 
 static const u8 sSuctionCupsDescription[] = _(
-	"Immunity to forced\n"
-	"switching.");
+	"User's contact moves trap\n"
+	"the target and user is\n"
+	"immune to forced switching.");
 
 static const u8 sIntimidateDescription[] = _(
 	"Lowers the foe's Attack by\n"

@@ -47,9 +47,10 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Ability update: Victory Star. User and ally accuracy set to 100%.
 - Ability update: Solar Power. No longer decreases HP. Power modifier changed to 25%.
 - Ability update: Normalize. Buffed to 30% from 20%.
-- Ability update: Liquid Voice. Now powers up sound moves by 20%.
-- Ability update: Multitype. Now includes Adaptability and Filter effects.
+- Ability update: Liquid Voice. Also powers up sound moves by 20%.
+- Ability update: Multitype. Also includes Adaptability and Filter effects.
 - Ability update: Cursed Body. Now always disables the move for just the next turn.
+- Ability update: Suction Cups. Also traps target when user strikes it with a contact move.
 
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.

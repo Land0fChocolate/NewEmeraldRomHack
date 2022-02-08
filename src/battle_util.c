@@ -5980,6 +5980,20 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     effect++;
                 }
                 break;
+            case ABILITY_SUCTION_CUPS:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                 && gBattleMons[gBattlerTarget].hp != 0
+                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && IsMoveMakingContact(move, gBattlerAttacker)
+                 && TARGET_TURN_DAMAGED // Need to actually hit the target //TODO: check if this line covers Substitute, check below may be redundant
+                 && !IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GHOST)
+                 && !(gBattleMons[gBattlerTarget].status2 & STATUS2_SUBSTITUTE & STATUS2_ESCAPE_PREVENTION))
+                {
+                    gLastUsedAbility = ABILITY_SUCTION_CUPS;
+                    BattleScriptPushCursor();
+                    BattleScriptExecute(BattleScript_SuctionCupsActivates);
+                    effect++;
+                }
             }
         }
         break;
