@@ -1644,7 +1644,12 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move)
 
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
-    if (HasAbility(ABILITY_UNAWARE, atkAbilities) || HasAbility(ABILITY_KEEN_EYE, atkAbilities) || HasAbility(ABILITY_AURA_SENSE, atkAbilities))
+    if (HasAbility(ABILITY_UNAWARE, atkAbilities)
+        || HasAbility(ABILITY_KEEN_EYE, atkAbilities)
+        || HasAbility(ABILITY_AURA_SENSE, atkAbilities)
+        || HasAbility(ABILITY_SWEET_VEIL, atkAbilities)
+        || (IsBattlerAlive(BATTLE_PARTNER(battlerAtk)) && HasAbility(ABILITY_SWEET_VEIL, GetBattlerAbilities(BATTLE_PARTNER(battlerAtk))))
+        || HasAbility(ABILITY_ILLUMINATE, atkAbilities))
         evasionStage = 6;
     if (gBattleMoves[move].flags & FLAG_STAT_STAGES_IGNORED)
         evasionStage = 6;
@@ -1674,17 +1679,12 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move)
     calc = gAccuracyStageRatios[buff].dividend * moveAcc;
     calc /= gAccuracyStageRatios[buff].divisor;
 
-    if (HasAbility(ABILITY_COMPOUND_EYES, atkAbilities))
-        calc = (calc * 130) / 100; // 1.3 compound eyes boost
-    else if (HasAbility(ABILITY_VICTORY_STAR, atkAbilities))
-        calc = (calc * 110) / 100; // 1.1 victory star boost
-    if (IsBattlerAlive(BATTLE_PARTNER(battlerAtk)) && HasAbility(ABILITY_VICTORY_STAR, GetBattlerAbilities(BATTLE_PARTNER(battlerAtk))))
-        calc = (calc * 110) / 100; // 1.1 ally's victory star boost
+    if (HasAbility(ABILITY_VICTORY_STAR, atkAbilities)
+        || (IsBattlerAlive(BATTLE_PARTNER(battlerAtk)) && HasAbility(ABILITY_VICTORY_STAR, GetBattlerAbilities(BATTLE_PARTNER(battlerAtk)))))
+        return 100;
 
-    if (HasAbility(ABILITY_SAND_VEIL, defAbilities) && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SANDSTORM_ANY)
-        calc = (calc * 80) / 100; // 1.2 sand veil loss
-    else if (HasAbility(ABILITY_SNOW_CLOAK, defAbilities) && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_HAIL_ANY)
-        calc = (calc * 80) / 100; // 1.2 snow cloak loss
+    if (HasAbility(ABILITY_COMPOUND_EYES, atkAbilities) || HasAbility(ABILITY_KEEN_EYE, atkAbilities))
+        calc = (calc * 130) / 100; // 1.3 compound eyes & keen eye boost
     else if (HasAbility(ABILITY_TANGLED_FEET, defAbilities) && gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
         calc = (calc * 50) / 100; // 1.5 tangled feet loss
 

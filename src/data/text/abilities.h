@@ -16,7 +16,9 @@ static const u8 sSpeedBoostDescription[] = _(
 	"turn.");
 
 static const u8 sBattleArmorDescription[] = _(
-	"Blocks critical hits."); //TODO: scheduled for update
+	"Blocks critical hits and\n"
+	"reduces damage from neutral\n"
+	"effective moves by 25%.");
 
 static const u8 sSturdyDescription[] = _(
 	"If at full health, survive\n"
@@ -29,7 +31,8 @@ static const u8 sLimberDescription[] = _(
 	"Grants paralysis immunity.");
 
 static const u8 sSandVeilDescription[] = _(
-	"Ups evasion in a sandstorm."); //TODO: scheduled for update
+	"Ups Sp.Def in a sandstorm\n"
+	"by 50%.");
 
 static const u8 sStaticDescription[] = _(
 	"Attackers who make contact\n"
@@ -79,8 +82,9 @@ static const u8 sOwnTempoDescription[] = _(
 	"Grants confusion immunity.\n");
 
 static const u8 sSuctionCupsDescription[] = _(
-	"Immunity to forced\n"
-	"switching.");
+	"User's contact moves trap\n"
+	"the target and user is\n"
+	"immune to forced switching.");
 
 static const u8 sIntimidateDescription[] = _(
 	"Lowers the foe's Attack by\n"
@@ -301,7 +305,9 @@ static const u8 sPurePowerDescription[] = _(
 	"Doubles attack stat.");
 
 static const u8 sShellArmorDescription[] = _(
-	"Blocks critical hits."); //TODO: scheduled for update
+	"Blocks critical hits and\n"
+	"reduces damage from neutral\n"
+	"effective moves by 25%.");
 
 static const u8 sAirLockDescription[] = _(
 	"Negates weather effects.");
@@ -325,7 +331,7 @@ static const u8 sSteadfastDescription[] = _(
 	"raises by one stage.");
 
 static const u8 sSnowCloakDescription[] = _(
-	"Ups evasion in Hail."); //TODO: scheduled for update
+	"Ups Defense in Hail by 50%.");
 
 static const u8 sGluttonyDescription[] = _(
 	"Eats Berries at 50% health.\n");
@@ -378,8 +384,9 @@ static const u8 sHydrationDescription[] = _(
 	"Cures status in rain.");
 
 static const u8 sSolarPowerDescription[] = _(
-	"User Sp. Atk increased 50%\n"
-	"during strong sunlight.");
+	"User's special moves power\n"
+	"up 25% during strong\n"
+	"sunlight.");
 
 static const u8 sQuickFeetDescription[] = _(
 	"Speed stat raised by 50%\n"
@@ -388,7 +395,7 @@ static const u8 sQuickFeetDescription[] = _(
 static const u8 sNormalizeDescription[] = _(
 	"All moves become Normal\n"
 	"type and increase in power\n"
-	"by 20%.");
+	"by 30%.");
 
 static const u8 sSniperDescription[] = _(
 	"Critical hits triple\n"
@@ -452,7 +459,8 @@ static const u8 sFilterDescription[] = _(
 	"25%.");
 
 static const u8 sSlowStartDescription[] = _(
-	"Takes a while to get going."); //TODO: scheduled for update
+	"Attack and speed is halved\n"
+	"for the first turn.");
 
 static const u8 sScrappyDescription[] = _(
 	"Allows user normal and\n"
@@ -484,7 +492,9 @@ static const u8 sRecklessDescription[] = _(
 	"in damage by 20%.");
 
 static const u8 sMultitypeDescription[] = _(
-	"Changes type to its Plate."); //TODO: scheduled for update
+	"Changes type to its Plate\n"
+	"and has in-built Filter\n"
+	"and Adaptability effects.");
 
 static const u8 sFlowerGiftDescription[] = _(
 	"Raises Atk and Sp.Def one\n"
@@ -520,7 +530,9 @@ static const u8 sDefeatistDescription[] = _(
 	"less.");
 
 static const u8 sCursedBodyDescription[] = _(
-	"Disables moves on contact."); //TODO: scheduled for update
+	"If contact, opponent has\n"
+	"their move disabled on the\n"
+	"next turn.");
 
 static const u8 sHealerDescription[] = _(
 	"User has 30% chance of\n"
@@ -640,7 +652,8 @@ static const u8 sZenModeDescription[] = _(
 	"Transforms at half HP");
 
 static const u8 sVictoryStarDescription[] = _(
-	"Raises party accuracy.");
+	"User and ally accuracy\n"
+	"is 100%.");
 
 static const u8 sAromaVeilDescription[] = _(
 	"Prevents limiting of moves\n"
@@ -680,7 +693,9 @@ static const u8 sRefrigerateDescription[] = _(
 	"20%.");
 
 static const u8 sSweetVeilDescription[] = _(
-	"Prevents allies from sleep.");
+	"Prevents allies from sleep\n"
+	"and allies ignore opoonent\n"
+	"evasion boosts.");
 
 static const u8 sStanceChangeDescription[] = _(
 	"Aegislash transforms into\n"
@@ -789,12 +804,13 @@ static const u8 sSlushRushDescription[] = _(
 	"Doubles Speed in hail.");
 
 static const u8 sLongReachDescription[] = _(
-	"User moves don't make\n"
+	"User's moves don't make\n"
 	"contact.");
 
 static const u8 sLiquidVoiceDescription[] = _(
 	"Sound moves type changed\n"
-	"to water.");
+	"to water and powered up\n"
+	"by 20%.");
 
 static const u8 sTriageDescription[] = _(
 	"Healing moves have\n"
@@ -824,7 +840,9 @@ static const u8 sPowerConstructDescription[] = _(
 	"Cells aid it when weakened.");
 
 static const u8 sCorrosionDescription[] = _(
-	"Poisons any type."); //TODO: scheduled for update
+	"User's poison moves are\n"
+	"super-effective vs steel\n"
+	"and can poison them.");
 
 static const u8 sComatoseDescription[] = _(
 	"Always asleep. Cannot\n"
