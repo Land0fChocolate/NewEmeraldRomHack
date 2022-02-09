@@ -397,6 +397,7 @@ static const s8 sMindRatings[] =
     [MOVE_WATER_PULSE] = 1,
     [MOVE_DOOM_DESIRE] = 1,
     [MOVE_PSYCHO_BOOST] = 1,
+    [MOVE_WAR_DANCE] = 0,
 };
 
 #define TAG_JUDGEMENT_ICON 1000
