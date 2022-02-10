@@ -2278,8 +2278,8 @@ static const u8 sFAIRY_LOCKDescription[] = _(
     "preventing escape next turn.");
 
 static const u8 sKINGS_SHIELDDescription[] = _(
-    "Evades damage, and sharply\n"
-    "reduces Attack if struck.");
+    "Blocks damage, and reduces\n"
+    "foe Attack if struck.");
 
 static const u8 sPLAY_NICEDescription[] = _(
     "Befriend the foe, lowering\n"
@@ -2953,6 +2953,10 @@ static const u8 sFlintBladeDescription[] = _(
 static const u8 sFlareCrashDescription[] = _(
     "User crashes hard into the\n"
     "foe but has speed reduced.");
+
+static const u8 sSingularityDescription[] = _(
+    "Blocks damage, and reduces\n"
+    "foe Speed if struck.");
 
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
@@ -3721,4 +3725,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_WAR_DANCE - 1] = sWarDanceDescription,
     [MOVE_FLINT_BLADE - 1] = sFlintBladeDescription,
     [MOVE_FLARE_CRASH - 1] = sFlareCrashDescription,
+    [MOVE_SINGULARITY - 1] = sSingularityDescription,
 };

@@ -782,7 +782,8 @@ gBattleAnims_Moves::
 	.4byte Move_WAR_DANCE
 	.4byte Move_FLINT_BLADE
 	.4byte Move_FLARE_CRASH
-	.4byte Move_COUNT @ cannot be reached, because last move is War Dance
+	.4byte Move_SINGULARITY
+	.4byte Move_COUNT @ cannot be reached, because last move is Singularity
 
 	.align 2
 gBattleAnims_StatusConditions::
@@ -23879,6 +23880,12 @@ Move_FLARE_CRASH:
 	restorebg
 	waitbgfadein
 	end
+
+@TODO: using KINGS_SHIELD animation
+Move_SINGULARITY:
+	loadspritegfx ANIM_TAG_PROTECT  @protect
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_PROTECT, 0x0, 0xC, 0xC, 0x318C   @Gray
+	goto Move_PROTECT
 
 Move_COUNT:
 	loadspritegfx ANIM_TAG_IMPACT

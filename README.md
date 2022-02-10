@@ -82,7 +82,9 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 # New Moves
 
 - War Dance: User have their own attack and speed rise by 1 stage and attempts to confuse the opponent. Learned by Sentret/Furret/Yungoos/Gumshoos via level up.
-- Flint Blade: 75 BP, 100%, Rock type, increased crit ratio. Boosted by Swordmaster ability. Learned by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian/Rockruff/Lycanroc/Gigalith/Onix/Steelix/Omanite/Omastar/Kabuto/Kabutops/Aerodactyl/Anorith/Armaldo/Shieldon/Bastiodon/Binacle/Barbaracle/Rhyhorn/Rhydon/Rhypherior/Aggron/Kleavor.
+- Flint Blade: 75 BP, 100% Acc, Rock type, increased crit ratio. Boosted by Swordmaster ability. Learned by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian/Rockruff/Lycanroc/Gigalith/Onix/Steelix/Omanite/Omastar/Kabuto/Kabutops/Aerodactyl/Anorith/Armaldo/Shieldon/Bastiodon/Binacle/Barbaracle/Rhyhorn/Rhydon/Rhypherior/Aggron/Kleavor.
+- Flare Crash: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Learned by Flareon.
+- Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir.
 
 # Updated Moves
 
