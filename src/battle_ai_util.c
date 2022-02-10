@@ -2079,6 +2079,7 @@ bool32 IsStatRaisingEffect(u16 effect)
     case EFFECT_GEOMANCY:
     case EFFECT_STOCKPILE:
     case EFFECT_WAR_DANCE:
+    case EFFECT_SERPENT_DANCE:
         return TRUE;
     default:
         return FALSE;

@@ -168,7 +168,7 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .effect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .comboStarterId = 0,
-        .comboMoves = {COMBO_STARTER_POUND, COMBO_STARTER_WAR_DANCE},
+        .comboMoves = {COMBO_STARTER_POUND, COMBO_STARTER_WAR_DANCE, COMBO_STARTER_SERPENT_DANCE},
     },
 
     [MOVE_VINE_WHIP] =
@@ -280,7 +280,7 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .effect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .comboStarterId = 0,
-        .comboMoves = {0}
+        .comboMoves = {COMBO_STARTER_SERPENT_DANCE}
     },
 
     [MOVE_TAKE_DOWN] =
@@ -2434,7 +2434,7 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .effect = CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .comboStarterId = 0,
-        .comboMoves = {0}
+        .comboMoves = {COMBO_STARTER_SERPENT_DANCE}
     },
 
     [MOVE_CRUSH_CLAW] =
@@ -3906,7 +3906,7 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .effect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .comboStarterId = 0,
-        .comboMoves = {0}
+        .comboMoves = {COMBO_STARTER_SERPENT_DANCE}
     },
 
     [MOVE_LOW_SWEEP] =
@@ -4673,7 +4673,7 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
     {
         .effect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_CUTE,
-        .comboStarterId = 0,
+        .comboStarterId = COMBO_STARTER_MOONBLAST,
         .comboMoves = {0}
     },
 
@@ -5947,6 +5947,14 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .effect = CONTEST_EFFECT_AVOID_STARTLE,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .comboStarterId = 0,
+        .comboMoves = {COMBO_STARTER_MOONBLAST}
+    },
+
+    [MOVE_SERPENT_DANCE] =
+    {
+        .effect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .comboStarterId = COMBO_STARTER_SERPENT_DANCE,
         .comboMoves = {0}
     },
 };

@@ -978,6 +978,12 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             else if (!BattlerStatCanRise(battlerAtk, AI_DATA->atkAbilities, STAT_SPDEF))
                 score -= 6;
             break;
+        case EFFECT_SERPENT_DANCE:
+            if (!BattlerStatCanRise(battlerAtk, AI_DATA->atkAbilities, STAT_SPATK) || !HasMoveWithSplit(battlerAtk, SPLIT_SPECIAL))
+                score -= 10;
+            else if (!BattlerStatCanRise(battlerAtk, AI_DATA->atkAbilities, STAT_SPEED))
+                score -= 8;
+            break;
         case EFFECT_SHIFT_GEAR:
             if (!BattlerStatCanRise(battlerAtk, AI_DATA->atkAbilities, STAT_ATK) || !HasMoveWithSplit(battlerAtk, SPLIT_PHYSICAL))
                 score -= 10;
@@ -4289,6 +4295,10 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPATK, &score);
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPDEF, &score);
         break;
+    case EFFECT_SERPENT_DANCE:
+        IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPEED, &score);
+        IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPATK, &score);
+        break;
     case EFFECT_SHELL_SMASH:
         if (AI_DATA->atkHoldEffect == HOLD_EFFECT_POWER_HERB)
             score += 3;
@@ -4773,6 +4783,7 @@ static s16 AI_SetupFirstTurn(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_HAIL:
     case EFFECT_GEOMANCY:
     case EFFECT_WAR_DANCE:
+    case EFFECT_SERPENT_DANCE:
         score += 2;
         break;
     default:
@@ -5061,6 +5072,7 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case EFFECT_DRAGON_DANCE:
             case EFFECT_DEFENSE_UP_3:
             case EFFECT_SPECIAL_ATTACK_UP_3:
+            case EFFECT_SERPENT_DANCE:
                 score -= 2;
                 break;
             default:

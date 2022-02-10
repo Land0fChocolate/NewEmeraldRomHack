@@ -783,7 +783,8 @@ gBattleAnims_Moves::
 	.4byte Move_FLINT_BLADE
 	.4byte Move_FLARE_CRASH
 	.4byte Move_SINGULARITY
-	.4byte Move_COUNT @ cannot be reached, because last move is Singularity
+	.4byte Move_SERPENT_DANCE
+	.4byte Move_COUNT @ cannot be reached, because last move is Serpent Dance
 
 	.align 2
 gBattleAnims_StatusConditions::
@@ -23881,11 +23882,35 @@ Move_FLARE_CRASH:
 	waitbgfadein
 	end
 
-@TODO: using KINGS_SHIELD animation
+@TODO: using Move_KINGS_SHIELD animation
 Move_SINGULARITY:
 	loadspritegfx ANIM_TAG_PROTECT  @protect
 	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_PROTECT, 0x0, 0xC, 0xC, 0x318C   @Gray
 	goto Move_PROTECT
+
+@TODO: using Move_QUIVER_DANCE animation
+Move_SERPENT_DANCE:
+	loadspritegfx ANIM_TAG_HOLLOW_ORB
+	monbg ANIM_ATTACKER
+	call SetBugBg
+	createvisualtask AnimTask_DragonDanceWaver, 5
+	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
+	delay 8
+	createvisualtask AnimTask_BlendPalInAndOutByTag, 5, ANIM_TAG_HOLLOW_ORB, RGB_GREEN, 14, 0, 3
+	createsprite gDragonDanceOrbSpriteTemplate, ANIM_ATTACKER, 2, 0
+	createsprite gDragonDanceOrbSpriteTemplate, ANIM_ATTACKER, 2, 43
+	createsprite gDragonDanceOrbSpriteTemplate, ANIM_ATTACKER, 2, 85
+	createsprite gDragonDanceOrbSpriteTemplate, ANIM_ATTACKER, 2, 128
+	createsprite gDragonDanceOrbSpriteTemplate, ANIM_ATTACKER, 2, 170
+	createsprite gDragonDanceOrbSpriteTemplate, ANIM_ATTACKER, 2, 213
+	delay 30
+	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
+	delay 30
+	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	clearmonbg ANIM_ATTACKER
+	call UnsetBugBg
+	end
 
 Move_COUNT:
 	loadspritegfx ANIM_TAG_IMPACT

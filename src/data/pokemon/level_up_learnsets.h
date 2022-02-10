@@ -6159,10 +6159,10 @@ static const struct LevelUpMove sMiloticLevelUpLearnset[] = {
     LEVEL_UP_MOVE(27, MOVE_RECOVER),
     LEVEL_UP_MOVE(31, MOVE_AQUA_TAIL),
     LEVEL_UP_MOVE(34, MOVE_ATTRACT),
-    LEVEL_UP_MOVE(37, MOVE_SAFEGUARD),
+    LEVEL_UP_MOVE(37, MOVE_SERPENT_DANCE),
     LEVEL_UP_MOVE(41, MOVE_COIL),
     LEVEL_UP_MOVE(44, MOVE_HYDRO_PUMP),
-    LEVEL_UP_MOVE(47, MOVE_RAIN_DANCE),
+    LEVEL_UP_MOVE(47, MOVE_SAFEGUARD),
     LEVEL_UP_END
 };
 
@@ -7118,6 +7118,8 @@ static const struct LevelUpMove sClamperlLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sHuntailLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_COIL),
+    LEVEL_UP_MOVE( 1, MOVE_SERPENT_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_WHIRLPOOL),
     LEVEL_UP_MOVE( 1, MOVE_BITE),
     LEVEL_UP_MOVE( 5, MOVE_SCREECH),
@@ -7137,6 +7139,8 @@ static const struct LevelUpMove sHuntailLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sGorebyssLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_COIL),
+    LEVEL_UP_MOVE( 1, MOVE_SERPENT_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_WHIRLPOOL),
     LEVEL_UP_MOVE( 1, MOVE_CONFUSION),
     LEVEL_UP_MOVE( 5, MOVE_WATER_SPORT),
@@ -7150,7 +7154,7 @@ static const struct LevelUpMove sGorebyssLevelUpLearnset[] = {
     LEVEL_UP_MOVE(29, MOVE_BATON_PASS),
     LEVEL_UP_MOVE(34, MOVE_PSYCHIC),
     LEVEL_UP_MOVE(39, MOVE_AQUA_TAIL),
-    LEVEL_UP_MOVE(45, MOVE_COIL),
+    LEVEL_UP_MOVE(45, MOVE_SERPENT_DANCE),
     LEVEL_UP_MOVE(50, MOVE_HYDRO_PUMP),
     LEVEL_UP_END
 };
@@ -7246,6 +7250,7 @@ static const struct LevelUpMove sSeviperLevelUpLearnset[] = {
     LEVEL_UP_MOVE(41, MOVE_BELCH),
     LEVEL_UP_MOVE(44, MOVE_COIL),
     LEVEL_UP_MOVE(46, MOVE_WRING_OUT),
+    LEVEL_UP_MOVE(52, MOVE_SERPENT_DANCE),
     LEVEL_UP_END
 };
 
@@ -7785,6 +7790,7 @@ static const struct LevelUpMove sGroudonLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sRayquazaLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_SERPENT_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_TWISTER),
     LEVEL_UP_MOVE( 5, MOVE_SCARY_FACE),
     LEVEL_UP_MOVE(15, MOVE_ANCIENT_POWER),

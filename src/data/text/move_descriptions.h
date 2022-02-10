@@ -2958,6 +2958,10 @@ static const u8 sSingularityDescription[] = _(
     "Blocks damage, and reduces\n"
     "foe Speed if struck.");
 
+static const u8 sSerpentDanceDescription[] = _(
+    "A graceful dance that ups\n"
+    "Sp. Atk and Speed.");
+
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
 
@@ -3726,4 +3730,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_FLINT_BLADE - 1] = sFlintBladeDescription,
     [MOVE_FLARE_CRASH - 1] = sFlareCrashDescription,
     [MOVE_SINGULARITY - 1] = sSingularityDescription,
+    [MOVE_SERPENT_DANCE - 1] = sSerpentDanceDescription,
 };

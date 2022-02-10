@@ -11699,4 +11699,18 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .flags = FLAG_PROTECTION_MOVE,
         .split = SPLIT_STATUS,
     },
+
+    [MOVE_SERPENT_DANCE] =
+    {
+        .effect = EFFECT_SERPENT_DANCE,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_SNATCH_AFFECTED | FLAG_DANCE,
+        .split = SPLIT_STATUS,
+    },
 };
