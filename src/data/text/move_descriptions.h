@@ -2950,6 +2950,10 @@ static const u8 sFlintBladeDescription[] = _(
     "Strikes with a hard edge.\n"
     "High critical-hit ratio.");
 
+static const u8 sFlareCrashDescription[] = _(
+    "User crashes hard into the\n"
+    "foe but has speed reduced.");
+
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
 
@@ -3716,4 +3720,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     //New Emerald
     [MOVE_WAR_DANCE - 1] = sWarDanceDescription,
     [MOVE_FLINT_BLADE - 1] = sFlintBladeDescription,
+    [MOVE_FLARE_CRASH - 1] = sFlareCrashDescription,
 };

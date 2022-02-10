@@ -760,4 +760,5 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     //New Emerald
     [MOVE_WAR_DANCE] = _("War Dance"),
     [MOVE_FLINT_BLADE] = _("Flint Blade"),
+    [MOVE_FLARE_CRASH] = _("Flare Crash"),
 };

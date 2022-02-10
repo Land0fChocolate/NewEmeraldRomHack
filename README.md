@@ -27,6 +27,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Removed badge boosts
 - Pokemon will attempt to learn a new move upon evolution.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
+- Changes to learnsets of some Pokemon (TODO: make list).
 
 # New Abilities
 

@@ -1638,7 +1638,7 @@ static void SetUpModifyArrows(struct BattleDebugMenu *data)
         break;
     case LIST_ITEM_MOVES:
         data->modifyArrows.minValue = 0;
-        data->modifyArrows.maxValue = MOVES_COUNT_GEN8 - 1;
+        data->modifyArrows.maxValue = MOVES_COUNT_NEW_EMERALD - 1;
         data->modifyArrows.maxDigits = 3;
         if (data->currentSecondaryListItemId == 4)
         {
