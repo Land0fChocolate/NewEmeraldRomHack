@@ -2750,6 +2750,7 @@ static const struct LevelUpMove sKabutoLevelUpLearnset[] = {
 
 static const struct LevelUpMove sKabutopsLevelUpLearnset[] = {
     //LEVEL_UP_MOVE( 0, MOVE_SLASH),
+    LEVEL_UP_MOVE( 1, MOVE_FLINT_BLADE),
     LEVEL_UP_MOVE( 1, MOVE_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_NIGHT_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_FEINT),
@@ -4875,12 +4876,12 @@ static const struct LevelUpMove sEnteiLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 8, MOVE_EMBER),
     LEVEL_UP_MOVE(15, MOVE_ROAR),
-    LEVEL_UP_MOVE(22, MOVE_FIRE_SPIN),
+    LEVEL_UP_MOVE(22, MOVE_FIRE_FANG),
     LEVEL_UP_MOVE(29, MOVE_STOMP),
     LEVEL_UP_MOVE(36, MOVE_FLAMETHROWER),
     LEVEL_UP_MOVE(43, MOVE_SWAGGER),
-    LEVEL_UP_MOVE(50, MOVE_FIRE_FANG),
-    LEVEL_UP_MOVE(57, MOVE_LAVA_PLUME),
+    LEVEL_UP_MOVE(50, MOVE_FLARE_CRASH),
+    LEVEL_UP_MOVE(57, MOVE_FIRE_SPIN),
     LEVEL_UP_MOVE(64, MOVE_EXTRASENSORY),
     LEVEL_UP_MOVE(71, MOVE_FIRE_BLAST),
     LEVEL_UP_MOVE(78, MOVE_CALM_MIND),
@@ -10136,6 +10137,7 @@ static const struct LevelUpMove sPigniteLevelUpLearnset[] = {
 static const struct LevelUpMove sEmboarLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_ARM_THRUST),
     LEVEL_UP_MOVE( 1, MOVE_HAMMER_ARM),
+    LEVEL_UP_MOVE( 1, MOVE_FLARE_CRASH),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE( 1, MOVE_EMBER),

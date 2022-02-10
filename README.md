@@ -14,6 +14,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Rework aspects of the Battle Frontier. Change the Battle Palace to be themed around inverse type matchups. Rework the battle Pokemon list. 
 - Add methods to make training easier. Super vitamins (giving 60 EVs per stat), IV boosters and nature mints to be added and accessable.
 - Add credits of people whos tutorials and work you have used in the game.
+- Change some trainer Pokemon
+- Revert some unnecessary changes Emerald made from Ruby/Sapphire like the Vigoroth movers and Zigzagoon attacking Prof Birch instead of Poochyena.
 
 # Changelog
 
@@ -84,9 +86,11 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - War Dance: User have their own attack and speed rise by 1 stage and attempts to confuse the opponent. Learned by Sentret/Furret/Yungoos/Gumshoos via level up.
 - Flint Blade: 75 BP, 100% Acc, Rock type, increased crit ratio. Boosted by Swordmaster ability. Learned by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian/Rockruff/Lycanroc/Gigalith/Onix/Steelix/Omanite/Omastar/Kabuto/Kabutops/Aerodactyl/Anorith/Armaldo/Shieldon/Bastiodon/Binacle/Barbaracle/Rhyhorn/Rhydon/Rhypherior/Aggron/Kleavor/Seviper.
-- Flare Crash: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Learned by Flareon/Growlith/Arcanine/Ponyta/Rapidash/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo/Boltund.
+
+- Flare Crash: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Learned by Flareon/Growlith/Arcanine/Ponyta/Rapidash/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo.
+
 - Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir.
-- Serpent Dance: Increases the user's special attack and speed by one stage. Learned by Seviper/Milotic/Serperior/Dunsparce/Ekans/Arbok/Huntail/Gorebyss/Rayquaza/Silicobra/Sandaconda/Giratina/Gyarados.
+- Serpent Dance: Increases the user's special attack and speed by one stage. Learned by Seviper/Milotic/Serperior/Dunsparce/Ekans/Arbok/Huntail/Gorebyss/Rayquaza/Silicobra/Sandaconda/Giratina/Gyarados/Furret.
 
 # Updated Moves
 
