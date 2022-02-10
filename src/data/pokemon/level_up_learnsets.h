@@ -9500,6 +9500,7 @@ static const struct LevelUpMove sYanmegaLevelUpLearnset[] = {
 
 static const struct LevelUpMove sLeafeonLevelUpLearnset[] = {
     //LEVEL_UP_MOVE( 0, MOVE_RAZOR_LEAF),
+    LEVEL_UP_MOVE( 1, MOVE_FLINT_BLADE),
     LEVEL_UP_MOVE( 1, MOVE_RAZOR_LEAF),
     LEVEL_UP_MOVE( 1, MOVE_HELPING_HAND),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),

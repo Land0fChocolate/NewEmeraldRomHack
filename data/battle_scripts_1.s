@@ -405,6 +405,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectClangorousSoul          @ EFFECT_CLANGOROUS_SOUL
 	.4byte BattleScript_EffectHit                     @ EFFECT_BOLT_BEAK
 	.4byte BattleScript_EffectWarDance                @ EFFECT_WAR_DANCE
+	.4byte BattleScript_EffectHit                     @ EFFECT_FLINT_BLADE
 
 BattleScript_EffectShellSideArm:
 	shellsidearmcheck

@@ -779,6 +779,7 @@ gBattleAnims_Moves::
 	.4byte Move_ASTRAL_BARRAGE
 	.4byte Move_EERIE_SPELL
 	.4byte Move_WAR_DANCE
+	.4byte Move_FLINT_BLADE
 	.4byte Move_COUNT @ cannot be reached, because last move is War Dance
 
 	.align 2
@@ -23776,6 +23777,27 @@ Move_WAR_DANCE:
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
 	delay 1
+	end
+
+@TODO: using Move_NIGHT_SLASH animation
+Move_FLINT_BLADE:
+	loadspritegfx ANIM_TAG_SLASH
+	createvisualtask AnimTask_BlendNightSlash, 2, ANIM_TARGET, 2, 0, 8, 1
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 0, 1, 3, 0, 12, RGB_BLACK
+	waitforvisualfinish
+	createsprite gNightSlashLeftSpriteTemplate, ANIM_TARGET, 2, 1, -8, 0
+	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
+	delay 4
+	createsprite gNightSlashLeftSpriteTemplate, ANIM_TARGET, 2, 1, 8, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 8, 1
+	delay 40
+	createsprite gNightSlashRightSpriteTemplate, ANIM_TARGET, 2, 1, -8, 0
+	createsprite gNightSlashRightSpriteTemplate, ANIM_TARGET, 2, 1, 8, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 18, 1
+	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
+	waitforvisualfinish
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 0, 1, 3, 12, 0, RGB_BLACK
+	waitforvisualfinish
 	end
 
 Move_COUNT:

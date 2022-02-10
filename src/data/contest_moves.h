@@ -2778,7 +2778,7 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .effect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .comboStarterId = 0,
-        .comboMoves = {0}
+        .comboMoves = {COMBO_STARTER_SWORDS_DANCE}
     },
 
     [MOVE_DRAGON_DANCE] =
@@ -5924,6 +5924,14 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .comboStarterId = COMBO_STARTER_WAR_DANCE,
         .comboMoves = {0},
+    },
+
+    [MOVE_FLINT_BLADE] =
+    {
+        .effect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .comboStarterId = 0,
+        .comboMoves = {COMBO_STARTER_SWORDS_DANCE}
     },
 };
 

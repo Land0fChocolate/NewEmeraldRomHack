@@ -2946,6 +2946,10 @@ static const u8 sWarDanceDescription[] = _(
     "Ups user Attack and Speed\n"
     "and confuses opponent.");
 
+static const u8 sFlintBladeDescription[] = _(
+    "Strikes with a hard edge.\n"
+    "High critical-hit ratio.");
+
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
 
@@ -3711,4 +3715,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 
     //New Emerald
     [MOVE_WAR_DANCE - 1] = sWarDanceDescription,
+    [MOVE_FLINT_BLADE - 1] = sFlintBladeDescription,
 };

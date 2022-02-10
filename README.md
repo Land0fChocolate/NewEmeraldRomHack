@@ -7,13 +7,17 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - implement ability description label in the summary screen.
 - Include ORAS dex Pokemon like Budew and Dusknoir.
 - New Pokemon moves.
-- New Pokemon abilities.
+	- animations for new moves
+	- Add the new moves to the move tutors lists.
+- Expand and add new areas, including adding some new wild Pokemon for the area.
+- Rework aspects of the Battle Frontier. Change the Battle Palace to be themed around inverse type matchups. Rework the battle Pokemon list. 
+- Add methods to make training easier. Super vitamins (giving 60 EVs per stat), IV boosters and nature mints to be added and accessable.
 - Add credits of people whos tutorials and work you have used in the game.
 
 # Changelog
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
-- Pokemon can have up to 3 active abilities, dependant on their species. Many Pokemon have had their ability set updated.
+- Pokemon can have up to 3 active abilities, dependant on their species. Many Pokemon have had their ability set updated (TODO: make a list of ability stat changes somewhere).
 - New moves and abilities (listed below).
 - Some vanilla abilities updated to make them more useful (listed below).
 - Berry tree drop rates are tripled.
@@ -26,28 +30,28 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 # New Abilities
 
-- Volume Up. Power of sound based moves have increased by 33%. Used by Loudred/Exploud.
-- Lava Body. Attackers who make contact will get inflicted with burn. Used by Slugma/Magargo.
-- Wildfire. Sp.Atk raises one stage after fainting an opponent. Used by Quilava/Typlosion.
-- Miracle Blossom. User and ally restore 1/8 HP at the end of every turn. Used by Bayleef/Meganium/Xerneas.
-- Scorching Heart. Power of Fire type moves increased by 50%. Used by Solrock/Groudon/Solgaleo.
-- Ice Affinity. Power of Ice type moves increased by 50%. Used by Lunatone/Kyogre/Piplup/Prinplup/Empoleon/Lunala.
-- Aquatic. Power of Water type moves increased by 50%. Used by Dhelmise/Clobbopus/Grapploct.
-- Gardener. Power of Grass type moves increased by 50%. Used by Floette/Florges.
-- Prickly Thorns. Effectively like Rough Skin. Used by Cacnea/Cacturne.
-- Aura Sense. User shudders if opponent has super-effective move. Also ignores evasive boosts from target. Used by Riolu/Lucario.
-- Soul Siphon. Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir/Palossand/Dhelmise/Corsola(Galarian).
-- Bad Luck. Opponent cannot land crits and less likely to land status moves against user. Used by Spiritomb/Cofagrigus.
-- Wickedness. User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius/Braixen/Delphox.
-- Spinning Body. User's physical moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop.
-- Evergreen. User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
-- Hematophagy. Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
-- Swordmaster. Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
-- Supercooled. User's Ice type moves are super-effective against Water types. Used by Lapras/Glaceon/Aurorus.
-- Kings Might. User doesn't need to recharge on moves like Hyper Beam and Giga Impact. Used by Slaking.
-- Pleasant Dreams. Heals sleeping Pokemon 1/4 HP every turn. Used by Cresselia.
-- Wish Maker. User creates a wish on entry. Used by Jirachi.
-- Heart Swap. If user makes contact with target, stat changes are swapped. Used by Manaphy.
+- Volume Up: Power of sound based moves have increased by 33%. Used by Loudred/Exploud.
+- Lava Body: Attackers who make contact will get inflicted with burn. Used by Slugma/Magargo.
+- Wildfire: Sp.Atk raises one stage after fainting an opponent. Used by Quilava/Typlosion.
+- Miracle Blossom: User and ally restore 1/8 HP at the end of every turn. Used by Bayleef/Meganium/Xerneas.
+- Scorching Heart: Power of Fire type moves increased by 50%. Used by Solrock/Groudon/Solgaleo.
+- Ice Affinity: Power of Ice type moves increased by 50%. Used by Lunatone/Kyogre/Piplup/Prinplup/Empoleon/Lunala.
+- Aquatic: Power of Water type moves increased by 50%. Used by Dhelmise/Clobbopus/Grapploct.
+- Gardener: Power of Grass type moves increased by 50%. Used by Floette/Florges.
+- Prickly Thorns: Effectively like Rough Skin. Used by Cacnea/Cacturne.
+- Aura Sense: User shudders if opponent has super-effective move. Also ignores evasive boosts from target. Used by Riolu/Lucario.
+- Soul Siphon: Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir/Palossand/Dhelmise/Corsola(Galarian).
+- Bad Luck: Opponent cannot land crits and less likely to land status moves against user. Used by Spiritomb/Cofagrigus.
+- Wickedness: User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius/Braixen/Delphox.
+- Spinning Body: User's physical moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop.
+- Evergreen: User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
+- Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
+- Swordmaster: Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
+- Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Glaceon/Aurorus.
+- King's Might: User doesn't need to recharge on moves like Hyper Beam and Giga Impact. Used by Slaking.
+- Pleasant Dreams: Heals sleeping Pokemon 1/4 HP every turn. Used by Cresselia.
+- Wish Maker: User creates a wish on entry. Used by Jirachi.
+- Heart Swap: If user makes contact with target, stat changes are swapped. Used by Manaphy.
 
 # Updated Abilities
 
@@ -63,7 +67,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Slow Start: Timer tuned down to 1 turn from 5.
 - Sweet Veil: Also ignores evasion boosts from target.
 - Corrosion: Also makes user's poison moves super effective against steel types.
-- Solar Power: No longer decreases HP. Power modifier changed to 25%.
+- Solar Power: No longer decreases HP. Power modifier changed to 25% from 50%.
 - Normalize: Buffed to 30% from 20%.
 - Liquid Voice: Also powers up sound moves by 20%.
 - Cursed Body: Now always disables the move for just the next turn.
@@ -76,7 +80,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 # New Moves
 
-- New move: War Dance. User have their own attack and speed rise by 1 stage and attempts to confuse the opponent. Learned by Sentret/Furret/Yungoos/Gumshoos via level up.
+- War Dance: User have their own attack and speed rise by 1 stage and attempts to confuse the opponent. Learned by Sentret/Furret/Yungoos/Gumshoos via level up.
+- Flint Blade: 75 BP, 100%, Rock type, increased crit ratio. Boosted by Swordmaster ability. Learned by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian/Rockruff/Lycanroc/Gigalith/Onix/Steelix/Omanite/Omastar/Kabuto/Kabutops/Aerodactyl/Anorith/Armaldo/Shieldon/Bastiodon/Binacle/Barbaracle/Rhyhorn/Rhydon/Rhypherior/Aggron/Kleavor.
 
 # Updated Moves
 
@@ -90,6 +95,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 # Credits
 
+- The fine people who worked on pokeemerald and pokeemerald-expansion
 - DizzyEggg
 - LOuroboros
 - BuffelSaft

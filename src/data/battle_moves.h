@@ -11657,4 +11657,18 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .flags = FLAG_SNATCH_AFFECTED | FLAG_DANCE | FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
         .split = SPLIT_STATUS,
     },
+
+    [MOVE_FLINT_BLADE] =
+    {
+        .effect = EFFECT_HIT,
+        .power = 75,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT | FLAG_SWORDMASTER_BOOST,
+        .split = SPLIT_PHYSICAL,
+    },
 };
