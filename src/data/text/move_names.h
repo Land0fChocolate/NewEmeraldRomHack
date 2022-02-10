@@ -756,4 +756,11 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_GLACIAL_LANCE] = _("GlacialLance"),
     [MOVE_ASTRAL_BARRAGE] = _("AstrlBarrage"),
     [MOVE_EERIE_SPELL] = _("Eerie Spell"),
+
+    //New Emerald
+    [MOVE_WAR_DANCE] = _("War Dance"),
+    [MOVE_FLINT_BLADE] = _("Flint Blade"),
+    [MOVE_FLARE_CRASH] = _("Flare Crash"),
+    [MOVE_SINGULARITY] = _("Singularity"),
+    [MOVE_SERPENT_DANCE] = _("SerpentDance"),
 };

@@ -2278,8 +2278,8 @@ static const u8 sFAIRY_LOCKDescription[] = _(
     "preventing escape next turn.");
 
 static const u8 sKINGS_SHIELDDescription[] = _(
-    "Evades damage, and sharply\n"
-    "reduces Attack if struck.");
+    "Blocks damage, and reduces\n"
+    "foe Attack if struck.");
 
 static const u8 sPLAY_NICEDescription[] = _(
     "Befriend the foe, lowering\n"
@@ -2941,6 +2941,26 @@ static const u8 sASTRAL_BARRAGEDescription[] = _(
 static const u8 sEERIE_SPELLDescription[] = _(
     "Attacks with psychic power.\n"
     "Foe's last move has 3 PP cut.");
+
+static const u8 sWarDanceDescription[] = _(
+    "Ups user Attack and Speed\n"
+    "and confuses opponent.");
+
+static const u8 sFlintBladeDescription[] = _(
+    "Strikes with a hard edge.\n"
+    "High critical-hit ratio.");
+
+static const u8 sFlareCrashDescription[] = _(
+    "User crashes hard into the\n"
+    "foe but has speed reduced.");
+
+static const u8 sSingularityDescription[] = _(
+    "Blocks damage, and reduces\n"
+    "foe Speed if struck.");
+
+static const u8 sSerpentDanceDescription[] = _(
+    "A graceful dance that ups\n"
+    "Sp. Atk and Speed.");
 
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
@@ -3704,4 +3724,11 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_GLACIAL_LANCE - 1] = sGLACIAL_LANCEDescription,
     [MOVE_ASTRAL_BARRAGE - 1] = sASTRAL_BARRAGEDescription,
     [MOVE_EERIE_SPELL - 1] = sEERIE_SPELLDescription,
+
+    //New Emerald
+    [MOVE_WAR_DANCE - 1] = sWarDanceDescription,
+    [MOVE_FLINT_BLADE - 1] = sFlintBladeDescription,
+    [MOVE_FLARE_CRASH - 1] = sFlareCrashDescription,
+    [MOVE_SINGULARITY - 1] = sSingularityDescription,
+    [MOVE_SERPENT_DANCE - 1] = sSerpentDanceDescription,
 };

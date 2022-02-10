@@ -2545,6 +2545,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Counter48BP,
         gText_ThunderWave48BP,
         gText_SwordsDance48BP,
+        gText_SerpentDance48BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_MOVE_TUTOR_2] = 
@@ -2559,6 +2560,8 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_IcePunch48BP,
         gText_ThunderPunch48BP,
         gText_FirePunch48BP,
+        gText_FlintBlade48BP,
+        gText_FlareCrash48BP,
         gText_Exit
     },
     [SCROLL_MULTI_SS_TIDAL_DESTINATION] =
@@ -3148,7 +3151,8 @@ static const u16 sBattleFrontier_TutorMoves1[] =
     MOVE_ROCK_SLIDE, 
     MOVE_COUNTER, 
     MOVE_THUNDER_WAVE, 
-    MOVE_SWORDS_DANCE 
+    MOVE_SWORDS_DANCE,
+    MOVE_SERPENT_DANCE
 };
 
 static const u16 sBattleFrontier_TutorMoves2[] =
@@ -3162,7 +3166,9 @@ static const u16 sBattleFrontier_TutorMoves2[] =
     MOVE_PSYCH_UP, 
     MOVE_ICE_PUNCH, 
     MOVE_THUNDER_PUNCH, 
-    MOVE_FIRE_PUNCH 
+    MOVE_FIRE_PUNCH,
+    MOVE_FLINT_BLADE,
+    MOVE_FLARE_CRASH
 };
 
 void BufferBattleFrontierTutorMoveName(void)
