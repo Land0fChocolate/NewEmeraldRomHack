@@ -8424,7 +8424,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_MaxieMagmaHideout),
-        .party = {.NoItemDefaultMoves = sParty_MaxieMagmaHideout},
+        .party = {.ItemCustomMoves = sParty_MaxieMagmaHideout},
     },
 
     [TRAINER_MAXIE_MT_CHIMNEY] =
@@ -8438,7 +8438,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_MaxieMtChimney),
-        .party = {.NoItemDefaultMoves = sParty_MaxieMtChimney},
+        .party = {.ItemCustomMoves = sParty_MaxieMtChimney},
     },
 
     [TRAINER_TIANA] =
@@ -10258,7 +10258,35 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = ARRAY_COUNT(sParty_TabithaMagmaHideout),
-        .party = {.NoItemDefaultMoves = sParty_TabithaMagmaHideout},
+        .party = {.ItemCustomMoves = sParty_TabithaMagmaHideout},
+    },
+
+    [TRAINER_COURTNEY_MAGMA_HIDEOUT] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_MAGMA_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_ADMIN, //TODO: add in new pic
+        .trainerName = _("COURTNEY"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_CourtneyMagmaHideout),
+        .party = {.ItemCustomMoves = sParty_CourtneyMagmaHideout},
+    },
+
+    [TRAINER_MATT_MT_PYRE] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerPic = TRAINER_PIC_AQUA_ADMIN_M,
+        .trainerName = _("MATT"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_MattMtPyre),
+        .party = {.ItemCustomMoves = sParty_MattMtPyre},
     },
 
     [TRAINER_DARCY] =
@@ -10286,7 +10314,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_MaxieMossdeep),
-        .party = {.NoItemDefaultMoves = sParty_MaxieMossdeep},
+        .party = {.ItemCustomMoves = sParty_MaxieMossdeep},
     },
 
     [TRAINER_PETE] =

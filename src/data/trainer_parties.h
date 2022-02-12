@@ -334,13 +334,19 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Zander[] = {
 static const struct TrainerMonItemCustomMoves sParty_ShellyWeatherInstitute[] = {
     {
     .iv = 50,
-    .lvl = 28,
-    .species = SPECIES_MIGHTYENA,
-    .moves = {MOVE_BITE, MOVE_ICE_FANG, MOVE_SCARY_FACE, MOVE_HOWL}
+    .lvl = 27,
+    .species = SPECIES_STARYU,
+    .moves = {MOVE_BRINE, MOVE_PSYBEAM, MOVE_SWIFT, MOVE_CONFUSE_RAY}
     },
     {
     .iv = 50,
     .lvl = 28,
+    .species = SPECIES_MIGHTYENA,
+    .moves = {MOVE_BITE, MOVE_ICE_FANG, MOVE_POISON_FANG, MOVE_HOWL}
+    },
+    {
+    .iv = 50,
+    .lvl = 29,
     .species = SPECIES_STARMIE,
     .moves = {MOVE_ICY_WIND, MOVE_BRINE, MOVE_PSYBEAM, MOVE_RECOVER}
     }
@@ -350,12 +356,18 @@ static const struct TrainerMonItemCustomMoves sParty_ShellySeafloorCavern[] = {
     {
     .iv = 100,
     .lvl = 37,
-    .species = SPECIES_MIGHTYENA,
-    .moves = {MOVE_ASSURANCE, MOVE_ICE_FANG, MOVE_DIG, MOVE_HOWL}
+    .species = SPECIES_STARYU,
+    .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_LIGHT_SCREEN, MOVE_CONFUSE_RAY}
     },
     {
     .iv = 100,
     .lvl = 37,
+    .species = SPECIES_MIGHTYENA,
+    .moves = {MOVE_ASSURANCE, MOVE_ICE_FANG, MOVE_POISON_FANG, MOVE_HOWL}
+    },
+    {
+    .iv = 100,
+    .lvl = 38,
     .species = SPECIES_STARMIE,
     .moves = {MOVE_ICE_BEAM, MOVE_SURF, MOVE_PSYCHIC, MOVE_RECOVER}
     }
@@ -7896,23 +7908,18 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GruntWeatherInst5[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_TabithaMtChimney[] = {
     {
     .iv = 50,
-    .lvl = 18,
+    .lvl = 20,
     .species = SPECIES_SLUGMA,
     },
     {
     .iv = 50,
-    .lvl = 20,
-    .species = SPECIES_POOCHYENA,
+    .lvl = 22,
+    .species = SPECIES_SLUGMA,
     },
     {
     .iv = 50,
     .lvl = 22,
-    .species = SPECIES_NUMEL,
-    },
-    {
-    .iv = 50,
-    .lvl = 22,
-    .species = SPECIES_ZUBAT,
+    .species = SPECIES_GOLBAT,
     }
 };
 
@@ -9789,26 +9796,66 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GruntMagmaHideout16[] = 
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_TabithaMagmaHideout[] = {
+static const struct TrainerMonItemCustomMoves sParty_TabithaMagmaHideout[] = {
     {
     .iv = 75,
-    .lvl = 26,
-    .species = SPECIES_NUMEL,
+    .lvl = 33,
+    .species = SPECIES_SLUGMA,
+    .moves = {MOVE_FLAMETHROWER, MOVE_ANCIENT_POWER, MOVE_YAWN, MOVE_SUNNY_DAY}
     },
     {
     .iv = 75,
-    .lvl = 28,
+    .lvl = 34,
     .species = SPECIES_MIGHTYENA,
+    .moves = {MOVE_BITE, MOVE_FIRE_FANG, MOVE_DIG, MOVE_HOWL}
     },
     {
     .iv = 75,
-    .lvl = 30,
-    .species = SPECIES_ZUBAT,
+    .lvl = 36,
+    .species = SPECIES_MAGCARGO,
+    .moves = {MOVE_FLAMETHROWER, MOVE_ROCK_SLIDE, MOVE_EARTH_POWER, MOVE_CLEAR_SMOG}
+    }
+};
+
+static const struct TrainerMonItemCustomMoves sParty_CourtneyMagmaHideout[] = {
+    {
+    .iv = 75,
+    .lvl = 33,
+    .species = SPECIES_VULPIX,
+    .moves = {MOVE_FLAMETHROWER, MOVE_EXTRASENSORY, MOVE_WILL_O_WISP, MOVE_SUNNY_DAY}
+    },
+    {
+    .iv = 75,
+    .lvl = 34,
+    .species = SPECIES_GOLBAT,
+    .moves = {MOVE_POISON_FANG, MOVE_AIR_CUTTER, MOVE_SUPERSONIC, MOVE_SUNNY_DAY}
+    },
+    {
+    .iv = 75,
+    .lvl = 36,
+    .species = SPECIES_NINETALES,
+    .moves = {MOVE_FLAMETHROWER, MOVE_SOLAR_BEAM, MOVE_EXTRASENSORY, MOVE_NASTY_PLOT}
+    }
+};
+
+static const struct TrainerMonItemCustomMoves sParty_MattMtPyre[] = {
+    {
+    .iv = 75,
+    .lvl = 31,
+    .species = SPECIES_WAILMER,
+    .moves = {MOVE_SURF, MOVE_ROCK_TOMB, MOVE_HEAVY_SLAM, MOVE_RAIN_DANCE}
+    },
+    {
+    .iv = 75,
+    .lvl = 31,
+    .species = SPECIES_GOLBAT,
+    .moves = {MOVE_POISON_FANG, MOVE_AIR_CUTTER, MOVE_SUPERSONIC, MOVE_RAIN_DANCE}
     },
     {
     .iv = 75,
     .lvl = 33,
-    .species = SPECIES_CAMERUPT,
+    .species = SPECIES_WAILORD,
+    .moves = {MOVE_SURF, MOVE_BODY_SLAM, MOVE_HEAVY_SLAM, MOVE_BOUNCE}
     }
 };
 
