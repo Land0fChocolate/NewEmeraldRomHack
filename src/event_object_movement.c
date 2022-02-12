@@ -453,7 +453,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_KYOGRE_REFLECTION       0x1117
 #define OBJ_EVENT_PAL_TAG_GROUDON                 0x1118
 #define OBJ_EVENT_PAL_TAG_GROUDON_REFLECTION      0x1119
-#define OBJ_EVENT_PAL_TAG_MACHOKE                 0x111A
+#define OBJ_EVENT_PAL_TAG_UNUSED                  0x111A
 #define OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW        0x111B
 #define OBJ_EVENT_PAL_TAG_POOCHYENA               0x111C
 #define OBJ_EVENT_PAL_TAG_RED_LEAF                0x111D
@@ -509,7 +509,6 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
-    {gObjectEventPal_Machoke,               OBJ_EVENT_PAL_TAG_MACHOKE},
     {NULL,                                  0x0000},
 };
 
@@ -560,13 +559,6 @@ static const u16 sReflectionPaletteTags_VigorothMover[] = {
     OBJ_EVENT_PAL_TAG_VIGOROTH,
     OBJ_EVENT_PAL_TAG_VIGOROTH,
     OBJ_EVENT_PAL_TAG_VIGOROTH,
-};
-
-static const u16 sReflectionPaletteTags_MachokeMover[] = {
-    OBJ_EVENT_PAL_TAG_MACHOKE,
-    OBJ_EVENT_PAL_TAG_MACHOKE,
-    OBJ_EVENT_PAL_TAG_MACHOKE,
-    OBJ_EVENT_PAL_TAG_MACHOKE,
 };
 
 static const u16 sReflectionPaletteTags_MovingBox[] = {
@@ -639,7 +631,6 @@ static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_NPC_3,            sReflectionPaletteTags_Npc3},
     {OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW, sReflectionPaletteTags_SubmarineShadow},
     {OBJ_EVENT_PAL_TAG_RED_LEAF,         sReflectionPaletteTags_RedLeaf},
-    {OBJ_EVENT_PAL_TAG_MACHOKE,          sReflectionPaletteTags_MachokeMover},
     {OBJ_EVENT_PAL_TAG_NONE,             NULL},
 };
 
