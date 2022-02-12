@@ -11941,6 +11941,76 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Everett},
     },
 
+    [TRAINER_CECE] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_LASS, //TODO: implement Fairy Tale Girl class
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = _("CECE"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = 0,
+        .partySize = ARRAY_COUNT(sParty_Cece),
+        .party = {.NoItemDefaultMoves = sParty_Cece},
+    },
+
+    [TRAINER_FRANNY] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_LASS, //TODO: implement Fairy Tale Girl class
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = _("FRANNY"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = 0,
+        .partySize = ARRAY_COUNT(sParty_Franny),
+        .party = {.NoItemDefaultMoves = sParty_Franny},
+    },
+
+    [TRAINER_MEGGI] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_LASS, //TODO: implement Fairy Tale Girl class
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = _("MEGGI"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = 0,
+        .partySize = ARRAY_COUNT(sParty_Meggi),
+        .party = {.NoItemDefaultMoves = sParty_Meggi},
+    },
+
+    [TRAINER_MOMO] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_LASS, //TODO: implement Fairy Tale Girl class
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = _("MOMO"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = 0,
+        .partySize = ARRAY_COUNT(sParty_Momo),
+        .party = {.NoItemDefaultMoves = sParty_Momo},
+    },
+
+    [TRAINER_NELLIE] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_LASS, //TODO: implement Fairy Tale Girl class
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = _("NELLIE"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = 0,
+        .partySize = ARRAY_COUNT(sParty_Nellie),
+        .party = {.NoItemDefaultMoves = sParty_Nellie},
+    },
+
     [TRAINER_RED] =
     {
         .partyFlags = 0,
