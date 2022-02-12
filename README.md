@@ -9,6 +9,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - New Pokemon moves.
 	- animations for new moves
 	- Add the new moves to the move tutors lists.
+- Update move tutor lists to have tutor moves from later gens.
 - Remove the OHKO moves.
 - Expand and add new areas, including adding some new wild Pokemon for the area.
 - Rework aspects of the Battle Frontier. Change the Battle Palace to be themed around inverse type matchups. Rework the battle Pokemon list. 

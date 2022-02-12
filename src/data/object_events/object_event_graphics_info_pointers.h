@@ -95,6 +95,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayFieldMove;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothCarryingBox;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothFacingAway;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MachokeCarryingBox;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MachokeFacingAway;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirchsBag;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EnemyZigzagoon;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Artist;
@@ -344,6 +346,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_TRUCK] =                    &gObjectEventGraphicsInfo_Truck,
     [OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX] =    &gObjectEventGraphicsInfo_VigorothCarryingBox,
     [OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY] =     &gObjectEventGraphicsInfo_VigorothFacingAway,
+    [OBJ_EVENT_GFX_MACHOKE_CARRYING_BOX] =     &gObjectEventGraphicsInfo_MachokeCarryingBox,
+    [OBJ_EVENT_GFX_MACHOKE_FACING_AWAY] =      &gObjectEventGraphicsInfo_MachokeFacingAway,
     [OBJ_EVENT_GFX_BIRCHS_BAG] =               &gObjectEventGraphicsInfo_BirchsBag,
     [OBJ_EVENT_GFX_ZIGZAGOON_1] =              &gObjectEventGraphicsInfo_EnemyZigzagoon,
     [OBJ_EVENT_GFX_ARTIST] =                   &gObjectEventGraphicsInfo_Artist,
