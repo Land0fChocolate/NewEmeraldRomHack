@@ -458,7 +458,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_ShellyWeatherInstitute),
-        .party = {.NoItemDefaultMoves = sParty_ShellyWeatherInstitute},
+        .party = {.ItemCustomMoves = sParty_ShellyWeatherInstitute},
     },
 
     [TRAINER_SHELLY_SEAFLOOR_CAVERN] =
@@ -472,7 +472,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_ShellySeafloorCavern),
-        .party = {.NoItemDefaultMoves = sParty_ShellySeafloorCavern},
+        .party = {.ItemCustomMoves = sParty_ShellySeafloorCavern},
     },
 
     [TRAINER_ARCHIE] =
@@ -486,7 +486,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_Archie),
-        .party = {.NoItemDefaultMoves = sParty_Archie},
+        .party = {.ItemCustomMoves = sParty_Archie},
     },
 
     [TRAINER_LEAH] =

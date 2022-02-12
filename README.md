@@ -40,7 +40,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Miracle Blossom: User and ally restore 1/8 HP at the end of every turn. Used by Bayleef/Meganium/Xerneas.
 - Scorching Heart: Power of Fire type moves increased by 50%. Used by Solrock/Groudon/Solgaleo.
 - Ice Affinity: Power of Ice type moves increased by 50%. Used by Lunatone/Kyogre/Piplup/Prinplup/Empoleon/Lunala.
-- Aquatic: Power of Water type moves increased by 50%. Used by Dhelmise/Clobbopus/Grapploct.
+- Aquatic: Power of Water type moves increased by 50%. Used by Anorith/Armaldo/Dhelmise/Clobbopus/Grapploct.
 - Gardener: Power of Grass type moves increased by 50%. Used by Floette/Florges.
 - Prickly Thorns: Effectively like Rough Skin. Used by Cacnea/Cacturne.
 - Aura Sense: User shudders if opponent has super-effective move. Also ignores evasive boosts from target. Used by Riolu/Lucario.
