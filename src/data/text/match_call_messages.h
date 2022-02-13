@@ -358,6 +358,11 @@ const u8 gText_MatchCallMysticDuo_TateAndLiza_Pokemon[] = _("Always friendly POK
 const u8 gText_MatchCallMysticDuo_TateAndLiza_Intro1[] = _("Papa has trouble telling");
 const u8 gText_MatchCallMysticDuo_TateAndLiza_Intro2[] = _("the two of us apart!");
 
+const u8 gText_MatchCallTurquoiseDiva_Wallace_Strategy[] = _("Dignity and respect.");
+const u8 gText_MatchCallTurquoiseDiva_Wallace_Pokemon[] = _("I prefer POKéMON of grace.");
+const u8 gText_MatchCallTurquoiseDiva_Wallace_Intro1[] = _("I represent beauty as");
+const u8 gText_MatchCallTurquoiseDiva_Wallace_Intro2[] = _("well as intelligence.");
+
 const u8 gText_MatchCallDandyCharm_Juan_Strategy[] = _("I use splendid waterpower.");
 const u8 gText_MatchCallDandyCharm_Juan_Pokemon[] = _("POKéMON of elegance!");
 const u8 gText_MatchCallDandyCharm_Juan_Intro1[] = _("The adulation of beautiful");
@@ -383,10 +388,10 @@ const u8 gText_MatchCallEliteFour_Drake_Pokemon[] = _("The raw power of DRAGONS!
 const u8 gText_MatchCallEliteFour_Drake_Intro1[] = _("I dedicate myself to the");
 const u8 gText_MatchCallEliteFour_Drake_Intro2[] = _("POKéMON that saved me.");
 
-const u8 gText_MatchCallChampion_Wallace_Strategy[] = _("Dignity and respect.");
-const u8 gText_MatchCallChampion_Wallace_Pokemon[] = _("I prefer POKéMON of grace.");
-const u8 gText_MatchCallChampion_Wallace_Intro1[] = _("I represent beauty as");
-const u8 gText_MatchCallChampion_Wallace_Intro2[] = _("well as intelligence.");
+const u8 gText_MatchCallChampion_Steven_Strategy[] = _("Attack the weak points!");
+const u8 gText_MatchCallChampion_Steven_Pokemon[] = _("Ultimate Steel Pokémon.");
+const u8 gText_MatchCallChampion_Steven_Intro1[] = _("When it comes down to it,");
+const u8 gText_MatchCallChampion_Steven_Intro2[] = _("I'm still the strongest!");
 
 const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_COUNT] = 
 {
@@ -462,10 +467,11 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_NORMAN] = MCFLAVOR(ReliableOne_Dad),
     [REMATCH_WINONA] = MCFLAVOR(SkyTamer_Winona),
     [REMATCH_TATE_AND_LIZA] = MCFLAVOR(MysticDuo_TateAndLiza),
+    [REMATCH_WALLACE] = MCFLAVOR(TurquoiseDiva_Wallace),
     [REMATCH_JUAN] = MCFLAVOR(DandyCharm_Juan),
     [REMATCH_SIDNEY] = MCFLAVOR(EliteFour_Sidney),
     [REMATCH_PHOEBE] = MCFLAVOR(EliteFour_Phoebe),
     [REMATCH_GLACIA] = MCFLAVOR(EliteFour_Glacia),
     [REMATCH_DRAKE] = MCFLAVOR(EliteFour_Drake),
-    [REMATCH_WALLACE] = MCFLAVOR(Champion_Wallace),
+    [REMATCH_STEVEN] = MCFLAVOR(Champion_Steven),
 };
