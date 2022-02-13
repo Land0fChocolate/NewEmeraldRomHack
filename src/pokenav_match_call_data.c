@@ -234,27 +234,6 @@ static const struct MatchCallStructNPC sMomMatchCallHeader =
     .textData = sMomTextScripts
 };
 
-static const match_call_text_data_t sStevenTextScripts[] = {
-    { MatchCall_Text_Steven1, 0xFFFF,                              0xFFFF },
-    { MatchCall_Text_Steven2, FLAG_RUSTURF_TUNNEL_OPENED,          0xFFFF },
-    { MatchCall_Text_Steven3, FLAG_RECEIVED_RED_OR_BLUE_ORB,       0xFFFF },
-    { MatchCall_Text_Steven4, FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, 0xFFFF },
-    { MatchCall_Text_Steven5, FLAG_DEFEATED_MOSSDEEP_GYM,          0xFFFF },
-    { MatchCall_Text_Steven6, FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, 0xFFFF },
-    { MatchCall_Text_Steven7, FLAG_SYS_GAME_CLEAR,                 0xFFFF },
-    { NULL,                   0xFFFF,                              0xFFFF },
-};
-
-static const struct MatchCallStructNPC sStevenMatchCallHeader =
-{
-    .type = MC_TYPE_NPC,
-    .mapSec = MAPSEC_NONE,
-    .flag = FLAG_REGISTERED_STEVEN_POKENAV,
-    .desc = gText_StevenMatchCallDesc,
-    .name = gText_StevenMatchCallName,
-    .textData = sStevenTextScripts
-};
-
 static const match_call_text_data_t sMayTextScripts[] = {
     { MatchCall_Text_May1,  0xFFFF,                              0xFFFF },
     { MatchCall_Text_May2,  FLAG_DEFEATED_DEWFORD_GYM,           0xFFFF },
@@ -478,21 +457,37 @@ static const struct MatchCallStructTrainer sTateLizaMatchCallHeader =
     .textData = sTateLizaTextScripts
 };
 
-static const match_call_text_data_t sJuanTextScripts[] = {
-    { MatchCall_Text_Juan1, 0xFFFE,              0xFFFF },
-    { MatchCall_Text_Juan2, 0xFFFF,              0xFFFF },
-    { MatchCall_Text_Juan3, 0xFFFF,              0xFFFF },
-    { MatchCall_Text_Juan4, FLAG_SYS_GAME_CLEAR, 0xFFFF },
+static const match_call_text_data_t sWallaceTextScripts[] = {
+    { MatchCall_Text_Wallace1, 0xFFFE,              0xFFFF },
+    { MatchCall_Text_Wallace2, 0xFFFF,              0xFFFF },
+    { MatchCall_Text_Wallace3, 0xFFFF,              0xFFFF },
+    { MatchCall_Text_Wallace4, FLAG_SYS_GAME_CLEAR, 0xFFFF },
     { NULL,                 0xFFFF,              0xFFFF }
+};
+
+static const struct MatchCallStructTrainer sWallaceMatchCallHeader =
+{
+    .type = MC_TYPE_LEADER,
+    .mapSec = MAPSEC_SOOTOPOLIS_CITY,
+    .flag = FLAG_ENABLE_WALLACE_MATCH_CALL,
+    .rematchTableIdx = REMATCH_WALLACE,
+    .desc = gText_WallaceMatchCallDesc,
+    .name = NULL,
+    .textData = sWallaceTextScripts
+};
+
+static const match_call_text_data_t sJuanTextScripts[] = {
+    { MatchCall_Text_Juan, 0xFFFF, 0xFFFF },
+    { NULL,                  0xFFFF, 0xFFFF }
 };
 
 static const struct MatchCallStructTrainer sJuanMatchCallHeader =
 {
-    .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_SOOTOPOLIS_CITY,
-    .flag = FLAG_ENABLE_JUAN_MATCH_CALL,
+    .type = MC_TYPE_TRAINER,
+    .mapSec = MAPSEC_EVER_GRANDE_CITY,
+    .flag = FLAG_UNUSED_0x1DE, //TODO: fully build when making Juan fight
     .rematchTableIdx = REMATCH_JUAN,
-    .desc = gText_JuanMatchCallDesc,
+    .desc = gText_EliteFourMatchCallDesc,
     .name = NULL,
     .textData = sJuanTextScripts
 };
@@ -561,21 +556,37 @@ static const struct MatchCallStructTrainer sDrakeMatchCallHeader =
     .textData = sDrakeTextScripts
 };
 
-static const match_call_text_data_t sWallaceTextScripts[] = {
-    { MatchCall_Text_Wallace, 0xFFFF, 0xFFFF },
-    { NULL,                   0xFFFF, 0xFFFF }
+static const match_call_text_data_t sStevenTextScripts[] = {
+    { MatchCall_Text_Steven1, 0xFFFF,                              0xFFFF },
+    { MatchCall_Text_Steven2, FLAG_RUSTURF_TUNNEL_OPENED,          0xFFFF },
+    { MatchCall_Text_Steven3, FLAG_RECEIVED_RED_OR_BLUE_ORB,       0xFFFF },
+    { MatchCall_Text_Steven4, FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, 0xFFFF },
+    { MatchCall_Text_Steven5, FLAG_DEFEATED_MOSSDEEP_GYM,          0xFFFF },
+    { MatchCall_Text_Steven6, FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN, 0xFFFF },
+    { MatchCall_Text_Steven7, FLAG_SYS_GAME_CLEAR,                 0xFFFF },
+    { NULL,                   0xFFFF,                              0xFFFF },
 };
 
-static const struct MatchCallStructTrainer sWallaceMatchCallHeader =
+static const struct MatchCallStructTrainer sStevenMatchCallHeader =
 {
     .type = MC_TYPE_LEADER,
     .mapSec = MAPSEC_EVER_GRANDE_CITY,
-    .flag = FLAG_REMATCH_WALLACE,
-    .rematchTableIdx = REMATCH_WALLACE,
+    .flag = FLAG_REMATCH_STEVEN,
+    .rematchTableIdx = REMATCH_STEVEN,
     .desc = gText_ChampionMatchCallDesc,
     .name = NULL,
-    .textData = sWallaceTextScripts
+    .textData = sStevenTextScripts
 };
+
+// static const struct MatchCallStructNPC sStevenMatchCallHeader = // old code here. Keeping this around in case I need something from it.
+// {
+//     .type = MC_TYPE_NPC,
+//     .mapSec = MAPSEC_NONE,
+//     .flag = FLAG_REGISTERED_STEVEN_POKENAV,
+//     .desc = gText_StevenMatchCallDesc,
+//     .name = gText_StevenMatchCallName,
+//     .textData = sStevenTextScripts
+// };
 
 static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_MR_STONE]   = {.npc    = &sMrStoneMatchCallHeader},
@@ -585,7 +596,6 @@ static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_WALLY]      = {.wally  = &sWallyMatchCallHeader},
     [MC_HEADER_NORMAN]     = {.leader = &sNormanMatchCallHeader},
     [MC_HEADER_MOM]        = {.npc    = &sMomMatchCallHeader},
-    [MC_HEADER_STEVEN]     = {.npc    = &sStevenMatchCallHeader},
     [MC_HEADER_SCOTT]      = {.npc    = &sScottMatchCallHeader},
     [MC_HEADER_ROXANNE]    = {.leader = &sRoxanneMatchCallHeader},
     [MC_HEADER_BRAWLY]     = {.leader = &sBrawlyMatchCallHeader},
@@ -593,12 +603,13 @@ static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_FLANNERY]   = {.leader = &sFlanneryMatchCallHeader},
     [MC_HEADER_WINONA]     = {.leader = &sWinonaMatchCallHeader},
     [MC_HEADER_TATE_LIZA]  = {.leader = &sTateLizaMatchCallHeader},
+    [MC_HEADER_WALLACE]    = {.leader = &sWallaceMatchCallHeader},
     [MC_HEADER_JUAN]       = {.leader = &sJuanMatchCallHeader},
     [MC_HEADER_SIDNEY]     = {.leader = &sSidneyMatchCallHeader},
     [MC_HEADER_PHOEBE]     = {.leader = &sPhoebeMatchCallHeader},
     [MC_HEADER_GLACIA]     = {.leader = &sGlaciaMatchCallHeader},
     [MC_HEADER_DRAKE]      = {.leader = &sDrakeMatchCallHeader},
-    [MC_HEADER_WALLACE]    = {.leader = &sWallaceMatchCallHeader}
+    [MC_HEADER_STEVEN]     = {.leader = &sStevenMatchCallHeader}
 };
 
 static bool32 (*const sMatchCallGetEnabledFuncs[])(match_call_t) = {
@@ -657,27 +668,16 @@ static void (*const sMatchCall_GetNameAndDescFunctions[])(match_call_t, const u8
     MatchCall_GetNameAndDesc_Birch
 };
 
-static const struct MatchCallCheckPageOverride sCheckPageOverrides[] = {
-    { 
+static const struct MatchCallCheckPageOverride sCheckPageOverrides[] = { //TODO: may not need this override for Steven.
+    {
         .idx = MC_HEADER_STEVEN,  
-        .facilityClass = FACILITY_CLASS_STEVEN,  
+        .facilityClass = FACILITY_CLASS_CHAMPION_STEVEN,  
         .flag = 0xFFFF,                     
         .flavorTexts = { 
             [CHECK_PAGE_STRATEGY] = gText_MatchCallSteven_Strategy, 
             [CHECK_PAGE_POKEMON]  = gText_MatchCallSteven_Pokemon, 
-            [CHECK_PAGE_INTRO_1]  = gText_MatchCallSteven_Intro1_BeforeMeteorFallsBattle, 
-            [CHECK_PAGE_INTRO_2]  = gText_MatchCallSteven_Intro2_BeforeMeteorFallsBattle 
-        } 
-    },
-    { 
-        .idx = MC_HEADER_STEVEN,  
-        .facilityClass = FACILITY_CLASS_STEVEN,  
-        .flag = FLAG_DEFEATED_MOSSDEEP_GYM, 
-        .flavorTexts = { 
-            [CHECK_PAGE_STRATEGY] = gText_MatchCallSteven_Strategy, 
-            [CHECK_PAGE_POKEMON]  = gText_MatchCallSteven_Pokemon, 
-            [CHECK_PAGE_INTRO_1]  = gText_MatchCallSteven_Intro1_AfterMeteorFallsBattle, 
-            [CHECK_PAGE_INTRO_2]  = gText_MatchCallSteven_Intro2_AfterMeteorFallsBattle 
+            [CHECK_PAGE_INTRO_1]  = gText_MatchCallSteven_Intro1, 
+            [CHECK_PAGE_INTRO_2]  = gText_MatchCallSteven_Intro2 
         } 
     },
     { 

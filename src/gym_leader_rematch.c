@@ -15,7 +15,7 @@ static const u16 GymLeaderRematches_AfterNewMauville[] = {
     REMATCH_NORMAN,
     REMATCH_WINONA,
     REMATCH_TATE_AND_LIZA,
-    REMATCH_JUAN
+    REMATCH_WALLACE
 };
 
 static const u16 GymLeaderRematches_BeforeNewMauville[] = {
@@ -26,7 +26,7 @@ static const u16 GymLeaderRematches_BeforeNewMauville[] = {
     REMATCH_NORMAN,
     REMATCH_WINONA,
     REMATCH_TATE_AND_LIZA,
-    REMATCH_JUAN
+    REMATCH_WALLACE
 };
 
 void UpdateGymLeaderRematch(void)

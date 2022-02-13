@@ -2223,33 +2223,24 @@ MatchCall_Text_TateLiza4::
 	.string "TATE: It would be nice if…\n"
 	.string "LIZA: We could all battle again!$"
 
-MatchCall_Text_Juan1::
+MatchCall_Text_Wallace1:: @TODO: 
+	.string "WALLACE: \n"
+
+MatchCall_Text_Wallace2:: @TODO:
+	.string "WALLACE: \n"
+
+MatchCall_Text_Wallace3:: @TODO:
+	.string "WALLACE: \n"
+
+MatchCall_Text_Wallace4:: @TODO:
+	.string "WALLACE: \n"
+
+MatchCall_Text_Juan::
 	.string "JUAN: Hmm…\n"
 	.string "{PLAYER}{KUN}… Was it?\p"
 	.string "Our battle together--it brought\n"
 	.string "to me memories of when I first\l"
 	.string "encountered WALLACE.\p"
-	.string "Perhaps you are a genius who may\n"
-	.string "yet surpass WALLACE!$"
-
-MatchCall_Text_Juan2::
-	.string "JUAN: Fufu… {PLAYER}{KUN}…\n"
-	.string "You've finally achieved your goal.\p"
-	.string "My eye for appraising talent wasn't\n"
-	.string "mistaken…\p"
-	.string "I wish for another chance to meet\n"
-	.string "you, for you have scaled the peak\l"
-	.string "of power and prestige.$"
-
-MatchCall_Text_Juan3::
-	.string "JUAN: Hoho… {PLAYER}{KUN}…\p"
-	.string "Our SOOTOPOLIS GYM has finally\n"
-	.string "reopened.\p"
-	.string "If you wish to see me, you are\n"
-	.string "welcome to visit anytime.$"
-
-MatchCall_Text_Juan4::
-	.string "JUAN: {PLAYER}{KUN}…\p"
 	.string "Like the finest music, the battles\n"
 	.string "we wage together strike chords\l"
 	.string "of inspiration in my heart…\p"
@@ -2292,19 +2283,16 @@ MatchCall_Text_Drake::
 	.string "the POKéMON LEAGUE!\p"
 	.string "Don't you agree, {PLAYER}?$"
 
-MatchCall_Text_Wallace::
-	.string "WALLACE: Hello, {PLAYER}{KUN}.\n"
-	.string "Have you met STEVEN?\p"
-	.string "He is…\n"
-	.string "Actually incredibly skilled.\p"
-	.string "However, he's an odd soul who\n"
-	.string "rarely battles.\p"
-	.string "Instead, he would rather look for\n"
-	.string "rare stones.\p"
-	.string "I'm sure he's digging in a cave or\n"
-	.string "a craggy mountain somewhere.\p"
-	.string "But what is a rare stone exactly?\n"
-	.string "All I can think of is a METEORITE…$"
+MatchCall_Text_Steven::
+	.string "STEVEN: Hi, {PLAYER}{KUN}!\p"
+	.string "When you're on an adventure with\n"
+	.string "your POKéMON, what do you think?\p"
+	.string "Do you consider them to be strong\n"
+	.string "partners?\p"
+	.string "Do you think of them as fun\n"
+	.string "companions?\p"
+	.string "Depending on how you think, your\n"
+	.string "adventure's significance changes.$"
 
 MatchCall_Text_MayRayquazaCall:
 	.string "… … … … … …\n"
