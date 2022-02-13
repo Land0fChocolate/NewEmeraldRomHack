@@ -254,7 +254,7 @@ MossdeepCity_EventScript_DeclineKingsRock::
 	end
 
 MossdeepCity_EventScript_BlackBelt::
-	msgbox MossdeepCity_Text_SootopolisNewGymLeader, MSGBOX_NPC
+	msgbox MossdeepCity_Text_WavesOverFeet, MSGBOX_NPC
 	end
 
 MossdeepCity_EventScript_Scott::
@@ -427,13 +427,7 @@ MossdeepCity_Text_ScottSomethingWrongWithTown:
 	.string "I don't think it concerns me in any\n"
 	.string "way, though.$"
 
-MossdeepCity_Text_SootopolisNewGymLeader:
+MossdeepCity_Text_WavesOverFeet:
 	.string "Ahh… It feels great letting the waves\n"
-	.string "wash over my feet…\p"
-	.string "Speaking of the waves, you know that\n"
-	.string "island city SOOTOPOLIS?\p"
-	.string "I think the GYM there had a new\n"
-	.string "LEADER come in.\p"
-	.string "People tell me the new LEADER once\n"
-	.string "mentored WALLACE.$"
+	.string "wash over my feet…$"
 
