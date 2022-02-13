@@ -854,8 +854,8 @@
 #define TRAINER_EVERETT                     850
 #define TRAINER_RED                         851 //unused
 #define TRAINER_LEAF                        852 //unused
-#define TRAINER_BRENDAN_PLACEHOLDER         853
-#define TRAINER_MAY_PLACEHOLDER             854
+#define TRAINER_BRENDAN_PLACEHOLDER         853 //unused
+#define TRAINER_MAY_PLACEHOLDER             854 //unused
 #define TRAINER_COURTNEY_MAGMA_HIDEOUT      855
 #define TRAINER_MATT_MT_PYRE                856
 #define TRAINER_CECE                        857
