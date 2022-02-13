@@ -40,14 +40,14 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Miracle Blossom: User and ally restore 1/8 HP at the end of every turn. Used by Bayleef/Meganium/Xerneas.
 - Scorching Heart: Power of Fire type moves increased by 50%. Used by Solrock/Groudon/Solgaleo.
 - Ice Affinity: Power of Ice type moves increased by 50%. Used by Lunatone/Kyogre/Piplup/Prinplup/Empoleon/Lunala.
-- Aquatic: Power of Water type moves increased by 50%. Used by Dhelmise/Clobbopus/Grapploct.
+- Aquatic: Power of Water type moves increased by 50%. Used by Anorith/Armaldo/Dhelmise/Clobbopus/Grapploct.
 - Gardener: Power of Grass type moves increased by 50%. Used by Floette/Florges.
 - Prickly Thorns: Effectively like Rough Skin. Used by Cacnea/Cacturne.
 - Aura Sense: User shudders if opponent has super-effective move. Also ignores evasive boosts from target. Used by Riolu/Lucario.
 - Soul Siphon: Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir/Palossand/Dhelmise/Corsola(Galarian).
 - Bad Luck: Opponent cannot land crits and less likely to land status moves against user. Used by Spiritomb/Cofagrigus.
 - Wickedness: User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius/Braixen/Delphox.
-- Spinning Body: User's physical moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop.
+- Spinning Body: User's physical moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Klink/Klang/Kilinklang.
 - Evergreen: User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
 - Swordmaster: Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
