@@ -5,17 +5,15 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 # TODO
 
 - implement ability description label in the summary screen.
-- Include ORAS dex Pokemon like Budew and Dusknoir. Add ways to access them.
+- Include ORAS dex Pokemon like Budew and Dusknoir and add ways to access them.
 - New Pokemon moves.
 	- animations for new moves
 	- Add the new moves to the move tutors lists.
 - Update move tutor lists to have tutor moves from later gens.
-- Remove the OHKO moves.
 - Expand and add new areas, including adding some new wild Pokemon for the area.
 - Rework aspects of the Battle Frontier. Change the Battle Palace to be themed around inverse type matchups. Rework the battle Pokemon list. 
 - Add methods to make training easier. Super vitamins (giving 60 EVs per stat), IV boosters and nature mints to be added and accessable.
 - Add credits of people whos tutorials and work you have used in the game.
-- Change some trainer Pokemon
 - Revert some unnecessary changes Emerald made from Ruby/Sapphire like the Vigoroth movers and Zigzagoon attacking Prof Birch instead of Poochyena.
 - Type resisting berries and Type boosting gems to be accessible somewhere. 
 - Remove item use in battle and create a prompt for Poke Balls.
@@ -26,6 +24,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Pokemon can have up to 3 active abilities, dependant on their species. Many Pokemon have had their ability set updated (TODO: make a list of ability stat changes somewhere).
 - New moves and abilities (listed below).
 - Some vanilla abilities updated to make them more useful (listed below).
+- Many gameplay adjustments to vanilla moves. 
+	- OHKO moves have been removed from battle facility movepools.
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.
 - TMs have infinite use.
