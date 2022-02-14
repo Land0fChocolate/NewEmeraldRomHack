@@ -2580,6 +2580,7 @@ static const struct LevelUpMove sLaprasLevelUpLearnset[] = {
     LEVEL_UP_MOVE(22, MOVE_RAIN_DANCE),
     LEVEL_UP_MOVE(27, MOVE_PERISH_SONG),
     LEVEL_UP_MOVE(32, MOVE_ICE_BEAM),
+    LEVEL_UP_MOVE(34, MOVE_SOAK),
     LEVEL_UP_MOVE(37, MOVE_BRINE),
     LEVEL_UP_MOVE(43, MOVE_SAFEGUARD),
     LEVEL_UP_MOVE(47, MOVE_HYDRO_PUMP),
@@ -9537,6 +9538,8 @@ static const struct LevelUpMove sLeafeonLevelUpLearnset[] = {
 static const struct LevelUpMove sGlaceonLevelUpLearnset[] = {
     //LEVEL_UP_MOVE( 0, MOVE_ICY_WIND),
     LEVEL_UP_MOVE( 1, MOVE_ICY_WIND),
+    LEVEL_UP_MOVE( 1, MOVE_HURRICANE),
+    LEVEL_UP_MOVE( 1, MOVE_BRINE),
     LEVEL_UP_MOVE( 1, MOVE_HELPING_HAND),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
