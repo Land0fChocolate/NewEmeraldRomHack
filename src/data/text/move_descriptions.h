@@ -527,7 +527,7 @@ static const u8 sSpikeCannonDescription[] = _(
 
 static const u8 sConstrictDescription[] = _(
     "Constricts to inflict pain.\n"
-    "May lower Speed.");
+    "Lowers target Speed.");
 
 static const u8 sAmnesiaDescription[] = _(
     "Forgets about something\n"
@@ -579,7 +579,7 @@ static const u8 sTransformDescription[] = _(
 
 static const u8 sBubbleDescription[] = _(
     "An attack using bubbles.\n"
-    "May lower the foe's Speed.");
+    "Lowers the foe's Speed.");
 
 static const u8 sDizzyPunchDescription[] = _(
     "A rhythmic punch that may\n"
@@ -914,8 +914,8 @@ static const u8 sPursuitDescription[] = _(
     "on a foe switching out.");
 
 static const u8 sRapidSpinDescription[] = _(
-    "Spins the body at high\n"
-    "speed to strike the foe.");
+    "Spins to clear hazards\n"
+    "and increase user Speed.");
 
 static const u8 sSweetScentDescription[] = _(
     "Allures the foe to reduce\n"
@@ -995,7 +995,7 @@ static const u8 sFutureSightDescription[] = _(
 
 static const u8 sRockSmashDescription[] = _(
     "A rock-crushing attack\n"
-    "that may lower Defense.");
+    "that also lowers Defense.");
 
 static const u8 sWhirlpoolDescription[] = _(
     "Traps and hurts the foe in\n"
@@ -1179,11 +1179,11 @@ static const u8 sTailGlowDescription[] = _(
 
 static const u8 sLusterPurgeDescription[] = _(
     "Attacks with a burst of\n"
-    "light. May lower Sp. Def.");
+    "light that lowers Sp. Def.");
 
 static const u8 sMistBallDescription[] = _(
     "Attacks with a flurry of\n"
-    "down. May lower Sp. Atk.");
+    "down that lowers Sp. Atk.");
 
 static const u8 sFeatherDanceDescription[] = _(
     "Envelops the foe with down\n"
@@ -1218,12 +1218,12 @@ static const u8 sHyperVoiceDescription[] = _(
     "sound waves to injure.");
 
 static const u8 sPoisonFangDescription[] = _(
-    "A sharp-fanged attack.\n"
-    "May badly poison the foe.");
+    "A sharp-fanged attack that\n"
+    "badly poisons the foe.");
 
 static const u8 sCrushClawDescription[] = _(
     "Tears at the foe with sharp\n"
-    "claws. May lower Defense.");
+    "claws that lower Defense.");
 
 static const u8 sBlastBurnDescription[] = _(
     "Powerful, but leaves the\n"
@@ -1774,8 +1774,8 @@ static const u8 sJUDGMENTDescription[] = _(
     "kind of Plate held.");
 
 static const u8 sCHARGE_BEAMDescription[] = _(
-    "Fires a beam of electricity.\n"
-    "May raise Sp. Atk.");
+    "Fires a beam of electricity\n"
+    "that raises user Sp. Atk.");
 
 static const u8 sWOOD_HAMMERDescription[] = _(
     "Slams the body into a foe\n"
