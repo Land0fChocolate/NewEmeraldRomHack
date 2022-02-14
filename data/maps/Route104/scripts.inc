@@ -1042,7 +1042,7 @@ Route104_Text_OnlyThrowBallAtWildPokemon:
 	.string "wild POKéMON.$"
 
 Route104_Text_ImNotATrainer:
-	.string "Oh, no, I'm not a TRAINER.\p"
+	.string "Oh, no, I'm not a Trainer.\p"
 	.string "But that's right, if TRAINERS lock eyes,\n"
 	.string "it's a challenge to battle.\p"
 	.string "If you don't want to battle, stay out\n"
@@ -1096,7 +1096,7 @@ Route104_Text_TrainerTipsDoubleBattles:
 	.string "of TRAINERS who challenge others\l"
 	.string "for 2-on-2 POKéMON battles called\l"
 	.string "DOUBLE BATTLES.\p"
-	.string "In a DOUBLE BATTLE, the TRAINER must\n"
+	.string "In a DOUBLE BATTLE, the Trainer must\n"
 	.string "send out two POKéMON, the one at the\l"
 	.string "left of the list and the top one.\l"
 	.string "Watch how POKéMON are lined up.$"
@@ -1125,14 +1125,14 @@ Route104_Text_MayHaventRaisedPokemon:
 	.string "MAY: Oh, what's the matter?\p"
 	.string "Haven't you caught or raised your\n"
 	.string "POKéMON very much?\p"
-	.string "That's not very good for a TRAINER!$"
+	.string "That's not very good for a Trainer!$"
 
 Route104_Text_MayLetsBattle:
 	.string "MAY: So, what do you think?\n"
 	.string "How about a little battle here?$"
 
 Route104_Text_MayIntro:
-	.string "MAY: You just became a TRAINER,\n"
+	.string "MAY: You just became a Trainer,\n"
 	.string "{PLAYER}{KUN}. I'm not going to lose!$"
 
 Route104_Text_MayDefeat:
@@ -1177,7 +1177,7 @@ Route104_Text_BrendanLetsBattle:
 
 Route104_Text_BrendanIntro:
 	.string "BRENDAN: I know you just became\n"
-	.string "a TRAINER, but I won't go easy!$"
+	.string "a Trainer, but I won't go easy!$"
 
 Route104_Text_BrendanDefeat:
 	.string "Hmm…\n"

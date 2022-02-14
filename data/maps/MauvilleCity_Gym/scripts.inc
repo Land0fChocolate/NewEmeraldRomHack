@@ -326,7 +326,7 @@ MauvilleCity_Gym_Text_VivianDefeat:
 MauvilleCity_Gym_Text_VivianPostBattle:
 	.string "I've heard that MAUVILLE was founded\n"
 	.string "by WATTSON.\p"
-	.string "He was a TRAINER long before we\n"
+	.string "He was a Trainer long before we\n"
 	.string "became TRAINERS.\l"
 	.string "He must know all sorts of things!$"
 
@@ -384,7 +384,7 @@ MauvilleCity_Gym_Text_RegisteredWattson:
 
 MauvilleCity_Gym_Text_WattsonPostBattle:
 	.string "I swell with optimism, seeing a promising\n"
-	.string "young TRAINER like you!$"
+	.string "young Trainer like you!$"
 
 MauvilleCity_Gym_Text_WattsonGoForthAndEndeavor:
 	.string "Wahahahah!\n"

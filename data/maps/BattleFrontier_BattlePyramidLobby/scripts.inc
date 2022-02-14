@@ -889,7 +889,7 @@ BattleFrontier_BattlePyramidLobby_Text_ExplainTrainerRules:
 	.string "inside the PYRAMID.\p"
 	.string "On each floor, there are up to\n"
 	.string "eight TRAINERS.\p"
-	.string "When you defeat a TRAINER, you will\n"
+	.string "When you defeat a Trainer, you will\n"
 	.string "get a helpful hint for your adventure.$"
 
 BattleFrontier_BattlePyramidLobby_Text_ExplainMazeRules:
@@ -898,7 +898,7 @@ BattleFrontier_BattlePyramidLobby_Text_ExplainMazeRules:
 	.string "The mazes are poorly lit.\n"
 	.string "You must advance with caution.\p"
 	.string "The light grows brighter whenever you\n"
-	.string "defeat a wild POKéMON or a TRAINER.$"
+	.string "defeat a wild POKéMON or a Trainer.$"
 
 BattleFrontier_BattlePyramidLobby_Text_ExplainBagRules:
 	.string "The BATTLE BAG serves as your BAG\n"

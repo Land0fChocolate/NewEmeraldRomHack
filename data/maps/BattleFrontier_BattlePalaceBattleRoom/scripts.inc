@@ -529,7 +529,7 @@ BattleFrontier_BattlePalaceBattleRoom_Text_SpenserFirstIntro:
 	.string "POKéMON always!\p"
 	.string "My heart beats as one with\n"
 	.string "POKéMON always!\p"
-	.string "Young one of a TRAINER!\n"
+	.string "Young one of a Trainer!\n"
 	.string "Do you believe in your POKéMON?\p"
 	.string "Can you believe them through\n"
 	.string "and through?\p"

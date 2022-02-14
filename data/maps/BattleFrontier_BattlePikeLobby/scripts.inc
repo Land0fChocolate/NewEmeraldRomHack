@@ -396,7 +396,7 @@ BattleFrontier_BattlePikeLobby_Text_OneRoomAwayFromGoal:
 BattleFrontier_BattlePikeLobby_Text_NeverHadToBattleTrainer:
 	.string "I've completed the challenge 10 times\n"
 	.string "now, but I've never had to battle\l"
-	.string "a TRAINER once.$"
+	.string "a Trainer once.$"
 
 BattleFrontier_BattlePikeLobby_Text_ThinkAbilitiesUsefulHere:
 	.string "Listen! Listen!\p"

@@ -1021,7 +1021,7 @@ BattleFrontier_BattleTowerLobby_Text_ProgressWillBeSaved:
 
 BattleFrontier_BattleTowerLobby_Text_AboutToFace50thTrainer:
 	.string "You're finally about to face the\n"
-	.string "50th TRAINER.\p"
+	.string "50th Trainer.\p"
 	.string "From here on, every time you beat seven\n"
 	.string "TRAINERS in a row, your POKéMON will\l"
 	.string "receive a commemorative RIBBON.\p"
@@ -1283,12 +1283,12 @@ BattleFrontier_BattleTowerLobby_Text_ExplainMultisChallenge:
 	.string "ROOMS are facilities for conducting\l"
 	.string "MULTI BATTLES.\p"
 	.string "For MULTI BATTLES, you must partner\n"
-	.string "with a TRAINER in the TOWER and enter\l"
+	.string "with a Trainer in the TOWER and enter\l"
 	.string "with two POKéMON each.\p"
 	.string "Inside the TOWER is a room named\n"
 	.string "the BATTLE SALON where you may meet\l"
 	.string "other TRAINERS.\p"
-	.string "There, you must find a TRAINER to act\n"
+	.string "There, you must find a Trainer to act\n"
 	.string "as your partner in MULTI BATTLES.\p"
 	.string "Once you have partnered up, you will\n"
 	.string "be shown to a MULTI BATTLE ROOM.\p"

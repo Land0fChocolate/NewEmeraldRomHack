@@ -555,7 +555,7 @@ BattlePyramid_Text_TwoTrainersRemaining1::
 BattlePyramid_Text_OneTrainersRemaining1::
 	.string "You were really awesome!\p"
 	.string "But there's still one tough\n"
-	.string "TRAINER other than me!$"
+	.string "Trainer other than me!$"
 
 BattlePyramid_Text_ZeroTrainersRemaining1::
 	.string "You were really awesome!\p"
@@ -594,7 +594,7 @@ BattlePyramid_Text_TwoTrainersRemaining2::
 
 BattlePyramid_Text_OneTrainersRemaining2::
 	.string "This is so upsetting!\p"
-	.string "But there's one TRAINER left!\n"
+	.string "But there's one Trainer left!\n"
 	.string "I'm sure you will be humbled!$"
 
 BattlePyramid_Text_ZeroTrainersRemaining2::
@@ -634,7 +634,7 @@ BattlePyramid_Text_TwoTrainersRemaining3::
 
 BattlePyramid_Text_OneTrainersRemaining3::
 	.string "That's pretty impressive!\p"
-	.string "But there's still one more TRAINER\n"
+	.string "But there's still one more Trainer\n"
 	.string "on this floor. Can you prevail?$"
 
 BattlePyramid_Text_ZeroTrainersRemaining3::
@@ -668,7 +668,7 @@ BattlePyramid_Text_TwoTrainersRemaining4::
 
 BattlePyramid_Text_OneTrainersRemaining4::
 	.string "Maybe you could complete your sweep\n"
-	.string "with the one TRAINER left on this floor.$"
+	.string "with the one Trainer left on this floor.$"
 
 BattlePyramid_Text_ZeroTrainersRemaining4::
 	.string "There isn't a single person left who\n"
@@ -700,7 +700,7 @@ BattlePyramid_Text_TwoTrainersRemaining5::
 
 BattlePyramid_Text_OneTrainersRemaining5::
 	.string "You may have what it takes to beat\n"
-	.string "the one expert TRAINER who remains.$"
+	.string "the one expert Trainer who remains.$"
 
 BattlePyramid_Text_ZeroTrainersRemaining5::
 	.string "Your skills are beyond reproach.\p"
@@ -733,7 +733,7 @@ BattlePyramid_Text_TwoTrainersRemaining6::
 
 BattlePyramid_Text_OneTrainersRemaining6::
 	.string "Can you keep winning against\n"
-	.string "the last remaining TRAINER?$"
+	.string "the last remaining Trainer?$"
 
 BattlePyramid_Text_ZeroTrainersRemaining6::
 	.string "There aren't any TRAINERS left that\n"

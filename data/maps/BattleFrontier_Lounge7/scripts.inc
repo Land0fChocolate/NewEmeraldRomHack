@@ -294,7 +294,7 @@ BattleFrontier_Lounge7_EventScript_Gentleman::
 BattleFrontier_Lounge7_Text_LeftTutorIntro:
 	.string "Buhahaha!\p"
 	.string "You couldn't tell it from looking now,\n"
-	.string "but I used to be one tough TRAINER.\p"
+	.string "but I used to be one tough Trainer.\p"
 	.string "I had a reputation as the toughest\n"
 	.string "BEAUTY around, I tell you!\p"
 	.string "… … … … … …\p"
@@ -343,7 +343,7 @@ BattleFrontier_Lounge7_Text_YouDontWantTo:
 BattleFrontier_Lounge7_Text_RightTutorIntro:
 	.string "Ihihihi!\p"
 	.string "I know it's hard to see now, but I used\n"
-	.string "to be one fantastic TRAINER.\p"
+	.string "to be one fantastic Trainer.\p"
 	.string "I had a reputation as the most\n"
 	.string "invincible SWIMMER around, I tell you!\p"
 	.string "… … … … … …\p"

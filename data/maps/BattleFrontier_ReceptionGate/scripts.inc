@@ -318,7 +318,7 @@ BattleFrontier_ReceptionGate_Text_ObtainedFrontierPass:
 	.string "the FRONTIER PASS.$"
 
 BattleFrontier_ReceptionGate_Text_PlacedTrainerCardInFrontierPass:
-	.string "{PLAYER} placed the TRAINER CARD\n"
+	.string "{PLAYER} placed the Trainer CARD\n"
 	.string "in the FRONTIER PASS.$"
 
 BattleFrontier_ReceptionGate_Text_EnjoyBattleFrontier:
@@ -434,7 +434,7 @@ BattleFrontier_ReceptionGate_Text_Level50Info:
 	.string "The Level 50 course is open to POKéMON\n"
 	.string "up to and including Level 50.\p"
 	.string "Please keep in mind, however, that\n"
-	.string "no TRAINER you face will have any\l"
+	.string "no Trainer you face will have any\l"
 	.string "POKéMON below Level 50.\p"
 	.string "This course is the entry level for\n"
 	.string "battles at the BATTLE FRONTIER.\p"
@@ -448,7 +448,7 @@ BattleFrontier_ReceptionGate_Text_OpenLevelInfo:
 	.string "The levels of your opponents will\n"
 	.string "be adjusted to match the levels of\l"
 	.string "your POKéMON.\p"
-	.string "However, no TRAINER you face will\n"
+	.string "However, no Trainer you face will\n"
 	.string "have any POKéMON below Level 60.$"
 
 BattleFrontier_ReceptionGate_Text_MonEntryInfo:

@@ -415,12 +415,12 @@ Route116_Text_ThankYouTokenOfAppreciation:
 	.string "Why, if I were a rain cloud, I would\n"
 	.string "shower you with gratitude and hail\l"
 	.string "you as a hero!\p"
-	.string "For you, the most wonderful TRAINER,\n"
+	.string "For you, the most wonderful Trainer,\n"
 	.string "I bear good news!\p"
 	.string "Recently, our company developed\n"
 	.string "a new kind of POKé BALL.\p"
 	.string "As a token of our appreciation, this\n"
-	.string "is our gift to our wonderful TRAINER!$"
+	.string "is our gift to our wonderful Trainer!$"
 
 Route116_Text_NewBallAvailableAtMart:
 	.string "Our new POKé BALL will be available\n"
@@ -436,7 +436,7 @@ Route116_Text_TokenOfAppreciation:
 	.string "As a token of our appreciation for\n"
 	.string "your delivering our package, I have\l"
 	.string "a gift of a new kind of POKé BALL\l"
-	.string "for our most wonderful TRAINER!$"
+	.string "for our most wonderful Trainer!$"
 
 Route116_Text_CanYouHelpMeFindGlasses:
 	.string "I dropped my glasses…\n"
@@ -489,6 +489,6 @@ Route116_Text_TrainerTipsBagHasPockets:
 	.string "Your BAG has several POCKETS.\p"
 	.string "Items you obtain are automatically\n"
 	.string "placed in the appropriate POCKETS.\p"
-	.string "No TRAINER can afford to be without\n"
+	.string "No Trainer can afford to be without\n"
 	.string "a BAG of their own.$"
 

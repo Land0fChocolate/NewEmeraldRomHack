@@ -284,7 +284,7 @@ SlateportCity_PokemonFanClub_Text_MeetChairman:
 	.string "show us theirs.$"
 
 SlateportCity_PokemonFanClub_Text_LikeToSeeEnteredContestPokemon:
-	.string "The POKéMON of a TRAINER who has\n"
+	.string "The POKéMON of a Trainer who has\n"
 	.string "entered a POKéMON CONTEST…\l"
 	.string "That, I would like to see.$"
 
@@ -297,7 +297,7 @@ SlateportCity_PokemonFanClub_Text_AllowMeToExamineYourPokemon:
 	.string "raised by other TRAINERS.\p"
 	.string "The happy expressions of POKéMON\n"
 	.string "raised with proper care…\p"
-	.string "The kindly eyes of the TRAINER that\n"
+	.string "The kindly eyes of the Trainer that\n"
 	.string "nurtured and raised the POKéMON…\p"
 	.string "The very thought fills my heart to\n"
 	.string "overwhelming with joy.\p"
@@ -317,7 +317,7 @@ SlateportCity_PokemonFanClub_Text_HmHmISee:
 SlateportCity_PokemonFanClub_Text_GiveMonMorePokeblocks:
 	.string "Hmmm… It's not bad, but it's not\n"
 	.string "good, either…\p"
-	.string "You, the TRAINER, must put more\n"
+	.string "You, the Trainer, must put more\n"
 	.string "effort into raising this POKéMON!\p"
 	.string "For instance, may I suggest that\n"
 	.string "you give it more {POKEBLOCK}S?$"
@@ -381,7 +381,7 @@ SlateportCity_PokemonFanClub_Text_ShowMePokemonThatLoveYou:
 SlateportCity_PokemonFanClub_Text_PokemonAdoresYou:
 	.string "Your POKéMON really adores you.\p"
 	.string "For you, a most compassionate\n"
-	.string "TRAINER, a gift from the FAN CLUB!$"
+	.string "Trainer, a gift from the FAN CLUB!$"
 
 SlateportCity_PokemonFanClub_Text_TreatPokemonWithLove:
 	.string "POKéMON are very sensitive to\n"
@@ -393,7 +393,7 @@ SlateportCity_PokemonFanClub_Text_PokemonDontLikeFainting:
 	.string "If you keep letting a POKéMON faint\n"
 	.string "in battle, it'll come to resent it.\p"
 	.string "Soon, it will become less trusting\n"
-	.string "of the TRAINER.\p"
+	.string "of the Trainer.\p"
 	.string "In other words, it certainly won't\n"
 	.string "like you very much.$"
 

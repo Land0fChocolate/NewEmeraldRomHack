@@ -159,7 +159,7 @@ FortreeCity_Gym_Text_JaredDefeat:
 	.string "You're strong…$"
 
 FortreeCity_Gym_Text_JaredPostBattle:
-	.string "A TRAINER has to be smart to keep\n"
+	.string "A Trainer has to be smart to keep\n"
 	.string "up with unexpected turns of events.\p"
 	.string "Do you have the smarts to get to\n"
 	.string "our LEADER?$"
@@ -244,7 +244,7 @@ FortreeCity_Gym_Text_WinonaIntro:
 	.string "of BIRD POKéMON and I!$"
 
 FortreeCity_Gym_Text_WinonaDefeat:
-	.string "Never before have I seen a TRAINER\n"
+	.string "Never before have I seen a Trainer\n"
 	.string "command POKéMON with more grace\l"
 	.string "than I…\p"
 	.string "In recognition of your prowess,\n"
