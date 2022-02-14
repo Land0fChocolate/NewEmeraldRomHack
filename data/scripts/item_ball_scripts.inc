@@ -154,8 +154,8 @@ Route117_EventScript_ItemRevive::
 	finditem ITEM_REVIVE
 	end
 
-Route118_EventScript_ItemHyperPotion::
-	finditem ITEM_HYPER_POTION
+Route118_EventScript_ItemDawnStone::
+	finditem ITEM_DAWN_STONE
 	end
 
 Route119_EventScript_ItemSuperRepel::
@@ -382,8 +382,8 @@ MeteorFalls_1F_1R_EventScript_ItemTM23::
 	finditem ITEM_TM23
 	end
 
-MeteorFalls_1F_1R_EventScript_ItemFullHeal::
-	finditem ITEM_FULL_HEAL
+MeteorFalls_1F_1R_EventScript_ItemEviolite::
+	finditem ITEM_EVIOLITE
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemMoonStone::
