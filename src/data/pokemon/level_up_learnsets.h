@@ -4382,6 +4382,7 @@ static const struct LevelUpMove sSlugmaLevelUpLearnset[] = {
 static const struct LevelUpMove sMagcargoLevelUpLearnset[] = {
     //LEVEL_UP_MOVE( 0, MOVE_SHELL_SMASH),
     LEVEL_UP_MOVE( 1, MOVE_SHELL_SMASH),
+    LEVEL_UP_MOVE( 1, MOVE_EXPLOSION),
     LEVEL_UP_MOVE( 1, MOVE_EARTH_POWER),
     LEVEL_UP_MOVE( 1, MOVE_YAWN),
     LEVEL_UP_MOVE( 1, MOVE_SMOG),
@@ -10206,6 +10207,7 @@ static const struct LevelUpMove sDewottLevelUpLearnset[] = {
 static const struct LevelUpMove sSamurottLevelUpLearnset[] = {
     //LEVEL_UP_MOVE( 0, MOVE_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_SLASH),
+    LEVEL_UP_MOVE( 1, MOVE_SHELL_SMASH),
     LEVEL_UP_MOVE( 1, MOVE_SACRED_SWORD),
     LEVEL_UP_MOVE( 1, MOVE_MEGAHORN),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
