@@ -2400,9 +2400,18 @@ void ShowScrollableMultichoice(void)
             task->tTaskId = taskId;
             break;
         case SCROLL_MULTI_BF_MOVE_TUTOR_1:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 12;
+            task->tLeft = 15;
+            task->tTop = 1;
+            task->tWidth = 14;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
         case SCROLL_MULTI_BF_MOVE_TUTOR_2:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 11;
+            task->tNumItems = 13;
             task->tLeft = 15;
             task->tTop = 1;
             task->tWidth = 14;
@@ -2564,33 +2573,33 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_MOVE_TUTOR_1] = 
     {
-        gText_Softboiled16BP,
-        gText_SeismicToss24BP,
-        gText_DreamEater24BP,
-        gText_MegaPunch24BP,
-        gText_MegaKick48BP,
-        gText_BodySlam48BP,
-        gText_RockSlide48BP,
-        gText_Counter48BP,
-        gText_ThunderWave48BP,
-        gText_SwordsDance48BP,
-        gText_SerpentDance48BP,
+        gText_Softboiled8BP,
+        gText_SeismicToss12BP,
+        gText_DreamEater12BP,
+        gText_MegaPunch12BP,
+        gText_MegaKick12BP,
+        gText_BodySlam16BP,
+        gText_RockSlide16BP,
+        gText_Counter16BP,
+        gText_ThunderWave16BP,
+        gText_SwordsDance24BP,
+        gText_SerpentDance24BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_MOVE_TUTOR_2] = 
     {
-        gText_DefenseCurl16BP,
-        gText_Snore24BP,
-        gText_MudSlap24BP,
-        gText_Swift24BP,
-        gText_IcyWind24BP,
-        gText_Endure48BP,
-        gText_PsychUp48BP,
-        gText_IcePunch48BP,
-        gText_ThunderPunch48BP,
-        gText_FirePunch48BP,
-        gText_FlintBlade48BP,
-        gText_FlareCrash48BP,
+        gText_DefenseCurl4BP,
+        gText_Snore4BP,
+        gText_MudSlap4BP,
+        gText_Swift4BP,
+        gText_IcyWind12BP,
+        gText_Endure12BP,
+        gText_PsychUp12BP,
+        gText_IcePunch24BP,
+        gText_ThunderPunch24BP,
+        gText_FirePunch24BP,
+        gText_FlintBlade24BP,
+        gText_FlareCrash24BP,
         gText_Exit
     },
     [SCROLL_MULTI_SS_TIDAL_DESTINATION] =
@@ -3255,6 +3264,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_CounterDesc,
         BattleFrontier_Lounge7_Text_ThunderWaveDesc,
         BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SerpentDanceDesc,
         gText_Exit,
     };
 
@@ -3270,6 +3280,8 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_IcePunchDesc,
         BattleFrontier_Lounge7_Text_ThunderPunchDesc,
         BattleFrontier_Lounge7_Text_FirePunchDesc,
+        BattleFrontier_Lounge7_Text_FlintBladeDesc,
+        BattleFrontier_Lounge7_Text_FlareCrashDesc,
         gText_Exit,
     };
 
