@@ -69,7 +69,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - Trace: copies the opponent’s highest rated ability that the user doesn’t already have.
 - Receiver: copies fainted ally’s strongest ability that the user doesn’t already have.
-- Neutralising Gas: Neutralises target abilities unless it is a banned ability like Stance Change.
+- Neutralising Gas: Neutralises other Pokemon abilities unless it is a banned ability like Stance Change.
 - Mummy: replaces all the contact attacker’s abilities with just the Mummy ability.
 - Wandering Spirit: replaces each respective ability with the attacker if hit by a contact move unless it is a banned ability.
 - Neutralizing Gas: Nullifies other Pokemon abilities. User abilities still active.
