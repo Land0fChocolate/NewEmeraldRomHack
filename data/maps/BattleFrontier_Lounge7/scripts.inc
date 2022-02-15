@@ -509,9 +509,9 @@ BattleFrontier_Lounge7_Text_FirePunchDesc::
 	.string "the foe.$"
 
 BattleFrontier_Lounge7_Text_FlintBladeDesc::
-	.string "A rock-hard\n"
-	.string "edge with a\n"
-	.string "high crit rate.$"
+	.string "A rock-hard edge\n"
+	.string "with a high\n"
+	.string "critical hit rate.$"
 
 BattleFrontier_Lounge7_Text_FlareCrashDesc::
 	.string "A reckless crash\n"

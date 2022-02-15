@@ -222,6 +222,10 @@ Route121_EventScript_ItemZinc::
 	finditem ITEM_ZINC
 	end
 
+Route121_EventScript_ItemShinyStone::
+	finditem ITEM_SHINY_STONE
+	end
+
 Route123_EventScript_ItemCalcium::
 	finditem ITEM_CALCIUM
 	end
