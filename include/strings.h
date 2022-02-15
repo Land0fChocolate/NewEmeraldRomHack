@@ -879,9 +879,24 @@ extern const u8 BattleFrontier_ExchangeServiceCorner_Text_QuickClawDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_MentalHerbDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_BrightpowderDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ChoiceBandDesc[];
-extern const u8 BattleFrontier_ExchangeServiceCorner_Text_KingsRockDesc[];
-extern const u8 BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ChoiceSpecsDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ChoiceScarfDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_FocusSashDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_OvalStoneDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ReaperClothDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ProtectorDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ElectirizerDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_MagmarizerDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_DeepSeaScaleDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_DeepSeaToothDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_DragonScaleDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_UpgradeDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_DubiousDiscDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_KingsRockDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_RazorClawDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_RazorFangDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_MetalCoatDesc[];
 
 // Battle Frontier Move Tutors
 extern const u8 BattleFrontier_Lounge7_Text_SoftboiledDesc[];

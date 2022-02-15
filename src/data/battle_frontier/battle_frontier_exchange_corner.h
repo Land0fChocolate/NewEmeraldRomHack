@@ -53,9 +53,9 @@ static const u8 *const sFrontierExchangeCorner_Decor1Descriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_KissPosterDesc,
     BattleFrontier_ExchangeServiceCorner_Text_KissCushionDesc,
     BattleFrontier_ExchangeServiceCorner_Text_SmoochumDollDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_TogepiDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_MeowthDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ClefairyDollDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_TogepiDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_DittoDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_CyndaquilDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ChikoritaDollDesc,
@@ -70,6 +70,25 @@ static const u8 *const sFrontierExchangeCorner_Decor2Descriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
+    gText_Exit
+};
+
+static const u8 *const sFrontierExchangeCorner_EvoItemsDescriptions[] = 
+{
+    BattleFrontier_ExchangeServiceCorner_Text_OvalStoneDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_ReaperClothDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_ProtectorDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_ElectirizerDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_MagmarizerDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_DeepSeaScaleDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_DeepSeaToothDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_DragonScaleDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_UpgradeDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_DubiousDiscDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_KingsRockDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_RazorClawDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_RazorFangDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_MetalCoatDesc,
     gText_Exit
 };
 
@@ -92,8 +111,9 @@ static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_MentalHerbDesc,
     BattleFrontier_ExchangeServiceCorner_Text_BrightpowderDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ChoiceBandDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_KingsRockDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_ChoiceSpecsDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_ChoiceScarfDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_FocusSashDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc,
     gText_Exit
 };
