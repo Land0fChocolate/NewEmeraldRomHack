@@ -23,7 +23,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 # Changelog
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
-	- Including physical/special split, fairy types, new moves, new items, regional species varieties.
+	- Including physical/special split, fairy types, new moves, new items, regional species variants.
 	- Whilst data for all post gen3 Pokemon are in the game, only those that existed in gens 1-3 or have evolutions linked to Pokemon in those gens will be accessible.
 - Pokemon can have up to 3 active abilities, dependant on their species. Many Pokemon have had their ability set updated (TODO: make a list of ability stat changes somewhere).
 - New moves and abilities (listed below).
