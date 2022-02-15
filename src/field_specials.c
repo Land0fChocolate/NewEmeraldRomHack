@@ -2461,25 +2461,25 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1] = 
     {
-        gText_KissPoster16BP,
-        gText_KissCushion32BP,
-        gText_SmoochumDoll32BP,
-        gText_TogepiDoll48BP,
-        gText_MeowthDoll48BP,
-        gText_ClefairyDoll48BP,
-        gText_DittoDoll48BP,
-        gText_CyndaquilDoll80BP,
-        gText_ChikoritaDoll80BP,
-        gText_TotodileDoll80BP,
+        gText_KissPoster8BP,
+        gText_KissCushion16BP,
+        gText_SmoochumDoll24BP,
+        gText_MeowthDoll24BP,
+        gText_ClefairyDoll24BP,
+        gText_TogepiDoll32BP,
+        gText_DittoDoll32BP,
+        gText_CyndaquilDoll40BP,
+        gText_ChikoritaDoll40BP,
+        gText_TotodileDoll40BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2] =
     {
-        gText_LaprasDoll128BP,
-        gText_SnorlaxDoll128BP,
-        gText_VenusaurDoll256BP,
-        gText_CharizardDoll256BP,
-        gText_BlastoiseDoll256BP,
+        gText_LaprasDoll96BP,
+        gText_SnorlaxDoll96BP,
+        gText_VenusaurDoll128BP,
+        gText_CharizardDoll128BP,
+        gText_BlastoiseDoll128BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR] =
@@ -2494,15 +2494,16 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
     {
-        gText_Leftovers48BP,
-        gText_WhiteHerb48BP,
-        gText_QuickClaw48BP,
-        gText_MentalHerb48BP,
-        gText_BrightPowder64BP,
-        gText_ChoiceBand64BP,
-        gText_KingsRock64BP,
-        gText_FocusBand64BP,
-        gText_ScopeLens64BP,
+        gText_Leftovers32BP,
+        gText_WhiteHerb32BP,
+        gText_QuickClaw32BP,
+        gText_MentalHerb32BP,
+        gText_BrightPowder48BP,
+        gText_ChoiceBand48BP,
+        gText_ChoiceSpecs48BP,
+        gText_ChoiceScarf48BP,
+        gText_FocusSash48BP,
+        gText_ScopeLens48BP,
         gText_Exit
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =
