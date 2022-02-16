@@ -1843,8 +1843,8 @@
                 "species": "SPECIES_TAILLOW"
               },
               {
-                "min_level": 9,
-                "max_level": 9,
+                "min_level": 10,
+                "max_level": 10,
                 "species": "SPECIES_SLAKOTH"
               }
             ]
@@ -1912,8 +1912,8 @@
                 "species": "SPECIES_WHISMUR"
               },
               {
-                "min_level": 8,
-                "max_level": 8,
+                "min_level": 13,
+                "max_level": 13,
                 "species": "SPECIES_WHISMUR"
               }
             ]

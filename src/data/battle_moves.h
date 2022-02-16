@@ -2719,16 +2719,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SNORE] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 50,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_SOUND,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .power = 40,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_SOUND,
-        #else
-            .power = 40,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_SOUND,
-        #endif
+        .power = 70,
         .effect = EFFECT_SNORE,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -2736,6 +2727,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .secondaryEffectChance = 30,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_SOUND,
         .split = SPLIT_SPECIAL,
     },
 
