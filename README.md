@@ -11,21 +11,27 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- Add the new moves to the move tutors lists.
 - Update move tutor lists to have tutor moves from later gens.
 - Expand and add new areas, including adding some new wild Pokemon for the area.
+- New NPCs, some of which you acquire new items from.
+- Remove HMs. Should only need a compatable Pokemon to clear obstacles (e.g. a Pokemon that can learn Cut can remove a cuttable tree but doesn't have to have the move).
 - Rework aspects of the Battle Frontier. Change the Battle Palace to be themed around inverse type matchups. Rework the battle Pokemon list. 
 - Add methods to make training easier. Super vitamins (giving 60 EVs per stat), IV boosters and nature mints to be added and accessable.
-- Add credits of people whos tutorials and work you have used in the game.
 - Revert some unnecessary changes Emerald made from Ruby/Sapphire like the Vigoroth movers and Zigzagoon attacking Prof Birch instead of Poochyena.
 - Type resisting berries and Type boosting gems to be accessible somewhere. 
 - Remove item use in battle and create a prompt for Poke Balls.
+- Add credits of people whos tutorials and work you have used in the game.
 
 # Changelog
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
+	- Including physical/special split, fairy types, new moves, new items, regional species variants.
+	- Whilst data for all post gen3 Pokemon are in the game, only those that existed in gens 1-3 or have evolutions linked to Pokemon in those gens will be accessible.
 - Pokemon can have up to 3 active abilities, dependant on their species. Many Pokemon have had their ability set updated (TODO: make a list of ability stat changes somewhere).
 - New moves and abilities (listed below).
 - Some vanilla abilities updated to make them more useful (listed below).
-- Many gameplay adjustments to vanilla moves. 
+- Many gameplay adjustments to vanilla moves (Listed below). 
 	- OHKO moves have been removed from battle facility movepools.
+	- Changes to learnsets of some Pokemon (TODO: make list).
+	- Pokemon will attempt to learn a new move upon evolution.
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.
 - TMs have infinite use.
@@ -67,10 +73,9 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - Trace: copies the opponent’s highest rated ability that the user doesn’t already have.
 - Receiver: copies fainted ally’s strongest ability that the user doesn’t already have.
-- Neutralising Gas: Neutralises target abilities unless it is a banned ability like Stance Change.
 - Mummy: replaces all the contact attacker’s abilities with just the Mummy ability.
 - Wandering Spirit: replaces each respective ability with the attacker if hit by a contact move unless it is a banned ability.
-- Neutralizing Gas: Nullifies other Pokemon abilities. User abilities still active.
+- Neutralizing Gas: Nullifies other Pokemon abilities unless it is a banned ability like Stance Change. User abilities still active.
 - Shell Armor/Battle Armor: Also reduces damage of neutral effective moves by 25%.
 - Sand Veil: Increases Sp.Def instead of evasion by one stage.
 - Snow Cloak: Increases Defense instead of evasion by one stage.
@@ -105,6 +110,9 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Gastro Acid: Neutralises target abilities unless it is a banned ability like Stance Change.
 - Role Play: replaces the user’s abilities with the target’s abilities.
 - Core Enforcer: Nullifies opponent’s abilities.
+- Charge Beam: Now 40 BP, 100% Acc with 100% chance for special attack boost.
+- Rock Smash: Now 50 BP with 100% chance for target defense drop.
+- Poison Fang: 100% chance to poison target.
 
 # Credits
 
