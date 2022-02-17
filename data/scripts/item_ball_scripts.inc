@@ -494,12 +494,12 @@ MtPyre_3F_EventScript_ItemSuperRepel::
 	finditem ITEM_SUPER_REPEL
 	end
 
-MtPyre_4F_EventScript_ItemSeaIncense::
-	finditem ITEM_SEA_INCENSE
+MtPyre_4F_EventScript_ItemDestinyKnot::
+	finditem ITEM_DESTINY_KNOT
 	end
 
-MtPyre_5F_EventScript_ItemLaxIncense::
-	finditem ITEM_LAX_INCENSE
+MtPyre_5F_EventScript_ItemReaperCloth::
+	finditem ITEM_REAPER_CLOTH
 	end
 
 MtPyre_6F_EventScript_ItemTM30::
