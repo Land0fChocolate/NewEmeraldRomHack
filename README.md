@@ -32,9 +32,11 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- OHKO moves have been removed from battle facility movepools.
 	- Changes to learnsets of some Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
+- Some Pokemon have base stat changes to better fit their theme and gameplay. Sceptile has its Attack and Special Attack swapped.
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.
 - TMs have infinite use.
+- TMs from #51 to #99 have been added.
 - Ice types have their special defense boosted by 50% in hail.
 - Removed badge boosts
 - Encounter rates adjusted.

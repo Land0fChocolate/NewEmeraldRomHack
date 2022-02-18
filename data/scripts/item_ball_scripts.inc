@@ -330,8 +330,8 @@ MossdeepCity_EventScript_ItemNetBall::
 	finditem ITEM_NET_BALL
 	end
 
-PetalburgWoods_EventScript_ItemXAttack::
-	finditem ITEM_X_ATTACK
+PetalburgWoods_EventScript_ItemBigRoot::
+	finditem ITEM_BIG_ROOT
 	end
 
 PetalburgWoods_EventScript_ItemGreatBall::

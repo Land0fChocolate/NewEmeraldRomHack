@@ -578,6 +578,12 @@ SlateportCity_EventScript_PowerTMClerk::
 SlateportCity_Pokemart_PowerTMs:
 	.2byte ITEM_TM10  @ Hidden Power
 	.2byte ITEM_TM43  @ Secret Power
+	.2byte ITEM_TM96  @ Nature Power
+	.2byte ITEM_TM57  @ Charge Beam
+	.2byte ITEM_TM62  @ Acrobatics
+	.2byte ITEM_TM78  @ Bulldoze
+	.2byte ITEM_TM89  @ U-Turn
+	.2byte ITEM_TM95  @ Snarl
 	.2byte ITEM_NONE
 	release
 	end
