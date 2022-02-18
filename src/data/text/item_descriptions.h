@@ -3241,8 +3241,10 @@ static const u8 sTM99Desc[] = _(
     "powerful flash\n"
     "at opponents.");
 
-static const u8 sTM100Desc[] = _( // Todo
-    "?????");
+static const u8 sTM100Desc[] = _(
+    "User crushes the\n"
+    "foe under its power\n"
+    "and lowers Defense.");
 
 static const u8 sHM01Desc[] = _(
     "Attacks the foe\n"
