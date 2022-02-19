@@ -2148,7 +2148,7 @@
                 "species": "SPECIES_LAIRON"
               },
               {
-                "min_level": 40,
+                "min_level": 39,
                 "max_level": 40,
                 "species": "SPECIES_LOUDRED"
               },
@@ -2178,18 +2178,18 @@
                 "species": "SPECIES_ARON"
               },
               {
-                "min_level": 36,
-                "max_level": 36,
-                "species": "SPECIES_WHISMUR"
-              },
-              {
-                "min_level": 43,
-                "max_level": 43,
+                "min_level": 40,
+                "max_level": 40,
                 "species": "SPECIES_RHYDON"
               },
               {
-                "min_level": 43,
-                "max_level": 43,
+                "min_level": 40,
+                "max_level": 40,
+                "species": "SPECIES_RHYDON"
+              },
+              {
+                "min_level": 45,
+                "max_level": 45,
                 "species": "SPECIES_PROBOPASS"
               }
             ]
@@ -7347,8 +7347,8 @@
                 "species": "SPECIES_MAWILE"
               },
               {
-                "min_level": 44,
-                "max_level": 44,
+                "min_level": 40,
+                "max_level": 40,
                 "species": "SPECIES_RHYDON"
               },
               {
@@ -7446,8 +7446,8 @@
                 "species": "SPECIES_MAWILE"
               },
               {
-                "min_level": 46,
-                "max_level": 46,
+                "min_level": 42,
+                "max_level": 42,
                 "species": "SPECIES_RHYDON"
               },
               {

@@ -4383,7 +4383,6 @@ static const struct LevelUpMove sSlugmaLevelUpLearnset[] = {
 static const struct LevelUpMove sMagcargoLevelUpLearnset[] = {
     //LEVEL_UP_MOVE( 0, MOVE_SHELL_SMASH),
     LEVEL_UP_MOVE( 1, MOVE_SHELL_SMASH),
-    LEVEL_UP_MOVE( 1, MOVE_EXPLOSION),
     LEVEL_UP_MOVE( 1, MOVE_EARTH_POWER),
     LEVEL_UP_MOVE( 1, MOVE_YAWN),
     LEVEL_UP_MOVE( 1, MOVE_SMOG),
