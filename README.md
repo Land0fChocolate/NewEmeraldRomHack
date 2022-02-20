@@ -36,7 +36,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.
 - TMs have infinite use.
-- TMs from #51 to #100 have been added.
+- TMs from #51 to #100 have been added. They are similar to the gen 7 TM set (TODO: make list).
 - Ice types have their special defense boosted by 50% in hail.
 - Removed badge boosts
 - Encounter rates adjusted.
