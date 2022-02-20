@@ -215,7 +215,10 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor2::
 	case 2, BattleFrontier_ExchangeServiceCorner_EventScript_VenusaurDoll
 	case 3, BattleFrontier_ExchangeServiceCorner_EventScript_CharizardDoll
 	case 4, BattleFrontier_ExchangeServiceCorner_EventScript_BlastoiseDoll
-	case 5, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 5, BattleFrontier_ExchangeServiceCorner_EventScript_RegirockDoll
+	case 6, BattleFrontier_ExchangeServiceCorner_EventScript_RegiceDoll
+	case 7, BattleFrontier_ExchangeServiceCorner_EventScript_RegisteelDoll
+	case 8, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
@@ -261,6 +264,33 @@ BattleFrontier_ExchangeServiceCorner_EventScript_BlastoiseDoll::
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor2
 	setvar VAR_0x8008, 128
 	setvar VAR_0x8009, DECOR_BLASTOISE_DOLL
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_RegirockDoll::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmRegirockDoll, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor2
+	setvar VAR_0x8008, 160
+	setvar VAR_0x8009, DECOR_REGIROCK_DOLL
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_RegiceDoll::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmRegiceDoll, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor2
+	setvar VAR_0x8008, 160
+	setvar VAR_0x8009, DECOR_REGICE_DOLL
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_RegisteelDoll::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmRegisteelDoll, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor2
+	setvar VAR_0x8008, 160
+	setvar VAR_0x8009, DECOR_REGISTEEL_DOLL
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -521,7 +551,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem::
 	case 1, BattleFrontier_ExchangeServiceCorner_EventScript_WhiteHerb
 	case 2, BattleFrontier_ExchangeServiceCorner_EventScript_QuickClaw
 	case 3, BattleFrontier_ExchangeServiceCorner_EventScript_MentalHerb
-	case 4, BattleFrontier_ExchangeServiceCorner_EventScript_Brightpowder
+	case 4, BattleFrontier_ExchangeServiceCorner_EventScript_AirBalloon
 	case 5, BattleFrontier_ExchangeServiceCorner_EventScript_ChoiceBand
 	case 6, BattleFrontier_ExchangeServiceCorner_EventScript_ChoiceSpecs
 	case 7, BattleFrontier_ExchangeServiceCorner_EventScript_ChoiceScarf
@@ -567,12 +597,12 @@ BattleFrontier_ExchangeServiceCorner_EventScript_MentalHerb::
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
-BattleFrontier_ExchangeServiceCorner_EventScript_Brightpowder::
-	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmBrightpowder, MSGBOX_YESNO
+BattleFrontier_ExchangeServiceCorner_EventScript_AirBalloon::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmAirBalloon, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8009, ITEM_BRIGHT_POWDER
+	setvar VAR_0x8009, ITEM_AIR_BALLOON
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -714,6 +744,18 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmBlastoiseDoll:
 	.string "You've chosen the BLASTOISE DOLL.\n"
 	.string "Is that correct?$"
 
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmRegirockDoll:
+	.string "You've chosen the Regirock doll.\n"
+	.string "Is that correct?$"
+
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmRegiceDoll:
+	.string "You've chosen the Regice doll.\n"
+	.string "Is that correct?$"
+
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmRegisteelDoll:
+	.string "You've chosen the Registeel doll.\n"
+	.string "Is that correct?$"
+
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmOvalStone:
 	.string "You've chosen the Oval Stone.\n"
 	.string "Is that correct?$"
@@ -794,8 +836,8 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmHPUp:
 	.string "You've chosen the HP UP.\n"
 	.string "Is that correct?$"
 
-BattleFrontier_ExchangeServiceCorner_Text_ConfirmBrightpowder:
-	.string "You've chosen the BRIGHTPOWDER.\n"
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmAirBalloon:
+	.string "You've chosen the Air Balloon.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmWhiteHerb:
@@ -1019,9 +1061,9 @@ BattleFrontier_ExchangeServiceCorner_Text_MentalHerbDesc::
 	.string "A hold item that snaps POKéMON out\n"
 	.string "of infatuation.$"
 
-BattleFrontier_ExchangeServiceCorner_Text_BrightpowderDesc::
-	.string "A hold item that casts a glare to\n"
-	.string "reduce accuracy.$"
+BattleFrontier_ExchangeServiceCorner_Text_AirBalloonDesc::
+	.string "A hold item that causes the user\n"
+	.string "to levitate until it pops.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ChoiceBandDesc::
 	.string "Raises a move's physical power,\n"

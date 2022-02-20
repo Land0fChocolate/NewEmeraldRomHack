@@ -19,7 +19,10 @@ static const u16 sFrontierExchangeCorner_Decor2[] =
     DECOR_SNORLAX_DOLL, 
     DECOR_VENUSAUR_DOLL, 
     DECOR_CHARIZARD_DOLL, 
-    DECOR_BLASTOISE_DOLL, 
+    DECOR_BLASTOISE_DOLL,
+    DECOR_REGIROCK_DOLL,
+    DECOR_REGICE_DOLL,
+    DECOR_REGISTEEL_DOLL,
     0xFFFF 
 };
 
@@ -40,10 +43,11 @@ static const u16 sFrontierExchangeCorner_HoldItems[] =
     ITEM_WHITE_HERB, 
     ITEM_QUICK_CLAW, 
     ITEM_MENTAL_HERB, 
-    ITEM_BRIGHT_POWDER, 
-    ITEM_CHOICE_BAND, 
-    ITEM_KINGS_ROCK, 
-    ITEM_FOCUS_BAND, 
+    ITEM_AIR_BALLOON, 
+    ITEM_CHOICE_BAND,
+    ITEM_CHOICE_SPECS,
+    ITEM_CHOICE_SCARF,
+    ITEM_FOCUS_SASH, 
     ITEM_SCOPE_LENS, 
     0xFFFF 
 };
@@ -65,6 +69,9 @@ static const u8 *const sFrontierExchangeCorner_Decor1Descriptions[] =
 
 static const u8 *const sFrontierExchangeCorner_Decor2Descriptions[] = 
 {
+    BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
@@ -109,7 +116,7 @@ static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_WhiteHerbDesc,
     BattleFrontier_ExchangeServiceCorner_Text_QuickClawDesc,
     BattleFrontier_ExchangeServiceCorner_Text_MentalHerbDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_BrightpowderDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_AirBalloonDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ChoiceBandDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ChoiceSpecsDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ChoiceScarfDesc,

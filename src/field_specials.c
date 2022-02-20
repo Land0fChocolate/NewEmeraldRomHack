@@ -2341,7 +2341,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 6;
+            task->tNumItems = 9;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2499,6 +2499,9 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_VenusaurDoll128BP,
         gText_CharizardDoll128BP,
         gText_BlastoiseDoll128BP,
+        gText_RegirockDoll160BP,
+        gText_RegiceDoll160BP,
+        gText_RegisteelDoll160BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR] =
@@ -2535,7 +2538,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_WhiteHerb32BP,
         gText_QuickClaw32BP,
         gText_MentalHerb32BP,
-        gText_BrightPowder48BP,
+        gText_AirBalloon48BP,
         gText_ChoiceBand48BP,
         gText_ChoiceSpecs48BP,
         gText_ChoiceScarf48BP,

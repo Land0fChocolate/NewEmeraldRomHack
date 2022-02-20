@@ -25,6 +25,10 @@ LilycoveCity_DepartmentStore_4F_EventScript_ClerkLeft::
 
 	.align 2
 LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs:
+	.2byte ITEM_TM51  @ Leech Life
+	.2byte ITEM_TM80  @ Rock Slide
+	.2byte ITEM_TM84  @ Poison Jab
+	.2byte ITEM_TM98  @ Waterfall
 	.2byte ITEM_TM14  @ Blizzard
 	.2byte ITEM_TM25  @ Thunder
 	.2byte ITEM_TM38  @ Fire Blast
