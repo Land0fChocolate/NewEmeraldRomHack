@@ -3060,9 +3060,9 @@ static const u8 sTM62Desc[] = _(
     "if no item held.");
 
 static const u8 sTM63Desc[] = _(
-    "Target's held\n"
-    "items are\n"
-    "negated.");
+    "A shout that\n"
+    "increases power if\n"
+    "used sequentially.");
 
 static const u8 sTM64Desc[] = _(
     "User sacrifices\n"
