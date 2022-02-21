@@ -24,25 +24,24 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
 	- Including physical/special split, fairy types, new moves, new items, regional species variants.
-	- Whilst data for all post gen3 Pokemon are in the game, only those that existed in gens 1-3 or have evolutions linked to Pokemon in those gens will be accessible.
+	- Whilst data for all post gen3 Pokemon are in the game, only those that existed in gens 1-3 or have evolutions linked to Pokemon in those gens will be accessible, baring a few exceptions.
 - Pokemon can have up to 3 active abilities, dependant on their species. Many Pokemon have had their ability set updated (TODO: make a list of ability stat changes somewhere).
 - New moves and abilities (listed below).
 - Some vanilla abilities updated to make them more useful (listed below).
 - Many gameplay adjustments to vanilla moves (Listed below). 
 	- OHKO moves have been removed from battle facility movepools.
-	- Changes to learnsets of some Pokemon (TODO: make list).
+	- Changes to level up and TM learnsets of some Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
-- Some Pokemon have base stat changes to better fit their theme and gameplay. Sceptile has its Attack and Special Attack swapped.
+- Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko line has its Attack and Special Attack swapped.
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.
 - TMs have infinite use.
 - TMs from #51 to #100 have been added. They are similar to the gen 7 TM set (TODO: make list).
+- New shops and updates to existing shops to stock later gen items and new TMs.
 - Ice types have their special defense boosted by 50% in hail.
 - Removed badge boosts
 - Encounter rates adjusted.
-- Pokemon will attempt to learn a new move upon evolution.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
-- Changes to learnsets of some Pokemon (TODO: make list).
 - Many changes to trainer parties.
 - Steven is back to being champion and Wallace back to being a gym leader.
 
