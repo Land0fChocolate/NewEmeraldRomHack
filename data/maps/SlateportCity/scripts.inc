@@ -159,6 +159,39 @@ SlateportCity_Pokemart_EnergyGuru:
 	release
 	end
 
+SlateportCity_EventScript_GemLady::
+	lock
+	faceplayer
+	message SlateportCity_Text_GemLadyOpener
+	waitmessage
+	pokemart SlateportCity_Pokemart_GemLady
+	msgbox gText_LookForwardToSeeingYouAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_GemLady:
+	.2byte ITEM_NORMAL_GEM
+	.2byte ITEM_FIRE_GEM
+	.2byte ITEM_WATER_GEM
+	.2byte ITEM_GRASS_GEM
+	.2byte ITEM_ELECTRIC_GEM
+	.2byte ITEM_ICE_GEM
+	.2byte ITEM_FIGHTING_GEM
+	.2byte ITEM_POISON_GEM
+	.2byte ITEM_GROUND_GEM
+	.2byte ITEM_FLYING_GEM
+	.2byte ITEM_PSYCHIC_GEM
+	.2byte ITEM_BUG_GEM
+	.2byte ITEM_ROCK_GEM
+	.2byte ITEM_GHOST_GEM
+	.2byte ITEM_DRAGON_GEM
+	.2byte ITEM_DARK_GEM
+	.2byte ITEM_STEEL_GEM
+	.2byte ITEM_FAIRY_GEM
+	release
+	end
+
 SlateportCity_EventScript_EffortRibbonWoman::
 	lock
 	faceplayer
@@ -975,6 +1008,10 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 SlateportCity_Text_EnergyGuruSellWhatYouNeed:
 	.string "I'm the ENERGY GURU! I'll go for it and\n"
 	.string "sell you what you need!$"
+
+SlateportCity_Text_GemLadyOpener:
+	.string "Hello, cutie pie! If your Pokémon need\n"
+	.string "more bite, I have just what you need!$"
 
 SlateportCity_Text_OhYourPokemon:
 	.string "Oh?\n"

@@ -8,3 +8,6 @@ gText_PleaseComeAgain::
 gText_PlayerWhatCanIDoForYou::
 	.string "{PLAYER}{STRING 5}, welcome!\p"
 	.string "What can I do for you?$"
+
+gText_LookForwardToSeeingYouAgain::
+	.string "I look forward to seeing you again!$"
