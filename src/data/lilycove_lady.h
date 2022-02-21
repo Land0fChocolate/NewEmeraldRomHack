@@ -270,17 +270,17 @@ static const u16 sQuizLadyQuizAnswers[] =
 
 static const u16 sQuizLadyPrizes[] =
 {
-    ITEM_GLITTER_MAIL,
-    ITEM_BEAD_MAIL,
-    ITEM_TROPIC_MAIL,
+    ITEM_PAMTRE_BERRY,
+    ITEM_SPELON_BERRY,
+    ITEM_PP_UP,
+    ITEM_PP_UP,
     ITEM_MAX_ETHER,
-    ITEM_MAX_ETHER,
-    ITEM_MAX_ETHER,
+    ITEM_MAX_ELIXIR,
     ITEM_WATMEL_BERRY,
     ITEM_BELUE_BERRY,
     ITEM_DURIN_BERRY,
     ITEM_LUXURY_BALL,
-    ITEM_TM15_HYPER_BEAM,
+    ITEM_PP_MAX,
     ITEM_BIG_PEARL,
     ITEM_STAR_PIECE,
     ITEM_RARE_CANDY,
@@ -423,9 +423,9 @@ static const u16 *const sFavorLadyAcceptedItemLists[] =
 
 static const u16 sFavorLadyPrizes[] =
 {
-    ITEM_LUXURY_BALL,
+    ITEM_PP_UP,
     ITEM_NUGGET,
-    ITEM_PROTEIN,
+    ITEM_HEART_SCALE,
     ITEM_HEART_SCALE,
     ITEM_RARE_CANDY,
     ITEM_PP_MAX

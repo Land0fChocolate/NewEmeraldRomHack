@@ -2341,7 +2341,17 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 6;
+            task->tNumItems = 9;
+            task->tLeft = 14;
+            task->tTop = 1;
+            task->tWidth = 15;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 15;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2361,7 +2371,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 10;
+            task->tNumItems = 11;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2390,9 +2400,18 @@ void ShowScrollableMultichoice(void)
             task->tTaskId = taskId;
             break;
         case SCROLL_MULTI_BF_MOVE_TUTOR_1:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 12;
+            task->tLeft = 15;
+            task->tTop = 1;
+            task->tWidth = 14;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
         case SCROLL_MULTI_BF_MOVE_TUTOR_2:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 11;
+            task->tNumItems = 13;
             task->tLeft = 15;
             task->tTop = 1;
             task->tWidth = 14;
@@ -2461,25 +2480,46 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1] = 
     {
-        gText_KissPoster16BP,
-        gText_KissCushion32BP,
-        gText_SmoochumDoll32BP,
-        gText_TogepiDoll48BP,
-        gText_MeowthDoll48BP,
-        gText_ClefairyDoll48BP,
-        gText_DittoDoll48BP,
-        gText_CyndaquilDoll80BP,
-        gText_ChikoritaDoll80BP,
-        gText_TotodileDoll80BP,
+        gText_KissPoster8BP,
+        gText_KissCushion16BP,
+        gText_SmoochumDoll24BP,
+        gText_MeowthDoll24BP,
+        gText_ClefairyDoll24BP,
+        gText_TogepiDoll32BP,
+        gText_DittoDoll32BP,
+        gText_CyndaquilDoll40BP,
+        gText_ChikoritaDoll40BP,
+        gText_TotodileDoll40BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2] =
     {
-        gText_LaprasDoll128BP,
-        gText_SnorlaxDoll128BP,
-        gText_VenusaurDoll256BP,
-        gText_CharizardDoll256BP,
-        gText_BlastoiseDoll256BP,
+        gText_LaprasDoll96BP,
+        gText_SnorlaxDoll96BP,
+        gText_VenusaurDoll128BP,
+        gText_CharizardDoll128BP,
+        gText_BlastoiseDoll128BP,
+        gText_RegirockDoll160BP,
+        gText_RegiceDoll160BP,
+        gText_RegisteelDoll160BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR] =
+    {
+        gText_OvalStone4BP,
+        gText_ReaperCloth16BP,
+        gText_Protector16BP,
+        gText_Electirizer16BP,
+        gText_Magmarizer16BP,
+        gText_DeepSeaScale16BP,
+        gText_DeepSeaTooth16BP,
+        gText_DragonScale16BP,
+        gText_UpGrade16BP,
+        gText_DubiousDisc16BP,
+        gText_KingsRock24BP,
+        gText_RazorClaw24BP,
+        gText_RazorFang24BP,
+        gText_MetalCoat24BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR] =
@@ -2494,15 +2534,16 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
     {
-        gText_Leftovers48BP,
-        gText_WhiteHerb48BP,
-        gText_QuickClaw48BP,
-        gText_MentalHerb48BP,
-        gText_BrightPowder64BP,
-        gText_ChoiceBand64BP,
-        gText_KingsRock64BP,
-        gText_FocusBand64BP,
-        gText_ScopeLens64BP,
+        gText_Leftovers32BP,
+        gText_WhiteHerb32BP,
+        gText_QuickClaw32BP,
+        gText_MentalHerb32BP,
+        gText_AirBalloon48BP,
+        gText_ChoiceBand48BP,
+        gText_ChoiceSpecs48BP,
+        gText_ChoiceScarf48BP,
+        gText_FocusSash48BP,
+        gText_ScopeLens48BP,
         gText_Exit
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =
@@ -2535,33 +2576,33 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_MOVE_TUTOR_1] = 
     {
-        gText_Softboiled16BP,
-        gText_SeismicToss24BP,
-        gText_DreamEater24BP,
-        gText_MegaPunch24BP,
-        gText_MegaKick48BP,
-        gText_BodySlam48BP,
-        gText_RockSlide48BP,
-        gText_Counter48BP,
-        gText_ThunderWave48BP,
-        gText_SwordsDance48BP,
-        gText_SerpentDance48BP,
+        gText_Softboiled8BP,
+        gText_SeismicToss12BP,
+        gText_DreamEater12BP,
+        gText_MegaPunch12BP,
+        gText_MegaKick12BP,
+        gText_BodySlam16BP,
+        gText_RockSlide16BP,
+        gText_Counter16BP,
+        gText_ThunderWave16BP,
+        gText_SwordsDance24BP,
+        gText_SerpentDance24BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_MOVE_TUTOR_2] = 
     {
-        gText_DefenseCurl16BP,
-        gText_Snore24BP,
-        gText_MudSlap24BP,
-        gText_Swift24BP,
-        gText_IcyWind24BP,
-        gText_Endure48BP,
-        gText_PsychUp48BP,
-        gText_IcePunch48BP,
-        gText_ThunderPunch48BP,
-        gText_FirePunch48BP,
-        gText_FlintBlade48BP,
-        gText_FlareCrash48BP,
+        gText_DefenseCurl4BP,
+        gText_Snore4BP,
+        gText_MudSlap4BP,
+        gText_Swift4BP,
+        gText_IcyWind12BP,
+        gText_Endure12BP,
+        gText_PsychUp12BP,
+        gText_IcePunch24BP,
+        gText_ThunderPunch24BP,
+        gText_FirePunch24BP,
+        gText_FlintBlade24BP,
+        gText_FlareCrash24BP,
         gText_Exit
     },
     [SCROLL_MULTI_SS_TIDAL_DESTINATION] =
@@ -3097,6 +3138,10 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
                     sScrollableMultichoice_ItemSpriteId = AddDecorationIconObject(sFrontierExchangeCorner_Decor2[selection], 33, 88, 0, 5500, 5500);
                 }
                 break;
+            case SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR:
+                AddTextPrinterParameterized2(0, 1, sFrontierExchangeCorner_EvoItemsDescriptions[selection], 0, NULL, 2, 1, 3);
+                ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Vitamins[selection]);
+                break;
             case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
                 AddTextPrinterParameterized2(0, 1, sFrontierExchangeCorner_VitaminsDescriptions[selection], 0, NULL, 2, 1, 3);
                 ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Vitamins[selection]);
@@ -3131,6 +3176,7 @@ static void HideFrontierExchangeCornerItemIcon(u16 menu, u16 unused)
         {
             case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1:
             case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
+            case SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR:
             case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
             case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
                 DestroySpriteAndFreeResources(&gSprites[sScrollableMultichoice_ItemSpriteId]);
@@ -3221,6 +3267,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_CounterDesc,
         BattleFrontier_Lounge7_Text_ThunderWaveDesc,
         BattleFrontier_Lounge7_Text_SwordsDanceDesc,
+        BattleFrontier_Lounge7_Text_SerpentDanceDesc,
         gText_Exit,
     };
 
@@ -3236,6 +3283,8 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_IcePunchDesc,
         BattleFrontier_Lounge7_Text_ThunderPunchDesc,
         BattleFrontier_Lounge7_Text_FirePunchDesc,
+        BattleFrontier_Lounge7_Text_FlintBladeDesc,
+        BattleFrontier_Lounge7_Text_FlareCrashDesc,
         gText_Exit,
     };
 

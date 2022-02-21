@@ -25,10 +25,16 @@ LilycoveCity_DepartmentStore_4F_EventScript_ClerkLeft::
 
 	.align 2
 LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs:
-	.2byte ITEM_TM38  @ Fire Blast
-	.2byte ITEM_TM25  @ Thunder
+	.2byte ITEM_TM51  @ Leech Life
+	.2byte ITEM_TM80  @ Rock Slide
+	.2byte ITEM_TM84  @ Poison Jab
+	.2byte ITEM_TM98  @ Waterfall
 	.2byte ITEM_TM14  @ Blizzard
+	.2byte ITEM_TM25  @ Thunder
+	.2byte ITEM_TM38  @ Fire Blast
+	.2byte ITEM_TM52  @ Focus Blast
 	.2byte ITEM_TM15  @ Hyper Beam
+	.2byte ITEM_TM68  @ Giga Impact
 	.2byte ITEM_NONE
 	release
 	end
@@ -45,10 +51,16 @@ LilycoveCity_DepartmentStore_4F_EventScript_ClerkRight::
 
 	.align 2
 LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
+	.2byte ITEM_TM16  @ Light Screen
 	.2byte ITEM_TM17  @ Protect
 	.2byte ITEM_TM20  @ Safeguard
 	.2byte ITEM_TM33  @ Reflect
-	.2byte ITEM_TM16  @ Light Screen
+	.2byte ITEM_TM61  @ Will-O-Wisp
+	.2byte ITEM_TM70  @ Aurora Veil
+	.2byte ITEM_TM77  @ Psych Up
+	.2byte ITEM_TM87  @ Swagger
+	.2byte ITEM_TM90  @ Substitute
+	.2byte ITEM_TM92  @ Trick Room
 	.2byte ITEM_NONE
 	release
 	end

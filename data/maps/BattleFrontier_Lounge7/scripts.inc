@@ -37,7 +37,8 @@ BattleFrontier_Lounge7_EventScript_ChooseLeftTutorMove::
 	case 7, BattleFrontier_Lounge7_EventScript_Counter
 	case 8, BattleFrontier_Lounge7_EventScript_ThunderWave
 	case 9, BattleFrontier_Lounge7_EventScript_SwordsDance
-	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case 10, BattleFrontier_Lounge7_EventScript_SerpentDance
+	case 11, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 
@@ -61,57 +62,63 @@ BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove::
 	case 7, BattleFrontier_Lounge7_EventScript_Counter
 	case 8, BattleFrontier_Lounge7_EventScript_ThunderWave
 	case 9, BattleFrontier_Lounge7_EventScript_SwordsDance
-	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case 10, BattleFrontier_Lounge7_EventScript_SerpentDance
+	case 11, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 
 BattleFrontier_Lounge7_EventScript_Softboiled::
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 8
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_SeismicToss::
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 12
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_DreamEater::
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 12
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_MegaPunch::
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 12
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_MegaKick::
-	setvar VAR_0x8008, 48
+	setvar VAR_0x8008, 12
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_BodySlam::
-	setvar VAR_0x8008, 48
+	setvar VAR_0x8008, 16
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_RockSlide::
-	setvar VAR_0x8008, 48
+	setvar VAR_0x8008, 16
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_Counter::
-	setvar VAR_0x8008, 48
+	setvar VAR_0x8008, 16
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_ThunderWave::
-	setvar VAR_0x8008, 48
+	setvar VAR_0x8008, 16
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_SwordsDance::
-	setvar VAR_0x8008, 48
+	setvar VAR_0x8008, 24
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_SerpentDance::
+	setvar VAR_0x8008, 24
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -151,7 +158,9 @@ BattleFrontier_Lounge7_EventScript_ChooseRightTutorMove::
 	case 7, BattleFrontier_Lounge7_EventScript_IcePunch
 	case 8, BattleFrontier_Lounge7_EventScript_ThunderPunch
 	case 9, BattleFrontier_Lounge7_EventScript_FirePunch
-	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case 10, BattleFrontier_Lounge7_EventScript_FlintBlade
+	case 11, BattleFrontier_Lounge7_EventScript_FlareCrash
+	case 12, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 
@@ -175,57 +184,69 @@ BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove::
 	case 7, BattleFrontier_Lounge7_EventScript_IcePunch
 	case 8, BattleFrontier_Lounge7_EventScript_ThunderPunch
 	case 9, BattleFrontier_Lounge7_EventScript_FirePunch
-	case 10, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case 10, BattleFrontier_Lounge7_EventScript_FlintBlade
+	case 11, BattleFrontier_Lounge7_EventScript_FlareCrash
+	case 12, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 
 BattleFrontier_Lounge7_EventScript_DefenseCurl::
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 4
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_Snore::
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 4
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_MudSlap::
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 4
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_Swift::
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 4
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_IcyWind::
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 12
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_Endure::
-	setvar VAR_0x8008, 48
+	setvar VAR_0x8008, 12
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_PsychUp::
-	setvar VAR_0x8008, 48
+	setvar VAR_0x8008, 12
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_IcePunch::
-	setvar VAR_0x8008, 48
+	setvar VAR_0x8008, 24
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_ThunderPunch::
-	setvar VAR_0x8008, 48
+	setvar VAR_0x8008, 24
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_FirePunch::
-	setvar VAR_0x8008, 48
+	setvar VAR_0x8008, 24
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_FlintBlade::
+	setvar VAR_0x8008, 24
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_FlareCrash::
+	setvar VAR_0x8008, 24
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -432,6 +453,11 @@ BattleFrontier_Lounge7_Text_SwordsDanceDesc::
 	.string "that sharply\n"
 	.string "raises ATTACK.$"
 
+BattleFrontier_Lounge7_Text_SerpentDanceDesc::
+	.string "A graceful dance\n"
+	.string "that raises\n"
+	.string "Sp.Atk and Speed.$"
+
 BattleFrontier_Lounge7_Text_DefenseCurlDesc::
 	.string "Curls up to con-\n"
 	.string "ceal weak spots\n"
@@ -481,3 +507,13 @@ BattleFrontier_Lounge7_Text_FirePunchDesc::
 	.string "A fiery punch\n"
 	.string "that may burn\n"
 	.string "the foe.$"
+
+BattleFrontier_Lounge7_Text_FlintBladeDesc::
+	.string "A rock-hard edge\n"
+	.string "with a high\n"
+	.string "critical hit rate.$"
+
+BattleFrontier_Lounge7_Text_FlareCrashDesc::
+	.string "A reckless crash\n"
+	.string "that lowers the\n"
+	.string "user's Speed.$"
