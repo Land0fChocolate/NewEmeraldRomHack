@@ -106,7 +106,7 @@ Route119_EventScript_BattleMayMudkip::
 
 Route119_EventScript_DefeatedMay::
 	msgbox Route119_Text_MayPresentForYou, MSGBOX_DEFAULT
-	call Route119_EventScript_GiveFlyHM
+	call Route119_EventScript_GiveTM76
 	msgbox Route119_Text_MayExplainFly, MSGBOX_DEFAULT
 	goto Route119_EventScript_RivalExitScottArrive
 	end
@@ -136,14 +136,14 @@ Route119_EventScript_BattleBrendanMudkip::
 
 Route119_EventScript_DefeatedBrendan::
 	msgbox Route119_Text_BrendanIllGiveYouThis, MSGBOX_DEFAULT
-	call Route119_EventScript_GiveFlyHM
+	call Route119_EventScript_GiveTM76
 	msgbox Route119_Text_BrendanExplainFly, MSGBOX_DEFAULT
 	goto Route119_EventScript_RivalExitScottArrive
 	end
 
-Route119_EventScript_GiveFlyHM::
-	giveitem ITEM_HM02
-	setflag FLAG_RECEIVED_HM02
+Route119_EventScript_GiveTM76::
+	giveitem ITEM_TM76
+	setflag FLAG_RECEIVED_TM76
 	return
 
 Route119_EventScript_RivalExitScottArrive::
@@ -519,17 +519,14 @@ Route119_Text_MayPresentForYou:
 	.string "And, here! I have a present for you.$"
 
 Route119_Text_MayExplainFly:
-	.string "MAY: Use FLY, and your POKéMON will\n"
-	.string "instantly carry you to any town you've\l"
-	.string "already visited.\p"
-	.string "But, to use FLY, you have to get\n"
-	.string "the GYM BADGE from FORTREE CITY.\l"
-	.string "That's important, so don't forget.\p"
-	.string "You should FLY home and visit\n"
-	.string "LITTLEROOT for a change.\p"
-	.string "I bet your mom's worried about you,\n"
-	.string "{PLAYER}{KUN}.\p"
-	.string "Well, let's meet again somewhere!$"
+	.string "May: Some Team Aqua goon left this\n"
+	.string "behind. I figured he wasn't going to\l"
+	.string "need it anymore so I took it.\p"
+	.string "But, then I found I didn't really\n"
+	.string "need it either. So I'm offloading\l"
+	.string "it onto you.\p"
+	.string "Well, let's meet again somewhere!\n"
+	.string "See ya!$"
 
 Route119_Text_BrendanIntro:
 	.string "BRENDAN: {PLAYER}! So this is where\n"
@@ -550,11 +547,11 @@ Route119_Text_BrendanIllGiveYouThis:
 	.string "Try it out.$"
 
 Route119_Text_BrendanExplainFly:
-	.string "BRENDAN: Use FLY, and your POKéMON\n"
-	.string "instantly carries you to any town\l"
-	.string "you've already visited.\p"
-	.string "But you need the FORTREE GYM BADGE \n"
-	.string "to do that.\p"
+	.string "Brendan: A Team Aqua member\n"
+	.string "dropped that when he was leaving\l"
+	.string "the Weather Institute.\p"
+	.string "I don't need it, so I guess you\n"
+	.string "can have it.\p"
 	.string "Anyway, I have to move along.$"
 
 Route119_Text_ScottWayToGoBeSeeingYou:

@@ -68,9 +68,9 @@ RusturfTunnel_EventScript_ClearTunnelScene::
 	call_if_eq RusturfTunnel_EventScript_WandasBoyfriendApproachPlayer
 	compare VAR_TEMP_1, 3
 	call_if_eq RusturfTunnel_EventScript_WandasBoyfriendApproachPlayer
-	giveitem ITEM_HM04
-	setflag FLAG_RECEIVED_HM04
-	msgbox RusturfTunnel_Text_ExplainStrength, MSGBOX_DEFAULT
+	giveitem ITEM_TM93
+	setflag FLAG_RECEIVED_TM93
+	msgbox RusturfTunnel_Text_ExplainWildCharge, MSGBOX_DEFAULT
 	closemessage
 	compare VAR_TEMP_1, 1
 	call_if_eq RusturfTunnel_EventScript_BoyfriendApproachWanda1
@@ -505,13 +505,12 @@ RusturfTunnel_Text_YouShatteredBoulderTakeHM:
 	.string "Wow! You shattered that boulder\n"
 	.string "blocking the way.\p"
 	.string "To show you how much I appreciate it,\n"
-	.string "I'd like you to have this HM.$"
+	.string "I'd like you to have this TM.$"
 
-RusturfTunnel_Text_ExplainStrength:
-	.string "That HM contains STRENGTH.\p"
-	.string "If a muscular POKéMON were to learn\n"
-	.string "that, it would be able to move even\l"
-	.string "large boulders.$"
+RusturfTunnel_Text_ExplainWildCharge:
+	.string "That TM contains Wild Charge.\p"
+	.string "It is a move of great power, but\n"
+	.string "also of considerable consequence.$"
 
 RusturfTunnel_Text_WandaReunion:
 	.string "WANDA!\n"

@@ -573,11 +573,11 @@ MossdeepCity_Gym_Text_ReceivedMindBadge:
 	.string "from TATE and LIZA.$"
 
 MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
-	.string "TATE: The MIND BADGE enhances the\n"
-	.string "SP. ATK and SP. DEF of POKéMON.\p"
-	.string "LIZA: It also lets you use the HM move\n"
-	.string "DIVE outside of battle.\p"
-	.string "TATE: You should also take this, too.$"
+	.string "Tate: The Mind Badge enhances the\n"
+	.string "Sp. Atk and Sp. Def of Pokémon.\p"
+	.string "Liza: It also grants your Pokémon the\n"
+	.string "power to carry you deep underwater.\p"
+	.string "Tate: You should also take this, too.$"
 
 MossdeepCity_Gym_Text_ExplainCalmMind:
 	.string "TATE: That TM04 contains…\n"
