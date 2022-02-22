@@ -24226,161 +24226,210 @@ const u32 gTMHMLearnsets[][4] =
     //                                         | TMHM(TM06_TOXIC),
     //                                         TMHM2(TM68_GIGA_IMPACT)),
 
-    // [SPECIES_UNOWN_B]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_B]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_C]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_C]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_D]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_D]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_E]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_E]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_F]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_F]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_G]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_G]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_H]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_H]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_I]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_I]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_J]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_J]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_K]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_K]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_L]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_L]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_M]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_M]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_N]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_N]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_O]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_O]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_P]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_P]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_Q]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_Q]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_R]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_R]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_S]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_S]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_T]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_T]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_U]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_U]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_V]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_V]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_W]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_W]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_X]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_X]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_Y]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_Y]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_Z]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_Z]     = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_EMARK] = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_EMARK] = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_UNOWN_QMARK] = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
+    [SPECIES_UNOWN_QMARK] = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER), 0),
 
-    // [SPECIES_DEOXYS_ATTACK]  = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
-    //                                         | TMHM(TM31_BRICK_BREAK)
-    //                                         | TMHM(TM04_CALM_MIND)
-    //                                         | TMHM(TM32_DOUBLE_TEAM)
-    //                                         | TMHM(TM42_FACADE)
-    //                                         | TMHM(TM01_FOCUS_PUNCH)
-    //                                         | TMHM(TM21_FRUSTRATION)
-    //                                         | TMHM(TM10_HIDDEN_POWER)
-    //                                         | TMHM(TM15_HYPER_BEAM)
-    //                                         | TMHM(TM13_ICE_BEAM)
-    //                                         | TMHM(TM16_LIGHT_SCREEN)
-    //                                         | TMHM(TM17_PROTECT)
-    //                                         | TMHM(TM29_PSYCHIC)
-    //                                         | TMHM(TM18_RAIN_DANCE)
-    //                                         | TMHM(TM33_REFLECT)
-    //                                         | TMHM(TM44_REST)
-    //                                         | TMHM(TM27_RETURN)
-    //                                         | TMHM(TM39_ROCK_TOMB)
-    //                                         | TMHM(TM20_SAFEGUARD)
-    //                                         | TMHM(TM43_SECRET_POWER)
-    //                                         | TMHM(TM30_SHADOW_BALL)
-    //                                         | TMHM(TM34_SHOCK_WAVE)
-    //                                         | TMHM(TM48_SKILL_SWAP)
-    //                                         | TMHM(TM49_SNATCH)
-    //                                         | TMHM(TM22_SOLARBEAM)
-    //                                         | TMHM(TM11_SUNNY_DAY)
-    //                                         | TMHM(TM12_TAUNT)
-    //                                         | TMHM(TM25_THUNDER)
-    //                                         | TMHM(TM24_THUNDERBOLT)
-    //                                         | TMHM(TM41_TORMENT)
-    //                                         | TMHM(TM06_TOXIC)
-    //                                         | TMHM(TM03_WATER_PULSE),
-    //                                         TMHM2(TM68_GIGA_IMPACT)),
+    [SPECIES_DEOXYS_ATTACK]  = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
+                                            | TMHM(TM31_BRICK_BREAK)
+                                            | TMHM(TM04_CALM_MIND)
+                                            | TMHM(TM32_DOUBLE_TEAM)
+                                            | TMHM(TM42_FACADE)
+                                            | TMHM(TM01_FOCUS_PUNCH)
+                                            | TMHM(TM21_FRUSTRATION)
+                                            | TMHM(TM10_HIDDEN_POWER)
+                                            | TMHM(TM15_HYPER_BEAM)
+                                            | TMHM(TM13_ICE_BEAM)
+                                            | TMHM(TM16_LIGHT_SCREEN)
+                                            | TMHM(TM17_PROTECT)
+                                            | TMHM(TM29_PSYCHIC)
+                                            | TMHM(TM18_RAIN_DANCE)
+                                            | TMHM(TM33_REFLECT)
+                                            | TMHM(TM44_REST)
+                                            | TMHM(TM27_RETURN)
+                                            | TMHM(TM39_ROCK_TOMB)
+                                            | TMHM(TM20_SAFEGUARD)
+                                            | TMHM(TM43_SECRET_POWER)
+                                            | TMHM(TM30_SHADOW_BALL)
+                                            | TMHM(TM34_SHOCK_WAVE)
+                                            | TMHM(TM48_SKILL_SWAP)
+                                            | TMHM(TM49_SNATCH)
+                                            | TMHM(TM22_SOLARBEAM)
+                                            | TMHM(TM11_SUNNY_DAY)
+                                            | TMHM(TM12_TAUNT)
+                                            | TMHM(TM25_THUNDER)
+                                            | TMHM(TM24_THUNDERBOLT)
+                                            | TMHM(TM41_TORMENT)
+                                            | TMHM(TM06_TOXIC)
+                                            | TMHM(TM03_WATER_PULSE)
+                                            | TMHM(TM52_FOCUS_BLAST)
+                                            | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM57_CHARGE_BEAM),
+                                            TMHM2(TM68_GIGA_IMPACT)
+                                            | TMHM2(TM73_THUNDER_WAVE)
+                                            | TMHM2(TM77_PSYCH_UP)
+                                            | TMHM2(TM80_ROCK_SLIDE)
+                                            | TMHM2(TM84_POISON_JAB)
+                                            | TMHM2(TM85_DREAM_EATER)
+                                            | TMHM2(TM86_GRASS_KNOT)
+                                            | TMHM2(TM87_SWAGGER)
+                                            | TMHM2(TM88_SLEEP_TALK)
+                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM91_FLASH_CANNON)
+                                            | TMHM2(TM92_TRICK_ROOM)
+                                            | TMHM2(TM97_DARK_PULSE)
+                                            | TMHM2(TM100_ROCK_SMASH)),
 
-    // [SPECIES_DEOXYS_DEFENSE]  = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
-    //                                         | TMHM(TM31_BRICK_BREAK)
-    //                                         | TMHM(TM04_CALM_MIND)
-    //                                         | TMHM(TM32_DOUBLE_TEAM)
-    //                                         | TMHM(TM42_FACADE)
-    //                                         | TMHM(TM01_FOCUS_PUNCH)
-    //                                         | TMHM(TM21_FRUSTRATION)
-    //                                         | TMHM(TM10_HIDDEN_POWER)
-    //                                         | TMHM(TM15_HYPER_BEAM)
-    //                                         | TMHM(TM13_ICE_BEAM)
-    //                                         | TMHM(TM16_LIGHT_SCREEN)
-    //                                         | TMHM(TM17_PROTECT)
-    //                                         | TMHM(TM29_PSYCHIC)
-    //                                         | TMHM(TM18_RAIN_DANCE)
-    //                                         | TMHM(TM33_REFLECT)
-    //                                         | TMHM(TM44_REST)
-    //                                         | TMHM(TM27_RETURN)
-    //                                         | TMHM(TM39_ROCK_TOMB)
-    //                                         | TMHM(TM20_SAFEGUARD)
-    //                                         | TMHM(TM43_SECRET_POWER)
-    //                                         | TMHM(TM30_SHADOW_BALL)
-    //                                         | TMHM(TM34_SHOCK_WAVE)
-    //                                         | TMHM(TM48_SKILL_SWAP)
-    //                                         | TMHM(TM49_SNATCH)
-    //                                         | TMHM(TM22_SOLARBEAM)
-    //                                         | TMHM(TM11_SUNNY_DAY)
-    //                                         | TMHM(TM12_TAUNT)
-    //                                         | TMHM(TM25_THUNDER)
-    //                                         | TMHM(TM24_THUNDERBOLT)
-    //                                         | TMHM(TM41_TORMENT)
-    //                                         | TMHM(TM06_TOXIC)
-    //                                         | TMHM(TM03_WATER_PULSE),
-    //                                         TMHM2(TM68_GIGA_IMPACT)),
+    [SPECIES_DEOXYS_DEFENSE]  = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
+                                            | TMHM(TM31_BRICK_BREAK)
+                                            | TMHM(TM04_CALM_MIND)
+                                            | TMHM(TM32_DOUBLE_TEAM)
+                                            | TMHM(TM42_FACADE)
+                                            | TMHM(TM01_FOCUS_PUNCH)
+                                            | TMHM(TM21_FRUSTRATION)
+                                            | TMHM(TM10_HIDDEN_POWER)
+                                            | TMHM(TM15_HYPER_BEAM)
+                                            | TMHM(TM13_ICE_BEAM)
+                                            | TMHM(TM16_LIGHT_SCREEN)
+                                            | TMHM(TM17_PROTECT)
+                                            | TMHM(TM29_PSYCHIC)
+                                            | TMHM(TM18_RAIN_DANCE)
+                                            | TMHM(TM33_REFLECT)
+                                            | TMHM(TM44_REST)
+                                            | TMHM(TM27_RETURN)
+                                            | TMHM(TM39_ROCK_TOMB)
+                                            | TMHM(TM20_SAFEGUARD)
+                                            | TMHM(TM43_SECRET_POWER)
+                                            | TMHM(TM30_SHADOW_BALL)
+                                            | TMHM(TM34_SHOCK_WAVE)
+                                            | TMHM(TM48_SKILL_SWAP)
+                                            | TMHM(TM49_SNATCH)
+                                            | TMHM(TM22_SOLARBEAM)
+                                            | TMHM(TM11_SUNNY_DAY)
+                                            | TMHM(TM12_TAUNT)
+                                            | TMHM(TM25_THUNDER)
+                                            | TMHM(TM24_THUNDERBOLT)
+                                            | TMHM(TM41_TORMENT)
+                                            | TMHM(TM06_TOXIC)
+                                            | TMHM(TM03_WATER_PULSE)
+                                            | TMHM(TM52_FOCUS_BLAST)
+                                            | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM57_CHARGE_BEAM),
+                                            TMHM2(TM68_GIGA_IMPACT)
+                                            | TMHM2(TM73_THUNDER_WAVE)
+                                            | TMHM2(TM77_PSYCH_UP)
+                                            | TMHM2(TM80_ROCK_SLIDE)
+                                            | TMHM2(TM84_POISON_JAB)
+                                            | TMHM2(TM85_DREAM_EATER)
+                                            | TMHM2(TM86_GRASS_KNOT)
+                                            | TMHM2(TM87_SWAGGER)
+                                            | TMHM2(TM88_SLEEP_TALK)
+                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM91_FLASH_CANNON)
+                                            | TMHM2(TM92_TRICK_ROOM)
+                                            | TMHM2(TM97_DARK_PULSE)
+                                            | TMHM2(TM100_ROCK_SMASH)),
 
-    // [SPECIES_DEOXYS_SPEED]  = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
-    //                                         | TMHM(TM31_BRICK_BREAK)
-    //                                         | TMHM(TM04_CALM_MIND)
-    //                                         | TMHM(TM32_DOUBLE_TEAM)
-    //                                         | TMHM(TM42_FACADE)
-    //                                         | TMHM(TM01_FOCUS_PUNCH)
-    //                                         | TMHM(TM21_FRUSTRATION)
-    //                                         | TMHM(TM10_HIDDEN_POWER)
-    //                                         | TMHM(TM15_HYPER_BEAM)
-    //                                         | TMHM(TM13_ICE_BEAM)
-    //                                         | TMHM(TM16_LIGHT_SCREEN)
-    //                                         | TMHM(TM17_PROTECT)
-    //                                         | TMHM(TM29_PSYCHIC)
-    //                                         | TMHM(TM18_RAIN_DANCE)
-    //                                         | TMHM(TM33_REFLECT)
-    //                                         | TMHM(TM44_REST)
-    //                                         | TMHM(TM27_RETURN)
-    //                                         | TMHM(TM39_ROCK_TOMB)
-    //                                         | TMHM(TM20_SAFEGUARD)
-    //                                         | TMHM(TM43_SECRET_POWER)
-    //                                         | TMHM(TM30_SHADOW_BALL)
-    //                                         | TMHM(TM34_SHOCK_WAVE)
-    //                                         | TMHM(TM48_SKILL_SWAP)
-    //                                         | TMHM(TM49_SNATCH)
-    //                                         | TMHM(TM22_SOLARBEAM)
-    //                                         | TMHM(TM11_SUNNY_DAY)
-    //                                         | TMHM(TM12_TAUNT)
-    //                                         | TMHM(TM25_THUNDER)
-    //                                         | TMHM(TM24_THUNDERBOLT)
-    //                                         | TMHM(TM41_TORMENT)
-    //                                         | TMHM(TM06_TOXIC)
-    //                                         | TMHM(TM03_WATER_PULSE),
-    //                                         TMHM2(TM68_GIGA_IMPACT)),
+
+    [SPECIES_DEOXYS_SPEED]  = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
+                                            | TMHM(TM31_BRICK_BREAK)
+                                            | TMHM(TM04_CALM_MIND)
+                                            | TMHM(TM32_DOUBLE_TEAM)
+                                            | TMHM(TM42_FACADE)
+                                            | TMHM(TM01_FOCUS_PUNCH)
+                                            | TMHM(TM21_FRUSTRATION)
+                                            | TMHM(TM10_HIDDEN_POWER)
+                                            | TMHM(TM15_HYPER_BEAM)
+                                            | TMHM(TM13_ICE_BEAM)
+                                            | TMHM(TM16_LIGHT_SCREEN)
+                                            | TMHM(TM17_PROTECT)
+                                            | TMHM(TM29_PSYCHIC)
+                                            | TMHM(TM18_RAIN_DANCE)
+                                            | TMHM(TM33_REFLECT)
+                                            | TMHM(TM44_REST)
+                                            | TMHM(TM27_RETURN)
+                                            | TMHM(TM39_ROCK_TOMB)
+                                            | TMHM(TM20_SAFEGUARD)
+                                            | TMHM(TM43_SECRET_POWER)
+                                            | TMHM(TM30_SHADOW_BALL)
+                                            | TMHM(TM34_SHOCK_WAVE)
+                                            | TMHM(TM48_SKILL_SWAP)
+                                            | TMHM(TM49_SNATCH)
+                                            | TMHM(TM22_SOLARBEAM)
+                                            | TMHM(TM11_SUNNY_DAY)
+                                            | TMHM(TM12_TAUNT)
+                                            | TMHM(TM25_THUNDER)
+                                            | TMHM(TM24_THUNDERBOLT)
+                                            | TMHM(TM41_TORMENT)
+                                            | TMHM(TM06_TOXIC)
+                                            | TMHM(TM03_WATER_PULSE)
+                                            | TMHM(TM52_FOCUS_BLAST)
+                                            | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM57_CHARGE_BEAM),
+                                            TMHM2(TM68_GIGA_IMPACT)
+                                            | TMHM2(TM73_THUNDER_WAVE)
+                                            | TMHM2(TM77_PSYCH_UP)
+                                            | TMHM2(TM80_ROCK_SLIDE)
+                                            | TMHM2(TM84_POISON_JAB)
+                                            | TMHM2(TM85_DREAM_EATER)
+                                            | TMHM2(TM86_GRASS_KNOT)
+                                            | TMHM2(TM87_SWAGGER)
+                                            | TMHM2(TM88_SLEEP_TALK)
+                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM91_FLASH_CANNON)
+                                            | TMHM2(TM92_TRICK_ROOM)
+                                            | TMHM2(TM97_DARK_PULSE)
+                                            | TMHM2(TM100_ROCK_SMASH)),
 
     // [SPECIES_BURMY_SANDY_CLOAK]  = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER)
     //                                         | TMHM(TM17_PROTECT),

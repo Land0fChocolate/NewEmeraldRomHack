@@ -1734,6 +1734,9 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
         }
     }
     return FALSE;
+
+    u8 i;
+    u16 fieldMoveId = ScriptReadWord(ctx)
 }
 
 bool8 ScrCmd_addmoney(struct ScriptContext *ctx)
