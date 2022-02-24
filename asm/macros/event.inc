@@ -975,6 +975,14 @@
 	.2byte \index
 	.endm
 
+	@ Checks if at least one Pokemon in the player's party knows the specified (index) command. If so, VAR_RESULT is set to the
+	@ (zero-indexed) slot number of the first Pokemon that can use the command. If not, VAR_RESULT is set to PARTY_SIZE.
+	@ VAR_0x8004 is also set to this Pokemon's species.
+	.macro checkpartycommand index:req
+	.byte 0xc7
+	.2byte \index
+	.endm
+
 	@ Writes the name of the Pokemon at index species to the specified buffer.
 	.macro bufferspeciesname out:req, species:req
 	.byte 0x7d

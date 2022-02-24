@@ -1,5 +1,5 @@
 #define HIDDEN_COMMAND_LEARNSET(commands) {(u8)(commands)}
-#define HIDDEN_COMMAND(hc) (u8)
+#define HIDDEN_COMMAND(hc) (u8)(hc)
 
 // This table determines which TMs and HMs a species is capable of learning.
 // Each entry is a 64-bit bit array spread across two 32-bit values, with
@@ -9,1670 +9,1423 @@ const u8 gHiddenCommandLearnsets[][1] =
     [SPECIES_NONE]        = HIDDEN_COMMAND_LEARNSET(0),
 
     [SPECIES_BULBASAUR]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
                                             
 
     [SPECIES_IVYSAUR]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_VENUSAUR]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_CHARMANDER]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_CHARMELEON]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_CHARIZARD]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SQUIRTLE]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_SQUIRTLE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_WARTORTLE]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_WARTORTLE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_BLASTOISE]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_BLASTOISE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_CATERPIE]    = TMHM_LEARNSET(0),
+    [SPECIES_CATERPIE]    = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_METAPOD]     = TMHM_LEARNSET(0),
+    [SPECIES_METAPOD]     = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_BUTTERFREE]  = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_BUTTERFREE]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_WEEDLE]      = TMHM_LEARNSET(0),
+    [SPECIES_WEEDLE]      = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_KAKUNA]      = TMHM_LEARNSET(0),
+    [SPECIES_KAKUNA]      = HIDDEN_COMMAND_LEARNSET(0),
 
     [SPECIES_BEEDRILL]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_PIDGEY]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_PIDGEY]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_PIDGEOTTO]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_PIDGEOTTO]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_PIDGEOT]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_PIDGEOT]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
     [SPECIES_RATTATA]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_RATICATE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SPEAROW]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_SPEAROW]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_FEAROW]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_FEAROW]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_EKANS]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)),
+    [SPECIES_EKANS]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)),
 
-    [SPECIES_ARBOK]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)),
+    [SPECIES_ARBOK]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)),
 
-    [SPECIES_PIKACHU]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_PIKACHU]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_RAICHU]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_RAICHU]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_SANDSHREW]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_SANDSLASH]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_NIDORAN_F]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_NIDORINA]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_NIDOQUEEN]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_NIDORAN_M]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_NIDORINO]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_NIDOKING]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_CLEFAIRY]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_CLEFAIRY]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_CLEFABLE]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_CLEFABLE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_VULPIX]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_VULPIX]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_NINETALES]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_NINETALES]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_JIGGLYPUFF]  = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_JIGGLYPUFF]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_WIGGLYTUFF]  = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_WIGGLYTUFF]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_ZUBAT]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_ZUBAT]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_GOLBAT]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_GOLBAT]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
     [SPECIES_ODDISH]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_GLOOM]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_VILEPLUME]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_PARAS]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_PARASECT]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_VENONAT]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_VENONAT]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_VENOMOTH]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_VENOMOTH]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_DIGLETT]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_DUGTRIO]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_MEOWTH]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_PERSIAN]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_PSYDUCK]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_PSYDUCK]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_GOLDUCK]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_GOLDUCK]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_MANKEY]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MANKEY]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_PRIMEAPE]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_PRIMEAPE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_GROWLITHE]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_GROWLITHE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_ARCANINE]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_ARCANINE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_POLIWAG]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_POLIWAG]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_POLIWHIRL]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_POLIWHIRL]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_POLIWRATH]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_POLIWRATH]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_ABRA]        = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_ABRA]        = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_KADABRA]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_KADABRA]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_ALAKAZAM]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_ALAKAZAM]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_MACHOP]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MACHOP]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MACHOKE]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MACHOKE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MACHAMP]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MACHAMP]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_BELLSPROUT]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_WEEPINBELL]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_VICTREEBEL]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_TENTACOOL]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_TENTACRUEL]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_GEODUDE]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_GEODUDE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_GRAVELER]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_GRAVELER]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_GOLEM]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_GOLEM]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_PONYTA]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_PONYTA]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_RAPIDASH]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_RAPIDASH]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SLOWPOKE]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_SLOWPOKE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_SLOWBRO]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_SLOWBRO]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_MAGNEMITE]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_MAGNEMITE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_MAGNETON]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_MAGNETON]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_FARFETCHD]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
     [SPECIES_DODUO]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_DODRIO]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_DODRIO]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_SEEL]        = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_SEEL]        = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_DEWGONG]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_DEWGONG]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_GRIMER]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_GRIMER]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_MUK]         = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MUK]         = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SHELLDER]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_SHELLDER]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_CLOYSTER]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_CLOYSTER]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_GASTLY]      = HIDDEN_COMMAND_LEARNSET(0),
 
     [SPECIES_HAUNTER]     = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_GENGAR]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_GENGAR]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_ONIX]        = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_ONIX]        = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_DROWZEE]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_DROWZEE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_HYPNO]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_HYPNO]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_KRABBY]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_KINGLER]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_VOLTORB]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_VOLTORB]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_ELECTRODE]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_ELECTRODE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_EXEGGCUTE]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_EXEGGCUTE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_EXEGGUTOR]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_EXEGGUTOR]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_CUBONE]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_CUBONE]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MAROWAK]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MAROWAK]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_HITMONLEE]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_HITMONLEE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_HITMONCHAN]  = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_HITMONCHAN]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_LICKITUNG]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_KOFFING]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_KOFFING]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_WEEZING]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_WEEZING]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_RHYHORN]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_RHYHORN]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_RHYDON]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_CHANSEY]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_CHANSEY]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_TANGELA]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_KANGASKHAN]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_HORSEA]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_HORSEA]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_SEADRA]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_SEADRA]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_GOLDEEN]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_GOLDEEN]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_SEAKING]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_SEAKING]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_STARYU]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_STARYU]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_STARMIE]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_STARMIE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_MR_MIME]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_MR_MIME]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_SCYTHER]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_JYNX]        = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_JYNX]        = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_ELECTABUZZ]  = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_ELECTABUZZ]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MAGMAR]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MAGMAR]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_PINSIR]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_TAUROS]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_TAUROS]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MAGIKARP]    = TMHM_LEARNSET(0),
+    [SPECIES_MAGIKARP]    = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_GYARADOS]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_GYARADOS]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_LAPRAS]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_LAPRAS]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_DITTO]       = TMHM_LEARNSET(0),
+    [SPECIES_DITTO]       = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_EEVEE]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_EEVEE]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_VAPOREON]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_VAPOREON]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_JOLTEON]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_JOLTEON]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_FLAREON]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_FLAREON]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_PORYGON]     = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_OMANYTE]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_OMANYTE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_OMASTAR]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_OMASTAR]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_KABUTO]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_KABUTO]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_KABUTOPS]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_AERODACTYL]  = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_AERODACTYL]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SNORLAX]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_SNORLAX]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_ARTICUNO]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_ARTICUNO]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_ZAPDOS]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_ZAPDOS]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MOLTRES]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MOLTRES]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_DRATINI]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)),
+    [SPECIES_DRATINI]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)),
 
-    [SPECIES_DRAGONAIR]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)),
+    [SPECIES_DRAGONAIR]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)),
 
     [SPECIES_DRAGONITE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_MEWTWO]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MEWTWO]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_MEW]         = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_CHIKORITA]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_BAYLEEF]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_MEGANIUM]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_CYNDAQUIL]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)),
 
     [SPECIES_QUILAVA]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_TYPHLOSION]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_TOTODILE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_CROCONAW]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_FERALIGATR]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_SENTRET]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)),
 
     [SPECIES_FURRET]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_HOOTHOOT]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_NOCTOWL]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_NOCTOWL]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_LEDYBA]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_LEDYBA]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_LEDIAN]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_LEDIAN]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_SPINARAK]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_SPINARAK]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_ARIADOS]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_ARIADOS]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_CROBAT]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_CROBAT]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_CHINCHOU]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_CHINCHOU]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_LANTURN]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_LANTURN]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_PICHU]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_PICHU]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_CLEFFA]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_CLEFFA]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_IGGLYBUFF]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_IGGLYBUFF]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_TOGEPI]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_TOGEPI]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_TOGETIC]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_NATU]        = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_NATU]        = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_XATU]        = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_XATU]        = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_MAREEP]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_MAREEP]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_FLAAFFY]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_FLAAFFY]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_AMPHAROS]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_AMPHAROS]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_BELLOSSOM]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_MARILL]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_MARILL]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_AZUMARILL]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_AZUMARILL]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_SUDOWOODO]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_SUDOWOODO]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_POLITOED]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_POLITOED]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_HOPPIP]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_HOPPIP]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_SKIPLOOM]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_SKIPLOOM]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_JUMPLUFF]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_JUMPLUFF]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_AIPOM]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_AIPOM]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_SUNKERN]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_SUNFLORA]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_YANMA]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_YANMA]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_WOOPER]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_WOOPER]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_QUAGSIRE]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_QUAGSIRE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_ESPEON]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_UMBREON]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_MURKROW]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_SLOWKING]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_SLOWKING]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_MISDREAVUS]  = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_MISDREAVUS]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_UNOWN]       = HIDDEN_COMMAND_LEARNSET(0),
 
     [SPECIES_WOBBUFFET]   = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_GIRAFARIG]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_GIRAFARIG]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_PINECO]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_PINECO]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_FORRETRESS]  = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_FORRETRESS]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_DUNSPARCE]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_DUNSPARCE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_GLIGAR]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_STEELIX]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SNUBBULL]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_SNUBBULL]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_GRANBULL]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_GRANBULL]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_QWILFISH]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_QWILFISH]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_SCIZOR]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SHUCKLE]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_SHUCKLE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_HERACROSS]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_SNEASEL]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_TEDDIURSA]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_URSARING]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SLUGMA]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_SLUGMA]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MAGCARGO]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MAGCARGO]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SWINUB]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_SWINUB]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_PILOSWINE]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_PILOSWINE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_CORSOLA]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_CORSOLA]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_REMORAID]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_REMORAID]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_OCTILLERY]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_OCTILLERY]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_DELIBIRD]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_DELIBIRD]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_MANTINE]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_MANTINE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_SKARMORY]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_HOUNDOUR]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_HOUNDOUR]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_HOUNDOOM]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_HOUNDOOM]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_KINGDRA]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_KINGDRA]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_PHANPY]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_PHANPY]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_DONPHAN]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_DONPHAN]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_PORYGON2]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_PORYGON2]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_STANTLER]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_STANTLER]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_SMEARGLE]    = TMHM_LEARNSET(0),
+    [SPECIES_SMEARGLE]    = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_TYROGUE]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_TYROGUE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_HITMONTOP]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_HITMONTOP]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SMOOCHUM]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_SMOOCHUM]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_ELEKID]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_ELEKID]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MAGBY]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MAGBY]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MILTANK]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MILTANK]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_BLISSEY]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_BLISSEY]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_RAIKOU]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_ENTEI]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_SUICUNE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_LARVITAR]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_LARVITAR]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_PUPITAR]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_PUPITAR]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_TYRANITAR]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_LUGIA]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_LUGIA]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_HO_OH]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_HO_OH]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_CELEBI]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_TREECKO]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_GROVYLE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_SCEPTILE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_TORCHIC]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_COMBUSKEN]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_BLAZIKEN]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MUDKIP]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_MUDKIP]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_MARSHTOMP]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_MARSHTOMP]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_SWAMPERT]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_SWAMPERT]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_POOCHYENA]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_POOCHYENA]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MIGHTYENA]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MIGHTYENA]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_ZIGZAGOON]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_LINOONE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_WURMPLE]     = TMHM_LEARNSET(0),
+    [SPECIES_WURMPLE]     = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_SILCOON]     = TMHM_LEARNSET(0),
+    [SPECIES_SILCOON]     = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_BEAUTIFLY]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_BEAUTIFLY]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_CASCOON]     = TMHM_LEARNSET(0),
+    [SPECIES_CASCOON]     = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_DUSTOX]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_DUSTOX]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_LOTAD]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_LOTAD]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_LOMBRE]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_LOMBRE]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_LUDICOLO]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_LUDICOLO]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_SEEDOT]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_SEEDOT]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_NUZLEAF]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_SHIFTRY]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_TAILLOW]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_TAILLOW]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_SWELLOW]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_SWELLOW]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_WINGULL]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_WINGULL]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_PELIPPER]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)),
+    [SPECIES_PELIPPER]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)),
 
-    [SPECIES_RALTS]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_RALTS]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_KIRLIA]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_KIRLIA]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_GARDEVOIR]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_GARDEVOIR]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_SURSKIT]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_SURSKIT]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_MASQUERAIN]  = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_MASQUERAIN]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_SHROOMISH]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_SHROOMISH]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_BRELOOM]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_SLAKOTH]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_VIGOROTH]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_SLAKING]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_NINCADA]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_NINJASK]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_SHEDINJA]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_WHISMUR]     = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_LOUDRED]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_LOUDRED]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_EXPLOUD]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_EXPLOUD]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MAKUHITA]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MAKUHITA]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_HARIYAMA]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_HARIYAMA]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_AZURILL]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)),
+    [SPECIES_AZURILL]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)),
 
-    [SPECIES_NOSEPASS]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_NOSEPASS]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SKITTY]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_SKITTY]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_DELCATTY]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_DELCATTY]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_SABLEYE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MAWILE]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MAWILE]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_ARON]        = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_LAIRON]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_AGGRON]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MEDITITE]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MEDITITE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MEDICHAM]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MEDICHAM]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_ELECTRIKE]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_ELECTRIKE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_MANECTRIC]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_MANECTRIC]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_PLUSLE]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_PLUSLE]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_MINUN]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_MINUN]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_VOLBEAT]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_VOLBEAT]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_ILLUMISE]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_ILLUMISE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_ROSELIA]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_GULPIN]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_GULPIN]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SWALOT]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_SWALOT]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_CARVANHA]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_CARVANHA]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_SHARPEDO]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_SHARPEDO]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_WAILMER]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_WAILMER]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_WAILORD]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_WAILORD]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_NUMEL]       = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_NUMEL]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_CAMERUPT]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_CAMERUPT]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_TORKOAL]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_TORKOAL]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SPOINK]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_SPOINK]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_GRUMPIG]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_GRUMPIG]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_SPINDA]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_SPINDA]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_TRAPINCH]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_TRAPINCH]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_VIBRAVA]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_VIBRAVA]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_FLYGON]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_FLYGON]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_CACNEA]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_CACTURNE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_SWABLU]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_SWABLU]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
-    [SPECIES_ALTARIA]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_ALTARIA]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_ZANGOOSE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SEVIPER]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_SEVIPER]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_LUNATONE]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_LUNATONE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_SOLROCK]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_SOLROCK]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_BARBOACH]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_BARBOACH]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_WHISCASH]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_WHISCASH]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_CORPHISH]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_CRAWDAUNT]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_BALTOY]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_BALTOY]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_CLAYDOL]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_CLAYDOL]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_LILEEP]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_LILEEP]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_CRADILY]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_CRADILY]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_ANORITH]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_ARMALDO]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_FEEBAS]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_FEEBAS]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_MILOTIC]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_MILOTIC]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_CASTFORM]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_CASTFORM]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_KECLEON]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_SHUPPET]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_SHUPPET]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_BANETTE]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_BANETTE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_DUSKULL]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_DUSKULL]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_DUSCLOPS]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_DUSCLOPS]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_TROPIUS]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_CHIMECHO]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_CHIMECHO]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_ABSOL]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_WYNAUT]      = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_SNORUNT]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_SNORUNT]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_GLALIE]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_GLALIE]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_SPHEAL]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_SPHEAL]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_SEALEO]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_SEALEO]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_WALREIN]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_WALREIN]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_CLAMPERL]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_CLAMPERL]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_HUNTAIL]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_HUNTAIL]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_GOREBYSS]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_GOREBYSS]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_RELICANTH]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_RELICANTH]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_LUVDISC]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_LUVDISC]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_BAGON]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_SHELGON]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_SALAMENCE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_BELDUM]      = HIDDEN_COMMAND_LEARNSET(0),
 
     [SPECIES_METANG]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_METAGROSS]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_REGIROCK]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_REGIROCK]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_REGICE]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_REGICE]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_REGISTEEL]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_REGISTEEL]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_LATIAS]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)),
 
     [SPECIES_LATIOS]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)),
 
-    [SPECIES_KYOGRE]      = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_KYOGRE]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     [SPECIES_GROUDON]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_RAYQUAZA]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
-    [SPECIES_JIRACHI]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_JIRACHI]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_DEOXYS]      = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     // [SPECIES_TURTWIG]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
     //                                         | TMHM(TM09_BULLET_SEED)
@@ -2070,10 +1823,10 @@ const u8 gHiddenCommandLearnsets[][1] =
     //                                         TMHM2(TM68_GIGA_IMPACT)),
 
     [SPECIES_BUDEW]       = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_ROSERADE]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     // [SPECIES_CRANIDOS]    = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
     //                                         | TMHM(TM14_BLIZZARD)
@@ -2408,8 +2161,8 @@ const u8 gHiddenCommandLearnsets[][1] =
     //                                         TMHM2(TM68_GIGA_IMPACT)),
 
     [SPECIES_AMBIPOM]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     // [SPECIES_DRIFLOON]    = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
     //                                         | TMHM(TM04_CALM_MIND)
@@ -2505,11 +2258,9 @@ const u8 gHiddenCommandLearnsets[][1] =
     //                                         | TMHM(TM03_WATER_PULSE),
     //                                         TMHM2(TM68_GIGA_IMPACT)),
 
-    [SPECIES_MISMAGIUS]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_MISMAGIUS]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_HONCHKROW]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
+    [SPECIES_HONCHKROW]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)),
 
     // [SPECIES_GLAMEOW]     = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
     //                                         | TMHM(TM45_ATTRACT)
@@ -2565,8 +2316,7 @@ const u8 gHiddenCommandLearnsets[][1] =
     //                                         | TMHM(TM03_WATER_PULSE),
     //                                         TMHM2(TM68_GIGA_IMPACT)),
 
-    [SPECIES_CHINGLING]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_CHINGLING]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     // [SPECIES_STUNKY]      = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
     //                                         | TMHM(TM28_DIG)
@@ -2670,11 +2420,9 @@ const u8 gHiddenCommandLearnsets[][1] =
 
     [SPECIES_BONSLY]      = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_MIME_JR]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_MIME_JR]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
-    [SPECIES_HAPPINY]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_HAPPINY]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     // [SPECIES_CHATOT]      = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
     //                                         | TMHM(TM45_ATTRACT)
@@ -2794,10 +2542,9 @@ const u8 gHiddenCommandLearnsets[][1] =
     //                                         | TMHM(TM06_TOXIC),
     //                                         TMHM2(TM68_GIGA_IMPACT)),
 
-    [SPECIES_MUNCHLAX]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MUNCHLAX]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     // [SPECIES_RIOLU]       = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
     //                                         | TMHM(TM31_BRICK_BREAK)
@@ -3049,10 +2796,9 @@ const u8 gHiddenCommandLearnsets[][1] =
     //                                         | TMHM(TM03_WATER_PULSE),
     //                                         TMHM2(TM68_GIGA_IMPACT)),
 
-    [SPECIES_MANTYKE]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_MANTYKE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
 
     // [SPECIES_SNOVER]      = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
     //                                         | TMHM(TM14_BLIZZARD)
@@ -3108,81 +2854,71 @@ const u8 gHiddenCommandLearnsets[][1] =
     //                                         TMHM2(TM68_GIGA_IMPACT)),
 
     [SPECIES_WEAVILE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MAGNEZONE]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_MAGNEZONE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_LICKILICKY]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_RHYPERIOR]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_TANGROWTH]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_ELECTIVIRE]  = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_ELECTIVIRE]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MAGMORTAR]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MAGMORTAR]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_TOGEKISS]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_TOGEKISS]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_YANMEGA]     = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_YANMEGA]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_LEAFEON]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_GLACEON]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_GLISCOR]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_MAMOSWINE]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_MAMOSWINE]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_PORYGON_Z]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_PORYGON_Z]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     [SPECIES_GALLADE]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_PROBOPASS]   = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_PROBOPASS]   = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_DUSKNOIR]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+    [SPECIES_DUSKNOIR]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
-    [SPECIES_FROSLASS]    = HIDDEN_COMMAND_LEARNSET(
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
+    [SPECIES_FROSLASS]    = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)),
 
     // [SPECIES_ROTOM]       = TMHM_LEARNSET(TMHM(TM32_DOUBLE_TEAM)
     //                                         | TMHM(TM42_FACADE)
@@ -8069,8 +7805,8 @@ const u8 gHiddenCommandLearnsets[][1] =
     //                                         TMHM2(TM68_GIGA_IMPACT)),
 
     [SPECIES_SYLVEON]     = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                            | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     // [SPECIES_HAWLUCHA]    = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
     //                                         | TMHM(TM45_ATTRACT)
@@ -11262,8 +10998,6 @@ const u8 gHiddenCommandLearnsets[][1] =
     //                                                | TMHM(TM29_PSYCHIC)
     //                                                | TMHM(TM33_REFLECT)
     //                                                | TMHM(TM44_REST)
-    
-    
     //                                                | TMHM(TM24_THUNDERBOLT)
     //                                                | TMHM(TM25_THUNDER)
     //                                                | TMHM(TM06_TOXIC),
@@ -11271,7 +11005,6 @@ const u8 gHiddenCommandLearnsets[][1] =
 
     // [SPECIES_SANDSHREW_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
     //                                                | TMHM(TM31_BRICK_BREAK)
-    
     //                                                | TMHM(TM28_DIG)
     //                                                | TMHM(TM26_EARTHQUAKE)
     //                                                | TMHM(TM42_FACADE)
@@ -11279,14 +11012,11 @@ const u8 gHiddenCommandLearnsets[][1] =
     //                                                | TMHM(TM23_IRON_TAIL)
     //                                                | TMHM(TM17_PROTECT)
     //                                                | TMHM(TM44_REST)
-    
-    
     //                                                | TMHM(TM06_TOXIC),
     //                                                TMHM2(TM68_GIGA_IMPACT)),
 
     // [SPECIES_SANDSLASH_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
     //                                                | TMHM(TM31_BRICK_BREAK)
-    
     //                                                | TMHM(TM28_DIG)
     //                                                | TMHM(TM26_EARTHQUAKE)
     //                                                | TMHM(TM42_FACADE)
@@ -11295,28 +11025,12 @@ const u8 gHiddenCommandLearnsets[][1] =
     //                                                | TMHM(TM23_IRON_TAIL)
     //                                                | TMHM(TM17_PROTECT)
     //                                                | TMHM(TM44_REST)
-    
-    
     //                                                | TMHM(TM06_TOXIC),
     //                                                TMHM2(TM68_GIGA_IMPACT)),
 
-    [SPECIES_VULPIX_ALOLAN]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_VULPIX_ALOLAN]  = HIDDEN_COMMAND_LEARNSET(0),
 
-    [SPECIES_NINETALES_ALOLAN]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+    [SPECIES_NINETALES_ALOLAN]  = HIDDEN_COMMAND_LEARNSET(0),
 
     // [SPECIES_DIGLETT_ALOLAN]  = TMHM_LEARNSET(TMHM(HM01_CUT)
     //                                                | TMHM(TM28_DIG)
@@ -12163,31 +11877,19 @@ const u8 gHiddenCommandLearnsets[][1] =
     [SPECIES_UNOWN_QMARK] = HIDDEN_COMMAND_LEARNSET(0),
 
     [SPECIES_DEOXYS_ATTACK]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_DEOXYS_DEFENSE]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     [SPECIES_DEOXYS_SPEED]  = HIDDEN_COMMAND_LEARNSET(HIDDEN_COMMAND(HIDDEN_COMMAND_CUT)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLY)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_SURF)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_WATERFALL)
-                                            HIDDEN_COMMAND(HIDDEN_COMMAND_DIVE)),
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_STRENGTH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_FLASH)
+                                           | HIDDEN_COMMAND(HIDDEN_COMMAND_ROCK_SMASH)),
 
     // [SPECIES_BURMY_SANDY_CLOAK]  = TMHM_LEARNSET(TMHM(TM10_HIDDEN_POWER)
     //                                         | TMHM(TM17_PROTECT),
@@ -12202,7 +11904,6 @@ const u8 gHiddenCommandLearnsets[][1] =
     //                                            | TMHM(TM32_DOUBLE_TEAM)
     //                                            | TMHM(TM26_EARTHQUAKE)
     //                                            | TMHM(TM42_FACADE)
-
     //                                            | TMHM(TM21_FRUSTRATION)
     //                                            | TMHM(TM10_HIDDEN_POWER)
     //                                            | TMHM(TM15_HYPER_BEAM)
@@ -12225,7 +11926,6 @@ const u8 gHiddenCommandLearnsets[][1] =
     // [SPECIES_WORMADAM_TRASH_CLOAK]  = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
     //                                            | TMHM(TM32_DOUBLE_TEAM)
     //                                            | TMHM(TM42_FACADE)
-
     //                                            | TMHM(TM21_FRUSTRATION)
     //                                            | TMHM(TM10_HIDDEN_POWER)
     //                                            | TMHM(TM15_HYPER_BEAM)

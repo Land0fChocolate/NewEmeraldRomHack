@@ -30,6 +30,7 @@
 #include "mystery_event_script.h"
 #include "palette.h"
 #include "party_menu.h"
+#include "pokemon.h"
 #include "pokemon_storage_system.h"
 #include "random.h"
 #include "overworld.h"
@@ -1734,9 +1735,27 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
         }
     }
     return FALSE;
+}
 
+bool8 ScrCmd_checkpartycommand(struct ScriptContext *ctx)
+{
     u8 i;
-    u16 fieldMoveId = ScriptReadWord(ctx)
+    u16 commandId = ScriptReadHalfword(ctx);
+
+    gSpecialVar_Result = PARTY_SIZE;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+        if (!species)
+            break;
+        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && CanSpeciesUseHiddenCommand(species, commandId))
+        {
+            gSpecialVar_Result = i;
+            gSpecialVar_0x8004 = species;
+            break;
+        }
+    }
+    return FALSE;
 }
 
 bool8 ScrCmd_addmoney(struct ScriptContext *ctx)

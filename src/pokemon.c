@@ -1843,6 +1843,7 @@ const s8 gNatureStatTable[NUM_NATURES][NUM_NATURE_STATS] =
 };
 
 #include "data/pokemon/tmhm_learnsets.h"
+#include "data/pokemon/hidden_command_learnsets.h"
 #include "data/pokemon/trainer_class_lookups.h"
 #include "data/pokemon/experience_tables.h"
 #include "data/pokemon/base_stats.h"
@@ -7141,6 +7142,20 @@ u32 CanSpeciesLearnTMHM(u16 species, u8 tm)
         u32 mask = 1 << (tm - 96);
         return gTMHMLearnsets[species][3] & mask;
     }
+}
+
+u8 CanSpeciesUseHiddenCommand(u16 species, u8 hc)
+{
+     if (species == SPECIES_EGG)
+    {
+        return 0;
+    }
+    else if (hc < 8)
+    {
+        return gHiddenCommandLearnsets[species][0] & hc;
+    }
+
+    return 0;
 }
 
 u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)
