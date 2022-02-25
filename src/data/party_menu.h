@@ -838,6 +838,11 @@ static const u16 sFieldMoves[] =
     MOVE_DIG, MOVE_SECRET_POWER, MOVE_MILK_DRINK, MOVE_SOFT_BOILED, MOVE_SWEET_SCENT, FIELD_MOVE_TERMINATOR
 };
 
+static const u16 sMenuHiddenCommands[] =
+{
+    HIDDEN_COMMAND_FLASH, HIDDEN_COMMAND_FLY
+};
+
 struct
 {
     bool8 (*fieldMoveFunc)(void);

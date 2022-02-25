@@ -2536,9 +2536,22 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 i, j;
+    bool8 hasFlash, hasFly;
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
+
+    if (CanSpeciesUseHiddenCommand(GetMonData(&mons[slotId], MON_DATA_SPECIES, 0), HIDDEN_COMMAND_FLY) && FLAG_BADGE06_GET)
+    {
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLY);
+        hasFly = TRUE;
+    }
+
+    if (CanSpeciesUseHiddenCommand(GetMonData(&mons[slotId], MON_DATA_SPECIES, 0), HIDDEN_COMMAND_FLASH) && FLAG_BADGE02_GET)
+    {
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLASH);
+        hasFlash = TRUE;
+    }
 
     // Add field moves to action list
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -2547,6 +2560,10 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         {
             if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
+                if ((sFieldMoves[j] == MOVE_FLASH) && hasFlash)
+                    break;
+                if ((sFieldMoves[j] == MOVE_FLY) && hasFly)
+                    break;
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                 break;
             }
