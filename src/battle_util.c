@@ -4291,7 +4291,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
     u32 speciesAtk, speciesDef;
     u32 pidAtk, pidDef;
     u32 moveType, move;
-    u16 abilityRating = -1, i, j, x, y;
+    u16 abilityRating = 0, i, j, x, y;
 
     if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
         return 0;
@@ -6280,7 +6280,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
 
                 if (effect)
                 {
-                    gLastUsedAbility = ABILITY_TRACE;
+                    //gLastUsedAbility = ABILITY_TRACE;
                     if (caseID == ABILITYEFFECT_TRACE1)
                     {
                         BattleScriptPushCursorAndCallback(BattleScript_TraceActivatesEnd3);
@@ -6301,7 +6301,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     battler = gBattlerAbility = gBattleScripting.battler = i;
 
                     PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gActiveBattler, gBattlerPartyIndexes[gActiveBattler])
-                    PREPARE_ABILITY_BUFFER(gBattleTextBuff2, gLastUsedAbility)
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff2, tracedAbility)
                     break;
                 }
             }
@@ -10233,7 +10233,7 @@ bool32 SetIllusionMon(struct Pokemon *mon, u32 battlerId)
     u16 *abilities = GetMonAbilities(mon);
 
     gBattleStruct->illusion[battlerId].set = 1;
-    if (HasAbility(ABILITY_ILLUSION, abilities))
+    if (!HasAbility(ABILITY_ILLUSION, abilities))
         return FALSE;
 
     if (GetBattlerSide(battlerId) == B_SIDE_PLAYER)

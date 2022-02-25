@@ -7150,12 +7150,8 @@ u8 CanSpeciesUseHiddenCommand(u16 species, u8 hc)
     {
         return 0;
     }
-    else if (hc < 8)
-    {
-        return gHiddenCommandLearnsets[species][0] & hc;
-    }
-
-    return 0;
+ 
+    return gHiddenCommandLearnsets[species][0] & hc;
 }
 
 u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)

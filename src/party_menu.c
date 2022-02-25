@@ -2541,13 +2541,15 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
-    if (CanSpeciesUseHiddenCommand(GetMonData(&mons[slotId], MON_DATA_SPECIES, 0), HIDDEN_COMMAND_FLY) && FLAG_BADGE06_GET)
+    if (CanSpeciesUseHiddenCommand(GetMonData(mons[slotId], MON_DATA_SPECIES, 0), HIDDEN_COMMAND_FLY)
+        && FLAG_BADGE06_GET)
     {
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLY);
         hasFly = TRUE;
     }
 
-    if (CanSpeciesUseHiddenCommand(GetMonData(&mons[slotId], MON_DATA_SPECIES, 0), HIDDEN_COMMAND_FLASH) && FLAG_BADGE02_GET)
+    if (CanSpeciesUseHiddenCommand(GetMonData(mons[slotId], MON_DATA_SPECIES, 0), HIDDEN_COMMAND_FLASH)
+        && FLAG_BADGE02_GET)
     {
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLASH);
         hasFlash = TRUE;

@@ -155,8 +155,9 @@ static const u8 sHugePowerDescription[] = _(
 	"Doubles attack stat.");
 
 static const u8 sPoisonPointDescription[] = _(
-	"Attackers who make contact\n"
-	"may become poisoned.");
+	"Attackers who make\n"
+	"contact may become\n"
+	"poisoned.");
 
 static const u8 sInnerFocusDescription[] = _(
 	"Grants flinch immunity.");

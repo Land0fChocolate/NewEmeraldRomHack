@@ -4233,7 +4233,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Billy[] = {
     {
     .iv = 0,
     .lvl = 5,
-    .species = SPECIES_SWELLOW,
+    .species = SPECIES_TAILLOW,
     },
     {
     .iv = 0,
