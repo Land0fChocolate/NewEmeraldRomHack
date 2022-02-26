@@ -274,7 +274,6 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectPowerSwap               @ EFFECT_POWER_SWAP
 	.4byte BattleScript_EffectGuardSwap               @ EFFECT_GUARD_SWAP
 	.4byte BattleScript_EffectHeartSwap               @ EFFECT_HEART_SWAP
-	.4byte BattleScript_HeartSwapAbilityActivates     @ EFFECT_HEART_SWAP
 	.4byte BattleScript_EffectPowerSplit              @ EFFECT_POWER_SPLIT
 	.4byte BattleScript_EffectGuardSplit              @ EFFECT_GUARD_SPLIT
 	.4byte BattleScript_EffectStickyWeb               @ EFFECT_STICKY_WEB
@@ -405,8 +404,8 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectClangorousSoul          @ EFFECT_CLANGOROUS_SOUL
 	.4byte BattleScript_EffectHit                     @ EFFECT_BOLT_BEAK
 	.4byte BattleScript_EffectWarDance                @ EFFECT_WAR_DANCE
-	.4byte BattleScript_EffectHit                     @ EFFECT_FLINT_BLADE
 	.4byte BattleScript_EffectSerpentDance            @ EFFECT_SERPENT_DANCE
+	.4byte BattleScript_HeartSwapAbilityActivates     @ EFFECT_HEART_SWAP @ TODO: Likely bugged. Remake.
 
 BattleScript_EffectShellSideArm:
 	shellsidearmcheck
