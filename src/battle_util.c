@@ -2784,14 +2784,6 @@ s32 GetDrainedBigRootHp(u32 battler, s32 hp)
 {
     if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_BIG_ROOT)
         hp = (hp * 1300) / 1000;
-    if (hp == 0)
-        hp = 1;
-
-    return hp * -1;
-}
-
-s32 GetDrainedHematophagyHp(u32 battler, s32 hp)
-{
     if (HasAbility(ABILITY_HEMATOPHAGY, GetBattlerAbilities(battler)))
         hp = (hp * 1500) / 1000;
     if (hp == 0)
