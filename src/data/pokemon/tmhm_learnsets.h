@@ -5,7 +5,7 @@
 // This table determines which TMs and HMs a species is capable of learning.
 // The original has each entry being a 64-bit bit array spread across two 32-bit values, with
 // each bit corresponding to a TM or HM.
-// The new table supports four 32-bit values, so up to 128 TMs or HMs can be assigned.
+// The new table supports four 32-bit values, so up to 128 TMs can be assigned.
 const u32 gTMHMLearnsets[][4] =
 {
     [SPECIES_NONE]        = TMHM_LEARNSET(0, 0),

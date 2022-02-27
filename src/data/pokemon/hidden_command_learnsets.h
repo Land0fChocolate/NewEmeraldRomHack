@@ -1,10 +1,9 @@
-#define HIDDEN_COMMAND_LEARNSET(commands) {(u8)(commands)}
-#define HIDDEN_COMMAND(hc) (u8)(hc)
+#define HIDDEN_COMMAND_LEARNSET(commands) {(u16)(commands)}
+#define HIDDEN_COMMAND(hc) (u16)(hc)
 
-// This table determines which TMs and HMs a species is capable of learning.
-// Each entry is a 64-bit bit array spread across two 32-bit values, with
-// each bit corresponding to a TM or HM.
-const u8 gHiddenCommandLearnsets[][1] =
+// This table determines which Hidden Commands a species is capable of using.
+// Each entry is a 16-bit bit array, with each bit corresponding to a Hidden Command.
+const u16 gHiddenCommandLearnsets[][1] =
 {
     [SPECIES_NONE]        = HIDDEN_COMMAND_LEARNSET(0),
 

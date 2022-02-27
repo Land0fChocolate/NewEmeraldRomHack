@@ -7144,13 +7144,11 @@ u32 CanSpeciesLearnTMHM(u16 species, u8 tm)
     }
 }
 
-u8 CanSpeciesUseHiddenCommand(u16 species, u8 hc)
+u16 CanSpeciesUseHiddenCommand(u16 species, u16 hc)
 {
      if (species == SPECIES_EGG)
-    {
         return 0;
-    }
- 
+    
     return gHiddenCommandLearnsets[species][0] & hc;
 }
 

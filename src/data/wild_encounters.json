@@ -1953,7 +1953,7 @@
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_ABRA"
+                "species": "SPECIES_MEDITITE"
               },
               {
                 "min_level": 10,
@@ -2022,7 +2022,7 @@
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_ABRA"
+                "species": "SPECIES_MEDITITE"
               },
               {
                 "min_level": 10,
@@ -2421,7 +2421,7 @@
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_ABRA"
+                "species": "SPECIES_MEDITITE"
               },
               {
                 "min_level": 10,
@@ -4579,7 +4579,7 @@
               {
                 "min_level": 8,
                 "max_level": 8,
-                "species": "SPECIES_ABRA"
+                "species": "SPECIES_MEDITITE"
               },
               {
                 "min_level": 10,

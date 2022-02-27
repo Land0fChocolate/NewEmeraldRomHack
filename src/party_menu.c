@@ -2537,19 +2537,20 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 i, j;
     bool8 hasFlash, hasFly;
+    bool16 shouldUseCommand;
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
-    if (CanSpeciesUseHiddenCommand(GetMonData(mons[slotId], MON_DATA_SPECIES, 0), HIDDEN_COMMAND_FLY)
-        && FLAG_BADGE06_GET)
+    shouldUseCommand = CanSpeciesUseHiddenCommand(GetMonData(mons[slotId], MON_DATA_SPECIES, 0), HIDDEN_COMMAND_FLY);
+    if (shouldUseCommand && FLAG_BADGE06_GET)
     {
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLY);
         hasFly = TRUE;
     }
 
-    if (CanSpeciesUseHiddenCommand(GetMonData(mons[slotId], MON_DATA_SPECIES, 0), HIDDEN_COMMAND_FLASH)
-        && FLAG_BADGE02_GET)
+    shouldUseCommand = CanSpeciesUseHiddenCommand(GetMonData(mons[slotId], MON_DATA_SPECIES, 0), HIDDEN_COMMAND_FLASH);
+    if (shouldUseCommand && FLAG_BADGE02_GET)
     {
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLASH);
         hasFlash = TRUE;
