@@ -1580,8 +1580,6 @@ bool8 JumpIfMoveAffectedByProtect(u16 move)
 
 static bool32 AccuracyCalcHelper(u16 move)
 {
-    u16 *abilities = GetBattlerAbilities(gBattlerAttacker);
-
     if (gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
     {
         JumpIfMoveFailed(7, move);
@@ -1594,12 +1592,10 @@ static bool32 AccuracyCalcHelper(u16 move)
         JumpIfMoveFailed(7, move);
         return TRUE;
     }
-    else if (HasAbility(ABILITY_NO_GUARD, abilities))
+    else if (HasAbility(ABILITY_NO_GUARD, GetBattlerAbilities(gBattlerAttacker))
+        || (HasAbility(ABILITY_NO_GUARD, GetBattlerAbilities(gBattlerTarget))))
     {
-        return TRUE;
-    }
-    else if (HasAbility(ABILITY_NO_GUARD, abilities))
-    {
+        JumpIfMoveFailed(7, move);
         return TRUE;
     }
 
@@ -10757,8 +10753,8 @@ static void Cmd_tryKO(void)
     {
         if ((((gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS)
                 && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
-            || HasAbility(ABILITY_NO_GUARD, GetBattlerAbilities(gBattlerAttacker))
-            || HasAbility(ABILITY_NO_GUARD, GetBattlerAbilities(gBattlerTarget)))
+            /*|| HasAbility(ABILITY_NO_GUARD, GetBattlerAbilities(gBattlerAttacker))
+            || HasAbility(ABILITY_NO_GUARD, GetBattlerAbilities(gBattlerTarget))*/)
             && gBattleMons[gBattlerAttacker].level >= gBattleMons[gBattlerTarget].level)
         {
             lands = TRUE;

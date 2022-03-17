@@ -7090,6 +7090,11 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
 u32 CanMonLearnTMHM(struct Pokemon *mon, u8 tm)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES2, 0);
+    return CanSpeciesLearnTMHM(species, tm);
+}
+
+u32 CanSpeciesLearnTMHM(u16 species, u8 tm)
+{
     if (species == SPECIES_EGG)
     {
         return 0;
@@ -7113,43 +7118,31 @@ u32 CanMonLearnTMHM(struct Pokemon *mon, u8 tm)
     {
         u32 mask = 1 << (tm - 96);
         return gTMHMLearnsets[species][3] & mask;
-    }   
-}
-
-u32 CanSpeciesLearnTMHM(u16 species, u8 tm)
-{
-     if (species == SPECIES_EGG)
-    {
-        return 0;
-    }
-    else if (tm < 32)
-    {
-        u32 mask = 1 << tm;
-        return gTMHMLearnsets[species][0] & mask;
-    }
-    else if (tm < 64)
-    {
-        u32 mask = 1 << (tm - 32);
-        return gTMHMLearnsets[species][1] & mask;
-    }
-    else if (tm < 96)
-    {
-        u32 mask = 1 << (tm - 64);
-        return gTMHMLearnsets[species][2] & mask;
-    }
-    else
-    {
-        u32 mask = 1 << (tm - 96);
-        return gTMHMLearnsets[species][3] & mask;
     }
 }
 
-u16 CanSpeciesUseHiddenCommand(u16 species, u16 hc)
+u16 CommandToTMHM(u16 commandId)
 {
-     if (species == SPECIES_EGG)
-        return 0;
-    
-    return gHiddenCommandLearnsets[species][0] & hc;
+    switch (commandId)
+    {
+        case HIDDEN_COMMAND_CUT:
+            return ITEM_HM01;
+        case HIDDEN_COMMAND_FLY:
+            return ITEM_HM02;
+        case HIDDEN_COMMAND_SURF:
+            return ITEM_HM03;
+        case HIDDEN_COMMAND_STRENGTH:
+            return ITEM_HM04;
+        case HIDDEN_COMMAND_FLASH:
+            return ITEM_HM05;
+        case HIDDEN_COMMAND_ROCK_SMASH:
+            return ITEM_HM06;
+        case HIDDEN_COMMAND_WATERFALL:
+            return ITEM_HM07;
+        case HIDDEN_COMMAND_DIVE:
+            return ITEM_HM08;
+    }
+    return 0;
 }
 
 u8 GetMoveRelearnerMoves(struct Pokemon *mon, u16 *moves)

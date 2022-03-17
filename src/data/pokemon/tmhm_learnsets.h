@@ -8486,7 +8486,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)),
+                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(HM01_CUT)),
 
     [SPECIES_COMBUSKEN]   = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
                                             | TMHM(TM45_ATTRACT)
@@ -8746,7 +8747,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)),
+                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(HM01_CUT)),
 
     [SPECIES_LINOONE]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
                                             | TMHM(TM14_BLIZZARD)
@@ -9243,7 +9245,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
-                                            | TMHM2(TM99_DAZZLING_GLEAM)),
+                                            | TMHM2(TM99_DAZZLING_GLEAM)
+                                            | TMHM2(HM05_FLASH)),
 
     [SPECIES_GARDEVOIR]   = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
                                             | TMHM(TM04_CALM_MIND)
@@ -9310,7 +9313,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)),
+                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(HM05_FLASH)),
 
     [SPECIES_MASQUERAIN]  = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
                                             | TMHM(TM45_ATTRACT)
@@ -13204,7 +13208,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM99_DAZZLING_GLEAM)),
+                                            | TMHM2(TM99_DAZZLING_GLEAM)
+                                            | TMHM2(HM01_CUT)
+                                            | TMHM2(HM05_FLASH)),
 
     [SPECIES_ROSERADE]    = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
                                             | TMHM(TM09_BULLET_SEED)

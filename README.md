@@ -32,7 +32,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- Changes to level up and TM learnsets of some Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
 - Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko line has its Attack and Special Attack swapped.
-- HMs have been removed and replaced with Hidden Commands. These work like HMs, except that the Pokemon doesn't need to learn the move to use it. Only the relevant badge and a compatible Pokemon species is required to traverse obstacles.
+- HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species is required to traverse obstacles.
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.
 - TMs have infinite use.
@@ -129,3 +129,4 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Xavion3
 - GriffinR
 - kleeenexfeu
+- Citrus Bolt

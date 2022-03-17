@@ -50,6 +50,7 @@
 #include "tv.h"
 #include "window.h"
 #include "constants/event_objects.h"
+#include "constants/items.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(void);
@@ -1740,8 +1741,10 @@ bool8 ScrCmd_checkpartymove(struct ScriptContext *ctx)
 bool8 ScrCmd_checkpartycommand(struct ScriptContext *ctx)
 {
     u8 i;
-    u16 commandId = ScriptReadHalfword(ctx);
-    bool16 shouldUseCommand;
+    u16 commandId = ScriptReadHalfword(ctx), tmhm;
+    u32 canUseCommand;
+
+    tmhm = CommandToTMHM(commandId);
 
     gSpecialVar_Result = PARTY_SIZE;
     for (i = 0; i < PARTY_SIZE; i++)
@@ -1750,8 +1753,8 @@ bool8 ScrCmd_checkpartycommand(struct ScriptContext *ctx)
         if (!species)
             break;
 
-        shouldUseCommand = CanSpeciesUseHiddenCommand(species, commandId);
-        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && shouldUseCommand)
+        canUseCommand = CanSpeciesLearnTMHM(species, tmhm - ITEM_TM01 + 1);
+        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && canUseCommand)
         {
             gSpecialVar_Result = i;
             gSpecialVar_0x8004 = species;

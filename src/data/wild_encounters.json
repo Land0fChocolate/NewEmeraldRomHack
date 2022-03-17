@@ -431,7 +431,7 @@
               {
                 "min_level": 3,
                 "max_level": 5,
-                "species": "SPECIES_CHINGLING"
+                "species": "SPECIES_ZIGZAGOON"
               },
               {
                 "min_level": 5,
@@ -1012,7 +1012,7 @@
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_MARILL"
+                "species": "SPECIES_CHINGLING"
               },
               {
                 "min_level": 15,
@@ -1931,13 +1931,13 @@
                 "species": "SPECIES_ZUBAT"
               },
               {
-                "min_level": 6,
-                "max_level": 8,
+                "min_level": 7,
+                "max_level": 9,
                 "species": "SPECIES_SPHEAL"
               },
               {
-                "min_level": 6,
-                "max_level": 7,
+                "min_level": 7,
+                "max_level": 8,
                 "species": "SPECIES_MAKUHITA"
               },
               {
@@ -1961,8 +1961,8 @@
                 "species": "SPECIES_MAKUHITA"
               },
               {
-                "min_level": 6,
-                "max_level": 9,
+                "min_level": 7,
+                "max_level": 10,
                 "species": "SPECIES_MEDITITE"
               },
               {
@@ -1976,8 +1976,8 @@
                 "species": "SPECIES_GEODUDE"
               },
               {
-                "min_level": 6,
-                "max_level": 6,
+                "min_level": 10,
+                "max_level": 10,
                 "species": "SPECIES_GEODUDE"
               },
               {
