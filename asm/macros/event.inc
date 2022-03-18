@@ -1452,12 +1452,12 @@
 	.2byte \box
 	.endm
 
-	@ Sets the color of the text in standard message boxes. 0x00 produces blue (male) text, 0x01 produces red (female) text, 
-	@ 0xFF resets the color to the default for the current OW's gender, and all other values produce black text.
-	@ Used only in FireRed/LeafGreen, does nothing in Emerald.
-	.macro textcolor color:req
+	@ Checks if at least one Pokemon in the player's party knows the specified (index) command. If so, VAR_RESULT is set to the
+	@ (zero-indexed) slot number of the first Pokemon that can use the command. If not, VAR_RESULT is set to PARTY_SIZE.
+	@ VAR_0x8004 is also set to this Pokemon's species.
+	.macro checkpartycommand index:req
 	.byte 0xc7
-	.byte \color
+	.2byte \index
 	.endm
 
 	@ The exact purpose of this command is unknown, but it is related to the blue help-text box that appears on the bottom 

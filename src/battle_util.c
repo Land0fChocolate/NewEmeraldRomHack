@@ -2784,14 +2784,6 @@ s32 GetDrainedBigRootHp(u32 battler, s32 hp)
 {
     if (GetBattlerHoldEffect(battler, TRUE) == HOLD_EFFECT_BIG_ROOT)
         hp = (hp * 1300) / 1000;
-    if (hp == 0)
-        hp = 1;
-
-    return hp * -1;
-}
-
-s32 GetDrainedHematophagyHp(u32 battler, s32 hp)
-{
     if (HasAbility(ABILITY_HEMATOPHAGY, GetBattlerAbilities(battler)))
         hp = (hp * 1500) / 1000;
     if (hp == 0)
@@ -4291,7 +4283,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
     u32 speciesAtk, speciesDef;
     u32 pidAtk, pidDef;
     u32 moveType, move;
-    u16 abilityRating = -1, i, j, x, y;
+    u16 abilityRating = 0, i, j, x, y;
 
     if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
         return 0;
@@ -4308,8 +4300,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
     if (special)
     {
         gLastUsedAbilities[0] = special;
-        gLastUsedAbilities[1] = ABILITY_NONE;
-        gLastUsedAbilities[2] = ABILITY_NONE;
+        gLastUsedAbilities[1] = gLastUsedAbilities[2] = ABILITY_NONE;
     }
     else
         memcpy(gLastUsedAbilities, GetBattlerAbilities(battler), sizeof(gLastUsedAbilities));
@@ -5155,7 +5146,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
             }
         }
         break;
-    case ABILITYEFFECT_MOVES_BLOCK: // 2 //continue from here
+    case ABILITYEFFECT_MOVES_BLOCK: // 2
         if ((HasAbility(ABILITY_SOUNDPROOF, gLastUsedAbilities) && gBattleMoves[move].flags & FLAG_SOUND && !(gBattleMoves[move].target & MOVE_TARGET_USER))
             || (HasAbility(ABILITY_BULLETPROOF, gLastUsedAbilities) && gBattleMoves[move].flags & FLAG_BALLISTIC))
         {
@@ -5205,38 +5196,52 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 {
                     case ABILITY_VOLT_ABSORB:
                         if (moveType == TYPE_ELECTRIC)
+                        {
                             gLastUsedAbility = ABILITY_VOLT_ABSORB;
                             effect = 1;
+                        }
                         break;
                     case ABILITY_WATER_ABSORB:
                         if (moveType == TYPE_WATER)
+                        {
                             gLastUsedAbility = ABILITY_WATER_ABSORB;
                             effect = 1;
+                        }
                         break;
                     case ABILITY_DRY_SKIN:
                         if (moveType == TYPE_WATER)
+                        {
                             gLastUsedAbility = ABILITY_DRY_SKIN;
                             effect = 1;
+                        }
                         break;
                     case ABILITY_MOTOR_DRIVE:
                         if (moveType == TYPE_ELECTRIC)
+                        {
                             gLastUsedAbility = ABILITY_MOTOR_DRIVE;
                             effect = 2, statId = STAT_SPEED;
+                        }
                         break;
                     case ABILITY_LIGHTNING_ROD:
                         if (moveType == TYPE_ELECTRIC)
+                        {
                             gLastUsedAbility = ABILITY_LIGHTNING_ROD;
                             effect = 2, statId = STAT_SPATK;
+                        }
                         break;
                     case ABILITY_STORM_DRAIN:
                         if (moveType == TYPE_WATER)
+                        {
                             gLastUsedAbility = ABILITY_STORM_DRAIN;
                             effect = 2, statId = STAT_SPATK;
+                        }
                         break;
                     case ABILITY_SAP_SIPPER:
                         if (moveType == TYPE_GRASS)
+                        {
                             gLastUsedAbility = ABILITY_SAP_SIPPER;
                             effect = 2, statId = STAT_ATK;
+                        }
                         break;
                     case ABILITY_FLASH_FIRE:
                         if (moveType == TYPE_FIRE && !((gBattleMons[battler].status1 & STATUS1_FREEZE) && B_FLASH_FIRE_FROZEN <= GEN_4))
@@ -5262,9 +5267,9 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                                     gBattlescriptCurrInstr = BattleScript_FlashFireBoost_PPLoss;
     
                             effect = 3;
+                            }
                         }
-                    }
-                    break;
+                        break;
                 }
             }
 
@@ -6280,7 +6285,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
 
                 if (effect)
                 {
-                    gLastUsedAbility = ABILITY_TRACE;
+                    //gLastUsedAbility = ABILITY_TRACE;
                     if (caseID == ABILITYEFFECT_TRACE1)
                     {
                         BattleScriptPushCursorAndCallback(BattleScript_TraceActivatesEnd3);
@@ -6301,7 +6306,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     battler = gBattlerAbility = gBattleScripting.battler = i;
 
                     PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gActiveBattler, gBattlerPartyIndexes[gActiveBattler])
-                    PREPARE_ABILITY_BUFFER(gBattleTextBuff2, gLastUsedAbility)
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff2, tracedAbility)
                     break;
                 }
             }
@@ -10233,7 +10238,7 @@ bool32 SetIllusionMon(struct Pokemon *mon, u32 battlerId)
     u16 *abilities = GetMonAbilities(mon);
 
     gBattleStruct->illusion[battlerId].set = 1;
-    if (HasAbility(ABILITY_ILLUSION, abilities))
+    if (!HasAbility(ABILITY_ILLUSION, abilities))
         return FALSE;
 
     if (GetBattlerSide(battlerId) == B_SIDE_PLAYER)

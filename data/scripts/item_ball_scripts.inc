@@ -346,8 +346,8 @@ PetalburgWoods_EventScript_ItemParalyzeHeal::
 	finditem ITEM_PARALYZE_HEAL
 	end
 
-RusturfTunnel_EventScript_ItemPokeBall::
-	finditem ITEM_POKE_BALL
+RusturfTunnel_EventScript_ItemTM63::
+	finditem ITEM_TM63
 	end
 
 RusturfTunnel_EventScript_ItemMaxEther::

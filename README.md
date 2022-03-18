@@ -12,7 +12,6 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Update move tutor lists to have tutor moves from later gens.
 - Expand and add new areas, including adding some new wild Pokemon for the area.
 - New NPCs, some of which you acquire new items from.
-- Remove HMs. Should only need a compatable Pokemon to clear obstacles (e.g. a Pokemon that can learn Cut can remove a cuttable tree but doesn't have to have the move).
 - Rework aspects of the Battle Frontier. Change the Battle Palace to be themed around inverse type matchups. Rework the battle Pokemon list. 
 - Add methods to make training easier. Super vitamins (giving 60 EVs per stat), IV boosters and nature mints to be added and accessable.
 - Revert some unnecessary changes Emerald made from Ruby/Sapphire like the Vigoroth movers and Zigzagoon attacking Prof Birch instead of Poochyena.
@@ -24,15 +23,16 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
 	- Including physical/special split, fairy types, new moves, new items, regional species variants.
-	- Whilst data for all post gen3 Pokemon are in the game, only those that existed in gens 1-3 or have evolutions linked to Pokemon in those gens will be accessible, baring a few exceptions.
-- Pokemon can have up to 3 active abilities, dependant on their species. Many Pokemon have had their ability set updated (TODO: make a list of ability stat changes somewhere).
+	- Whilst data for all post gen3 Pokemon are in the game, only those that existed in gens 1-3 or have evolutions linked to Pokemon in those gens are accessible, baring a few exceptions.
+- Pokemon can have up to 3 active abilities, dependant on their species. Many Pokemon have had their ability sets updated (TODO: make a list of ability stat changes somewhere). These are usually the same to what the Pokemon had access to before but some Pokemon have new abilities.
 - New moves and abilities (listed below).
-- Some vanilla abilities updated to make them more useful (listed below).
+- Some vanilla abilities updated to make them more useful and compatible with the new ability change (listed below).
 - Many gameplay adjustments to vanilla moves (Listed below). 
-	- OHKO moves have been removed from battle facility movepools.
 	- Changes to level up and TM learnsets of some Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
-- Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko line has its Attack and Special Attack swapped.
+	- OHKO moves have been removed from battle facility movepools.
+- Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko line has its Attack and Special Attack swapped. (TODO: make list)
+- HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.
 - TMs have infinite use.
@@ -40,10 +40,11 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - New shops and updates to existing shops to stock later gen items and new TMs.
 - Ice types have their special defense boosted by 50% in hail.
 - Removed badge boosts
-- Encounter rates adjusted.
+- Wild Encounters adjusted.
+- Trainer parties adjusted.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
-- Many changes to trainer parties.
 - Steven is back to being champion and Wallace back to being a gym leader.
+- Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
 
 # New Abilities
 
@@ -98,8 +99,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - War Dance: User have their own attack and speed rise by 1 stage and attempts to confuse the opponent. Learned by Sentret/Furret/Yungoos/Gumshoos via level up.
 - Flint Blade: 75 BP, 100% Acc, Rock type, increased crit ratio. Boosted by Swordmaster ability. Added to Battle Frontier move tutor list. Learned by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian/Rockruff/Lycanroc/Gigalith/Onix/Steelix/Omanite/Omastar/Kabuto/Kabutops/Aerodactyl/Anorith/Armaldo/Shieldon/Bastiodon/Binacle/Barbaracle/Rhyhorn/Rhydon/Rhypherior/Aggron/Kleavor/Seviper.
-- Flare Crash: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Added to Battle Frontier move tutor list. Learned by Flareon/Growlith/Arcanine/Ponyta/Rapidash/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo.
-- Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir.
+- Flare Crash: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Added to Battle Frontier move tutor list. Learned by Growlith/Arcanine/Ponyta/Rapidash/Flareon/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo.
+- Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir via level up.
 - Serpent Dance: Increases the user's special attack and speed by one stage. Added to Battle Frontier move tutor list. Learned by Seviper/Milotic/Serperior/Dunsparce/Ekans/Arbok/Huntail/Gorebyss/Rayquaza/Silicobra/Sandaconda/Giratina/Gyarados/Furret.
 
 # Updated Moves
@@ -117,7 +118,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 # Credits
 
-- The fine people who worked on pokeemerald and pokeemerald-expansion
+The fine people who worked on pokeemerald and pokeemerald-expansion and helped me with problems:
 - DizzyEggg
 - LOuroboros
 - BuffelSaft
@@ -129,3 +130,4 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Xavion3
 - GriffinR
 - kleeenexfeu
+- Citrus Bolt

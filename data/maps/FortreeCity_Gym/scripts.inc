@@ -255,11 +255,12 @@ FortreeCity_Gym_Text_ReceivedFeatherBadge:
 	.string "from WINONA.$"
 
 FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis:
-	.string "With the FEATHER BADGE, all POKéMON up\n"
-	.string "to LV 70, even those received through\l"
+	.string "With the Feather Badge, all Pokémon up\n"
+	.string "to Lv 70, even those received through\l"
 	.string "trades, will obey your every command.\p"
-	.string "You will also be able to use\n"
-	.string "the HM move FLY outside of battle.\p"
+	.string "Your flying Pokémon will also be able\n"
+	.string "to carry you to previously visited\l"
+	.string "towns and cities.\p"
 	.string "And this…\n"
 	.string "This is a gift from me.$"
 
