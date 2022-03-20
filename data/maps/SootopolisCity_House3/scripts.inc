@@ -21,7 +21,7 @@ SootopolisCity_House3_EventScript_Girl::
 	end
 
 SootopolisCity_House3_Text_WallaceHasManyFans:
-	.string "WALLACE is often swarmed by fans\n"
+	.string "Wallace is often swarmed by fans\n"
 	.string "because of his contest and battling\n"
 	.string "careers.\p"
 	.string "I've been lucky enough to get an\n"
@@ -38,7 +38,7 @@ SootopolisCity_House3_Text_LonesomeTryWorkingHarder:
 
 SootopolisCity_House3_Text_TrainerFanClubWasWild:
 	.string "Dedicated fans come over from even\n"
-	.string "outside of HOENN.\p"
+	.string "outside of Hoenn.\p"
 	.string "It was really wild when I went to the\n"
-	.string "TRAINER FAN CLUB in LILYCOVE.$"
+	.string "Trainer Fan Club in Lilycove.$"
 

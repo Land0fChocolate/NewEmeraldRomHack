@@ -159,8 +159,8 @@ Route113_Text_RouteSignFallarbor:
 
 Route113_Text_TrainerTipsRegisterKeyItems:
 	.string "TRAINER TIPS\p"
-	.string "You may register one of the KEY ITEMS\n"
-	.string "in your BAG as SELECT.\p"
+	.string "You may register one of the key items\n"
+	.string "in your Bag as SELECT.\p"
 	.string "Simply press SELECT to use\n"
 	.string "the registered item conveniently.$"
 

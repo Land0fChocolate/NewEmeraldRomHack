@@ -35,8 +35,9 @@ static const u8 sSandVeilDescription[] = _(
 	"by 50%.");
 
 static const u8 sStaticDescription[] = _(
-	"Attackers who make contact\n"
-	"may become paralyzed.");
+	"Attackers who make\n"
+	"contact may become\n"
+	"paralyzed.");
 
 static const u8 sVoltAbsorbDescription[] = _(
 	"Heals quarter health if\n"
@@ -110,7 +111,7 @@ static const u8 sLevitateDescription[] = _(
 	"attacks and field hazards.");
 
 static const u8 sEffectSporeDescription[] = _(
-	"Attackers who make contact\n"
+	"Attackers who touch user\n"
 	"may become poisoned,\n"
 	"asleep or paralyzed.");
 
@@ -196,8 +197,8 @@ static const u8 sEarlyBirdDescription[] = _(
 	"from sleep.");
 
 static const u8 sFlameBodyDescription[] = _(
-	"Attackers who make contact\n"
-	"may become burned.");
+	"Attackers who make\n"
+	"contact may become burned.");
 
 static const u8 sRunAwayDescription[] = _(
 	"Can always flee or switch,\n"
@@ -224,8 +225,9 @@ static const u8 sHustleDescription[] = _(
 	"decreased by 20%.");
 
 static const u8 sCuteCharmDescription[] = _(
-	"Attackers who make contact\n"
-	"may become attracted.");
+	"Attackers who make\n"
+	"contact may become\n"
+	"attracted.");
 
 static const u8 sPlusDescription[] = _(
 	"Increases special attack\n"
@@ -572,8 +574,8 @@ static const u8 sHarvestDescription[] = _(
 	"used Berry every turn.");
 
 static const u8 sTelepathyDescription[] = _(
-	"Can't be damaged by an\n"
-	"ally.");
+	"Can't be damaged directly\n"
+	"by an ally.");
 
 static const u8 sMoodyDescription[] = _(
 	"Randomly raises a stat two\n"
@@ -638,7 +640,7 @@ static const u8 sMagicBounceDescription[] = _(
 
 static const u8 sSapSipperDescription[] = _(
 	"Raises attack by one stage\n"
-	"if hit by a grass move."
+	"if hit by a grass move.\n"
 	"Grants grass immunity.");
 
 static const u8 sPranksterDescription[] = _(
@@ -728,9 +730,9 @@ static const u8 sPixilateDescription[] = _(
 	"20%.");
 
 static const u8 sGooeyDescription[] = _(
-	"Attackers who make contact\n"
-	"have their speed reduced\n"
-	"by one stage.");
+	"Attackers who make\n"
+	"contact have their speed\n"
+	"reduced by one stage.");
 
 static const u8 sAerilateDescription[] = _(
 	"Normal moves become Flying\n"
@@ -875,9 +877,9 @@ static const u8 sSoulHeartDescription[] = _(
 	"one stage.");
 
 static const u8 sTanglingHairDescription[] = _(
-	"Attackers who make contact\n"
-	"have their speed reduced\n"
-	"by one stage.");
+	"Attackers who make\n"
+	"contact have their speed\n"
+	"reduced by one stage.");
 
 static const u8 sReceiverDescription[] = _(
 	"Copies fainted ally's\n"

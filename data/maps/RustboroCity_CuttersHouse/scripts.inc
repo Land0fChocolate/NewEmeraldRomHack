@@ -31,7 +31,7 @@ RustboroCity_CuttersHouse_Text_IHaveJustWhatYouNeed:
 	.string "Any trainer worth his salt knows\n"
 	.string "that there are times where they'll\l"
 	.string "need to hold back so that they\l"
-	.string "can catch new Pokemon.\p"
+	.string "can catch new Pokémon.\p"
 	.string "I have just what you need!\p"
 	.string "No need to be modest or shy.\n"
 	.string "Go on, take it!$"
@@ -41,9 +41,9 @@ RustboroCity_CuttersHouse_Text_ExplainCut:
 	.string "short, is False Swipe.\p"
 	.string "You can use it to teach a suitable\n"
 	.string "Pokémon the False Swipe move.\p"
-	.string "False Swipe never KOs the opponent,\n"
-	.string "making it safer to weaken Pokémon\l"
-	.string "you want to capture.$"
+	.string "False Swipe is a safe cutting,\n"
+	.string "technique, making it safer to\l"
+	.string "weaken Pokémon for capture.$"
 
 RustboroCity_CuttersHouse_Text_DadHelpedClearLandOfTrees:
 	.string "When they were expanding the city of\n"

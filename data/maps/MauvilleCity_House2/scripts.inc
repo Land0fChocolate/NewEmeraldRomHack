@@ -6,7 +6,7 @@ MauvilleCity_House2_EventScript_Woman::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_COIN_CASE, MauvilleCity_House2_EventScript_ReceivedCoinCase
 	msgbox MauvilleCity_House2_Text_BuyHarborMailAtSlateport, MSGBOX_DEFAULT
-	checkitem ITEM_HARBOR_MAIL, 1
+	checkitem ITEM_NORMAL_GEM, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq MauvilleCity_House2_EventScript_AskToTradeForHarborMail
 	release
@@ -27,7 +27,7 @@ MauvilleCity_House2_EventScript_AskToTradeForHarborMail::
 
 MauvilleCity_House2_EventScript_AcceptTrade::
 	msgbox MauvilleCity_House2_Text_IllTradeYouCoinCase, MSGBOX_DEFAULT
-	removeitem ITEM_HARBOR_MAIL
+	removeitem ITEM_NORMAL_GEM
 	giveitem ITEM_COIN_CASE
 	setflag FLAG_RECEIVED_COIN_CASE
 	goto MauvilleCity_House2_EventScript_ReceivedCoinCase
@@ -44,25 +44,25 @@ MauvilleCity_House2_EventScript_DeclineTrade::
 	end
 
 MauvilleCity_House2_Text_BuyHarborMailAtSlateport:
-	.string "If I had a BIKE, it'd be easy to cycle to\n"
-	.string "SLATEPORT for some shopping.\p"
-	.string "I'd be able to buy HARBOR MAIL at the\n"
-	.string "POKéMON MART in SLATEPORT…$"
+	.string "If I had a bike, it'd be easy to cycle to\n"
+	.string "Slateport for some shopping.\p"
+	.string "I'd be able to buy a Normal Gem at\n"
+	.string "the market in Slateport…$"
 
 MauvilleCity_House2_Text_TradeHarborMailForCoinCase:
-	.string "Oh! You have HARBOR MAIL?\n"
-	.string "Will you trade it for a COIN CASE?$"
+	.string "Oh! You have a Normal Gem?\n"
+	.string "Will you trade it for a Coin Case?$"
 
 MauvilleCity_House2_Text_IllTradeYouCoinCase:
 	.string "Oh, I'm so happy!\n"
-	.string "Okay, I'll trade you a COIN CASE!$"
+	.string "Okay, I'll trade you a Coin Case!$"
 
 MauvilleCity_House2_Text_UseCoinCaseAtGameCorner:
-	.string "That COIN CASE can be used\n"
-	.string "at the GAME CORNER.$"
+	.string "That Coin Case can be used\n"
+	.string "at the Game Corner.$"
 
 MauvilleCity_House2_Text_ThatsDisappointing:
 	.string "Oh, that's disappointing.\p"
-	.string "A COIN CASE is needed for the\n"
-	.string "GAME CORNER.$"
+	.string "A Coin Case is needed for the\n"
+	.string "Game Corner.$"
 
