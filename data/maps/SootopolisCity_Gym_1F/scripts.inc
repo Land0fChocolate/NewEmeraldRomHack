@@ -237,11 +237,11 @@ SootopolisCity_Gym_1F_Text_ReceivedRainBadge:
 
 SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
 	.string "Having that badge assures you full\n"
-	.string "obedience of all your POKéMON\l"
+	.string "obedience of all your Pokémon\l"
 	.string "to every command you make.\p"
-	.string "The RAIN BADGE also allows the use\n"
-	.string "of your HM move WATERFALL to scale\l"
-	.string "walls of cascading water.\p"
+	.string "The Rain Badge also gifts your\n"
+	.string "Pokémon the strength to carry you\l"
+	.string "up walls of cascading water.\p"
 	.string "And, so you never forget the\n"
 	.string "battle we shared…$"
 

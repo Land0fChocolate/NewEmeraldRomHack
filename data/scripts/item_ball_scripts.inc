@@ -154,8 +154,8 @@ Route117_EventScript_ItemRevive::
 	finditem ITEM_REVIVE
 	end
 
-Route118_EventScript_ItemHyperPotion::
-	finditem ITEM_HYPER_POTION
+Route118_EventScript_ItemDawnStone::
+	finditem ITEM_DAWN_STONE
 	end
 
 Route119_EventScript_ItemSuperRepel::
@@ -220,6 +220,10 @@ Route121_EventScript_ItemRevive::
 
 Route121_EventScript_ItemZinc::
 	finditem ITEM_ZINC
+	end
+
+Route121_EventScript_ItemShinyStone::
+	finditem ITEM_SHINY_STONE
 	end
 
 Route123_EventScript_ItemCalcium::
@@ -326,8 +330,8 @@ MossdeepCity_EventScript_ItemNetBall::
 	finditem ITEM_NET_BALL
 	end
 
-PetalburgWoods_EventScript_ItemXAttack::
-	finditem ITEM_X_ATTACK
+PetalburgWoods_EventScript_ItemBigRoot::
+	finditem ITEM_BIG_ROOT
 	end
 
 PetalburgWoods_EventScript_ItemGreatBall::
@@ -342,8 +346,8 @@ PetalburgWoods_EventScript_ItemParalyzeHeal::
 	finditem ITEM_PARALYZE_HEAL
 	end
 
-RusturfTunnel_EventScript_ItemPokeBall::
-	finditem ITEM_POKE_BALL
+RusturfTunnel_EventScript_ItemTM63::
+	finditem ITEM_TM63
 	end
 
 RusturfTunnel_EventScript_ItemMaxEther::
@@ -382,8 +386,8 @@ MeteorFalls_1F_1R_EventScript_ItemTM23::
 	finditem ITEM_TM23
 	end
 
-MeteorFalls_1F_1R_EventScript_ItemFullHeal::
-	finditem ITEM_FULL_HEAL
+MeteorFalls_1F_1R_EventScript_ItemEviolite::
+	finditem ITEM_EVIOLITE
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemMoonStone::
@@ -490,12 +494,12 @@ MtPyre_3F_EventScript_ItemSuperRepel::
 	finditem ITEM_SUPER_REPEL
 	end
 
-MtPyre_4F_EventScript_ItemSeaIncense::
-	finditem ITEM_SEA_INCENSE
+MtPyre_4F_EventScript_ItemDestinyKnot::
+	finditem ITEM_DESTINY_KNOT
 	end
 
-MtPyre_5F_EventScript_ItemLaxIncense::
-	finditem ITEM_LAX_INCENSE
+MtPyre_5F_EventScript_ItemReaperCloth::
+	finditem ITEM_REAPER_CLOTH
 	end
 
 MtPyre_6F_EventScript_ItemTM30::

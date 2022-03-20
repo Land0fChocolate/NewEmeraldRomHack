@@ -1361,12 +1361,12 @@ SootopolisCity_EventScript_ManiacRayquaza::
 	releaseall
 	end
 
-SootopolisCity_EventScript_Wallace::
+SootopolisCity_EventScript_Wallace:: @this is to be changed. Have him walk off screen right after giving you the TM.
 	lock
 	faceplayer
 	compare VAR_SOOTOPOLIS_CITY_STATE, 4
 	goto_if_eq SootopolisCity_EventScript_GoToSkyPillar
-	goto_if_set FLAG_RECEIVED_HM07, SootopolisCity_EventScript_GoToGym
+	goto_if_set FLAG_RECEIVED_TM98, SootopolisCity_EventScript_GoToGym
 	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_GiveWaterfall
 	msgbox SootopolisCity_Text_AquaMagmaDidntMeanHarm, MSGBOX_DEFAULT
 	release
@@ -1375,8 +1375,8 @@ SootopolisCity_EventScript_Wallace::
 SootopolisCity_EventScript_GiveWaterfall::
 	msgbox SootopolisCity_Text_ThankYouForHelpAcceptThis, MSGBOX_DEFAULT
 	giveitem ITEM_HM07
-	setflag FLAG_RECEIVED_HM07
-	msgbox SootopolisCity_Text_ExplainWaterfallGoToGym, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM98
+	msgbox SootopolisCity_Text_OneMoreGymChallenge, MSGBOX_DEFAULT
 	closemessage
 	compare VAR_FACING, DIR_NORTH
 	call_if_eq SootopolisCity_EventScript_WallaceMoveFromGym
@@ -1778,18 +1778,11 @@ SootopolisCity_Text_ThankYouForHelpAcceptThis:
 	.string "This is a gift from me.\n"
 	.string "Please accept it.$"
 
-SootopolisCity_Text_ExplainWaterfallGoToGym:
-	.string "That HIDDEN MACHINE contains\n"
-	.string "WATERFALL.\p"
-	.string "If you have the RAIN BADGE, a POKéMON\n"
-	.string "that has learned that HM move can\l"
-	.string "force its way up waterfalls.\p"
-	.string "And where does one get the RAIN BADGE?\n"
-	.string "You know, don't you?\p"
-	.string "That's right! You have to beat\n"
-	.string "the SOOTOPOLIS GYM LEADER.\p"
-	.string "When you're all set to go, step through\n"
-	.string "that door.$"
+SootopolisCity_Text_OneMoreGymChallenge:
+	.string "I believe you have one more Gym\n"
+	.string "challenge left, Trainer.\p"
+	.string "I look forward to our reunion\p"
+	.string "at the Sootopolis Gym.$"
 
 SootopolisCity_Text_DazzledByMentor:
 	.string "WALLACE: I'm sure that you will be\n"

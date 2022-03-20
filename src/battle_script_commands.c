@@ -1156,33 +1156,33 @@ static const u16 sPickupItems[] =
     ITEM_GREAT_BALL,
     ITEM_REPEL,
     ITEM_ESCAPE_ROPE,
-    ITEM_X_ATTACK,
+    ITEM_BINDING_BAND,
     ITEM_FULL_HEAL,
     ITEM_ULTRA_BALL,
     ITEM_HYPER_POTION,
     ITEM_RARE_CANDY,
     ITEM_PROTEIN,
     ITEM_REVIVE,
-    ITEM_HP_UP,
+    ITEM_PP_UP,
     ITEM_FULL_RESTORE,
     ITEM_MAX_REVIVE,
-    ITEM_PP_UP,
     ITEM_MAX_ELIXIR,
+    ITEM_PP_MAX,
 };
 
 static const u16 sRarePickupItems[] =
 {
-    ITEM_HYPER_POTION,
-    ITEM_NUGGET,
-    ITEM_KINGS_ROCK,
     ITEM_FULL_RESTORE,
+    ITEM_NUGGET,
     ITEM_ETHER,
+    ITEM_KINGS_ROCK,
+    ITEM_MENTAL_HERB,
     ITEM_WHITE_HERB,
-    ITEM_TM44_REST,
-    ITEM_ELIXIR,
-    ITEM_TM01_FOCUS_PUNCH,
+    ITEM_POWER_HERB,
+    ITEM_SHED_SHELL,
+    ITEM_BLACK_SLUDGE,
     ITEM_LEFTOVERS,
-    ITEM_TM26_EARTHQUAKE,
+    ITEM_FOCUS_SASH,
 };
 
 static const u8 sPickupProbabilities[] =
@@ -1580,8 +1580,6 @@ bool8 JumpIfMoveAffectedByProtect(u16 move)
 
 static bool32 AccuracyCalcHelper(u16 move)
 {
-    u16 *abilities = GetBattlerAbilities(gBattlerAttacker);
-
     if (gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
     {
         JumpIfMoveFailed(7, move);
@@ -1594,12 +1592,10 @@ static bool32 AccuracyCalcHelper(u16 move)
         JumpIfMoveFailed(7, move);
         return TRUE;
     }
-    else if (HasAbility(ABILITY_NO_GUARD, abilities))
+    else if (HasAbility(ABILITY_NO_GUARD, GetBattlerAbilities(gBattlerAttacker))
+        || (HasAbility(ABILITY_NO_GUARD, GetBattlerAbilities(gBattlerTarget))))
     {
-        return TRUE;
-    }
-    else if (HasAbility(ABILITY_NO_GUARD, abilities))
-    {
+        JumpIfMoveFailed(7, move);
         return TRUE;
     }
 
@@ -9757,9 +9753,6 @@ static void Cmd_manipulatedamage(void)
     case DMG_BIG_ROOT:
         gBattleMoveDamage = GetDrainedBigRootHp(gBattlerAttacker, gBattleMoveDamage);
         break;
-    case DMG_HEMATOPHAGY:
-        gBattleMoveDamage = GetDrainedHematophagyHp(gBattlerAttacker, gBattleMoveDamage);
-        break;
     case DMG_1_2_ATTACKER_HP:
         gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 2;
         break;
@@ -10760,8 +10753,8 @@ static void Cmd_tryKO(void)
     {
         if ((((gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS)
                 && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
-            || HasAbility(ABILITY_NO_GUARD, GetBattlerAbilities(gBattlerAttacker))
-            || HasAbility(ABILITY_NO_GUARD, GetBattlerAbilities(gBattlerTarget)))
+            /*|| HasAbility(ABILITY_NO_GUARD, GetBattlerAbilities(gBattlerAttacker))
+            || HasAbility(ABILITY_NO_GUARD, GetBattlerAbilities(gBattlerTarget))*/)
             && gBattleMons[gBattlerAttacker].level >= gBattleMons[gBattlerTarget].level)
         {
             lands = TRUE;

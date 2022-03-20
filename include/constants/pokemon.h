@@ -90,7 +90,7 @@
 #define MAX_STAT_STAGE    12
 
 // Shiny odds
-#define SHINY_ODDS 8 // Actual probability is SHINY_ODDS/65536
+#define SHINY_ODDS 32 // Actual probability is SHINY_ODDS/65536
 
 // Flags for Get(Box)MonData / Set(Box)MonData
 #define MON_DATA_PERSONALITY        0
@@ -400,5 +400,14 @@
 #define MON_PIC_SIZE (64 * 64 / 2)
 
 #define NUM_ABILITY_SLOTS 3
+
+#define HIDDEN_COMMAND_CUT         0
+#define HIDDEN_COMMAND_FLY         1
+#define HIDDEN_COMMAND_SURF        2
+#define HIDDEN_COMMAND_STRENGTH    3
+#define HIDDEN_COMMAND_FLASH       4
+#define HIDDEN_COMMAND_ROCK_SMASH  5
+#define HIDDEN_COMMAND_WATERFALL   6
+#define HIDDEN_COMMAND_DIVE        7
 
 #endif // GUARD_CONSTANTS_POKEMON_H

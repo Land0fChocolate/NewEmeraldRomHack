@@ -176,9 +176,9 @@ static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 wi
 static void HpTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 windowWidth);
 static void FillHealthboxObject(void *dest, u32 arg1, u32 arg2);
 
-static void sub_8073E08(u8 taskId);
-static void sub_8073F98(u8 taskId);
-static void sub_8073E64(u8 taskId);
+static void Task_HidePartyStatusSummary_BattleStart_1(u8 taskId);
+static void Task_HidePartyStatusSummary_BattleStart_2(u8 taskId);
+static void Task_HidePartyStatusSummary_DuringBattle(u8 taskId);
 
 static void SpriteCB_HealthBoxOther(struct Sprite *sprite);
 static void SpriteCB_HealthBar(struct Sprite *sprite);
@@ -1913,15 +1913,15 @@ void Task_HidePartyStatusSummary(u8 taskId)
         gSprites[summaryBarSpriteId].data[1] = 0;
         gSprites[summaryBarSpriteId].callback = sub_8074090;
         SetSubspriteTables(&gSprites[summaryBarSpriteId], sUnknown_0832C2CC);
-        gTasks[taskId].func = sub_8073E08;
+        gTasks[taskId].func = Task_HidePartyStatusSummary_BattleStart_1;
     }
     else
     {
-        gTasks[taskId].func = sub_8073F98;
+        gTasks[taskId].func = Task_HidePartyStatusSummary_BattleStart_2;
     }
 }
 
-static void sub_8073E08(u8 taskId)
+static void Task_HidePartyStatusSummary_BattleStart_1(u8 taskId)
 {
     if ((gTasks[taskId].data[11]++ % 2) == 0)
     {
@@ -1931,10 +1931,10 @@ static void sub_8073E08(u8 taskId)
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(gTasks[taskId].data[15], 16 - gTasks[taskId].data[15]));
     }
     if (gTasks[taskId].tData15 == 0)
-        gTasks[taskId].func = sub_8073E64;
+        gTasks[taskId].func = Task_HidePartyStatusSummary_DuringBattle;
 }
 
-static void sub_8073E64(u8 taskId)
+static void Task_HidePartyStatusSummary_DuringBattle(u8 taskId)
 {
     u8 ballIconSpriteIds[PARTY_SIZE];
     s32 i;
@@ -1973,7 +1973,7 @@ static void sub_8073E64(u8 taskId)
     }
 }
 
-static void sub_8073F98(u8 taskId)
+static void Task_HidePartyStatusSummary_BattleStart_2(u8 taskId)
 {
     u8 ballIconSpriteIds[PARTY_SIZE];
     s32 i;

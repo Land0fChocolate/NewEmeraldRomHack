@@ -5,36 +5,46 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 # TODO
 
 - implement ability description label in the summary screen.
-- Include ORAS dex Pokemon like Budew and Dusknoir. Add ways to access them.
+- Include ORAS dex Pokemon like Budew and Dusknoir and add ways to access them.
 - New Pokemon moves.
 	- animations for new moves
 	- Add the new moves to the move tutors lists.
 - Update move tutor lists to have tutor moves from later gens.
-- Remove the OHKO moves.
 - Expand and add new areas, including adding some new wild Pokemon for the area.
+- New NPCs, some of which you acquire new items from.
 - Rework aspects of the Battle Frontier. Change the Battle Palace to be themed around inverse type matchups. Rework the battle Pokemon list. 
 - Add methods to make training easier. Super vitamins (giving 60 EVs per stat), IV boosters and nature mints to be added and accessable.
-- Add credits of people whos tutorials and work you have used in the game.
-- Change some trainer Pokemon
 - Revert some unnecessary changes Emerald made from Ruby/Sapphire like the Vigoroth movers and Zigzagoon attacking Prof Birch instead of Poochyena.
 - Type resisting berries and Type boosting gems to be accessible somewhere. 
 - Remove item use in battle and create a prompt for Poke Balls.
+- Add credits of people whos tutorials and work you have used in the game.
 
 # Changelog
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
-- Pokemon can have up to 3 active abilities, dependant on their species. Many Pokemon have had their ability set updated (TODO: make a list of ability stat changes somewhere).
+	- Including physical/special split, fairy types, new moves, new items, regional species variants.
+	- Whilst data for all post gen3 Pokemon are in the game, only those that existed in gens 1-3 or have evolutions linked to Pokemon in those gens are accessible, baring a few exceptions.
+- Pokemon can have up to 3 active abilities, dependant on their species. Many Pokemon have had their ability sets updated (TODO: make a list of ability stat changes somewhere). These are usually the same to what the Pokemon had access to before but some Pokemon have new abilities.
 - New moves and abilities (listed below).
-- Some vanilla abilities updated to make them more useful (listed below).
+- Some vanilla abilities updated to make them more useful and compatible with the new ability change (listed below).
+- Many gameplay adjustments to vanilla moves (Listed below). 
+	- Changes to level up and TM learnsets of some Pokemon (TODO: make list).
+	- Pokemon will attempt to learn a new move upon evolution.
+	- OHKO moves have been removed from battle facility movepools.
+- Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko line has its Attack and Special Attack swapped. (TODO: make list)
+- HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
 - Berry tree drop rates are tripled.
 - Number of Feebas spots is tripled.
 - TMs have infinite use.
+- TMs from #51 to #100 have been added. They are similar to the gen 7 TM set (TODO: make list).
+- New shops and updates to existing shops to stock later gen items and new TMs.
 - Ice types have their special defense boosted by 50% in hail.
 - Removed badge boosts
-- Pokemon will attempt to learn a new move upon evolution.
+- Wild Encounters adjusted.
+- Trainer parties adjusted.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
-- Changes to learnsets of some Pokemon (TODO: make list).
 - Steven is back to being champion and Wallace back to being a gym leader.
+- Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
 
 # New Abilities
 
@@ -65,10 +75,9 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - Trace: copies the opponent’s highest rated ability that the user doesn’t already have.
 - Receiver: copies fainted ally’s strongest ability that the user doesn’t already have.
-- Neutralising Gas: Neutralises target abilities unless it is a banned ability like Stance Change.
 - Mummy: replaces all the contact attacker’s abilities with just the Mummy ability.
 - Wandering Spirit: replaces each respective ability with the attacker if hit by a contact move unless it is a banned ability.
-- Neutralizing Gas: Nullifies other Pokemon abilities. User abilities still active.
+- Neutralizing Gas: Nullifies other Pokemon abilities unless it is a banned ability like Stance Change. User abilities still active.
 - Shell Armor/Battle Armor: Also reduces damage of neutral effective moves by 25%.
 - Sand Veil: Increases Sp.Def instead of evasion by one stage.
 - Snow Cloak: Increases Defense instead of evasion by one stage.
@@ -90,8 +99,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - War Dance: User have their own attack and speed rise by 1 stage and attempts to confuse the opponent. Learned by Sentret/Furret/Yungoos/Gumshoos via level up.
 - Flint Blade: 75 BP, 100% Acc, Rock type, increased crit ratio. Boosted by Swordmaster ability. Added to Battle Frontier move tutor list. Learned by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian/Rockruff/Lycanroc/Gigalith/Onix/Steelix/Omanite/Omastar/Kabuto/Kabutops/Aerodactyl/Anorith/Armaldo/Shieldon/Bastiodon/Binacle/Barbaracle/Rhyhorn/Rhydon/Rhypherior/Aggron/Kleavor/Seviper.
-- Flare Crash: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Added to Battle Frontier move tutor list. Learned by Flareon/Growlith/Arcanine/Ponyta/Rapidash/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo.
-- Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir.
+- Flare Crash: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Added to Battle Frontier move tutor list. Learned by Growlith/Arcanine/Ponyta/Rapidash/Flareon/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo.
+- Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir via level up.
 - Serpent Dance: Increases the user's special attack and speed by one stage. Added to Battle Frontier move tutor list. Learned by Seviper/Milotic/Serperior/Dunsparce/Ekans/Arbok/Huntail/Gorebyss/Rayquaza/Silicobra/Sandaconda/Giratina/Gyarados/Furret.
 
 # Updated Moves
@@ -103,10 +112,13 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Gastro Acid: Neutralises target abilities unless it is a banned ability like Stance Change.
 - Role Play: replaces the user’s abilities with the target’s abilities.
 - Core Enforcer: Nullifies opponent’s abilities.
+- Charge Beam: Now 40 BP, 100% Acc with 100% chance for special attack boost.
+- Rock Smash: Now 50 BP with 100% chance for target defense drop.
+- Poison Fang: 100% chance to poison target.
 
 # Credits
 
-- The fine people who worked on pokeemerald and pokeemerald-expansion
+The fine people who worked on pokeemerald and pokeemerald-expansion and helped me with problems:
 - DizzyEggg
 - LOuroboros
 - BuffelSaft
@@ -118,3 +130,4 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Xavion3
 - GriffinR
 - kleeenexfeu
+- Citrus Bolt

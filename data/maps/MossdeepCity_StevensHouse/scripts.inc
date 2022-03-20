@@ -41,8 +41,8 @@ MossdeepCity_StevensHouse_EventScript_StevenGivesDive::
 	applymovement LOCALID_STEVEN, MossdeepCity_StevensHouse_Movement_StevenApproachPlayer
 	waitmovement 0
 	msgbox MossdeepCity_StevensHouse_Text_YouveEarnedHMDive, MSGBOX_DEFAULT
-	giveitem ITEM_HM08
-	setflag FLAG_RECEIVED_HM08
+	giveitem ITEM_TM91
+	setflag FLAG_RECEIVED_TM91
 	setflag FLAG_OMIT_DIVE_FROM_STEVEN_LETTER
 	msgbox MossdeepCity_StevensHouse_Text_ExplainDive, MSGBOX_DEFAULT
 	closemessage
@@ -153,28 +153,33 @@ MossdeepCity_StevensHouse_EventScript_Letter::
 @ Unused, leftover from RS
 MossdeepCity_StevensHouse_EventScript_DiveItemBall::
 	finditem ITEM_HM08
-	setflag FLAG_RECEIVED_HM08
+	setflag FLAG_RECEIVED_TM91
 	end
 
 MossdeepCity_StevensHouse_Text_YouveEarnedHMDive:
-	.string "STEVEN: {PLAYER}{KUN}…\p"
+	.string "Steven: {PLAYER}{KUN}…\p"
 	.string "As you can see, there's not much here,\n"
 	.string "but this is my home.\p"
-	.string "Thank you for all that you've done.\p"
+	.string "Thank you for all that you've done\n"
+	.string "in helping the people of Hoenn.\p"
 	.string "This is my token of appreciation.\n"
-	.string "It's the HIDDEN MACHINE DIVE.\p"
+	.string "It's Technical Machine number 91:\l"
+	.string "Flash Cannon.\p"
 	.string "No need to be shy--you've earned\n"
-	.string "this HM.$"
+	.string "this TM.$"
 
 MossdeepCity_StevensHouse_Text_ExplainDive:
-	.string "STEVEN: While you're using SURF, you\n"
+	.string "Steven: While you're surfing, you\n"
 	.string "should notice dark patches of water.\p"
-	.string "Use DIVE if you come to deep water\n"
+	.string "Your Pokémon can dive to deep water\n"
 	.string "like it. You'll drop to the seafloor.\p"
-	.string "When you want to come back up, use\n"
-	.string "DIVE again.\p"
+	.string "When you want to come back up, you\n"
+	.string "can command your Pokémon again.\p"
 	.string "In some places, it won't be possible\n"
-	.string "for you to surface, though.$"
+	.string "for you to surface, though.\p"
+	.string "You will need the Mossdeep Gym badge\n"
+	.string "as well for your Pokémon to take you\l"
+	.string "underwater.$"
 
 MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis:
 	.string "STEVEN: Apparently, there's an\n"
