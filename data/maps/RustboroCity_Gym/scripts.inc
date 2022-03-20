@@ -110,7 +110,7 @@ RustboroCity_Gym_EventScript_RegisterRoxanne::
 RustboroCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going?\p"
 	.string "Listen, my friend!\n"
-	.string "Would you like to become the CHAMPION?\p"
+	.string "Would you like to become the Champion?\p"
 	.string "I'm no Trainer, not me, but I can\n"
 	.string "sure give you winning advice.\p"
 	.string "That's settled, then! We'll aim for the\n"
@@ -123,8 +123,8 @@ RustboroCity_Gym_Text_GymGuideAdvice:
 	.string "Roxanne, the Gym Leader, is a user\n"
 	.string "of Rock-type Pokémon.\p"
 	.string "The Rock type is very durable, but\n"
-	.string "it can't stand WATER-type and\l"
-	.string "GRASS-type moves.\p"
+	.string "it can't stand Water-type and\l"
+	.string "Grass-type moves.\p"
 	.string "Come see me afterwards, if you beat\n"
 	.string "the Gym Leader.\p"
 	.string "Well, go for it!$"
@@ -142,7 +142,7 @@ RustboroCity_Gym_Text_GymGuidePostVictory:
 	.string "That's got to feel awesome!$"
 
 RustboroCity_Gym_Text_JoshIntro:
-	.string "Don't take us GYM Trainers lightly!\n"
+	.string "Don't take us Gym Trainers lightly!\n"
 	.string "I'll show you why we're better!$"
 
 RustboroCity_Gym_Text_JoshDefeat:
@@ -180,7 +180,7 @@ RustboroCity_Gym_Text_MarcPostBattle:
 	.string "pick the Rock type at her young age.$"
 
 RustboroCity_Gym_Text_RoxanneIntro:
-	.string "Hello, I am Roxanne, the RUSTBORO\n"
+	.string "Hello, I am Roxanne, the Rustboro\n"
 	.string "Pokémon Gym Leader.\p"
 	.string "I became a Gym Leader so that I might\n"
 	.string "apply what I learned at the Pokémon\l"
@@ -254,7 +254,7 @@ RustboroCity_Gym_Text_RoxanneRegisterCall:
 
 RustboroCity_Gym_Text_RegisteredRoxanne:
 	.string "Registered Gym Leader Roxanne\n"
-	.string "in the POKéNAV.$"
+	.string "in the Pokénav.$"
 
 RustboroCity_Gym_Text_RoxannePreRematch:
 	.string "Roxanne: I'm so glad to see you again.\n"

@@ -182,11 +182,11 @@ SootopolisCity_Gym_1F_EventScript_GymStatue::
 	end
 
 SootopolisCity_Gym_1F_Text_GymGuideAdvice:
-	.string "Yo! How's it going, CHAMPION-\n"
+	.string "Yo! How's it going, Champion-\n"
 	.string "bound {PLAYER}?\p"
-	.string "SOOTOPOLIS's GYM LEADER WALLACE is\n"
-	.string "a master of WATER-type POKéMON.\p"
-	.string "And, to get to WALLACE, an icy floor\n"
+	.string "Sootopolis's Gym Leader Wallace is\n"
+	.string "a master of Water-type Pokémon.\p"
+	.string "And, to get to Wallace, an icy floor\n"
 	.string "will hamper your progress…\p"
 	.string "Listen, I'm sorry, but that's all the\n"
 	.string "advice that I have for you.\p"
@@ -194,11 +194,11 @@ SootopolisCity_Gym_1F_Text_GymGuideAdvice:
 	.string "go for it yourself!$"
 
 SootopolisCity_Gym_1F_Text_GymGuidePostVictory:
-	.string "Yow! You've beaten even WALLACE, who\n"
-	.string "was supposedly the best in all HOENN!\p"
-	.string "Okay! Check out your Trainer CARD.\p"
-	.string "If you've gotten all the BADGES, you're\n"
-	.string "set for the POKéMON LEAGUE challenge!$"
+	.string "Yow! You've beaten even Wallace, who\n"
+	.string "was supposedly the best in all Hoenn!\p"
+	.string "Okay! Check out your Trainer Card.\p"
+	.string "If you've gotten all the Badges, you're\n"
+	.string "set for the Pokémon League challenge!$"
 
 SootopolisCity_Gym_1F_Text_WallaceIntro:
 	.string "Allow me to formally introduce myself.\p"
@@ -229,11 +229,11 @@ SootopolisCity_Gym_1F_Text_WallaceDefeat:
 	.string "I find much joy in having met you\n"
 	.string "and your Pokemon.\p"
 	.string "You have proven yourself worthy\n"
-	.string "of the RAIN BADGE.$"
+	.string "of the Rain Badge.$"
 
 SootopolisCity_Gym_1F_Text_ReceivedRainBadge:
-	.string "{PLAYER} received the RAIN BADGE\n"
-	.string "from WALLACE.$"
+	.string "{PLAYER} received the Rain Badge\n"
+	.string "from Wallace.$"
 
 SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
 	.string "Having that badge assures you full\n"
@@ -246,8 +246,8 @@ SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
 	.string "battle we shared…$"
 
 SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
-	.string "The TECHNICAL MACHINE I handed you\n"
-	.string "contains WATER PULSE.\p"
+	.string "The Technical Machine I handed you\n"
+	.string "contains Water Pulse.\p"
 	.string "In use, it will occasionally confuse\n"
 	.string "the target with ultrasonic waves.\p"
 	.string "…\p"
@@ -260,25 +260,25 @@ SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
 	.string "You can reach it from Evergrande City.$"
 
 SootopolisCity_Gym_1F_Text_RegisteredWallace:
-	.string "Registered GYM LEADER WALLACE\n"
-	.string "in the POKéNAV.$"
+	.string "Registered Gym Leader Wallace\n"
+	.string "in the Pokénav.$"
 
 SootopolisCity_Gym_1F_Text_WallacePostBattle:
-	.string "The TRAINERS who have gathered all\n"
-	.string "the GYM BADGES of HOENN should make\l"
+	.string "The Trainers who have gathered all\n"
+	.string "the Gym Badges of Hoenn should make\l"
 	.string "way to the ultimate destination.\p"
-	.string "The POKéMON LEAGUE.\p"
+	.string "The Pokémon League.\p"
 	.string "Travel to the easternmost reaches\n"
-	.string "of HOENN, to the island EVER GRANDE.\p"
-	.string "There, you shall find the POKéMON\n"
-	.string "LEAGUE.$"
+	.string "of Hoenn, to the island Ever Grande.\p"
+	.string "There, you shall find the Pokémon\n"
+	.string "League.$"
 
 SootopolisCity_Gym_1F_Text_GoGetFortreeBadge:
-	.string "There remains but one BADGE to\n"
-	.string "obtain in HOENN.\p"
-	.string "If you wish to challenge the POKéMON\n"
-	.string "LEAGUE, you must obtain the last\l"
-	.string "BADGE from the GYM in FORTREE.$"
+	.string "There remains but one Badge to\n"
+	.string "obtain in Hoenn.\p"
+	.string "If you wish to challenge the Pokémon\n"
+	.string "League, you must obtain the last\l"
+	.string "Badge from the Gym in Fortree.$"
 
 SootopolisCity_Gym_1F_Text_GymStatue:
 	.string "SOOTOPOLIS CITY POKéMON GYM$"
@@ -289,7 +289,7 @@ SootopolisCity_Gym_1F_Text_GymStatueCertified:
 	.string "{PLAYER}$"
 
 SootopolisCity_Gym_1F_Text_WallacePreRematch:
-	.string "WALLACE: Ah, this GYM had returned to its\n"
+	.string "Wallace: Ah, this gym had returned to its\n"
 	.string "usual state of serenity…\p"
 	.string "But our young typhoon has returned\n"
 	.string "to put us to the test again!\p"
@@ -302,7 +302,7 @@ SootopolisCity_Gym_1F_Text_WallaceRematchDefeat:
 	.string "You have defeated me again!$"
 
 SootopolisCity_Gym_1F_Text_WallacePostRematch:
-	.string "WALLACE: If I told you to become my\n"
+	.string "Wallace: If I told you to become my\n"
 	.string "apprentice, you will refuse, I am sure.\p"
 	.string "I would like to make a gift of my coat\n"
 	.string "to you.\p"
@@ -312,14 +312,14 @@ SootopolisCity_Gym_1F_Text_WallacePostRematch:
 	.string "of nobility!$"
 
 SootopolisCity_Gym_1F_Text_WallaceRematchNeedTwoMons:
-	.string "WALLACE: Ah, this GYM had returned to its\n"
+	.string "Wallace: Ah, this gym had returned to its\n"
 	.string "usual state of serenity…\p"
 	.string "But our young typhoon has returned\n"
 	.string "to put us to the test again!\p"
 	.string "Well, my friend, most certainly!\n"
 	.string "I shall be delighted to dance with you…\p"
 	.string "Ah, no, no, no.\n"
-	.string "You have with you but one POKéMON.\p"
+	.string "You have with you but one Pokémon.\p"
 	.string "I wish that you would return with\n"
-	.string "two, perhaps more, POKéMON, please.$"
+	.string "two, perhaps more, Pokémon, please.$"
 

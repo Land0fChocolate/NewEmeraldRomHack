@@ -48,9 +48,9 @@ SootopolisCity_PokemonCenter_1F_EventScript_WomanNoLegendaries::
 	end
 
 SootopolisCity_PokemonCenter_1F_Text_WallaceMentor:
-	.string "WALLACE was taught by a man named\n"
-	.string "JUAN. He's one of the toughest\p"
-	.string "TRAINERS in the entire Hoenn\n"
+	.string "Walace was taught by a man named\n"
+	.string "Juan. He's one of the toughest\p"
+	.string "Trainers in the entire Hoenn\n"
 	.string "region.$"
 
 SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge:
@@ -62,10 +62,10 @@ SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge:
 SootopolisCity_PokemonCenter_1F_Text_AlwaysBeFriendsWithPokemon:
 	.string "Whenever, wherever, and whatever\n"
 	.string "happens, I will always be friends with\l"
-	.string "POKéMON.\p"
-	.string "Because it's fun to be with POKéMON!$"
+	.string "Pokémon.\p"
+	.string "Because it's fun to be with Pokémon!$"
 
 SootopolisCity_PokemonCenter_1F_Text_ArentPokemonOurFriends:
-	.string "Aren't POKéMON our friends?\p"
+	.string "Aren't Pokémon our friends?\p"
 	.string "Why are they going wild this way?$"
 
