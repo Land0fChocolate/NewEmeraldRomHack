@@ -189,6 +189,7 @@ SlateportCity_Pokemart_GemLady:
 	.2byte ITEM_DARK_GEM
 	.2byte ITEM_STEEL_GEM
 	.2byte ITEM_FAIRY_GEM
+	.2byte ITEM_NONE
 	release
 	end
 

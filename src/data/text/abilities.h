@@ -1049,7 +1049,7 @@ static const u8 sAsOneShadowRiderDescription[] = _(
 	"Foes can't eat Berries.");
 
 static const u8 sVolumeUpDescription[] = _(
-	"sound based moves are\n"
+	"Sound based moves are\n"
 	"powered up by 33%.");
 
 static const u8 sLavaBodyDescription[] = _(
