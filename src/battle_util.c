@@ -1791,9 +1791,15 @@ void PrepareStringBattle(u16 stringId, u8 battler)
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_DefiantActivates;
         if (HasAbility(ABILITY_DEFIANT, GetBattlerAbilities(gBattlerTarget)))
+        {
+            gLastUsedAbility = ABILITY_DEFIANT;
             SET_STATCHANGER(STAT_ATK, 2, FALSE);
+        }
         else
+        {
+            gLastUsedAbility = ABILITY_COMPETITIVE;
             SET_STATCHANGER(STAT_SPATK, 2, FALSE);
+        }
     }
 
     gActiveBattler = battler;

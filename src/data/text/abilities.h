@@ -3,8 +3,8 @@ static const u8 sNoneDescription[] = _(
 
 static const u8 sStenchDescription[] = _(
 	"May cause a foe to flinch\n"
-	"on hit. Reduces encounter\n"
-	"rate.");
+	"on hit. Also reduces\n"
+	"encounter rate.");
 
 static const u8 sDrizzleDescription[] = _(
 	"Summons rain in battle\n"
@@ -205,7 +205,9 @@ static const u8 sRunAwayDescription[] = _(
 	"even when traps were set.");
 
 static const u8 sKeenEyeDescription[] = _(
-	"Prevents loss of accuracy."); //TODO: scheduled for update
+	"Increases accuracy by 30%\n"
+	"and prevents accuracy from\n"
+	"being decreased.");
 
 static const u8 sHyperCutterDescription[] = _(
 	"Prevents Attack stat\n"
@@ -308,9 +310,9 @@ static const u8 sPurePowerDescription[] = _(
 	"Doubles attack stat.");
 
 static const u8 sShellArmorDescription[] = _(
-	"Blocks critical hits and\n"
-	"reduces damage from neutral\n"
-	"effective moves by 25%.");
+	"Reduces damage from\n"
+	"neutral effective moves by\n"
+	"25% and blocks crits.");
 
 static const u8 sAirLockDescription[] = _(
 	"Negates weather effects.");
@@ -562,12 +564,12 @@ static const u8 sMultiscaleDescription[] = _(
 	"full HP.");
 
 static const u8 sToxicBoostDescription[] = _(
-	"Ups user Attack by one\n"
-	"stage if poisoned.");
+	"Increases user Attack by\n"
+	"one stage if poisoned.");
 
 static const u8 sFlareBoostDescription[] = _(
-	"Ups user Sp. Atk by one\n"
-	"stage if burned.");
+	"Increases user Sp. Atk by\n"
+	"one stage if burned.");
 
 static const u8 sHarvestDescription[] = _(
 	"50% chance to recycle a\n"

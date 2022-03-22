@@ -1585,7 +1585,7 @@ Route112_Text_CarolPostBattle:
 	.string "If you have the most fun, you win!$"
 
 Route112_Text_BryantIntro:
-	.string "I caught hot Pokémon in FIERY PATH!\n"
+	.string "I caught hot Pokémon in Fiery Path!\n"
 	.string "Take a look!$"
 
 Route112_Text_BryantDefeat:
@@ -1706,35 +1706,35 @@ Route113_Text_LungPostBattle:
 	.string "It's lonely if no one comes along.$"
 
 Route113_Text_ToriIntro:
-	.string "TORI: Both of us, we collect ashes.\n"
+	.string "Tori: Both of us, we collect ashes.\n"
 	.string "We battle Pokémon, too.$"
 
 Route113_Text_ToriDefeat:
-	.string "TORI: We lost… It's boring, so I'm going\n"
+	.string "Tori: We lost… It's boring, so I'm going\n"
 	.string "to get some more ashes.$"
 
 Route113_Text_ToriPostBattle:
-	.string "TORI: How much ash do we have?\n"
-	.string "Enough for a WHITE FLUTE, I hope.$"
+	.string "Tori: How much ash do we have?\n"
+	.string "Enough for a White Flute, I hope.$"
 
 Route113_Text_ToriNotEnoughMons:
-	.string "TORI: We want to battle 2-on-2.\n"
+	.string "Tori: We want to battle 2-on-2.\n"
 	.string "If we didn't, we would lose!$"
 
 Route113_Text_TiaIntro:
-	.string "TIA: Both of us, we collect ashes.\n"
+	.string "Tia: Both of us, we collect ashes.\n"
 	.string "We battle Pokémon, too.$"
 
 Route113_Text_TiaDefeat:
-	.string "TIA: We couldn't win… It's boring,\n"
+	.string "Tia: We couldn't win… It's boring,\n"
 	.string "so I'm getting some more ashes.$"
 
 Route113_Text_TiaPostBattle:
-	.string "TIA: We have a lot of ashes!\n"
-	.string "I think enough for a WHITE FLUTE!$"
+	.string "Tia: We have a lot of ashes!\n"
+	.string "I think enough for a White Flute!$"
 
 Route113_Text_TiaNotEnoughMons:
-	.string "TIA: We want to battle 2-on-2.\n"
+	.string "Tia: We want to battle 2-on-2.\n"
 	.string "If we don't, we won't win!$"
 
 Route113_Text_CobyIntro:
@@ -1927,35 +1927,35 @@ Route114_Text_NolanPostBattle:
 	.string "away from fishing or Pokémon.$"
 
 Route114_Text_TyraIntro:
-	.string "TYRA: Well, sure.\n"
+	.string "Tyra: Well, sure.\n"
 	.string "I'm in the mood for it.\l"
 	.string "I'll teach you a little about Pokémon.$"
 
 Route114_Text_TyraDefeat:
-	.string "TYRA: What an amazing battle style!$"
+	.string "Tyra: What an amazing battle style!$"
 
 Route114_Text_TyraPostBattle:
-	.string "TYRA: I was teaching my junior IVY\n"
+	.string "Tyra: I was teaching my junior Ivy\n"
 	.string "about Pokémon.$"
 
 Route114_Text_TyraNotEnoughMons:
-	.string "TYRA: Giggle…\n"
+	.string "Tyra: Giggle…\n"
 	.string "If you want to battle with us, just one\l"
 	.string "Pokémon isn't enough!$"
 
 Route114_Text_IvyIntro:
-	.string "IVY: Who taught you about Pokémon?$"
+	.string "Ivy: Who taught you about Pokémon?$"
 
 Route114_Text_IvyDefeat:
-	.string "IVY: What an amazing battle style!$"
+	.string "Ivy: What an amazing battle style!$"
 
 Route114_Text_IvyPostBattle:
-	.string "IVY: I started training Pokémon\n"
-	.string "because TYRA, my student mentor,\l"
+	.string "Ivy: I started training Pokémon\n"
+	.string "because Tyra, my student mentor,\l"
 	.string "taught me!$"
 
 Route114_Text_IvyNotEnoughMons:
-	.string "IVY: Do you only have one Pokémon?\n"
+	.string "Ivy: Do you only have one Pokémon?\n"
 	.string "I think it must feel lonesome.$"
 
 Route114_Text_KaiIntro:

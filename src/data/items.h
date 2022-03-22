@@ -1614,7 +1614,7 @@ const struct Item gItems[] =
     {
         .name = _("X Defense"),
         .itemId = ITEM_X_DEFENSE,
-        .price = 2000,
+        .price = 1000,
         .description = sXDefenseDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -1642,7 +1642,7 @@ const struct Item gItems[] =
     {
         .name = _("X Sp. Def"),
         .itemId = ITEM_X_SP_DEF,
-        .price = 2000,
+        .price = 1000,
         .description = sXSpDefDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,

@@ -7920,7 +7920,7 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_NUMEL] =
     {
-        .baseHP        = 60,
+        .baseHP        = 70,
         .baseAttack    = 60,
         .baseDefense   = 40,
         .baseSpeed     = 35,
@@ -7942,9 +7942,9 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_CAMERUPT] = //TODO: stat changes. -20 to atk, +20 to HP
+    [SPECIES_CAMERUPT] =
     {
-        .baseHP        = 70,
+        .baseHP        = 110,
         .baseAttack    = 100,
         .baseDefense   = 70,
         .baseSpeed     = 40,

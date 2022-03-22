@@ -545,6 +545,13 @@ MauvilleCity_GameCorner_EventScript_PokefanM::
 	goto MauvilleCity_GameCorner_EventScript_NPCReturnToSlots
 	end
 
+MauvilleCity_GameCorner_EventScript_BugCatcher::
+	lock
+	faceplayer
+	msgbox MauvilleCity_GameCorner_Text_DescribePrizes, MSGBOX_DEFAULT
+	goto MauvilleCity_GameCorner_EventScript_NPCReturnToSlots
+	end
+
 MauvilleCity_GameCorner_EventScript_TryGive20Coins::
 	goto_if_set FLAG_RECEIVED_20_COINS, MauvilleCity_GameCorner_EventScript_PokefanMNormal
 	checkcoins VAR_TEMP_1
@@ -835,6 +842,15 @@ MauvilleCity_GameCorner_Text_NeedCoinCaseGoNextDoor:
 	.string "you need a Coin Case.\p"
 	.string "I think the young lady next door\n"
 	.string "had one. Go see her!$"
+
+MauvilleCity_GameCorner_Text_DescribePrizes:
+	.string "I don't even care for the games,\n"
+	.string "I just want the prizes.\p"
+	.string "They're all really good TMs.\n"
+	.string "TM29 is Psychic, TM53 is Energy Ball,\l"
+	.string "TM56 is Dragon Pulse, TM13 is Ice Beam\l"
+	.string "TM24 is Thunderbolt, TM35 is\l"
+	.string "Flamethrower and TM94 is Surf.$"
 
 MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins:
 	.string "My luck can only last so long.\n"
