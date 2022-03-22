@@ -367,7 +367,7 @@ MauvilleCity_Gym_Text_ReceivedDynamoBadge:
 MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
 	.string "With the Dynamo Badge, Pokémon can\n"
 	.string "use the Rock Smash command out of\l"
-	.string "battle."
+	.string "battle.\p"
 	.string "And, it will make your Pokémon a little\n"
 	.string "bit faster, too.\p"
 	.string "Hmm…\n"
