@@ -631,7 +631,7 @@ static const u8 sJustifiedDescription[] = _(
 	"Attack by one stage.");
 
 static const u8 sRattledDescription[] = _(
-	"Hits by bug, dark or ghost\n"
+	"Hits by Bug, Dark or Ghost\n"
 	"moves raise Attack by one\n"
 	"stage.");
 
@@ -649,12 +649,13 @@ static const u8 sPranksterDescription[] = _(
 	"Status moves have priority.");
 
 static const u8 sSandForceDescription[] = _(
-	"Rock, ground and steel\n"
+	"Rock, Ground and Steel\n"
 	"moves power up by 30%\n"
-	"during sandstorm.");
+	"during a sandstorm.");
 
 static const u8 sZenModeDescription[] = _(
-	"Transforms at half HP");
+	"Transforms at half HP into\n"
+	"a defensive form.");
 
 static const u8 sVictoryStarDescription[] = _(
 	"User and ally accuracy\n"
@@ -1118,7 +1119,7 @@ static const u8 sEvergreenDescription[] = _(
 
 static const u8 sHematophagyDescription[] = _(
 	"Healing effect from drain\n"
-	"move increased by 50%.");
+	"moves is increased by 50%.");
 
 static const u8 sSwordmasterDescription[] = _(
 	"Power of sword/blade moves\n"
