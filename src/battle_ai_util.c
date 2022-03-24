@@ -1369,12 +1369,12 @@ u32 AI_GetMoveAccuracy(u8 battlerAtk, u8 battlerDef, u16 atkAbilities[], u16 def
     calc = gAccuracyStageRatios[buff].dividend * moveAcc;
     calc /= gAccuracyStageRatios[buff].divisor;
 
-    if (HasAbility(ABILITY_COMPOUND_EYES, atkAbilities))
-        calc = (calc * 130) / 100; // 1.3 compound eyes boost
+    if (HasAbility(ABILITY_COMPOUND_EYES, atkAbilities) || HasAbility(ABILITY_KEEN_EYE, atkAbilities))
+        calc = (calc * 130) / 100; // 1.3 compound eyes and keen eye boost
     else if (HasAbility(ABILITY_VICTORY_STAR, atkAbilities))
-        calc = (calc * 110) / 100; // 1.1 victory star boost
+        calc = 100; // victory star boost
     if (IsBattlerAlive(BATTLE_PARTNER(battlerAtk)) && HasAbility(ABILITY_VICTORY_STAR, GetBattlerAbilities(BATTLE_PARTNER(battlerAtk))))
-        calc = (calc * 110) / 100; // 1.1 ally's victory star boost
+        calc = 100; // 1.1 ally's victory star boost
 
     if (HasAbility(ABILITY_SNOW_CLOAK, defAbilities) && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_HAIL_ANY)
         calc = (calc * 80) / 100; // 1.2 snow cloak loss
@@ -2307,11 +2307,13 @@ static bool32 BattlerAffectedByHail(u8 battlerId, u16 abilities[])
 
 static u32 GetWeatherDamage(u8 battlerId)
 {
-    u16 *abilities = AI_GetAbilities(battlerId);
+    u16 abilities[NUM_ABILITY_SLOTS];
     u32 holdEffect = AI_GetHoldEffect(battlerId);
     u32 damage = 0;
     if (!AI_WeatherHasEffect())
         return 0;
+
+    memcpy(abilities, AI_GetAbilities(battlerId), sizeof(abilities));
 
     if (gBattleWeather & WEATHER_SANDSTORM_ANY)
     {
@@ -2412,12 +2414,14 @@ struct Pokemon *GetPartyBattlerPartyData(u8 battlerId, u8 switchBattler)
 static bool32 PartyBattlerShouldAvoidHazards(u8 currBattler, u8 switchBattler)
 {
     struct Pokemon *mon = GetPartyBattlerPartyData(currBattler, switchBattler);
-    u16 *abilities = GetMonAbilities(mon);   // we know our own party data
+    u16 abilities[NUM_ABILITY_SLOTS];   // we know our own party data
     u16 holdEffect = GetBattlerHoldEffect(GetMonData(mon, MON_DATA_HELD_ITEM), TRUE);
     u32 flags = gSideStatuses[GetBattlerSide(currBattler)] & (SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK | SIDE_STATUS_STICKY_WEB | SIDE_STATUS_TOXIC_SPIKES);
 
     if (flags == 0)
         return FALSE;
+
+    memcpy(abilities, GetMonAbilities(mon), sizeof(abilities));
 
     if (HasAbility(ABILITY_MAGIC_GUARD, abilities) || HasAbility(ABILITY_LEVITATE, abilities)
       || holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS)
@@ -2674,7 +2678,9 @@ static bool32 AI_CanPoisonType(u8 battlerAttacker, u8 battlerTarget)
 
 static bool32 AI_CanBePoisoned(u8 battlerAtk, u8 battlerDef)
 {
-    u16 *abilities = AI_GetAbilities(battlerDef);
+    u16 abilities[NUM_ABILITY_SLOTS];
+
+    memcpy(abilities, AI_GetAbilities(battlerDef), sizeof(abilities));
 
     if (!(AI_CanPoisonType(battlerAtk, battlerDef))
      || gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD

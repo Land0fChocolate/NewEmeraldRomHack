@@ -4796,7 +4796,7 @@ static void Cmd_setgraphicalstatchangevalues(void)
 
 static void Cmd_playstatchangeanimation(void)
 {
-    u16 *abilities = GetBattlerAbilities(gActiveBattler);
+    u16 abilities[NUM_ABILITY_SLOTS];
     u32 currStat = 0;
     u32 statAnimId = 0;
     u32 changeableStatsCount = 0;
@@ -4806,6 +4806,7 @@ static void Cmd_playstatchangeanimation(void)
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
     statsToCheck = gBattlescriptCurrInstr[2];
+    memcpy(abilities, GetBattlerAbilities(gActiveBattler), sizeof(abilities));
 
     // Handle Contrary and Simple
     if (HasAbility(ABILITY_CONTRARY, abilities))
@@ -10823,7 +10824,8 @@ static void Cmd_setsandstorm(void)
 
 static void Cmd_weatherdamage(void)
 {
-    u16 *abilities = GetBattlerAbilities(gBattlerAttacker);
+    u16 abilities[NUM_ABILITY_SLOTS];
+    memcpy(abilities, GetBattlerAbilities(gBattlerAttacker), sizeof(abilities));
 
     gBattleMoveDamage = 0;
     if (IsBattlerAlive(gBattlerAttacker) && WEATHER_HAS_EFFECT && !HasAbility(ABILITY_MAGIC_GUARD, abilities))

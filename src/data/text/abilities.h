@@ -16,9 +16,9 @@ static const u8 sSpeedBoostDescription[] = _(
 	"turn.");
 
 static const u8 sBattleArmorDescription[] = _(
-	"Blocks critical hits and\n"
-	"reduces damage from neutral\n"
-	"effective moves by 25%.");
+	"Reduces damage from\n"
+	"neutral effective moves by\n"
+	"25% and blocks crits.");
 
 static const u8 sSturdyDescription[] = _(
 	"If at full health, survive\n"
@@ -98,8 +98,8 @@ static const u8 sShadowTagDescription[] = _(
 	"out.");
 
 static const u8 sRoughSkinDescription[] = _(
-	"Damages attackers who make\n"
-	"contact for 1/8 HP.");
+	"Damages attackers who\n"
+	"make contact for 1/8 HP.");
 
 static const u8 sWonderGuardDescription[] = _(
 	"User is only hurt from\n"
@@ -468,9 +468,9 @@ static const u8 sSlowStartDescription[] = _(
 	"for the first turn.");
 
 static const u8 sScrappyDescription[] = _(
-	"Allows user normal and\n"
-	"fighting moves to hit\n"
-	"ghost types.");
+	"Allows user Normal and\n"
+	"Fighting moves to hit\n"
+	"Ghost types.");
 
 static const u8 sStormDrainDescription[] = _(
 	"Draws water moves. Gives\n"
@@ -1085,8 +1085,8 @@ static const u8 sGardenerDescription[] = _(
 	"power by 50%.");
 
 static const u8 sPricklyThornsDescription[] = _(
-	"Damages attackers who make\n"
-	"contact for 1/8 HP.");
+	"Damages attackers who\n"
+	"make contact for 1/8 HP.");
 
 static const u8 sAuraSenseDescription[] = _(
 	"User shudders if opponent\n"
