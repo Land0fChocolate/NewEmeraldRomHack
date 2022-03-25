@@ -121,6 +121,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 The fine people who worked on pokeemerald and pokeemerald-expansion and helped me with problems:
 - DizzyEggg
 - LOuroboros
+- Lunos
 - BuffelSaft
 - Blackforest92
 - ExpoSeed
@@ -132,3 +133,5 @@ The fine people who worked on pokeemerald and pokeemerald-expansion and helped m
 - kleeenexfeu
 - Citrus Bolt
 - dunsparce9
+- Sapphire Jester
+- TheXaman

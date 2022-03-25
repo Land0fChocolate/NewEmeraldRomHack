@@ -1058,6 +1058,8 @@ extern const u8 gText_ThrowInPremierBall[];
 extern const u8 gText_ShopBuy[];
 extern const u8 gText_ShopSell[];
 extern const u8 gText_ShopQuit[];
+extern const u8 gText_SoldOut[];
+extern const u8 gText_SoldOut2[];
 
 extern const u8 gText_OhABite[];
 extern const u8 gText_PokemonOnHook[];
@@ -3061,5 +3063,7 @@ extern const u8 gText_Summary2[];
 extern const u8 gText_PkmnForSwap[];
 extern const u8 gText_SamePkmnInPartyAlready[];
 extern const u8 gText_Cancel3[];
+
+extern const u8 gText_AshQty[];
 
 #endif // GUARD_STRINGS_H
