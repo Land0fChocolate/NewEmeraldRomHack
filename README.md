@@ -131,3 +131,4 @@ The fine people who worked on pokeemerald and pokeemerald-expansion and helped m
 - GriffinR
 - kleeenexfeu
 - Citrus Bolt
+- dunsparce9
