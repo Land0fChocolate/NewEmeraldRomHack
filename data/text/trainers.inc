@@ -1089,7 +1089,7 @@ Route110_Text_JasmineDefeated:
 	.string "I'm worried about muscle cramps…$"
 
 Route110_Text_JasminePostBattle:
-	.string "Oh, you have some GYM BADGES?\n"
+	.string "Oh, you have some Gym Badges?\n"
 	.string "No wonder you're so strong!$"
 
 Route110_Text_EdwardIntro:
@@ -2030,14 +2030,14 @@ Route115_Text_TimothyPostRematch:
 
 Route115_Text_KoichiIntro:
 	.string "You!\p"
-	.string "My MACHOP!\p"
+	.string "My Machop!\p"
 	.string "Demand a battle!$"
 
 Route115_Text_KoichiDefeat:
 	.string "Ouch, ouch, ouch!$"
 
 Route115_Text_KoichiPostBattle:
-	.string "My MACHOP crew!\p"
+	.string "My Machop crew!\p"
 	.string "So long as they seek power, I will\n"
 	.string "grow strong with them!$"
 
@@ -2145,7 +2145,7 @@ Route115_Text_HelenePostBattle:
 	.string "I rarely meet anyone who's better\n"
 	.string "than me…\p"
 	.string "I get it now!\n"
-	.string "You're a GYM LEADER, aren't you?$"
+	.string "You're a Gym Leader, aren't you?$"
 
 Route115_Text_AlixIntro:
 	.string "Our eyes met!\n"
@@ -2157,7 +2157,7 @@ Route115_Text_AlixDefeat:
 
 Route115_Text_AlixPostBattle:
 	.string "Oh, well.\n"
-	.string "I think I will TELEPORT home.$"
+	.string "I think I will Teleport home.$"
 
 Route115_Text_MarleneIntro:
 	.string "You've disturbed my meditation…\n"
@@ -2606,7 +2606,7 @@ Route118_Text_RosePostRematch:
 	.string "Pokémon will be attracted by it.$"
 
 Route118_Text_PerryIntro:
-	.string "Bird Pokémon that FLY elegantly in\n"
+	.string "Bird Pokémon that Fly elegantly in\n"
 	.string "the sky… They're the best!$"
 
 Route118_Text_PerryDefeat:
@@ -2949,7 +2949,7 @@ Route120_Text_ColinDefeat:
 	.string "You soared above me!$"
 
 Route120_Text_ColinPostBattle:
-	.string "The move FLY is convenient,\n"
+	.string "The move Fly is convenient,\n"
 	.string "don't you think?\p"
 	.string "While the Pokémon is flying,\n"
 	.string "almost no moves can strike it.$"
@@ -3350,15 +3350,15 @@ Route123_Text_WendyPostBattle:
 
 Route123_Text_BraxtonIntro:
 	.string "You seem to have a big collection\n"
-	.string "of GYM BADGES.\p"
+	.string "of Gym Badges.\p"
 	.string "Let me see if you're actually worthy of\n"
-	.string "those BADGES!$"
+	.string "those Badges!$"
 
 Route123_Text_BraxtonDefeat:
 	.string "Oh, you're worthy, all right!$"
 
 Route123_Text_BraxtonPostBattle:
-	.string "You did your BADGES proud in that\n"
+	.string "You did your Badges proud in that\n"
 	.string "match!$"
 
 Route123_Text_VioletIntro:
@@ -3370,7 +3370,7 @@ Route123_Text_VioletDefeat:
 	.string "I smell the bitter scent of misery…$"
 
 Route123_Text_VioletPostBattle:
-	.string "The BERRY MASTER's garden is filled\n"
+	.string "The Berry Master's garden is filled\n"
 	.string "with uplifting fragrances.$"
 
 Route123_Text_CameronIntro:
@@ -3431,33 +3431,33 @@ Route123_Text_JackiPostRematch:
 	.string "That could be a psychic power, too.$"
 
 Route123_Text_MiuIntro:
-	.string "MIU: Hello, Trainer. I hope your\n"
+	.string "Miu: Hello, Trainer. I hope your\n"
 	.string "Pokémon won't cry when they lose.$"
 
 Route123_Text_MiuDefeat:
-	.string "MIU: Uh-oh, we lost.$"
+	.string "Miu: Uh-oh, we lost.$"
 
 Route123_Text_MiuPostBattle:
-	.string "MIU: Trainer, your Pokémon are\n"
+	.string "Miu: Trainer, your Pokémon are\n"
 	.string "strong because you are friends.$"
 
 Route123_Text_MiuNotEnoughMons:
-	.string "MIU: It's no fun to battle if you\n"
+	.string "Miu: It's no fun to battle if you\n"
 	.string "don't have two Pokémon.$"
 
 Route123_Text_YukiIntro:
-	.string "YUKI: Okay!\n"
+	.string "Yuki: Okay!\n"
 	.string "We're beating the Trainer's Pokémon!$"
 
 Route123_Text_YukiDefeat:
-	.string "YUKI: Uh-oh, we lost.$"
+	.string "Yuki: Uh-oh, we lost.$"
 
 Route123_Text_YukiPostBattle:
-	.string "YUKI: Why are you so strong?\n"
+	.string "Yuki: Why are you so strong?\n"
 	.string "We've never lost before.$"
 
 Route123_Text_YukiNotEnoughMons:
-	.string "YUKI: It's no fun to battle if you\n"
+	.string "Yuki: It's no fun to battle if you\n"
 	.string "don't have two Pokémon.$"
 
 Route123_Text_KindraIntro:
@@ -4237,8 +4237,8 @@ Route128_Text_WayneDefeat:
 
 Route128_Text_WaynePostBattle:
 	.string "Awww, phooey!\p"
-	.string "My Pokémon knows Waterfall, but\n"
-	.string "I don't have the Sootopolis GYM BADGE!$"
+	.string "My Pokémon can climb waterfalls, but\n"
+	.string "I don't have the Sootopolis Gym Badge!$"
 
 Route128_Text_HarrisonIntro:
 	.string "You're looking awfully tough.\n"

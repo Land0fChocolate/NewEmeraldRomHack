@@ -3192,9 +3192,9 @@ static const u8 sTM89Desc[] = _(
     "forcing a switch.");
 
 static const u8 sTM90Desc[] = _(
-    "Creates a doll\n"
-    "that takes damage\n"
-    "until destroyed.");
+    "User crushes the\n"
+    "foe under its power\n"
+    "and lowers Defense.");
 
 static const u8 sTM91Desc[] = _(
     "Blasts with light\n"

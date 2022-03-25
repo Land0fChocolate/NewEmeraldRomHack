@@ -2952,7 +2952,7 @@ static const u8 sFlintBladeDescription[] = _(
 
 static const u8 sFlareCrashDescription[] = _(
     "User crashes hard into the\n"
-    "foe but has speed reduced.");
+    "foe but has Speed reduced.");
 
 static const u8 sSingularityDescription[] = _(
     "Blocks damage, and reduces\n"
