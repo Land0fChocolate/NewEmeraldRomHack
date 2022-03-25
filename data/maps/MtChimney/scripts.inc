@@ -592,7 +592,7 @@ MtChimney_Text_MaxieYouHaventSeenLastOfMagma:
 	.string "you've seen of Team Magma.\p"
 	.string "Fufufu…\p"
 	.string "Even without the Meteorite, if we\n"
-	.string "obtain that ORB… Fufufu…$"
+	.string "obtain that Orb… Fufufu…$"
 
 MtChimney_Text_TabithaIntro:
 	.string "Hehehe!\p"
@@ -645,7 +645,7 @@ MtChimney_Text_TeamAquaAlwaysMessingWithPlans:
 	.string "They always mess with our plans!$"
 
 MtChimney_Text_MeteoritesPackAmazingPower:
-	.string "MeteoriteS pack amazing power!$"
+	.string "Meteorites pack amazing power!$"
 
 MtChimney_Text_YouBetterNotMessWithUs:
 	.string "You'd better not mess with us!\p"

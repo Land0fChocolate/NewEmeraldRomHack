@@ -12,26 +12,26 @@ Mevent_Text_YouKnowThoseWordsGift::
 	.string "Oh, hello!\n"
 	.string "You know those words?\p"
 	.string "That means you must know about\n"
-	.string "the MYSTERY GIFT.\p"
+	.string "the Mystery Gift.\p"
 	.string "From now on, you should be\n"
-	.string "receiving MYSTERY GIFTS!$"
+	.string "receiving Mystery Gifts!$"
 
 Mevent_Text_YouCanAccessMysteryGift::
 	.string "Once you save your game, you can\n"
-	.string "access the MYSTERY GIFT.$"
+	.string "access the Mystery Gift.$"
 
 Mevent_Text_YouKnowThoseWordsEvent::
 	.string "Oh, hello!\n"
 	.string "You know those words?\p"
 	.string "That means you must know about\n"
-	.string "the MYSTERY EVENT.$"
+	.string "the Mystery EVENT.$"
 
 Mevent_Text_YouCanAccessMysteryEvent::
 	.string "Once you save your game, you can\n"
-	.string "access the MYSTERY EVENT.$"
+	.string "access the Mystery EVENT.$"
 
 Mevent_Text_TheresATicketForYou::
-	.string "Thank you for using the MYSTERY\n"
+	.string "Thank you for using the Mystery\n"
 	.string "EVENT System.\p"
 	.string "You must be {PLAYER}.\n"
 	.string "There is a ticket here for you.$"

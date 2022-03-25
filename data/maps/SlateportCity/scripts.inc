@@ -189,6 +189,7 @@ SlateportCity_Pokemart_GemLady:
 	.2byte ITEM_DARK_GEM
 	.2byte ITEM_STEEL_GEM
 	.2byte ITEM_FAIRY_GEM
+	.2byte ITEM_NONE
 	release
 	end
 
@@ -616,8 +617,8 @@ SlateportCity_Pokemart_PowerTMs:
 	.2byte ITEM_TM62  @ Acrobatics
 	.2byte ITEM_TM78  @ Bulldoze
 	.2byte ITEM_TM89  @ U-Turn
+	.2byte ITEM_TM90  @ Rock Smash
 	.2byte ITEM_TM95  @ Snarl
-	.2byte ITEM_TM100 @ Rock Smash
 	.2byte ITEM_NONE
 	release
 	end

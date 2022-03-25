@@ -1614,7 +1614,7 @@ const struct Item gItems[] =
     {
         .name = _("X Defense"),
         .itemId = ITEM_X_DEFENSE,
-        .price = 2000,
+        .price = 1000,
         .description = sXDefenseDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -1642,7 +1642,7 @@ const struct Item gItems[] =
     {
         .name = _("X Sp. Def"),
         .itemId = ITEM_X_SP_DEF,
-        .price = 2000,
+        .price = 1000,
         .description = sXSpDefDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -8499,10 +8499,10 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM60_FLAME_CHARGE] =
+    [ITEM_TM60_PSYSHOCK] =
     {
         .name = _("TM60"),
-        .itemId = ITEM_TM60_FLAME_CHARGE,
+        .itemId = ITEM_TM60_PSYSHOCK,
         .price = 3000,
         .description = sTM60Desc,
         .importance = 1,
@@ -8859,11 +8859,11 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM90_SUBSTITUTE] =
+    [ITEM_TM90_ROCK_SMASH] =
     {
         .name = _("TM90"),
-        .itemId = ITEM_TM90_SUBSTITUTE,
-        .price = 3000,
+        .itemId = ITEM_TM90_ROCK_SMASH,
+        .price = 4000,
         .description = sTM90Desc,
         .importance = 1,
         .pocket = POCKET_TM_HM,
@@ -8979,10 +8979,10 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM100_ROCK_SMASH] =
+    [ITEM_TM100_UNUSED] =
     {
         .name = _("TM100"),
-        .itemId = ITEM_TM100_ROCK_SMASH,
+        .itemId = ITEM_TM100_UNUSED,
         .price = 4000,
         .description = sTM100Desc,
         .importance = 1,
@@ -9524,7 +9524,7 @@ const struct Item gItems[] =
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_SootSack,
     },
 
     [ITEM_POKE_FLUTE] =

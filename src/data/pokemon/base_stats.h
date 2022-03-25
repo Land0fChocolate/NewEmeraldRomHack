@@ -661,7 +661,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_SAND_VEIL, ABILITY_SAND_RUSH, ABILITY_NONE},
+        .abilities = {ABILITY_SAND_VEIL, ABILITY_SAND_RUSH, ABILITY_EARLY_BIRD},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },
@@ -7789,7 +7789,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_LIQUID_OOZE, ABILITY_STICKY_HOLD, ABILITY_GLUTTONY},
+        .abilities = {ABILITY_LIQUID_OOZE, ABILITY_CORROSION, ABILITY_GLUTTONY},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
     },
@@ -7815,7 +7815,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_LIQUID_OOZE, ABILITY_STICKY_HOLD, ABILITY_GLUTTONY},
+        .abilities = {ABILITY_LIQUID_OOZE, ABILITY_CORROSION, ABILITY_GLUTTONY},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
     },
@@ -7920,7 +7920,7 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_NUMEL] =
     {
-        .baseHP        = 60,
+        .baseHP        = 70,
         .baseAttack    = 60,
         .baseDefense   = 40,
         .baseSpeed     = 35,
@@ -7942,9 +7942,9 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_CAMERUPT] = //TODO: stat changes. -20 to atk, +20 to HP
+    [SPECIES_CAMERUPT] =
     {
-        .baseHP        = 70,
+        .baseHP        = 110,
         .baseAttack    = 100,
         .baseDefense   = 70,
         .baseSpeed     = 40,

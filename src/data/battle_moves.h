@@ -3887,19 +3887,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_FUTURE_SIGHT] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 120,
-            .accuracy = 100,
-            .pp = 10,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .power = 100,
-            .accuracy = 100,
-            .pp = 10,
-        #else
-            .power = 80,
-            .accuracy = 90,
-            .pp = 15,
-        #endif
+        .power = 120,
+        .accuracy = 100,
+        .pp = 10,
         .effect = EFFECT_FUTURE_SIGHT,
         .type = TYPE_PSYCHIC,
         .secondaryEffectChance = 0,
@@ -4980,15 +4970,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_ROCK_TOMB] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 60,
-            .accuracy = 95,
-            .pp = 15,
-        #else
-            .power = 50,
-            .accuracy = 80,
-            .pp = 10,
-        #endif
+        .power = 60,
+        .accuracy = 100,
+        .pp = 15,
         .effect = EFFECT_SPEED_DOWN_HIT,
         .type = TYPE_ROCK,
         .secondaryEffectChance = 100,
@@ -7695,7 +7679,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_ACID_SPRAY] =
     {
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT_2,
-        .power = 40,
+        .power = 50,
         .type = TYPE_POISON,
         .accuracy = 100,
         .pp = 20,

@@ -37,9 +37,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -72,9 +71,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -111,9 +109,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -143,7 +140,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM56_DRAGON_PULSE)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM62_ACROBATICS)
                                             | TMHM(TM63_ECHOED_VOICE),
@@ -152,8 +148,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -182,7 +177,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM56_DRAGON_PULSE)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM62_ACROBATICS)
                                             | TMHM(TM63_ECHOED_VOICE),
@@ -191,8 +185,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -229,7 +222,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM56_DRAGON_PULSE)
                                             | TMHM(TM58_ROOST)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM62_ACROBATICS)
                                             | TMHM(TM63_ECHOED_VOICE),
@@ -242,8 +234,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM04_STRENGTH)
@@ -276,10 +267,9 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM74_GYRO_BALL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -313,10 +303,9 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM74_GYRO_BALL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -358,12 +347,11 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -407,7 +395,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_WEEDLE]      = TMHM_LEARNSET(0, 0),
@@ -446,8 +433,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)),
 
@@ -472,7 +458,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_PIDGEOTTO]   = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -496,7 +481,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_PIDGEOT]     = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -522,7 +506,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_RATTATA]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -553,8 +536,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -592,8 +574,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -620,7 +601,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_FEAROW]      = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -647,7 +627,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_EKANS]       = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -679,7 +658,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM04_STRENGTH)),
 
@@ -714,7 +692,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM04_STRENGTH)),
 
@@ -745,9 +722,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -784,9 +760,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -823,8 +798,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -864,8 +838,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -900,8 +873,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -936,8 +908,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -991,9 +962,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -1029,8 +999,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -1065,8 +1034,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -1120,9 +1088,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -1161,6 +1128,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -1168,9 +1136,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -1210,6 +1177,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -1218,9 +1186,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -1245,13 +1212,11 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -1278,7 +1243,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM60_FLAME_CHARGE)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
@@ -1286,7 +1251,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -1329,7 +1293,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM04_STRENGTH)
@@ -1377,7 +1340,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM04_STRENGTH)
@@ -1413,7 +1375,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_GOLBAT]      = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -1448,7 +1409,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_ODDISH]      = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -1474,7 +1434,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM01_CUT)
@@ -1503,7 +1462,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM01_CUT)
@@ -1535,7 +1493,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM01_CUT)
@@ -1570,9 +1527,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -1609,9 +1565,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -1639,7 +1594,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_VENOMOTH]    = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -1672,7 +1626,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_DIGLETT]     = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -1699,8 +1652,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -1732,8 +1684,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -1770,7 +1721,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)),
@@ -1810,7 +1760,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)),
@@ -1838,15 +1787,15 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM55_SCALD),
+                                            | TMHM(TM55_SCALD)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -1879,16 +1828,16 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM55_SCALD),
+                                            | TMHM(TM55_SCALD)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -1930,8 +1879,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -1972,8 +1920,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -1998,14 +1945,12 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM95_SNARL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -2033,16 +1978,14 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM56_DRAGON_PULSE)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM95_SNARL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -2067,7 +2010,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM55_SCALD),
                                             TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -2099,10 +2041,9 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -2142,10 +2083,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -2179,14 +2119,14 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -2219,14 +2159,14 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -2261,7 +2201,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -2269,7 +2210,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -2303,8 +2243,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -2337,8 +2276,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -2374,8 +2312,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -2405,7 +2342,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)),
@@ -2436,7 +2372,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)),
@@ -2469,7 +2404,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)),
@@ -2502,7 +2436,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
@@ -2541,7 +2474,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
@@ -2577,9 +2509,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -2610,9 +2541,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -2647,9 +2577,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -2670,12 +2599,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -2698,7 +2625,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM67_SMART_STRIKE)
@@ -2706,7 +2632,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -2740,6 +2665,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM55_SCALD)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -2748,7 +2674,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(HM03_SURF)
@@ -2791,6 +2716,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM55_SCALD)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -2800,10 +2726,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -2835,7 +2760,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM05_FLASH)),
@@ -2866,7 +2790,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM05_FLASH)),
@@ -2897,7 +2820,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM02_FLY)),
 
@@ -2922,7 +2844,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM76_FLY)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_DODRIO]      = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -2951,7 +2872,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM76_FLY)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_SEEL]        = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -2976,7 +2896,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM67_SMART_STRIKE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -3009,7 +2928,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM79_FROST_BREATH)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -3050,7 +2968,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM04_STRENGTH)),
 
     [SPECIES_MUK]         = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -3091,9 +3008,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -3117,7 +3033,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM07_WATERFALL)
@@ -3150,7 +3065,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM07_WATERFALL)
@@ -3189,7 +3103,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)),
@@ -3229,7 +3142,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)),
@@ -3274,11 +3186,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -3313,10 +3224,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -3344,14 +3254,14 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM12_TAUNT)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM41_TORMENT)
-                                            | TMHM(TM06_TOXIC),
+                                            | TMHM(TM06_TOXIC)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -3382,7 +3292,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM52_FOCUS_BLAST),
+                                            | TMHM(TM52_FOCUS_BLAST)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -3390,7 +3301,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -3421,9 +3331,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -3459,9 +3368,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -3494,7 +3402,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM74_GYRO_BALL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM05_FLASH)),
 
@@ -3525,7 +3432,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM74_GYRO_BALL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM05_FLASH)),
 
@@ -3550,6 +3456,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM64_EXPLOSION),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -3558,7 +3465,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(HM04_STRENGTH)
@@ -3586,6 +3492,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM64_EXPLOSION),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -3595,7 +3502,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(HM04_STRENGTH)
@@ -3632,8 +3538,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -3672,8 +3577,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -3702,8 +3606,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -3731,8 +3634,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -3776,9 +3678,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -3814,7 +3715,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM05_FLASH)),
 
@@ -3850,7 +3750,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM05_FLASH)),
 
@@ -3890,8 +3789,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -3939,9 +3837,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -3995,10 +3892,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -4030,9 +3926,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -4079,9 +3974,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -4106,7 +4000,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM56_DRAGON_PULSE),
                                             TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
@@ -4135,7 +4028,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
@@ -4164,7 +4056,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -4193,7 +4084,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -4225,7 +4115,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
@@ -4257,7 +4146,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM55_SCALD),
+                                            | TMHM(TM55_SCALD)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -4266,7 +4156,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM94_SURF)
@@ -4310,7 +4199,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -4320,7 +4210,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -4353,8 +4242,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -4387,6 +4275,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
@@ -4397,7 +4286,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(HM05_FLASH)),
 
@@ -4430,9 +4318,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -4458,13 +4345,11 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -4498,8 +4383,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -4538,10 +4422,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -4584,11 +4467,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -4629,10 +4511,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -4658,8 +4539,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM63_ECHOED_VOICE),
-                                            TMHM2(TM87_SWAGGER)
-                                            | TMHM2(HM06_ROCK_SMASH)),
+                                            TMHM2(TM87_SWAGGER)),
 
     [SPECIES_VAPOREON]    = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
                                             | TMHM(TM14_BLIZZARD)
@@ -4688,10 +4568,9 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -4728,9 +4607,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -4756,14 +4634,12 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM30_SHADOW_BALL)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -4791,14 +4667,14 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)),
 
     [SPECIES_OMANYTE]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -4826,10 +4702,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM06_ROCK_SMASH)
                                             | TMHM2(HM07_WATERFALL)
@@ -4863,10 +4738,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM06_ROCK_SMASH)
                                             | TMHM2(HM07_WATERFALL)
@@ -4900,10 +4774,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM06_ROCK_SMASH)
                                             | TMHM2(HM07_WATERFALL)
@@ -4943,11 +4816,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -4992,8 +4864,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -5035,10 +4906,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -5072,8 +4942,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -5107,9 +4976,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -5137,15 +5005,13 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM58_ROOST)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM76_FLY)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -5180,11 +5046,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
-                                            | TMHM2(HM06_ROCK_SMASH)
                                             | TMHM2(HM07_WATERFALL)),
 
     [SPECIES_DRAGONAIR]   = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -5218,11 +5082,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
-                                            | TMHM2(HM06_ROCK_SMASH)
                                             | TMHM2(HM07_WATERFALL)),
 
     [SPECIES_DRAGONITE]   = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -5270,10 +5132,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM03_SURF)
@@ -5325,6 +5186,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -5337,9 +5199,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM92_TRICK_ROOM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -5403,7 +5264,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM58_ROOST)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM60_FLAME_CHARGE)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM62_ACROBATICS)
                                             | TMHM(TM63_ECHOED_VOICE)
@@ -5433,7 +5294,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM93_WILD_CHARGE)
@@ -5443,7 +5304,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM03_SURF)
@@ -5477,7 +5337,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)),
@@ -5506,9 +5365,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -5543,9 +5401,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -5568,11 +5425,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(HM01_CUT)),
@@ -5597,14 +5452,12 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -5634,7 +5487,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -5642,10 +5494,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -5678,7 +5529,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM01_CUT)
@@ -5715,10 +5565,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -5762,10 +5611,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -5804,7 +5652,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)),
@@ -5845,9 +5692,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -5878,7 +5724,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM05_FLASH)),
 
@@ -5909,7 +5754,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM05_FLASH)),
 
@@ -5941,7 +5785,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_LEDIAN]      = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -5975,8 +5818,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)),
 
@@ -6004,7 +5846,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_ARIADOS]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -6035,7 +5876,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_CROBAT]      = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -6071,7 +5911,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM02_FLY)),
 
@@ -6099,7 +5938,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
@@ -6135,7 +5973,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
@@ -6168,7 +6005,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM05_FLASH)),
@@ -6197,6 +6033,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -6204,7 +6041,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_IGGLYBUFF]   = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -6237,7 +6073,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM05_FLASH)),
 
@@ -6263,6 +6098,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -6270,9 +6106,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -6304,6 +6139,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM58_ROOST)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM67_SMART_STRIKE)
                                             | TMHM2(TM68_GIGA_IMPACT)
@@ -6314,9 +6150,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -6344,7 +6179,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM58_ROOST),
+                                            | TMHM(TM58_ROOST)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM85_DREAM_EATER)
@@ -6352,7 +6188,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -6381,7 +6216,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM58_ROOST),
+                                            | TMHM(TM58_ROOST)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM76_FLY)
@@ -6391,7 +6227,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM02_FLY)
@@ -6420,7 +6255,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM05_FLASH)),
 
@@ -6449,9 +6283,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -6485,9 +6318,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -6516,7 +6348,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM01_CUT)
@@ -6547,10 +6378,9 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -6585,10 +6415,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -6625,9 +6454,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -6660,10 +6488,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -6695,7 +6522,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
 
@@ -6724,7 +6550,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
 
@@ -6755,7 +6580,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
 
@@ -6794,8 +6618,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -6821,7 +6644,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)),
@@ -6850,7 +6672,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)),
@@ -6878,7 +6699,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_WOOPER]      = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -6907,10 +6727,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -6952,10 +6771,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -6984,6 +6802,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM48_SKILL_SWAP)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -6991,7 +6810,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM01_CUT)
@@ -7024,7 +6842,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM01_CUT)
@@ -7059,7 +6876,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM02_FLY)),
@@ -7096,6 +6912,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM55_SCALD)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -7106,10 +6923,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -7150,7 +6966,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
@@ -7196,10 +7011,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -7231,8 +7045,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -7266,9 +7079,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -7310,9 +7122,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -7355,9 +7166,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -7395,11 +7205,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -7441,11 +7250,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -7493,11 +7301,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -7529,7 +7336,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -7566,9 +7372,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -7599,8 +7404,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -7638,8 +7442,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -7681,11 +7484,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -7721,8 +7523,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -7761,8 +7562,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -7784,15 +7584,13 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
     [SPECIES_MAGCARGO]    = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -7816,7 +7614,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM64_EXPLOSION),
                                             TMHM2(TM68_GIGA_IMPACT)
@@ -7828,9 +7625,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -7859,8 +7655,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -7892,8 +7687,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -7931,10 +7725,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -7965,7 +7758,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -8002,7 +7794,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
@@ -8034,7 +7825,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM79_FROST_BREATH)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_MANTINE]     = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -8065,7 +7855,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -8099,10 +7888,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -8130,16 +7918,14 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
     [SPECIES_HOUNDOOM]    = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -8166,17 +7952,15 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -8201,7 +7985,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
@@ -8230,8 +8013,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -8262,8 +8044,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -8290,17 +8071,16 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
-                                            | TMHM2(HM05_FLASH)
-                                            | TMHM2(HM06_ROCK_SMASH)),
+                                            | TMHM2(HM05_FLASH)),
 
     [SPECIES_STANTLER]    = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
                                             | TMHM(TM04_CALM_MIND)
@@ -8329,7 +8109,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -8337,7 +8118,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM04_STRENGTH)
@@ -8365,8 +8145,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -8396,8 +8175,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -8423,6 +8201,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM70_AURORA_VEIL)
@@ -8432,7 +8211,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(HM05_FLASH)),
 
@@ -8460,9 +8238,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -8485,12 +8262,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
     [SPECIES_MILTANK]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -8530,9 +8305,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -8586,10 +8360,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -8626,10 +8399,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM95_SNARL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -8658,7 +8430,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -8666,9 +8437,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM95_SNARL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -8703,11 +8473,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -8742,10 +8511,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
     [SPECIES_PUPITAR]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -8776,10 +8544,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
     [SPECIES_TYRANITAR]   = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -8828,11 +8595,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -8874,6 +8640,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM56_DRAGON_PULSE)
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM58_ROOST)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -8884,10 +8651,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -8929,7 +8695,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM58_ROOST)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM68_GIGA_IMPACT)
@@ -8940,8 +8705,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -8984,7 +8748,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
@@ -9019,9 +8782,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -9057,9 +8819,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -9103,9 +8864,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -9128,7 +8888,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM65_SHADOW_CLAW)
@@ -9136,8 +8895,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -9163,7 +8921,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM65_SHADOW_CLAW)
@@ -9172,8 +8929,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -9203,7 +8959,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM62_ACROBATICS)
                                             | TMHM(TM63_ECHOED_VOICE),
@@ -9216,8 +8971,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -9245,10 +8999,9 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -9281,10 +9034,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -9323,10 +9075,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -9356,10 +9107,9 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
     [SPECIES_MIGHTYENA]   = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -9387,10 +9137,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -9422,9 +9171,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -9461,9 +9209,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -9502,7 +9249,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_CASCOON]     = TMHM_LEARNSET(0, 0),
@@ -9537,7 +9283,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_LOTAD]       = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -9567,7 +9312,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(HM03_SURF)
@@ -9603,11 +9347,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -9647,11 +9390,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -9682,9 +9424,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -9719,11 +9460,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -9764,11 +9504,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -9795,7 +9534,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_SWELLOW]     = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -9821,7 +9559,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_WINGULL]     = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -9850,7 +9587,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM02_FLY)),
 
     [SPECIES_PELIPPER]    = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -9882,7 +9618,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM03_SURF)),
@@ -9913,6 +9648,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM73_THUNDER_WAVE)
@@ -9921,7 +9657,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -9952,6 +9687,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM73_THUNDER_WAVE)
@@ -9960,7 +9696,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -9994,6 +9729,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM73_THUNDER_WAVE)
@@ -10002,7 +9738,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -10031,7 +9766,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_MASQUERAIN]  = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -10063,7 +9797,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_SHROOMISH]   = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -10090,7 +9823,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_BRELOOM]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -10126,8 +9858,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -10164,8 +9895,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10206,8 +9936,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10250,8 +9979,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10277,7 +10005,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10310,7 +10037,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10342,7 +10068,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10370,8 +10095,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM87_SWAGGER)
-                                            | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)),
+                                            | TMHM2(TM88_SLEEP_TALK)),
 
     [SPECIES_LOUDRED]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
                                             | TMHM(TM14_BLIZZARD)
@@ -10405,8 +10129,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -10445,9 +10168,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10476,9 +10198,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10511,9 +10232,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10538,7 +10258,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM55_SCALD),
                                             TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -10572,9 +10291,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -10611,7 +10329,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM05_FLASH)),
 
@@ -10650,9 +10367,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10691,11 +10407,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10739,10 +10454,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -10773,8 +10487,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10807,8 +10520,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10860,11 +10572,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -10891,7 +10602,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM30_SHADOW_BALL)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM52_FOCUS_BLAST),
+                                            | TMHM(TM52_FOCUS_BLAST)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM84_POISON_JAB)
@@ -10899,8 +10611,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10928,7 +10639,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM53_ENERGY_BALL),
+                                            | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -10937,8 +10649,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -10967,7 +10678,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(HM04_STRENGTH)
@@ -11000,7 +10710,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(HM04_STRENGTH)
@@ -11029,7 +10738,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM05_FLASH)),
 
@@ -11056,7 +10764,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM05_FLASH)),
 
@@ -11093,7 +10800,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
 
@@ -11130,7 +10836,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
 
@@ -11159,7 +10864,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM01_CUT)
@@ -11192,8 +10896,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -11228,8 +10931,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -11255,7 +10957,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
@@ -11293,12 +10994,11 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -11328,10 +11028,9 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -11363,10 +11062,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -11391,16 +11089,14 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -11425,7 +11121,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE)
                                             | TMHM(TM64_EXPLOSION),
@@ -11436,10 +11131,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -11463,7 +11157,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM64_EXPLOSION),
                                             TMHM2(TM68_GIGA_IMPACT)
@@ -11473,9 +11166,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -11503,7 +11195,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -11511,7 +11204,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(HM05_FLASH)),
 
@@ -11544,7 +11236,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -11554,7 +11247,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(HM05_FLASH)),
 
@@ -11588,10 +11280,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM93_WILD_CHARGE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -11618,8 +11309,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -11650,8 +11340,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -11691,8 +11380,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -11722,7 +11410,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM01_CUT)
@@ -11756,7 +11443,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM01_CUT)
@@ -11790,7 +11476,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM02_FLY)),
 
@@ -11830,9 +11515,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -11878,8 +11562,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -11915,9 +11598,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -11945,6 +11627,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM48_SKILL_SWAP)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM62_ACROBATICS)
                                             | TMHM(TM64_EXPLOSION),
                                             TMHM2(TM68_GIGA_IMPACT)
@@ -11958,7 +11641,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(HM05_FLASH)),
 
@@ -11988,6 +11670,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM62_ACROBATICS)
                                             | TMHM(TM64_EXPLOSION),
                                             TMHM2(TM68_GIGA_IMPACT)
@@ -12001,7 +11684,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(HM05_FLASH)),
 
@@ -12027,7 +11709,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -12060,10 +11741,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -12099,10 +11779,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -12141,13 +11820,12 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -12180,6 +11858,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM64_EXPLOSION),
                                             TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -12190,7 +11869,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -12221,6 +11899,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM64_EXPLOSION),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
@@ -12233,10 +11912,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -12266,7 +11944,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_CRADILY]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -12299,8 +11976,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -12329,8 +12005,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -12367,9 +12042,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -12398,7 +12072,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM56_DRAGON_PULSE),
                                             TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -12432,7 +12105,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -12470,7 +12142,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_KECLEON]     = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -12512,9 +12183,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM92_TRICK_ROOM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -12551,7 +12221,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
@@ -12592,7 +12261,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
@@ -12629,7 +12297,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM05_FLASH)),
@@ -12673,10 +12340,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)),
 
@@ -12709,9 +12375,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM04_STRENGTH)
@@ -12743,6 +12408,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -12750,7 +12416,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -12803,10 +12468,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -12835,7 +12499,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM79_FROST_BREATH)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_GLALIE]      = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -12868,7 +12531,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM79_FROST_BREATH)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM05_FLASH)),
 
@@ -12896,10 +12558,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -12931,10 +12592,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -12968,10 +12628,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -12996,7 +12655,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM55_SCALD),
                                             TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -13026,7 +12684,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -13058,7 +12715,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -13095,10 +12751,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM06_ROCK_SMASH)
                                             | TMHM2(HM07_WATERFALL)
@@ -13124,7 +12779,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -13155,8 +12809,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -13185,8 +12838,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -13225,8 +12877,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM04_STRENGTH)
@@ -13256,6 +12907,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM36_SLUDGE_BOMB)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM64_EXPLOSION),
                                             TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -13265,9 +12917,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -13295,6 +12946,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM36_SLUDGE_BOMB)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM64_EXPLOSION),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
@@ -13305,9 +12957,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -13346,8 +12997,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -13386,9 +13036,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -13426,9 +13075,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -13466,7 +13114,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM56_DRAGON_PULSE)
                                             | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM58_ROOST),
+                                            | TMHM(TM58_ROOST)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -13477,7 +13126,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM01_CUT)
@@ -13521,7 +13169,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM56_DRAGON_PULSE)
                                             | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM58_ROOST),
+                                            | TMHM(TM58_ROOST)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -13532,7 +13181,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM01_CUT)
@@ -13574,10 +13222,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)
@@ -13627,8 +13274,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -13681,10 +13327,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM82_DRAGON_TAIL)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM03_SURF)
@@ -13719,7 +13364,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -13728,11 +13374,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -13770,7 +13415,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -13780,11 +13426,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -14209,7 +13854,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM01_CUT)
@@ -14242,7 +13886,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM01_CUT)
@@ -14617,8 +14260,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -14752,7 +14394,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
@@ -14789,7 +14430,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM02_FLY)),
@@ -14872,6 +14512,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -14879,7 +14520,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM05_FLASH)),
@@ -15007,7 +14647,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM96_NATURE_POWER)),
 
     [SPECIES_MIME_JR]     = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -15039,7 +14678,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM83_INFESTATION)
@@ -15047,7 +14687,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(HM05_FLASH)),
 
@@ -15080,7 +14719,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     // [SPECIES_CHATOT]      = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -15234,9 +14872,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -15514,7 +15151,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
                                             | TMHM2(HM03_SURF)
@@ -15614,11 +15250,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM95_SNARL)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -15650,7 +15285,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(HM05_FLASH)),
@@ -15698,9 +15332,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -15750,10 +15383,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM94_SURF)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM04_STRENGTH)
@@ -15794,9 +15426,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -15838,9 +15469,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -15872,15 +15502,13 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM60_FLAME_CHARGE)
                                             | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -15912,6 +15540,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM58_ROOST)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -15921,9 +15550,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM02_FLY)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -15955,7 +15583,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     [SPECIES_LEAFEON]     = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
@@ -15987,9 +15614,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM96_NATURE_POWER)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -16022,8 +15648,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM79_FROST_BREATH)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -16068,9 +15693,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM89_U_TURN)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -16103,8 +15727,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
-                                            | TMHM2(TM100_ROCK_SMASH)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -16131,14 +15754,14 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(HM05_FLASH)),
@@ -16179,6 +15802,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM68_GIGA_IMPACT)
@@ -16194,10 +15818,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -16233,10 +15856,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
@@ -16280,10 +15902,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -16324,7 +15945,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
                                             | TMHM2(HM05_FLASH)),
 
     // [SPECIES_ROTOM]       = TMHM_LEARNSET(TMHM(TM32_DOUBLE_TEAM)
@@ -21232,14 +20852,14 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM48_SKILL_SWAP)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
+                                            | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM05_FLASH)
                                             | TMHM2(HM06_ROCK_SMASH)),
@@ -24487,7 +24107,6 @@ const u32 gTMHMLearnsets[][4] =
                                                 | TMHM2(TM79_FROST_BREATH)
                                                 | TMHM2(TM87_SWAGGER)
                                                 | TMHM2(TM88_SLEEP_TALK)
-                                                | TMHM2(TM90_SUBSTITUTE)
                                                 | TMHM2(TM97_DARK_PULSE)),
 
     [SPECIES_NINETALES_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
@@ -24500,7 +24119,8 @@ const u32 gTMHMLearnsets[][4] =
                                                    | TMHM(TM17_PROTECT)
                                                    | TMHM(TM33_REFLECT)
                                                    | TMHM(TM44_REST)
-                                                   | TMHM(TM06_TOXIC),
+                                                   | TMHM(TM06_TOXIC)
+                                                   | TMHM(TM60_PSYSHOCK),
                                                    TMHM2(TM66_PAYBACK)
                                                    | TMHM2(TM68_GIGA_IMPACT)
                                                    | TMHM2(TM70_AURORA_VEIL)
@@ -24509,7 +24129,6 @@ const u32 gTMHMLearnsets[][4] =
                                                    | TMHM2(TM85_DREAM_EATER)
                                                    | TMHM2(TM87_SWAGGER)
                                                    | TMHM2(TM88_SLEEP_TALK)
-                                                   | TMHM2(TM90_SUBSTITUTE)
                                                    | TMHM2(TM97_DARK_PULSE)
                                                    | TMHM2(TM99_DAZZLING_GLEAM)),
 
@@ -25401,11 +25020,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -25455,11 +25073,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -25510,11 +25127,10 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
-                                            | TMHM2(TM90_SUBSTITUTE)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM92_TRICK_ROOM)
                                             | TMHM2(TM97_DARK_PULSE)
-                                            | TMHM2(TM100_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)

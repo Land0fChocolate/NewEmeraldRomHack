@@ -3,8 +3,8 @@ static const u8 sNoneDescription[] = _(
 
 static const u8 sStenchDescription[] = _(
 	"May cause a foe to flinch\n"
-	"on hit. Reduces encounter\n"
-	"rate.");
+	"on hit. Also reduces\n"
+	"encounter rate.");
 
 static const u8 sDrizzleDescription[] = _(
 	"Summons rain in battle\n"
@@ -16,9 +16,9 @@ static const u8 sSpeedBoostDescription[] = _(
 	"turn.");
 
 static const u8 sBattleArmorDescription[] = _(
-	"Blocks critical hits and\n"
-	"reduces damage from neutral\n"
-	"effective moves by 25%.");
+	"Reduces damage from\n"
+	"neutral effective moves by\n"
+	"25% and blocks crits.");
 
 static const u8 sSturdyDescription[] = _(
 	"If at full health, survive\n"
@@ -98,8 +98,8 @@ static const u8 sShadowTagDescription[] = _(
 	"out.");
 
 static const u8 sRoughSkinDescription[] = _(
-	"Damages attackers who make\n"
-	"contact for 1/8 HP.");
+	"Damages attackers who\n"
+	"make contact for 1/8 HP.");
 
 static const u8 sWonderGuardDescription[] = _(
 	"User is only hurt from\n"
@@ -205,7 +205,9 @@ static const u8 sRunAwayDescription[] = _(
 	"even when traps were set.");
 
 static const u8 sKeenEyeDescription[] = _(
-	"Prevents loss of accuracy."); //TODO: scheduled for update
+	"Increases accuracy by 30%\n"
+	"and prevents accuracy from\n"
+	"being decreased.");
 
 static const u8 sHyperCutterDescription[] = _(
 	"Prevents Attack stat\n"
@@ -308,9 +310,9 @@ static const u8 sPurePowerDescription[] = _(
 	"Doubles attack stat.");
 
 static const u8 sShellArmorDescription[] = _(
-	"Blocks critical hits and\n"
-	"reduces damage from neutral\n"
-	"effective moves by 25%.");
+	"Reduces damage from\n"
+	"neutral effective moves by\n"
+	"25% and blocks crits.");
 
 static const u8 sAirLockDescription[] = _(
 	"Negates weather effects.");
@@ -466,9 +468,9 @@ static const u8 sSlowStartDescription[] = _(
 	"for the first turn.");
 
 static const u8 sScrappyDescription[] = _(
-	"Allows user normal and\n"
-	"fighting moves to hit\n"
-	"ghost types.");
+	"Allows user Normal and\n"
+	"Fighting moves to hit\n"
+	"Ghost types.");
 
 static const u8 sStormDrainDescription[] = _(
 	"Draws water moves. Gives\n"
@@ -562,12 +564,12 @@ static const u8 sMultiscaleDescription[] = _(
 	"full HP.");
 
 static const u8 sToxicBoostDescription[] = _(
-	"Ups user Attack by one\n"
-	"stage if poisoned.");
+	"Increases user Attack by\n"
+	"one stage if poisoned.");
 
 static const u8 sFlareBoostDescription[] = _(
-	"Ups user Sp. Atk by one\n"
-	"stage if burned.");
+	"Increases user Sp. Atk by\n"
+	"one stage if burned.");
 
 static const u8 sHarvestDescription[] = _(
 	"50% chance to recycle a\n"
@@ -629,7 +631,7 @@ static const u8 sJustifiedDescription[] = _(
 	"Attack by one stage.");
 
 static const u8 sRattledDescription[] = _(
-	"Hits by bug, dark or ghost\n"
+	"Hits by Bug, Dark or Ghost\n"
 	"moves raise Attack by one\n"
 	"stage.");
 
@@ -647,12 +649,13 @@ static const u8 sPranksterDescription[] = _(
 	"Status moves have priority.");
 
 static const u8 sSandForceDescription[] = _(
-	"Rock, ground and steel\n"
+	"Rock, Ground and Steel\n"
 	"moves power up by 30%\n"
-	"during sandstorm.");
+	"during a sandstorm.");
 
 static const u8 sZenModeDescription[] = _(
-	"Transforms at half HP");
+	"Transforms at half HP into\n"
+	"a defensive form.");
 
 static const u8 sVictoryStarDescription[] = _(
 	"User and ally accuracy\n"
@@ -1049,7 +1052,7 @@ static const u8 sAsOneShadowRiderDescription[] = _(
 	"Foes can't eat Berries.");
 
 static const u8 sVolumeUpDescription[] = _(
-	"sound based moves are\n"
+	"Sound based moves are\n"
 	"powered up by 33%.");
 
 static const u8 sLavaBodyDescription[] = _(
@@ -1082,8 +1085,8 @@ static const u8 sGardenerDescription[] = _(
 	"power by 50%.");
 
 static const u8 sPricklyThornsDescription[] = _(
-	"Damages attackers who make\n"
-	"contact for 1/8 HP.");
+	"Damages attackers who\n"
+	"make contact for 1/8 HP.");
 
 static const u8 sAuraSenseDescription[] = _(
 	"User shudders if opponent\n"
@@ -1116,7 +1119,7 @@ static const u8 sEvergreenDescription[] = _(
 
 static const u8 sHematophagyDescription[] = _(
 	"Healing effect from drain\n"
-	"move increased by 50%.");
+	"moves is increased by 50%.");
 
 static const u8 sSwordmasterDescription[] = _(
 	"Power of sword/blade moves\n"

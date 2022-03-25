@@ -342,17 +342,17 @@ Route104_EventScript_Woman::
 Route104_EventScript_Boy2::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TM09, Route104_EventScript_ReceivedBulletSeed
+	goto_if_set FLAG_RECEIVED_TM83, Route104_EventScript_ReceivedBulletSeed
 	msgbox Route104_Text_LikeFillingMouthWithSeedsTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM09
+	giveitem ITEM_TM83
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_TM09
+	setflag FLAG_RECEIVED_TM83
 	release
 	end
 
 Route104_EventScript_ReceivedBulletSeed::
-	msgbox Route104_Text_TMsAreOneTimeUse, MSGBOX_DEFAULT
+	msgbox Route104_Text_TMDescription, MSGBOX_DEFAULT
 	release
 	end
 
@@ -1049,18 +1049,17 @@ Route104_Text_ImNotATrainer:
 	.string "of their sight.$"
 
 Route104_Text_LikeFillingMouthWithSeedsTakeThis:
-	.string "I like filling my mouth with seeds,\n"
-	.string "then spitting them out fast!\p"
-	.string "You can have this, so you try it out!\p"
-	.string "Use it on a Pokémon, and it will learn\n"
-	.string "a move for firing seeds rapidly.$"
+	.string "Bugs!\p"
+	.string "Bugs everywhere!\p"
+	.string "They're crawling all over me!\p"
+	.string "You like bugs too? Take this.$"
 
-Route104_Text_TMsAreOneTimeUse:
-	.string "A word of advice!\p"
-	.string "A TM, Technical Machine, is good only\n"
-	.string "for one-time use.\p"
-	.string "Once you use it, it's gone.\n"
-	.string "Think twice before using it!$"
+Route104_Text_TMDescription:
+	.string "That's a TM, a Technical Machine.\p"
+	.string "You can teach your Pokémon a new\n"
+	.string "move with it.\p"
+	.string "They're reusable, so you can have\n"
+	.string "some fun trying out new moves.!$"
 
 Route104_Text_DontNeedThisTakeIt:
 	.string "This Flower Shop started selling\n"
