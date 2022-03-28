@@ -75,9 +75,9 @@ Route119_WeatherInstitute_1F_EventScript_Grunt4::
 
 Route119_WeatherInstitute_1F_Text_Grunt1Intro:
 	.string "The boss got interested in\n"
-	.string "the research they have going here,\l"
-	.string "so he sent us out.\p"
-	.string "You quit meddling!$"
+	.string "the Pokémon they have here so he,\l"
+	.string "sent us out.\p"
+	.string "Stay out of our way!$"
 
 Route119_WeatherInstitute_1F_Text_Grunt1Defeat:
 	.string "Blast it…\n"
@@ -90,7 +90,7 @@ Route119_WeatherInstitute_1F_Text_Grunt1PostBattle:
 
 Route119_WeatherInstitute_1F_Text_Grunt4Intro:
 	.string "Huh?\n"
-	.string "What's a kid doing here?$"
+	.string "There's another kid?$"
 
 Route119_WeatherInstitute_1F_Text_Grunt4Defeat:
 	.string "Huh?\n"

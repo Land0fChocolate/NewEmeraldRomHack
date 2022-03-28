@@ -22,18 +22,19 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 # Changelog
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
-	- Including physical/special split, fairy types, new moves, new items, regional species variants.
-	- Whilst data for all post gen3 Pokemon are in the game, only those that existed in gens 1-3 or have evolutions linked to Pokemon in those gens are accessible, baring a few exceptions.
-- Pokemon can have up to 3 active abilities, dependant on their species. Many Pokemon have had their ability sets updated (TODO: make a list of ability stat changes somewhere). These are usually the same to what the Pokemon had access to before but some Pokemon have new abilities.
+	- Including physical/special split, fairy types, new moves, new items, new Pokemon species, regional species variants.
+	- Whilst data for all post gen3 Pokemon are in the game, only those that existed in gens 1-3 or have evolutions linked to Pokemon in those gens are accessible, baring a few exceptions (Namely Alolan Vulpix and evo).
+- Pokemon can have up to 3 active abilities at once, dependant on their species.
+	- Many Pokemon have had their ability sets updated with new abilities (TODO: make a list of ability stat changes somewhere).
 - New moves and abilities (listed below).
-- Some vanilla abilities updated to make them more useful and compatible with the new ability change (listed below).
+- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
 - Many gameplay adjustments to vanilla moves (Listed below). 
 	- Changes to level up and TM learnsets of some Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
 	- OHKO moves have been removed from battle facility movepools.
 - Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko line has its Attack and Special Attack swapped. (TODO: make list)
 - HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
-- Berry tree drop rates are tripled.
+- Berry tree drop rates are tripled. Interaction with berry trees is also quicker.
 - Number of Feebas spots is tripled.
 - TMs have infinite use.
 - TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
@@ -45,11 +46,12 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
+- Various story changes.
 
 # New Abilities
 
 - Volume Up: Power of sound based moves have increased by 33%. Used by Loudred/Exploud.
-- Lava Body: Attackers who make contact will get inflicted with burn. Used by Slugma/Magargo.
+- Lava Body: Attackers who make contact will always get inflicted with burn unless they have immunity. Used by Slugma/Magargo.
 - Wildfire: Sp.Atk raises one stage after fainting an opponent. Used by Quilava/Typlosion.
 - Miracle Blossom: User and ally restore 1/8 HP at the end of every turn. Used by Bayleef/Meganium/Xerneas.
 - Scorching Heart: Power of Fire type moves increased by 50%. Used by Solrock/Groudon/Solgaleo.
@@ -100,7 +102,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - War Dance: User have their own attack and speed rise by 1 stage and attempts to confuse the opponent. Learned by Sentret/Furret/Yungoos/Gumshoos via level up.
 - Flint Blade: 75 BP, 100% Acc, Rock type, increased crit ratio. Boosted by Swordmaster ability. Added to Battle Frontier move tutor list. Learned by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian/Rockruff/Lycanroc/Gigalith/Onix/Steelix/Omanite/Omastar/Kabuto/Kabutops/Aerodactyl/Anorith/Armaldo/Shieldon/Bastiodon/Binacle/Barbaracle/Rhyhorn/Rhydon/Rhypherior/Aggron/Kleavor/Seviper.
 - Flare Crash: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Added to Battle Frontier move tutor list. Learned by Growlith/Arcanine/Ponyta/Rapidash/Flareon/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo.
-- Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir via level up.
+- Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir on evolution.
 - Serpent Dance: Increases the user's special attack and speed by one stage. Added to Battle Frontier move tutor list. Learned by Seviper/Milotic/Serperior/Dunsparce/Ekans/Arbok/Huntail/Gorebyss/Rayquaza/Silicobra/Sandaconda/Giratina/Gyarados/Furret.
 
 # Updated Moves
@@ -114,14 +116,13 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Core Enforcer: Nullifies opponent’s abilities.
 - Charge Beam: Now 40 BP, 100% Acc with 100% chance for special attack boost.
 - Rock Smash: Now 50 BP with 100% chance for target defense drop.
-- Poison Fang: 100% chance to poison target.
+- Poison Fang: Now has a 100% chance to poison target.
 
 # Credits
 
 The fine people who worked on pokeemerald and pokeemerald-expansion and helped me with problems:
 - DizzyEggg
-- LOuroboros
-- Lunos
+- LOuroboros/Lunos
 - BuffelSaft
 - Blackforest92
 - ExpoSeed
