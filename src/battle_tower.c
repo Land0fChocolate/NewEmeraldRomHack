@@ -816,23 +816,23 @@ struct
         .fixedIV = MAX_PER_STAT_IVS,
         .level = 33,
         .nature = NATURE_BOLD,
-        .evs = {0, 0, 200, 200, 6, 0},
-        .moves = {MOVE_WATER_PULSE, MOVE_AIR_SLASH, MOVE_TAILWIND, MOVE_U_TURN}
+        .evs = {0, 0, 160, 160, 6, 0},
+        .moves = {MOVE_WATER_PULSE, MOVE_WING_ATTACK, MOVE_TAILWIND, MOVE_U_TURN}
     },
     {
         .species = SPECIES_BRELOOM,
         .fixedIV = MAX_PER_STAT_IVS,
         .level = 33,
         .nature = NATURE_JOLLY,
-        .evs = {200, 200, 0, 0, 6, 0},
-        .moves = {MOVE_MACH_PUNCH, MOVE_FORCE_PALM, MOVE_BULLET_SEED, MOVE_LEECH_SEED}
+        .evs = {160, 160, 0, 0, 6, 0},
+        .moves = {MOVE_MACH_PUNCH, MOVE_FORCE_PALM, MOVE_MEGA_DRAIN, MOVE_LEECH_SEED}
     },
     {
         .species = SPECIES_COMBUSKEN,
         .fixedIV = MAX_PER_STAT_IVS,
         .level = 35,
         .nature = NATURE_ADAMANT,
-        .evs = {6, 200, 0, 0, 0, 200},
+        .evs = {6, 160, 0, 0, 0, 160},
         .moves = {MOVE_DOUBLE_KICK, MOVE_FLAME_CHARGE, MOVE_OVERHEAT, MOVE_BULK_UP}
     }
 };
@@ -852,15 +852,15 @@ struct
         .fixedIV = MAX_PER_STAT_IVS,
         .level = 33,
         .nature = NATURE_JOLLY,
-        .evs = {200, 200, 0, 0, 6, 0},
-        .moves = {MOVE_MACH_PUNCH, MOVE_FORCE_PALM, MOVE_BULLET_SEED, MOVE_LEECH_SEED}
+        .evs = {160, 160, 0, 0, 6, 0},
+        .moves = {MOVE_MACH_PUNCH, MOVE_FORCE_PALM, MOVE_MEGA_DRAIN, MOVE_LEECH_SEED}
     },
     {
         .species = SPECIES_MAGCARGO,
         .fixedIV = MAX_PER_STAT_IVS,
         .level = 33,
         .nature = NATURE_CALM,
-        .evs = {200, 0, 0, 200, 6, 0},
+        .evs = {160, 0, 0, 160, 6, 0},
         .moves = {MOVE_ANCIENT_POWER, MOVE_FLAME_BURST, MOVE_YAWN, MOVE_REFLECT}
     },
     {
@@ -868,8 +868,8 @@ struct
         .fixedIV = MAX_PER_STAT_IVS,
         .level = 35,
         .nature = NATURE_ADAMANT,
-        .evs = {6, 200, 0, 0, 0, 200},
-        .moves = {MOVE_WATER_PULSE, MOVE_MUD_BOMB, MOVE_ROCK_SLIDE, MOVE_BRICK_BREAK}
+        .evs = {6, 160, 0, 0, 0, 160},
+        .moves = {MOVE_WATER_GUN, MOVE_MUD_BOMB, MOVE_ROCK_SLIDE, MOVE_PROTECT}
     }
 };
 
@@ -897,7 +897,7 @@ struct
         .level = 33,
         .nature = NATURE_BOLD,
         .evs = {0, 0, 200, 200, 6, 0},
-        .moves = {MOVE_WATER_PULSE, MOVE_AIR_SLASH, MOVE_TAILWIND, MOVE_U_TURN}
+        .moves = {MOVE_WATER_PULSE, MOVE_WING_ATTACK, MOVE_TAILWIND, MOVE_U_TURN}
     },
     {
         .species = SPECIES_GROVYLE,

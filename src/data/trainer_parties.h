@@ -335,8 +335,8 @@ static const struct TrainerMonItemCustomMoves sParty_ShellyWeatherInstitute[] = 
     {
     .iv = 50,
     .lvl = 32,
-    .species = SPECIES_TENTACRUEL,
-    .moves = {MOVE_BRINE, MOVE_POISON_JAB, MOVE_SWIFT, MOVE_CONFUSE_RAY}
+    .species = SPECIES_STARYU,
+    .moves = {MOVE_BRINE, MOVE_LIGHT_SCREEN, MOVE_SWIFT, MOVE_BUBBLE_BEAM}
     },
     {
     .iv = 50,
@@ -348,7 +348,7 @@ static const struct TrainerMonItemCustomMoves sParty_ShellyWeatherInstitute[] = 
     .iv = 50,
     .lvl = 34,
     .species = SPECIES_STARMIE,
-    .moves = {MOVE_ICY_WIND, MOVE_BRINE, MOVE_PSYBEAM, MOVE_RECOVER}
+    .moves = {MOVE_SWIFT, MOVE_BUBBLE_BEAM, MOVE_PSYBEAM, MOVE_RECOVER}
     }
 };
 
@@ -378,13 +378,13 @@ static const struct TrainerMonItemCustomMoves sParty_ArchieWeatherInstitute[] = 
     .iv = 150,
     .lvl = 33,
     .species = SPECIES_MIGHTYENA,
-    .moves = {MOVE_ASSURANCE, MOVE_ICE_FANG, MOVE_POISON_FANG, MOVE_HOWL}
+    .moves = {MOVE_ASSURANCE, MOVE_THUNDER_FANG, MOVE_TORMENT, MOVE_HOWL}
     },
     {
     .iv = 150,
     .lvl = 34,
     .species = SPECIES_GOLBAT,
-    .moves = {MOVE_CROSS_POISON, MOVE_CONFUSE_RAY, MOVE_GIGA_DRAIN, MOVE_TOXIC}
+    .moves = {MOVE_POISON_FANG, MOVE_CONFUSE_RAY, MOVE_LEECH_LIFE, MOVE_AIR_CUTTER}
     },
     {
     .iv = 150,

@@ -1,11 +1,12 @@
-.set LOCALID_GRUNT_1, 1
-.set LOCALID_GRUNT_2, 2
-.set LOCALID_SHELLY, 3
-.set LOCALID_SCIENTIST, 5
-.set LOCALID_GRUNT_BEAT, 7
-.set LOCALID_GRUNT_4, 8
-.set LOCALID_RIVAL, 9
-.set LOCALID_ARCHIE, 10
+.set LOCALID_GRUNT_1, 1 @left door guard
+.set LOCALID_GRUNT_2, 2 @right door guard
+.set LOCALID_GRUNT_3, 3 @beaten
+.set LOCALID_GRUNT_4, 4 @beaten, behind Archie
+.set LOCALID_GRUNT_5, 5 @beaten, kicked back
+.set LOCALID_SHELLY, 6
+.set LOCALID_ARCHIE, 7
+.set LOCALID_RIVAL, 8
+.set LOCALID_SCIENTIST, 10
 
 Route119_WeatherInstitute_2F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route119_WeatherInstitute_2F_OnTransition
@@ -34,20 +35,30 @@ Route119_WeatherInstitute_2F_EventScript_SetScientistPosGameClear::
 	setobjectmovementtype LOCALID_SCIENTIST, MOVEMENT_TYPE_FACE_UP
 	return
 
-Route119_WeatherInstitute_2F_EventScript_Grunt5::
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_5, Route119_WeatherInstitute_2F_Text_Grunt5Intro, Route119_WeatherInstitute_2F_Text_Grunt5Defeat
-	msgbox Route119_WeatherInstitute_2F_Text_Grunt5PostBattle, MSGBOX_DEFAULT
+Route119_WeatherInstitute_2F_EventScript_Grunt1::
+	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_5, Route119_WeatherInstitute_2F_Text_Grunt1Intro, Route119_WeatherInstitute_2F_Text_Grunt1Defeat
+	faceplayer
+	msgbox Route119_WeatherInstitute_2F_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_WeatherInstitute_2F_EventScript_Grunt2::
 	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_2, Route119_WeatherInstitute_2F_Text_Grunt2Intro, Route119_WeatherInstitute_2F_Text_Grunt2Defeat
-	msgbox Route119_WeatherInstitute_2F_Text_Grunt2PostBattle, MSGBOX_DEFAULT
+	faceplayer
+	msgbox Route119_WeatherInstitute_2F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route119_WeatherInstitute_2F_EventScript_GruntBeat::
-	lock
-	msgbox Route119_WeatherInstitute_2F_Text_GruntBeat, MSGBOX_DEFAULT
-	release
+Route119_WeatherInstitute_2F_EventScript_Grunt3::
+	faceplayer
+	msgbox Route119_WeatherInstitute_2F_Text_Grunt3, MSGBOX_AUTOCLOSE
+	end
+
+Route119_WeatherInstitute_2F_EventScript_Grunt4::
+	msgbox Route119_WeatherInstitute_2F_Text_Grunt4, MSGBOX_AUTOCLOSE
+	end
+
+Route119_WeatherInstitute_2F_EventScript_Grunt5::
+	faceplayer
+	msgbox Route119_WeatherInstitute_2F_Text_Grunt5, MSGBOX_AUTOCLOSE
 	end
 
 Route119_WeatherInstitute_2F_EventScript_FightTrigger1::
@@ -62,9 +73,21 @@ Route119_WeatherInstitute_2F_EventScript_FightTrigger3::
 	goto Route119_WeatherInstitute_2F_EventScript_FightScene
 	end
 
+Route119_WeatherInstitute_2F_EventScript_ReturnToFightTrigger::
+	msgbox Route119_WeatherInstitute_2F_ReturnToTheFight, MSGBOX_AUTOCLOSE
+	applymovement OBJ_EVENT_ID_PLAYER, Route119_WeatherInstitute_2F_BackToFight
+	end
+
+Route119_WeatherInstitute_2F_BackToFight::
+	walk_right
+	step_end
+
 Route119_WeatherInstitute_2F_EventScript_FightScene::
 	lockall
-	applymovement LOCALID_GRUNT_BEAT, Route119_WeatherInstitute_2F_Knocked_Back
+	setvar VAR_WEATHER_INSTITUTE_TRIGGER_STATE, 1
+	playse SE_NOT_EFFECTIVE
+	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceFastestRight
+	applymovement LOCALID_GRUNT_5, Route119_WeatherInstitute_2F_Knocked_Back
 	waitmovement 0
 	applymovement LOCALID_RIVAL, Common_Movement_FaceDown
 	waitmovement 0
@@ -73,40 +96,68 @@ Route119_WeatherInstitute_2F_EventScript_FightScene::
 	waitmovement 0
 	checkplayergender
 	compare VAR_RESULT, MALE
-	msgbox Route119_WeatherInstitute_2F_Text_RivalMaySeesPlayer, MSGBOX_DEFAULT
+	goto_if_eq Route119_WeatherInstitute_2F_MaySeesPlayer
 	compare VAR_RESULT, FEMALE
-	msgbox Route119_WeatherInstitute_2F_Text_RivalBrendanSeesPlayer, MSGBOX_DEFAULT
+	goto_if_eq Route119_WeatherInstitute_2F_BrendanSeesPlayer
+Route119_WeatherInstitute_2F_EventScript_FightScenePart2::
 	applymovement LOCALID_SHELLY, Common_Movement_FaceDown
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox Route119_WeatherInstitute_2F_Text_ArchieSeesPlayer, MSGBOX_DEFAULT
-	applymovement LOCALID_RIVAL, Route119_WeatherInstitute_2F_Move_Up_To_Archie
-	applymovement LOCALID_GRUNT_BEAT, Route119_WeatherInstitute_2F_Shove_Grunt_OutOfWay
+	applymovement LOCALID_RIVAL, Route119_WeatherInstitute_2F_Move_Up_To_Shelly
+	applymovement LOCALID_GRUNT_5, Route119_WeatherInstitute_2F_Shove_Grunt_OutOfWay
+	waitmovement 0
+	applymovement LOCALID_SHELLY, Common_Movement_FaceLeft
+	applymovement LOCALID_ARCHIE, Common_Movement_FaceLeft
+	waitmovement 0
 	compare VAR_RESULT, MALE
-	msgbox Route119_WeatherInstitute_2F_Text_MayAsksPlayerToJoinFight, MSGBOX_DEFAULT
+	goto_if_eq Route119_WeatherInstitute_2F_MayAsksPlayerToJoinFight
 	compare VAR_RESULT, FEMALE
-	msgbox Route119_WeatherInstitute_2F_Text_BrendanAsksPlayerToJoinFight, MSGBOX_DEFAULT
+	goto_if_eq Route119_WeatherInstitute_2F_BrendanAsksPlayerToJoinFight
+Route119_WeatherInstitute_2F_EventScript_FightScenePart3::
 	releaseall
 	end
 
-Route119_WeatherInstitute_2F_Knocked_Back:
+Route119_WeatherInstitute_2F_MaySeesPlayer::
+	msgbox Route119_WeatherInstitute_2F_Text_RivalMaySeesPlayer, MSGBOX_DEFAULT
+	closemessage
+	goto Route119_WeatherInstitute_2F_EventScript_FightScenePart2
+
+Route119_WeatherInstitute_2F_BrendanSeesPlayer::
+	msgbox Route119_WeatherInstitute_2F_Text_RivalBrendanSeesPlayer, MSGBOX_DEFAULT
+	closemessage
+	goto Route119_WeatherInstitute_2F_EventScript_FightScenePart2
+
+Route119_WeatherInstitute_2F_Knocked_Back::
 	lock_facing_direction
 	walk_fast_right
 	unlock_facing_direction
 	delay_16
 	step_end
 
-Route119_WeatherInstitute_2F_Move_Up_To_Archie:
+Route119_WeatherInstitute_2F_Move_Up_To_Shelly::
 	walk_right
 	walk_right
+	walk_up
+	face_down
 	step_end
 
-Route119_WeatherInstitute_2F_Shove_Grunt_OutOfWay:
+Route119_WeatherInstitute_2F_Shove_Grunt_OutOfWay::
 	delay_16
 	ride_water_current_up
 	ride_water_current_up
 	walk_in_place_fastest_down
 	step_end
+
+Route119_WeatherInstitute_2F_MayAsksPlayerToJoinFight::
+	msgbox Route119_WeatherInstitute_2F_Text_MayAsksPlayerToJoinFight, MSGBOX_DEFAULT
+	closemessage
+	goto Route119_WeatherInstitute_2F_EventScript_FightScenePart3
+
+Route119_WeatherInstitute_2F_BrendanAsksPlayerToJoinFight::
+	msgbox Route119_WeatherInstitute_2F_Text_BrendanAsksPlayerToJoinFight, MSGBOX_DEFAULT
+	closemessage
+	goto Route119_WeatherInstitute_2F_EventScript_FightScenePart3
 
 Route119_WeatherInstitute_2F_EventScript_Shelly::
 	lock
@@ -127,17 +178,24 @@ Route119_WeatherInstitute_2F_EventScript_RivalReadyForBattlePrompt::
 	waitmovement 0
 	checkplayergender
 	compare VAR_RESULT, MALE
-	msgbox Route119_WeatherInstitute_2F_Text_MayAreYouReadyToBattle, MSGBOX_YESNO
+	goto_if_eq Route119_WeatherInstitute_2F_MayAreYouReadyToBattle
 	compare VAR_RESULT, FEMALE
-	msgbox Route119_WeatherInstitute_2F_Text_BrendanAreYouReadyToBattle, MSGBOX_YESNO
+	goto_if_eq Route119_WeatherInstitute_2F_BrendanAreYouReadyToBattle
+Route119_WeatherInstitute_2F_EventScript_RivalReadyForBattlePromptPart2::
 	compare VAR_RESULT, YES
 	goto_if_eq Route119_WeatherInstitute_2F_EventScript_ChoosePartyForMultiBattle
 	msgbox MossdeepCity_SpaceCenter_2F_Text_RivalHurryGetReadyQuickly, MSGBOX_DEFAULT
 	closemessage
-	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFastestDown
-	waitmovement 0
 	releaseall
 	end
+
+Route119_WeatherInstitute_2F_MayAreYouReadyToBattle::
+	msgbox Route119_WeatherInstitute_2F_Text_MayAreYouReadyToBattle, MSGBOX_YESNO
+	goto Route119_WeatherInstitute_2F_EventScript_RivalReadyForBattlePromptPart2
+
+Route119_WeatherInstitute_2F_BrendanAreYouReadyToBattle::
+	msgbox Route119_WeatherInstitute_2F_Text_BrendanAreYouReadyToBattle, MSGBOX_YESNO
+	goto Route119_WeatherInstitute_2F_EventScript_RivalReadyForBattlePromptPart2
 
 Route119_WeatherInstitute_2F_EventScript_ChoosePartyForMultiBattle::
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFastestRight
@@ -156,6 +214,9 @@ Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattle::
 	frontier_set FRONTIER_DATA_SELECTED_MON_ORDER
 	setvar VAR_0x8004, SPECIAL_BATTLE_RIVAL
 	setvar VAR_0x8005, 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	applymovement LOCALID_RIVAL, Common_Movement_FaceRight
+	waitmovement 0
 	special DoSpecialTrainerBattle
 	waitstate
 	frontier_saveparty
@@ -168,6 +229,7 @@ Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattle::
 
 Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	lockall
+	applymovement LOCALID_ARCHIE, Common_Movement_FaceLeft
 	msgbox Route119_WeatherInstitute_2F_Text_ArchieLost, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_GRUNT_1, Route119_WeatherInstitute_2F_Grunt_Reporting
@@ -189,25 +251,23 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_AQUA_GRUNT_M
 	removeobject LOCALID_GRUNT_1
 	removeobject LOCALID_GRUNT_2
-	removeobject LOCALID_SHELLY
+	removeobject LOCALID_GRUNT_3
 	removeobject LOCALID_GRUNT_4
-	removeobject LOCALID_GRUNT_BEAT
+	removeobject LOCALID_GRUNT_5
+	removeobject LOCALID_SHELLY
 	removeobject LOCALID_ARCHIE
-	setobjectxy OBJ_EVENT_ID_PLAYER, 6, 6
-	setobjectxy LOCALID_RIVAL, 6, 7
-	delay_16
+	setobjectxy OBJ_EVENT_ID_PLAYER, 7, 6
+	setobjectxy LOCALID_RIVAL, 8, 6
+	applymovement LOCALID_RIVAL, Common_Movement_FaceRight
 	fadescreen FADE_FROM_BLACK
-	delay_16
-	delay_16
-	delay_16
-	delay_16
 	applymovement LOCALID_RIVAL, Common_Movement_FaceLeft
+	waitmovement 0
 	checkplayergender
 	compare VAR_RESULT, MALE
-	msgbox Route119_WeatherInstitute_2F_Text_MayThanksForTheHelp, MSGBOX_DEFAULT
+	goto_if_eq Route119_WeatherInstitute_2F_MayThanksForTheHelp
 	compare VAR_RESULT, FEMALE
-	msgbox Route119_WeatherInstitute_2F_Text_BrendanThanksForTheHelp, MSGBOX_DEFAULT
-	closemessage
+	goto_if_eq Route119_WeatherInstitute_2F_BrendanThanksForTheHelp
+Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShellyPart2::
 	applymovement LOCALID_RIVAL, Route119_WeatherInstitute_2F_Movement_RivalLeaves
 	waitmovement 0
 	applymovement LOCALID_SCIENTIST, Route119_WeatherInstitute_2F_Movement_ScientistApproachPlayer
@@ -217,6 +277,16 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform
 	releaseall
 	end
+
+Route119_WeatherInstitute_2F_MayThanksForTheHelp::
+	msgbox Route119_WeatherInstitute_2F_Text_MayThanksForTheHelp, MSGBOX_DEFAULT
+	closemessage
+	goto Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShellyPart2
+
+Route119_WeatherInstitute_2F_BrendanThanksForTheHelp::
+	msgbox Route119_WeatherInstitute_2F_Text_BrendanThanksForTheHelp, MSGBOX_DEFAULT
+	closemessage
+	goto Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShellyPart2
 
 Route119_WeatherInstitute_2F_EventScript_ArchieTrainer::
 	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_ARCHIE_WEATHER_INSTITUTE, 0, Route119_WeatherInstitute_2F_Text_ArchieDefeat, Route119_WeatherInstitute_2F_Text_ArchieDefeat
@@ -234,12 +304,12 @@ Route119_WeatherInstitute_2F_Grunt_Reporting::
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
 	step_end
 
 Route119_WeatherInstitute_2F_Grunt_MoveAwayForReporter::
-	delay_16
-	delay_16
-	delay_16
 	delay_16
 	delay_16
 	delay_16
@@ -337,35 +407,6 @@ Route119_WeatherInstitute_2F_EventScript_NoAbnormalWeather::
 	release
 	end
 
-Route119_WeatherInstitute_2F_Movement_GruntApproachShelly:
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	step_end
-
-Route119_WeatherInstitute_2F_Movement_ShovePlayerOutOfWay:
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	ride_water_current_up
-	walk_in_place_fastest_down
-	step_end
-
-Route119_WeatherInstitute_2F_Movement_PlayerReturnToPosition:
-	slide_down
-	walk_in_place_fastest_left
-	step_end
-
 Route119_WeatherInstitute_2F_Movement_RivalLeaves:
 	walk_right
 	walk_right
@@ -382,6 +423,7 @@ Route119_WeatherInstitute_2F_Movement_ScientistApproachPlayer:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
 	step_end
 
 Route119_WeatherInstitute_2F_EventScript_WeatherScientist::
@@ -391,22 +433,25 @@ Route119_WeatherInstitute_2F_EventScript_WeatherScientist::
 	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform
 	end
 
-Route119_WeatherInstitute_2F_Text_Grunt5Intro:
+Route119_WeatherInstitute_2F_ReturnToTheFight:
+	.string "Return to the fight!$"
+
+Route119_WeatherInstitute_2F_Text_Grunt2Intro:
 	.string "Don't tell me you're looking for that\n"
 	.string "weather Pokémon, too?\p"
 	.string "That's a no-no!\n"
 	.string "We were here to get it first!$"
 
-Route119_WeatherInstitute_2F_Text_Grunt5Defeat:
+Route119_WeatherInstitute_2F_Text_Grunt1Defeat:
 	.string "Oh, will you look at my Pokémon?$"
 
-Route119_WeatherInstitute_2F_Text_Grunt5PostBattle:
+Route119_WeatherInstitute_2F_Text_Grunt2PostBattle:
 	.string "Humph, so what?\n"
 	.string "What we want…\p"
 	.string "What we really want isn't here…\n"
 	.string "Ihihihihi…$"
 
-Route119_WeatherInstitute_2F_Text_Grunt2Intro:
+Route119_WeatherInstitute_2F_Text_Grunt1Intro:
 	.string "The Institute created a type of\n"
 	.string "Pokémon that has something to do with\l"
 	.string "the weather. We're here to take them!$"
@@ -414,27 +459,35 @@ Route119_WeatherInstitute_2F_Text_Grunt2Intro:
 Route119_WeatherInstitute_2F_Text_Grunt2Defeat:
 	.string "Our plan's being spoiled by kids?$"
 
-Route119_WeatherInstitute_2F_Text_Grunt2PostBattle:
+Route119_WeatherInstitute_2F_Text_Grunt1PostBattle:
 	.string "I don't get why the boss needs the\n"
 	.string "weather Pokémon but he always knows\l"
 	.string "what's best.$"
 
-Route119_WeatherInstitute_2F_Text_GruntBeat:
+Route119_WeatherInstitute_2F_Text_Grunt3:
+	.string "Don't mind me. I'm just\n"
+	.string "watching the show.$"
+
+Route119_WeatherInstitute_2F_Text_Grunt4:
 	.string "Oof! When did kids get so tough?$"
+
+Route119_WeatherInstitute_2F_Text_Grunt5:
+	.string "Oh great, another kid.\n"
+	.string "I'm already down!$"
 
 Route119_WeatherInstitute_2F_Text_RivalMaySeesPlayer:
 	.string "May: {PLAYER}! Good timing,\n"
 	.string "I need your help!\p"
 	.string "Team Aqua is trying to steal the\n"
-	.string "Pokémon here!.$"
+	.string "Pokémon here!$"
 
 Route119_WeatherInstitute_2F_Text_RivalBrendanSeesPlayer:
 	.string "Brendan: {PLAYER}! Glad you're here.\n"
 	.string "Team Aqua is trying to steal the\n"
-	.string "Weather Institute's Pokémon!.$"
+	.string "Weather Institute's Pokémon!$"
 
 Route119_WeatherInstitute_2F_Text_ArchieSeesPlayer:
-	.string "Archie: Oh, you again?\n"
+	.string "Archie: Oh, it's you again.\n"
 	.string "Bwahahahahah! It's very bold of you\l"
 	.string "to continue to meddle in our affairs!\p"
 	.string "But you're going down along with the\n"
