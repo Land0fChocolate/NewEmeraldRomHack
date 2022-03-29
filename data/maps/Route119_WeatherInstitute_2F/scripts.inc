@@ -61,6 +61,16 @@ Route119_WeatherInstitute_2F_EventScript_Grunt5::
 	msgbox Route119_WeatherInstitute_2F_Text_Grunt5, MSGBOX_AUTOCLOSE
 	end
 
+Route119_WeatherInstitute_2F_EventScript_Worker1::
+	faceplayer
+	msgbox Route119_WeatherInstitute_2F_Text_Worker1, MSGBOX_AUTOCLOSE
+	end
+
+Route119_WeatherInstitute_2F_EventScript_Worker2::
+	faceplayer
+	msgbox Route119_WeatherInstitute_2F_Text_Worker2, MSGBOX_AUTOCLOSE
+	end
+
 Route119_WeatherInstitute_2F_EventScript_FightTrigger1::
 	goto Route119_WeatherInstitute_2F_EventScript_FightScene
 	end
@@ -273,6 +283,8 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShellyPart2::
 	applymovement LOCALID_SCIENTIST, Route119_WeatherInstitute_2F_Movement_ScientistApproachPlayer
 	waitmovement 0
 	removeobject LOCALID_RIVAL
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
 	copyobjectxytoperm LOCALID_SCIENTIST
 	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform
 	releaseall
@@ -322,7 +334,7 @@ Route119_WeatherInstitute_2F_Grunt_MoveAwayForReporter::
 Route119_WeatherInstitute_2F_EventScript_ReceiveCastform::
 	msgbox Route119_WeatherInstitute_2F_Text_ThanksPleaseTakePokemon, MSGBOX_DEFAULT
 	setvar VAR_TEMP_1, SPECIES_CASTFORM
-	givemon SPECIES_CASTFORM, 25, ITEM_MYSTIC_WATER
+	givemon SPECIES_CASTFORM, 30, ITEM_MYSTIC_WATER
 	compare VAR_RESULT, 0
 	goto_if_eq Route119_WeatherInstitute_2F_EventScript_ReceiveCastformParty
 	compare VAR_RESULT, 1
@@ -465,8 +477,8 @@ Route119_WeatherInstitute_2F_Text_Grunt1PostBattle:
 	.string "what's best.$"
 
 Route119_WeatherInstitute_2F_Text_Grunt3:
-	.string "Don't mind me. I'm just\n"
-	.string "watching the show.$"
+	.string "Don't mind me. I already lost. I'm\n"
+	.string "just watching the show now.$"
 
 Route119_WeatherInstitute_2F_Text_Grunt4:
 	.string "Oof! When did kids get so tough?$"
@@ -534,10 +546,8 @@ Route119_WeatherInstitute_2F_Text_BrendanAreYouReadyToBattle:
 Route119_WeatherInstitute_2F_Text_ArchieLost:
 	.string "Archie: Heheheh. Ya little scamp!\n"
 	.string "I knew you were the real deal!\p"
-	.string "Though I'm afraid it doesn't matter\n"
-	.string "how often you beat us, we'll always\l"
-	.string "be back for more as long as our goal\l"
-	.string "remains incomplete.$"
+	.string "Brilliant! We'll go another round.\n"
+	.string "My team won't hold back this time!$"
 
 Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy:
 	.string "Boss, we have a situation here!\p"
@@ -545,29 +555,29 @@ Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy:
 	.string "heading east towards Mt. Pyre.$"
 
 Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre:
-	.string "What?!\p"
+	.string "Archie: What?!\p"
 	.string "What are they up to?\n"
 	.string "We have to follow them!\p"
 	.string "Ahahahaha!\n"
 	.string "Team, it's time to pull out!$"
 
 Route119_WeatherInstitute_2F_Text_ArchieLetsMeetAgain:
-	.string "I'd love to stick around and\n"
+	.string "Archie: I'd love to stick around and\n"
 	.string "fight some more, scamp.\l"
-	.string "But when you're a grown-up,\l"
-	.string "y'see, sometimes things crop up.\p"
-	.string "Let's meet again somewhere.\n"
+	.string "But when you're a grown-up, y'see,\l"
+	.string "sometimes things crop up.\p"
+	.string "We'll settle the score later.\n"
 	.string "I'll be sure to remember that face.$"
 
 Route119_WeatherInstitute_2F_Text_MayThanksForTheHelp:
 	.string "May: Thanks for the help {PLAYER},\n"
 	.string "I don't think I could have won\l"
 	.string "against them all by myself.\p"
-	.string "My dad asked me to come here to\n"
-	.string "pick up research data on the\l"
-	.string "Pokémon they created.\p"
-	.string "I wasn't expecting to have to\n"
-	.string "fight Team Aqua!\p"
+	.string "My dad asked me to come here to pick\n"
+	.string "up research data on the Pokémon they\l"
+	.string "created.\p"
+	.string "I wasn't expecting to have to fight\n"
+	.string "Team Aqua!\p"
 	.string "Whew! I'm beat! I'm going to go\n"
 	.string "outside and take a breather!$"
 
@@ -634,3 +644,11 @@ Route119_WeatherInstitute_2F_Text_NoAbnormalWeather:
 	.string "The occasional rainfall is a blessing,\n"
 	.string "really.$"
 
+Route119_WeatherInstitute_2F_Text_Worker1:
+	.string "Nice going, kid! The Castform\n"
+	.string "are thankful too!$"
+
+Route119_WeatherInstitute_2F_Text_Worker2:
+	.string "I've heard of Team Aqua causing\n"
+	.string "trouble throughout Hoenn, but I\l"
+	.string "never thought they would come here.$"

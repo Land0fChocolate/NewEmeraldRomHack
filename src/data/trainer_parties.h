@@ -378,7 +378,7 @@ static const struct TrainerMonItemCustomMoves sParty_ArchieWeatherInstitute[] = 
     .iv = 150,
     .lvl = 33,
     .species = SPECIES_MIGHTYENA,
-    .moves = {MOVE_ASSURANCE, MOVE_THUNDER_FANG, MOVE_TORMENT, MOVE_HOWL}
+    .moves = {MOVE_ASSURANCE, MOVE_ICE_FANG, MOVE_TORMENT, MOVE_HOWL}
     },
     {
     .iv = 150,
