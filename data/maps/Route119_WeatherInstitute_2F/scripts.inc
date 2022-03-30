@@ -259,6 +259,7 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_HIDE_ROUTE_119_TEAM_AQUA
 	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_AQUA_GRUNT_M
+	clearflag FLAG_ROUTE_119_HIDE_RIVAL
 	removeobject LOCALID_GRUNT_1
 	removeobject LOCALID_GRUNT_2
 	removeobject LOCALID_GRUNT_3
@@ -454,8 +455,8 @@ Route119_WeatherInstitute_2F_Text_Grunt2Intro:
 	.string "That's a no-no!\n"
 	.string "We were here to get it first!$"
 
-Route119_WeatherInstitute_2F_Text_Grunt1Defeat:
-	.string "Oh, will you look at my Pokémon?$"
+Route119_WeatherInstitute_2F_Text_Grunt2Defeat:
+	.string "Our plan's being spoiled by kids?$"
 
 Route119_WeatherInstitute_2F_Text_Grunt2PostBattle:
 	.string "Humph, so what?\n"
@@ -468,17 +469,17 @@ Route119_WeatherInstitute_2F_Text_Grunt1Intro:
 	.string "Pokémon that has something to do with\l"
 	.string "the weather. We're here to take them!$"
 
-Route119_WeatherInstitute_2F_Text_Grunt2Defeat:
-	.string "Our plan's being spoiled by kids?$"
+Route119_WeatherInstitute_2F_Text_Grunt1Defeat:
+	.string "Oh, will you look at my Pokémon?$"
 
 Route119_WeatherInstitute_2F_Text_Grunt1PostBattle:
-	.string "I don't get why the boss needs the\n"
-	.string "weather Pokémon but he always knows\l"
-	.string "what's best.$"
+	.string "Everyone's fighting over the weather\n"
+	.string "Pokémon; you, us and that other kid.\l"
+	.string "I guess it must be important.$"
 
 Route119_WeatherInstitute_2F_Text_Grunt3:
-	.string "Don't mind me. I already lost. I'm\n"
-	.string "just watching the show now.$"
+	.string "Don't mind me, I already lost.\n"
+	.string "I'm just watching the show now.$"
 
 Route119_WeatherInstitute_2F_Text_Grunt4:
 	.string "Oof! When did kids get so tough?$"
@@ -500,8 +501,8 @@ Route119_WeatherInstitute_2F_Text_RivalBrendanSeesPlayer:
 
 Route119_WeatherInstitute_2F_Text_ArchieSeesPlayer:
 	.string "Archie: Oh, it's you again.\n"
-	.string "Bwahahahahah! It's very bold of you\l"
-	.string "to continue to meddle in our affairs!\p"
+	.string "Bwahahahahah! It's very bold of you to\l"
+	.string "continue to meddle in our affairs!\p"
 	.string "But you're going down along with the\n"
 	.string "other fry!$"
 
@@ -509,8 +510,8 @@ Route119_WeatherInstitute_2F_Text_MayAsksPlayerToJoinFight:
 	.string "Let's go beat these goons, {PLAYER}!$"
 
 Route119_WeatherInstitute_2F_Text_BrendanAsksPlayerToJoinFight:
-	.string "Let's take down their leader, {PLAYER}\n"
-	.string "are you with me?$"
+	.string "Let's take down their leader,\n"
+	.string "{PLAYER} are you with me?$"
 
 MossdeepCity_SpaceCenter_2F_Text_RivalHurryGetReadyQuickly:
 	.string "Then, hurry!\n"
@@ -524,8 +525,8 @@ Route119_WeatherInstitute_2F_Text_ShellyWaitingForBattle:
 	.string "simply ignorant, or both!$"
 
 Route119_WeatherInstitute_2F_Text_ShellyDefeat:
-	.string "Ahahahaha!\n"
-	.string "You're disgustingly strong!$"
+	.string "Ooohhhh! Are you telling me you're\n"
+	.string "that strong and still just a kid?!$"
 
 Route119_WeatherInstitute_2F_Text_ArchieWaitingForBattle:
 	.string "Archie: Ha! Come at me, scamp!$"
@@ -551,8 +552,8 @@ Route119_WeatherInstitute_2F_Text_ArchieLost:
 
 Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy:
 	.string "Boss, we have a situation here!\p"
-	.string "We've spotted a Team Magma mob\n"
-	.string "heading east towards Mt. Pyre.$"
+	.string "We've spotted a Team Magma mob heading\n"
+	.string "east towards Mt. Pyre.$"
 
 Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre:
 	.string "Archie: What?!\p"
@@ -578,8 +579,8 @@ Route119_WeatherInstitute_2F_Text_MayThanksForTheHelp:
 	.string "created.\p"
 	.string "I wasn't expecting to have to fight\n"
 	.string "Team Aqua!\p"
-	.string "Whew! I'm beat! I'm going to go\n"
-	.string "outside and take a breather!$"
+	.string "Whew! I'm beat! I'm going to go outside\n"
+	.string "and take a breather!$"
 
 Route119_WeatherInstitute_2F_Text_BrendanThanksForTheHelp:
 	.string "Brendan: That got a bit hairy.\n"
