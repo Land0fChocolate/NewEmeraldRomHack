@@ -1305,6 +1305,19 @@ static void PlayerPartnerHandleDrawTrainerPic(void)
         xPos = 90;
         yPos = (8 - gTrainerBackPicCoords[trainerPicId].size) * 4 + 80;
     }
+    else if (gPartnerTrainerId == TRAINER_RIVAL_PARTNER)
+    {
+        if (gSaveBlock2Ptr->playerGender == MALE)
+        {
+            trainerPicId = TRAINER_BACK_PIC_MAY;
+        }
+        else
+        {
+            trainerPicId = TRAINER_BACK_PIC_BRENDAN;
+        }
+        xPos = 90;
+        yPos = (8 - gTrainerBackPicCoords[trainerPicId].size) * 4 + 80;
+    }
     else if (gPartnerTrainerId >= TRAINER_CUSTOM_PARTNER)
     {
         trainerPicId = gPartnerSpriteId;
@@ -1318,8 +1331,10 @@ static void PlayerPartnerHandleDrawTrainerPic(void)
         yPos = (8 - gTrainerFrontPicCoords[trainerPicId].size) * 4 + 80;
     }
 
-    // Use back pic only if the partner is Steven
-    if (gPartnerTrainerId == TRAINER_STEVEN_PARTNER || gPartnerTrainerId >= TRAINER_CUSTOM_PARTNER)
+    // Use back pic only if the partner is Steven or Rival
+    if (gPartnerTrainerId == TRAINER_RIVAL_PARTNER
+        || gPartnerTrainerId == TRAINER_STEVEN_PARTNER 
+        || gPartnerTrainerId >= TRAINER_CUSTOM_PARTNER)
     {
         DecompressTrainerBackPic(trainerPicId, gActiveBattler);
         SetMultiuseSpriteTemplateToTrainerBack(trainerPicId, GetBattlerPosition(gActiveBattler));
@@ -1788,6 +1803,7 @@ static void PlayerPartnerHandleIntroTrainerBallThrow(void)
 {
     u8 paletteNum;
     u8 taskId;
+    u8 spriteId;
 
     SetSpritePrimaryCoordsFromSecondaryCoords(&gSprites[gBattlerSpriteIds[gActiveBattler]]);
 
@@ -1803,17 +1819,29 @@ static void PlayerPartnerHandleIntroTrainerBallThrow(void)
     paletteNum = AllocSpritePalette(0xD6F9);
     if (gPartnerTrainerId == TRAINER_STEVEN_PARTNER)
     {
-        u8 spriteId = TRAINER_BACK_PIC_STEVEN;
+        spriteId = TRAINER_BACK_PIC_STEVEN;
+        LoadCompressedPalette(gTrainerBackPicPaletteTable[spriteId].data, 0x100 + paletteNum * 16, 32);
+    }
+    else if (gPartnerTrainerId == TRAINER_RIVAL_PARTNER)
+    {
+        if (gSaveBlock2Ptr->playerGender == MALE)
+        {
+            spriteId = TRAINER_BACK_PIC_MAY;
+        }
+        else
+        {
+            spriteId = TRAINER_BACK_PIC_BRENDAN;
+        }
         LoadCompressedPalette(gTrainerBackPicPaletteTable[spriteId].data, 0x100 + paletteNum * 16, 32);
     }
     else if (gPartnerTrainerId >= TRAINER_CUSTOM_PARTNER)
     {
-        u8 spriteId = gPartnerSpriteId;
+        spriteId = gPartnerSpriteId;
         LoadCompressedPalette(gTrainerBackPicPaletteTable[spriteId].data, 0x100 + paletteNum * 16, 32);
     }
     else
     {
-        u8 spriteId = GetFrontierTrainerFrontSpriteId(gPartnerTrainerId);
+        spriteId = GetFrontierTrainerFrontSpriteId(gPartnerTrainerId);
         LoadCompressedPalette(gTrainerFrontPicPaletteTable[spriteId].data, 0x100 + paletteNum * 16, 32);
     }
 

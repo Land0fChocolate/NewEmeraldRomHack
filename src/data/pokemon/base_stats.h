@@ -8796,7 +8796,7 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_TROPIUS] =
     {
-        .baseHP        = 99,
+        .baseHP        = 114,
         .baseAttack    = 68,
         .baseDefense   = 83,
         .baseSpeed     = 51,

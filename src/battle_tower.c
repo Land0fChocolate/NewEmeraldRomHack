@@ -23,6 +23,7 @@
 #include "field_message_box.h"
 #include "tv.h"
 #include "battle_factory.h"
+#include "starter_choose.h"
 #include "constants/apprentice.h"
 #include "constants/battle_dome.h"
 #include "constants/battle_frontier.h"
@@ -39,6 +40,8 @@
 
 extern const u8 MossdeepCity_SpaceCenter_2F_EventScript_MaxieTrainer[];
 extern const u8 MossdeepCity_SpaceCenter_2F_EventScript_TabithaTrainer[];
+extern const u8 Route119_WeatherInstitute_2F_EventScript_ArchieTrainer[];
+extern const u8 Route119_WeatherInstitute_2F_EventScript_ShellyTrainer[];
 
 // EWRAM vars.
 EWRAM_DATA const struct BattleFrontierTrainer *gFacilityTrainers = NULL;
@@ -798,6 +801,114 @@ struct
     }
 };
 
+struct
+{
+    u16 species;
+    u8 fixedIV;
+    u8 level;
+    u8 nature;
+    u8 evs[NUM_STATS];
+    u16 moves[MAX_MON_MOVES];
+} const sRivalMonsTreecko[MULTI_PARTY_SIZE] =
+{
+    {
+        .species = SPECIES_PELIPPER,
+        .fixedIV = MAX_PER_STAT_IVS,
+        .level = 33,
+        .nature = NATURE_BOLD,
+        .evs = {0, 0, 160, 160, 6, 0},
+        .moves = {MOVE_WATER_PULSE, MOVE_WING_ATTACK, MOVE_TAILWIND, MOVE_U_TURN}
+    },
+    {
+        .species = SPECIES_BRELOOM,
+        .fixedIV = MAX_PER_STAT_IVS,
+        .level = 33,
+        .nature = NATURE_JOLLY,
+        .evs = {160, 160, 0, 0, 6, 0},
+        .moves = {MOVE_MACH_PUNCH, MOVE_FORCE_PALM, MOVE_MEGA_DRAIN, MOVE_LEECH_SEED}
+    },
+    {
+        .species = SPECIES_COMBUSKEN,
+        .fixedIV = MAX_PER_STAT_IVS,
+        .level = 35,
+        .nature = NATURE_ADAMANT,
+        .evs = {6, 160, 0, 0, 0, 160},
+        .moves = {MOVE_DOUBLE_KICK, MOVE_FLAME_CHARGE, MOVE_OVERHEAT, MOVE_BULK_UP}
+    }
+};
+
+struct
+{
+    u16 species;
+    u8 fixedIV;
+    u8 level;
+    u8 nature;
+    u8 evs[NUM_STATS];
+    u16 moves[MAX_MON_MOVES];
+} const sRivalMonsTorchic[MULTI_PARTY_SIZE] =
+{
+    {
+        .species = SPECIES_BRELOOM,
+        .fixedIV = MAX_PER_STAT_IVS,
+        .level = 33,
+        .nature = NATURE_JOLLY,
+        .evs = {160, 160, 0, 0, 6, 0},
+        .moves = {MOVE_MACH_PUNCH, MOVE_FORCE_PALM, MOVE_MEGA_DRAIN, MOVE_LEECH_SEED}
+    },
+    {
+        .species = SPECIES_MAGCARGO,
+        .fixedIV = MAX_PER_STAT_IVS,
+        .level = 33,
+        .nature = NATURE_CALM,
+        .evs = {160, 0, 0, 160, 6, 0},
+        .moves = {MOVE_ANCIENT_POWER, MOVE_FLAME_BURST, MOVE_YAWN, MOVE_REFLECT}
+    },
+    {
+        .species = SPECIES_MARSHTOMP,
+        .fixedIV = MAX_PER_STAT_IVS,
+        .level = 35,
+        .nature = NATURE_ADAMANT,
+        .evs = {6, 160, 0, 0, 0, 160},
+        .moves = {MOVE_WATER_GUN, MOVE_MUD_BOMB, MOVE_ROCK_SLIDE, MOVE_PROTECT}
+    }
+};
+
+struct
+{
+    u16 species;
+    u8 fixedIV;
+    u8 level;
+    u8 nature;
+    u8 evs[NUM_STATS];
+    u16 moves[MAX_MON_MOVES];
+} const sRivalMonsMudkip[MULTI_PARTY_SIZE] =
+{
+    {
+        .species = SPECIES_MAGCARGO,
+        .fixedIV = MAX_PER_STAT_IVS,
+        .level = 33,
+        .nature = NATURE_CALM,
+        .evs = {200, 0, 0, 200, 6, 0},
+        .moves = {MOVE_ANCIENT_POWER, MOVE_FLAME_BURST, MOVE_YAWN, MOVE_REFLECT}
+    },
+    {
+        .species = SPECIES_PELIPPER,
+        .fixedIV = MAX_PER_STAT_IVS,
+        .level = 33,
+        .nature = NATURE_BOLD,
+        .evs = {0, 0, 200, 200, 6, 0},
+        .moves = {MOVE_WATER_PULSE, MOVE_WING_ATTACK, MOVE_TAILWIND, MOVE_U_TURN}
+    },
+    {
+        .species = SPECIES_GROVYLE,
+        .fixedIV = MAX_PER_STAT_IVS,
+        .level = 35,
+        .nature = NATURE_ADAMANT,
+        .evs = {6, 200, 0, 0, 0, 200},
+        .moves = {MOVE_LEAF_BLADE, MOVE_SLASH, MOVE_PURSUIT, MOVE_ACROBATICS}
+    }
+};
+
 #include "data/battle_frontier/battle_tent.h"
 
 static void (* const sBattleTowerFuncs[])(void) =
@@ -1448,6 +1559,10 @@ u8 GetFrontierOpponentClass(u16 trainerId)
     {
         return GetFrontierBrainTrainerClass();
     }
+    else if (trainerId == TRAINER_RIVAL_PARTNER)
+    {
+        trainerClass = TRAINER_CLASS_PKMN_TRAINER_3;
+    }
     else if (trainerId == TRAINER_STEVEN_PARTNER)
     {
         trainerClass = gTrainers[TRAINER_STEVEN].trainerClass;
@@ -1531,6 +1646,20 @@ void GetFrontierTrainerName(u8 *dst, u16 trainerId)
     {
         CopyFrontierBrainTrainerName(dst);
         return;
+    }
+    else if (trainerId == TRAINER_RIVAL_PARTNER)
+    {
+        for (i = 0; i < PLAYER_NAME_LENGTH; i++)
+        {
+            if (gSaveBlock2Ptr->playerGender == MALE)
+            {
+                dst[i] = gTrainers[TRAINER_MAY_PLACEHOLDER].trainerName[i];
+            }
+            else
+            {
+                dst[i] = gTrainers[TRAINER_BRENDAN_PLACEHOLDER].trainerName[i];
+            }
+        }
     }
     else if (trainerId == TRAINER_STEVEN_PARTNER)
     {
@@ -2136,6 +2265,18 @@ void DoSpecialTrainerBattle(void)
         CreateTask(Task_StartBattleAfterTransition, 1);
         PlayMapChosenOrBattleBGM(0);
         BattleTransition_StartOnField(B_TRANSITION_MAGMA);
+        break;
+    case SPECIAL_BATTLE_RIVAL:
+        gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
+        FillPartnerParty(TRAINER_RIVAL_PARTNER);
+        gApproachingTrainerId = 0;
+        BattleSetup_ConfigureTrainerBattle(Route119_WeatherInstitute_2F_EventScript_ArchieTrainer + 1);
+        gApproachingTrainerId = 1;
+        BattleSetup_ConfigureTrainerBattle(Route119_WeatherInstitute_2F_EventScript_ShellyTrainer + 1);
+        gPartnerTrainerId = TRAINER_RIVAL_PARTNER;
+        CreateTask(Task_StartBattleAfterTransition, 1);
+        PlayMapChosenOrBattleBGM(0);
+        BattleTransition_StartOnField(B_TRANSITION_AQUA);
         break;
     case SPECIAL_BATTLE_MULTI:
         if (gSpecialVar_0x8005 & MULTI_BATTLE_2_VS_WILD) // Player + AI against wild mon
@@ -2989,6 +3130,7 @@ void TryHideBattleTowerReporter(void)
 }
 
 #define STEVEN_OTID 61226
+#define RIVAL_OTID 80952
 
 static void FillPartnerParty(u16 trainerId)
 {
@@ -2998,6 +3140,7 @@ static void FillPartnerParty(u16 trainerId)
     u16 monId;
     u32 otID;
     u8 trainerName[(PLAYER_NAME_LENGTH * 3) + 1];
+    u16 starter;
     SetFacilityPtrsGetLevel();
 
     if (trainerId == TRAINER_STEVEN_PARTNER)
@@ -3027,6 +3170,99 @@ static void FillPartnerParty(u16 trainerId)
             j = MALE;
             SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
             CalculateMonStats(&gPlayerParty[MULTI_PARTY_SIZE + i]);
+        }
+    }
+    else if (trainerId == TRAINER_RIVAL_PARTNER)
+    {
+        *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
+        starter = GetStarterPokemon(gSpecialVar_Result);
+
+        if (starter == SPECIES_TREECKO)
+        {
+            for (i = 0; i < MULTI_PARTY_SIZE; i++)
+            {
+                do
+                {
+                    j = Random32();
+                } while (IsShinyOtIdPersonality(RIVAL_OTID, j) || sRivalMonsTreecko[i].nature != GetNatureFromPersonality(j));
+                CreateMon(&gPlayerParty[MULTI_PARTY_SIZE + i],
+                          sRivalMonsTreecko[i].species,
+                          sRivalMonsTreecko[i].level,
+                          sRivalMonsTreecko[i].fixedIV,
+                          TRUE, 
+                          #ifdef BUGFIX
+                          j,
+                          #else
+                          i,
+                          #endif
+                          OT_ID_PRESET, RIVAL_OTID);
+                for (j = 0; j < PARTY_SIZE; j++)
+                    SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_HP_EV + j, &sRivalMonsTreecko[i].evs[j]);
+                for (j = 0; j < MAX_MON_MOVES; j++)
+                    SetMonMoveSlot(&gPlayerParty[MULTI_PARTY_SIZE + i], sRivalMonsTreecko[i].moves[j], j);
+                SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_STEVEN].trainerName);
+                j = MALE;
+                SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
+                CalculateMonStats(&gPlayerParty[MULTI_PARTY_SIZE + i]);
+            }
+        }
+        else if (starter == SPECIES_TORCHIC)
+        {
+            for (i = 0; i < MULTI_PARTY_SIZE; i++)
+            {
+                do
+                {
+                    j = Random32();
+                } while (IsShinyOtIdPersonality(RIVAL_OTID, j) || sRivalMonsTorchic[i].nature != GetNatureFromPersonality(j));
+                CreateMon(&gPlayerParty[MULTI_PARTY_SIZE + i],
+                          sRivalMonsTorchic[i].species,
+                          sRivalMonsTorchic[i].level,
+                          sRivalMonsTorchic[i].fixedIV,
+                          TRUE, 
+                          #ifdef BUGFIX
+                          j,
+                          #else
+                          i,
+                          #endif
+                          OT_ID_PRESET, RIVAL_OTID);
+                for (j = 0; j < PARTY_SIZE; j++)
+                    SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_HP_EV + j, &sRivalMonsTorchic[i].evs[j]);
+                for (j = 0; j < MAX_MON_MOVES; j++)
+                    SetMonMoveSlot(&gPlayerParty[MULTI_PARTY_SIZE + i], sRivalMonsTorchic[i].moves[j], j);
+                SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_STEVEN].trainerName);
+                j = MALE;
+                SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
+                CalculateMonStats(&gPlayerParty[MULTI_PARTY_SIZE + i]);
+            }
+        }
+        else if (starter == SPECIES_MUDKIP)
+        {
+            for (i = 0; i < MULTI_PARTY_SIZE; i++)
+            {
+                do
+                {
+                    j = Random32();
+                } while (IsShinyOtIdPersonality(RIVAL_OTID, j) || sRivalMonsMudkip[i].nature != GetNatureFromPersonality(j));
+                CreateMon(&gPlayerParty[MULTI_PARTY_SIZE + i],
+                          sRivalMonsMudkip[i].species,
+                          sRivalMonsMudkip[i].level,
+                          sRivalMonsMudkip[i].fixedIV,
+                          TRUE, 
+                          #ifdef BUGFIX
+                          j,
+                          #else
+                          i,
+                          #endif
+                          OT_ID_PRESET, RIVAL_OTID);
+                for (j = 0; j < PARTY_SIZE; j++)
+                    SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_HP_EV + j, &sRivalMonsMudkip[i].evs[j]);
+                for (j = 0; j < MAX_MON_MOVES; j++)
+                    SetMonMoveSlot(&gPlayerParty[MULTI_PARTY_SIZE + i], sRivalMonsMudkip[i].moves[j], j);
+                SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_STEVEN].trainerName);
+                j = MALE;
+                SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
+                CalculateMonStats(&gPlayerParty[MULTI_PARTY_SIZE + i]);
+            }
         }
     }
     else if (trainerId >= TRAINER_CUSTOM_PARTNER)

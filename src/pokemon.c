@@ -7620,6 +7620,17 @@ const u8 *GetTrainerPartnerName(void)
         {
             return gTrainers[TRAINER_STEVEN].trainerName;
         }
+        else if (gPartnerTrainerId == TRAINER_STEVEN_PARTNER)
+        {
+            if (gSaveBlock2Ptr->playerGender == MALE)
+            {
+                return gTrainers[TRAINER_MAY_PLACEHOLDER].trainerName;
+            }
+            else
+            {
+                return gTrainers[TRAINER_BRENDAN_PLACEHOLDER].trainerName;
+            }
+        }
         else
         {
             GetFrontierTrainerName(gStringVar1, gPartnerTrainerId);
