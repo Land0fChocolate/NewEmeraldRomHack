@@ -41,7 +41,27 @@ FortreeCity_EventScript_Boy::
 	end
 
 FortreeCity_EventScript_GameboyKid::
-	msgbox FortreeCity_Text_PokemonThatEvolveWhenTraded, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox FortreeCity_EventScript_SelfTrade_Text_IllTradeIfYouWant, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq FortreeCity_EventScript_SelfTrade_DeclineTrade
+	special ChoosePartyMon
+	waitstate
+	compare VAR_0x8004, 255
+	goto_if_eq FortreeCity_EventScript_SelfTrade_DeclineTrade
+	copyvar VAR_0x8005, VAR_0x8004
+	setvar VAR_0x8004, 6
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	waitstate
+	msgbox FortreeCity_EventScript_SelfTrade_Text_ComeBack, MSGBOX_DEFAULT
+	release
+	end
+
+FortreeCity_EventScript_SelfTrade_DeclineTrade::
+	msgbox FortreeCity_EventScript_SelfTrade_Text_YouDontWantToThatsOkay, MSGBOX_DEFAULT
+	release
 	end
 
 FortreeCity_EventScript_CitySign::
@@ -155,4 +175,16 @@ FortreeCity_Text_GymSign:
 	.string "LEADER: WINONA\p"
 	.string "“The bird user taking flight into\n"
 	.string "the world.”$"
+
+FortreeCity_EventScript_SelfTrade_Text_IllTradeIfYouWant:
+	.string "Heyo! I'm the Tradeback Guy!\p"
+	.string "I can help you trade a Pokémon with\n"
+	.string "yourself! Are you here to do that?$"
+
+FortreeCity_EventScript_SelfTrade_Text_ComeBack:
+	.string "Happy to help! Come back anytime.$"
+
+FortreeCity_EventScript_SelfTrade_Text_YouDontWantToThatsOkay:
+	.string "You dont want to?\n"
+	.string "Okay, come back anytime.$"
 

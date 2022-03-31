@@ -1,5 +1,5 @@
 gBirchDexRatingText_AreYouCurious::
-	.string "PROF. BIRCH: Ah, {PLAYER}{KUN}!\p"
+	.string "Prof. Birch: Ah, {PLAYER}{KUN}!\p"
 	.string "Are you curious about how your\n"
 	.string "Pokédex is coming along?$"
 
@@ -35,7 +35,7 @@ gBirchDexRatingText_LessThan50::
 	.string "Keep up the effort.$"
 
 gBirchDexRatingText_LessThan60::
-	.string "Are you using any RODS?\n"
+	.string "Are you using any fishing rods?\n"
 	.string "There are many Pokémon in the sea.$"
 
 gBirchDexRatingText_LessThan70::
@@ -52,7 +52,7 @@ gBirchDexRatingText_LessThan90::
 	.string "Your talent is remarkable!$"
 
 gBirchDexRatingText_LessThan100::
-	.string "Have you visited the SAFARI ZONE?\p"
+	.string "Have you visited the Safari Zone?\p"
 	.string "I hear there are some Pokémon that\n"
 	.string "can only be caught there.$"
 
@@ -63,7 +63,7 @@ gBirchDexRatingText_LessThan110::
 
 gBirchDexRatingText_LessThan120::
 	.string "There might be Pokémon that can be\n"
-	.string "found using ROCK SMASH.$"
+	.string "found using Rock Smash.$"
 
 gBirchDexRatingText_LessThan130::
 	.string "You should get some more Pokémon\n"

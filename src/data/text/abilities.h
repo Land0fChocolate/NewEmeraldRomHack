@@ -242,8 +242,8 @@ static const u8 sMinusDescription[] = _(
 	"Plus or another Minus.");
 
 static const u8 sForecastDescription[] = _(
-	"Changes form with the\n"
-	"weather.");
+	"Changes form with rain,\n"
+	"sun or hail.");
 
 static const u8 sStickyHoldDescription[] = _(
 	"Prevents forced removal of\n"

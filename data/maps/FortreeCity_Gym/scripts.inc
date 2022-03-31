@@ -259,8 +259,8 @@ FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis:
 	.string "to Lv 70, even those received through\l"
 	.string "trades, will obey your every command.\p"
 	.string "Your flying Pokémon will also be able\n"
-	.string "to carry you to previously visited\l"
-	.string "towns and cities.\p"
+	.string "to carry you to previously visited towns\l"
+	.string "and cities with the Fly field move .\p"
 	.string "And this…\n"
 	.string "This is a gift from me.$"
 
