@@ -363,7 +363,7 @@ static const struct TrainerMonItemCustomMoves sParty_ShellySeafloorCavern[] = {
     .iv = 100,
     .lvl = 37,
     .species = SPECIES_MIGHTYENA,
-    .moves = {MOVE_ASSURANCE, MOVE_ICE_FANG, MOVE_POISON_FANG, MOVE_HOWL}
+    .moves = {MOVE_ASSURANCE, MOVE_ICE_FANG, MOVE_POISON_FANG, MOVE_SCARY_FACE}
     },
     {
     .iv = 100,
@@ -378,7 +378,7 @@ static const struct TrainerMonItemCustomMoves sParty_ArchieWeatherInstitute[] = 
     .iv = 150,
     .lvl = 33,
     .species = SPECIES_MIGHTYENA,
-    .moves = {MOVE_ASSURANCE, MOVE_ICE_FANG, MOVE_SCARY_FACE, MOVE_FACADE}
+    .moves = {MOVE_ASSURANCE, MOVE_ICE_FANG, MOVE_HOWL, MOVE_TAKE_DOWN}
     },
     {
     .iv = 150,

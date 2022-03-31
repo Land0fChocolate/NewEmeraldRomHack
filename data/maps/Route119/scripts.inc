@@ -18,8 +18,8 @@ Route119_EventScript_TryRemoveKecleon::
 	return
 
 Route119_OnTransition:
-	@call Common_EventScript_SetupRivalGfxId
-	@call Common_EventScript_SetupRivalOnBikeGfxId
+	call Common_EventScript_SetupRivalGfxId
+	call Common_EventScript_SetupRivalOnBikeGfxId
 	compare VAR_WEATHER_INSTITUTE_STATE, 1
 	call_if_eq Route119_EventScript_MoveInstituteWorkersDownstairs
 	special SetRoute119Weather
@@ -171,11 +171,12 @@ Route119_EventScript_RivalExit::
 	closemessage
 	removeobject LOCALID_RIVAL
 	addobject LOCALID_RIVAL_ON_BIKE
-	delay 30
+	delay 20
 	getplayerxy VAR_0x8004, VAR_0x8005
 	compare VAR_0x8004, 19
 	goto_if_eq Route119_PlayerMoveOutOfWay
 Route119_EventScript_RivalExitPart2::
+	delay 20
 	applymovement OBJ_EVENT_ID_PLAYER, Route119_Movement_WatchRivalExit
 	applymovement LOCALID_RIVAL_ON_BIKE, Route119_Movement_RivalExit
 	waitmovement 0
