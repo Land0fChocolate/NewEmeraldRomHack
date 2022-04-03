@@ -5,6 +5,7 @@
 .set LOCALID_GRUNT_3, 6
 .set LOCALID_GRUNT_4, 7
 .set LOCALID_MAXIE, 8
+.set LOCALID_PHOEBE, 9
 
 MtPyre_Summit_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MtPyre_Summit_OnTransition
@@ -13,6 +14,8 @@ MtPyre_Summit_MapScripts::
 MtPyre_Summit_OnTransition:
 	compare VAR_MT_PYRE_STATE, 2
 	call_if_eq MtPyre_Summit_EventScript_SetArchieMaxiePositions
+	checkflag FLAG_HIDE_MT_PYRE_SUMMIT_PHOEBE
+	goto_if FALSE, MtPyre_Summit_Position_Phoebe
 	end
 
 MtPyre_Summit_EventScript_SetArchieMaxiePositions::
@@ -42,16 +45,18 @@ MtPyre_Summit_EventScript_TeamAquaExits::
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
-	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFastestDown
+	msgbox MtPyre_Summit_Text_ArchieWeGotTheOrb, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ARCHIE, Common_Movement_FaceDown
 	waitmovement 0
-	delay 50
+	delay 30
 	compare VAR_0x8008, 0
 	call_if_eq MtPyre_Summit_EventScript_ArchieFacePlayer0
 	compare VAR_0x8008, 1
 	call_if_eq MtPyre_Summit_EventScript_ArchieFacePlayer1
 	compare VAR_0x8008, 2
 	call_if_eq MtPyre_Summit_EventScript_ArchieFacePlayer2
-	msgbox MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo, MSGBOX_DEFAULT
+	msgbox MtPyre_Summit_Text_ArchieWeArePullingOut, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ARCHIE
@@ -73,8 +78,26 @@ MtPyre_Summit_EventScript_TeamAquaExits::
 	call_if_eq MtPyre_Summit_EventScript_OldLadyApproachPlayer2
 	msgbox MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis, MSGBOX_DEFAULT
 	giveitem ITEM_MAGMA_EMBLEM
+	closemessage
 	setflag FLAG_RECEIVED_RED_OR_BLUE_ORB
 	setflag FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD
+	clearflag FLAG_HIDE_MT_PYRE_SUMMIT_PHOEBE
+	getplayerxy VAR_0x8004, VAR_0x8005
+	compare VAR_0x8004, 22
+	goto_if_eq MtPyre_Summit_EventScript_PhoebeWalkLeftRight
+	compare VAR_0x8004, 23
+	goto_if_eq MtPyre_Summit_EventScript_PhoebeWalkMiddle
+	compare VAR_0x8004, 24
+	goto_if_eq MtPyre_Summit_EventScript_PhoebeWalkLeftRight
+MtPyre_Summit_EventScript_TeamAquaExitsPart2::
+	msgbox MtPyre_Summit_Text_PhoebeIntro, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PHOEBE, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox MtPyre_Summit_Text_PhoebeTalksToPlayer, MSGBOX_DEFAULT
+	giveitem ITEM_TM65
+	msgbox MtPyre_Summit_Text_PhoebeBonds, MSGBOX_DEFAULT
+	closemessage
 	releaseall
 	end
 
@@ -137,6 +160,51 @@ MtPyre_Summit_Movement_ArchieFacePlayer2:
 	walk_in_place_fastest_down
 	step_end
 
+MtPyre_Summit_EventScript_PhoebeWalkMiddle:
+	applymovement OBJ_EVENT_ID_PLAYER, MtPyre_Summit_EventScript_MovementPlayerMoveOutOfWay
+	applymovement LOCALID_PHOEBE, MtPyre_Summit_Movement_PhoebeMiddle
+	waitmovement 0
+	goto MtPyre_Summit_EventScript_TeamAquaExitsPart2
+
+MtPyre_Summit_EventScript_PhoebeWalkLeftRight:
+	applymovement LOCALID_PHOEBE, MtPyre_Summit_Movement_PhoebeLeftRight
+	waitmovement 0
+	goto MtPyre_Summit_EventScript_TeamAquaExitsPart2
+
+MtPyre_Summit_Movement_PhoebeMiddle:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+MtPyre_Summit_Movement_PhoebeLeftRight:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+MtPyre_Summit_Position_Phoebe:
+	setobjectxy LOCALID_PHOEBE, 24, 5
+	end
+
+MtPyre_Summit_EventScript_PlayerMoveOutOfWay::
+	applymovement OBJ_EVENT_ID_PLAYER, MtPyre_Summit_EventScript_MovementPlayerMoveOutOfWay
+	goto MtPyre_Summit_EventScript_TeamAquaExitsPart2
+
+MtPyre_Summit_EventScript_MovementPlayerMoveOutOfWay:
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_right
+	face_left
+	step_end
+
 MtPyre_Summit_EventScript_OldMan::
 	lock
 	faceplayer
@@ -146,6 +214,13 @@ MtPyre_Summit_EventScript_OldMan::
 	call_if_eq MtPyre_Summit_EventScript_OldManTale
 	compare VAR_RESULT, NO
 	call_if_eq MtPyre_Summit_EventScript_DeclineOldManTale
+	release
+	end
+
+MtPyre_Summit_EventScript_Phoebe::
+	lock
+	faceplayer
+	msgbox MtPyre_Summit_Text_PhoebeBonds, MSGBOX_DEFAULT
 	release
 	end
 
@@ -510,48 +585,69 @@ MtPyre_Summit_Text_Grunt4PostBattle:
 	.string "We have a great combination going\n"
 	.string "with us members and our leader.$"
 
-MtPyre_Summit_Text_ArchieWeGotTheOrbLetsGo:
-	.string "Archie: Team Magma's Maxie got ahead\n"
-	.string "of us, but we also got what we wanted.\p"
-	.string "The Red Orb preserved at Mt. Pyre…\n"
-	.string "I, Archie, now have it in my possession!\p"
-	.string "Fufufu… Now we can bring our ultimate\n"
-	.string "objective to fruition!\p"
-	.string "Okay, Team!\n"
-	.string "We're pulling out!$"
+MtPyre_Summit_Text_ArchieWeGotTheOrb:
+	.string "Archie: The Blue Orb!\n"
+	.string "I knew the legend but I didn't know\l"
+	.string "where it was or if it really existed…\p"
+	.string "Thanks for the tip, Maxie! Bwhahahaha!$"
+
+MtPyre_Summit_Text_ArchieWeArePullingOut:
+	.string "I thought something was a bit noisy,\n"
+	.string "and who is it but the usual scamp!\p"
+	.string "Sorry, scampo, but I'm afraid I just\n"
+	.string "don't have time to play with you right\l"
+	.string "now.\p"
+	.string "Okay, team. We are pulling out!$"
 
 MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis:
 	.string "Oh, no…\n"
 	.string "This cannot happen…\p"
-	.string "Not only the Blue Orb, but even\n"
-	.string "the Red Orb has been taken…\p"
-	.string "The Blue Orb and Red Orb must never\n"
+	.string "Not only the Red Orb, but even\n"
+	.string "the Blue Orb has been taken…\p"
+	.string "The Red Orb and Blue Orb must never\n"
 	.string "be separated. They belong together.\p"
 	.string "What are those men trying to do with\n"
-	.string "the two ORBS?\p"
+	.string "the two orbs?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "Oh, yes. Was it Team Magma who came\n"
-	.string "and took the Blue Orb first?\p"
+	.string "and took the Red Orb first?\p"
 	.string "Well, in their haste, they left this\n"
 	.string "behind.\p"
 	.string "I couldn't imagine what exactly it\n"
 	.string "could be.\p"
-	.string "I would like you to have it.\n"
+	.string "Are you going after them?\n"
 	.string "Perhaps it will be useful in some way.$"
 
+MtPyre_Summit_Text_PhoebeIntro:
+	.string "Phoebe: Grandma! Are you alright?\n"
+	.string "I heard some shifty group was\l"
+	.string "occupying Mt. Pyre.$"
+
+MtPyre_Summit_Text_PhoebeTalksToPlayer:
+	.string "Phoebe: Oh, and you are…?\p"
+	.string "{PLAYER}. Thanks for watching\n"
+	.string "over my grandma.\p"
+	.string "Here, a token of my gratitude.$"
+
+MtPyre_Summit_Text_PhoebeBonds:
+	.string "I can sense that the bonds between you\n"
+	.string "and your Pokémon are strong. We'll\l"
+	.string "probably run into each other again.$"
+
 MtPyre_Summit_Text_OrbsHaveBeenTaken:
-	.string "The Blue Orb and Red Orb taken by\n"
+	.string "The Blue Orb and Red Orb stolen by\n"
 	.string "those sinister men…\p"
-	.string "They must never be apart…\n"
-	.string "I fear something terrible will happen…$"
+	.string "It seems odd that they were taken\n"
+	.string "at the same time by different people.\l"
+	.string "Those orbs are not common knowledge.$"
 
 MtPyre_Summit_Text_GroudonKyogreAwakened:
 	.string "Oh, my goodness…\p"
 	.string "You say that both Groudon and Kyogre\n"
 	.string "have been awakened?\p"
-	.string "It is said that the Blue Orb and\n"
-	.string "the Red Orb quelled the rage of\l"
+	.string "It is said that the Red Orb and\n"
+	.string "the Blue Orb quelled the rage of\l"
 	.string "the two Pokémon…\p"
 	.string "It is also said that the true owner\n"
 	.string "of the Orbs still exists.\p"
@@ -602,7 +698,7 @@ MtPyre_Summit_Text_GroudonKyogreTale:
 	.string "infernos and vicious storms.\p"
 	.string "The Blue Orb and the Red Orb brought\n"
 	.string "an end to the calamity.\p"
-	.string "Light poured from the two ORBS and\n"
+	.string "Light poured from the two orbs and\n"
 	.string "becalmed the enraged adversaries.\p"
 	.string "The pair, made docile, dove deep into\n"
 	.string "the sea where eventually they\l"

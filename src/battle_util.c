@@ -459,6 +459,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_UNAWARE] = 4,
     [ABILITY_UNBURDEN] = 3,
     [ABILITY_UNNERVE] = 2,
+    [ABILITY_UNSTEADY] = 3,
     [ABILITY_VICTORY_STAR] = 5,
     [ABILITY_VITAL_SPIRIT] = 2,
     [ABILITY_VOLT_ABSORB] = 5,
@@ -5445,6 +5446,19 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     effect++;
                 }
                 break;
+            case ABILITY_UNSTEADY:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                 && TARGET_TURN_DAMAGED
+                 && IsBattlerAlive(battler)
+                 && (CompareStat(battler, STAT_EVASION, MAX_STAT_STAGE, CMP_LESS_THAN))) // Don't activate if evasion cannot be raised
+                {
+                    gLastUsedAbility = ABILITY_UNSTEADY;
+                    SET_STATCHANGER(STAT_EVASION, 1, FALSE);
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_TargetAbilityStatRaiseOnMoveEnd;
+                    effect++;
+                }
+                break;
             case ABILITY_CURSED_BODY:
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                  && TARGET_TURN_DAMAGED
@@ -5969,7 +5983,13 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 }
                 break;
             case ABILITY_SPINNING_BODY:
-                if (IS_MOVE_PHYSICAL(gCurrentMove))
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                 && gBattleMons[gBattlerTarget].hp != 0
+                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && IS_MOVE_PHYSICAL(gCurrentMove)
+                 && IsMoveMakingContact(move, gBattlerAttacker)
+                 && !(gSideStatuses[gBattlerTarget] & SIDE_STATUS_SAFEGUARD)
+                 && TARGET_TURN_DAMAGED)
                 {
                     BattleScriptPushCursor();
                     BattleScriptExecute(BattleScript_RapidSpinAway);

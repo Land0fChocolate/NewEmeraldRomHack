@@ -619,7 +619,7 @@ LilycoveCity_Text_ImFromKanto:
 LilycoveCity_Text_TeamAquaBeenTrainingWailmer:
 	.string "Team Aqua's been training their\n"
 	.string "Wailmer in the cove.\p"
-	.string "We Sailors can't get our boats out\n"
+	.string "We sailors can't get our boats out\n"
 	.string "to sea with them in the way!$"
 
 LilycoveCity_Text_SomeonePuntedTeamAquaOut:
@@ -703,19 +703,19 @@ LilycoveCity_Text_MuseumSignPlayersExhibit:
 
 LilycoveCity_Text_HarborSignUnderConstruction:
 	.string "LILYCOVE CITY HARBOR\p"
-	.string "“The ferry S.S. TIDAL is under\n"
-	.string "construction in SLATEPORT CITY.\p"
+	.string "“The ferry S.S. Tidal is under\n"
+	.string "construction in Slateport City.\p"
 	.string "“Service is scheduled to begin\n"
 	.string "shortly.”$"
 
 LilycoveCity_Text_HarborSign:
 	.string "LILYCOVE CITY HARBOR\p"
 	.string "“Enjoy a delightful cruise on\n"
-	.string "the ferry S.S. TIDAL.”$"
+	.string "the ferry S.S. Tidal.”$"
 
 LilycoveCity_Text_TrainerFanClubSign:
-	.string "Pokémon TRAINER FAN CLUB\p"
-	.string "The names of TRAINERS are scribbled\n"
+	.string "POKéMON TRAINER FAN CLUB\p"
+	.string "The names of Trainers are scribbled\n"
 	.string "all over the sign…$"
 
 LilycoveCity_Text_DepartmentStoreSign:
@@ -731,7 +731,7 @@ LilycoveCity_Text_MoveDeletersHouseSign:
 
 LilycoveCity_Text_DoYouKnowAboutBerryBlender:
 	.string "Do you know about the machine\n"
-	.string "BERRY BLENDER?$"
+	.string "Berry Blender?$"
 
 LilycoveCity_Text_FasterSpinBetterPokeblocks:
 	.string "People have to work together to get it\n"
@@ -748,7 +748,7 @@ LilycoveCity_Text_ExplainBerryBlender:
 LilycoveCity_Text_HeardTowerCalledSkyPillar:
 	.string "I heard there's a tower somewhere out\n"
 	.string "on the sea routes.\p"
-	.string "It's called the SKY PILLAR, I hear.$"
+	.string "It's called the Sky Pillar, I hear.$"
 
 LilycoveCity_Text_SawTallTowerOnRoute131:
 	.string "I saw this tall tower somewhere\n"
@@ -758,7 +758,7 @@ LilycoveCity_Text_SawTallTowerOnRoute131:
 LilycoveCity_Text_JustArrivedAndSawRarePokemon:
 	.string "We just arrived here on our\n"
 	.string "honeymoon vacation.\p"
-	.string "We happened to see a DRAGON-type\n"
+	.string "We happened to see a dragon-type\n"
 	.string "Pokémon flying way up in the sky.\p"
 	.string "Do cool Pokémon like that live in\n"
 	.string "the Hoenn region?$"

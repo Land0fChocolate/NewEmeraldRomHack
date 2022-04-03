@@ -3887,7 +3887,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_FUTURE_SIGHT] =
     {
-        .power = 120,
+        .power = 130,
         .accuracy = 100,
         .pp = 10,
         .effect = EFFECT_FUTURE_SIGHT,

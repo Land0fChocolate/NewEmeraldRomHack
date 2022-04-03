@@ -3189,41 +3189,41 @@ Route121_Text_TammyDefeat:
 	.string "I have lost…$"
 
 Route121_Text_TammyPostBattle:
-	.string "MT. PYRE…\n"
+	.string "Mt. Pyre…\n"
 	.string "There is a mysterious power\l"
 	.string "at work there…$"
 
 Route121_Text_KateIntro:
-	.string "KATE: Together, we're fearless!\n"
+	.string "Kate: Together, we're fearless!\n"
 	.string "We'll demonstrate how tough we are!$"
 
 Route121_Text_KateDefeat:
-	.string "KATE: I blew it in front of my junior\n"
+	.string "Kate: I blew it in front of my junior\n"
 	.string "student partner…$"
 
 Route121_Text_KatePostBattle:
-	.string "KATE: When someone's relying on me,\n"
+	.string "Kate: When someone's relying on me,\n"
 	.string "I get this urge to look cool in front\l"
 	.string "of them…$"
 
 Route121_Text_KateNotEnoughMons:
-	.string "KATE: If you've only got one Pokémon,\n"
+	.string "Kate: If you've only got one Pokémon,\n"
 	.string "we can't battle with you.\p"
 	.string "That would be bullying.$"
 
 Route121_Text_JoyIntro:
-	.string "JOY: Together, we're fearless!\n"
+	.string "Joy: Together, we're fearless!\n"
 	.string "We'll demonstrate how tough we are!$"
 
 Route121_Text_JoyDefeat:
-	.string "JOY: Please forgive me, KATE!$"
+	.string "Joy: Please forgive me, Kate!$"
 
 Route121_Text_JoyPostBattle:
-	.string "JOY: Ehehe, I'll have to train with KATE,\n"
+	.string "Joy: Ehehe, I'll have to train with Kate,\n"
 	.string "my senior student partner, again.$"
 
 Route121_Text_JoyNotEnoughMons:
-	.string "JOY: You need at least two Pokémon\n"
+	.string "Joy: You need at least two Pokémon\n"
 	.string "if you're going to challenge us!$"
 
 Route121_Text_JessicaIntro:
@@ -3236,7 +3236,7 @@ Route121_Text_JessicaDefeat:
 
 Route121_Text_JessicaPostBattle:
 	.string "Maybe I'll go catch more Pokémon at\n"
-	.string "the SAFARI.$"
+	.string "the Safari.$"
 
 Route121_Text_JessicaRegister:
 	.string "I took it easy on you this time!\n"
@@ -3252,7 +3252,7 @@ Route121_Text_JessicaRematchDefeat:
 
 Route121_Text_JessicaPostRematch:
 	.string "Maybe I'll go catch more Pokémon at\n"
-	.string "the SAFARI.$"
+	.string "the Safari.$"
 
 Route121_Text_CristinIntro:
 	.string "I have this routine.\n"
@@ -3298,7 +3298,7 @@ Route121_Text_CaleDefeat:
 
 Route121_Text_CalePostBattle:
 	.string "I bought too much stuff at\n"
-	.string "the Lilycove DEPT. STORE.\p"
+	.string "the Lilycove Dept. Store.\p"
 	.string "It's up the road from here.\n"
 	.string "I wish I had a Bag like yours.$"
 
@@ -3399,7 +3399,7 @@ Route123_Text_CameronRematchDefeat:
 	.string "I feel sad…$"
 
 Route123_Text_CameronPostRematch:
-	.string "I should train at MT. PYRE…\n"
+	.string "I should train at Mt. Pyre…\n"
 	.string "I'll never beat you this way…$"
 
 Route123_Text_JackiIntro:
@@ -3461,7 +3461,7 @@ Route123_Text_YukiNotEnoughMons:
 	.string "don't have two Pokémon.$"
 
 Route123_Text_KindraIntro:
-	.string "MT. PYRE…\n"
+	.string "Mt. Pyre…\n"
 	.string "Where the spirits of Pokémon sleep…\l"
 	.string "Will your Pokémon sleep?$"
 
@@ -3469,7 +3469,7 @@ Route123_Text_KindraDefeat:
 	.string "Overflowing with vitality…$"
 
 Route123_Text_KindraPostBattle:
-	.string "MT. PYRE…\n"
+	.string "Mt. Pyre…\n"
 	.string "Where the spirits of Pokémon sleep…\p"
 	.string "It must overflow with a power that\n"
 	.string "soothes spirits…$"
