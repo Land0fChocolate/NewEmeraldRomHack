@@ -25,7 +25,8 @@ static const u8 sSturdyDescription[] = _(
 	"any attack on 1 HP.");
 
 static const u8 sDampDescription[] = _(
-	"Prevents self-destruction."); //TODO: scheduled for update
+	"Prevents self-destruct\n"
+	"and powder moves.");
 
 static const u8 sLimberDescription[] = _(
 	"Grants paralysis immunity.");
@@ -1158,6 +1159,10 @@ static const u8 sHeartSwapDescription[] = _(
 	"opponent, stat changes are\n"
 	"swapped.");
 
+static const u8 sUnsteadyDescription[] = _(
+	"User raises evasion by one\n"
+	"stage if hit by an attack.\n");
+
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -1453,6 +1458,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_TIME_TRAVELLER] = _("Time Traveller"),
     [ABILITY_WISH_MAKER] = _("Wish Maker"),
     [ABILITY_HEART_SWAP] = _("Heart Swap"),
+    [ABILITY_UNSTEADY] = _("Unsteady"),
 };
 #else   // 12 characters
 
@@ -1750,6 +1756,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_TIME_TRAVELLER] = "TimeTravellr",
     [ABILITY_WISH_MAKER] = "Wish Maker",
     [ABILITY_HEART_SWAP] = "Heart Swap",
+    [ABILITY_UNSTEADY] = "Unsteady",
 };
 #endif
 
@@ -2047,4 +2054,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_TIME_TRAVELLER] = sTimeTravellerDescription,
     [ABILITY_WISH_MAKER] = sWishMakerDescription,
     [ABILITY_HEART_SWAP] = sHeartSwapDescription,
+    [ABILITY_UNSTEADY] = sUnsteadyDescription,
 };

@@ -6255,6 +6255,7 @@ static void Cmd_switchineffects(void)
     // Neutralizing Gas announces itself before hazards
     if (HasAbility(ABILITY_NEUTRALIZING_GAS, gBattleMons[gActiveBattler].abilities) && gSpecialStatuses[gActiveBattler].announceNeutralizingGas == 0)
     {
+        gLastUsedAbility = ABILITY_NEUTRALIZING_GAS;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SWITCHIN_NEUTRALIZING_GAS;
         gSpecialStatuses[gActiveBattler].announceNeutralizingGas = TRUE;
         gBattlerAbility = gActiveBattler;

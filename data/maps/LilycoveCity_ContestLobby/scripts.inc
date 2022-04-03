@@ -1033,9 +1033,9 @@ LilycoveCity_ContestLobby_Text_MakePokeblocksDifferentBerries:
 
 LilycoveCity_ContestLobby_Text_YourPokemonSpurredMeToPaint:
 	.string "Congratulations!\p"
-	.string "I did a painting of your hundred to\n"
+	.string "I did a painting of your Pokémon to\n"
 	.string "commemorate its victory…\p"
-	.string "Well, your hundred's appeals were\n"
+	.string "Well, your Pokémon's appeals were\n"
 	.string "so fantastic, it spurred me into\l"
 	.string "painting better than I usually do.\l"
 	.string "Look, see?$"
@@ -1061,7 +1061,7 @@ LilycoveCity_ContestLobby_Text_IllTakePaintingToMuseum:
 LilycoveCity_ContestLobby_Text_TakeMementoOfPainting:
 	.string "Oh, that's right!\p"
 	.string "As a memento of me painting your\n"
-	.string "hundred, please take this.$"
+	.string "Pokémon, please take this.$"
 
 LilycoveCity_ContestLobby_Text_ReceivedARibbon:
 	.string "{PLAYER} received a Ribbon.$"
@@ -1089,20 +1089,20 @@ LilycoveCity_ContestLobby_Text_MasterRankHereICome:
 	.string "Hoo, boy… Master Rank Contests,\n"
 	.string "here I come.\p"
 	.string "The world will know that my dearest\n"
-	.string "hundred is the cutest being in all\l"
+	.string "Pokémon is the cutest being in all\l"
 	.string "existence. The time has come!\l"
 	.string "Uheheheh.$"
 
 LilycoveCity_ContestLobby_Text_WholeVarietyOfPokemonHere:
 	.string "You can see a whole variety of\n"
-	.string "hundred here.\p"
+	.string "Pokémon here.\p"
 	.string "That's why I make this place a regular\n"
 	.string "part of my daily stroll.$"
 
 LilycoveCity_ContestLobby_Text_ContestFeastForEyes:
 	.string "Wow, coming out to a Contest is\n"
 	.string "a feast for these eyes!\p"
-	.string "Would you look at all the hundred\n"
+	.string "Would you look at all the Pokémon\n"
 	.string "that just scream to be painted?$"
 
 LilycoveCity_ContestLobby_Text_ToughContestIsExtreme:
@@ -1113,7 +1113,7 @@ LilycoveCity_ContestLobby_Text_ToughContestIsExtreme:
 
 LilycoveCity_ContestLobby_Text_LavishedCareOnMon:
 	.string "Day in and day out, I lavished my care\n"
-	.string "on this hundred.\p"
+	.string "on this Pokémon.\p"
 	.string "Its condition is peaking.\n"
 	.string "Today, victory is mine!$"
 

@@ -894,7 +894,7 @@ const struct Item gItems[] =
     {
         .name = _("HP Up"),
         .itemId = ITEM_HP_UP,
-        .price = 10000,
+        .price = 7200,
         .description = sHPUpDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -906,7 +906,7 @@ const struct Item gItems[] =
     {
         .name = _("Protein"),
         .itemId = ITEM_PROTEIN,
-        .price = 10000,
+        .price = 7200,
         .description = sProteinDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -918,7 +918,7 @@ const struct Item gItems[] =
     {
         .name = _("Iron"),
         .itemId = ITEM_IRON,
-        .price = 10000,
+        .price = 7200,
         .description = sIronDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -930,7 +930,7 @@ const struct Item gItems[] =
     {
         .name = _("Calcium"),
         .itemId = ITEM_CALCIUM,
-        .price = 10000,
+        .price = 7200,
         .description = sCalciumDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -942,7 +942,7 @@ const struct Item gItems[] =
     {
         .name = _("Zinc"),
         .itemId = ITEM_ZINC,
-        .price = 10000,
+        .price = 7200,
         .description = sZincDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -954,7 +954,7 @@ const struct Item gItems[] =
     {
         .name = _("Carbos"),
         .itemId = ITEM_CARBOS,
-        .price = 10000,
+        .price = 7200,
         .description = sCarbosDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -978,7 +978,7 @@ const struct Item gItems[] =
     {
         .name = _("PP Max"),
         .itemId = ITEM_PP_MAX,
-        .price = 10000,
+        .price = 25000,
         .description = sPPMaxDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
