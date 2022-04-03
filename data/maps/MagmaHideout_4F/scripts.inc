@@ -2,7 +2,7 @@
 .set LOCALID_GRUNT_1, 2
 .set LOCALID_GRUNT_2, 3
 .set LOCALID_GRUNT_3, 4
-.set LOCALID_TABITHA, 5
+.set LOCALID_COURTNEY, 5
 .set LOCALID_MAXIE, 6
 .set LOCALID_GROUDON_SLEEPING, 7
 
@@ -76,7 +76,7 @@ MagmaHideout_4F_EventScript_Maxie::
 	removeobject LOCALID_GRUNT_1
 	removeobject LOCALID_GRUNT_2
 	removeobject LOCALID_GRUNT_3
-	removeobject LOCALID_TABITHA
+	removeobject LOCALID_COURTNEY
 	setflag FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS
 	fadescreen FADE_FROM_BLACK
 	releaseall
@@ -129,24 +129,25 @@ MagmaHideout_4F_EventScript_Grunt13::
 	msgbox MagmaHideout_4F_Text_Grunt13PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-MagmaHideout_4F_EventScript_Tabitha::
-	trainerbattle_single TRAINER_TABITHA_MAGMA_HIDEOUT, MagmaHideout_4F_Text_TabithaIntro, MagmaHideout_4F_Text_TabithaDefeat
-	msgbox MagmaHideout_4F_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
+MagmaHideout_4F_EventScript_Courtney::
+	trainerbattle_single TRAINER_COURTNEY_MAGMA_HIDEOUT, MagmaHideout_4F_Text_CourtneyIntro, MagmaHideout_4F_Text_CourtneyDefeat
+	msgbox MagmaHideout_4F_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MagmaHideout_4F_Text_Grunt11Intro:
-	.string "I want to see Groudon, too, but they\n"
-	.string "won't let me see even its tail…\p"
-	.string "It's got me feeling really frustrated.\p"
-	.string "Oh, no!\n"
-	.string "I blabbed about Groudon!$"
+	.string "Drat! Team Aqua followed us!\n"
+	.string "Wait, you're not Team Aqua. who\n"
+	.string "are you?$"
 
 MagmaHideout_4F_Text_Grunt11Defeat:
 	.string "I guess it's impossible to win if one\n"
 	.string "doesn't have a calm mind…$"
 
 MagmaHideout_4F_Text_Grunt11PostBattle:
-	.string "I wonder if Groudon even has a tail?$"
+	.string "It took a while getting the boss back\n"
+	.string "to base, we were attacked by an Aqua\l"
+	.string "hit squad. They somehow knew what we\l"
+	.string "were up to.$"
 
 MagmaHideout_4F_Text_Grunt12Intro:
 	.string "Fuhahaha!\n"
@@ -171,23 +172,22 @@ MagmaHideout_4F_Text_Grunt13Defeat:
 MagmaHideout_4F_Text_Grunt13PostBattle:
 	.string "C-come on, one more match…$"
 
-MagmaHideout_4F_Text_TabithaIntro:
-	.string "Hehehe!\n"
-	.string "You made it this far, so I'll tell you!\p"
-	.string "That's right!\n"
-	.string "Up ahead, Groudon is sleeping!\p"
-	.string "Maxie went to Groudon just seconds\n"
-	.string "ago!\p"
-	.string "It's going to awaken real soon!\n"
-	.string "Hehe! Hehehe!$"
+MagmaHideout_4F_Text_CourtneyIntro:
+	.string "…\n"
+	.string "…Analyzing.\p"
+	.string "The anomaly that interfered with the\n"
+	.string "Mt. Chimney eruption plan.\p"
+	.string "High risk of interfering with\n"
+	.string "Awaken the Continent plan.\p"
+	.string "Deleting…$"
 
-MagmaHideout_4F_Text_TabithaDefeat:
-	.string "Taken down again…\n"
-	.string "Hehe…$"
+MagmaHideout_4F_Text_CourtneyDefeat:
+	.string "That's unanticipated… Annoying…\n"
+	.string "but interesting!$"
 
-MagmaHideout_4F_Text_TabithaPostBattle:
-	.string "…And while you wasted time with me,\n"
-	.string "Maxie should have awakened Groudon…$"
+MagmaHideout_4F_Text_CourtneyPostBattle:
+	.string "Target locked. Commencing… experiment.\n"
+	.string "You shall be observed.$"
 
 MagmaHideout_4F_Text_MaxieAwakenGroudon:
 	.string "Maxie: Groudon…\p"

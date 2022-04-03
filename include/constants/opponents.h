@@ -733,7 +733,7 @@
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_14      729
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_15      730
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_16      731
-#define TRAINER_TABITHA_MAGMA_HIDEOUT       732
+#define TRAINER_COURTNEY_MAGMA_HIDEOUT      732
 #define TRAINER_DARCY                       733
 #define TRAINER_MAXIE_MOSSDEEP              734
 #define TRAINER_PETE                        735
@@ -856,20 +856,18 @@
 #define TRAINER_LEAF                        852 //unused
 #define TRAINER_BRENDAN_PLACEHOLDER         853 //unused
 #define TRAINER_MAY_PLACEHOLDER             854 //unused
-#define TRAINER_COURTNEY_MAGMA_HIDEOUT      855
-#define TRAINER_MATT_MT_PYRE                856
-#define TRAINER_CECE                        857
-#define TRAINER_FRANNY                      858
-#define TRAINER_MEGGI                       859
-#define TRAINER_MOMO                        860
-#define TRAINER_NELLIE                      861
-#define TRAINER_ARCHIE_WEATHER_INSTITUTE    862
+#define TRAINER_CECE                        855
+#define TRAINER_FRANNY                      856
+#define TRAINER_MEGGI                       857
+#define TRAINER_MOMO                        858
+#define TRAINER_NELLIE                      859
+#define TRAINER_ARCHIE_WEATHER_INSTITUTE    860
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      863
-#define MAX_TRAINERS_COUNT                  864
+#define TRAINERS_COUNT                      861
+#define MAX_TRAINERS_COUNT                  862
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H
