@@ -58,15 +58,13 @@ AquaHideout_1F_Text_OurBossIsSnatchingSomething:
 	.string "… …\n"
 	.string "Where did he go?\p"
 	.string "Wahaha! Do you really think I'd tell\n"
-	.string "you something that crucial?$"
+	.string "you something that crucial?\p"
+	.string "But seriously, I have no idea.$\n"
 
 AquaHideout_1F_Text_WhereMightMagmaHideoutBe:
-	.string "What? What?\n"
-	.string "Are you a Team Magma grunt?\p"
-	.string "I hear that Team Magma is trying to\n"
-	.string "awaken an awesome Pokémon at their\l"
-	.string "Hideout.\p"
-	.string "But where might their Hideout be?$"
+	.string "Access denied, pal.\n"
+	.string "Go mess about in Team Magma's hideout.\n"
+	.string "It's somewhere around Mt. Chimney.$"
 
 AquaHideout_1F_Text_BossWentToJackASubmarine:
 	.string "What? What? What do you want with \n"
@@ -76,7 +74,8 @@ AquaHideout_1F_Text_BossWentToJackASubmarine:
 	.string "… …\n"
 	.string "Where did he go?\p"
 	.string "Wahaha! Do you really think I'd tell\n"
-	.string "you something that crucial?$"
+	.string "you something that crucial?\p"
+	.string "But seriously, I have no idea.$\n"
 
 AquaHideout_1F_Text_BossIsOnRoute122:
 	.string "What? What? What do you want with \n"
@@ -86,14 +85,12 @@ AquaHideout_1F_Text_BossIsOnRoute122:
 	.string "… …\n"
 	.string "Why did he go?\p"
 	.string "Wahaha! Do you really think I'd tell\n"
-	.string "you something that crucial?$"
+	.string "you something that crucial?\p"
+	.string "But seriously, I have no idea.$\n"
 
 AquaHideout_1F_Text_TeamMagmaAtMtChimney:
-	.string "What? What?\n"
-	.string "Are you a Team Magma grunt?\p"
-	.string "I hear that Team Magma is after\n"
-	.string "an awesome Pokémon at MT. Chimney.\p"
-	.string "But what is that Pokémon like?$"
+	.string "Why are you here, come to borrow a cup\n"
+	.string "of sugar? Beat it, kid.$"
 
 AquaHideout_1F_Text_BossIsInSlateportCity:
 	.string "What? What? What do you want with\n"
@@ -103,7 +100,8 @@ AquaHideout_1F_Text_BossIsInSlateportCity:
 	.string "… …\n"
 	.string "Why did he go?\p"
 	.string "Wahaha! Do you really think I'd tell\n"
-	.string "you something that crucial?$"
+	.string "you something that crucial?\p"
+	.string "But seriously, I have no idea.$\n"
 
 AquaHideout_1F_Text_Grunt1Intro:
 	.string "Ayiyiyi!\n"

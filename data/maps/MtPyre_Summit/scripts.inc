@@ -616,7 +616,7 @@ MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis:
 	.string "behind.\p"
 	.string "I couldn't imagine what exactly it\n"
 	.string "could be.\p"
-	.string "I would like you to have it.\n"
+	.string "Are you going after them?\n"
 	.string "Perhaps it will be useful in some way.$"
 
 MtPyre_Summit_Text_PhoebeIntro:
@@ -628,7 +628,7 @@ MtPyre_Summit_Text_PhoebeTalksToPlayer:
 	.string "Phoebe: Oh, and you are…?\p"
 	.string "{PLAYER}. Thanks for watching\n"
 	.string "over my grandma.\p"
-	.string "Here, a token of my graditude.$"
+	.string "Here, a token of my gratitude.$"
 
 MtPyre_Summit_Text_PhoebeBonds:
 	.string "I can sense that the bonds between you\n"
