@@ -58,10 +58,11 @@ MagmaHideout_2F_2R_Text_Grunt7Defeat:
 	.string "Just like a volcano!$"
 
 MagmaHideout_2F_2R_Text_Grunt7PostBattle:
-	.string "You just happened to win this time,\n"
-	.string "but that doesn't matter.\p"
-	.string "Team Magma's goal is about to be\n"
-	.string "reached!$"
+	.string "This is a pretty scary place to be.\n"
+	.string "One bad quake and we could be buried\l"
+	.string "under rocks or submerged in lava.\p"
+	.string "There's a good reason we operate here,\n"
+	.string "not that I will tell you what.$"
 
 MagmaHideout_2F_2R_Text_Grunt8Intro:
 	.string "One of our guys was freaking out that\n"
