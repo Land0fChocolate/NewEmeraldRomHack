@@ -93,8 +93,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 3,
-      "y": 23,
+      "x": 23,
+      "y": 4,
       "elevation": 4,
       "var": "VAR_MAGMA_HIDEOUT_ZINNIA_TRIGGER_STATE",
       "var_value": "0",
