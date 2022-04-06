@@ -1472,8 +1472,8 @@ u8 SpawnSpecialObjectEventParameterized(u16 graphicsId, u8 movementBehavior, u8 
     x -= 7;
     y -= 7;
     objectEventTemplate.localId = localId;
-    objectEventTemplate.graphicsId = graphicsId;
     objectEventTemplate.inConnection = 0;
+    objectEventTemplate.graphicsId = graphicsId;
     objectEventTemplate.x = x;
     objectEventTemplate.y = y;
     objectEventTemplate.elevation = z;

@@ -1155,6 +1155,18 @@ static const struct SpriteFrameImage sPicTable_AquaMemberF[] = {
     overworld_frame(gObjectEventPic_AquaMemberF, 2, 4, 8),
 };
 
+static const struct SpriteFrameImage sPicTable_ZinniaAqua[] = {
+    overworld_frame(gObjectEventPic_ZinniaAqua, 2, 4, 0),
+    overworld_frame(gObjectEventPic_ZinniaAqua, 2, 4, 1),
+    overworld_frame(gObjectEventPic_ZinniaAqua, 2, 4, 2),
+    overworld_frame(gObjectEventPic_ZinniaAqua, 2, 4, 3),
+    overworld_frame(gObjectEventPic_ZinniaAqua, 2, 4, 4),
+    overworld_frame(gObjectEventPic_ZinniaAqua, 2, 4, 5),
+    overworld_frame(gObjectEventPic_ZinniaAqua, 2, 4, 6),
+    overworld_frame(gObjectEventPic_ZinniaAqua, 2, 4, 7),
+    overworld_frame(gObjectEventPic_ZinniaAqua, 2, 4, 8),
+};
+
 static const struct SpriteFrameImage sPicTable_MagmaMemberM[] = {
     overworld_frame(gObjectEventPic_MagmaMemberM, 2, 4, 0),
     overworld_frame(gObjectEventPic_MagmaMemberM, 2, 4, 1),
@@ -1177,6 +1189,18 @@ static const struct SpriteFrameImage sPicTable_MagmaMemberF[] = {
     overworld_frame(gObjectEventPic_MagmaMemberF, 2, 4, 6),
     overworld_frame(gObjectEventPic_MagmaMemberF, 2, 4, 7),
     overworld_frame(gObjectEventPic_MagmaMemberF, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_ZinniaMagma[] = {
+    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 0),
+    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 1),
+    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 2),
+    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 3),
+    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 4),
+    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 5),
+    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 6),
+    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 7),
+    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 8),
 };
 
 static const struct SpriteFrameImage sPicTable_Sidney[] = {
@@ -1435,6 +1459,18 @@ static const struct SpriteFrameImage sPicTable_SubmarineShadow[] = {
     obj_frame_tiles(gObjectEventPic_SubmarineShadow),
     obj_frame_tiles(gObjectEventPic_SubmarineShadow),
     obj_frame_tiles(gObjectEventPic_SubmarineShadow),
+};
+
+static const struct SpriteFrameImage sPicTable_Zinnia[] = {
+    overworld_frame(gObjectEventPic_Zinnia, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Zinnia, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Zinnia, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Zinnia, 2, 4, 3),
+    overworld_frame(gObjectEventPic_Zinnia, 2, 4, 4),
+    overworld_frame(gObjectEventPic_Zinnia, 2, 4, 5),
+    overworld_frame(gObjectEventPic_Zinnia, 2, 4, 6),
+    overworld_frame(gObjectEventPic_Zinnia, 2, 4, 7),
+    overworld_frame(gObjectEventPic_Zinnia, 2, 4, 8),
 };
 
 static const struct SpriteFrameImage sPicTable_PichuDoll[] = {
@@ -2147,18 +2183,6 @@ static const struct SpriteFrameImage sPicTable_HoOh[] = {
     overworld_frame(gObjectEventPic_HoOh, 4, 4, 1),
     overworld_frame(gObjectEventPic_HoOh, 4, 4, 0),
     overworld_frame(gObjectEventPic_HoOh, 4, 4, 1),
-};
-
-static const struct SpriteFrameImage sPicTable_ZinniaMagma[] = {
-    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 0),
-    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 1),
-    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 2),
-    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 3),
-    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 4),
-    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 5),
-    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 6),
-    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 7),
-    overworld_frame(gObjectEventPic_ZinniaMagma, 2, 4, 8),
 };
 
 static const struct SpriteFrameImage sPicTable_RubySapphireBrendan[] = {

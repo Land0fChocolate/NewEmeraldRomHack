@@ -135,19 +135,19 @@ MagmaHideout_4F_EventScript_Courtney::
 	end
 
 MagmaHideout_4F_Text_Grunt11Intro:
-	.string "Drat! Team Aqua followed us!\n"
-	.string "Wait, you're not Team Aqua. who\n"
-	.string "are you?$"
+	.string "Hey, you.\n"
+	.string "Could you cover my shift?\p"
+	.string "Wait, who are you!?$"
 
 MagmaHideout_4F_Text_Grunt11Defeat:
-	.string "I guess it's impossible to win if one\n"
-	.string "doesn't have a calm mind…$"
+	.string "Man, I never should have gone into\n"
+	.string "work today…$"
 
 MagmaHideout_4F_Text_Grunt11PostBattle:
-	.string "It took a while getting the boss back\n"
-	.string "to base, we were attacked by an Aqua\l"
-	.string "hit squad. They somehow knew what we\l"
-	.string "were up to.$"
+	.string "I'm quitting after today.\n"
+	.string "The work we do doesn't feel very\l"
+	.string "rewarding and just doesn't make up for\l"
+	.string "the benefits.$"
 
 MagmaHideout_4F_Text_Grunt12Intro:
 	.string "Fuhahaha!\n"

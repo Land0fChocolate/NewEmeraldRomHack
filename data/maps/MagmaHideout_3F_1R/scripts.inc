@@ -20,7 +20,10 @@ MagmaHideout_3F_1R_EventScript_Zinnia_Trigger::
 	end
 
 MagmaHideout_3F_1R_EventScript_ZinniaIdle::
+	lock
+	faceplayer
 	msgbox MagmaHideout_3F_1R_Text_ZinniaIdle, MSGBOX_AUTOCLOSE
+	release
 	end
 
 MagmaHideout_3F_1R_Movement_Zinnia:
