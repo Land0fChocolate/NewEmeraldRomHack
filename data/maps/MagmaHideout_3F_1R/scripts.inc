@@ -61,8 +61,7 @@ MagmaHideout_3F_1R_Text_ZinniaMeetsPlayer:
 	.string "can go on through.$"
 
 MagmaHideout_3F_1R_Text_ZinniaIdle:
-	.string "It's an unscheduled meeting, but you\n"
-	.string "can go on through.$"
+	.string "TODO:$"
 
 MagmaHideout_3F_1R_Text_Grunt9Intro:
 	.string "What did I do to deserve this guard\n"
