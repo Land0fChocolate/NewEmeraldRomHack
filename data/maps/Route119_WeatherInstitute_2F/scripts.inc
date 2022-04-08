@@ -71,15 +71,7 @@ Route119_WeatherInstitute_2F_EventScript_Worker2::
 	msgbox Route119_WeatherInstitute_2F_Text_Worker2, MSGBOX_AUTOCLOSE
 	end
 
-Route119_WeatherInstitute_2F_EventScript_FightTrigger1::
-	goto Route119_WeatherInstitute_2F_EventScript_FightScene
-	end
-
-Route119_WeatherInstitute_2F_EventScript_FightTrigger2::
-	goto Route119_WeatherInstitute_2F_EventScript_FightScene
-	end
-
-Route119_WeatherInstitute_2F_EventScript_FightTrigger3::
+Route119_WeatherInstitute_2F_EventScript_FightTrigger::
 	goto Route119_WeatherInstitute_2F_EventScript_FightScene
 	end
 

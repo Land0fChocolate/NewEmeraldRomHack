@@ -53,15 +53,15 @@ MagmaHideout_2F_1R_Text_Grunt3PostBattle:
 
 MagmaHideout_2F_1R_Text_Grunt4Intro:
 	.string "Ahah!\n"
-	.string "An intruder!$"
+	.string "Alert! An intruder!$"
 
 MagmaHideout_2F_1R_Text_Grunt4Defeat:
 	.string "Graaah!$"
 
 MagmaHideout_2F_1R_Text_Grunt4PostBattle:
-	.string "I've already lost.\p"
-	.string "Do I really need to keep running\n"
-	.string "around in a circle?$"
+	.string "We really should have built an alarm\n"
+	.string "system for this place. We trust that\l"
+	.string "secret door too much.$"
 
 MagmaHideout_2F_1R_Text_Grunt5Intro:
 	.string "Oh, oh!\n"
