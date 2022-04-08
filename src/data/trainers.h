@@ -9253,7 +9253,7 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemCustomMoves = sParty_WallyVR5},
     },
 
-    [TRAINER_BRENDAN_LILYCOVE_MUDKIP] =
+    [TRAINER_BRENDAN_MOSSDEEP_MUDKIP] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
@@ -9263,11 +9263,11 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_BrendanLilycoveMudkip),
-        .party = {.NoItemDefaultMoves = sParty_BrendanLilycoveMudkip},
+        .partySize = ARRAY_COUNT(sParty_BrendanMossdeepMudkip),
+        .party = {.NoItemDefaultMoves = sParty_BrendanMossdeepMudkip},
     },
 
-    [TRAINER_BRENDAN_LILYCOVE_TREECKO] =
+    [TRAINER_BRENDAN_MOSSDEEP_TREECKO] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
@@ -9277,11 +9277,11 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_BrendanLilycoveTreecko),
-        .party = {.NoItemDefaultMoves = sParty_BrendanLilycoveTreecko},
+        .partySize = ARRAY_COUNT(sParty_BrendanMossdeepTreecko),
+        .party = {.NoItemDefaultMoves = sParty_BrendanMossdeepTreecko},
     },
 
-    [TRAINER_BRENDAN_LILYCOVE_TORCHIC] =
+    [TRAINER_BRENDAN_MOSSDEEP_TORCHIC] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
@@ -9291,11 +9291,11 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_BrendanLilycoveTorchic),
-        .party = {.NoItemDefaultMoves = sParty_BrendanLilycoveTorchic},
+        .partySize = ARRAY_COUNT(sParty_BrendanMossdeepTorchic),
+        .party = {.NoItemDefaultMoves = sParty_BrendanMossdeepTorchic},
     },
 
-    [TRAINER_MAY_LILYCOVE_MUDKIP] =
+    [TRAINER_MAY_MOSSDEEP_MUDKIP] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
@@ -9305,11 +9305,11 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_MayLilycoveMudkip),
-        .party = {.NoItemDefaultMoves = sParty_MayLilycoveMudkip},
+        .partySize = ARRAY_COUNT(sParty_MayMossdeepMudkip),
+        .party = {.NoItemDefaultMoves = sParty_MayMossdeepMudkip},
     },
 
-    [TRAINER_MAY_LILYCOVE_TREECKO] =
+    [TRAINER_MAY_MOSSDEEP_TREECKO] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
@@ -9319,11 +9319,11 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_MayLilycoveTreecko),
-        .party = {.NoItemDefaultMoves = sParty_MayLilycoveTreecko},
+        .partySize = ARRAY_COUNT(sParty_MayMossdeepTreecko),
+        .party = {.NoItemDefaultMoves = sParty_MayMossdeepTreecko},
     },
 
-    [TRAINER_MAY_LILYCOVE_TORCHIC] =
+    [TRAINER_MAY_MOSSDEEP_TORCHIC] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3,
@@ -9333,8 +9333,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_MayLilycoveTorchic),
-        .party = {.NoItemDefaultMoves = sParty_MayLilycoveTorchic},
+        .partySize = ARRAY_COUNT(sParty_MayMossdeepTorchic),
+        .party = {.NoItemDefaultMoves = sParty_MayMossdeepTorchic},
     },
 
     [TRAINER_JONAH] =

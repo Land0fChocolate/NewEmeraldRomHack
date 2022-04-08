@@ -8017,7 +8017,7 @@ static const struct TrainerMonItemCustomMoves sParty_MaxieMagmaHideout[] = {
     },
     {
     .iv = 150,
-    .lvl = 42,
+    .lvl = 43,
     .species = SPECIES_CAMERUPT,
     .moves = {MOVE_LAVA_PLUME, MOVE_EARTH_POWER, MOVE_CURSE, MOVE_ROCK_SLIDE}
     }
@@ -8936,7 +8936,12 @@ static const struct TrainerMonNoItemCustomMoves sParty_WallyVR5[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_BrendanLilycoveMudkip[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_BrendanMossdeepMudkip[] = {
+    {
+    .iv = 150,
+    .lvl = 40,
+    .species = SPECIES_SWELLOW,
+    },
     {
     .iv = 150,
     .lvl = 38,
@@ -8959,7 +8964,12 @@ static const struct TrainerMonNoItemDefaultMoves sParty_BrendanLilycoveMudkip[] 
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_BrendanLilycoveTreecko[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_BrendanMossdeepTreecko[] = {
+    {
+    .iv = 150,
+    .lvl = 40,
+    .species = SPECIES_SWELLOW,
+    },
     {
     .iv = 150,
     .lvl = 38,
@@ -8982,7 +8992,12 @@ static const struct TrainerMonNoItemDefaultMoves sParty_BrendanLilycoveTreecko[]
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_BrendanLilycoveTorchic[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_BrendanMossdeepTorchic[] = {
+    {
+    .iv = 150,
+    .lvl = 40,
+    .species = SPECIES_SWELLOW,
+    },
     {
     .iv = 150,
     .lvl = 38,
@@ -9005,71 +9020,86 @@ static const struct TrainerMonNoItemDefaultMoves sParty_BrendanLilycoveTorchic[]
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_MayLilycoveMudkip[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_MayMossdeepMudkip[] = {
     {
     .iv = 150,
-    .lvl = 38,
+    .lvl = 40,
+    .species = SPECIES_SWELLOW,
+    },
+    {
+    .iv = 150,
+    .lvl = 40,
     .species = SPECIES_RAICHU,
     },
     {
     .iv = 150,
-    .lvl = 38,
+    .lvl = 40,
     .species = SPECIES_MAGCARGO,
     },
     {
     .iv = 150,
-    .lvl = 38,
+    .lvl = 40,
     .species = SPECIES_PELIPPER,
     },
     {
     .iv = 200,
-    .lvl = 40,
+    .lvl = 42,
     .species = SPECIES_SCEPTILE,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_MayLilycoveTreecko[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_MayMossdeepTreecko[] = {
     {
     .iv = 150,
-    .lvl = 38,
+    .lvl = 40,
+    .species = SPECIES_SWELLOW,
+    },
+    {
+    .iv = 150,
+    .lvl = 40,
     .species = SPECIES_RAICHU,
     },
     {
     .iv = 150,
-    .lvl = 38,
+    .lvl = 40,
     .species = SPECIES_PELIPPER,
     },
     {
     .iv = 150,
-    .lvl = 38,
+    .lvl = 40,
     .species = SPECIES_BRELOOM,
     },
     {
     .iv = 200,
-    .lvl = 40,
+    .lvl = 42,
     .species = SPECIES_BLAZIKEN,
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_MayLilycoveTorchic[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_MayMossdeepTorchic[] = {
     {
     .iv = 150,
-    .lvl = 38,
+    .lvl = 40,
+    .species = SPECIES_SWELLOW,
+    },
+    {
+    .iv = 150,
+    .lvl = 40,
     .species = SPECIES_RAICHU,
     },
     {
     .iv = 150,
-    .lvl = 38,
+    .lvl = 40,
     .species = SPECIES_BRELOOM,
     },
     {
     .iv = 150,
-    .lvl = 38,
+    .lvl = 40,
     .species = SPECIES_MAGCARGO,
     },
     {
     .iv = 200,
-    .lvl = 40,
+    .lvl = 42,
     .species = SPECIES_SWAMPERT,
     }
 };
@@ -9794,7 +9824,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GruntMagmaHideout11[] = 
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntMagmaHideout12[] = {
     {
     .iv = 0,
-    .lvl = 33,
+    .lvl = 34,
     .species = SPECIES_NUMEL,
     }
 };
@@ -9802,7 +9832,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GruntMagmaHideout12[] = 
 static const struct TrainerMonNoItemDefaultMoves sParty_GruntMagmaHideout13[] = {
     {
     .iv = 0,
-    .lvl = 33,
+    .lvl = 34,
     .species = SPECIES_ZUBAT,
     }
 };

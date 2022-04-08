@@ -17,7 +17,7 @@ LittlerootTown_MaysHouse_2F_OnTransition:
 	end
 
 LittlerootTown_MaysHouse_2F_EventScript_CheckShouldUpdateMayPos::
-	goto_if_set FLAG_MET_RIVAL_LILYCOVE, LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos
+	goto_if_set FLAG_MET_RIVAL_MOSSDEEP, LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos
 	compare VAR_BIRCH_LAB_STATE, 2
 	goto_if_ge LittlerootTown_MaysHouse_2F_EventScript_Ret
 	goto LittlerootTown_MaysHouse_2F_EventScript_TryUpdateMayPos
@@ -250,7 +250,7 @@ LittlerootTown_MaysHouse_2F_Movement_PlayerWatchMayEast:
 
 RivalsHouse_2F_EventScript_Rival::
 	lockall
-	goto_if_set FLAG_MET_RIVAL_LILYCOVE, RivalsHouse_2F_EventScript_RivalPostLilycove
+	goto_if_set FLAG_MET_RIVAL_MOSSDEEP, RivalsHouse_2F_EventScript_RivalPostLilycove
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq RivalsHouse_2F_EventScript_May
