@@ -67,6 +67,7 @@ MagmaHideout_4F_EventScript_Maxie::
 	closemessage
 	clearflag FLAG_HIDE_SLATEPORT_CITY_CAPTAIN_STERN
 	clearflag FLAG_HIDE_SLATEPORT_CITY_GABBY_AND_TY
+	clearflag FLAG_HIDE_LILYCOVE_CITY_RIVAL
 	setvar VAR_SLATEPORT_CITY_STATE, 1
 	setflag FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT
 	setflag FLAG_HIDE_MT_PYRE_SUMMIT_PHOEBE
@@ -156,21 +157,22 @@ MagmaHideout_4F_Text_Grunt12Intro:
 
 MagmaHideout_4F_Text_Grunt12Defeat:
 	.string "Grrr…\n"
-	.string "I've come so far, but now this?$"
+	.string "You can't stop us! Glory to Team Magma!$"
 
 MagmaHideout_4F_Text_Grunt12PostBattle:
 	.string "Maxie, sir!\n"
 	.string "An intruder is headed your way!$"
 
 MagmaHideout_4F_Text_Grunt13Intro:
-	.string "You're not finished yet!\n"
-	.string "You're not getting by me easily!$"
+	.string "This ends here! You won't be messing\n"
+	.string "with us any longer!$"
 
 MagmaHideout_4F_Text_Grunt13Defeat:
 	.string "Was I that easy to knock down?$"
 
 MagmaHideout_4F_Text_Grunt13PostBattle:
-	.string "C-come on, one more match…$"
+	.string "I-it doesn't matter!\n"
+	.string "We've nearly won!$"
 
 MagmaHideout_4F_Text_CourtneyIntro:
 	.string "…\n"
@@ -193,9 +195,9 @@ MagmaHideout_4F_Text_MaxieAwakenGroudon:
 	.string "Maxie: Groudon…\p"
 	.string "Nothing could awaken you from your\n"
 	.string "sleep bathed in magma…\p"
-	.string "This Blue Orb is what you sought.\n"
+	.string "This Red Orb is what you sought.\n"
 	.string "Wasn't it?\p"
-	.string "I have brought you the Blue Orb.\n"
+	.string "I have brought you the Red Orb.\n"
 	.string "Let its shine awaken you!\p"
 	.string "And show me…\n"
 	.string "Show me the full extent of your power!$"
@@ -203,7 +205,7 @@ MagmaHideout_4F_Text_MaxieAwakenGroudon:
 MagmaHideout_4F_Text_MaxieGroudonWhatsWrong:
 	.string "Maxie: Groudon!\n"
 	.string "What's wrong?\p"
-	.string "Wasn't the Blue Orb the key?\p"
+	.string "Wasn't the Red Orb the key?\p"
 	.string "Groudon!\n"
 	.string "Where have you gone…$"
 
