@@ -188,7 +188,7 @@
       "elevation": 3,
       "var": "VAR_WEATHER_INSTITUTE_TRIGGER_STATE",
       "var_value": "0",
-      "script": "Route119_WeatherInstitute_2F_EventScript_FightTrigger1"
+      "script": "Route119_WeatherInstitute_2F_EventScript_FightTrigger"
     },
     {
       "type": "trigger",
@@ -197,7 +197,7 @@
       "elevation": 3,
       "var": "VAR_WEATHER_INSTITUTE_TRIGGER_STATE",
       "var_value": "0",
-      "script": "Route119_WeatherInstitute_2F_EventScript_FightTrigger2"
+      "script": "Route119_WeatherInstitute_2F_EventScript_FightTrigger"
     },
     {
       "type": "trigger",
@@ -206,7 +206,7 @@
       "elevation": 3,
       "var": "VAR_WEATHER_INSTITUTE_TRIGGER_STATE",
       "var_value": "0",
-      "script": "Route119_WeatherInstitute_2F_EventScript_FightTrigger3"
+      "script": "Route119_WeatherInstitute_2F_EventScript_FightTrigger"
     },
     {
       "type": "trigger",

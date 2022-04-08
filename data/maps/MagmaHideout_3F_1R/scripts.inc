@@ -3,17 +3,19 @@
 MagmaHideout_3F_1R_MapScripts::
 	.byte 0
 
-MagmaHideout_3F_1R_EventScript_Zinnia_Trigger::
+MagmaHideout_3F_1R_EventScript_Zinnia::
 	lock
-	setvar VAR_MAGMA_HIDEOUT_ZINNIA_TRIGGER_STATE, 1
-	msgbox MagmaHideout_3F_1R_Text_ZinniaTalkingToHerself, MSGBOX_DEFAULT
+	checkflag FLAG_MAGMA_HIDEOUT_ZINNIA
+	goto_if TRUE MagmaHideout_3F_1R_EventScript_ZinniaIdle
+	setflag FLAG_MAGMA_HIDEOUT_ZINNIA
+	msgbox MagmaHideout_3F_1R_Text_ZinniaPreIntro, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ZINNIA, Common_Movement_FaceRight
-	waitmovement 0
+	faceplayer
 	playse SE_PIN
 	applymovement LOCALID_ZINNIA, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_ZINNIA, MagmaHideout_3F_1R_Movement_Zinnia
+	applymovement LOCALID_ZINNIA, Common_Movement_Delay48
+	waitmovement 0
 	msgbox MagmaHideout_3F_1R_Text_ZinniaMeetsPlayer, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -26,6 +28,7 @@ MagmaHideout_3F_1R_EventScript_ZinniaIdle::
 	release
 	end
 
+@unused until I can figure out how to make triggers work on this map
 MagmaHideout_3F_1R_Movement_Zinnia:
 	walk_right
 	walk_right
@@ -43,25 +46,26 @@ MagmaHideout_3F_1R_EventScript_Grunt16::
 	msgbox MagmaHideout_3F_1R_Text_Grunt16PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-MagmaHideout_3F_1R_Text_ZinniaTalkingToHerself:
+MagmaHideout_3F_1R_Text_ZinniaPreIntro:
 	.string "…Stern has found it. The location is\n"
 	.string "likely to remain in his vessel's logs…$"
 
 MagmaHideout_3F_1R_Text_ZinniaMeetsPlayer:
 	.string "Oh my, an intruder?\p"
-	.string "Aha, you're the Trainer that has\n"
-	.string "been interfering with Team Magma and\l"
-	.string "Team Aqua since the Petalburg Woods\l"
+	.string "Aha, you're the Trainer that has been\n"
+	.string "interfering with Team Magma and Team\l"
+	.string "Aqua since the Petalburg Woods\l"
 	.string "incident.\p"
 	.string "You have business with Maxie, that's\n"
-	.string "why you've come all the way here?"
+	.string "why you've come all the way here?\p"
 	.string "Hmm…\p"
 	.string "Yeah, this can work out.\p"
 	.string "It's an unscheduled meeting, but you\n"
 	.string "can go on through.$"
 
 MagmaHideout_3F_1R_Text_ZinniaIdle:
-	.string "TODO:$"
+	.string "Oh don't mind me. Just do whatever it is\n"
+	.string "you came here to do.$"
 
 MagmaHideout_3F_1R_Text_Grunt9Intro:
 	.string "What did I do to deserve this guard\n"

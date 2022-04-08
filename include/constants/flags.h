@@ -653,7 +653,7 @@
 #define FLAG_ROUTE_119_HIDE_RIVAL        0x264
 #define FLAG_MET_RIVAL_ROUTE_119         0x265
 #define FLAG_HIDE_MT_PYRE_SUMMIT_PHOEBE  0x266
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
+#define FLAG_MAGMA_HIDEOUT_ZINNIA        0x267
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
