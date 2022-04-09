@@ -137,6 +137,9 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre::
 	setflag FLAG_SYS_WEATHER_CTRL
 	setflag FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN
 	setflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_STEVEN
+	checkflag FLAG_RECEIVED_TM91
+	goto_if FALSE, SeafloorCavern_Room9_PlaceTM91StevensHouse
+SeafloorCavern_Room9_EventScript_ArchieAwakenKyogrePart2::
 	setvar VAR_STEVENS_HOUSE_STATE, 2
 	setvar VAR_SEAFLOOR_CAVERN_STATE, 1
 	setflag FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_ARCHIE
@@ -149,6 +152,10 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre::
 	waitstate
 	releaseall
 	end
+
+SeafloorCavern_Room9_PlaceTM91StevensHouse::
+	clearflag FLAG_ITEM_MOSSDEEP_CITY_TM91
+	goto SeafloorCavern_Room9_EventScript_ArchieAwakenKyogrePart2
 
 SeafloorCavern_Room9_Movement_ArchieApproachPlayer:
 	walk_right

@@ -275,5 +275,6 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL
 	setflag FLAG_HIDE_MT_PYRE_SUMMIT_PHOEBE
 	setflag FLAG_HIDE_MOSSDEEP_CITY_RIVAL
+	setflag FLAG_ITEM_MOSSDEEP_CITY_TM91
 	call EventScript_ResetAllBerries
 	end
