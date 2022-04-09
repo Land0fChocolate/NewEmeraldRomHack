@@ -726,7 +726,7 @@ MatchCall_PersonalizedText9::
 	.string "Right now, behind you…\l"
 	.string "Wasn't there something…?\p"
 	.string "The power of the Pokémon that\n"
-	.string "sleep here at MT. PYRE…\p"
+	.string "sleep here at Mt. Pyre…\p"
 	.string "It's telling me about you…\p"
 	.string "You should walk away quickly and\n"
 	.string "never once look back…\p"
@@ -2382,7 +2382,7 @@ MatchCall_Text_May7::
 
 MatchCall_Text_May8::
 	.string "May: {PLAYER}{KUN}, hi.\p"
-	.string "MT. PYRE is a memorial to Pokémon\n"
+	.string "Mt. Pyre is a memorial to Pokémon\n"
 	.string "whose lives have ended.\p"
 	.string "Maybe as a result, it's infested\n"
 	.string "with many GHOST-type Pokémon!$"
@@ -2509,7 +2509,7 @@ MatchCall_Text_Brendan7::
 
 MatchCall_Text_Brendan8::
 	.string "Brendan: {PLAYER}!\p"
-	.string "MT. PYRE is a memorial to Pokémon\n"
+	.string "Mt. Pyre is a memorial to Pokémon\n"
 	.string "whose lives have ended.\p"
 	.string "That's probably why it's infested\n"
 	.string "with many GHOST-type Pokémon!$"
@@ -2650,7 +2650,7 @@ MatchCall_Text_Scott2::
 MatchCall_Text_Scott3::
 	.string "Scott: Hi, hi, {PLAYER}{KUN}!\p"
 	.string "Have you had the chance to climb\n"
-	.string "MT. PYRE?\p"
+	.string "Mt. Pyre?\p"
 	.string "The place is a memorial to Pokémon\n"
 	.string "that have passed away.\p"
 	.string "It's somewhere every Trainer\n"

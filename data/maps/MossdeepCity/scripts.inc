@@ -11,20 +11,26 @@ MossdeepCity_OnTransition:
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_3
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_4
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+	call_if_set FLAG_HIDE_MOSSDEEP_CITY_RIVAL, Mossdeep_Eventscript_MoveRival
 	end
 
-MossdeepCity_Eventscript_RivalTrigger:: @TODO: do more work on this
+Mossdeep_Eventscript_MoveRival::
+	setobjectxyperm LOCALID_RIVAL, 64, 15
+	end
+
+MossdeepCity_Eventscript_RivalTrigger::
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_RIVAL
+	SETVAR VAR_MOSSDEEP_CITY_RIVAL_STATE, 1
 	opendoor 64, 15
 	waitdooranim
 	addobject LOCALID_RIVAL
-	applymovement LOCALID_RIVAL, MossdeepCity_Movement_RivalExitsSpaceCenter
 	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Movement_PlayerMovesOutOfWay
+	applymovement LOCALID_RIVAL, MossdeepCity_Movement_RivalExitsSpaceCenter
 	waitmovement 0
 	closedoor 64, 15
 	waitdooranim
 	delay 10
-	goto MossdeepCity_EventScript_Rival
+	goto MossdeepCity_EventScript_RivalPart2
 
 MossdeepCity_Movement_RivalExitsSpaceCenter:
 	walk_down
@@ -38,12 +44,12 @@ MossdeepCity_Movement_PlayerMovesOutOfWay:
 MossdeepCity_EventScript_Rival::
 	lock
 	faceplayer
+MossdeepCity_EventScript_RivalPart2::
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq MossdeepCity_EventScript_May
 	compare VAR_RESULT, FEMALE
 	goto_if_eq MossdeepCity_EventScript_Brendan
-	end
 
 MossdeepCity_EventScript_May::
 	playbgm MUS_ENCOUNTER_MAY, TRUE
@@ -202,7 +208,7 @@ MossdeepCity_EventScript_RivalFlyAway::
 	setfieldeffectargument 0, 1
 	dofieldeffect FLDEFF_NPCFLY_OUT
 	delay 15
-	removeobject VAR_LAST_TALKED
+	removeobject LOCALID_RIVAL
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -374,7 +380,7 @@ MossdeepCity_Text_MayNotRaisingPokemon:
 	.string "May: Oh, why? {PLAYER}, haven't you\n"
 	.string "been raising your Pokémon?\p"
 	.string "That's not a very good showing as a\n"
-	.string "Trainer$"
+	.string "Trainer.$"
 
 MossdeepCity_Text_MayBattleMe:
 	.string "May: Come on, battle with me, so I can\n"

@@ -104,8 +104,8 @@ MossdeepCity_SpaceCenter_1F_Text_HoennFamousForMeteorShowers:
 
 
 MossdeepCity_SpaceCenter_1F_Text_DidPokemonComeFromSpace:
-	.string "Some people claim that Pokémon came\n"
-	.string "from space. Could it be true?$"
+	.string "Some people claim that some Pokémon\n"
+	.string "come from space. Could it be true?$"
 
 MossdeepCity_SpaceCenter_1F_Text_RocketsBoggleMyMind:
 	.string "A giant chunk of metal bursts through\n"
