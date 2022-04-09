@@ -142,7 +142,7 @@ AquaHideout_B2F_Text_Grunt6Defeat:
 	.string "What's wrong with you?\n"
 	.string "You're not tired at all!$"
 
-AquaHideout_B2F_Text_Grunt6PostBattle:
+AquaHideout_B2F_Text_Grunt6PostBattle: @TODO: update this line. Master Ball not in hideout anymore
 	.string "That reminds me… I can't remember\n"
 	.string "where I put the Master Ball.\p"
 	.string "If I fail to guard it, our Boss will\n"

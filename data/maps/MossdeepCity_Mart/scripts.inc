@@ -27,6 +27,7 @@ MossdeepCity_Mart_Pokemart:
 	end
 
 MossdeepCity_Mart_EventScript_Woman::
+	clearflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_STEVEN
 	msgbox MossdeepCity_Mart_Text_ReviveIsFantastic, MSGBOX_NPC
 	end
 
