@@ -21,11 +21,11 @@ SootopolisCity_House3_EventScript_Girl::
 	end
 
 SootopolisCity_House3_Text_WallaceHasManyFans:
-	.string "Wallace is often swarmed by fans\n"
-	.string "because of his contest and battling\n"
-	.string "careers.\p"
+	.string "Wallace is often swarmed by fans because\n"
+	.string "of his contest and battling careers.\p"
 	.string "I've been lucky enough to get an\n"
-	.string "autograph!$"
+	.string "autograph!\p"
+	.string "Do you have any fans?"
 
 SootopolisCity_House3_Text_YouMustBePrettyStrong:
 	.string "Oh, then you must be pretty strong.$"

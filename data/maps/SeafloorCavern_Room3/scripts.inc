@@ -11,30 +11,41 @@ SeafloorCavern_Room3_EventScript_Grunt5::
 	msgbox SeafloorCavern_Room3_Text_Grunt5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
+SeafloorCavern_Room3_EventScript_Zinnia::
+	lock
+	faceplayer
+	msgbox SeafloorCavern_Room3_Text_Zinnia, MSGBOX_DEFAULT
+	closemessage
+	end
+
+SeafloorCavern_Room3_Text_Zinnia:
+	.string "Ah, you!\n"
+	.string "Well, of course it's you!\p"
+	.string "You don't know me. Nope!\p"
+	.string "Archie is a little further up ahead.\n"
+	.string "That's the place to go to if you want\l"
+	.string "to stop him.$"
+
 SeafloorCavern_Room3_Text_ShellyIntro:
-	.string "Ahahahaha!\p"
+	.string "Hahn?\p"
 	.string "How did you manage to get here without\n"
-	.string "a submarine?\l"
-	.string "What an impressive child!\p"
-	.string "But… It won't do to have you\n"
-	.string "meddling about here.\p"
-	.string "And, I do want payback for what\n"
-	.string "happened at the Weather Institute…\p"
-	.string "I'm going to give you a little taste\n"
-	.string "of pain! Resign yourself to it!$"
+	.string "a submarine? Well, it doesn't matter.\p"
+	.string "The world Archie dreams of would be a\n"
+	.string "utopia for Pokémon. I can't let you get\l"
+	.string "in the way of someone who's pushing on\l"
+	.string "toward a perfect world!$"
 
 SeafloorCavern_Room3_Text_ShellyDefeat:
-	.string "Ahahahaha!\p"
-	.string "Ouch!$"
+	.string "Wh-what was that!?$"
 
 SeafloorCavern_Room3_Text_ShellyPostBattle:
-	.string "Ahahahaha!\n"
-	.string "You're so darn strong.\p"
-	.string "It's terribly disappointing that you're\n"
-	.string "not a Team Aqua member.\p"
-	.string "You could have enjoyed the fabulous\n"
-	.string "world our boss has promised as\l"
-	.string "one of us…$"
+	.string "Uh. Are you telling me you've upped your\n"
+	.string "game even more since last time?\p" 
+	.string "My Pokémon and I don't have any\n"
+	.string "strength left to fight…\p"
+	.string "Go on… Go and be destroyed by Archie.\n"
+	.string "You don't have your friend to help you\l"
+	.string "this time.$"
 
 SeafloorCavern_Room3_Text_Grunt5Intro:
 	.string "For our dream to become real, we need\n"

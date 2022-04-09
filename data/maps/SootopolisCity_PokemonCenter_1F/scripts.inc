@@ -48,7 +48,7 @@ SootopolisCity_PokemonCenter_1F_EventScript_WomanNoLegendaries::
 	end
 
 SootopolisCity_PokemonCenter_1F_Text_WallaceMentor:
-	.string "Walace was taught by a man named\n"
+	.string "Wallace was taught by a man named\n"
 	.string "Juan. He's one of the toughest\p"
 	.string "Trainers in the entire Hoenn\n"
 	.string "region.$"
