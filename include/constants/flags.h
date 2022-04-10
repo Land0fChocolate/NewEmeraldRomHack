@@ -1171,7 +1171,7 @@
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_PP_MAX                           0x464
 #define FLAG_ITEM_MOSSDEEP_CITY_TM91                                0x465
 #define FLAG_RECEIVED_TM91                                          0x466
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B2F_NEST_BALL                   0x467 // Unused Flag, leftover from the Ruby Magma hideout
+#define FLAG_HIDE_SOOTOPOLIS_CITY_JUAN                              0x467
 #define FLAG_UNUSED_0x468                                           0x468 // Unused Flag
 #define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
 #define FLAG_ITEM_MT_PYRE_4F_DESTINY_KNOT                           0x46A

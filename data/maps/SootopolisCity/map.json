@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [],
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
@@ -81,10 +81,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 26,
-      "y": 4,
+      "x": 13,
+      "y": 16,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -94,8 +94,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_STEVEN",
-      "x": 20,
-      "y": 36,
+      "x": 19,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -198,10 +198,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 19,
-      "y": 37,
+      "x": 42,
+      "y": 41,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -211,8 +211,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAXIE",
-      "x": 29,
-      "y": 33,
+      "x": 28,
+      "y": 34,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -224,8 +224,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ARCHIE",
-      "x": 31,
-      "y": 33,
+      "x": 32,
+      "y": 34,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -237,8 +237,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WALLACE",
-      "x": 31,
-      "y": 18,
+      "x": 20,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -247,6 +247,71 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SootopolisCity_EventScript_Wallace",
       "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+      "x": 27,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SootopolisCity_EventScript_Tabitha",
+      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
+      "x": 29,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SootopolisCity_EventScript_Courtney",
+      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
+      "x": 31,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SootopolisCity_EventScript_Matt",
+      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+      "x": 34,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SootopolisCity_EventScript_Shelly",
+      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_JUAN",
+      "x": 24,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_JUAN"
     }
   ],
   "warp_events": [
@@ -342,7 +407,26 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 34,
+      "elevation": 3,
+      "var": "VAR_SOOTOPOLIS_STEVEN_WALLACE_STATE",
+      "var_value": "0",
+      "script": "SootopolisCity_EventScript_Steven_Wallace_Encounter"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 34,
+      "elevation": 3,
+      "var": "VAR_SOOTOPOLIS_STEVEN_WALLACE_STATE",
+      "var_value": "0",
+      "script": "SootopolisCity_EventScript_Steven_Wallace_Encounter"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
