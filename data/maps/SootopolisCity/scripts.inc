@@ -15,6 +15,10 @@
 .set LOCALID_MAXIE, 16
 .set LOCALID_ARCHIE, 17
 .set LOCALID_WALLACE, 18
+.set LOCALID_TABITHA, 19
+.set LOCALID_COURTNEY, 20
+.set LOCALID_MATT, 21
+.set LOCALID_SHELLY, 22
 .set LOCALID_JUAN, 23
 
 SootopolisCity_MapScripts::
@@ -69,11 +73,11 @@ SootopolisCity_OnTransition:
 	compare VAR_SOOTOPOLIS_CITY_STATE, 5
 	call_if_eq SootopolisCity_EventScript_SetBattleSpectators
 	compare VAR_SOOTOPOLIS_CITY_STATE, 2
-	call_if_eq SootopolisCity_EventScript_CheckSetEnterCaveOfOriginObjPos
+	call_if_eq SootopolisCity_EventScript_SetBattleSpectators
 	compare VAR_SOOTOPOLIS_CITY_STATE, 3
-	call_if_eq SootopolisCity_EventScript_CheckSetEnterCaveOfOriginObjPos
+	call_if_eq SootopolisCity_EventScript_SetBattleSpectators
 	compare VAR_SOOTOPOLIS_CITY_STATE, 4
-	call_if_eq SootopolisCity_EventScript_SetExitCaveOfOriginObjPos
+	call_if_eq SootopolisCity_EventScript_SetBattleSpectators
 	compare VAR_SOOTOPOLIS_CITY_STATE, 5
 	call_if_eq SootopolisCity_EventScript_SetOutsideGymObjPos
 	compare VAR_SOOTOPOLIS_CITY_STATE, 6
@@ -156,9 +160,13 @@ SootopolisCity_EventScript_SetExitCaveOfOriginObjPos::
 
 SootopolisCity_EventScript_SetOutsideGymObjPos::
 	setobjectxyperm LOCALID_EXPERT, 31, 18
-	setobjectxyperm LOCALID_STEVEN, 29, 33
-	setobjectxyperm LOCALID_MAXIE, 33, 35
-	setobjectxyperm LOCALID_ARCHIE, 34, 35
+	setobjectxyperm LOCALID_STEVEN, 30, 33
+	setobjectxyperm LOCALID_TABITHA, 27, 35
+	setobjectxyperm LOCALID_MAXIE, 28, 35
+	setobjectxyperm LOCALID_COURTNEY, 29, 35
+	setobjectxyperm LOCALID_MATT, 32, 35
+	setobjectxyperm LOCALID_ARCHIE, 33, 35
+	setobjectxyperm LOCALID_SHELLY, 34, 35
 	compare VAR_SOOTOPOLIS_WALLACE_STATE, 0
 	call_if_eq SootopolisCity_EventScript_SetWallaceMiddle
 	compare VAR_SOOTOPOLIS_WALLACE_STATE, 1
@@ -1280,7 +1288,10 @@ SootopolisCity_EventScript_JuanIntro::
 	removeobject LOCALID_JUAN
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_JUAN
+	setflag FLAG_JUAN_GOES_TO_SKY_PILLAR
+	clearflag FLAG_HIDE_SKY_PILLAR_JUAN
 	setvar VAR_SOOTOPOLIS_STEVEN_WALLACE_STATE, 1
+	setvar VAR_SOOTOPOLIS_CITY_STATE, 3
 	releaseall
 	end
 

@@ -1389,7 +1389,7 @@ Route111_Text_WiltonRematchDefeat:
 
 Route111_Text_WiltonPostRematch:
 	.string "Since you're that strong, you should\n"
-	.string "aim for the Pokémon LEAGUE.$"
+	.string "aim for the Pokémon League.$"
 
 Route111_Text_BrookeIntro:
 	.string "Oh, your Pokémon look like serious\n"
@@ -4206,7 +4206,7 @@ Route128_Text_KatelynPostRematch:
 
 Route128_Text_AlexaIntro:
 	.string "We've been working so hard to mount\n"
-	.string "a Pokémon LEAGUE challenge…\p"
+	.string "a Pokémon League challenge…\p"
 	.string "We can't afford to lose now!$"
 
 Route128_Text_AlexaDefeat:
@@ -4327,7 +4327,7 @@ Route129_Text_ClarenceDefeat:
 
 Route129_Text_ClarencePostBattle:
 	.string "You have your sights on the Pokémon\n"
-	.string "LEAGUE? Keep at it!$"
+	.string "League? Keep at it!$"
 
 Route130_Text_RodneyIntro:
 	.string "What a surprise! I didn't expect to\n"
