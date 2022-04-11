@@ -160,34 +160,20 @@ SootopolisCity_EventScript_SetExitCaveOfOriginObjPos::
 
 SootopolisCity_EventScript_SetOutsideGymObjPos::
 	setobjectxyperm LOCALID_EXPERT, 31, 18
-	setobjectxyperm LOCALID_STEVEN, 30, 33
+	setobjectxyperm LOCALID_WALLACE, 31, 33
 	setobjectxyperm LOCALID_TABITHA, 27, 35
 	setobjectxyperm LOCALID_MAXIE, 28, 35
 	setobjectxyperm LOCALID_COURTNEY, 29, 35
 	setobjectxyperm LOCALID_MATT, 32, 35
 	setobjectxyperm LOCALID_ARCHIE, 33, 35
 	setobjectxyperm LOCALID_SHELLY, 34, 35
-	compare VAR_SOOTOPOLIS_WALLACE_STATE, 0
-	call_if_eq SootopolisCity_EventScript_SetWallaceMiddle
-	compare VAR_SOOTOPOLIS_WALLACE_STATE, 1
-	call_if_eq SootopolisCity_EventScript_SetWallaceRight
-	compare VAR_SOOTOPOLIS_WALLACE_STATE, 2
-	call_if_eq SootopolisCity_EventScript_SetWallaceLeft
+	setobjectxyperm LOCALID_STEVEN, 30, 33
+	checkflag FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE
+	goto_if TRUE SootopolisCity_EventScript_StevenInFrontOfGym
 	return
 
-SootopolisCity_EventScript_SetWallaceMiddle::
-	setobjectxyperm LOCALID_WALLACE, 31, 33
-	setobjectmovementtype LOCALID_WALLACE, MOVEMENT_TYPE_FACE_DOWN
-	return
-
-SootopolisCity_EventScript_SetWallaceRight::
-	setobjectxyperm LOCALID_WALLACE, 32, 33
-	setobjectmovementtype LOCALID_WALLACE, MOVEMENT_TYPE_FACE_DOWN
-	return
-
-SootopolisCity_EventScript_SetWallaceLeft::
-	setobjectxyperm LOCALID_WALLACE, 30, 33
-	setobjectmovementtype LOCALID_WALLACE, MOVEMENT_TYPE_FACE_DOWN
+SootopolisCity_EventScript_StevenInFrontOfGym::
+	setobjectxyperm LOCALID_STEVEN, 31, 33
 	return
 
 SootopolisCity_EventScript_SetExpertBlockCaveEntrance::
@@ -1299,8 +1285,35 @@ SootopolisCity_EventScript_Steven::
 	lockall
 	applymovement LOCALID_STEVEN, Common_Movement_FacePlayer
 	waitmovement 0
+	checkflag FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE
+	goto_if TRUE SootopolisCity_EventScript_StevenThanksPlayerAndLeaves
+	compare VAR_SOOTOPOLIS_CITY_STATE, 5
+	goto_if_eq SootopolisCity_EventScript_StevenRayquazaStoppedIt
 	msgbox SootopolisCity_Text_StevenGoToSkyPillar, MSGBOX_DEFAULT
 	closemessage
+	releaseall
+	end
+
+SootopolisCity_EventScript_StevenRayquazaStoppedIt::
+	msgbox SootopolisCity_Text_StevenRayquazaStoppedIt, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_WALLACE, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox SootopolisCity_Text_WallaceStevenDrooling, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+SootopolisCity_EventScript_StevenThanksPlayerAndLeaves::
+	msgbox SootopolisCity_Text_StevenThanksPlayerAndLeaves, MSGBOX_DEFAULT
+	closemessage
+	delay 50
+	setfieldeffectargument 0, 1
+	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 15
+	removeobject LOCALID_STEVEN
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+	setflag FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN
 	releaseall
 	end
 
@@ -1308,7 +1321,15 @@ SootopolisCity_EventScript_Wallace::
 	lockall
 	applymovement LOCALID_WALLACE, Common_Movement_FacePlayer
 	waitmovement 0
+	compare VAR_SOOTOPOLIS_CITY_STATE, 5
+	goto_if_eq SootopolisCity_EventScript_WallaceItsOver
 	msgbox SootopolisCity_Text_WallaceMentorJuan, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+SootopolisCity_EventScript_WallaceItsOver::
+	msgbox SootopolisCity_Text_WallaceItsOver, MSGBOX_DEFAULT
 	closemessage
 	releaseall
 	end
@@ -1391,66 +1412,6 @@ SootopolisCity_EventScript_ManiacRayquaza::
 	releaseall
 	end
 
-SootopolisCity_EventScript_Wallace2:: @TODO: this is to be changed. Have him walk off screen right after giving you the TM.
-	lock
-	faceplayer
-	compare VAR_SOOTOPOLIS_CITY_STATE, 4
-	goto_if_eq SootopolisCity_EventScript_GoToSkyPillar
-	goto_if_set FLAG_RECEIVED_TM98, SootopolisCity_EventScript_GoToGym
-	goto_if_set FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE, SootopolisCity_EventScript_GiveWaterfall
-	msgbox SootopolisCity_Text_AquaMagmaDidntMeanHarm, MSGBOX_DEFAULT
-	release
-	end
-
-SootopolisCity_EventScript_GiveWaterfall::
-	msgbox SootopolisCity_Text_ThankYouForHelpAcceptThis, MSGBOX_DEFAULT
-	giveitem ITEM_HM07
-	setflag FLAG_RECEIVED_TM98
-	msgbox SootopolisCity_Text_OneMoreGymChallenge, MSGBOX_DEFAULT
-	closemessage
-	compare VAR_FACING, DIR_NORTH
-	call_if_eq SootopolisCity_EventScript_WallaceMoveFromGym
-	compare VAR_FACING, DIR_EAST
-	call_if_eq SootopolisCity_EventScript_WallaceMoveFromGym
-	compare VAR_FACING, DIR_WEST
-	call_if_eq SootopolisCity_EventScript_WallaceMoveFromGymWest
-	release
-	end
-
-SootopolisCity_EventScript_WallaceMoveFromGym::
-	applymovement LOCALID_WALLACE, SootopolisCity_Movement_WallaceMoveFromGym
-	waitmovement 0
-	copyobjectxytoperm LOCALID_WALLACE
-	setvar VAR_SOOTOPOLIS_WALLACE_STATE, 1
-	return
-
-SootopolisCity_EventScript_WallaceMoveFromGymWest::
-	applymovement LOCALID_WALLACE, SootopolisCity_Movement_WallaceMoveFromGymWest
-	waitmovement 0
-	copyobjectxytoperm LOCALID_WALLACE
-	setvar VAR_SOOTOPOLIS_WALLACE_STATE, 2
-	return
-
-SootopolisCity_EventScript_GoToSkyPillar::
-	msgbox SootopolisCity_Text_HaventYouScaledSkyPillar, MSGBOX_DEFAULT
-	release
-	end
-
-SootopolisCity_EventScript_GoToGym::
-	msgbox SootopolisCity_Text_DazzledByMentor, MSGBOX_DEFAULT
-	release
-	end
-
-SootopolisCity_Movement_WallaceMoveFromGym:
-	walk_right
-	walk_in_place_fastest_down
-	step_end
-
-SootopolisCity_Movement_WallaceMoveFromGymWest:
-	walk_left
-	walk_in_place_fastest_down
-	step_end
-
 SootopolisCity_EventScript_Maxie::
 	lockall
 	compare VAR_SOOTOPOLIS_CITY_STATE, 5
@@ -1461,7 +1422,8 @@ SootopolisCity_EventScript_Maxie::
 	end
 
 SootopolisCity_EventScript_MaxieRayquaza::
-	msgbox SootopolisCity_Text_AfterAllOurScheming, MSGBOX_DEFAULT
+	faceplayer
+	msgbox SootopolisCity_Text_IHaveCausedHarm, MSGBOX_DEFAULT
 	setflag FLAG_MET_MAXIE_SOOTOPOLIS
 	goto_if_set FLAG_MET_ARCHIE_SOOTOPOLIS, SootopolisCity_EventScript_MaxieArchieLeave
 	releaseall
@@ -1507,6 +1469,7 @@ SootopolisCity_EventScript_Archie::
 	end
 
 SootopolisCity_EventScript_ArchieRayquaza::
+	faceplayer
 	msgbox SootopolisCity_Text_TryingMeaninglessToPokemon, MSGBOX_DEFAULT
 	setflag FLAG_MET_ARCHIE_SOOTOPOLIS
 	goto_if_set FLAG_MET_MAXIE_SOOTOPOLIS, SootopolisCity_EventScript_MaxieArchieLeave
@@ -1546,6 +1509,7 @@ SootopolisCity_EventScript_MattRayquaza::
 SootopolisCity_EventScript_MaxieArchieLeave::
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE
+	setflag FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE
 	setflag FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE
 	clearflag FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE
 	clearflag FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE
@@ -1763,7 +1727,7 @@ SootopolisCity_Text_GroudonPleaseStop:
 	.string "If you keep going, all Hoenn, not just\n"
 	.string "Sootopolis, will be utterly ruined!$"
 
-SootopolisCity_Text_AfterAllOurScheming:
+SootopolisCity_Text_IHaveCausedHarm:
 	.string "Maxie: I have caused great harm, and for\n"
 	.string "that I apologize most sincerely.\p"
 	.string "I have committed wrongs so great as to\n"
@@ -1802,92 +1766,6 @@ SootopolisCity_Text_TryingMeaninglessToPokemon:
 	.string "I'm heading out to reflect.\n"
 	.string "See ya, scamp.$"
 
-SootopolisCity_Text_InvolvedWithCrisisComeWithMe:
-	.string "Steven: Those Pokémon fighting…\n"
-	.string "Groudon… And Kyogre…\p"
-	.string "The two super-ancient Pokémon\n"
-	.string "were awakened from a long sleep…\p"
-	.string "And now they are smashing each other\n"
-	.string "with their uncontrollable energy…\p"
-	.string "…{PLAYER}{KUN}.\p"
-	.string "You being here now I'll take to mean\n"
-	.string "that you're prepared to become\l"
-	.string "involved in this crisis.\p"
-	.string "Well, then, there's someone that\n"
-	.string "I'd like you to meet.\p"
-	.string "Come with me, please.$"
-
-SootopolisCity_Text_DoesThisMakeYourFearPokemon:
-	.string "Steven: Listen, {PLAYER}{KUN}.\p"
-	.string "Does seeing Groudon and Kyogre make\n"
-	.string "you think Pokémon are to be feared?\p"
-	.string "But that's not true.\n"
-	.string "Pokémon are really more…\p"
-	.string "…Why am I asking you this?\n"
-	.string "You already know.$"
-
-SootopolisCity_Text_HereWereAreHelpWallace:
-	.string "Steven: Okay, here we are!\p"
-	.string "Inside here you'll find someone named\n"
-	.string "Wallace.\p"
-	.string "I think you have what's needed to\n"
-	.string "help him…$"
-
-SootopolisCity_Text_KnowWhatsNeededToHelpHim:
-	.string "Steven: I think you have what's\n"
-	.string "needed to help him…$"
-
-SootopolisCity_Text_NeverBeenToSkyPillar:
-	.string "Steven: The Sky Pillar…\p"
-	.string "I've never been there.\n"
-	.string "I wonder where it could be?$"
-
-SootopolisCity_Text_SoThatsRayquaza:
-	.string "Steven: So that's Rayquaza…\p"
-	.string "It's incredible how the two rampaging\n"
-	.string "Pokémon would flee from it in fear…$"
-
-SootopolisCity_Text_MaxieArchieLeft:
-	.string "Steven: It looks like both Maxie and\n"
-	.string "Archie have gone away somewhere.\p"
-	.string "Perhaps they've gone to Mt. Pyre to\n"
-	.string "return those Orbs…$"
-
-SootopolisCity_Text_HaventYouScaledSkyPillar:
-	.string "Wallace: Oh?\n"
-	.string "{PLAYER}{KUN}?\p"
-	.string "Haven't you scaled the Sky Pillar\n"
-	.string "yet?\p"
-	.string "I'm sure that you can make it to\n"
-	.string "the top of the Sky Pillar…$"
-
-SootopolisCity_Text_AquaMagmaDidntMeanHarm:
-	.string "Wallace: {PLAYER}{KUN}…\p"
-	.string "The leaders of Team Magma and Aqua,\n"
-	.string "I don't think they meant harm.\p"
-	.string "It wouldn't hurt to hear what they\n"
-	.string "have to say for themselves.$"
-
-SootopolisCity_Text_ThankYouForHelpAcceptThis:
-	.string "Wallace: {PLAYER}{KUN}…\n"
-	.string "My eyes didn't deceive me.\p"
-	.string "Thanks to your help, Sootopolis…\n"
-	.string "No, all of Hoenn was saved.\p"
-	.string "On behalf of the people, I thank you.\p"
-	.string "This is a gift from me.\n"
-	.string "Please accept it.$"
-
-SootopolisCity_Text_OneMoreGymChallenge:
-	.string "I believe you have one more Gym\n"
-	.string "challenge left, Trainer.\p"
-	.string "I look forward to our reunion\p"
-	.string "at the Sootopolis Gym.$"
-
-SootopolisCity_Text_DazzledByMentor:
-	.string "Wallace: I'm sure that you will be\n"
-	.string "dazzled by my mentor's breathtakingly\l"
-	.string "elegant battle style.$"
-
 SootopolisCity_Text_TabithaGroudonKyogre:
 	.string "Tabitha: Dammit, all of our efforts to\n"
 	.string "control Groudon have failed!\p"
@@ -1896,25 +1774,49 @@ SootopolisCity_Text_TabithaGroudonKyogre:
 	.string "unimaginable damage across Hoenn.$"
 
 SootopolisCity_Text_TabithaRayquaza:
-	.string "Tabitha: TODO:$"
+	.string "Tabitha: Without a doubt, we have\n"
+	.string "committed an offense that can never be\l"
+	.string "forgiven.\p"
+	.string "We will accept responsibility and must\n"
+	.string "now set things right.$"
 
 SootopolisCity_Text_CourtneyGroudonKyogre:
-	.string "Courtney: TODO:$"
+	.string "Courtney: …Air pressure, rising.\n"
+	.string "Wind speeds, rising.\l"
+	.string "Temperature, rising.\l"
+	.string "Hoenn destruction is imminent.$"
 
 SootopolisCity_Text_CourtneyRayquaza:
-	.string "Courtney: TODO:$"
+	.string "Courtney: … … …\n"
+	.string "Our impact, was grossly underestimated.\l"
+	.string "Our crimes, regrettable.\p"
+	.string "We… no… I trust in Maxie to move us\n"
+	.string "forward on a better path.$"
 
 SootopolisCity_Text_ShellyGroudonKyogre:
-	.string "Shelly: TODO:$"
+	.string "Shelly: Archie… the world you have\n"
+	.string "dreamt of and the world that Kyogre\l"
+	.string "will create are two very different\l"
+	.string "places…\p"
+	.string "What…have you done…$"
 
 SootopolisCity_Text_ShellyRayquaza:
-	.string "Shelly: TODO:$"
+	.string "Shelly: Even if our leader is a big dolt\n"
+	.string "who no one in the world will ever\l"
+	.string "forgive, we still love him.\p"
+	.string "We'll be staying with him forever.$"
 
 SootopolisCity_Text_MattGroudonKyogre:
-	.string "Matt: TODO:$"
+	.string "Matt: This is not cool, man.\n"
+	.string "Really not cool!\p"
+	.string "People and Pokémon are gonna get really\n"
+	.string "hurt. This ain't what we wanted…$"
 
 SootopolisCity_Text_MattRayquaza:
-	.string "Matt: TODO:$"
+	.string "Matt: Whew! I'm glad that's over.\p"
+	.string "Me and my bro, Archie…\n"
+	.string "We ain't gonna cause trouble for\l"
+	.string "anyone else anymore.\p"
 
 SootopolisCity_Text_StevenGreetsPlayer:
 	.string "Steven: {PLAYER}!\n"
@@ -2009,3 +1911,40 @@ SootopolisCity_Text_WallaceMentorJuan:
 	.string "knowledgable and skilled.\p"
 	.string "I can trust that you can wake Rayquaza\n"
 	.string "so this mess can get sorted out.$"
+
+SootopolisCity_Text_StevenRayquazaStoppedIt:
+	.string "Steven: That was …astonishing.$"
+
+SootopolisCity_Text_WallaceStevenDrooling:
+	.string "Wallace: Ha, Steven! This is the first\n"
+	.string "time I've seen you with that expression\l"
+	.string "when you're not looking at your rocks!$"
+
+SootopolisCity_Text_WallaceItsOver::
+	.string "Wallace: It's over. Sootopolis is saved.\n"
+	.string "No, all of Hoenn is saved.\p"
+	.string "On behalf of all the people, I thank you.$"
+
+SootopolisCity_Text_StevenThanksPlayerAndLeaves:
+	.string "Steven: {PLAYER},\n"
+	.string "we owe you a great thanks.\p"
+	.string "The sky over Sootopolis has returned\n"
+	.string "to normal.\p"
+	.string "Team Magma and Team Aqua both wished to\n"
+	.string "make the world a better place, but they\l"
+	.string "went too far and nearly ruined it.\p"
+	.string "I think this crisis has made them\n"
+	.string "realize that.\p"
+	.string "{PLAYER}… I hope you will continue to\n"
+	.string "travel this world and see its richness\l"
+	.string "with your own eyes.\p"
+	.string "But for the present, you may wish to\n"
+	.string "challenge this city's Pokémon Gym.\p"
+	.string "There, Wallace is waiting for you.\n"
+	.string "He's strong. But the way you are now,\l"
+	.string "you should be capable of battling him on\l"
+	.string "an equal footing.\p"
+	.string "Should we meet again, I hope you will be\n"
+	.string "able to show me and my team what you've\l"
+	.string "learned.\p"
+	.string "Until then…$"
