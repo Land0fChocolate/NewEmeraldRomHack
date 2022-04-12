@@ -113,30 +113,29 @@ AquaHideout_B1F_EventScript_Grunt7::
 	msgbox AquaHideout_B1F_Text_Grunt7PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-AquaHideout_B1F_Text_Grunt2Intro:
-	.string "If you want to know the secret about\n"
-	.string "our Hideout, you have me to beat!$"
-
-AquaHideout_B1F_Text_Grunt2Defeat:
-	.string "I can't win at all…$"
-
-AquaHideout_B1F_Text_Grunt2PostBattle:
-	.string "Our Hideout's secret?\p"
-	.string "Well, let's just say…\n"
-	.string "There's a submarine at the far end!\p"
-	.string "But, by now…\n"
-	.string "Kekekeke…$"
-
 AquaHideout_B1F_Text_Grunt3Intro:
+	.string "Hey, watch it! Can't you see I'm\n"
+	.string "trying to clean the floors here?\l"
+	.string "You're bringing in more dirt!$"
+
+AquaHideout_B1F_Text_Grunt3Defeat:
+	.string "Sigh. I'm going to have to get the\n"
+	.string "elbow grease…$"
+
+AquaHideout_B1F_Text_Grunt3PostBattle:
+	.string "Huh? What do you mean elbow grease\n"
+	.string "is not a cleaning product?$"
+
+AquaHideout_B1F_Text_Grunt2Intro:
 	.string "Fuel supply loaded A-OK!\n"
 	.string "In-cruise snacks loaded A-OK!\p"
 	.string "Nothing left to do but KO a pesky\n"
 	.string "meddler!$"
 
-AquaHideout_B1F_Text_Grunt3Defeat:
+AquaHideout_B1F_Text_Grunt2Defeat:
 	.string "I took a serious licking!$"
 
-AquaHideout_B1F_Text_Grunt3PostBattle:
+AquaHideout_B1F_Text_Grunt2PostBattle:
 	.string "Humph!\n"
 	.string "This was supposed to happen!\p"
 	.string "My mission was to just hold you up!$"

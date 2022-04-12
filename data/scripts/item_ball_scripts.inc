@@ -514,8 +514,8 @@ MtPyre_Exterior_EventScript_ItemTM48::
 	finditem ITEM_TM48
 	end
 
-AquaHideout_B1F_EventScript_ItemMasterBall::
-	finditem ITEM_MASTER_BALL
+AquaHideout_B1F_EventScript_ItemPPMax::
+	finditem ITEM_PP_MAX
 	end
 
 AquaHideout_B1F_EventScript_ItemNugget::
@@ -660,4 +660,8 @@ MagmaHideout_4F_EventScript_ItemMaxRevive::
 
 MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
+	end
+
+MossdeepCity_StevensHouse_EventScript_ItemTM91::
+	finditem ITEM_TM91
 	end

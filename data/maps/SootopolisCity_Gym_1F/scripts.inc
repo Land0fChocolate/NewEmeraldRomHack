@@ -204,19 +204,18 @@ SootopolisCity_Gym_1F_Text_WallaceIntro:
 	.string "Allow me to formally introduce myself.\p"
 	.string "I am Wallace\n"
 	.string "The Gym Leader of Sootopolis City.\p"
-	.string "There's something about you...\n"
-	.string "A difference in your demeanor..\p"
+	.string "There's something about you…\n"
+	.string "A difference in your demeanor…\l"
 	.string "I think I sense that in you.\p"
 	.string "What happened at Sky Pillar,\n"
-	.string "and what you did there...\n"
+	.string "and what you did there…\p"
 	.string "Our upcoming battle will make that\n"
 	.string "all clear.\p"
 	.string "Now, show me. Show me the power\n"
 	.string "you wield with your Pokemon.\p"
-	.string "And I, in turn shall present you...\p"
+	.string "And I, in turn shall present you…\p"
 	.string "with a performance of illusions\n"
-	.string "in water...\p"
-	.string "by me and my Pokemon!$"
+	.string "in water by me and my Pokemon!$"
 
 @ NOTE: This defeat text actually causes a buffer overflow. It's about 50 bytes too long for
 @ the gDisplayedStringBattle buffer that it's put into, and it stomps all over the gBattleTextBuffs
@@ -237,13 +236,13 @@ SootopolisCity_Gym_1F_Text_ReceivedRainBadge:
 
 SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
 	.string "Having that badge assures you full\n"
-	.string "obedience of all your Pokémon\l"
-	.string "to every command you make.\p"
-	.string "The Rain Badge also gifts your\n"
-	.string "Pokémon the strength to carry you\l"
-	.string "up walls of cascading water.\p"
-	.string "And, so you never forget the\n"
-	.string "battle we shared…$"
+	.string "obedience of all your Pokémon to every\l"
+	.string "command you make.\p"
+	.string "The Rain Badge also gifts your Pokémon\n"
+	.string "the strength to carry you up walls of\l"
+	.string "cascading water.\p"
+	.string "And, so you never forget the battle\n"
+	.string "we shared…$"
 
 SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
 	.string "The Technical Machine I handed you\n"
@@ -267,15 +266,14 @@ SootopolisCity_Gym_1F_Text_WallacePostBattle:
 	.string "The Trainers who have gathered all\n"
 	.string "the Gym Badges of Hoenn should make\l"
 	.string "way to the ultimate destination.\p"
-	.string "The Pokémon League.\p"
 	.string "Travel to the easternmost reaches\n"
 	.string "of Hoenn, to the island Ever Grande.\p"
 	.string "There, you shall find the Pokémon\n"
 	.string "League.$"
 
 SootopolisCity_Gym_1F_Text_GoGetFortreeBadge:
-	.string "There remains but one Badge to\n"
-	.string "obtain in Hoenn.\p"
+	.string "There remains but one Badge to obtain\n"
+	.string "in Hoenn.\p"
 	.string "If you wish to challenge the Pokémon\n"
 	.string "League, you must obtain the last\l"
 	.string "Badge from the Gym in Fortree.$"
@@ -288,6 +286,7 @@ SootopolisCity_Gym_1F_Text_GymStatueCertified:
 	.string "WALLACE'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
+@TODO: update the Wallace rematch text. He is currently using Juan's.
 SootopolisCity_Gym_1F_Text_WallacePreRematch:
 	.string "Wallace: Ah, this gym had returned to its\n"
 	.string "usual state of serenity…\p"

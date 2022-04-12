@@ -1229,7 +1229,7 @@ SlateportCity_Text_CaptainsACelebrity:
 	.string "The Captain's a celebrity!$"
 
 SlateportCity_Text_BigSmileForCamera:
-	.string "TY: Okay, Capt. Stern, a big smile\n"
+	.string "Ty: Okay, Capt. Stern, a big smile\n"
 	.string "for the camera!$"
 
 SlateportCity_Text_MostInvaluableExperience:
@@ -1280,7 +1280,7 @@ SlateportCity_Text_SternWhatWasAllThat:
 	.string "Where did it come from?$"
 
 SlateportCity_Text_FromHarborTryingToTakeSub:
-	.string "It's from the Habor!\p"
+	.string "It's from the Harbor!\p"
 	.string "The submarine!\n"
 	.string "They're trying to take it!$"
 

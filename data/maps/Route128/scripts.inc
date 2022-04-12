@@ -1,6 +1,5 @@
 .set LOCALID_STEVEN, 3
 .set LOCALID_ARCHIE, 4
-.set LOCALID_MAXIE, 5
 
 Route128_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route128_OnTransition
@@ -24,31 +23,19 @@ Route128_EventScript_KyogreAwakenedScene::
 	closemessage
 	applymovement LOCALID_ARCHIE, Route128_Movement_ArchieBackUp
 	waitmovement 0
+	delay 40
 	msgbox Route128_Text_ArchieIOnlyWanted, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_MAXIE, Route128_Movement_MaxieApproachArchie
-	waitmovement 0
 	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceFastestUp
-	waitmovement 0
-	msgbox Route128_Text_MaxieDoYouUnderstandNow, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_MAXIE, Route128_Movement_MaxieApproachPlayer
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
-	msgbox Route128_Text_MaxieResposibilityFallsToArchieAndMe, MSGBOX_DEFAULT
-	closemessage
 	applymovement LOCALID_ARCHIE, Route128_Movement_ArchieRunLeft
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
-	applymovement LOCALID_MAXIE, Route128_Movement_MaxieWalkLeft
 	waitmovement 0
-	msgbox Route128_Text_MaxieThisDefiesBelief, MSGBOX_DEFAULT
-	closemessage
 	delay 40
-	applymovement LOCALID_MAXIE, Route128_Movement_MaxieExit
 	applymovement LOCALID_ARCHIE, Route128_Movement_ArchieExit
 	waitmovement 0
-	removeobject LOCALID_MAXIE
 	removeobject LOCALID_ARCHIE
 	delay 100
 	setfieldeffectargument 0, 1
@@ -148,36 +135,6 @@ Route128_Movement_ArchieExit:
 	walk_fast_up
 	step_end
 
-Route128_Movement_MaxieWalkLeft:
-	walk_left
-	walk_left
-	delay_8
-	delay_4
-	step_end
-
-Route128_Movement_MaxieApproachArchie:
-	walk_left
-	walk_in_place_fastest_down
-	step_end
-
-Route128_Movement_MaxieExit:
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	step_end
-
-Route128_Movement_MaxieApproachPlayer:
-	walk_right
-	walk_in_place_fastest_down
-	step_end
-
 Route128_EventScript_Isaiah::
 	trainerbattle_single TRAINER_ISAIAH_1, Route128_Text_IsaiahIntro, Route128_Text_IsaiahDefeat, Route128_EventScript_RegisterIsaiah
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -248,40 +205,18 @@ Route128_EventScript_Carlee::
 	end
 
 Route128_Text_ArchieWhatHappened:
-	.string "Archie: What happened…\n"
-	.string "What is this wretched scene…\p"
-	.string "Did I…make a horrible mistake?$"
+	.string "Archie: This is…\n"
+	.string "This is some fiesty storm…$"
 
 Route128_Text_ArchieIOnlyWanted:
-	.string "I…\n"
-	.string "I only wanted…$"
-
-Route128_Text_MaxieDoYouUnderstandNow:
-	.string "Maxie: Do you understand now,\n"
-	.string "Archie?\p"
-	.string "Do you finally see how disastrous\n"
-	.string "your dream turned out to be?\p"
-	.string "We have to hurry! We have to do\n"
-	.string "something before the situation goes\l"
-	.string "completely out of control!$"
-
-Route128_Text_MaxieResposibilityFallsToArchieAndMe:
-	.string "Maxie: {PLAYER}, don't say anything.\p"
-	.string "I know that I have no right to be\n"
-	.string "critical of Archie…\p"
-	.string "But the way things are now, I doubt\n"
-	.string "that we humans will be capable of\l"
-	.string "doing anything about it.\p"
-	.string "But neither can we stand by and\n"
-	.string "just watch helplessly.\p"
-	.string "The responsibility for putting an end\n"
-	.string "to this falls to Archie and me…$"
-
-Route128_Text_MaxieThisDefiesBelief:
-	.string "Maxie: This defies belief…\p"
-	.string "Those super-ancient Pokémon…\p"
-	.string "Their power is unbelievable.\n"
-	.string "They've upset the balance of nature…$"
+	.string "Archie: Ack! This is even getting\n"
+	.string "dangerous! Our readings are not good.\p"
+	.string "This is far too much! This… this is a\n"
+	.string "complete disaster!\p"
+	.string "No… it can't…\n"
+	.string "I only wanted… a world where Pokémon\l"
+	.string "could live on …in peace.\p"
+	.string "…Where did Kyogre go?$"
 
 Route128_Text_StevenWhatIsHappening:
 	.string "Steven: {PLAYER}{KUN}!\n"
@@ -291,9 +226,9 @@ Route128_Text_StevenWholeWorldWillDrown:
 	.string "This is terrible…\p"
 	.string "After the scorching heat wave ended,\n"
 	.string "this deluge began.\p"
-	.string "If this doesn't stop, all of Hoenn…\n"
-	.string "No, the whole world will drown.\p"
-	.string "This huge rain cloud is spreading\n"
+	.string "If this doesn't stop, all of Hoenn is\n"
+	.string "going to be engulfed by waves!\p"
+	.string "This huge storm cloud is spreading\n"
 	.string "from above Sootopolis…\p"
 	.string "What in the world is taking place there?\p"
 	.string "There's no point arguing here…\n"

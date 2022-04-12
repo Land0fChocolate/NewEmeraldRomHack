@@ -3,8 +3,6 @@
 
 MossdeepCity_StevensHouse_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_StevensHouse_OnLoad
-	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_StevensHouse_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, MossdeepCity_StevensHouse_OnFrame
 	.byte 0
 
 MossdeepCity_StevensHouse_OnLoad:
@@ -14,64 +12,6 @@ MossdeepCity_StevensHouse_OnLoad:
 MossdeepCity_StevensHouse_EventScript_HideStevensNote::
 	setmetatile 6, 4, METATILE_GenericBuilding_TableEdge, 1
 	return
-
-MossdeepCity_StevensHouse_OnTransition:
-	compare VAR_STEVENS_HOUSE_STATE, 2
-	call_if_eq MossdeepCity_StevensHouse_EventScript_SetStevenPos
-	end
-
-MossdeepCity_StevensHouse_EventScript_SetStevenPos::
-	setobjectxyperm LOCALID_STEVEN, 6, 5
-	setobjectmovementtype LOCALID_STEVEN, MOVEMENT_TYPE_FACE_UP
-	return
-
-MossdeepCity_StevensHouse_OnFrame:
-	map_script_2 VAR_STEVENS_HOUSE_STATE, 1, MossdeepCity_StevensHouse_EventScript_StevenGivesDive
-	.2byte 0
-
-MossdeepCity_StevensHouse_EventScript_StevenGivesDive::
-	lockall
-	applymovement LOCALID_STEVEN, Common_Movement_WalkInPlaceFastestLeft
-	waitmovement 0
-	playse SE_PIN
-	applymovement LOCALID_STEVEN, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_STEVEN, Common_Movement_Delay48
-	waitmovement 0
-	applymovement LOCALID_STEVEN, MossdeepCity_StevensHouse_Movement_StevenApproachPlayer
-	waitmovement 0
-	msgbox MossdeepCity_StevensHouse_Text_YouveEarnedHMDive, MSGBOX_DEFAULT
-	giveitem ITEM_TM91
-	setflag FLAG_RECEIVED_TM91
-	setflag FLAG_OMIT_DIVE_FROM_STEVEN_LETTER
-	msgbox MossdeepCity_StevensHouse_Text_ExplainDive, MSGBOX_DEFAULT
-	closemessage
-	delay 20
-	applymovement LOCALID_STEVEN, MossdeepCity_StevensHouse_Movement_StevenReturn
-	waitmovement 0
-	setflag FLAG_HIDE_MOSSDEEP_CITY_SCOTT
-	setflag FLAG_HIDE_SEAFLOOR_CAVERN_ENTRANCE_AQUA_GRUNT
-	setvar VAR_STEVENS_HOUSE_STATE, 2
-	releaseall
-	end
-
-MossdeepCity_StevensHouse_Movement_StevenApproachPlayer:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_in_place_fastest_down
-	step_end
-
-MossdeepCity_StevensHouse_Movement_StevenReturn:
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_in_place_fastest_up
-	step_end
 
 MossdeepCity_StevensHouse_EventScript_BeldumPokeball::
 	lockall
@@ -141,7 +81,21 @@ MossdeepCity_StevensHouse_EventScript_RockDisplay::
 	end
 
 MossdeepCity_StevensHouse_EventScript_Steven::
-	msgbox MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis, MSGBOX_NPC
+	lockall
+	faceplayer
+	checkflag FLAG_MOSSDEEP_CITY_STEVEN
+	goto_if FALSE, MossdeepCity_StevensHouse_EventScript_StevenGreetingPlayer
+	msgbox MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis, MSGBOX_DEFAULT
+	closemessage
+	end
+
+MossdeepCity_StevensHouse_EventScript_StevenGreetingPlayer::
+	setflag FLAG_MOSSDEEP_CITY_STEVEN
+	msgbox MossdeepCity_StevensHouse_Text_GreetingPlayer, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM91
+	setflag FLAG_RECEIVED_TM91
+	releaseall
 	end
 
 MossdeepCity_StevensHouse_EventScript_Letter::
@@ -150,14 +104,8 @@ MossdeepCity_StevensHouse_EventScript_Letter::
 	releaseall
 	end
 
-@ Unused, leftover from RS
-MossdeepCity_StevensHouse_EventScript_DiveItemBall::
-	finditem ITEM_HM08
-	setflag FLAG_RECEIVED_TM91
-	end
-
-MossdeepCity_StevensHouse_Text_YouveEarnedHMDive:
-	.string "Steven: {PLAYER}{KUN}…\p"
+MossdeepCity_StevensHouse_Text_GreetingPlayer:
+	.string "Steven: Greetings, {PLAYER}{KUN}.\p"
 	.string "As you can see, there's not much here,\n"
 	.string "but this is my home.\p"
 	.string "Thank you for all that you've done\n"
@@ -168,25 +116,14 @@ MossdeepCity_StevensHouse_Text_YouveEarnedHMDive:
 	.string "No need to be shy--you've earned\n"
 	.string "this TM.$"
 
-MossdeepCity_StevensHouse_Text_ExplainDive:
-	.string "Steven: While you're surfing, you\n"
-	.string "should notice dark patches of water.\p"
-	.string "Your Pokémon can dive to deep water\n"
-	.string "like it. You'll drop to the seafloor.\p"
-	.string "When you want to come back up, you\n"
-	.string "can command your Pokémon again.\p"
-	.string "In some places, it won't be possible\n"
-	.string "for you to surface, though.\p"
-	.string "You will need the Mossdeep Gym badge\n"
-	.string "as well for your Pokémon to take you\l"
-	.string "underwater.$"
-
 MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis:
 	.string "Steven: Apparently, there's an\n"
 	.string "underwater cavern between\l"
 	.string "Mossdeep and Sootopolis.\p"
 	.string "You know, the one that Capt. Stern\n"
-	.string "found in his submarine.$"
+	.string "found in his submarine.\p"
+	.string "I may pay a visit to check out the\n"
+	.string "minerals it may have there.$"
 
 MossdeepCity_StevensHouse_Text_TakeBallContainingBeldum:
 	.string "{PLAYER} checked the Poké Ball.\p"
@@ -216,8 +153,8 @@ MossdeepCity_StevensHouse_Text_LetterFromSteven:
 	.string "I have a favor to ask of you.\p"
 	.string "I want you to take the Poké Ball on\n"
 	.string "the desk.\p"
-	.string "Inside it is a Beldum, my favorite\n"
-	.string "Pokémon.\p"
+	.string "Inside it is a Beldum, one of my\n"
+	.string "favorite Pokémon.\p"
 	.string "I'm counting on you.\p"
 	.string "May our paths cross again someday.\p"
 	.string "Steven Stone$"

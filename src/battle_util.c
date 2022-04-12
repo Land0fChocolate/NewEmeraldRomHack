@@ -5984,7 +5984,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 break;
             case ABILITY_SPINNING_BODY:
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
-                 && gBattleMons[gBattlerTarget].hp != 0
                  && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
                  && IS_MOVE_PHYSICAL(gCurrentMove)
                  && IsMoveMakingContact(move, gBattlerAttacker)
