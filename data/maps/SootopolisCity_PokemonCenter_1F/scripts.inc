@@ -28,6 +28,7 @@ SootopolisCity_PokemonCenter_1F_EventScript_Gentleman::
 	end
 
 SootopolisCity_PokemonCenter_1F_EventScript_GentlemanNoLegendaries::
+	setvar VAR_SOOTOPOLIS_CITY_STATE, 6
 	msgbox SootopolisCity_PokemonCenter_1F_Text_WallaceMentor, MSGBOX_DEFAULT
 	release
 	end
@@ -48,10 +49,10 @@ SootopolisCity_PokemonCenter_1F_EventScript_WomanNoLegendaries::
 	end
 
 SootopolisCity_PokemonCenter_1F_Text_WallaceMentor:
-	.string "Wallace was taught by a man named\n"
-	.string "Juan. He's one of the toughest\p"
-	.string "Trainers in the entire Hoenn\n"
-	.string "region.$"
+	.string "Wallace was taught by a man named Juan.\p"
+	.string "Juan is somewhat like the mayor of this\n"
+	.string "city, and a respectable Trainer and\l"
+	.string "contest coordinator.$"
 
 SootopolisCity_PokemonCenter_1F_Text_EveryoneTakenRefuge:
 	.string "Everyone in town has taken refuge\n"

@@ -143,21 +143,6 @@ SootopolisCity_EventScript_SetDownpour::
 	setweather WEATHER_DOWNPOUR
 	return
 
-SootopolisCity_EventScript_CheckSetEnterCaveOfOriginObjPos::
-	goto_if_set FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN, SootopolisCity_EventScript_SetEnterCaveOfOriginObjPos
-	return
-
-SootopolisCity_EventScript_SetEnterCaveOfOriginObjPos::
-	setobjectxyperm LOCALID_EXPERT, 30, 18
-	setobjectxyperm LOCALID_STEVEN, 32, 18
-	return
-
-SootopolisCity_EventScript_SetExitCaveOfOriginObjPos::
-	setobjectxyperm LOCALID_EXPERT, 30, 18
-	setobjectxyperm LOCALID_WALLACE, 31, 18
-	setobjectxyperm LOCALID_STEVEN, 32, 18
-	end
-
 SootopolisCity_EventScript_SetOutsideGymObjPos::
 	setobjectxyperm LOCALID_EXPERT, 31, 18
 	setobjectxyperm LOCALID_WALLACE, 31, 33
@@ -1314,6 +1299,7 @@ SootopolisCity_EventScript_StevenThanksPlayerAndLeaves::
 	removeobject LOCALID_STEVEN
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	setflag FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN
+	setvar VAR_SOOTOPOLIS_CITY_STATE, 6
 	releaseall
 	end
 
