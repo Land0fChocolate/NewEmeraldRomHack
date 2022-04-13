@@ -6318,13 +6318,14 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
 
                 if (effect)
                 {
-                    //gLastUsedAbility = ABILITY_TRACE;
                     if (caseID == ABILITYEFFECT_TRACE1)
                     {
+                        gLastUsedAbility = ABILITY_TRACE;
                         BattleScriptPushCursorAndCallback(BattleScript_TraceActivatesEnd3);
                     }
                     else
                     {
+                        gLastUsedAbility = ABILITY_TRACE;
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_TraceActivates;
                     }

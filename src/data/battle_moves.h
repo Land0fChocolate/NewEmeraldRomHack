@@ -190,7 +190,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
             .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
         #endif
         .effect = EFFECT_TWO_TURNS_ATTACK,
-        .power = 130,
+        .power = 140,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 10,
@@ -202,11 +202,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_SWORDS_DANCE] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 20,
-        #else
-            .pp = 30,
-        #endif
+        .pp = 20,
         .effect = EFFECT_ATTACK_UP_2,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -221,7 +217,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_CUT] =
     {
         .effect = EFFECT_ALWAYS_CRIT,
-        .power = 25,
+        .power = 30,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 30,
@@ -3887,7 +3883,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_FUTURE_SIGHT] =
     {
-        .power = 130,
+        .power = 140,
         .accuracy = 100,
         .pp = 10,
         .effect = EFFECT_FUTURE_SIGHT,
@@ -5535,13 +5531,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_DOOM_DESIRE] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 140,
-            .accuracy = 100,
-        #else
-            .power = 120,
-            .accuracy = 85,
-        #endif
+        .power = 140,
+        .accuracy = 100,
         .effect = EFFECT_FUTURE_SIGHT,
         .type = TYPE_STEEL,
         .pp = 5,

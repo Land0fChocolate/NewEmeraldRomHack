@@ -5460,6 +5460,7 @@ static void Cmd_moveend(void)
                       && gBattleMons[battler].item == ITEM_NONE                                         // Pickpocketer can't have an item already
                       && CanStealItem(battler, gBattlerAttacker, gBattleMons[gBattlerAttacker].item))   // Cannot steal plates, mega stones, etc
                     {
+                        gLastUsedAbility = ABILITY_PICKPOCKET;
                         gBattlerTarget = gBattlerAbility = battler;
                         // Battle scripting is super brittle so we shall do the item exchange now (if possible)
                         if (!HasAbility(ABILITY_STICKY_HOLD, GetBattlerAbilities(gBattlerAttacker)))

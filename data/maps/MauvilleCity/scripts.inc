@@ -13,7 +13,7 @@ MauvilleCity_OnTransition:
 	setflag FLAG_SYS_TV_START
 	clearflag FLAG_MAUVILLE_GYM_BARRIERS_STATE
 	setvar VAR_MAUVILLE_GYM_STATE, 0
-	call_if_set FLAG_GOT_TM24_FROM_WATTSON, MauvilleCity_EventScript_MoveWattsonBackToGym
+	call_if_set FLAG_GOT_TM72_FROM_WATTSON, MauvilleCity_EventScript_MoveWattsonBackToGym
 	end
 
 MauvilleCity_EventScript_MoveWattsonBackToGym::
@@ -424,7 +424,7 @@ MauvilleCity_Movement_ScottExitEast:
 MauvilleCity_EventScript_Wattson::
 	lock
 	faceplayer
-	goto_if_set FLAG_GOT_TM24_FROM_WATTSON, MauvilleCity_EventScript_ReceivedThunderbolt
+	goto_if_set FLAG_GOT_TM72_FROM_WATTSON, MauvilleCity_EventScript_ReceivedThunderbolt
 	compare VAR_NEW_MAUVILLE_STATE, 2
 	goto_if_eq MauvilleCity_EventScript_CompletedNewMauville
 	goto_if_set FLAG_GOT_BASEMENT_KEY_FROM_WATTSON, MauvilleCity_EventScript_BegunNewMauville
@@ -442,10 +442,10 @@ MauvilleCity_EventScript_BegunNewMauville::
 
 MauvilleCity_EventScript_CompletedNewMauville::
 	msgbox MauvilleCity_Text_WattsonThanksTakeTM, MSGBOX_DEFAULT
-	giveitem ITEM_TM24
+	giveitem ITEM_TM72
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
-	setflag FLAG_GOT_TM24_FROM_WATTSON
+	setflag FLAG_GOT_TM72_FROM_WATTSON
 	msgbox MauvilleCity_Text_WattsonYoungTakeCharge, MSGBOX_DEFAULT
 	release
 	end
@@ -476,10 +476,10 @@ MauvilleCity_Text_UncleHesTooPeppy:
 	.string "But he's become a bit too peppy…$"
 
 MauvilleCity_Text_WallyWantToChallengeGym:
-	.string "Wally: Aww, Uncle, please?\p"
-	.string "I want to challenge this Gym and see\n"
-	.string "how much better I've become.\p"
-	.string "Please? May I, please?$"
+	.string "Wally: Uncle, I'm begging you! I want to\n"
+	.string "challenge this Gym to see how much\l"
+	.string "stronger I've become!\p"
+	.string "Please! You'll let me, won't you?$"
 
 MauvilleCity_Text_UncleYourePushingIt:
 	.string "Uncle: Now hold on, Wally.\p"
@@ -489,16 +489,16 @@ MauvilleCity_Text_UncleYourePushingIt:
 	.string "to suddenly challenge a Gym?$"
 
 MauvilleCity_Text_WallyWeCanBeatAnyone:
-	.string "Wally: I'm not pushing it.\p"
-	.string "If I combine forces with my Pokémon,\n"
+	.string "Wally: I'm not pushing it! If it's me\n"
+	.string "and my Kirlia, we can beat anyone!$"
 	.string "we can beat anyone!$"
 
 MauvilleCity_Text_WallyWillYouBattleMe:
 	.string "Wally: Oh! Hi, {PLAYER}!\p"
-	.string "I've gotten a lot stronger since\n"
-	.string "we met.\p"
-	.string "{PLAYER}, I want you and my Uncle to\n"
-	.string "understand that.\p"
+	.string "Me and my Pokémon have gotten a lot\n"
+	.string "stronger since we first met.\p"
+	.string "I want to prove that to you and my uncle\n"
+	.string "both, {PLAYER}.\p"
 	.string "{PLAYER}, please, will you have\n"
 	.string "a battle with me?$"
 
@@ -534,9 +534,9 @@ MauvilleCity_Text_WallyIllGoBackToVerdanturf:
 MauvilleCity_Text_ThankYouNotEnoughToBattle:
 	.string "{PLAYER}, thank you.\n"
 	.string "Being a Trainer is tough, isn't it?\p"
-	.string "It's not enough just to have Pokémon\n"
-	.string "and make them battle. That isn't what\l"
-	.string "being a real Trainer is about.$"
+	.string "It's not enough to just battle with your\n"
+	.string "Pokémon. I can't become a true Trainer\l"
+	.string "like that… Not really.$"
 
 MauvilleCity_Text_UncleNoNeedToBeDown:
 	.string "Uncle: Wally, there's no need to be so\n"

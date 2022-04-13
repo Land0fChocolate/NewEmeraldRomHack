@@ -4,10 +4,10 @@ RustboroCity_CuttersHouse_MapScripts::
 RustboroCity_CuttersHouse_EventScript_Cutter::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TM54, RustboroCity_CuttersHouse_EventScript_ExplainFalseSwipe
+	goto_if_set FLAG_RECEIVED_TM64, RustboroCity_CuttersHouse_EventScript_ExplainFalseSwipe
 	msgbox RustboroCity_CuttersHouse_Text_IHaveJustWhatYouNeed, MSGBOX_DEFAULT
-	giveitem ITEM_TM54
-	setflag FLAG_RECEIVED_TM54
+	giveitem ITEM_TM64
+	setflag FLAG_RECEIVED_TM64
 	msgbox RustboroCity_CuttersHouse_Text_ExplainCut, MSGBOX_DEFAULT
 	release
 	end
@@ -26,24 +26,21 @@ RustboroCity_CuttersHouse_Text_IHaveJustWhatYouNeed:
 	.string "That limber way you move…\l"
 	.string "And your well-trained Pokémon…\p"
 	.string "You're obviously a skilled Trainer!\p"
-	.string "However, you appear to lack\n"
-	.string "restraint…\p"
-	.string "Any trainer worth his salt knows\n"
-	.string "that there are times where they'll\l"
-	.string "need to hold back so that they\l"
-	.string "can catch new Pokémon.\p"
-	.string "I have just what you need!\p"
+	.string "No, wait, don't say a word.\n"
+	.string "I can tell just by looking at you.\p"
+	.string "I'm sure that you can put this\n"
+	.string "Technical Machine to good use.\p"
 	.string "No need to be modest or shy.\n"
 	.string "Go on, take it!$"
 
 RustboroCity_CuttersHouse_Text_ExplainCut:
 	.string "That Technical Machine, or TM for\n"
-	.string "short, is False Swipe.\p"
+	.string "short, is Cut.\p"
 	.string "You can use it to teach a suitable\n"
-	.string "Pokémon the False Swipe move.\p"
-	.string "False Swipe is a safe cutting,\n"
-	.string "technique, making it safer to\l"
-	.string "weaken Pokémon for capture.$"
+	.string "Pokémon the Cut move.\p"
+	.string "Cut always critically strikes, meaning\n"
+	.string "it deals double damage and ignores\l"
+	.string "the opponent's defense boosts.$"
 
 RustboroCity_CuttersHouse_Text_DadHelpedClearLandOfTrees:
 	.string "When they were expanding the city of\n"
