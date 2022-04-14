@@ -1753,7 +1753,7 @@ bool8 ScrCmd_checkpartycommand(struct ScriptContext *ctx)
         if (!species)
             break;
 
-        canUseCommand = CanSpeciesLearnTMHM(species, tmhm - ITEM_TM01 + 1);
+        canUseCommand = CanSpeciesLearnTMHM(species, tmhm - ITEM_TM01);
         if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && canUseCommand)
         {
             gSpecialVar_Result = i;

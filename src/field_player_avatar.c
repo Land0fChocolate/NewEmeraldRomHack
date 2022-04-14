@@ -1288,7 +1288,7 @@ bool8 PartyHasMonWithSurf(void)
             species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
             if (species == SPECIES_NONE)
                 break;
-            canUseCommand = CanSpeciesLearnTMHM(species, ITEM_HM03 - ITEM_TM01 + 1);
+            canUseCommand = CanSpeciesLearnTMHM(species, ITEM_HM03 - ITEM_TM01);
             if (canUseCommand && FLAG_BADGE05_GET)
                 return TRUE;
         }
