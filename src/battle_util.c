@@ -6248,8 +6248,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
             if (HasAbility(ABILITY_INTIMIDATE, GetBattlerAbilities(i)) && gBattleResources->flags->flags[i] & RESOURCE_FLAG_INTIMIDATED
                 && (IsBattlerAlive(BATTLE_OPPOSITE(i)) || IsBattlerAlive(BATTLE_PARTNER(BATTLE_OPPOSITE(i))))) // At least one opposing mon has to be alive.
             {
-                gBattleResources->flags->flags[i] &= ~(RESOURCE_FLAG_INTIMIDATED);
                 gLastUsedAbility = ABILITY_INTIMIDATE;
+                gBattleResources->flags->flags[i] &= ~(RESOURCE_FLAG_INTIMIDATED);
                 if (caseID == ABILITYEFFECT_INTIMIDATE1)
                 {
                     BattleScriptPushCursorAndCallback(BattleScript_IntimidateActivatesEnd3);
@@ -9918,7 +9918,7 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
     if (moveType == TYPE_GROUND && !IsBattlerGrounded(battlerDef) && !(gBattleMoves[move].flags & FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING))
     {
         modifier = UQ_4_12(0.0);
-        if (recordAbilities && HasAbility(ABILITY_LEVITATE, abilities))
+        if (/*recordAbilities && */HasAbility(ABILITY_LEVITATE, abilities)) //TODO: probably don't need the recordAbilities check.
         {
             gLastUsedAbility = ABILITY_LEVITATE;
             gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
@@ -9926,9 +9926,31 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
             gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
         }
     }
-    else if (B_SHEER_COLD_IMMUNITY >= GEN_7 && move == MOVE_SHEER_COLD && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
+
+    if (moveType == TYPE_GRASS && HasAbility(ABILITY_SAP_SIPPER, abilities)) //TODO: this is new, double check that it works properly
     {
         modifier = UQ_4_12(0.0);
+        gLastUsedAbility = ABILITY_SAP_SIPPER;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[battlerDef] = 0;
+    }
+
+    if (moveType == TYPE_ELECTRIC && HasAbility(ABILITY_LIGHTNING_ROD, abilities)) //TODO: this is new, double check that it works properly
+    {
+        modifier = UQ_4_12(0.0);
+        gLastUsedAbility = ABILITY_LIGHTNING_ROD;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[battlerDef] = 0;
+    }
+
+    if (B_SHEER_COLD_IMMUNITY >= GEN_7 && move == MOVE_SHEER_COLD && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
+    {
+        modifier = UQ_4_12(0.0);
+    }
+
+    if (B_GLARE_GHOST >= GEN_4 && move == MOVE_GLARE && IS_BATTLER_OF_TYPE(battlerDef, TYPE_GHOST))
+    {
+        modifier = UQ_4_12(1.0);
     }
 
     // Thousand Arrows ignores type modifiers for flying mons
@@ -9943,8 +9965,8 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
         && gBattleMoves[move].power)
     {
         modifier = UQ_4_12(0.0);
-        if (recordAbilities)
-        {
+        //if (recordAbilities) //TODO: probably don't need this.
+        //{
             if (HasAbility(ABILITY_WONDER_GUARD, abilities))
                 gLastUsedAbility = ABILITY_WONDER_GUARD;
             if (HasAbility(ABILITY_TELEPATHY, abilities))
@@ -9952,7 +9974,7 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
             gMoveResultFlags |= MOVE_RESULT_MISSED;
             gLastLandedMoves[battlerDef] = 0;
             gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_DMG;
-        }
+        //}
     }
 
     return modifier;

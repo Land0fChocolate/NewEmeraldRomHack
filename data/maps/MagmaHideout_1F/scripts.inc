@@ -17,28 +17,26 @@ MagmaHideout_1F_EventScript_Grunt2::
 	end
 
 MagmaHideout_1F_Text_Grunt1Intro:
-	.string "Our leader told us to dig into\n"
-	.string "Mt. Chimney, so we dug and dug.\p"
-	.string "And in the course of digging, we came\n"
-	.string "across something that blew our minds!\p"
-	.string "What did we find?\p"
-	.string "Fuhahaha!\n"
-	.string "I'll tell you if you beat me!$"
+	.string "You!\p"
+	.string "You're the brat who stopped us from\n"
+	.string "blowing up Mt Chimney!\p"
+	.string "You've taken from humanity all that\n"
+	.string "land and rare metals the volcano would\l"
+	.string "have churned up!\p"
+	.string "You're gonna pay!$"
 
 MagmaHideout_1F_Text_Grunt1Defeat:
-	.string "Arrgh!\n"
-	.string "Taken down!$"
+	.string "And now you've taken this victory from\n"
+	.string "us as well…$"
 
 MagmaHideout_1F_Text_Grunt1PostBattle:
-	.string "I won't tell you after all.\n"
-	.string "You'll find out when you get there!\p"
-	.string "It'd be better if you saved surprises\n"
-	.string "to the end, don't you think?$"
+	.string "There's only so much one kid can do.\n"
+	.string "We'll reach our goals sooner or later.$"
 
 MagmaHideout_1F_Text_Grunt2Intro:
-	.string "Drat! Team Aqua followed us!\n"
-	.string "Wait, you're not Team Aqua. who\n"
-	.string "are you?$"
+	.string "Drat! Team Aqua found us!\n"
+	.string "Wait, you're not Team Aqua.\n"
+	.string "Who are you?$"
 
 MagmaHideout_1F_Text_Grunt2Defeat:
 	.string "Is it that easy to just walk in here?$"

@@ -7,8 +7,6 @@ MauvilleCity_GameCorner_MapScripts::
 	.set TM53_COINS,  3500
 	.set TM56_COINS,  3500
 	.set TM35_COINS,  4000
-	.set TM24_COINS,  4000
-	.set TM13_COINS,  4000
 	.set TM94_COINS,  4000
 	.set DOLL_COINS,  1000
 
@@ -257,11 +255,9 @@ MauvilleCity_GameCorner_EventScript_ChooseTMPrize::
 	case 1, MauvilleCity_GameCorner_EventScript_TM29
 	case 2, MauvilleCity_GameCorner_EventScript_TM53
 	case 3, MauvilleCity_GameCorner_EventScript_TM56
-	case 4, MauvilleCity_GameCorner_EventScript_TM13
-	case 5, MauvilleCity_GameCorner_EventScript_TM24
-	case 6, MauvilleCity_GameCorner_EventScript_TM35
-	case 7, MauvilleCity_GameCorner_EventScript_TM94
-	case 8, MauvilleCity_GameCorner_EventScript_CancelTMSelect
+	case 4, MauvilleCity_GameCorner_EventScript_TM35
+	case 5, MauvilleCity_GameCorner_EventScript_TM94
+	case 6, MauvilleCity_GameCorner_EventScript_CancelTMSelect
 	goto MauvilleCity_GameCorner_EventScript_CancelTMSelect
 	end
 
@@ -295,18 +291,6 @@ MauvilleCity_GameCorner_EventScript_TM35::
 	setvar VAR_0x8004, ITEM_TM35
 	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
 
-MauvilleCity_GameCorner_EventScript_TM24::
-	setvar VAR_TEMP_1, 4
-	bufferitemname 0, ITEM_TM24
-	setvar VAR_0x8004, ITEM_TM24
-	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
-
-MauvilleCity_GameCorner_EventScript_TM13::
-	setvar VAR_TEMP_1, 5
-	bufferitemname 0, ITEM_TM13
-	setvar VAR_0x8004, ITEM_TM13
-	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
-
 MauvilleCity_GameCorner_EventScript_TM94::
 	setvar VAR_TEMP_1, 5
 	bufferitemname 0, ITEM_TM94
@@ -321,12 +305,10 @@ MauvilleCity_GameCorner_EventScript_ConfirmTMPrize::
 	switch VAR_TEMP_1
 	case 1, MauvilleCity_GameCorner_EventScript_BuyTM32
 	case 2, MauvilleCity_GameCorner_EventScript_BuyTM29
-	case 2, MauvilleCity_GameCorner_EventScript_BuyTM53
-	case 2, MauvilleCity_GameCorner_EventScript_BuyTM56
-	case 5, MauvilleCity_GameCorner_EventScript_BuyTM13
-	case 4, MauvilleCity_GameCorner_EventScript_BuyTM24
-	case 3, MauvilleCity_GameCorner_EventScript_BuyTM35
-	case 2, MauvilleCity_GameCorner_EventScript_BuyTM94
+	case 3, MauvilleCity_GameCorner_EventScript_BuyTM53
+	case 4, MauvilleCity_GameCorner_EventScript_BuyTM56
+	case 5, MauvilleCity_GameCorner_EventScript_BuyTM35
+	case 6, MauvilleCity_GameCorner_EventScript_BuyTM94
 	end
 
 MauvilleCity_GameCorner_EventScript_BuyTM32::
@@ -398,36 +380,6 @@ MauvilleCity_GameCorner_EventScript_BuyTM35::
 	goto_if_eq MauvilleCity_GameCorner_EventScript_YouAlreadyHaveThis
 	removecoins TM35_COINS
 	additem ITEM_TM35
-	updatecoinsbox 1, 1
-	playse SE_SHOP
-	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
-	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseTMPrize
-	end
-
-MauvilleCity_GameCorner_EventScript_BuyTM24::
-	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, TM24_COINS
-	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForTM
-	checkitem ITEM_TM24, 1
-	compare VAR_RESULT, TRUE
-	goto_if_eq MauvilleCity_GameCorner_EventScript_YouAlreadyHaveThis
-	removecoins TM24_COINS
-	additem ITEM_TM24
-	updatecoinsbox 1, 1
-	playse SE_SHOP
-	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
-	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseTMPrize
-	end
-
-MauvilleCity_GameCorner_EventScript_BuyTM13::
-	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, TM13_COINS
-	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForTM
-	checkitem ITEM_TM13, 1
-	compare VAR_RESULT, TRUE
-	goto_if_eq MauvilleCity_GameCorner_EventScript_YouAlreadyHaveThis
-	removecoins TM13_COINS
-	additem ITEM_TM13
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -845,11 +797,10 @@ MauvilleCity_GameCorner_Text_NeedCoinCaseGoNextDoor:
 
 MauvilleCity_GameCorner_Text_DescribePrizes:
 	.string "I don't even care for the games,\n"
-	.string "I just want the prizes.\p"
-	.string "They're all really good TMs.\n"
-	.string "TM29 is Psychic, TM53 is Energy Ball,\l"
-	.string "TM56 is Dragon Pulse, TM13 is Ice Beam\l"
-	.string "TM24 is Thunderbolt, TM35 is\l"
+	.string "I just want the prizes.\l"
+	.string "They're all really good TMs.\p"
+	.string "TM29 is Psychic, TM53 is Energy Ball,\n"
+	.string "TM56 is Dragon Pulse, TM35 is\l"
 	.string "Flamethrower and TM94 is Surf.$"
 
 MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins:
