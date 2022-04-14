@@ -1,6 +1,6 @@
 #define TMHM_LEARNSET(moves, moves2) {(u32)(moves), ((u64)(moves) >> 32), (u32)(moves2), (u64)(moves2) >> 32}
-#define TMHM(tmhm) ((u64)1 << (ITEM_##tmhm - ITEM_TM01_FOCUS_PUNCH)) // item id 482
-#define TMHM2(tmhm) ((u64)1 << (ITEM_##tmhm - ITEM_TM64_CUT)) // item id 546
+#define TMHM(tmhm) ((u64)1 << (ITEM_##tmhm - ITEM_TM01_FOCUS_PUNCH)) // item id 583
+#define TMHM2(tmhm) ((u64)1 << (ITEM_##tmhm - ITEM_TM65_SHADOW_CLAW)) // item id 646
 
 // This table determines which TMs and HMs a species is capable of learning.
 // The original has each entry being a 64-bit bit array spread across two 32-bit values, with

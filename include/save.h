@@ -30,8 +30,8 @@ struct SaveSectionOffsets
 };
 
 // Each 4 KiB flash sector contains 3968 bytes of actual data followed by a 128 byte footer
-#define SECTOR_DATA_SIZE 3968
-#define SECTOR_FOOTER_SIZE 128
+#define SECTOR_DATA_SIZE 3968 //TODO: Increase to 4084 (Bag Expansion)
+#define SECTOR_FOOTER_SIZE 128  //TODO: Change to 12 (Bag Expansion)
 #define SECTOR_SIZE (SECTOR_DATA_SIZE + SECTOR_FOOTER_SIZE)
 
 // Emerald changes this definition to be the sectors per slot.

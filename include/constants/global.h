@@ -38,10 +38,10 @@
 #define TV_SHOWS_COUNT 25
 #define POKE_NEWS_COUNT 16
 #define PC_ITEMS_COUNT 50
-#define BAG_ITEMS_COUNT 30
+#define BAG_ITEMS_COUNT 30 //TODO: Increase to 50 (Bag Expansion)
 #define BAG_KEYITEMS_COUNT 30
 #define BAG_POKEBALLS_COUNT 16
-#define BAG_TMHM_COUNT 64
+#define BAG_TMHM_COUNT 64 //TODO: Increase to 100 (Bag Expansion)
 #define BAG_BERRIES_COUNT 46
 #define OBJECT_EVENT_TEMPLATES_COUNT 64
 #define DECOR_MAX_SECRET_BASE 16

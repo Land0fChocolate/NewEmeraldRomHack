@@ -136,3 +136,4 @@ The fine people who worked on pokeemerald and pokeemerald-expansion and helped m
 - dunsparce9
 - Sapphire Jester
 - TheXaman
+- MeekRhino

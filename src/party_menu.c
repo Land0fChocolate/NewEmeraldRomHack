@@ -2541,11 +2541,11 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
-    canUseCommand = CanMonLearnTMHM(&mons[slotId], ITEM_HM02 - ITEM_TM01 + 1);
+    canUseCommand = CanMonLearnTMHM(&mons[slotId], ITEM_HM02 - ITEM_TM01);
     if (canUseCommand && FLAG_BADGE06_GET)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLY);
 
-    canUseCommand = CanMonLearnTMHM(&mons[slotId], ITEM_HM05 - ITEM_TM01 + 1);
+    canUseCommand = CanMonLearnTMHM(&mons[slotId], ITEM_HM05 - ITEM_TM01);
     if (canUseCommand && FLAG_BADGE02_GET)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLASH);
 
