@@ -58,6 +58,8 @@
     #define SPECIES_DURANT                           0
     #define SPECIES_CARBINK                          0
     #define SPECIES_MAREANIE                         0
+    #define SPECIES_CELEBI                           0
+    #define SPECIES_CELEBI_TIME_TRAVELLED            10023
 #endif
 
 // Items with peculiar battle effects.

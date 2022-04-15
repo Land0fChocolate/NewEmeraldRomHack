@@ -3299,6 +3299,7 @@ u8 DoBattlerEndTurnEffects(void)
                 && --gDisableStructs[gActiveBattler].slowStartTimer == 0
                 && HasAbility(ABILITY_SLOW_START, abilities))
             {
+                gLastUsedAbility = ABILITY_SLOW_START;
                 BattleScriptExecute(BattleScript_SlowStartEnds);
                 effect++;
             }
@@ -5913,6 +5914,22 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                 }
                 break;
+            case ABILITY_TIME_TRAVELLER:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                    && gBattleMons[battlerDef].species == SPECIES_CELEBI
+                    && gBattleMons[gBattlerTarget].hp == 0)
+                {
+                    gLastUsedAbility = ABILITY_TIME_TRAVELLER;
+                    //TODO: -1 to status timers/states for true reversing via time travel feel
+                    gBattleMons[gActiveBattler].species = SPECIES_CELEBI_TIME_TRAVELLED;
+                    gBattleMoveDamage = gSpecialStatuses[gBattlerTarget].dmg;
+                    if (gBattleMoveDamage == 0)
+                        gBattleMoveDamage = 1;                    
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_TimeTravellerActivates;
+                    effect++;
+                }
+                break;
             }
         }
         break;
@@ -6182,7 +6199,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
             }
         }
         break;
-    case ABILITYEFFECT_FORECAST: // 6 //continue from here
+    case ABILITYEFFECT_FORECAST: // 6
         for (battler = 0; battler < gBattlersCount; battler++)
         {
             if (HasAbility(ABILITY_FORECAST, GetBattlerAbilities(battler)) || HasAbility(ABILITY_FLOWER_GIFT, GetBattlerAbilities(battler)))
@@ -9925,7 +9942,56 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
             gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
         }
     }
-    else if (B_SHEER_COLD_IMMUNITY >= GEN_7 && move == MOVE_SHEER_COLD && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
+
+    if (moveType == TYPE_GRASS && HasAbility(ABILITY_SAP_SIPPER, abilities)) //TODO: this is new, double check that it works properly
+    {
+        modifier = UQ_4_12(0.0);
+        gLastUsedAbility = ABILITY_SAP_SIPPER;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[battlerDef] = 0;
+    }
+
+    if (moveType == TYPE_ELECTRIC && HasAbility(ABILITY_LIGHTNING_ROD, abilities)) //TODO: this is new, double check that it works properly
+    {
+        modifier = UQ_4_12(0.0);
+        gLastUsedAbility = ABILITY_LIGHTNING_ROD;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[battlerDef] = 0;
+    }
+
+    if (moveType == TYPE_ELECTRIC && HasAbility(ABILITY_VOLT_ABSORB, abilities)) //TODO: this is new, double check that it works properly
+    {
+        modifier = UQ_4_12(0.0);
+        gLastUsedAbility = ABILITY_VOLT_ABSORB;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[battlerDef] = 0;
+    }
+
+    if (moveType == TYPE_WATER && HasAbility(ABILITY_STORM_DRAIN, abilities)) //TODO: this is new, double check that it works properly
+    {
+        modifier = UQ_4_12(0.0);
+        gLastUsedAbility = ABILITY_STORM_DRAIN;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[battlerDef] = 0;
+    }
+
+    if (moveType == TYPE_WATER && HasAbility(ABILITY_DRY_SKIN, abilities)) //TODO: this is new, double check that it works properly
+    {
+        modifier = UQ_4_12(0.0);
+        gLastUsedAbility = ABILITY_DRY_SKIN;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[battlerDef] = 0;
+    }
+
+    if (moveType == TYPE_FIRE && HasAbility(ABILITY_FLASH_FIRE, abilities)) //TODO: this is new, double check that it works properly
+    {
+        modifier = UQ_4_12(0.0);
+        gLastUsedAbility = ABILITY_FLASH_FIRE;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[battlerDef] = 0;
+    }
+
+    if (B_SHEER_COLD_IMMUNITY >= GEN_7 && move == MOVE_SHEER_COLD && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
     {
         modifier = UQ_4_12(0.0);
     }
@@ -10211,6 +10277,7 @@ void UndoFormChange(u32 monId, u32 side, bool32 isSwitchingOut)
         {SPECIES_CRAMORANT_GULPING,             SPECIES_CRAMORANT,            TRUE},
         {SPECIES_MORPEKO_HANGRY,                SPECIES_MORPEKO,              TRUE},
         {SPECIES_DARMANITAN_ZEN_MODE_GALARIAN,  SPECIES_DARMANITAN_GALARIAN,  TRUE},
+        {SPECIES_CELEBI_TIME_TRAVELLED,         SPECIES_CELEBI,              FALSE},
     };
 
     currSpecies = GetMonData(&party[monId], MON_DATA_SPECIES, NULL);

@@ -6931,6 +6931,14 @@ BattleScript_SlowStartEnds::
 	waitmessage B_WAIT_TIME_LONG
 	end2
 
+BattleScript_TimeTravellerReady::
+	pause 5
+	copybyte gBattlerAbility, gBattlerAttacker
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_SLOWSTARTEND
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
 BattleScript_SelectingNotAllowedMoveGravity::
 	printselectionstring STRINGID_GRAVITYPREVENTSUSAGE
 	endselectionscript
@@ -7309,6 +7317,17 @@ BattleScript_AftermathDmg::
 	printstring STRINGID_AFTERMATHDMG
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_ATTACKER, FALSE, NULL
+	return
+
+BattleScript_TimeTravellerActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	playanimation BS_TARGET, B_ANIM_ILLUSION_OFF, NULL
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	waitanimation
+	printstring STRINGID_PKMNTIMETRAVELLER
+	waitmessage B_WAIT_TIME_LONG
 	return
 
 BattleScript_MoveUsedIsAsleep::

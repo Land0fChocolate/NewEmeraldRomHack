@@ -740,6 +740,7 @@ static const u8 sText_CantEscapeBecauseOfCurrentMove[] = _("{B_DEF_NAME_WITH_PRE
 static const u8 sText_NeutralizingGasEnters[] = _("Neutralizing Gas filled the area!");
 static const u8 sText_NeutralizingGasOver[] = _("The effects of Neutralizing\nGas wore off!");
 static const u8 sText_MiracleBlossomHeals[] = _("{B_ATK_NAME_WITH_PREFIX} heals\nwith Miracle Blossom!");
+static const u8 sText_TimeTravellerActivates[] = _("{B_ATK_NAME_WITH_PREFIX} reverts\nto its previous state!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1344,6 +1345,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_CANTESCAPEBECAUSEOFCURRENTMOVE - 12] = sText_CantEscapeBecauseOfCurrentMove,
     [STRINGID_MIRACLEBLOSSOMHEALS - 12] = sText_MiracleBlossomHeals,
     [STRINGID_PLEASANTDREAMSHEAL - 12] = sText_PleasantDreamsHeal,
+    [STRINGID_PKMNTIMETRAVELLER - 12] = sText_TimeTravellerActivates,
+    [STRINGID_TIMETRAVELLERREADY - 12] = sText_TimeTravellerReady,
 };
 
 const u16 gMentalHerbCureStringIds[] = 

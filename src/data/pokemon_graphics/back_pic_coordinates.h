@@ -6100,6 +6100,11 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x87,
         .y_offset = 7,
     },
+    [SPECIES_CELEBI_TIME_TRAVELLED] =
+    {
+        .size = 0x67,
+        .y_offset = 7,
+    },
     // Egg
     [SPECIES_EGG] =
     {

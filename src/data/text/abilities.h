@@ -251,8 +251,8 @@ static const u8 sStickyHoldDescription[] = _(
 	"user's held item.");
 
 static const u8 sShedSkinDescription[] = _(
-	"Chance to heal status at.\n"
-	"the end of turn of 33%.");
+	"33% chance to heal user\n"
+	"status at the end of turn.");
 
 static const u8 sGutsDescription[] = _(
 	"Attack stat raised by 50%\n"
@@ -1140,15 +1140,14 @@ static const u8 sPleasantDreamsDescription[] = _(
 	"Heals sleeping Pokémon\n"
 	"of 1/4 HP per turn.");
 
-static const u8 sBubbleShieldDescription[] = _(
-	"Immunity to status moves\n"
-	"and the first hit while\n"
-	"the shield is up.");
+static const u8 sOriginDescription[] = _(
+	"User has access to four\n"
+	"additional moves in\n"
+	"battle via Origin Strand.");
 
 static const u8 sTimeTravellerDescription[] = _(
-	"If user is about to faint\n"
-	"revert to previous state\n"
-	"two turns before.");
+	"If user is about to faint,\n"
+	"revert to previous state.");
 
 static const u8 sWishMakerDescription[] = _(
 	"User creates a wish when\n"

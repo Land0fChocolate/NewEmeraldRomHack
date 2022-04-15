@@ -516,4 +516,7 @@ const u16 *const gFormSpeciesIdTables[NUM_SPECIES] =
     // Calyrex
     [SPECIES_CALYREX_ICE_RIDER] = sCalyrexFormSpeciesIdTable,
     [SPECIES_CALYREX_SHADOW_RIDER] = sCalyrexFormSpeciesIdTable,
+    // Celebi
+    [SPECIES_CELEBI] = sCelebiFormSpeciesIdTable,
+    [SPECIES_CELEBI_TIME_TRAVELLED] = sCelebiFormSpeciesIdTable,
 };
