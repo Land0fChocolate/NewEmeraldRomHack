@@ -119,6 +119,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Charge Beam: Now 40 BP, 100% Acc with 100% chance for special attack boost.
 - Rock Smash: Now 50 BP with 100% chance for target defense drop.
 - Poison Fang: Now has a 100% chance to poison target.
+- Cut: Now has 30 BP and always crits.
 
 # Credits
 
