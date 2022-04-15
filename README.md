@@ -68,6 +68,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
 - Swordmaster: Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
 - Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Glaceon/Aurorus.
+- Disarm: User's contact moves inflict the Embargo status (disable held items) on the target. Used by Meowth/Persian/Pawniard/Bisharp/Meowth(Galarian)
 - King's Might: User doesn't need to recharge on moves like Hyper Beam and Giga Impact. Used by Slaking.
 - Pleasant Dreams: Heals sleeping Pokemon 1/4 HP every turn. Used by Cresselia.
 - Wish Maker: User creates a wish on entry. Used by Jirachi.
@@ -96,6 +97,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Damp: Also grants user immunity to powder based moves and abilities.
 - Multitype: Also includes Adaptability and Filter effects.
 - Victory Star: User and ally accuracy set to 100%.
+- Sturdy will not activate if the user has a max HP of 1.
 
 # New Moves
 

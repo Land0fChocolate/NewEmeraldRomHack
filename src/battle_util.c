@@ -239,7 +239,6 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_BERSERK] = 4,
     [ABILITY_BIG_PECKS] = 1,
     [ABILITY_BLAZE] = 2,
-    [ABILITY_BUBBLE_SHIELD] = 0,
     [ABILITY_BULLETPROOF] = 4,
     [ABILITY_CHEEK_POUCH] = 2,
     [ABILITY_CHLOROPHYLL] = 4,
@@ -261,6 +260,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_DEFIANT] = 2,
     [ABILITY_DELTA_STREAM] = 2,
     [ABILITY_DESOLATE_LAND] = 2,
+    [ABILITY_DISARM] = 3,
     [ABILITY_DISGUISE] = 0,
     [ABILITY_DOWNLOAD] = 4,
     [ABILITY_DRIZZLE] = 2,
@@ -353,6 +353,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_NO_GUARD] = 3,
     [ABILITY_NORMALIZE] = 1,
     [ABILITY_OBLIVIOUS] = 2,
+    [ABILITY_ORIGIN] = 0,
     [ABILITY_OVERCOAT] = 3,
     [ABILITY_OVERGROW] = 2,
     [ABILITY_OWN_TEMPO] = 2,
@@ -6032,6 +6033,20 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     BattleScriptExecute(BattleScript_SuctionCupsActivates);
                     effect++;
                 }
+                break;
+            case ABILITY_DISARM:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                 && gBattleMons[gBattlerTarget].hp != 0
+                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && IsMoveMakingContact(move, gBattlerAttacker)
+                 && !(gStatuses3[gBattlerTarget] & STATUS3_EMBARGO))
+                {
+                    gLastUsedAbility = ABILITY_DISARM;
+                    BattleScriptPushCursor();
+                    BattleScriptExecute(BattleScript_DisarmActivates);
+                    effect++;
+                }
+                break;
             }
         }
         break;

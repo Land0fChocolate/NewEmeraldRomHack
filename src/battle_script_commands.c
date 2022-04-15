@@ -1958,7 +1958,9 @@ static void Cmd_adjustdamage(void)
         RecordItemEffectBattle(gBattlerTarget, holdEffect);
         gSpecialStatuses[gBattlerTarget].focusSashed = TRUE;
     }
-    else if (HasAbility(ABILITY_STURDY, GetBattlerAbilities(gBattlerTarget)) && BATTLER_MAX_HP(gBattlerTarget))
+    else if (HasAbility(ABILITY_STURDY, GetBattlerAbilities(gBattlerTarget))
+        && BATTLER_MAX_HP(gBattlerTarget)
+        && (BATTLER_MAX_HP(gBattlerTarget) != 1)) // so Shedinja isn't unkillable if it gets Sturdy.
     {
         gSpecialStatuses[gBattlerTarget].sturdied = TRUE;
     }
