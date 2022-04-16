@@ -458,8 +458,12 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_HO_OH                   0x1120
 #define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
-#define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
-#define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
+#define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123 //4387
+#define OBJ_EVENT_PAL_TAG_ZINNIA                  0x1124
+#define OBJ_EVENT_PAL_TAG_ZINNIA_MAGMA            0x1125
+#define OBJ_EVENT_PAL_TAG_ZINNIA_AQUA             0x1126
+#define OBJ_EVENT_PAL_TAG_COURTNEY                0x1127
+#define OBJ_EVENT_PAL_TAG_NONE                    0x11FF //4607
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
 #include "data/object_events/object_event_pic_tables.h"
@@ -505,6 +509,10 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
+    {gObjectEventPal_Zinnia,                OBJ_EVENT_PAL_TAG_ZINNIA},
+    {gObjectEventPal_ZinniaMagma,           OBJ_EVENT_PAL_TAG_ZINNIA_MAGMA},
+    {gObjectEventPal_ZinniaAqua,            OBJ_EVENT_PAL_TAG_ZINNIA_AQUA},
+    {gObjectEventPal_Courtney,              OBJ_EVENT_PAL_TAG_COURTNEY},
     {NULL,                                  0x0000},
 };
 
