@@ -1960,7 +1960,7 @@ static void Cmd_adjustdamage(void)
     }
     else if (HasAbility(ABILITY_STURDY, GetBattlerAbilities(gBattlerTarget))
         && BATTLER_MAX_HP(gBattlerTarget)
-        && (BATTLER_MAX_HP(gBattlerTarget) != 1)) // so Shedinja isn't unkillable if it gets Sturdy.
+        && (gBattleMons[gBattlerTarget].species != SPECIES_SHEDINJA)) // so Shedinja isn't unkillable if it gets Sturdy.
     {
         gSpecialStatuses[gBattlerTarget].sturdied = TRUE;
     }
@@ -2641,7 +2641,6 @@ void SetMoveEffect(bool32 primary, u32 certain)
     if (HasAbility(ABILITY_SHEER_FORCE, attackerAbilities)
         && gBattleMoves[gCurrentMove].flags & FLAG_SHEER_FORCE_BOOST
         && affectsUser != MOVE_EFFECT_AFFECTS_USER)
-    //if (TestSheerForceFlag(gBattlerAttacker, gCurrentMove) && affectsUser != MOVE_EFFECT_AFFECTS_USER) //TODO: do we need this if instead?
         INCREMENT_RESET_RETURN
 
     if (gBattleMons[gEffectBattler].hp == 0
@@ -8132,13 +8131,13 @@ static void Cmd_various(void)
             return;
         }
         break;
-    case VARIOUS_TRY_ACTIVATE_RECEIVER: // Partner gets fainted's ally ability //TODO: update for multi ability (should work like Trace using sTraceAbilityRatings but can't bring that into this file)
+    case VARIOUS_TRY_ACTIVATE_RECEIVER: // Partner gets fainted's ally ability
         gBattlerAbility = BATTLE_PARTNER(gActiveBattler);
         memcpy(battlerAbilities, GetBattlerAbilities(gBattlerAbility), sizeof(battlerAbilities));
         if (IsBattlerAlive(gBattlerAbility)
             && (HasAbility(ABILITY_RECEIVER, battlerAbilities) || HasAbility(ABILITY_POWER_OF_ALCHEMY, battlerAbilities)))
         {
-            u16 ability, battlerAbility, abilityRating = -1;
+            u16 ability, battlerAbility;
             for (x = 0; x < NUM_ABILITY_SLOTS; x++)
             {
                 battlerAbility = gBattleMons[gActiveBattler].abilities[x];
@@ -8153,9 +8152,10 @@ static void Cmd_various(void)
                 case ABILITY_SCHOOLING:         case ABILITY_COMATOSE:
                 case ABILITY_SHIELDS_DOWN:      case ABILITY_DISGUISE:
                 case ABILITY_RKS_SYSTEM:        case ABILITY_TRACE:
+                case ABILITY_TIME_TRAVELLER:    case ABILITY_ORIGIN:
                     break;
                 default:
-                    gBattleStruct->tracedAbilities[x] = ability; //TODO: currently picking any ability. Update to use sTraceAbilityRatings.
+                    gBattleStruct->tracedAbilities[x] = ability; // As I cannot bring in sTraceAbilityRatings to this file, we'll just take the first viable ability.
                     gBattleScripting.battler = gActiveBattler;
                     BattleScriptPush(gBattlescriptCurrInstr + 3);
                     gBattlescriptCurrInstr = BattleScript_ReceiverActivates;
@@ -10856,6 +10856,7 @@ static void Cmd_weatherdamage(void)
                 && !BATTLER_MAX_HP(gBattlerAttacker)
                 && !(gStatuses3[gBattlerAttacker] & STATUS3_HEAL_BLOCK))
             {
+                gLastUsedAbility = ABILITY_ICE_BODY;
                 gBattlerAbility = gBattlerAttacker;
                 gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 16;
                 if (gBattleMoveDamage == 0)

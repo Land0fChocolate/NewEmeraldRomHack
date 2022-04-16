@@ -920,7 +920,7 @@ extern u16 gMoveToLearn;
 extern u8 gBattleMonForms[MAX_BATTLERS_COUNT];
 extern u32 gFieldStatuses;
 extern struct FieldTimer gFieldTimers;
-extern u8 gBattlerAbility; //TODO: probably don't need to update for multi ability. Confusing name.
+extern u8 gBattlerAbility; //NOTE: probably don't need to update for multi ability. Confusing name.
 extern u16 gPartnerSpriteId;
 extern struct TotemBoost gTotemBoosts[MAX_BATTLERS_COUNT];
 

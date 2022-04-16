@@ -147,7 +147,9 @@ static const u8 sChlorophyllDescription[] = _(
 	"sunlight.");
 
 static const u8 sIlluminateDescription[] = _(
-	"Encounter rate increases."); //TODO: scheduled for update
+	"Encounter rate increases.\n"
+	"Foes in battle have less\n"
+	"evasion.");
 
 static const u8 sTraceDescription[] = _(
 	"Copies the opponents\n"

@@ -8134,7 +8134,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        .abilities = {ABILITY_LEVITATE, ABILITY_TINTED_LENS, ABILITY_SAND_STREAM},
+        .abilities = {ABILITY_LEVITATE, ABILITY_TINTED_LENS, ABILITY_SAND_FORCE},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
     },
@@ -12044,7 +12044,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE}, //TODO: create ABILITY_PLEASANT_DRAEMS
+        .abilities = {ABILITY_PLEASANT_DREAMS, ABILITY_LEVITATE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },

@@ -232,8 +232,8 @@ EverGrandeCity_ChampionsRoom_Movement_BirchArrives:
 EverGrandeCity_ChampionsRoom_Text_IntroSpeech:
 	.string "Steven: Welcome, {PLAYER}{KUN}.\p"
 	.string "I was looking forward to seeing you\n"
-	.string "here one day.\l"
-	.string "You... what you did you see on your\n"
+	.string "here one day.\p"
+	.string "You… what you did you see on your\n"
 	.string "journey with Pokemon?\p"
 	.string "What did you feel, meeting so many\n"
 	.string "other Trainers like you?\p"
@@ -248,7 +248,7 @@ EverGrandeCity_ChampionsRoom_Text_Defeat:
 	.string "Trainer!$"
 
 EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech:
-	.string "Steven: Congratulations!\p  "
+	.string "Steven: Congratulations!\p"
 	.string "The feelings you have for your Pokémon…\n"
 	.string "And the Pokémon that responded to\l"
 	.string "those feelings with all their might…\p"
@@ -256,7 +256,8 @@ EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech:
 	.string "created an even greater power.\p"
 	.string "And thus, you were able to grasp\n"
 	.string "victory today!\p"
-	.string "You are rightfully the Hoenn region's new…$"
+	.string "You are rightfully the Hoenn region's\n"
+	.string "new…$"
 
 EverGrandeCity_ChampionsRoom_Text_MayAdvice:
 	.string "May: {PLAYER}{KUN}!\p"
@@ -288,7 +289,7 @@ EverGrandeCity_ChampionsRoom_Text_BirchArriveRatePokedex:
 	.string "… … … … … … … …\n"
 	.string "{PLAYER}{KUN}, you've finally done it.\p"
 	.string "When I heard that you defeated your\n"
-	.string "own father at the PETALBURG GYM,\l"
+	.string "own father at the Petalburg Gym,\l"
 	.string "I thought perhaps you had a chance…\p"
 	.string "But to think you've actually become\n"
 	.string "the Champion!\p"

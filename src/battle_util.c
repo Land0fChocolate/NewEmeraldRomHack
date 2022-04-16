@@ -106,6 +106,8 @@ static const u16 sSkillSwapBannedAbilities[] =
     ABILITY_ICE_FACE,
     ABILITY_HUNGER_SWITCH,
     ABILITY_GULP_MISSILE,
+    ABILITY_ORIGIN,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const u16 sRolePlayBannedAbilities[] =
@@ -131,6 +133,8 @@ static const u16 sRolePlayBannedAbilities[] =
     ABILITY_ICE_FACE,
     ABILITY_HUNGER_SWITCH,
     ABILITY_GULP_MISSILE,
+    ABILITY_ORIGIN,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const u16 sRolePlayBannedAttackerAbilities[] =
@@ -147,6 +151,8 @@ static const u16 sRolePlayBannedAttackerAbilities[] =
     ABILITY_POWER_CONSTRUCT,
     ABILITY_ICE_FACE,
     ABILITY_GULP_MISSILE,
+    ABILITY_ORIGIN,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const u16 sWorrySeedBannedAbilities[] =
@@ -163,6 +169,7 @@ static const u16 sWorrySeedBannedAbilities[] =
     ABILITY_TRUANT,
     ABILITY_ICE_FACE,
     ABILITY_GULP_MISSILE,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const u16 sGastroAcidBannedAbilities[] =
@@ -181,6 +188,7 @@ static const u16 sGastroAcidBannedAbilities[] =
     ABILITY_SHIELDS_DOWN,
     ABILITY_STANCE_CHANGE,
     ABILITY_ZEN_MODE,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const u16 sEntrainmentBannedAttackerAbilities[] =
@@ -199,6 +207,8 @@ static const u16 sEntrainmentBannedAttackerAbilities[] =
     ABILITY_ICE_FACE,
     ABILITY_HUNGER_SWITCH,
     ABILITY_GULP_MISSILE,
+    ABILITY_ORIGIN,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const u16 sEntrainmentTargetSimpleBeamBannedAbilities[] =
@@ -214,6 +224,8 @@ static const u16 sEntrainmentTargetSimpleBeamBannedAbilities[] =
     ABILITY_BATTLE_BOND,
     ABILITY_ICE_FACE,
     ABILITY_GULP_MISSILE,
+    ABILITY_ORIGIN,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
@@ -5498,6 +5510,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         case ABILITY_SCHOOLING:
                         case ABILITY_SHIELDS_DOWN:
                         case ABILITY_STANCE_CHANGE:
+                        case ABILITY_TIME_TRAVELLER:
                             continue;
                         default:
                             gLastUsedAbilities[y] = gBattleMons[gBattlerAttacker].abilities[y] = ABILITY_MUMMY;
@@ -5533,6 +5546,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         case ABILITY_STANCE_CHANGE:
                         case ABILITY_WONDER_GUARD:
                         case ABILITY_ZEN_MODE:
+                        case ABILITY_TIME_TRAVELLER:
                             break;
                         default:
                             switch (gBattleMons[gBattlerTarget].abilities[x])
@@ -5550,6 +5564,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                             case ABILITY_STANCE_CHANGE:
                             case ABILITY_WONDER_GUARD:
                             case ABILITY_ZEN_MODE:
+                            case ABILITY_TIME_TRAVELLER:
                                 break;
                             default:
                                 gLastUsedAbilities[x] = gBattleMons[gBattlerAttacker].abilities[x];
@@ -6404,6 +6419,7 @@ bool32 IsNeutralizingGasBannedAbility(u16 ability)
     case ABILITY_ICE_FACE:
     case ABILITY_AS_ONE_ICE_RIDER:
     case ABILITY_AS_ONE_SHADOW_RIDER:
+    case ABILITY_TIME_TRAVELLER:
         return TRUE;
     default:
         return FALSE;
