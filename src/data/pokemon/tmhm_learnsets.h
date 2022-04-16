@@ -1,6 +1,6 @@
 #define TMHM_LEARNSET(moves, moves2) {(u32)(moves), ((u64)(moves) >> 32), (u32)(moves2), (u64)(moves2) >> 32}
-#define TMHM(tmhm) ((u64)1 << (ITEM_##tmhm - ITEM_TM01_FOCUS_PUNCH)) // item id 482
-#define TMHM2(tmhm) ((u64)1 << (ITEM_##tmhm - ITEM_TM64_EXPLOSION)) // item id 546
+#define TMHM(tmhm) ((u64)1 << (ITEM_##tmhm - ITEM_TM01_FOCUS_PUNCH)) // item id 583
+#define TMHM2(tmhm) ((u64)1 << (ITEM_##tmhm - ITEM_TM65_SHADOW_CLAW)) // item id 646
 
 // This table determines which TMs and HMs a species is capable of learning.
 // The original has each entry being a 64-bit bit array spread across two 32-bit values, with
@@ -31,7 +31,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM86_GRASS_KNOT)
@@ -65,7 +66,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM86_GRASS_KNOT)
@@ -102,7 +104,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM78_BULLDOZE)
@@ -142,7 +145,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM56_DRAGON_PULSE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM62_ACROBATICS)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -179,7 +183,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM56_DRAGON_PULSE)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM62_ACROBATICS)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -224,7 +229,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM58_ROOST)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM62_ACROBATICS)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -423,7 +429,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM58_ROOST)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM62_ACROBATICS),
+                                            | TMHM(TM62_ACROBATICS)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -530,7 +537,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM86_GRASS_KNOT)
@@ -567,7 +575,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -788,7 +797,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM51_LEECH_LIFE),
+                                            | TMHM(TM51_LEECH_LIFE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM74_GYRO_BALL)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -826,7 +836,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM51_LEECH_LIFE)
-                                            | TMHM(TM52_FOCUS_BLAST),
+                                            | TMHM(TM52_FOCUS_BLAST)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -868,7 +879,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
@@ -903,7 +915,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM87_SWAGGER)
@@ -952,7 +965,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM56_DRAGON_PULSE)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -993,7 +1007,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM67_SMART_STRIKE)
                                             | TMHM2(TM84_POISON_JAB)
@@ -1028,7 +1043,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM67_SMART_STRIKE)
                                             | TMHM2(TM84_POISON_JAB)
@@ -1077,7 +1093,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM56_DRAGON_PULSE)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM67_SMART_STRIKE)
                                             | TMHM2(TM68_GIGA_IMPACT)
@@ -1428,7 +1445,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM86_GRASS_KNOT)
@@ -1456,7 +1474,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM86_GRASS_KNOT)
@@ -1486,7 +1505,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM83_INFESTATION)
@@ -1522,7 +1542,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM51_LEECH_LIFE)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM54_FALSE_SWIPE)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
@@ -1558,7 +1579,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM51_LEECH_LIFE)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM54_FALSE_SWIPE)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM81_X_SCISSOR)
@@ -1646,7 +1668,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -1676,7 +1699,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -1713,7 +1737,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -1751,7 +1776,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
@@ -2335,7 +2361,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM51_LEECH_LIFE)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM84_POISON_JAB)
@@ -2365,7 +2392,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM51_LEECH_LIFE)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM84_POISON_JAB)
@@ -2396,7 +2424,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM51_LEECH_LIFE)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM83_INFESTATION)
@@ -2429,7 +2458,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM55_SCALD)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM83_INFESTATION)
@@ -2466,7 +2496,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM55_SCALD)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -2500,8 +2531,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM37_SANDSTORM)
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
-                                            | TMHM(TM06_TOXIC)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM06_TOXIC),
                                             TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -2532,8 +2562,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM37_SANDSTORM)
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
-                                            | TMHM(TM06_TOXIC)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM06_TOXIC),
                                             TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -2567,8 +2596,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM52_FOCUS_BLAST),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -2752,8 +2780,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM57_CHARGE_BEAM),
                                             TMHM2(TM72_VOLT_SWITCH)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -2781,8 +2808,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM57_CHARGE_BEAM),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM72_VOLT_SWITCH)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -2812,7 +2838,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM58_ROOST)
-                                            | TMHM(TM62_ACROBATICS),
+                                            | TMHM(TM62_ACROBATICS)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM76_FLY)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -2960,8 +2987,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM59_VENOSHOCK),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM83_INFESTATION)
@@ -2999,8 +3025,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM59_VENOSHOCK),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -3028,8 +3053,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM27_RETURN)
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM03_WATER_PULSE),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
@@ -3055,8 +3079,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM03_WATER_PULSE),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM67_SMART_STRIKE)
                                             | TMHM2(TM68_GIGA_IMPACT)
@@ -3095,8 +3118,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM61_WILL_O_WISP)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM83_INFESTATION)
@@ -3132,8 +3154,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM61_WILL_O_WISP)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -3175,8 +3196,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM61_WILL_O_WISP)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
@@ -3212,8 +3232,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM12_TAUNT)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM56_DRAGON_PULSE)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM56_DRAGON_PULSE),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -3325,7 +3344,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM54_FALSE_SWIPE)
-                                            | TMHM(TM55_SCALD),
+                                            | TMHM(TM55_SCALD)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM81_X_SCISSOR)
@@ -3361,7 +3381,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM54_FALSE_SWIPE)
-                                            | TMHM(TM55_SCALD),
+                                            | TMHM(TM55_SCALD)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -3395,8 +3416,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM57_CHARGE_BEAM),
                                             TMHM2(TM72_VOLT_SWITCH)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -3424,8 +3444,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM57_CHARGE_BEAM),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM72_VOLT_SWITCH)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -3456,8 +3475,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM60_PSYSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM83_INFESTATION)
@@ -3492,8 +3510,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM60_PSYSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -3668,7 +3685,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM03_WATER_PULSE),
+                                            | TMHM(TM03_WATER_PULSE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -3708,8 +3726,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM61_WILL_O_WISP)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM74_GYRO_BALL)
                                             | TMHM2(TM83_INFESTATION)
@@ -3742,8 +3759,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM61_WILL_O_WISP)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -3823,7 +3839,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM56_DRAGON_PULSE),
+                                            | TMHM(TM56_DRAGON_PULSE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM67_SMART_STRIKE)
@@ -3918,7 +3935,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM53_ENERGY_BALL),
+                                            | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -3967,7 +3985,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM52_FOCUS_BLAST),
+                                            | TMHM(TM52_FOCUS_BLAST)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM78_BULLDOZE)
@@ -4235,7 +4254,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM58_ROOST)
-                                            | TMHM(TM62_ACROBATICS),
+                                            | TMHM(TM62_ACROBATICS)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM81_X_SCISSOR)
@@ -4374,7 +4394,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM54_FALSE_SWIPE),
+                                            | TMHM(TM54_FALSE_SWIPE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -4807,7 +4828,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM51_LEECH_LIFE)
-                                            | TMHM(TM55_SCALD),
+                                            | TMHM(TM55_SCALD)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -5124,7 +5146,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM56_DRAGON_PULSE)
-                                            | TMHM(TM58_ROOST),
+                                            | TMHM(TM58_ROOST)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM76_FLY)
                                             | TMHM2(TM78_BULLDOZE)
@@ -5268,7 +5291,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM62_ACROBATICS)
                                             | TMHM(TM63_ECHOED_VOICE)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM67_SMART_STRIKE)
@@ -5332,7 +5355,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
@@ -5360,7 +5384,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
@@ -5393,7 +5418,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM78_BULLDOZE)
@@ -5425,7 +5451,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM61_WILL_O_WISP),
+                                            | TMHM(TM61_WILL_O_WISP)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM93_WILD_CHARGE)
@@ -5452,7 +5479,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM61_WILL_O_WISP),
+                                            | TMHM(TM61_WILL_O_WISP)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
                                             | TMHM2(TM90_ROCK_SMASH)
@@ -5487,7 +5515,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM61_WILL_O_WISP),
+                                            | TMHM(TM61_WILL_O_WISP)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM74_GYRO_BALL)
                                             | TMHM2(TM78_BULLDOZE)
@@ -5523,7 +5552,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM55_SCALD),
+                                            | TMHM(TM55_SCALD)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -5559,7 +5589,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM55_SCALD),
+                                            | TMHM(TM55_SCALD)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -5602,7 +5633,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM55_SCALD)
-                                            | TMHM(TM56_DRAGON_PULSE),
+                                            | TMHM(TM56_DRAGON_PULSE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -5646,7 +5678,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
@@ -5685,7 +5718,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM86_GRASS_KNOT)
@@ -6141,8 +6175,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM58_ROOST)
                                             | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM63_ECHOED_VOICE),
-                                            TMHM2(TM67_SMART_STRIKE)
-                                            | TMHM2(TM68_GIGA_IMPACT)
+                                            TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM76_FLY)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -6341,7 +6374,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM53_ENERGY_BALL),
+                                            | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM83_INFESTATION)
@@ -6444,8 +6478,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM12_TAUNT)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM41_TORMENT)
-                                            | TMHM(TM06_TOXIC)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM06_TOXIC),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -6609,7 +6642,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM62_ACROBATICS),
+                                            | TMHM(TM62_ACROBATICS)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -6639,7 +6673,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM53_ENERGY_BALL),
+                                            | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
@@ -6666,7 +6701,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM53_ENERGY_BALL),
+                                            | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM86_GRASS_KNOT)
@@ -6803,7 +6839,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM60_PSYSHOCK)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM85_DREAM_EATER)
@@ -6835,7 +6872,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM12_TAUNT)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -7037,8 +7075,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM59_VENOSHOCK),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM74_GYRO_BALL)
                                             | TMHM2(TM78_BULLDOZE)
@@ -7069,8 +7106,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM59_VENOSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM72_VOLT_SWITCH)
@@ -7154,7 +7190,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM58_ROOST)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM62_ACROBATICS),
+                                            | TMHM(TM62_ACROBATICS)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -7193,7 +7230,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM56_DRAGON_PULSE)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
@@ -7328,8 +7365,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM55_SCALD)
-                                            | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM59_VENOSHOCK),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -7365,7 +7401,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM58_ROOST)
                                             | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM62_ACROBATICS),
+                                            | TMHM(TM62_ACROBATICS)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM81_X_SCISSOR)
@@ -7433,7 +7470,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM54_FALSE_SWIPE)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -7474,7 +7512,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM54_FALSE_SWIPE),
+                                            | TMHM(TM54_FALSE_SWIPE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -7515,7 +7554,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM12_TAUNT)
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM41_TORMENT)
-                                            | TMHM(TM06_TOXIC),
+                                            | TMHM(TM06_TOXIC)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -7552,7 +7592,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM52_FOCUS_BLAST),
+                                            | TMHM(TM52_FOCUS_BLAST)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
@@ -7614,8 +7655,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM61_WILL_O_WISP)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -7717,8 +7757,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM55_SCALD)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM55_SCALD),
                                             TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
                                             | TMHM2(TM78_BULLDOZE)
@@ -7880,7 +7919,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM58_ROOST),
+                                            | TMHM(TM58_ROOST)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM76_FLY)
@@ -8391,7 +8431,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM55_SCALD)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM72_VOLT_SWITCH)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -8430,7 +8471,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM61_WILL_O_WISP),
+                                            | TMHM(TM61_WILL_O_WISP)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -8467,7 +8509,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM55_SCALD),
+                                            | TMHM(TM55_SCALD)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM78_BULLDOZE)
@@ -8583,7 +8626,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM56_DRAGON_PULSE),
+                                            | TMHM(TM56_DRAGON_PULSE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
@@ -8738,7 +8782,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -8776,7 +8821,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM62_ACROBATICS),
+                                            | TMHM(TM62_ACROBATICS)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM86_GRASS_KNOT)
@@ -8812,7 +8858,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM54_FALSE_SWIPE)
-                                            | TMHM(TM62_ACROBATICS),
+                                            | TMHM(TM62_ACROBATICS)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM81_X_SCISSOR)
@@ -8855,7 +8902,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM56_DRAGON_PULSE)
-                                            | TMHM(TM62_ACROBATICS),
+                                            | TMHM(TM62_ACROBATICS)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM78_BULLDOZE)
@@ -8889,7 +8937,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM61_WILL_O_WISP)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -8922,7 +8971,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM61_WILL_O_WISP)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -8961,7 +9011,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM62_ACROBATICS)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -9166,7 +9217,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
@@ -9202,7 +9254,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -9418,8 +9471,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM54_FALSE_SWIPE)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM54_FALSE_SWIPE),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM87_SWAGGER)
@@ -9452,7 +9504,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM54_FALSE_SWIPE)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -9494,7 +9546,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM54_FALSE_SWIPE)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -9850,7 +9902,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM54_FALSE_SWIPE),
+                                            | TMHM(TM54_FALSE_SWIPE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -9890,7 +9943,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM03_WATER_PULSE),
+                                            | TMHM(TM03_WATER_PULSE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
@@ -9930,7 +9984,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM52_FOCUS_BLAST),
+                                            | TMHM(TM52_FOCUS_BLAST)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -9972,7 +10027,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM52_FOCUS_BLAST),
+                                            | TMHM(TM52_FOCUS_BLAST)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM78_BULLDOZE)
@@ -10001,7 +10057,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM51_LEECH_LIFE)
-                                            | TMHM(TM54_FALSE_SWIPE),
+                                            | TMHM(TM54_FALSE_SWIPE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM81_X_SCISSOR)
                                             | TMHM2(TM87_SWAGGER)
                                             | TMHM2(TM88_SLEEP_TALK)
@@ -10031,7 +10088,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM51_LEECH_LIFE)
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM58_ROOST)
-                                            | TMHM(TM62_ACROBATICS),
+                                            | TMHM(TM62_ACROBATICS)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM81_X_SCISSOR)
@@ -10061,7 +10119,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM51_LEECH_LIFE)
                                             | TMHM(TM54_FALSE_SWIPE)
-                                            | TMHM(TM61_WILL_O_WISP),
+                                            | TMHM(TM61_WILL_O_WISP)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM81_X_SCISSOR)
@@ -10281,8 +10340,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM41_TORMENT)
-                                            | TMHM(TM06_TOXIC)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM06_TOXIC),
                                             TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
                                             | TMHM2(TM72_VOLT_SWITCH)
@@ -10399,7 +10457,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM61_WILL_O_WISP),
+                                            | TMHM(TM61_WILL_O_WISP)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -10480,7 +10539,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM34_SHOCK_WAVE)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM03_WATER_PULSE),
+                                            | TMHM(TM03_WATER_PULSE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM78_BULLDOZE)
@@ -10512,7 +10572,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM34_SHOCK_WAVE)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM03_WATER_PULSE),
+                                            | TMHM(TM03_WATER_PULSE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -10559,7 +10620,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM56_DRAGON_PULSE),
+                                            | TMHM(TM56_DRAGON_PULSE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM67_SMART_STRIKE)
@@ -10857,7 +10919,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM84_POISON_JAB)
@@ -10890,8 +10953,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM59_VENOSHOCK),
                                             TMHM2(TM83_INFESTATION)
                                             | TMHM2(TM85_DREAM_EATER)
                                             | TMHM2(TM87_SWAGGER)
@@ -10923,8 +10985,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM59_VENOSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM59_VENOSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM78_BULLDOZE)
                                             | TMHM2(TM83_INFESTATION)
@@ -11122,8 +11183,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM61_WILL_O_WISP)
-                                            | TMHM(TM63_ECHOED_VOICE)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -11157,8 +11217,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM22_SOLARBEAM)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM61_WILL_O_WISP)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM61_WILL_O_WISP),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -11403,7 +11462,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM84_POISON_JAB)
@@ -11435,7 +11495,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -11553,7 +11614,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM54_FALSE_SWIPE),
+                                            | TMHM(TM54_FALSE_SWIPE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -11628,8 +11690,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM60_PSYSHOCK)
-                                            | TMHM(TM62_ACROBATICS)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM62_ACROBATICS),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -11671,8 +11732,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM60_PSYSHOCK)
-                                            | TMHM(TM62_ACROBATICS)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM62_ACROBATICS),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -11772,7 +11832,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM54_FALSE_SWIPE)
-                                            | TMHM(TM55_SCALD),
+                                            | TMHM(TM55_SCALD)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -11812,7 +11873,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM54_FALSE_SWIPE)
-                                            | TMHM(TM55_SCALD),
+                                            | TMHM(TM55_SCALD)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -11858,8 +11920,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM60_PSYSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM74_GYRO_BALL)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -11899,8 +11960,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM60_PSYSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM60_PSYSHOCK),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -11998,7 +12058,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM54_FALSE_SWIPE),
+                                            | TMHM(TM54_FALSE_SWIPE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -12032,7 +12093,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM54_FALSE_SWIPE),
+                                            | TMHM(TM54_FALSE_SWIPE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -12175,7 +12237,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -12367,7 +12430,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM58_ROOST),
+                                            | TMHM(TM58_ROOST)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM76_FLY)
@@ -12455,7 +12519,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM61_WILL_O_WISP)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
@@ -12522,8 +12587,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM12_TAUNT)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM03_WATER_PULSE),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -12804,7 +12868,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM56_DRAGON_PULSE),
+                                            | TMHM(TM56_DRAGON_PULSE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
@@ -12833,7 +12898,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM56_DRAGON_PULSE),
+                                            | TMHM(TM56_DRAGON_PULSE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM87_SWAGGER)
@@ -12867,7 +12933,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM56_DRAGON_PULSE)
-                                            | TMHM(TM58_ROOST),
+                                            | TMHM(TM58_ROOST)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -12908,7 +12975,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM60_PSYSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM74_GYRO_BALL)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -12947,7 +13014,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM60_PSYSHOCK)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM74_GYRO_BALL)
@@ -12986,8 +13053,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM57_CHARGE_BEAM),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -13024,8 +13090,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM57_CHARGE_BEAM),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM70_AURORA_VEIL)
@@ -13064,8 +13129,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM57_CHARGE_BEAM),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
@@ -13115,7 +13179,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM56_DRAGON_PULSE)
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM58_ROOST)
-                                            | TMHM(TM60_PSYSHOCK),
+                                            | TMHM(TM60_PSYSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -13170,7 +13235,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM56_DRAGON_PULSE)
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM58_ROOST)
-                                            | TMHM(TM60_PSYSHOCK),
+                                            | TMHM(TM60_PSYSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -13261,7 +13327,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM56_DRAGON_PULSE),
+                                            | TMHM(TM56_DRAGON_PULSE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
@@ -13313,7 +13380,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM56_DRAGON_PULSE)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -13416,7 +13484,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM60_PSYSHOCK),
+                                            | TMHM(TM60_PSYSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -13848,7 +13917,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM86_GRASS_KNOT)
@@ -13878,7 +13948,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM59_VENOSHOCK),
+                                            | TMHM(TM59_VENOSHOCK)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -14250,7 +14321,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM62_ACROBATICS),
+                                            | TMHM(TM62_ACROBATICS)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
@@ -14640,8 +14712,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM43_SECRET_POWER)
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM46_THIEF)
-                                            | TMHM(TM06_TOXIC)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM06_TOXIC),
                                             TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM80_ROCK_SLIDE)
@@ -15239,7 +15310,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM54_FALSE_SWIPE),
+                                            | TMHM(TM54_FALSE_SWIPE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
@@ -15276,8 +15348,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM57_CHARGE_BEAM)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM57_CHARGE_BEAM),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM72_VOLT_SWITCH)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -15321,7 +15392,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM74_GYRO_BALL)
                                             | TMHM2(TM75_SWORDS_DANCE)
@@ -15369,7 +15440,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM56_DRAGON_PULSE),
+                                            | TMHM(TM56_DRAGON_PULSE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM67_SMART_STRIKE)
@@ -15415,7 +15487,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM46_THIEF)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
-                                            | TMHM(TM53_ENERGY_BALL),
+                                            | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -15607,7 +15680,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM75_SWORDS_DANCE)
                                             | TMHM2(TM81_X_SCISSOR)
@@ -15642,7 +15716,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM03_WATER_PULSE)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM70_AURORA_VEIL)
                                             | TMHM2(TM79_FROST_BREATH)
@@ -15680,7 +15755,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM54_FALSE_SWIPE)
                                             | TMHM(TM58_ROOST)
-                                            | TMHM(TM62_ACROBATICS),
+                                            | TMHM(TM62_ACROBATICS)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
@@ -15804,7 +15880,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM60_PSYSHOCK)
                                             | TMHM(TM61_WILL_O_WISP)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM71_STONE_EDGE)
                                             | TMHM2(TM73_THUNDER_WAVE)
@@ -15845,8 +15922,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM41_TORMENT)
-                                            | TMHM(TM06_TOXIC)
-                                            | TMHM(TM64_EXPLOSION),
+                                            | TMHM(TM06_TOXIC),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM69_ROCK_POLISH)
                                             | TMHM2(TM71_STONE_EDGE)
@@ -20853,7 +20929,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM60_PSYSHOCK)
-                                            | TMHM(TM63_ECHOED_VOICE),
+                                            | TMHM(TM63_ECHOED_VOICE)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM77_PSYCH_UP)
                                             | TMHM2(TM87_SWAGGER)
@@ -25010,7 +25087,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -25063,7 +25141,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)
@@ -25117,7 +25196,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM03_WATER_PULSE)
                                             | TMHM(TM52_FOCUS_BLAST)
                                             | TMHM(TM53_ENERGY_BALL)
-                                            | TMHM(TM57_CHARGE_BEAM),
+                                            | TMHM(TM57_CHARGE_BEAM)
+                                            | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_PSYCH_UP)

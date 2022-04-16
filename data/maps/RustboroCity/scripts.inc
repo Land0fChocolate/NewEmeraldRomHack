@@ -1044,6 +1044,18 @@ RustboroCity_EventScript_Boy1::
 	msgbox RustboroCity_Text_YouCanHave2On2Battle, MSGBOX_NPC
 	end
 
+RustboroCity_EventScript_BlackBelt::
+	msgbox RustboroCity_Text_TeamMagmaStealingFuel, MSGBOX_NPC
+	end
+
+RustboroCity_Text_TeamMagmaStealingFuel:
+	.string "Some bad folks called Team Magma have\n"
+	.string "been stealing fuel and tech.\p"
+	.string "Devon Corp have been buffing up their\n"
+	.string "security in response.\p"
+	.string "They should have hired me! I would love\n"
+	.string "to knock around those Magma fools!$"
+
 RustboroCity_Text_WeShortenItToDevon:
 	.string "The Devon Corporation…\n"
 	.string "We all just shorten it to Devon.\p"

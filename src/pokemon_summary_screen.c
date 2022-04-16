@@ -1972,7 +1972,7 @@ static void SwitchToAbilitySelection(u8 taskId)
 
     sMonSummaryScreen->firstAbilityIndex = 0;
     ability = sMonSummaryScreen->summary.abilities[sMonSummaryScreen->firstAbilityIndex];
-    HandleAbilityDescriptionLabelTilemap(9, -3); //TODO: configure this
+    HandleAbilityDescriptionLabelTilemap(9, -3);
     ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_INFO);
     PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_CANCEL);
     PrintMonAbilityDescription(ability);
@@ -2622,7 +2622,7 @@ static void ChangeTilemap(const struct TilemapCtrl *unkStruct, u16 *dest, u8 c, 
     Free(alloced);
 }
 
-static void HandleAbilityDescriptionLabelTilemap(u16 a, s16 b) //TODO: print description over trainer memo label
+static void HandleAbilityDescriptionLabelTilemap(u16 a, s16 b)
 {
     if (b > sAbilityDescriptionLabelTilemapCtrl.field_6)
         b = sAbilityDescriptionLabelTilemapCtrl.field_6;
@@ -2640,7 +2640,7 @@ static void HandleAbilityDescriptionLabelTilemap(u16 a, s16 b) //TODO: print des
     }
 }
 
-static void Task_ShowAbilityDescriptionLabelWindow(u8 taskId) //TODO:
+static void Task_ShowAbilityDescriptionLabelWindow(u8 taskId) //TODO: This will need to be figured out at some point
 {
     u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO);
     s16 *data = gTasks[taskId].data;
@@ -2782,7 +2782,7 @@ static void Task_ShowAppealJamWindow(u8 taskId)
     ScheduleBgCopyTilemapToVram(2);
 }
 
-static void HandleStatusTilemap(u16 a, s16 b) //TODO: probably change
+static void HandleStatusTilemap(u16 a, s16 b) //TODO: probably remove
 {
     // if (b > sStatusTilemapCtrl1.field_6)
     //     b = sStatusTilemapCtrl1.field_6;
@@ -2799,7 +2799,7 @@ static void HandleStatusTilemap(u16 a, s16 b) //TODO: probably change
     // }
 }
 
-static void Task_ShowStatusWindow(u8 taskId) //TODO:
+static void Task_ShowStatusWindow(u8 taskId) //TODO: probably remove
 {
     // s16 *data = gTasks[taskId].data;
     // data[1] += data[0];
@@ -3972,7 +3972,7 @@ static void PrintHMMovesCantBeForgotten(void)
     PrintTextOnWindow(windowId, gText_HMMovesCantBeForgotten2, 6, 1, 0, 0);
 }
 
-static void ResetSpriteIds(void) //TODO: do I still need this?
+static void ResetSpriteIds(void)
 {
     u8 i;
 

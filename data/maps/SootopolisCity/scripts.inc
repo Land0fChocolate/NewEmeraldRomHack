@@ -1290,7 +1290,10 @@ SootopolisCity_EventScript_StevenRayquazaStoppedIt::
 	end
 
 SootopolisCity_EventScript_StevenThanksPlayerAndLeaves::
-	msgbox SootopolisCity_Text_StevenThanksPlayerAndLeaves, MSGBOX_DEFAULT
+	msgbox SootopolisCity_Text_StevenThanksPlayerAndGivesMasterBall, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_MASTER_BALL
+	msgbox SootopolisCity_Text_StevenLeaves, MSGBOX_DEFAULT
 	closemessage
 	delay 50
 	setfieldeffectargument 0, 1
@@ -1911,7 +1914,7 @@ SootopolisCity_Text_WallaceItsOver::
 	.string "No, all of Hoenn is saved.\p"
 	.string "On behalf of all the people, I thank you.$"
 
-SootopolisCity_Text_StevenThanksPlayerAndLeaves:
+SootopolisCity_Text_StevenThanksPlayerAndGivesMasterBall:
 	.string "Steven: {PLAYER},\n"
 	.string "we owe you a great thanks.\p"
 	.string "The sky over Sootopolis has returned\n"
@@ -1921,6 +1924,16 @@ SootopolisCity_Text_StevenThanksPlayerAndLeaves:
 	.string "went too far and nearly ruined it.\p"
 	.string "I think this crisis has made them\n"
 	.string "realize that.\p"
+	.string "{PLAYER}, I would like to give you\n"
+	.string "this. It's a prototype developed by the\l"
+	.string "Devon Corporation.\p"
+	.string "They call it the Master Ball. It can\n"
+	.string "catch any Pokémon without fail.\p"
+	.string "It was given as a gift to me, but I\n"
+	.string "think a Trainer such as yourself will\l"
+	.string "make better use of it.$"
+
+SootopolisCity_Text_StevenLeaves:
 	.string "{PLAYER}… I hope you will continue to\n"
 	.string "travel this world and see its richness\l"
 	.string "with your own eyes.\p"

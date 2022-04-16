@@ -106,6 +106,8 @@ static const u16 sSkillSwapBannedAbilities[] =
     ABILITY_ICE_FACE,
     ABILITY_HUNGER_SWITCH,
     ABILITY_GULP_MISSILE,
+    ABILITY_ORIGIN,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const u16 sRolePlayBannedAbilities[] =
@@ -131,6 +133,8 @@ static const u16 sRolePlayBannedAbilities[] =
     ABILITY_ICE_FACE,
     ABILITY_HUNGER_SWITCH,
     ABILITY_GULP_MISSILE,
+    ABILITY_ORIGIN,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const u16 sRolePlayBannedAttackerAbilities[] =
@@ -147,6 +151,8 @@ static const u16 sRolePlayBannedAttackerAbilities[] =
     ABILITY_POWER_CONSTRUCT,
     ABILITY_ICE_FACE,
     ABILITY_GULP_MISSILE,
+    ABILITY_ORIGIN,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const u16 sWorrySeedBannedAbilities[] =
@@ -163,6 +169,7 @@ static const u16 sWorrySeedBannedAbilities[] =
     ABILITY_TRUANT,
     ABILITY_ICE_FACE,
     ABILITY_GULP_MISSILE,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const u16 sGastroAcidBannedAbilities[] =
@@ -181,6 +188,7 @@ static const u16 sGastroAcidBannedAbilities[] =
     ABILITY_SHIELDS_DOWN,
     ABILITY_STANCE_CHANGE,
     ABILITY_ZEN_MODE,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const u16 sEntrainmentBannedAttackerAbilities[] =
@@ -199,6 +207,8 @@ static const u16 sEntrainmentBannedAttackerAbilities[] =
     ABILITY_ICE_FACE,
     ABILITY_HUNGER_SWITCH,
     ABILITY_GULP_MISSILE,
+    ABILITY_ORIGIN,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const u16 sEntrainmentTargetSimpleBeamBannedAbilities[] =
@@ -214,6 +224,8 @@ static const u16 sEntrainmentTargetSimpleBeamBannedAbilities[] =
     ABILITY_BATTLE_BOND,
     ABILITY_ICE_FACE,
     ABILITY_GULP_MISSILE,
+    ABILITY_ORIGIN,
+    ABILITY_TIME_TRAVELLER,
 };
 
 static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
@@ -239,7 +251,6 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_BERSERK] = 4,
     [ABILITY_BIG_PECKS] = 1,
     [ABILITY_BLAZE] = 2,
-    [ABILITY_BUBBLE_SHIELD] = 0,
     [ABILITY_BULLETPROOF] = 4,
     [ABILITY_CHEEK_POUCH] = 2,
     [ABILITY_CHLOROPHYLL] = 4,
@@ -261,6 +272,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_DEFIANT] = 2,
     [ABILITY_DELTA_STREAM] = 2,
     [ABILITY_DESOLATE_LAND] = 2,
+    [ABILITY_DISARM] = 3,
     [ABILITY_DISGUISE] = 0,
     [ABILITY_DOWNLOAD] = 4,
     [ABILITY_DRIZZLE] = 2,
@@ -353,6 +365,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_NO_GUARD] = 3,
     [ABILITY_NORMALIZE] = 1,
     [ABILITY_OBLIVIOUS] = 2,
+    [ABILITY_ORIGIN] = 0,
     [ABILITY_OVERCOAT] = 3,
     [ABILITY_OVERGROW] = 2,
     [ABILITY_OWN_TEMPO] = 2,
@@ -5497,6 +5510,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         case ABILITY_SCHOOLING:
                         case ABILITY_SHIELDS_DOWN:
                         case ABILITY_STANCE_CHANGE:
+                        case ABILITY_TIME_TRAVELLER:
                             continue;
                         default:
                             gLastUsedAbilities[y] = gBattleMons[gBattlerAttacker].abilities[y] = ABILITY_MUMMY;
@@ -5532,6 +5546,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         case ABILITY_STANCE_CHANGE:
                         case ABILITY_WONDER_GUARD:
                         case ABILITY_ZEN_MODE:
+                        case ABILITY_TIME_TRAVELLER:
                             break;
                         default:
                             switch (gBattleMons[gBattlerTarget].abilities[x])
@@ -5549,6 +5564,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                             case ABILITY_STANCE_CHANGE:
                             case ABILITY_WONDER_GUARD:
                             case ABILITY_ZEN_MODE:
+                            case ABILITY_TIME_TRAVELLER:
                                 break;
                             default:
                                 gLastUsedAbilities[x] = gBattleMons[gBattlerAttacker].abilities[x];
@@ -6032,6 +6048,20 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     BattleScriptExecute(BattleScript_SuctionCupsActivates);
                     effect++;
                 }
+                break;
+            case ABILITY_DISARM:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                 && gBattleMons[gBattlerTarget].hp != 0
+                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && IsMoveMakingContact(move, gBattlerAttacker)
+                 && !(gStatuses3[gBattlerTarget] & STATUS3_EMBARGO))
+                {
+                    gLastUsedAbility = ABILITY_DISARM;
+                    BattleScriptPushCursor();
+                    BattleScriptExecute(BattleScript_DisarmActivates);
+                    effect++;
+                }
+                break;
             }
         }
         break;
@@ -6248,8 +6278,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
             if (HasAbility(ABILITY_INTIMIDATE, GetBattlerAbilities(i)) && gBattleResources->flags->flags[i] & RESOURCE_FLAG_INTIMIDATED
                 && (IsBattlerAlive(BATTLE_OPPOSITE(i)) || IsBattlerAlive(BATTLE_PARTNER(BATTLE_OPPOSITE(i))))) // At least one opposing mon has to be alive.
             {
-                gBattleResources->flags->flags[i] &= ~(RESOURCE_FLAG_INTIMIDATED);
                 gLastUsedAbility = ABILITY_INTIMIDATE;
+                gBattleResources->flags->flags[i] &= ~(RESOURCE_FLAG_INTIMIDATED);
                 if (caseID == ABILITYEFFECT_INTIMIDATE1)
                 {
                     BattleScriptPushCursorAndCallback(BattleScript_IntimidateActivatesEnd3);
@@ -6318,13 +6348,14 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
 
                 if (effect)
                 {
-                    //gLastUsedAbility = ABILITY_TRACE;
                     if (caseID == ABILITYEFFECT_TRACE1)
                     {
+                        gLastUsedAbility = ABILITY_TRACE;
                         BattleScriptPushCursorAndCallback(BattleScript_TraceActivatesEnd3);
                     }
                     else
                     {
+                        gLastUsedAbility = ABILITY_TRACE;
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_TraceActivates;
                     }
@@ -6388,6 +6419,7 @@ bool32 IsNeutralizingGasBannedAbility(u16 ability)
     case ABILITY_ICE_FACE:
     case ABILITY_AS_ONE_ICE_RIDER:
     case ABILITY_AS_ONE_SHADOW_RIDER:
+    case ABILITY_TIME_TRAVELLER:
         return TRUE;
     default:
         return FALSE;
@@ -9917,7 +9949,7 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
     if (moveType == TYPE_GROUND && !IsBattlerGrounded(battlerDef) && !(gBattleMoves[move].flags & FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING))
     {
         modifier = UQ_4_12(0.0);
-        if (recordAbilities && HasAbility(ABILITY_LEVITATE, abilities))
+        if (/*recordAbilities && */HasAbility(ABILITY_LEVITATE, abilities)) //TODO: probably don't need the recordAbilities check.
         {
             gLastUsedAbility = ABILITY_LEVITATE;
             gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
@@ -9925,9 +9957,31 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
             gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
         }
     }
-    else if (B_SHEER_COLD_IMMUNITY >= GEN_7 && move == MOVE_SHEER_COLD && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
+
+    if (moveType == TYPE_GRASS && HasAbility(ABILITY_SAP_SIPPER, abilities)) //TODO: this is new, double check that it works properly
     {
         modifier = UQ_4_12(0.0);
+        gLastUsedAbility = ABILITY_SAP_SIPPER;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[battlerDef] = 0;
+    }
+
+    if (moveType == TYPE_ELECTRIC && HasAbility(ABILITY_LIGHTNING_ROD, abilities)) //TODO: this is new, double check that it works properly
+    {
+        modifier = UQ_4_12(0.0);
+        gLastUsedAbility = ABILITY_LIGHTNING_ROD;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[battlerDef] = 0;
+    }
+
+    if (B_SHEER_COLD_IMMUNITY >= GEN_7 && move == MOVE_SHEER_COLD && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
+    {
+        modifier = UQ_4_12(0.0);
+    }
+
+    if (B_GLARE_GHOST >= GEN_4 && move == MOVE_GLARE && IS_BATTLER_OF_TYPE(battlerDef, TYPE_GHOST))
+    {
+        modifier = UQ_4_12(1.0);
     }
 
     // Thousand Arrows ignores type modifiers for flying mons
@@ -9942,8 +9996,8 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
         && gBattleMoves[move].power)
     {
         modifier = UQ_4_12(0.0);
-        if (recordAbilities)
-        {
+        //if (recordAbilities) //TODO: probably don't need this.
+        //{
             if (HasAbility(ABILITY_WONDER_GUARD, abilities))
                 gLastUsedAbility = ABILITY_WONDER_GUARD;
             if (HasAbility(ABILITY_TELEPATHY, abilities))
@@ -9951,7 +10005,7 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
             gMoveResultFlags |= MOVE_RESULT_MISSED;
             gLastLandedMoves[battlerDef] = 0;
             gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_DMG;
-        }
+        //}
     }
 
     return modifier;

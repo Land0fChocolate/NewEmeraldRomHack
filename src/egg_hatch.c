@@ -878,6 +878,7 @@ u8 GetEggCyclesToSubtract(void)
             u16 *abilities = GetMonAbilities(&gPlayerParty[i]);
             if (HasAbility(ABILITY_MAGMA_ARMOR, abilities) 
                 || HasAbility(ABILITY_FLAME_BODY, abilities)
+                || HasAbility(ABILITY_LAVA_BODY, abilities)
                 || HasAbility(ABILITY_STEAM_ENGINE, abilities))
                 return 2;
         }

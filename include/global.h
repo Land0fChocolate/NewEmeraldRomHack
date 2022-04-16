@@ -1033,8 +1033,8 @@ struct SaveBlock1
     /*0x31A8*/ u8 giftRibbons[GIFT_RIBBONS_COUNT];
     /*0x31B3*/ struct ExternalEventData externalEventData;
     /*0x31C7*/ struct ExternalEventFlags externalEventFlags;
-    /*0x31DC*/ struct Roamer roamer;
-    /*0x31F8*/ struct EnigmaBerry enigmaBerry;
+    /*0x31DC*/ struct Roamer roamer; //roamer has a size of 21
+    /*0x31F8*/ struct EnigmaBerry enigmaBerry; //TODO: replace with roamer2 (Roamer Expansion). enigmaBerry has a size of 52
     /*0x322C*/ struct MEventBuffers unk_322C;
     /*0x3???*/ u8 dexSeen[DEX_FLAGS_NO];
     /*0x3???*/ u8 dexCaught[DEX_FLAGS_NO];

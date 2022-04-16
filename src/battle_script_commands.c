@@ -1958,7 +1958,9 @@ static void Cmd_adjustdamage(void)
         RecordItemEffectBattle(gBattlerTarget, holdEffect);
         gSpecialStatuses[gBattlerTarget].focusSashed = TRUE;
     }
-    else if (HasAbility(ABILITY_STURDY, GetBattlerAbilities(gBattlerTarget)) && BATTLER_MAX_HP(gBattlerTarget))
+    else if (HasAbility(ABILITY_STURDY, GetBattlerAbilities(gBattlerTarget))
+        && BATTLER_MAX_HP(gBattlerTarget)
+        && (gBattleMons[gBattlerTarget].maxHP != 1)) // so Shedinja isn't unkillable if it gets Sturdy.
     {
         gSpecialStatuses[gBattlerTarget].sturdied = TRUE;
     }
@@ -2639,7 +2641,6 @@ void SetMoveEffect(bool32 primary, u32 certain)
     if (HasAbility(ABILITY_SHEER_FORCE, attackerAbilities)
         && gBattleMoves[gCurrentMove].flags & FLAG_SHEER_FORCE_BOOST
         && affectsUser != MOVE_EFFECT_AFFECTS_USER)
-    //if (TestSheerForceFlag(gBattlerAttacker, gCurrentMove) && affectsUser != MOVE_EFFECT_AFFECTS_USER) //TODO: do we need this if instead?
         INCREMENT_RESET_RETURN
 
     if (gBattleMons[gEffectBattler].hp == 0
@@ -5460,6 +5461,7 @@ static void Cmd_moveend(void)
                       && gBattleMons[battler].item == ITEM_NONE                                         // Pickpocketer can't have an item already
                       && CanStealItem(battler, gBattlerAttacker, gBattleMons[gBattlerAttacker].item))   // Cannot steal plates, mega stones, etc
                     {
+                        gLastUsedAbility = ABILITY_PICKPOCKET;
                         gBattlerTarget = gBattlerAbility = battler;
                         // Battle scripting is super brittle so we shall do the item exchange now (if possible)
                         if (!HasAbility(ABILITY_STICKY_HOLD, GetBattlerAbilities(gBattlerAttacker)))
@@ -8129,13 +8131,13 @@ static void Cmd_various(void)
             return;
         }
         break;
-    case VARIOUS_TRY_ACTIVATE_RECEIVER: // Partner gets fainted's ally ability //TODO: update for multi ability (should work like Trace using sTraceAbilityRatings but can't bring that into this file)
+    case VARIOUS_TRY_ACTIVATE_RECEIVER: // Partner gets fainted's ally ability
         gBattlerAbility = BATTLE_PARTNER(gActiveBattler);
         memcpy(battlerAbilities, GetBattlerAbilities(gBattlerAbility), sizeof(battlerAbilities));
         if (IsBattlerAlive(gBattlerAbility)
             && (HasAbility(ABILITY_RECEIVER, battlerAbilities) || HasAbility(ABILITY_POWER_OF_ALCHEMY, battlerAbilities)))
         {
-            u16 ability, battlerAbility, abilityRating = -1;
+            u16 ability, battlerAbility;
             for (x = 0; x < NUM_ABILITY_SLOTS; x++)
             {
                 battlerAbility = gBattleMons[gActiveBattler].abilities[x];
@@ -8150,9 +8152,10 @@ static void Cmd_various(void)
                 case ABILITY_SCHOOLING:         case ABILITY_COMATOSE:
                 case ABILITY_SHIELDS_DOWN:      case ABILITY_DISGUISE:
                 case ABILITY_RKS_SYSTEM:        case ABILITY_TRACE:
+                case ABILITY_TIME_TRAVELLER:    case ABILITY_ORIGIN:
                     break;
                 default:
-                    gBattleStruct->tracedAbilities[x] = ability; //TODO: currently picking any ability. Update to use sTraceAbilityRatings.
+                    gBattleStruct->tracedAbilities[x] = ability; // As I cannot bring in sTraceAbilityRatings to this file, we'll just take the first viable ability.
                     gBattleScripting.battler = gActiveBattler;
                     BattleScriptPush(gBattlescriptCurrInstr + 3);
                     gBattlescriptCurrInstr = BattleScript_ReceiverActivates;
@@ -10049,11 +10052,14 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
     bool32 notProtectAffected = FALSE;
     u32 index;
     bool32 affectsUser = (flags & MOVE_EFFECT_AFFECTS_USER);
+    u16 battlerAbilities[NUM_ABILITY_SLOTS];
 
     if (affectsUser)
         gActiveBattler = gBattlerAttacker;
     else
         gActiveBattler = gBattlerTarget;
+
+    memcpy(battlerAbilities, GetBattlerAbilities(gActiveBattler), sizeof(battlerAbilities));
 
     gSpecialStatuses[gActiveBattler].changedStatsBattlerId = gBattlerAttacker;
 
@@ -10067,7 +10073,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
         notProtectAffected++;
     flags &= ~(STAT_BUFF_NOT_PROTECT_AFFECTED);
 
-    if (HasAbility(ABILITY_CONTRARY, GetBattlerAbilities(gActiveBattler)))
+    if (HasAbility(ABILITY_CONTRARY, battlerAbilities))
     {
         statValue ^= STAT_BUFF_NEGATIVE;
         gBattleScripting.statChanger ^= STAT_BUFF_NEGATIVE;
@@ -10077,7 +10083,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             gBattleScripting.moveEffect = ReverseStatChangeMoveEffect(gBattleScripting.moveEffect);
         }
     }
-    else if (HasAbility(ABILITY_SIMPLE, GetBattlerAbilities(gActiveBattler)))
+    else if (HasAbility(ABILITY_SIMPLE, battlerAbilities))
     {
         statValue = (SET_STAT_BUFF_VALUE(GET_STAT_BUFF_VALUE(statValue) * 2)) | ((statValue <= -1) ? STAT_BUFF_NEGATIVE : 0);
     }
@@ -10086,8 +10092,6 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
 
     if (statValue <= -1) // Stat decrease.
     {
-        u16 *battlerAbilities = GetBattlerAbilities(gActiveBattler);
-
         if (gSideTimers[GET_BATTLER_SIDE(gActiveBattler)].mistTimer
             && !certain && gCurrentMove != MOVE_CURSE
             && !(gActiveBattler == gBattlerTarget && HasAbility(ABILITY_INFILTRATOR, GetBattlerAbilities(gBattlerAttacker))))
@@ -10114,6 +10118,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             gBattlescriptCurrInstr = BattleScript_ButItFailed;
             return STAT_CHANGE_DIDNT_WORK;
         }
+
         else if ((HasAbility(ABILITY_CLEAR_BODY, battlerAbilities)
                   || HasAbility(ABILITY_FULL_METAL_BODY, battlerAbilities)
                   || HasAbility(ABILITY_WHITE_SMOKE, battlerAbilities))
@@ -10853,6 +10858,7 @@ static void Cmd_weatherdamage(void)
                 && !BATTLER_MAX_HP(gBattlerAttacker)
                 && !(gStatuses3[gBattlerAttacker] & STATUS3_HEAL_BLOCK))
             {
+                gLastUsedAbility = ABILITY_ICE_BODY;
                 gBattlerAbility = gBattlerAttacker;
                 gBattleMoveDamage = gBattleMons[gBattlerAttacker].maxHP / 16;
                 if (gBattleMoveDamage == 0)

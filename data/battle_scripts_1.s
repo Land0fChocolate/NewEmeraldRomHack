@@ -405,7 +405,6 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHit                     @ EFFECT_BOLT_BEAK
 	.4byte BattleScript_EffectWarDance                @ EFFECT_WAR_DANCE
 	.4byte BattleScript_EffectSerpentDance            @ EFFECT_SERPENT_DANCE
-	.4byte BattleScript_HeartSwapAbilityActivates     @ EFFECT_HEART_SWAP @ TODO: Likely bugged. Remake.
 
 BattleScript_EffectShellSideArm:
 	shellsidearmcheck
@@ -8268,6 +8267,13 @@ BattleScript_SoulSiphonHeal:
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 BattleScript_SoulSiphonEnd:
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_DisarmActivates::
+	call BattleScript_AbilityPopUp
+	setembargo BattleScript_ButItFailed
+	printstring STRINGID_PKMNCANTUSEITEMSANYMORE
 	waitmessage B_WAIT_TIME_LONG
 	return
 

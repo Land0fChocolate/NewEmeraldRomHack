@@ -216,13 +216,13 @@ struct BattleMsgData
     u16 currentMove;
     u16 originallyUsedMove;
     u16 lastItem;
-    u16 lastAbility; //TODO: check if need update for multi ability (probably not)
+    u16 lastAbility; //TODO: check if need update for multi ability
     u8 scrActive;
     u8 unk1605E;
     u8 hpScale;
     u8 itemEffectBattler;
     u8 moveType;
-    u16 abilities[MAX_BATTLERS_COUNT]; // this is a collection of all battler abilities //TODO: find a way to implement multi ability here
+    u16 abilities[MAX_BATTLERS_COUNT]; // this is a collection of all battler abilities
     u8 textBuffs[3][TEXT_BUFF_ARRAY_COUNT];
 };
 
