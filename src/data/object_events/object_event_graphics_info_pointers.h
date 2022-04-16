@@ -240,6 +240,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zinnia;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ZinniaMagma;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ZinniaAqua;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Courtney;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -492,6 +493,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ZINNIA] =                   &gObjectEventGraphicsInfo_Zinnia,
     [OBJ_EVENT_GFX_ZINNIA_MAGMA] =             &gObjectEventGraphicsInfo_ZinniaMagma,
     [OBJ_EVENT_GFX_ZINNIA_AQUA] =              &gObjectEventGraphicsInfo_ZinniaAqua,
+    [OBJ_EVENT_GFX_COURTNEY] =                 &gObjectEventGraphicsInfo_Courtney,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
