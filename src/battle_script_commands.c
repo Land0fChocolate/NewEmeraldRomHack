@@ -1960,7 +1960,7 @@ static void Cmd_adjustdamage(void)
     }
     else if (HasAbility(ABILITY_STURDY, GetBattlerAbilities(gBattlerTarget))
         && BATTLER_MAX_HP(gBattlerTarget)
-        && (gBattleMons[gBattlerTarget].species != SPECIES_SHEDINJA)) // so Shedinja isn't unkillable if it gets Sturdy.
+        && (gBattleMons[gBattlerTarget].maxHP != 1)) // so Shedinja isn't unkillable if it gets Sturdy.
     {
         gSpecialStatuses[gBattlerTarget].sturdied = TRUE;
     }
@@ -10052,11 +10052,14 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
     bool32 notProtectAffected = FALSE;
     u32 index;
     bool32 affectsUser = (flags & MOVE_EFFECT_AFFECTS_USER);
+    u16 battlerAbilities[NUM_ABILITY_SLOTS];
 
     if (affectsUser)
         gActiveBattler = gBattlerAttacker;
     else
         gActiveBattler = gBattlerTarget;
+
+    memcpy(battlerAbilities, GetBattlerAbilities(gActiveBattler), sizeof(battlerAbilities));
 
     gSpecialStatuses[gActiveBattler].changedStatsBattlerId = gBattlerAttacker;
 
@@ -10070,7 +10073,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
         notProtectAffected++;
     flags &= ~(STAT_BUFF_NOT_PROTECT_AFFECTED);
 
-    if (HasAbility(ABILITY_CONTRARY, GetBattlerAbilities(gActiveBattler)))
+    if (HasAbility(ABILITY_CONTRARY, battlerAbilities))
     {
         statValue ^= STAT_BUFF_NEGATIVE;
         gBattleScripting.statChanger ^= STAT_BUFF_NEGATIVE;
@@ -10080,7 +10083,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             gBattleScripting.moveEffect = ReverseStatChangeMoveEffect(gBattleScripting.moveEffect);
         }
     }
-    else if (HasAbility(ABILITY_SIMPLE, GetBattlerAbilities(gActiveBattler)))
+    else if (HasAbility(ABILITY_SIMPLE, battlerAbilities))
     {
         statValue = (SET_STAT_BUFF_VALUE(GET_STAT_BUFF_VALUE(statValue) * 2)) | ((statValue <= -1) ? STAT_BUFF_NEGATIVE : 0);
     }
@@ -10089,8 +10092,6 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
 
     if (statValue <= -1) // Stat decrease.
     {
-        u16 *battlerAbilities = GetBattlerAbilities(gActiveBattler);
-
         if (gSideTimers[GET_BATTLER_SIDE(gActiveBattler)].mistTimer
             && !certain && gCurrentMove != MOVE_CURSE
             && !(gActiveBattler == gBattlerTarget && HasAbility(ABILITY_INFILTRATOR, GetBattlerAbilities(gBattlerAttacker))))
@@ -10117,6 +10118,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             gBattlescriptCurrInstr = BattleScript_ButItFailed;
             return STAT_CHANGE_DIDNT_WORK;
         }
+
         else if ((HasAbility(ABILITY_CLEAR_BODY, battlerAbilities)
                   || HasAbility(ABILITY_FULL_METAL_BODY, battlerAbilities)
                   || HasAbility(ABILITY_WHITE_SMOKE, battlerAbilities))

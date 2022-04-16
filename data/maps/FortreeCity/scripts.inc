@@ -12,7 +12,7 @@ FortreeCity_OnResume:
 	end
 
 FortreeCity_EventScript_Man::
-	msgbox FortreeCity_Text_SawGiganticPokemonInSky, MSGBOX_NPC
+	msgbox FortreeCity_Text_SawJetPokemonInSky, MSGBOX_NPC
 	end
 
 FortreeCity_EventScript_Woman::
@@ -109,11 +109,11 @@ FortreeCity_Movement_KecleonFlee:
 	walk_right
 	step_end
 
-FortreeCity_Text_SawGiganticPokemonInSky:
-	.string "No one believes me, but I saw this\n"
-	.string "gigantic Pokémon in the sky.\p"
-	.string "It seemed to squirm as it flew toward\n"
-	.string "Route 131.\p"
+FortreeCity_Text_SawJetPokemonInSky:
+	.string "No one believes me, but I saw these\n"
+	.string "jet-like Pokémon in the sky.\p"
+	.string "I've never seen any Pokémon like them\n"
+	.string "before in all my life.\p"
 	.string "By the way… Sniff…\n"
 	.string "Um… You, uh…smell singed.\p"
 	.string "Were you at a volcano or something?$"
