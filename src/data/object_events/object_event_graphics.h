@@ -385,3 +385,5 @@ const u16 gObjectEventPal_Matt[] = INCBIN_U16("graphics/object_events/pics/peopl
 const u32 gObjectEventPic_Matt[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/matt.4bpp");
 const u16 gObjectEventPal_Shelly[] = INCBIN_U16("graphics/object_events/pics/people/team_aqua/shelly.gbapal");
 const u32 gObjectEventPic_Shelly[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/shelly.4bpp");
+const u16 gObjectEventPal_FairyTaleGirl[] = INCBIN_U16("graphics/object_events/pics/people/fairy_tale_girl.gbapal");
+const u32 gObjectEventPic_FairyTaleGirl[] = INCBIN_U32("graphics/object_events/pics/people/fairy_tale_girl.4bpp");
