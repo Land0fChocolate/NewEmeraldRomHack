@@ -379,3 +379,5 @@ const u16 gObjectEventPal_ZinniaAqua[] = INCBIN_U16("graphics/object_events/pics
 const u32 gObjectEventPic_ZinniaAqua[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/zinnia_aqua.4bpp");
 const u16 gObjectEventPal_Courtney[] = INCBIN_U16("graphics/object_events/pics/people/team_magma/courtney.gbapal");
 const u32 gObjectEventPic_Courtney[] = INCBIN_U32("graphics/object_events/pics/people/team_magma/courtney.4bpp");
+const u16 gObjectEventPal_Tabitha[] = INCBIN_U16("graphics/object_events/pics/people/team_magma/tabitha.gbapal");
+const u32 gObjectEventPic_Tabitha[] = INCBIN_U32("graphics/object_events/pics/people/team_magma/tabitha.4bpp");
