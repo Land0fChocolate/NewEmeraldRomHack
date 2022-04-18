@@ -242,6 +242,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ZinniaMagma;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ZinniaAqua;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Courtney;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tabitha;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Matt;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shelly;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -497,7 +499,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_COURTNEY] =                 &gObjectEventGraphicsInfo_Courtney,
     [OBJ_EVENT_GFX_TABITHA] =                  &gObjectEventGraphicsInfo_Tabitha,
     [OBJ_EVENT_GFX_MATT] =                     &gObjectEventGraphicsInfo_Matt,
-    //[OBJ_EVENT_GFX_SHELLY] =                   &gObjectEventGraphicsInfo_Shelly,
+    [OBJ_EVENT_GFX_SHELLY] =                   &gObjectEventGraphicsInfo_Shelly,
     //[OBJ_EVENT_GFX_FAIRY_TALE_GIRL] =          &gObjectEventGraphicsInfo_FairyTaleGirl,
 };
 
