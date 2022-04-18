@@ -496,7 +496,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ZINNIA_AQUA] =              &gObjectEventGraphicsInfo_ZinniaAqua,
     [OBJ_EVENT_GFX_COURTNEY] =                 &gObjectEventGraphicsInfo_Courtney,
     [OBJ_EVENT_GFX_TABITHA] =                  &gObjectEventGraphicsInfo_Tabitha,
-    //[OBJ_EVENT_GFX_MATT] =                     &gObjectEventGraphicsInfo_Matt,
+    [OBJ_EVENT_GFX_MATT] =                     &gObjectEventGraphicsInfo_Matt,
     //[OBJ_EVENT_GFX_SHELLY] =                   &gObjectEventGraphicsInfo_Shelly,
     //[OBJ_EVENT_GFX_FAIRY_TALE_GIRL] =          &gObjectEventGraphicsInfo_FairyTaleGirl,
 };
