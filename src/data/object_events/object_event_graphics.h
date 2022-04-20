@@ -161,6 +161,7 @@ const u32 gObjectEventPic_HotSpringsOldWoman[] = INCBIN_U32("graphics/object_eve
 const u32 gObjectEventPic_LatiasLatios[] = INCBIN_U32("graphics/object_events/pics/pokemon/latias_latios.4bpp");
 const u32 gObjectEventPic_GameboyKid[] = INCBIN_U32("graphics/object_events/pics/people/gameboy_kid.4bpp");
 const u32 gObjectEventPic_ContestJudge[] = INCBIN_U32("graphics/object_events/pics/people/contest_judge.4bpp");
+const u16 gObjectEventPal_Archie[] = INCBIN_U16("graphics/object_events/pics/people/team_aqua/archie.gbapal");
 const u32 gObjectEventPic_Archie[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/archie.4bpp");
 const u32 gObjectEventPic_Maxie[] = INCBIN_U32("graphics/object_events/pics/people/team_magma/maxie.4bpp");
 const u32 gObjectEventPic_Kyogre[] = INCBIN_U32("graphics/object_events/pics/pokemon/kyogre.4bpp");
