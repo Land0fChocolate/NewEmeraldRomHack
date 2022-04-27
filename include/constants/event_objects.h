@@ -244,8 +244,12 @@
 #define OBJ_EVENT_GFX_ZINNIA_MAGMA               240
 #define OBJ_EVENT_GFX_ZINNIA_AQUA                241
 #define OBJ_EVENT_GFX_COURTNEY                   242
+#define OBJ_EVENT_GFX_TABITHA                    243
+#define OBJ_EVENT_GFX_MATT                       244
+#define OBJ_EVENT_GFX_SHELLY                     245
+#define OBJ_EVENT_GFX_FAIRY_TALE_GIRL            246
 
-#define NUM_OBJ_EVENT_GFX                        243
+#define NUM_OBJ_EVENT_GFX                        247
 
 
 // These are dynamic object gfx ids.
