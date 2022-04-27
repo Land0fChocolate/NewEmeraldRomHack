@@ -245,6 +245,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tabitha;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Matt;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shelly;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FairyTaleGirl;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Linoone;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -502,6 +503,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MATT] =                     &gObjectEventGraphicsInfo_Matt,
     [OBJ_EVENT_GFX_SHELLY] =                   &gObjectEventGraphicsInfo_Shelly,
     [OBJ_EVENT_GFX_FAIRY_TALE_GIRL] =          &gObjectEventGraphicsInfo_FairyTaleGirl,
+    [OBJ_EVENT_GFX_LINOONE] =                  &gObjectEventGraphicsInfo_Linoone,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
