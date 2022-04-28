@@ -399,3 +399,5 @@ const u16 gObjectEventPal_Ludicolo[] = INCBIN_U16("graphics/object_events/pics/p
 const u32 gObjectEventPic_Ludicolo[] = INCBIN_U32("graphics/object_events/pics/pokemon/ludicolo.4bpp");
 const u16 gObjectEventPal_Nuzleaf[] = INCBIN_U16("graphics/object_events/pics/pokemon/nuzleaf.gbapal");
 const u32 gObjectEventPic_Nuzleaf[] = INCBIN_U32("graphics/object_events/pics/pokemon/nuzleaf.4bpp");
+const u16 gObjectEventPal_Taillow[] = INCBIN_U16("graphics/object_events/pics/pokemon/taillow.gbapal");
+const u32 gObjectEventPic_Taillow[] = INCBIN_U32("graphics/object_events/pics/pokemon/taillow.4bpp");
