@@ -251,8 +251,9 @@
 #define OBJ_EVENT_GFX_LINOONE                    247
 #define OBJ_EVENT_GFX_WURMPLE                    248
 #define OBJ_EVENT_GFX_BEAUTIFLY                  249
+#define OBJ_EVENT_GFX_LUDICOLO                   250
 
-#define NUM_OBJ_EVENT_GFX                        250
+#define NUM_OBJ_EVENT_GFX                        251
 
 
 // These are dynamic object gfx ids.
