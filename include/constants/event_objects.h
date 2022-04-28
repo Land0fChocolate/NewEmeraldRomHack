@@ -255,8 +255,10 @@
 #define OBJ_EVENT_GFX_NUZLEAF                    251
 #define OBJ_EVENT_GFX_TAILLOW                    252
 #define OBJ_EVENT_GFX_RALTS                      253
+#define OBJ_EVENT_GFX_SHROOMISH                  254
+#define OBJ_EVENT_GFX_WHISMUR                    255
 
-#define NUM_OBJ_EVENT_GFX                        254
+#define NUM_OBJ_EVENT_GFX                        256
 
 
 // These are dynamic object gfx ids.
