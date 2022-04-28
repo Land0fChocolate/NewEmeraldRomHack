@@ -1997,6 +1997,18 @@ static const struct SpriteFrameImage sPicTable_Ludicolo[] = {
     overworld_frame(gObjectEventPic_Ludicolo, 4, 4, 8),
 };
 
+static const struct SpriteFrameImage sPicTable_Nuzleaf[] = {
+    overworld_frame(gObjectEventPic_Nuzleaf, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Nuzleaf, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Nuzleaf, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Nuzleaf, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Nuzleaf, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Nuzleaf, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Nuzleaf, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Nuzleaf, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Nuzleaf, 4, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_Wingull[] = {
     overworld_frame(gObjectEventPic_Wingull, 2, 2, 0),
     overworld_frame(gObjectEventPic_Wingull, 2, 2, 2),
