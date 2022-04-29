@@ -429,4 +429,7 @@ const u16 gObjectEventPal_Machop[] = INCBIN_U16("graphics/object_events/pics/pok
 const u32 gObjectEventPic_Machop[] = INCBIN_U32("graphics/object_events/pics/pokemon/machop.4bpp");
 const u16 gObjectEventPal_Machoke[] = INCBIN_U16("graphics/object_events/pics/pokemon/machoke.gbapal");
 const u32 gObjectEventPic_Machoke[] = INCBIN_U32("graphics/object_events/pics/pokemon/machoke.4bpp");
-
+const u16 gObjectEventPal_Meditite[] = INCBIN_U16("graphics/object_events/pics/pokemon/meditite.gbapal");
+const u32 gObjectEventPic_Meditite[] = INCBIN_U32("graphics/object_events/pics/pokemon/meditite.4bpp");
+const u16 gObjectEventPal_Medicham[] = INCBIN_U16("graphics/object_events/pics/pokemon/medicham.gbapal");
+const u32 gObjectEventPic_Medicham[] = INCBIN_U32("graphics/object_events/pics/pokemon/medicham.4bpp");
