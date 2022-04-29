@@ -407,3 +407,7 @@ const u16 gObjectEventPal_Shroomish[] = INCBIN_U16("graphics/object_events/pics/
 const u32 gObjectEventPic_Shroomish[] = INCBIN_U32("graphics/object_events/pics/pokemon/shroomish.4bpp");
 const u16 gObjectEventPal_Whismur[] = INCBIN_U16("graphics/object_events/pics/pokemon/whismur.gbapal");
 const u32 gObjectEventPic_Whismur[] = INCBIN_U32("graphics/object_events/pics/pokemon/whismur.4bpp");
+const u16 gObjectEventPal_Abra[] = INCBIN_U16("graphics/object_events/pics/pokemon/abra.gbapal");
+const u32 gObjectEventPic_Abra[] = INCBIN_U32("graphics/object_events/pics/pokemon/abra.4bpp");
+const u16 gObjectEventPal_Kadabra[] = INCBIN_U16("graphics/object_events/pics/pokemon/kadabra.gbapal");
+const u32 gObjectEventPic_Kadabra[] = INCBIN_U32("graphics/object_events/pics/pokemon/kadabra.4bpp");

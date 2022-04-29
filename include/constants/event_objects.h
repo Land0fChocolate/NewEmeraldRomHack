@@ -257,8 +257,10 @@
 #define OBJ_EVENT_GFX_RALTS                      253
 #define OBJ_EVENT_GFX_SHROOMISH                  254
 #define OBJ_EVENT_GFX_WHISMUR                    255
+#define OBJ_EVENT_GFX_ABRA                       256
+#define OBJ_EVENT_GFX_KADABRA                    257
 
-#define NUM_OBJ_EVENT_GFX                        256
+#define NUM_OBJ_EVENT_GFX                        258
 
 
 // These are dynamic object gfx ids.
