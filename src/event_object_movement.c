@@ -480,6 +480,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_WHISMUR                 0x1136
 #define OBJ_EVENT_PAL_TAG_ABRA                    0x1137
 #define OBJ_EVENT_PAL_TAG_KADABRA                 0x1138
+#define OBJ_EVENT_PAL_TAG_MAKUHITA                0x1139
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF //4607
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -547,6 +548,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Whismur,               OBJ_EVENT_PAL_TAG_WHISMUR},
     {gObjectEventPal_Abra,                  OBJ_EVENT_PAL_TAG_ABRA},
     {gObjectEventPal_Kadabra,               OBJ_EVENT_PAL_TAG_KADABRA},
+    {gObjectEventPal_Makuhita,              OBJ_EVENT_PAL_TAG_MAKUHITA},
     {NULL,                                  0x0000},
 };
 
