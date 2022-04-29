@@ -271,8 +271,9 @@
 #define OBJ_EVENT_GFX_MACHOKE_FACING_AWAY        267
 #define OBJ_EVENT_GFX_MEDITITE                   268
 #define OBJ_EVENT_GFX_MEDICHAM                   269
+#define OBJ_EVENT_GFX_ELECTRIKE                  270
 
-#define NUM_OBJ_EVENT_GFX                        270
+#define NUM_OBJ_EVENT_GFX                        271
 
 
 // These are dynamic object gfx ids.

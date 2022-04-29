@@ -268,6 +268,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MachokeCarryingBox
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MachokeFacingAway;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meditite;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Medicham;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Electrike;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -548,6 +549,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MACHOKE_FACING_AWAY] =      &gObjectEventGraphicsInfo_MachokeFacingAway,
     [OBJ_EVENT_GFX_MEDITITE] =                 &gObjectEventGraphicsInfo_Meditite,
     [OBJ_EVENT_GFX_MEDICHAM] =                 &gObjectEventGraphicsInfo_Medicham,
+    [OBJ_EVENT_GFX_ELECTRIKE] =                &gObjectEventGraphicsInfo_Electrike,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

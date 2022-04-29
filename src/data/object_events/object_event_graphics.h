@@ -433,3 +433,5 @@ const u16 gObjectEventPal_Meditite[] = INCBIN_U16("graphics/object_events/pics/p
 const u32 gObjectEventPic_Meditite[] = INCBIN_U32("graphics/object_events/pics/pokemon/meditite.4bpp");
 const u16 gObjectEventPal_Medicham[] = INCBIN_U16("graphics/object_events/pics/pokemon/medicham.gbapal");
 const u32 gObjectEventPic_Medicham[] = INCBIN_U32("graphics/object_events/pics/pokemon/medicham.4bpp");
+const u16 gObjectEventPal_Electrike[] = INCBIN_U16("graphics/object_events/pics/pokemon/electrike.gbapal");
+const u32 gObjectEventPic_Electrike[] = INCBIN_U32("graphics/object_events/pics/pokemon/electrike.4bpp");
