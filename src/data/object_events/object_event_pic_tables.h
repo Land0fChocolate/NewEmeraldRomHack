@@ -2093,6 +2093,18 @@ static const struct SpriteFrameImage sPicTable_Makuhita[] = {
     overworld_frame(gObjectEventPic_Makuhita, 4, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_Nosepass[] = {
+    overworld_frame(gObjectEventPic_Nosepass, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Nosepass, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Nosepass, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Nosepass, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Nosepass, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Nosepass, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Nosepass, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Nosepass, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Nosepass, 4, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_Wingull[] = {
     overworld_frame(gObjectEventPic_Wingull, 2, 2, 0),
     overworld_frame(gObjectEventPic_Wingull, 2, 2, 2),

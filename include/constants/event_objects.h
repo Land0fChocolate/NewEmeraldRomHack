@@ -260,8 +260,9 @@
 #define OBJ_EVENT_GFX_ABRA                       256
 #define OBJ_EVENT_GFX_KADABRA                    257
 #define OBJ_EVENT_GFX_MAKUHITA                   258
+#define OBJ_EVENT_GFX_NOSEPASS                   259
 
-#define NUM_OBJ_EVENT_GFX                        259
+#define NUM_OBJ_EVENT_GFX                        260
 
 
 // These are dynamic object gfx ids.

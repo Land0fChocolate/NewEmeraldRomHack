@@ -257,6 +257,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Whismur;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Abra;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kadabra;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Makuhita;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Nosepass;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -526,6 +527,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ABRA] =                     &gObjectEventGraphicsInfo_Abra,
     [OBJ_EVENT_GFX_KADABRA] =                  &gObjectEventGraphicsInfo_Kadabra,
     [OBJ_EVENT_GFX_MAKUHITA] =                 &gObjectEventGraphicsInfo_Makuhita,
+    [OBJ_EVENT_GFX_NOSEPASS] =                 &gObjectEventGraphicsInfo_Nosepass,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

@@ -413,3 +413,5 @@ const u16 gObjectEventPal_Kadabra[] = INCBIN_U16("graphics/object_events/pics/po
 const u32 gObjectEventPic_Kadabra[] = INCBIN_U32("graphics/object_events/pics/pokemon/kadabra.4bpp");
 const u16 gObjectEventPal_Makuhita[] = INCBIN_U16("graphics/object_events/pics/pokemon/makuhita.gbapal");
 const u32 gObjectEventPic_Makuhita[] = INCBIN_U32("graphics/object_events/pics/pokemon/makuhita.4bpp");
+const u16 gObjectEventPal_Nosepass[] = INCBIN_U16("graphics/object_events/pics/pokemon/nosepass.gbapal");
+const u32 gObjectEventPic_Nosepass[] = INCBIN_U32("graphics/object_events/pics/pokemon/nosepass.4bpp");
