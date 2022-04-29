@@ -261,8 +261,10 @@
 #define OBJ_EVENT_GFX_KADABRA                    257
 #define OBJ_EVENT_GFX_MAKUHITA                   258
 #define OBJ_EVENT_GFX_NOSEPASS                   259
+#define OBJ_EVENT_GFX_GEODUDE                    260
+#define OBJ_EVENT_GFX_GRAVELLER                  261
 
-#define NUM_OBJ_EVENT_GFX                        260
+#define NUM_OBJ_EVENT_GFX                        262
 
 
 // These are dynamic object gfx ids.

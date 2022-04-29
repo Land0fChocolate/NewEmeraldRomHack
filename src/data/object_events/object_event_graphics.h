@@ -415,3 +415,7 @@ const u16 gObjectEventPal_Makuhita[] = INCBIN_U16("graphics/object_events/pics/p
 const u32 gObjectEventPic_Makuhita[] = INCBIN_U32("graphics/object_events/pics/pokemon/makuhita.4bpp");
 const u16 gObjectEventPal_Nosepass[] = INCBIN_U16("graphics/object_events/pics/pokemon/nosepass.gbapal");
 const u32 gObjectEventPic_Nosepass[] = INCBIN_U32("graphics/object_events/pics/pokemon/nosepass.4bpp");
+const u16 gObjectEventPal_Geodude[] = INCBIN_U16("graphics/object_events/pics/pokemon/geodude.gbapal");
+const u32 gObjectEventPic_Geodude[] = INCBIN_U32("graphics/object_events/pics/pokemon/geodude.4bpp");
+const u16 gObjectEventPal_Graveller[] = INCBIN_U16("graphics/object_events/pics/pokemon/graveller.gbapal");
+const u32 gObjectEventPic_Graveller[] = INCBIN_U32("graphics/object_events/pics/pokemon/graveller.4bpp");
