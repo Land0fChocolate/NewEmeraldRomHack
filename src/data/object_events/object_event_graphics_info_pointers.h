@@ -263,6 +263,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Graveller;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Delcatty;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mawile;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sableye;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Machop;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MachokeCarryingBox;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MachokeFacingAway;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -538,6 +541,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_DELCATTY] =                 &gObjectEventGraphicsInfo_Delcatty,
     [OBJ_EVENT_GFX_MAWILE] =                   &gObjectEventGraphicsInfo_Mawile,
     [OBJ_EVENT_GFX_SABLEYE] =                  &gObjectEventGraphicsInfo_Sableye,
+    [OBJ_EVENT_GFX_MACHOP] =                   &gObjectEventGraphicsInfo_Machop,
+    [OBJ_EVENT_GFX_MACHOKE_CARRYING_BOX] =     &gObjectEventGraphicsInfo_MachokeCarryingBox,
+    [OBJ_EVENT_GFX_MACHOKE_FACING_AWAY] =      &gObjectEventGraphicsInfo_MachokeFacingAway,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

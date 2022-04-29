@@ -266,8 +266,11 @@
 #define OBJ_EVENT_GFX_DELCATTY                   262
 #define OBJ_EVENT_GFX_MAWILE                     263
 #define OBJ_EVENT_GFX_SABLEYE                    264
+#define OBJ_EVENT_GFX_MACHOP                     265
+#define OBJ_EVENT_GFX_MACHOKE_CARRYING_BOX       266
+#define OBJ_EVENT_GFX_MACHOKE_FACING_AWAY        267
 
-#define NUM_OBJ_EVENT_GFX                        265
+#define NUM_OBJ_EVENT_GFX                        268
 
 
 // These are dynamic object gfx ids.

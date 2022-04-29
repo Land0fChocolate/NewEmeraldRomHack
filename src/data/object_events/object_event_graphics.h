@@ -425,3 +425,8 @@ const u16 gObjectEventPal_Mawile[] = INCBIN_U16("graphics/object_events/pics/pok
 const u32 gObjectEventPic_Mawile[] = INCBIN_U32("graphics/object_events/pics/pokemon/mawile.4bpp");
 const u16 gObjectEventPal_Sableye[] = INCBIN_U16("graphics/object_events/pics/pokemon/sableye.gbapal");
 const u32 gObjectEventPic_Sableye[] = INCBIN_U32("graphics/object_events/pics/pokemon/sableye.4bpp");
+const u16 gObjectEventPal_Machop[] = INCBIN_U16("graphics/object_events/pics/pokemon/machop.gbapal");
+const u32 gObjectEventPic_Machop[] = INCBIN_U32("graphics/object_events/pics/pokemon/machop.4bpp");
+const u16 gObjectEventPal_Machoke[] = INCBIN_U16("graphics/object_events/pics/pokemon/machoke.gbapal");
+const u32 gObjectEventPic_Machoke[] = INCBIN_U32("graphics/object_events/pics/pokemon/machoke.4bpp");
+
