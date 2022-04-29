@@ -419,3 +419,5 @@ const u16 gObjectEventPal_Geodude[] = INCBIN_U16("graphics/object_events/pics/po
 const u32 gObjectEventPic_Geodude[] = INCBIN_U32("graphics/object_events/pics/pokemon/geodude.4bpp");
 const u16 gObjectEventPal_Graveller[] = INCBIN_U16("graphics/object_events/pics/pokemon/graveller.gbapal");
 const u32 gObjectEventPic_Graveller[] = INCBIN_U32("graphics/object_events/pics/pokemon/graveller.4bpp");
+const u16 gObjectEventPal_Delcatty[] = INCBIN_U16("graphics/object_events/pics/pokemon/delcatty.gbapal");
+const u32 gObjectEventPic_Delcatty[] = INCBIN_U32("graphics/object_events/pics/pokemon/delcatty.4bpp");

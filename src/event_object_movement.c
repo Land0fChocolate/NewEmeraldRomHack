@@ -484,6 +484,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_NOSEPASS                0x113A
 #define OBJ_EVENT_PAL_TAG_GEODUDE                 0x113B
 #define OBJ_EVENT_PAL_TAG_GRAVELLER               0x113C
+#define OBJ_EVENT_PAL_TAG_DELCATTY                0x113D
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF //4607
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -555,6 +556,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Nosepass,              OBJ_EVENT_PAL_TAG_NOSEPASS},
     {gObjectEventPal_Geodude,               OBJ_EVENT_PAL_TAG_GEODUDE},
     {gObjectEventPal_Graveller,             OBJ_EVENT_PAL_TAG_GRAVELLER},
+    {gObjectEventPal_Delcatty,              OBJ_EVENT_PAL_TAG_DELCATTY},
     {NULL,                                  0x0000},
 };
 

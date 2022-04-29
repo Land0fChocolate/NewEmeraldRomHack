@@ -263,8 +263,9 @@
 #define OBJ_EVENT_GFX_NOSEPASS                   259
 #define OBJ_EVENT_GFX_GEODUDE                    260
 #define OBJ_EVENT_GFX_GRAVELLER                  261
+#define OBJ_EVENT_GFX_DELCATTY                   262
 
-#define NUM_OBJ_EVENT_GFX                        262
+#define NUM_OBJ_EVENT_GFX                        263
 
 
 // These are dynamic object gfx ids.
