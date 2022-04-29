@@ -2141,6 +2141,30 @@ static const struct SpriteFrameImage sPicTable_Delcatty[] = {
     overworld_frame(gObjectEventPic_Delcatty, 4, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_Mawile[] = {
+    overworld_frame(gObjectEventPic_Mawile, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Mawile, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Mawile, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Mawile, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Mawile, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Mawile, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Mawile, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Mawile, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Mawile, 4, 4, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_Sableye[] = {
+    overworld_frame(gObjectEventPic_Sableye, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Sableye, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Sableye, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Sableye, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Sableye, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Sableye, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Sableye, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Sableye, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Sableye, 4, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_Wingull[] = {
     overworld_frame(gObjectEventPic_Wingull, 2, 2, 0),
     overworld_frame(gObjectEventPic_Wingull, 2, 2, 2),

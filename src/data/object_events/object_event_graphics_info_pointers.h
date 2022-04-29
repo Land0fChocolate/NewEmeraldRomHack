@@ -261,6 +261,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Nosepass;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Geodude;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Graveller;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Delcatty;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mawile;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sableye;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -534,6 +536,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GEODUDE] =                  &gObjectEventGraphicsInfo_Geodude,
     [OBJ_EVENT_GFX_GRAVELLER] =                &gObjectEventGraphicsInfo_Graveller,
     [OBJ_EVENT_GFX_DELCATTY] =                 &gObjectEventGraphicsInfo_Delcatty,
+    [OBJ_EVENT_GFX_MAWILE] =                   &gObjectEventGraphicsInfo_Mawile,
+    [OBJ_EVENT_GFX_SABLEYE] =                  &gObjectEventGraphicsInfo_Sableye,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

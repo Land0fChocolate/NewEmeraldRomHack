@@ -264,8 +264,10 @@
 #define OBJ_EVENT_GFX_GEODUDE                    260
 #define OBJ_EVENT_GFX_GRAVELLER                  261
 #define OBJ_EVENT_GFX_DELCATTY                   262
+#define OBJ_EVENT_GFX_MAWILE                     263
+#define OBJ_EVENT_GFX_SABLEYE                    264
 
-#define NUM_OBJ_EVENT_GFX                        263
+#define NUM_OBJ_EVENT_GFX                        265
 
 
 // These are dynamic object gfx ids.

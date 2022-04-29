@@ -421,3 +421,7 @@ const u16 gObjectEventPal_Graveller[] = INCBIN_U16("graphics/object_events/pics/
 const u32 gObjectEventPic_Graveller[] = INCBIN_U32("graphics/object_events/pics/pokemon/graveller.4bpp");
 const u16 gObjectEventPal_Delcatty[] = INCBIN_U16("graphics/object_events/pics/pokemon/delcatty.gbapal");
 const u32 gObjectEventPic_Delcatty[] = INCBIN_U32("graphics/object_events/pics/pokemon/delcatty.4bpp");
+const u16 gObjectEventPal_Mawile[] = INCBIN_U16("graphics/object_events/pics/pokemon/mawile.gbapal");
+const u32 gObjectEventPic_Mawile[] = INCBIN_U32("graphics/object_events/pics/pokemon/mawile.4bpp");
+const u16 gObjectEventPal_Sableye[] = INCBIN_U16("graphics/object_events/pics/pokemon/sableye.gbapal");
+const u32 gObjectEventPic_Sableye[] = INCBIN_U32("graphics/object_events/pics/pokemon/sableye.4bpp");
