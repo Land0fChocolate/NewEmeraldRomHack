@@ -269,6 +269,36 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MachokeFacingAway;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meditite;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Medicham;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Electrike;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Magnemite;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Phanpy;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Oddish;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bellossom;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Doduo;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roselia;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Numel;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Koffing;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sandshrew;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Spinda;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Vibrava;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Swablu;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zangoose;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Baltoy;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jigglypuff;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shuppet;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Duskull;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chimecho;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Vulpix;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Psyduck;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wynaut;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Natu;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Snorunt;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Spheal;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Corsola;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chinchou;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bagon;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Beldum;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Castform;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -550,6 +580,36 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MEDITITE] =                 &gObjectEventGraphicsInfo_Meditite,
     [OBJ_EVENT_GFX_MEDICHAM] =                 &gObjectEventGraphicsInfo_Medicham,
     [OBJ_EVENT_GFX_ELECTRIKE] =                &gObjectEventGraphicsInfo_Electrike,
+	[OBJ_EVENT_GFX_MAGNEMITE] =	               &gObjectEventGraphicsInfo_Magnemite,
+	[OBJ_EVENT_GFX_PHANPY] =                   &gObjectEventGraphicsInfo_Phanpy,
+	[OBJ_EVENT_GFX_ODDISH] =                   &gObjectEventGraphicsInfo_Oddish,
+	[OBJ_EVENT_GFX_BELLOSSOM] =	               &gObjectEventGraphicsInfo_Bellossom,
+	[OBJ_EVENT_GFX_DODUO] =                    &gObjectEventGraphicsInfo_Doduo,
+	[OBJ_EVENT_GFX_ROSELIA] =                  &gObjectEventGraphicsInfo_Roselia,
+	[OBJ_EVENT_GFX_NUMEL] =                    &gObjectEventGraphicsInfo_Numel,
+	[OBJ_EVENT_GFX_KOFFING] =                  &gObjectEventGraphicsInfo_Koffing,
+	[OBJ_EVENT_GFX_SANDSHREW] =	               &gObjectEventGraphicsInfo_Sandshrew,
+	[OBJ_EVENT_GFX_SPINDA] =                   &gObjectEventGraphicsInfo_Spinda,
+	[OBJ_EVENT_GFX_VIBRAVA] =                  &gObjectEventGraphicsInfo_Vibrava,
+	[OBJ_EVENT_GFX_SWABLU] =                   &gObjectEventGraphicsInfo_Swablu,
+	[OBJ_EVENT_GFX_ZANGOOSE] =                 &gObjectEventGraphicsInfo_Zangoose,
+	[OBJ_EVENT_GFX_BALTOY] =                   &gObjectEventGraphicsInfo_Baltoy,
+	[OBJ_EVENT_GFX_JIGGLYPUFF] =               &gObjectEventGraphicsInfo_Jigglypuff,
+	[OBJ_EVENT_GFX_SHUPPET] =                  &gObjectEventGraphicsInfo_Shuppet,
+	[OBJ_EVENT_GFX_DUSKULL] =                  &gObjectEventGraphicsInfo_Duskull,
+	[OBJ_EVENT_GFX_CHIMECHO] =                 &gObjectEventGraphicsInfo_Chimecho,
+	[OBJ_EVENT_GFX_VULPIX] =                   &gObjectEventGraphicsInfo_Vulpix,
+	[OBJ_EVENT_GFX_PSYDUCK] =                  &gObjectEventGraphicsInfo_Psyduck,
+	[OBJ_EVENT_GFX_WYNAUT] =                   &gObjectEventGraphicsInfo_Wynaut,
+	[OBJ_EVENT_GFX_NATU] =                     &gObjectEventGraphicsInfo_Natu,
+	[OBJ_EVENT_GFX_SNORUNT] =                  &gObjectEventGraphicsInfo_Snorunt,
+	[OBJ_EVENT_GFX_SPHEAL] =                   &gObjectEventGraphicsInfo_Spheal,
+	[OBJ_EVENT_GFX_CORSOLA] =                  &gObjectEventGraphicsInfo_Corsola,
+	[OBJ_EVENT_GFX_CHINCHOU] =                 &gObjectEventGraphicsInfo_Chinchou,
+	[OBJ_EVENT_GFX_BAGON] =                    &gObjectEventGraphicsInfo_Bagon,
+	[OBJ_EVENT_GFX_BELDUM] =                   &gObjectEventGraphicsInfo_Beldum,
+	[OBJ_EVENT_GFX_CASTFORM] =                 &gObjectEventGraphicsInfo_Castform,
+	[OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

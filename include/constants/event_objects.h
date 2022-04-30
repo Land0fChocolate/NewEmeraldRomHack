@@ -272,8 +272,38 @@
 #define OBJ_EVENT_GFX_MEDITITE                   268
 #define OBJ_EVENT_GFX_MEDICHAM                   269
 #define OBJ_EVENT_GFX_ELECTRIKE                  270
+#define OBJ_EVENT_GFX_MAGNEMITE                  271
+#define OBJ_EVENT_GFX_PHANPY                     272
+#define OBJ_EVENT_GFX_ODDISH                     273
+#define OBJ_EVENT_GFX_BELLOSSOM                  274
+#define OBJ_EVENT_GFX_DODUO                      275
+#define OBJ_EVENT_GFX_ROSELIA                    276
+#define OBJ_EVENT_GFX_NUMEL                      277
+#define OBJ_EVENT_GFX_KOFFING                    278
+#define OBJ_EVENT_GFX_SANDSHREW                  279
+#define OBJ_EVENT_GFX_SPINDA                     280
+#define OBJ_EVENT_GFX_VIBRAVA                    281
+#define OBJ_EVENT_GFX_SWABLU                     282
+#define OBJ_EVENT_GFX_ZANGOOSE                   283
+#define OBJ_EVENT_GFX_BALTOY                     284
+#define OBJ_EVENT_GFX_JIGGLYPUFF                 285
+#define OBJ_EVENT_GFX_SHUPPET                    286
+#define OBJ_EVENT_GFX_DUSKULL                    287
+#define OBJ_EVENT_GFX_CHIMECHO                   288
+#define OBJ_EVENT_GFX_VULPIX                     289
+#define OBJ_EVENT_GFX_PSYDUCK                    290
+#define OBJ_EVENT_GFX_WYNAUT                     291
+#define OBJ_EVENT_GFX_NATU                       292
+#define OBJ_EVENT_GFX_SNORUNT                    293
+#define OBJ_EVENT_GFX_SPHEAL                     294
+#define OBJ_EVENT_GFX_CORSOLA                    295
+#define OBJ_EVENT_GFX_CHINCHOU                   296
+#define OBJ_EVENT_GFX_BAGON                      297
+#define OBJ_EVENT_GFX_BELDUM                     298
+#define OBJ_EVENT_GFX_CASTFORM                   299
+#define OBJ_EVENT_GFX_EEVEE                      300
 
-#define NUM_OBJ_EVENT_GFX                        271
+#define NUM_OBJ_EVENT_GFX                        301
 
 
 // These are dynamic object gfx ids.

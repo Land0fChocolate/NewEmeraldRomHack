@@ -492,6 +492,36 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_MEDITITE                0x1142
 #define OBJ_EVENT_PAL_TAG_MEDICHAM                0x1143
 #define OBJ_EVENT_PAL_TAG_ELECTRIKE               0x1144
+#define OBJ_EVENT_PAL_TAG_MAGNEMITE               0x1145
+#define OBJ_EVENT_PAL_TAG_PHANPY                  0x1146
+#define OBJ_EVENT_PAL_TAG_ODDISH                  0x1147
+#define OBJ_EVENT_PAL_TAG_BELLOSSOM               0x1148
+#define OBJ_EVENT_PAL_TAG_DODUO                   0x1149
+#define OBJ_EVENT_PAL_TAG_ROSELIA                 0x114A
+#define OBJ_EVENT_PAL_TAG_NUMEL                   0x114B
+#define OBJ_EVENT_PAL_TAG_KOFFING                 0x114C
+#define OBJ_EVENT_PAL_TAG_SANDSHREW               0x114D
+#define OBJ_EVENT_PAL_TAG_SPINDA                  0x114E
+#define OBJ_EVENT_PAL_TAG_VIBRAVA                 0x114F
+#define OBJ_EVENT_PAL_TAG_SWABLU                  0x1150
+#define OBJ_EVENT_PAL_TAG_ZANGOOSE                0x1151
+#define OBJ_EVENT_PAL_TAG_BALTOY                  0x1152
+#define OBJ_EVENT_PAL_TAG_JIGGLYPUFF              0x1153
+#define OBJ_EVENT_PAL_TAG_SHUPPET                 0x1154
+#define OBJ_EVENT_PAL_TAG_DUSKULL                 0x1155
+#define OBJ_EVENT_PAL_TAG_CHIMECHO                0x1156
+#define OBJ_EVENT_PAL_TAG_VULPIX                  0x1157
+#define OBJ_EVENT_PAL_TAG_PSYDUCK                 0x1158
+#define OBJ_EVENT_PAL_TAG_WYNAUT                  0x1159
+#define OBJ_EVENT_PAL_TAG_NATU                    0x115A
+#define OBJ_EVENT_PAL_TAG_SNORUNT                 0x115B
+#define OBJ_EVENT_PAL_TAG_SPHEAL                  0x115C
+#define OBJ_EVENT_PAL_TAG_CORSOLA                 0x115D
+#define OBJ_EVENT_PAL_TAG_CHINCHOU                0x115E
+#define OBJ_EVENT_PAL_TAG_BAGON                   0x115F
+#define OBJ_EVENT_PAL_TAG_BELDUM                  0x1160
+#define OBJ_EVENT_PAL_TAG_CASTFORM                0x1161
+#define OBJ_EVENT_PAL_TAG_EEVEE                   0x1162
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF //4607
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -571,6 +601,36 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Meditite,              OBJ_EVENT_PAL_TAG_MEDITITE},
     {gObjectEventPal_Medicham,              OBJ_EVENT_PAL_TAG_MEDICHAM},
     {gObjectEventPal_Electrike,             OBJ_EVENT_PAL_TAG_ELECTRIKE},
+    {gObjectEventPal_Magnemite,             OBJ_EVENT_PAL_TAG_MAGNEMITE},
+    {gObjectEventPal_Phanpy,                OBJ_EVENT_PAL_TAG_PHANPY},
+    {gObjectEventPal_Oddish,                OBJ_EVENT_PAL_TAG_ODDISH},
+    {gObjectEventPal_Bellossom,             OBJ_EVENT_PAL_TAG_BELLOSSOM},
+    {gObjectEventPal_Doduo,                 OBJ_EVENT_PAL_TAG_DODUO},
+    {gObjectEventPal_Roselia,               OBJ_EVENT_PAL_TAG_ROSELIA},
+    {gObjectEventPal_Numel,                 OBJ_EVENT_PAL_TAG_NUMEL},
+    {gObjectEventPal_Koffing,               OBJ_EVENT_PAL_TAG_KOFFING},
+    {gObjectEventPal_Sandshrew,             OBJ_EVENT_PAL_TAG_SANDSHREW},
+    {gObjectEventPal_Spinda,                OBJ_EVENT_PAL_TAG_SPINDA},
+    {gObjectEventPal_Vibrava,               OBJ_EVENT_PAL_TAG_VIBRAVA},
+    {gObjectEventPal_Swablu,                OBJ_EVENT_PAL_TAG_SWABLU},
+    {gObjectEventPal_Zangoose,              OBJ_EVENT_PAL_TAG_ZANGOOSE},
+    {gObjectEventPal_Baltoy,                OBJ_EVENT_PAL_TAG_BALTOY},
+    {gObjectEventPal_Jigglypuff,            OBJ_EVENT_PAL_TAG_JIGGLYPUFF},
+    {gObjectEventPal_Shuppet,               OBJ_EVENT_PAL_TAG_SHUPPET},
+    {gObjectEventPal_Duskull,               OBJ_EVENT_PAL_TAG_DUSKULL},
+    {gObjectEventPal_Chimecho,              OBJ_EVENT_PAL_TAG_CHIMECHO},
+    {gObjectEventPal_Vulpix,                OBJ_EVENT_PAL_TAG_VULPIX},
+    {gObjectEventPal_Psyduck,               OBJ_EVENT_PAL_TAG_PSYDUCK},
+    {gObjectEventPal_Wynaut,                OBJ_EVENT_PAL_TAG_WYNAUT},
+    {gObjectEventPal_Natu,                  OBJ_EVENT_PAL_TAG_NATU},
+    {gObjectEventPal_Snorunt,               OBJ_EVENT_PAL_TAG_SNORUNT},
+    {gObjectEventPal_Spheal,                OBJ_EVENT_PAL_TAG_SPHEAL},
+    {gObjectEventPal_Corsola,               OBJ_EVENT_PAL_TAG_CORSOLA},
+    {gObjectEventPal_Chinchou,              OBJ_EVENT_PAL_TAG_CHINCHOU},
+    {gObjectEventPal_Bagon,                 OBJ_EVENT_PAL_TAG_BAGON},
+    {gObjectEventPal_Beldum,                OBJ_EVENT_PAL_TAG_BELDUM},
+    {gObjectEventPal_Castform,              OBJ_EVENT_PAL_TAG_CASTFORM},
+    {gObjectEventPal_Eevee,                 OBJ_EVENT_PAL_TAG_EEVEE},
     {NULL,                                  0x0000},
 };
 
