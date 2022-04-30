@@ -495,3 +495,5 @@ const u16 gObjectEventPal_Castform[] = INCBIN_U16("graphics/object_events/pics/p
 const u32 gObjectEventPic_Castform[] = INCBIN_U32("graphics/object_events/pics/pokemon/castform.4bpp");
 const u16 gObjectEventPal_Eevee[] = INCBIN_U16("graphics/object_events/pics/pokemon/eevee.gbapal");
 const u32 gObjectEventPic_Eevee[] = INCBIN_U32("graphics/object_events/pics/pokemon/eevee.4bpp");
+const u16 gObjectEventPal_Mightyena[] = INCBIN_U16("graphics/object_events/pics/pokemon/mightyena.gbapal");
+const u32 gObjectEventPic_Mightyena[] = INCBIN_U32("graphics/object_events/pics/pokemon/mightyena.4bpp");

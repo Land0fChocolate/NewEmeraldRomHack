@@ -522,6 +522,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_BELDUM                  0x1160
 #define OBJ_EVENT_PAL_TAG_CASTFORM                0x1161
 #define OBJ_EVENT_PAL_TAG_EEVEE                   0x1162
+#define OBJ_EVENT_PAL_TAG_MIGHTYENA               0x1163
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF //4607
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -631,6 +632,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Beldum,                OBJ_EVENT_PAL_TAG_BELDUM},
     {gObjectEventPal_Castform,              OBJ_EVENT_PAL_TAG_CASTFORM},
     {gObjectEventPal_Eevee,                 OBJ_EVENT_PAL_TAG_EEVEE},
+    {gObjectEventPal_Mightyena,             OBJ_EVENT_PAL_TAG_MIGHTYENA},
     {NULL,                                  0x0000},
 };
 

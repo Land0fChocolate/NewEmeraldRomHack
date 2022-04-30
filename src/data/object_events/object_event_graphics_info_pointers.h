@@ -299,6 +299,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bagon;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Beldum;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Castform;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mightyena;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -610,6 +611,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_BELDUM] =                   &gObjectEventGraphicsInfo_Beldum,
 	[OBJ_EVENT_GFX_CASTFORM] =                 &gObjectEventGraphicsInfo_Castform,
 	[OBJ_EVENT_GFX_EEVEE] =                    &gObjectEventGraphicsInfo_Eevee,
+	[OBJ_EVENT_GFX_MIGHTYENA] =                &gObjectEventGraphicsInfo_Mightyena,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
