@@ -46,7 +46,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
-- Various story changes.
+- Various story changes. Includes aspects from ORAS.
+- Graphical updates to overworld sprites and environments.
 
 # New Abilities
 
