@@ -389,7 +389,7 @@ Route110_TrickHouseEntrance_EventScript_GivePuzzle2Reward::
 	end
 
 Route110_TrickHouseEntrance_EventScript_GivePuzzle3Reward::
-	giveitem ITEM_HARD_STONE
+	giveitem ITEM_SILVER_POWDER
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route110_TrickHouseEntrance_EventScript_GotReward
 	compare VAR_RESULT, FALSE

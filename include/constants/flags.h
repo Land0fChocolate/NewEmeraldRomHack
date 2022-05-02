@@ -1094,7 +1094,7 @@
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP                          0x417
 #define FLAG_ITEM_RUSTURF_TUNNEL_TM63                               0x418
 #define FLAG_ITEM_RUSTURF_TUNNEL_MAX_ETHER                          0x419
-#define FLAG_ITEM_GRANITE_CAVE_1F_ESCAPE_ROPE                       0x41A
+#define FLAG_ITEM_GRANITE_CAVE_1F_TM69                              0x41A
 #define FLAG_ITEM_GRANITE_CAVE_B1F_POKE_BALL                        0x41B
 #define FLAG_ITEM_MT_PYRE_5F_REAPER_CLOTH                           0x41C
 #define FLAG_ITEM_GRANITE_CAVE_B2F_REPEL                            0x41D
@@ -1217,7 +1217,7 @@
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 #define FLAG_ITEM_ROUTE_121_SHINY_STONE                             0x493
 
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
+#define FLAG_ITEM_GRANITE_CAVE_B1F_HARD_STONE                       0x494
 #define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag

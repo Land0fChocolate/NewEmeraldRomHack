@@ -354,12 +354,16 @@ RusturfTunnel_EventScript_ItemMaxEther::
 	finditem ITEM_MAX_ETHER
 	end
 
-GraniteCave_1F_EventScript_ItemEscapeRope::
-	finditem ITEM_ESCAPE_ROPE
+GraniteCave_1F_EventScript_ItemTM69::
+	finditem ITEM_TM69
 	end
 
 GraniteCave_B1F_EventScript_ItemPokeBall::
 	finditem ITEM_POKE_BALL
+	end
+
+GraniteCave_B1F_EventScript_ItemHardStone::
+	finditem ITEM_HARD_STONE
 	end
 
 GraniteCave_B2F_EventScript_ItemRepel::
