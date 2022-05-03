@@ -2938,7 +2938,7 @@
           "map": "MAP_ROUTE106",
           "base_label": "gRoute106",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 25,
             "mons": [
               {
                 "min_level": 7,
