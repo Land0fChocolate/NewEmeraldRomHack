@@ -2938,7 +2938,7 @@
           "map": "MAP_ROUTE106",
           "base_label": "gRoute106",
           "land_mons": {
-            "encounter_rate": 25,
+            "encounter_rate": 35,
             "mons": [
               {
                 "min_level": 7,
@@ -2981,14 +2981,14 @@
                 "species": "SPECIES_WINGULL"
               },
               {
-                "min_level": 7,
-                "max_level": 7,
-                "species": "SPECIES_CHINGLING"
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_SPHEAL"
               },
               {
                 "min_level": 9,
                 "max_level": 9,
-                "species": "SPECIES_CHINGLING"
+                "species": "SPECIES_ZIGZAGOON"
               },
               {
                 "min_level": 12,
