@@ -1048,6 +1048,33 @@ RustboroCity_EventScript_BlackBelt::
 	msgbox RustboroCity_Text_TeamMagmaStealingFuel, MSGBOX_NPC
 	end
 
+RustboroCity_EventScript_Phanpy::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_PHANPY, 0
+	waitmoncry
+	release
+	end
+
+RustboroCity_EventScript_Mawile::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_MAWILE, 0
+	waitmoncry
+	release
+	end
+
+RustboroCity_EventScript_Koffing::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_KOFFING, 0
+	waitmoncry
+	release
+	end
+
 RustboroCity_Text_TeamMagmaStealingFuel:
 	.string "Some bad folks called Team Magma have\n"
 	.string "been stealing fuel and tech.\p"

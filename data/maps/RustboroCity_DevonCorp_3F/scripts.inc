@@ -57,7 +57,6 @@ RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 	waitfanfare
 	setflag FLAG_SYS_POKENAV_GET
 	setflag FLAG_RECEIVED_POKENAV
-	setflag FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT
 	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneExplainPokenavRestUp, MSGBOX_DEFAULT
 	closemessage
 	call Common_EventScript_OutOfCenterPartyHeal
@@ -197,6 +196,15 @@ RustboroCity_DevonCorp_3F_EventScript_EmployeeBalls::
 
 RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay::
 	msgbox RustboroCity_DevonCorp_3F_Text_RareRocksDisplay, MSGBOX_SIGN
+	end
+
+RustboroCity_DevonCorp_3F_EventScript_Beldum::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_BELDUM, 0
+	waitmoncry
+	release
 	end
 
 RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor:

@@ -10,6 +10,8 @@
 .equ LOCALID_BOAT_R104, 7
 .equ LOCALID_BRINEY_R104, 8
 
+.set LOCALID_NOSEPASS, 7
+
 DewfordTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_OnTransition
 	.byte 0
@@ -645,6 +647,26 @@ DewfordTown_EventScript_CancelNewTrendyPhrase::
 
 DewfordTown_EventScript_PhraseNotTrendyEnough::
 	msgbox DewfordTown_Text_XHuhIThinkYIsCool, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_EventScript_Spheal::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_SPHEAL, 0
+	waitmoncry
+	release
+	end
+
+DewfordTown_EventScript_Nosepass::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_NOSEPASS, 0
+	waitmoncry
+	applymovement LOCALID_NOSEPASS, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 

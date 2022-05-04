@@ -63,6 +63,15 @@ DewfordTown_Hall_EventScript_ExpertM::
 	release
 	end
 
+DewfordTown_Hall_EventScript_Meditite::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_MEDITITE, 0
+	waitmoncry
+	release
+	end
+
 DewfordTown_Hall_EventScript_Twin::
 	lock
 	faceplayer

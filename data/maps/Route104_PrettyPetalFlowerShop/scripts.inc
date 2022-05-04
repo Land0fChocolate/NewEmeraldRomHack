@@ -103,3 +103,12 @@ Route104_PrettyPetalFlowerShop_EventScript_AlreadyReceivedBerry::
 	msgbox Route104_PrettyPetalFlowerShop_Text_MachineMixesBerries, MSGBOX_DEFAULT
 	release
 	end
+
+Route104_PrettyPetalFlowerShop_EventScript_Roselia::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_ROSELIA, 0
+	waitmoncry
+	release
+	end

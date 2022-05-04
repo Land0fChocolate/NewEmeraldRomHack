@@ -9,6 +9,15 @@ RustboroCity_Flat1_1F_EventScript_Woman::
 	msgbox RustboroCity_Flat1_1F_Text_PokemonStrange, MSGBOX_NPC
 	end
 
+RustboroCity_Flat1_1F_EventScript_Wurmple::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_WURMPLE, 0
+	waitmoncry
+	release
+	end
+
 RustboroCity_Flat1_1F_Text_EveryPokemonHasAbility:
 	.string "Every Pokémon has special abilities\n"
 	.string "that it can use.$"

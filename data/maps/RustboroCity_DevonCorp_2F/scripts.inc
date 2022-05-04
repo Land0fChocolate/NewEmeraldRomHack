@@ -295,6 +295,15 @@ RustboroCity_DevonCorp_2F_EventScript_WorkOnNext::
 	release
 	end
 
+RustboroCity_DevonCorp_2F_EventScript_Magnemite::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_MAGNEMITE, 0
+	waitmoncry
+	release
+	end
+
 RustboroCity_DevonCorp_2F_Text_DeviceForTalkingToPokemon:
 	.string "We're developing a device for talking\n"
 	.string "with Pokémon.\p"
