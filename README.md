@@ -7,7 +7,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - implement ability description label in the summary screen.
 - Include ORAS dex Pokemon like Budew and Dusknoir and add ways to access them.
 - New Pokemon moves.
-	- animations for new moves
+	- new animations for new moves
 	- Add the new moves to the move tutors lists.
 - Update move tutor lists to have tutor moves from later gens.
 - Expand and add new areas, including adding some new wild Pokemon for the area.

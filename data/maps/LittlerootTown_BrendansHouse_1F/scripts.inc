@@ -377,12 +377,6 @@ PlayersHouse_1F_Text_RegisteredMom:
 	.string "Registered Mom\n"
 	.string "in the Pokénav.$"
 
-PlayersHouse_1F_Text_Vigoroth1:
-	.string "Fugiiiiih!$"
-
-PlayersHouse_1F_Text_Vigoroth2:
-	.string "Huggoh, uggo uggo…$"
-
 PlayersHouse_1F_Text_ReportFromPetalburgGym:
 	.string "Interviewer: …We brought you this\n"
 	.string "report from in front of Petalburg Gym.$"

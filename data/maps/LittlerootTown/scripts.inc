@@ -271,7 +271,6 @@ LittlerootTown_EventScript_Zigzagoon::
 	faceplayer
 	waitse
 	playmoncry SPECIES_ZIGZAGOON, 0
-	msgbox LittlerootTown_Text_Zigzagoon, MSGBOX_DEFAULT
 	waitmoncry
 	release
 	end
@@ -1029,9 +1028,6 @@ LittlerootTown_Text_BirchSpendsDaysInLab:
 	.string "the wild to do more research…\p"
 	.string "When does Prof. Birch spend time\n"
 	.string "at home?$"
-
-LittlerootTown_Text_Zigzagoon:
-	.string "Zigzagoon: Krar!$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Um, um, um!\p"

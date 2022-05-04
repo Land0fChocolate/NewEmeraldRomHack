@@ -385,8 +385,7 @@ PlayersHouse_1F_EventScript_Vigoroth1::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_VIGOROTH, 0
-	msgbox PlayersHouse_1F_Text_Vigoroth1, MSGBOX_DEFAULT
+	playmoncry SPECIES_MACHOKE, 0
 	waitmoncry
 	release
 	end
@@ -395,8 +394,7 @@ PlayersHouse_1F_EventScript_Vigoroth2::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_VIGOROTH, 0
-	msgbox PlayersHouse_1F_Text_Vigoroth2, MSGBOX_DEFAULT
+	playmoncry SPECIES_MACHOKE, 0
 	waitmoncry
 	release
 	end
