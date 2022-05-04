@@ -9,6 +9,15 @@ PetalburgCity_House1_EventScript_Woman::
 	msgbox PetalburgCity_House1_Text_GoOnAdventure, MSGBOX_NPC
 	end
 
+PetalburgCity_House1_EventScript_Zigzagoon::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_ZIGZAGOON, 0
+	waitmoncry
+	release
+	end
+
 PetalburgCity_House1_Text_TravelingIsWonderful:
 	.string "Traveling is wonderful!\p"
 	.string "When I was young, I roamed the seas\n"

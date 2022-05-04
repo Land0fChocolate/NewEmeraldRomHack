@@ -34,6 +34,15 @@ OldaleTown_PokemonCenter_1F_EventScript_Girl::
 	release
 	end
 
+OldaleTown_PokemonCenter_1F_EventScript_Seedot::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_SEEDOT, 0
+	waitmoncry
+	release
+	end
+
 OldaleTown_PokemonCenter_1F_EventScript_WirelessClubAvailable::
 	msgbox OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub, MSGBOX_DEFAULT
 	release
