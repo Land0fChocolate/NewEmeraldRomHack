@@ -192,9 +192,9 @@ OverworldPokemon_EventScript_Nosepass::
 	faceplayer
 	waitse
 	playmoncry SPECIES_NOSEPASS, 0
+	waitmoncry
 	applymovement LOCALID_NOSEPASS, Common_Movement_FaceLeft
 	waitmovement 0
-	waitmoncry
 	release
 	end
 
