@@ -9,15 +9,6 @@ OldaleTown_House2_EventScript_Man::
 	msgbox OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon, MSGBOX_NPC
 	end
 
-OldaleTown_House2_EventScript_Wurmple::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_WURMPLE, 0
-	waitmoncry
-	release
-	end
-
 OldaleTown_House2_Text_PokemonLevelUp:
 	.string "When Pokémon battle, they eventually\n"
 	.string "level up and become stronger.$"

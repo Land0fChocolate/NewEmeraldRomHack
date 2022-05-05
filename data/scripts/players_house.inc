@@ -381,24 +381,6 @@ PlayersHouse_1F_EventScript_DidYouMeetProfBirch::
 	release
 	end
 
-PlayersHouse_1F_EventScript_Vigoroth1::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_MACHOKE, 0
-	waitmoncry
-	release
-	end
-
-PlayersHouse_1F_EventScript_Vigoroth2::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_MACHOKE, 0
-	waitmoncry
-	release
-	end
-
 PlayersHouse_1F_Movement_PlayerApproachTVForGymMale:
 	walk_down
 	walk_down

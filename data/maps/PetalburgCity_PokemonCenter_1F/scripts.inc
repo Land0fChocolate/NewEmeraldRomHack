@@ -46,15 +46,6 @@ PetalburgCity_PokemonCenter_1F_EventScript_SayStarterTypeInfo::
 	release
 	end
 
-PetalburgCity_PokemonCenter_1F_EventScript_Shroomish::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_SHROOMISH, 0
-	waitmoncry
-	release
-	end
-
 PetalburgCity_PokemonCenter_1F_EventScript_SayTreeckoType::
 	msgbox PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType, MSGBOX_DEFAULT
 	return

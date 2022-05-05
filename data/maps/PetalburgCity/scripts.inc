@@ -720,24 +720,6 @@ PetalburgCity_EventScript_GymBoy::
 	msgbox PetalburgCity_Text_AreYouRookieTrainer, MSGBOX_NPC
 	end
 
-PetalburgCity_EventScript_Nuzleaf::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_NUZLEAF, 0
-	waitmoncry
-	release
-	end
-	
-PetalburgCity_EventScript_Beautifly::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_BEAUTIFLY, 0
-	waitmoncry
-	release
-	end
-
 PetalburgCity_Text_WhereIsWally:
 	.string "Where has our Wally gone?\p"
 	.string "We have to leave for Verdanturf Town\n"

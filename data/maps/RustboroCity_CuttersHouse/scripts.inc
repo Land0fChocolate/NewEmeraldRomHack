@@ -21,15 +21,6 @@ RustboroCity_CuttersHouse_EventScript_Lass::
 	msgbox RustboroCity_CuttersHouse_Text_DadHelpedClearLandOfTrees, MSGBOX_NPC
 	end
 
-RustboroCity_CuttersHouse_EventScript_Zangoose::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_ZANGOOSE, 0
-	waitmoncry
-	release
-	end
-
 RustboroCity_CuttersHouse_Text_IHaveJustWhatYouNeed:
 	.string "That determined expression…\n"
 	.string "That limber way you move…\l"

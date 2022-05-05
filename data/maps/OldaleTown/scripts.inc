@@ -37,16 +37,6 @@ OldaleTown_EventScript_Girl::
 	msgbox OldaleTown_Text_SavingMyProgress, MSGBOX_NPC
 	end
 
-OldaleTown_EventScript_Ralts::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_RALTS, 0
-	msgbox OldaleTown_Text_Ralts, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
 OldaleTown_EventScript_MartEmployee::
 	lock
 	faceplayer
@@ -362,9 +352,6 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 OldaleTown_Text_SavingMyProgress:
 	.string "I want to take a rest, so I'm saving my\n"
 	.string "progress.$"
-
-OldaleTown_Text_Ralts:
-	.string "Ra ra.$"
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Hi!\n"

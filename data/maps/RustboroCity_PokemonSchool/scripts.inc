@@ -163,15 +163,6 @@ RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsEast:
 	walk_left
 	step_end
 
-RustboroCity_PokemonSchool_EventScript_Geodude::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_GEODUDE, 0
-	waitmoncry
-	release
-	end
-
 RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges:
 	.string "The blackboard lists status changes\n"
 	.string "that may affect Pokémon in battle.$"

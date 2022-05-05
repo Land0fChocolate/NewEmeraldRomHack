@@ -2621,6 +2621,18 @@ static const struct SpriteFrameImage sPicTable_Seedot[] = {
     overworld_frame(gObjectEventPic_Seedot, 4, 4, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_WingullRoost[] = {
+    overworld_frame(gObjectEventPic_WingullRoost, 4, 4, 0),
+    overworld_frame(gObjectEventPic_WingullRoost, 4, 4, 1),
+    overworld_frame(gObjectEventPic_WingullRoost, 4, 4, 2),
+    overworld_frame(gObjectEventPic_WingullRoost, 4, 4, 0),
+    overworld_frame(gObjectEventPic_WingullRoost, 4, 4, 0),
+    overworld_frame(gObjectEventPic_WingullRoost, 4, 4, 1),
+    overworld_frame(gObjectEventPic_WingullRoost, 4, 4, 1),
+    overworld_frame(gObjectEventPic_WingullRoost, 4, 4, 2),
+    overworld_frame(gObjectEventPic_WingullRoost, 4, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_Wingull[] = {
     overworld_frame(gObjectEventPic_Wingull, 2, 2, 0),
     overworld_frame(gObjectEventPic_Wingull, 2, 2, 2),

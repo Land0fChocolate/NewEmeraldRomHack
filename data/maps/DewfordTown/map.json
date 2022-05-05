@@ -100,7 +100,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DewfordTown_EventScript_Spheal",
+      "script": "OverworldPokemon_EventScript_Spheal",
       "flag": "0"
     },
     {
@@ -113,7 +113,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DewfordTown_EventScript_Nosepass",
+      "script": "OverworldPokemon_EventScript_Nosepass",
       "flag": "0"
     }
   ],

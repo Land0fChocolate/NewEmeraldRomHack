@@ -650,26 +650,6 @@ DewfordTown_EventScript_PhraseNotTrendyEnough::
 	release
 	end
 
-DewfordTown_EventScript_Spheal::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_SPHEAL, 0
-	waitmoncry
-	release
-	end
-
-DewfordTown_EventScript_Nosepass::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_NOSEPASS, 0
-	waitmoncry
-	applymovement LOCALID_NOSEPASS, Common_Movement_FaceLeft
-	waitmovement 0
-	release
-	end
-
 DewfordTown_Text_TinyIslandCommunity:
 	.string "Dewford is a tiny island community.\n"
 	.string "If something gets trendy here,\l"

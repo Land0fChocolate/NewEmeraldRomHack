@@ -9,15 +9,6 @@ PetalburgCity_House2_EventScript_SchoolKid::
 	msgbox PetalburgCity_House2_Text_BattledNormanOnce, MSGBOX_NPC
 	end
 
-PetalburgCity_House2_EventScript_Abra::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_ABRA, 0
-	waitmoncry
-	release
-	end
-
 PetalburgCity_House2_Text_NormanBecameGymLeader:
 	.string "Norman became our town's new\n"
 	.string "Gym Leader.\p"

@@ -266,15 +266,6 @@ LittlerootTown_EventScript_Boy::
 	msgbox LittlerootTown_Text_BirchSpendsDaysInLab, MSGBOX_NPC
 	end
 
-LittlerootTown_EventScript_Zigzagoon::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_ZIGZAGOON, 0
-	waitmoncry
-	release
-	end
-
 LittlerootTown_EventScript_Twin::
 	lock
 	faceplayer
@@ -968,6 +959,9 @@ LittlerootTown_EventScript_GiveRunningShoes::
 	closemessage
 	delay 30
 	return
+
+LittlerootTown_EventScript_Zigzagoon::
+	goto OverworldPokemon_EventScript_Zigzagoon
 
 LittlerootTown_Text_OurNewHomeLetsGoInside:
 	.string "Mom: {PLAYER}, we're here, honey!\p"

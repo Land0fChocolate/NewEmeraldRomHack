@@ -9,15 +9,6 @@ DewfordTown_House1_EventScript_Woman::
 	msgbox DewfordTown_House1_Text_LifeGoesSlowlyOnIsland, MSGBOX_NPC
 	end
 
-DewfordTown_House1_EventScript_Zigzagoon::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_ZIGZAGOON, 0
-	waitmoncry
-	release
-	end
-
 DewfordTown_House1_Text_LotToBeSaidForLivingOnIsland:
 	.string "There's a lot to be said for living on\n"
 	.string "a small island like this in harmony with\l"

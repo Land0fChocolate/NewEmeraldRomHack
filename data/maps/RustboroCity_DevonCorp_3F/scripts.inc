@@ -198,15 +198,6 @@ RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay::
 	msgbox RustboroCity_DevonCorp_3F_Text_RareRocksDisplay, MSGBOX_SIGN
 	end
 
-RustboroCity_DevonCorp_3F_EventScript_Beldum::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_BELDUM, 0
-	waitmoncry
-	release
-	end
-
 RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor:
 	.string "I'm Mr. Stone, the Presidents of\n"
 	.string "the Devon Corporation.\p"

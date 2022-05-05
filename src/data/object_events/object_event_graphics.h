@@ -501,3 +501,5 @@ const u16 gObjectEventPal_Mightyena[] = INCBIN_U16("graphics/object_events/pics/
 const u32 gObjectEventPic_Mightyena[] = INCBIN_U32("graphics/object_events/pics/pokemon/mightyena.4bpp");
 const u16 gObjectEventPal_Seedot[] = INCBIN_U16("graphics/object_events/pics/pokemon/seedot.gbapal");
 const u32 gObjectEventPic_Seedot[] = INCBIN_U32("graphics/object_events/pics/pokemon/seedot.4bpp");
+const u16 gObjectEventPal_WingullRoost[] = INCBIN_U16("graphics/object_events/pics/pokemon/wingull_roost.gbapal");
+const u32 gObjectEventPic_WingullRoost[] = INCBIN_U32("graphics/object_events/pics/pokemon/wingull_roost.4bpp");

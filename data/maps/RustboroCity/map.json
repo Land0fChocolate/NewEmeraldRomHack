@@ -274,7 +274,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RustboroCity_EventScript_Phanpy",
+      "script": "OverworldPokemon_EventScript_Phanpy",
       "flag": "0"
     },
     {
@@ -287,7 +287,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RustboroCity_EventScript_Mawile",
+      "script": "OverworldPokemon_EventScript_Mawile",
       "flag": "0"
     },
     {
@@ -300,7 +300,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RustboroCity_EventScript_Koffing",
+      "script": "OverworldPokemon_EventScript_Koffing",
       "flag": "0"
     }
   ],

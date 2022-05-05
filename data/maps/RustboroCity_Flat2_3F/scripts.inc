@@ -9,15 +9,6 @@ RustboroCity_Flat2_3F_EventScript_Woman::
 	msgbox RustboroCity_Flat2_3F_Text_PresidentsSonAlsoCollectsRareStones, MSGBOX_NPC
 	end
 
-RustboroCity_Flat2_3F_EventScript_Poochyena::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_POOCHYENA, 0
-	waitmoncry
-	release
-	end
-
 RustboroCity_Flat2_3F_Text_PresidentCollectsRareStones:
 	.string "Devon's President likes to collect\n"
 	.string "rare stones.$"

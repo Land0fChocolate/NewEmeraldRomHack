@@ -30,15 +30,6 @@ RustboroCity_PokemonCenter_1F_EventScript_Girl::
 	msgbox RustboroCity_PokemonCenter_1F_Text_TMCutNextDoor, MSGBOX_NPC
 	end
 
-RustboroCity_PokemonCenter_1F_EventScript_Taillow::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_TAILLOW, 0
-	waitmoncry
-	release
-	end
-
 RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities:
 	.string "My Pokémon has a naive nature, and my\n"
 	.string "friend's has a jolly nature.\p"

@@ -9,15 +9,6 @@ RustboroCity_House2_EventScript_LittleGirl::
 	msgbox RustboroCity_House2_Text_RoxanneKnowsALot, MSGBOX_NPC
 	end
 
-RustboroCity_House2_EventScript_Jigglypuff::
-	locktarget
-	faceplayer
-	waitse
-	playmoncry SPECIES_JIGGLYPUFF, 0
-	waitmoncry
-	release
-	end
-
 RustboroCity_House2_Text_TrainerSchoolExcellent:
 	.string "The Trainer's school is excellent.\p"
 	.string "If you study there, you could even\n"
