@@ -10235,30 +10235,6 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Johnson[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Melina[] = {
-    {
-    .iv = 0,
-    .lvl = 18,
-    .species = SPECIES_DODUO,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Brandi[] = {
-    {
-    .iv = 0,
-    .lvl = 19,
-    .species = SPECIES_RALTS,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Aisha[] = {
-    {
-    .iv = 0,
-    .lvl = 18,
-    .species = SPECIES_MEDITITE,
-    }
-};
-
 static const struct TrainerMonNoItemDefaultMoves sParty_Makayla[] = {
     {
     .iv = 0,

@@ -1066,9 +1066,9 @@
                 "species": "SPECIES_NUMEL"
               },
               {
-                "min_level": 14,
-                "max_level": 14,
-                "species": "SPECIES_MARILL"
+                "min_level": 13,
+                "max_level": 13,
+                "species": "SPECIES_CHINGLING"
               },
               {
                 "min_level": 16,
@@ -1078,7 +1078,7 @@
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_MARILL"
+                "species": "SPECIES_KOFFING"
               },
               {
                 "min_level": 16,
@@ -1091,8 +1091,8 @@
                 "species": "SPECIES_KOFFING"
               },
               {
-                "min_level": 16,
-                "max_level": 16,
+                "min_level": 15,
+                "max_level": 15,
                 "species": "SPECIES_KOFFING"
               },
               {

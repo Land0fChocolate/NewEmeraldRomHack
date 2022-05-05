@@ -10569,48 +10569,6 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Johnson},
     },
 
-    [TRAINER_MELINA] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TRIATHLETE,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
-        .trainerName = _("Melina"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Melina),
-        .party = {.NoItemDefaultMoves = sParty_Melina},
-    },
-
-    [TRAINER_BRANDI] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_PSYCHIC,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_PSYCHIC_F,
-        .trainerName = _("Brandi"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Brandi),
-        .party = {.NoItemDefaultMoves = sParty_Brandi},
-    },
-
-    [TRAINER_AISHA] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BATTLE_GIRL,
-        .trainerName = _("Aisha"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Aisha),
-        .party = {.NoItemDefaultMoves = sParty_Aisha},
-    },
-
     [TRAINER_MAKAYLA] =
     {
         .partyFlags = 0,

@@ -2541,40 +2541,6 @@ Route117_Text_MegRematchNotEnoughMons:
 	.string "We can't battle with you, then.\p"
 	.string "We want to have a 2-on-2 battle.$"
 
-Route117_Text_MelinaIntro:
-	.string "Isn't it nice? To battle while looking\n"
-	.string "at pretty flowers?$"
-
-Route117_Text_MelinaDefeat:
-	.string "Oh, that's quite impressive!$"
-
-Route117_Text_MelinaPostBattle:
-	.string "It feels wonderful to go for a jog\n"
-	.string "while looking at flowers.$"
-
-Route117_Text_BrandiIntro:
-	.string "Let me demonstrate the power\n"
-	.string "hidden within a Psychic Pokémon!$"
-
-Route117_Text_BrandiDefeat:
-	.string "Astonishing!$"
-
-Route117_Text_BrandiPostBattle:
-	.string "Psychic Pokémon are complex.\n"
-	.string "You should try catching some.$"
-
-Route117_Text_AishaIntro:
-	.string "Concentrate on getting the win.\n"
-	.string "That's how I battle!$"
-
-Route117_Text_AishaDefeat:
-	.string "I don't waste any time being angry\n"
-	.string "over a loss--I would rather train.$"
-
-Route117_Text_AishaPostBattle:
-	.string "I think that if you worry about losing,\n"
-	.string "you're more likely to lose.$"
-
 Route118_Text_RoseIntro:
 	.string "The aroma of flowers has a magical\n"
 	.string "power. It cleanses us body and soul.$"
