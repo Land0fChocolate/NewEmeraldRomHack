@@ -52,16 +52,6 @@ VerdanturfTown_FriendshipRatersHouse_EventScript_AdoresYou::
 	release
 	end
 
-VerdanturfTown_FriendshipRatersHouse_EventScript_Pikachu::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_PIKACHU, 0
-	msgbox VerdanturfTown_FriendshipRatersHouse_Text_Pikachu, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
 VerdanturfTown_FriendshipRatersHouse_Text_SeeHowMuchPokemonLikesYou:
 	.string "Let me see your Pokémon.\n"
 	.string "I'll check to see how much it likes you.\p"
