@@ -10209,19 +10209,6 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Marlene[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Devan[] = {
-    {
-    .iv = 0,
-    .lvl = 8,
-    .species = SPECIES_GEODUDE,
-    },
-    {
-    .iv = 0,
-    .lvl = 8,
-    .species = SPECIES_GEODUDE,
-    }
-};
-
 static const struct TrainerMonNoItemDefaultMoves sParty_Johnson[] = {
     {
     .iv = 0,
@@ -10256,16 +10243,37 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Fabian[] = {
     }
 };
 
+static const struct TrainerMonNoItemDefaultMoves sParty_Devan[] = {
+    {
+    .iv = 0,
+    .lvl = 19,
+    .species = SPECIES_GEODUDE,
+    },
+    {
+    .iv = 0,
+    .lvl = 19,
+    .species = SPECIES_MACHOP,
+    }
+};
+
 static const struct TrainerMonNoItemDefaultMoves sParty_Dayton[] = {
     {
     .iv = 0,
-    .lvl = 28,
+    .lvl = 19,
     .species = SPECIES_SLUGMA,
     },
     {
     .iv = 0,
-    .lvl = 28,
-    .species = SPECIES_NUMEL,
+    .lvl = 19,
+    .species = SPECIES_PSYDUCK,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Aisha[] = {
+    {
+    .iv = 0,
+    .lvl = 20,
+    .species = SPECIES_MEDITITE,
     }
 };
 

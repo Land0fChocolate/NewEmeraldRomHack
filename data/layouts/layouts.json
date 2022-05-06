@@ -2924,7 +2924,7 @@
     {
       "id": "LAYOUT_FIERY_PATH",
       "name": "FieryPath_Layout",
-      "width": 35,
+      "width": 55,
       "height": 38,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",

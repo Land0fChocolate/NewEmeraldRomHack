@@ -756,9 +756,9 @@
 #define TRAINER_MARLENE                     752
 #define TRAINER_DEVAN                       753
 #define TRAINER_JOHNSON                     754
-#define TRAINER_MELINA                      755
-#define TRAINER_BRANDI                      756
-#define TRAINER_AISHA                       757
+#define TRAINER_MELINA                      755 //unused
+#define TRAINER_BRANDI                      756 //unused
+#define TRAINER_AISHA                       757 //unused
 #define TRAINER_MAKAYLA                     758
 #define TRAINER_FABIAN                      759
 #define TRAINER_DAYTON                      760

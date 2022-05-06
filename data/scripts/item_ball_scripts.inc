@@ -378,6 +378,14 @@ JaggedPass_EventScript_ItemBurnHeal::
 	finditem ITEM_BURN_HEAL
 	end
 
+FieryPath_EventScript_ItemGreatBall::
+	finditem ITEM_GREAT_BALL
+	end
+
+FieryPath_EventScript_ItemFreshWater::
+	finditem ITEM_FRESH_WATER
+	end
+
 FieryPath_EventScript_ItemFireStone::
 	finditem ITEM_FIRE_STONE
 	end

@@ -10547,7 +10547,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_HIKER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .trainerName = _("Deven"),
+        .trainerName = _("Devan"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
@@ -10609,6 +10609,20 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = ARRAY_COUNT(sParty_Dayton),
         .party = {.NoItemDefaultMoves = sParty_Dayton},
+    },
+
+    [TRAINER_AISHA] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_BATTLE_GIRL,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BATTLE_GIRL,
+        .trainerName = _("Aisha"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_Aisha),
+        .party = {.NoItemDefaultMoves = sParty_Aisha},
     },
 
     [TRAINER_RACHEL] =
