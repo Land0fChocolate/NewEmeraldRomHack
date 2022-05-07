@@ -565,3 +565,11 @@ gMetatiles_PetalburgWoods::
 	.align 1
 gMetatileAttributes_PetalburgWoods::
 	.incbin "data/tilesets/secondary/petalburg_woods/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_CrumblingGorge::
+	.incbin "data/tilesets/secondary/crumbling_gorge/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_CrumblingGorge::
+	.incbin "data/tilesets/secondary/crumbling_gorge/metatile_attributes.bin"

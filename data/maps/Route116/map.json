@@ -235,8 +235,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
-      "x": 22,
-      "y": 16,
+      "x": 21,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
       "movement_range_x": 0,
@@ -412,6 +412,27 @@
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
       "dest_warp_id": 0
+    },
+    {
+      "x": 16,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE104",
+      "dest_warp_id": 4
+    },
+    {
+      "x": 66,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_CRUMBLING_GORGE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 67,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_CRUMBLING_GORGE",
+      "dest_warp_id": 1
     }
   ],
   "coord_events": [

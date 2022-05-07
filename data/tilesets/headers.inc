@@ -841,3 +841,14 @@ gTileset_PetalburgWoods::
 	.4byte gMetatiles_PetalburgWoods
 	.4byte gMetatileAttributes_PetalburgWoods
 	.4byte InitTilesetAnim_PetalburgWoods
+
+	.align 2
+gTileset_CrumblingGorge::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary tileset
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_CrumblingGorge
+	.4byte gTilesetPalettes_CrumblingGorge
+	.4byte gMetatiles_CrumblingGorge
+	.4byte gMetatileAttributes_CrumblingGorge
+	.4byte NULL @ animation callback

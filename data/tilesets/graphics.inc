@@ -1752,3 +1752,26 @@ gTilesetPalettes_PetalburgWoods::
 	.incbin "data/tilesets/secondary/petalburg_woods/palettes/13.gbapal"
 	.incbin "data/tilesets/secondary/petalburg_woods/palettes/14.gbapal"
 	.incbin "data/tilesets/secondary/petalburg_woods/palettes/15.gbapal"
+
+	.align 2
+gTilesetTiles_CrumblingGorge::
+	.incbin "data/tilesets/secondary/crumbling_gorge/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_CrumblingGorge::
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/12.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/13.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/14.gbapal"
+	.incbin "data/tilesets/secondary/crumbling_gorge/palettes/15.gbapal"
