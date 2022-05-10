@@ -254,7 +254,6 @@ OverworldPokemon_EventScript_Machop::
 
 OverworldPokemon_EventScript_Machoke::
 	locktarget
-	faceplayer
 	waitse
 	playmoncry SPECIES_MACHOKE, 0
 	waitmoncry

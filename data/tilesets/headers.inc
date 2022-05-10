@@ -852,3 +852,14 @@ gTileset_CrumblingGorge::
 	.4byte gMetatiles_CrumblingGorge
 	.4byte gMetatileAttributes_CrumblingGorge
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_DraconidArchives::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary tileset
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_DraconidArchives
+	.4byte gTilesetPalettes_DraconidArchives
+	.4byte gMetatiles_DraconidArchives
+	.4byte gMetatileAttributes_DraconidArchives
+	.4byte NULL @ animation callback

@@ -1064,3 +1064,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/CrumblingGorge/scripts.inc"
+
+	.include "data/maps/FallarborTown_DraconidArchives/scripts.inc"

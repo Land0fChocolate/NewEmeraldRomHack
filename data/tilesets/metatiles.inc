@@ -573,3 +573,11 @@ gMetatiles_CrumblingGorge::
 	.align 1
 gMetatileAttributes_CrumblingGorge::
 	.incbin "data/tilesets/secondary/crumbling_gorge/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_DraconidArchives::
+	.incbin "data/tilesets/secondary/draconid_archives/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_DraconidArchives::
+	.incbin "data/tilesets/secondary/draconid_archives/metatile_attributes.bin"

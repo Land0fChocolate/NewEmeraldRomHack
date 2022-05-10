@@ -135,7 +135,7 @@
       "id": "LAYOUT_FALLARBOR_TOWN",
       "name": "FallarborTown_Layout",
       "width": 20,
-      "height": 20,
+      "height": 24,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fallarbor",
       "border_filepath": "data/layouts/FallarborTown/border.bin",
@@ -4420,6 +4420,16 @@
       "secondary_tileset": "gTileset_CrumblingGorge",
       "border_filepath": "data/layouts/CrumblingGorge/border.bin",
       "blockdata_filepath": "data/layouts/CrumblingGorge/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALLARBOR_TOWN_DRACONID_ARCHIVES",
+      "name": "FallarborTown_DraconidArchives_Layout",
+      "width": 30,
+      "height": 15,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_DraconidArchives",
+      "border_filepath": "data/layouts/FallarborTown_DraconidArchives/border.bin",
+      "blockdata_filepath": "data/layouts/FallarborTown_DraconidArchives/map.bin"
     }
   ]
 }

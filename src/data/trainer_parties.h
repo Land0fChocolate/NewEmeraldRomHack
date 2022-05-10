@@ -320,8 +320,8 @@ static const struct TrainerMonItemCustomMoves sParty_Matt[] = {
     {
     .iv = 50,
     .lvl = 41,
-    .species = SPECIES_MIGHTYENA,
-    .moves = {MOVE_CRUNCH, MOVE_ICE_FANG, MOVE_SNARL, MOVE_DIG},
+    .species = SPECIES_GOLBAT,
+    .moves = {MOVE_POISON_FANG, MOVE_LEECH_LIFE, MOVE_CONFUSE_RAY, MOVE_ACROBATICS},
     },
     {
     .iv = 50,
@@ -6773,8 +6773,8 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Hector[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_TabithaMossdeep[] = {
     {
     .iv = 100,
-    .lvl = 36,
-    .species = SPECIES_CAMERUPT,
+    .lvl = 38,
+    .species = SPECIES_BALTOY,
     },
     {
     .iv = 100,
@@ -6784,7 +6784,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_TabithaMossdeep[] = {
     {
     .iv = 100,
     .lvl = 40,
-    .species = SPECIES_GOLBAT,
+    .species = SPECIES_CLAYDOL,
     }
 };
 
@@ -8007,12 +8007,12 @@ static const struct TrainerMonNoItemDefaultMoves sParty_TabithaMtChimney[] = {
     {
     .iv = 50,
     .lvl = 22,
-    .species = SPECIES_SLUGMA,
+    .species = SPECIES_BALTOY,
     },
     {
     .iv = 50,
     .lvl = 22,
-    .species = SPECIES_SLUGMA,
+    .species = SPECIES_BALTOY,
     },
     {
     .iv = 50,
@@ -9930,7 +9930,7 @@ static const struct TrainerMonItemCustomMoves sParty_CourtneyMagmaHideout[] = {
     .iv = 75,
     .lvl = 38,
     .species = SPECIES_VULPIX,
-    .moves = {MOVE_FLAMETHROWER, MOVE_EXTRASENSORY, MOVE_WILL_O_WISP, MOVE_SUNNY_DAY}
+    .moves = {MOVE_FLAMETHROWER, MOVE_EXTRASENSORY, MOVE_WILL_O_WISP, MOVE_CONFUSE_RAY}
     },
     {
     .iv = 75,
