@@ -72,6 +72,14 @@ FortreeCity_EventScript_GymSign::
 	msgbox FortreeCity_Text_GymSign, MSGBOX_SIGN
 	end
 
+FortreeCity_EventScript_PlantShopSign::
+	msgbox FortreeCity_Text_PlantShopSign, MSGBOX_SIGN
+	end
+
+FortreeCity_EventScript_DecorShopSign::
+	msgbox FortreeCity_Text_DecorShopSign, MSGBOX_SIGN
+	end
+
 FortreeCity_EventScript_Kecleon::
 	lock
 	faceplayer
@@ -188,3 +196,8 @@ FortreeCity_EventScript_SelfTrade_Text_YouDontWantToThatsOkay:
 	.string "You dont want to?\n"
 	.string "Okay, come back anytime.$"
 
+FortreeCity_Text_PlantShopSign:
+	.string "Rare herbs and seeds sold here!$"
+
+FortreeCity_Text_DecorShopSign:
+	.string "DECORATION SHOP$"
