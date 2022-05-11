@@ -4430,6 +4430,16 @@
       "secondary_tileset": "gTileset_DraconidArchives",
       "border_filepath": "data/layouts/FallarborTown_DraconidArchives/border.bin",
       "blockdata_filepath": "data/layouts/FallarborTown_DraconidArchives/map.bin"
+    },
+    {
+      "id": "LAYOUT_FORTREE_CITY_HOUSE6",
+      "name": "FortreeCity_House6_Layout",
+      "width": 8,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/FortreeCity_House6/border.bin",
+      "blockdata_filepath": "data/layouts/FortreeCity_House6/map.bin"
     }
   ]
 }
