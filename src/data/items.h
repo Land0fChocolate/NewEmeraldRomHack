@@ -6077,7 +6077,7 @@ const struct Item gItems[] =
     {
         .name = _("Absorb Bulb"),
         .itemId = ITEM_ABSORB_BULB,
-        .price = 4000,
+        .price = 5000,
         .holdEffect = HOLD_EFFECT_ABSORB_BULB,
         .holdEffectParam = 0,
         .description = sAbsorbBulbDesc,
@@ -6091,7 +6091,7 @@ const struct Item gItems[] =
     {
         .name = _("Cell Battery"),
         .itemId = ITEM_CELL_BATTERY,
-        .price = 4000,
+        .price = 5000,
         .holdEffect = HOLD_EFFECT_CELL_BATTERY,
         .holdEffectParam = 0,
         .description = sCellBatteryDesc,
@@ -6105,7 +6105,7 @@ const struct Item gItems[] =
     {
         .name = _("Luminous Moss"),
         .itemId = ITEM_LUMINOUS_MOSS,
-        .price = 4000,
+        .price = 5000,
         .holdEffect = HOLD_EFFECT_LUMINOUS_MOSS,
         .holdEffectParam = 0,
         .description = sLuminousMossDesc,
@@ -6119,7 +6119,7 @@ const struct Item gItems[] =
     {
         .name = _("Snowball"),
         .itemId = ITEM_SNOWBALL,
-        .price = 4000,
+        .price = 5000,
         .holdEffect = HOLD_EFFECT_SNOWBALL,
         .holdEffectParam = 0,
         .description = sSnowballDesc,
@@ -6149,7 +6149,7 @@ const struct Item gItems[] =
     {
         .name = _("White Herb"),
         .itemId = ITEM_WHITE_HERB,
-        .price = 4000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESTORE_STATS,
         .description = sWhiteHerbDesc,
         .pocket = POCKET_ITEMS,
@@ -6202,7 +6202,7 @@ const struct Item gItems[] =
     {
         .name = _("Mental Herb"),
         .itemId = ITEM_MENTAL_HERB,
-        .price = 4000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_MENTAL_HERB,
         .description = sMentalHerbDesc,
         .pocket = POCKET_ITEMS,
@@ -6419,7 +6419,7 @@ const struct Item gItems[] =
     {
         .name = _("Power Herb"),
         .itemId = ITEM_POWER_HERB,
-        .price = 4000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_POWER_HERB,
         .description = sPowerHerbDesc,
         .pocket = POCKET_ITEMS,
