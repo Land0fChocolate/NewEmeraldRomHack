@@ -67,7 +67,7 @@ LilycoveCity_EventScript_Girl::
 	end
 
 LilycoveCity_EventScript_GirlAquaGone::
-	msgbox LilycoveCity_Text_GoingToMoveDeleterForHMs, MSGBOX_DEFAULT
+	msgbox LilycoveCity_Text_EvolvedPokemonWithTradeback, MSGBOX_DEFAULT
 	release
 	end
 
@@ -156,6 +156,10 @@ LilycoveCity_EventScript_ContestHallSign::
 
 LilycoveCity_EventScript_MotelSign::
 	msgbox LilycoveCity_Text_MotelSign, MSGBOX_SIGN
+	end
+
+LilycoveCity_EventScript_TradebackSign::
+	msgbox LilycoveCity_Text_TradebackSign, MSGBOX_SIGN
 	end
 
 LilycoveCity_EventScript_MuseumSign::
@@ -295,11 +299,11 @@ LilycoveCity_Text_StrangeCaveInCove:
 	.string "Have you seen that strange cave in\n"
 	.string "the cove at the edge of town?$"
 
-LilycoveCity_Text_GoingToMoveDeleterForHMs:
-	.string "I'm going to teach my Pokémon some new\n"
-	.string "moves for entering a Contest.\p"
-	.string "So, I'm going to see the Move Deleter\n"
-	.string "and make it forget HM moves.$"
+LilycoveCity_Text_EvolvedPokemonWithTradeback:
+	.string "I came all this way to see the tradeback\n"
+	.string "guy so I could evolve my Pokémon.\p"
+	.string "But now I'm having second thoughts,\n"
+	.string "I love my Pokémon the way they are…$"
 
 LilycoveCity_Text_ImFromKanto:
 	.string "I came from Kanto.\p"
@@ -377,12 +381,16 @@ LilycoveCity_Text_CitySign:
 
 LilycoveCity_Text_ContestHallSign:
 	.string "Pokémon CONTEST HALL\n"
-	.string "“The gathering place for TRAINERS!”$"
+	.string "“The gathering place for Trainers!”$"
 
 LilycoveCity_Text_MotelSign:
 	.string "COVE LILY MOTEL\p"
-	.string "“Remember us as COVE LILY of\n"
-	.string "LILYCOVE.”$"
+	.string "“Remember us as Cove Lily of\n"
+	.string "Lilycove.”$"
+
+LilycoveCity_Text_TradebackSign:
+	.string "TRADEBACK SERVICE\n"
+	.string "“Evolve your Pokémon!”$"
 
 LilycoveCity_Text_MuseumSign:
 	.string "LILYCOVE MUSEUM\p"

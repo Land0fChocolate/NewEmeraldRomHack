@@ -61,6 +61,15 @@ OverworldPokemon_EventScript_Azumarill::
 	release
 	end
 
+OverworldPokemon_EventScript_Kecleon::
+	locktarget
+	faceplayer
+	waitse
+	playmoncry SPECIES_KECLEON, 0
+	waitmoncry
+	release
+	end
+
 OverworldPokemon_EventScript_Kirlia::
 	locktarget
 	faceplayer
