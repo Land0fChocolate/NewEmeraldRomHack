@@ -44,6 +44,10 @@ Route123_EventScript_BerryMastersHouseSign::
 	msgbox Route123_Text_BerryMastersHouse, MSGBOX_SIGN
 	end
 
+Route123_EventScript_Meteorite::
+	msgbox Route123_Text_Meteorite, MSGBOX_SIGN
+	end
+
 Route123_EventScript_Wendy::
 	trainerbattle_single TRAINER_WENDY, Route123_Text_WendyIntro, Route123_Text_WendyDefeat
 	msgbox Route123_Text_WendyPostBattle, MSGBOX_AUTOCLOSE
@@ -201,3 +205,6 @@ Route123_Text_RouteSignMtPyre:
 Route123_Text_BerryMastersHouse:
 	.string "BERRY MASTER'S HOUSE$"
 
+Route123_Text_Meteorite:
+	.string "A meteorite landed here.\n"
+	.string "It radiates a strange yet warm aura.$"
