@@ -78,7 +78,6 @@ PacifidlogTown_House2_EventScript_HappyAzurill::
 	faceplayer
 	waitse
 	playmoncry SPECIES_AZURILL, 0
-	msgbox PacifidlogTown_House2_Text_Rurii, MSGBOX_DEFAULT
 	waitmoncry
 	msgbox PacifidlogTown_House2_Text_VeryFriendlyWithTrainer, MSGBOX_DEFAULT
 	release
@@ -89,7 +88,6 @@ PacifidlogTown_House2_EventScript_UnhappyAzurill::
 	faceplayer
 	waitse
 	playmoncry SPECIES_AZURILL, 2
-	msgbox PacifidlogTown_House2_Text_Rururi, MSGBOX_DEFAULT
 	waitmoncry
 	msgbox PacifidlogTown_House2_Text_DoesntLikeTrainerVeryMuch, MSGBOX_DEFAULT
 	release
@@ -136,15 +134,9 @@ PacifidlogTown_House2_Text_GetGoodTMInXDays:
 	.string "I'll give you a TM that's suitable for\l"
 	.string "your Pokémon.$"
 
-PacifidlogTown_House2_Text_Rurii:
-	.string "Azuril: Rurii.$"
-
 PacifidlogTown_House2_Text_VeryFriendlyWithTrainer:
 	.string "It appears to be very friendly with the\n"
 	.string "Trainer.$"
-
-PacifidlogTown_House2_Text_Rururi:
-	.string "Azuril: Rururi!$"
 
 PacifidlogTown_House2_Text_DoesntLikeTrainerVeryMuch:
 	.string "It doesn't appear to like the Trainer\n"
