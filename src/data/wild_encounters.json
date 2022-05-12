@@ -9813,7 +9813,7 @@
               {
                 "min_level": 25,
                 "max_level": 30,
-                "species": "SPECIES_GOLDEEN"
+                "species": "SPECIES_REMORAID"
               },
               {
                 "min_level": 30,
@@ -9877,7 +9877,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_SUNKERN"
+                "species": "SPECIES_HOUNDOUR"
               },
               {
                 "min_level": 32,
@@ -9897,7 +9897,7 @@
               {
                 "min_level": 36,
                 "max_level": 36,
-                "species": "SPECIES_HOUNDOUR"
+                "species": "SPECIES_CHANSEY"
               },
               {
                 "min_level": 37,
