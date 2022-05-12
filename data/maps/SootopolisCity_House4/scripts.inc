@@ -9,16 +9,6 @@ SootopolisCity_House4_EventScript_Woman::
 	msgbox SootopolisCity_House4_Text_StrollUnderwaterWithPokemon, MSGBOX_NPC
 	end
 
-SootopolisCity_House4_EventScript_Azumarill::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_AZUMARILL, 0
-	msgbox SootopolisCity_House4_Text_Azumarill, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
 SootopolisCity_House4_Text_AncientTreasuresWaitingInSea:
 	.string "Listen up, and I'll tell you something\n"
 	.string "good.\p"
@@ -33,7 +23,3 @@ SootopolisCity_House4_Text_StrollUnderwaterWithPokemon:
 	.string "even if they didn't, it would be so\l"
 	.string "beautiful to take an underwater\l"
 	.string "stroll with my Pokémon.$"
-
-SootopolisCity_House4_Text_Azumarill:
-	.string "Azumarill: Marurii.$"
-
