@@ -154,8 +154,8 @@ Route117_EventScript_ItemRevive::
 	finditem ITEM_REVIVE
 	end
 
-Route118_EventScript_ItemDawnStone::
-	finditem ITEM_DAWN_STONE
+Route118_EventScript_ItemHyperPotion::
+	finditem ITEM_HYPER_POTION
 	end
 
 Route119_EventScript_ItemSuperRepel::
