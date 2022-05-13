@@ -1,3 +1,6 @@
+.set LOCALID_MEDICHAM, 1
+.set LOCALID_LUDICOLO, 2
+
 EverGrandeCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_OnTransition
 	.byte 0
@@ -23,6 +26,76 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 	setvar VAR_TEMP_1, 1
 	end
 
+EverGrandeCity_EventScript_WomanInBattle::
+	locktarget
+	msgbox EverGrandeCity_Text_WomanInBattle, MSGBOX_SIGN
+	waitse
+	playmoncry SPECIES_MEDICHAM, 0
+	waitmoncry
+	playse SE_EFFECTIVE
+	applymovement LOCALID_MEDICHAM, EverGrandeCity_Movement_MedichamAttacks
+	waitmovement 0
+	applymovement LOCALID_MEDICHAM, EverGrandeCity_Movement_MedichamMovesBack
+	waitmovement 0
+	release
+	end
+
+EverGrandeCity_Movement_MedichamAttacks::
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+EverGrandeCity_Movement_MedichamMovesBack::
+	lock_facing_direction
+	walk_left
+	walk_left
+	step_end
+
+EverGrandeCity_EventScript_ManInBattle::
+	locktarget
+	msgbox EverGrandeCity_Text_ManInBattle, MSGBOX_SIGN
+	waitse
+	playmoncry SPECIES_LUDICOLO, 0
+	waitmoncry
+	playse SE_EFFECTIVE
+	applymovement LOCALID_LUDICOLO, EverGrandeCity_Movement_LudicoloAttacks
+	waitmovement 0
+	applymovement LOCALID_LUDICOLO, EverGrandeCity_Movement_LudicoloMovesBack
+	waitmovement 0
+	release
+	end
+
+EverGrandeCity_Movement_LudicoloAttacks::
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+EverGrandeCity_Movement_LudicoloMovesBack::
+	lock_facing_direction
+	walk_right
+	walk_right
+	step_end
+
+EverGrandeCity_EventScript_BattleGirl::
+	msgbox EverGrandeCity_Text_BattleGirl, MSGBOX_NPC
+	end
+
+EverGrandeCity_EventScript_ExpertM::
+	msgbox EverGrandeCity_Text_ExpertM, MSGBOX_SIGN
+	end
+
+EverGrandeCity_EventScript_HexManiac::
+	msgbox EverGrandeCity_Text_HexManiac, MSGBOX_SIGN
+	end
+
+EverGrandeCity_EventScript_Man::
+	msgbox EverGrandeCity_Text_Man, MSGBOX_NPC
+	end
+
+EverGrandeCity_EventScript_Triathlete::
+	msgbox EverGrandeCity_Text_Triathlete, MSGBOX_NPC
+	end
+
 EverGrandeCity_Text_EnteringVictoryRoad:
 	.string "ENTERING VICTORY ROAD$"
 
@@ -35,3 +108,39 @@ EverGrandeCity_Text_CitySign:
 	.string "“The paradise of flowers, the sea,\n"
 	.string "and Pokémon.”$"
 
+EverGrandeCity_Text_WomanInBattle:
+	.string "Medicham, strike it with a\n"
+	.string "High Jump Kick!$"
+
+EverGrandeCity_Text_ManInBattle:
+	.string "We still got this, use Waterfall,\n"
+	.string "Ludicolo!$"
+
+EverGrandeCity_Text_BattleGirl:
+	.string "Ooh, boy. The trainers here are tougher\n"
+	.string "than I expected.\l"
+	.string "I've got a lot of catching up to do!$"
+
+EverGrandeCity_Text_ExpertM:
+	.string "Yes, that's it!\n"
+	.string "Go my protégé, you have this battle\l"
+	.string "in the bag!$"
+
+EverGrandeCity_Text_HexManiac:
+	.string "Fufufufufu…\p"
+	.string "That man… something about the way he\n"
+	.string "battles… I should make him mine!$"
+
+EverGrandeCity_Text_Man:
+	.string "We get people coming in from all over\n"
+	.string "to test themselves here. The city\l"
+	.string "practically never sleeps.$"
+
+EverGrandeCity_Text_Triathlete:
+	.string "Whoa, hey! It isn't what it looks like!\p"
+	.string "I'm not about to jump, I mean… I'm\n"
+	.string "not trying to off myself!\p"
+	.string "I was just wondering if it would be fun\n"
+	.string "to dive into the sea from this height\p"
+	.string "Well, I think I should try a safer jump\n"
+	.string "someplace else first.$"

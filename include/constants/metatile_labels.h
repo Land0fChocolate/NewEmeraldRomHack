@@ -150,6 +150,7 @@
 #define METATILE_EliteFour_RightSpotlightOff         0x2DE
 
 // gTileset_EverGrande
+#define METATILE_EverGrande_Door                0x2C2
 #define METATILE_EverGrande_Door_PokemonLeague  0x21D
 
 // gTileset_Facility

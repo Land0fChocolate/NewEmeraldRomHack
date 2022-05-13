@@ -1068,3 +1068,13 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/FallarborTown_DraconidArchives/scripts.inc"
 
 	.include "data/maps/FortreeCity_House6/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_House1/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_House2/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_House3/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_DevelopersHouse/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_Mart/scripts.inc"
