@@ -840,7 +840,7 @@ const struct Item gItems[] =
 
     [ITEM_CASTELIACONE] = // Todo
     {
-        .name = _("????????"),
+        .name = _("Casteliacone"),
         .itemId = ITEM_NONE,
         .price = 0,
         .description = sDummyDesc,

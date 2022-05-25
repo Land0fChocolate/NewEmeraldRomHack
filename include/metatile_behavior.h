@@ -137,6 +137,7 @@ bool8 MetatileBehavior_IsPokeCenterBookShelf(u8);
 bool8 MetatileBehavior_IsVase(u8);
 bool8 MetatileBehavior_IsTrashCan(u8);
 bool8 MetatileBehavior_IsShopShelf(u8);
+bool8 MetatileBehavior_IsSweetShopShelf(u8);
 bool8 MetatileBehavior_IsBlueprint(u8);
 bool8 MetatileBehavior_IsBattlePyramidWarp(u8);
 bool8 MetatileBehavior_IsPlayerFacingWirelessBoxResults(u8 tile, u8 playerDir);

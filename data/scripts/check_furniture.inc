@@ -22,6 +22,10 @@ EventScript_ShopShelf::
 	msgbox Text_ShopShelf, MSGBOX_SIGN
 	end
 
+EventScript_SweetShopShelf::
+	msgbox Text_SweetShopShelf, MSGBOX_SIGN
+	end
+
 EventScript_Blueprint::
 	msgbox Text_Blueprint, MSGBOX_SIGN
 	end

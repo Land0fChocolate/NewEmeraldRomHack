@@ -190,7 +190,11 @@
     "MauvilleCity_House2",
     "MauvilleCity_PokemonCenter_1F",
     "MauvilleCity_PokemonCenter_2F",
-    "MauvilleCity_Mart"
+    "MauvilleCity_Mart",
+    "MauvilleCity_SweetShop",
+    "MauvilleCity_ToolShop",
+    "MauvilleCity_GroomerHouse",
+    "MauvilleCity_TVStation"
   ],
   "gMapGroup_IndoorRustboro": [
     "RustboroCity_DevonCorp_1F",

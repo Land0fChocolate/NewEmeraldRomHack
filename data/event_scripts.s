@@ -1078,3 +1078,11 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/EverGrandeCity_DevelopersHouse/scripts.inc"
 
 	.include "data/maps/EverGrandeCity_Mart/scripts.inc"
+
+	.include "data/maps/MauvilleCity_SweetShop/scripts.inc"
+
+	.include "data/maps/MauvilleCity_ToolShop/scripts.inc"
+
+	.include "data/maps/MauvilleCity_GroomerHouse/scripts.inc"
+
+	.include "data/maps/MauvilleCity_TVStation/scripts.inc"
