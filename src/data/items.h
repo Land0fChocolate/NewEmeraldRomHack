@@ -786,24 +786,24 @@ const struct Item gItems[] =
 
 // Regional Specialties
 
-    [ITEM_PEWTER_CRUNCHIES] = // Todo
+    [ITEM_PEWTER_CRUNCHIES] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("PewtrCrnches"),
+        .itemId = ITEM_PEWTER_CRUNCHIES,
+        .price = 150,
+        .description = sPewterCrunchiesDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
     },
 
-    [ITEM_RAGE_CANDY_BAR] = // Todo
+    [ITEM_RAGE_CANDY_BAR] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("RageCandyBar"),
+        .itemId = ITEM_RAGE_CANDY_BAR,
+        .price = 250,
+        .description = sRageCandyBarDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -828,7 +828,7 @@ const struct Item gItems[] =
     {
         .name = _("Old Gateau"),
         .itemId = ITEM_OLD_GATEAU,
-        .price = 350,
+        .price = 650,
         .description = sOldGateauDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -838,39 +838,45 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_CASTELIACONE] = // Todo
+    [ITEM_CASTELIACONE] =
     {
-        .name = _("Casteliacone"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("CasteliaCone"),
+        .itemId = ITEM_CASTELIACONE,
+        .price = 500,
+        .description = sCasteliaconeDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = ITEM_B_USE_MEDICINE,
+        .battleUseFunc = ItemUseInBattle_Medicine,
         .flingPower = 30,
     },
 
-    [ITEM_LUMIOSE_GALETTE] = // Todo
+    [ITEM_LUMIOSE_GALETTE] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("LumioseGlete"),
+        .itemId = ITEM_LUMIOSE_GALETTE,
+        .price = 250,
+        .description = sLumioseGaletteDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = ITEM_B_USE_MEDICINE,
+        .battleUseFunc = ItemUseInBattle_Medicine,
         .flingPower = 30,
     },
 
-    [ITEM_SHALOUR_SABLE] = // Todo
+    [ITEM_SHALOUR_SABLE] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("ShalourSable"),
+        .itemId = ITEM_SHALOUR_SABLE,
+        .price = 350,
+        .description = sShalourSableDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = ITEM_B_USE_MEDICINE,
+        .battleUseFunc = ItemUseInBattle_Medicine,
         .flingPower = 30,
     },
 
@@ -880,6 +886,20 @@ const struct Item gItems[] =
         .itemId = ITEM_BIG_MALASADA,
         .price = 350,
         .description = sBigMalasadaDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = ITEM_B_USE_MEDICINE,
+        .battleUseFunc = ItemUseInBattle_Medicine,
+        .flingPower = 30,
+    },
+
+    [ITEM_JELLY_FILLED_DONUT] =
+    {
+        .name = _("Jelly Donut"),
+        .itemId = ITEM_JELLY_FILLED_DONUT,
+        .price = 450,
+        .description = sJellyFilledDonutDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,

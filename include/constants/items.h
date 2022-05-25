@@ -977,7 +977,9 @@
 #define ITEM_RUBY 758
 #define ITEM_SAPPHIRE 759
 
-#define ITEMS_COUNT 760
+#define ITEM_JELLY_FILLED_DONUT 760
+
+#define ITEMS_COUNT 761
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS

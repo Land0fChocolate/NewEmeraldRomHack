@@ -443,6 +443,11 @@ const u8 gItemEffect_SitrusBerry[7] = {
     [6] = ITEM6_HEAL_HP_QUARTER,
 };
 
+const u8 gItemEffect_LumioseGalette[7] = {
+    [4] = ITEM4_HEAL_PP_ONE | ITEM4_HEAL_PP,
+    [6] = 5, // Amount of PP to recover
+};
+
 #define EV_BERRY_FRIENDSHIP_CHANGE          \
     [7] = 10, /* Friendship change, low */  \
     [8] = 5,  /* Friendship change, mid */  \
@@ -519,8 +524,14 @@ const u8 *const gItemEffectTable[] =
     [ITEM_RED_FLUTE - ITEM_POTION]      = gItemEffect_RedFlute,
     [ITEM_BERRY_JUICE - ITEM_POTION]    = gItemEffect_BerryJuice,
     [ITEM_SWEET_HEART - ITEM_POTION]    = gItemEffect_SweetHeart,
-    [ITEM_BIG_MALASADA - ITEM_POTION]   = gItemEffect_BigMalasada,
-    [ITEM_OLD_GATEAU - ITEM_POTION]     = gItemEffect_OldGateau,
+    [ITEM_PEWTER_CRUNCHIES - ITEM_POTION] = gItemEffect_OranBerry,
+    [ITEM_RAGE_CANDY_BAR - ITEM_POTION]   = gItemEffect_Potion,
+    [ITEM_OLD_GATEAU - ITEM_POTION]       = gItemEffect_SuperPotion,
+    [ITEM_CASTELIACONE - ITEM_POTION]     = gItemEffect_LeppaBerry,
+    [ITEM_LUMIOSE_GALETTE - ITEM_POTION]  = gItemEffect_LumioseGalette,
+    [ITEM_SHALOUR_SABLE - ITEM_POTION]    = gItemEffect_FullHeal,
+    [ITEM_BIG_MALASADA - ITEM_POTION]     = gItemEffect_FullHeal,
+    [ITEM_JELLY_FILLED_DONUT - ITEM_POTION] = gItemEffect_SodaPop,
     [ITEM_SACRED_ASH - ITEM_POTION]     = gItemEffect_SacredAsh,
     [ITEM_HP_UP - ITEM_POTION]          = gItemEffect_HPUp,
     [ITEM_PROTEIN - ITEM_POTION]        = gItemEffect_Protein,

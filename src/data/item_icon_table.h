@@ -60,14 +60,15 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_SWEET_HEART] = {gItemIcon_SweetHeart, gItemIconPalette_SweetHeart},
     [ITEM_MAX_HONEY] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
     // Regional Specialties
-    [ITEM_PEWTER_CRUNCHIES] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
-    [ITEM_RAGE_CANDY_BAR] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
+    [ITEM_PEWTER_CRUNCHIES] = {gItemIcon_PewterCrunchies, gItemIconPalette_PewterCrunchies},
+    [ITEM_RAGE_CANDY_BAR] = {gItemIcon_RageCandyBar, gItemIconPalette_RageCandyBar},
     [ITEM_LAVA_COOKIE] = {gItemIcon_LavaCookie, gItemIconPalette_LavaCookieAndLetter},
     [ITEM_OLD_GATEAU] = {gItemIcon_OldGateau, gItemIconPalette_OldGateau},
-    [ITEM_CASTELIACONE] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
-    [ITEM_LUMIOSE_GALETTE] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
-    [ITEM_SHALOUR_SABLE] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
+    [ITEM_CASTELIACONE] = {gItemIcon_CasteliaCone, gItemIconPalette_CasteliaCone},
+    [ITEM_LUMIOSE_GALETTE] = {gItemIcon_LumioseGalette, gItemIconPalette_LumioseGalette},
+    [ITEM_SHALOUR_SABLE] = {gItemIcon_ShalourSable, gItemIconPalette_ShalourSable},
     [ITEM_BIG_MALASADA] = {gItemIcon_BigMalasada, gItemIconPalette_BigMalasada},
+    [ITEM_JELLY_FILLED_DONUT] = {gItemIcon_JellyFilledDonut, gItemIconPalette_JellyFilledDonut},
     // Vitamins
     [ITEM_HP_UP] = {gItemIcon_HPUp, gItemIconPalette_HPUp},
     [ITEM_PROTEIN] = {gItemIcon_Vitamin, gItemIconPalette_Protein},

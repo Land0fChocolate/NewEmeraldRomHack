@@ -272,11 +272,15 @@ static const u8 sSweetHeartDesc[] = _(
 static const u8 sMaxHoneyDesc[] = _( // Todo
     "?????");
 
-static const u8 sPewterCrunchiesDesc[] = _( // Todo
-    "?????");
+static const u8 sPewterCrunchiesDesc[] = _(
+    "Heals the HP\n"
+    "of a Pokémon by\n"
+    "10 points.");
 
-static const u8 sRageCandyBarDesc[] = _( // Todo
-    "?????");
+static const u8 sRageCandyBarDesc[] = _(
+    "Heals the HP\n"
+    "of a Pokémon by\n"
+    "20 points.");
 
 static const u8 sLavaCookieDesc[] = _(
     "A local specialty\n"
@@ -284,23 +288,34 @@ static const u8 sLavaCookieDesc[] = _(
     "status problems.");
 
 static const u8 sOldGateauDesc[] = _(
+    "Heals the HP\n"
+    "of a Pokémon by\n"
+    "60 points.");
+
+static const u8 sCasteliaconeDesc[] = _(
+    "Restores the PP\n"
+    "of a Pokémon by\n"
+    "10 points.");
+
+static const u8 sLumioseGaletteDesc[] = _(
+    "Restores the PP\n"
+    "of a Pokémon by\n"
+    "5 points.");
+
+static const u8 sShalourSableDesc[] = _(
     "Heals all the\n"
     "status problems of\n"
     "one Pokémon.");
-
-static const u8 sCasteliaconeDesc[] = _( // Todo
-    "?????");
-
-static const u8 sLumioseGaletteDesc[] = _( // Todo
-    "?????");
-
-static const u8 sShalourSableDesc[] = _( // Todo
-    "?????");
 
 static const u8 sBigMalasadaDesc[] = _(
     "Heals all the\n"
     "status problems of\n"
     "one Pokémon.");
+
+static const u8 sJellyFilledDonutDesc[] = _(
+    "Heals the HP\n"
+    "of a Pokémon by\n"
+    "50 points.");
 
 // Vitamins
 static const u8 sHPUpDesc[] = _(
