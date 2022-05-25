@@ -52,7 +52,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 # New Abilities
 
-- Volume Up: Power of sound based moves have increased by 33%. Used by Loudred/Exploud.
+- Volume Up: Power of sound based moves are increased by 33%. Used by Loudred/Exploud.
 - Lava Body: Attackers who make contact will always get inflicted with burn unless they have immunity. Used by Slugma/Magargo.
 - Wildfire: Sp.Atk raises one stage after fainting an opponent. Used by Quilava/Typlosion.
 - Miracle Blossom: User and ally restore 1/8 HP at the end of every turn. Used by Bayleef/Meganium/Xerneas.
