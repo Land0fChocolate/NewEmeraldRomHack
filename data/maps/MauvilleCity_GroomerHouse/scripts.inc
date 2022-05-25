@@ -1,7 +1,7 @@
 MauvilleCity_GroomerHouse_MapScripts::
 	.byte 0
 
-MauvilleCity_GroomerHouse_EventScript_Girl:: @TODO: make sure that the FLAG_DAILY_GROOM_DONE is reset every day
+MauvilleCity_GroomerHouse_EventScript_Girl::
 	lock
 	faceplayer
 	dotimebasedevents
