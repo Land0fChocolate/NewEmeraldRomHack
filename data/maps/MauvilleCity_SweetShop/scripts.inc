@@ -31,12 +31,33 @@ MauvilleCity_SweetShop_EventScript_Woman::
 	message MauvilleCity_SweetShop_Text_Woman
 	waitmessage
 	pokemart MauvilleCity_SweetShop_Pokemart_Woman
-	msgbox gText_LookForwardToSeeingYouAgain, MSGBOX_DEFAULT
+	msgbox MauvilleCity_SweetShop_Text_WomanBye, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-MauvilleCity_SweetShop_Pokemart_Woman: @TODO: mints
+MauvilleCity_SweetShop_Pokemart_Woman:
+	.2byte ITEM_LONELY_MINT
+	.2byte ITEM_ADAMANT_MINT
+	.2byte ITEM_NAUGHTY_MINT
+	.2byte ITEM_BRAVE_MINT
+	.2byte ITEM_BOLD_MINT
+	.2byte ITEM_IMPISH_MINT
+	.2byte ITEM_LAX_MINT
+	.2byte ITEM_RELAXED_MINT
+	.2byte ITEM_MODEST_MINT
+	.2byte ITEM_MILD_MINT
+	.2byte ITEM_RASH_MINT
+	.2byte ITEM_QUIET_MINT
+	.2byte ITEM_CALM_MINT
+	.2byte ITEM_GENTLE_MINT
+	.2byte ITEM_CAREFUL_MINT
+	.2byte ITEM_SASSY_MINT
+	.2byte ITEM_TIMID_MINT
+	.2byte ITEM_HASTY_MINT
+	.2byte ITEM_JOLLY_MINT
+	.2byte ITEM_NAIVE_MINT
+	.2byte ITEM_SERIOUS_MINT
 	.2byte ITEM_NONE
 	release
 	end
@@ -64,6 +85,9 @@ MauvilleCity_SweetShop_Text_OldMan:
 MauvilleCity_SweetShop_Text_Woman:
 	.string "We have mints so strong, your\n"
 	.string "Pokémon won't feel the same again!$"
+
+MauvilleCity_SweetShop_Text_WomanBye:
+	.string "Come stop by again!$"
 
 MauvilleCity_SweetShop_Text_Hiker:
 	.string "These donuts are great!\n"
