@@ -154,8 +154,8 @@ Route117_EventScript_ItemRevive::
 	finditem ITEM_REVIVE
 	end
 
-Route118_EventScript_ItemDawnStone::
-	finditem ITEM_DAWN_STONE
+Route118_EventScript_ItemHyperPotion::
+	finditem ITEM_HYPER_POTION
 	end
 
 Route119_EventScript_ItemSuperRepel::
@@ -354,12 +354,16 @@ RusturfTunnel_EventScript_ItemMaxEther::
 	finditem ITEM_MAX_ETHER
 	end
 
-GraniteCave_1F_EventScript_ItemEscapeRope::
-	finditem ITEM_ESCAPE_ROPE
+GraniteCave_1F_EventScript_ItemTM69::
+	finditem ITEM_TM69
 	end
 
 GraniteCave_B1F_EventScript_ItemPokeBall::
 	finditem ITEM_POKE_BALL
+	end
+
+GraniteCave_B1F_EventScript_ItemHardStone::
+	finditem ITEM_HARD_STONE
 	end
 
 GraniteCave_B2F_EventScript_ItemRepel::
@@ -372,6 +376,14 @@ GraniteCave_B2F_EventScript_ItemRareCandy::
 
 JaggedPass_EventScript_ItemBurnHeal::
 	finditem ITEM_BURN_HEAL
+	end
+
+FieryPath_EventScript_ItemGreatBall::
+	finditem ITEM_GREAT_BALL
+	end
+
+FieryPath_EventScript_ItemFreshWater::
+	finditem ITEM_FRESH_WATER
 	end
 
 FieryPath_EventScript_ItemFireStone::

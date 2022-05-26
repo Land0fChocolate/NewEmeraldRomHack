@@ -557,3 +557,27 @@ gMetatiles_UnionRoom::
 	.align 1
 gMetatileAttributes_UnionRoom::
 	.incbin "data/tilesets/secondary/union_room/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_PetalburgWoods::
+	.incbin "data/tilesets/secondary/petalburg_woods/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_PetalburgWoods::
+	.incbin "data/tilesets/secondary/petalburg_woods/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_CrumblingGorge::
+	.incbin "data/tilesets/secondary/crumbling_gorge/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_CrumblingGorge::
+	.incbin "data/tilesets/secondary/crumbling_gorge/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_DraconidArchives::
+	.incbin "data/tilesets/secondary/draconid_archives/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_DraconidArchives::
+	.incbin "data/tilesets/secondary/draconid_archives/metatile_attributes.bin"

@@ -165,11 +165,11 @@ const u32 gItemIconPalette_SweetHeart[] = INCBIN_U32("graphics/items/icon_palett
 
 // Regional Specialties
 
-//const u32 gItemIcon_PewterCrunchies[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_PewterCrunchies[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
+const u32 gItemIcon_PewterCrunchies[] = INCBIN_U32("graphics/items/icons/pewter_crunchies.4bpp.lz");
+const u32 gItemIconPalette_PewterCrunchies[] = INCBIN_U32("graphics/items/icon_palettes/pewter_crunchies.gbapal.lz");
 
-//const u32 gItemIcon_RageCandyBar[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_RageCandyBar[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
+const u32 gItemIcon_RageCandyBar[] = INCBIN_U32("graphics/items/icons/rage_candy_bar.4bpp.lz");
+const u32 gItemIconPalette_RageCandyBar[] = INCBIN_U32("graphics/items/icon_palettes/rage_candy_bar.gbapal.lz");
 
 const u32 gItemIcon_LavaCookie[] = INCBIN_U32("graphics/items/icons/lava_cookie.4bpp.lz");
 const u32 gItemIconPalette_LavaCookieAndLetter[] = INCBIN_U32("graphics/items/icon_palettes/lava_cookie_and_letter.gbapal.lz");
@@ -177,17 +177,20 @@ const u32 gItemIconPalette_LavaCookieAndLetter[] = INCBIN_U32("graphics/items/ic
 const u32 gItemIcon_OldGateau[] = INCBIN_U32("graphics/items/icons/old_gateau.4bpp.lz");
 const u32 gItemIconPalette_OldGateau[] = INCBIN_U32("graphics/items/icon_palettes/old_gateau.gbapal.lz");
 
-//const u32 gItemIcon_CasteliaCone[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_CasteliaCone[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
+const u32 gItemIcon_CasteliaCone[] = INCBIN_U32("graphics/items/icons/casteliacone.4bpp.lz");
+const u32 gItemIconPalette_CasteliaCone[] = INCBIN_U32("graphics/items/icon_palettes/casteliacone.gbapal.lz");
 
-//const u32 gItemIcon_LumioseGalette[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_LumioseGalette[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
+const u32 gItemIcon_LumioseGalette[] = INCBIN_U32("graphics/items/icons/lumiose_galette.4bpp.lz");
+const u32 gItemIconPalette_LumioseGalette[] = INCBIN_U32("graphics/items/icon_palettes/lumiose_galette.gbapal.lz");
 
-//const u32 gItemIcon_ShalourSable[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_ShalourSable[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
+const u32 gItemIcon_ShalourSable[] = INCBIN_U32("graphics/items/icons/shalour_sable.4bpp.lz");
+const u32 gItemIconPalette_ShalourSable[] = INCBIN_U32("graphics/items/icon_palettes/shalour_sable.gbapal.lz");
 
 const u32 gItemIcon_BigMalasada[] = INCBIN_U32("graphics/items/icons/big_malasada.4bpp.lz");
 const u32 gItemIconPalette_BigMalasada[] = INCBIN_U32("graphics/items/icon_palettes/big_malasada.gbapal.lz");
+
+const u32 gItemIcon_JellyFilledDonut[] = INCBIN_U32("graphics/items/icons/jelly_filled_donut.4bpp.lz");
+const u32 gItemIconPalette_JellyFilledDonut[] = INCBIN_U32("graphics/items/icon_palettes/jelly_filled_donut.gbapal.lz");
 
 // Vitamins
 
@@ -241,68 +244,13 @@ const u32 gItemIconPalette_AbilityCapsule[] = INCBIN_U32("graphics/items/icon_pa
 
 // Mints
 
-//const u32 gItemIcon_LonelyMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_LonelyMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_AdamantMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_AdamantMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_NaughtyMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_NaughtyMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_BraveMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_BraveMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_BoldMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_BoldMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_ImpishMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_ImpishMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_LaxMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_LaxMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_RelaxedMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_RelaxedMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_ModestMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_ModestMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_MildMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_MildMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_RashMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_RashMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_QuietMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_QuietMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_CalmMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_CalmMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_GentleMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_GentleMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_CarefulMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_CarefulMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_SassyMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_SassyMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_TimidMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_TimidMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_HastyMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_HastyMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_JollyMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_JollyMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_NaiveMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_NaiveMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
-
-//const u32 gItemIcon_SeriousMint[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_SeriousMint[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
+const u32 gItemIcon_Mint[] = INCBIN_U32("graphics/items/icons/mint.4bpp.lz");
+const u32 gItemIconPalette_RedMint[] = INCBIN_U32("graphics/items/icon_palettes/red_mint.gbapal.lz");
+const u32 gItemIconPalette_BlueMint[] = INCBIN_U32("graphics/items/icon_palettes/blue_mint.gbapal.lz");
+const u32 gItemIconPalette_LightBlueMint[] = INCBIN_U32("graphics/items/icon_palettes/light_blue_mint.gbapal.lz");
+const u32 gItemIconPalette_PinkMint[] = INCBIN_U32("graphics/items/icon_palettes/pink_mint.gbapal.lz");
+const u32 gItemIconPalette_GreenMint[] = INCBIN_U32("graphics/items/icon_palettes/green_mint.gbapal.lz");
+const u32 gItemIconPalette_YellowMint[] = INCBIN_U32("graphics/items/icon_palettes/yellow_mint.gbapal.lz");
 
 // Candy
 

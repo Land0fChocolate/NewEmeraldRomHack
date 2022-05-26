@@ -12,7 +12,7 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
@@ -169,6 +169,71 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "FLAG_HIDE_WEATHER_INSTITUTE_2F_AQUA_GRUNT_M"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CASTFORM",
+      "x": 3,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_EventScript_Castform",
+      "flag": "FLAG_HIDE_ROUTE_119_TEAM_AQUA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CASTFORM",
+      "x": 2,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_EventScript_Castform",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CASTFORM",
+      "x": 3,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_EventScript_Castform",
+      "flag": "FLAG_HIDE_ROUTE_119_TEAM_AQUA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CASTFORM",
+      "x": 17,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_EventScript_Castform",
+      "flag": "FLAG_HIDE_WEATHER_INSTITUTE_2F_CASTFORM"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CASTFORM",
+      "x": 2,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_EventScript_Castform",
+      "flag": "FLAG_HIDE_ROUTE_119_TEAM_AQUA"
     }
   ],
   "warp_events": [
@@ -207,16 +272,9 @@
       "var": "VAR_WEATHER_INSTITUTE_TRIGGER_STATE",
       "var_value": "0",
       "script": "Route119_WeatherInstitute_2F_EventScript_FightTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 4,
-      "y": 6,
-      "elevation": 3,
-      "var": "VAR_WEATHER_INSTITUTE_STATE",
-      "var_value": "0",
-      "script": "Route119_WeatherInstitute_2F_EventScript_ReturnToFightTrigger"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+
+  ]
 }

@@ -21,8 +21,8 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 15,
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "x": 16,
       "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -66,7 +66,7 @@
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 0,
-      "movement_range_y": 2,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LavaridgeTown_EventScript_Twin",
@@ -75,7 +75,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN",
       "x": 4,
-      "y": 4,
+      "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
@@ -88,7 +88,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN",
       "x": 5,
-      "y": 4,
+      "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
@@ -136,6 +136,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LavaridgeTown_EventScript_EggWoman",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NUMEL",
+      "x": 13,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_EventScript_Numel",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SWABLU",
+      "x": 13,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -154,7 +180,7 @@
       "dest_warp_id": 0
     },
     {
-      "x": 15,
+      "x": 20,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_LAVARIDGE_TOWN_MART",
@@ -191,6 +217,15 @@
       "var": "0",
       "var_value": "0",
       "script": "LavaridgeTown_EventScript_HotSpringsTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 4,
+      "elevation": 3,
+      "var": "0",
+      "var_value": "0",
+      "script": "LavaridgeTown_EventScript_HotSpringsTrigger"
     }
   ],
   "bg_events": [
@@ -212,7 +247,7 @@
     },
     {
       "type": "sign",
-      "x": 17,
+      "x": 22,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -220,8 +255,8 @@
     },
     {
       "type": "sign",
-      "x": 13,
-      "y": 8,
+      "x": 20,
+      "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LavaridgeTown_EventScript_TownSign"
@@ -236,7 +271,7 @@
     },
     {
       "type": "sign",
-      "x": 16,
+      "x": 21,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",

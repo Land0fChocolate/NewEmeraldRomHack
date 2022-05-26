@@ -43,6 +43,7 @@ static void TilesetAnim_MauvilleGym(u16);
 static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
+static void TilesetAnim_PetalburgWoods(u16);
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
@@ -832,6 +833,36 @@ void InitTilesetAnim_BattleDome(void)
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
     sSecondaryTilesetAnimCallback = TilesetAnim_BattleDome;
+}
+
+void InitTilesetAnim_PetalburgWoods(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_PetalburgWoods;
+}
+
+static void TilesetAnim_PetalburgWoods(u16 timer)
+{
+    if (timer % 8 == 0)
+    {
+        QueueAnimTiles_Rustboro_WindyWater(timer >> 3, 0);
+        QueueAnimTiles_Rustboro_Fountain(timer >> 3);
+    }
+    if (timer % 8 == 1)
+        QueueAnimTiles_Rustboro_WindyWater(timer >> 3, 1);
+    if (timer % 8 == 2)
+        QueueAnimTiles_Rustboro_WindyWater(timer >> 3, 2);
+    if (timer % 8 == 3)
+        QueueAnimTiles_Rustboro_WindyWater(timer >> 3, 3);
+    if (timer % 8 == 4)
+        QueueAnimTiles_Rustboro_WindyWater(timer >> 3, 4);
+    if (timer % 8 == 5)
+        QueueAnimTiles_Rustboro_WindyWater(timer >> 3, 5);
+    if (timer % 8 == 6)
+        QueueAnimTiles_Rustboro_WindyWater(timer >> 3, 6);
+    if (timer % 8 == 7)
+        QueueAnimTiles_Rustboro_WindyWater(timer >> 3, 7);
 }
 
 static void TilesetAnim_Rustboro(u16 timer)

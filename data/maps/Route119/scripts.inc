@@ -337,11 +337,6 @@ Route119_EventScript_Fabian::
 	msgbox Route119_Text_FabianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route119_EventScript_Dayton::
-	trainerbattle_single TRAINER_DAYTON, Route119_Text_DaytonIntro, Route119_Text_DaytonDefeat
-	msgbox Route119_Text_DaytonPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route119_EventScript_Rachel::
 	trainerbattle_single TRAINER_RACHEL, Route119_Text_RachelIntro, Route119_Text_RachelDefeat
 	msgbox Route119_Text_RachelPostBattle, MSGBOX_AUTOCLOSE

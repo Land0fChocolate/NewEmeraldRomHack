@@ -134,7 +134,8 @@
     "FallarborTown_PokemonCenter_1F",
     "FallarborTown_PokemonCenter_2F",
     "FallarborTown_CozmosHouse",
-    "FallarborTown_MoveRelearnersHouse"
+    "FallarborTown_MoveRelearnersHouse",
+    "FallarborTown_DraconidArchives"
   ],
   "gMapGroup_IndoorVerdanturf": [
     "VerdanturfTown_BattleTentLobby",
@@ -189,7 +190,11 @@
     "MauvilleCity_House2",
     "MauvilleCity_PokemonCenter_1F",
     "MauvilleCity_PokemonCenter_2F",
-    "MauvilleCity_Mart"
+    "MauvilleCity_Mart",
+    "MauvilleCity_SweetShop",
+    "MauvilleCity_ToolShop",
+    "MauvilleCity_GroomerHouse",
+    "MauvilleCity_TVStation"
   ],
   "gMapGroup_IndoorRustboro": [
     "RustboroCity_DevonCorp_1F",
@@ -220,7 +225,8 @@
     "FortreeCity_House3",
     "FortreeCity_House4",
     "FortreeCity_House5",
-    "FortreeCity_DecorationShop"
+    "FortreeCity_DecorationShop",
+    "FortreeCity_House6"
   ],
   "gMapGroup_IndoorLilycove": [
     "LilycoveCity_CoveLilyMotel_1F",
@@ -294,7 +300,12 @@
     "EverGrandeCity_HallOfFame",
     "EverGrandeCity_PokemonCenter_1F",
     "EverGrandeCity_PokemonCenter_2F",
-    "EverGrandeCity_PokemonLeague_2F"
+    "EverGrandeCity_PokemonLeague_2F",
+    "EverGrandeCity_House1",
+    "EverGrandeCity_House2",
+    "EverGrandeCity_House3",
+    "EverGrandeCity_DevelopersHouse",
+    "EverGrandeCity_Mart"
   ],
   "gMapGroup_IndoorRoute104": [
     "Route104_MrBrineysHouse",
@@ -584,7 +595,8 @@
     "NavelRock_Down10",
     "NavelRock_Down11",
     "NavelRock_Bottom",
-    "TrainerHill_Elevator"
+    "TrainerHill_Elevator",
+    "CrumblingGorge"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",

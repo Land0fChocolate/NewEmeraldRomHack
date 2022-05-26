@@ -786,24 +786,24 @@ const struct Item gItems[] =
 
 // Regional Specialties
 
-    [ITEM_PEWTER_CRUNCHIES] = // Todo
+    [ITEM_PEWTER_CRUNCHIES] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("PewtrCrnches"),
+        .itemId = ITEM_PEWTER_CRUNCHIES,
+        .price = 150,
+        .description = sPewterCrunchiesDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
     },
 
-    [ITEM_RAGE_CANDY_BAR] = // Todo
+    [ITEM_RAGE_CANDY_BAR] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("RageCandyBar"),
+        .itemId = ITEM_RAGE_CANDY_BAR,
+        .price = 250,
+        .description = sRageCandyBarDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -828,7 +828,7 @@ const struct Item gItems[] =
     {
         .name = _("Old Gateau"),
         .itemId = ITEM_OLD_GATEAU,
-        .price = 350,
+        .price = 650,
         .description = sOldGateauDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -838,39 +838,45 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_CASTELIACONE] = // Todo
+    [ITEM_CASTELIACONE] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("CasteliaCone"),
+        .itemId = ITEM_CASTELIACONE,
+        .price = 500,
+        .description = sCasteliaconeDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = ITEM_B_USE_MEDICINE,
+        .battleUseFunc = ItemUseInBattle_Medicine,
         .flingPower = 30,
     },
 
-    [ITEM_LUMIOSE_GALETTE] = // Todo
+    [ITEM_LUMIOSE_GALETTE] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("LumioseGlete"),
+        .itemId = ITEM_LUMIOSE_GALETTE,
+        .price = 250,
+        .description = sLumioseGaletteDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = ITEM_B_USE_MEDICINE,
+        .battleUseFunc = ItemUseInBattle_Medicine,
         .flingPower = 30,
     },
 
-    [ITEM_SHALOUR_SABLE] = // Todo
+    [ITEM_SHALOUR_SABLE] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("ShalourSable"),
+        .itemId = ITEM_SHALOUR_SABLE,
+        .price = 350,
+        .description = sShalourSableDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = ITEM_B_USE_MEDICINE,
+        .battleUseFunc = ItemUseInBattle_Medicine,
         .flingPower = 30,
     },
 
@@ -880,6 +886,20 @@ const struct Item gItems[] =
         .itemId = ITEM_BIG_MALASADA,
         .price = 350,
         .description = sBigMalasadaDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = ITEM_B_USE_MEDICINE,
+        .battleUseFunc = ItemUseInBattle_Medicine,
+        .flingPower = 30,
+    },
+
+    [ITEM_JELLY_FILLED_DONUT] =
+    {
+        .name = _("Jelly Donut"),
+        .itemId = ITEM_JELLY_FILLED_DONUT,
+        .price = 450,
+        .description = sJellyFilledDonutDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -1089,255 +1109,255 @@ const struct Item gItems[] =
 
 // Mints
 
-    [ITEM_LONELY_MINT] = // Todo
+    [ITEM_LONELY_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Lonely Mint"),
+        .itemId = ITEM_LONELY_MINT,
+        .price = 40000,
+        .description = sLonelyMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_ADAMANT_MINT] = // Todo
+    [ITEM_ADAMANT_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Adamant Mint"),
+        .itemId = ITEM_ADAMANT_MINT,
+        .price = 40000,
+        .description = sAdamantMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_NAUGHTY_MINT] = // Todo
+    [ITEM_NAUGHTY_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Naughty Mint"),
+        .itemId = ITEM_NAUGHTY_MINT,
+        .price = 40000,
+        .description = sNaughtyMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_BRAVE_MINT] = // Todo
+    [ITEM_BRAVE_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Brave Mint"),
+        .itemId = ITEM_BRAVE_MINT,
+        .price = 40000,
+        .description = sBraveMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_BOLD_MINT] = // Todo
+    [ITEM_BOLD_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Bold Mint"),
+        .itemId = ITEM_BOLD_MINT,
+        .price = 40000,
+        .description = sBoldMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_IMPISH_MINT] = // Todo
+    [ITEM_IMPISH_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Impish Mint"),
+        .itemId = ITEM_IMPISH_MINT,
+        .price = 40000,
+        .description = sImpishMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_LAX_MINT] = // Todo
+    [ITEM_LAX_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Lax Mint"),
+        .itemId = ITEM_LAX_MINT,
+        .price = 40000,
+        .description = sLaxMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_RELAXED_MINT] = // Todo
+    [ITEM_RELAXED_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Relaxed Mint"),
+        .itemId = ITEM_RELAXED_MINT,
+        .price = 40000,
+        .description = sRelaxedMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_MODEST_MINT] = // Todo
+    [ITEM_MODEST_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Modest Mint"),
+        .itemId = ITEM_MODEST_MINT,
+        .price = 40000,
+        .description = sModestMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_MILD_MINT] = // Todo
+    [ITEM_MILD_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Mild Mint"),
+        .itemId = ITEM_MILD_MINT,
+        .price = 40000,
+        .description = sMildMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_RASH_MINT] = // Todo
+    [ITEM_RASH_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Rash Mint"),
+        .itemId = ITEM_RASH_MINT,
+        .price = 40000,
+        .description = sRashMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_QUIET_MINT] = // Todo
+    [ITEM_QUIET_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Quiet Mint"),
+        .itemId = ITEM_QUIET_MINT,
+        .price = 40000,
+        .description = sQuietMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_CALM_MINT] = // Todo
+    [ITEM_CALM_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Calm Mint"),
+        .itemId = ITEM_CALM_MINT,
+        .price = 40000,
+        .description = sCalmMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_GENTLE_MINT] = // Todo
+    [ITEM_GENTLE_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Gentle Mint"),
+        .itemId = ITEM_GENTLE_MINT,
+        .price = 40000,
+        .description = sGentleMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_CAREFUL_MINT] = // Todo
+    [ITEM_CAREFUL_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Careful Mint"),
+        .itemId = ITEM_CAREFUL_MINT,
+        .price = 40000,
+        .description = sCarefulMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_SASSY_MINT] = // Todo
+    [ITEM_SASSY_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Sassy Mint"),
+        .itemId = ITEM_SASSY_MINT,
+        .price = 40000,
+        .description = sSassyMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_TIMID_MINT] = // Todo
+    [ITEM_TIMID_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Timid Mint"),
+        .itemId = ITEM_TIMID_MINT,
+        .price = 40000,
+        .description = sTimidMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_HASTY_MINT] = // Todo
+    [ITEM_HASTY_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Hasty Mint"),
+        .itemId = ITEM_HASTY_MINT,
+        .price = 40000,
+        .description = sHastyMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_JOLLY_MINT] = // Todo
+    [ITEM_JOLLY_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Jolly Mint"),
+        .itemId = ITEM_JOLLY_MINT,
+        .price = 40000,
+        .description = sJollyMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_NAIVE_MINT] = // Todo
+    [ITEM_NAIVE_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Naive Mint"),
+        .itemId = ITEM_NAIVE_MINT,
+        .price = 40000,
+        .description = sNaiveMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
-    [ITEM_SERIOUS_MINT] = // Todo
+    [ITEM_SERIOUS_MINT] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Serious Mint"),
+        .itemId = ITEM_SERIOUS_MINT,
+        .price = 40000,
+        .description = sSeriousMintDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
         .flingPower = 10,
     },
 
@@ -6077,7 +6097,7 @@ const struct Item gItems[] =
     {
         .name = _("Absorb Bulb"),
         .itemId = ITEM_ABSORB_BULB,
-        .price = 4000,
+        .price = 5000,
         .holdEffect = HOLD_EFFECT_ABSORB_BULB,
         .holdEffectParam = 0,
         .description = sAbsorbBulbDesc,
@@ -6091,7 +6111,7 @@ const struct Item gItems[] =
     {
         .name = _("Cell Battery"),
         .itemId = ITEM_CELL_BATTERY,
-        .price = 4000,
+        .price = 5000,
         .holdEffect = HOLD_EFFECT_CELL_BATTERY,
         .holdEffectParam = 0,
         .description = sCellBatteryDesc,
@@ -6105,7 +6125,7 @@ const struct Item gItems[] =
     {
         .name = _("Luminous Moss"),
         .itemId = ITEM_LUMINOUS_MOSS,
-        .price = 4000,
+        .price = 5000,
         .holdEffect = HOLD_EFFECT_LUMINOUS_MOSS,
         .holdEffectParam = 0,
         .description = sLuminousMossDesc,
@@ -6119,7 +6139,7 @@ const struct Item gItems[] =
     {
         .name = _("Snowball"),
         .itemId = ITEM_SNOWBALL,
-        .price = 4000,
+        .price = 5000,
         .holdEffect = HOLD_EFFECT_SNOWBALL,
         .holdEffectParam = 0,
         .description = sSnowballDesc,
@@ -6149,7 +6169,7 @@ const struct Item gItems[] =
     {
         .name = _("White Herb"),
         .itemId = ITEM_WHITE_HERB,
-        .price = 4000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESTORE_STATS,
         .description = sWhiteHerbDesc,
         .pocket = POCKET_ITEMS,
@@ -6202,7 +6222,7 @@ const struct Item gItems[] =
     {
         .name = _("Mental Herb"),
         .itemId = ITEM_MENTAL_HERB,
-        .price = 4000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_MENTAL_HERB,
         .description = sMentalHerbDesc,
         .pocket = POCKET_ITEMS,
@@ -6419,7 +6439,7 @@ const struct Item gItems[] =
     {
         .name = _("Power Herb"),
         .itemId = ITEM_POWER_HERB,
-        .price = 4000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_POWER_HERB,
         .description = sPowerHerbDesc,
         .pocket = POCKET_ITEMS,

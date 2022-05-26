@@ -3,11 +3,8 @@
 MagmaHideout_3F_1R_MapScripts::
 	.byte 0
 
-MagmaHideout_3F_1R_EventScript_Zinnia::
+MagmaHideout_3F_1R_EventScript_Zinnia_Trigger::
 	lock
-	checkflag FLAG_MAGMA_HIDEOUT_ZINNIA
-	goto_if TRUE MagmaHideout_3F_1R_EventScript_ZinniaIdle
-	setflag FLAG_MAGMA_HIDEOUT_ZINNIA
 	msgbox MagmaHideout_3F_1R_Text_ZinniaPreIntro, MSGBOX_DEFAULT
 	closemessage
 	faceplayer
@@ -16,19 +13,18 @@ MagmaHideout_3F_1R_EventScript_Zinnia::
 	waitmovement 0
 	applymovement LOCALID_ZINNIA, Common_Movement_Delay48
 	waitmovement 0
+	applymovement LOCALID_ZINNIA, MagmaHideout_3F_1R_Movement_Zinnia
+	waitmovement 0
 	msgbox MagmaHideout_3F_1R_Text_ZinniaMeetsPlayer, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_MAGMA_HIDEOUT_ZINNIA_TRIGGER_STATE, 1
 	release
 	end
 
-MagmaHideout_3F_1R_EventScript_ZinniaIdle::
-	lock
-	faceplayer
-	msgbox MagmaHideout_3F_1R_Text_ZinniaIdle, MSGBOX_AUTOCLOSE
-	release
+MagmaHideout_3F_1R_EventScript_Zinnia::
+	msgbox MagmaHideout_3F_1R_Text_ZinniaIdle, MSGBOX_NPC
 	end
 
-@unused until I can figure out how to make triggers work on this map
 MagmaHideout_3F_1R_Movement_Zinnia:
 	walk_right
 	walk_right
@@ -76,8 +72,9 @@ MagmaHideout_3F_1R_Text_Grunt9Defeat:
 	.string "I'm getting heat exhaustion…$"
 
 MagmaHideout_3F_1R_Text_Grunt9PostBattle:
-	.string "Do you think it's odd that we're wearing\n"
-	.string "hoods in this magma-filled volcano?$"
+	.string "Our outfits are supposed to be heat\n"
+	.string "resistant, but there is only so much\l"
+	.string "heat they can take.$"
 
 MagmaHideout_3F_1R_Text_Grunt16Intro:
 	.string "We joined so we can help our leader\n"

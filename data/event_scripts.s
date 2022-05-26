@@ -831,6 +831,7 @@ Common_EventScript_PlayerHandedOverTheItem::
 	.include "data/scripts/elite_four.inc"
 	.include "data/scripts/movement.inc"
 	.include "data/scripts/check_furniture.inc"
+	.include "data/scripts/overworld_pokemon.inc"
 	.include "data/text/record_mix.inc"
 	.include "data/text/pc.inc"
 	.include "data/text/pkmn_center_nurse.inc"
@@ -1061,3 +1062,27 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
+
+	.include "data/maps/CrumblingGorge/scripts.inc"
+
+	.include "data/maps/FallarborTown_DraconidArchives/scripts.inc"
+
+	.include "data/maps/FortreeCity_House6/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_House1/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_House2/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_House3/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_DevelopersHouse/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_Mart/scripts.inc"
+
+	.include "data/maps/MauvilleCity_SweetShop/scripts.inc"
+
+	.include "data/maps/MauvilleCity_ToolShop/scripts.inc"
+
+	.include "data/maps/MauvilleCity_GroomerHouse/scripts.inc"
+
+	.include "data/maps/MauvilleCity_TVStation/scripts.inc"

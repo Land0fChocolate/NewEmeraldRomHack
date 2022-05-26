@@ -44,6 +44,5 @@ RustboroCity_PokemonCenter_1F_Text_MaleAndFemalePokemon:
 
 RustboroCity_PokemonCenter_1F_Text_TMCutNextDoor:
 	.string "The man next door gave me an TM.\p"
-	.string "I have a much eaiser time of\n"
-	.string "catching Pokémon now!$"
-
+	.string "It's always good to have a variety\n"
+	.string "of moves on your Pokémon.$"

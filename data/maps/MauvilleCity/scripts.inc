@@ -1,6 +1,6 @@
 .set LOCALID_WALLY, 6
 .set LOCALID_WALLYS_UNCLE, 7
-.set LOCALID_SCOTT, 11
+.set LOCALID_NOSEPASS, 8
 
 MauvilleCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MauvilleCity_OnTransition

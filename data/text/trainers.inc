@@ -2316,17 +2316,6 @@ Route116_Text_DawsonPostBattle:
 	.string "You've ruined my hairdo, too!\l"
 	.string "I'll have to call my stylist now!$"
 
-Route116_Text_DevanIntro:
-	.string "We'll rock you hard!$"
-
-Route116_Text_DevanDefeat:
-	.string "Aiyiyi!\n"
-	.string "No contest at all!$"
-
-Route116_Text_DevanPostBattle:
-	.string "I should try different Pokémon\n"
-	.string "types, that's what I ought to do.$"
-
 Route116_Text_JohnsonIntro:
 	.string "It's a dead end up here.\n"
 	.string "I'm bored, so can we battle?$"
@@ -2540,40 +2529,6 @@ Route117_Text_MegRematchNotEnoughMons:
 	.string "Meg: Do you only have one Pokémon?\n"
 	.string "We can't battle with you, then.\p"
 	.string "We want to have a 2-on-2 battle.$"
-
-Route117_Text_MelinaIntro:
-	.string "Isn't it nice? To battle while looking\n"
-	.string "at pretty flowers?$"
-
-Route117_Text_MelinaDefeat:
-	.string "Oh, that's quite impressive!$"
-
-Route117_Text_MelinaPostBattle:
-	.string "It feels wonderful to go for a jog\n"
-	.string "while looking at flowers.$"
-
-Route117_Text_BrandiIntro:
-	.string "Let me demonstrate the power\n"
-	.string "hidden within a Psychic Pokémon!$"
-
-Route117_Text_BrandiDefeat:
-	.string "Astonishing!$"
-
-Route117_Text_BrandiPostBattle:
-	.string "Psychic Pokémon are complex.\n"
-	.string "You should try catching some.$"
-
-Route117_Text_AishaIntro:
-	.string "Concentrate on getting the win.\n"
-	.string "That's how I battle!$"
-
-Route117_Text_AishaDefeat:
-	.string "I don't waste any time being angry\n"
-	.string "over a loss--I would rather train.$"
-
-Route117_Text_AishaPostBattle:
-	.string "I think that if you worry about losing,\n"
-	.string "you're more likely to lose.$"
 
 Route118_Text_RoseIntro:
 	.string "The aroma of flowers has a magical\n"
@@ -2913,20 +2868,6 @@ Route119_Text_FabianPostBattle:
 	.string "Hit me with another power chord!\n"
 	.string "Leave me alone!\l"
 	.string "Your win you have to atone!$"
-
-Route119_Text_DaytonIntro:
-	.string "Hohoho!\n"
-	.string "I like kid Trainers!\l"
-	.string "Let's have a good one!$"
-
-Route119_Text_DaytonDefeat:
-	.string "You're pretty amazing!\n"
-	.string "Hohoho!$"
-
-Route119_Text_DaytonPostBattle:
-	.string "Hohoho!\n"
-	.string "I'll try emulating the pep of kid\l"
-	.string "Trainers like you!$"
 
 Route119_Text_RachelIntro:
 	.string "Wherever and whenever I may be,\n"
@@ -4779,3 +4720,41 @@ Route134_Text_HudsonPostBattle:
 	.string "Our boat drifted out to sea.\p"
 	.string "My buddy's a timid fellow, so I'm\n"
 	.string "worried about him.$"
+
+FieryPath_Text_DevanIntro:
+	.string "You should always bring plenty of fluid\n"
+	.string "when travelling. Even more so if you're\l"
+	.string "going through a place like this.$"
+
+FieryPath_Text_DevanDefeat:
+	.string "A water Pokémon would come in handy…$"
+
+FieryPath_Text_DevanPostBattle:
+	.string "Whew! I'm parched.\n"
+	.string "I should have brought more water.$"
+
+FieryPath_Text_DaytonIntro:
+	.string "The rocks here are so hot, you could\n"
+	.string "grill meat on them!$"
+
+FieryPath_Text_DaytonDefeat:
+	.string "Now I'm getting hungry.$"
+
+FieryPath_Text_DaytonPostBattle:
+	.string "That does it.\n"
+	.string "I'm setting up a barbecue here.\l"
+	.string "Mt. Chimney burgers here I come!$"
+
+FieryPath_Text_AishaIntro:
+	.string "This place makes for a unique training\n"
+	.string "environment. Is that why you have come\l"
+	.string "here too?$"
+
+FieryPath_Text_AishaDefeat:
+	.string "I don't waste any time being angry\n"
+	.string "over a loss--I would rather train.$"
+
+FieryPath_Text_AishaPostBattle:
+	.string "It's important to challenge yourself in\n"
+	.string "different ways. A true fighter learns to\l"
+	.string "adapt to all manner of environments.$"

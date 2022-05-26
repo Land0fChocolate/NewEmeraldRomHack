@@ -1006,6 +1006,25 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 	releaseall
 	end
 
+SlateportCity_EventScript_Drake::
+	msgbox SlateportCity_Text_Drake, MSGBOX_NPC
+	end
+
+SlateportCity_Text_Drake:
+	.string "Ahoy, fellow Trainer!\p"
+	.string "Gazing outwards towards the horizon,\n"
+	.string "it makes you hunger for adventure\l"
+	.string "doesn't it?\p"
+	.string "In my youth, I sailed the world.\n"
+	.string "I took on everything and everyone.\p"
+	.string "My path took me to become a member of\n"
+	.string "Hoenn's Elite Four.\p"
+	.string "I can feel your strong will and deep\n"
+	.string "love for your Pokémon. I expect us to\l"
+	.string "meet again at Ever Grande to battle.\p"
+	.string "Fair winds and following seas to you,\n"
+	.string "Trainer!$"
+
 SlateportCity_Text_EnergyGuruSellWhatYouNeed:
 	.string "I'm the Energy Guru! I'll go for it and\n"
 	.string "sell you what you need!$"

@@ -111,9 +111,6 @@ static bool8 CheckFeebas(void)
         if (y >= gRoute119WaterTileData[3 * 2 + 0] && y <= gRoute119WaterTileData[3 * 2 + 1])
             route119Section = 2;
 
-        if (Random() % 100 > 49) // 50% chance of encountering Feebas
-            return FALSE;
-
         FeebasSeedRng(gSaveBlock1Ptr->dewfordTrends[0].rand);
         for (i = 0; i != NUM_FEEBAS_SPOTS;)
         {

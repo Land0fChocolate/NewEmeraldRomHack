@@ -3,12 +3,20 @@ FieryPath_MapScripts::
 	.byte 0
 
 FieryPath_OnTransition:
-	call_if_unset FLAG_LANDMARK_FIERY_PATH, FieryPath_EventScript_MoveScottToFallarbor
 	setflag FLAG_LANDMARK_FIERY_PATH
 	end
 
-FieryPath_EventScript_MoveScottToFallarbor::
-	setflag FLAG_HIDE_VERDANTURF_TOWN_SCOTT
-	clearflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
-	return
+FieryPath_EventScript_Devan::
+	trainerbattle_single TRAINER_DEVAN, FieryPath_Text_DevanIntro, FieryPath_Text_DevanDefeat
+	msgbox FieryPath_Text_DevanPostBattle, MSGBOX_AUTOCLOSE
+	end
 
+FieryPath_EventScript_Dayton::
+	trainerbattle_single TRAINER_DAYTON, FieryPath_Text_DaytonIntro, FieryPath_Text_DaytonDefeat
+	msgbox FieryPath_Text_DaytonPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+FieryPath_EventScript_Aisha::
+	trainerbattle_single TRAINER_AISHA, FieryPath_Text_AishaIntro, FieryPath_Text_AishaDefeat
+	msgbox FieryPath_Text_AishaPostBattle, MSGBOX_AUTOCLOSE
+	end

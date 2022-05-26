@@ -272,11 +272,15 @@ static const u8 sSweetHeartDesc[] = _(
 static const u8 sMaxHoneyDesc[] = _( // Todo
     "?????");
 
-static const u8 sPewterCrunchiesDesc[] = _( // Todo
-    "?????");
+static const u8 sPewterCrunchiesDesc[] = _(
+    "Heals the HP\n"
+    "of a Pokémon by\n"
+    "10 points.");
 
-static const u8 sRageCandyBarDesc[] = _( // Todo
-    "?????");
+static const u8 sRageCandyBarDesc[] = _(
+    "Heals the HP\n"
+    "of a Pokémon by\n"
+    "20 points.");
 
 static const u8 sLavaCookieDesc[] = _(
     "A local specialty\n"
@@ -284,23 +288,34 @@ static const u8 sLavaCookieDesc[] = _(
     "status problems.");
 
 static const u8 sOldGateauDesc[] = _(
+    "Heals the HP\n"
+    "of a Pokémon by\n"
+    "60 points.");
+
+static const u8 sCasteliaconeDesc[] = _(
+    "Restores the PP\n"
+    "of a Pokémon by\n"
+    "10 points.");
+
+static const u8 sLumioseGaletteDesc[] = _(
+    "Restores the PP\n"
+    "of a Pokémon by\n"
+    "5 points.");
+
+static const u8 sShalourSableDesc[] = _(
     "Heals all the\n"
     "status problems of\n"
     "one Pokémon.");
-
-static const u8 sCasteliaconeDesc[] = _( // Todo
-    "?????");
-
-static const u8 sLumioseGaletteDesc[] = _( // Todo
-    "?????");
-
-static const u8 sShalourSableDesc[] = _( // Todo
-    "?????");
 
 static const u8 sBigMalasadaDesc[] = _(
     "Heals all the\n"
     "status problems of\n"
     "one Pokémon.");
+
+static const u8 sJellyFilledDonutDesc[] = _(
+    "Heals the HP\n"
+    "of a Pokémon by\n"
+    "50 points.");
 
 // Vitamins
 static const u8 sHPUpDesc[] = _(
@@ -382,68 +397,110 @@ static const u8 sAbilityPatchDesc[] = _( // Todo
     "?????");
 
 // Mints
-static const u8 sLonelyMintDesc[] = _( // Todo
-    "?????");
+static const u8 sLonelyMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Attack, but\n"
+    "reduces Defense.");
 
-static const u8 sAdamantMintDesc[] = _( // Todo
-    "?????");
+static const u8 sAdamantMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Attack, but\n"
+    "reduces Sp. Atk.");
 
-static const u8 sNaughtyMintDesc[] = _( // Todo
-    "?????");
+static const u8 sNaughtyMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Attack, but\n"
+    "reduces Sp. Def.");
 
-static const u8 sBraveMintDesc[] = _( // Todo
-    "?????");
+static const u8 sBraveMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Attack, but\n"
+    "reduces Speed.");
 
-static const u8 sBoldMintDesc[] = _( // Todo
-    "?????");
+static const u8 sBoldMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Defense, but\n"
+    "reduces Attack.");
 
-static const u8 sImpishMintDesc[] = _( // Todo
-    "?????");
+static const u8 sImpishMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Defense, but\n"
+    "reduces Sp. Atk.");
 
-static const u8 sLaxMintDesc[] = _( // Todo
-    "?????");
+static const u8 sLaxMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Defense, but\n"
+    "reduces Sp. Def.");
 
-static const u8 sRelaxedMintDesc[] = _( // Todo
-    "?????");
+static const u8 sRelaxedMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Defense, but\n"
+    "reduces Speed.");
 
-static const u8 sModestMintDesc[] = _( // Todo
-    "?????");
+static const u8 sModestMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Sp. Atk, but\n"
+    "reduces Attack.");
 
-static const u8 sMildMintDesc[] = _( // Todo
-    "?????");
+static const u8 sMildMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Sp. Atk, but\n"
+    "reduces Defense.");
 
-static const u8 sRashMintDesc[] = _( // Todo
-    "?????");
+static const u8 sRashMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Sp. Atk, but\n"
+    "reduces Sp. Def.");
 
-static const u8 sQuietMintDesc[] = _( // Todo
-    "?????");
+static const u8 sQuietMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Sp. Atk, but\n"
+    "reduces Speed.");
 
-static const u8 sCalmMintDesc[] = _( // Todo
-    "?????");
+static const u8 sCalmMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Sp. Def, but\n"
+    "reduces Attack.");
 
-static const u8 sGentleMintDesc[] = _( // Todo
-    "?????");
+static const u8 sGentleMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Sp. Def, but\n"
+    "reduces Defense.");
 
-static const u8 sCarefulMintDesc[] = _( // Todo
-    "?????");
+static const u8 sCarefulMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Sp. Def, but\n"
+    "reduces Sp. Atk.");
 
-static const u8 sSassyMintDesc[] = _( // Todo
-    "?????");
+static const u8 sSassyMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Sp. Def, but\n"
+    "reduces Speed.");
 
-static const u8 sTimidMintDesc[] = _( // Todo
-    "?????");
+static const u8 sTimidMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Speed, but\n"
+    "reduces Attack.");
 
-static const u8 sHastyMintDesc[] = _( // Todo
-    "?????");
+static const u8 sHastyMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Speed, but\n"
+    "reduces Defense.");
 
-static const u8 sJollyMintDesc[] = _( // Todo
-    "?????");
+static const u8 sJollyMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Speed, but\n"
+    "reduces Sp. Atk.");
 
-static const u8 sNaiveMintDesc[] = _( // Todo
-    "?????");
+static const u8 sNaiveMintDesc[] = _(
+    "Can be smelled. It\n"
+    "ups Speed, but\n"
+    "reduces Sp. Def.");
 
-static const u8 sSeriousMintDesc[] = _( // Todo
-    "?????");
+static const u8 sSeriousMintDesc[] = _(
+    "Can be smelled. It\n"
+    "sets no boons\n"
+    "or cons for stats.");
 
 // Candy
 static const u8 sRareCandyDesc[] = _(

@@ -6,7 +6,7 @@ LilycoveCity_DepartmentStore_4F_EventScript_Gentleman::
 	end
 
 LilycoveCity_DepartmentStore_4F_EventScript_Woman::
-	msgbox LilycoveCity_DepartmentStore_4F_Text_FiftyDifferentTMs, MSGBOX_NPC
+	msgbox LilycoveCity_DepartmentStore_4F_Text_HundredDifferentTMs, MSGBOX_NPC
 	end
 
 LilycoveCity_DepartmentStore_4F_EventScript_Youngster::
@@ -71,7 +71,7 @@ LilycoveCity_DepartmentStore_4F_Text_AttackOrDefenseTM:
 	.string "It's no easy matter to decide which TM\n"
 	.string "moves should be taught to Pokémon…$"
 
-LilycoveCity_DepartmentStore_4F_Text_FiftyDifferentTMs:
+LilycoveCity_DepartmentStore_4F_Text_HundredDifferentTMs:
 	.string "There are so many different kinds of\n"
 	.string "TM moves.\p"
 	.string "A catalog I read said there are a\n"

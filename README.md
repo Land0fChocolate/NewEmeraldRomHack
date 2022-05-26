@@ -7,7 +7,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - implement ability description label in the summary screen.
 - Include ORAS dex Pokemon like Budew and Dusknoir and add ways to access them.
 - New Pokemon moves.
-	- animations for new moves
+	- new animations for new moves
 	- Add the new moves to the move tutors lists.
 - Update move tutor lists to have tutor moves from later gens.
 - Expand and add new areas, including adding some new wild Pokemon for the area.
@@ -46,11 +46,13 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
-- Various story changes.
+- Map changes, including new areas to explore that have new Pokemon.
+- Graphical updates to overworld sprites and environments.
+- Various story changes. Includes aspects from ORAS.
 
 # New Abilities
 
-- Volume Up: Power of sound based moves have increased by 33%. Used by Loudred/Exploud.
+- Volume Up: Power of sound based moves are increased by 33%. Used by Loudred/Exploud.
 - Lava Body: Attackers who make contact will always get inflicted with burn unless they have immunity. Used by Slugma/Magargo.
 - Wildfire: Sp.Atk raises one stage after fainting an opponent. Used by Quilava/Typlosion.
 - Miracle Blossom: User and ally restore 1/8 HP at the end of every turn. Used by Bayleef/Meganium/Xerneas.

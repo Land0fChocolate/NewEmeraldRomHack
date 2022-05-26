@@ -236,36 +236,6 @@ SlateportCity_PokemonFanClub_EventScript_Twin::
 	msgbox SlateportCity_PokemonFanClub_Text_MonEnjoyedProtein, MSGBOX_NPC
 	end
 
-SlateportCity_PokemonFanClub_EventScript_Skitty::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_SKITTY, 0
-	msgbox SlateportCity_PokemonFanClub_Text_Skitty, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
-SlateportCity_PokemonFanClub_EventScript_Zigzagoon::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_ZIGZAGOON, 0
-	msgbox SlateportCity_PokemonFanClub_Text_Zigzagoon, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
-SlateportCity_PokemonFanClub_EventScript_Azumarill::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_AZUMARILL, 0
-	msgbox SlateportCity_PokemonFanClub_Text_Azumarill, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
 SlateportCity_PokemonFanClub_Text_MeetChairman:
 	.string "Er-hem! I am the Chairman of the\n"
 	.string "Pokémon Fan Club!\p"

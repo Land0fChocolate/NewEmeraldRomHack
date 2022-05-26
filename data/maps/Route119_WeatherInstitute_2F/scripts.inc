@@ -247,6 +247,7 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	closemessage
 	setvar VAR_WEATHER_INSTITUTE_STATE, 1
 	clearflag FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS
+	clearflag FLAG_HIDE_WEATHER_INSTITUTE_2F_CASTFORM
 	fadedefaultbgm
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_HIDE_ROUTE_119_TEAM_AQUA

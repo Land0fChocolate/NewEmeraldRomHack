@@ -104,6 +104,7 @@
 #define MAP_FALLARBOR_TOWN_POKEMON_CENTER_2F       (5 | (5 << 8))
 #define MAP_FALLARBOR_TOWN_COZMOS_HOUSE            (6 | (5 << 8))
 #define MAP_FALLARBOR_TOWN_MOVE_RELEARNERS_HOUSE   (7 | (5 << 8))
+#define MAP_FALLARBOR_TOWN_DRACONID_ARCHIVES       (8 | (5 << 8))
 
 // gMapGroup_IndoorVerdanturf
 #define MAP_VERDANTURF_TOWN_BATTLE_TENT_LOBBY       (0 | (6 << 8))
@@ -159,6 +160,10 @@
 #define MAP_MAUVILLE_CITY_POKEMON_CENTER_1F (5 | (10 << 8))
 #define MAP_MAUVILLE_CITY_POKEMON_CENTER_2F (6 | (10 << 8))
 #define MAP_MAUVILLE_CITY_MART              (7 | (10 << 8))
+#define MAP_MAUVILLE_CITY_SWEET_SHOP        (8 | (10 << 8))
+#define MAP_MAUVILLE_CITY_TOOL_SHOP         (9 | (10 << 8))
+#define MAP_MAUVILLE_CITY_GROOMER_HOUSE     (10 | (10 << 8))
+#define MAP_MAUVILLE_CITY_TVSTATION         (11 | (10 << 8))
 
 // gMapGroup_IndoorRustboro
 #define MAP_RUSTBORO_CITY_DEVON_CORP_1F     (0 | (11 << 8))
@@ -190,6 +195,7 @@
 #define MAP_FORTREE_CITY_HOUSE4            (7 | (12 << 8))
 #define MAP_FORTREE_CITY_HOUSE5            (8 | (12 << 8))
 #define MAP_FORTREE_CITY_DECORATION_SHOP   (9 | (12 << 8))
+#define MAP_FORTREE_CITY_HOUSE6            (10 | (12 << 8))
 
 // gMapGroup_IndoorLilycove
 #define MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F        (0 | (13 << 8))
@@ -264,6 +270,11 @@
 #define MAP_EVER_GRANDE_CITY_POKEMON_CENTER_1F (12 | (16 << 8))
 #define MAP_EVER_GRANDE_CITY_POKEMON_CENTER_2F (13 | (16 << 8))
 #define MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_2F (14 | (16 << 8))
+#define MAP_EVER_GRANDE_CITY_HOUSE1            (15 | (16 << 8))
+#define MAP_EVER_GRANDE_CITY_HOUSE2            (16 | (16 << 8))
+#define MAP_EVER_GRANDE_CITY_HOUSE3            (17 | (16 << 8))
+#define MAP_EVER_GRANDE_CITY_DEVELOPERS_HOUSE  (18 | (16 << 8))
+#define MAP_EVER_GRANDE_CITY_MART              (19 | (16 << 8))
 
 // gMapGroup_IndoorRoute104
 #define MAP_ROUTE104_MR_BRINEYS_HOUSE         (0 | (17 << 8))
@@ -554,6 +565,7 @@
 #define MAP_NAVEL_ROCK_DOWN11                               (86 | (26 << 8))
 #define MAP_NAVEL_ROCK_BOTTOM                               (87 | (26 << 8))
 #define MAP_TRAINER_HILL_ELEVATOR                           (88 | (26 << 8))
+#define MAP_CRUMBLING_GORGE                                 (89 | (26 << 8))
 
 // gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))

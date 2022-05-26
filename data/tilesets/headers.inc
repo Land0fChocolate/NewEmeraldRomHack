@@ -830,3 +830,36 @@ gTileset_UnionRoom::
 	.4byte gMetatiles_UnionRoom
 	.4byte gMetatileAttributes_UnionRoom
 	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_PetalburgWoods::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary tileset
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_PetalburgWoods
+	.4byte gTilesetPalettes_PetalburgWoods
+	.4byte gMetatiles_PetalburgWoods
+	.4byte gMetatileAttributes_PetalburgWoods
+	.4byte InitTilesetAnim_PetalburgWoods
+
+	.align 2
+gTileset_CrumblingGorge::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary tileset
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_CrumblingGorge
+	.4byte gTilesetPalettes_CrumblingGorge
+	.4byte gMetatiles_CrumblingGorge
+	.4byte gMetatileAttributes_CrumblingGorge
+	.4byte NULL @ animation callback
+
+	.align 2
+gTileset_DraconidArchives::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary tileset
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_DraconidArchives
+	.4byte gTilesetPalettes_DraconidArchives
+	.4byte gMetatiles_DraconidArchives
+	.4byte gMetatileAttributes_DraconidArchives
+	.4byte NULL @ animation callback

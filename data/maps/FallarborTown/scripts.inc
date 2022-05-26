@@ -29,18 +29,8 @@ FallarborTown_EventScript_Gentleman::
 	msgbox FallarborTown_Text_HaveYouChallengedFlannery, MSGBOX_NPC
 	end
 
-FallarborTown_EventScript_Azurill::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_AZURILL, 0
-	msgbox FallarborTown_Text_Azurill, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
-FallarborTown_EventScript_BattleTentSign::
-	msgbox FallarborTown_Text_BattleTentSign, MSGBOX_SIGN
+FallarborTown_EventScript_DraconidArchives_Sign::
+	msgbox FallarborTown_Text_DraconidArchivesSign, MSGBOX_SIGN
 	end
 
 FallarborTown_EventScript_TownSign::
@@ -68,9 +58,6 @@ FallarborTown_Text_MyPreciousAzurill:
 	.string "This is my precious Azurill!\p"
 	.string "It's slick and smooth and plushy, too!$"
 
-FallarborTown_Text_Azurill:
-	.string "Azurill: Rooreelooo.$"
-
 FallarborTown_Text_HaveYouChallengedFlannery:
 	.string "Have you already challenged Flannery,\n"
 	.string "the Leader of Lavaridge Gym?\p"
@@ -81,9 +68,9 @@ FallarborTown_Text_HaveYouChallengedFlannery:
 	.string "become a great Trainer in her own\l"
 	.string "right.$"
 
-FallarborTown_Text_BattleTentSign:
-	.string "BATTLE TENT FALLARBOR SITE\n"
-	.string "“May the Greatest Teams Gather!”$"
+FallarborTown_Text_DraconidArchivesSign:
+	.string "DRACONID ARCHIVES\n"
+	.string "“Keeping Hoenn's history alive.”$"
 
 FallarborTown_Text_TownSign:
 	.string "FALLARBOR TOWN\n"
