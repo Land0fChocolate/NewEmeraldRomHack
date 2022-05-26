@@ -90,7 +90,17 @@
       "dest_warp_id": 2
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_MAGMA_HIDEOUT_ZINNIA_TRIGGER_STATE",
+      "var_value": "0",
+      "script": "MagmaHideout_3F_1R_EventScript_Zinnia_Trigger"
+    }
+  ],
   "bg_events": [
 
   ]
