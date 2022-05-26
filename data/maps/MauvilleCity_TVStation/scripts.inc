@@ -36,8 +36,13 @@ MauvilleCity_TVStation_Text_Receptionist:
 	.string "studios here.\p"
 	.string "Feel free to tour the studios.$"
 
-MauvilleCity_TVStation_Text_Man: @TODO:
-	.string "TODO$"
+MauvilleCity_TVStation_Text_Man:
+	.string "Much of our content isn't filmed here.\n"
+	.string "We have reporters across Hoenn to catch\l"
+	.string "the latest action on scene.\p"
+	.string "You may have come across them.\n"
+	.string "Please do accept their interviews when\l"
+	.string "you have the time!$"
 
 MauvilleCity_TVStation_Text_CameraMan:
 	.string "Are you touring the studios?\n"

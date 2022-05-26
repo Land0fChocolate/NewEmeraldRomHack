@@ -10,7 +10,7 @@
 .equ LOCALID_BOAT_R104, 7
 .equ LOCALID_BRINEY_R104, 8
 
-.set LOCALID_NOSEPASS, 7
+.set LOCALID_NOSEPASS, 8
 
 DewfordTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, DewfordTown_OnTransition
