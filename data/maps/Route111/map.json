@@ -474,8 +474,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 26,
-      "y": 132,
+      "x": 23,
+      "y": 105,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -487,8 +487,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 20,
-      "y": 132,
+      "x": 17,
+      "y": 105,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
@@ -670,7 +670,7 @@
     {
       "type": "trigger",
       "x": 12,
-      "y": 62,
+      "y": 63,
       "elevation": 3,
       "var": "0",
       "var_value": "0",
@@ -688,7 +688,7 @@
     {
       "type": "trigger",
       "x": 12,
-      "y": 61,
+      "y": 62,
       "elevation": 3,
       "var": "VAR_TEMP_3",
       "var_value": "0",
@@ -697,7 +697,7 @@
     {
       "type": "trigger",
       "x": 13,
-      "y": 61,
+      "y": 63,
       "elevation": 3,
       "var": "VAR_TEMP_3",
       "var_value": "0",
@@ -714,34 +714,34 @@
     },
     {
       "type": "trigger",
-      "x": 12,
-      "y": 44,
-      "elevation": 3,
-      "var": "VAR_TEMP_3",
-      "var_value": "0",
-      "script": "Route111_EventScript_ViciousSandstormTriggerLeft"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 43,
-      "elevation": 3,
-      "var": "VAR_TEMP_3",
-      "var_value": "0",
-      "script": "Route111_EventScript_ViciousSandstormTriggerLeft"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 42,
-      "elevation": 3,
-      "var": "VAR_TEMP_3",
-      "var_value": "0",
-      "script": "Route111_EventScript_ViciousSandstormTriggerLeft"
-    },
-    {
-      "type": "trigger",
       "x": 16,
+      "y": 35,
+      "elevation": 3,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route111_EventScript_ViciousSandstormTriggerLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 34,
+      "elevation": 3,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route111_EventScript_ViciousSandstormTriggerLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 34,
+      "elevation": 3,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route111_EventScript_ViciousSandstormTriggerLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
       "y": 40,
       "elevation": 3,
       "var": "VAR_TEMP_3",
@@ -751,7 +751,7 @@
     {
       "type": "trigger",
       "x": 14,
-      "y": 61,
+      "y": 64,
       "elevation": 3,
       "var": "VAR_TEMP_3",
       "var_value": "0",
@@ -777,8 +777,17 @@
     },
     {
       "type": "trigger",
+      "x": 8,
+      "y": 35,
+      "elevation": 3,
+      "var": "0",
+      "var_value": "0",
+      "script": "Route111_EventScript_SunTrigger"
+    },
+    {
+      "type": "trigger",
       "x": 9,
-      "y": 37,
+      "y": 34,
       "elevation": 3,
       "var": "0",
       "var_value": "0",
@@ -786,16 +795,7 @@
     },
     {
       "type": "trigger",
-      "x": 10,
-      "y": 36,
-      "elevation": 3,
-      "var": "0",
-      "var_value": "0",
-      "script": "Route111_EventScript_SunTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 17,
+      "x": 11,
       "y": 39,
       "elevation": 3,
       "var": "VAR_TEMP_3",
@@ -804,7 +804,7 @@
     },
     {
       "type": "trigger",
-      "x": 18,
+      "x": 12,
       "y": 38,
       "elevation": 3,
       "var": "VAR_TEMP_3",
@@ -895,7 +895,7 @@
     {
       "type": "trigger",
       "x": 13,
-      "y": 62,
+      "y": 64,
       "elevation": 3,
       "var": "0",
       "var_value": "0",
@@ -904,52 +904,7 @@
     {
       "type": "trigger",
       "x": 14,
-      "y": 62,
-      "elevation": 3,
-      "var": "0",
-      "var_value": "0",
-      "script": "Route111_EventScript_SandstormTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 17,
-      "y": 38,
-      "elevation": 3,
-      "var": "0",
-      "var_value": "0",
-      "script": "Route111_EventScript_SandstormTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 16,
-      "y": 39,
-      "elevation": 3,
-      "var": "0",
-      "var_value": "0",
-      "script": "Route111_EventScript_SandstormTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 15,
-      "y": 40,
-      "elevation": 3,
-      "var": "0",
-      "var_value": "0",
-      "script": "Route111_EventScript_SandstormTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 41,
-      "elevation": 3,
-      "var": "0",
-      "var_value": "0",
-      "script": "Route111_EventScript_SandstormTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 13,
-      "y": 42,
+      "y": 65,
       "elevation": 3,
       "var": "0",
       "var_value": "0",
@@ -958,7 +913,7 @@
     {
       "type": "trigger",
       "x": 12,
-      "y": 43,
+      "y": 37,
       "elevation": 3,
       "var": "0",
       "var_value": "0",
@@ -967,7 +922,52 @@
     {
       "type": "trigger",
       "x": 11,
-      "y": 44,
+      "y": 38,
+      "elevation": 3,
+      "var": "0",
+      "var_value": "0",
+      "script": "Route111_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 39,
+      "elevation": 3,
+      "var": "0",
+      "var_value": "0",
+      "script": "Route111_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 33,
+      "elevation": 3,
+      "var": "0",
+      "var_value": "0",
+      "script": "Route111_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 33,
+      "elevation": 3,
+      "var": "0",
+      "var_value": "0",
+      "script": "Route111_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 34,
+      "elevation": 3,
+      "var": "0",
+      "var_value": "0",
+      "script": "Route111_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 35,
       "elevation": 3,
       "var": "0",
       "var_value": "0",
