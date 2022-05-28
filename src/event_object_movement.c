@@ -527,6 +527,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_PIKACHU                 0x1165
 #define OBJ_EVENT_PAL_TAG_SEEDOT                  0x1166
 #define OBJ_EVENT_PAL_TAG_WINGULL                 0x1167
+#define OBJ_EVENT_PAL_TAG_KECLEON                 0x1168
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF //4607
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -641,6 +642,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Pikachu,               OBJ_EVENT_PAL_TAG_PIKACHU},
     {gObjectEventPal_Seedot,                OBJ_EVENT_PAL_TAG_SEEDOT},
     {gObjectEventPal_WingullRoost,          OBJ_EVENT_PAL_TAG_WINGULL},
+    {gObjectEventPal_Kecleon,               OBJ_EVENT_PAL_TAG_KECLEON},
     {NULL,                                  0x0000},
 };
 

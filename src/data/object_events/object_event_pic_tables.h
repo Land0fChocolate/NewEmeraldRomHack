@@ -1906,15 +1906,15 @@ static const struct SpriteFrameImage sPicTable_Skitty[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_Kecleon[] = {
-    overworld_frame(gObjectEventPic_Kecleon, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Kecleon, 2, 2, 1),
-    overworld_frame(gObjectEventPic_Kecleon, 2, 2, 2),
-    overworld_frame(gObjectEventPic_Kecleon, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Kecleon, 2, 2, 0),
-    overworld_frame(gObjectEventPic_Kecleon, 2, 2, 1),
-    overworld_frame(gObjectEventPic_Kecleon, 2, 2, 1),
-    overworld_frame(gObjectEventPic_Kecleon, 2, 2, 2),
-    overworld_frame(gObjectEventPic_Kecleon, 2, 2, 2),
+    overworld_frame(gObjectEventPic_Kecleon, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Kecleon, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Kecleon, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Kecleon, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Kecleon, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Kecleon, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Kecleon, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Kecleon, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Kecleon, 2, 4, 2),
 };
 
 static const struct SpriteFrameImage sPicTable_Rayquaza[] = {
