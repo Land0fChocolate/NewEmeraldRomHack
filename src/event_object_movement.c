@@ -529,6 +529,9 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_WINGULL                 0x1167
 #define OBJ_EVENT_PAL_TAG_KECLEON                 0x1168
 #define OBJ_EVENT_PAL_TAG_KIRLIA                  0x1169
+#define OBJ_EVENT_PAL_TAG_TREECKO                 0x116A
+#define OBJ_EVENT_PAL_TAG_TORCHIC                 0x116B
+#define OBJ_EVENT_PAL_TAG_MUDKIP                  0x116C
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF //4607
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -645,6 +648,9 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_WingullRoost,          OBJ_EVENT_PAL_TAG_WINGULL},
     {gObjectEventPal_Kecleon,               OBJ_EVENT_PAL_TAG_KECLEON},
     {gObjectEventPal_Kirlia,                OBJ_EVENT_PAL_TAG_KIRLIA},
+    {gObjectEventPal_Treecko,               OBJ_EVENT_PAL_TAG_TREECKO},
+    {gObjectEventPal_Torchic,               OBJ_EVENT_PAL_TAG_TORCHIC},
+    {gObjectEventPal_Mudkip,                OBJ_EVENT_PAL_TAG_MUDKIP},
     {NULL,                                  0x0000},
 };
 

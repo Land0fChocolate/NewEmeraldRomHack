@@ -305,8 +305,11 @@
 #define OBJ_EVENT_GFX_MIGHTYENA                  301
 #define OBJ_EVENT_GFX_SEEDOT                     302
 #define OBJ_EVENT_GFX_WINGULL_ROOST              303
+#define OBJ_EVENT_GFX_TREECKO                    304
+#define OBJ_EVENT_GFX_TORCHIC                    305
+#define OBJ_EVENT_GFX_MUDKIP                     306
 
-#define NUM_OBJ_EVENT_GFX                        304
+#define NUM_OBJ_EVENT_GFX                        307
 
 
 // These are dynamic object gfx ids.

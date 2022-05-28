@@ -2645,6 +2645,42 @@ static const struct SpriteFrameImage sPicTable_Wingull[] = {
     overworld_frame(gObjectEventPic_Wingull, 4, 4, 5),
 };
 
+static const struct SpriteFrameImage sPicTable_Treecko[] = {
+    overworld_frame(gObjectEventPic_Treecko, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Treecko, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Treecko, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Treecko, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Treecko, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Treecko, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Treecko, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Treecko, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Treecko, 2, 4, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_Torchic[] = {
+    overworld_frame(gObjectEventPic_Torchic, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Torchic, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Torchic, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Torchic, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Torchic, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Torchic, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Torchic, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Torchic, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Torchic, 2, 4, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_Mudkip[] = {
+    overworld_frame(gObjectEventPic_Mudkip, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Mudkip, 2, 4, 2),
+};
+
 static const struct SpriteFrameImage sPicTable_TuberMSwimming[] = {
     overworld_frame(gObjectEventPic_TuberMSwimming, 2, 2, 0),
     overworld_frame(gObjectEventPic_TuberMSwimming, 2, 2, 1),

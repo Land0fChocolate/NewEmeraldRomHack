@@ -302,6 +302,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mightyena;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Seedot;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WingullRoost;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Treecko;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Torchic;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mudkip;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -616,6 +619,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_MIGHTYENA] =                &gObjectEventGraphicsInfo_Mightyena,
 	[OBJ_EVENT_GFX_SEEDOT] =                   &gObjectEventGraphicsInfo_Seedot,
 	[OBJ_EVENT_GFX_WINGULL_ROOST] =            &gObjectEventGraphicsInfo_WingullRoost,
+	[OBJ_EVENT_GFX_TREECKO] =                  &gObjectEventGraphicsInfo_Treecko,
+	[OBJ_EVENT_GFX_TORCHIC] =                  &gObjectEventGraphicsInfo_Torchic,
+	[OBJ_EVENT_GFX_MUDKIP] =                   &gObjectEventGraphicsInfo_Mudkip,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
