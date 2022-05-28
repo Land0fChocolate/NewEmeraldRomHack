@@ -2562,15 +2562,15 @@ static const struct SpriteFrameImage sPicTable_Chinchou[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_Bagon[] = {
-    overworld_frame(gObjectEventPic_Bagon, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Bagon, 4, 4, 1),
-    overworld_frame(gObjectEventPic_Bagon, 4, 4, 2),
-    overworld_frame(gObjectEventPic_Bagon, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Bagon, 4, 4, 0),
-    overworld_frame(gObjectEventPic_Bagon, 4, 4, 1),
-    overworld_frame(gObjectEventPic_Bagon, 4, 4, 1),
-    overworld_frame(gObjectEventPic_Bagon, 4, 4, 2),
-    overworld_frame(gObjectEventPic_Bagon, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Bagon, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Bagon, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Bagon, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Bagon, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Bagon, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Bagon, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Bagon, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Bagon, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Bagon, 2, 4, 2),
 };
 
 static const struct SpriteFrameImage sPicTable_Beldum[] = {
