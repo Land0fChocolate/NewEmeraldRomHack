@@ -430,6 +430,9 @@ $(OBJEVENTGFXDIR)/people/zinnia.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/pokemon_ranger_f.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/pokemon_ranger_m.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 $(OBJEVENTGFXDIR)/pokemon/azumarill.4bpp: %.4bpp: %.png

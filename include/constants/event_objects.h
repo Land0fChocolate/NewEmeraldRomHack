@@ -309,8 +309,9 @@
 #define OBJ_EVENT_GFX_TORCHIC                    305
 #define OBJ_EVENT_GFX_MUDKIP                     306
 #define OBJ_EVENT_GFX_POKEMON_RANGER_F           307
+#define OBJ_EVENT_GFX_POKEMON_RANGER_M           308
 
-#define NUM_OBJ_EVENT_GFX                        308
+#define NUM_OBJ_EVENT_GFX                        309
 
 
 // These are dynamic object gfx ids.

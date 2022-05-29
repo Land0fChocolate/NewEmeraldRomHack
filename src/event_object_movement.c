@@ -653,6 +653,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Torchic,               OBJ_EVENT_PAL_TAG_TORCHIC},
     {gObjectEventPal_Mudkip,                OBJ_EVENT_PAL_TAG_MUDKIP},
     {gObjectEventPal_PokemonRangerF,        OBJ_EVENT_PAL_TAG_POKEMON_RANGER},
+    {gObjectEventPal_PokemonRangerM,        OBJ_EVENT_PAL_TAG_POKEMON_RANGER},
     {NULL,                                  0x0000},
 };
 

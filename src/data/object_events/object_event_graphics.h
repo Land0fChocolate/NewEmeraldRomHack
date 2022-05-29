@@ -513,3 +513,5 @@ const u16 gObjectEventPal_Mudkip[] = INCBIN_U16("graphics/object_events/pics/pok
 const u32 gObjectEventPic_Mudkip[] = INCBIN_U32("graphics/object_events/pics/pokemon/mudkip.4bpp");
 const u16 gObjectEventPal_PokemonRangerF[] = INCBIN_U16("graphics/object_events/pics/people/pokemon_ranger_f.gbapal");
 const u32 gObjectEventPic_PokemonRangerF[] = INCBIN_U32("graphics/object_events/pics/people/pokemon_ranger_f.4bpp");
+const u16 gObjectEventPal_PokemonRangerM[] = INCBIN_U16("graphics/object_events/pics/people/pokemon_ranger_m.gbapal");
+const u32 gObjectEventPic_PokemonRangerM[] = INCBIN_U32("graphics/object_events/pics/people/pokemon_ranger_m.4bpp");
