@@ -511,3 +511,5 @@ const u16 gObjectEventPal_Torchic[] = INCBIN_U16("graphics/object_events/pics/po
 const u32 gObjectEventPic_Torchic[] = INCBIN_U32("graphics/object_events/pics/pokemon/torchic.4bpp");
 const u16 gObjectEventPal_Mudkip[] = INCBIN_U16("graphics/object_events/pics/pokemon/mudkip.gbapal");
 const u32 gObjectEventPic_Mudkip[] = INCBIN_U32("graphics/object_events/pics/pokemon/mudkip.4bpp");
+const u16 gObjectEventPal_PokemonRangerF[] = INCBIN_U16("graphics/object_events/pics/people/pokemon_ranger_f.gbapal");
+const u32 gObjectEventPic_PokemonRangerF[] = INCBIN_U32("graphics/object_events/pics/people/pokemon_ranger_f.4bpp");
