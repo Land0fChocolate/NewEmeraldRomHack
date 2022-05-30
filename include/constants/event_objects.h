@@ -313,8 +313,9 @@
 #define OBJ_EVENT_GFX_DELINQUENT                 309
 #define OBJ_EVENT_GFX_STREET_THUG                310
 #define OBJ_EVENT_GFX_LISIA                      311
+#define OBJ_EVENT_GFX_FLANNERY_HOT_SPRINGS       312
 
-#define NUM_OBJ_EVENT_GFX                        312
+#define NUM_OBJ_EVENT_GFX                        313
 
 
 // These are dynamic object gfx ids.

@@ -280,6 +280,10 @@ LavaridgeTown_EventScript_DeclineEgg::
 	release
 	end
 
+LavaridgeTown_EventScript_Flannery::
+	msgbox LavaridgeTown_Text_Flannery, MSGBOX_NPC
+	end
+
 LavaridgeTown_EventScript_TownSign::
 	msgbox LavaridgeTown_Text_TownSign, MSGBOX_SIGN
 	end
@@ -408,6 +412,16 @@ LavaridgeTown_Text_HotSpringsClaims:
 	.string "relieving aching muscles, solving\l"
 	.string "romantic problems, and attracting\l"
 	.string "money…$"
+
+LavaridgeTown_Text_Flannery:
+	.string "Oh, {PLAYER}!\n"
+	.string "You like the hot springs too, huh?\p"
+	.string "There are all kinds of different hot\n"
+	.string "springs, and they can be really good for\l"
+	.string "you.\p"
+	.string "I should travel around a bit and see if\n"
+	.string "there are any others. There's bound to\l"
+	.string "be more somewhere in Hoenn.$"
 
 LavaridgeTown_Text_TownSign:
 	.string "LAVARIDGE TOWN\p"
