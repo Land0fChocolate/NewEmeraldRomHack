@@ -534,6 +534,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_MUDKIP                  0x116C
 #define OBJ_EVENT_PAL_TAG_POKEMON_RANGER          0x116D
 #define OBJ_EVENT_PAL_TAG_THUG                    0x116E
+#define OBJ_EVENT_PAL_TAG_LISIA                   0x116F
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF //4607
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -657,6 +658,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_PokemonRangerM,        OBJ_EVENT_PAL_TAG_POKEMON_RANGER},
     {gObjectEventPal_Delinquent,            OBJ_EVENT_PAL_TAG_THUG},
     {gObjectEventPal_StreetThug,            OBJ_EVENT_PAL_TAG_THUG},
+    {gObjectEventPal_Lisia,                 OBJ_EVENT_PAL_TAG_LISIA},
     {NULL,                                  0x0000},
 };
 

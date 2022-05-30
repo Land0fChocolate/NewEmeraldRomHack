@@ -519,3 +519,5 @@ const u16 gObjectEventPal_Delinquent[] = INCBIN_U16("graphics/object_events/pics
 const u32 gObjectEventPic_Delinquent[] = INCBIN_U32("graphics/object_events/pics/people/delinquent.4bpp");
 const u16 gObjectEventPal_StreetThug[] = INCBIN_U16("graphics/object_events/pics/people/street_thug.gbapal");
 const u32 gObjectEventPic_StreetThug[] = INCBIN_U32("graphics/object_events/pics/people/street_thug.4bpp");
+const u16 gObjectEventPal_Lisia[] = INCBIN_U16("graphics/object_events/pics/people/lisia.gbapal");
+const u32 gObjectEventPic_Lisia[] = INCBIN_U32("graphics/object_events/pics/people/lisia.4bpp");
