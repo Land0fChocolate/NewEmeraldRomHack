@@ -127,6 +127,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roxanne;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Brawly;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wattson;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Flannery;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FlanneryHotSprings;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Norman;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Winona;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Liza;
@@ -302,6 +303,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Eevee;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mightyena;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Seedot;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WingullRoost;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Treecko;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Torchic;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mudkip;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Trader;
@@ -309,7 +313,11 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Storyteller;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giddy;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan1;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
-
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerF;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerM;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Delinquent;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StreetThug;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lisia;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -441,6 +449,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BRAWLY] =                   &gObjectEventGraphicsInfo_Brawly,
     [OBJ_EVENT_GFX_WATTSON] =                  &gObjectEventGraphicsInfo_Wattson,
     [OBJ_EVENT_GFX_FLANNERY] =                 &gObjectEventGraphicsInfo_Flannery,
+    [OBJ_EVENT_GFX_FLANNERY_HOT_SPRINGS] =     &gObjectEventGraphicsInfo_FlanneryHotSprings,
     [OBJ_EVENT_GFX_NORMAN] =                   &gObjectEventGraphicsInfo_Norman,
     [OBJ_EVENT_GFX_WINONA] =                   &gObjectEventGraphicsInfo_Winona,
     [OBJ_EVENT_GFX_LIZA] =                     &gObjectEventGraphicsInfo_Liza,
@@ -616,6 +625,14 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_MIGHTYENA] =                &gObjectEventGraphicsInfo_Mightyena,
 	[OBJ_EVENT_GFX_SEEDOT] =                   &gObjectEventGraphicsInfo_Seedot,
 	[OBJ_EVENT_GFX_WINGULL_ROOST] =            &gObjectEventGraphicsInfo_WingullRoost,
+	[OBJ_EVENT_GFX_TREECKO] =                  &gObjectEventGraphicsInfo_Treecko,
+	[OBJ_EVENT_GFX_TORCHIC] =                  &gObjectEventGraphicsInfo_Torchic,
+	[OBJ_EVENT_GFX_MUDKIP] =                   &gObjectEventGraphicsInfo_Mudkip,
+	[OBJ_EVENT_GFX_POKEMON_RANGER_F] =         &gObjectEventGraphicsInfo_PokemonRangerF,
+	[OBJ_EVENT_GFX_POKEMON_RANGER_M] =         &gObjectEventGraphicsInfo_PokemonRangerM,
+	[OBJ_EVENT_GFX_DELINQUENT] =               &gObjectEventGraphicsInfo_Delinquent,
+	[OBJ_EVENT_GFX_STREET_THUG] =              &gObjectEventGraphicsInfo_StreetThug,
+	[OBJ_EVENT_GFX_LISIA] =                    &gObjectEventGraphicsInfo_Lisia,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

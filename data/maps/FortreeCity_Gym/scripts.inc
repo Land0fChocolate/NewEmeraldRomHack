@@ -45,6 +45,8 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	setflag FLAG_ENABLE_WINONA_MATCH_CALL
 	setvar VAR_SCOTT_FORTREE_CALL_STEP_COUNTER, 0
 	setflag FLAG_SCOTT_CALL_FORTREE_GYM
+	clearflag FLAG_HIDE_FLANNERY_HOT_SPRINGS
+	setflag FLAG_FLAG_HIDE_FLANNERY_GYM
 	release
 	end
 

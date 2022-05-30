@@ -305,8 +305,17 @@
 #define OBJ_EVENT_GFX_MIGHTYENA                  301
 #define OBJ_EVENT_GFX_SEEDOT                     302
 #define OBJ_EVENT_GFX_WINGULL_ROOST              303
+#define OBJ_EVENT_GFX_TREECKO                    304
+#define OBJ_EVENT_GFX_TORCHIC                    305
+#define OBJ_EVENT_GFX_MUDKIP                     306
+#define OBJ_EVENT_GFX_POKEMON_RANGER_F           307
+#define OBJ_EVENT_GFX_POKEMON_RANGER_M           308
+#define OBJ_EVENT_GFX_DELINQUENT                 309
+#define OBJ_EVENT_GFX_STREET_THUG                310
+#define OBJ_EVENT_GFX_LISIA                      311
+#define OBJ_EVENT_GFX_FLANNERY_HOT_SPRINGS       312
 
-#define NUM_OBJ_EVENT_GFX                        304
+#define NUM_OBJ_EVENT_GFX                        313
 
 
 // These are dynamic object gfx ids.
