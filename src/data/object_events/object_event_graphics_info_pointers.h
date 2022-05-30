@@ -314,7 +314,8 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldM
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerF;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerM;
-
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Delinquent;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StreetThug;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -626,6 +627,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_MUDKIP] =                   &gObjectEventGraphicsInfo_Mudkip,
 	[OBJ_EVENT_GFX_POKEMON_RANGER_F] =         &gObjectEventGraphicsInfo_PokemonRangerF,
 	[OBJ_EVENT_GFX_POKEMON_RANGER_M] =         &gObjectEventGraphicsInfo_PokemonRangerM,
+	[OBJ_EVENT_GFX_DELINQUENT] =               &gObjectEventGraphicsInfo_Delinquent,
+	[OBJ_EVENT_GFX_STREET_THUG] =              &gObjectEventGraphicsInfo_StreetThug,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

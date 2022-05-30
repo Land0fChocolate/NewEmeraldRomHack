@@ -515,3 +515,7 @@ const u16 gObjectEventPal_PokemonRangerF[] = INCBIN_U16("graphics/object_events/
 const u32 gObjectEventPic_PokemonRangerF[] = INCBIN_U32("graphics/object_events/pics/people/pokemon_ranger_f.4bpp");
 const u16 gObjectEventPal_PokemonRangerM[] = INCBIN_U16("graphics/object_events/pics/people/pokemon_ranger_m.gbapal");
 const u32 gObjectEventPic_PokemonRangerM[] = INCBIN_U32("graphics/object_events/pics/people/pokemon_ranger_m.4bpp");
+const u16 gObjectEventPal_Delinquent[] = INCBIN_U16("graphics/object_events/pics/people/delinquent.gbapal");
+const u32 gObjectEventPic_Delinquent[] = INCBIN_U32("graphics/object_events/pics/people/delinquent.4bpp");
+const u16 gObjectEventPal_StreetThug[] = INCBIN_U16("graphics/object_events/pics/people/street_thug.gbapal");
+const u32 gObjectEventPic_StreetThug[] = INCBIN_U32("graphics/object_events/pics/people/street_thug.4bpp");
