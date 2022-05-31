@@ -8855,10 +8855,10 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM88_SLEEP_TALK] =
+    [ITEM_TM88_DRAIN_PUNCH] =
     {
         .name = _("TM88"),
-        .itemId = ITEM_TM88_SLEEP_TALK,
+        .itemId = ITEM_TM88_DRAIN_PUNCH,
         .price = 3000,
         .description = sTM88Desc,
         .importance = 1,
