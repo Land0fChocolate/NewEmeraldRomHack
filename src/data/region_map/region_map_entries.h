@@ -198,6 +198,8 @@ static const u8 sMapName_MarineCave[] = _("Marine Cave");
 static const u8 sMapName_TerraCave[] = _("Terra Cave");
 static const u8 sMapName_DesertUnderpass[] = _("Desert Underpass");
 static const u8 sMapName_TrainerHill[] = _("Trainer Hill");
+static const u8 sMapName_CrumblingGorge[] = _("Crumbling Gorge");
+static const u8 sMapName_OldaleFarm[] = _("Oldale Farm");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN]            = { 4, 11, 1, 1, sMapName_LittlerootTown},
@@ -412,7 +414,9 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_DESERT_UNDERPASS]           = { 2,  0, 1, 1, sMapName_DesertUnderpass},
     [MAPSEC_ALTERING_CAVE]              = { 6,  8, 1, 1, sMapName_AlteringCave},
     [MAPSEC_NAVEL_ROCK]                 = { 0,  0, 1, 1, sMapName_NavelRock},
-    [MAPSEC_TRAINER_HILL]               = { 8,  4, 1, 1, sMapName_TrainerHill}
+    [MAPSEC_TRAINER_HILL]               = { 8,  4, 1, 1, sMapName_TrainerHill},
+    [MAPSEC_CRUMBLING_GORGE]            = { 3,  6, 1, 1, sMapName_CrumblingGorge},
+    [MAPSEC_OLDALE_FARM]                = { 3, 10, 1, 1, sMapName_OldaleFarm},
 };
 
 #endif //GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H

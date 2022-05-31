@@ -9733,7 +9733,7 @@
               {
                 "min_level": 35,
                 "max_level": 35,
-                "species": "SPECIES_HOOTHOOT"
+                "species": "SPECIES_ARIADOS"
               },
               {
                 "min_level": 34,
@@ -9887,7 +9887,7 @@
               {
                 "min_level": 33,
                 "max_level": 33,
-                "species": "SPECIES_HOOTHOOT"
+                "species": "SPECIES_LEDIAN"
               },
               {
                 "min_level": 33,
@@ -9897,7 +9897,7 @@
               {
                 "min_level": 36,
                 "max_level": 36,
-                "species": "SPECIES_CHANSEY"
+                "species": "SPECIES_MILTANK"
               },
               {
                 "min_level": 37,

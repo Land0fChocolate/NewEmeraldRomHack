@@ -64,16 +64,6 @@ Route114_EventScript_ReceivedRoar::
 	release
 	end
 
-Route114_EventScript_Poochyena::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_POOCHYENA, 2
-	msgbox Route114_Text_Poochyena, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
 Route114_EventScript_MeteorFallsSign::
 	msgbox Route114_Text_MeteorFallsSign, MSGBOX_SIGN
 	end
@@ -194,9 +184,6 @@ Route114_Text_AllMyMonDoesIsRoarTakeThis:
 Route114_Text_ExplainRoar:
 	.string "TM05 contains Roar.\n"
 	.string "A Roar sends Pokémon scurrying.$"
-
-Route114_Text_Poochyena:
-	.string "Bow! Bowwow!$"
 
 Route114_Text_MeteorFallsSign:
 	.string "METEOR FALLS\n"

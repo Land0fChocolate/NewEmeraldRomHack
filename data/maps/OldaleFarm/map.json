@@ -3,7 +3,7 @@
   "name": "OldaleFarm",
   "layout": "LAYOUT_OLDALE_FARM",
   "music": "MUS_ROUTE101",
-  "region_map_section": "MAPSEC_OLDALE_TOWN",
+  "region_map_section": "MAPSEC_OLDALE_FARM",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
