@@ -596,7 +596,9 @@
     "NavelRock_Down11",
     "NavelRock_Bottom",
     "TrainerHill_Elevator",
-    "CrumblingGorge"
+    "CrumblingGorge",
+    "OldaleFarm",
+    "OldaleFarm_House"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",

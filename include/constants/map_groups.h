@@ -566,6 +566,8 @@
 #define MAP_NAVEL_ROCK_BOTTOM                               (87 | (26 << 8))
 #define MAP_TRAINER_HILL_ELEVATOR                           (88 | (26 << 8))
 #define MAP_CRUMBLING_GORGE                                 (89 | (26 << 8))
+#define MAP_OLDALE_FARM                                     (90 | (26 << 8))
+#define MAP_OLDALE_FARM_HOUSE                               (91 | (26 << 8))
 
 // gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))

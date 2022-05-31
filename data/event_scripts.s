@@ -1086,3 +1086,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/MauvilleCity_GroomerHouse/scripts.inc"
 
 	.include "data/maps/MauvilleCity_TVStation/scripts.inc"
+
+	.include "data/maps/OldaleFarm/scripts.inc"
+
+	.include "data/maps/OldaleFarm_House/scripts.inc"
