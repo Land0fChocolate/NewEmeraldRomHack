@@ -8699,10 +8699,10 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM75_SWORDS_DANCE] =
+    [ITEM_TM75_DRAINING_KISS] =
     {
         .name = _("TM75"),
-        .itemId = ITEM_TM75_SWORDS_DANCE,
+        .itemId = ITEM_TM75_DRAINING_KISS,
         .price = 3000,
         .description = sTM75Desc,
         .importance = 1,
@@ -8723,10 +8723,10 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM77_PSYCH_UP] =
+    [ITEM_TM77_THROAT_CHOP] =
     {
         .name = _("TM77"),
-        .itemId = ITEM_TM77_PSYCH_UP,
+        .itemId = ITEM_TM77_THROAT_CHOP,
         .price = 3000,
         .description = sTM77Desc,
         .importance = 1,
@@ -8819,10 +8819,10 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM85_DREAM_EATER] =
+    [ITEM_TM85_ELECTROWEB] =
     {
         .name = _("TM85"),
-        .itemId = ITEM_TM85_DREAM_EATER,
+        .itemId = ITEM_TM85_ELECTROWEB,
         .price = 3000,
         .description = sTM85Desc,
         .importance = 1,
@@ -8843,10 +8843,10 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM87_SWAGGER] =
+    [ITEM_TM87_TOPSY_TURVY] =
     {
         .name = _("TM87"),
-        .itemId = ITEM_TM87_SWAGGER,
+        .itemId = ITEM_TM87_TOPSY_TURVY,
         .price = 3000,
         .description = sTM87Desc,
         .importance = 1,
