@@ -3177,9 +3177,9 @@ static const u8 sTM74Desc[] = _(
     "are to the target.");
 
 static const u8 sTM75Desc[] = _(
-    "A frenetic dance\n"
-    "to sharply boost\n"
-    "the user's Attack.");
+    "Steals half\n"
+    "damage dealt to\n"
+    "heal the user.");
 
 static const u8 sTM76Desc[] = _(
     "User flies up to\n"
@@ -3187,9 +3187,9 @@ static const u8 sTM76Desc[] = _(
     "strikes next turn.");
 
 static const u8 sTM77Desc[] = _(
-    "User hypnotizes\n"
-    "itself to copy\n"
-    "foe stat changes.");
+    "User strikes the\n"
+    "vocal chords to\n"
+    "disable sound moves.");
 
 static const u8 sTM78Desc[] = _(
     "User stomps about\n"
@@ -3225,9 +3225,9 @@ static const u8 sTM84Desc[] = _(
     "poison.");
 
 static const u8 sTM85Desc[] = _(
-    "User eats a\n"
-    "sleeper's dream\n"
-    "to heal HP.");
+    "Lays down a trap\n"
+    "that inflicts\n"
+    "paralysis.");
 
 static const u8 sTM86Desc[] = _(
     "Trips the target\n"
@@ -3235,13 +3235,14 @@ static const u8 sTM86Desc[] = _(
     "the heavier.");
 
 static const u8 sTM87Desc[] = _(
-    "Confuses the foe\n"
-    "and sharply raises\n"
-    "its Attack.");
+    "Reverses stat\n"
+    "changes of the\n"
+    "target.");
 
 static const u8 sTM88Desc[] = _(
-    "Picks a random\n"
-    "move while asleep.");
+    "Steals half\n"
+    "damage dealt to\n"
+    "heal the user.");
 
 static const u8 sTM89Desc[] = _(
     "User bounces away\n"

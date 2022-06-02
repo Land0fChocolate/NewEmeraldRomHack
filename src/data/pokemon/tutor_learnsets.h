@@ -66,7 +66,6 @@ const u16 gTutorMoves[] =
 #define TUTOR_LEARNSET(moves) ((u64)(moves))
 #define TUTOR(move) ((u64)1 << (TUTOR_##move))
 
-//TODO: do Alolan Vulpix and Ninetales, Deoxys forms, 
 static const u64 sTutorLearnsets[] =
 {
     [SPECIES_NONE]          = TUTOR_LEARNSET(0),
