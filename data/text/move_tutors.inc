@@ -235,3 +235,27 @@ MoveTutor_Text_ExplosionTaught:
 	.string "to ignite my own Explosion…\p"
 	.string "Maybe it's because deep down,\n"
 	.string "I would rather stay here…$"
+
+MoveTutor_Text_DracoMeteorTeach:
+	.string "The fights here are good… but they\n"
+	.string "could do with some more blitz.\p"
+	.string "The moves too weak, lacking oomph.\n"
+	.string "You know what I'm talking about, right?\p"
+	.string "You can be better than the rest.\n"
+	.string "I can teach one of your Pokémon a\l"
+	.string "powerful Dragon-type move: Draco Meteor.\p"
+	.string "Would you like one of your Pokémon to\n"
+	.string "learn Draco Meteor?$"
+
+MoveTutor_Text_DracoMeteorDeclined:
+	.string "A shame.\n"
+	.string "Come again if you change your mind.$"
+
+MoveTutor_Text_DracoMeteorWhichMon:
+	.string "Hoorah!\n"
+	.string "Which Pokémon desires to wreak total\l"
+	.string "devastation?$"
+
+MoveTutor_Text_DracoMeteorTaught:
+	.string "I knew you were a cut above the rest.\n"
+	.string "Go forth, and rain heavenly destruction!$"

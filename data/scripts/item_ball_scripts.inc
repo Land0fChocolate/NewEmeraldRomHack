@@ -422,8 +422,8 @@ NewMauville_Inside_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
 
-NewMauville_Inside_EventScript_ItemThunderStone::
-	finditem ITEM_THUNDER_STONE
+NewMauville_Inside_EventScript_ItemElectirizer::
+	finditem ITEM_ELECTIRIZER
 	end
 
 NewMauville_Inside_EventScript_ItemFullHeal::
@@ -654,8 +654,8 @@ MagmaHideout_2F_2R_EventScript_ItemMaxElixir::
 	finditem ITEM_MAX_ELIXIR
 	end
 
-MagmaHideout_2F_2R_EventScript_ItemFullRestore::
-	finditem ITEM_FULL_RESTORE
+MagmaHideout_2F_2R_EventScript_ItemMagmarizer::
+	finditem ITEM_MAGMARIZER
 	end
 
 MagmaHideout_3F_1R_EventScript_ItemNugget::

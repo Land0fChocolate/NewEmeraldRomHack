@@ -94,7 +94,7 @@ EverGrandeCity_EventScript_Man::
 
 EverGrandeCity_EventScript_Triathlete::
 	msgbox EverGrandeCity_Text_Triathlete, MSGBOX_NPC
-	end
+	end	
 
 EverGrandeCity_Text_EnteringVictoryRoad:
 	.string "ENTERING VICTORY ROAD$"

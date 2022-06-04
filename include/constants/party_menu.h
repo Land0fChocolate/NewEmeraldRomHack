@@ -10,37 +10,37 @@
 #define AILMENT_PKRS  6
 #define AILMENT_FNT   7
 
-#define TUTOR_MOVE_SWORDS_DANCE    0
-#define TUTOR_MOVE_BODY_SLAM       1
-#define TUTOR_MOVE_DOUBLE_EDGE     2
-#define TUTOR_MOVE_COUNTER         3
-#define TUTOR_MOVE_SEISMIC_TOSS    4
-#define TUTOR_MOVE_MIMIC           5
-#define TUTOR_MOVE_METRONOME       6
-#define TUTOR_MOVE_SOFT_BOILED     7
-#define TUTOR_MOVE_DREAM_EATER     8
+#define TUTOR_MOVE_SWORDS_DANCE    0 //Battle Frontier
+#define TUTOR_MOVE_BODY_SLAM       1 //Battle Frontier
+#define TUTOR_MOVE_DOUBLE_EDGE     2 //During Mainline
+#define TUTOR_MOVE_COUNTER         3 //Battle Frontier
+#define TUTOR_MOVE_SEISMIC_TOSS    4 //Battle Frontier
+#define TUTOR_MOVE_MIMIC           5 //During Mainline
+#define TUTOR_MOVE_METRONOME       6 //During Mainline
+#define TUTOR_MOVE_SOFT_BOILED     7 //Battle Frontier
+#define TUTOR_MOVE_DREAM_EATER     8 //Battle Frontier
 #define TUTOR_MOVE_GASTRO_ACID     9
-#define TUTOR_MOVE_EXPLOSION       10
+#define TUTOR_MOVE_EXPLOSION       10 //During Mainline
 #define TUTOR_MOVE_PSYCHIC_FANGS   11
-#define TUTOR_MOVE_SUBSTITUTE      12
-#define TUTOR_MOVE_DYNAMIC_PUNCH   13
-#define TUTOR_MOVE_ROLLOUT         14
-#define TUTOR_MOVE_PSYCH_UP        15
-#define TUTOR_MOVE_SNORE           16
-#define TUTOR_MOVE_ICY_WIND        17
-#define TUTOR_MOVE_ENDURE          18
+#define TUTOR_MOVE_SUBSTITUTE      12 //During Mainline
+#define TUTOR_MOVE_DYNAMIC_PUNCH   13 //During Mainline
+#define TUTOR_MOVE_ROLLOUT         14 //During Mainline
+#define TUTOR_MOVE_PSYCH_UP        15 //Battle Frontier
+#define TUTOR_MOVE_SNORE           16 //Battle Frontier
+#define TUTOR_MOVE_ICY_WIND        17 //Battle Frontier
+#define TUTOR_MOVE_ENDURE          18 //Battle Frontier
 #define TUTOR_MOVE_EARTH_POWER     19
-#define TUTOR_MOVE_ICE_PUNCH       20
-#define TUTOR_MOVE_SWAGGER         21
-#define TUTOR_MOVE_SLEEP_TALK      22
-#define TUTOR_MOVE_SWIFT           23
-#define TUTOR_MOVE_DEFENSE_CURL    24
-#define TUTOR_MOVE_THUNDER_PUNCH   25
-#define TUTOR_MOVE_FIRE_PUNCH      26
-#define TUTOR_MOVE_FURY_CUTTER     27
-#define TUTOR_MOVE_SERPENT_DANCE   28
-#define TUTOR_MOVE_FLINT_BLADE     29
-#define TUTOR_MOVE_FLARE_CRASH     30
+#define TUTOR_MOVE_ICE_PUNCH       20 //Battle Frontier
+#define TUTOR_MOVE_SWAGGER         21 //During Mainline
+#define TUTOR_MOVE_SLEEP_TALK      22 //During Mainline
+#define TUTOR_MOVE_SWIFT           23 //Battle Frontier
+#define TUTOR_MOVE_DEFENSE_CURL    24 //Battle Frontier
+#define TUTOR_MOVE_THUNDER_PUNCH   25 //Battle Frontier
+#define TUTOR_MOVE_FIRE_PUNCH      26 //Battle Frontier
+#define TUTOR_MOVE_FURY_CUTTER     27 //During Mainline
+#define TUTOR_MOVE_SERPENT_DANCE   28 //Battle Frontier
+#define TUTOR_MOVE_FLINT_BLADE     29 //Battle Frontier
+#define TUTOR_MOVE_FLARE_CRASH     30 //Battle Frontier
 #define TUTOR_MOVE_WORK_UP         31
 #define TUTOR_MOVE_LOW_SWEEP       32
 #define TUTOR_MOVE_AVALANCHE       33
@@ -70,7 +70,7 @@
 #define TUTOR_MOVE_AQUA_TAIL       57
 #define TUTOR_MOVE_FOUL_PLAY       58
 #define TUTOR_MOVE_MEGAHORN        59
-#define TUTOR_MOVE_DRACO_METEOR    60
+#define TUTOR_MOVE_DRACO_METEOR    60 //Ever Grande City
 
 #define TUTOR_MOVE_COUNT           61
 
