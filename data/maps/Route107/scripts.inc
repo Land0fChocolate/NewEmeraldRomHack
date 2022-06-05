@@ -33,11 +33,6 @@ Route107_EventScript_Denise::
 	msgbox Route107_Text_DenisePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route107_EventScript_Beth::
-	trainerbattle_single TRAINER_BETH, Route107_Text_BethIntro, Route107_Text_BethDefeated
-	msgbox Route107_Text_BethPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route107_EventScript_Lisa::
 	trainerbattle_double TRAINER_LISA_AND_RAY, Route107_Text_LisaIntro, Route107_Text_LisaDefeated, Route107_Text_LisaNotEnoughPokemon
 	msgbox Route107_Text_LisaPostBattle, MSGBOX_AUTOCLOSE

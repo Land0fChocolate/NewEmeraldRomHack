@@ -100,16 +100,6 @@ Route112_EventScript_Carol::
 	msgbox Route112_Text_CarolPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route112_EventScript_Bryant::
-	trainerbattle_single TRAINER_BRYANT, Route112_Text_BryantIntro, Route112_Text_BryantDefeat
-	msgbox Route112_Text_BryantPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route112_EventScript_Shayla::
-	trainerbattle_single TRAINER_SHAYLA, Route112_Text_ShaylaIntro, Route112_Text_ShaylaDefeat
-	msgbox Route112_Text_ShaylaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route112_Text_LeaderGoingToAwakenThing:
 	.string "Hey, man, is our leader really going\n"
 	.string "to awaken that thing?$"

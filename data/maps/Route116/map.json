@@ -183,8 +183,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 36,
-      "y": 17,
+      "x": 28,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
       "movement_range_x": 0,
@@ -248,8 +248,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
-      "x": 28,
-      "y": 8,
+      "x": 36,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -325,7 +325,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
+      "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
       "x": 33,
       "y": 5,
       "elevation": 3,
@@ -366,7 +366,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 36,
-      "y": 13,
+      "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 1,

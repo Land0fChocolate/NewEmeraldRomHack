@@ -138,16 +138,6 @@ Route121_EventScript_Cale::
 	msgbox Route121_Text_CalePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route121_EventScript_Myles::
-	trainerbattle_single TRAINER_MYLES, Route121_Text_MylesIntro, Route121_Text_MylesDefeat
-	msgbox Route121_Text_MylesPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route121_EventScript_Pat::
-	trainerbattle_single TRAINER_PAT, Route121_Text_PatIntro, Route121_Text_PatDefeat
-	msgbox Route121_Text_PatPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route121_EventScript_Marcel::
 	trainerbattle_single TRAINER_MARCEL, Route121_Text_MarcelIntro, Route121_Text_MarcelDefeat
 	msgbox Route121_Text_MarcelPostBattle, MSGBOX_AUTOCLOSE

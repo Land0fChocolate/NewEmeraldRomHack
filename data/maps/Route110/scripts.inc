@@ -300,16 +300,6 @@ Route110_EventScript_Kaleb::
 	msgbox Route110_Text_KalebPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route110_EventScript_Joseph::
-	trainerbattle_single TRAINER_JOSEPH, Route110_Text_JosephIntro, Route110_Text_JosephDefeated
-	msgbox Route110_Text_JosephPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route110_EventScript_Alyssa::
-	trainerbattle_single TRAINER_ALYSSA, Route110_Text_AlyssaIntro, Route110_Text_AlyssaDefeated
-	msgbox Route110_Text_AlyssaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route110_EventScript_CyclingChallengeEnd::
 	lockall
 	applymovement LOCALID_CHALLENGE_BIKER, Common_Movement_WalkInPlaceFastestRight

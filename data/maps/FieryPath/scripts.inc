@@ -20,3 +20,13 @@ FieryPath_EventScript_Aisha::
 	trainerbattle_single TRAINER_AISHA, FieryPath_Text_AishaIntro, FieryPath_Text_AishaDefeat
 	msgbox FieryPath_Text_AishaPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+FieryPath_EventScript_Bryant::
+	trainerbattle_single TRAINER_BRYANT, FieryPath_Text_BryantIntro, FieryPath_Text_BryantDefeat
+	msgbox FieryPath_Text_BryantPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+FieryPath_EventScript_Shayla::
+	trainerbattle_single TRAINER_SHAYLA, FieryPath_Text_ShaylaIntro, FieryPath_Text_ShaylaDefeat
+	msgbox FieryPath_Text_ShaylaPostBattle, MSGBOX_AUTOCLOSE
+	end

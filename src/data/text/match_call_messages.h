@@ -3,11 +3,6 @@ const u8 gText_MatchCallAromaLady_Rose_Pokemon[] = _("Fragrant Grass Pokémon.")
 const u8 gText_MatchCallAromaLady_Rose_Intro1[] = _("Soothing aromas make the");
 const u8 gText_MatchCallAromaLady_Rose_Intro2[] = _("body and mind healthy.");
 
-const u8 gText_MatchCallRuinManiac_Andres_Strategy[] = _("I'm not very good at this.");
-const u8 gText_MatchCallRuinManiac_Andres_Pokemon[] = _("Ruin-exploration partners.");
-const u8 gText_MatchCallRuinManiac_Andres_Intro1[] = _("I am searching for undersea");
-const u8 gText_MatchCallRuinManiac_Andres_Intro2[] = _("ruins and relics.");
-
 const u8 gText_MatchCallRuinManiac_Dusty_Strategy[] = _("Overwhelm with power!");
 const u8 gText_MatchCallRuinManiac_Dusty_Pokemon[] = _("Craggy Rock Pokémon.");
 const u8 gText_MatchCallRuinManiac_Dusty_Intro1[] = _("In search of ancient lore,");
@@ -258,11 +253,6 @@ const u8 gText_MatchCallSailor_Ernest_Pokemon[] = _("Water and Fighting types.")
 const u8 gText_MatchCallSailor_Ernest_Intro1[] = _("Seamen are rough spirits!");
 const u8 gText_MatchCallSailor_Ernest_Intro2[] = _("Any complaints?");
 
-const u8 gText_MatchCallSailor_Cory_Strategy[] = _("Up for a fight anytime!");
-const u8 gText_MatchCallSailor_Cory_Pokemon[] = _("Water Pokémon are my faves!");
-const u8 gText_MatchCallSailor_Cory_Intro1[] = _("If you want to shout loud,");
-const u8 gText_MatchCallSailor_Cory_Intro2[] = _("suck in air with your belly!");
-
 const u8 gText_MatchCallCollector_Edwin_Strategy[] = _("Protect Pokémon from harm.");
 const u8 gText_MatchCallCollector_Edwin_Pokemon[] = _("I love rare Pokémon.");
 const u8 gText_MatchCallCollector_Edwin_Intro1[] = _("I want to collect all the");
@@ -396,7 +386,6 @@ const u8 gText_MatchCallChampion_Steven_Intro2[] = _("I'm still the strongest!")
 const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_COUNT] = 
 {
     [REMATCH_ROSE] = MCFLAVOR(AromaLady_Rose),
-    [REMATCH_ANDRES] = MCFLAVOR(RuinManiac_Andres),
     [REMATCH_DUSTY] = MCFLAVOR(RuinManiac_Dusty),
     [REMATCH_LOLA] = MCFLAVOR(Tuber_Lola),
     [REMATCH_RICKY] = MCFLAVOR(Tuber_Ricky),
@@ -447,7 +436,6 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_DIANA] = MCFLAVOR(Picnicker_Diana),
     [REMATCH_AMY_AND_LIV] = MCFLAVOR(Twins_AmyAndLiv),
     [REMATCH_ERNEST] = MCFLAVOR(Sailor_Ernest),
-    [REMATCH_CORY] = MCFLAVOR(Sailor_Cory),
     [REMATCH_EDWIN] = MCFLAVOR(Collector_Edwin),
     [REMATCH_LYDIA] = MCFLAVOR(PkmnBreeder_Lydia),
     [REMATCH_ISAAC] = MCFLAVOR(PkmnBreeder_Isaac),
