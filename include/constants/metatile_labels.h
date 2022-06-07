@@ -152,6 +152,7 @@
 // gTileset_EverGrande
 #define METATILE_EverGrande_Door                0x2C2
 #define METATILE_EverGrande_Door_PokemonLeague  0x21D
+#define METATILE_EverGrande_Door_BattleTent     0x30A
 
 // gTileset_Facility
 #define METATILE_Facility_DataPad                       0x3E4
@@ -176,7 +177,6 @@
 #define METATILE_Fallarbor_BrownCaveIndent           0x208
 #define METATILE_Fallarbor_BrownCaveOpen             0x210
 #define METATILE_Fallarbor_BrownRockWall             0x265
-#define METATILE_Fallarbor_Door_BattleTent           0x36C
 #define METATILE_Fallarbor_Door_DarkRoof             0x2F7
 #define METATILE_Fallarbor_Door_LightRoof            0x2A5
 #define METATILE_Fallarbor_NormalGrass               0x212
@@ -326,7 +326,6 @@
 #define METATILE_Mauville_DeepSand_BottomMid  0x259
 #define METATILE_Mauville_DeepSand_Center     0x251
 #define METATILE_Mauville_Door                0x2AC
-#define METATILE_Mauville_Door_BattleTent     0x3D4
 #define METATILE_Mauville_Door_CyclingRoad    0x289
 #define METATILE_Mauville_Door_Verdanturf     0x3A1
 #define METATILE_Mauville_MirageTower_Tile0   0x3D8
@@ -722,7 +721,6 @@
 
 // gTileset_Slateport
 #define METATILE_Slateport_Door             0x2DC
-#define METATILE_Slateport_Door_BattleTent  0x393
 
 // gTileset_SootopolisGym
 #define METATILE_SootopolisGym_Ice_Broken   0x206

@@ -9648,9 +9648,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_DESTINEE] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TUBER_F,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_F,
+        .trainerClass = TRAINER_CLASS_DELINQUENT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_DELINQUENT,
         .trainerName = _("Destinee"),
         .items = {},
         .doubleBattle = FALSE,
@@ -9662,9 +9662,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BLAIR] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TUBER_M,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_TUBER_M,
+        .trainerClass = TRAINER_CLASS_STREET_THUG,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_STREET_THUG,
         .trainerName = _("Blair"),
         .items = {},
         .doubleBattle = FALSE,
@@ -11398,9 +11398,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_CECE] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_LASS, //TODO: implement Fairy Tale Girl class
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerClass = TRAINER_CLASS_FAIRY_TALE_GIRL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
+        .trainerPic = TRAINER_PIC_FAIRY_TALE_GIRL,
         .trainerName = _("Cece"),
         .items = {},
         .doubleBattle = FALSE,
@@ -11412,9 +11412,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_FRANNY] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_LASS, //TODO: implement Fairy Tale Girl class
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerClass = TRAINER_CLASS_FAIRY_TALE_GIRL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
+        .trainerPic = TRAINER_PIC_FAIRY_TALE_GIRL,
         .trainerName = _("Franny"),
         .items = {},
         .doubleBattle = FALSE,
@@ -11426,9 +11426,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_MEGGI] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_LASS, //TODO: implement Fairy Tale Girl class
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerClass = TRAINER_CLASS_FAIRY_TALE_GIRL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
+        .trainerPic = TRAINER_PIC_FAIRY_TALE_GIRL,
         .trainerName = _("Meggi"),
         .items = {},
         .doubleBattle = FALSE,
@@ -11440,9 +11440,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_MOMO] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_LASS, //TODO: implement Fairy Tale Girl class
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerClass = TRAINER_CLASS_FAIRY_TALE_GIRL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
+        .trainerPic = TRAINER_PIC_FAIRY_TALE_GIRL,
         .trainerName = _("Momo"),
         .items = {},
         .doubleBattle = FALSE,
@@ -11454,9 +11454,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_NELLIE] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_LASS, //TODO: implement Fairy Tale Girl class
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_GIRL,
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerClass = TRAINER_CLASS_FAIRY_TALE_GIRL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
+        .trainerPic = TRAINER_PIC_FAIRY_TALE_GIRL,
         .trainerName = _("Nellie"),
         .items = {},
         .doubleBattle = FALSE,
@@ -11510,9 +11510,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_MELINA] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BUG_CATCHER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerClass = TRAINER_CLASS_DELINQUENT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_DELINQUENT,
         .trainerName = _("Melina"),
         .items = {},
         .doubleBattle = FALSE,
@@ -11538,9 +11538,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_CAROLINA] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_EXPERT, //TODO: implement Fairy Tale Girl class
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_EXPERT_F,
+        .trainerClass = TRAINER_CLASS_FAIRY_TALE_GIRL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
+        .trainerPic = TRAINER_PIC_FAIRY_TALE_GIRL,
         .trainerName = _("Carolina"),
         .items = {},
         .doubleBattle = FALSE,
@@ -11579,7 +11579,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_COBY] =
     {
-        .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_GUITARIST,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_GUITARIST,
@@ -11607,7 +11607,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_ISABELLE] =
     {
-        .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
@@ -11636,9 +11636,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_KEVIN] =
     {
         .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TRIATHLETE, //TODO: implement Street Thug class
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_CYCLING_TRIATHLETE_M,
+        .trainerClass = TRAINER_CLASS_STREET_THUG,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_STREET_THUG,
         .trainerName = _("Kevin"),
         .items = {},
         .doubleBattle = FALSE,
@@ -11733,7 +11733,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_ANDRES] =
     {
-        .partyFlags = F_TRAINER_PARTY_HELD_ITEM,
+        .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_RICH_BOY,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_RICH,
         .trainerPic = TRAINER_PIC_RICH_BOY,
@@ -11813,5 +11813,19 @@ const struct Trainer gTrainers[] = {
         .aiFlags = 0,
         .partySize = ARRAY_COUNT(sParty_MayLinkPlaceholder),
         .party = {.NoItemDefaultMoves = sParty_MayLinkPlaceholder},
+    },
+
+    [TRAINER_ZINNIA] =
+    {
+        .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .trainerClass = TRAINER_CLASS_LORE_KEEPER,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_ZINNIA,
+        .trainerName = _("Zinnia"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_Zinnia),
+        .party = {.ItemCustomMoves = sParty_Zinnia},
     },
 };

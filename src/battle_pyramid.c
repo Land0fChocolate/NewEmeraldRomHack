@@ -406,7 +406,7 @@ static const u8 sPickupItemSlots[][2] =
 
 static const u8 sPickupItemOffsets[] = {0, 9, 18, 27, 36, 45, 54};
 
-static const struct PyramidTrainerEncounterMusic sTrainerClassEncounterMusic[54] =
+static const struct PyramidTrainerEncounterMusic sTrainerClassEncounterMusic[57] =
 {
     {TRAINER_CLASS_TEAM_AQUA, TRAINER_ENCOUNTER_MUSIC_AQUA},
     {TRAINER_CLASS_AQUA_ADMIN, TRAINER_ENCOUNTER_MUSIC_AQUA},
@@ -462,6 +462,9 @@ static const struct PyramidTrainerEncounterMusic sTrainerClassEncounterMusic[54]
     {TRAINER_CLASS_HIKER, TRAINER_ENCOUNTER_MUSIC_HIKER},
     {TRAINER_CLASS_LEADER, TRAINER_ENCOUNTER_MUSIC_FEMALE},
     {TRAINER_CLASS_SCHOOL_KID, TRAINER_ENCOUNTER_MUSIC_MALE},
+    {TRAINER_CLASS_FAIRY_TALE_GIRL, TRAINER_ENCOUNTER_MUSIC_TWINS},
+    {TRAINER_CLASS_DELINQUENT, TRAINER_ENCOUNTER_MUSIC_INTENSE},
+    {TRAINER_CLASS_STREET_THUG, TRAINER_ENCOUNTER_MUSIC_INTENSE},
 };
 
 static const u8 sTrainerTextGroups[50][2] =

@@ -330,6 +330,10 @@ static const union AnimCmd *const sAnims_Steven[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_Zinnia[] ={
+    sAnim_GeneralFrame0,
+};
+
 static const union AnimCmd *const sAnims_SalonMaidenAnabel[] ={
     sAnim_GeneralFrame0,
 };
@@ -371,6 +375,18 @@ static const union AnimCmd *const sAnims_RubySapphireBrendan[] ={
 };
 
 static const union AnimCmd *const sAnims_RubySapphireMay[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_FairyTaleGirl[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Delinquent[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_StreetThug[] ={
     sAnim_GeneralFrame0,
 };
 
@@ -458,6 +474,7 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_OLD_COUPLE] = sAnims_OldCouple,
     [TRAINER_PIC_SIS_AND_BRO] = sAnims_SisAndBro,
     [TRAINER_PIC_STEVEN] = sAnims_Steven,
+    [TRAINER_PIC_ZINNIA] = sAnims_Zinnia,
     [TRAINER_PIC_SALON_MAIDEN_ANABEL] = sAnims_SalonMaidenAnabel,
     [TRAINER_PIC_DOME_ACE_TUCKER] = sAnims_DomeAceTucker,
     [TRAINER_PIC_PALACE_MAVEN_SPENSER] = sAnims_PalaceMavenSpenser,
@@ -470,4 +487,7 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_RS_BRENDAN] = sAnims_RubySapphireBrendan,
     [TRAINER_PIC_RS_MAY] = sAnims_RubySapphireMay,
     [TRAINER_PIC_MAGMA_ADMIN_F] = sAnims_MagmaAdminF,
+    [TRAINER_PIC_FAIRY_TALE_GIRL] = sAnims_FairyTaleGirl,
+    [TRAINER_PIC_DELINQUENT] = sAnims_Delinquent,
+    [TRAINER_PIC_STREET_THUG] = sAnims_StreetThug,
 };
