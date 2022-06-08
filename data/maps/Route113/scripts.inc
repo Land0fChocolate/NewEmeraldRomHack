@@ -53,6 +53,11 @@ Route113_EventScript_Jaylen::
 	msgbox Route113_Text_JaylenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route113_EventScript_Franny::
+	trainerbattle_single TRAINER_FRANNY, Route113_Text_FrannyIntro, Route113_Text_FrannyDefeat
+	msgbox Route113_Text_FrannyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 Route113_EventScript_Dillon::
 	trainerbattle_single TRAINER_DILLON, Route113_Text_DillonIntro, Route113_Text_DillonDefeat
 	msgbox Route113_Text_DillonPostBattle, MSGBOX_AUTOCLOSE

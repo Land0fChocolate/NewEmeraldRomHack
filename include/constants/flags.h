@@ -427,11 +427,11 @@
 #define FLAG_REMATCH_DIANA                   0x18E
 #define FLAG_REMATCH_AMY_AND_LIV             0x18F
 #define FLAG_REMATCH_ERNEST                  0x190
-#define FLAG_REMATCH_CORY                    0x191 //unused
+#define FLAG_REMATCH_MOMO                    0x191
 #define FLAG_REMATCH_EDWIN                   0x192
 #define FLAG_REMATCH_LYDIA                   0x193
 #define FLAG_REMATCH_ISAAC                   0x194
-#define FLAG_REMATCH_GABRIELLE               0x195
+#define FLAG_REMATCH_GABRIELLE               0x195 //unused
 #define FLAG_REMATCH_CATHERINE               0x196
 #define FLAG_REMATCH_JACKSON                 0x197
 #define FLAG_REMATCH_HALEY                   0x198
@@ -447,7 +447,7 @@
 #define FLAG_REMATCH_NORMAN                  0x1A2
 #define FLAG_REMATCH_WINONA                  0x1A3
 #define FLAG_REMATCH_TATE_AND_LIZA           0x1A4
-// Note: FLAG_REMATCH_WALLACE is handled by FLAG_ENABLE_WALLACE_MATCH_CALL instead. May update for consistency.
+// Note: FLAG_REMATCH_WALLACE is handled by FLAG_ENABLE_WALLACE_MATCH_CALL instead. May update for consistency. //TODO: will probably have to sort this rematch out.
 #define FLAG_REMATCH_SIDNEY                  0x1A5
 #define FLAG_REMATCH_PHOEBE                  0x1A6
 #define FLAG_REMATCH_GLACIA                  0x1A7
@@ -1147,7 +1147,7 @@
 #define FLAG_ITEM_ABANDONED_SHIP_CAPTAINS_OFFICE_STORAGE_KEY        0x44C 
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_3_WATER_STONE    0x44D 
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_1_TM_18          0x44E 
-#define FLAG_ITEM_ROUTE_121_CARBOS                                  0x44F
+#define FLAG_ITEM_ROUTE_121_CARBOS                                  0x44F //unused
 #define FLAG_ITEM_ROUTE_123_ULTRA_BALL                              0x450
 #define FLAG_ITEM_ROUTE_126_GREEN_SHARD                             0x451
 #define FLAG_ITEM_ROUTE_119_HYPER_POTION_2                          0x452

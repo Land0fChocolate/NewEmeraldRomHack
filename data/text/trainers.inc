@@ -1357,6 +1357,19 @@ Route111_Text_BrandenPostBattle:
 	.string "My Sandshrew loves eating\n"
 	.string "my sandwiches.$"
 
+Route111_Text_CeceIntro:
+	.string "I've come here to look for fairies.\n"
+	.string "Have you seen any?$"
+
+Route111_Text_CeceDefeat:
+	.string "You are certainly not a fairy.$"
+
+Route111_Text_CecePostBattle:
+	.string "Fairies are tricky, they like to hide.\n"
+	.string "However, their efforts are futile!\p"
+	.string "They cannot stop me! I will find them\n"
+	.string "and become their friend!$"
+
 Route112_Text_BriceIntro:
 	.string "Hahahaha!\n"
 	.string "How about we have a battle?\l"
@@ -1469,6 +1482,19 @@ Route113_Text_JaylenPostBattle:
 	.string "The volcanic ash blocks the sun,\n"
 	.string "so it doesn't get very warm.\p"
 	.string "That's good for me--I can't stand heat!$"
+
+Route113_Text_FrannyIntro:
+	.string "I have found it quite enjoyable to\n"
+	.string "frolick in the ash. Sadly, my Pokémon\l"
+	.string "do not seem to agree.$"
+
+Route113_Text_FrannyDefeat:
+	.string "Oh, dear!$"
+
+Route113_Text_FrannyPostBattle:
+	.string "My dress is absolutely ruined, but I\p"
+	.string "cannot help myself to not play around\l"
+	.string "in the ashfalls.$"
 
 Route113_Text_DillonIntro:
 	.string "The volcano's eruption is proof that\n"

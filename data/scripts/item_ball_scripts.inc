@@ -210,10 +210,6 @@ Route120_EventScript_ItemRevive::
 	finditem ITEM_REVIVE
 	end
 
-Route121_EventScript_ItemCarbos::
-	finditem ITEM_CARBOS
-	end
-
 Route121_EventScript_ItemRevive::
 	finditem ITEM_REVIVE
 	end

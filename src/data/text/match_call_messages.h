@@ -268,11 +268,6 @@ const u8 gText_MatchCallPkmnBreeder_Isaac_Pokemon[] = _("Anything. I'll raise it
 const u8 gText_MatchCallPkmnBreeder_Isaac_Intro1[] = _("I give them {POKEBLOCK}S for");
 const u8 gText_MatchCallPkmnBreeder_Isaac_Intro2[] = _("going after Contest titles.");
 
-const u8 gText_MatchCallPkmnBreeder_Gabrielle_Strategy[] = _("I raise Pokémon with care.");
-const u8 gText_MatchCallPkmnBreeder_Gabrielle_Pokemon[] = _("Fun-to-raise Pokémon.");
-const u8 gText_MatchCallPkmnBreeder_Gabrielle_Intro1[] = _("Treat every Pokémon you");
-const u8 gText_MatchCallPkmnBreeder_Gabrielle_Intro2[] = _("meet with respect.");
-
 const u8 gText_MatchCallPkmnRanger_Catherine_Strategy[] = _("I believe in my Pokémon.");
 const u8 gText_MatchCallPkmnRanger_Catherine_Pokemon[] = _("I like strong Pokémon.");
 const u8 gText_MatchCallPkmnRanger_Catherine_Intro1[] = _("I'm training for rescue");
@@ -302,6 +297,11 @@ const u8 gText_MatchCallHiker_Sawyer_Strategy[] = _("I like it hot!");
 const u8 gText_MatchCallHiker_Sawyer_Pokemon[] = _("Hot Pokémon!");
 const u8 gText_MatchCallHiker_Sawyer_Intro1[] = _("As much as I love Pokémon,");
 const u8 gText_MatchCallHiker_Sawyer_Intro2[] = _("I surely like hiking!");
+
+const u8 gText_MatchCallFairyGirl_Momo_Strategy[] = _("Trust my Pokémon.");
+const u8 gText_MatchCallFairyGirl_Momo_Pokemon[] = _("Fairies of course!");
+const u8 gText_MatchCallFairyGirl_Momo_Intro1[] = _("I love Pokémon, it's");
+const u8 gText_MatchCallFairyGirl_Momo_Intro2[] = _("people I'm no good with.");
 
 const u8 gText_MatchCallYoungCouple_LoisAndHal_Strategy[] = _("Lovey-dovey strategy!");
 const u8 gText_MatchCallYoungCouple_LoisAndHal_Pokemon[] = _("Lovey-dovey Pokémon!");
@@ -439,13 +439,13 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_EDWIN] = MCFLAVOR(Collector_Edwin),
     [REMATCH_LYDIA] = MCFLAVOR(PkmnBreeder_Lydia),
     [REMATCH_ISAAC] = MCFLAVOR(PkmnBreeder_Isaac),
-    [REMATCH_GABRIELLE] = MCFLAVOR(PkmnBreeder_Gabrielle),
     [REMATCH_CATHERINE] = MCFLAVOR(PkmnRanger_Catherine),
     [REMATCH_JACKSON] = MCFLAVOR(PkmnRanger_Jackson),
     [REMATCH_HALEY] = MCFLAVOR(Lass_Haley),
     [REMATCH_JAMES] = MCFLAVOR(BugCatcher_James),
     [REMATCH_TRENT] = MCFLAVOR(Hiker_Trent),
     [REMATCH_SAWYER] = MCFLAVOR(Hiker_Sawyer),
+    [REMATCH_MOMO] = MCFLAVOR(FairyGirl_Momo),
     [REMATCH_KIRA_AND_DAN] = MCFLAVOR(YoungCouple_LoisAndHal),
     [REMATCH_WALLY_3] = MCFLAVOR(PkmnTrainer_Wally),
     [REMATCH_ROXANNE] = MCFLAVOR(RockinWhiz_Roxanne),

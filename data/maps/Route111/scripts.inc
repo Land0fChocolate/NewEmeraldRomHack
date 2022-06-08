@@ -571,6 +571,11 @@ Route111_EventScript_Branden::
 	msgbox Route111_Text_BrandenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route111_EventScript_Cece::
+	trainerbattle_single TRAINER_CECE, Route111_Text_CeceIntro, Route111_Text_CeceDefeat
+	msgbox Route111_Text_CecePostBattle, MSGBOX_AUTOCLOSE
+	end
+
 Route111_EventScript_TrainerHillSign::
 	msgbox Route111_Text_TrainerHillSign, MSGBOX_SIGN
 	end
