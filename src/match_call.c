@@ -319,15 +319,6 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 3),
     },
     {
-        .trainerId = TRAINER_FERNANDO_1,
-        .unused = 0,
-        .battleTopicTextIds = BATTLE_TEXT_IDS(6),
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 17),
-        .battleFrontierRecordStreakTextIndex = 6,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 6),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 6),
-    },
-    {
         .trainerId = TRAINER_DALTON_1,
         .unused = 0,
         .battleTopicTextIds = BATTLE_TEXT_IDS(4),
@@ -697,16 +688,6 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 3),
     },
     {
-        .trainerId = TRAINER_SAWYER_1,
-        .unused = 0,
-        // Thalia and Sawyer are the only ones who use different msg ids for their battle topics
-        .battleTopicTextIds = { TEXT_ID(B_TOPIC_WILD, 15), TEXT_ID(B_TOPIC_NEGATIVE, 3), TEXT_ID(B_TOPIC_POSITIVE, 3) },
-        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 1),
-        .battleFrontierRecordStreakTextIndex = 3,
-        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 3),
-        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 3),
-    },
-    {
         .trainerId = TRAINER_KIRA_AND_DAN_1,
         .unused = 1,
         .battleTopicTextIds = BATTLE_TEXT_IDS(9),
@@ -714,6 +695,24 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .battleFrontierRecordStreakTextIndex = 9,
         .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 9),
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 9),
+    },
+    {
+        .trainerId = TRAINER_SHARLENE_1,
+        .unused = 0,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(6),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 42),
+        .battleFrontierRecordStreakTextIndex = 6,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 6),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 6),
+    },
+    {
+        .trainerId = TRAINER_GOMEZ_1,
+        .unused = 0,
+        .battleTopicTextIds = BATTLE_TEXT_IDS(7),
+        .generalTextId = TEXT_ID(GEN_TOPIC_PERSONAL, 21),
+        .battleFrontierRecordStreakTextIndex = 7,
+        .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 7),
+        .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 7),
     },
     {
         .trainerId = TRAINER_MOMO_1,

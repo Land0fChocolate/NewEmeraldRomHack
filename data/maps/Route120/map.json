@@ -463,7 +463,7 @@
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_sight_or_berry_tree_id": "5",
       "script": "Route120_EventScript_Keigo",
       "flag": "0"
     },
@@ -559,7 +559,7 @@
       "flag": "FLAG_HIDE_ROUTE_120_KECLEON_4"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "graphics_id": "OBJ_EVENT_GFX_DELINQUENT",
       "x": 19,
       "y": 32,
       "elevation": 3,
@@ -568,7 +568,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route120_EventScript_Callie",
+      "script": "Route120_EventScript_Sharlene",
       "flag": "0"
     },
     {
@@ -596,6 +596,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route120_EventScript_ItemRevive",
       "flag": "FLAG_ITEM_ROUTE_120_REVIVE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_STREET_THUG",
+      "x": 4,
+      "y": 60,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Route120_EventScript_Gomez",
+      "flag": "0"
     }
   ],
   "warp_events": [

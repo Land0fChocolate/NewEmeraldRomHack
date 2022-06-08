@@ -118,14 +118,14 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
-      "x": 70,
+      "x": 69,
       "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Route123_EventScript_Wendy",
       "flag": "0"
     },
@@ -494,7 +494,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_DELINQUENT",
       "x": 66,
       "y": 16,
       "elevation": 3,
@@ -503,7 +503,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route123_EventScript_Fernando",
+      "script": "Route123_EventScript_Kylie",
       "flag": "0"
     },
     {
@@ -557,6 +557,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route123_EventScript_ItemRevivalHerb",
       "flag": "FLAG_ITEM_ROUTE_123_REVIVAL_HERB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_STREET_THUG",
+      "x": 73,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route123_EventScript_Hannibal",
+      "flag": "0"
     }
   ],
   "warp_events": [

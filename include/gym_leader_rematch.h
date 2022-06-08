@@ -19,7 +19,6 @@ enum {
     REMATCH_TONY,
     REMATCH_NOB,
     REMATCH_KOJI,
-    REMATCH_FERNANDO,
     REMATCH_DALTON,
     REMATCH_BERNIE,
     REMATCH_ETHAN,
@@ -61,7 +60,8 @@ enum {
     REMATCH_HALEY,
     REMATCH_JAMES,
     REMATCH_TRENT,
-    REMATCH_SAWYER,
+    REMATCH_SHARLENE,
+    REMATCH_GOMEZ,
     REMATCH_MOMO,
     REMATCH_KIRA_AND_DAN,
     REMATCH_WALLY_3,  // Entries above WALLY are considered normal trainers, from Wally below are special trainers

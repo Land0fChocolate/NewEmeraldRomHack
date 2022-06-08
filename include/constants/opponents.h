@@ -2,7 +2,7 @@
 #define GUARD_CONSTANTS_OPPONENTS_H
 
 #define TRAINER_NONE                          0
-#define TRAINER_SAWYER_1                      1
+#define TRAINER_SAWYER                        1
 #define TRAINER_GRUNT_AQUA_HIDEOUT_1          2
 #define TRAINER_GRUNT_AQUA_HIDEOUT_2          3
 #define TRAINER_GRUNT_AQUA_HIDEOUT_3          4
@@ -10,7 +10,7 @@
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_1       6
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_2       7
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
-#define TRAINER_GABRIELLE_1                   9 //unused
+#define TRAINER_GOMEZ_1                       9
 #define TRAINER_GRUNT_PETALBURG_WOODS        10
 #define TRAINER_MARCEL                       11
 #define TRAINER_ALBERTO                      12
@@ -196,7 +196,7 @@
 #define TRAINER_GRUNT_AQUA_HIDEOUT_7        192
 #define TRAINER_GRUNT_AQUA_HIDEOUT_8        193
 #define TRAINER_SHAWN                       194
-#define TRAINER_FERNANDO_1                  195
+#define TRAINER_FERNANDO_1                  195 //unused
 #define TRAINER_DALTON_1                    196
 #define TRAINER_DALTON_2                    197
 #define TRAINER_DALTON_3                    198
@@ -218,7 +218,7 @@
 #define TRAINER_SHANE                       214
 #define TRAINER_JUSTIN                      215
 #define TRAINER_ETHAN_1                     216
-#define TRAINER_AUTUMN                      217 //unused
+#define TRAINER_KYLIE                       217
 #define TRAINER_TRAVIS                      218
 #define TRAINER_ETHAN_2                     219
 #define TRAINER_ETHAN_3                     220
@@ -567,9 +567,9 @@
 #define TRAINER_CATHERINE_3                 563
 #define TRAINER_CATHERINE_4                 564
 #define TRAINER_CATHERINE_5                 565
-#define TRAINER_JULIO                       566 //unused
+#define TRAINER_HANNIBAL                    566
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_5     567
-#define TRAINER_GRUNT_UNUSED                568
+#define TRAINER_GRUNT_UNUSED                568 //unused
 #define TRAINER_GRUNT_MT_PYRE_4             569
 #define TRAINER_GRUNT_JAGGED_PASS           570
 #define TRAINER_MARC                        571
@@ -634,7 +634,7 @@
 #define TRAINER_ALAN                        630
 #define TRAINER_CLARK                       631
 #define TRAINER_ERIC                        632
-#define TRAINER_LUCAS_2                     633 //unused
+#define TRAINER_JAYLIN                      633
 #define TRAINER_MIKE_1                      634 //unused
 #define TRAINER_MIKE_2                      635
 #define TRAINER_TRENT_2                     636
@@ -735,11 +735,11 @@
 #define TRAINER_GRUNT_MAGMA_HIDEOUT_16      731
 #define TRAINER_COURTNEY_MAGMA_HIDEOUT      732
 #define TRAINER_DARCY                       733
-#define TRAINER_MAXIE_MOSSDEEP              734 //unused
+#define TRAINER_MILEY                       734
 #define TRAINER_PETE                        735
 #define TRAINER_ISABELLE                    736
 #define TRAINER_ANDRES                      737
-#define TRAINER_JOSUE                       738 //unused
+#define TRAINER_SHARLENE_1                  738
 #define TRAINER_CAMRON                      739
 #define TRAINER_CORY_1                      740
 #define TRAINER_CAROLINA                    741
@@ -817,10 +817,10 @@
 #define TRAINER_MOMO_3                      813
 #define TRAINER_MOMO_4                      814
 #define TRAINER_MOMO_5                      815
-#define TRAINER_CORY_2                      816 //unused
-#define TRAINER_CORY_3                      817 //unused
-#define TRAINER_CORY_4                      818 //unused
-#define TRAINER_CORY_5                      819 //unused
+#define TRAINER_SHARLENE_2                  816
+#define TRAINER_SHARLENE_3                  817
+#define TRAINER_SHARLENE_4                  818
+#define TRAINER_SHARLENE_5                  819
 #define TRAINER_PABLO_2                     820
 #define TRAINER_PABLO_3                     821
 #define TRAINER_PABLO_4                     822
@@ -833,18 +833,18 @@
 #define TRAINER_CRISTIN_3                   829
 #define TRAINER_CRISTIN_4                   830
 #define TRAINER_CRISTIN_5                   831
-#define TRAINER_FERNANDO_2                  832
-#define TRAINER_FERNANDO_3                  833
-#define TRAINER_FERNANDO_4                  834
-#define TRAINER_FERNANDO_5                  835
-#define TRAINER_SAWYER_2                    836
-#define TRAINER_SAWYER_3                    837
-#define TRAINER_SAWYER_4                    838
-#define TRAINER_SAWYER_5                    839
-#define TRAINER_GABRIELLE_2                 840 //unused
-#define TRAINER_GABRIELLE_3                 841 //unused
-#define TRAINER_GABRIELLE_4                 842 //unused
-#define TRAINER_GABRIELLE_5                 843 //unused
+#define TRAINER_FERNANDO_2                  832 //unused
+#define TRAINER_FERNANDO_3                  833 //unused
+#define TRAINER_FERNANDO_4                  834 //unused
+#define TRAINER_FERNANDO_5                  835 //unused
+#define TRAINER_SAWYER_2                    836 //unused
+#define TRAINER_SAWYER_3                    837 //unused
+#define TRAINER_SAWYER_4                    838 //unused
+#define TRAINER_SAWYER_5                    839 //unused
+#define TRAINER_GOMEZ_2                     840
+#define TRAINER_GOMEZ_3                     841
+#define TRAINER_GOMEZ_4                     842
+#define TRAINER_GOMEZ_5                     843
 #define TRAINER_THALIA_2                    844
 #define TRAINER_THALIA_3                    845
 #define TRAINER_THALIA_4                    846
@@ -858,7 +858,7 @@
 #define TRAINER_MAY_PLACEHOLDER             854 //unused
 #define TRAINER_CECE                        855
 #define TRAINER_FRANNY                      856
-#define TRAINER_MEGGI                       857 //TODO: set up but unused, need to find a location for this trainer.
+#define TRAINER_MEGGI                       857 //set up but unused, need to find a location for this trainer.
 #define TRAINER_MOMO_1                      858
 #define TRAINER_NELLIE                      859
 #define TRAINER_ARCHIE_WEATHER_INSTITUTE    860

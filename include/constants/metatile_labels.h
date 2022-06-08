@@ -178,12 +178,12 @@
 #define METATILE_Fallarbor_BrownCaveOpen             0x210
 #define METATILE_Fallarbor_BrownRockWall             0x265
 #define METATILE_Fallarbor_Door_DarkRoof             0x2F7
+#define METATILE_Fallarbor_Door_DraconidArchives     0x36C
 #define METATILE_Fallarbor_Door_LightRoof            0x2A5
 #define METATILE_Fallarbor_NormalGrass               0x212
 #define METATILE_Fallarbor_RedCaveEntrance_Bottom    0x34F
 #define METATILE_Fallarbor_RedCaveEntrance_Top       0x347
 #define METATILE_Fallarbor_RedRockWall               0x269
-#define METATILE_Fallarbor_Door_DraconidArchives     0x36C
 
 // gTileset_Fortree
 #define METATILE_Fortree_BridgeOverGrass_Lowered           0x24F

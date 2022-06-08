@@ -383,9 +383,48 @@ Route120_EventScript_Leonel::
 	msgbox Route120_Text_LeonelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route120_EventScript_Callie::
-	trainerbattle_single TRAINER_CALLIE, Route120_Text_CallieIntro, Route120_Text_CallieDefeat
-	msgbox Route120_Text_CalliePostBattle, MSGBOX_AUTOCLOSE
+Route120_EventScript_Gomez::
+	trainerbattle_single TRAINER_GOMEZ_1, Route120_Text_GomezIntro, Route120_Text_GomezDefeat, Route120_EventScript_RegisterGomez
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route120_EventScript_RematchGomez
+	msgbox Route120_Text_GomezPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route120_EventScript_RegisterGomez::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	msgbox Route120_Text_GomezRegister, MSGBOX_DEFAULT
+	register_matchcall TRAINER_GOMEZ_1
+	release
+	end
+
+Route120_EventScript_RematchGomez::
+	trainerbattle_rematch TRAINER_GOMEZ_1, Route120_Text_GomezRematchIntro, Route120_Text_GomezRematchDefeat
+	msgbox Route120_Text_GomezPostRematch, MSGBOX_AUTOCLOSE
+	end
+
+Route120_EventScript_Sharlene::
+	trainerbattle_single TRAINER_SHARLENE_1, Route120_Text_GomezIntro, Route120_Text_GomezDefeat, Route120_EventScript_RegisterGomez
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route120_EventScript_RematchGomez
+	msgbox Route120_Text_GomezPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+Route120_EventScript_RegisterSharlene::
+	special PlayerFaceTrainerAfterBattle
+	waitmovement 0
+	msgbox Route120_Text_SharleneRegister, MSGBOX_DEFAULT
+	register_matchcall TRAINER_SHARLENE_1
+	release
+	end
+
+Route120_EventScript_RematchSharlene::
+	trainerbattle_rematch TRAINER_SHARLENE_1, Route120_Text_SharleneRematchIntro, Route120_Text_SharleneRematchDefeat
+	msgbox Route120_Text_SharlenePostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route120_Text_StevenGreeting:

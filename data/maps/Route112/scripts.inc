@@ -68,6 +68,11 @@ Route112_EventScript_Brice::
 	msgbox Route112_Text_BricePostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route112_EventScript_Jaylin::
+	trainerbattle_single TRAINER_JAYLIN, Route112_Text_JaylinIntro, Route112_Text_JaylinDefeat
+	msgbox Route112_Text_JaylinPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 Route112_EventScript_Trent::
 	trainerbattle_single TRAINER_TRENT_1, Route112_Text_TrentIntro, Route112_Text_TrentDefeat, Route112_EventScript_RegisterTrent
 	specialvar VAR_RESULT, ShouldTryRematchBattle

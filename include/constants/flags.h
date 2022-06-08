@@ -376,7 +376,7 @@
 // Trainer Rematch Flags
 #define FLAG_MATCH_CALL_REGISTERED           0x15C
 #define FLAG_REMATCH_ROSE                    0x15D
-#define FLAG_REMATCH_ANDRES                  0x15E //unused
+#define FLAG_REMATCH_GOMEZ                   0x15E
 #define FLAG_REMATCH_DUSTY                   0x15F
 #define FLAG_REMATCH_LOLA                    0x160
 #define FLAG_REMATCH_RICKY                   0x161
@@ -393,7 +393,7 @@
 #define FLAG_REMATCH_TONY                    0x16C
 #define FLAG_REMATCH_NOB                     0x16D
 #define FLAG_REMATCH_KOJI                    0x16E
-#define FLAG_REMATCH_FERNANDO                0x16F
+#define FLAG_REMATCH_FERNANDO                0x16F //unused
 #define FLAG_REMATCH_DALTON                  0x170
 #define FLAG_REMATCH_BERNIE                  0x171
 #define FLAG_REMATCH_ETHAN                   0x172
@@ -431,7 +431,7 @@
 #define FLAG_REMATCH_EDWIN                   0x192
 #define FLAG_REMATCH_LYDIA                   0x193
 #define FLAG_REMATCH_ISAAC                   0x194
-#define FLAG_REMATCH_GABRIELLE               0x195 //unused
+#define FLAG_REMATCH_SHARLENE                0x195
 #define FLAG_REMATCH_CATHERINE               0x196
 #define FLAG_REMATCH_JACKSON                 0x197
 #define FLAG_REMATCH_HALEY                   0x198

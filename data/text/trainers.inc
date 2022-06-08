@@ -1445,6 +1445,19 @@ Route112_Text_CarolPostBattle:
 	.string "at singing or Pokémon.\p"
 	.string "If you have the most fun, you win!$"
 
+Route112_Text_JaylinIntro:
+	.string "I'm not such an amateur that I'm going\n"
+	.string "to take it easy just because you're a\l"
+	.string "kid.$"
+
+Route112_Text_JaylinDefeat:
+	.string "Appearances are deceiving.\n"
+	.string "You're not just some kid.$"
+
+Route112_Text_JaylinPostBattle:
+	.string "Hehehe…\n"
+	.string "You a pro, huh?$"
+
 FieryPath_Text_BryantIntro:
 	.string "I caught hot Pokémon here!\n"
 	.string "Take a look!$"
@@ -2432,6 +2445,80 @@ Route118_Text_WadePostBattle:
 	.string "Come to think of it, fishing is a battle\n"
 	.string "between a Fisherman and a Pokémon.$"
 
+Route118_Text_MileyIntro:
+	.string "My hobby is making cute accessories\n"
+	.string "for Pokémon.\p"
+	.string "What?\n"
+	.string "You got something to say about it?!$"
+
+Route118_Text_MileyDefeat:
+	.string "I'm not very good at battles.$"
+
+Route118_Text_MileyPostBattle:
+	.string "Whether it's fashion, playing or\n"
+	.string "whatever, making fun of someone's\l"
+	.string "hobby is insensitive.$"
+
+Route120_Text_SharleneIntro:
+	.string "I'll tell you this right up front…\n"
+	.string "I'm super-crazy weak!$"
+
+Route120_Text_SharleneDefeat:
+	.string "See…$"
+
+Route120_Text_SharlenePostBattle:
+	.string "I'm tired of being weak.\n"
+	.string "I'm going to start training hard and\l"
+	.string "become frighteningly strong like you.$"
+
+Route120_Text_SharleneRegister:
+	.string "Hey, could you be my training buddy?\n"
+	.string "You've inspired me to get better.$"
+
+Route120_Text_SharleneRematchIntro:
+	.string "Oh, it's you! You're, like, back for\n"
+	.string "another battle, right?\l"
+	.string "I might be a little better…$"
+
+Route120_Text_SharleneRematchDefeat:
+	.string "Hmm… you sure are strong.$"
+
+Route120_Text_SharlenePostRematch:
+	.string "I knew it would be fun to battle you.\n"
+	.string "Let's do it again sometime, if you feel\l"
+	.string "like it.$"
+
+Route120_Text_GomezIntro:
+	.string "My face is so scary that when I walk in\n"
+	.string "the tall grass, nothing appears at all…$"
+
+Route120_Text_GomezDefeat:
+	.string "It must be nice to have some strong\n"
+	.string "Pokémon…$"
+
+Route120_Text_GomezPostBattle:
+	.string "Looking on the bright side, at least\n"
+	.string "I don't have to spend any money on\l"
+	.string "repels.$"
+
+Route120_Text_GomezRegister:
+	.string "At least you're not scared of me.\n"
+	.string "Want to fight me again?$"
+
+Route120_Text_GomezRematchIntro:
+	.string "Oh! It's you! How have you been?\n"
+	.string "Let's celebrate meeting up again with\l"
+	.string "a battle!$"
+
+Route120_Text_GomezRematchDefeat:
+	.string "Your Pokémon are as strong as ever.$"
+
+Route120_Text_GomezPostRematch:
+	.string "Hmm…\p"
+	.string "If my face is too scary for Pokémon to\n"
+	.string "come to me in the tall grass, maybe\l"
+	.string "I should try wearing a mask.$"
+
 Route118_Text_DaltonIntro:
 	.string "Let my melody rock your soul!$"
 
@@ -3216,34 +3303,31 @@ Route123_Text_KindraPostBattle:
 	.string "It must overflow with a power that\n"
 	.string "soothes spirits…$"
 
-Route123_Text_FernandoIntro:
-	.string "I'll turn your lights out while\n"
-	.string "I rip through this tune!$"
+Route123_Text_HannibalIntro:
+	.string "My Pokémon are getting old.\n"
+	.string "I should look around for some new ones.$"
 
-Route123_Text_FernandoDefeat:
-	.string "Hey, hold it!\n"
-	.string "I was still playing the intro!$"
+Route123_Text_HannibalDefeat:
+	.string "It's okay, little buddies!$"
 
-Route123_Text_FernandoPostBattle:
-	.string "You're rock steady.\n"
-	.string "I'd like to write a tune about you.$"
+Route123_Text_HannibalPostBattle:
+	.string "My Pokémon and I have been together\n"
+	.string "since I was barely walking. I could\l"
+	.string "never leave them.$"
 
-Route123_Text_FernandoRegister:
-	.string "The next time, lend your ears to\n"
-	.string "the full tune, will you?$"
+Route123_Text_KylieIntro:
+	.string "Did you know that if your Pokémon fight\n"
+	.string "Pokémon that are strong in a particular\l"
+	.string "stat, your Pokémon will become stronger\l"
+	.string "in that stat?$"
 
-Route123_Text_FernandoRematchIntro:
-	.string "Today's the day I'm going to do it!\n"
-	.string "I'll turn out your lights before\l"
-	.string "I finish singing my song!$"
+Route123_Text_KylieDefeat:
+	.string "All that effort…$"
 
-Route123_Text_FernandoRematchDefeat:
-	.string "Hey, hold it!\n"
-	.string "I haven't even hit the chorus!$"
-
-Route123_Text_FernandoPostRematch:
-	.string "I thought you'd be so enthralled\n"
-	.string "by my tune, you'd lose.$"
+Route123_Text_KyliePostBattle:
+	.string "Honestly, increasing a Pokémon's effort\n"
+	.string "values is a pain.\l"
+	.string "Training Pokémon is like, super hard.$"
 
 Route123_Text_FrederickIntro:
 	.string "Hello, child!\n"
