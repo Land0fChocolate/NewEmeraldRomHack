@@ -68,9 +68,9 @@ RusturfTunnel_EventScript_ClearTunnelScene::
 	call_if_eq RusturfTunnel_EventScript_WandasBoyfriendApproachPlayer
 	compare VAR_TEMP_1, 3
 	call_if_eq RusturfTunnel_EventScript_WandasBoyfriendApproachPlayer
-	giveitem ITEM_TM93
-	setflag FLAG_RECEIVED_TM93
-	msgbox RusturfTunnel_Text_ExplainWildCharge, MSGBOX_DEFAULT
+	giveitem ITEM_TM77
+	setflag FLAG_RECEIVED_TM77
+	msgbox RusturfTunnel_Text_ExplainThroatChop, MSGBOX_DEFAULT
 	closemessage
 	compare VAR_TEMP_1, 1
 	call_if_eq RusturfTunnel_EventScript_BoyfriendApproachWanda1
@@ -508,10 +508,11 @@ RusturfTunnel_Text_YouShatteredBoulderTakeHM:
 	.string "To show you how much I appreciate it,\n"
 	.string "I'd like you to have this TM.$"
 
-RusturfTunnel_Text_ExplainWildCharge:
-	.string "That TM contains Wild Charge.\p"
-	.string "It is a move of great power, but\n"
-	.string "also of considerable consequence.$"
+RusturfTunnel_Text_ExplainThroatChop:
+	.string "That TM contains Throat Chop.\p"
+	.string "It's a wicked technique I taught myself\n"
+	.string "that silences noisy Pokémon from using\l"
+	.string "their sound moves.$"
 
 RusturfTunnel_Text_WandaReunion:
 	.string "Wanda!\n"

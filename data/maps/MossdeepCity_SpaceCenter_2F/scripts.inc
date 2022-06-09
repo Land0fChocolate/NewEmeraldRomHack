@@ -22,28 +22,6 @@ MossdeepCity_SpaceCenter_2F_EventScript_RichBoy::
 	release
 	end
 
-MossdeepCity_SpaceCenter_2F_EventScript_RivalRayquazaCall::
-	lockall
-	checkplayergender
-	compare VAR_RESULT, MALE
-	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_MayRayquazaCall
-	compare VAR_RESULT, FEMALE
-	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_BrendanRayquazaCall
-	closemessage
-	clearflag FLAG_DEFEATED_MAGMA_SPACE_CENTER
-	releaseall
-	end
-
-MossdeepCity_SpaceCenter_2F_EventScript_MayRayquazaCall::
-	pokenavcall MatchCall_Text_MayRayquazaCall
-	waitmessage
-	return
-
-MossdeepCity_SpaceCenter_2F_EventScript_BrendanRayquazaCall::
-	pokenavcall MatchCall_Text_BrendanRayquazaCall
-	waitmessage
-	return
-
 MossdeepCity_SpaceCenter_2F_Text_MossdeepIdealForRockets:
 	.string "Mossdeep has mainly sunny weather,\n"
 	.string "and its winds are stable.\p"

@@ -121,7 +121,7 @@
 #define FLAG_UNUSED_0x068                    0x68  // Unused Flag
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
-#define FLAG_RECEIVED_TM93                   0x6A
+#define FLAG_RECEIVED_TM77                   0x6A
 #define FLAG_RECEIVED_TM66                   0x6B
 #define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player cant white out from poison before receiving Go Goggles
 #define FLAG_RECEIVED_HM05                   0x6D // Unused
@@ -132,7 +132,7 @@
 #define FLAG_SCOTT_CALL_BATTLE_FRONTIER      0x72 // Used in order to activate a phone call from Scott, inviting the player to the SS Tidal.
 #define FLAG_RECEIVED_METEORITE              0x73
 #define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
-#define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // Set when Team Magma is defeated at Mossdeep's Space Center.
+#define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // unused
 #define FLAG_MET_HIDDEN_POWER_GIVER          0x76
 
 #define FLAG_CANCEL_BATTLE_ROOM_CHALLENGE    0x77
