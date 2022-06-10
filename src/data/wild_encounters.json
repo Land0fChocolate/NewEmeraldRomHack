@@ -11775,7 +11775,7 @@
           "map": "MAP_LITTLEROOT_BEACH",
           "base_label": "gLittlerootBeach",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 5,
