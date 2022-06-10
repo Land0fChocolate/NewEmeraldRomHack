@@ -95,7 +95,7 @@
       "id": "LAYOUT_LITTLEROOT_TOWN",
       "name": "LittlerootTown_Layout",
       "width": 20,
-      "height": 20,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/LittlerootTown/border.bin",
@@ -225,7 +225,7 @@
       "id": "LAYOUT_ROUTE107",
       "name": "Route107_Layout",
       "width": 60,
-      "height": 45,
+      "height": 35,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Route107/border.bin",
@@ -4560,6 +4560,26 @@
       "secondary_tileset": "gTileset_BattleTent",
       "border_filepath": "data/layouts/EverGrandeCity_BattleTent/border.bin",
       "blockdata_filepath": "data/layouts/EverGrandeCity_BattleTent/map.bin"
+    },
+    {
+      "id": "LAYOUT_LITTLEROOT_BEACH",
+      "name": "LittlerootBeach_Layout",
+      "width": 40,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/LittlerootBeach/border.bin",
+      "blockdata_filepath": "data/layouts/LittlerootBeach/map.bin"
+    },
+    {
+      "id": "LAYOUT_FILLER_SEA_PATCH",
+      "name": "FillerSeaPatch_Layout",
+      "width": 20,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/FillerSeaPatch/border.bin",
+      "blockdata_filepath": "data/layouts/FillerSeaPatch/map.bin"
     }
   ]
 }

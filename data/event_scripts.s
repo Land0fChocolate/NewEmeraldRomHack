@@ -1092,3 +1092,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/OldaleFarm_House/scripts.inc"
 
 	.include "data/maps/EverGrandeCity_BattleTent/scripts.inc"
+
+	.include "data/maps/LittlerootBeach/scripts.inc"
+
+	.include "data/maps/FillerSeaPatch/scripts.inc"

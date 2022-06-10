@@ -15,25 +15,35 @@
   "connections": [
     {
       "direction": "left",
-      "offset": 26,
+      "offset": 16,
       "map": "MAP_DEWFORD_TOWN"
     },
     {
       "direction": "right",
-      "offset": 18,
+      "offset": 10,
       "map": "MAP_ROUTE108"
     },
     {
       "direction": "left",
-      "offset": 0,
+      "offset": -10,
       "map": "MAP_ROUTE106"
+    },
+    {
+      "direction": "up",
+      "offset": 20,
+      "map": "MAP_LITTLEROOT_BEACH"
+    },
+    {
+      "direction": "up",
+      "offset": 0,
+      "map": "MAP_FILLER_SEA_PATCH"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
       "x": 28,
-      "y": 18,
+      "y": 8,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
       "movement_range_x": 1,
@@ -46,7 +56,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
       "x": 20,
-      "y": 28,
+      "y": 18,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_LEFT_UP",
       "movement_range_x": 8,
@@ -59,7 +69,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
       "x": 50,
-      "y": 31,
+      "y": 21,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
       "movement_range_x": 0,
@@ -72,7 +82,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
       "x": 33,
-      "y": 24,
+      "y": 14,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -85,7 +95,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_M_SWIMMING",
       "x": 32,
-      "y": 24,
+      "y": 14,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -98,7 +108,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
       "x": 50,
-      "y": 25,
+      "y": 15,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 1,

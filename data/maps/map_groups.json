@@ -599,7 +599,9 @@
     "TrainerHill_Elevator",
     "CrumblingGorge",
     "OldaleFarm",
-    "OldaleFarm_House"
+    "OldaleFarm_House",
+    "LittlerootBeach",
+    "FillerSeaPatch"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",
