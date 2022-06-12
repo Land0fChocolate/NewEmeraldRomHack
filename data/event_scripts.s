@@ -1096,3 +1096,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/LittlerootBeach/scripts.inc"
 
 	.include "data/maps/FillerSeaPatch/scripts.inc"
+
+	.include "data/maps/FallarborWasteland/scripts.inc"
+
+	.include "data/maps/FallarborWastelandFiller/scripts.inc"

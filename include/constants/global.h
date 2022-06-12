@@ -42,7 +42,7 @@
 #define BAG_KEYITEMS_COUNT 30
 #define BAG_POKEBALLS_COUNT 16
 #define BAG_TMHM_COUNT 64 //TODO: Increase to 100 (Bag Expansion)
-#define BAG_BERRIES_COUNT 46
+#define BAG_BERRIES_COUNT 46 //TODO: Increase to 68 (Bag Expansion)
 #define OBJECT_EVENT_TEMPLATES_COUNT 64
 #define DECOR_MAX_SECRET_BASE 16
 #define DECOR_MAX_PLAYERS_HOUSE 12

@@ -571,6 +571,8 @@
 #define MAP_OLDALE_FARM_HOUSE                               (91 | (26 << 8))
 #define MAP_LITTLEROOT_BEACH                                (92 | (26 << 8))
 #define MAP_FILLER_SEA_PATCH                                (93 | (26 << 8))
+#define MAP_FALLARBOR_WASTELAND                             (94 | (26 << 8))
+#define MAP_FALLARBOR_WASTELAND_FILLER                      (95 | (26 << 8))
 
 // gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))

@@ -22,6 +22,11 @@
       "direction": "right",
       "offset": -4,
       "map": "MAP_FALLARBOR_TOWN"
+    },
+    {
+      "direction": "left",
+      "offset": -23,
+      "map": "MAP_FALLARBOR_WASTELAND"
     }
   ],
   "object_events": [

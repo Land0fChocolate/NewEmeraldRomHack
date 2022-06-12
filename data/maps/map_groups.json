@@ -601,7 +601,9 @@
     "OldaleFarm",
     "OldaleFarm_House",
     "LittlerootBeach",
-    "FillerSeaPatch"
+    "FillerSeaPatch",
+    "FallarborWasteland",
+    "FallarborWastelandFiller"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",

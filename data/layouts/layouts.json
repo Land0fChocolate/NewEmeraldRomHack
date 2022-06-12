@@ -4580,6 +4580,26 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/FillerSeaPatch/border.bin",
       "blockdata_filepath": "data/layouts/FillerSeaPatch/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALLARBOR_WASTELAND",
+      "name": "FallarborWasteland_Layout",
+      "width": 44,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/FallarborWasteland/border.bin",
+      "blockdata_filepath": "data/layouts/FallarborWasteland/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALLARBOR_WASTELAND_FILLER",
+      "name": "FallarborWastelandFiller_Layout",
+      "width": 7,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/FallarborWastelandFiller/border.bin",
+      "blockdata_filepath": "data/layouts/FallarborWastelandFiller/map.bin"
     }
   ]
 }
