@@ -202,6 +202,7 @@ static const u8 sMapName_CrumblingGorge[] = _("Crumbling Gorge");
 static const u8 sMapName_OldaleFarm[] = _("Oldale Farm");
 static const u8 sMapName_LittlerootBeach[] = _("Littleroot Beach");
 static const u8 sMapName_FallarborWasteland[] = _("Fallarbor Wastes");
+static const u8 sMapName_Wildwoods[] = _("Wildwoods");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN]            = { 4, 11, 1, 1, sMapName_LittlerootTown},
@@ -421,6 +422,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_OLDALE_FARM]                = { 3, 10, 1, 1, sMapName_OldaleFarm},
     [MAPSEC_LITTLEROOT_BEACH]           = { 4, 12, 1, 1, sMapName_LittlerootBeach},
     [MAPSEC_FALLARBOR_WASTELAND]        = { 0,  0, 1, 1, sMapName_FallarborWasteland},
+    [MAPSEC_WILDWOODS]                  = { 4,  11, 1, 1, sMapName_Wildwoods},
 };
 
 #endif //GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H
