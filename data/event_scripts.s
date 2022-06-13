@@ -1100,3 +1100,21 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/FallarborWasteland/scripts.inc"
 
 	.include "data/maps/FallarborWastelandFiller/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area1/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area2/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area3/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area4/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area5/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area6/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area7/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area8/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area9/scripts.inc"

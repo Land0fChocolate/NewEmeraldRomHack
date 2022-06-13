@@ -573,6 +573,15 @@
 #define MAP_FILLER_SEA_PATCH                                (93 | (26 << 8))
 #define MAP_FALLARBOR_WASTELAND                             (94 | (26 << 8))
 #define MAP_FALLARBOR_WASTELAND_FILLER                      (95 | (26 << 8))
+#define MAP_WILDWOODS_AREA1                                 (96 | (26 << 8))
+#define MAP_WILDWOODS_AREA2                                 (97 | (26 << 8))
+#define MAP_WILDWOODS_AREA3                                 (98 | (26 << 8))
+#define MAP_WILDWOODS_AREA4                                 (99 | (26 << 8))
+#define MAP_WILDWOODS_AREA5                                 (100 | (26 << 8))
+#define MAP_WILDWOODS_AREA6                                 (101 | (26 << 8))
+#define MAP_WILDWOODS_AREA7                                 (102 | (26 << 8))
+#define MAP_WILDWOODS_AREA8                                 (103 | (26 << 8))
+#define MAP_WILDWOODS_AREA9                                 (104 | (26 << 8))
 
 // gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))

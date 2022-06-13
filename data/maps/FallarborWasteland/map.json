@@ -34,7 +34,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_FALLARBOR_WASTELAND_CHOPLE",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_LITTLEROOT_BEACH_RINDO",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -47,7 +47,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_FALLARBOR_WASTELAND_SHUCA",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_LITTLEROOT_BEACH_RINDO",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -60,7 +60,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_FALLARBOR_WASTELAND_CHARTI",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_LITTLEROOT_BEACH_RINDO",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -118,7 +118,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_F",
-      "x": 19,
+      "x": 20,
       "y": 19,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",

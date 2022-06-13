@@ -603,7 +603,16 @@
     "LittlerootBeach",
     "FillerSeaPatch",
     "FallarborWasteland",
-    "FallarborWastelandFiller"
+    "FallarborWastelandFiller",
+    "Wildwoods_Area1",
+    "Wildwoods_Area2",
+    "Wildwoods_Area3",
+    "Wildwoods_Area4",
+    "Wildwoods_Area5",
+    "Wildwoods_Area6",
+    "Wildwoods_Area7",
+    "Wildwoods_Area8",
+    "Wildwoods_Area9"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",
