@@ -582,6 +582,7 @@
 #define MAP_WILDWOODS_AREA7                                 (102 | (26 << 8))
 #define MAP_WILDWOODS_AREA8                                 (103 | (26 << 8))
 #define MAP_WILDWOODS_AREA9                                 (104 | (26 << 8))
+#define MAP_MAUVILLE_MEADOW                                 (105 | (26 << 8))
 
 // gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))

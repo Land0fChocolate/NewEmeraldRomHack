@@ -1118,3 +1118,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Wildwoods_Area8/scripts.inc"
 
 	.include "data/maps/Wildwoods_Area9/scripts.inc"
+
+	.include "data/maps/MauvilleMeadow/scripts.inc"

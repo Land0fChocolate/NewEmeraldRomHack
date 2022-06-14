@@ -203,6 +203,7 @@ static const u8 sMapName_OldaleFarm[] = _("Oldale Farm");
 static const u8 sMapName_LittlerootBeach[] = _("Littleroot Beach");
 static const u8 sMapName_FallarborWasteland[] = _("Fallarbor Wastes");
 static const u8 sMapName_Wildwoods[] = _("Wildwoods");
+static const u8 sMapName_MauvilleMeadow[] = _("Mauville Meadow");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN]            = { 4, 11, 1, 1, sMapName_LittlerootTown},
@@ -416,13 +417,14 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_UNDERWATER_129]             = {24, 10, 2, 1, sMapName_Underwater},
     [MAPSEC_DESERT_UNDERPASS]           = { 2,  0, 1, 1, sMapName_DesertUnderpass},
     [MAPSEC_ALTERING_CAVE]              = { 6,  8, 1, 1, sMapName_AlteringCave},
-    [MAPSEC_NAVEL_ROCK]                 = { 0,  0, 1, 1, sMapName_NavelRock},
+    [MAPSEC_NAVEL_ROCK]                 = { 20, 13, 1, 1, sMapName_NavelRock},
     [MAPSEC_TRAINER_HILL]               = { 8,  4, 1, 1, sMapName_TrainerHill},
     [MAPSEC_CRUMBLING_GORGE]            = { 3,  6, 1, 1, sMapName_CrumblingGorge},
     [MAPSEC_OLDALE_FARM]                = { 3, 10, 1, 1, sMapName_OldaleFarm},
     [MAPSEC_LITTLEROOT_BEACH]           = { 4, 12, 1, 1, sMapName_LittlerootBeach},
     [MAPSEC_FALLARBOR_WASTELAND]        = { 0,  0, 1, 1, sMapName_FallarborWasteland},
     [MAPSEC_WILDWOODS]                  = { 4,  11, 1, 1, sMapName_Wildwoods},
+    [MAPSEC_MAUVILLE_MEADOW]            = { 10,  8, 1, 1, sMapName_MauvilleMeadow},
 };
 
 #endif //GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H

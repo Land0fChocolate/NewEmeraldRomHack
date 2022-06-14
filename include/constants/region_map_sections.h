@@ -219,7 +219,8 @@
 #define MAPSEC_LITTLEROOT_BEACH             0xD7
 #define MAPSEC_FALLARBOR_WASTELAND          0xD8
 #define MAPSEC_WILDWOODS                    0xD9
-#define MAPSEC_NONE                         0xDA
+#define MAPSEC_MAUVILLE_MEADOW              0xDA
+#define MAPSEC_NONE                         0xDB
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE
