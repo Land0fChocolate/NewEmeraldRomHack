@@ -1120,3 +1120,11 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Wildwoods_Area9/scripts.inc"
 
 	.include "data/maps/MauvilleMeadow/scripts.inc"
+
+	.include "data/maps/FortreeLake/scripts.inc"
+
+	.include "data/maps/FortreeJungle_Area1/scripts.inc"
+
+	.include "data/maps/FortreeJungle_Area2/scripts.inc"
+
+	.include "data/maps/FortreeJungle_Area3/scripts.inc"

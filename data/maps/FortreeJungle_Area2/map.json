@@ -1,0 +1,80 @@
+{
+  "id": "MAP_FORTREE_JUNGLE_AREA2",
+  "name": "FortreeJungle_Area2",
+  "layout": "LAYOUT_FORTREE_JUNGLE_AREA2",
+  "music": "MUS_PETALBURG_WOODS",
+  "region_map_section": "MAPSEC_FORTREE_JUNGLE",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 17,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_11"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+      "x": 6,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 23,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_FORTREE_JUNGLE_AREA1",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 24,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_FORTREE_JUNGLE_AREA1",
+      "dest_warp_id": 3
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_FORTREE_JUNGLE_AREA3",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_FORTREE_JUNGLE_AREA3",
+      "dest_warp_id": 1
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

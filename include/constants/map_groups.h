@@ -583,6 +583,10 @@
 #define MAP_WILDWOODS_AREA8                                 (103 | (26 << 8))
 #define MAP_WILDWOODS_AREA9                                 (104 | (26 << 8))
 #define MAP_MAUVILLE_MEADOW                                 (105 | (26 << 8))
+#define MAP_FORTREE_LAKE                                    (106 | (26 << 8))
+#define MAP_FORTREE_JUNGLE_AREA1                            (107 | (26 << 8))
+#define MAP_FORTREE_JUNGLE_AREA2                            (108 | (26 << 8))
+#define MAP_FORTREE_JUNGLE_AREA3                            (109 | (26 << 8))
 
 // gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))

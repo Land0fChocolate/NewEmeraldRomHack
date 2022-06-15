@@ -22,6 +22,16 @@
       "direction": "right",
       "offset": 80,
       "map": "MAP_ROUTE121"
+    },
+    {
+      "direction": "right",
+      "offset": 100,
+      "map": "MAP_ROUTE122"
+    },
+    {
+      "direction": "down",
+      "offset": 0,
+      "map": "MAP_FORTREE_LAKE"
     }
   ],
   "object_events": [

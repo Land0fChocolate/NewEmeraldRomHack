@@ -613,7 +613,11 @@
     "Wildwoods_Area7",
     "Wildwoods_Area8",
     "Wildwoods_Area9",
-    "MauvilleMeadow"
+    "MauvilleMeadow",
+    "FortreeLake",
+    "FortreeJungle_Area1",
+    "FortreeJungle_Area2",
+    "FortreeJungle_Area3"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",

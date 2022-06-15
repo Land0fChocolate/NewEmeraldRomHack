@@ -15,16 +15,28 @@
   "connections": [
     {
       "direction": "up",
-      "offset": -20,
+      "offset": 0,
       "map": "MAP_ROUTE121"
     },
     {
       "direction": "down",
-      "offset": -100,
+      "offset": -80,
       "map": "MAP_ROUTE123"
+    },
+    {
+      "direction": "left",
+      "offset": -100,
+      "map": "MAP_ROUTE120"
+    },
+    {
+      "direction": "left",
+      "offset": -4,
+      "map": "MAP_FORTREE_LAKE"
     }
   ],
-  "object_events": [],
+  "object_events": [
+
+  ],
   "warp_events": [
     {
       "x": 22,
@@ -34,6 +46,10 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

@@ -220,7 +220,9 @@
 #define MAPSEC_FALLARBOR_WASTELAND          0xD8
 #define MAPSEC_WILDWOODS                    0xD9
 #define MAPSEC_MAUVILLE_MEADOW              0xDA
-#define MAPSEC_NONE                         0xDB
+#define MAPSEC_FORTREE_LAKE                 0xDB
+#define MAPSEC_FORTREE_JUNGLE               0xDC
+#define MAPSEC_NONE                         0xDD
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

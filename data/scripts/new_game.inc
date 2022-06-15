@@ -137,9 +137,10 @@ EventScript_ResetAllBerries::
 	return
 
 	@Fortree Jungle
-	@Electric
-	@Bug
-	@Poison
+	setberrytree BERRY_TREE_FORTREE_JUNGLE_WACAN, ITEM_TO_BERRY(ITEM_WACAN_BERRY), BERRY_STAGE_BERRIES  @Electric
+	setberrytree BERRY_TREE_FORTREE_JUNGLE_TANGA, ITEM_TO_BERRY(ITEM_TANGA_BERRY), BERRY_STAGE_BERRIES  @Bug
+	setberrytree BERRY_TREE_FORTREE_JUNGLE_KEBIA, ITEM_TO_BERRY(ITEM_KEBIA_BERRY), BERRY_STAGE_BERRIES  @Poison
+	return
 
 	@???
 	@Ice

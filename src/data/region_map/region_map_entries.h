@@ -204,6 +204,8 @@ static const u8 sMapName_LittlerootBeach[] = _("Littleroot Beach");
 static const u8 sMapName_FallarborWasteland[] = _("Fallarbor Wastes");
 static const u8 sMapName_Wildwoods[] = _("Wildwoods");
 static const u8 sMapName_MauvilleMeadow[] = _("Mauville Meadow");
+static const u8 sMapName_FortreeJungle[] = _("Fortree Lake");
+static const u8 sMapName_FortreeJungle[] = _("Fortree Jungle");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN]            = { 4, 11, 1, 1, sMapName_LittlerootTown},
@@ -425,6 +427,8 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_FALLARBOR_WASTELAND]        = { 0,  0, 1, 1, sMapName_FallarborWasteland},
     [MAPSEC_WILDWOODS]                  = { 4,  11, 1, 1, sMapName_Wildwoods},
     [MAPSEC_MAUVILLE_MEADOW]            = { 10,  8, 1, 1, sMapName_MauvilleMeadow},
+    [MAPSEC_FORTREE_LAKE]             = { 13,  4, 1, 1, sMapName_FortreeLake},
+    [MAPSEC_FORTREE_LAKE]             = { 12,  4, 1, 1, sMapName_FortreeJungle},
 };
 
 #endif //GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H

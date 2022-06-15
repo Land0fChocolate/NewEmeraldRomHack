@@ -355,7 +355,7 @@
       "id": "LAYOUT_ROUTE120",
       "name": "Route120_Layout",
       "width": 40,
-      "height": 100,
+      "height": 96,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Route120/border.bin",
@@ -374,7 +374,7 @@
     {
       "id": "LAYOUT_ROUTE122",
       "name": "Route122_Layout",
-      "width": 40,
+      "width": 60,
       "height": 40,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lilycove",
@@ -4700,6 +4700,46 @@
       "secondary_tileset": "gTileset_EverGrande",
       "border_filepath": "data/layouts/MauvilleMeadow/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleMeadow/map.bin"
+    },
+    {
+      "id": "LAYOUT_FORTREE_LAKE",
+      "name": "FortreeLake_Layout",
+      "width": 40,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/FortreeLake/border.bin",
+      "blockdata_filepath": "data/layouts/FortreeLake/map.bin"
+    },
+    {
+      "id": "LAYOUT_FORTREE_JUNGLE_AREA1",
+      "name": "FortreeJungle_Area1_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/FortreeJungle_Area1/border.bin",
+      "blockdata_filepath": "data/layouts/FortreeJungle_Area1/map.bin"
+    },
+    {
+      "id": "LAYOUT_FORTREE_JUNGLE_AREA2",
+      "name": "FortreeJungle_Area2_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/FortreeJungle_Area2/border.bin",
+      "blockdata_filepath": "data/layouts/FortreeJungle_Area2/map.bin"
+    },
+    {
+      "id": "LAYOUT_FORETREE_JUNGLE_AREA3",
+      "name": "FortreeJungle_Area3_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/FortreeJungle_Area3/border.bin",
+      "blockdata_filepath": "data/layouts/FortreeJungle_Area3/map.bin"
     }
   ]
 }
