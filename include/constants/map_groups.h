@@ -587,6 +587,12 @@
 #define MAP_FORTREE_JUNGLE_AREA1                            (107 | (26 << 8))
 #define MAP_FORTREE_JUNGLE_AREA2                            (108 | (26 << 8))
 #define MAP_FORTREE_JUNGLE_AREA3                            (109 | (26 << 8))
+#define MAP_LUSTROUS_LAIR                                   (110 | (26 << 8))
+#define MAP_DERELICT_DEN                                    (111 | (26 << 8))
+#define MAP_FIERY_THRONE                                    (112 | (26 << 8))
+#define MAP_CONQUERORS_CAMP                                 (113 | (26 << 8))
+#define MAP_ROYAL_REST                                      (114 | (26 << 8))
+#define MAP_SAGES_SANCTUARY                                 (115 | (26 << 8))
 
 // gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))

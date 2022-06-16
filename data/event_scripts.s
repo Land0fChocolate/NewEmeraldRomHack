@@ -1128,3 +1128,15 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/FortreeJungle_Area2/scripts.inc"
 
 	.include "data/maps/FortreeJungle_Area3/scripts.inc"
+
+	.include "data/maps/LustrousLair/scripts.inc"
+
+	.include "data/maps/DerelictDen/scripts.inc"
+
+	.include "data/maps/FieryThrone/scripts.inc"
+
+	.include "data/maps/ConquerorsCamp/scripts.inc"
+
+	.include "data/maps/RoyalRest/scripts.inc"
+
+	.include "data/maps/SagesSanctuary/scripts.inc"

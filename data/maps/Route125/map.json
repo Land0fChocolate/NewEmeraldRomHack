@@ -36,7 +36,7 @@
       "y": 31,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
-      "movement_range_x": 0,
+      "movement_range_x": 7,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",

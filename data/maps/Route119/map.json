@@ -586,6 +586,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE119_HOUSE",
       "dest_warp_id": 0
+    },
+    {
+      "x": 12,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_CONQUERORS_CAMP",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [

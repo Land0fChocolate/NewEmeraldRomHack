@@ -345,7 +345,7 @@
       "id": "LAYOUT_ROUTE119",
       "name": "Route119_Layout",
       "width": 40,
-      "height": 140,
+      "height": 145,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Route119/border.bin",
@@ -4740,6 +4740,66 @@
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/FortreeJungle_Area3/border.bin",
       "blockdata_filepath": "data/layouts/FortreeJungle_Area3/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUSTROUS_LAIR",
+      "name": "LustrousLair_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/LustrousLair/border.bin",
+      "blockdata_filepath": "data/layouts/LustrousLair/map.bin"
+    },
+    {
+      "id": "LAYOUT_DERELICT_DEN",
+      "name": "DerelictDen_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DerelictDen/border.bin",
+      "blockdata_filepath": "data/layouts/DerelictDen/map.bin"
+    },
+    {
+      "id": "LAYOUT_FIERY_THRONE",
+      "name": "FieryThrone_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fallarbor",
+      "border_filepath": "data/layouts/FieryThrone/border.bin",
+      "blockdata_filepath": "data/layouts/FieryThrone/map.bin"
+    },
+    {
+      "id": "LAYOUT_CONQUERORS_CAMP",
+      "name": "ConquerorsCamp_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/ConquerorsCamp/border.bin",
+      "blockdata_filepath": "data/layouts/ConquerorsCamp/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROYAL_REST",
+      "name": "RoyalRest_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/RoyalRest/border.bin",
+      "blockdata_filepath": "data/layouts/RoyalRest/map.bin"
+    },
+    {
+      "id": "LAYOUT_SAGES_SANCTUARY",
+      "name": "SagesSanctuary_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/SagesSanctuary/border.bin",
+      "blockdata_filepath": "data/layouts/SagesSanctuary/map.bin"
     }
   ]
 }

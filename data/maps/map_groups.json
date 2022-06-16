@@ -617,7 +617,13 @@
     "FortreeLake",
     "FortreeJungle_Area1",
     "FortreeJungle_Area2",
-    "FortreeJungle_Area3"
+    "FortreeJungle_Area3",
+    "LustrousLair",
+    "DerelictDen",
+    "FieryThrone",
+    "ConquerorsCamp",
+    "RoyalRest",
+    "SagesSanctuary"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",
