@@ -17,6 +17,7 @@ Route111_OnLoad:
 	call_if_unset FLAG_REGI_DOORS_OPENED, Route111_EventScript_CloseDesertRuins
 	compare VAR_MIRAGE_TOWER_STATE, 1
 	call_if_eq Route111_EventScript_ShowTemporaryMirageTower
+	call_if_unset FLAG_SYS_GAME_CLEAR, Route111_EventScript_CloseRoyalRest
 	end
 
 Route111_EventScript_CloseDesertRuins::
@@ -44,6 +45,15 @@ Route111_EventScript_ShowTemporaryMirageTower::
 	setmetatile 18, 58, METATILE_Mauville_MirageTower_TileF, 0
 	setmetatile 19, 58, METATILE_Mauville_MirageTower_Tile10, 0
 	setmetatile 20, 58, METATILE_Mauville_MirageTower_Tile11, 0
+	return
+
+Route111_EventScript_CloseRoyalRest::
+	setmetatile 30, 0, METATILE_General_RockFloor, 0
+	setmetatile 32, 0, METATILE_General_RockFloor, 0
+	setmetatile 30, 1, METATILE_General_RockFloor, 0
+	setmetatile 31, 1, METATILE_General_RockFloor, 0
+	setmetatile 32, 1, METATILE_General_RockFloor, 0
+	setmetatile 31, 2, METATILE_General_RockWall_RockBase, 1
 	return
 
 Route111_OnTransition:

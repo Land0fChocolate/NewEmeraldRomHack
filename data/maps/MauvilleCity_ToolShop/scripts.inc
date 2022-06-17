@@ -4,8 +4,7 @@ MauvilleCity_ToolShop_MapScripts::
 MauvilleCity_ToolShop_EventScript_ShopKeeper::
 	lock
 	faceplayer
-	checkflag FLAG_IS_CHAMPION
-	goto_if FALSE, MauvilleCity_ToolShop_EventScript_ShopKeeperNotSelling
+	goto_if_set FLAG_SYS_GAME_CLEAR, MauvilleCity_ToolShop_EventScript_ShopKeeperNotSelling
 	message MauvilleCity_ToolShop_Text_ShopKeeper
 	waitmessage
 	pokemart MauvilleCity_ToolShop_Pokemart_ShopKeeper

@@ -139,6 +139,9 @@
 #define BERRY_TREE_FORTREE_JUNGLE_WACAN        102
 #define BERRY_TREE_FORTREE_JUNGLE_TANGA        103
 #define BERRY_TREE_FORTREE_JUNGLE_KEBIA        104
+//#define BERRY_TREE_X_CHILAN        105
+//#define BERRY_TREE_X_HABAN         106
+//#define BERRY_TREE_X_BABIRI        107
 
 // Remainder are unused
 

@@ -18,7 +18,23 @@ Route114_OnLoad:
 	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute114North
 	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_114_SOUTH
 	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute114South
+	call_if_unset FLAG_SYS_GAME_CLEAR, Route114_EventScript_CloseFallarborWastelandPath
 	end
+
+Route114_EventScript_CloseFallarborWastelandPath::
+	setmetatile 1, 17, METATILE_General_OceanRockTopLeft, 1
+	setmetatile 2, 17, METATILE_General_OceanRockTopRight, 1
+	setmetatile 1, 18, METATILE_General_OceanRockBotLeft, 1
+	setmetatile 2, 18, METATILE_General_OceanRockBotRight, 1
+	setmetatile 5, 16, METATILE_General_OceanRockTopLeft_EdgeTop, 1
+	setmetatile 6, 16, METATILE_General_OceanRockTopRight_EdgeTop, 1
+	setmetatile 5, 17, METATILE_General_OceanRockBotLeft, 1
+	setmetatile 6, 17, METATILE_General_OceanRockBotRight, 1
+	setmetatile 7, 17, METATILE_General_OceanRockTopLeft, 1
+	setmetatile 8, 17, METATILE_General_OceanRockTopRight, 1
+	setmetatile 7, 18, METATILE_General_OceanRockBotLeft, 1
+	setmetatile 8, 18, METATILE_General_OceanRockBotRight, 1
+	return
 
 Route114_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1

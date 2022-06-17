@@ -46,6 +46,7 @@ Route120_OnLoad:
 	call_if_unset FLAG_REGI_DOORS_OPENED, Route120_EventScript_CloseAncientTomb
 	call_if_set FLAG_RECEIVED_DEVON_SCOPE, Route120_EventScript_SetBridgeClearMetatiles
 	call_if_unset FLAG_RECEIVED_DEVON_SCOPE, Route120_EventScript_SetBridgeKecleonMovement
+	call_if_unset FLAG_SYS_GAME_CLEAR, Route120_EventScript_CloseFortreeJunglePath
 	end
 
 Route120_EventScript_CloseAncientTomb::
@@ -62,6 +63,15 @@ Route120_EventScript_SetBridgeClearMetatiles::
 
 Route120_EventScript_SetBridgeKecleonMovement::
 	setobjectmovementtype LOCALID_BRIDGE_KECLEON_SHADOW, MOVEMENT_TYPE_FACE_RIGHT
+	return
+
+Route120_EventScript_CloseFortreeJunglePath::
+	setmetatile 23, 93, METATILE_General_Grass_TreeUp, 0
+	setmetatile 24, 93, METATILE_General_Grass_TreeUp, 0
+	setmetatile 23, 94, METATILE_General_SmallTree_GrassBase, 1
+	setmetatile 24, 94, METATILE_General_SmallTree_GrassBase, 1
+	setmetatile 23, 95, METATILE_General_RockWall_RockBase, 1
+	setmetatile 24, 95, METATILE_General_RockWall_RockBase, 1
 	return
 
 Route120_OnTransition:

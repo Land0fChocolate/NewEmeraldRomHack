@@ -2,7 +2,7 @@ OldaleFarm_House_MapScripts::
 	.byte 0
 
 OldaleFarm_House_Eventscript_Man::
-	goto_if_set FLAG_IS_CHAMPION, OldaleFarm_House_Eventscript_Man_PlayerIsChampion
+	goto_if_set FLAG_SYS_GAME_CLEAR, OldaleFarm_House_Eventscript_Man_PlayerIsChampion
 	msgbox OldaleFarm_House_Text_Man, MSGBOX_NPC
 	end
 

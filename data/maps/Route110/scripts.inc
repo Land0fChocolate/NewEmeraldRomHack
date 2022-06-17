@@ -6,6 +6,7 @@
 Route110_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Route110_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, Route110_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, Route110_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route110_OnFrame
 	.byte 0
 
@@ -19,6 +20,29 @@ Route110_OnTransition:
 	compare VAR_CYCLING_CHALLENGE_STATE, 1
 	call_if_eq Route110_EventScript_SaveCyclingMusic
 	end
+
+Route110_OnLoad:
+	call_if_unset FLAG_SYS_GAME_CLEAR, Route110_EventScript_CloseMauvilleMeadowPath
+	end
+
+Route110_EventScript_CloseMauvilleMeadowPath::
+	setmetatile 35, 31, METATILE_General_OceanRockTopLeft_EdgeTop, 1
+	setmetatile 36, 31, METATILE_General_OceanRockTopRight_EdgeTop, 1
+	setmetatile 35, 32, METATILE_General_OceanRockBotLeft, 1
+	setmetatile 36, 32, METATILE_General_OceanRockBotRight, 1
+	setmetatile 37, 32, METATILE_General_OceanRockTopLeft, 1
+	setmetatile 38, 32, METATILE_General_OceanRockTopRight, 1
+	setmetatile 37, 33, METATILE_General_OceanRockBotLeft, 1
+	setmetatile 38, 33, METATILE_General_OceanRockBotRight, 1
+	setmetatile 38, 34, METATILE_General_OceanRockTopLeft, 1
+	setmetatile 39, 34, METATILE_General_OceanRockTopRight, 1
+	setmetatile 38, 35, METATILE_General_OceanRockBotLeft, 1
+	setmetatile 39, 35, METATILE_General_OceanRockBotRight, 1
+	setmetatile 37, 36, METATILE_General_OceanRockTopLeft, 1
+	setmetatile 38, 36, METATILE_General_OceanRockTopRight, 1
+	setmetatile 37, 37, METATILE_General_OceanRockBotLeft, 1
+	setmetatile 38, 37, METATILE_General_OceanRockBotRight, 1
+	return
 
 Route110_EventScript_SaveCyclingMusic::
 	savebgm MUS_CYCLING

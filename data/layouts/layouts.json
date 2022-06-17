@@ -355,7 +355,7 @@
       "id": "LAYOUT_ROUTE120",
       "name": "Route120_Layout",
       "width": 40,
-      "height": 96,
+      "height": 114,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",
       "border_filepath": "data/layouts/Route120/border.bin",

@@ -3,6 +3,7 @@
 
 Route119_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, Route119_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, Route119_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, Route119_OnTransition
 	.byte 0
 
@@ -24,6 +25,47 @@ Route119_OnTransition:
 	call_if_eq Route119_EventScript_MoveInstituteWorkersDownstairs
 	special SetRoute119Weather
 	end
+
+Route119_OnLoad:
+	call_if_unset FLAG_SYS_GAME_CLEAR, Route119_EventScript_CloseConquerorsCamp
+	end
+
+Route119_EventScript_CloseConquerorsCamp::
+	setmetatile 12, 1, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 10, 2, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 11, 2, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 12, 2, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 13, 2, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 14, 2, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 10, 3, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 11, 3, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 12, 3, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 13, 3, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 14, 3, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 10, 4, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 11, 4, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 12, 4, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 13, 4, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 14, 4, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 12, 5, METATILE_General_SmallTree_GrassBase, 1
+	setmetatile 13, 5, METATILE_General_SmallTree_GrassBase, 1
+	setmetatile 14, 5, METATILE_General_SmallTree_GrassBase, 1
+	setmetatile 15, 4, METATILE_General_RockWallEast_Ocean, 1
+	setmetatile 15, 5, METATILE_General_RockWallEast_Ocean, 1
+	setmetatile 16, 4, METATILE_Fortree_OceanWater, 1
+	setmetatile 16, 5, METATILE_Fortree_OceanWater, 1
+	setmetatile 16, 6, METATILE_Fortree_OceanWater, 1
+	setmetatile 16, 7, METATILE_Fortree_OceanWater, 1
+	setmetatile 17, 6, METATILE_Fortree_OceanWater, 1
+	setmetatile 17, 7, METATILE_Fortree_OceanWater, 1
+	setmetatile 18, 6, METATILE_General_RockWallWest_Ocean, 1
+	setmetatile 18, 7, METATILE_General_RockWallWest_Ocean, 1
+	setmetatile 19, 5, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 19, 6, METATILE_Fortree_BigTreeTopLeft_SmallTreeTops, 1
+	setmetatile 19, 7, METATILE_Fortree_BigTreeBotLeft_SmallTreeTops, 1
+	setmetatile 19, 8, METATILE_Fortree_SmallTree_SmallTreeShadow, 1
+	setmetatile 19, 9, METATILE_General_SmallTree_GrassBase, 1
+	return
 	
 Route119_EventScript_Rival::
 	lock
