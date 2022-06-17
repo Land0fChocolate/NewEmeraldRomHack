@@ -262,13 +262,6 @@
   ],
   "warp_events": [
     {
-      "x": 45,
-      "y": 12,
-      "elevation": 0,
-      "dest_map": "MAP_ALTERING_CAVE",
-      "dest_warp_id": 0
-    },
-    {
       "x": 8,
       "y": 5,
       "elevation": 0,
@@ -283,8 +276,8 @@
       "dest_warp_id": 1
     },
     {
-      "x": 54,
-      "y": 10,
+      "x": 45,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_DERELICT_DEN",
       "dest_warp_id": 0

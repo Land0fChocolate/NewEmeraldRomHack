@@ -1,6 +1,10 @@
 OldaleFarm_MapScripts::
 	.byte 0
 
+OldaleFarm_OnTransition:
+	setflag FLAG_LANDMARK_OLDALE_FARM
+	end
+
 OldaleFarm_Eventscript_Girl::
 	msgbox OldaleFarm_Text_Girl, MSGBOX_NPC
 	end

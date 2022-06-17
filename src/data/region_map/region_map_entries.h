@@ -206,6 +206,12 @@ static const u8 sMapName_Wildwoods[] = _("Wildwoods");
 static const u8 sMapName_MauvilleMeadow[] = _("Mauville Meadow");
 static const u8 sMapName_FortreeLake[] = _("Fortree Lake");
 static const u8 sMapName_FortreeJungle[] = _("Fortree Jungle");
+static const u8 sMapName_LustrousLair[] = _("Lustrous Lair");
+static const u8 sMapName_DerelictDen[] = _("Derelict Den");
+static const u8 sMapName_FieryThrone[] = _("Fiery Throne");
+static const u8 sMapName_ConquerorsCamp[] = _("Conqueror's Camp");
+static const u8 sMapName_RoyalRest[] = _("Royal Rest");
+static const u8 sMapName_SagesSanctuary[] = _("Sage's Sanctuary");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN]            = { 4, 11, 1, 1, sMapName_LittlerootTown},
@@ -419,16 +425,22 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_UNDERWATER_129]             = {24, 10, 2, 1, sMapName_Underwater},
     [MAPSEC_DESERT_UNDERPASS]           = { 2,  0, 1, 1, sMapName_DesertUnderpass},
     [MAPSEC_ALTERING_CAVE]              = { 6,  8, 1, 1, sMapName_AlteringCave},
-    [MAPSEC_NAVEL_ROCK]                 = { 20, 13, 1, 1, sMapName_NavelRock},
+    [MAPSEC_NAVEL_ROCK]                 = {20, 13, 1, 1, sMapName_NavelRock},
     [MAPSEC_TRAINER_HILL]               = { 8,  4, 1, 1, sMapName_TrainerHill},
     [MAPSEC_CRUMBLING_GORGE]            = { 3,  6, 1, 1, sMapName_CrumblingGorge},
     [MAPSEC_OLDALE_FARM]                = { 3, 10, 1, 1, sMapName_OldaleFarm},
     [MAPSEC_LITTLEROOT_BEACH]           = { 4, 12, 1, 1, sMapName_LittlerootBeach},
     [MAPSEC_FALLARBOR_WASTELAND]        = { 0,  0, 1, 1, sMapName_FallarborWasteland},
-    [MAPSEC_WILDWOODS]                  = { 4,  11, 1, 1, sMapName_Wildwoods},
-    [MAPSEC_MAUVILLE_MEADOW]            = { 10,  8, 1, 1, sMapName_MauvilleMeadow},
-    [MAPSEC_FORTREE_LAKE]               = { 13,  4, 1, 1, sMapName_FortreeLake},
-    [MAPSEC_FORTREE_JUNGLE]             = { 12,  4, 1, 1, sMapName_FortreeJungle},
+    [MAPSEC_WILDWOODS]                  = { 4, 11, 1, 1, sMapName_Wildwoods},
+    [MAPSEC_MAUVILLE_MEADOW]            = {10,  8, 1, 1, sMapName_MauvilleMeadow},
+    [MAPSEC_FORTREE_LAKE]               = {13,  4, 1, 1, sMapName_FortreeLake},
+    [MAPSEC_FORTREE_JUNGLE]             = {12,  4, 1, 1, sMapName_FortreeJungle},
+    [MAPSEC_LUSTROUS_LAIR]              = {22,  5, 1, 1, sMapName_LustrousLair},
+    [MAPSEC_DERELICT_DEN]               = { 0,  0, 1, 1, sMapName_DerelictDen},
+    [MAPSEC_FIERY_THRONE]               = { 4, 11, 1, 1, sMapName_FieryThrone},
+    [MAPSEC_CONQUERORS_CAMP]            = {11,  0, 1, 1, sMapName_ConquerorsCamp},
+    [MAPSEC_ROYAL_REST]                 = { 8,  0, 1, 1, sMapName_RoyalRest},
+    [MAPSEC_SAGES_SANCTUARY]            = {25,  7, 1, 1, sMapName_SagesSanctuary},
 };
 
 #endif //GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H

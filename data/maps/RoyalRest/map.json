@@ -3,7 +3,7 @@
   "name": "RoyalRest",
   "layout": "LAYOUT_ROYAL_REST",
   "music": "MUS_RG_SEVII_CAVE",
-  "region_map_section": "MAPSEC_ROUTE_111",
+  "region_map_section": "MAPSEC_ROYAL_REST",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

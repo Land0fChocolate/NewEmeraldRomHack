@@ -222,7 +222,13 @@
 #define MAPSEC_MAUVILLE_MEADOW              0xDA
 #define MAPSEC_FORTREE_LAKE                 0xDB
 #define MAPSEC_FORTREE_JUNGLE               0xDC
-#define MAPSEC_NONE                         0xDD
+#define MAPSEC_LUSTROUS_LAIR                0xDD
+#define MAPSEC_DERELICT_DEN                 0xDE
+#define MAPSEC_FIERY_THRONE                 0xDF
+#define MAPSEC_CONQUERORS_CAMP              0xE0
+#define MAPSEC_ROYAL_REST                   0xE1
+#define MAPSEC_SAGES_SANCTUARY              0xE2
+#define MAPSEC_NONE                         0xE3
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE
