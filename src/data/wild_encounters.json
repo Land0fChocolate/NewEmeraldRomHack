@@ -10858,12 +10858,12 @@
               {
                 "min_level": 41,
                 "max_level": 41,
-                "species": "SPECIES_PARAS"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 42,
                 "max_level": 42,
-                "species": "SPECIES_DUNSPARCE"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 43,
@@ -10878,7 +10878,7 @@
               {
                 "min_level": 45,
                 "max_level": 45,
-                "species": "SPECIES_PARASECT"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 46,
@@ -10927,12 +10927,12 @@
               {
                 "min_level": 41,
                 "max_level": 41,
-                "species": "SPECIES_PARAS"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 42,
                 "max_level": 42,
-                "species": "SPECIES_DUNSPARCE"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 43,
@@ -10947,7 +10947,7 @@
               {
                 "min_level": 45,
                 "max_level": 45,
-                "species": "SPECIES_PARASECT"
+                "species": "SPECIES_SMEARGLE"
               },
               {
                 "min_level": 46,
@@ -12978,7 +12978,7 @@
               {
                 "min_level": 15,
                 "max_level": 25,
-                "species": "SPECIES_POLIWAG"
+                "species": "SPECIES_WOOPER"
               },
               {
                 "min_level": 15,
@@ -12988,17 +12988,17 @@
               {
                 "min_level": 25,
                 "max_level": 35,
-                "species": "SPECIES_POLIWHIRL"
+                "species": "SPECIES_QUAGSIRE"
               },
               {
                 "min_level": 25,
                 "max_level": 35,
-                "species": "SPECIES_POLIWHIRL"
+                "species": "SPECIES_QUAGSIRE"
               },
               {
                 "min_level": 25,
                 "max_level": 35,
-                "species": "SPECIES_POLIWHIRL"
+                "species": "SPECIES_QUAGSIRE"
               }
             ]
           },

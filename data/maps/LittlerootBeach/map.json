@@ -128,6 +128,19 @@
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_LITTLEROOT_BEACH_PASSHO",
       "script": "BerryTreeScript",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 13,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LittlerootBeach_EventScript_ItemTM58",
+      "flag": "FLAG_ITEM_LITTLEROOT_BEACH_TM58"
     }
   ],
   "warp_events": [

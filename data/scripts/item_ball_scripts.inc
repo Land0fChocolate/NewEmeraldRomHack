@@ -673,3 +673,23 @@ MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 MossdeepCity_StevensHouse_EventScript_ItemTM91::
 	finditem ITEM_TM91
 	end
+
+LittlerootBeach_EventScript_ItemTM58::
+	finditem ITEM_TM58
+	end
+
+Wildwoods_Area7_EventScript_ItemTM75::
+	finditem ITEM_TM75
+	end
+
+FallarborWasteland_EventScript_ItemTM67::
+	finditem ITEM_TM67
+	end
+
+MauvilleMeadow_EventScript_ItemTM93::
+	finditem ITEM_TM93
+	end
+
+FortreeJungle_Area2_EventScript_ItemTM09::
+	finditem ITEM_TM09
+	end
