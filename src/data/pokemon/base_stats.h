@@ -14812,7 +14812,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = TRUE,
     },
 
-    [SPECIES_TYNAMO] = //CONTINUE FROM HERE
+    [SPECIES_TYNAMO] =
     {
         .baseHP        = 35,
         .baseAttack    = 55,
@@ -15217,7 +15217,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_WATER_1,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_LIMBER, ABILITY_STATIC, ABILITY_SAND_VEIL}, //TODO: give ABILITY_MIMICRY to normal Stunfisk as well?
+        .abilities = {ABILITY_MIMICRY, ABILITY_STATIC, ABILITY_SAND_VEIL},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },
