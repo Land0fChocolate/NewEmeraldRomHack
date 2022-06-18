@@ -5263,7 +5263,7 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Demetrius},
     },
 
-    [TRAINER_ISAIAH_1] =
+    [TRAINER_ISAIAH] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_TRIATHLETE,
@@ -5273,8 +5273,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Isaiah1),
-        .party = {.NoItemDefaultMoves = sParty_Isaiah1},
+        .partySize = ARRAY_COUNT(sParty_Isaiah),
+        .party = {.NoItemDefaultMoves = sParty_Isaiah},
     },
 
     [TRAINER_PABLO_1] =
@@ -5303,62 +5303,6 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = ARRAY_COUNT(sParty_Chase),
         .party = {.NoItemDefaultMoves = sParty_Chase},
-    },
-
-    [TRAINER_ISAIAH_2] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TRIATHLETE,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-        .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .trainerName = _("Isaiah"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Isaiah2),
-        .party = {.NoItemDefaultMoves = sParty_Isaiah2},
-    },
-
-    [TRAINER_ISAIAH_3] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TRIATHLETE,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-        .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .trainerName = _("Isaiah"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Isaiah3),
-        .party = {.NoItemDefaultMoves = sParty_Isaiah3},
-    },
-
-    [TRAINER_ISAIAH_4] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TRIATHLETE,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-        .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .trainerName = _("Isaiah"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Isaiah4),
-        .party = {.NoItemDefaultMoves = sParty_Isaiah4},
-    },
-
-    [TRAINER_ISAIAH_5] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_TRIATHLETE,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-        .trainerPic = TRAINER_PIC_SWIMMING_TRIATHLETE_M,
-        .trainerName = _("Isaiah"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Isaiah5),
-        .party = {.NoItemDefaultMoves = sParty_Isaiah5},
     },
 
     [TRAINER_ISOBEL] =
@@ -9323,7 +9267,7 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Ruben},
     },
 
-    [TRAINER_KOJI_1] =
+    [TRAINER_KOJI] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_BLACK_BELT,
@@ -9333,8 +9277,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Koji1),
-        .party = {.NoItemDefaultMoves = sParty_Koji1},
+        .partySize = ARRAY_COUNT(sParty_Koji),
+        .party = {.NoItemDefaultMoves = sParty_Koji},
     },
 
     [TRAINER_WAYNE] =
@@ -11127,62 +11071,6 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = ARRAY_COUNT(sParty_Pablo5),
         .party = {.NoItemDefaultMoves = sParty_Pablo5},
-    },
-
-    [TRAINER_KOJI_2] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .trainerName = _("Koji"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Koji2),
-        .party = {.NoItemDefaultMoves = sParty_Koji2},
-    },
-
-    [TRAINER_KOJI_3] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .trainerName = _("Koji"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Koji3),
-        .party = {.NoItemDefaultMoves = sParty_Koji3},
-    },
-
-    [TRAINER_KOJI_4] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .trainerName = _("Koji"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Koji4),
-        .party = {.NoItemDefaultMoves = sParty_Koji4},
-    },
-
-    [TRAINER_KOJI_5] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BLACK_BELT,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
-        .trainerName = _("Koji"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Koji5),
-        .party = {.NoItemDefaultMoves = sParty_Koji5},
     },
 
     [TRAINER_CRISTIN_2] =

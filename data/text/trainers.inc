@@ -3920,22 +3920,6 @@ Route127_Text_KojiPostBattle:
 	.string "Going barefoot feels great.\n"
 	.string "But your Running Shoes are cool, too.$"
 
-Route127_Text_KojiRegister:
-	.string "This is what I do to people who beat me!\n"
-	.string "I hope we can do this again.$"
-
-Route127_Text_KojiRematchIntro:
-	.string "I still run in my bare feet daily.\n"
-	.string "My soles are tough!$"
-
-Route127_Text_KojiRematchDefeat:
-	.string "Yowch!\n"
-	.string "Pebbles dug into my arches!$"
-
-Route127_Text_KojiPostRematch:
-	.string "Want to go barefoot for a while?\n"
-	.string "So I can try your Running Shoes?$"
-
 Route127_Text_AthenaIntro:
 	.string "We should have a slow and methodical\n"
 	.string "match.$"
@@ -3959,22 +3943,6 @@ Route128_Text_IsaiahDefeat:
 Route128_Text_IsaiahPostBattle:
 	.string "My whole life has been about losing,\n"
 	.string "but I will never give up!$"
-
-Route128_Text_IsaiahRegister:
-	.string "I know I'm not good now, but I think\n"
-	.string "I can win eventually.\p"
-	.string "Please register me in your Pokénav.$"
-
-Route128_Text_IsaiahRematchIntro:
-	.string "I'm still feeling good. I'll keep on\n"
-	.string "swimming to Ever Grande City.$"
-
-Route128_Text_IsaiahRematchDefeat:
-	.string "I've yet to taste my first victory…$"
-
-Route128_Text_IsaiahPostRematch:
-	.string "I'll eventually reach Ever Grande City\n"
-	.string "where I can eventually win…$"
 
 Route128_Text_KatelynIntro:
 	.string "You have to swim, cycle, and then run\n"

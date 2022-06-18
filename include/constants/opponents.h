@@ -377,13 +377,13 @@
 #define TRAINER_MARIA_5                     373
 #define TRAINER_CAMDEN                      374
 #define TRAINER_DEMETRIUS                   375
-#define TRAINER_ISAIAH_1                    376
+#define TRAINER_ISAIAH                      376
 #define TRAINER_PABLO_1                     377
 #define TRAINER_CHASE                       378
-#define TRAINER_ISAIAH_2                    379
-#define TRAINER_ISAIAH_3                    380
-#define TRAINER_ISAIAH_4                    381
-#define TRAINER_ISAIAH_5                    382
+#define TRAINER_ISAIAH_2                    379 //unused
+#define TRAINER_ISAIAH_3                    380 //unused
+#define TRAINER_ISAIAH_4                    381 //unused
+#define TRAINER_ISAIAH_5                    382 //unused
 #define TRAINER_ISOBEL                      383
 #define TRAINER_DONNY                       384
 #define TRAINER_TALIA                       385
@@ -673,7 +673,7 @@
 #define TRAINER_ROGER                       669
 #define TRAINER_ALEXA                       670
 #define TRAINER_RUBEN                       671
-#define TRAINER_KOJI_1                      672
+#define TRAINER_KOJI                        672
 #define TRAINER_WAYNE                       673
 #define TRAINER_AIDAN                       674
 #define TRAINER_REED                        675
@@ -825,10 +825,10 @@
 #define TRAINER_PABLO_3                     821
 #define TRAINER_PABLO_4                     822
 #define TRAINER_PABLO_5                     823
-#define TRAINER_KOJI_2                      824
-#define TRAINER_KOJI_3                      825
-#define TRAINER_KOJI_4                      826
-#define TRAINER_KOJI_5                      827
+#define TRAINER_KOJI_2                      824 //unused
+#define TRAINER_KOJI_3                      825 //unused
+#define TRAINER_KOJI_4                      826 //unused
+#define TRAINER_KOJI_5                      827 //unused
 #define TRAINER_CRISTIN_2                   828
 #define TRAINER_CRISTIN_3                   829
 #define TRAINER_CRISTIN_4                   830
@@ -858,7 +858,7 @@
 #define TRAINER_MAY_PLACEHOLDER             854 //unused
 #define TRAINER_CECE                        855
 #define TRAINER_FRANNY                      856
-#define TRAINER_MEGGI                       857 //set up but unused, need to find a location for this trainer.
+#define TRAINER_MEGGI                       857 //TODO: set up but unused, need to find a location for this trainer.
 #define TRAINER_MOMO_1                      858
 #define TRAINER_NELLIE                      859
 #define TRAINER_ARCHIE_WEATHER_INSTITUTE    860

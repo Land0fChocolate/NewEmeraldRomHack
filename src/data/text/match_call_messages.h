@@ -78,11 +78,6 @@ const u8 gText_MatchCallBlackBelt_Nob_Pokemon[] = _("Fighting type.");
 const u8 gText_MatchCallBlackBelt_Nob_Intro1[] = _("Not to brag, but I can bust");
 const u8 gText_MatchCallBlackBelt_Nob_Intro2[] = _("ten roof tiles!");
 
-const u8 gText_MatchCallBlackBelt_Koji_Strategy[] = _("Witness karate power!");
-const u8 gText_MatchCallBlackBelt_Koji_Pokemon[] = _("My partners in training!");
-const u8 gText_MatchCallBlackBelt_Koji_Intro1[] = _("Let us discuss matters of");
-const u8 gText_MatchCallBlackBelt_Koji_Intro2[] = _("the world with bare fists!");
-
 const u8 gText_MatchCallGuitarist_Dalton_Strategy[] = _("I'll electrify you!");
 const u8 gText_MatchCallGuitarist_Dalton_Pokemon[] = _("They're Electric!");
 const u8 gText_MatchCallGuitarist_Dalton_Intro1[] = _("I want to make people cry");
@@ -167,11 +162,6 @@ const u8 gText_MatchCallFisherman_Elliot_Strategy[] = _("I battle patiently.");
 const u8 gText_MatchCallFisherman_Elliot_Pokemon[] = _("Water Pokémon to battle!");
 const u8 gText_MatchCallFisherman_Elliot_Intro1[] = _("I'm the world's only guy to");
 const u8 gText_MatchCallFisherman_Elliot_Intro2[] = _("catch a huge Pokémon!");
-
-const u8 gText_MatchCallTriathlete_Isaiah_Strategy[] = _("Exploit the environment!");
-const u8 gText_MatchCallTriathlete_Isaiah_Pokemon[] = _("All hail the Water type!");
-const u8 gText_MatchCallTriathlete_Isaiah_Intro1[] = _("I won't be beaten by some");
-const u8 gText_MatchCallTriathlete_Isaiah_Intro2[] = _("beach bum Swimmer!");
 
 const u8 gText_MatchCallTriathlete_Maria_Strategy[] = _("Speed above all!");
 const u8 gText_MatchCallTriathlete_Maria_Pokemon[] = _("I use a speedy Pokémon.");
@@ -401,7 +391,6 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_STEVE] = MCFLAVOR(PokeManiac_Steve),
     [REMATCH_TONY] = MCFLAVOR(Swimmer_Tony),
     [REMATCH_NOB] = MCFLAVOR(BlackBelt_Nob),
-    [REMATCH_KOJI] = MCFLAVOR(BlackBelt_Koji),
     [REMATCH_DALTON] = MCFLAVOR(Guitarist_Dalton),
     [REMATCH_BERNIE] = MCFLAVOR(Kindler_Bernie),
     [REMATCH_ETHAN] = MCFLAVOR(Camper_Ethan),
@@ -419,7 +408,6 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_SHELBY] = MCFLAVOR(Expert_Shelby),
     [REMATCH_CALVIN] = MCFLAVOR(Youngster_Calvin),
     [REMATCH_ELLIOT] = MCFLAVOR(Fisherman_Elliot),
-    [REMATCH_ISAIAH] = MCFLAVOR(Triathlete_Isaiah),
     [REMATCH_MARIA] = MCFLAVOR(Triathlete_Maria),
     [REMATCH_ABIGAIL] = MCFLAVOR(Triathlete_Abigail),
     [REMATCH_DYLAN] = MCFLAVOR(Triathlete_Dylan),

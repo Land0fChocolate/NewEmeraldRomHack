@@ -392,7 +392,7 @@
 #define FLAG_REMATCH_STEVE                   0x16B
 #define FLAG_REMATCH_TONY                    0x16C
 #define FLAG_REMATCH_NOB                     0x16D
-#define FLAG_REMATCH_KOJI                    0x16E
+#define FLAG_REMATCH_KOJI                    0x16E //unused
 #define FLAG_REMATCH_FERNANDO                0x16F //unused
 #define FLAG_REMATCH_DALTON                  0x170
 #define FLAG_REMATCH_BERNIE                  0x171

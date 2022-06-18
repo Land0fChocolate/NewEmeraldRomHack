@@ -5063,7 +5063,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Demetrius[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Isaiah1[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Isaiah[] = {
     {
     .iv = 0,
     .lvl = 35,
@@ -5094,38 +5094,6 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Chase[] = {
     .iv = 80,
     .lvl = 35,
     .species = SPECIES_STARYU,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Isaiah2[] = {
-    {
-    .iv = 10,
-    .lvl = 39,
-    .species = SPECIES_STARYU,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Isaiah3[] = {
-    {
-    .iv = 20,
-    .lvl = 42,
-    .species = SPECIES_STARYU,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Isaiah4[] = {
-    {
-    .iv = 30,
-    .lvl = 45,
-    .species = SPECIES_STARMIE,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Isaiah5[] = {
-    {
-    .iv = 40,
-    .lvl = 48,
-    .species = SPECIES_STARMIE,
     }
 };
 
@@ -9217,7 +9185,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Ruben[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Koji1[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Koji[] = {
     {
     .iv = 0,
     .lvl = 37,
@@ -11597,73 +11565,6 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Pablo5[] = {
     .iv = 40,
     .lvl = 43,
     .species = SPECIES_STARMIE,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Koji2[] = {
-    {
-    .iv = 10,
-    .lvl = 37,
-    .species = SPECIES_MACHOKE,
-    },
-    {
-    .iv = 10,
-    .lvl = 37,
-    .species = SPECIES_MACHOKE,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Koji3[] = {
-    {
-    .iv = 20,
-    .lvl = 39,
-    .species = SPECIES_MAKUHITA,
-    },
-    {
-    .iv = 20,
-    .lvl = 39,
-    .species = SPECIES_MACHOKE,
-    },
-    {
-    .iv = 20,
-    .lvl = 39,
-    .species = SPECIES_MACHOKE,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Koji4[] = {
-    {
-    .iv = 30,
-    .lvl = 41,
-    .species = SPECIES_HARIYAMA,
-    },
-    {
-    .iv = 30,
-    .lvl = 41,
-    .species = SPECIES_MACHOKE,
-    },
-    {
-    .iv = 30,
-    .lvl = 41,
-    .species = SPECIES_MACHOKE,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Koji5[] = {
-    {
-    .iv = 40,
-    .lvl = 43,
-    .species = SPECIES_HARIYAMA,
-    },
-    {
-    .iv = 40,
-    .lvl = 43,
-    .species = SPECIES_MACHAMP,
-    },
-    {
-    .iv = 40,
-    .lvl = 43,
-    .species = SPECIES_MACHAMP,
     }
 };
 
