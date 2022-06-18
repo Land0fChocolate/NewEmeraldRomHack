@@ -373,7 +373,7 @@
 #define FLAG_MET_FRONTIER_BEAUTY_MOVE_TUTOR  0x15A
 #define FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR 0x15B
 
-// Trainer Rematch Flags
+// Trainer Rematch Flags //misleading names, this is for if the trainer is in the match call list, not if they are open to a rematch.
 #define FLAG_MATCH_CALL_REGISTERED           0x15C
 #define FLAG_REMATCH_ROSE                    0x15D
 #define FLAG_REMATCH_GOMEZ                   0x15E
@@ -447,7 +447,7 @@
 #define FLAG_REMATCH_NORMAN                  0x1A2
 #define FLAG_REMATCH_WINONA                  0x1A3
 #define FLAG_REMATCH_TATE_AND_LIZA           0x1A4
-// Note: FLAG_REMATCH_WALLACE is handled by FLAG_ENABLE_WALLACE_MATCH_CALL instead. May update for consistency. //TODO: will probably have to sort this rematch out.
+// Note: FLAG_REMATCH_WALLACE is handled by FLAG_ENABLE_WALLACE_MATCH_CALL instead. May update for consistency.
 #define FLAG_REMATCH_SIDNEY                  0x1A5
 #define FLAG_REMATCH_PHOEBE                  0x1A6
 #define FLAG_REMATCH_GLACIA                  0x1A7
@@ -898,7 +898,7 @@
 #define FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON                          0x355
 #define FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS                         0x356
 #define FLAG_HIDE_SKY_PILLAR_JUAN                                   0x357
-#define FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE                              0x358
+#define FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE                              0x358 //unused
 #define FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS                              0x359
 #define FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY                       0x35A
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE                     0x35B
@@ -958,7 +958,7 @@
 #define FLAG_HIDE_MAUVILLE_GYM_WATTSON                              0x391
 #define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                        0x392
 #define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
-#define FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE                             0x394
+#define FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE                             0x394 //unused
 #define FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA                          0x395
 #define FLAG_HIDE_BATTLE_TOWER_REPORTER                             0x396
 #define FLAG_HIDE_ROUTE_110_RIVAL                                   0x397
@@ -1034,7 +1034,7 @@
 #define FLAG_HIDE_ROUTE_119_KECLEON_1                               0x3DD
 #define FLAG_HIDE_ROUTE_119_KECLEON_2                               0x3DE
 #define FLAG_HIDE_ROUTE_101_BOY                                     0x3DF
-#define FLAG_HIDE_WEATHER_INSTITUTE_2F_AQUA_GRUNT_M                 0x3E0
+#define FLAG_HIDE_WEATHER_INSTITUTE_2F_ZINNIA_AQUA                  0x3E0
 #define FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON          0x3E1
 #define FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY                       0x3E2
 #define FLAG_HIDE_PETALBURG_CITY_SCOTT                              0x3E3

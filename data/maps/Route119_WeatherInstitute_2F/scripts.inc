@@ -7,6 +7,7 @@
 .set LOCALID_ARCHIE, 7
 .set LOCALID_RIVAL, 8
 .set LOCALID_SCIENTIST, 10
+.set LOCALID_ZINNIA_AQUA, 12
 
 Route119_WeatherInstitute_2F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route119_WeatherInstitute_2F_OnTransition
@@ -234,7 +235,8 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceLeft
 	msgbox Route119_WeatherInstitute_2F_Text_ArchieLost, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GRUNT_1, Route119_WeatherInstitute_2F_Grunt_Reporting
+	clearflag FLAG_HIDE_WEATHER_INSTITUTE_2F_ZINNIA_AQUA
+	applymovement LOCALID_ZINNIA_AQUA, Route119_WeatherInstitute_2F_Grunt_Reporting
 	applymovement LOCALID_GRUNT_4, Route119_WeatherInstitute_2F_Grunt_MoveAwayForReporter
 	waitmovement 0
 	msgbox Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy, MSGBOX_DEFAULT
@@ -251,7 +253,7 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	fadedefaultbgm
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_HIDE_ROUTE_119_TEAM_AQUA
-	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_AQUA_GRUNT_M
+	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_ZINNIA_AQUA
 	clearflag FLAG_ROUTE_119_HIDE_RIVAL
 	removeobject LOCALID_GRUNT_1
 	removeobject LOCALID_GRUNT_2
@@ -260,6 +262,7 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	removeobject LOCALID_GRUNT_5
 	removeobject LOCALID_SHELLY
 	removeobject LOCALID_ARCHIE
+	removeobject LOCALID_ZINNIA_AQUA
 	setobjectxy OBJ_EVENT_ID_PLAYER, 7, 6
 	setobjectxy LOCALID_RIVAL, 8, 6
 	applymovement LOCALID_RIVAL, Common_Movement_FaceRight
@@ -303,10 +306,6 @@ Route119_WeatherInstitute_2F_EventScript_ShellyTrainer::
 	end
 
 Route119_WeatherInstitute_2F_Grunt_Reporting::
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
@@ -316,8 +315,6 @@ Route119_WeatherInstitute_2F_Grunt_Reporting::
 	step_end
 
 Route119_WeatherInstitute_2F_Grunt_MoveAwayForReporter::
-	delay_16
-	delay_16
 	delay_16
 	delay_16
 	ride_water_current_down
