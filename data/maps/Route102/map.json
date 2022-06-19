@@ -22,6 +22,11 @@
       "direction": "right",
       "offset": 0,
       "map": "MAP_OLDALE_TOWN"
+    },
+    {
+      "direction": "down",
+      "offset": 26,
+      "map": "MAP_OLDALE_FARM"
     }
   ],
   "object_events": [

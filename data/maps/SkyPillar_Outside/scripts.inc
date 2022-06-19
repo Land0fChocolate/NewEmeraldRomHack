@@ -146,6 +146,8 @@ SkyPillar_Outside_Text_JuanGuardEntrance2:
 SkyPillar_Outside_Text_JuanGuardEntrance3:
 	.string "Juan: You have my utmost thanks. I shall\n"
 	.string "be delighted to dance with you one day.\p"
-	.string "However, I must stand watch to prevent\n"
-	.string "any other miscreants using legendary\l"
-	.string "Pokémon to cause catastrophe.$"
+	.string "However, even though Rayquaza has not\n"
+	.string "yet returned to its throne, I must\l"
+	.string "stand watch to prevent any other"
+	.string "miscreants using legendary Pokémon\l"
+	.string "to cause catastrophe.$"

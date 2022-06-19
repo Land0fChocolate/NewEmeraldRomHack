@@ -68,6 +68,11 @@ Route112_EventScript_Brice::
 	msgbox Route112_Text_BricePostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route112_EventScript_Jaylin::
+	trainerbattle_single TRAINER_JAYLIN, Route112_Text_JaylinIntro, Route112_Text_JaylinDefeat
+	msgbox Route112_Text_JaylinPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 Route112_EventScript_Trent::
 	trainerbattle_single TRAINER_TRENT_1, Route112_Text_TrentIntro, Route112_Text_TrentDefeat, Route112_EventScript_RegisterTrent
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -98,16 +103,6 @@ Route112_EventScript_Larry::
 Route112_EventScript_Carol::
 	trainerbattle_single TRAINER_CAROL, Route112_Text_CarolIntro, Route112_Text_CarolDefeat
 	msgbox Route112_Text_CarolPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route112_EventScript_Bryant::
-	trainerbattle_single TRAINER_BRYANT, Route112_Text_BryantIntro, Route112_Text_BryantDefeat
-	msgbox Route112_Text_BryantPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route112_EventScript_Shayla::
-	trainerbattle_single TRAINER_SHAYLA, Route112_Text_ShaylaIntro, Route112_Text_ShaylaDefeat
-	msgbox Route112_Text_ShaylaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route112_Text_LeaderGoingToAwakenThing:

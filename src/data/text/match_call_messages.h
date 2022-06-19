@@ -3,11 +3,6 @@ const u8 gText_MatchCallAromaLady_Rose_Pokemon[] = _("Fragrant Grass Pokémon.")
 const u8 gText_MatchCallAromaLady_Rose_Intro1[] = _("Soothing aromas make the");
 const u8 gText_MatchCallAromaLady_Rose_Intro2[] = _("body and mind healthy.");
 
-const u8 gText_MatchCallRuinManiac_Andres_Strategy[] = _("I'm not very good at this.");
-const u8 gText_MatchCallRuinManiac_Andres_Pokemon[] = _("Ruin-exploration partners.");
-const u8 gText_MatchCallRuinManiac_Andres_Intro1[] = _("I am searching for undersea");
-const u8 gText_MatchCallRuinManiac_Andres_Intro2[] = _("ruins and relics.");
-
 const u8 gText_MatchCallRuinManiac_Dusty_Strategy[] = _("Overwhelm with power!");
 const u8 gText_MatchCallRuinManiac_Dusty_Pokemon[] = _("Craggy Rock Pokémon.");
 const u8 gText_MatchCallRuinManiac_Dusty_Intro1[] = _("In search of ancient lore,");
@@ -82,16 +77,6 @@ const u8 gText_MatchCallBlackBelt_Nob_Strategy[] = _("Grand slam pummeling!");
 const u8 gText_MatchCallBlackBelt_Nob_Pokemon[] = _("Fighting type.");
 const u8 gText_MatchCallBlackBelt_Nob_Intro1[] = _("Not to brag, but I can bust");
 const u8 gText_MatchCallBlackBelt_Nob_Intro2[] = _("ten roof tiles!");
-
-const u8 gText_MatchCallBlackBelt_Koji_Strategy[] = _("Witness karate power!");
-const u8 gText_MatchCallBlackBelt_Koji_Pokemon[] = _("My partners in training!");
-const u8 gText_MatchCallBlackBelt_Koji_Intro1[] = _("Let us discuss matters of");
-const u8 gText_MatchCallBlackBelt_Koji_Intro2[] = _("the world with bare fists!");
-
-const u8 gText_MatchCallGuitarist_Fernando_Strategy[] = _("Rock to stunning sounds!");
-const u8 gText_MatchCallGuitarist_Fernando_Pokemon[] = _("Electric-and-sound combo!");
-const u8 gText_MatchCallGuitarist_Fernando_Intro1[] = _("My compositions will shock");
-const u8 gText_MatchCallGuitarist_Fernando_Intro2[] = _("you and stun you!");
 
 const u8 gText_MatchCallGuitarist_Dalton_Strategy[] = _("I'll electrify you!");
 const u8 gText_MatchCallGuitarist_Dalton_Pokemon[] = _("They're Electric!");
@@ -178,11 +163,6 @@ const u8 gText_MatchCallFisherman_Elliot_Pokemon[] = _("Water Pokémon to battle
 const u8 gText_MatchCallFisherman_Elliot_Intro1[] = _("I'm the world's only guy to");
 const u8 gText_MatchCallFisherman_Elliot_Intro2[] = _("catch a huge Pokémon!");
 
-const u8 gText_MatchCallTriathlete_Isaiah_Strategy[] = _("Exploit the environment!");
-const u8 gText_MatchCallTriathlete_Isaiah_Pokemon[] = _("All hail the Water type!");
-const u8 gText_MatchCallTriathlete_Isaiah_Intro1[] = _("I won't be beaten by some");
-const u8 gText_MatchCallTriathlete_Isaiah_Intro2[] = _("beach bum Swimmer!");
-
 const u8 gText_MatchCallTriathlete_Maria_Strategy[] = _("Speed above all!");
 const u8 gText_MatchCallTriathlete_Maria_Pokemon[] = _("I use a speedy Pokémon.");
 const u8 gText_MatchCallTriathlete_Maria_Intro1[] = _("A marathon is a challenge");
@@ -258,11 +238,6 @@ const u8 gText_MatchCallSailor_Ernest_Pokemon[] = _("Water and Fighting types.")
 const u8 gText_MatchCallSailor_Ernest_Intro1[] = _("Seamen are rough spirits!");
 const u8 gText_MatchCallSailor_Ernest_Intro2[] = _("Any complaints?");
 
-const u8 gText_MatchCallSailor_Cory_Strategy[] = _("Up for a fight anytime!");
-const u8 gText_MatchCallSailor_Cory_Pokemon[] = _("Water Pokémon are my faves!");
-const u8 gText_MatchCallSailor_Cory_Intro1[] = _("If you want to shout loud,");
-const u8 gText_MatchCallSailor_Cory_Intro2[] = _("suck in air with your belly!");
-
 const u8 gText_MatchCallCollector_Edwin_Strategy[] = _("Protect Pokémon from harm.");
 const u8 gText_MatchCallCollector_Edwin_Pokemon[] = _("I love rare Pokémon.");
 const u8 gText_MatchCallCollector_Edwin_Intro1[] = _("I want to collect all the");
@@ -277,11 +252,6 @@ const u8 gText_MatchCallPkmnBreeder_Isaac_Strategy[] = _("Full-on attack!");
 const u8 gText_MatchCallPkmnBreeder_Isaac_Pokemon[] = _("Anything. I'll raise it.");
 const u8 gText_MatchCallPkmnBreeder_Isaac_Intro1[] = _("I give them {POKEBLOCK}S for");
 const u8 gText_MatchCallPkmnBreeder_Isaac_Intro2[] = _("going after Contest titles.");
-
-const u8 gText_MatchCallPkmnBreeder_Gabrielle_Strategy[] = _("I raise Pokémon with care.");
-const u8 gText_MatchCallPkmnBreeder_Gabrielle_Pokemon[] = _("Fun-to-raise Pokémon.");
-const u8 gText_MatchCallPkmnBreeder_Gabrielle_Intro1[] = _("Treat every Pokémon you");
-const u8 gText_MatchCallPkmnBreeder_Gabrielle_Intro2[] = _("meet with respect.");
 
 const u8 gText_MatchCallPkmnRanger_Catherine_Strategy[] = _("I believe in my Pokémon.");
 const u8 gText_MatchCallPkmnRanger_Catherine_Pokemon[] = _("I like strong Pokémon.");
@@ -308,10 +278,20 @@ const u8 gText_MatchCallHiker_Trent_Pokemon[] = _("Hard-bodied Pokémon.");
 const u8 gText_MatchCallHiker_Trent_Intro1[] = _("I've been planning a month");
 const u8 gText_MatchCallHiker_Trent_Intro2[] = _("for today's hike.");
 
-const u8 gText_MatchCallHiker_Sawyer_Strategy[] = _("I like it hot!");
-const u8 gText_MatchCallHiker_Sawyer_Pokemon[] = _("Hot Pokémon!");
-const u8 gText_MatchCallHiker_Sawyer_Intro1[] = _("As much as I love Pokémon,");
-const u8 gText_MatchCallHiker_Sawyer_Intro2[] = _("I surely like hiking!");
+const u8 gText_MatchCallDelinquent_Sharlene_Strategy[] = _("Like I care about that.");
+const u8 gText_MatchCallDelinquent_Sharlene_Pokemon[] = _("C-cute ones!");
+const u8 gText_MatchCallDelinquent_Sharlene_Intro1[] = _("I, like, seriously go all");
+const u8 gText_MatchCallDelinquent_Sharlene_Intro2[] = _("out, so be ready.");
+
+const u8 gText_MatchCallStreetThug_Gomez_Strategy[] = _("Never let up the pressure.");
+const u8 gText_MatchCallStreetThug_Gomez_Pokemon[] = _("Cool ones, y'know.");
+const u8 gText_MatchCallStreetThug_Gomez_Intro1[] = _("Y'know, it really hurts when");
+const u8 gText_MatchCallStreetThug_Gomez_Intro2[] = _("people say I look scary…");
+
+const u8 gText_MatchCallFairyGirl_Momo_Strategy[] = _("Trust my Pokémon.");
+const u8 gText_MatchCallFairyGirl_Momo_Pokemon[] = _("Fairies of course!");
+const u8 gText_MatchCallFairyGirl_Momo_Intro1[] = _("I love Pokémon, it's");
+const u8 gText_MatchCallFairyGirl_Momo_Intro2[] = _("people I'm no good with.");
 
 const u8 gText_MatchCallYoungCouple_LoisAndHal_Strategy[] = _("Lovey-dovey strategy!");
 const u8 gText_MatchCallYoungCouple_LoisAndHal_Pokemon[] = _("Lovey-dovey Pokémon!");
@@ -396,7 +376,6 @@ const u8 gText_MatchCallChampion_Steven_Intro2[] = _("I'm still the strongest!")
 const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_COUNT] = 
 {
     [REMATCH_ROSE] = MCFLAVOR(AromaLady_Rose),
-    [REMATCH_ANDRES] = MCFLAVOR(RuinManiac_Andres),
     [REMATCH_DUSTY] = MCFLAVOR(RuinManiac_Dusty),
     [REMATCH_LOLA] = MCFLAVOR(Tuber_Lola),
     [REMATCH_RICKY] = MCFLAVOR(Tuber_Ricky),
@@ -412,8 +391,6 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_STEVE] = MCFLAVOR(PokeManiac_Steve),
     [REMATCH_TONY] = MCFLAVOR(Swimmer_Tony),
     [REMATCH_NOB] = MCFLAVOR(BlackBelt_Nob),
-    [REMATCH_KOJI] = MCFLAVOR(BlackBelt_Koji),
-    [REMATCH_FERNANDO] = MCFLAVOR(Guitarist_Fernando),
     [REMATCH_DALTON] = MCFLAVOR(Guitarist_Dalton),
     [REMATCH_BERNIE] = MCFLAVOR(Kindler_Bernie),
     [REMATCH_ETHAN] = MCFLAVOR(Camper_Ethan),
@@ -431,7 +408,6 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_SHELBY] = MCFLAVOR(Expert_Shelby),
     [REMATCH_CALVIN] = MCFLAVOR(Youngster_Calvin),
     [REMATCH_ELLIOT] = MCFLAVOR(Fisherman_Elliot),
-    [REMATCH_ISAIAH] = MCFLAVOR(Triathlete_Isaiah),
     [REMATCH_MARIA] = MCFLAVOR(Triathlete_Maria),
     [REMATCH_ABIGAIL] = MCFLAVOR(Triathlete_Abigail),
     [REMATCH_DYLAN] = MCFLAVOR(Triathlete_Dylan),
@@ -447,17 +423,17 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_DIANA] = MCFLAVOR(Picnicker_Diana),
     [REMATCH_AMY_AND_LIV] = MCFLAVOR(Twins_AmyAndLiv),
     [REMATCH_ERNEST] = MCFLAVOR(Sailor_Ernest),
-    [REMATCH_CORY] = MCFLAVOR(Sailor_Cory),
     [REMATCH_EDWIN] = MCFLAVOR(Collector_Edwin),
     [REMATCH_LYDIA] = MCFLAVOR(PkmnBreeder_Lydia),
     [REMATCH_ISAAC] = MCFLAVOR(PkmnBreeder_Isaac),
-    [REMATCH_GABRIELLE] = MCFLAVOR(PkmnBreeder_Gabrielle),
     [REMATCH_CATHERINE] = MCFLAVOR(PkmnRanger_Catherine),
     [REMATCH_JACKSON] = MCFLAVOR(PkmnRanger_Jackson),
     [REMATCH_HALEY] = MCFLAVOR(Lass_Haley),
     [REMATCH_JAMES] = MCFLAVOR(BugCatcher_James),
     [REMATCH_TRENT] = MCFLAVOR(Hiker_Trent),
-    [REMATCH_SAWYER] = MCFLAVOR(Hiker_Sawyer),
+    [REMATCH_SHARLENE] = MCFLAVOR(Delinquent_Sharlene),
+    [REMATCH_GOMEZ] = MCFLAVOR(StreetThug_Gomez),
+    [REMATCH_MOMO] = MCFLAVOR(FairyGirl_Momo),
     [REMATCH_KIRA_AND_DAN] = MCFLAVOR(YoungCouple_LoisAndHal),
     [REMATCH_WALLY_3] = MCFLAVOR(PkmnTrainer_Wally),
     [REMATCH_ROXANNE] = MCFLAVOR(RockinWhiz_Roxanne),

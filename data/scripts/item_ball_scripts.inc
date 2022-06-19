@@ -210,10 +210,6 @@ Route120_EventScript_ItemRevive::
 	finditem ITEM_REVIVE
 	end
 
-Route121_EventScript_ItemCarbos::
-	finditem ITEM_CARBOS
-	end
-
 Route121_EventScript_ItemRevive::
 	finditem ITEM_REVIVE
 	end
@@ -422,8 +418,8 @@ NewMauville_Inside_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
 
-NewMauville_Inside_EventScript_ItemThunderStone::
-	finditem ITEM_THUNDER_STONE
+NewMauville_Inside_EventScript_ItemElectirizer::
+	finditem ITEM_ELECTIRIZER
 	end
 
 NewMauville_Inside_EventScript_ItemFullHeal::
@@ -654,8 +650,8 @@ MagmaHideout_2F_2R_EventScript_ItemMaxElixir::
 	finditem ITEM_MAX_ELIXIR
 	end
 
-MagmaHideout_2F_2R_EventScript_ItemFullRestore::
-	finditem ITEM_FULL_RESTORE
+MagmaHideout_2F_2R_EventScript_ItemMagmarizer::
+	finditem ITEM_MAGMARIZER
 	end
 
 MagmaHideout_3F_1R_EventScript_ItemNugget::
@@ -676,4 +672,28 @@ MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 
 MossdeepCity_StevensHouse_EventScript_ItemTM91::
 	finditem ITEM_TM91
+	end
+
+LittlerootBeach_EventScript_ItemTM58::
+	finditem ITEM_TM58
+	end
+
+Wildwoods_Area7_EventScript_ItemTM99::
+	finditem ITEM_TM99
+	end
+
+FallarborWasteland_EventScript_ItemTM67::
+	finditem ITEM_TM67
+	end
+
+MauvilleMeadow_EventScript_ItemTM93::
+	finditem ITEM_TM93
+	end
+
+FortreeJungle_Area2_EventScript_ItemTM09::
+	finditem ITEM_TM09
+	end
+
+CrumblingGorge_EventScript_ItemTM59::
+	finditem ITEM_TM59
 	end

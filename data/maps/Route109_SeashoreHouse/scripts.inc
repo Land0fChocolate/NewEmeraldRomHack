@@ -83,15 +83,21 @@ Route109_SeashoreHouse_EventScript_Johanna::
 	msgbox Route109_SeashoreHouse_Text_JohannaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route109_SeashoreHouse_EventScript_Simon::
-	trainerbattle_single TRAINER_SIMON, Route109_SeashoreHouse_Text_SimonIntro, Route109_SeashoreHouse_Text_SimonDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
-	msgbox Route109_SeashoreHouse_Text_SimonPostBattle, MSGBOX_AUTOCLOSE
+Route109_SeashoreHouse_EventScript_Destinee::
+	trainerbattle_single TRAINER_DESTINEE, Route109_SeashoreHouse_Text_DestineeIntro, Route109_SeashoreHouse_Text_DestineeDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
+	msgbox Route109_SeashoreHouse_Text_DestineePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route109_SeashoreHouse_EventScript_Blair::
+	trainerbattle_single TRAINER_BLAIR, Route109_SeashoreHouse_Text_BlairIntro, Route109_SeashoreHouse_Text_BlairDefeated, Route109_SeashoreHouse_EventScript_CheckTrainersCompletion
+	msgbox Route109_SeashoreHouse_Text_BlairPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_SeashoreHouse_EventScript_CheckTrainersCompletion::
 	goto_if_not_defeated TRAINER_DWAYNE, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
 	goto_if_not_defeated TRAINER_JOHANNA, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
-	goto_if_not_defeated TRAINER_SIMON, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
+	goto_if_not_defeated TRAINER_DESTINEE, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
+	goto_if_not_defeated TRAINER_BLAIR, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
 	setflag FLAG_DEFEATED_SEASHORE_HOUSE
 	release
 	end
@@ -167,15 +173,27 @@ Route109_SeashoreHouse_Text_JohannaPostBattle:
 	.string "Whew, I'm all thirsty.\n"
 	.string "Maybe I'll have a Soda Pop.$"
 
-Route109_SeashoreHouse_Text_SimonIntro:
-	.string "I'm going to show you how great\n"
-	.string "my Pokémon are, but don't cry!$"
+Route109_SeashoreHouse_Text_DestineeIntro:
+	.string "The burger I ordered is taking forever!\n"
+	.string "It's making me totally crabby!$"
 
-Route109_SeashoreHouse_Text_SimonDefeated:
-	.string "…I lost, but I won't cry…$"
+Route109_SeashoreHouse_Text_DestineePostBattle:
+	.string "Gosh! I'm starving!$"
 
-Route109_SeashoreHouse_Text_SimonPostBattle:
-	.string "If one of my Pokémon knew the move\n"
-	.string "for carrying me across water on its\l"
-	.string "back, I could get rid of this inner tube.$"
+Route109_SeashoreHouse_Text_DestineeDefeated:
+	.string "There's something special about the food\n"
+	.string "at the Seashore House, isn't there?\p"
+	.string "It's not like it's particulary good or\n"
+	.string "anything, but I never want to miss out.$"
 
+Route109_SeashoreHouse_Text_BlairIntro:
+	.string "Hey! Hey, hey, hey! What's the deal?\n"
+	.string "Are you after my ice cream!?$"
+
+Route109_SeashoreHouse_Text_BlairPostBattle:
+	.string "Wh-where did you come from?$"
+
+Route109_SeashoreHouse_Text_BlairDefeated:
+	.string "Oh!\p"
+	.string "It melted…\n"
+	.string "My… my ice cream…$"

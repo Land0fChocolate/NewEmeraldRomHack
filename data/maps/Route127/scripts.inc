@@ -15,11 +15,17 @@ Route127_OnTransition:
 	end
 
 Route127_OnLoad:
+	call_if_unset FLAG_SYS_GAME_CLEAR, Route127_EventScript_CloseSagesSanctuary
 	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_127_NORTH
 	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute127North
 	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_127_SOUTH
 	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute127South
 	end
+
+Route127_EventScript_CloseSagesSanctuary::
+	setmetatile 56, 21, METATILE_General_RockWall_RockBase, 1
+	setmetatile 56, 22, METATILE_General_RockWall_GrassBase, 1
+	return
 
 Route127_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
@@ -61,24 +67,7 @@ Route127_EventScript_Athena::
 	end
 
 Route127_EventScript_Koji::
-	trainerbattle_single TRAINER_KOJI_1, Route127_Text_KojiIntro, Route127_Text_KojiDefeat, Route127_EventScript_RegisterKoji
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route127_EventScript_RematchKoji
-	msgbox Route127_Text_KojiPostBattle, MSGBOX_DEFAULT
+	trainerbattle_single TRAINER_KOJI, Route127_Text_KojiIntro, Route127_Text_KojiDefeat
+	msgbox Route127_Text_KojiPostBattle, MSGBOX_AUTOCLOSE
 	release
 	end
-
-Route127_EventScript_RegisterKoji::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route127_Text_KojiRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_KOJI_1
-	release
-	end
-
-Route127_EventScript_RematchKoji::
-	trainerbattle_rematch TRAINER_KOJI_1, Route127_Text_KojiRematchIntro, Route127_Text_KojiRematchDefeat
-	msgbox Route127_Text_KojiPostRematch, MSGBOX_AUTOCLOSE
-	end
-

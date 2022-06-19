@@ -94,6 +94,10 @@ const struct MonCoords gTrainerFrontPicCoords[] =
     [TRAINER_PIC_RS_BRENDAN] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_RS_MAY] = {.size = 8, .y_offset = 1},
     [TRAINER_PIC_MAGMA_ADMIN_F] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_FAIRY_TALE_GIRL] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_DELINQUENT] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_STREET_THUG] = {.size = 8, .y_offset = 1},
+    [TRAINER_PIC_ZINNIA] = {.size = 8, .y_offset = 1},
 };
 
 #define TRAINER_SPRITE(trainerPic, sprite, size) [TRAINER_PIC_##trainerPic] = {sprite, size, TRAINER_PIC_##trainerPic}
@@ -194,6 +198,10 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
     TRAINER_SPRITE(RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, 0x800),
     TRAINER_SPRITE(RS_MAY, gTrainerFrontPic_RubySapphireMay, 0x800),
     TRAINER_SPRITE(MAGMA_ADMIN_F, gTrainerFrontPic_MagmaAdminF, 0x800),
+    TRAINER_SPRITE(FAIRY_TALE_GIRL, gTrainerFrontPic_FairyTaleGirl, 0x800),
+    TRAINER_SPRITE(DELINQUENT, gTrainerFrontPic_Delinquent, 0x800),
+    TRAINER_SPRITE(STREET_THUG, gTrainerFrontPic_StreetThug, 0x800),
+    TRAINER_SPRITE(ZINNIA, gTrainerFrontPic_Zinnia, 0x800),
 };
 
 #define TRAINER_PAL(trainerPic, pal) [TRAINER_PIC_##trainerPic] = {pal, TRAINER_PIC_##trainerPic}
@@ -294,4 +302,8 @@ const struct CompressedSpritePalette gTrainerFrontPicPaletteTable[] =
     TRAINER_PAL(RS_BRENDAN, gTrainerPalette_RubySapphireBrendan),
     TRAINER_PAL(RS_MAY, gTrainerPalette_RubySapphireMay),
     TRAINER_PAL(MAGMA_ADMIN_F, gTrainerPalette_MagmaAdminF),
+    TRAINER_PAL(FAIRY_TALE_GIRL, gTrainerPalette_FairyTaleGirl),
+    TRAINER_PAL(DELINQUENT, gTrainerPalette_Delinquent),
+    TRAINER_PAL(STREET_THUG, gTrainerPalette_StreetThug),
+    TRAINER_PAL(ZINNIA, gTrainerPalette_Zinnia),
 };

@@ -219,6 +219,11 @@ Route118_EventScript_Wade::
 	msgbox Route118_Text_WadePostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route118_EventScript_Miley::
+	trainerbattle_single TRAINER_MILEY, Route118_Text_MileyIntro, Route118_Text_MileyDefeat
+	msgbox Route118_Text_MileyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 Route118_EventScript_Dalton::
 	trainerbattle_single TRAINER_DALTON_1, Route118_Text_DaltonIntro, Route118_Text_DaltonDefeat, Route118_EventScript_RegisterDalton
 	specialvar VAR_RESULT, ShouldTryRematchBattle
@@ -249,11 +254,6 @@ Route118_EventScript_Perry::
 Route118_EventScript_Chester::
 	trainerbattle_single TRAINER_CHESTER, Route118_Text_ChesterIntro, Route118_Text_ChesterDefeat
 	msgbox Route118_Text_ChesterPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route118_EventScript_Deandre::
-	trainerbattle_single TRAINER_DEANDRE, Route118_Text_DeandreIntro, Route118_Text_DeandreDefeat
-	msgbox Route118_Text_DeandrePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route118_Text_StevenQuestions:

@@ -179,8 +179,18 @@
       "flag": "FLAG_ITEM_ROUTE_127_RARE_CANDY"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
+  "warp_events": [
+    {
+      "x": 56,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_SAGES_SANCTUARY",
+      "dest_warp_id": 0
+    }
+  ],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "secret_base",

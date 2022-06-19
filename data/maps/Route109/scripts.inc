@@ -358,16 +358,6 @@ Route109_EventScript_OldMan::
 	msgbox Route109_Text_ZigzagoonPicksUpLitter, MSGBOX_NPC
 	end
 
-Route109_EventScript_Zigzagoon::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_ZIGZAGOON, 0
-	msgbox Route109_Text_ZigzagoonCry, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
 Route109_EventScript_SeashoreHouseSign::
 	msgbox Route109_Text_SeashoreHouseSign, MSGBOX_SIGN
 	end
@@ -440,6 +430,11 @@ Route109_EventScript_LolaRematch::
 	msgbox Route109_Text_LolaRematchPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route109_EventScript_Simon::
+	trainerbattle_single TRAINER_SIMON, Route109_Text_SimonIntro, Route109_Text_SimonDefeated
+	msgbox Route109_Text_SimonPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 Route109_EventScript_Austina::
 	trainerbattle_single TRAINER_AUSTINA, Route109_Text_AustinaIntro, Route109_Text_AustinaDefeated
 	msgbox Route109_Text_AustinaPostBattle, MSGBOX_AUTOCLOSE
@@ -463,16 +458,6 @@ Route109_EventScript_Paul::
 Route109_EventScript_Mel::
 	trainerbattle_double TRAINER_MEL_AND_PAUL, Route109_Text_MelIntro, Route109_Text_MelDefeated, Route109_Text_MelNotEnoughPokemon
 	msgbox Route109_Text_MelPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route109_EventScript_Chandler::
-	trainerbattle_single TRAINER_CHANDLER, Route109_Text_ChandlerIntro, Route109_Text_ChandlerDefeated
-	msgbox Route109_Text_ChandlerPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route109_EventScript_Hailey::
-	trainerbattle_single TRAINER_HAILEY, Route109_Text_HaileyIntro, Route109_Text_HaileyDefeated
-	msgbox Route109_Text_HaileyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route109_EventScript_Elijah::
@@ -551,9 +536,6 @@ Route109_Text_ZigzagoonPicksUpLitter:
 	.string "rivers, which we drink from…\p"
 	.string "If we pollute the sea, it all comes\n"
 	.string "back to haunt us eventually.$"
-
-Route109_Text_ZigzagoonCry:
-	.string "Zigzagoon: Guguu?$"
 
 Route109_Text_SeashoreHouseSign:
 	.string "SEASHORE HOUSE\p"

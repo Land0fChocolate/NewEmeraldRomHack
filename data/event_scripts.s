@@ -1086,3 +1086,57 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/MauvilleCity_GroomerHouse/scripts.inc"
 
 	.include "data/maps/MauvilleCity_TVStation/scripts.inc"
+
+	.include "data/maps/OldaleFarm/scripts.inc"
+
+	.include "data/maps/OldaleFarm_House/scripts.inc"
+
+	.include "data/maps/EverGrandeCity_BattleTent/scripts.inc"
+
+	.include "data/maps/LittlerootBeach/scripts.inc"
+
+	.include "data/maps/FillerSeaPatch/scripts.inc"
+
+	.include "data/maps/FallarborWasteland/scripts.inc"
+
+	.include "data/maps/FallarborWastelandFiller/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area1/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area2/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area3/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area4/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area5/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area6/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area7/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area8/scripts.inc"
+
+	.include "data/maps/Wildwoods_Area9/scripts.inc"
+
+	.include "data/maps/MauvilleMeadow/scripts.inc"
+
+	.include "data/maps/FortreeLake/scripts.inc"
+
+	.include "data/maps/FortreeJungle_Area1/scripts.inc"
+
+	.include "data/maps/FortreeJungle_Area2/scripts.inc"
+
+	.include "data/maps/FortreeJungle_Area3/scripts.inc"
+
+	.include "data/maps/LustrousLair/scripts.inc"
+
+	.include "data/maps/DerelictDen/scripts.inc"
+
+	.include "data/maps/FieryThrone/scripts.inc"
+
+	.include "data/maps/ConquerorsCamp/scripts.inc"
+
+	.include "data/maps/RoyalRest/scripts.inc"
+
+	.include "data/maps/SagesSanctuary/scripts.inc"

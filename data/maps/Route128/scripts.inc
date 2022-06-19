@@ -136,25 +136,9 @@ Route128_Movement_ArchieExit:
 	step_end
 
 Route128_EventScript_Isaiah::
-	trainerbattle_single TRAINER_ISAIAH_1, Route128_Text_IsaiahIntro, Route128_Text_IsaiahDefeat, Route128_EventScript_RegisterIsaiah
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route128_EventScript_RematchIsaiah
-	msgbox Route128_Text_IsaiahPostBattle, MSGBOX_DEFAULT
+	trainerbattle_single TRAINER_ISAIAH, Route128_Text_IsaiahIntro, Route128_Text_IsaiahDefeat
+	msgbox Route128_Text_IsaiahPostBattle, MSGBOX_AUTOCLOSE
 	release
-	end
-
-Route128_EventScript_RegisterIsaiah::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route128_Text_IsaiahRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_ISAIAH_1
-	release
-	end
-
-Route128_EventScript_RematchIsaiah::
-	trainerbattle_rematch TRAINER_ISAIAH_1, Route128_Text_IsaiahRematchIntro, Route128_Text_IsaiahRematchDefeat
-	msgbox Route128_Text_IsaiahPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route128_EventScript_Katelyn::

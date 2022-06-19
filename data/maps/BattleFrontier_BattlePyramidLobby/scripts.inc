@@ -491,6 +491,10 @@ BattleFrontier_BattlePyramidLobby_EventScript_FatMan::
 	msgbox BattleFrontier_BattlePyramidLobby_Text_LostLotOfItems, MSGBOX_NPC
 	end
 
+BattleFrontier_BattlePyramidLobby_EventScript_Ranger::
+	msgbox BattleFrontier_BattlePyramidLobby_Text_PokemonUsePickUp, MSGBOX_NPC
+	end
+
 BattleFrontier_BattlePyramidLobby_EventScript_RulesBoard::
 	lockall
 	msgbox BattleFrontier_BattlePyramidLobby_Text_RulesAreListed, MSGBOX_DEFAULT
@@ -859,6 +863,12 @@ BattleFrontier_BattlePyramidLobby_Text_LostLotOfItems:
 	.string "I had a whole lot of items, but I lost\n"
 	.string "them all when I lost!\p"
 	.string "Awaaaaaaarrrrgh!$"
+
+BattleFrontier_BattlePyramidLobby_Text_PokemonUsePickUp:
+	.string "I have a nifty strategy when tackling\n"
+	.string "the pyramid.\p"
+	.string "My Pokémon has the Pick Up ability, so\n"
+	.string "it can find extra items after battles.$"
 
 BattleFrontier_BattlePyramidLobby_Text_YouveDefeatedPyramidKing:
 	.string "Welcome back!\n"

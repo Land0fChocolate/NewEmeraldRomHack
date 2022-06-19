@@ -147,36 +147,14 @@ Route123_EventScript_Jonas::
 	msgbox Route123_Text_JonasPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route123_EventScript_Jazmyn::
-	trainerbattle_single TRAINER_JAZMYN, Route123_Text_JazmynIntro, Route123_Text_JazmynDefeat
-	msgbox Route123_Text_JazmynPostBattle, MSGBOX_AUTOCLOSE
+Route123_EventScript_Kylie::
+	trainerbattle_single TRAINER_KYLIE, Route123_Text_KylieIntro, Route123_Text_KylieDefeat
+	msgbox Route123_Text_KyliePostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route123_EventScript_Davis::
-	trainerbattle_single TRAINER_DAVIS, Route123_Text_DavisIntro, Route123_Text_DavisDefeat
-	msgbox Route123_Text_DavisPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route123_EventScript_Fernando::
-	trainerbattle_single TRAINER_FERNANDO_1, Route123_Text_FernandoIntro, Route123_Text_FernandoDefeat, Route123_EventScript_RegisterFernando
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	compare VAR_RESULT, TRUE
-	goto_if_eq Route123_EventScript_RematchFernando
-	msgbox Route123_Text_FernandoPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-Route123_EventScript_RegisterFernando::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox Route123_Text_FernandoRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_FERNANDO_1
-	release
-	end
-
-Route123_EventScript_RematchFernando::
-	trainerbattle_rematch TRAINER_FERNANDO_1, Route123_Text_FernandoRematchIntro, Route123_Text_FernandoRematchDefeat
-	msgbox Route123_Text_FernandoPostRematch, MSGBOX_AUTOCLOSE
+Route123_EventScript_Hannibal::
+	trainerbattle_single TRAINER_HANNIBAL, Route123_Text_HannibalIntro, Route123_Text_HannibalDefeat
+	msgbox Route123_Text_HannibalPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route123_Text_LoveGrassMonsHaveAny:

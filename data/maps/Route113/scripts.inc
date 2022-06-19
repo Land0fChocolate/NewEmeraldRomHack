@@ -53,6 +53,11 @@ Route113_EventScript_Jaylen::
 	msgbox Route113_Text_JaylenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route113_EventScript_Franny::
+	trainerbattle_single TRAINER_FRANNY, Route113_Text_FrannyIntro, Route113_Text_FrannyDefeat
+	msgbox Route113_Text_FrannyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 Route113_EventScript_Dillon::
 	trainerbattle_single TRAINER_DILLON, Route113_Text_DillonIntro, Route113_Text_DillonDefeat
 	msgbox Route113_Text_DillonPostBattle, MSGBOX_AUTOCLOSE
@@ -115,16 +120,6 @@ Route113_EventScript_Tori::
 Route113_EventScript_Tia::
 	trainerbattle_double TRAINER_TORI_AND_TIA, Route113_Text_TiaIntro, Route113_Text_TiaDefeat, Route113_Text_TiaNotEnoughMons
 	msgbox Route113_Text_TiaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route113_EventScript_Sophie::
-	trainerbattle_single TRAINER_SOPHIE, Route113_Text_SophieIntro, Route113_Text_SophieDefeat
-	msgbox Route113_Text_SophiePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route113_EventScript_Coby::
-	trainerbattle_single TRAINER_COBY, Route113_Text_CobyIntro, Route113_Text_CobyDefeat
-	msgbox Route113_Text_CobyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route113_EventScript_Lawrence::

@@ -6,6 +6,7 @@
 LittlerootTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_OnFrame
+	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_OnLoad
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_OnWarp
 	.byte 0
 
@@ -233,6 +234,27 @@ LittlerootTown_EventScript_BeginDexUpgradeScene::
 	warp MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 255, 6, 5
 	waitstate
 	releaseall
+	end
+
+LittlerootTown_OnLoad:
+	call_if_unset FLAG_SYS_GAME_CLEAR, LittlerootTown_EventScript_CloseLittlerootBeachPath
+	end
+
+LittlerootTown_EventScript_CloseLittlerootBeachPath::
+	setmetatile 10, 19, METATILE_General_Grass_TreeLeft, 0
+	setmetatile 11, 19, METATILE_General_Grass_TreeRight, 0
+	setmetatile 9, 20, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 10, 20, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 11, 20, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 12, 20, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 10, 21, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 11, 21, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 10, 22, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 11, 22, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 10, 23, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 11, 23, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 10, 24, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 11, 24, METATILE_General_FatTreeTopRight_Grass, 1
 	end
 
 LittlerootTown_OnWarp:

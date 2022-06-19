@@ -15,7 +15,7 @@
   "connections": [
     {
       "direction": "down",
-      "offset": 20,
+      "offset": 0,
       "map": "MAP_ROUTE122"
     },
     {
@@ -27,6 +27,11 @@
       "direction": "right",
       "offset": -10,
       "map": "MAP_LILYCOVE_CITY"
+    },
+    {
+      "direction": "left",
+      "offset": 16,
+      "map": "MAP_FORTREE_LAKE"
     }
   ],
   "object_events": [
@@ -291,19 +296,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 55,
-      "y": 10,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route121_EventScript_ItemCarbos",
-      "flag": "FLAG_ITEM_ROUTE_121_CARBOS"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
       "x": 26,
       "y": 12,
@@ -327,32 +319,6 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route121_EventScript_Cale",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
-      "x": 59,
-      "y": 8,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
-      "script": "Route121_EventScript_Myles",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 59,
-      "y": 13,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
-      "script": "Route121_EventScript_Pat",
       "flag": "0"
     },
     {
@@ -383,7 +349,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 60,
+      "x": 55,
       "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -396,8 +362,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 38,
-      "y": 13,
+      "x": 22,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -523,7 +489,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 58,
+      "x": 51,
       "y": 3,
       "elevation": 3,
       "item": "ITEM_NUGGET",

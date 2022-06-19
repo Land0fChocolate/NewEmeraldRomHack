@@ -145,14 +145,9 @@ JaggedPass_EventScript_EthanRematch::
 	msgbox JaggedPass_Text_EthanPostRematch, MSGBOX_AUTOCLOSE
 	end
 
-JaggedPass_EventScript_Julio::
-	trainerbattle_single TRAINER_JULIO, JaggedPass_Text_JulioIntro, JaggedPass_Text_JulioDefeat
-	msgbox JaggedPass_Text_JulioPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-JaggedPass_EventScript_Autumn::
-	trainerbattle_single TRAINER_AUTUMN, JaggedPass_Text_AutumnIntro, JaggedPass_Text_AutumnDefeat
-	msgbox JaggedPass_Text_AutumnPostBattle, MSGBOX_AUTOCLOSE
+JaggedPass_EventScript_Nellie::
+	trainerbattle_single TRAINER_NELLIE, JaggedPass_Text_NellieIntro, JaggedPass_Text_NellieDefeat
+	msgbox JaggedPass_Text_NelliePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 JaggedPass_Text_EricIntro:
@@ -198,6 +193,20 @@ JaggedPass_Text_DianaRematchDefeat:
 JaggedPass_Text_DianaPostRematch:
 	.string "I'll forget about losing and just\n"
 	.string "enjoy this bumpy hike.$"
+
+JaggedPass_Text_NellieIntro:
+	.string "This little piggy went to market,\n"
+	.string "this little piggy stayed at home.\p"
+	.string "And this little piggy is about to\n"
+	.string "become bacon for this little girl!$"
+
+JaggedPass_Text_NellieDefeat:
+	.string "This little piggy bites back!$"
+
+JaggedPass_Text_NelliePostBattle:
+	.string "I love watching the Spoink bounce around\n"
+	.string "here. I wonder if I can catch one?\l"
+	.string "Hehehehe$"
 
 JaggedPass_Text_EthanIntro:
 	.string "Jagged Pass is hard to walk on.\n"

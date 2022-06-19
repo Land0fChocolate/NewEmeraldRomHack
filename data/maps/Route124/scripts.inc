@@ -1,10 +1,20 @@
 Route124_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Route124_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, Route124_OnTransition
 	.byte 0
 
 Route124_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	end
+
+Route124_OnLoad:
+	call_if_unset FLAG_SYS_GAME_CLEAR, Route124_EventScript_CloseLustrousLair
+	end
+
+Route124_EventScript_CloseLustrousLair::
+	setmetatile 51, 10, METATILE_General_RockWall_RockBase, 1
+	setmetatile 51, 11, METATILE_General_RockWall_GrassBase, 1
+	return
 
 Route124_EventScript_HuntersHouseSign::
 	msgbox Route124_Text_HuntersHouse, MSGBOX_SIGN

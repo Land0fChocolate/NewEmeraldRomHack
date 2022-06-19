@@ -11,12 +11,30 @@ Route103_OnTransition:
 	end
 
 Route103_OnLoad:
-	call_if_set FLAG_SYS_GAME_CLEAR, Route103_EventScript_OpenAlteringCave
+	call_if_unset FLAG_SYS_GAME_CLEAR, Route103_EventScript_CloseDerelictDen
+	call_if_unset FLAG_SYS_GAME_CLEAR, Route103_EventScript_CloseWildwoods
 	end
 
-Route103_EventScript_OpenAlteringCave::
-	setmetatile 45, 5, METATILE_General_CaveEntrance_Top, 1
-	setmetatile 45, 6, METATILE_General_CaveEntrance_Bottom, 0
+Route103_EventScript_CloseDerelictDen::
+	setmetatile 45, 11, METATILE_General_RockWall_RockBase, 1
+	setmetatile 45, 12, METATILE_General_RockWall_SandBase, 1
+	return
+
+Route103_EventScript_CloseWildwoods::
+	setmetatile 8, 2, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 9, 2, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 8, 3, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 9, 3, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 8, 4, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 9, 4, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 8, 5, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 9, 5, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 8, 6, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 9, 6, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 7, 7, METATILE_General_FatTreeBotRight, 1
+	setmetatile 8, 7, METATILE_General_FatTreeBotLeft, 1
+	setmetatile 9, 7, METATILE_General_FatTreeBotRight, 1
+	setmetatile 10, 7, METATILE_General_FatTreeBotLeft, 1
 	return
 
 Route103_EventScript_Rival::
@@ -281,16 +299,6 @@ Route103_EventScript_Marcos::
 Route103_EventScript_Rhett::
 	trainerbattle_single TRAINER_RHETT, Route103_Text_RhettIntro, Route103_Text_RhettDefeated
 	msgbox Route103_Text_RhettPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Pete::
-	trainerbattle_single TRAINER_PETE, Route103_Text_PeteIntro, Route103_Text_PeteDefeated
-	msgbox Route103_Text_PetePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route103_EventScript_Isabelle::
-	trainerbattle_single TRAINER_ISABELLE, Route103_Text_IsabelleIntro, Route103_Text_IsabelleDefeated
-	msgbox Route103_Text_IsabellePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route103_Text_MayRoute103Pokemon:

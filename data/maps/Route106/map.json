@@ -25,8 +25,13 @@
     },
     {
       "direction": "right",
-      "offset": 0,
+      "offset": 10,
       "map": "MAP_ROUTE107"
+    },
+    {
+      "direction": "right",
+      "offset": 0,
+      "map": "MAP_FILLER_SEA_PATCH"
     }
   ],
   "object_events": [

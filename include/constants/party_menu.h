@@ -10,40 +10,69 @@
 #define AILMENT_PKRS  6
 #define AILMENT_FNT   7
 
-#define TUTOR_MOVE_MEGA_PUNCH      0
-#define TUTOR_MOVE_SWORDS_DANCE    1
-#define TUTOR_MOVE_MEGA_KICK       2
-#define TUTOR_MOVE_BODY_SLAM       3
-#define TUTOR_MOVE_DOUBLE_EDGE     4
-#define TUTOR_MOVE_COUNTER         5
-#define TUTOR_MOVE_SEISMIC_TOSS    6
-#define TUTOR_MOVE_MIMIC           7
-#define TUTOR_MOVE_METRONOME       8
-#define TUTOR_MOVE_SOFT_BOILED     9
-#define TUTOR_MOVE_DREAM_EATER     10
-#define TUTOR_MOVE_THUNDER_WAVE    11
-#define TUTOR_MOVE_EXPLOSION       12
-#define TUTOR_MOVE_ROCK_SLIDE      13
-#define TUTOR_MOVE_SUBSTITUTE      14
-#define TUTOR_MOVE_DYNAMIC_PUNCH   15
-#define TUTOR_MOVE_ROLLOUT         16
-#define TUTOR_MOVE_PSYCH_UP        17
-#define TUTOR_MOVE_SNORE           18
-#define TUTOR_MOVE_ICY_WIND        19
-#define TUTOR_MOVE_ENDURE          20
-#define TUTOR_MOVE_MUD_SLAP        21
-#define TUTOR_MOVE_ICE_PUNCH       22
-#define TUTOR_MOVE_SWAGGER         23
-#define TUTOR_MOVE_SLEEP_TALK      24
-#define TUTOR_MOVE_SWIFT           25
-#define TUTOR_MOVE_DEFENSE_CURL    26
-#define TUTOR_MOVE_THUNDER_PUNCH   27
-#define TUTOR_MOVE_FIRE_PUNCH      28
-#define TUTOR_MOVE_FURY_CUTTER     29
-#define TUTOR_MOVE_SERPENT_DANCE   30
-#define TUTOR_MOVE_FLINT_BLADE     31
-#define TUTOR_MOVE_FLARE_CRASH     32
-#define TUTOR_MOVE_COUNT           33
+#define TUTOR_MOVE_SWORDS_DANCE    0 //Battle Frontier
+#define TUTOR_MOVE_BODY_SLAM       1 //Battle Frontier
+#define TUTOR_MOVE_DOUBLE_EDGE     2 //During Mainline
+#define TUTOR_MOVE_COUNTER         3 //Battle Frontier
+#define TUTOR_MOVE_SEISMIC_TOSS    4 //Battle Frontier
+#define TUTOR_MOVE_MIMIC           5 //During Mainline
+#define TUTOR_MOVE_METRONOME       6 //During Mainline
+#define TUTOR_MOVE_SOFT_BOILED     7 //Battle Frontier
+#define TUTOR_MOVE_DREAM_EATER     8 //Battle Frontier
+#define TUTOR_MOVE_GASTRO_ACID     9
+#define TUTOR_MOVE_EXPLOSION       10 //During Mainline
+#define TUTOR_MOVE_PSYCHIC_FANGS   11
+#define TUTOR_MOVE_SUBSTITUTE      12 //During Mainline
+#define TUTOR_MOVE_DYNAMIC_PUNCH   13 //During Mainline
+#define TUTOR_MOVE_ROLLOUT         14 //During Mainline
+#define TUTOR_MOVE_PSYCH_UP        15 //Battle Frontier
+#define TUTOR_MOVE_SNORE           16 //Battle Frontier
+#define TUTOR_MOVE_ICY_WIND        17 //Battle Frontier
+#define TUTOR_MOVE_ENDURE          18 //Battle Frontier
+#define TUTOR_MOVE_EARTH_POWER     19
+#define TUTOR_MOVE_ICE_PUNCH       20 //Battle Frontier
+#define TUTOR_MOVE_SWAGGER         21 //During Mainline
+#define TUTOR_MOVE_SLEEP_TALK      22 //During Mainline
+#define TUTOR_MOVE_SWIFT           23 //Battle Frontier
+#define TUTOR_MOVE_DEFENSE_CURL    24 //Battle Frontier
+#define TUTOR_MOVE_THUNDER_PUNCH   25 //Battle Frontier
+#define TUTOR_MOVE_FIRE_PUNCH      26 //Battle Frontier
+#define TUTOR_MOVE_FURY_CUTTER     27 //During Mainline
+#define TUTOR_MOVE_SERPENT_DANCE   28 //Battle Frontier
+#define TUTOR_MOVE_FLINT_BLADE     29 //Battle Frontier
+#define TUTOR_MOVE_FLARE_CRASH     30 //Battle Frontier
+#define TUTOR_MOVE_WORK_UP         31
+#define TUTOR_MOVE_LOW_SWEEP       32
+#define TUTOR_MOVE_AVALANCHE       33
+#define TUTOR_MOVE_SIGNAL_BEAM     34
+#define TUTOR_MOVE_NASTY_PLOT      35
+#define TUTOR_MOVE_SUPERPOWER      36
+#define TUTOR_MOVE_PLAY_ROUGH      37
+#define TUTOR_MOVE_STORED_POWER    38
+#define TUTOR_MOVE_ROLE_PLAY       39
+#define TUTOR_MOVE_DEFOG           40
+#define TUTOR_MOVE_TRICK           41
+#define TUTOR_MOVE_KNOCK_OFF       42
+#define TUTOR_MOVE_STEALTH_ROCK    43
+#define TUTOR_MOVE_TAILWIND        44
+#define TUTOR_MOVE_BREAKING_SWIPE  45
+#define TUTOR_MOVE_HEAT_WAVE       46
+#define TUTOR_MOVE_GUNK_SHOT       47
+#define TUTOR_MOVE_ZEN_HEADBUTT    48
+#define TUTOR_MOVE_BODY_PRESS      49
+#define TUTOR_MOVE_WORRY_SEED      50
+#define TUTOR_MOVE_RECYCLE         51
+#define TUTOR_MOVE_LOW_KICK        52
+#define TUTOR_MOVE_MAGIC_COAT      53
+#define TUTOR_MOVE_PAIN_SPLIT      54
+#define TUTOR_MOVE_SEED_BOMB       55
+#define TUTOR_MOVE_IRON_HEAD       56
+#define TUTOR_MOVE_AQUA_TAIL       57
+#define TUTOR_MOVE_FOUL_PLAY       58
+#define TUTOR_MOVE_MEGAHORN        59
+#define TUTOR_MOVE_DRACO_METEOR    60 //Ever Grande City
+
+#define TUTOR_MOVE_COUNT           61
 
 #define PARTY_LAYOUT_SINGLE          0
 #define PARTY_LAYOUT_DOUBLE          1

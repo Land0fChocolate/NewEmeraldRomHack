@@ -2,7 +2,9 @@
 .set LOCALID_VICTORIA, 2
 .set LOCALID_VIVI, 3
 .set LOCALID_VICKY, 4
-.set LOCALID_ROCK_SMASH_MAN, 46
+.set LOCALID_ROCK_SMASH_MAN, 42
+.set LOCALID_GRUNT_1, 44
+.set LOCALID_GRUNT_2, 45
 
 @ Note: LOCALID_ROUTE111_PLAYER_FALLING is a local id for this map used elsewhere. It's defined in event_objects.h
 
@@ -17,6 +19,7 @@ Route111_OnLoad:
 	call_if_unset FLAG_REGI_DOORS_OPENED, Route111_EventScript_CloseDesertRuins
 	compare VAR_MIRAGE_TOWER_STATE, 1
 	call_if_eq Route111_EventScript_ShowTemporaryMirageTower
+	call_if_unset FLAG_SYS_GAME_CLEAR, Route111_EventScript_CloseRoyalRest
 	end
 
 Route111_EventScript_CloseDesertRuins::
@@ -44,6 +47,15 @@ Route111_EventScript_ShowTemporaryMirageTower::
 	setmetatile 18, 58, METATILE_Mauville_MirageTower_TileF, 0
 	setmetatile 19, 58, METATILE_Mauville_MirageTower_Tile10, 0
 	setmetatile 20, 58, METATILE_Mauville_MirageTower_Tile11, 0
+	return
+
+Route111_EventScript_CloseRoyalRest::
+	setmetatile 30, 0, METATILE_General_RockFloor, 0
+	setmetatile 32, 0, METATILE_General_RockFloor, 0
+	setmetatile 30, 1, METATILE_General_RockFloor, 0
+	setmetatile 31, 1, METATILE_General_RockFloor, 0
+	setmetatile 32, 1, METATILE_General_RockFloor, 0
+	setmetatile 31, 2, METATILE_General_RockWall_RockBase, 1
 	return
 
 Route111_OnTransition:
@@ -556,26 +568,6 @@ Route111_EventScript_RematchBrooke::
 	msgbox Route111_Text_BrookePostRematch, MSGBOX_AUTOCLOSE
 	end
 
-Route111_EventScript_Hayden::
-	trainerbattle_single TRAINER_HAYDEN, Route111_Text_HaydenIntro, Route111_Text_HaydenDefeat
-	msgbox Route111_Text_HaydenPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route111_EventScript_Bianca::
-	trainerbattle_single TRAINER_BIANCA, Route111_Text_BiancaIntro, Route111_Text_BiancaDefeat
-	msgbox Route111_Text_BiancaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route111_EventScript_Tyron::
-	trainerbattle_single TRAINER_TYRON, Route111_Text_TyronIntro, Route111_Text_TyronDefeat
-	msgbox Route111_Text_TyronPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route111_EventScript_Celina::
-	trainerbattle_single TRAINER_CELINA, Route111_Text_CelinaIntro, Route111_Text_CelinaDefeat
-	msgbox Route111_Text_CelinaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route111_EventScript_Celia::
 	trainerbattle_single TRAINER_CELIA, Route111_Text_CeliaIntro, Route111_Text_CeliaDefeat
 	msgbox Route111_Text_CeliaPostBattle, MSGBOX_AUTOCLOSE
@@ -589,6 +581,35 @@ Route111_EventScript_Bryan::
 Route111_EventScript_Branden::
 	trainerbattle_single TRAINER_BRANDEN, Route111_Text_BrandenIntro, Route111_Text_BrandenDefeat
 	msgbox Route111_Text_BrandenPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route111_EventScript_Cece::
+	trainerbattle_single TRAINER_CECE, Route111_Text_CeceIntro, Route111_Text_CeceDefeat
+	msgbox Route111_Text_CecePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route111_EventScript_MagmaGrunts::
+	lock
+	applymovement LOCALID_GRUNT_2, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox Route111_Text_MagmaGrunt2Complaint, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GRUNT_1, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox Route111_Text_MagmaGrunt1Argument, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GRUNT_2, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Route111_Text_MagmaGrunt2Reply, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GRUNT_1, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Route111_Text_MagmaGrunt1Reply, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GRUNT_2, Common_Movement_FaceOriginalDirection
+	applymovement LOCALID_GRUNT_1, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	releaseall
 	end
 
 Route111_EventScript_TrainerHillSign::
@@ -748,3 +769,21 @@ Route111_Text_TrainerHillSign:
 	.string "“Scale the heights, you hot-blooded\n"
 	.string "Trainers!”$"
 
+Route111_Text_MagmaGrunt2Complaint:
+	.string "I'm telling you, I should have been\n"
+	.string "picked for the Crumbling Gorge mission.\l"
+	.string "I know the area. I've hit it before.$"
+
+Route111_Text_MagmaGrunt1Argument:
+	.string "The admin told you already.\n"
+	.string "She wanted the other recruits to get\l"
+	.string "some experience.$"
+
+Route111_Text_MagmaGrunt2Reply:
+	.string "Yeah, well, how come they aren't back\n"
+	.string "yet? I'm tired of waiting.\l"
+	.string "That Verdanturf cave isn't that far.$"
+
+Route111_Text_MagmaGrunt1Reply:
+	.string "It's not nearly as tiring as listening\n"
+	.string "to your whining.$"
