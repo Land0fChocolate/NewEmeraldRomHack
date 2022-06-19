@@ -24,8 +24,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Wildwoods_Area7_EventScript_ItemTM75",
-      "flag": "FLAG_ITEM_WILDWOODS_TM75"
+      "script": "Wildwoods_Area7_EventScript_ItemTM99",
+      "flag": "FLAG_ITEM_WILDWOODS_TM99"
     }
   ],
   "warp_events": [

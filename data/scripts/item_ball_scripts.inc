@@ -678,8 +678,8 @@ LittlerootBeach_EventScript_ItemTM58::
 	finditem ITEM_TM58
 	end
 
-Wildwoods_Area7_EventScript_ItemTM75::
-	finditem ITEM_TM75
+Wildwoods_Area7_EventScript_ItemTM99::
+	finditem ITEM_TM99
 	end
 
 FallarborWasteland_EventScript_ItemTM67::
@@ -692,4 +692,8 @@ MauvilleMeadow_EventScript_ItemTM93::
 
 FortreeJungle_Area2_EventScript_ItemTM09::
 	finditem ITEM_TM09
+	end
+
+CrumblingGorge_EventScript_ItemTM59::
+	finditem ITEM_TM59
 	end

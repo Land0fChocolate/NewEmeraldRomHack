@@ -958,7 +958,7 @@
 #define FLAG_HIDE_MAUVILLE_GYM_WATTSON                              0x391
 #define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                        0x392
 #define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
-#define FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE                             0x394 //unused
+#define FLAG_HIDE_ROUTE_111_MAGMA_GRUNTS                            0x394
 #define FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA                          0x395
 #define FLAG_HIDE_BATTLE_TOWER_REPORTER                             0x396
 #define FLAG_HIDE_ROUTE_110_RIVAL                                   0x397
@@ -1077,7 +1077,7 @@
 #define FLAG_ITEM_ROUTE_120_NUGGET                                  0x406
 #define FLAG_ITEM_ROUTE_120_FULL_HEAL                               0x407
 #define FLAG_ITEM_ROUTE_123_CALCIUM                                 0x408
-#define FLAG_ITEM_WILDWOODS_TM75                                    0x409
+#define FLAG_ITEM_WILDWOODS_TM99                                    0x409
 #define FLAG_ITEM_ROUTE_127_ZINC                                    0x40A
 #define FLAG_ITEM_ROUTE_127_CARBOS                                  0x40B
 #define FLAG_ITEM_ROUTE_132_RARE_CANDY                              0x40C
@@ -1182,7 +1182,7 @@
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
 #define FLAG_ITEM_LITTLEROOT_BEACH_TM58                             0x470
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
-#define FLAG_UNUSED_0x472                                           0x472 // Unused Flag
+#define FLAG_ITEM_CRUMBLING_GORGE_TM59                              0x472 // Unused Flag
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_POTION                                  0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475

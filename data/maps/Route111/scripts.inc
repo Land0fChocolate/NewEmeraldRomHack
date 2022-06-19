@@ -2,7 +2,9 @@
 .set LOCALID_VICTORIA, 2
 .set LOCALID_VIVI, 3
 .set LOCALID_VICKY, 4
-.set LOCALID_ROCK_SMASH_MAN, 46
+.set LOCALID_ROCK_SMASH_MAN, 42
+.set LOCALID_GRUNT_1, 44
+.set LOCALID_GRUNT_2, 45
 
 @ Note: LOCALID_ROUTE111_PLAYER_FALLING is a local id for this map used elsewhere. It's defined in event_objects.h
 
@@ -586,6 +588,30 @@ Route111_EventScript_Cece::
 	msgbox Route111_Text_CecePostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route111_EventScript_MagmaGrunts::
+	lock
+	applymovement LOCALID_GRUNT_2, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox Route111_Text_MagmaGrunt2Complaint, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GRUNT_1, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox Route111_Text_MagmaGrunt1Argument, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GRUNT_2, Common_Movement_WalkInPlaceFastestLeft
+	waitmovement 0
+	msgbox Route111_Text_MagmaGrunt2Reply, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GRUNT_1, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox Route111_Text_MagmaGrunt1Reply, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GRUNT_2, Common_Movement_FaceOriginalDirection
+	applymovement LOCALID_GRUNT_1, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	releaseall
+	end
+
 Route111_EventScript_TrainerHillSign::
 	msgbox Route111_Text_TrainerHillSign, MSGBOX_SIGN
 	end
@@ -743,3 +769,21 @@ Route111_Text_TrainerHillSign:
 	.string "“Scale the heights, you hot-blooded\n"
 	.string "Trainers!”$"
 
+Route111_Text_MagmaGrunt2Complaint:
+	.string "I'm telling you, I should have been\n"
+	.string "picked for the Crumbling Gorge mission.\l"
+	.string "I know the area. I've hit it before.$"
+
+Route111_Text_MagmaGrunt1Argument:
+	.string "The admin told you already.\n"
+	.string "She wanted the other recruits to get\l"
+	.string "some experience.$"
+
+Route111_Text_MagmaGrunt2Reply:
+	.string "Yeah, well, how come they aren't back\n"
+	.string "yet? I'm tired of waiting.\l"
+	.string "That Verdanturf cave isn't that far.$"
+
+Route111_Text_MagmaGrunt1Reply:
+	.string "It's not nearly as tiring as listening\n"
+	.string "to your whining.$"
