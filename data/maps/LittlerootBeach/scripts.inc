@@ -4,3 +4,6 @@ LittlerootBeach_MapScripts::
 LittlerootBeach_OnTransition:
 	setflag FLAG_LANDMARK_LITTLEROOT_BEACH
 	end
+
+LittlerootTown_EventScript_RivalEncounter::
+	end
