@@ -175,7 +175,7 @@ LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForPokedex:
 	walk_up
 	step_end
 
-LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex::
+LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex:: @TODO: remove
 	lockall
 	delay 30
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_OtherRegionsUpgradeToNational, MSGBOX_DEFAULT
@@ -217,7 +217,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_RIVAL
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2
 	setvar VAR_SCOTT_BF_CALL_STEP_COUNTER, 0
 	setflag FLAG_SCOTT_CALL_BATTLE_FRONTIER

@@ -836,7 +836,7 @@
 #define FLAG_HIDE_FANCLUB_LITTLE_BOY                                0x317
 #define FLAG_HIDE_FANCLUB_LADY                                      0x318
 #define FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT               0x319
-#define FLAG_HIDE_LITTLEROOT_TOWN_RIVAL                             0x31A // unused
+#define FLAG_HIDE_LITTLEROOT_BEACH_RIVAL                            0x31A
 #define FLAG_HIDE_LITTLEROOT_TOWN_BIRCH                             0x31B
 #define FLAG_HIDE_ROUTE_111_GABBY_AND_TY_1                          0x31C
 #define FLAG_HIDE_ROUTE_118_GABBY_AND_TY_1                          0x31D
@@ -898,7 +898,7 @@
 #define FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON                          0x355
 #define FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS                         0x356
 #define FLAG_HIDE_SKY_PILLAR_JUAN                                   0x357
-#define FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE                              0x358 //unused
+#define FLAG_HIDE_LITTLEROOT_BEACH_ZINNIA                           0x358
 #define FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS                              0x359
 #define FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY                       0x35A
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE                     0x35B
