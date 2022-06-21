@@ -466,12 +466,12 @@
 #define FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT       0x1B2 // Unused Flag
 #define FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER   0x1B3 // Unused Flag
 #define FLAG_MOVE_TUTOR_TAUGHT_MIMIC         0x1B4 // Unused Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_METRONOME     0x1B5 // Unused Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_SLEEP_TALK    0x1B6 // Unused Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_SUBSTITUTE    0x1B7 // Unused Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_DYNAMICPUNCH  0x1B8 // Unused Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_DOUBLE_EDGE   0x1B9 // Unused Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_EXPLOSION     0x1BA // Unused Flag
+#define FLAG_DEFEATED_ARTICUNO               0x1B5
+#define FLAG_DEFEATED_ZAPDOS                 0x1B6
+#define FLAG_DEFEATED_MOLTRES                0x1B7
+#define FLAG_DEFEATED_RAIKOU                 0x1B8
+#define FLAG_DEFEATED_ENTEI                  0x1B9
+#define FLAG_DEFEATED_SUICUNE                0x1BA
 #define FLAG_DEFEATED_REGIROCK               0x1BB
 #define FLAG_DEFEATED_REGICE                 0x1BC
 #define FLAG_DEFEATED_REGISTEEL              0x1BD
