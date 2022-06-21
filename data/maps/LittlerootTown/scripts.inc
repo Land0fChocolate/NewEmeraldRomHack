@@ -414,8 +414,6 @@ LittlerootTown_EventScript_FatMan::
 	end
 
 LittlerootTown_EventScript_Boy::
-	setflag FLAG_HIDE_LITTLEROOT_BEACH_ZINNIA @TODO: remove
-	clearflag FLAG_HIDE_LITTLEROOT_BEACH_RIVAL
 	msgbox LittlerootTown_Text_BirchSpendsDaysInLab, MSGBOX_NPC
 	end
 

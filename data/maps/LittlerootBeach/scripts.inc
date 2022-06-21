@@ -218,6 +218,7 @@ LittlerootBeach_EventScript_RivalLeavesPart2::
 	removeobject LOCALID_RIVAL
 	setflag FLAG_HIDE_LITTLEROOT_BEACH_RIVAL
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
+	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 2
 	fadedefaultbgm
 	releaseall
 	end
@@ -258,6 +259,8 @@ LittlerootBeach_Text_MayIntro:
 	.string "Would you ever believe that a pretty\n"
 	.string "place like this is just sitting right\l"
 	.string "next to where we live?\p"
+	.string "This would be a great place to chill out\n"
+	.string "with a cold drink.\p"
 	.string "It's also entirely full of new Pokémon!\p"
 	.string "Even in the water and the rocks.\n"
 	.string "There are new species everywhere!$"

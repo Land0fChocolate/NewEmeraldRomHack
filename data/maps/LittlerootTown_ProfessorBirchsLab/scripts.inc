@@ -29,6 +29,8 @@ LittlerootTown_ProfessorBirchsLab_MapScripts::
 LittlerootTown_ProfessorBirchsLab_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call ProfBirch_EventScript_UpdateLocation
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 2
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ReviewBeachFindingsSetScene
 	compare VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6
 	goto_if_ge LittlerootTown_ProfessorBirchsLab_EventScript_SetAfterJohtoStarterLayout
 	compare VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4
@@ -37,11 +39,17 @@ LittlerootTown_ProfessorBirchsLab_OnTransition:
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_CheckReadyForJohtoStarter
 	end
 
+LittlerootTown_ProfessorBirchsLab_EventScript_ReviewBeachFindingsSetScene::
+	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_LEFT
+	setobjectxyperm LOCALID_RIVAL, 7, 4
+	setobjectmovementtype LOCALID_BIRCH, MOVEMENT_TYPE_FACE_RIGHT
+	end
+
 LittlerootTown_ProfessorBirchsLab_EventScript_CheckReadyForJohtoStarter::
 	specialvar VAR_RESULT, HasAllHoennMons
 	compare VAR_RESULT, TRUE
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_SetReadyForJohtoStarter
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_WANDER_UP_AND_DOWN
+	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_WANDER_AROUND
 	setobjectxyperm LOCALID_RIVAL, 5, 10
 	end
 
@@ -500,6 +508,10 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter::
 LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 	lock
 	faceplayer
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 3
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_NewAreas
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 2
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ReviewBeachFindings
 	compare VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon
 	compare VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2
@@ -507,6 +519,19 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 	goto_if_unset FLAG_HAS_MATCH_CALL, LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
 	goto_if_unset FLAG_ENABLE_PROF_BIRCH_MATCH_CALL, EventScript_RegisterProfBirch
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ReviewBeachFindings::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ReviewingBeachFindings, MSGBOX_DEFAULT
+	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 3
+	clearflag FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_NewAreas
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_NewAreas::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_NewAreas, MSGBOX_DEFAULT
+	release
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon::
@@ -620,6 +645,10 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Machine::
 LittlerootTown_ProfessorBirchsLab_EventScript_Rival::
 	lock
 	faceplayer
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 3
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_RivalHelpWithProf
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 2
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_RivalEnjoyTheBeach
 	compare VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_RivalFuturePlans
 	compare VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6
@@ -631,6 +660,48 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Rival::
 	call_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_MayWhereShouldIGoNext
 	compare VAR_RESULT, FEMALE
 	call_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_BrendanWhereShouldIGoNext
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_RivalHelpWithProf::
+	checkplayergender
+	compare VAR_RESULT, MALE
+	call_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_MayHelpWithProf
+	compare VAR_RESULT, FEMALE
+	call_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_BrendanHelpWithProf
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_MayHelpWithProf::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayHelpWithProf, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BrendanHelpWithProf::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanHelpWithProf, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_RivalEnjoyTheBeach::
+	checkplayergender
+	compare VAR_RESULT, MALE
+	call_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_MayEnjoyTheBeach
+	compare VAR_RESULT, FEMALE
+	call_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_BrendanEnjoyTheBeach
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_MayEnjoyTheBeach::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayBeach, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BrendanEnjoyTheBeach::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanBeach, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
@@ -1059,3 +1130,42 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "we meet. I'll be waiting!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_MayBeach:
+	.string "May: Did you enjoy the beach,\n"
+	.string "{PLAYER}?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BrendanBeach:
+	.string "Brendan: Did you catch anything cool at\n"
+	.string "the beach, {PLAYER}?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ReviewingBeachFindings:
+	.string "Prof. Birch: Welcome back, {PLAYER}!\p"
+	.string "So, what did you think? That beach is\n"
+	.string "not just a cosy holiday spot, huh?\p"
+	.string "Hm… … … …\p"
+	.string "From the data that has been gathered\n"
+	.string "so far, I have a theory that the\l"
+	.string "Pokémon residing in Littleroot Beach\l"
+	.string "did not originate there.\p"
+	.string "{PLAYER}, would you mind checking\n"
+	.string "out the other new areas? It would\l"
+	.string "surely be of great help!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_NewAreas:
+	.string "I have reports of a newly discovered\n"
+	.string "forest north of Oldale.\p"
+	.string "A flowering island east of Route 110.\p"
+	.string "A rough outland west of Fallarbor.\p"
+	.string "A thick jungle west of Lilycove.\p"
+	.string "I wonder what kind of habitats they\n"
+	.string "provide to Pokémon?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_MayHelpWithProf:
+	.string "May: I'm going to stay here and help\n"
+	.string "my dad. Have fun out there!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BrendanHelpWithProf:
+	.string "Brendan: I'll be helping my dad. I'm a\n"
+	.string "bit envious of you\l"
+	.string "get back.$"
