@@ -30,7 +30,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MauvilleMeadow_Eventscript_Shelly",
       "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
@@ -43,7 +43,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MauvilleMeadow_Eventscript_FlowerAqua",
       "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
@@ -56,7 +56,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MauvilleMeadow_Eventscript_ObserveAquaM",
       "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
@@ -69,7 +69,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MauvilleMeadow_Eventscript_ObserveAquaF",
       "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
@@ -82,7 +82,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MauvilleMeadow_Eventscript_WanderAqua",
       "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {

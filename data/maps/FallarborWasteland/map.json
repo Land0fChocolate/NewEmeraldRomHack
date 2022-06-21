@@ -74,7 +74,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "FallarborWasteland_Eventscript_Tabitha",
       "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
@@ -87,7 +87,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "FallarborWasteland_Eventscript_MagmaPostBridge",
       "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
@@ -100,7 +100,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "FallarborWasteland_Eventscript_ObserveMagmaF",
       "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
@@ -113,7 +113,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "FallarborWasteland_Eventscript_ObserveMagmaM",
       "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
@@ -126,7 +126,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "FallarborWasteland_Eventscript_WanderMagma",
       "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {

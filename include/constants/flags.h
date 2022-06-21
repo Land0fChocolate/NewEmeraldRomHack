@@ -659,10 +659,10 @@
 #define FLAG_HIDE_SOOTOPOLIS_OVERWORLD_POKEMON   0x26A
 #define FLAG_HIDE_FLANNERY_HOT_SPRINGS           0x26B
 #define FLAG_FLAG_HIDE_FLANNERY_GYM              0x26C
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
+#define FLAG_MET_COURTNEY_WILDWOODS              0x26D
+#define FLAG_MET_TABITHA_FALLARBOR_WASTES        0x26E
+#define FLAG_MET_SHELLY_MAUVILLE_MEADOW          0x26F
+#define FLAG_MET_MATT_FORTREE_JUNGLE             0x270
 #define FLAG_UNUSED_0x271  0x271 // Unused Flag
 #define FLAG_UNUSED_0x272  0x272 // Unused Flag
 #define FLAG_UNUSED_0x273  0x273 // Unused Flag
