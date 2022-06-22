@@ -8,6 +8,12 @@ FallarborWasteland_OnTransition:
 FallarborWasteland_Eventscript_Tabitha::
 	msgbox FallarborWasteland_Text_TabithaFieldWork, MSGBOX_NPC
 	setflag FLAG_MET_TABITHA_FALLARBOR_WASTES
+	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, FallarborWasteland_Eventscript_CheckForBirchReportCall
+	end
+
+FallarborWasteland_Eventscript_CheckForBirchReportCall::
+	checkmultiflags FLAG_MET_COURTNEY_WILDWOODS, FLAG_MET_SHELLY_MAUVILLE_MEADOW, FLAG_MET_MATT_FORTREE_JUNGLE 
+	goto_if TRUE, Wildwoods_Area9_Eventscript_SetBirchReportCall
 	end
 
 FallarborWasteland_Eventscript_MagmaPostBridge::

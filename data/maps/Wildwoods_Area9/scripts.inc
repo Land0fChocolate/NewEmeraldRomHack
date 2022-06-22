@@ -4,6 +4,26 @@ Wildwoods_Area9_MapScripts::
 Wildwoods_Area9_Eventscript_Courtney::
 	msgbox Wildwoods_Area9_Text_Courtney, MSGBOX_NPC
 	setflag FLAG_MET_COURTNEY_WILDWOODS
+	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, Wildwoods_Area9_Eventscript_CheckForBirchReportCall
+	end
+
+Wildwoods_Area9_Eventscript_CheckForBirchReportCall::
+	checkmultiflags FLAG_MET_TABITHA_FALLARBOR_WASTES, FLAG_MET_SHELLY_MAUVILLE_MEADOW, FLAG_MET_MATT_FORTREE_JUNGLE 
+	goto_if TRUE, Wildwoods_Area9_Eventscript_SetBirchReportCall
+	end
+
+Wildwoods_Area9_Eventscript_SetBirchReportCall::
+	setflag FLAG_BIRCH_CALL_NEW_AREAS_REPORT
+	end
+
+Wildwoods_Area9_EventScript_BirchNewAreasCall::
+	lockall
+	pokenavcall Wildwoods_Area9_Text_BirchNewAreasCall
+	waitmessage
+	clearflag FLAG_BIRCH_CALL_NEW_AREAS_REPORT
+	setflag FLAG_BIRCH_CALLED_PLAYER
+	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 4
+	releaseall
 	end
 
 Wildwoods_Area9_Eventscript_MagmaF::
@@ -33,6 +53,20 @@ Wildwoods_Area9_Text_StudyingEnviroment:
 
 Wildwoods_Area9_Text_MagmaM:
 	.string "Every area in this forest has a unique\n"
-	.string "distribution of Pokémon species,\p"
+	.string "distribution of Pokémon species.\p"
 	.string "Some of the areas also have Pokémon\n"
 	.string "that are not found in others.$"
+
+Wildwoods_Area9_Text_BirchNewAreasCall:
+	.string "… … … … … …\n"
+	.string "… … … … … Beep!\p"
+	.string "Prof. Birch: Hey {PLAYER}!\n"
+	.string "How goes the expedition?\p"
+	.string "We've made some significant progress\n"
+	.string "on the Pokémon in the new areas.\p"
+	.string "When you have finished your trip\n"
+	.string "could you come back to the lab?\l"
+	.string "It would be great to compare our\n"
+	.string "notes!\p"
+	.string "… … … … … …\n"
+	.string "… … … … … Click!$"

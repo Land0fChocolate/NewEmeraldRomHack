@@ -611,6 +611,11 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
             ScriptContext1_SetupScript(RustboroCity_Gym_EventScript_RegisterRoxanne);
             return TRUE;
         }
+        if (ShouldDoBirchNewAreasReportCall() == TRUE)
+        {
+            ScriptContext1_SetupScript(Wildwoods_Area9_EventScript_BirchNewAreasCall);
+            return TRUE;
+        }
     }
 
     if (SafariZoneTakeStep() == TRUE)

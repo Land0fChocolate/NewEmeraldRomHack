@@ -8,6 +8,12 @@ MauvilleMeadow_OnTransition:
 MauvilleMeadow_Eventscript_Shelly::
 	msgbox MauvilleMeadow_Text_Shelly, MSGBOX_NPC
 	setflag FLAG_MET_SHELLY_MAUVILLE_MEADOW
+	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, MauvilleMeadow_Eventscript_CheckForBirchReportCall
+	end
+
+MauvilleMeadow_Eventscript_CheckForBirchReportCall::
+	checkmultiflags FLAG_MET_COURTNEY_WILDWOODS, FLAG_MET_TABITHA_FALLARBOR_WASTES, FLAG_MET_MATT_FORTREE_JUNGLE 
+	goto_if TRUE, Wildwoods_Area9_Eventscript_SetBirchReportCall
 	end
 
 MauvilleMeadow_Eventscript_FlowerAqua::
@@ -50,7 +56,7 @@ MauvilleMeadow_Text_ObserveAquaM:
 
 MauvilleMeadow_Text_ObserveAquaF:
 	.string "It's crazy that such an untouched place\n"
-	.string "is located right nearby Mauville.\p"
+	.string "is located right near by Mauville.\p"
 	.string "I guess there were no easy ways to get\n"
 	.string "here before?$"
 

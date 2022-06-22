@@ -663,8 +663,8 @@
 #define FLAG_MET_TABITHA_FALLARBOR_WASTES        0x26E
 #define FLAG_MET_SHELLY_MAUVILLE_MEADOW          0x26F
 #define FLAG_MET_MATT_FORTREE_JUNGLE             0x270
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
+#define FLAG_BIRCH_CALL_NEW_AREAS_REPORT         0x271
+#define FLAG_BIRCH_CALLED_PLAYER                 0x272
 #define FLAG_UNUSED_0x273  0x273 // Unused Flag
 #define FLAG_UNUSED_0x274  0x274 // Unused Flag
 #define FLAG_UNUSED_0x275  0x275 // Unused Flag

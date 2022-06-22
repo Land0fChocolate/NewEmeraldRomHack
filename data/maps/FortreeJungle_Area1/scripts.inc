@@ -10,8 +10,8 @@ FortreeJungle_Area1_Eventscript_AquaMember::
 	end
 
 FortreeJungle_Area1_Text_AquaMember:
-	.string "This is one thick jungle. It's truly\n"
-	.string "wild here.\p"
+	.string "This is one thick jungle.\n"
+	.string "It's truly wild here.\p"
 	.string "The others have cut their way through.\n"
 	.string "I've moved back to the entrance to\l"
 	.string "record the fauna in this area.$"

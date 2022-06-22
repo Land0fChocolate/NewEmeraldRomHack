@@ -4,6 +4,12 @@ FortreeJungle_Area3_MapScripts::
 FortreeJungle_Area3_Eventscript_Matt::
 	msgbox FortreeJungle_Area3_Text_Matt, MSGBOX_NPC
 	setflag FLAG_MET_MATT_FORTREE_JUNGLE
+	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, FortreeJungle_Area3_Eventscript_CheckForBirchReportCall
+	end
+
+FortreeJungle_Area3_Eventscript_CheckForBirchReportCall::
+	checkmultiflags FLAG_MET_COURTNEY_WILDWOODS, FLAG_MET_TABITHA_FALLARBOR_WASTES, FLAG_MET_SHELLY_MAUVILLE_MEADOW 
+	goto_if TRUE, Wildwoods_Area9_Eventscript_SetBirchReportCall
 	end
 
 FortreeJungle_Area3_Eventscript_AquaMemberF::
@@ -37,4 +43,4 @@ FortreeJungle_Area3_Text_AquaMemberM:
 	.string "Some Pokémon seem to love this dense\n"
 	.string "vegetation. For me, it feels cramped.\p"
 	.string "I'm pretty sure I saw some of these\n"
-	.string "plants move on their own as well…"
+	.string "plants move on their own as well…$"
