@@ -38,22 +38,26 @@ FallarborWasteland_Text_TabithaFieldWork:
 	.string "We're now looking for other ways to help\n"
 	.string "humanity's progress, whilst also\l"
 	.string "preserving the natural world.\p"
-	.string "We're even collaborating with Team Aqua.\p"
+	.string "We even have a collaboration with\n"
+	.string "Team Aqua.\p"
 	.string "Here, we're performing an inspection\n"
-	.string "on a newly discovered area. We already\l"
-	.string "have some interesting findings.$"
+	.string "on a newly discovered area.\l"
+	.string "We already have some good findings.$"
 
 FallarborWasteland_Text_BridgeMagma:
+	.string "The fact that this bridge exists, means\n"
+	.string "that humans have been here before a long\l"
+	.string "time ago.\p"
+	.string "We should be careful when digging. There\n"
+	.string "could be ancient artefects hidden in the\l"
+	.string "dirt.$"
+
+FallarborWasteland_Text_ObserveMagmaF:
 	.string "The soil is too poor for most plants.\n"
 	.string "This place is very much a wasteland.\p"
 	.string "These caverns cut into the land are\n"
 	.string "promising though, it could expose some\l"
 	.string "useful minerals.$"
-
-FallarborWasteland_Text_ObserveMagmaF:
-	.string "We've spotted a minor legendary Pokémon\n"
-	.string "flying in the area. It probably has\l"
-	.string "a lair somewhere around here.$"
 
 FallarborWasteland_Text_ObserveMagmaM:
 	.string "We're here to inspect the land of the\n"

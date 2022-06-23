@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SagesSanctuary_Eventscript_Suicune",
-      "flag": "0"
+      "flag": "FLAG_DEFEATED_SUICUNE"
     }
   ],
   "warp_events": [

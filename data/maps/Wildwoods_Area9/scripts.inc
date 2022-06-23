@@ -23,6 +23,7 @@ Wildwoods_Area9_EventScript_BirchNewAreasCall::
 	clearflag FLAG_BIRCH_CALL_NEW_AREAS_REPORT
 	setflag FLAG_BIRCH_CALLED_PLAYER
 	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 4
+	clearflag FLAG_HIDE_MAXIE_ARCHIE_BIRCH_LAB
 	releaseall
 	end
 
@@ -62,11 +63,11 @@ Wildwoods_Area9_Text_BirchNewAreasCall:
 	.string "… … … … … Beep!\p"
 	.string "Prof. Birch: Hey {PLAYER}!\n"
 	.string "How goes the expedition?\p"
-	.string "We've made some significant progress\n"
+	.string "We've made significant progress\n"
 	.string "on the Pokémon in the new areas.\p"
 	.string "When you have finished your trip\n"
 	.string "could you come back to the lab?\l"
-	.string "It would be great to compare our\n"
+	.string "It would be great to compare our\l"
 	.string "notes!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"

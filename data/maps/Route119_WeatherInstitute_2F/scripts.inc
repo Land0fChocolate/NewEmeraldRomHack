@@ -8,6 +8,8 @@
 .set LOCALID_RIVAL, 8
 .set LOCALID_SCIENTIST, 10
 .set LOCALID_ZINNIA_AQUA, 12
+.set LOCALID_CASTFORM2, 14
+.set LOCALID_ZINNIA, 18
 
 Route119_WeatherInstitute_2F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route119_WeatherInstitute_2F_OnTransition
@@ -18,8 +20,28 @@ Route119_WeatherInstitute_2F_OnTransition:
 	call_if_eq Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaHere
 	compare VAR_WEATHER_INSTITUTE_STATE, 1
 	call_if_eq Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaGone
-	call_if_set FLAG_SYS_GAME_CLEAR, Route119_WeatherInstitute_2F_EventScript_SetScientistPosGameClear
+	@ 2 is basically a nothing happening state, business as usual.
+	compare VAR_WEATHER_INSTITUTE_STATE, 3
+	call_if_eq Route119_WeatherInstitute_2F_EventScript_SetZinniaMeetUpScene
+	compare VAR_WEATHER_INSTITUTE_STATE, 4
+	call_if_eq Route119_WeatherInstitute_2F_EventScript_ZinniaWithScientist
+	compare VAR_WEATHER_INSTITUTE_STATE, 5
+	call_if_eq Route119_WeatherInstitute_2F_EventScript_SetScientistPosGameClear
 	end
+
+Route119_WeatherInstitute_2F_EventScript_ZinniaWithScientist::
+	setobjectxyperm LOCALID_SCIENTIST, 2, 2
+	setobjectmovementtype LOCALID_SCIENTIST, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_CASTFORM2, 6, 5
+	setobjectxyperm LOCALID_ZINNIA, 1, 2
+	setobjectmovementtype LOCALID_ZINNIA, MOVEMENT_TYPE_FACE_UP
+	return
+
+Route119_WeatherInstitute_2F_EventScript_SetZinniaMeetUpScene:: @DO
+	setobjectxyperm LOCALID_SCIENTIST, 2, 2
+	setobjectmovementtype LOCALID_SCIENTIST, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_CASTFORM2, 6, 5
+	return
 
 Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaHere::
 	setobjectxyperm LOCALID_SCIENTIST, 1, 6
@@ -34,6 +56,7 @@ Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaGone::
 Route119_WeatherInstitute_2F_EventScript_SetScientistPosGameClear::
 	setobjectxyperm LOCALID_SCIENTIST, 2, 2
 	setobjectmovementtype LOCALID_SCIENTIST, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_CASTFORM2, 6, 5
 	return
 
 Route119_WeatherInstitute_2F_EventScript_Grunt1::
@@ -74,11 +97,6 @@ Route119_WeatherInstitute_2F_EventScript_Worker2::
 
 Route119_WeatherInstitute_2F_EventScript_FightTrigger::
 	goto Route119_WeatherInstitute_2F_EventScript_FightScene
-	end
-
-Route119_WeatherInstitute_2F_EventScript_ReturnToFightTrigger::
-	msgbox Route119_WeatherInstitute_2F_ReturnToTheFight, MSGBOX_AUTOCLOSE
-	applymovement OBJ_EVENT_ID_PLAYER, Route119_WeatherInstitute_2F_BackToFight
 	end
 
 Route119_WeatherInstitute_2F_BackToFight::
@@ -371,8 +389,11 @@ Route119_WeatherInstitute_2F_EventScript_ExplainCastform::
 	release
 	end
 
-Route119_WeatherInstitute_2F_EventScript_ScientistMentionWeather::
-	goto_if_set FLAG_SYS_GAME_CLEAR, Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather
+Route119_WeatherInstitute_2F_EventScript_ScientistMentionWeather:: @DO
+	compare VAR_WEATHER_INSTITUTE_STATE, 5
+	goto_if_eq Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather
+	compare VAR_WEATHER_INSTITUTE_STATE, 4
+	goto_if_eq Route119_WeatherInstitute_2F_EventScript_PokemonInTheSky
 	msgbox Route119_WeatherInstitute_2F_Text_ChangingWeatherRidiculous, MSGBOX_DEFAULT
 	release
 	end
@@ -410,6 +431,11 @@ Route119_WeatherInstitute_2F_EventScript_NoAbnormalWeather::
 	release
 	end
 
+Route119_WeatherInstitute_2F_EventScript_PokemonInTheSky::
+	msgbox Route119_WeatherInstitute_2F_Text_PokemonInTheSky, MSGBOX_DEFAULT
+	release
+	end
+
 Route119_WeatherInstitute_2F_Movement_RivalLeaves:
 	walk_right
 	walk_right
@@ -436,8 +462,68 @@ Route119_WeatherInstitute_2F_EventScript_WeatherScientist::
 	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform
 	end
 
-Route119_WeatherInstitute_2F_ReturnToTheFight:
-	.string "Return to the fight!$"
+Route119_WeatherInstitute_2F_EventScript_ZinniaTrigger:: @DO
+	lock
+	playse SE_PIN
+	applymovement LOCALID_ZINNIA, Common_Movement_FaceDown
+	waitmovement 0
+	applymovement LOCALID_ZINNIA, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 80
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	msgbox Route119_WeatherInstitute_2F_Text_ZinniaWhatBringsYouHere, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_MYSTIC_TICKET
+	setvar VAR_WEATHER_INSTITUTE_STATE, 4
+	release
+	end
+
+Route119_WeatherInstitute_2F_EventScript_Zinnia::
+	msgbox Route119_WeatherInstitute_2F_Text_ZinniaNavelRock, MSGBOX_NPC
+	end
+
+Route119_WeatherInstitute_2F_Text_ZinniaWhatBringsYouHere:
+	.string "Zinnia: Oh my, it's {PLAYER}!\n"
+	.string "We do seem to meet an awful lot,\l"
+	.string "don't we?\p"
+	.string "What brings you here, are you also\n"
+	.string "interested in the weather?\p"
+	.string "… … … … …\n"
+	.string "Hunting for legendary Pokémon… that\l"
+	.string "sounds exciting!\p"
+	.string "Although, it would be a near impossible\n"
+	.string "task to find Groudon and Kyogre even if\l"
+	.string "you do find their lairs.\p"
+	.string "Unless they deem you worthy of their\n"
+	.string "attention, they won't show themselves to\l"
+	.string "you.\p"
+	.string "Not to worry though, there is a way you\n"
+	.string "can get their notice!\p"
+	.string "That would be to bring to each of them\n"
+	.string "a particular artefact that was from\l"
+	.string "another legendary Pokémon.\p"
+	.string "I know of two good choices, and they\n"
+	.string "both convieniently reside in one place.\p"
+	.string "That place is called Navel Rock.\p"
+	.string "Why do I know all this?\n"
+	.string "Well… I do a lot of reading.\p"
+	.string "Anyways, you'll need to get there by\n"
+	.string "ferry. And you'll need a ticket.\p"
+	.string "Here, borrow mine.$"
+
+Route119_WeatherInstitute_2F_Text_ZinniaNavelRock:
+	.string "Zinnia: Have fun at Navel Rock,\n"
+	.string "{PLAYER}!$"
+
+Route119_WeatherInstitute_2F_Text_PokemonInTheSky:
+	.string "Our sensors have been following a large\n"
+	.string "green snake-like Pokémon that has been\l"
+	.string "flying around in the sky recently.\p"
+	.string "That sky Pokémon has an intriguing power\n"
+	.string "where it manipulates the air currents.\p"
+	.string "I would love to study it up close,\n"
+	.string "but it never seems to land anywhere.$"
 
 Route119_WeatherInstitute_2F_Text_Grunt2Intro:
 	.string "Don't tell me you're looking for that\n"

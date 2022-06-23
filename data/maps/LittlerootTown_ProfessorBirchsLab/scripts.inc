@@ -4,6 +4,8 @@
 .set LOCALID_BALL_CYNDAQUIL, 4
 .set LOCALID_BALL_TOTODILE, 5
 .set LOCALID_BALL_CHIKORITA, 6
+.set LOCALID_MAXIE, 7
+.set LOCALID_ARCHIE, 8
 
 LittlerootTown_ProfessorBirchsLab_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_ProfessorBirchsLab_OnTransition
@@ -29,6 +31,10 @@ LittlerootTown_ProfessorBirchsLab_MapScripts::
 LittlerootTown_ProfessorBirchsLab_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call ProfBirch_EventScript_UpdateLocation
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 5
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindingsSetScene
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 4
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindingsSetScene
 	compare VAR_BIRCH_LAB_POSTGAME_STATE, 2
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ReviewBeachFindingsSetScene
 	compare VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6
@@ -37,6 +43,11 @@ LittlerootTown_ProfessorBirchsLab_OnTransition:
 	goto_if_ge LittlerootTown_ProfessorBirchsLab_EventScript_SetJohtoStarterLayout
 	compare VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_CheckReadyForJohtoStarter
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindingsSetScene::
+	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_RIVAL, 5, 7
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ReviewBeachFindingsSetScene::
@@ -508,6 +519,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedJohtoStarter::
 LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 	lock
 	faceplayer
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 4
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindings
 	compare VAR_BIRCH_LAB_POSTGAME_STATE, 3
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_NewAreas
 	compare VAR_BIRCH_LAB_POSTGAME_STATE, 2
@@ -520,6 +533,116 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 	goto_if_unset FLAG_ENABLE_PROF_BIRCH_MATCH_CALL, EventScript_RegisterProfBirch
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
 	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindings:: @DO
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchLetsSeeWhatYouHave, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BIRCH, Common_Movement_FaceDown
+	getplayerxy VAR_0x8004, VAR_0x8005
+    compare VAR_0x8005, 5
+    goto_if_eq LittlerootTown_ProfessorBirchsLab_Eventscript_PlayerSouthMove
+    compare VAR_0x8004, 5
+    goto_if_eq LittlerootTown_ProfessorBirchsLab_Eventscript_PlayerWestMove
+    compare VAR_0x8005, 3
+    goto_if_eq LittlerootTown_ProfessorBirchsLab_Eventscript_PlayerNorthMove
+    compare VAR_0x8004, 7
+    goto_if_eq LittlerootTown_ProfessorBirchsLab_Eventscript_PlayerEastMove
+LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindingsPart2::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchPlayerReport, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceFastestRight
+	waitmovement 0
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxieQuestionAnswer, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieWhyMakePokemonMigrate, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAXIE, Common_Movement_WalkInPlaceRight
+	waitmovement 0
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxiePeopleNotPrepared, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ARCHIE, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieEcosystemCatastrophe, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchConclusion, MSGBOX_DEFAULT
+	closemessage
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxieDots, MSGBOX_DEFAULT
+	closemessage
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieDots, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAXIE, Common_Movement_FaceDown
+	applymovement LOCALID_ARCHIE, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxieStopLegendarys, MSGBOX_DEFAULT
+	closemessage
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieFindingLegendarys, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 5
+	setvar VAR_WEATHER_INSTITUTE_STATE, 3
+	clearflag FLAG_HIDE_ZINNIA_WEATHER_INSTITUTE
+	end
+
+LittlerootTown_ProfessorBirchsLab_Eventscript_PlayerSouthMove::
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerSouthMove
+	waitmovement 0
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindingsPart2
+	end
+
+LittlerootTown_ProfessorBirchsLab_Eventscript_PlayerEastMove::
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerEastMove
+	waitmovement 0
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindingsPart2
+	end
+
+LittlerootTown_ProfessorBirchsLab_Eventscript_PlayerNorthMove::
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerNorthMove
+	waitmovement 0
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindingsPart2
+	end
+
+LittlerootTown_ProfessorBirchsLab_Eventscript_PlayerWestMove::
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerWestMove
+	waitmovement 0
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindingsPart2
+	end
+
+LittlerootTown_ProfessorBirchsLab_Movement_PlayerSouthMove:
+	walk_down
+	face_up
+	step_end
+
+LittlerootTown_ProfessorBirchsLab_Movement_PlayerEastMove:
+	walk_left
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+LittlerootTown_ProfessorBirchsLab_Movement_PlayerNorthMove:
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+LittlerootTown_ProfessorBirchsLab_Movement_PlayerWestMove:
+	walk_right
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	face_up
+	step_end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ReviewBeachFindings::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ReviewingBeachFindings, MSGBOX_DEFAULT
@@ -645,6 +768,10 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Machine::
 LittlerootTown_ProfessorBirchsLab_EventScript_Rival::
 	lock
 	faceplayer
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 5
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_RivalOnTeamLeaders
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 4
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_RivalOnTeamLeaders
 	compare VAR_BIRCH_LAB_POSTGAME_STATE, 3
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_RivalHelpWithProf
 	compare VAR_BIRCH_LAB_POSTGAME_STATE, 2
@@ -660,6 +787,27 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Rival::
 	call_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_MayWhereShouldIGoNext
 	compare VAR_RESULT, FEMALE
 	call_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_BrendanWhereShouldIGoNext
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_RivalOnTeamLeaders::
+	checkplayergender
+	compare VAR_RESULT, MALE
+	call_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_MayOnTeamLeaders
+	compare VAR_RESULT, FEMALE
+	call_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_BrendanOnTeamLeaders
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_MayOnTeamLeaders::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayOnTeamLeaders, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_BrendanOnTeamLeaders::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanOnTeamLeaders, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
@@ -763,6 +911,34 @@ LittlerootTown_ProfessorBirchsLab_EventScript_MayTakeBreakFromFieldwork::
 LittlerootTown_ProfessorBirchsLab_EventScript_BrendanTakeBreakFromFieldwork::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork, MSGBOX_DEFAULT
 	return
+
+LittlerootTown_ProfessorBirchsLab_EventScript_Maxie::
+	lock
+	faceplayer
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 5
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_MaxieStopLegends
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxieIntro, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_MaxieStopLegends::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxieStopLegendarys, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_Archie::
+	lock
+	faceplayer
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 5
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ArchieFindingLegends
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieIntro, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ArchieFindingLegends::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieFindingLegendarys, MSGBOX_DEFAULT
+	release
+	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_PC::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_PCUsedForResearch, MSGBOX_SIGN
@@ -1153,8 +1329,8 @@ LittlerootTown_ProfessorBirchsLab_Text_ReviewingBeachFindings:
 	.string "surely be of great help!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_NewAreas:
-	.string "I have reports of a newly discovered\n"
-	.string "forest north of Oldale.\p"
+	.string "Prof. Birch: I have reports of a newly\n"
+	.string "discovered forest north of Oldale.\p"
 	.string "A flowering island east of Route 110.\p"
 	.string "A rough outland west of Fallarbor.\p"
 	.string "A thick jungle west of Lilycove.\p"
@@ -1169,3 +1345,124 @@ LittlerootTown_ProfessorBirchsLab_Text_BrendanHelpWithProf:
 	.string "Brendan: I'll be helping my dad. I'm a\n"
 	.string "bit envious of you\l"
 	.string "get back.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_MaxieIntro:
+	.string "Maxie: Child.\p"
+	.string "Ah… forgive me. I should greet you more\n"
+	.string "properly by now, {PLAYER}.\p"
+	.string "You should know that I and Archie have\n"
+	.string "returned the orbs to Mt. Pyre and\l"
+	.string "started making amends.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ArchieIntro:
+	.string "Archie: Hey scamp!\p"
+	.string "Naw… it's {PLAYER}, isn't it?\p"
+	.string "Since some new habitats popped up and\n"
+	.string "we're busy studying them, we decided to\l"
+	.string "join forces with the habitat expert\l"
+	.string "here.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_MayOnTeamLeaders:
+	.string "May: It's weird how the people you were\n"
+	.string "fighting before become allies later.\p"
+	.string "I don't know if I can get used to that,\n"
+	.string "but those two have been surprisingly\l"
+	.string "helpful.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BrendanOnTeamLeaders:
+	.string "Brendan: I'm a little uncomfortable\n"
+	.string "having those two around, but they've\l"
+	.string "been giving us plenty of help.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BirchLetsSeeWhatYouHave:
+	.string "Prof. Birch: Ah, {PLAYER}.\p"
+	.string "I was discussing our research with the\n"
+	.string "leaders of Team Magma and Team Aqua.\l"
+	.string "They have volunteered to share their\l"
+	.string "data with us.\p"
+	.string "Speaking of data, let's see what you\n"
+	.string "have to show me!\p"
+	.string "Hm… … … …\p"
+	.string "This appears to be in line with all the\n"
+	.string "other data…$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BirchPlayerReport:
+	.string "I think we can safely conclude that the\n"
+	.string "Pokémon in the new areas are migrants.\l"
+	.string "Likely from the nearby regions of Johto\l"
+	.string "and Kanto.\p"
+	.string "That does raise the question however…\n"
+	.string "What made them come here?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_MaxieQuestionAnswer:
+	.string "Maxie: That question is easy to answer.\p"
+	.string "Who else has such influence over the\n"
+	.string "ecosystem other than legendary Pokémon\l"
+	.string "like Groudon and Kyogre?\p"
+	.string "It's no coincidence that these new areas\n"
+	.string "revealed themelves shortly after they\l"
+	.string "had awakened.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ArchieWhyMakePokemonMigrate:
+	.string "Archie: Aye, The legends are almost\n"
+	.string "surely behind it, but a better question\l"
+	.string "is why make those Pokémon migrate all\l"
+	.string "the way over here?\l"
+	.string "Their original habitats are doing fine.\p"
+	.string "I don't know what the legends have to\n"
+	.string "gain from this. Perhaps they just do\l"
+	.string "what comes naturally to them?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_MaxiePeopleNotPrepared:
+	.string "Maxie: Whatever the reason, the people\n"
+	.string "of Hoenn are not prepared for this.\p"
+	.string "Our infrastructure would require\n"
+	.string "redesign, and our crops are seriously\l"
+	.string "vulnerable to the new Pokémon.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ArchieEcosystemCatastrophe:
+	.string "Archie: I am concerned with what the\n"
+	.string "teams have been reporting.\p"
+	.string "The population numbers for the new areas\n"
+	.string "are increasing. If they get too high\l"
+	.string "the new Pokémon could be forced to\l"
+	.string "expand into native areas, and push out\l"
+	.string "the native Pokémon.\p"
+	.string "Of course, not forgetting the countless\n"
+	.string "ripple effects the new Pokémon will\l"
+	.string "inevitably cause in the environment…\p"
+	.string "We have a serious risk of ecological\n"
+	.string "catastrophe.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BirchConclusion:
+	.string "Prof. Birch: It appears that since the\n"
+	.string "legendary Pokémon are probably not\l"
+	.string "meant to be awakened at this time,\l"
+	.string "Hoenn is getting out of balance.\p"
+	.string "If the legendary Pokémon are allowed to\n"
+	.string "continue, Hoenn may come into ruin.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_MaxieDots:
+	.string "Maxie: …$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ArchieDots:
+	.string "Archie: …$"
+
+LittlerootTown_ProfessorBirchsLab_Text_MaxieStopLegendarys:
+	.string "Maxie: {PLAYER}…\p"
+	.string "I'm sorry our foolish actions could not\n"
+	.string "be left in the past, and still threaten\l"
+	.string "Hoenn.\p"
+	.string "I ask you, to help us reverse our\n"
+	.string "mistake once and for all, by defeating\l"
+	.string "Groudon and Kyogre.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ArchieFindingLegendarys:
+	.string "Archie: Finding them will be a breeze.\n"
+	.string "Just look for a place with abnormal\l"
+	.string "weather. They'll surely have their lair\l"
+	.string "somewhere around there.\p"
+	.string "The Weather Institute can also help ye\n"
+	.string "with that.\p"
+	.string "Well… it's kinda why I hit it in the\n"
+	.string "first place.$"
