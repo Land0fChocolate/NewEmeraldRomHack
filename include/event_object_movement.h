@@ -195,6 +195,7 @@ void LoadObjectEventPalette(u16 paletteTag);
 u8 GetObjectEventBerryTreeId(u8 objectEventId);
 void SetBerryTreeJustPicked(u8 mapId, u8 mapNumber, u8 mapGroup);
 bool8 IsBerryTreeSparkling(u8, u8, u8);
+u16 GetBoulderRevealFlagByLocalIdAndMap(u8, u8, u8);
 
 void MovementType_None(struct Sprite *);
 void MovementType_LookAround(struct Sprite *);

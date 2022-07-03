@@ -485,7 +485,7 @@ static const struct MatchCallStructTrainer sJuanMatchCallHeader =
 {
     .type = MC_TYPE_TRAINER,
     .mapSec = MAPSEC_EVER_GRANDE_CITY,
-    .flag = FLAG_UNUSED_0x1DE, //TODO: fully build when making Juan fight
+    .flag = FLAG_UNUSED_0x1DA, //TODO: fully build when making Juan fight
     .rematchTableIdx = REMATCH_JUAN,
     .desc = gText_EliteFourMatchCallDesc,
     .name = NULL,

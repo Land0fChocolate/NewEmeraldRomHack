@@ -37,7 +37,7 @@ Route119_WeatherInstitute_2F_EventScript_ZinniaWithScientist::
 	setobjectmovementtype LOCALID_ZINNIA, MOVEMENT_TYPE_FACE_UP
 	return
 
-Route119_WeatherInstitute_2F_EventScript_SetZinniaMeetUpScene:: @DO
+Route119_WeatherInstitute_2F_EventScript_SetZinniaMeetUpScene::
 	setobjectxyperm LOCALID_SCIENTIST, 2, 2
 	setobjectmovementtype LOCALID_SCIENTIST, MOVEMENT_TYPE_FACE_UP
 	setobjectxyperm LOCALID_CASTFORM2, 6, 5
@@ -389,7 +389,7 @@ Route119_WeatherInstitute_2F_EventScript_ExplainCastform::
 	release
 	end
 
-Route119_WeatherInstitute_2F_EventScript_ScientistMentionWeather:: @DO
+Route119_WeatherInstitute_2F_EventScript_ScientistMentionWeather::
 	compare VAR_WEATHER_INSTITUTE_STATE, 5
 	goto_if_eq Route119_WeatherInstitute_2F_EventScript_TryStartAbnormalWeather
 	compare VAR_WEATHER_INSTITUTE_STATE, 4
@@ -462,7 +462,7 @@ Route119_WeatherInstitute_2F_EventScript_WeatherScientist::
 	goto Route119_WeatherInstitute_2F_EventScript_ReceiveCastform
 	end
 
-Route119_WeatherInstitute_2F_EventScript_ZinniaTrigger:: @DO
+Route119_WeatherInstitute_2F_EventScript_ZinniaTrigger::
 	lock
 	playse SE_PIN
 	applymovement LOCALID_ZINNIA, Common_Movement_FaceDown

@@ -190,6 +190,7 @@ RustboroCity_EventScript_Boy2BrineyLeftTunnel::
 	end
 
 RustboroCity_EventScript_Twin::
+	setflag FLAG_HIDE_BOULDER1
 	msgbox RustboroCity_Text_WowYouHavePokemon, MSGBOX_NPC
 	end
 

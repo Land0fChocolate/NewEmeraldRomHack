@@ -45,12 +45,10 @@ FallarborWasteland_Text_TabithaFieldWork:
 	.string "We already have some good findings.$"
 
 FallarborWasteland_Text_BridgeMagma:
-	.string "The fact that this bridge exists, means\n"
-	.string "that humans have been here before a long\l"
-	.string "time ago.\p"
-	.string "We should be careful when digging. There\n"
-	.string "could be ancient artefects hidden in the\l"
-	.string "dirt.$"
+	.string "I was told that this area was recently\n"
+	.string "discovered.\p"
+	.string "If that's the case, how did this bridge\n"
+	.string "get here then?$"
 
 FallarborWasteland_Text_ObserveMagmaF:
 	.string "The soil is too poor for most plants.\n"
