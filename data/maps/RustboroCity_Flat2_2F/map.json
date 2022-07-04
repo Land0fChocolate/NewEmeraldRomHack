@@ -78,7 +78,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_BOULDER_SWITCH_1",
+      "var_value": "0",
+      "script": "RustboroCity_Flat2_1F_Eventscript_BoulderSwitch"
+    }
   ],
   "bg_events": [
 
