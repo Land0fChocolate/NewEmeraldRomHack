@@ -667,7 +667,7 @@
 #define FLAG_BIRCH_CALLED_PLAYER                 0x272
 #define FLAG_HIDE_MAXIE_ARCHIE_BIRCH_LAB         0x273
 #define FLAG_HIDE_ZINNIA_WEATHER_INSTITUTE       0x274
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
+#define FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER4_2    0x275 // Second boulder flag to allow boulders to fall through 2 floors
 #define FLAG_UNUSED_0x276  0x276 // Unused Flag
 #define FLAG_UNUSED_0x277  0x277 // Unused Flag
 #define FLAG_UNUSED_0x278  0x278 // Unused Flag

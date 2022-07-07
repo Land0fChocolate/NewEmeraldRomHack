@@ -112,14 +112,14 @@ NavelRock_Lugia2_Eventscript_BlockCurrent2::
 	setmetatile 7, 22, METATILE_Pacifidlog_DarkOcean_TopLeftLedge, 0
 	setmetatile 8, 22, METATILE_Pacifidlog_SubmergedBoulder_DarkOcean, 1
 	setmetatile 9, 22, METATILE_Pacifidlog_DarkOcean_TopRightLedge, 0
-
 	return
 
 NavelRock_Lugia2_Eventscript_ShowBoulder4::
+	goto_if_set FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER4_2, NavelRock_Lugia2_Eventscript_HideBoulder4
 	goto_if_unset FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER3, NavelRock_Lugia2_Eventscript_HideBoulder4
 	clearflag FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER4
+	setflag FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER4_2
 	end
 
 NavelRock_Lugia2_Eventscript_HideBoulder4::
-	setflag FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER4
 	end
