@@ -4817,7 +4817,7 @@
       "width": 40,
       "height": 30,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_NavelRock",
+      "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/NavelRock_Lugia2/border.bin",
       "blockdata_filepath": "data/layouts/NavelRock_Lugia2/map.bin"
     },
@@ -4827,7 +4827,7 @@
       "width": 40,
       "height": 30,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_NavelRock",
+      "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/NavelRock_Lugia3/border.bin",
       "blockdata_filepath": "data/layouts/NavelRock_Lugia3/map.bin"
     },

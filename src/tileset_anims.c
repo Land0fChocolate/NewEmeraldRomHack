@@ -35,7 +35,6 @@ static void TilesetAnim_Pacifidlog(u16);
 static void TilesetAnim_Sootopolis(u16);
 static void TilesetAnim_BattleFrontierOutsideWest(u16);
 static void TilesetAnim_BattleFrontierOutsideEast(u16);
-static void TilesetAnim_NavelRock(u16);
 static void TilesetAnim_Underwater(u16);
 static void TilesetAnim_SootopolisGym(u16);
 static void TilesetAnim_Cave(u16);
@@ -75,7 +74,6 @@ static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
 static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
-static void QueueAnimTiles_NavelRock_WaterCurrents(u8);
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -760,13 +758,6 @@ void InitTilesetAnim_Pacifidlog(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_Pacifidlog;
 }
 
-void InitTilesetAnim_NavelRock(void)
-{
-    sSecondaryTilesetAnimCounter = sPrimaryTilesetAnimCounter;
-    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
-    sSecondaryTilesetAnimCallback = TilesetAnim_NavelRock;
-}
-
 void InitTilesetAnim_Sootopolis(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -995,12 +986,6 @@ static void TilesetAnim_BattleFrontierOutsideEast(u16 timer)
         QueueAnimTiles_BattleFrontierOutsideEast_Flag(timer >> 3);
 }
 
-static void TilesetAnim_NavelRock(u16 timer)
-{
-    if (timer % 16 == 1)
-        QueueAnimTiles_NavelRock_WaterCurrents(timer >> 4);
-}
-
 static void QueueAnimTiles_General_LandWaterEdge(u16 timer)
 {
     u16 i = timer % 4;
@@ -1032,12 +1017,6 @@ static void QueueAnimTiles_Pacifidlog_WaterCurrents(u8 timer)
 {
     u8 i = timer % 8;
     AppendTilesetAnimToBuffer(gTilesetAnims_Pacifidlog_WaterCurrents[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 496)), 0x100);
-}
-
-static void QueueAnimTiles_NavelRock_WaterCurrents(u8 timer)
-{
-    u8 i = timer % 8;
-    AppendTilesetAnimToBuffer(gTilesetAnims_General_Water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 428)), 0x80);
 }
 
 static void QueueAnimTiles_Mauville_Flowers(u16 timer_div, u8 timer_mod)
