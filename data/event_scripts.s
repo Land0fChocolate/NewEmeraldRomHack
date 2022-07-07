@@ -1140,3 +1140,15 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/RoyalRest/scripts.inc"
 
 	.include "data/maps/SagesSanctuary/scripts.inc"
+
+	.include "data/maps/NavelRock_Lugia1/scripts.inc"
+
+	.include "data/maps/NavelRock_Lugia2/scripts.inc"
+
+	.include "data/maps/NavelRock_Lugia3/scripts.inc"
+
+	.include "data/maps/NavelRock_Hooh1/scripts.inc"
+
+	.include "data/maps/NavelRock_Hooh2/scripts.inc"
+
+	.include "data/maps/NavelRock_Hooh3/scripts.inc"

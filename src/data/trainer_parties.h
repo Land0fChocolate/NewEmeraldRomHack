@@ -1586,7 +1586,7 @@ static const struct TrainerMonItemDefaultMoves sParty_Naomi[] = {
     {
     .iv = 100,
     .lvl = 45,
-    .species = SPECIES_ROSELIA,
+    .species = SPECIES_ROSERADE,
     .heldItem = ITEM_NUGGET
     }
 };

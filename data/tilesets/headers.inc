@@ -785,7 +785,7 @@ gTileset_NavelRock::
 	.4byte gTilesetPalettes_NavelRock
 	.4byte gMetatiles_NavelRock
 	.4byte gMetatileAttributes_NavelRock
-	.4byte NULL @ animation callback
+	.4byte InitTilesetAnim_NavelRock
 
 	.align 2
 gTileset_BattleFrontierRankingHall::

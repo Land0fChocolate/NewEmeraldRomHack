@@ -258,6 +258,7 @@
 #define METATILE_General_SecretBase_TreeRight            0x027
 #define METATILE_General_SecretBase_VineLeft             0x036
 #define METATILE_General_SecretBase_VineRight            0x037
+#define METATILE_General_Shallow_Water                   0x19E
 #define METATILE_General_SmallTree_GrassBase             0x016
 #define METATILE_General_SmallTree_SmallTree             0x0C7
 #define METATILE_General_TallGrass                       0x00D
@@ -391,6 +392,22 @@
 // gTileset_Mossdeep
 #define METATILE_Mossdeep_Door              0x2A1
 #define METATILE_Mossdeep_Door_SpaceCenter  0x2ED
+
+// gTileset_NavelRock
+#define METATILE_NavelRock_Ocean_Water                         0x293
+#define METATILE_NavelRock_Ocean_Water_EastShallow             0x3E7
+#define METATILE_NavelRock_Ocean_Water_NorthEastCornerShallow  0x3FE
+#define METATILE_NavelRock_Ocean_Water_NorthEastShallow        0x3F2
+#define METATILE_NavelRock_Ocean_Water_NorthShallow            0x3DA
+#define METATILE_NavelRock_Ocean_Water_NorthWestCornerShallow  0x3FF
+#define METATILE_NavelRock_Ocean_Water_NorthWestShallow        0x3F3
+#define METATILE_NavelRock_Ocean_Water_SouthEastCornerShallow  0x3F6
+#define METATILE_NavelRock_Ocean_Water_SouthEastShallow        0x3F0
+#define METATILE_NavelRock_Ocean_Water_SouthShallow            0x3DB
+#define METATILE_NavelRock_Ocean_Water_SouthWestCornerShallow  0x3F7
+#define METATILE_NavelRock_Ocean_Water_SouthWestShallow        0x3F1
+#define METATILE_NavelRock_Ocean_Water_WestShallow             0x3EF
+#define METATILE_NavelRock_Submerged_Boulder                   0x3F4
 
 // gTileset_Pacifidlog
 #define METATILE_Pacifidlog_Door                           0x21A

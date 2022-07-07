@@ -4215,7 +4215,7 @@
       "id": "LAYOUT_NAVEL_ROCK_ENTRANCE",
       "name": "NavelRock_Entrance_Layout",
       "width": 21,
-      "height": 32,
+      "height": 27,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_NavelRock",
       "border_filepath": "data/layouts/NavelRock_Entrance/border.bin",
@@ -4244,8 +4244,8 @@
     {
       "id": "LAYOUT_NAVEL_ROCK_LADDER_ROOM1",
       "name": "NavelRock_LadderRoom1_Layout",
-      "width": 9,
-      "height": 8,
+      "width": 40,
+      "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_NavelRock",
       "border_filepath": "data/layouts/NavelRock_LadderRoom1/border.bin",
@@ -4254,8 +4254,8 @@
     {
       "id": "LAYOUT_NAVEL_ROCK_LADDER_ROOM2",
       "name": "NavelRock_LadderRoom2_Layout",
-      "width": 9,
-      "height": 8,
+      "width": 40,
+      "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_NavelRock",
       "border_filepath": "data/layouts/NavelRock_LadderRoom2/border.bin",
@@ -4800,6 +4800,66 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/SagesSanctuary/border.bin",
       "blockdata_filepath": "data/layouts/SagesSanctuary/map.bin"
+    },
+    {
+      "id": "LAYOUT_NAVEL_ROCK_LUGIA1",
+      "name": "NavelRock_Lugia1_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/NavelRock_Lugia1/border.bin",
+      "blockdata_filepath": "data/layouts/NavelRock_Lugia1/map.bin"
+    },
+    {
+      "id": "LAYOUT_NAVEL_ROCK_LUGIA2",
+      "name": "NavelRock_Lugia2_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/NavelRock_Lugia2/border.bin",
+      "blockdata_filepath": "data/layouts/NavelRock_Lugia2/map.bin"
+    },
+    {
+      "id": "LAYOUT_NAVEL_ROCK_LUGIA3",
+      "name": "NavelRock_Lugia3_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/NavelRock_Lugia3/border.bin",
+      "blockdata_filepath": "data/layouts/NavelRock_Lugia3/map.bin"
+    },
+    {
+      "id": "LAYOUT_NAVEL_ROCK_HOOH1",
+      "name": "NavelRock_Hooh1_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/NavelRock_Hooh1/border.bin",
+      "blockdata_filepath": "data/layouts/NavelRock_Hooh1/map.bin"
+    },
+    {
+      "id": "LAYOUT_NAVEL_ROCK_HOOH2",
+      "name": "NavelRock_Hooh2_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/NavelRock_Hooh2/border.bin",
+      "blockdata_filepath": "data/layouts/NavelRock_Hooh2/map.bin"
+    },
+    {
+      "id": "LAYOUT_NAVEL_ROCK_HOOH3",
+      "name": "NavelRock_Hooh3_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/NavelRock_Hooh3/border.bin",
+      "blockdata_filepath": "data/layouts/NavelRock_Hooh3/map.bin"
     }
   ]
 }
