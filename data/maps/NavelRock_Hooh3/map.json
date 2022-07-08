@@ -37,8 +37,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FortreeJungle_Area2_EventScript_ItemTM09",
-      "flag": "FLAG_ITEM_FORTREE_JUNGLE_TM09"
+      "script": "NavelRock_Hooh3_Eventscript_ItemMaxRevive",
+      "flag": "FLAG_ITEM_NAVEL_ROCK_HOOH_3_MAX_REVIVE"
     }
   ],
   "warp_events": [
@@ -46,36 +46,36 @@
       "x": 21,
       "y": 5,
       "elevation": 3,
-      "dest_map": "MAP_NAVEL_ROCK_HOOH1",
-      "dest_warp_id": 0
+      "dest_map": "MAP_NAVEL_ROCK_HOOH2",
+      "dest_warp_id": 7
     },
     {
       "x": 25,
       "y": 14,
       "elevation": 3,
-      "dest_map": "MAP_NAVEL_ROCK_HOOH1",
-      "dest_warp_id": 0
+      "dest_map": "MAP_NAVEL_ROCK_HOOH2",
+      "dest_warp_id": 8
     },
     {
       "x": 9,
       "y": 22,
       "elevation": 3,
-      "dest_map": "MAP_NAVEL_ROCK_HOOH1",
-      "dest_warp_id": 0
+      "dest_map": "MAP_NAVEL_ROCK_HOOH2",
+      "dest_warp_id": 9
     },
     {
       "x": 4,
       "y": 24,
       "elevation": 3,
-      "dest_map": "MAP_NAVEL_ROCK_HOOH1",
-      "dest_warp_id": 0
+      "dest_map": "MAP_NAVEL_ROCK_HOOH2",
+      "dest_warp_id": 10
     },
     {
       "x": 18,
       "y": 12,
       "elevation": 3,
-      "dest_map": "MAP_NAVEL_ROCK_HOOH1",
-      "dest_warp_id": 0
+      "dest_map": "MAP_NAVEL_ROCK_HOOH2",
+      "dest_warp_id": 11
     },
     {
       "x": 7,
@@ -86,7 +86,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_NAVEL_ROCK_BOULDER_BUTTON_4",
+      "var_value": "99",
+      "script": "NavelRock_Hooh3_Eventscript_BoulderSwitch4"
+    }
   ],
   "bg_events": [
 

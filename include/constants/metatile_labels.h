@@ -394,6 +394,7 @@
 #define METATILE_Mossdeep_Door_SpaceCenter  0x2ED
 
 // gTileset_NavelRock
+#define METATILE_NavelRock_GoldCave_Floor                      0x201
 #define METATILE_NavelRock_Ocean_Water                         0x293
 #define METATILE_NavelRock_Ocean_Water_EastShallow             0x3E7
 #define METATILE_NavelRock_Ocean_Water_NorthEastCornerShallow  0x3FE

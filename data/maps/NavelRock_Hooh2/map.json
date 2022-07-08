@@ -50,8 +50,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FortreeJungle_Area2_EventScript_ItemTM09",
-      "flag": "FLAG_ITEM_FORTREE_JUNGLE_TM09"
+      "script": "NavelRock_Hooh2_Eventscript_ItemTM97",
+      "flag": "FLAG_ITEM_NAVEL_ROCK_HOOH_2_TM97"
     }
   ],
   "warp_events": [
@@ -60,49 +60,49 @@
       "y": 27,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH1",
-      "dest_warp_id": 0
+      "dest_warp_id": 1
     },
     {
       "x": 31,
       "y": 16,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH1",
-      "dest_warp_id": 0
+      "dest_warp_id": 3
     },
     {
       "x": 29,
       "y": 5,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH1",
-      "dest_warp_id": 0
+      "dest_warp_id": 3
     },
     {
       "x": 24,
       "y": 26,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH1",
-      "dest_warp_id": 0
+      "dest_warp_id": 4
     },
     {
       "x": 36,
       "y": 27,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH1",
-      "dest_warp_id": 0
+      "dest_warp_id": 5
     },
     {
       "x": 18,
       "y": 23,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH1",
-      "dest_warp_id": 0
+      "dest_warp_id": 6
     },
     {
       "x": 4,
       "y": 5,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH1",
-      "dest_warp_id": 0
+      "dest_warp_id": 7
     },
     {
       "x": 21,
@@ -131,10 +131,25 @@
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH3",
       "dest_warp_id": 3
+    },
+    {
+      "x": 18,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_NAVEL_ROCK_HOOH3",
+      "dest_warp_id": 4
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_NAVEL_ROCK_BOULDER_BUTTON_3",
+      "var_value": "99",
+      "script": "NavelRock_Hooh2_Eventscript_BoulderSwitch3"
+    }
   ],
   "bg_events": [
 

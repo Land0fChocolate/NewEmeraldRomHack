@@ -50,8 +50,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FortreeJungle_Area2_EventScript_ItemTM09",
-      "flag": "FLAG_ITEM_FORTREE_JUNGLE_TM09"
+      "script": "NavelRock_Hooh1_Eventscript_ItemBoldMint",
+      "flag": "FLAG_ITEM_NAVEL_ROCK_HOOH_1_BOLD_MINT"
     }
   ],
   "warp_events": [
@@ -113,7 +113,24 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_NAVEL_ROCK_BOULDER_BUTTON_1",
+      "var_value": "99",
+      "script": "NavelRock_Hooh1_Eventscript_BoulderSwitch1"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_NAVEL_ROCK_BOULDER_BUTTON_2",
+      "var_value": "99",
+      "script": "NavelRock_Hooh1_Eventscript_BoulderSwitch2"
+    }
   ],
   "bg_events": [
 

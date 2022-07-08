@@ -9695,12 +9695,12 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_TRI_PASS] =
+    [ITEM_SILVER_WING] =
     {
-        .name = _("Tri-Pass"),
-        .itemId = ITEM_TRI_PASS,
+        .name = _("Silver Wing"),
+        .itemId = ITEM_SILVER_WING,
         .price = 0,
-        .description = sTriPassDesc,
+        .description = sSilverWingDesc,
         .importance = 1,
         .unk19 = 1,
         .pocket = POCKET_KEY_ITEMS,
@@ -9708,12 +9708,12 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_RAINBOW_PASS] =
+    [ITEM_RAINBOW_WING] =
     {
-        .name = _("Rainbow Pass"),
-        .itemId = ITEM_RAINBOW_PASS,
+        .name = _("Rainbow Wing"),
+        .itemId = ITEM_RAINBOW_WING,
         .price = 0,
-        .description = sRainbowPassDesc,
+        .description = sRainbowWingDesc,
         .importance = 1,
         .unk19 = 1,
         .pocket = POCKET_KEY_ITEMS,

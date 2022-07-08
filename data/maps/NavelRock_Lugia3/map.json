@@ -24,8 +24,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FortreeJungle_Area2_EventScript_ItemTM09",
-      "flag": "FLAG_ITEM_FORTREE_JUNGLE_TM09"
+      "script": "NavelRock_Lugia3_Eventscript_ItemTM60",
+      "flag": "FLAG_ITEM_NAVEL_ROCK_LUGIA_3_TM60"
     }
   ],
   "warp_events": [

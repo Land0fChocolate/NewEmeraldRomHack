@@ -264,10 +264,10 @@
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER       0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER 0x40F6 // unused
 #define VAR_BIRCH_CALL_STEP_COUNTER          0x40F7
-#define VAR_BOULDER_SWITCH_1                 0x40F8 // Unused Var (test)
-#define VAR_UNUSED_0x40F9                    0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                    0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                    0x40FB // Unused Var
+#define VAR_NAVEL_ROCK_BOULDER_BUTTON_1      0x40F8
+#define VAR_NAVEL_ROCK_BOULDER_BUTTON_2      0x40F9
+#define VAR_NAVEL_ROCK_BOULDER_BUTTON_3      0x40FA
+#define VAR_NAVEL_ROCK_BOULDER_BUTTON_4      0x40FB
 #define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                    0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                    0x40FE // Unused Var

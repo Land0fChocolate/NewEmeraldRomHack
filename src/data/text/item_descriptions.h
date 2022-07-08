@@ -3639,15 +3639,15 @@ static const u8 sSilphScopeDesc[] = _(
     "makes unseeable\n"
     "POKéMON visible.");
 
-static const u8 sTriPassDesc[] = _(
-    "A pass for ferries\n"
-    "between One, Two,\n"
-    "and Three Island.");
+static const u8 sSilverWingDesc[] = _(
+    "A strange, silvery\n"
+    "feather that\n"
+    "sparkles.");
 
-static const u8 sRainbowPassDesc[] = _(
-    "For ferries serving\n"
-    "Vermilion and the\n"
-    "Sevii Islands.");
+static const u8 sRainbowWingDesc[] = _(
+    "A mystical rainbow\n"
+    "feather that\n"
+    "sparkles.");
 
 static const u8 sTeaDesc[] = _(
     "A thirst-quenching\n"

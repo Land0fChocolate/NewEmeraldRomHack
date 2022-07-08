@@ -1218,15 +1218,15 @@
 #define FLAG_ITEM_GRANITE_CAVE_B1F_HARD_STONE                       0x494
 #define FLAG_ITEM_FIERY_PATH_GREAT_BALL                             0x495
 #define FLAG_ITEM_FIERY_PATH_FRESH_WATER                            0x496
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
-#define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
-#define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
+#define FLAG_ITEM_NAVEL_ROCK_ENTRANCE_ESCAPE_ROPE                   0x497
+#define FLAG_ITEM_NAVEL_ROCK_LUGIA_1_IMPISH_MINT                    0x498
+#define FLAG_ITEM_NAVEL_ROCK_LUGIA_2_RARE_CANDY                     0x499
+#define FLAG_ITEM_NAVEL_ROCK_LUGIA_3_TM60                           0x49A
+#define FLAG_ITEM_NAVEL_ROCK_HOOH_1_BOLD_MINT                       0x49B
+#define FLAG_ITEM_NAVEL_ROCK_HOOH_2_TM97                            0x49C
+#define FLAG_ITEM_NAVEL_ROCK_HOOH_3_MAX_REVIVE                      0x49D
+#define FLAG_ITEM_NAVEL_ROCK_TOP_RAINBOW_WING                       0x49E
+#define FLAG_ITEM_NAVEL_ROCK_BOTTOM_SILVER_WING                     0x49F
 #define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
 #define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
 #define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
