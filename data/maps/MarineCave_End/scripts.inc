@@ -10,9 +10,13 @@ MarineCave_End_OnResume:
 	end
 
 MarineCave_End_EventScript_TryRemoveKyogre::
+	checkitem ITEM_SILVER_WING, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq TerraCave_End_EventScript_RemoveKyogre
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_ne Common_EventScript_NopReturn
+TerraCave_End_EventScript_RemoveKyogre::
 	removeobject LOCALID_KYOGRE
 	return
 

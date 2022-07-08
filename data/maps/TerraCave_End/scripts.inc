@@ -10,9 +10,13 @@ TerraCave_End_OnResume:
 	end
 
 TerraCave_End_EventScript_TryRemoveGroudon::
+	checkitem ITEM_RAINBOW_WING, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq TerraCave_End_EventScript_RemoveGroudon
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_ne Common_EventScript_NopReturn
+TerraCave_End_EventScript_RemoveGroudon::
 	removeobject LOCALID_GROUDON
 	return
 
