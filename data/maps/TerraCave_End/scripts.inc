@@ -55,12 +55,18 @@ TerraCave_End_EventScript_Groudon::
 	goto_if_eq TerraCave_End_EventScript_RanFromGroudon
 	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
 	setflag FLAG_DEFEATED_GROUDON
+	call_if_set FLAG_DEFEATED_KYOGRE, TerraCave_End_EventScript_GroudonKyogreDefeated
 	releaseall
 	end
+
+TerraCave_End_EventScript_GroudonKyogreDefeated::
+	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 6
+	return
 
 TerraCave_End_EventScript_DefeatedGroudon::
 	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
 	setflag FLAG_DEFEATED_GROUDON
+	call_if_set FLAG_DEFEATED_KYOGRE, TerraCave_End_EventScript_GroudonKyogreDefeated
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 

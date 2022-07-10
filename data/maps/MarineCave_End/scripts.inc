@@ -55,12 +55,18 @@ MarineCave_End_EventScript_Kyogre::
 	goto_if_eq MarineCave_End_EventScript_RanFromKyogre
 	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
 	setflag FLAG_DEFEATED_KYOGRE
+	call_if_set FLAG_DEFEATED_GROUDON, MarineCave_End_EventScript_GroudonKyogreDefeated
 	releaseall
 	end
+
+MarineCave_End_EventScript_GroudonKyogreDefeated::
+	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 6
+	return
 
 MarineCave_End_EventScript_DefeatedKyogre::
 	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
 	setflag FLAG_DEFEATED_KYOGRE
+	call_if_set FLAG_DEFEATED_GROUDON, MarineCave_End_EventScript_GroudonKyogreDefeated
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 

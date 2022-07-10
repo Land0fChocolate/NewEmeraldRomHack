@@ -7,6 +7,13 @@ Route119_WeatherInstitute_1F_MapScripts::
 Route119_WeatherInstitute_1F_OnTransition:
 	compare VAR_WEATHER_INSTITUTE_STATE, 0
 	call_if_eq Route119_WeatherInstitute_1F_EventScript_SetLittleBoyPos
+	checkflag FLAG_ARRIVED_AT_NAVEL_ROCK
+	goto_if TRUE Route119_WeatherInstitute_1F_SetWeatherInstituteStateTo5
+	end
+
+Route119_WeatherInstitute_1F_SetWeatherInstituteStateTo5::
+	setvar VAR_WEATHER_INSTITUTE_STATE, 5
+	setflag FLAG_HIDE_ZINNIA_WEATHER_INSTITUTE
 	end
 
 Route119_WeatherInstitute_1F_EventScript_SetLittleBoyPos::

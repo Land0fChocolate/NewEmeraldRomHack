@@ -5,6 +5,16 @@ MauvilleMeadow_OnTransition:
 	setflag FLAG_LANDMARK_MAUVILLE_MEADOW
 	end
 
+MauvilleMeadow_EventScript_Alistair::
+	trainerbattle_single TRAINER_ALISTAIR, MauvilleMeadow_Text_AlistairIntro, MauvilleMeadow_Text_AlistairDefeat
+	msgbox MauvilleMeadow_Text_AlistairPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MauvilleMeadow_EventScript_Natasha::
+	trainerbattle_single TRAINER_NATASHA, MauvilleMeadow_Text_NatashaIntro, MauvilleMeadow_Text_NatashaDefeat
+	msgbox MauvilleMeadow_Text_NatashaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 MauvilleMeadow_Eventscript_Shelly::
 	msgbox MauvilleMeadow_Text_Shelly, MSGBOX_NPC
 	setflag FLAG_MET_SHELLY_MAUVILLE_MEADOW

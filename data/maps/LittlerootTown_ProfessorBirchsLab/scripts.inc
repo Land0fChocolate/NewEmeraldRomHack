@@ -31,6 +31,8 @@ LittlerootTown_ProfessorBirchsLab_MapScripts::
 LittlerootTown_ProfessorBirchsLab_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
 	call ProfBirch_EventScript_UpdateLocation
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 6
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_DefeatedLegendariesSetScene
 	compare VAR_BIRCH_LAB_POSTGAME_STATE, 5
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindingsSetScene
 	compare VAR_BIRCH_LAB_POSTGAME_STATE, 4
@@ -43,6 +45,12 @@ LittlerootTown_ProfessorBirchsLab_OnTransition:
 	goto_if_ge LittlerootTown_ProfessorBirchsLab_EventScript_SetJohtoStarterLayout
 	compare VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_CheckReadyForJohtoStarter
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_DefeatedLegendariesSetScene::
+	setobjectxyperm LOCALID_RIVAL, 7, 4
+	setobjectxyperm LOCALID_ARCHIE, 7, 6
+	setobjectxyperm LOCALID_MAXIE, 5, 6
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindingsSetScene::
@@ -126,11 +134,54 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForJohtoStarters::
 	end
 
 LittlerootTown_ProfessorBirchsLab_OnFrame:
+	map_script_2 VAR_BIRCH_LAB_POSTGAME_STATE, 6, LittlerootTown_ProfessorBirchsLab_EventScript_LegendariesDefeatedEvent
 	map_script_2 VAR_BIRCH_LAB_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent
 	map_script_2 VAR_BIRCH_LAB_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_ChooseJohtoStarter
 	.2byte 0
+
+LittlerootTown_ProfessorBirchsLab_EventScript_LegendariesDefeatedEvent::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForLegendaryBriefing
+	waitmovement 0
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_LegendaryBriefing
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_LegendaryBriefing::
+	applymovement LOCALID_MAXIE, Common_Movement_FaceDown
+	applymovement LOCALID_ARCHIE, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxieMigrationHalting, MSGBOX_DEFAULT
+	closemessage
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieGoodJobPlayer, MSGBOX_DEFAULT
+	closemessage
+	end @TODO: continue this event
+
+LittlerootTown_ProfessorBirchsLab_Text_MaxieMigrationHalting::
+	.string "Maxie: We have received reports that the\n"
+	.string "migration of foreign Pokémon into the\l"
+	.string "new areas is slowing down to a halt.\p"
+	.string "I assume you have taken care of Groudon\n"
+	.string "and Kyogre?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ArchieGoodJobPlayer::
+	.string "Archie: Bwahaha!\n"
+	.string "Good job, {PLAYER}!\p"
+	.string "Now with balance restored, we've sunk\n"
+	.string "the chances of an environmental crisis.\p"
+	.string "The Pokémon that already made it here\n"
+	.string "don't seem to be leaving anytime soon.\p"
+	.string "That means you and the professor's kid\n"
+	.string "can still go out and catch them.$"
+
+LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForLegendaryBriefing:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
 
 @ The starter is technically given prior to this on Route 101 by special ChooseStarter
 @ This is just where the game tells you its yours and lets you nickname it

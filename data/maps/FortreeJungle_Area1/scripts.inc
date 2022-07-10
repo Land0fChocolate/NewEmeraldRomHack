@@ -5,6 +5,11 @@ FortreeJungle_Area1_OnTransition:
 	setflag FLAG_LANDMARK_FORTREE_JUNGLE
 	end
 
+FortreeJungle_Area1_Eventscript_Zuko::
+	trainerbattle_single TRAINER_ZUKO, FortreeJungle_Area1_Text_ZukoIntro, FortreeJungle_Area1_Text_ZukoDefeat
+	msgbox FortreeJungle_Area1_Text_ZukoPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 FortreeJungle_Area1_Eventscript_AquaMember::
 	msgbox FortreeJungle_Area1_Text_AquaMember, MSGBOX_NPC
 	end

@@ -12203,7 +12203,7 @@
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_HAPPINY"
+                "species": "SPECIES_CHANSEY"
               }
             ]
           }
@@ -12976,8 +12976,8 @@
                 "species": "SPECIES_WEEPINBELL"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 28,
+                "max_level": 30,
                 "species": "SPECIES_EXEGGUTOR"
               },
               {

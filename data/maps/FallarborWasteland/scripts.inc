@@ -5,6 +5,21 @@ FallarborWasteland_OnTransition:
 	setflag FLAG_LANDMARK_FALLARBOR_WASTELAND
 	end
 
+FallarborWasteland_EventScript_Kat::
+	trainerbattle_double TRAINER_KAT_AND_ASHE, FallarborWasteland_Text_KatIntro, FallarborWasteland_Text_KatDefeat, FallarborWasteland_Text_KatNotEnoughMons
+	msgbox FallarborWasteland_Text_KatPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+FallarborWasteland_EventScript_Ashe::
+	trainerbattle_double TRAINER_KAT_AND_ASHE, FallarborWasteland_Text_AsheIntro, FallarborWasteland_Text_AsheDefeat, FallarborWasteland_Text_AsheNotEnoughMons
+	msgbox FallarborWasteland_Text_AshePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+FallarborWasteland_EventScript_Geordi::
+	trainerbattle_single TRAINER_GEORDI, FallarborWasteland_Text_GeordiIntro, FallarborWasteland_Text_GeordiDefeat
+	msgbox FallarborWasteland_Text_GeordiPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 FallarborWasteland_Eventscript_Tabitha::
 	msgbox FallarborWasteland_Text_TabithaFieldWork, MSGBOX_NPC
 	setflag FLAG_MET_TABITHA_FALLARBOR_WASTES
