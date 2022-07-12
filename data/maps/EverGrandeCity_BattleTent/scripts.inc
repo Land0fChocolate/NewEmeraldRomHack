@@ -110,15 +110,6 @@ EverGrandeCity_BattleTent_EventScript_TriathleteF::
 	msgbox EverGrandeCity_BattleTent_Text_BrandiPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-EverGrandeCity_BattleTent_Text_Delinquent:
-	.string "TODO"
-
-EverGrandeCity_BattleTent_Text_StreetThug:
-	.string "TODO"
-
-EverGrandeCity_BattleTent_Text_PsychicM:
-	.string "TODO"
-
 EverGrandeCity_BattleTent_Text_Teala:
 	.string "Hello, and welcome to the Battle Tent.\p"
 	.string "Here trainers may come here to battle\n"

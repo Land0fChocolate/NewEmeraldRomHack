@@ -94,7 +94,11 @@ EverGrandeCity_EventScript_Man::
 
 EverGrandeCity_EventScript_Triathlete::
 	msgbox EverGrandeCity_Text_Triathlete, MSGBOX_NPC
-	end	
+	end
+
+EverGrandeCity_EventScript_Scott::
+	msgbox EverGrandeCity_Text_Scott, MSGBOX_NPC
+	end
 
 EverGrandeCity_Text_EnteringVictoryRoad:
 	.string "ENTERING VICTORY ROAD$"
@@ -113,8 +117,8 @@ EverGrandeCity_Text_WomanInBattle:
 	.string "High Jump Kick!$"
 
 EverGrandeCity_Text_ManInBattle:
-	.string "We still got this, use Waterfall,\n"
-	.string "Ludicolo!$"
+	.string "We still got this.\n"
+	.string "Use Waterfall, Ludicolo!$"
 
 EverGrandeCity_Text_BattleGirl:
 	.string "Ooh, boy. The trainers here are tougher\n"
@@ -137,10 +141,21 @@ EverGrandeCity_Text_Man:
 	.string "practically never sleeps.$"
 
 EverGrandeCity_Text_Triathlete:
-	.string "Whoa, hey! It isn't what it looks like!\p"
-	.string "I'm not about to jump, I mean… I'm\n"
-	.string "not trying to off myself!\p"
-	.string "I was just wondering if it would be fun\n"
-	.string "to dive into the sea from this height\p"
-	.string "Well, I think I should try a safer jump\n"
+	.string "It might be fun to jump into the sea\n"
+	.string "from here, but it won't be fun hitting\l"
+	.string "the rocks at the bottom.\p"
+	.string "I should probably try a safer jump\n"
 	.string "someplace else first.$"
+
+EverGrandeCity_Text_Scott:
+	.string "Scott: Hi, hi {PLAYER}!\n"
+	.string "Good to see you've made it all the way\l"
+	.string "to Ever Grande City!\p"
+	.string "Strong trainers from all over gather\n"
+	.string "here to face off against the Pokémon\l"
+	.string "League.\l"
+	.string "Naturally, I come to observe them!\p"
+	.string "Speaking of strong trainers, there was\n"
+	.string "another kid. This one younger than you.\p"
+	.string "He'd been making a stir around here.\n"
+	.string "I wonder where he ran off to?$"

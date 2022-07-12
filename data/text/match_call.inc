@@ -2172,15 +2172,15 @@ MatchCall_Text_Winona1::
 
 MatchCall_Text_Winona2::
 	.string "Winona: You've done it, {PLAYER}!\p"
-	.string "News about the new CHAMPION\n"
-	.string "has reached us in FORTREE!\p"
+	.string "News about the new Champion\n"
+	.string "has reached us in Fortree!\p"
 	.string "But… The next time we battle,\n"
 	.string "it's not going to end the same way.$"
 
 MatchCall_Text_Winona3::
 	.string "Winona: Is this {PLAYER}?\n"
 	.string "Our Gym is back in operation!\p"
-	.string "We're waiting for you in FORTREE!$"
+	.string "We're waiting for you in Fortree!$"
 
 MatchCall_Text_Winona4::
 	.string "Winona: {PLAYER}…\n"
@@ -2397,7 +2397,7 @@ MatchCall_Text_May12::
 MatchCall_Text_May13::
 	.string "May: Hi, {PLAYER}{KUN}!\p"
 	.string "How's it going?\n"
-	.string "Are you filling your POKéDEX?\p"
+	.string "Are you filling your Pokédex?\p"
 	.string "I heard a rumor that there are\n"
 	.string "super-ancient Pokémon out there.\l"
 	.string "And there are three of them!\p"
@@ -2524,7 +2524,7 @@ MatchCall_Text_Brendan12::
 MatchCall_Text_Brendan13::
 	.string "Brendan: Hey there, {PLAYER}!\p"
 	.string "How's it going? Filling up your\n"
-	.string "POKéDEX successfully?\p"
+	.string "Pokédex successfully?\p"
 	.string "I heard a rumor that there are\n"
 	.string "super-ancient Pokémon out there.\l"
 	.string "And not just one--three!\p"
@@ -2645,7 +2645,7 @@ MatchCall_Text_Scott4::
 	.string "Scott: Hi, {PLAYER}{KUN}!\p"
 	.string "I've been hearing about these odd\n"
 	.string "gangs being a nuisance.\p"
-	.string "Team Magma and Team AQUA,\n"
+	.string "Team Magma and Team Aqua,\n"
 	.string "I think they were.\p"
 	.string "I would think there'd be some\n"
 	.string "skilled Trainers among them.\p"
@@ -2665,7 +2665,7 @@ MatchCall_Text_Scott6::
 	.string "the Pokémon League when you've\l"
 	.string "collected all the Gym Badges?\p"
 	.string "With your talent, becoming the\n"
-	.string "CHAMPION isn't a pipe dream.\p"
+	.string "Champion isn't a pipe dream.\p"
 	.string "But did you know?\n"
 	.string "There's somewhere even better.\p"
 	.string "But, that's all I'm willing to say\n"
@@ -2673,8 +2673,8 @@ MatchCall_Text_Scott6::
 	.string "It's something you can look\n"
 	.string "forward to.\p"
 	.string "When you've won your way through\n"
-	.string "the Pokémon League into the HALL\l"
-	.string "OF FAME!$"
+	.string "the Pokémon League into the Hall\l"
+	.string "of Fame!$"
 
 MatchCall_Text_Scott7::
 	.string "… … … … … …\n"
@@ -2716,7 +2716,7 @@ MatchCall_Text_Norman4::
 
 MatchCall_Text_Norman5::
 	.string "Dad: Oh, hi, {PLAYER}!\p"
-	.string "What's that? Magma EMBLEM?\n"
+	.string "What's that? Magma Emblem?\n"
 	.string "I don't know what that's about.\p"
 	.string "But with a name like that, it may\n"
 	.string "be somehow linked to a volcano!$"
@@ -2730,7 +2730,7 @@ MatchCall_Text_Norman6::
 MatchCall_Text_Norman7::
 	.string "Dad: {PLAYER}!\p"
 	.string "Who would've thought you'd become\n"
-	.string "the Pokémon League CHAMPION…\p"
+	.string "the Pokémon League Champion…\p"
 	.string "Okay!\n"
 	.string "I won't be left behind!$"
 
@@ -2798,7 +2798,7 @@ MatchCall_Text_Steven6::
 
 MatchCall_Text_Steven7::
 	.string "Steven: {PLAYER}{KUN}… Congratulations\n"
-	.string "for entering the HALL OF FAME.\p"
+	.string "for entering the Hall of Fame.\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "I hope we can meet again\n"
@@ -2811,7 +2811,7 @@ MatchCall_Text_BirchRegisterCall:
 	.string "upgraded with Match Call.\p"
 	.string "Well, I should register, too!\p"
 	.string "That way, I'd be able to examine\n"
-	.string "your POKéDEX even while you're\l"
+	.string "your Pokédex even while you're\l"
 	.string "out in the field.\p"
 	.string "… … … … … …$"
 
@@ -2821,7 +2821,7 @@ MatchCall_Text_RegisteredBirch:
 
 MatchCall_Text_UnusedProfBirch:
 	.string "Prof. Birch: When one has both\n"
-	.string "the POKéDEX and Pokénav, studying\l"
+	.string "the Pokédex and Pokénav, studying\l"
 	.string "Pokémon becomes more fun, eh?$"
 
 MatchCall_Text_MrStone1::

@@ -416,15 +416,6 @@ Route119_EventScript_TrainerTipsDecoration::
 	msgbox Route119_Text_TrainerTipsDecoration, MSGBOX_SIGN
 	end
 
-Route119_EventScript_ScottWonAtFortreeGymCall::
-	lockall
-	pokenavcall Route119_Text_ScottYouWonAtFortreeGym
-	waitmessage
-	clearflag FLAG_SCOTT_CALL_FORTREE_GYM
-	addvar VAR_SCOTT_STATE, 1
-	releaseall
-	end
-
 Route119_Text_MayIntro:
 	.string "May: Hey, {PLAYER}{KUN}!\p"
 	.string "Me and my Pokémon are already feeling\n"
@@ -495,21 +486,6 @@ Route119_Text_BrendanExplainFly:
 	.string "I don't need it, so I guess you\n"
 	.string "can have it.\p"
 	.string "Anyway, I'll catch you later. Bye!$"
-
-Route119_Text_ScottYouWonAtFortreeGym:
-	.string "… … … … … …\n"
-	.string "… … … … … Beep!\p"
-	.string "Scott: Hiya, {PLAYER}{KUN}, it's me!\p"
-	.string "Just as I thought, you won at\n"
-	.string "the Fortree Gym.\p"
-	.string "Your strength…\n"
-	.string "Perhaps you really are the Trainer\l"
-	.string "that I've been searching for.\p"
-	.string "Remember, you have a fan in me.\n"
-	.string "I'll be cheering from the sidelines.\l"
-	.string "Keep up the great work!\p"
-	.string "… … … … … …\n"
-	.string "… … … … … Click!$"
 
 Route119_Text_StayAwayFromWeatherInstitute:
 	.string "We're standing lookout here.\p"

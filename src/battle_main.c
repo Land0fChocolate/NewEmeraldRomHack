@@ -4425,7 +4425,7 @@ u32 GetBattlerTotalSpeedStat(u8 battlerId)
     if (gBattleMons[battlerId].status1 & STATUS1_PARALYSIS && !HasAbility(ABILITY_QUICK_FEET, abilities))
         speed /= (B_PARALYSIS_SPEED >= GEN_7 ? 2 : 4);
 
-    if (GetBattlerHoldEffect(battlerId, TRUE) == HOLD_EFFECT_QUICK_CLAW && (gBattleMons[battlerId].hp < gBattleMons[battlerId].maxHP/2)) 
+    if (GetBattlerHoldEffect(battlerId, TRUE) == HOLD_EFFECT_QUICK_CLAW && (gBattleMons[battlerId].hp < gBattleMons[battlerId].maxHP / 2)) 
         speed *= 1.1;
 
     return speed;
