@@ -211,11 +211,11 @@
 #define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF
 #define FLAG_RECEIVED_SUN_STONE_MOSSDEEP     0xC0
 #define FLAG_WALLY_SPEECH                    0xC1
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1   0xC2 // Leftover from the RS version of Puzzle Room 7, functionally unused
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2   0xC3 //
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3   0xC4 //
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4   0xC5 //
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_5   0xC6 //
+#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1   0xC2 //unused, Leftover from the RS version of Puzzle Room 7, functionally unused
+#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2   0xC3 //unused
+#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3   0xC4 //unused
+#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4   0xC5 //unused
+#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_5   0xC6 //unused
 #define FLAG_RUSTURF_TUNNEL_OPENED           0xC7
 #define FLAG_RECEIVED_RED_SCARF              0xC8
 #define FLAG_RECEIVED_BLUE_SCARF             0xC9
@@ -462,7 +462,7 @@
 #define FLAG_SHOWN_EON_TICKET                0x1AE
 #define FLAG_SHOWN_AURORA_TICKET             0x1AF
 #define FLAG_SHOWN_OLD_SEA_MAP               0x1B0
-#define FLAG_MOVE_TUTOR_TAUGHT_SWAGGER       0x1B1 // Unused Flag
+#define FLAG_ENABLE_ZINNIA_MATCH_CALL        0x1B1
 #define FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT       0x1B2 // Unused Flag
 #define FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER   0x1B3 // Unused Flag
 #define FLAG_MOVE_TUTOR_TAUGHT_MIMIC         0x1B4 // Unused Flag
@@ -668,7 +668,7 @@
 #define FLAG_HIDE_MAXIE_ARCHIE_BIRCH_LAB         0x273
 #define FLAG_HIDE_ZINNIA_WEATHER_INSTITUTE       0x274
 #define FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER4_2    0x275 // Second boulder flag to allow boulders to fall through 2 floors
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
+#define FLAG_HIDE_DRACONID_ARCHIVES_SCIENTIST    0x276
 #define FLAG_UNUSED_0x277  0x277 // Unused Flag
 #define FLAG_UNUSED_0x278  0x278 // Unused Flag
 #define FLAG_UNUSED_0x279  0x279 // Unused Flag

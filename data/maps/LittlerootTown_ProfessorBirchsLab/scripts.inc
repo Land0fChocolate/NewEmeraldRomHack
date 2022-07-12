@@ -156,7 +156,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_LegendaryBriefing::
 	closemessage
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieGoodJobPlayer, MSGBOX_DEFAULT
 	closemessage
-	end @TODO: continue this event
+	applymovement LOCALID_BIRCH, LittlerootTown_ProfessorBirchsLab_Movement_BirchMovesDown
+	waitmovement 0
+	end @TODO: continue this event, call about Space Center under attack?
 
 LittlerootTown_ProfessorBirchsLab_Text_MaxieMigrationHalting::
 	.string "Maxie: We have received reports that the\n"
@@ -174,6 +176,10 @@ LittlerootTown_ProfessorBirchsLab_Text_ArchieGoodJobPlayer::
 	.string "don't seem to be leaving anytime soon.\p"
 	.string "That means you and the professor's kid\n"
 	.string "can still go out and catch them.$"
+
+LittlerootTown_ProfessorBirchsLab_Movement_BirchMovesDown:
+	walk_down
+	step_end
 
 LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForLegendaryBriefing:
 	walk_up

@@ -81,9 +81,9 @@ Route119_WeatherInstitute_1F_EventScript_Grunt4::
 	end
 
 Route119_WeatherInstitute_1F_Text_Grunt1Intro:
-	.string "The boss got interested in\n"
-	.string "the Pokémon they have here so he,\l"
-	.string "sent us out.\p"
+	.string "The boss got interested in the fancy\n"
+	.string "sciencey work they do here,\l"
+	.string "so he sent us out.\p"
 	.string "Stay out of our way!$"
 
 Route119_WeatherInstitute_1F_Text_Grunt1Defeat:

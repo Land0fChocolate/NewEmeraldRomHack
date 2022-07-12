@@ -526,8 +526,8 @@ Route119_WeatherInstitute_2F_Text_PokemonInTheSky:
 	.string "but it never seems to land anywhere.$"
 
 Route119_WeatherInstitute_2F_Text_Grunt2Intro:
-	.string "Don't tell me you're looking for that\n"
-	.string "weather Pokémon, too?\p"
+	.string "Don't tell me you're here for the tech\n"
+	.string "the eggheads have, too?\p"
 	.string "That's a no-no!\n"
 	.string "We were here to get it first!$"
 
@@ -543,14 +543,17 @@ Route119_WeatherInstitute_2F_Text_Grunt2PostBattle:
 Route119_WeatherInstitute_2F_Text_Grunt1Intro:
 	.string "The Institute created a type of\n"
 	.string "Pokémon that has something to do with\l"
-	.string "the weather. We're here to take them!$"
+	.string "the weather.\p"
+	.string "They look pretty neat, so I think I'll\n"
+	.string "take one for myself!$"
 
 Route119_WeatherInstitute_2F_Text_Grunt1Defeat:
 	.string "Oh, will you look at my Pokémon?$"
 
 Route119_WeatherInstitute_2F_Text_Grunt1PostBattle:
 	.string "Everyone's fighting over the weather\n"
-	.string "Pokémon; you, us and that other kid.\l"
+	.string "Pokémon and the stuff they have here;\l"
+	.string "you, us and that other kid.\l"
 	.string "I guess it must be important.$"
 
 Route119_WeatherInstitute_2F_Text_Grunt3:
@@ -689,10 +692,11 @@ Route119_WeatherInstitute_2F_Text_PokemonChangesWithWeather:
 	.string "That Pokémon changes shape according\n"
 	.string "to the weather conditions. It's very\l"
 	.string "sensitive to atmospheric changes,\l"
-	.string "hence why we use it for data at the\l"
-	.string "Institute.\p"
+	.string "hence why we use it to help with our\l"
+	.string "research at the Institute.\p"
 	.string "I don't know why Team Aqua wanted\n"
-	.string "them, but I'm happy they're all safe.$"
+	.string "the equipment and the Castform, but\l"
+	.string "I'm glad they're all safe.$"
 
 Route119_WeatherInstitute_2F_Text_ChangingWeatherRidiculous:
 	.string "I've been researching rain for many\n"

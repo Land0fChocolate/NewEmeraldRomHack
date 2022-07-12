@@ -4425,6 +4425,9 @@ u32 GetBattlerTotalSpeedStat(u8 battlerId)
     if (gBattleMons[battlerId].status1 & STATUS1_PARALYSIS && !HasAbility(ABILITY_QUICK_FEET, abilities))
         speed /= (B_PARALYSIS_SPEED >= GEN_7 ? 2 : 4);
 
+    if (GetBattlerHoldEffect(battlerId, TRUE) == HOLD_EFFECT_QUICK_CLAW && (gBattleMons[battlerId].hp < gBattleMons[battlerId].maxHP/2)) 
+        speed *= 1.1;
+
     return speed;
 }
 
@@ -4503,8 +4506,8 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
         gProtectStructs[battler1].quickDraw = TRUE;
     // Quick Claw and Custap Berry
     if (!gProtectStructs[battler1].quickDraw
-     && ((holdEffectBattler1 == HOLD_EFFECT_QUICK_CLAW && gRandomTurnNumber < (0xFFFF * GetBattlerHoldEffectParam(battler1)) / 100)
-     || (holdEffectBattler1 == HOLD_EFFECT_CUSTAP_BERRY && HasEnoughHpToEatBerry(battler1, 4, gBattleMons[battler1].item))))
+     //&& ((holdEffectBattler1 == HOLD_EFFECT_QUICK_CLAW && gRandomTurnNumber < (0xFFFF * GetBattlerHoldEffectParam(battler1)) / 100)
+     || (holdEffectBattler1 == HOLD_EFFECT_CUSTAP_BERRY && HasEnoughHpToEatBerry(battler1, 4, gBattleMons[battler1].item)))
         gProtectStructs[battler1].usedCustapBerry = TRUE;
 
     // Battler 2

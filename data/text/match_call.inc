@@ -2123,7 +2123,7 @@ MatchCall_Text_Wattson2::
 MatchCall_Text_Wattson3::
 	.string "Wattson: Oh, it's you!\n"
 	.string "My Gym's ready!\p"
-	.string "Visit MAUVILLE anytime!\n"
+	.string "Visit Mauville anytime!\n"
 	.string "Wahahahaha!$"
 
 MatchCall_Text_Wattson4::
@@ -2316,17 +2316,17 @@ MatchCall_Text_May3::
 	.string "the Cutter in Rustboro?\l"
 	.string "He had a house there, remember?\p"
 	.string "Well, I found out his younger\n"
-	.string "brother lives in MAUVILLE.\p"
+	.string "brother lives in Mauville.\p"
 	.string "Can you guess his name?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
-	.string "The ROCK SMASH GUY!$"
+	.string "The Rock Smash Guy!$"
 
 MatchCall_Text_May4::
 	.string "May: {PLAYER}{KUN}?\p"
 	.string "Rusturf Tunnel…\n"
 	.string "They named it that because it\l"
-	.string "joins Rustboro and VERDANTURF.$"
+	.string "joins Rustboro and Verdanturf.$"
 
 MatchCall_Text_May5::
 	.string "May: {PLAYER}{KUN}, how are you?\p"
@@ -2442,17 +2442,17 @@ MatchCall_Text_Brendan3::
 	.string "the Cutter in Rustboro?\l"
 	.string "He had a house there, right?\p"
 	.string "Well, it turns out his little\n"
-	.string "brother lives in MAUVILLE.\p"
+	.string "brother lives in Mauville.\p"
 	.string "Can you guess his name?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
-	.string "The ROCK SMASH GUY!$"
+	.string "The Rock Smash Guy!$"
 
 MatchCall_Text_Brendan4::
 	.string "Brendan: This voice… {PLAYER}?\p"
 	.string "They gave Rusturf Tunnel its name\n"
 	.string "because it joins Rustboro and\l"
-	.string "VERDANTURF.\p"
+	.string "Verdanturf.\p"
 	.string "Did you know that?$"
 
 MatchCall_Text_Brendan5::
@@ -2560,7 +2560,7 @@ MatchCall_Text_Wally2::
 MatchCall_Text_Wally3::
 	.string "Wally: Oh, {PLAYER}!\p"
 	.string "I… I left my uncle's place in\n"
-	.string "VERDANTURF without telling anyone.\p"
+	.string "Verdanturf without telling anyone.\p"
 	.string "I wonder if he's furious with me…\p"
 	.string "{PLAYER}, you understand how\n"
 	.string "I feel, don't you?$"
@@ -2598,6 +2598,20 @@ MatchCall_Text_Wally7::
 	.string "my very own Pokémon…\p"
 	.string "{PLAYER}…\n"
 	.string "Thank you…$"
+
+MatchCall_Text_Zinnia::
+	.string "Zinnia: Hey, {PLAYER}!\p"
+	.string "While I was traveling a while back,\n"
+	.string "I had a Whismur as my partner.\l"
+	.string "Her name's Aster.\p"
+	.string "She's so darned adorable, especially the\n"
+	.string "way she likes to nuzzle up against me\l"
+	.string "and make the cutest little noises.\p"
+	.string "Aster and I were always together…\n"
+	.string "in good times and in bad.\p"
+	.string "If she hadn't stuck with me through that\n"
+	.string "journey, I don't know if I'd be where\l"
+	.string "I am today.$"
 
 MatchCall_Text_Scott1::
 	.string "Scott: Howdy, {PLAYER}{KUN}!\p"
@@ -2734,7 +2748,7 @@ MatchCall_Text_Norman9::
 
 MatchCall_Text_Steven1::
 	.string "Steven: Hi, {PLAYER}{KUN}!\p"
-	.string "Have you been to MAUVILLE\n"
+	.string "Have you been to Mauville\n"
 	.string "already?\p"
 	.string "You should visit the BIKE SHOP\n"
 	.string "and get a MACH BIKE.\p"
