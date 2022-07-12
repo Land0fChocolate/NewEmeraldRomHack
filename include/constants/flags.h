@@ -211,11 +211,11 @@
 #define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF
 #define FLAG_RECEIVED_SUN_STONE_MOSSDEEP     0xC0
 #define FLAG_WALLY_SPEECH                    0xC1
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1   0xC2 //unused, Leftover from the RS version of Puzzle Room 7, functionally unused
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2   0xC3 //unused
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3   0xC4 //unused
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4   0xC5 //unused
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_5   0xC6 //unused
+#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1   0xC2 // unused, Leftover from the RS version of Puzzle Room 7, functionally unused
+#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2   0xC3 // unused
+#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3   0xC4 // unused
+#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4   0xC5 // unused
+#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_5   0xC6 // unused
 #define FLAG_RUSTURF_TUNNEL_OPENED           0xC7
 #define FLAG_RECEIVED_RED_SCARF              0xC8
 #define FLAG_RECEIVED_BLUE_SCARF             0xC9
@@ -392,8 +392,8 @@
 #define FLAG_REMATCH_STEVE                   0x16B
 #define FLAG_REMATCH_TONY                    0x16C
 #define FLAG_REMATCH_NOB                     0x16D
-#define FLAG_REMATCH_KOJI                    0x16E //unused
-#define FLAG_REMATCH_FERNANDO                0x16F //unused
+#define FLAG_REMATCH_KOJI                    0x16E // unused
+#define FLAG_REMATCH_FERNANDO                0x16F // unused
 #define FLAG_REMATCH_DALTON                  0x170
 #define FLAG_REMATCH_BERNIE                  0x171
 #define FLAG_REMATCH_ETHAN                   0x172
@@ -669,13 +669,13 @@
 #define FLAG_HIDE_ZINNIA_WEATHER_INSTITUTE       0x274
 #define FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER4_2    0x275 // Second boulder flag to allow boulders to fall through 2 floors
 #define FLAG_HIDE_DRACONID_ARCHIVES_SCIENTIST    0x276
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
-#define FLAG_UNUSED_0x279  0x279 // Unused Flag
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
-#define FLAG_UNUSED_0x27B  0x27B // Unused Flag
-#define FLAG_UNUSED_0x27C  0x27C // Unused Flag
-#define FLAG_UNUSED_0x27D  0x27D // Unused Flag
+#define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_1 0x277
+#define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_2 0x278
+#define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_3 0x279
+#define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_4 0x27A
+#define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_5 0x27B
+#define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_6 0x27C
+#define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_7 0x27D
 #define FLAG_UNUSED_0x27E  0x27E // Unused Flag
 #define FLAG_UNUSED_0x27F  0x27F // Unused Flag
 #define FLAG_UNUSED_0x280  0x280 // Unused Flag
@@ -914,7 +914,7 @@
 #define FLAG_HIDE_FALLORBOR_POKEMON_CENTER_LANETTE                  0x367
 #define FLAG_HIDE_TRICK_HOUSE_ENTRANCE_MAN                          0x368
 #define FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER_REPLACEMENT    0x369
-#define FLAG_HIDE_DESERT_UNDERPASS_FOSSIL                           0x36A
+#define FLAG_HIDE_DESERT_UNDERPASS_FOSSIL                           0x36A // unused
 #define FLAG_HIDE_ROUTE_111_PLAYER_DESCENT                          0x36B
 #define FLAG_HIDE_ROUTE_111_DESERT_FOSSIL                           0x36C
 #define FLAG_HIDE_MT_CHIMNEY_TRAINERS                               0x36D
@@ -1566,7 +1566,7 @@
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
 #define FLAG_DAILY_OLDALEFARM_POKEMON_GIVEN         (DAILY_FLAGS_START + 0x3)
-#define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
+#define FLAG_DAILY_DESERT_UNDERPASS_FOSSIL          (DAILY_FLAGS_START + 0x4)
 #define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
 #define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
 #define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag

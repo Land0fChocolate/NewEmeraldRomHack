@@ -4608,10 +4608,13 @@ EverGrandeCity_BattleTent_Text_MelinaPostBattle:
 	.string "Later.$"
 
 EverGrandeCity_BattleTent_Text_PatIntro:
+	.string "TODO$"
 
 EverGrandeCity_BattleTent_Text_PatDefeated:
+	.string "TODO$"
 
 EverGrandeCity_BattleTent_Text_PatPostBattle:
+	.string "TODO$"
 
 EverGrandeCity_BattleTent_Text_CarolinaIntro:
 	.string "Hi! Do you prefer butterscotch cake\n"
@@ -4827,7 +4830,8 @@ FallarborWasteland_Text_KatPostBattle:
 	.string "TODO$"
 
 FallarborWasteland_Text_KatNotEnoughMons:
-	.string "TODO$"
+	.string "Kat: Are you doing some single Pokémon\n"
+	.string "challenge or something?$"
 
 FallarborWasteland_Text_AsheIntro:
 	.string "TODO$"
