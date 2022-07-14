@@ -32,273 +32,273 @@
       "x": 1,
       "y": 3,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_Beauty",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_BEAUTY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
       "x": 3,
       "y": 9,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_BlackBelt",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_BLACK_BELT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
       "x": 11,
       "y": 5,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_BugCatcher",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_BUG_CATCHER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DELINQUENT",
       "x": 9,
       "y": 4,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_Delinquent",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_DELINQUENT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "x": 0,
       "y": 10,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_ExpertF",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_EXPERT_F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FAIRY_TALE_GIRL",
       "x": 3,
       "y": 7,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_FairyTaleGirl",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_FAIRY_TALE_GIRL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 3,
       "y": 5,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_Hiker",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_HIKER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
       "x": 13,
       "y": 5,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_HexManiac",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_HEX_MANIAC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
       "x": 1,
       "y": 8,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_Maniac",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_MANIAC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
       "x": 3,
       "y": 2,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_Guitarist",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_GUITARIST"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 6,
       "y": 4,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_CoolTrainerM",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_COOLTRAINER_M"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 9,
       "y": 9,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_NinjaBoy",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_NINJA_BOY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_RANGER_F",
       "x": 2,
       "y": 11,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_RangerF",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_RANGER_F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_RANGER_M",
       "x": 11,
       "y": 8,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_RangerM",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_RANGER_M"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 0,
       "y": 6,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_PsychicF",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_PSYCHIC_F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M",
       "x": 11,
       "y": 11,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_TriathleteM",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_TRIATHLETE_M"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_STREET_THUG",
       "x": 13,
       "y": 10,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_StreetThug",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_STREET_THUG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 13,
       "y": 8,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_Lady",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_LADY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
       "x": 6,
       "y": 2,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_CoolTrainerF",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_COOLTRAINER_F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
       "x": 9,
       "y": 2,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_RichBoy",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_RICH_BOY"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",
       "x": 11,
       "y": 2,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_BattleTent_EventScript_TriathleteF",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BATTLE_TENT_TRIATHLETE_F"
     }
   ],
   "warp_events": [

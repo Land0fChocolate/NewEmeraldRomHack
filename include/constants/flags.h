@@ -1286,27 +1286,27 @@
 #define FLAG_UNUSED_0x4D8                                           0x4D8 // Unused Flag
 #define FLAG_UNUSED_0x4D9                                           0x4D9 // Unused Flag
 #define FLAG_UNUSED_0x4DA                                           0x4DA // Unused Flag
-#define FLAG_UNUSED_0x4DB                                           0x4DB // Unused Flag
-#define FLAG_UNUSED_0x4DC                                           0x4DC // Unused Flag
-#define FLAG_UNUSED_0x4DD                                           0x4DD // Unused Flag
-#define FLAG_UNUSED_0x4DE                                           0x4DE // Unused Flag
-#define FLAG_UNUSED_0x4DF                                           0x4DF // Unused Flag
-#define FLAG_UNUSED_0x4E0                                           0x4E0 // Unused Flag
-#define FLAG_UNUSED_0x4E1                                           0x4E1 // Unused Flag
-#define FLAG_UNUSED_0x4E2                                           0x4E2 // Unused Flag
-#define FLAG_UNUSED_0x4E3                                           0x4E3 // Unused Flag
-#define FLAG_UNUSED_0x4E4                                           0x4E4 // Unused Flag
-#define FLAG_UNUSED_0x4E5                                           0x4E5 // Unused Flag
-#define FLAG_UNUSED_0x4E6                                           0x4E6 // Unused Flag
-#define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag
-#define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
-#define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag
-#define FLAG_UNUSED_0x4EA                                           0x4EA // Unused Flag
-#define FLAG_UNUSED_0x4EB                                           0x4EB // Unused Flag
-#define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
-#define FLAG_UNUSED_0x4ED                                           0x4ED // Unused Flag
-#define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
-#define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag
+#define FLAG_HIDE_BATTLE_TENT_BEAUTY                                0x4DB
+#define FLAG_HIDE_BATTLE_TENT_BLACK_BELT                            0x4DC
+#define FLAG_HIDE_BATTLE_TENT_BUG_CATCHER                           0x4DD
+#define FLAG_HIDE_BATTLE_TENT_DELINQUENT                            0x4DE
+#define FLAG_HIDE_BATTLE_TENT_EXPERT_F                              0x4DF
+#define FLAG_HIDE_BATTLE_TENT_FAIRY_TALE_GIRL                       0x4E0
+#define FLAG_HIDE_BATTLE_TENT_HIKER                                 0x4E1
+#define FLAG_HIDE_BATTLE_TENT_HEX_MANIAC                            0x4E2
+#define FLAG_HIDE_BATTLE_TENT_GUITARIST                             0x4E3
+#define FLAG_HIDE_BATTLE_TENT_MANIAC                                0x4E4
+#define FLAG_HIDE_BATTLE_TENT_COOLTRAINER_M                         0x4E5
+#define FLAG_HIDE_BATTLE_TENT_NINJA_BOY                             0x4E6
+#define FLAG_HIDE_BATTLE_TENT_RANGER_F                              0x4E7
+#define FLAG_HIDE_BATTLE_TENT_RANGER_M                              0x4E8
+#define FLAG_HIDE_BATTLE_TENT_PSYCHIC_F                             0x4E9
+#define FLAG_HIDE_BATTLE_TENT_TRIATHLETE_M                          0x4EA
+#define FLAG_HIDE_BATTLE_TENT_STREET_THUG                           0x4EB
+#define FLAG_HIDE_BATTLE_TENT_LADY                                  0x4EC
+#define FLAG_HIDE_BATTLE_TENT_COOLTRAINER_F                         0x4ED
+#define FLAG_HIDE_BATTLE_TENT_RICH_BOY                              0x4EE
+#define FLAG_HIDE_BATTLE_TENT_TRIATHLETE_F                          0x4EF
 
 #define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0
 #define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1
@@ -1567,7 +1567,7 @@
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
 #define FLAG_DAILY_OLDALEFARM_POKEMON_GIVEN         (DAILY_FLAGS_START + 0x3)
 #define FLAG_DAILY_DESERT_UNDERPASS_FOSSIL          (DAILY_FLAGS_START + 0x4)
-#define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
+#define FLAG_DAILY_BATTLE_TENT_TRAINERS             (DAILY_FLAGS_START + 0x5)
 #define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
 #define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag
 #define FLAG_UNUSED_0x928                           (DAILY_FLAGS_START + 0x8)  // Unused Flag

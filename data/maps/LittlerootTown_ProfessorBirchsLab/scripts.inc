@@ -158,6 +158,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_LegendaryBriefing::
 	closemessage
 	applymovement LOCALID_BIRCH, LittlerootTown_ProfessorBirchsLab_Movement_BirchMovesDown
 	waitmovement 0
+
+	setvar VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
 	end @TODO: continue this event, call about Space Center under attack?
 
 LittlerootTown_ProfessorBirchsLab_Text_MaxieMigrationHalting::

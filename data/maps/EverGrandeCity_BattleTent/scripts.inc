@@ -1,5 +1,173 @@
 EverGrandeCity_BattleTent_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, EverGrandeCity_BattleTent_OnLoad
 	.byte 0
+
+EverGrandeCity_BattleTent_OnLoad:
+	dotimebasedevents
+	goto_if_unset FLAG_DAILY_BATTLE_TENT_TRAINERS, EverGrandeCity_BattleTent_EventScript_SetUpTrainers
+	end
+
+EverGrandeCity_BattleTent_EventScript_SetUpTrainers::
+	setflag FLAG_HIDE_BATTLE_TENT_BEAUTY
+	setflag FLAG_HIDE_BATTLE_TENT_BLACK_BELT
+	setflag FLAG_HIDE_BATTLE_TENT_BUG_CATCHER
+	setflag FLAG_HIDE_BATTLE_TENT_DELINQUENT
+	setflag FLAG_HIDE_BATTLE_TENT_EXPERT_F
+	setflag FLAG_HIDE_BATTLE_TENT_FAIRY_TALE_GIRL
+	setflag FLAG_HIDE_BATTLE_TENT_HIKER
+	setflag FLAG_HIDE_BATTLE_TENT_HEX_MANIAC
+	setflag FLAG_HIDE_BATTLE_TENT_GUITARIST
+	setflag FLAG_HIDE_BATTLE_TENT_MANIAC
+	setflag FLAG_HIDE_BATTLE_TENT_COOLTRAINER_M
+	setflag FLAG_HIDE_BATTLE_TENT_NINJA_BOY
+	setflag FLAG_HIDE_BATTLE_TENT_RANGER_F
+	setflag FLAG_HIDE_BATTLE_TENT_RANGER_M
+	setflag FLAG_HIDE_BATTLE_TENT_PSYCHIC_F
+	setflag FLAG_HIDE_BATTLE_TENT_TRIATHLETE_M
+	setflag FLAG_HIDE_BATTLE_TENT_STREET_THUG
+	setflag FLAG_HIDE_BATTLE_TENT_LADY
+	setflag FLAG_HIDE_BATTLE_TENT_COOLTRAINER_F
+	setflag FLAG_HIDE_BATTLE_TENT_RICH_BOY
+	setflag FLAG_HIDE_BATTLE_TENT_TRIATHLETE_F
+	setflag FLAG_DAILY_BATTLE_TENT_TRAINERS
+	call EverGrandeCity_BattleTent_EventScript_SetUpATrainer
+	call EverGrandeCity_BattleTent_EventScript_SetUpATrainer
+	call EverGrandeCity_BattleTent_EventScript_SetUpATrainer
+	call EverGrandeCity_BattleTent_EventScript_SetUpATrainer
+	call EverGrandeCity_BattleTent_EventScript_SetUpATrainer
+	end
+
+EverGrandeCity_BattleTent_EventScript_SetUpATrainer::
+	random 21
+	copyvar VAR_0x800A, VAR_RESULT
+	switch VAR_RESULT
+	case 0, EverGrandeCity_BattleTent_EventScript_SetUpBeauty
+	case 1, EverGrandeCity_BattleTent_EventScript_SetUpBlackbelt
+	case 2, EverGrandeCity_BattleTent_EventScript_SetUpBugCatcher
+	case 3, EverGrandeCity_BattleTent_EventScript_SetUpDelinquent
+	case 4, EverGrandeCity_BattleTent_EventScript_SetUpExpertF
+	case 5, EverGrandeCity_BattleTent_EventScript_SetUpFairyTaleGirl
+	case 6, EverGrandeCity_BattleTent_EventScript_SetUpHiker
+	case 7, EverGrandeCity_BattleTent_EventScript_SetUpHexManiac
+	case 8, EverGrandeCity_BattleTent_EventScript_SetUpManiac
+	case 9, EverGrandeCity_BattleTent_EventScript_SetUpGuitarist
+	case 10, EverGrandeCity_BattleTent_EventScript_SetUpCoolTrainerM
+	case 11, EverGrandeCity_BattleTent_EventScript_SetUpNinjaBoy
+	case 12, EverGrandeCity_BattleTent_EventScript_SetUpPokemonRangerF
+	case 13, EverGrandeCity_BattleTent_EventScript_SetUpPokemonRangerM
+	case 14, EverGrandeCity_BattleTent_EventScript_SetUpPsychicF
+	case 15, EverGrandeCity_BattleTent_EventScript_SetUpTriathleteM
+	case 16, EverGrandeCity_BattleTent_EventScript_SetUpStreetThug
+	case 17, EverGrandeCity_BattleTent_EventScript_SetUpLady
+	case 18, EverGrandeCity_BattleTent_EventScript_SetUpCoolTrainerF
+	case 19, EverGrandeCity_BattleTent_EventScript_SetUpRichBoy
+	case 20, EverGrandeCity_BattleTent_EventScript_SetUpTriathleteF
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpBeauty::
+	clearflag FLAG_HIDE_BATTLE_TENT_BEAUTY
+	cleartrainerflag TRAINER_ALYSSA
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpBlackbelt::
+	clearflag FLAG_HIDE_BATTLE_TENT_BLACK_BELT
+	cleartrainerflag TRAINER_TYRON
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpBugCatcher::
+	clearflag FLAG_HIDE_BATTLE_TENT_BUG_CATCHER
+	cleartrainerflag TRAINER_DEANDRE
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpDelinquent::
+	clearflag FLAG_HIDE_BATTLE_TENT_DELINQUENT
+	cleartrainerflag TRAINER_MELINA
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpExpertF::
+	clearflag FLAG_HIDE_BATTLE_TENT_EXPERT_F
+	cleartrainerflag TRAINER_PAT
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpFairyTaleGirl::
+	clearflag FLAG_HIDE_BATTLE_TENT_FAIRY_TALE_GIRL
+	cleartrainerflag TRAINER_CAROLINA
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpHiker::
+	clearflag FLAG_HIDE_BATTLE_TENT_HIKER
+	cleartrainerflag TRAINER_PETE
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpHexManiac::
+	clearflag FLAG_HIDE_BATTLE_TENT_HEX_MANIAC
+	cleartrainerflag TRAINER_SOPHIE
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpManiac::
+	clearflag FLAG_HIDE_BATTLE_TENT_MANIAC
+	cleartrainerflag TRAINER_COBY
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpGuitarist::
+	clearflag FLAG_HIDE_BATTLE_TENT_GUITARIST
+	cleartrainerflag TRAINER_CLARENCE
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpCoolTrainerM::
+	clearflag FLAG_HIDE_BATTLE_TENT_COOLTRAINER_M
+	cleartrainerflag TRAINER_JOSEPH
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpNinjaBoy::
+	clearflag FLAG_HIDE_BATTLE_TENT_NINJA_BOY
+	cleartrainerflag TRAINER_JAIDEN
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpPokemonRangerF::
+	clearflag FLAG_HIDE_BATTLE_TENT_RANGER_F
+	cleartrainerflag TRAINER_KARA
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpPokemonRangerM::
+	clearflag FLAG_HIDE_BATTLE_TENT_RANGER_M
+	cleartrainerflag TRAINER_DAVIS
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpPsychicF::
+	clearflag FLAG_HIDE_BATTLE_TENT_PSYCHIC_F
+	cleartrainerflag TRAINER_ISABELLE
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpTriathleteM::
+	clearflag FLAG_HIDE_BATTLE_TENT_TRIATHLETE_M
+	cleartrainerflag TRAINER_MYLES
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpStreetThug::
+	clearflag FLAG_HIDE_BATTLE_TENT_STREET_THUG
+	cleartrainerflag TRAINER_KEVIN
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpLady::
+	clearflag FLAG_HIDE_BATTLE_TENT_LADY
+	cleartrainerflag TRAINER_BETH
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpCoolTrainerF::
+	clearflag FLAG_HIDE_BATTLE_TENT_COOLTRAINER_F
+	cleartrainerflag TRAINER_JAZMYN
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpRichBoy::
+	clearflag FLAG_HIDE_BATTLE_TENT_RICH_BOY
+	cleartrainerflag TRAINER_ANDRES
+	return
+
+EverGrandeCity_BattleTent_EventScript_SetUpTriathleteF::
+	clearflag FLAG_HIDE_BATTLE_TENT_TRIATHLETE_F
+	cleartrainerflag TRAINER_BRANDI
+	return
 
 EverGrandeCity_BattleTent_EventScript_Teala::
 	msgbox EverGrandeCity_BattleTent_Text_Teala, MSGBOX_NPC
