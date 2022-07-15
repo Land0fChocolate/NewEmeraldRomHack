@@ -463,9 +463,9 @@
 #define FLAG_SHOWN_AURORA_TICKET             0x1AF
 #define FLAG_SHOWN_OLD_SEA_MAP               0x1B0
 #define FLAG_ENABLE_ZINNIA_MATCH_CALL        0x1B1
-#define FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT       0x1B2 // Unused Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_FURY_CUTTER   0x1B3 // Unused Flag
-#define FLAG_MOVE_TUTOR_TAUGHT_MIMIC         0x1B4 // Unused Flag
+#define FLAG_SET_HIDE_HEX_MANIAC_BIKE_QUEST  0x1B2
+#define FLAG_SET_HIDE_BIRD_KEEPER_BIKE_QUEST 0x1B3
+#define FLAG_SET_HIDE_TRIATHLETE_BIKE_QUEST  0x1B4
 #define FLAG_DEFEATED_ARTICUNO               0x1B5
 #define FLAG_DEFEATED_ZAPDOS                 0x1B6
 #define FLAG_DEFEATED_MOLTRES                0x1B7
@@ -805,9 +805,9 @@
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK                  0x2FA
 #define FLAG_HIDE_DEOXYS                                            0x2FB
 #define FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE                      0x2FC
-#define FLAG_HIDE_MAUVILLE_CITY_SCOTT                               0x2FD // unused
-#define FLAG_HIDE_VERDANTURF_TOWN_SCOTT                             0x2FE // unused
-#define FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT                  0x2FF // unused
+#define FLAG_HIDE_HEX_MANIAC_BIKE_QUEST                             0x2FD
+#define FLAG_HIDE_BIRD_KEEPER_BIKE_QUEST                            0x2FE
+#define FLAG_HIDE_TRIATHLETE_BIKE_QUEST                             0x2FF
 #define FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE                        0x300
 #define FLAG_HIDE_ROUTE_111_VICTORIA_WINSTRATE                      0x301
 #define FLAG_HIDE_ROUTE_111_VIVI_WINSTRATE                          0x302

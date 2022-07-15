@@ -19,8 +19,13 @@ Route111_OnLoad:
 	call_if_unset FLAG_REGI_DOORS_OPENED, Route111_EventScript_CloseDesertRuins
 	compare VAR_MIRAGE_TOWER_STATE, 1
 	call_if_eq Route111_EventScript_ShowTemporaryMirageTower
+	call_if_set FLAG_SET_HIDE_HEX_MANIAC_BIKE_QUEST, Route111_EventScript_HideHexManiacBikeQuest
 	call_if_unset FLAG_SYS_GAME_CLEAR, Route111_EventScript_CloseRoyalRest
 	end
+
+Route111_EventScript_HideHexManiacBikeQuest::
+	setflag FLAG_HIDE_HEX_MANIAC_BIKE_QUEST
+	return
 
 Route111_EventScript_CloseDesertRuins::
 	setmetatile 29, 86, METATILE_General_RockWall_RockBase, 1
@@ -588,6 +593,32 @@ Route111_EventScript_Cece::
 	msgbox Route111_Text_CecePostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route111_EventScript_HexManiacBikeQuest::
+	lock
+	faceplayer
+	goto_if_set FLAG_SET_HIDE_HEX_MANIAC_BIKE_QUEST, Route111_EventScript_HexManiacBikeQuest_WillGetBike
+	specialvar VAR_RESULT, GetPlayerAvatarBike
+	compare VAR_RESULT, 0
+	goto_if_eq Route111_EventScript_HexManiacBikeQuest_NoBike
+	msgbox Route111_Text_ILikeYourBike, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SET_HIDE_HEX_MANIAC_BIKE_QUEST
+	addvar VAR_BIKE_UPGRADE_STATE, 1
+	release
+	end
+
+Route111_EventScript_HexManiacBikeQuest_NoBike::
+	msgbox Route111_Text_NoBike, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route111_EventScript_HexManiacBikeQuest_WillGetBike::
+	msgbox Route111_Text_WillGetBike, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 Route111_EventScript_MagmaGrunts::
 	lock
 	applymovement LOCALID_GRUNT_2, Common_Movement_FaceLeft
@@ -787,3 +818,21 @@ Route111_Text_MagmaGrunt2Reply:
 Route111_Text_MagmaGrunt1Reply:
 	.string "It's not nearly as tiring as listening\n"
 	.string "to your whining.$"
+
+Route111_Text_NoBike:
+	.string "My dress got all dirty from climbing up\n"
+	.string "this cliff!\l"
+	.string "I wish there was an easier way…$"
+
+Route111_Text_ILikeYourBike:
+	.string "Wow! Nice bike!\n"
+	.string "Did you use it to climb up here?\p"
+	.string "Hmm… … …\n"
+	.string "I'm intrigued.\p"
+	.string "Perhaps I should pay a visit to that\n"
+	.string "bike shop in Mauville.$"
+
+Route111_Text_WillGetBike:
+	.string "Yeah, I'm definitely getting a bike\n"
+	.string "like yours now. Thanks for showing\l"
+	.string "it to me!$"
