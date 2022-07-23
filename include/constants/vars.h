@@ -155,7 +155,7 @@
 #define VAR_CONTEST_TYPE                     0x4088
 #define VAR_SECRET_BASE_INITIALIZED          0x4089
 #define VAR_CONTEST_PRIZE_PICKUP             0x408A
-#define VAR_UNUSED_0x408B                    0x408B // Unused Var
+#define VAR_BIRCH_LAB_POSTGAME_STATE         0x408B
 #define VAR_LITTLEROOT_HOUSES_STATE_BRENDAN  0x408C
 #define VAR_LITTLEROOT_RIVAL_STATE           0x408D
 #define VAR_BOARD_BRINEY_BOAT_STATE          0x408E
@@ -198,7 +198,7 @@
 #define VAR_WEATHER_INSTITUTE_STATE          0x40B3
 #define VAR_SS_TIDAL_STATE                   0x40B4
 #define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR  0x40B5
-#define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2     0x40B6 // Leftover from RS, never set
+#define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2     0x40B6 // unused. Leftover from RS, never set
 #define VAR_SLATEPORT_FAN_CLUB_STATE         0x40B7
 #define VAR_WEATHER_INSTITUTE_TRIGGER_STATE  0x40B8
 #define VAR_MT_PYRE_STATE                    0x40B9
@@ -235,7 +235,7 @@
 #define VAR_SOOTOPOLIS_WALLACE_STATE         0x40D8
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE             0x40DA
-#define VAR_UNUSED_0x40DB                    0x40DB // Unused Var
+#define VAR_BIKE_UPGRADE_STATE               0x40DB
 #define VAR_UNUSED_0x40DC                    0x40DC // Unused Var
 #define VAR_EVENT_PICHU_SLOT                 0x40DD
 #define VAR_NEVER_READ_0x40DE                0x40DE // Var is written to, but never read
@@ -263,11 +263,11 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER        0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER       0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER 0x40F6 // unused
-#define VAR_UNUSED_0x40F7                    0x40F7 // Unused Var
-#define VAR_UNUSED_0x40F8                    0x40F8 // Unused Var
-#define VAR_UNUSED_0x40F9                    0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                    0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                    0x40FB // Unused Var
+#define VAR_BIRCH_CALL_STEP_COUNTER          0x40F7
+#define VAR_NAVEL_ROCK_BOULDER_BUTTON_1      0x40F8
+#define VAR_NAVEL_ROCK_BOULDER_BUTTON_2      0x40F9
+#define VAR_NAVEL_ROCK_BOULDER_BUTTON_3      0x40FA
+#define VAR_NAVEL_ROCK_BOULDER_BUTTON_4      0x40FB
 #define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                    0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                    0x40FE // Unused Var

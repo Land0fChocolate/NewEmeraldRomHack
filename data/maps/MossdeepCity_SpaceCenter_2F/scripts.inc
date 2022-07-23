@@ -1,12 +1,17 @@
 MossdeepCity_SpaceCenter_2F_MapScripts::
 	.byte 0
 
-MossdeepCity_SpaceCenter_2F_EventScript_Scientist::
+MossdeepCity_SpaceCenter_2F_EventScript_Scientist1::
 	lock
-	faceplayer
-	msgbox MossdeepCity_SpaceCenter_2F_Text_MossdeepIdealForRockets, MSGBOX_DEFAULT
+	msgbox MossdeepCity_SpaceCenter_2F_Text_PokemonInSpace, MSGBOX_DEFAULT
 	release
-	end	
+	end
+
+MossdeepCity_SpaceCenter_2F_EventScript_Scientist2::
+	lock
+	msgbox MossdeepCity_SpaceCenter_2F_Text_StrangeReadings, MSGBOX_DEFAULT
+	release
+	end
 
 MossdeepCity_SpaceCenter_2F_EventScript_Gentleman::
 	lock
@@ -22,11 +27,16 @@ MossdeepCity_SpaceCenter_2F_EventScript_RichBoy::
 	release
 	end
 
-MossdeepCity_SpaceCenter_2F_Text_MossdeepIdealForRockets:
-	.string "Mossdeep has mainly sunny weather,\n"
-	.string "and its winds are stable.\p"
-	.string "It's an ideal location for launching\n"
-	.string "rockets.$"
+MossdeepCity_SpaceCenter_2F_Text_PokemonInSpace:
+	.string "Gamma ray pulse? Solar flare?\n"
+	.string "Maybe some kind of incredibly powerful\l"
+	.string "Pokémon up there in space?\p"
+	.string "That couldn't be it, could it?$"
+
+MossdeepCity_SpaceCenter_2F_Text_StrangeReadings:
+	.string "These readings are beyond strange.\n"
+	.string "What in the world could expel that\l"
+	.string "amount of energy?$"
 
 MossdeepCity_SpaceCenter_2F_Text_WouldveLikedToBeAstronaut:
 	.string "If only I was a little younger, I would\n"
@@ -37,63 +47,3 @@ MossdeepCity_SpaceCenter_2F_Text_WouldveLikedToBeAstronaut:
 MossdeepCity_SpaceCenter_2F_Text_WishOrdinaryPeopleCouldGoIntoSpace:
 	.string "I wish ordinary people could go into\n"
 	.string "space one day…$"
-
-MossdeepCity_SpaceCenter_2F_Text_YoureOutnumberedTakeUsOn:
-	.string "What's wrong with you?\p"
-	.string "You're outnumbered three to one,\n"
-	.string "but you still want to take us on?$"
-
-MossdeepCity_SpaceCenter_2F_Text_GoodAnswer:
-	.string "Good answer!\n"
-	.string "That's what a smart person'll do!$"
-
-MossdeepCity_SpaceCenter_2F_Text_Grunt5Intro:
-	.string "A reckless go-getter, are you?\n"
-	.string "Okay, I'll go first!$"
-
-MossdeepCity_SpaceCenter_2F_Text_Grunt5Defeat:
-	.string "I lost!\n"
-	.string "But!$"
-
-MossdeepCity_SpaceCenter_2F_Text_Grunt6Intro:
-	.string "It's too soon to be relieved!\n"
-	.string "I'm up next!$"
-
-MossdeepCity_SpaceCenter_2F_Text_Grunt6Defeat:
-	.string "I lost, too!\n"
-	.string "But!$"
-
-MossdeepCity_SpaceCenter_2F_Text_Grunt7Intro:
-	.string "I bet you want to take a break.\n"
-	.string "But I'm not about to let you do that!$"
-
-MossdeepCity_SpaceCenter_2F_Text_Grunt7Defeat:
-	.string "We should've taken a break…\n"
-	.string "That's what we should've done…$"
-
-MossdeepCity_SpaceCenter_2F_Text_Grunt6PostBattle:
-	.string "Three of us here, and look at the sorry\n"
-	.string "mess we got ourselves into.$"
-
-MossdeepCity_SpaceCenter_2F_Text_Grunt7PostBattle:
-	.string "We three losing like this…\n"
-	.string "We look worse than usual by triple!$"
-
-MossdeepCity_SpaceCenter_2F_Text_Grunt5PostBattle:
-	.string "Are we being useful to our leader\n"
-	.string "at all?$"
-
-MossdeepCity_SpaceCenter_2F_Text_WellTakeCareOfYou:
-	.string "Hehehe!\p"
-	.string "We come all the way here to get some\n"
-	.string "fuel, and we're interfered with again!\p"
-	.string "If you're going to mess with us too,\n"
-	.string "we'll take care of you at the same time!$"
-
-
-MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand:
-	.string "All I want…\n"
-	.string "I just want to expand the land mass…$"
-
-MossdeepCity_SpaceCenter_Text_TabithaDefeat:
-	.string "I'm with our leader…$"

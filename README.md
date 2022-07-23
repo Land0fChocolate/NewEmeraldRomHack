@@ -49,6 +49,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Map changes, including new areas to explore that have new Pokemon.
 - Graphical updates to overworld sprites and environments.
 - Various story changes. Includes aspects from ORAS.
+- Item changes: Quick Claw now increases speed by 10% when user is below 50% health.
 
 # New Abilities
 
@@ -70,6 +71,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
 - Swordmaster: Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
 - Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Glaceon/Aurorus.
+- Unsteady: User's evasion increases by one stage when hit. Used by Spinda.
 - Disarm: User's contact moves inflict the Embargo status (disable held items) on the target. Used by Meowth/Persian/Pawniard/Bisharp/Meowth(Galarian)
 - King's Might: User doesn't need to recharge on moves like Hyper Beam and Giga Impact. Used by Slaking.
 - Pleasant Dreams: Heals sleeping Pokemon 1/4 HP every turn. Used by Cresselia.

@@ -1,7 +1,6 @@
 .set LOCALID_TWIN, 1
 .set LOCALID_MOM, 4
-.set LOCALID_RIVAL, 7
-.set LOCALID_BIRCH, 8
+.set LOCALID_BIRCH, 7
 
 LittlerootTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_OnTransition
@@ -121,7 +120,7 @@ LittlerootTown_EventScript_SetMomInFrontOfDoorFemale::
 LittlerootTown_OnFrame:
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 1, LittlerootTown_EventScript_StepOffTruckMale
 	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_EventScript_StepOffTruckFemale
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_BeginDexUpgradeScene
+	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_BirchIntroducingPlayerToLittlerootBeachScene
 	.2byte 0
 
 LittlerootTown_EventScript_StepOffTruckMale::
@@ -219,22 +218,155 @@ LittlerootTown_Movement_PlayerStepOffTruck:
 	delay_16
 	step_end
 
-LittlerootTown_EventScript_BeginDexUpgradeScene::
+LittlerootTown_EventScript_BirchIntroducingPlayerToLittlerootBeachScene::
 	lockall
 	playse SE_PIN
 	applymovement LOCALID_BIRCH, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 80
-	msgbox LittlerootTown_Text_BirchSomethingToShowYouAtLab, MSGBOX_DEFAULT
+	msgbox LittlerootTown_Text_BirchNewAreas, MSGBOX_DEFAULT
 	closemessage
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_RIVAL
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
 	delay 20
+	checkplayergender
+	compare VAR_RESULT, MALE
+	call_if_eq LittlerootTown_EventScript_WalkToLittleRootBeachPathBoy
+	compare VAR_RESULT, FEMALE
+	call_if_eq LittlerootTown_EventScript_WalkToLittleRootBeachPathGirl
+	delay 20
+	msgbox LittlerootTown_Text_BirchInvestigateBeach, MSGBOX_DEFAULT
+	closemessage
+	delay 20
+	playse SE_CLICK
+	delay 10
+	playse SE_PC_ON
+	waitse
+	delay 20
+	msgbox LittlerootTown_Text_OkayAllDone, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	message LittlerootTown_Text_PokedexUpgradedToNational
+	waitmessage
+	waitfanfare
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
+	msgbox LittlerootTown_Text_BirchBackToLab, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BIRCH, LittlerootTown_Movement_BirchToLab
+	waitmovement 0
+	opendoor 7, 16
+	waitdooranim
+	applymovement LOCALID_BIRCH, LittlerootTown_Movement_BirchEnterLab
+	waitmovement 0
+	removeobject LOCALID_BIRCH
+	closedoor 7, 16
+	waitdooranim
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
+	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2
+	setvar VAR_SCOTT_BF_CALL_STEP_COUNTER, 0
+	setflag FLAG_SCOTT_CALL_BATTLE_FRONTIER
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	warp MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 255, 6, 5
-	waitstate
 	releaseall
 	end
+
+LittlerootTown_EventScript_WalkToLittleRootBeachPathBoy::
+	applymovement LOCALID_BIRCH, LittlerootTown_Movement_BirchToLittlerootBeachPathBoy
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_PlayerToLittlerootBeachPathBoy
+	waitmovement 0
+	return
+
+LittlerootTown_EventScript_WalkToLittleRootBeachPathGirl::
+	applymovement LOCALID_BIRCH, LittlerootTown_Movement_BirchToLittlerootBeachPathGirl
+	applymovement OBJ_EVENT_ID_PLAYER, LittlerootTown_Movement_PlayerToLittlerootBeachPathGirl
+	waitmovement 0
+	return
+
+LittlerootTown_Movement_BirchToLittlerootBeachPathBoy:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	face_right
+	step_end
+
+LittlerootTown_Movement_PlayerToLittlerootBeachPathBoy:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	face_left
+	step_end
+
+LittlerootTown_Movement_BirchToLittlerootBeachPathGirl:
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	face_right
+	step_end
+
+LittlerootTown_Movement_PlayerToLittlerootBeachPathGirl:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	face_left
+	step_end
+
+LittlerootTown_Movement_BirchToLab:
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	step_end
+
+LittlerootTown_Movement_BirchEnterLab:
+	walk_in_place_fastest_up
+	walk_up
+	step_end
 
 LittlerootTown_OnLoad:
 	call_if_unset FLAG_SYS_GAME_CLEAR, LittlerootTown_EventScript_CloseLittlerootBeachPath
@@ -263,7 +395,6 @@ LittlerootTown_OnWarp:
 
 LittlerootTown_EventScript_SetRivalBirchPosForDexUpgrade::
 	addobject LOCALID_BIRCH
-	addobject LOCALID_RIVAL
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeMale
@@ -271,12 +402,10 @@ LittlerootTown_EventScript_SetRivalBirchPosForDexUpgrade::
 	end
 
 LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeMale::
-	setobjectxy LOCALID_RIVAL, 6, 10
 	setobjectxy LOCALID_BIRCH, 5, 10
 	end
 
 LittlerootTown_EventScript_SetRivalBirchPosForDexUpgradeFemale::
-	setobjectxy LOCALID_RIVAL, 13, 10
 	setobjectxy LOCALID_BIRCH, 14, 10
 	end
 
@@ -1084,14 +1213,42 @@ LittlerootTown_Text_PlayersHouse:
 LittlerootTown_Text_ProfBirchsHouse:
 	.string "PROF. BIRCH'S HOUSE$"
 
-LittlerootTown_Text_BirchSomethingToShowYouAtLab:
-	.string "Prof. Birch: Well, well, {PLAYER}{KUN}!\n"
-	.string "That was good work out there!\p"
-	.string "I knew there was something special\n"
-	.string "about you when I first saw you,\l"
-	.string "but I never expected this.\p"
-	.string "Oh, yes. Do you still have the Pokédex\n"
-	.string "I gave you?\p"
-	.string "I have something to show you.\n"
-	.string "Let's go to my Lab.$"
+LittlerootTown_Text_BirchNewAreas:
+	.string "Prof. Birch: {PLAYER}!\p"
+	.string "There have been some remarkable\n"
+	.string "discoveries recently.\p"
+	.string "New areas have opened up, and they have\n"
+	.string "wild Pokemon never before seen in this\l"
+	.string "region!\p"
+	.string "There's even one right next to\n"
+	.string "Littleroot! Come and see!$"
 
+LittlerootTown_Text_BirchInvestigateBeach:
+	.string "As you can see, a new path opened up.\p"
+	.string "We've named the area it leads to, as\n"
+	.string "Littleroot Beach.\p"
+	.string "{RIVAL} is already there to have\n"
+	.string "a look around.\p"
+	.string "{PLAYER}, I would like you to\n"
+	.string "investigate too, as part of your work\l"
+	.string "for the Pokédex.\l"
+	.string "The more data the merrier!\p"
+	.string "Oh, and just before you do that.\n"
+	.string "I'm going to upgrade your Pokédex to\l"
+	.string "support entries for more species.\p"
+	.string "Here, let me see your Pokédex.$"
+
+LittlerootTown_Text_OkayAllDone:
+	.string "Prof. Birch: Okay, all done!$"
+
+LittlerootTown_Text_PokedexUpgradedToNational:
+	.string "{PLAYER}'s Pokédex was upgraded\n"
+	.string "to the National Mode!$"
+
+LittlerootTown_Text_BirchBackToLab:
+	.string "I would love to join you, but I have a\n"
+	.string "ton of data coming in.\p"
+	.string "Meet up with {RIVAL} to discuss your\n"
+	.string "findings and then come back to the lab.\p"
+	.string "I'm looking forward to hearing your\n"
+	.string "reports!$"

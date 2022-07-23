@@ -32,11 +32,11 @@
 #define TRAINER_GRUNT_AQUA_HIDEOUT_6         28
 #define TRAINER_FREDRICK                     29
 #define TRAINER_MATT                         30
-#define TRAINER_ZANDER                       31 //unused
+#define TRAINER_KAT_AND_ASHE                 31
 #define TRAINER_SHELLY_WEATHER_INSTITUTE     32
 #define TRAINER_SHELLY_SEAFLOOR_CAVERN       33
 #define TRAINER_ARCHIE                       34
-#define TRAINER_LEAH                         35 //unused
+#define TRAINER_GEORDI                       35
 #define TRAINER_DAISY                        36
 #define TRAINER_ROSE_1                       37
 #define TRAINER_FELIX                        38
@@ -196,7 +196,7 @@
 #define TRAINER_GRUNT_AQUA_HIDEOUT_7        192
 #define TRAINER_GRUNT_AQUA_HIDEOUT_8        193
 #define TRAINER_SHAWN                       194
-#define TRAINER_FERNANDO_1                  195 //unused
+#define TRAINER_ALISTAIR                    195
 #define TRAINER_DALTON_1                    196
 #define TRAINER_DALTON_2                    197
 #define TRAINER_DALTON_3                    198
@@ -380,10 +380,10 @@
 #define TRAINER_ISAIAH                      376
 #define TRAINER_PABLO_1                     377
 #define TRAINER_CHASE                       378
-#define TRAINER_ISAIAH_2                    379 //unused
-#define TRAINER_ISAIAH_3                    380 //unused
-#define TRAINER_ISAIAH_4                    381 //unused
-#define TRAINER_ISAIAH_5                    382 //unused
+#define TRAINER_NATASHA                     379
+#define TRAINER_ZUKO                        380
+#define TRAINER_RYU                         381
+#define TRAINER_JOSS                        382
 #define TRAINER_ISOBEL                      383
 #define TRAINER_DONNY                       384
 #define TRAINER_TALIA                       385
@@ -635,7 +635,7 @@
 #define TRAINER_CLARK                       631
 #define TRAINER_ERIC                        632
 #define TRAINER_JAYLIN                      633
-#define TRAINER_MIKE_1                      634 //unused
+#define TRAINER_PITAHA                      634
 #define TRAINER_MIKE_2                      635
 #define TRAINER_TRENT_2                     636
 #define TRAINER_TRENT_3                     637
@@ -706,7 +706,7 @@
 #define TRAINER_MARCOS                      702
 #define TRAINER_RHETT                       703
 #define TRAINER_TYRON                       704
-#define TRAINER_CELINA                      705 //unused
+#define TRAINER_CELINA                      705
 #define TRAINER_BIANCA                      706 //unused
 #define TRAINER_HAYDEN                      707 //unused
 #define TRAINER_SOPHIE                      708
@@ -858,7 +858,7 @@
 #define TRAINER_MAY_PLACEHOLDER             854 //unused
 #define TRAINER_CECE                        855
 #define TRAINER_FRANNY                      856
-#define TRAINER_MEGGI                       857 //TODO: set up but unused, need to find a location for this trainer.
+#define TRAINER_MEGGI                       857
 #define TRAINER_MOMO_1                      858
 #define TRAINER_NELLIE                      859
 #define TRAINER_ARCHIE_WEATHER_INSTITUTE    860

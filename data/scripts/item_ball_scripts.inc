@@ -697,3 +697,51 @@ FortreeJungle_Area2_EventScript_ItemTM09::
 CrumblingGorge_EventScript_ItemTM59::
 	finditem ITEM_TM59
 	end
+
+NavelRock_Entrance_Eventscript_ItemEscapeRope::
+	finditem ITEM_ESCAPE_ROPE
+	end
+
+NavelRock_Lugia1_Eventscript_ItemImpishMint::
+	finditem ITEM_IMPISH_MINT
+	end
+
+NavelRock_Lugia2_Eventscript_ItemRareCandy::
+	finditem ITEM_RARE_CANDY
+	end
+
+NavelRock_Lugia3_Eventscript_ItemTM60::
+	finditem ITEM_TM60
+	end
+
+NavelRock_Hooh1_Eventscript_ItemBoldMint::
+	finditem ITEM_BOLD_MINT
+	end
+
+NavelRock_Hooh2_Eventscript_ItemTM97::
+	finditem ITEM_TM97
+	end
+
+NavelRock_Hooh3_Eventscript_ItemMaxRevive::
+	finditem ITEM_MAX_REVIVE
+	end
+
+NavelRock_Bottom_Eventscript_ItemSilverWing::
+	finditem ITEM_SILVER_WING
+	msgbox Text_FoundSilverWing, MSGBOX_DEFAULT
+	closemessage
+	end
+
+NavelRock_Hooh3_Eventscript_ItemRainbowWing::
+	finditem ITEM_RAINBOW_WING
+	msgbox Text_FoundRainbowWing, MSGBOX_DEFAULT
+	closemessage
+	end
+
+Text_FoundSilverWing:
+	.string "You have found a legendary artefact!\n"
+	.string "Kyogre should appear for you now.$"
+
+Text_FoundRainbowWing:
+	.string "You have found a legendary artefact!\n"
+	.string "Groudon should appear for you now.$"

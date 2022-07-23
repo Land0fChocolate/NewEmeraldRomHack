@@ -535,6 +535,12 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_POKEMON_RANGER          0x116D
 #define OBJ_EVENT_PAL_TAG_THUG                    0x116E
 #define OBJ_EVENT_PAL_TAG_LISIA                   0x116F
+#define OBJ_EVENT_PAL_TAG_ARTICUNO                0x1170
+#define OBJ_EVENT_PAL_TAG_ZAPDOS                  0x1171
+#define OBJ_EVENT_PAL_TAG_MOLTRES                 0x1172
+#define OBJ_EVENT_PAL_TAG_RAIKOU                  0x1173
+#define OBJ_EVENT_PAL_TAG_ENTEI                   0x1174
+#define OBJ_EVENT_PAL_TAG_SUICUNE                 0x1175
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF //4607
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -659,6 +665,12 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Delinquent,            OBJ_EVENT_PAL_TAG_THUG},
     {gObjectEventPal_StreetThug,            OBJ_EVENT_PAL_TAG_THUG},
     {gObjectEventPal_Lisia,                 OBJ_EVENT_PAL_TAG_LISIA},
+    {gObjectEventPal_Articuno,              OBJ_EVENT_PAL_TAG_ARTICUNO},
+    {gObjectEventPal_Zapdos,                OBJ_EVENT_PAL_TAG_ZAPDOS},
+    {gObjectEventPal_Moltres,               OBJ_EVENT_PAL_TAG_MOLTRES},
+    {gObjectEventPal_Raikou,                OBJ_EVENT_PAL_TAG_RAIKOU},
+    {gObjectEventPal_Entei,                 OBJ_EVENT_PAL_TAG_ENTEI},
+    {gObjectEventPal_Suicune,               OBJ_EVENT_PAL_TAG_SUICUNE},
     {NULL,                                  0x0000},
 };
 
@@ -2293,6 +2305,13 @@ static u8 GetObjectTrainerTypeByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup
         return 0xFF;
     }
     return gObjectEvents[objectEventId].trainerType;
+}
+
+u16 GetBoulderRevealFlagByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup)
+{
+    // Pushable boulder object events store the flag to reveal the boulder
+    // on the floor below in their trainer type field.
+    return GetObjectEventTemplateByLocalIdAndMap(localId, mapNum, mapGroup)->trainerType;
 }
 
 // Unused

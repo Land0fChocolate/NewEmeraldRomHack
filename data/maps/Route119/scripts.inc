@@ -27,8 +27,13 @@ Route119_OnTransition:
 	end
 
 Route119_OnLoad:
+	call_if_set FLAG_SET_HIDE_HEX_MANIAC_BIKE_QUEST, Route119_EventScript_HideBirdKeeperBikeQuest
 	call_if_unset FLAG_SYS_GAME_CLEAR, Route119_EventScript_CloseConquerorsCamp
 	end
+
+Route119_EventScript_HideBirdKeeperBikeQuest::
+	setflag FLAG_HIDE_BIRD_KEEPER_BIKE_QUEST
+	return
 
 Route119_EventScript_CloseConquerorsCamp::
 	setmetatile 12, 1, METATILE_General_SmallTree_SmallTree, 1
@@ -404,6 +409,32 @@ Route119_EventScript_BridgeAquaGrunt2::
 	release
 	end
 
+Route119_EventScript_BirdKeeperBikeQuest::
+	lock
+	faceplayer
+	goto_if_set FLAG_SET_HIDE_BIRD_KEEPER_BIKE_QUEST, Route119_EventScript_BirdKeeperBikeQuest_WillGetBike
+	specialvar VAR_RESULT, GetPlayerAvatarBike
+	compare VAR_RESULT, 0
+	goto_if_eq Route119_EventScript_BirdKeeperBikeQuest_NoBike
+	msgbox Route119_Text_ILikeYourBike, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SET_HIDE_BIRD_KEEPER_BIKE_QUEST
+	addvar VAR_BIKE_UPGRADE_STATE, 1
+	release
+	end
+
+Route119_EventScript_BirdKeeperBikeQuest_NoBike::
+	msgbox Route119_Text_NoBike, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route119_EventScript_BirdKeeperBikeQuest_WillGetBike::
+	msgbox Route119_Text_WillGetBike, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 Route119_EventScript_Boy1::
 	msgbox Route119_Text_ThoughtFlyByCatchingBirdMons, MSGBOX_NPC
 	end
@@ -414,15 +445,6 @@ Route119_EventScript_Boy2::
 
 Route119_EventScript_TrainerTipsDecoration::
 	msgbox Route119_Text_TrainerTipsDecoration, MSGBOX_SIGN
-	end
-
-Route119_EventScript_ScottWonAtFortreeGymCall::
-	lockall
-	pokenavcall Route119_Text_ScottYouWonAtFortreeGym
-	waitmessage
-	clearflag FLAG_SCOTT_CALL_FORTREE_GYM
-	addvar VAR_SCOTT_STATE, 1
-	releaseall
 	end
 
 Route119_Text_MayIntro:
@@ -496,21 +518,6 @@ Route119_Text_BrendanExplainFly:
 	.string "can have it.\p"
 	.string "Anyway, I'll catch you later. Bye!$"
 
-Route119_Text_ScottYouWonAtFortreeGym:
-	.string "… … … … … …\n"
-	.string "… … … … … Beep!\p"
-	.string "Scott: Hiya, {PLAYER}{KUN}, it's me!\p"
-	.string "Just as I thought, you won at\n"
-	.string "the Fortree Gym.\p"
-	.string "Your strength…\n"
-	.string "Perhaps you really are the Trainer\l"
-	.string "that I've been searching for.\p"
-	.string "Remember, you have a fan in me.\n"
-	.string "I'll be cheering from the sidelines.\l"
-	.string "Keep up the great work!\p"
-	.string "… … … … … …\n"
-	.string "… … … … … Click!$"
-
 Route119_Text_StayAwayFromWeatherInstitute:
 	.string "We're standing lookout here.\p"
 	.string "Hey, you! Stay away from the Weather\n"
@@ -556,3 +563,24 @@ Route119_Text_TrainerTipsDecoration:
 	.string "Pick your favorite items and create\n"
 	.string "your very own Secret Base exactly the\l"
 	.string "way you want.$"
+
+Route119_Text_NoBike:
+	.string "I wanted to check out this little\n"
+	.string "isolated patch so I got my bird Pokémon\l"
+	.string "to carry me here.\p"
+	.string "They got really tired though.\n"
+	.string "I wish I could find another way to move\l"
+	.string "around without putting strain on my\l"
+	.string "birds…$"
+
+Route119_Text_ILikeYourBike:
+	.string "Woah! The way you got over here on your\n"
+	.string "bike was so cool and elegant, like a\l"
+	.string "bird!\p"
+	.string "You got that bike from Mauville, yeah?\n"
+	.string "I gotta get me one of those.$"
+
+Route119_Text_WillGetBike:
+	.string "Ooh, I'm just imagining how much fun it\n"
+	.string "would be to ride a bike with my birds\l"
+	.string "flying alongside me!$"

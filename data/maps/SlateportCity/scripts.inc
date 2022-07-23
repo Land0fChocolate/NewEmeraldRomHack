@@ -17,7 +17,7 @@
 .set LOCALID_GRUNT_8, 30
 .set LOCALID_GRUNT_9, 31
 .set LOCALID_GRUNT_11, 33
-.set LOCALID_SCOTT, 35
+.set LOCALID_SCOTT, 42
 
 SlateportCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_OnTransition
@@ -58,6 +58,7 @@ SlateportCity_EventScript_MovePeopleForSternInterview::
 
 SlateportCity_EventScript_SetReadyForScottScene::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
+	clearflag FLAG_HIDE_SLATEPORT_CITY_SCOTT
 	getplayerxy VAR_0x8004, VAR_0x8005
 	compare VAR_0x8004, 30
 	goto_if_eq SlateportCity_EventScript_MoveScottLeft
@@ -76,19 +77,10 @@ SlateportCity_OnFrame:
 
 SlateportCity_EventScript_ScottScene::
 	lockall
-	addobject LOCALID_SCOTT
 	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Movement_PlayerFaceScott
 	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottApproachPlayer
 	waitmovement 0
 	msgbox SlateportCity_Text_YouDroveTeamAquaAway, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFastestLeft
-	waitmovement 0
-	delay 60
-	msgbox SlateportCity_Text_MaybeThisTrainer, MSGBOX_DEFAULT
-	applymovement LOCALID_SCOTT, Common_Movement_WalkInPlaceFastestRight
-	waitmovement 0
-	msgbox SlateportCity_Text_LetsRegisterEachOther, MSGBOX_DEFAULT
 	closemessage
 	delay 30
 	playfanfare MUS_REGISTER_MATCH_CALL
@@ -102,11 +94,9 @@ SlateportCity_EventScript_ScottScene::
 	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottExit
 	waitmovement 0
 	removeobject LOCALID_SCOTT
-	setobjectxyperm LOCALID_SCOTT, 10, 12
-	setobjectmovementtype LOCALID_SCOTT, MOVEMENT_TYPE_FACE_DOWN
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setflag FLAG_HIDE_SLATEPORT_CITY_SCOTT
 	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 2
-	addvar VAR_SCOTT_STATE, 1
 	releaseall
 	end
 
@@ -950,56 +940,6 @@ SlateportCity_EventScript_NotEnoughBerryPowder::
 	goto SlateportCity_EventScript_ChooseBerryPowderItem
 	end
 
-SlateportCity_EventScript_ScottBattleTentScene::
-	lockall
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
-	waitmovement 0
-	opendoor 10, 12
-	waitdooranim
-	addobject LOCALID_SCOTT
-	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Movement_PushPlayerDown
-	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottExitBattleTent
-	waitmovement 0
-	closedoor 10, 12
-	waitdooranim
-	msgbox SlateportCity_Text_TakingBattleTentChallenge, MSGBOX_DEFAULT
-	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, SlateportCity_Movement_PlayerWatchScottExit
-	applymovement LOCALID_SCOTT, SlateportCity_Movement_ScottExitAfterBattleTent
-	waitmovement 0
-	removeobject LOCALID_SCOTT
-	addvar VAR_SCOTT_STATE, 1
-	setvar VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 3
-	releaseall
-	end
-
-SlateportCity_Movement_PushPlayerDown:
-	lock_facing_direction
-	walk_down
-	unlock_facing_direction
-	step_end
-
-SlateportCity_Movement_PlayerWatchScottExit:
-	delay_16
-	walk_in_place_fastest_right
-	step_end
-
-SlateportCity_Movement_ScottExitBattleTent:
-	delay_8
-	walk_down
-	step_end
-
-SlateportCity_Movement_ScottExitAfterBattleTent:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
 SlateportCity_EventScript_BerryCrushRankingsSign::
 	lockall
 	special ShowBerryCrushRankings
@@ -1422,44 +1362,32 @@ SlateportCity_Text_ComeBackToTradeBerryPowder:
 	.string "Did you know?$"
 
 SlateportCity_Text_YouDroveTeamAquaAway:
-	.string "Scott: Huh?\n"
+	.string "Huh?\n"
 	.string "I'm sure I met you somewhere before.\p"
 	.string "Have I introduced myself to you?\n"
 	.string "If not, my name's Scott.\p"
 	.string "I just saw Team Aqua run away from\n"
 	.string "here like they were stung.\p"
-	.string "Let me guess--you drove them away?$"
-
-SlateportCity_Text_MaybeThisTrainer:
-	.string "Scott: Hmm…\n"
-	.string "Maybe, just maybe, this Trainer$"
-
-SlateportCity_Text_LetsRegisterEachOther:
-	.string "Scott: All right! I think you're going\n"
-	.string "to become a good friend.\p"
-	.string "So, let's register each other in our\n"
-	.string "Pokénavs.\p"
-	.string "… … … … … …$"
+	.string "Let me guess--you drove them away?\p"
+	.string "Oh! I remember now!\n"
+	.string "I saw you at Petalburg Gym.\l"
+	.string "You're Norman's kid!\p"
+	.string "You see, I'm travelling arund looking\n"
+	.string "for talented trainers for a particular\l"
+	.string "project of mine.\p"
+	.string "You're too juvenile as of now, but you\n"
+	.string "show great promise!\p"
+	.string "Let's register each other in our\n"
+	.string "Pokénavs so I have you on record.\l"
+	.string "I may contact you in the future.$"
 
 SlateportCity_Text_RegisteredScott:
 	.string "Registered this Scott person\n"
 	.string "in the Pokénav.$"
 
 SlateportCity_Text_KeepEyeOnTrainersBeSeeingYou:
-	.string "Scott: What I'd like to do is tag along\n"
-	.string "with you, but I do want to keep an eye\l"
-	.string "on the talents of other people, too.\p"
-	.string "So, I'll be off to roam other towns\n"
-	.string "a bit more.\p"
-	.string "Be seeing you, {PLAYER}{KUN}!$"
-
-SlateportCity_Text_TakingBattleTentChallenge:
-	.string "Scott: Oh, hey!\n"
-	.string "If it isn't {PLAYER}{KUN}!\p"
-	.string "{PLAYER}{KUN}, let me guess--you're going\n"
-	.string "to take the Battle Tent challenge?\p"
-	.string "Yeah! That's a good idea!\n"
-	.string "That's a really great idea!\p"
-	.string "After all, a tough Trainer is\n"
-	.string "the perfect fit for the Battle Tent!\p"
-	.string "Give it your best effort!$"
+	.string "Scott: Right. I'll be heading off.\p"
+	.string "If you keep on improving yourself as a\n"
+	.string "trainer, I'm sure we'll run into each\l"
+	.string "other again.\p"
+	.string "Be seeing you, {PLAYER}!$"

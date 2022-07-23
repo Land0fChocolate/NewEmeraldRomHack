@@ -599,6 +599,16 @@ bool8 ScrCmd_checkflag(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_checkmultiflags(struct ScriptContext *ctx)
+{
+    u8 flag1 = FlagGet(ScriptReadHalfword(ctx));
+    u8 flag2 = FlagGet(ScriptReadHalfword(ctx));
+    u8 flag3 = FlagGet(ScriptReadHalfword(ctx));
+
+    ctx->comparisonResult = flag1 & flag2 & flag3;
+    return FALSE;
+}
+
 bool8 ScrCmd_incrementgamestat(struct ScriptContext *ctx)
 {
     IncrementGameStat(ScriptReadByte(ctx));

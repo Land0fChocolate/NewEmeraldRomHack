@@ -1207,6 +1207,10 @@ PetalburgCity_Gym_EventScript_GymGuidePostVictory::
 	release
 	end
 
+PetalburgCity_Gym_EventScript_Scott::
+	msgbox PetalburgCity_Gym_Text_Scott, MSGBOX_NPC
+	end
+
 PetalburgCity_Gym_EventScript_LeftGymStatue::
 	lockall
 	goto_if_set FLAG_BADGE05_GET, PetalburgCity_Gym_EventScript_GymStatueCertified
@@ -1499,7 +1503,7 @@ PetalburgCity_Gym_Text_GeorgePostBattle:
 	.string "earned only through effort.\p"
 	.string "I lost because my own efforts\n"
 	.string "weren't enough.\p"
-	.string "Go on! The One-Hit KO Room is next.$"
+	.string "Go on! The Critical Hit Room is next.$"
 
 PetalburgCity_Gym_Text_GeorgePostBadge:
 	.string "I'm going to keep training at Gyms.\n"
@@ -1564,7 +1568,7 @@ PetalburgCity_Gym_Text_AlexiaPostBattle:
 	.string "Now, go on! The left door goes to\n"
 	.string "the Strength Room.\p"
 	.string "The right door opens to\n"
-	.string "the One-Hit KO Room.\p"
+	.string "the Critical Hit Room.\p"
 	.string "Both of them have Trainers who are\n"
 	.string "skilled at offense.$"
 
@@ -1627,7 +1631,7 @@ PetalburgCity_Gym_Text_EnterStrengthRoom:
 	.string "Do you want to go through?$"
 
 PetalburgCity_Gym_Text_EnterOHKORoom:
-	.string "“ONE-HIT KO ROOM,” the sign says.\p"
+	.string "“CRITICAL HIT ROOM,” the sign says.\p"
 	.string "Do you want to go through?$"
 
 PetalburgCity_Gym_Text_EnterGymLeadersRoom:
@@ -1681,3 +1685,6 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 	.string "Sorry, but you'll have to come back\n"
 	.string "with at least two Pokémon.$"
 
+PetalburgCity_Gym_Text_Scott:
+	.string "I heard the new Gym Leader here is tough\n"
+	.string "as nails. I had to go see for myself.$"

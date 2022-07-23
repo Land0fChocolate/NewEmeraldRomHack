@@ -28,7 +28,7 @@ Route114_FossilManiacsTunnel_EventScript_ManiacMentionCaveIn::
 	applymovement LOCALID_FOSSIL_MANIAC, Common_Movement_WalkInPlaceFastestUp
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
-	msgbox Route114_FossilManiacsTunnel_Text_NotSafeThatWay, MSGBOX_DEFAULT
+	msgbox Route114_FossilManiacsTunnel_Text_FossilTunnel, MSGBOX_DEFAULT
 	setvar VAR_FOSSIL_MANIAC_STATE, 2
 	releaseall
 	end
@@ -36,13 +36,22 @@ Route114_FossilManiacsTunnel_EventScript_ManiacMentionCaveIn::
 Route114_FossilManiacsTunnel_EventScript_FossilManiac::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_REVIVED_FOSSIL_MON, Route114_FossilManiacsTunnel_EventScript_PlayerRevivedFossil
+	checkitem ITEM_DOME_FOSSIL, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route114_FossilManiacsTunnel_EventScript_PlayerHasFossil
+	checkitem ITEM_HELIX_FOSSIL, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route114_FossilManiacsTunnel_EventScript_PlayerHasFossil
+	checkitem ITEM_OLD_AMBER, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route114_FossilManiacsTunnel_EventScript_PlayerHasFossil
 	checkitem ITEM_ROOT_FOSSIL, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_FossilManiacsTunnel_EventScript_PlayerHasFossil
 	checkitem ITEM_CLAW_FOSSIL, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route114_FossilManiacsTunnel_EventScript_PlayerHasFossil
+	goto_if_set FLAG_IS_CHAMPION, Route114_FossilManiacsTunnel_EventScript_FossilsInTunnel
 	msgbox Route114_FossilManiacsTunnel_Text_LookInDesertForFossils, MSGBOX_DEFAULT
 	release
 	end
@@ -52,8 +61,8 @@ Route114_FossilManiacsTunnel_EventScript_PlayerHasFossil::
 	release
 	end
 
-Route114_FossilManiacsTunnel_EventScript_PlayerRevivedFossil::
-	msgbox Route114_FossilManiacsTunnel_Text_FossilsAreWonderful, MSGBOX_DEFAULT
+Route114_FossilManiacsTunnel_EventScript_FossilsInTunnel::
+	msgbox Route114_FossilManiacsTunnel_Text_FossilsInTunnel, MSGBOX_DEFAULT
 	release
 	end
 
@@ -79,17 +88,17 @@ Route114_FossilManiacsTunnel_Text_DevonCorpRevivingFossils:
 	.string "I love my fossils, so I would never\n"
 	.string "do anything like that…$"
 
-Route114_FossilManiacsTunnel_Text_FossilsAreWonderful:
-	.string "fossils are so… Wonderful…\n"
-	.string "It's so dreamy…$"
+Route114_FossilManiacsTunnel_Text_FossilsInTunnel:
+	.string "I found a motherlode of fossils in the\n"
+	.string "tunnel. They're mine, all mine!\p"
+	.string "Still, new fossils keep popping up\n"
+	.string "every day.$"
 
-Route114_FossilManiacsTunnel_Text_NotSafeThatWay:
-	.string "Oh…\n"
-	.string "It's not safe that way…\p"
-	.string "I was digging away, you see…\n"
-	.string "When the whole wall collapsed…\p"
-	.string "I think there's a giant cavern\n"
-	.string "underneath now…\p"
-	.string "But I've left it alone because I don't\n"
-	.string "think there are any fossils there…$"
-
+Route114_FossilManiacsTunnel_Text_FossilTunnel:
+	.string "Oh ho…\n"
+	.string "You wish to enter my prized fossil\l"
+	.string "tunnel?\p"
+	.string "I'll allow it. I've found more fossils\n"
+	.string "than I know what to do with.\p"
+	.string "Yet, there are always some left in\n"
+	.string "there if you look hard enough.$"

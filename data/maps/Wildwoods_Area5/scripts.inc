@@ -1,2 +1,7 @@
 Wildwoods_Area5_MapScripts::
 	.byte 0
+
+Wildwoods_Area5_Eventscript_Pitaha::
+	trainerbattle_single TRAINER_PITAHA, Wildwoods_Area5_Text_PitahaIntro, Wildwoods_Area5_Text_PitahaDefeated
+	msgbox Wildwoods_Area5_Text_PitahaPostBattle, MSGBOX_AUTOCLOSE
+	end

@@ -4,6 +4,10 @@ MauvilleCity_BikeShop_MapScripts::
 MauvilleCity_BikeShop_EventScript_Rydel::
 	lock
 	faceplayer
+	compare VAR_BIKE_UPGRADE_STATE, 4
+	goto_if_eq MauvilleCity_BikeShop_EventScript_RydelBestWishes
+	compare VAR_BIKE_UPGRADE_STATE, 3
+	goto_if_eq MauvilleCity_BikeShop_EventScript_GiveSecondBike
 	goto_if_set FLAG_RECEIVED_BIKE, MauvilleCity_BikeShop_EventScript_AskSwitchBikes
 	goto_if_set FLAG_DECLINED_BIKE, MauvilleCity_BikeShop_EventScript_SkipGreeting
 	msgbox MauvilleCity_BikeShop_Text_RydelGreeting, MSGBOX_DEFAULT
@@ -12,6 +16,29 @@ MauvilleCity_BikeShop_EventScript_Rydel::
 	goto_if_eq MauvilleCity_BikeShop_EventScript_YesFar
 	compare VAR_RESULT, NO
 	goto_if_eq MauvilleCity_BikeShop_EventScript_NotFar
+	end
+
+MauvilleCity_BikeShop_EventScript_RydelBestWishes::
+	msgbox MauvilleCity_BikeShop_Text_BestWishes, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_BikeShop_EventScript_GiveSecondBike::
+	msgbox MauvilleCity_BikeShop_Text_GiveSecondBike, MSGBOX_DEFAULT
+	checkitem ITEM_ACRO_BIKE, 1
+	compare VAR_RESULT, TRUE
+	goto MauvilleCity_BikeShop_EventScript_GiveMachBike
+	giveitem ITEM_ACRO_BIKE
+	msgbox MauvilleCity_BikeShop_Text_SwitchBetweenBikesButton, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MauvilleCity_BikeShop_EventScript_GiveMachBike::
+	giveitem ITEM_MACH_BIKE
+	msgbox MauvilleCity_BikeShop_Text_SwitchBetweenBikesButton, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 
 MauvilleCity_BikeShop_EventScript_SkipGreeting::
@@ -260,6 +287,25 @@ MauvilleCity_BikeShop_Text_OhYourBikeIsInPC:
 	.string "and I'll be happy to exchange it!\p"
 	.string "May the wind always be at your back\n"
 	.string "on your adventure!$"
+
+MauvilleCity_BikeShop_Text_GiveSecondBike:
+	.string "Rydel: My favourite customer!\p"
+	.string "There's been a buzz lately of a young\n"
+	.string "trainer using their bike to traverse\l"
+	.string "tricky obstacles.\l"
+	.string "That must be you, yes?\p"
+	.string "Thanks to you, business has been\n"
+	.string "booming! I can't thank you enough!\p"
+	.string "Here, as a token of my thanks.\n"
+	.string "Take the other bike.$"
+
+MauvilleCity_BikeShop_Text_SwitchBetweenBikesButton:
+	.string "Rydel: You can switch between bikes by\n"
+	.string "pressing “R” for great convienience!$"
+
+MauvilleCity_BikeShop_Text_BestWishes:
+	.string "Rydel: May the winds be always on your\n"
+	.string "back during your adventure!$"
 
 MauvilleCity_BikeShop_Text_HandbooksAreInBack:
 	.string "I'm learning about bikes while\n"

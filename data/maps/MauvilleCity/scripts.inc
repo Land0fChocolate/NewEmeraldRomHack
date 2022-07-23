@@ -164,47 +164,8 @@ MauvilleCity_EventScript_DefeatedWally::
 	setflag FLAG_DEFEATED_WALLY_MAUVILLE
 	setvar VAR_WALLY_CALL_STEP_COUNTER, 0
 	setflag FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL
-	compare VAR_FACING, DIR_NORTH
-	call_if_eq MauvilleCity_EventScript_ScottApproachPlayerNorth
-	compare VAR_FACING, DIR_EAST
-	call_if_eq MauvilleCity_EventScript_ScottApproachPlayerEast
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestDown
-	waitmovement 0
-	msgbox MauvilleCity_Text_ScottYouDidntHoldBack, MSGBOX_DEFAULT
-	closemessage
-	addvar VAR_SCOTT_STATE, 1
-	compare VAR_FACING, DIR_NORTH
-	call_if_eq MauvilleCity_EventScript_ScottExitNorth
-	compare VAR_FACING, DIR_EAST
-	call_if_eq MauvilleCity_EventScript_ScottExitEast
-	removeobject LOCALID_SCOTT
 	releaseall
 	end
-
-MauvilleCity_EventScript_ScottApproachPlayerNorth::
-	addobject LOCALID_SCOTT
-	applymovement LOCALID_SCOTT, MauvilleCity_Movement_ScottApproachPlayerNorth
-	waitmovement 0
-	return
-
-MauvilleCity_EventScript_ScottApproachPlayerEast::
-	setobjectxyperm LOCALID_SCOTT, 12, 13
-	addobject LOCALID_SCOTT
-	applymovement LOCALID_SCOTT, MauvilleCity_Movement_ScottApproachPlayerEast
-	waitmovement 0
-	return
-
-MauvilleCity_EventScript_ScottExitNorth::
-	applymovement OBJ_EVENT_ID_PLAYER, MauvilleCity_Movement_PlayerWatchScottExitNorth
-	applymovement LOCALID_SCOTT, MauvilleCity_Movement_ScottExitNorth
-	waitmovement 0
-	return
-
-MauvilleCity_EventScript_ScottExitEast::
-	applymovement OBJ_EVENT_ID_PLAYER, MauvilleCity_Movement_PlayerWatchScottExitEast
-	applymovement LOCALID_SCOTT, MauvilleCity_Movement_ScottExitEast
-	waitmovement 0
-	return
 
 MauvilleCity_EventScript_BattleWally::
 	msgbox MauvilleCity_Text_WallyHereICome, MSGBOX_DEFAULT
@@ -290,17 +251,6 @@ MauvilleCity_Movement_PlayerWatchWallyExitEast2:
 	walk_in_place_fastest_left
 	step_end
 
-MauvilleCity_Movement_PlayerWatchScottExitNorth:
-	delay_16
-	walk_in_place_fastest_left
-	step_end
-
-MauvilleCity_Movement_PlayerWatchScottExitEast:
-	delay_16
-	delay_16
-	walk_in_place_fastest_left
-	step_end
-
 MauvilleCity_Movement_PlayerWatchWallyExitEast1:
 	delay_16
 	walk_in_place_fastest_down
@@ -358,59 +308,6 @@ MauvilleCity_Movement_WallysUncleExitNorth2:
 
 MauvilleCity_Movement_WallysUncleExitEast2:
 	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-MauvilleCity_Movement_ScottApproachPlayerNorth:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_in_place_fastest_up
-	step_end
-
-MauvilleCity_Movement_ScottApproachPlayerEast:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_up
-	step_end
-
-MauvilleCity_Movement_ScottExitNorth:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-MauvilleCity_Movement_ScottExitEast:
-	walk_down
-	walk_left
 	walk_left
 	walk_left
 	walk_left
@@ -570,19 +467,6 @@ MauvilleCity_Text_WallyPokenavCall:
 MauvilleCity_Text_RegisteredWally:
 	.string "Registered Wally\n"
 	.string "in the Pokénav.$"
-
-MauvilleCity_Text_ScottYouDidntHoldBack:
-	.string "Scott: Hehe…\n"
-	.string "I was watching that match!\p"
-	.string "You're friends with that boy Wally,\n"
-	.string "aren't you?\p"
-	.string "But you didn't hold anything back\n"
-	.string "and beat him impressively.\p"
-	.string "Yeah! That's what a real Pokémon\n"
-	.string "battle is all about!\p"
-	.string "I idolize Trainers like that!\p"
-	.string "… … … … … …\n"
-	.string "I'll be cheering for you!$"
 
 MauvilleCity_Text_WattsonNeedFavorTakeKey:
 	.string "Wattson: Oh, {PLAYER}{KUN}!\n"
