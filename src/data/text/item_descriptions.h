@@ -347,6 +347,36 @@ static const u8 sCarbosDesc[] = _(
     "Speed stat of one\n"
     "Pokémon.");
 
+static const u8 sSuperHPUpDesc[] = _(
+    "Raises the base HP\n"
+    "of one Pokémon. 4x\n"
+    "strength of HP Up.");
+
+static const u8 sSuperProteinDesc[] = _(
+    "Raises base Attack\n"
+    "of one Pokémon. 4x\n"
+    "potency of Protein.");
+
+static const u8 sSuperIronDesc[] = _(
+    "Ups base Defense\n"
+    "of one Pokémon. 4x\n"
+    "strength of Iron.");
+
+static const u8 sSuperCalciumDesc[] = _(
+    "Raises base Sp. Atk\n"
+    "of one Pokémon. 4x\n"
+    "potency of Calcium.");
+
+static const u8 sSuperZincDesc[] = _(
+    "Raises base Sp. Def\n"
+    "of one Pokémon. 4x\n"
+    "strength of Zinc.");
+
+static const u8 sSuperCarbosDesc[] = _(
+    "Raises base Speed\n"
+    "of one Pokémon. 4x\n"
+    "potency of Carbos.");
+
 static const u8 sPPUpDesc[] = _(
     "Raises the maximum\n"
     "PP of a selected\n"

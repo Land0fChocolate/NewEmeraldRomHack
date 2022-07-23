@@ -76,6 +76,12 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_CALCIUM] = {gItemIcon_Vitamin, gItemIconPalette_Calcium},
     [ITEM_ZINC] = {gItemIcon_Vitamin, gItemIconPalette_Zinc},
     [ITEM_CARBOS] = {gItemIcon_Vitamin, gItemIconPalette_Carbos},
+    [ITEM_SUPER_HP_UP] = {gItemIcon_HPUp, gItemIconPalette_HPUp},
+    [ITEM_SUPER_PROTEIN] = {gItemIcon_Vitamin, gItemIconPalette_Protein},
+    [ITEM_SUPER_IRON] = {gItemIcon_Vitamin, gItemIconPalette_Iron},
+    [ITEM_SUPER_CALCIUM] = {gItemIcon_Vitamin, gItemIconPalette_Calcium},
+    [ITEM_SUPER_ZINC] = {gItemIcon_Vitamin, gItemIconPalette_Zinc},
+    [ITEM_SUPER_CARBOS] = {gItemIcon_Vitamin, gItemIconPalette_Carbos},
     [ITEM_PP_UP] = {gItemIcon_PPUp, gItemIconPalette_PPUp},
     [ITEM_PP_MAX] = {gItemIcon_PPMax, gItemIconPalette_PPMax},
     // EV Feathers

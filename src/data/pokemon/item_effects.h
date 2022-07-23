@@ -250,6 +250,50 @@ const u8 gItemEffect_Zinc[11] = {
     [10] = ITEM10_IS_VITAMIN,
 };
 
+const u8 gItemEffect_SuperHPUp[11] = {
+    [4] = ITEM4_EV_HP,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_SUPER_ADD_EV,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_SuperProtein[11] = {
+    [4] = ITEM4_EV_ATK,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_SUPER_ADD_EV,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_SuperIron[11] = {
+    [5] = ITEM5_EV_DEF | ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_SUPER_ADD_EV,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_SuperCarbos[11] = {
+    [5] = ITEM5_EV_SPEED | ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_SUPER_ADD_EV,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_SuperCalcium[11] = {
+    [5] = ITEM5_EV_SPATK | ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_SUPER_ADD_EV,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_SuperZinc[11] = {
+    [5] = ITEM5_EV_SPDEF | ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_SUPER_ADD_EV,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+    [10] = ITEM10_IS_VITAMIN,
+};
+
 #define FEATHER_FRIENDSHIP_CHANGE(i)             \
     [(i) + 0] = 3, /* Friendship change, low */  \
     [(i) + 1] = 2, /* Friendship change, mid */  \
@@ -541,6 +585,12 @@ const u8 *const gItemEffectTable[] =
     [ITEM_RARE_CANDY - ITEM_POTION]     = gItemEffect_RareCandy,
     [ITEM_PP_UP - ITEM_POTION]          = gItemEffect_PPUp,
     [ITEM_ZINC - ITEM_POTION]           = gItemEffect_Zinc,
+    [ITEM_SUPER_HP_UP - ITEM_POTION]    = gItemEffect_SuperHPUp,
+    [ITEM_SUPER_PROTEIN - ITEM_POTION]  = gItemEffect_SuperProtein,
+    [ITEM_SUPER_IRON - ITEM_POTION]     = gItemEffect_SuperIron,
+    [ITEM_SUPER_CARBOS - ITEM_POTION]   = gItemEffect_SuperCarbos,
+    [ITEM_SUPER_CALCIUM - ITEM_POTION]  = gItemEffect_SuperCalcium,
+    [ITEM_SUPER_ZINC - ITEM_POTION]     = gItemEffect_SuperZinc,
     [ITEM_HEALTH_FEATHER - ITEM_POTION] = gItemEffect_HpFeather,
     [ITEM_MUSCLE_FEATHER - ITEM_POTION] = gItemEffect_AtkFeather,
     [ITEM_RESIST_FEATHER - ITEM_POTION] = gItemEffect_DefFeather,
