@@ -2225,15 +2225,19 @@ MatchCall_Text_TateLiza4::
 
 MatchCall_Text_Wallace1:: @TODO: 
 	.string "Wallace: \n"
+	.string "TODO$"
 
 MatchCall_Text_Wallace2:: @TODO:
 	.string "Wallace: \n"
+	.string "TODO$"
 
 MatchCall_Text_Wallace3:: @TODO:
 	.string "Wallace: \n"
+	.string "TODO$"
 
 MatchCall_Text_Wallace4:: @TODO:
 	.string "Wallace: \n"
+	.string "TODO$"
 
 MatchCall_Text_Juan::
 	.string "Juan: Hmm…\n"

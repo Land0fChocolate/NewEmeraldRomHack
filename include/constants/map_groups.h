@@ -599,6 +599,11 @@
 #define MAP_CONQUERORS_CAMP                                 (119 | (26 << 8))
 #define MAP_ROYAL_REST                                      (120 | (26 << 8))
 #define MAP_SAGES_SANCTUARY                                 (121 | (26 << 8))
+#define MAP_FARAWAY_ISLAND_RUIN1                            (122 | (26 << 8))
+#define MAP_FARAWAY_ISLAND_RUIN2                            (123 | (26 << 8))
+#define MAP_FARAWAY_ISLAND_RUIN3                            (124 | (26 << 8))
+#define MAP_FARAWAY_ISLAND_RUIN4                            (125 | (26 << 8))
+#define MAP_FARAWAY_ISLAND_RUIN5                            (126 | (26 << 8))
 
 // gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))

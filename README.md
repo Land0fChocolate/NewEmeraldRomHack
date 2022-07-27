@@ -50,6 +50,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Graphical updates to overworld sprites and environments.
 - Various story changes. Includes aspects from ORAS.
 - Item changes: Quick Claw now increases speed by 10% when user is below 50% health.
+- New Items:
+	- Super Vitamins
 
 # New Abilities
 

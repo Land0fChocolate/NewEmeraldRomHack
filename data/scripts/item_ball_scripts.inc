@@ -745,3 +745,23 @@ Text_FoundSilverWing:
 Text_FoundRainbowWing:
 	.string "You have found a legendary artefact!\n"
 	.string "Groudon should appear for you now.$"
+
+FarawayIsland_Ruin1_Eventscript_ItemHeartScale::
+	finditem ITEM_HEART_SCALE
+	end
+
+FarawayIsland_Ruin2_Eventscript_ItemRareBone::
+	finditem ITEM_RARE_BONE
+	end
+
+FarawayIsland_Ruin3_Eventscript_ItemLifeOrb::
+	finditem ITEM_LIFE_ORB
+	end
+
+FarawayIsland_Ruin4_Eventscript_ItemLightClay::
+	finditem ITEM_LIGHT_CLAY
+	end
+
+FarawayIsland_Ruin5_Eventscript_ItemBlueShard::
+	finditem ITEM_BLUE_SHARD
+	end

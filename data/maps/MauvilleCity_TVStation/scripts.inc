@@ -50,6 +50,7 @@ MauvilleCity_TVStation_Text_CameraMan:
 	.string "That stuff is expensive.$"
 
 MauvilleCity_TVStation_Text_Beauty: @TODO
+	.string ""
 	.string "TODO$"
 
 MauvilleCity_TVStation_Text_Sidney:

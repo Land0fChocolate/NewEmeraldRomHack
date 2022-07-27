@@ -1152,3 +1152,13 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/NavelRock_Hooh2/scripts.inc"
 
 	.include "data/maps/NavelRock_Hooh3/scripts.inc"
+
+	.include "data/maps/FarawayIsland_Ruin1/scripts.inc"
+
+	.include "data/maps/FarawayIsland_Ruin2/scripts.inc"
+
+	.include "data/maps/FarawayIsland_Ruin3/scripts.inc"
+
+	.include "data/maps/FarawayIsland_Ruin4/scripts.inc"
+
+	.include "data/maps/FarawayIsland_Ruin5/scripts.inc"

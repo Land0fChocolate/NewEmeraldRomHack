@@ -629,7 +629,12 @@
     "FieryThrone",
     "ConquerorsCamp",
     "RoyalRest",
-    "SagesSanctuary"
+    "SagesSanctuary",
+    "FarawayIsland_Ruin1",
+    "FarawayIsland_Ruin2",
+    "FarawayIsland_Ruin3",
+    "FarawayIsland_Ruin4",
+    "FarawayIsland_Ruin5"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",

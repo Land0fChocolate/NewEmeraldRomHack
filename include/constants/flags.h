@@ -1180,7 +1180,7 @@
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
 #define FLAG_ITEM_LITTLEROOT_BEACH_TM58                             0x470
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
-#define FLAG_ITEM_CRUMBLING_GORGE_TM59                              0x472 // Unused Flag
+#define FLAG_ITEM_CRUMBLING_GORGE_TM59                              0x472
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_POTION                                  0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
@@ -1227,11 +1227,11 @@
 #define FLAG_ITEM_NAVEL_ROCK_HOOH_3_MAX_REVIVE                      0x49D
 #define FLAG_ITEM_NAVEL_ROCK_TOP_RAINBOW_WING                       0x49E
 #define FLAG_ITEM_NAVEL_ROCK_BOTTOM_SILVER_WING                     0x49F
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
+#define FLAG_ITEM_FARAWAY_ISLAND_RUIN1_HEART_SCALE                  0x4A0
+#define FLAG_ITEM_FARAWAY_ISLAND_RUIN2_RARE_BONE                    0x4A1
+#define FLAG_ITEM_FARAWAY_ISLAND_RUIN3_LIFE_ORB                     0x4A2
+#define FLAG_ITEM_FARAWAY_ISLAND_RUIN4_LIGHT_CLAY                   0x4A3
+#define FLAG_ITEM_FARAWAY_ISLAND_RUIN5_BLUE_SHARD                   0x4A4
 #define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
