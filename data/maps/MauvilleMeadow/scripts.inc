@@ -1,4 +1,5 @@
 MauvilleMeadow_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MauvilleMeadow_OnTransition
 	.byte 0
 
 MauvilleMeadow_OnTransition:

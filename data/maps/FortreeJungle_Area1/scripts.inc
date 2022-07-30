@@ -1,4 +1,5 @@
 FortreeJungle_Area1_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, FortreeJungle_Area1_OnTransition
 	.byte 0
 
 FortreeJungle_Area1_OnTransition:

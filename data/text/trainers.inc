@@ -4088,17 +4088,6 @@ Route129_Text_TishaPostBattle:
 	.string "That's why I try to take things\n"
 	.string "slowly.$"
 
-Route129_Text_ClarenceIntro:
-	.string "Surfing isn't as easy as it seems,\n"
-	.string "isn't that right?$"
-
-Route129_Text_ClarenceDefeat:
-	.string "Winning sure isn't easy.$"
-
-Route129_Text_ClarencePostBattle:
-	.string "You have your sights on the Pokémon\n"
-	.string "League? Keep at it!$"
-
 Route130_Text_RodneyIntro:
 	.string "What a surprise! I didn't expect to\n"
 	.string "see a Trainer out in the sea.\p"
@@ -4662,13 +4651,15 @@ EverGrandeCity_BattleTent_Text_CobyPostBattle:
 	.string "Do-do-do-do-doo-do-doo…$"
 
 EverGrandeCity_BattleTent_Text_ClarenceIntro:
-	.string "TODO$"
+	.string "Pst! Hey kid.\n"
+	.string "Wanna buy some NFTs?$"
 
 EverGrandeCity_BattleTent_Text_ClarenceDefeated:
-	.string "TODO$"
+	.string "I guess that's a no…?"
 
 EverGrandeCity_BattleTent_Text_ClarencePostBattle:
-	.string "TODO$"
+	.string "Blast! The value of my NFTs have\n"
+	.string "crashed!$"
 
 EverGrandeCity_BattleTent_Text_JosephIntro:
 	.string "There's nothing I love more than\n"
@@ -4799,13 +4790,16 @@ Wildwoods_Area4_Text_CelinaPostBattle:
 	.string "TODO$"
 
 Wildwoods_Area5_Text_PitahaIntro:
-	.string "TODO$"
+	.string "G…g…g…ghost!\p"
+	.string "Wait a minute… you're not a ghost.\n"
+	.string "You're just some kid!$"
 
 Wildwoods_Area5_Text_PitahaDefeated:
-	.string "TODO$"
+	.string "I ain't scared!$"
 
 Wildwoods_Area5_Text_PitahaPostBattle:
-	.string "TODO$"
+	.string "I shouldn't be scared of ghosts.\n"
+	.string "I have my Pokémon to protect me!$"
 
 Wildwoods_Area6_Text_MeggiIntro:
 	.string "I've been here for a hundred years, and\n"

@@ -106,12 +106,12 @@ EverGrandeCity_BattleTent_EventScript_SetUpHexManiac::
 
 EverGrandeCity_BattleTent_EventScript_SetUpManiac::
 	clearflag FLAG_HIDE_BATTLE_TENT_MANIAC
-	cleartrainerflag TRAINER_COBY
+	cleartrainerflag TRAINER_CLARENCE
 	return
 
 EverGrandeCity_BattleTent_EventScript_SetUpGuitarist::
 	clearflag FLAG_HIDE_BATTLE_TENT_GUITARIST
-	cleartrainerflag TRAINER_CLARENCE
+	cleartrainerflag TRAINER_COBY
 	return
 
 EverGrandeCity_BattleTent_EventScript_SetUpCoolTrainerM::

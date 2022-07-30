@@ -1,4 +1,5 @@
 LustrousLair_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LustrousLair_OnTransition
 	.byte 0
 
 LustrousLair_OnTransition:

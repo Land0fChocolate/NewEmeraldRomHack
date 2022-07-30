@@ -214,13 +214,13 @@
 #define MAPSEC_ALTERING_CAVE                0xD2
 #define MAPSEC_NAVEL_ROCK                   0xD3
 #define MAPSEC_TRAINER_HILL                 0xD4
-#define MAPSEC_CRUMBLING_GORGE              0xD5
-#define MAPSEC_OLDALE_FARM                  0xD6
-#define MAPSEC_LITTLEROOT_BEACH             0xD7
-#define MAPSEC_FALLARBOR_WASTELAND          0xD8
-#define MAPSEC_WILDWOODS                    0xD9
-#define MAPSEC_MAUVILLE_MEADOW              0xDA
-#define MAPSEC_FORTREE_LAKE                 0xDB
+#define MAPSEC_NONE                         0xD5
+#define MAPSEC_CRUMBLING_GORGE              0xD6
+#define MAPSEC_OLDALE_FARM                  0xD7
+#define MAPSEC_LITTLEROOT_BEACH             0xD8
+#define MAPSEC_FALLARBOR_WASTELAND          0xD9
+#define MAPSEC_WILDWOODS                    0xDA
+#define MAPSEC_MAUVILLE_MEADOW              0xDB
 #define MAPSEC_FORTREE_JUNGLE               0xDC
 #define MAPSEC_LUSTROUS_LAIR                0xDD
 #define MAPSEC_DERELICT_DEN                 0xDE
@@ -228,7 +228,6 @@
 #define MAPSEC_CONQUERORS_CAMP              0xE0
 #define MAPSEC_ROYAL_REST                   0xE1
 #define MAPSEC_SAGES_SANCTUARY              0xE2
-#define MAPSEC_NONE                         0xE3
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

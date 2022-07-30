@@ -2,6 +2,7 @@
 .set LOCALID_ZINNIA, 2
 
 LittlerootBeach_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootBeach_OnTransition
 	.byte 0
 
 LittlerootBeach_OnTransition:

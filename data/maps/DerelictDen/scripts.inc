@@ -1,4 +1,5 @@
 DerelictDen_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, DerelictDen_OnTransition
 	.byte 0
 
 DerelictDen_OnTransition:

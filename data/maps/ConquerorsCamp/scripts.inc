@@ -1,4 +1,5 @@
 ConquerorsCamp_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ConquerorsCamp_OnTransition
 	.byte 0
 
 ConquerorsCamp_OnTransition:

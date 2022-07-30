@@ -1,4 +1,5 @@
 RoyalRest_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, RoyalRest_OnTransition
 	.byte 0
 
 RoyalRest_OnTransition:
