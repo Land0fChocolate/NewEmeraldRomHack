@@ -3,7 +3,7 @@
   "name": "FortreeLake",
   "layout": "LAYOUT_FORTREE_LAKE",
   "music": "MUS_ROUTE120",
-  "region_map_section": "MAPSEC_FORTREE_LAKE",
+  "region_map_section": "MAPSEC_FORTREE_JUNGLE",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
