@@ -163,7 +163,7 @@ static const u16 sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_SAGES_SANCTUARY,            MAPSEC_ROUTE_127},
     {MAPSEC_ARTISAN_CAVE,               MAPSEC_BATTLE_FRONTIER},
     {MAPSEC_ABANDONED_SHIP,             MAPSEC_ROUTE_108},
-    {MAPSEC_NONE,                       MAPSEC_NONE}
+    {MAPSEC_NONE,                       MAPSEC_NONE},
 };
 
 static const u16 sMarineCaveMapSecIds[] =
