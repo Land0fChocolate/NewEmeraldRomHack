@@ -1,5 +1,25 @@
 RustboroCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_Gym_OnTransition
 	.byte 0
+
+RustboroCity_Gym_OnTransition::
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_ROXANNE_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq RustboroCity_Gym_Eventscript_RoxanneRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq RustboroCity_Gym_Eventscript_RoxanneTrainerSchool
+    end
+
+RustboroCity_Gym_Eventscript_RoxanneRematch::
+	setflag FLAG_HIDE_TRAINERS_SCHOOL_ROXANNE
+	clearflag FLAG_HIDE_RUSTBORO_GYM_ROXANNE
+	return
+
+RustboroCity_Gym_Eventscript_RoxanneTrainerSchool::
+	clearflag FLAG_HIDE_TRAINERS_SCHOOL_ROXANNE
+	setflag FLAG_HIDE_RUSTBORO_GYM_ROXANNE
+	return
 
 RustboroCity_Gym_EventScript_Roxanne::
 	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC

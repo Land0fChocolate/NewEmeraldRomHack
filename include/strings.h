@@ -140,6 +140,12 @@ extern const u8 gText_DecorationThrownAway[];
 extern const u8 gText_PokeBalls[];
 extern const u8 gText_Berries[];
 extern const u8 gText_Berry[];
+extern const u8 gText_MoonStone[];
+extern const u8 gText_SunStone[];
+extern const u8 gText_ShinyStone[];
+extern const u8 gText_DuskStone[];
+extern const u8 gText_DawnStone[];
+extern const u8 gText_IceStone[];
 
 extern const u8 gText_Desk[];
 extern const u8 gText_Chair[];

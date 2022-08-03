@@ -16,7 +16,27 @@ LavaridgeTown_OnTransition:
 	call_if_eq LavaridgeTown_EventScript_CheckSetRivalPos
 	compare VAR_LAVARIDGE_TOWN_STATE, 1
 	call_if_eq LavaridgeTown_EventScript_HideMapNamePopup
+	call LavaridgeTown_Eventscript_SetUpFlannery
 	end
+
+LavaridgeTown_Eventscript_SetUpFlannery::
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_FLANNERY_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq LavaridgeTown_Eventscript_FlanneryRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq LavaridgeTown_Eventscript_FlanneryHotSprings
+    end
+
+LavaridgeTown_Eventscript_FlanneryRematch::
+	setflag FLAG_HIDE_FLANNERY_HOT_SPRINGS
+	clearflag FLAG_HIDE_FLANNERY_GYM
+	return
+
+LavaridgeTown_Eventscript_FlanneryHotSprings::
+	clearflag FLAG_HIDE_FLANNERY_HOT_SPRINGS
+	setflag FLAG_HIDE_FLANNERY_GYM
+	return
 
 LavaridgeTown_EventScript_ClearLavaridgeWhiteOut::
 	clearflag FLAG_WHITEOUT_TO_LAVARIDGE
@@ -413,7 +433,7 @@ LavaridgeTown_Text_HotSpringsClaims:
 	.string "romantic problems, and attracting\l"
 	.string "money…$"
 
-LavaridgeTown_Text_Flannery:
+LavaridgeTown_Text_Flannery: @TODO: change this text, avoid hinting at other hot springs
 	.string "Oh, {PLAYER}!\n"
 	.string "You like the hot springs too, huh?\p"
 	.string "There are all kinds of different hot\n"

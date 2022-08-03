@@ -32,7 +32,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- Changes to level up and TM learnsets of some Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
 	- OHKO moves have been removed from battle facility movepools.
-- Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko line has its Attack and Special Attack swapped. (TODO: make list)
+- Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko, Spheal lines have Attack and Special Attack swapped. (TODO: make list)
 - HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
 - Berry tree drop rates are tripled. Interaction with berry trees is also quicker.
 - Number of Feebas spots is tripled.
@@ -49,6 +49,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Map changes, including new areas to explore that have new Pokemon.
 - Graphical updates to overworld sprites and environments.
 - Various story changes. Includes aspects from ORAS.
+- Gym Leaders do more:
+	- Roxanne trades evolution stones for fossils.
 - Item changes: Quick Claw now increases speed by 10% when user is below 50% health.
 - New Items:
 	- Super Vitamins

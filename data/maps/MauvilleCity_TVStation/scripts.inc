@@ -49,9 +49,10 @@ MauvilleCity_TVStation_Text_CameraMan:
 	.string "Don't touch any of the equipment.\l"
 	.string "That stuff is expensive.$"
 
-MauvilleCity_TVStation_Text_Beauty: @TODO
-	.string ""
-	.string "TODO$"
+MauvilleCity_TVStation_Text_Beauty:
+	.string "We have a very special guest for our\n"
+	.string "upcoming interview!\l"
+	.string "Please keep this a secret, okay?$"
 
 MauvilleCity_TVStation_Text_Sidney:
 	.string "Some Pokémon get an undeserved bad rep.\n"
@@ -68,5 +69,8 @@ MauvilleCity_TVStation_Text_Maniac:
 	.string "I'm tempted to pinch ideas from older\l"
 	.string "shows. Hehehe.$"
 
-MauvilleCity_TVStation_Text_Triathlete: @TODO: something about becoming a TV star?
-	.string "TODO$"
+MauvilleCity_TVStation_Text_Triathlete:
+	.string "Some people become TV stars through\n"
+	.string "Pokémon battles.\p"
+	.string "I'm not good with Pokémon, so I'll just\n"
+	.string "have to find another way.$"

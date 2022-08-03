@@ -373,7 +373,7 @@
 #define FLAG_MET_FRONTIER_BEAUTY_MOVE_TUTOR  0x15A
 #define FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR 0x15B
 
-// Trainer Rematch Flags //misleading names, this is for if the trainer is in the match call list, not if they are open to a rematch.
+// Trainer Rematch Flags //This is for if the trainer is open for rematch, not if they will rematch. gRematchTable handles rematches.
 #define FLAG_MATCH_CALL_REGISTERED           0x15C
 #define FLAG_REMATCH_ROSE                    0x15D
 #define FLAG_REMATCH_GOMEZ                   0x15E
@@ -676,17 +676,17 @@
 #define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_5 0x27B
 #define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_6 0x27C
 #define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_7 0x27D
-#define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
-#define FLAG_UNUSED_0x281  0x281 // Unused Flag
-#define FLAG_UNUSED_0x282  0x282 // Unused Flag
-#define FLAG_UNUSED_0x283  0x283 // Unused Flag
-#define FLAG_UNUSED_0x284  0x284 // Unused Flag
-#define FLAG_UNUSED_0x285  0x285 // Unused Flag
-#define FLAG_UNUSED_0x286  0x286 // Unused Flag
-#define FLAG_UNUSED_0x287  0x287 // Unused Flag
-#define FLAG_UNUSED_0x288  0x288 // Unused Flag
+#define FLAG_HIDE_RUSTBORO_GYM_ROXANNE            0x27E
+#define FLAG_HIDE_TRAINERS_SCHOOL_ROXANNE         0x27F
+#define FLAG_HIDE_DEWFORD_GYM_BRAWLY              0x280
+#define FLAG_HIDE_ROUTE106_BRAWLY                 0x281
+#define FLAG_HIDE_FORTREE_GYM_WINONA              0x282
+#define FLAG_HIDE_TBC_WINONA                      0x283
+#define FLAG_HIDE_MOSSDEEP_GYM_TATE_LISA          0x284
+#define FLAG_HIDE_TBC_TATE_LISA                   0x285
+#define FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE          0x286
+#define FLAG_HIDE_CONTEST_HALL_WALLACE            0x287
+#define FLAG_ROXANNE_TRADE_STONES                 0x288
 #define FLAG_UNUSED_0x289  0x289 // Unused Flag
 #define FLAG_UNUSED_0x28A  0x28A // Unused Flag
 #define FLAG_UNUSED_0x28B  0x28B // Unused Flag
