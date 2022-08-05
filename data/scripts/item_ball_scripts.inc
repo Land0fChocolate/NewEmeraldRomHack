@@ -442,8 +442,8 @@ AbandonedShip_Rooms2_B1F_EventScript_ItemDiveBall::
 	finditem ITEM_DIVE_BALL
 	end
 
-AbandonedShip_Room_B1F_EventScript_ItemTM13::
-	finditem ITEM_TM13
+AbandonedShip_Room_B1F_EventScript_ItemTM79::
+	finditem ITEM_TM79
 	end
 
 AbandonedShip_Rooms2_1F_EventScript_ItemRevive::
@@ -490,8 +490,8 @@ SafariZone_Northeast_EventScript_ItemNugget::
 	finditem ITEM_NUGGET
 	end
 
-SafariZone_Southeast_EventScript_ItemBigPearl::
-	finditem ITEM_BIG_PEARL
+SafariZone_Southeast_EventScript_ItemTM81::
+	finditem ITEM_TM81
 	end
 
 MtPyre_2F_EventScript_ItemUltraBall::
@@ -694,8 +694,8 @@ FortreeJungle_Area2_EventScript_ItemTM09::
 	finditem ITEM_TM09
 	end
 
-CrumblingGorge_EventScript_ItemTM59::
-	finditem ITEM_TM59
+CrumblingGorge_EventScript_ItemTM86::
+	finditem ITEM_TM86
 	end
 
 NavelRock_Entrance_Eventscript_ItemEscapeRope::

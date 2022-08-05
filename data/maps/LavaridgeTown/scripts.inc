@@ -26,7 +26,7 @@ LavaridgeTown_Eventscript_SetUpFlannery::
     goto_if_eq LavaridgeTown_Eventscript_FlanneryRematch
     compare VAR_RESULT, FALSE
     goto_if_eq LavaridgeTown_Eventscript_FlanneryHotSprings
-    end
+    return
 
 LavaridgeTown_Eventscript_FlanneryRematch::
 	setflag FLAG_HIDE_FLANNERY_HOT_SPRINGS

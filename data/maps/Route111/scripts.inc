@@ -802,7 +802,7 @@ Route111_Text_TrainerHillSign:
 
 Route111_Text_MagmaGrunt2Complaint:
 	.string "I'm telling you, I should have been\n"
-	.string "picked for the Crumbling Gorge mission.\l"
+	.string "picked for the Mauville mission.\l"
 	.string "I know the area. I've hit it before.$"
 
 Route111_Text_MagmaGrunt1Argument:
@@ -812,8 +812,8 @@ Route111_Text_MagmaGrunt1Argument:
 
 Route111_Text_MagmaGrunt2Reply:
 	.string "Yeah, well, how come they aren't back\n"
-	.string "yet? I'm tired of waiting.\l"
-	.string "That Verdanturf cave isn't that far.$"
+	.string "yet? I'm so tired of waiting.\l"
+	.string "Mauville City isn't that far.$"
 
 Route111_Text_MagmaGrunt1Reply:
 	.string "It's not nearly as tiring as listening\n"

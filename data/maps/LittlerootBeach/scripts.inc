@@ -160,8 +160,16 @@ LittlerootBeach_EventScript_MayReport::
 LittlerootBeach_EventScript_MayReportPart2::
 	msgbox LittlerootBeach_Text_MayReport, MSGBOX_DEFAULT
 	closemessage
+	goto_if_unset FLAG_RECEIVED_TM76, LittlerootBeach_EventScript_MayGivesTM76
 	goto LittlerootBeach_EventScript_RivalLeaves
 	end
+
+LittlerootBeach_EventScript_MayGivesTM76::
+	msgbox LittlerootBeach_Text_MayGivesTM76, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM76
+	setflag FLAG_RECEIVED_TM76
+	return
 
 LittlerootBeach_EventScript_BrendanReport::
 	msgbox LittlerootBeach_Text_BrendanComment, MSGBOX_DEFAULT
@@ -176,8 +184,16 @@ LittlerootBeach_EventScript_BrendanReport::
 LittlerootBeach_EventScript_BrendanReportPart2::
 	msgbox LittlerootBeach_Text_BrendanReport, MSGBOX_DEFAULT
 	closemessage
+	goto_if_unset FLAG_RECEIVED_TM76, LittlerootBeach_EventScript_BrendanGivesTM76
 	goto LittlerootBeach_EventScript_RivalLeaves
 	end
+
+LittlerootBeach_EventScript_BrendanGivesTM76::
+	msgbox LittlerootBeach_Text_BrendanGivesTM76, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_TM76
+	setflag FLAG_RECEIVED_TM76
+	return
 
 LittlerootBeach_EventScript_PlayerOnLeftFacingRival::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
@@ -308,6 +324,10 @@ LittlerootBeach_Text_MayReport:
 	.string "I'm going back to the lab to report back\n"
 	.string "to my dad. See you there!$"
 
+LittlerootBeach_Text_MayGivesTM76:
+	.string "May: Oh by the way, I've been meaning to\n"
+	.string "give you this earlier.$"
+
 LittlerootBeach_Text_BrendanReport:
 	.string "Brendan: As I was saying…\n"
 	.string "I found a bunch of new Pokémon.\p"
@@ -316,3 +336,8 @@ LittlerootBeach_Text_BrendanReport:
 	.string "Perhaps strong enough to defeat you?\p"
 	.string "Anyway, I'm going back to the lab and\n"
 	.string "give my dad a full report. See ya!$"
+
+LittlerootBeach_Text_BrendanGivesTM76:
+	.string "Brendan: Oh, and before I forget,\n"
+	.string "I got this a while ago. I don't need\l"
+	.string "it so you can have it.$"

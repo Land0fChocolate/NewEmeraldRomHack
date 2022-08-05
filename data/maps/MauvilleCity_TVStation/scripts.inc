@@ -14,7 +14,20 @@ MauvilleCity_TVStation_EventScript_CameraMan::
 	end
 
 MauvilleCity_TVStation_EventScript_Beauty::
-	msgbox MauvilleCity_TVStation_Text_Beauty, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_TM75, MauvilleCity_TVStation_EventScript_BeautyPostTM
+	msgbox MauvilleCity_TVStation_Text_Beauty, MSGBOX_DEFAULT
+	giveitem ITEM_TM75
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_TM75
+	goto MauvilleCity_TVStation_EventScript_BeautyPostTM
+	end
+
+MauvilleCity_TVStation_EventScript_BeautyPostTM::
+	msgbox MauvilleCity_TVStation_Text_BeautyPostTM, MSGBOX_DEFAULT
+	release
 	end
 
 MauvilleCity_TVStation_EventScript_Sidney::
@@ -50,6 +63,9 @@ MauvilleCity_TVStation_Text_CameraMan:
 	.string "That stuff is expensive.$"
 
 MauvilleCity_TVStation_Text_Beauty:
+	.string "TODO$"
+
+MauvilleCity_TVStation_Text_BeautyPostTM:
 	.string "We have a very special guest for our\n"
 	.string "upcoming interview!\l"
 	.string "Please keep this a secret, okay?$"

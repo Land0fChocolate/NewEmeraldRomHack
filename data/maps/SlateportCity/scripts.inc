@@ -604,6 +604,7 @@ SlateportCity_Pokemart_PowerTMs:
 	.2byte ITEM_TM43  @ Secret Power
 	.2byte ITEM_TM96  @ Nature Power
 	.2byte ITEM_TM57  @ Charge Beam
+	.2byte ITEM_TM59  @ Venoshock
 	.2byte ITEM_TM62  @ Acrobatics
 	.2byte ITEM_TM74  @ Gyro Ball
 	.2byte ITEM_TM78  @ Bulldoze

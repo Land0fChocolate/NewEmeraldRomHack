@@ -26,11 +26,53 @@ Route116_OnLoad:
 	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute116North
 	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_116_SOUTH
 	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute116South
+	call_if_unset FLAG_SYS_GAME_CLEAR, Route116_EventScript_CloseCrumblingGorge
 	end
 
 Route116_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
 	.2byte 0
+
+Route116_EventScript_CloseCrumblingGorge::
+	setmetatile 64, 15, METATILE_General_Grass_TreeLeft, 0
+	setmetatile 65, 15, METATILE_General_Grass_TreeRight, 0
+	setmetatile 64, 16, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 65, 16, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 66, 15, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 67, 15, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 66, 16, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 67, 16, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 68, 15, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 69, 15, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 68, 16, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 69, 16, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 64, 17, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 65, 17, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 64, 18, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 65, 18, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 66, 17, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 67, 17, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 66, 18, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 67, 18, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 68, 17, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 69, 17, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 68, 18, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 69, 18, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 64, 19, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 65, 19, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 64, 20, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 65, 20, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 66, 19, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 67, 19, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 66, 20, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 67, 20, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 68, 19, METATILE_General_FatTreeTopLeft_Grass, 1
+	setmetatile 69, 19, METATILE_General_FatTreeTopRight_Grass, 1
+	setmetatile 68, 20, METATILE_General_FatTreeBotLeft_LeftTopLeaves, 1
+	setmetatile 69, 20, METATILE_General_FatTreeBotRight_RightTopLeaves, 1
+	setmetatile 62, 20, METATILE_General_Grass, 0
+	setmetatile 63, 20, METATILE_General_Grass, 0
+	return
 
 Route116_EventScript_WandasBoyfriend::
 	lock

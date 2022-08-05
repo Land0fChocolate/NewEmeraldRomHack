@@ -1,5 +1,29 @@
 Route106_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route106_OnTransition
 	.byte 0
+
+Route106_OnTransition:
+	call Route106_Eventscript_SetUpBrawly
+	end
+
+Route106_Eventscript_SetUpBrawly::
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_BRAWLY_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq Route106_Eventscript_BrawlyRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq Route106_Eventscript_BrawlyBeach
+    return
+
+Route106_Eventscript_BrawlyRematch::
+	setflag FLAG_HIDE_ROUTE106_BRAWLY
+	clearflag FLAG_HIDE_DEWFORD_GYM_BRAWLY
+	return
+
+Route106_Eventscript_BrawlyBeach::
+	clearflag FLAG_HIDE_ROUTE106_BRAWLY
+	setflag FLAG_HIDE_DEWFORD_GYM_BRAWLY
+	return
 
 Route106_EventScript_TrainerTipsSign::
 	msgbox Route106_Text_TrainerTips, MSGBOX_SIGN
@@ -42,8 +66,17 @@ Route106_EventScript_Ned::
 	msgbox Route106_Text_NedPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route106_EventScript_Brawly::
+	msgbox Route106_Text_Brawly, MSGBOX_DEFAULT
+	release
+	end
+
+Route106_Text_Brawly:
+	.string "Brawly: I love to go surfing!\n"
+	.string "I've trained my body so I can enjoy\l"
+	.string "riding the rough waves!$"
+
 Route106_Text_TrainerTips:
 	.string "TRAINER TIPS\p"
 	.string "Advice on catching Pokémon with a rod:\n"
 	.string "Press the A Button if you get a bite.$"
-

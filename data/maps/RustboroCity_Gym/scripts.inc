@@ -3,13 +3,17 @@ RustboroCity_Gym_MapScripts::
 	.byte 0
 
 RustboroCity_Gym_OnTransition::
+	call RustboroCity_Gym_SetUpRoxanne
+	end
+
+RustboroCity_Gym_SetUpRoxanne::
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_ROXANNE_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE
     goto_if_eq RustboroCity_Gym_Eventscript_RoxanneRematch
     compare VAR_RESULT, FALSE
     goto_if_eq RustboroCity_Gym_Eventscript_RoxanneTrainerSchool
-    end
+    return
 
 RustboroCity_Gym_Eventscript_RoxanneRematch::
 	setflag FLAG_HIDE_TRAINERS_SCHOOL_ROXANNE

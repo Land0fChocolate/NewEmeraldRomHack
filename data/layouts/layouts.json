@@ -4414,7 +4414,7 @@
     {
       "id": "LAYOUT_CRUMBLING_GORGE",
       "name": "CrumblingGorge_Layout",
-      "width": 27,
+      "width": 28,
       "height": 60,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_CrumblingGorge",
