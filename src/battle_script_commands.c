@@ -3493,6 +3493,14 @@ static void Cmd_seteffectwithchance(void)
 
     if (HasAbility(ABILITY_SERENE_GRACE, GetBattlerAbilities(gBattlerAttacker)))
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance * 2;
+    else if (HasAbility(ABILITY_PAINFUL_BURN, GetBattlerAbilities(gBattlerAttacker))
+            && gBattleScripting.moveEffect & MOVE_EFFECT_FLINCH
+            && gBattleMons[gBattlerTarget].status1 == STATUS1_BURN)
+    {
+        percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance * 3;
+        if (percentChance > 60)
+            percentChance = 60; //capping the flinch chance. Otherwise Houndoom's Bite will have a 90% chance to flinch!
+    }
     else
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance;
 
@@ -12761,8 +12769,6 @@ static void Cmd_setstealthrock(void)
             }
             break;
     }
-
-    
 }
 
 static void Cmd_setuserstatus3(void)

@@ -71,7 +71,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_DRIZZLE] = 9,
     [ABILITY_DROUGHT] = 9,
     [ABILITY_DRY_SKIN] = 6,
-    [ABILITY_EARLY_BIRD] = 4,
+    [ABILITY_EARLY_BIRD] = 2,
     [ABILITY_EFFECT_SPORE] = 4,
     [ABILITY_ELECTRIC_SURGE] = 8,
     [ABILITY_EMERGENCY_EXIT] = 3,
@@ -162,6 +162,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_OVERCOAT] = 5,
     [ABILITY_OVERGROW] = 5,
     [ABILITY_OWN_TEMPO] = 3,
+    [ABILITY_PAINFUL_BURN] = 3,
     [ABILITY_PARENTAL_BOND] = 10,
     [ABILITY_PICKUP] = 1,
     [ABILITY_PICKPOCKET] = 3,
@@ -2835,10 +2836,12 @@ u32 ShouldTryToFlinch(u8 battlerAtk, u8 battlerDef, u16 atkAbilities[], u16 defA
     {
         return 0;   // don't try to flinch sleeping pokemon
     }
-    else if (HasAbility(ABILITY_SERENE_GRACE, atkAbilities)
+    else if ((HasAbility(ABILITY_SERENE_GRACE, atkAbilities)
       || gBattleMons[battlerDef].status1 & STATUS1_PARALYSIS
       || gBattleMons[battlerDef].status2 & STATUS2_INFATUATION
       || gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
+        || (HasAbility(ABILITY_PAINFUL_BURN, atkAbilities)
+        && gBattleMons[battlerDef].status1 & STATUS1_BURN))
     {
         return 2;   // good idea to flinch
     }
@@ -3613,7 +3616,8 @@ void IncreaseConfusionScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
     {
         if (gBattleMons[battlerDef].status1 & STATUS1_PARALYSIS
           || gBattleMons[battlerDef].status2 & STATUS2_INFATUATION
-          || (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->atkAbilities) && HasMoveEffect(battlerAtk, EFFECT_FLINCH_HIT)))
+          || (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->atkAbilities) && HasMoveEffect(battlerAtk, EFFECT_FLINCH_HIT))
+          || (HasAbility(ABILITY_PAINFUL_BURN, AI_DATA->atkAbilities) && HasMoveEffect(battlerAtk, EFFECT_FLINCH_HIT) && gBattleMons[battlerDef].status1 & STATUS1_BURN))
             *score += 3;
         else
             *score += 2;
