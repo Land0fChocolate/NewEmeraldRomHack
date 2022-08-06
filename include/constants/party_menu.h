@@ -19,9 +19,9 @@
 #define TUTOR_MOVE_METRONOME       6 //During Mainline
 #define TUTOR_MOVE_SOFT_BOILED     7 //Battle Frontier
 #define TUTOR_MOVE_DREAM_EATER     8 //Battle Frontier
-#define TUTOR_MOVE_GASTRO_ACID     9
+#define TUTOR_MOVE_GASTRO_ACID     9 //Battle Frontier
 #define TUTOR_MOVE_EXPLOSION       10 //During Mainline
-#define TUTOR_MOVE_PSYCHIC_FANGS   11
+#define TUTOR_MOVE_PSYCHIC_FANGS   11 //Battle Frontier
 #define TUTOR_MOVE_SUBSTITUTE      12 //During Mainline
 #define TUTOR_MOVE_DYNAMIC_PUNCH   13 //During Mainline
 #define TUTOR_MOVE_ROLLOUT         14 //During Mainline
@@ -29,7 +29,7 @@
 #define TUTOR_MOVE_SNORE           16 //Battle Frontier
 #define TUTOR_MOVE_ICY_WIND        17 //Battle Frontier
 #define TUTOR_MOVE_ENDURE          18 //Battle Frontier
-#define TUTOR_MOVE_EARTH_POWER     19
+#define TUTOR_MOVE_EARTH_POWER     19 //Battle Frontier
 #define TUTOR_MOVE_ICE_PUNCH       20 //Battle Frontier
 #define TUTOR_MOVE_SWAGGER         21 //During Mainline
 #define TUTOR_MOVE_SLEEP_TALK      22 //During Mainline
@@ -41,37 +41,37 @@
 #define TUTOR_MOVE_SERPENT_DANCE   28 //Battle Frontier
 #define TUTOR_MOVE_FLINT_BLADE     29 //Battle Frontier
 #define TUTOR_MOVE_FLARE_CRASH     30 //Battle Frontier
-#define TUTOR_MOVE_WORK_UP         31
-#define TUTOR_MOVE_LOW_SWEEP       32
-#define TUTOR_MOVE_AVALANCHE       33
-#define TUTOR_MOVE_SIGNAL_BEAM     34
-#define TUTOR_MOVE_NASTY_PLOT      35
-#define TUTOR_MOVE_SUPERPOWER      36
-#define TUTOR_MOVE_PLAY_ROUGH      37
-#define TUTOR_MOVE_STORED_POWER    38
-#define TUTOR_MOVE_ROLE_PLAY       39
-#define TUTOR_MOVE_DEFOG           40
-#define TUTOR_MOVE_TRICK           41
-#define TUTOR_MOVE_KNOCK_OFF       42
-#define TUTOR_MOVE_STEALTH_ROCK    43
-#define TUTOR_MOVE_TAILWIND        44
-#define TUTOR_MOVE_BREAKING_SWIPE  45
-#define TUTOR_MOVE_HEAT_WAVE       46
-#define TUTOR_MOVE_GUNK_SHOT       47
-#define TUTOR_MOVE_ZEN_HEADBUTT    48
-#define TUTOR_MOVE_BODY_PRESS      49
-#define TUTOR_MOVE_WORRY_SEED      50
-#define TUTOR_MOVE_RECYCLE         51
-#define TUTOR_MOVE_LOW_KICK        52
-#define TUTOR_MOVE_MAGIC_COAT      53
-#define TUTOR_MOVE_PAIN_SPLIT      54
-#define TUTOR_MOVE_SEED_BOMB       55
-#define TUTOR_MOVE_IRON_HEAD       56
-#define TUTOR_MOVE_AQUA_TAIL       57
-#define TUTOR_MOVE_FOUL_PLAY       58
-#define TUTOR_MOVE_MEGAHORN        59
+#define TUTOR_MOVE_WORK_UP         31 //Battle Frontier
+#define TUTOR_MOVE_LOW_SWEEP       32 //Battle Frontier
+#define TUTOR_MOVE_AVALANCHE       33 //Battle Frontier
+#define TUTOR_MOVE_SIGNAL_BEAM     34 //Battle Frontier
+#define TUTOR_MOVE_NASTY_PLOT      35 //Battle Frontier
+#define TUTOR_MOVE_SUPERPOWER      36 //Battle Frontier
+#define TUTOR_MOVE_PLAY_ROUGH      37 //Battle Frontier
+#define TUTOR_MOVE_STORED_POWER    38 //Battle Frontier
+#define TUTOR_MOVE_ROLE_PLAY       39 //Battle Frontier
+#define TUTOR_MOVE_DEFOG           40 //Battle Frontier
+#define TUTOR_MOVE_TRICK           41 //Battle Frontier
+#define TUTOR_MOVE_KNOCK_OFF       42 //Battle Frontier
+#define TUTOR_MOVE_STEALTH_ROCK    43 //Battle Frontier
+#define TUTOR_MOVE_TAILWIND        44 //Battle Frontier
+#define TUTOR_MOVE_BREAKING_SWIPE  45 //Battle Frontier
+#define TUTOR_MOVE_HEAT_WAVE       46 //Battle Frontier
+#define TUTOR_MOVE_GUNK_SHOT       47 //Battle Frontier
+#define TUTOR_MOVE_ZEN_HEADBUTT    48 //Battle Frontier
+#define TUTOR_MOVE_BODY_PRESS      49 //Battle Frontier
+#define TUTOR_MOVE_WORRY_SEED      50 //Battle Frontier
+#define TUTOR_MOVE_RECYCLE         51 //Battle Frontier
+#define TUTOR_MOVE_LOW_KICK        52 //Battle Frontier
+#define TUTOR_MOVE_MAGIC_COAT      53 //Battle Frontier
+#define TUTOR_MOVE_PAIN_SPLIT      54 //Battle Frontier
+#define TUTOR_MOVE_SEED_BOMB       55 //Battle Frontier
+#define TUTOR_MOVE_IRON_HEAD       56 //Battle Frontier
+#define TUTOR_MOVE_AQUA_TAIL       57 //Battle Frontier
+#define TUTOR_MOVE_FOUL_PLAY       58 //Battle Frontier
+#define TUTOR_MOVE_MEGAHORN        59 //Battle Frontier
 #define TUTOR_MOVE_DRACO_METEOR    60 //Ever Grande City
-#define TUTOR_MOVE_HIDDEN_THORNS   61
+#define TUTOR_MOVE_HIDDEN_THORNS   61 //Battle Frontier
 
 #define TUTOR_MOVE_COUNT           62
 

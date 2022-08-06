@@ -11562,7 +11562,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_FLINT_BLADE] =
     {
         .effect = EFFECT_HIT,
-        .power = 75,
+        .power = 80,
         .type = TYPE_ROCK,
         .accuracy = 100,
         .pp = 15,

@@ -77,6 +77,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Glaceon/Aurorus.
 - Unsteady: User's evasion increases by one stage when hit. Used by Spinda.
 - Disarm: User's contact moves inflict the Embargo status (disable held items) on the target. Used by Meowth/Persian/Pawniard/Bisharp/Meowth(Galarian)
+- Painful Burn: If the target is burned, the user's moves have triple the chance to flinch (capped at 60%). Learned by Houndour/Houndoom.
 - King's Might: User doesn't need to recharge on moves like Hyper Beam and Giga Impact. Used by Slaking.
 - Pleasant Dreams: Heals sleeping Pokemon 1/4 HP every turn. Used by Cresselia.
 - Wish Maker: User creates a wish on entry. Used by Jirachi.
@@ -110,15 +111,16 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 # New Moves
 
 - War Dance: User have their own attack and speed rise by 1 stage and attempts to confuse the opponent. Learned by Sentret/Furret/Yungoos/Gumshoos via level up.
-- Flint Blade: 75 BP, 100% Acc, Rock type, increased crit ratio. Boosted by Swordmaster ability. Added to Battle Frontier move tutor list. Learned by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian/Rockruff/Lycanroc/Gigalith/Onix/Steelix/Omanite/Omastar/Kabuto/Kabutops/Aerodactyl/Anorith/Armaldo/Shieldon/Bastiodon/Binacle/Barbaracle/Rhyhorn/Rhydon/Rhypherior/Aggron/Kleavor/Seviper.
+- Flint Blade: 80 BP, 100% Acc, Rock type, increased crit ratio. Boosted by Swordmaster ability. Added to Battle Frontier move tutor list. Learned by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian/Rockruff/Lycanroc/Gigalith/Onix/Steelix/Omanite/Omastar/Kabuto/Kabutops/Aerodactyl/Anorith/Armaldo/Shieldon/Bastiodon/Binacle/Barbaracle/Rhyhorn/Rhydon/Rhypherior/Aggron/Kleavor/Seviper.
 - Flare Crash: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Added to Battle Frontier move tutor list. Learned by Growlith/Arcanine/Ponyta/Rapidash/Flareon/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo.
 - Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir on evolution.
 - Serpent Dance: Increases the user's special attack and speed by one stage. Added to Battle Frontier move tutor list. Learned by Seviper/Milotic/Serperior/Dunsparce/Ekans/Arbok/Huntail/Gorebyss/Rayquaza/Silicobra/Sandaconda/Giratina/Gyarados/Furret.
+-Hidden Thorns. Grass type Stealth Rock. Will replace Stealth Rock if Stealth Rock is already on the field. Added to Frontier move tutor list. Learned naturally by Roselia/Roserade/Cacnea/Cacturne.
 
 # Updated Moves
 
 - Simple Beam: Replaces opponents abilities with the Simple ability. If opponent has a banned ability such as Stance Change, then they will still keep that ability but the others will be replaced with Simple.
-- Worry Seed: Replaces opponents abilities with just the Worry Seed ability. If opponent has a banned ability such as Stance Change, then they will still keep that ability but the others will be replaced with Worry Seed.
+- Worry Seed: Replaces opponents abilities with just the Insomnia ability. If opponent has a banned ability such as Stance Change, then they will still keep that ability but the others will be replaced with Worry Seed.
 - Entrainment: Replaces opponents abilities with the user’s abilities. If opponent has a banned ability such as Stance Change, then they will still keep that ability but the others will be replaced with the user’s abilities in their respective slot.
 - Skill Swap: swaps the user abilities with the target abilities.  If opponent has a banned ability such as Stance Change, then they will still keep that ability but the others will be replaced with the user’s abilities in their respective slot.
 - Gastro Acid: Neutralises target abilities unless it is a banned ability like Stance Change.
