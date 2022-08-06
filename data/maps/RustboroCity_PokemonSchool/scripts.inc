@@ -1,5 +1,179 @@
+.set LOCALID_TEACHER, 6
+.set LOCALID_ROXANNE, 8
+
 RustboroCity_PokemonSchool_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, RustboroCity_PokemonSchool_OnTransition
 	.byte 0
+
+RustboroCity_PokemonSchool_OnTransition::
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_ROXANNE_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq RustboroCity_PokemonSchool_Eventscript_RoxanneRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq RustboroCity_PokemonSchool_Eventscript_RoxanneTrainerSchool
+    end
+
+RustboroCity_PokemonSchool_Eventscript_RoxanneRematch::
+	setflag FLAG_HIDE_TRAINERS_SCHOOL_ROXANNE
+	clearflag FLAG_HIDE_RUSTBORO_GYM_ROXANNE
+	return
+
+RustboroCity_PokemonSchool_Eventscript_RoxanneTrainerSchool::
+	setobjectxyperm LOCALID_TEACHER, 1, 3
+	setobjectmovementtype LOCALID_TEACHER, MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT
+	clearflag FLAG_HIDE_TRAINERS_SCHOOL_ROXANNE
+	setflag FLAG_HIDE_RUSTBORO_GYM_ROXANNE
+	return
+
+RustboroCity_PokemonSchool_EventScript_Roxanne::
+	lock
+	faceplayer
+	goto_if_set FLAG_ROXANNE_TRADE_STONES, RustboroCity_PokemonSchool_EventScript_RoxanneTrade
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneTeaching, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_ROXANNE_TRADE_STONES
+	release
+	end
+
+RustboroCity_PokemonSchool_EventScript_RoxanneTrade::
+	checkitem ITEM_HELIX_FOSSIL, 1
+	compare VAR_RESULT, TRUE
+	call_if_eq RustboroCity_PokemonSchool_Eventscript_RoxanneEyeingHelixFossil
+	checkitem ITEM_DOME_FOSSIL, 1
+	compare VAR_RESULT, TRUE
+	call_if_eq RustboroCity_PokemonSchool_Eventscript_RoxanneEyeingDomeFossil
+	checkitem ITEM_OLD_AMBER, 1
+	compare VAR_RESULT, TRUE
+	call_if_eq RustboroCity_PokemonSchool_Eventscript_RoxanneEyeingOldAmber
+	checkitem ITEM_ROOT_FOSSIL, 1
+	compare VAR_RESULT, TRUE
+	call_if_eq RustboroCity_PokemonSchool_Eventscript_RoxanneEyeingRootFossil
+	checkitem ITEM_CLAW_FOSSIL, 1
+	compare VAR_RESULT, TRUE
+	call_if_eq RustboroCity_PokemonSchool_Eventscript_RoxanneEyeingClawFossil
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneOpenToTrade, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+RustboroCity_PokemonSchool_Eventscript_RoxanneEyeingHelixFossil::
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneEyeingHelixFossil, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+    goto_if_eq Common_EventScript_NopReturn
+    setvar VAR_0x8008, ITEM_HELIX_FOSSIL
+    goto RustboroCity_PokemonSchool_Eventscript_RoxanneChooseStone
+    return
+
+RustboroCity_PokemonSchool_Eventscript_RoxanneEyeingDomeFossil::
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneEyeingDomeFossil, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+    goto_if_eq Common_EventScript_NopReturn
+    setvar VAR_0x8008, ITEM_DOME_FOSSIL
+    goto RustboroCity_PokemonSchool_Eventscript_RoxanneChooseStone
+    return
+
+RustboroCity_PokemonSchool_Eventscript_RoxanneEyeingOldAmber::
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneEyeingOldAmber, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+    goto_if_eq Common_EventScript_NopReturn
+    setvar VAR_0x8008, ITEM_OLD_AMBER
+    goto RustboroCity_PokemonSchool_Eventscript_RoxanneChooseStone
+    return
+
+RustboroCity_PokemonSchool_Eventscript_RoxanneEyeingRootFossil::
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneEyeingRootFossil, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+    goto_if_eq Common_EventScript_NopReturn
+    setvar VAR_0x8008, ITEM_ROOT_FOSSIL
+    goto RustboroCity_PokemonSchool_Eventscript_RoxanneChooseStone
+    return
+
+RustboroCity_PokemonSchool_Eventscript_RoxanneEyeingClawFossil::
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneEyeingClawFossil, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+    goto_if_eq Common_EventScript_NopReturn
+    setvar VAR_0x8008, ITEM_CLAW_FOSSIL
+    goto RustboroCity_PokemonSchool_Eventscript_RoxanneChooseStone
+    return
+
+RustboroCity_PokemonSchool_Eventscript_RoxanneChooseStone::
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneChooseStone, MSGBOX_DEFAULT
+	multichoice 0, 0, MULTI_EVO_STONE, FALSE
+	switch VAR_RESULT
+	case 0, RustboroCity_PokemonSchool_Eventscript_PickMoonStone
+	case 1, RustboroCity_PokemonSchool_Eventscript_PickSunStone
+	case 2, RustboroCity_PokemonSchool_Eventscript_PickShinyStone
+	case 3, RustboroCity_PokemonSchool_Eventscript_PickDuskStone
+	case 4, RustboroCity_PokemonSchool_Eventscript_PickDawnStone
+	case 5, RustboroCity_PokemonSchool_Eventscript_PickIceStone
+	case 6, RustboroCity_PokemonSchool_Eventscript_DeclineTrade
+	goto RustboroCity_PokemonSchool_Eventscript_DeclineTrade
+	end
+
+RustboroCity_PokemonSchool_Eventscript_PickMoonStone::
+	setvar VAR_0x8009, ITEM_MOON_STONE
+	goto RustboroCity_PokemonSchool_Eventscript_CheckTrade
+	end
+
+RustboroCity_PokemonSchool_Eventscript_PickSunStone::
+	setvar VAR_0x8009, ITEM_SUN_STONE
+	goto RustboroCity_PokemonSchool_Eventscript_CheckTrade
+	end
+
+RustboroCity_PokemonSchool_Eventscript_PickShinyStone::
+	setvar VAR_0x8009, ITEM_SHINY_STONE
+	goto RustboroCity_PokemonSchool_Eventscript_CheckTrade
+	end
+
+RustboroCity_PokemonSchool_Eventscript_PickDuskStone::
+	setvar VAR_0x8009, ITEM_DUSK_STONE
+	goto RustboroCity_PokemonSchool_Eventscript_CheckTrade
+	end
+
+RustboroCity_PokemonSchool_Eventscript_PickDawnStone::
+	setvar VAR_0x8009, ITEM_DAWN_STONE
+	goto RustboroCity_PokemonSchool_Eventscript_CheckTrade
+	end
+
+RustboroCity_PokemonSchool_Eventscript_PickIceStone::
+	bufferitemname 0, VAR_0x8008
+	setvar VAR_0x8009, ITEM_ICE_STONE
+	bufferitemname 1, VAR_0x8009
+	goto RustboroCity_PokemonSchool_Eventscript_CheckTrade
+	end
+
+RustboroCity_PokemonSchool_Eventscript_CheckTrade::
+	bufferitemname 0, VAR_0x8008
+	bufferitemname 1, VAR_0x8009
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneYoullTradeFossilForStone, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Common_EventScript_NopReturn
+	checkitemspace VAR_0x8009, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq RustboroCity_PokemonSchool_Eventscript_BagFull
+	goto RustboroCity_PokemonSchool_Eventscript_RoxanneCommenceTrade
+	end
+
+RustboroCity_PokemonSchool_Eventscript_DeclineTrade::
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneOpenToTrade, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_PokemonSchool_Eventscript_BagFull::
+	msgbox RustboroCity_PokemonSchool_Text_BagFull, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_PokemonSchool_Eventscript_RoxanneCommenceTrade::
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneCommenceTrade, MSGBOX_DEFAULT
+	closemessage
+	bufferitemname 1, VAR_0x8009
+	giveitem VAR_0x8009
+	removeitem VAR_0x8008
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneComeBackForMore, MSGBOX_DEFAULT
+	closemessage
+	end
 
 RustboroCity_PokemonSchool_EventScript_Blackboard::
 	lockall
@@ -264,3 +438,74 @@ RustboroCity_PokemonSchool_Text_StudentsNotes:
 	.string "A Trainer's mission is to defeat\n"
 	.string "the strong Trainers who await\l"
 	.string "challengers in Pokémon Gyms.$"
+
+RustboroCity_PokemonSchool_Text_RoxanneTeaching:
+	.string "Roxanne: Hello, {PLAYER}.\n"
+	.string "Have you also come here to teach?\p"
+	.string "Or perhaps you would be more interested\n"
+	.string "in my collection of rare stones?\p"
+	.string "These rare stones I've found can be used\n"
+	.string "to evolve certain species of Pokémon.\p"
+	.string "I could offer them to you, in return for\n"
+	.string "other earthly treasures…\p"
+	.string "I have always been a fan of Pokémon\n"
+	.string "fossils, but I have had terrible luck\l"
+	.string "trying to find any!\p"
+	.string "I am willing to trade any of my stones\n"
+	.string "for any of your fossils.\p"
+	.string "I will be at the school if I am not\n"
+	.string "battling!$"
+
+RustboroCity_PokemonSchool_Text_RoxanneOpenToTrade:
+	.string "Roxanne: If you have any fossils, you\n"
+	.string "are welcome to trade one for one of my\l"
+	.string "evolution stones.$"
+
+RustboroCity_PokemonSchool_Text_RoxanneEyeingHelixFossil:
+	.string "Roxanne: That swirl…\n"
+	.string "That is unmistakably a Helix Fossil!\p"
+	.string "Would you be willing to trade it for an\n"
+	.string "evolution stone?$"
+
+RustboroCity_PokemonSchool_Text_RoxanneEyeingDomeFossil:
+	.string "Roxanne: You have a Dome Fossil with\n"
+	.string "you, do you not?\p"
+	.string "Would you be willing to trade it for an\n"
+	.string "evolution stone?$"
+
+RustboroCity_PokemonSchool_Text_RoxanneEyeingOldAmber:
+	.string "Roxanne: What a lovely color!\n"
+	.string "I must have that piece of Old Amber!\p"
+	.string "Would you be willing to trade it for an\n"
+	.string "evolution stone?$"
+
+RustboroCity_PokemonSchool_Text_RoxanneEyeingRootFossil:
+	.string "Roxanne: I like the look of that Root\n"
+	.string "Fossil you have with you.\p"
+	.string "Would you be willing to trade it for an\n"
+	.string "evolution stone?$"
+
+RustboroCity_PokemonSchool_Text_RoxanneEyeingClawFossil:
+	.string "Roxanne: That is a well preserved Claw\n"
+	.string "Fossil you have with you!\p"
+	.string "Would you be willing to trade it for an\n"
+	.string "evolution stone?$"
+
+RustboroCity_PokemonSchool_Text_RoxanneChooseStone:
+	.string "Roxanne: Which of my stones would you\n"
+	.string "like to trade it for?$"
+
+RustboroCity_PokemonSchool_Text_RoxanneYoullTradeFossilForStone:
+	.string "Roxanne: You'll trade your\n"
+	.string "{STR_VAR_1} for my {STR_VAR_2}, then?$"
+
+RustboroCity_PokemonSchool_Text_BagFull:
+	.string "Roxanne: Oh dear, it appears that your\n"
+	.string "bag is full. Come back later!$"
+
+RustboroCity_PokemonSchool_Text_RoxanneCommenceTrade:
+	.string "Roxanne: All right, here you go!$"
+
+RustboroCity_PokemonSchool_Text_RoxanneComeBackForMore:
+	.string "Roxanne: I'm always up for trading if\n"
+	.string "you get any more fossils!$"

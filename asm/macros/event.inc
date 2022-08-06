@@ -1639,6 +1639,14 @@
 	.byte 0xe3
 	.endm
 
+	@ Compares a & b & c to 1.
+	.macro checkmultiflags a:req, b:req, c:req
+	.byte 0xe4
+	.2byte \a
+	.2byte \b
+	.2byte \c
+	.endm
+
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req
@@ -1864,3 +1872,22 @@
 	settotemboost \battler, 0, 0, 0, 0, 0, 0, 2
 	.endm
 
+	.macro mgoto_if_unset flag:req, dest:req
+	checkmultiflags \flag
+	goto_if FALSE, \dest
+	.endm
+
+	.macro mgoto_if_set flag:req, dest:req
+	checkmultiflags \flag
+	goto_if TRUE, \dest
+	.endm
+
+	.macro mcall_if_unset flag:req, dest:req
+	checkmultiflags \flag
+	call_if FALSE, \dest
+	.endm
+
+	.macro mcall_if_set flag:req, dest:req
+	checkmultiflags \flag
+	call_if TRUE, \dest
+	.endm

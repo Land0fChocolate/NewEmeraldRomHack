@@ -405,6 +405,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHit                     @ EFFECT_BOLT_BEAK
 	.4byte BattleScript_EffectWarDance                @ EFFECT_WAR_DANCE
 	.4byte BattleScript_EffectSerpentDance            @ EFFECT_SERPENT_DANCE
+	.4byte BattleScript_EffectHiddenThorns            @ EFFECT_HIDDEN_THORNS
 
 BattleScript_EffectShellSideArm:
 	shellsidearmcheck
@@ -2400,6 +2401,17 @@ BattleScript_EffectStealthRock:
 	attackanimation
 	waitanimation
 	printstring STRINGID_POINTEDSTONESFLOAT
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectHiddenThorns:
+	attackcanceler
+	attackstring
+	ppreduce
+	setstealthrock BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_THORNSSPREADOUT
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -6816,6 +6828,11 @@ BattleScript_StickyWebFree::
 
 BattleScript_StealthRockFree::
 	printstring STRINGID_PKMNBLEWAWAYSTEALTHROCK
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_HiddenThornsFree::
+	printstring STRINGID_PKMNBLEWAWAYHIDDENTHORNS
 	waitmessage B_WAIT_TIME_LONG
 	return
 

@@ -1376,6 +1376,7 @@ const u16 gEggMoves[] = {
         MOVE_AVALANCHE,
         MOVE_STEALTH_ROCK,
         MOVE_ICICLE_CRASH,
+        MOVE_ICE_TUSK,
         MOVE_FREEZE_DRY),
 
     egg_moves(CORSOLA,

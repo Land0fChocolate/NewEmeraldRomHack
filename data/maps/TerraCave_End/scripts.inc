@@ -10,9 +10,13 @@ TerraCave_End_OnResume:
 	end
 
 TerraCave_End_EventScript_TryRemoveGroudon::
+	checkitem ITEM_RAINBOW_WING, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq TerraCave_End_EventScript_RemoveGroudon
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_ne Common_EventScript_NopReturn
+TerraCave_End_EventScript_RemoveGroudon::
 	removeobject LOCALID_GROUDON
 	return
 
@@ -51,12 +55,18 @@ TerraCave_End_EventScript_Groudon::
 	goto_if_eq TerraCave_End_EventScript_RanFromGroudon
 	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
 	setflag FLAG_DEFEATED_GROUDON
+	call_if_set FLAG_DEFEATED_KYOGRE, TerraCave_End_EventScript_GroudonKyogreDefeated
 	releaseall
 	end
+
+TerraCave_End_EventScript_GroudonKyogreDefeated::
+	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 6
+	return
 
 TerraCave_End_EventScript_DefeatedGroudon::
 	setvar VAR_SHOULD_END_ABNORMAL_WEATHER, 1
 	setflag FLAG_DEFEATED_GROUDON
+	call_if_set FLAG_DEFEATED_KYOGRE, TerraCave_End_EventScript_GroudonKyogreDefeated
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 

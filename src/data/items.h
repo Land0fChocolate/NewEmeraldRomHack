@@ -914,7 +914,7 @@ const struct Item gItems[] =
     {
         .name = _("HP Up"),
         .itemId = ITEM_HP_UP,
-        .price = 7200,
+        .price = 9800,
         .description = sHPUpDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -926,7 +926,7 @@ const struct Item gItems[] =
     {
         .name = _("Protein"),
         .itemId = ITEM_PROTEIN,
-        .price = 7200,
+        .price = 9800,
         .description = sProteinDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -938,7 +938,7 @@ const struct Item gItems[] =
     {
         .name = _("Iron"),
         .itemId = ITEM_IRON,
-        .price = 7200,
+        .price = 9800,
         .description = sIronDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -950,7 +950,7 @@ const struct Item gItems[] =
     {
         .name = _("Calcium"),
         .itemId = ITEM_CALCIUM,
-        .price = 7200,
+        .price = 9800,
         .description = sCalciumDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -962,7 +962,7 @@ const struct Item gItems[] =
     {
         .name = _("Zinc"),
         .itemId = ITEM_ZINC,
-        .price = 7200,
+        .price = 9800,
         .description = sZincDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -974,8 +974,80 @@ const struct Item gItems[] =
     {
         .name = _("Carbos"),
         .itemId = ITEM_CARBOS,
-        .price = 7200,
+        .price = 9800,
         .description = sCarbosDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .flingPower = 30,
+    },
+
+        [ITEM_SUPER_HP_UP] =
+    {
+        .name = _("Super HP Up"),
+        .itemId = ITEM_SUPER_HP_UP,
+        .price = 32000,
+        .description = sSuperHPUpDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .flingPower = 30,
+    },
+
+    [ITEM_SUPER_PROTEIN] =
+    {
+        .name = _("SuperProtein"),
+        .itemId = ITEM_SUPER_PROTEIN,
+        .price = 32000,
+        .description = sSuperProteinDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .flingPower = 30,
+    },
+
+    [ITEM_SUPER_IRON] =
+    {
+        .name = _("Super Iron"),
+        .itemId = ITEM_SUPER_IRON,
+        .price = 32000,
+        .description = sSuperIronDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .flingPower = 30,
+    },
+
+    [ITEM_SUPER_CALCIUM] =
+    {
+        .name = _("Super Calcium"),
+        .itemId = ITEM_SUPER_CALCIUM,
+        .price = 32000,
+        .description = sSuperCalciumDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .flingPower = 30,
+    },
+
+    [ITEM_SUPER_ZINC] =
+    {
+        .name = _("Super Zinc"),
+        .itemId = ITEM_SUPER_ZINC,
+        .price = 32000,
+        .description = sSuperZincDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .flingPower = 30,
+    },
+
+    [ITEM_SUPER_CARBOS] =
+    {
+        .name = _("Super Carbos"),
+        .itemId = ITEM_SUPER_CARBOS,
+        .price = 32000,
+        .description = sSuperCarbosDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -9695,12 +9767,12 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_TRI_PASS] =
+    [ITEM_SILVER_WING] =
     {
-        .name = _("Tri-Pass"),
-        .itemId = ITEM_TRI_PASS,
+        .name = _("Silver Wing"),
+        .itemId = ITEM_SILVER_WING,
         .price = 0,
-        .description = sTriPassDesc,
+        .description = sSilverWingDesc,
         .importance = 1,
         .unk19 = 1,
         .pocket = POCKET_KEY_ITEMS,
@@ -9708,12 +9780,12 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_RAINBOW_PASS] =
+    [ITEM_RAINBOW_WING] =
     {
-        .name = _("Rainbow Pass"),
-        .itemId = ITEM_RAINBOW_PASS,
+        .name = _("Rainbow Wing"),
+        .itemId = ITEM_RAINBOW_WING,
         .price = 0,
-        .description = sRainbowPassDesc,
+        .description = sRainbowWingDesc,
         .importance = 1,
         .unk19 = 1,
         .pocket = POCKET_KEY_ITEMS,

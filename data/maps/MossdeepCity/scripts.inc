@@ -1,5 +1,4 @@
 .set LOCALID_RIVAL, 12
-.set LOCALID_SCOTT, 13
 
 MossdeepCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_OnTransition
@@ -305,63 +304,6 @@ MossdeepCity_EventScript_BlackBelt::
 	msgbox MossdeepCity_Text_WavesOverFeet, MSGBOX_NPC
 	end
 
-MossdeepCity_EventScript_Scott::
-	lock
-	faceplayer
-	msgbox MossdeepCity_Text_ScottSomethingWrongWithTown, MSGBOX_DEFAULT
-	closemessage
-	compare VAR_FACING, DIR_NORTH
-	call_if_eq MossdeepCity_EventScript_ScottExitNorth
-	compare VAR_FACING, DIR_EAST
-	call_if_eq MossdeepCity_EventScript_ScottExitEast
-	addvar VAR_SCOTT_STATE, 1
-	removeobject LOCALID_SCOTT
-	release
-	end
-
-MossdeepCity_EventScript_ScottExitNorth::
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Movement_PlayerWatchScottExit
-	applymovement LOCALID_SCOTT, MossdeepCity_Movement_ScottExitNorth
-	waitmovement 0
-	return
-
-MossdeepCity_EventScript_ScottExitEast::
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_Movement_PlayerWatchScottExit
-	applymovement LOCALID_SCOTT, MossdeepCity_Movement_ScottExitEast
-	waitmovement 0
-	return
-
-MossdeepCity_Movement_PlayerWatchScottExit:
-	delay_16
-	delay_16
-	walk_in_place_fastest_left
-	step_end
-
-MossdeepCity_Movement_ScottExitNorth:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-MossdeepCity_Movement_ScottExitEast:
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
 MossdeepCity_Text_MaySpaceCenterLetsBattle:
 	.string "May: Oh, hey {PLAYER},\n"
 	.string "fancy meeting you here!\p"
@@ -589,20 +531,6 @@ MossdeepCity_Text_SpaceCenterSign:
 	.string "MOSSDEEP SPACE CENTER\n"
 	.string "“The closest place to space.”$"
 
-MossdeepCity_Text_ScottSomethingWrongWithTown:
-	.string "Scott: {PLAYER}{KUN}, feeling good?\n"
-	.string "I'm doing great!\p"
-	.string "I'd heard Mossdeep's Gym Leader is\n"
-	.string "pretty strong, so I decided to come\l"
-	.string "take a look-see for myself.\p"
-	.string "But there's something wrong about\n"
-	.string "this town.\p"
-	.string "People are going on about a warning\n"
-	.string "letter and the SPACE CENTER…\p"
-	.string "I don't think it concerns me in any\n"
-	.string "way, though.$"
-
 MossdeepCity_Text_WavesOverFeet:
-	.string "Ahh… It feels great letting the waves\n"
-	.string "wash over my feet…$"
-
+       .string "Ahh… It feels great letting the waves\n"
+       .string "wash over my feet…$"

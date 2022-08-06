@@ -303,6 +303,11 @@ const u8 gText_MatchCallPkmnTrainer_Wally_Pokemon[] = _("The 1st Pokémon I caug
 const u8 gText_MatchCallPkmnTrainer_Wally_Intro1[] = _("Pokémon and I have grown");
 const u8 gText_MatchCallPkmnTrainer_Wally_Intro2[] = _("stronger together.");
 
+const u8 gText_MatchCallLoreKeeper_Zinnia_Strategy[] = _("Power with knowledge!");
+const u8 gText_MatchCallLoreKeeper_Zinnia_Pokemon[] = _("Wicked draconic Pokémon!");
+const u8 gText_MatchCallLoreKeeper_Zinnia_Intro1[] = _("I've always turned my eyes");
+const u8 gText_MatchCallLoreKeeper_Zinnia_Intro2[] = _("to the sky and beyond.");
+
 const u8 gText_MatchCallRockinWhiz_Roxanne_Strategy[] = _("Rock-type power attack.");
 const u8 gText_MatchCallRockinWhiz_Roxanne_Pokemon[] = _("I prefer rock-hard Pokémon.");
 const u8 gText_MatchCallRockinWhiz_Roxanne_Intro1[] = _("A Leader of a big Gym bears");

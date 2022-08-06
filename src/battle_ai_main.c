@@ -1383,7 +1383,14 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         case EFFECT_STEALTH_ROCK:
             if (gSideTimers[GetBattlerSide(battlerDef)].stealthRockAmount > 0
-              || PartnerMoveIsSameNoTarget(AI_DATA->battlerAtkPartner, move, AI_DATA->partnerMove)) //Only one mon needs to set up Stealth Rocks
+              || PartnerMoveIsSameNoTarget(AI_DATA->battlerAtkPartner, move, AI_DATA->partnerMove) //Only one mon needs to set up Stealth Rocks
+              || AI_DATA->partnerMove == MOVE_HIDDEN_THORNS) //Stealth Rock doesn't stack with Hidden Thorns.
+                score -= 10;
+            break;
+        case EFFECT_HIDDEN_THORNS:
+            if (gSideTimers[GetBattlerSide(battlerDef)].hiddenThornsAmount > 0
+              || PartnerMoveIsSameNoTarget(AI_DATA->battlerAtkPartner, move, AI_DATA->partnerMove) //Only one mon needs to set up Hidden Thorns
+              || AI_DATA->partnerMove == MOVE_STEALTH_ROCK) //Hidden Thorns doesn't stack with Stealth Rock.
                 score -= 10;
             break;
         case EFFECT_TOXIC_SPIKES:
@@ -3757,6 +3764,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
 
     case EFFECT_SPIKES:
     case EFFECT_STEALTH_ROCK:
+    case EFFECT_HIDDEN_THORNS:
     case EFFECT_STICKY_WEB:
     case EFFECT_TOXIC_SPIKES:
         if (HasAbility(ABILITY_MAGIC_BOUNCE, AI_DATA->defAbilities) || CountUsablePartyMons(battlerDef) == 0)
@@ -4770,6 +4778,7 @@ static s16 AI_SetupFirstTurn(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_ELECTRIC_TERRAIN:
     case EFFECT_MISTY_TERRAIN:
     case EFFECT_STEALTH_ROCK:
+    case EFFECT_HIDDEN_THORNS:
     case EFFECT_TOXIC_SPIKES:
     case EFFECT_TRICK_ROOM:
     case EFFECT_WONDER_ROOM:

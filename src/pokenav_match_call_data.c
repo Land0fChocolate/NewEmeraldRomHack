@@ -321,6 +321,22 @@ static const struct MatchCallWally sWallyMatchCallHeader =
     .locationData = sWallyLocationData
 };
 
+
+static const match_call_text_data_t sZinniaTextScripts[] = {
+    { MatchCall_Text_Zinnia, 0xFFFF,                              0xFFFF },
+    { NULL,                  0xFFFF,                              0xFFFF }
+};
+
+static const struct MatchCallStructNPC sZinniaMatchCallHeader =
+{
+    .type = 0,
+    .mapSec = MAPSEC_FALLARBOR_TOWN,
+    .flag = FLAG_ENABLE_ZINNIA_MATCH_CALL,
+    .desc = gText_ZinniaMatchCallDesc,
+    .name = gText_ZinniaMatchCallName,
+    .textData = sZinniaTextScripts
+};
+
 static const match_call_text_data_t sScottTextScripts[] = {
     { MatchCall_Text_Scott1, 0xFFFF,                              0xFFFF },
     { MatchCall_Text_Scott2, FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY,  0xFFFF },
@@ -485,7 +501,7 @@ static const struct MatchCallStructTrainer sJuanMatchCallHeader =
 {
     .type = MC_TYPE_TRAINER,
     .mapSec = MAPSEC_EVER_GRANDE_CITY,
-    .flag = FLAG_UNUSED_0x1DE, //TODO: fully build when making Juan fight
+    .flag = FLAG_UNUSED_0x1DA, //TODO: fully build when making Juan fight
     .rematchTableIdx = REMATCH_JUAN,
     .desc = gText_EliteFourMatchCallDesc,
     .name = NULL,
@@ -594,6 +610,7 @@ static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_BRENDAN]    = {.rival  = &sBrendanMatchCallHeader},
     [MC_HEADER_MAY]        = {.rival  = &sMayMatchCallHeader},
     [MC_HEADER_WALLY]      = {.wally  = &sWallyMatchCallHeader},
+    [MC_HEADER_ZINNIA]     = {.npc    = &sZinniaMatchCallHeader},
     [MC_HEADER_NORMAN]     = {.leader = &sNormanMatchCallHeader},
     [MC_HEADER_MOM]        = {.npc    = &sMomMatchCallHeader},
     [MC_HEADER_SCOTT]      = {.npc    = &sScottMatchCallHeader},

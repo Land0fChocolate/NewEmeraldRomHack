@@ -5957,6 +5957,22 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .comboStarterId = COMBO_STARTER_SERPENT_DANCE,
         .comboMoves = {0}
     },
+
+    [MOVE_ICE_TUSK] =
+    {
+        .effect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .comboStarterId = 0,
+        .comboMoves = {COMBO_STARTER_HAIL},
+    },
+
+    [MOVE_HIDDEN_THORNS] =
+    {
+        .effect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .comboStarterId = 0,
+        .comboMoves = {0}
+    },
 };
 
 const struct ContestEffect gContestEffects[] =

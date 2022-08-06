@@ -177,7 +177,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_2",
+      "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_1",
       "x": 40,
       "y": 56,
       "elevation": 3,
@@ -186,7 +186,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BattleFrontier_OutsideEast_EventScript_Zigzagoon",
+      "script": "OverworldPokemon_EventScript_Zigzagoon",
       "flag": "0"
     },
     {
@@ -357,6 +357,58 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BattleFrontier_OutsideEast_EventScript_Camper",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
+      "x": 27,
+      "y": 46,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_LEFT_RIGHT_DOWN",
+      "movement_range_x": 10,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BattleFrontier_OutsideEast_EventScript_TriathleteBikeQuest",
+      "flag": "FLAG_HIDE_TRIATHLETE_BIKE_QUEST"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KADABRA",
+      "x": 64,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_EventScript_Kadabra",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BAGON",
+      "x": 9,
+      "y": 46,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OverworldPokemon_EventScript_Bagon",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_STREET_THUG",
+      "x": 22,
+      "y": 59,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 5,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BattleFrontier_OutsideEast_EventScript_DrainPunchGiver",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -438,13 +490,6 @@
       "dest_warp_id": 0
     },
     {
-      "x": 21,
-      "y": 45,
-      "elevation": 0,
-      "dest_map": "MAP_BATTLE_FRONTIER_LOUNGE9",
-      "dest_warp_id": 0
-    },
-    {
       "x": 3,
       "y": 51,
       "elevation": 0,
@@ -459,7 +504,9 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

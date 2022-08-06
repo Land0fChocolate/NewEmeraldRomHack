@@ -318,6 +318,12 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonRangerM;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Delinquent;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StreetThug;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lisia;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Articuno;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zapdos;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Moltres;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Raikou;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Entei;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Suicune;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -633,6 +639,12 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_DELINQUENT] =               &gObjectEventGraphicsInfo_Delinquent,
 	[OBJ_EVENT_GFX_STREET_THUG] =              &gObjectEventGraphicsInfo_StreetThug,
 	[OBJ_EVENT_GFX_LISIA] =                    &gObjectEventGraphicsInfo_Lisia,
+	[OBJ_EVENT_GFX_ARTICUNO] =                 &gObjectEventGraphicsInfo_Articuno,
+	[OBJ_EVENT_GFX_ZAPDOS] =                   &gObjectEventGraphicsInfo_Zapdos,
+	[OBJ_EVENT_GFX_MOLTRES] =                  &gObjectEventGraphicsInfo_Moltres,
+	[OBJ_EVENT_GFX_RAIKOU] =                   &gObjectEventGraphicsInfo_Raikou,
+	[OBJ_EVENT_GFX_ENTEI] =                    &gObjectEventGraphicsInfo_Entei,
+	[OBJ_EVENT_GFX_SUICUNE] =                  &gObjectEventGraphicsInfo_Suicune,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

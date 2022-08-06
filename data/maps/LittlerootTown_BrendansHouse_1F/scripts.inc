@@ -396,8 +396,7 @@ PlayersHouse_1F_Text_RunningShoesManual:
 	.string "the road running!”$"
 
 PlayersHouse_1F_Text_TicketFromBrineyCameForYou:
-	.string "Dad: Hm?\p"
-	.string "Hey, it's {PLAYER}!\p"
+	.string "Dad: Hey, {PLAYER}!\p"
 	.string "It's been a while since I saw you,\n"
 	.string "but you look…stronger, somehow.\p"
 	.string "That's the impression I get.\n"
@@ -407,7 +406,7 @@ PlayersHouse_1F_Text_TicketFromBrineyCameForYou:
 	.string "Mr. Briney.$"
 
 PlayersHouse_1F_Text_PortsInSlateportLilycove:
-	.string "Dad: Hm, a ticket for a ferry?\p"
+	.string "Dad: It's a ticket for a ferry.\p"
 	.string "If I recall, there are ferry ports in\n"
 	.string "Slateport and Lilycove.$"
 

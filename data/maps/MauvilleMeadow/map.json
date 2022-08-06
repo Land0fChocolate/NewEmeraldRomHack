@@ -30,8 +30,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "MauvilleMeadow_Eventscript_Shelly",
+      "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
@@ -43,8 +43,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "MauvilleMeadow_Eventscript_FlowerAqua",
+      "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
@@ -56,8 +56,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "MauvilleMeadow_Eventscript_ObserveAquaM",
+      "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
@@ -69,8 +69,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "MauvilleMeadow_Eventscript_ObserveAquaF",
+      "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
@@ -82,8 +82,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "MauvilleMeadow_Eventscript_WanderAqua",
+      "flag": "FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -136,6 +136,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MauvilleMeadow_EventScript_ItemTM93",
       "flag": "FLAG_ITEM_MAUVILLE_MEADOW_TM_93"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 34,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "MauvilleMeadow_EventScript_Alistair",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "x": 17,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "MauvilleMeadow_EventScript_Natasha",
+      "flag": "0"
     }
   ],
   "warp_events": [

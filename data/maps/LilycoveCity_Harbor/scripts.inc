@@ -85,7 +85,7 @@ LilycoveCity_Harbor_EventScript_GoToBirthIsland::
 
 LilycoveCity_Harbor_EventScript_GoToFarawayIsland::
 	call LilycoveCity_Harbor_EventScript_BoardFerry
-	warp MAP_FARAWAY_ISLAND_ENTRANCE, 255, 13, 38
+	warp MAP_FARAWAY_ISLAND_ENTRANCE, 255, 13, 58
 	waitstate
 	release
 	end
@@ -135,7 +135,6 @@ LilycoveCity_Harbor_EventScript_GetAuroraTicketState::
 
 LilycoveCity_Harbor_EventScript_GetOldSeaMapState::
 	setvar VAR_TEMP_C, 0
-	goto_if_unset FLAG_ENABLE_SHIP_FARAWAY_ISLAND, Common_EventScript_NopReturn
 	checkitem ITEM_OLD_SEA_MAP, 1
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_NopReturn
@@ -146,7 +145,6 @@ LilycoveCity_Harbor_EventScript_GetOldSeaMapState::
 
 LilycoveCity_Harbor_EventScript_GetMysticTicketState::
 	setvar VAR_TEMP_9, 0
-	goto_if_unset FLAG_ENABLE_SHIP_NAVEL_ROCK, Common_EventScript_NopReturn
 	checkitem ITEM_MYSTIC_TICKET, 1
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_NopReturn
@@ -281,7 +279,7 @@ LilycoveCity_Harbor_EventScript_OldSeaMapFirstTime::
 	call_if_eq LilycoveCity_Harbor_EventScript_BoardFerryWithBrineyAndSailorEast
 	setvar VAR_0x8004, LOCALID_SS_TIDAL
 	call Common_EventScript_FerryDepart
-	warp MAP_FARAWAY_ISLAND_ENTRANCE, 255, 13, 38
+	warp MAP_FARAWAY_ISLAND_ENTRANCE, 255, 13, 58
 	waitstate
 	release
 	end
@@ -289,7 +287,7 @@ LilycoveCity_Harbor_EventScript_OldSeaMapFirstTime::
 LilycoveCity_Harbor_EventScript_GoToFarawayIslandFirstTime::
 	closemessage
 	call LilycoveCity_Harbor_EventScript_BoardFerryWithSailor
-	warp MAP_FARAWAY_ISLAND_ENTRANCE, 255, 13, 38
+	warp MAP_FARAWAY_ISLAND_ENTRANCE, 255, 13, 58
 	waitstate
 	release
 	end

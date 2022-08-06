@@ -271,6 +271,8 @@ static const struct MenuAction MultichoiceList_GameCornerTMs[] =
     {gText_TM29AndPrice},
     {gText_TM53AndPrice},
     {gText_TM56AndPrice},
+    {gText_TM13AndPrice},
+    {gText_TM24AndPrice},
     {gText_TM35AndPrice},
     {gText_TM94AndPrice},
     {gText_Exit},
@@ -591,11 +593,14 @@ static const struct MenuAction MultichoiceList_UnusedSSTidal3[] =
     {gText_Exit},
 };
 
-static const struct MenuAction MultichoiceList_UnusedSSTidal4[] =
+static const struct MenuAction MultichoiceList_EvolutionStone[] =
 {
-    {gText_SouthernIsland},
-    {gText_BirthIsland},
-    {gText_FarawayIsland},
+    {gText_MoonStone},
+    {gText_SunStone},
+    {gText_ShinyStone},
+    {gText_DuskStone},
+    {gText_DawnStone},
+    {gText_IceStone},
     {gText_Exit},
 };
 
@@ -877,7 +882,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_UNUSED_SSTIDAL_1]           = MULTICHOICE(MultichoiceList_UnusedSSTidal1),
     [MULTI_UNUSED_SSTIDAL_2]           = MULTICHOICE(MultichoiceList_UnusedSSTidal2),
     [MULTI_UNUSED_SSTIDAL_3]           = MULTICHOICE(MultichoiceList_UnusedSSTidal3),
-    [MULTI_UNUSED_SSTIDAL_4]           = MULTICHOICE(MultichoiceList_UnusedSSTidal4),
+    [MULTI_EVO_STONE]                  = MULTICHOICE(MultichoiceList_EvolutionStone),
     [MULTI_FOSSIL]                     = MULTICHOICE(MultichoiceList_Fossil),
     [MULTI_YESNO]                      = MULTICHOICE(MultichoiceList_YesNo),
     [MULTI_FRONTIER_RULES]             = MULTICHOICE(MultichoiceList_FrontierRules),

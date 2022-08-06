@@ -442,8 +442,8 @@ AbandonedShip_Rooms2_B1F_EventScript_ItemDiveBall::
 	finditem ITEM_DIVE_BALL
 	end
 
-AbandonedShip_Room_B1F_EventScript_ItemTM13::
-	finditem ITEM_TM13
+AbandonedShip_Room_B1F_EventScript_ItemTM79::
+	finditem ITEM_TM79
 	end
 
 AbandonedShip_Rooms2_1F_EventScript_ItemRevive::
@@ -490,8 +490,8 @@ SafariZone_Northeast_EventScript_ItemNugget::
 	finditem ITEM_NUGGET
 	end
 
-SafariZone_Southeast_EventScript_ItemBigPearl::
-	finditem ITEM_BIG_PEARL
+SafariZone_Southeast_EventScript_ItemTM81::
+	finditem ITEM_TM81
 	end
 
 MtPyre_2F_EventScript_ItemUltraBall::
@@ -694,6 +694,74 @@ FortreeJungle_Area2_EventScript_ItemTM09::
 	finditem ITEM_TM09
 	end
 
-CrumblingGorge_EventScript_ItemTM59::
-	finditem ITEM_TM59
+CrumblingGorge_EventScript_ItemTM86::
+	finditem ITEM_TM86
+	end
+
+NavelRock_Entrance_Eventscript_ItemEscapeRope::
+	finditem ITEM_ESCAPE_ROPE
+	end
+
+NavelRock_Lugia1_Eventscript_ItemImpishMint::
+	finditem ITEM_IMPISH_MINT
+	end
+
+NavelRock_Lugia2_Eventscript_ItemRareCandy::
+	finditem ITEM_RARE_CANDY
+	end
+
+NavelRock_Lugia3_Eventscript_ItemTM60::
+	finditem ITEM_TM60
+	end
+
+NavelRock_Hooh1_Eventscript_ItemBoldMint::
+	finditem ITEM_BOLD_MINT
+	end
+
+NavelRock_Hooh2_Eventscript_ItemTM97::
+	finditem ITEM_TM97
+	end
+
+NavelRock_Hooh3_Eventscript_ItemMaxRevive::
+	finditem ITEM_MAX_REVIVE
+	end
+
+NavelRock_Bottom_Eventscript_ItemSilverWing::
+	finditem ITEM_SILVER_WING
+	msgbox Text_FoundSilverWing, MSGBOX_DEFAULT
+	closemessage
+	end
+
+NavelRock_Hooh3_Eventscript_ItemRainbowWing::
+	finditem ITEM_RAINBOW_WING
+	msgbox Text_FoundRainbowWing, MSGBOX_DEFAULT
+	closemessage
+	end
+
+Text_FoundSilverWing:
+	.string "You have found a legendary artefact!\n"
+	.string "Kyogre should appear for you now.$"
+
+Text_FoundRainbowWing:
+	.string "You have found a legendary artefact!\n"
+	.string "Groudon should appear for you now.$"
+
+FarawayIsland_Ruin1_Eventscript_ItemHeartScale::
+	finditem ITEM_HEART_SCALE
+	end
+
+FarawayIsland_Ruin2_Eventscript_ItemRareBone::
+	finditem ITEM_RARE_BONE
+	end
+
+FarawayIsland_Ruin3_Eventscript_ItemLifeOrb::
+	finditem ITEM_LIFE_ORB
+	end
+
+FarawayIsland_Ruin4_Eventscript_ItemLightClay::
+	finditem ITEM_LIGHT_CLAY
+	end
+
+FarawayIsland_Ruin5_Eventscript_ItemBlueShard::
+	finditem ITEM_BLUE_SHARD
 	end

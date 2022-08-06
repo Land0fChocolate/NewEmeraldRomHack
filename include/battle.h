@@ -212,6 +212,7 @@ struct SideTimer
     u8 spikesAmount;
     u8 toxicSpikesAmount;
     u8 stealthRockAmount;
+    u8 hiddenThornsAmount;
     u8 stickyWebAmount;
     u8 auroraVeilTimer;
     u8 auroraVeilBattlerId;

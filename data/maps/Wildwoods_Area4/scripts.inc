@@ -1,2 +1,7 @@
 Wildwoods_Area4_MapScripts::
 	.byte 0
+
+Wildwoods_Area4_Eventscript_Celina::
+	trainerbattle_single TRAINER_CELINA, Wildwoods_Area4_Text_CelinaIntro, Wildwoods_Area4_Text_CelinaDefeated
+	msgbox Wildwoods_Area4_Text_CelinaPostBattle, MSGBOX_AUTOCLOSE
+	end

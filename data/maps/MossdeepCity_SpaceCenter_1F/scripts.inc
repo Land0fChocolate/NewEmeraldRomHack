@@ -52,7 +52,7 @@ MossdeepCity_SpaceCenter_1F_EventScript_GaveSunStone::
 MossdeepCity_SpaceCenter_1F_EventScript_Woman::
 	lock
 	faceplayer
-	msgbox MossdeepCity_SpaceCenter_1F_Text_DidPokemonComeFromSpace, MSGBOX_DEFAULT
+	msgbox MossdeepCity_SpaceCenter_1F_Text_MissingRocket, MSGBOX_DEFAULT
 	release
 	end
 
@@ -102,10 +102,13 @@ MossdeepCity_SpaceCenter_1F_Text_HoennFamousForMeteorShowers:
 	.string "The Hoenn region has been famous for \n"
 	.string "its meteor showers for a long time.$"
 
-
-MossdeepCity_SpaceCenter_1F_Text_DidPokemonComeFromSpace:
-	.string "Some people claim that some Pokémon\n"
-	.string "come from space. Could it be true?$"
+MossdeepCity_SpaceCenter_1F_Text_MissingRocket:
+	.string "I worked on one of the rockets that was\n"
+	.string "launched here.\p"
+	.string "I wanted to see how it was doing, but\n"
+	.string "the scientists here said it went missing\l"
+	.string "and are being weird and dodging the\l"
+	.string "question. What's going on?$"
 
 MossdeepCity_SpaceCenter_1F_Text_RocketsBoggleMyMind:
 	.string "A giant chunk of metal bursts through\n"

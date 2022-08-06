@@ -314,8 +314,14 @@
 #define OBJ_EVENT_GFX_STREET_THUG                310
 #define OBJ_EVENT_GFX_LISIA                      311
 #define OBJ_EVENT_GFX_FLANNERY_HOT_SPRINGS       312
+#define OBJ_EVENT_GFX_ARTICUNO                   313
+#define OBJ_EVENT_GFX_ZAPDOS                     314
+#define OBJ_EVENT_GFX_MOLTRES                    315
+#define OBJ_EVENT_GFX_RAIKOU                     316
+#define OBJ_EVENT_GFX_ENTEI                      317
+#define OBJ_EVENT_GFX_SUICUNE                    318
 
-#define NUM_OBJ_EVENT_GFX                        313
+#define NUM_OBJ_EVENT_GFX                        319
 
 
 // These are dynamic object gfx ids.

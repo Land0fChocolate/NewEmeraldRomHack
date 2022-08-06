@@ -8,6 +8,8 @@ EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour
 	setflag FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY
 	clearflag FLAG_HIDE_SS_TIDAL_CORRIDOR_MR_BRINEY
+	clearflag FLAG_HIDE_DRACONID_ARCHIVES_SCIENTIST
+	setvar VAR_MT_PYRE_STATE, 2
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY
 	setvar VAR_STEVENS_HOUSE_STATE, 2
 	setflag FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY
@@ -16,6 +18,7 @@ EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags::
 	clearflag FLAG_HIDE_LILYCOVE_HARBOR_SSTIDAL
 	setflag FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS
 	setflag FLAG_HIDE_MOSSDEEP_CITY_RIVAL
+	setflag FLAG_HIDE_EVER_GRANDE_SCOTT
 	clearflag FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION
 	special UpdateTrainerFanClubGameClear
 	call_if_unset FLAG_RECEIVED_SS_TICKET, EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent
@@ -50,4 +53,5 @@ EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent::
 
 EverGrandeCity_HallOfFame_EventScript_ReadyDexUpgradeEvent::
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1
+	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 1
 	return

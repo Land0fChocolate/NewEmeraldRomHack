@@ -4,7 +4,27 @@ DewfordTown_Gym_MapScripts::
 
 DewfordTown_Gym_OnTransition:
 	call DewfordTown_Gym_EventScript_SetFlashRadius
+	call DewfordTown_Gym_Eventscript_SetUpBrawly
 	end
+
+DewfordTown_Gym_Eventscript_SetUpBrawly::
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_BRAWLY_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq DewfordTown_Gym_Eventscript_BrawlyRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq DewfordTown_Gym_Eventscript_BrawlyBeach
+    return
+
+DewfordTown_Gym_Eventscript_BrawlyRematch::
+	setflag FLAG_HIDE_ROUTE106_BRAWLY
+	clearflag FLAG_HIDE_DEWFORD_GYM_BRAWLY
+	return
+
+DewfordTown_Gym_Eventscript_BrawlyBeach::
+	clearflag FLAG_HIDE_ROUTE106_BRAWLY
+	setflag FLAG_HIDE_DEWFORD_GYM_BRAWLY
+	return
 
 DewfordTown_Gym_EventScript_SetFlashRadius::
 	goto_if_defeated TRAINER_BRAWLY_1, DewfordTown_Gym_EventScript_SetLightsOn

@@ -4425,6 +4425,9 @@ u32 GetBattlerTotalSpeedStat(u8 battlerId)
     if (gBattleMons[battlerId].status1 & STATUS1_PARALYSIS && !HasAbility(ABILITY_QUICK_FEET, abilities))
         speed /= (B_PARALYSIS_SPEED >= GEN_7 ? 2 : 4);
 
+    if (GetBattlerHoldEffect(battlerId, TRUE) == HOLD_EFFECT_QUICK_CLAW && (gBattleMons[battlerId].hp < gBattleMons[battlerId].maxHP / 2)) 
+        speed *= 1.1;
+
     return speed;
 }
 
@@ -4502,9 +4505,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
     if (!ignoreChosenMoves && HasAbility(ABILITY_QUICK_DRAW, abilities) && !IS_MOVE_STATUS(gChosenMoveByBattler[battler1]) && Random() % 100 < 30)
         gProtectStructs[battler1].quickDraw = TRUE;
     // Quick Claw and Custap Berry
-    if (!gProtectStructs[battler1].quickDraw
-     && ((holdEffectBattler1 == HOLD_EFFECT_QUICK_CLAW && gRandomTurnNumber < (0xFFFF * GetBattlerHoldEffectParam(battler1)) / 100)
-     || (holdEffectBattler1 == HOLD_EFFECT_CUSTAP_BERRY && HasEnoughHpToEatBerry(battler1, 4, gBattleMons[battler1].item))))
+    if (holdEffectBattler1 == HOLD_EFFECT_CUSTAP_BERRY && HasEnoughHpToEatBerry(battler1, 4, gBattleMons[battler1].item))
         gProtectStructs[battler1].usedCustapBerry = TRUE;
 
     // Battler 2
@@ -4515,9 +4516,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
     if (!ignoreChosenMoves && HasAbility(ABILITY_QUICK_DRAW, abilities) && !IS_MOVE_STATUS(gChosenMoveByBattler[battler2]) && Random() % 100 < 30)
         gProtectStructs[battler2].quickDraw = TRUE;
     // Quick Claw and Custap Berry
-    if (!gProtectStructs[battler2].quickDraw
-     && ((holdEffectBattler2 == HOLD_EFFECT_QUICK_CLAW && gRandomTurnNumber < (0xFFFF * GetBattlerHoldEffectParam(battler2)) / 100)
-     || (holdEffectBattler2 == HOLD_EFFECT_CUSTAP_BERRY && HasEnoughHpToEatBerry(battler2, 4, gBattleMons[battler2].item))))
+    if (holdEffectBattler2 == HOLD_EFFECT_CUSTAP_BERRY && HasEnoughHpToEatBerry(battler2, 4, gBattleMons[battler2].item))
         gProtectStructs[battler2].usedCustapBerry = TRUE;
 
     if (!ignoreChosenMoves)

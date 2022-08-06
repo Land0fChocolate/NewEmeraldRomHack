@@ -71,7 +71,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_DRIZZLE] = 9,
     [ABILITY_DROUGHT] = 9,
     [ABILITY_DRY_SKIN] = 6,
-    [ABILITY_EARLY_BIRD] = 4,
+    [ABILITY_EARLY_BIRD] = 2,
     [ABILITY_EFFECT_SPORE] = 4,
     [ABILITY_ELECTRIC_SURGE] = 8,
     [ABILITY_EMERGENCY_EXIT] = 3,
@@ -162,6 +162,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_OVERCOAT] = 5,
     [ABILITY_OVERGROW] = 5,
     [ABILITY_OWN_TEMPO] = 3,
+    [ABILITY_PAINFUL_BURN] = 3,
     [ABILITY_PARENTAL_BOND] = 10,
     [ABILITY_PICKUP] = 1,
     [ABILITY_PICKPOCKET] = 3,
@@ -1313,6 +1314,7 @@ bool32 IsHazardMoveEffect(u16 moveEffect)
     case EFFECT_TOXIC_SPIKES:
     case EFFECT_STICKY_WEB:
     case EFFECT_STEALTH_ROCK:
+    case EFFECT_HIDDEN_THORNS:
         return TRUE;
     default:
         return FALSE;
@@ -2418,7 +2420,7 @@ static bool32 PartyBattlerShouldAvoidHazards(u8 currBattler, u8 switchBattler)
     struct Pokemon *mon = GetPartyBattlerPartyData(currBattler, switchBattler);
     u16 abilities[NUM_ABILITY_SLOTS];   // we know our own party data
     u16 holdEffect = GetBattlerHoldEffect(GetMonData(mon, MON_DATA_HELD_ITEM), TRUE);
-    u32 flags = gSideStatuses[GetBattlerSide(currBattler)] & (SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK | SIDE_STATUS_STICKY_WEB | SIDE_STATUS_TOXIC_SPIKES);
+    u32 flags = gSideStatuses[GetBattlerSide(currBattler)] & (SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK | SIDE_STATUS_HIDDEN_THORNS | SIDE_STATUS_STICKY_WEB | SIDE_STATUS_TOXIC_SPIKES);
 
     if (flags == 0)
         return FALSE;
@@ -2429,7 +2431,7 @@ static bool32 PartyBattlerShouldAvoidHazards(u8 currBattler, u8 switchBattler)
       || holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS)
         return FALSE;
 
-    if (flags & (SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK) && GetMonData(mon, MON_DATA_HP) < (GetMonData(mon, MON_DATA_MAX_HP) / 8))
+    if (flags & (SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK | SIDE_STATUS_HIDDEN_THORNS) && GetMonData(mon, MON_DATA_HP) < (GetMonData(mon, MON_DATA_MAX_HP) / 8))
         return TRUE;
 
     return FALSE;
@@ -2834,10 +2836,12 @@ u32 ShouldTryToFlinch(u8 battlerAtk, u8 battlerDef, u16 atkAbilities[], u16 defA
     {
         return 0;   // don't try to flinch sleeping pokemon
     }
-    else if (HasAbility(ABILITY_SERENE_GRACE, atkAbilities)
+    else if ((HasAbility(ABILITY_SERENE_GRACE, atkAbilities)
       || gBattleMons[battlerDef].status1 & STATUS1_PARALYSIS
       || gBattleMons[battlerDef].status2 & STATUS2_INFATUATION
       || gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
+        || (HasAbility(ABILITY_PAINFUL_BURN, atkAbilities)
+        && gBattleMons[battlerDef].status1 & STATUS1_BURN))
     {
         return 2;   // good idea to flinch
     }
@@ -3612,7 +3616,8 @@ void IncreaseConfusionScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
     {
         if (gBattleMons[battlerDef].status1 & STATUS1_PARALYSIS
           || gBattleMons[battlerDef].status2 & STATUS2_INFATUATION
-          || (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->atkAbilities) && HasMoveEffect(battlerAtk, EFFECT_FLINCH_HIT)))
+          || (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->atkAbilities) && HasMoveEffect(battlerAtk, EFFECT_FLINCH_HIT))
+          || (HasAbility(ABILITY_PAINFUL_BURN, AI_DATA->atkAbilities) && HasMoveEffect(battlerAtk, EFFECT_FLINCH_HIT) && gBattleMons[battlerDef].status1 & STATUS1_BURN))
             *score += 3;
         else
             *score += 2;

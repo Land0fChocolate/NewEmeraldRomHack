@@ -1169,6 +1169,10 @@ static const u8 sDisarmDescription[] = _(
 	"User contact moves disable\n"
 	"the target's item.");
 
+static const u8 sPainfulBurnDescription[] = _(
+	"Have a much greater chance\n"
+	"to flinch a burned foe.");
+
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -1466,6 +1470,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_HEART_SWAP] = _("Heart Swap"),
     [ABILITY_UNSTEADY] = _("Unsteady"),
     [ABILITY_DISARM] = _("Disarm"),
+    [ABILITY_PAINFUL_BURN] = _("Painful Burn"),
 };
 #else   // 12 characters
 
@@ -1764,6 +1769,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_WISH_MAKER] = "Wish Maker",
     [ABILITY_HEART_SWAP] = "Heart Swap",
     [ABILITY_UNSTEADY] = "Unsteady",
+    [ABILITY_DISARM] = "Disarm",
+    [ABILITY_PAINFUL_BURN] = "Painful Burn",
 };
 #endif
 
@@ -2063,4 +2070,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_HEART_SWAP] = sHeartSwapDescription,
     [ABILITY_UNSTEADY] = sUnsteadyDescription,
     [ABILITY_DISARM] = sDisarmDescription,
+    [ABILITY_PAINFUL_BURN] = sPainfulBurnDescription,
 };

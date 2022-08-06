@@ -4088,17 +4088,6 @@ Route129_Text_TishaPostBattle:
 	.string "That's why I try to take things\n"
 	.string "slowly.$"
 
-Route129_Text_ClarenceIntro:
-	.string "Surfing isn't as easy as it seems,\n"
-	.string "isn't that right?$"
-
-Route129_Text_ClarenceDefeat:
-	.string "Winning sure isn't easy.$"
-
-Route129_Text_ClarencePostBattle:
-	.string "You have your sights on the Pokémon\n"
-	.string "League? Keep at it!$"
-
 Route130_Text_RodneyIntro:
 	.string "What a surprise! I didn't expect to\n"
 	.string "see a Trainer out in the sea.\p"
@@ -4608,10 +4597,13 @@ EverGrandeCity_BattleTent_Text_MelinaPostBattle:
 	.string "Later.$"
 
 EverGrandeCity_BattleTent_Text_PatIntro:
+	.string "TODO$"
 
 EverGrandeCity_BattleTent_Text_PatDefeated:
+	.string "TODO$"
 
 EverGrandeCity_BattleTent_Text_PatPostBattle:
+	.string "TODO$"
 
 EverGrandeCity_BattleTent_Text_CarolinaIntro:
 	.string "Hi! Do you prefer butterscotch cake\n"
@@ -4659,13 +4651,15 @@ EverGrandeCity_BattleTent_Text_CobyPostBattle:
 	.string "Do-do-do-do-doo-do-doo…$"
 
 EverGrandeCity_BattleTent_Text_ClarenceIntro:
-	.string "TODO$"
+	.string "Pst! Hey kid.\n"
+	.string "Wanna buy some NFTs?$"
 
 EverGrandeCity_BattleTent_Text_ClarenceDefeated:
-	.string "TODO$"
+	.string "I guess that's a no…?"
 
 EverGrandeCity_BattleTent_Text_ClarencePostBattle:
-	.string "TODO$"
+	.string "Blast! The value of my NFTs have\n"
+	.string "crashed!$"
 
 EverGrandeCity_BattleTent_Text_JosephIntro:
 	.string "There's nothing I love more than\n"
@@ -4785,3 +4779,119 @@ EverGrandeCity_BattleTent_Text_BrandiPostBattle:
 	.string "They say that you can't judge a person\n"
 	.string "by their appearance.\p"
 	.string "But often, their looks don't lie…$"
+
+Wildwoods_Area4_Text_CelinaIntro:
+	.string "TODO$"
+
+Wildwoods_Area4_Text_CelinaDefeated:
+	.string "TODO$"
+
+Wildwoods_Area4_Text_CelinaPostBattle:
+	.string "TODO$"
+
+Wildwoods_Area5_Text_PitahaIntro:
+	.string "G…g…g…ghost!\p"
+	.string "Wait a minute… you're not a ghost.\n"
+	.string "You're just some kid!$"
+
+Wildwoods_Area5_Text_PitahaDefeated:
+	.string "I ain't scared!$"
+
+Wildwoods_Area5_Text_PitahaPostBattle:
+	.string "I shouldn't be scared of ghosts.\n"
+	.string "I have my Pokémon to protect me!$"
+
+Wildwoods_Area6_Text_MeggiIntro:
+	.string "I've been here for a hundred years, and\n"
+	.string "I haven't aged a day.$"
+
+Wildwoods_Area6_Text_MeggiDefeated:
+	.string "Oh, tarnation!$"
+
+Wildwoods_Area6_Text_MeggiPostBattle:
+	.string "I'm just kidding about the age thing.\p"
+	.string "Being here reminded me of fairy tales\n"
+	.string "where time moves more slowly in\l$"
+	.string "mystical places.$"
+
+FallarborWasteland_Text_KatIntro:
+	.string "TODO$"
+
+FallarborWasteland_Text_KatDefeat:
+	.string "TODO$"
+
+FallarborWasteland_Text_KatPostBattle:
+	.string "TODO$"
+
+FallarborWasteland_Text_KatNotEnoughMons:
+	.string "Kat: Are you doing some single Pokémon\n"
+	.string "challenge or something?$"
+
+FallarborWasteland_Text_AsheIntro:
+	.string "TODO$"
+
+FallarborWasteland_Text_AsheDefeat:
+	.string "TODO$"
+
+FallarborWasteland_Text_AshePostBattle:
+	.string "Ashe: There's no way I can beat Kat,\n"
+	.string "except maybe if I aim for the horn…$"
+
+FallarborWasteland_Text_AsheNotEnoughMons:
+	.string "Ashe: You only have one Pokémon with\n"
+	.string "you? So boring!$"
+
+FallarborWasteland_Text_GeordiIntro:
+	.string "TODO$"
+
+FallarborWasteland_Text_GeordiDefeat:
+	.string "TODO$"
+
+FallarborWasteland_Text_GeordiPostBattle:
+	.string "TODO$"
+
+MauvilleMeadow_Text_AlistairIntro:
+	.string "TODO$"
+
+MauvilleMeadow_Text_AlistairDefeat:
+	.string "TODO$"
+
+MauvilleMeadow_Text_AlistairPostBattle:
+	.string "TODO$"
+
+MauvilleMeadow_Text_NatashaIntro:
+	.string "TODO$"
+
+MauvilleMeadow_Text_NatashaDefeat:
+	.string "TODO$"
+
+MauvilleMeadow_Text_NatashaPostBattle:
+	.string "TODO$"
+
+FortreeJungle_Area1_Text_ZukoIntro:
+	.string "Ya ha ha!\n"
+	.string "You found me!$"
+
+FortreeJungle_Area1_Text_ZukoDefeat:
+	.string "TODO$"
+
+FortreeJungle_Area1_Text_ZukoPostBattle:
+	.string "TODO$"
+
+FortreeJungle_Area1_Text_JossIntro:
+	.string "TODO$"
+
+FortreeJungle_Area1_Text_JossDefeat:
+	.string "TODO$"
+
+FortreeJungle_Area1_Text_JossPostBattle:
+	.string "TODO$"
+
+FortreeJungle_Area2_Text_RyuIntro:
+	.string "TODO$"
+
+FortreeJungle_Area2_Text_RyuDefeat:
+	.string "TODO$"
+
+FortreeJungle_Area2_Text_RyuPostBattle:
+	.string "TODO$"

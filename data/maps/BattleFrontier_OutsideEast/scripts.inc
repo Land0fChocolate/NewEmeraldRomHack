@@ -20,7 +20,12 @@ BattleFrontier_OutsideEast_OnTransition:
 	setvar VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0
 	setflag FLAG_HIDE_BATTLE_TOWER_REPORTER
 	call_if_unset FLAG_DEFEATED_SUDOWOODO, BattleFrontier_OutsideEast_EventScript_ShowSudowoodo
+	call_if_set FLAG_SET_HIDE_TRIATHLETE_BIKE_QUEST, BattleFrontier_OutsideEast_EventScript_HideTriathleteBikeQuest
 	end
+
+BattleFrontier_OutsideEast_EventScript_HideTriathleteBikeQuest::
+	setflag FLAG_HIDE_TRIATHLETE_BIKE_QUEST
+	return
 
 BattleFrontier_OutsideEast_EventScript_ShowSudowoodo::
 	clearflag FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO
@@ -236,6 +241,87 @@ BattleFrontier_OutsideEast_EventScript_OldWomanSudowoodoGone::
 BattleFrontier_OutsideEast_EventScript_Camper::
 	msgbox BattleFrontier_OutsideEast_Text_StickyMonWithLongTail, MSGBOX_NPC
 	end
+
+
+BattleFrontier_OutsideEast_EventScript_TriathleteBikeQuest::
+	lock
+	faceplayer
+	goto_if_set FLAG_SET_HIDE_TRIATHLETE_BIKE_QUEST, BattleFrontier_OutsideEast_EventScript_TriathleteBikeQuest_WillGetBike
+	specialvar VAR_RESULT, GetPlayerAvatarBike
+	compare VAR_RESULT, 0
+	goto_if_eq BattleFrontier_OutsideEast_EventScript_TriathleteBikeQuest_NoBike
+	msgbox BattleFrontier_OutsideEast_Text_ILikeYourBike, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SET_HIDE_TRIATHLETE_BIKE_QUEST
+	addvar VAR_BIKE_UPGRADE_STATE, 1
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_TriathleteBikeQuest_NoBike::
+	msgbox BattleFrontier_OutsideEast_Text_NoBike, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_TriathleteBikeQuest_WillGetBike::
+	msgbox BattleFrontier_OutsideEast_Text_WillGetBike, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_DrainPunchGiver::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_TM88, BattleFrontier_OutsideEast_EventScript_ReceivedDrainPunch
+	msgbox BattleFrontier_OutsideEast_Text_GiveDrainPunch, MSGBOX_DEFAULT
+	giveitem ITEM_TM88
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_TM88
+	msgbox BattleFrontier_OutsideEast_Text_ExplainDrainPunch, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_EventScript_ReceivedDrainPunch::
+	msgbox BattleFrontier_OutsideEast_Text_ExplainDrainPunch, MSGBOX_DEFAULT
+	release
+	end
+
+BattleFrontier_OutsideEast_Text_GiveDrainPunch:
+	.string "I tried to use a potion on my Pokémon\n"
+	.string "in one of the facilities, but it turns\l"
+	.string "out that's against the rules.\p"
+	.string "Gah! I hate seeing my Pokémon hurt!\p"
+	.string "Luckily, I have a backup plan.\n"
+	.string "My Pokémon can heal themselves with\l"
+	.string "their own moves.\p"
+	.string "Here, I won't keep it to myself.\n"
+	.string "You keep your Pokémon healthy too!$"
+
+BattleFrontier_OutsideEast_Text_ExplainDrainPunch:
+	.string "That TM I just gave you teaches a cool\n"
+	.string "move called Drain Punch.\p"
+	.string "If you get a good hit with it, your\n"
+	.string "Pokémon will be revitalized big time.$"
+
+BattleFrontier_OutsideEast_Text_NoBike:
+	.string "I saw some people with some real rad\n"
+	.string "bikes around here.\p"
+	.string "I shoulda asked 'em where they got 'em\n"
+	.string "from…$"
+
+BattleFrontier_OutsideEast_Text_ILikeYourBike:
+	.string "Holy moly, dude!\n"
+	.string "That is like, the raddest looking\l"
+	.string "bike I've ever seen!\p"
+	.string "You got it from a place called “Rydel's”\n"
+	.string "in Mauville?\p"
+	.string "Sweet! Thanks, dude!\n"
+	.string "Imma catch the next boat there!$"
+
+BattleFrontier_OutsideEast_Text_WillGetBike:
+	.string "Thanks, again dude for showing\n"
+	.string "your sweet ride.$"
 
 BattleFrontier_OutsideEast_Text_BattleTowerSign:
 	.string "This is the BATTLE TOWER!\n"

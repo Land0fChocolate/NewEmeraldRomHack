@@ -3493,6 +3493,14 @@ static void Cmd_seteffectwithchance(void)
 
     if (HasAbility(ABILITY_SERENE_GRACE, GetBattlerAbilities(gBattlerAttacker)))
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance * 2;
+    else if (HasAbility(ABILITY_PAINFUL_BURN, GetBattlerAbilities(gBattlerAttacker))
+            && gBattleScripting.moveEffect & MOVE_EFFECT_FLINCH
+            && gBattleMons[gBattlerTarget].status1 == STATUS1_BURN)
+    {
+        percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance * 3;
+        if (percentChance > 60)
+            percentChance = 60; //capping the flinch chance. Otherwise Houndoom's Bite will have a 90% chance to flinch!
+    }
     else
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance;
 
@@ -3557,7 +3565,7 @@ static void Cmd_tryfaintmon(void)
 
             BattleScriptPop();
             gBattlescriptCurrInstr = BS_ptr;
-            gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~(SIDE_STATUS_SPIKES_DAMAGED | SIDE_STATUS_TOXIC_SPIKES_DAMAGED | SIDE_STATUS_STEALTH_ROCK_DAMAGED | SIDE_STATUS_STICKY_WEB_DAMAGED);
+            gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~(SIDE_STATUS_SPIKES_DAMAGED | SIDE_STATUS_TOXIC_SPIKES_DAMAGED | SIDE_STATUS_STEALTH_ROCK_DAMAGED | SIDE_STATUS_HIDDEN_THORNS_DAMAGED | SIDE_STATUS_STICKY_WEB_DAMAGED);
         }
         else
         {
@@ -6289,6 +6297,17 @@ static void Cmd_switchineffects(void)
         if (gBattleMoveDamage != 0)
             SetDmgHazardsBattlescript(gActiveBattler, 1);
     }
+    else if (!(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_HIDDEN_THORNS_DAMAGED)
+        && (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_HIDDEN_THORNS)
+        && IsBattlerAffectedByHazards(gActiveBattler, FALSE)
+        && !HasAbility(ABILITY_MAGIC_GUARD, abilities))
+    {
+        gSideStatuses[GetBattlerSide(gActiveBattler)] |= SIDE_STATUS_HIDDEN_THORNS_DAMAGED;
+        gBattleMoveDamage = GetStealthHazardDamage(gBattleMoves[MOVE_HIDDEN_THORNS].type, gActiveBattler);
+
+        if (gBattleMoveDamage != 0)
+            SetDmgHazardsBattlescript(gActiveBattler, 1);
+    }
     else if (!(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_TOXIC_SPIKES_DAMAGED)
         && (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_TOXIC_SPIKES)
         && IsBattlerGrounded(gActiveBattler))
@@ -6352,7 +6371,7 @@ static void Cmd_switchineffects(void)
             || AbilityBattleEffects(ABILITYEFFECT_FORECAST, 0, 0, 0))
             return;
 
-        gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~(SIDE_STATUS_SPIKES_DAMAGED | SIDE_STATUS_TOXIC_SPIKES_DAMAGED | SIDE_STATUS_STEALTH_ROCK_DAMAGED | SIDE_STATUS_STICKY_WEB_DAMAGED);
+        gSideStatuses[GetBattlerSide(gActiveBattler)] &= ~(SIDE_STATUS_SPIKES_DAMAGED | SIDE_STATUS_TOXIC_SPIKES_DAMAGED | SIDE_STATUS_STEALTH_ROCK_DAMAGED | SIDE_STATUS_HIDDEN_THORNS_DAMAGED | SIDE_STATUS_STICKY_WEB_DAMAGED);
 
         for (i = 0; i < gBattlersCount; i++)
         {
@@ -7519,6 +7538,7 @@ static bool32 ClearDefogHazards(u8 battlerAtk, bool32 clear)
         }
         DEFOG_CLEAR(SIDE_STATUS_SPIKES, spikesAmount, BattleScript_SpikesFree, 0);
         DEFOG_CLEAR(SIDE_STATUS_STEALTH_ROCK, stealthRockAmount, BattleScript_StealthRockFree, 0);
+        DEFOG_CLEAR(SIDE_STATUS_HIDDEN_THORNS, stealthRockAmount, BattleScript_HiddenThornsFree, 0);
         DEFOG_CLEAR(SIDE_STATUS_TOXIC_SPIKES, toxicSpikesAmount, BattleScript_ToxicSpikesFree, 0);
         DEFOG_CLEAR(SIDE_STATUS_STICKY_WEB, stickyWebAmount, BattleScript_StickyWebFree, 0);
     }
@@ -12032,6 +12052,13 @@ static void Cmd_rapidspinfree(void)
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_StealthRockFree;
     }
+    else if (gSideStatuses[atkSide] & SIDE_STATUS_HIDDEN_THORNS)
+    {
+        gSideStatuses[atkSide] &= ~(SIDE_STATUS_HIDDEN_THORNS);
+        gSideTimers[atkSide].hiddenThornsAmount = 0;
+        BattleScriptPushCursor();
+        gBattlescriptCurrInstr = BattleScript_HiddenThornsFree;
+    }
     else
     {
         gBattlescriptCurrInstr++;
@@ -12710,15 +12737,37 @@ static void Cmd_tryimprison(void)
 static void Cmd_setstealthrock(void)
 {
     u8 targetSide = GetBattlerSide(gBattlerTarget);
-    if (gSideStatuses[targetSide] & SIDE_STATUS_STEALTH_ROCK)
+
+    switch (gBattleMoves[gCurrentMove].effect)
     {
-        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
-    }
-    else
-    {
-        gSideStatuses[targetSide] |= SIDE_STATUS_STEALTH_ROCK;
-        gSideTimers[targetSide].stealthRockAmount = 1;
-        gBattlescriptCurrInstr += 5;
+        case EFFECT_STEALTH_ROCK:
+            if (gSideStatuses[targetSide] & SIDE_STATUS_STEALTH_ROCK)
+            {
+                gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+            }
+            else
+            {
+                gSideStatuses[targetSide] |= SIDE_STATUS_STEALTH_ROCK;
+                gSideTimers[targetSide].stealthRockAmount = 1;
+                gSideStatuses[targetSide] ^= SIDE_STATUS_HIDDEN_THORNS; //TODO: test this, Stealth Rock should replace Hidden Thorns
+                gSideTimers[targetSide].hiddenThornsAmount = 0;
+                gBattlescriptCurrInstr += 5;
+            }
+            break;
+        case EFFECT_HIDDEN_THORNS:
+            if (gSideStatuses[targetSide] & SIDE_STATUS_HIDDEN_THORNS)
+            {
+                gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+            }
+            else
+            {
+                gSideStatuses[targetSide] |= SIDE_STATUS_HIDDEN_THORNS;
+                gSideTimers[targetSide].hiddenThornsAmount = 1;
+                gSideStatuses[targetSide] ^= SIDE_STATUS_STEALTH_ROCK; //TODO: test this, Hidden Thorns should replace Stealth Rock
+                gSideTimers[targetSide].stealthRockAmount = 0;
+                gBattlescriptCurrInstr += 5;
+            }
+            break;
     }
 }
 

@@ -1,0 +1,138 @@
+{
+  "id": "MAP_NAVEL_ROCK_HOOH1",
+  "name": "NavelRock_Hooh1",
+  "layout": "LAYOUT_NAVEL_ROCK_HOOH1",
+  "music": "MUS_RG_SEVII_CAVE",
+  "region_map_section": "MAPSEC_NAVEL_ROCK",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 12,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_13"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 17,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_NAVEL_ROCK_HOOH_HIDE_BOULDER1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 30,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NavelRock_Hooh1_Eventscript_ItemBoldMint",
+      "flag": "FLAG_ITEM_NAVEL_ROCK_HOOH_1_BOLD_MINT"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 15,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_NAVEL_ROCK_ENTRANCE",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 4,
+      "y": 27,
+      "elevation": 3,
+      "dest_map": "MAP_NAVEL_ROCK_HOOH2",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 31,
+      "y": 16,
+      "elevation": 3,
+      "dest_map": "MAP_NAVEL_ROCK_HOOH2",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 29,
+      "y": 5,
+      "elevation": 3,
+      "dest_map": "MAP_NAVEL_ROCK_HOOH2",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 24,
+      "y": 26,
+      "elevation": 3,
+      "dest_map": "MAP_NAVEL_ROCK_HOOH2",
+      "dest_warp_id": 3
+    },
+    {
+      "x": 36,
+      "y": 27,
+      "elevation": 3,
+      "dest_map": "MAP_NAVEL_ROCK_HOOH2",
+      "dest_warp_id": 4
+    },
+    {
+      "x": 18,
+      "y": 23,
+      "elevation": 3,
+      "dest_map": "MAP_NAVEL_ROCK_HOOH2",
+      "dest_warp_id": 5
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "elevation": 3,
+      "dest_map": "MAP_NAVEL_ROCK_HOOH2",
+      "dest_warp_id": 6
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_NAVEL_ROCK_BOULDER_BUTTON_1",
+      "var_value": "99",
+      "script": "NavelRock_Hooh1_Eventscript_BoulderSwitch1"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_NAVEL_ROCK_BOULDER_BUTTON_2",
+      "var_value": "99",
+      "script": "NavelRock_Hooh1_Eventscript_BoulderSwitch2"
+    }
+  ],
+  "bg_events": [
+
+  ]
+}

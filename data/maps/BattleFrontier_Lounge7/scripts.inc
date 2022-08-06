@@ -27,18 +27,34 @@ BattleFrontier_Lounge7_EventScript_ChooseLeftTutorMove::
 	waitstate
 	copyvar VAR_TEMP_D, VAR_RESULT
 	switch VAR_RESULT
-	case 0, BattleFrontier_Lounge7_EventScript_Softboiled
-	case 1, BattleFrontier_Lounge7_EventScript_SeismicToss
-	case 2, BattleFrontier_Lounge7_EventScript_DreamEater
-	case 3, BattleFrontier_Lounge7_EventScript_MegaPunch
-	case 4, BattleFrontier_Lounge7_EventScript_MegaKick
-	case 5, BattleFrontier_Lounge7_EventScript_BodySlam
-	case 6, BattleFrontier_Lounge7_EventScript_RockSlide
+	case 0, BattleFrontier_Lounge7_EventScript_GastroAcid
+	case 1, BattleFrontier_Lounge7_EventScript_RolePlay
+	case 2, BattleFrontier_Lounge7_EventScript_Trick
+	case 3, BattleFrontier_Lounge7_EventScript_WorrySeed
+	case 4, BattleFrontier_Lounge7_EventScript_Softboiled
+	case 5, BattleFrontier_Lounge7_EventScript_WorkUp
+	case 6, BattleFrontier_Lounge7_EventScript_Defog
 	case 7, BattleFrontier_Lounge7_EventScript_Counter
-	case 8, BattleFrontier_Lounge7_EventScript_ThunderWave
-	case 9, BattleFrontier_Lounge7_EventScript_SwordsDance
-	case 10, BattleFrontier_Lounge7_EventScript_SerpentDance
-	case 11, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case 8, BattleFrontier_Lounge7_EventScript_MagicCoat
+	case 9, BattleFrontier_Lounge7_EventScript_LowKick
+	case 10, BattleFrontier_Lounge7_EventScript_SeismicToss
+	case 11, BattleFrontier_Lounge7_EventScript_MegaPunch
+	case 12, BattleFrontier_Lounge7_EventScript_MegaKick
+	case 13, BattleFrontier_Lounge7_EventScript_BodySlam
+	case 14, BattleFrontier_Lounge7_EventScript_RockSlide
+	case 15, BattleFrontier_Lounge7_EventScript_SwordsDance
+	case 16, BattleFrontier_Lounge7_EventScript_KnockOff
+	case 17, BattleFrontier_Lounge7_EventScript_PsychicFangs
+	case 18, BattleFrontier_Lounge7_EventScript_IronHead
+	case 19, BattleFrontier_Lounge7_EventScript_StealthRock
+	case 20, BattleFrontier_Lounge7_EventScript_SeedBomb
+	case 21, BattleFrontier_Lounge7_EventScript_FlareCrash
+	case 22, BattleFrontier_Lounge7_EventScript_PlayRough
+	case 23, BattleFrontier_Lounge7_EventScript_AquaTail
+	case 24, BattleFrontier_Lounge7_EventScript_FoulPlay
+	case 25, BattleFrontier_Lounge7_EventScript_Megahorn
+	case 26, BattleFrontier_Lounge7_EventScript_Superpower
+	case 27, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 
@@ -52,73 +68,169 @@ BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove::
 	waitstate
 	copyvar VAR_TEMP_D, VAR_RESULT
 	switch VAR_RESULT
-	case 0, BattleFrontier_Lounge7_EventScript_Softboiled
-	case 1, BattleFrontier_Lounge7_EventScript_SeismicToss
-	case 2, BattleFrontier_Lounge7_EventScript_DreamEater
-	case 3, BattleFrontier_Lounge7_EventScript_MegaPunch
-	case 4, BattleFrontier_Lounge7_EventScript_MegaKick
-	case 5, BattleFrontier_Lounge7_EventScript_BodySlam
-	case 6, BattleFrontier_Lounge7_EventScript_RockSlide
+	case 0, BattleFrontier_Lounge7_EventScript_GastroAcid
+	case 1, BattleFrontier_Lounge7_EventScript_RolePlay
+	case 2, BattleFrontier_Lounge7_EventScript_Trick
+	case 3, BattleFrontier_Lounge7_EventScript_WorrySeed
+	case 4, BattleFrontier_Lounge7_EventScript_Softboiled
+	case 5, BattleFrontier_Lounge7_EventScript_WorkUp
+	case 6, BattleFrontier_Lounge7_EventScript_Defog
 	case 7, BattleFrontier_Lounge7_EventScript_Counter
-	case 8, BattleFrontier_Lounge7_EventScript_ThunderWave
-	case 9, BattleFrontier_Lounge7_EventScript_SwordsDance
-	case 10, BattleFrontier_Lounge7_EventScript_SerpentDance
-	case 11, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case 8, BattleFrontier_Lounge7_EventScript_MagicCoat
+	case 9, BattleFrontier_Lounge7_EventScript_LowKick
+	case 10, BattleFrontier_Lounge7_EventScript_SeismicToss
+	case 11, BattleFrontier_Lounge7_EventScript_MegaPunch
+	case 12, BattleFrontier_Lounge7_EventScript_MegaKick
+	case 13, BattleFrontier_Lounge7_EventScript_BodySlam
+	case 14, BattleFrontier_Lounge7_EventScript_RockSlide
+	case 15, BattleFrontier_Lounge7_EventScript_SwordsDance
+	case 16, BattleFrontier_Lounge7_EventScript_KnockOff
+	case 17, BattleFrontier_Lounge7_EventScript_PsychicFangs
+	case 18, BattleFrontier_Lounge7_EventScript_IronHead
+	case 19, BattleFrontier_Lounge7_EventScript_StealthRock
+	case 20, BattleFrontier_Lounge7_EventScript_SeedBomb
+	case 21, BattleFrontier_Lounge7_EventScript_FlareCrash
+	case 22, BattleFrontier_Lounge7_EventScript_PlayRough
+	case 23, BattleFrontier_Lounge7_EventScript_AquaTail
+	case 24, BattleFrontier_Lounge7_EventScript_FoulPlay
+	case 25, BattleFrontier_Lounge7_EventScript_Megahorn
+	case 26, BattleFrontier_Lounge7_EventScript_Superpower
+	case 27, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 
+BattleFrontier_Lounge7_EventScript_GastroAcid::
+	setvar VAR_0x8008, 4
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_RolePlay::
+	setvar VAR_0x8008, 4
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_Trick::
+	setvar VAR_0x8008, 4
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_WorrySeed::
+	setvar VAR_0x8008, 4
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
 BattleFrontier_Lounge7_EventScript_Softboiled::
+	setvar VAR_0x8008, 6
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_WorkUp::
+	setvar VAR_0x8008, 6
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_Defog::
+	setvar VAR_0x8008, 6
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_Counter::
+	setvar VAR_0x8008, 6
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_MagicCoat::
+	setvar VAR_0x8008, 6
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_LowKick::
 	setvar VAR_0x8008, 8
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_SeismicToss::
-	setvar VAR_0x8008, 12
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_DreamEater::
-	setvar VAR_0x8008, 12
+	setvar VAR_0x8008, 8
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_MegaPunch::
-	setvar VAR_0x8008, 12
+	setvar VAR_0x8008, 8
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_MegaKick::
-	setvar VAR_0x8008, 12
+	setvar VAR_0x8008, 8
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_BodySlam::
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 12
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_RockSlide::
-	setvar VAR_0x8008, 16
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_Counter::
-	setvar VAR_0x8008, 16
-	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
-	end
-
-BattleFrontier_Lounge7_EventScript_ThunderWave::
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 12
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_SwordsDance::
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 16
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
-BattleFrontier_Lounge7_EventScript_SerpentDance::
-	setvar VAR_0x8008, 24
+BattleFrontier_Lounge7_EventScript_KnockOff::
+	setvar VAR_0x8008, 16
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_PsychicFangs::
+	setvar VAR_0x8008, 16
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_IronHead::
+	setvar VAR_0x8008, 16
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_StealthRock::
+	setvar VAR_0x8008, 16
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_SeedBomb::
+	setvar VAR_0x8008, 16
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_FlareCrash::
+	setvar VAR_0x8008, 16
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_PlayRough::
+	setvar VAR_0x8008, 20
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_AquaTail::
+	setvar VAR_0x8008, 20
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_FoulPlay::
+	setvar VAR_0x8008, 20
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_Megahorn::
+	setvar VAR_0x8008, 20
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_Superpower::
+	setvar VAR_0x8008, 20
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -152,15 +264,31 @@ BattleFrontier_Lounge7_EventScript_ChooseRightTutorMove::
 	case 1, BattleFrontier_Lounge7_EventScript_Snore
 	case 2, BattleFrontier_Lounge7_EventScript_MudSlap
 	case 3, BattleFrontier_Lounge7_EventScript_Swift
-	case 4, BattleFrontier_Lounge7_EventScript_IcyWind
-	case 5, BattleFrontier_Lounge7_EventScript_Endure
-	case 6, BattleFrontier_Lounge7_EventScript_PsychUp
-	case 7, BattleFrontier_Lounge7_EventScript_IcePunch
-	case 8, BattleFrontier_Lounge7_EventScript_ThunderPunch
-	case 9, BattleFrontier_Lounge7_EventScript_FirePunch
-	case 10, BattleFrontier_Lounge7_EventScript_FlintBlade
-	case 11, BattleFrontier_Lounge7_EventScript_FlareCrash
-	case 12, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case 4, BattleFrontier_Lounge7_EventScript_PainSplit
+	case 5, BattleFrontier_Lounge7_EventScript_Recycle
+	case 6, BattleFrontier_Lounge7_EventScript_IcyWind
+	case 7, BattleFrontier_Lounge7_EventScript_Endure
+	case 8, BattleFrontier_Lounge7_EventScript_PsychUp
+	case 9, BattleFrontier_Lounge7_EventScript_DreamEater
+	case 10, BattleFrontier_Lounge7_EventScript_LowSweep
+	case 11, BattleFrontier_Lounge7_EventScript_BreakingSwipe
+	case 12, BattleFrontier_Lounge7_EventScript_SerpentDance
+	case 13, BattleFrontier_Lounge7_EventScript_Tailwind
+	case 14, BattleFrontier_Lounge7_EventScript_StoredPower
+	case 15, BattleFrontier_Lounge7_EventScript_Avalanche
+	case 16, BattleFrontier_Lounge7_EventScript_HiddenThorns
+	case 17, BattleFrontier_Lounge7_EventScript_IcePunch
+	case 18, BattleFrontier_Lounge7_EventScript_ThunderPunch
+	case 19, BattleFrontier_Lounge7_EventScript_FirePunch
+	case 20, BattleFrontier_Lounge7_EventScript_FlintBlade
+	case 21, BattleFrontier_Lounge7_EventScript_SignalBeam
+	case 22, BattleFrontier_Lounge7_EventScript_ZenHeadbutt
+	case 23, BattleFrontier_Lounge7_EventScript_HeatWave
+	case 24, BattleFrontier_Lounge7_EventScript_EarthPower
+	case 25, BattleFrontier_Lounge7_EventScript_BodyPress
+	case 26, BattleFrontier_Lounge7_EventScript_GunkShot
+	case 27, BattleFrontier_Lounge7_EventScript_NastyPlot
+	case 28, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 
@@ -178,15 +306,31 @@ BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove::
 	case 1, BattleFrontier_Lounge7_EventScript_Snore
 	case 2, BattleFrontier_Lounge7_EventScript_MudSlap
 	case 3, BattleFrontier_Lounge7_EventScript_Swift
-	case 4, BattleFrontier_Lounge7_EventScript_IcyWind
-	case 5, BattleFrontier_Lounge7_EventScript_Endure
-	case 6, BattleFrontier_Lounge7_EventScript_PsychUp
-	case 7, BattleFrontier_Lounge7_EventScript_IcePunch
-	case 8, BattleFrontier_Lounge7_EventScript_ThunderPunch
-	case 9, BattleFrontier_Lounge7_EventScript_FirePunch
-	case 10, BattleFrontier_Lounge7_EventScript_FlintBlade
-	case 11, BattleFrontier_Lounge7_EventScript_FlareCrash
-	case 12, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case 4, BattleFrontier_Lounge7_EventScript_PainSplit
+	case 5, BattleFrontier_Lounge7_EventScript_Recycle
+	case 6, BattleFrontier_Lounge7_EventScript_IcyWind
+	case 7, BattleFrontier_Lounge7_EventScript_Endure
+	case 8, BattleFrontier_Lounge7_EventScript_PsychUp
+	case 9, BattleFrontier_Lounge7_EventScript_DreamEater
+	case 10, BattleFrontier_Lounge7_EventScript_LowSweep
+	case 11, BattleFrontier_Lounge7_EventScript_BreakingSwipe
+	case 12, BattleFrontier_Lounge7_EventScript_SerpentDance
+	case 13, BattleFrontier_Lounge7_EventScript_Tailwind
+	case 14, BattleFrontier_Lounge7_EventScript_StoredPower
+	case 15, BattleFrontier_Lounge7_EventScript_Avalanche
+	case 16, BattleFrontier_Lounge7_EventScript_HiddenThorns
+	case 17, BattleFrontier_Lounge7_EventScript_IcePunch
+	case 18, BattleFrontier_Lounge7_EventScript_ThunderPunch
+	case 19, BattleFrontier_Lounge7_EventScript_FirePunch
+	case 20, BattleFrontier_Lounge7_EventScript_FlintBlade
+	case 21, BattleFrontier_Lounge7_EventScript_SignalBeam
+	case 22, BattleFrontier_Lounge7_EventScript_ZenHeadbutt
+	case 23, BattleFrontier_Lounge7_EventScript_HeatWave
+	case 24, BattleFrontier_Lounge7_EventScript_EarthPower
+	case 25, BattleFrontier_Lounge7_EventScript_BodyPress
+	case 26, BattleFrontier_Lounge7_EventScript_GunkShot
+	case 27, BattleFrontier_Lounge7_EventScript_NastyPlot
+	case 28, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 
@@ -210,43 +354,123 @@ BattleFrontier_Lounge7_EventScript_Swift::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
+BattleFrontier_Lounge7_EventScript_PainSplit::
+	setvar VAR_0x8008, 6
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_Recycle::
+	setvar VAR_0x8008, 6
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
 BattleFrontier_Lounge7_EventScript_IcyWind::
-	setvar VAR_0x8008, 12
+	setvar VAR_0x8008, 8
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_Endure::
-	setvar VAR_0x8008, 12
+	setvar VAR_0x8008, 8
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_PsychUp::
+	setvar VAR_0x8008, 8
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_DreamEater::
+	setvar VAR_0x8008, 8
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_LowSweep::
+	setvar VAR_0x8008, 8
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_BreakingSwipe::
+	setvar VAR_0x8008, 8
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_SerpentDance::
 	setvar VAR_0x8008, 12
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
+BattleFrontier_Lounge7_EventScript_Tailwind::
+	setvar VAR_0x8008, 12
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_StoredPower::
+	setvar VAR_0x8008, 12
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_Avalanche::
+	setvar VAR_0x8008, 12
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_HiddenThorns::
+	setvar VAR_0x8008, 16
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
 BattleFrontier_Lounge7_EventScript_IcePunch::
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 16
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_ThunderPunch::
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 16
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_FirePunch::
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 16
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
 BattleFrontier_Lounge7_EventScript_FlintBlade::
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 16
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
-BattleFrontier_Lounge7_EventScript_FlareCrash::
-	setvar VAR_0x8008, 24
+BattleFrontier_Lounge7_EventScript_SignalBeam::
+	setvar VAR_0x8008, 16
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_ZenHeadbutt::
+	setvar VAR_0x8008, 16
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_HeatWave::
+	setvar VAR_0x8008, 16
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_EarthPower::
+	setvar VAR_0x8008, 20
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_BodyPress::
+	setvar VAR_0x8008, 20
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_GunkShot::
+	setvar VAR_0x8008, 20
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_NastyPlot::
+	setvar VAR_0x8008, 20
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -403,10 +627,49 @@ BattleFrontier_Lounge7_Text_LadiesWereStrongAndBeautiful:
 	.string "but feel this…\p"
 	.string "Time is so cruel…$"
 
+BattleFrontier_Lounge7_Text_GastroAcidDesc::
+	.string "Eliminates the\n"
+	.string "foe's abilities.$"
+
+BattleFrontier_Lounge7_Text_RolePlayDesc::
+	.string "Copies the\n"
+	.string "abilities of the\n"
+	.string "target.$"
+
+BattleFrontier_Lounge7_Text_TrickDesc::
+	.string "Swaps user's held\n"
+	.string "item with the\n"
+	.string "foe's.$"
+
+BattleFrontier_Lounge7_Text_WorrySeedDesc::
+	.string "Replaces target\n"
+	.string "abilities with\n"
+	.string "Insomnia.$"
+
 BattleFrontier_Lounge7_Text_SoftboiledDesc::
 	.string "Recovers up to\n"
 	.string "half the user's\n"
 	.string "maximum HP.$"
+
+BattleFrontier_Lounge7_Text_WorkUpDesc::
+	.string "Raises the user's\n"
+	.string "Atk and Sp.Atk\n"
+	.string "stats.$"
+
+BattleFrontier_Lounge7_Text_DefogDesc::
+	.string "Reduces enemy\n"
+	.string "evasion and clears\n"
+	.string "field hazards.$"
+
+BattleFrontier_Lounge7_Text_MagicCoatDesc::
+	.string "Retaliates any\n"
+	.string "special hit with\n"
+	.string "double the power.$"
+
+BattleFrontier_Lounge7_Text_LowKickDesc::
+	.string "Deals more damage\n"
+	.string "the heavier\n"
+	.string "the foe.$"
 
 BattleFrontier_Lounge7_Text_SeismicTossDesc::
 	.string "Inflicts damage\n"
@@ -443,15 +706,59 @@ BattleFrontier_Lounge7_Text_CounterDesc::
 	.string "physical hit with\n"
 	.string "double the power.$"
 
-BattleFrontier_Lounge7_Text_ThunderWaveDesc::
-	.string "A weak jolt of\n"
-	.string "electricity that\n"
-	.string "paralyzes the foe.$"
-
 BattleFrontier_Lounge7_Text_SwordsDanceDesc::
 	.string "A fighting dance\n"
 	.string "that sharply\n"
 	.string "raises Attack.$"
+
+BattleFrontier_Lounge7_Text_KnockOffDesc::
+	.string "The hit knocks\n"
+	.string "away the foe's\n"
+	.string "held item.$"
+
+BattleFrontier_Lounge7_Text_PsychicFangsDesc::
+	.string "Destroys Light\n"
+	.string "Screen and\n"
+	.string "Reflect walls.$"
+
+BattleFrontier_Lounge7_Text_IronHeadDesc::
+	.string "May cause the\n"
+	.string "opponent to\n"
+	.string "flinch.$"
+
+BattleFrontier_Lounge7_Text_StealthRockDesc::
+	.string "Lays down a trap\n"
+	.string "that damages foes\n"
+	.string "on switch in.$"
+
+BattleFrontier_Lounge7_Text_SeedBombDesc::
+	.string "User barrages the\n"
+	.string "foe with hard\n"
+	.string "seeds.$"
+
+BattleFrontier_Lounge7_Text_PlayRoughDesc::
+	.string "May lower the\n"
+	.string "Attack stat of\n"
+	.string "the opponent.$"
+
+BattleFrontier_Lounge7_Text_AquaTailDesc::
+	.string "User swings its\n"
+	.string "tail like a\n"
+	.string "vicious wave.$"
+
+BattleFrontier_Lounge7_Text_FoulPlayDesc::
+	.string "User uses the\n"
+	.string "foe's Atk stat\n"
+	.string "to strike.$"
+
+BattleFrontier_Lounge7_Text_MegahornDesc::
+	.string "A powerful blow\n"
+	.string "from a large horn.$"
+
+BattleFrontier_Lounge7_Text_SuperpowerDesc::
+	.string "Lowers user\n"
+	.string "Atk and Def\n"
+	.string "after attack.$"
 
 BattleFrontier_Lounge7_Text_SerpentDanceDesc::
 	.string "A graceful dance\n"
@@ -459,9 +766,9 @@ BattleFrontier_Lounge7_Text_SerpentDanceDesc::
 	.string "Sp.Atk and Speed.$"
 
 BattleFrontier_Lounge7_Text_DefenseCurlDesc::
-	.string "Curls up to con-\n"
-	.string "ceal weak spots\n"
-	.string "and raise Defense.$"
+	.string "User curls up to\n"
+	.string "raise the Defense\n"
+	.string "stat.$"
 
 BattleFrontier_Lounge7_Text_SnoreDesc::
 	.string "A loud attack\n"
@@ -478,6 +785,15 @@ BattleFrontier_Lounge7_Text_SwiftDesc::
 	.string "shaped rays\n"
 	.string "that never miss.$"
 
+BattleFrontier_Lounge7_Text_PainSplitDesc::
+	.string "Shares user and\n"
+	.string "foe's remaining\n"
+	.string "health.$"
+
+BattleFrontier_Lounge7_Text_RecycleDesc::
+	.string "User recycles a\n"
+	.string "used held item.$"
+
 BattleFrontier_Lounge7_Text_IcyWindDesc::
 	.string "A chilling attack\n"
 	.string "that lowers the\n"
@@ -492,6 +808,34 @@ BattleFrontier_Lounge7_Text_PsychUpDesc::
 	.string "Copies the foe's\n"
 	.string "effect(s) and\n"
 	.string "gives to the user.$"
+
+BattleFrontier_Lounge7_Text_LowSweepDesc::
+	.string "Reduces the foe's\n"
+	.string "Speed stat.$"
+
+BattleFrontier_Lounge7_Text_BreakingSwipeDesc::
+	.string "Reduces the foe's\n"
+	.string "Attack stat.$"
+
+BattleFrontier_Lounge7_Text_TailwindDesc::
+	.string "Creates a field\n"
+	.string "that boosts the\n"
+	.string "team's Speed.$"
+
+BattleFrontier_Lounge7_Text_StoredPowerDesc::
+	.string "Increases power\n"
+	.string "the more stat ups\n"
+	.string "the user has.$"
+
+BattleFrontier_Lounge7_Text_AvalancheDesc::
+	.string "Doubles damage\n"
+	.string "if user is hit\n"
+	.string "on same turn.$"
+
+BattleFrontier_Lounge7_Text_HiddenThornsDesc::
+	.string "Lays down a trap\n"
+	.string "that damages foes\n"
+	.string "on switch in.$"
 
 BattleFrontier_Lounge7_Text_IcePunchDesc::
 	.string "An icy punch\n"
@@ -517,3 +861,38 @@ BattleFrontier_Lounge7_Text_FlareCrashDesc::
 	.string "A reckless crash\n"
 	.string "that lowers the\n"
 	.string "user's Speed.$"
+
+BattleFrontier_Lounge7_Text_SignalBeamDesc::
+	.string "May cause\n"
+	.string "confusion for\n"
+	.string "the foe.$"
+
+BattleFrontier_Lounge7_Text_ZenHeadbuttDesc::
+	.string "Foe is hit by a"
+	.string "willful head.\n"
+	.string "May flinch.$"
+
+BattleFrontier_Lounge7_Text_HeatWaveDesc::
+	.string "A blast of hot\n"
+	.string "air that may\n"
+	.string "cause burns.$"
+
+BattleFrontier_Lounge7_Text_EarthPowerDesc::
+	.string "An eruption that"
+	.string "may lower the\n"
+	.string "foe's Sp. Def.$"
+
+BattleFrontier_Lounge7_Text_BodyPressDesc::
+	.string "Uses user's\n"
+	.string "Defense stat\n"
+	.string "for damage.$"
+
+BattleFrontier_Lounge7_Text_GunkShotDesc::
+	.string "A chunk of filthy\n"
+	.string "trash that may\n"
+	.string "poison foe.$"
+
+BattleFrontier_Lounge7_Text_NastyPlotDesc::
+	.string "Wicked thoughts\n"
+	.string "that sharply\n"
+	.string "raises Sp.Atk.$"

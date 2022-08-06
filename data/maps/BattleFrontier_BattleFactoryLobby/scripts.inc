@@ -298,7 +298,7 @@ BattleFrontier_BattleFactoryLobby_EventScript_TormentGiver::
 	end
 
 BattleFrontier_BattleFactoryLobby_EventScript_ReceivedTorment::
-	msgbox SlateportCity_BattleTentLobby_Text_ExplainTorment, MSGBOX_DEFAULT
+	msgbox BattleFrontier_BattleFactoryLobby_Text_ExplainTorment, MSGBOX_DEFAULT
 	release
 	end
 
