@@ -71,8 +71,9 @@
 #define TUTOR_MOVE_FOUL_PLAY       58
 #define TUTOR_MOVE_MEGAHORN        59
 #define TUTOR_MOVE_DRACO_METEOR    60 //Ever Grande City
+#define TUTOR_MOVE_HIDDEN_THORNS   61
 
-#define TUTOR_MOVE_COUNT           61
+#define TUTOR_MOVE_COUNT           62
 
 #define PARTY_LAYOUT_SINGLE          0
 #define PARTY_LAYOUT_DOUBLE          1

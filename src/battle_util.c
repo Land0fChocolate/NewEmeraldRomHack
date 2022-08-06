@@ -370,6 +370,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_OVERGROW] = 2,
     [ABILITY_OWN_TEMPO] = 2,
     [ABILITY_PARENTAL_BOND] = 0,
+    [ABILITY_PAINFUL_BURN] = 1,
     [ABILITY_PICKUP] = 1,
     [ABILITY_PICKPOCKET] = 3,
     [ABILITY_PIXILATE] = 2,
@@ -7793,6 +7794,8 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
 
             if (HasAbility(ABILITY_SERENE_GRACE, abilities))
                 atkHoldEffectParam *= 2;
+            if (HasAbility(ABILITY_PAINFUL_BURN, abilities) && gBattleMons[gBattlerTarget].status1 == STATUS1_BURN)
+                atkHoldEffectParam *= 3;
             if (gBattleMoveDamage != 0  // Need to have done damage
                 && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                 && TARGET_TURN_DAMAGED
