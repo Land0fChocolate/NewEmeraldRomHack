@@ -11628,4 +11628,18 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
         .split = SPLIT_PHYSICAL,
     },
+
+    [MOVE_HIDDEN_THORNS] =
+    {
+        .flags = FLAG_MAGIC_COAT_AFFECTED,
+        .effect = EFFECT_HIDDEN_THORNS,
+        .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_OPPONENTS_FIELD,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+    },
 };

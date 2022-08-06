@@ -785,7 +785,8 @@ gBattleAnims_Moves::
 	.4byte Move_SINGULARITY
 	.4byte Move_SERPENT_DANCE
 	.4byte Move_ICE_TUSK
-	.4byte Move_COUNT @ cannot be reached, because last move is Ice Tusk
+	.4byte Move_HIDDEN_THORNS
+	.4byte Move_COUNT @ cannot be reached, because last move is Hidden Thorns
 
 	.align 2
 gBattleAnims_StatusConditions::
@@ -23949,6 +23950,24 @@ Move_ICE_TUSK:
 	waitforvisualfinish
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
+	end
+
+@TODO: using Stealth Rock animation
+Move_HIDDEN_THORNS:
+	loadspritegfx ANIM_TAG_STEALTH_ROCK
+	monbg ANIM_DEF_PARTNER
+	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
+	waitplaysewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET, 28
+	createsprite gStealthRockSpriteTemplate, ANIM_TARGET, 2, 20, 0, 0, 24, 30
+	delay 10
+	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
+	waitplaysewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET, 28
+	createsprite gStealthRockSpriteTemplate, ANIM_TARGET, 2, 20, 0, -24, 24, 30
+	delay 10
+	waitplaysewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET, 28
+	createsprite gStealthRockSpriteTemplate, ANIM_TARGET, 2, 20, 0, 24, 24, 30
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
 	end
 
 Move_COUNT:

@@ -2966,6 +2966,10 @@ static const u8 sIceTuskDescription[] = _(
     "Slams with mighty tusks.\n"
     "High critical-hit ratio.");
 
+static const u8 sHiddenThornsDescription[] = _(
+    "Sets a field of thorns that\n"
+    "hurt a foe switching in.");
+
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
 
@@ -3736,4 +3740,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_SINGULARITY - 1] = sSingularityDescription,
     [MOVE_SERPENT_DANCE - 1] = sSerpentDanceDescription,
     [MOVE_ICE_TUSK - 1] = sIceTuskDescription,
+    [MOVE_HIDDEN_THORNS - 1] = sHiddenThornsDescription,
 };
