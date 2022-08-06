@@ -5957,6 +5957,14 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .comboStarterId = COMBO_STARTER_SERPENT_DANCE,
         .comboMoves = {0}
     },
+
+    [MOVE_ICE_TUSK] =
+    {
+        .effect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .comboStarterId = 0,
+        .comboMoves = {COMBO_STARTER_HAIL},
+    },
 };
 
 const struct ContestEffect gContestEffects[] =

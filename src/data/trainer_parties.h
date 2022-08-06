@@ -3424,7 +3424,7 @@ static const struct TrainerMonItemCustomMoves sParty_Glacia[] = {
     .iv = 250,
     .lvl = 53,
     .species = SPECIES_GLALIE,
-    .heldItem = ITEM_NONE,
+    .heldItem = ITEM_OCCA_BERRY,
     .moves = {MOVE_LIGHT_SCREEN, MOVE_EARTHQUAKE, MOVE_ICE_SHARD, MOVE_CRUNCH}
     },
     {
@@ -3438,7 +3438,7 @@ static const struct TrainerMonItemCustomMoves sParty_Glacia[] = {
     .iv = 250,
     .lvl = 53,
     .species = SPECIES_GLALIE,
-    .heldItem = ITEM_OCCA_BERRY,
+    .heldItem = ITEM_NONE,
     .moves = {MOVE_FREEZE_DRY, MOVE_EXPLOSION, MOVE_HAIL, MOVE_SCARY_FACE}
     },
     {
@@ -3446,7 +3446,7 @@ static const struct TrainerMonItemCustomMoves sParty_Glacia[] = {
     .lvl = 55,
     .species = SPECIES_WALREIN,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_LIQUIDATION, MOVE_BODY_SLAM, MOVE_AVALANCHE, MOVE_ATTRACT}
+    .moves = {MOVE_LIQUIDATION, MOVE_BODY_SLAM, MOVE_ICE_TUSK, MOVE_ATTRACT}
     }
 };
 

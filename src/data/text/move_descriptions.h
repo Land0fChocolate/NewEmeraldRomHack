@@ -2951,7 +2951,7 @@ static const u8 sFlintBladeDescription[] = _(
     "High critical-hit ratio.");
 
 static const u8 sFlareCrashDescription[] = _(
-    "User crashes hard into the\n"
+    "User tackles hard into the\n"
     "foe but has Speed reduced.");
 
 static const u8 sSingularityDescription[] = _(
@@ -2961,6 +2961,10 @@ static const u8 sSingularityDescription[] = _(
 static const u8 sSerpentDanceDescription[] = _(
     "A graceful dance that ups\n"
     "Sp. Atk and Speed.");
+
+static const u8 sIceTuskDescription[] = _(
+    "Slams with mighty tusks.\n"
+    "High critical-hit ratio.");
 
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
@@ -3731,4 +3735,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_FLARE_CRASH - 1] = sFlareCrashDescription,
     [MOVE_SINGULARITY - 1] = sSingularityDescription,
     [MOVE_SERPENT_DANCE - 1] = sSerpentDanceDescription,
+    [MOVE_ICE_TUSK - 1] = sIceTuskDescription,
 };

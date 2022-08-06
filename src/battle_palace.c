@@ -84,6 +84,10 @@ static const u16 sBattlePalaceLatePrizes[] =
     ITEM_SCOPE_LENS,
     ITEM_LEFTOVERS,
     ITEM_FOCUS_SASH,
+    ITEM_HEAT_ROCK,
+    ITEM_DAMP_ROCK,
+    ITEM_SMOOTH_ROCK,
+    ITEM_ICY_ROCK,
 };
 
 static const u32 sWinStreakFlags[][2] =

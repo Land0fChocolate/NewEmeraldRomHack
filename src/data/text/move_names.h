@@ -763,4 +763,6 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_FLARE_CRASH] = _("Flare Crash"),
     [MOVE_SINGULARITY] = _("Singularity"),
     [MOVE_SERPENT_DANCE] = _("SerpentDance"),
+    [MOVE_ICE_TUSK] = _("Ice Tusk"),
+    [MOVE_LOVERS_KISS] = _("Lover's Kiss"),
 };

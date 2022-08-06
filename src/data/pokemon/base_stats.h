@@ -156,10 +156,10 @@ const struct BaseStats gBaseStats[] =
     [SPECIES_SQUIRTLE] =
     {
         .baseHP        = 44,
-        .baseAttack    = 48,
+        .baseAttack    = 47,
         .baseDefense   = 65,
         .baseSpeed     = 43,
-        .baseSpAttack  = 50,
+        .baseSpAttack  = 51,
         .baseSpDefense = 64,
         .type1 = TYPE_WATER,
         .type2 = TYPE_WATER,
@@ -180,10 +180,10 @@ const struct BaseStats gBaseStats[] =
     [SPECIES_WARTORTLE] =
     {
         .baseHP        = 59,
-        .baseAttack    = 63,
+        .baseAttack    = 60,
         .baseDefense   = 80,
         .baseSpeed     = 58,
-        .baseSpAttack  = 65,
+        .baseSpAttack  = 68,
         .baseSpDefense = 80,
         .type1 = TYPE_WATER,
         .type2 = TYPE_WATER,
@@ -204,11 +204,11 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_BLASTOISE] =
     {
-        .baseHP        = 79,
-        .baseAttack    = 83,
+        .baseHP        = 80,
+        .baseAttack    = 79,
         .baseDefense   = 100,
         .baseSpeed     = 78,
-        .baseSpAttack  = 85,
+        .baseSpAttack  = 88,
         .baseSpDefense = 105,
         .type1 = TYPE_WATER,
         .type2 = TYPE_WATER,
@@ -1822,7 +1822,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MINERAL,
         .eggGroup2 = EGG_GROUP_MINERAL,
-        .abilities = {ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_SAND_VEIL},
+        .abilities = {ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_SOLID_ROCK},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },
@@ -1847,7 +1847,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MINERAL,
         .eggGroup2 = EGG_GROUP_MINERAL,
-        .abilities = {ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_SAND_VEIL},
+        .abilities = {ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_SOLID_ROCK},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },
@@ -1872,7 +1872,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MINERAL,
         .eggGroup2 = EGG_GROUP_MINERAL,
-        .abilities = {ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_SAND_VEIL},
+        .abilities = {ABILITY_ROCK_HEAD, ABILITY_STURDY, ABILITY_SOLID_ROCK},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },
@@ -4628,11 +4628,7 @@ const struct BaseStats gBaseStats[] =
         .baseDefense   = 70,
         .baseSpeed     = 110,
         .baseSpAttack  = 55,
-        #if P_UPDATED_STATS >= GEN_6
-            .baseSpDefense = 95,
-        #else
-            .baseSpDefense = 85,
-        #endif
+        .baseSpDefense = 95,
         .type1 = TYPE_GRASS,
         .type2 = TYPE_FLYING,
         .catchRate = 45,
@@ -4644,7 +4640,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_GRASS,
-        .abilities = {ABILITY_CHLOROPHYLL, ABILITY_LEAF_GUARD, ABILITY_INFILTRATOR},
+        .abilities = {ABILITY_COTTON_DOWN, ABILITY_LEAF_GUARD, ABILITY_INFILTRATOR},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -7896,7 +7892,7 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_WAILORD] =
     {
-        .baseHP        = 170,
+        .baseHP        = 180,
         .baseAttack    = 90,
         .baseDefense   = 45,
         .baseSpeed     = 60,
@@ -8456,9 +8452,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 255,
         .expYield = 60,
         .evYield_SpDefense = 1,
-        #ifdef ITEM_EXPANSION
-            .item2 = ITEM_LIGHT_CLAY,
-        #endif
+        .item2 = ITEM_LIGHT_CLAY,
         .genderRatio = MON_GENDERLESS,
         .eggCycles = 20,
         .friendship = 70,
@@ -8483,9 +8477,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 90,
         .expYield = 175,
         .evYield_SpDefense = 2,
-        #ifdef ITEM_EXPANSION
-            .item2 = ITEM_LIGHT_CLAY,
-        #endif
+        .item2 = ITEM_LIGHT_CLAY,
         .genderRatio = MON_GENDERLESS,
         .eggCycles = 20,
         .friendship = 70,
