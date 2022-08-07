@@ -11241,6 +11241,90 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Cristin5},
     },
 
+    [TRAINER_MAY_POST_GAME_TREECKO] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3 | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_MAY,
+        .trainerName = _("May"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_MayPostGameTreecko),
+        .party = {.ItemCustomMoves = sParty_MayPostGameTreecko},
+    },
+
+    [TRAINER_MAY_POST_GAME_TORCHIC] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3 | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_MAY,
+        .trainerName = _("May"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_MayPostGameTorchic),
+        .party = {.ItemCustomMoves = sParty_MayPostGameTorchic},
+    },
+
+    [TRAINER_MAY_POST_GAME_MUDKIP] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3 | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_MAY,
+        .trainerName = _("May"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_MayPostGameMudkip),
+        .party = {.ItemCustomMoves = sParty_MayPostGameMudkip},
+    },
+
+    [TRAINER_BRENDAN_POST_GAME_TREECKO] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3 | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerName = _("Brendan"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_BrendanPostGameTreecko),
+        .party = {.ItemCustomMoves = sParty_BrendanPostGameTreecko},
+    },
+
+    [TRAINER_BRENDAN_POST_GAME_TORCHIC] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3 | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerName = _("Brendan"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_BrendanPostGameTorchic),
+        .party = {.ItemCustomMoves = sParty_BrendanPostGameTorchic},
+    },
+
+    [TRAINER_BRENDAN_POST_GAME_MUDKIP] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_3 | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BRENDAN,
+        .trainerName = _("Brendan"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_BrendanPostGameMudkip),
+        .party = {.ItemCustomMoves = sParty_BrendanPostGameMudkip},
+    },
+
     [TRAINER_THALIA_2] =
     {
         .partyFlags = 0,
