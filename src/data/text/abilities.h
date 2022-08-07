@@ -423,7 +423,8 @@ static const u8 sStallDescription[] = _(
 
 static const u8 sTechnicianDescription[] = _(
 	"Increases power of moves\n"
-	"with 60BP or less by 50%.");
+	"with 60 base power or\n"
+	"less by 50%.");
 
 static const u8 sLeafGuardDescription[] = _(
 	"Prevents status affliction\n"
