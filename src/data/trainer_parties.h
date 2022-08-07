@@ -10140,7 +10140,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Johnson[] = {
     {
     .iv = 0,
     .lvl = 8,
-    .species = SPECIES_SHROOMISH,
+    .species = SPECIES_TAILLOW,
     },
     {
     .iv = 0,
@@ -12447,7 +12447,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Coby[] = {
     {
     .iv = 0,
     .lvl = 44,
-    .species = SPECIES_ELECTIVIRE,
+    .species = SPECIES_MAGNEZONE,
     }
 };
 
