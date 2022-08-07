@@ -53,7 +53,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- Roxanne trades evolution stones for fossils.
 - Item changes: Quick Claw now increases speed by 10% when user is below 50% health.
 - New Items:
-	- Super Vitamins
+	- Super Vitamins (Adding 100 EVs per use)
 
 # New Abilities
 

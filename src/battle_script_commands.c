@@ -1151,7 +1151,7 @@ static const u16 sNaturePowerMoves[BATTLE_TERRAIN_COUNT] =
 static const u16 sPickupItems[] =
 {
     ITEM_POTION,
-    ITEM_ANTIDOTE,
+    ITEM_POKE_BALL,
     ITEM_SUPER_POTION,
     ITEM_GREAT_BALL,
     ITEM_REPEL,
