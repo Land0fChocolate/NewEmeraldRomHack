@@ -178,7 +178,7 @@ static const u8 sFreshWaterDesc[] = _(
 static const u8 sSodaPopDesc[] = _(
     "A fizzy soda drink\n"
     "that restores HP\n"
-    "by 60 points.");
+    "by 50 points.");
 
 static const u8 sLemonadeDesc[] = _(
     "A very sweet drink\n"
@@ -2242,9 +2242,9 @@ static const u8 sExpShareDesc[] = _(
     "from battles.");
 
 static const u8 sQuickClawDesc[] = _(
-    "A hold item that\n"
-    "occasionally allows\n"
-    "the first strike.");
+    "Ups Speed by 10%\n"
+    "if user is below\n"
+    "half health.");
 
 static const u8 sSootheBellDesc[] = _(
     "A hold item that\n"

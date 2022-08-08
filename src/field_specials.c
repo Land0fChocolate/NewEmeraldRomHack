@@ -2344,7 +2344,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 11;
+            task->tNumItems = 31;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2507,16 +2507,36 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
     {
+        gText_ScopeLens16BP,
+        gText_WideLens16BP,
+        gText_ToxicOrb16BP,
+        gText_FlameOrb16BP,
+        gText_AdrenalineOrb16BP,
+        gText_RedCard16BP,
+        gText_DestinyKnot16BP,
+        gText_Metronome16BP,
+        gText_ShedShell16BP,
+        gText_StickyBarb16BP,
+        gText_LaggingTail16BP,
+        gText_QuickClaw24BP,
+        gText_Snowball24BP,
+        gText_LightClay24BP,
+        gText_BlackSludge24BP,
+        gText_WiseGlasses24BP,
+        gText_MuscleBand24BP,
+        gText_HeatRock24BP,
+        gText_DampRock24BP,
+        gText_SmoothRock24BP,
+        gText_IcyRock24BP,
+        gText_WeaknessPolicy24BP,
+        gText_BlunderPolicy24BP,
         gText_Leftovers32BP,
-        gText_WhiteHerb32BP,
-        gText_QuickClaw32BP,
-        gText_MentalHerb32BP,
-        gText_AirBalloon48BP,
-        gText_ChoiceBand48BP,
-        gText_ChoiceSpecs48BP,
-        gText_ChoiceScarf48BP,
-        gText_FocusSash48BP,
-        gText_ScopeLens48BP,
+        gText_AirBalloon32BP,
+        gText_ChoiceBand32BP,
+        gText_ChoiceSpecs32BP,
+        gText_ChoiceScarf32BP,
+        gText_FocusSash32BP,
+        gText_LifeOrb32BP,
         gText_Exit
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =
