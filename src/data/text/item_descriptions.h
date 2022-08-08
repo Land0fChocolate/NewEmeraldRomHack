@@ -671,11 +671,15 @@ static const u8 sMaxMushroomsDesc[] = _( // Todo
     "?????");
 
 // Treasures
-static const u8 sBottleCapDesc[] = _( // Todo
-    "?????");
+static const u8 sBottleCapDesc[] = _(
+    "A beautiful bottle\n"
+    "cap that gives off\n"
+    "a silver gleam.");
 
-static const u8 sGoldBottleCapDesc[] = _( // Todo
-    "?????");
+static const u8 sGoldBottleCapDesc[] = _(
+    "A beautiful bottle\n"
+    "cap that gives off\n"
+    "a golden gleam.");
 
 static const u8 sNuggetDesc[] = _(
     "A nugget of pure\n"
@@ -2481,20 +2485,28 @@ static const u8 sProtectivePadsDesc[] = _(
 static const u8 sThroatSprayDesc[] = _( // Todo
     "?????");
 
-static const u8 sEjectPackDesc[] = _( // Todo
-    "?????");
+static const u8 sEjectPackDesc[] = _(
+    "Forces the user to\n"
+    "switch if its stats\n"
+    "are lowered.");
 
-static const u8 sHeavyDutyBootsDesc[] = _( // Todo
-    "?????");
+static const u8 sHeavyDutyBootsDesc[] = _(
+    "Boots that prevent\n"
+    "effects of traps\n"
+    "set in the field.");
 
-static const u8 sBlunderPolicyDesc[] = _( // Todo
-    "?????");
+static const u8 sBlunderPolicyDesc[] = _(
+    "Raises Speed if\n"
+    "the user misses\n"
+    "due to Accuracy.");
 
 static const u8 sRoomServiceDesc[] = _( // Todo
     "?????");
 
-static const u8 sUtilityUmbrellaDesc[] = _( // Todo
-    "?????");
+static const u8 sUtilityUmbrellaDesc[] = _(
+    "An umbrella that\n"
+    "protects from\n"
+    "weather effects.");
 
 // Berries
 static const u8 sCheriBerryDesc[] = _(
@@ -3422,8 +3434,10 @@ static const u8 sReinsOfUnityDesc[] = _( // Todo
     "?????");
 
 // Battle Mechanic Key Items
-static const u8 sKeyStoneDesc[] = _( // Todo
-    "?????");
+static const u8 sKeyStoneDesc[] = _(
+    "A stone of untold\n"
+    "power that allows\n"
+    "Mega Evolution.");
 
 static const u8 sMegaRingDesc[] = _(
     "Enables {PKMN} holding\n"
