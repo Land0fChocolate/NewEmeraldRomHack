@@ -9385,8 +9385,6 @@ BattleScript_EffectWarDance::
 	attackcanceler
 	attackstring
 	ppreduce
-	attackanimation
-	waitanimation
 	setmoveeffect MOVE_EFFECT_CONFUSION
 	seteffectprimary
 	resultmessage

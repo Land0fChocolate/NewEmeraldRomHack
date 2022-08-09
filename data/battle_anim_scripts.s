@@ -23785,25 +23785,23 @@ Move_WAR_DANCE:
 	delay 1
 	end
 
-@TODO: using Move_NIGHT_SLASH animation
 Move_FLINT_BLADE:
+	loadspritegfx ANIM_TAG_STONE_EDGE
 	loadspritegfx ANIM_TAG_SLASH
-	createvisualtask AnimTask_BlendNightSlash, 2, ANIM_TARGET, 2, 0, 8, 1
-	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 0, 1, 3, 0, 12, RGB_BLACK
-	waitforvisualfinish
-	createsprite gNightSlashLeftSpriteTemplate, ANIM_TARGET, 2, 1, -8, 0
+	createsprite gFlintBladeSpriteTemplate, 130, 7, -96, -32, 528, 30, 13, 50, 1
+	delay 8
+	createsprite gFlintBladeSpriteTemplate, 130, 7, -32, -48, 528, 30, 13, 50, 1
+	delay 8
+	createsprite gFlintBladeSpriteTemplate, 130, 7, -64, -48, 528, 30, 13, 50, 1
+	delay 8
+	createsprite gSlashSliceSpriteTemplate, ANIM_TARGET, 4, 2, 0, 0
 	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
-	delay 4
-	createsprite gNightSlashLeftSpriteTemplate, ANIM_TARGET, 2, 1, 8, 0
-	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 8, 1
-	delay 40
-	createsprite gNightSlashRightSpriteTemplate, ANIM_TARGET, 2, 1, -8, 0
-	createsprite gNightSlashRightSpriteTemplate, ANIM_TARGET, 2, 1, 8, 0
+	delay 6
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 18, 1
 	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
 	waitforvisualfinish
-	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 0, 1, 3, 12, 0, RGB_BLACK
-	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER
+	blendoff
 	end
 
 @TODO: using Move_FLARE_BLITZ animation

@@ -853,7 +853,7 @@
 #define TRAINER_ALVARO                      849
 #define TRAINER_EVERETT                     850
 #define TRAINER_RED                         851 //unused
-#define TRAINER_LEAF                        852 //unused
+#define TRAINER_LEAF                        852 //unused, except for testing
 #define TRAINER_BRENDAN_PLACEHOLDER         853 //unused
 #define TRAINER_MAY_PLACEHOLDER             854 //unused
 #define TRAINER_CECE                        855
