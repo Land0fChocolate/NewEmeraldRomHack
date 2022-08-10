@@ -11573,7 +11573,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .split = SPLIT_PHYSICAL,
     },
 
-    [MOVE_FLARE_CRASH] =
+    [MOVE_BLAZE_IMPACT] =
     {
         .effect = EFFECT_HAMMER_ARM,
         .power = 100,

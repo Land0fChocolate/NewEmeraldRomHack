@@ -203,5 +203,5 @@ const u16 gEasyChatGroup_Move2[] = {
     MOVE_ZAP_CANNON,
     MOVE_WAR_DANCE,
     MOVE_FLINT_BLADE,
-    MOVE_FLARE_CRASH,
+    MOVE_BLAZE_IMPACT,
 };

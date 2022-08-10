@@ -40,7 +40,7 @@
 #define TUTOR_MOVE_FURY_CUTTER     27 //During Mainline
 #define TUTOR_MOVE_SERPENT_DANCE   28 //Battle Frontier
 #define TUTOR_MOVE_FLINT_BLADE     29 //Battle Frontier
-#define TUTOR_MOVE_FLARE_CRASH     30 //Battle Frontier
+#define TUTOR_MOVE_BLAZE_IMPACT    30 //Battle Frontier
 #define TUTOR_MOVE_WORK_UP         31 //Battle Frontier
 #define TUTOR_MOVE_LOW_SWEEP       32 //Battle Frontier
 #define TUTOR_MOVE_AVALANCHE       33 //Battle Frontier

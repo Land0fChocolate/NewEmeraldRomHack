@@ -10779,7 +10779,7 @@ static const struct TrainerMonItemCustomMoves sParty_Flannery3[] = {
     .lvl = 41,
     .species = SPECIES_GROWLITHE,
     .heldItem = ITEM_WHITE_HERB,
-    .moves = {MOVE_CRUNCH, MOVE_FLARE_CRASH, MOVE_DIG, MOVE_ATTRACT}
+    .moves = {MOVE_CRUNCH, MOVE_BLAZE_IMPACT, MOVE_DIG, MOVE_ATTRACT}
     },
     {
     .iv = 255,
@@ -10817,7 +10817,7 @@ static const struct TrainerMonItemCustomMoves sParty_Flannery4[] = {
     .lvl = 46,
     .species = SPECIES_ARCANINE,
     .heldItem = ITEM_EXPERT_BELT,
-    .moves = {MOVE_THUNDER_FANG, MOVE_FLARE_CRASH, MOVE_DIG, MOVE_ATTRACT}
+    .moves = {MOVE_THUNDER_FANG, MOVE_BLAZE_IMPACT, MOVE_DIG, MOVE_ATTRACT}
     },
     {
     .iv = 255,
@@ -10862,7 +10862,7 @@ static const struct TrainerMonItemCustomMoves sParty_Flannery5[] = {
     .lvl = 51,
     .species = SPECIES_ARCANINE,
     .heldItem = ITEM_EXPERT_BELT,
-    .moves = {MOVE_THUNDER_FANG, MOVE_FLARE_CRASH, MOVE_DIG, MOVE_ATTRACT}
+    .moves = {MOVE_THUNDER_FANG, MOVE_BLAZE_IMPACT, MOVE_DIG, MOVE_ATTRACT}
     },
     {
     .iv = 255,

@@ -929,7 +929,7 @@ static const bool8 sValidApprenticeMoves[MOVES_COUNT] =
     [MOVE_PSYCHO_BOOST] = TRUE,
     [MOVE_WAR_DANCE] = TRUE,
     [MOVE_FLINT_BLADE] = TRUE,
-    [MOVE_FLARE_CRASH] = TRUE,
+    [MOVE_BLAZE_IMPACT] = TRUE,
 };
 
 // The possible questions to ask after the initial 3 WHICH MON questions. Retrieved from here and shuffled
