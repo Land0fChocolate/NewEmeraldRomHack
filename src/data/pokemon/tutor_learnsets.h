@@ -4489,7 +4489,6 @@ static const u64 sTutorLearnsets[] =
                                             | TUTOR(MOVE_SWIFT)
                                             | TUTOR(MOVE_SWORDS_DANCE)
                                             | TUTOR(MOVE_THUNDER_PUNCH)
-                                            | TUTOR(MOVE_SERPENT_DANCE)
                                             | TUTOR(MOVE_WORK_UP)
                                             | TUTOR(MOVE_BREAKING_SWIPE)
                                             | TUTOR(MOVE_LOW_SWEEP)
@@ -4681,7 +4680,6 @@ static const u64 sTutorLearnsets[] =
                                             | TUTOR(MOVE_SUBSTITUTE)
                                             | TUTOR(MOVE_SWAGGER)
                                             | TUTOR(MOVE_SWIFT)
-                                            | TUTOR(MOVE_SERPENT_DANCE)
                                             | TUTOR(MOVE_WORK_UP)
                                             | TUTOR(MOVE_PLAY_ROUGH)
                                             | TUTOR(MOVE_TRICK)
@@ -8038,13 +8036,15 @@ static const u64 sTutorLearnsets[] =
                                             | TUTOR(MOVE_SNORE)
                                             | TUTOR(MOVE_SUBSTITUTE)
                                             | TUTOR(MOVE_SWAGGER)
-                                            | TUTOR(MOVE_SWORDS_DANCE)),
+                                            | TUTOR(MOVE_SWORDS_DANCE)
+                                            | TUTOR(MOVE_SERPENT_DANCE)),
 
     [SPECIES_SERVINE]       = TUTOR_LEARNSET(TUTOR(MOVE_SLEEP_TALK)
                                             | TUTOR(MOVE_SNORE)
                                             | TUTOR(MOVE_SUBSTITUTE)
                                             | TUTOR(MOVE_SWAGGER)
-                                            | TUTOR(MOVE_SWORDS_DANCE)),
+                                            | TUTOR(MOVE_SWORDS_DANCE)
+                                            | TUTOR(MOVE_SERPENT_DANCE)),
 
     [SPECIES_SERPERIOR]     = TUTOR_LEARNSET(TUTOR(MOVE_SLEEP_TALK)
                                             | TUTOR(MOVE_SNORE)

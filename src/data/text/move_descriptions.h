@@ -2959,7 +2959,7 @@ static const u8 sSingularityDescription[] = _(
     "foe Speed if struck.");
 
 static const u8 sSerpentDanceDescription[] = _(
-    "A graceful dance that ups\n"
+    "A soothing dance that ups\n"
     "Sp. Atk and Speed.");
 
 static const u8 sIceTuskDescription[] = _(

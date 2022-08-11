@@ -23768,6 +23768,7 @@ Move_WAR_DANCE:
 Move_FLINT_BLADE:
 	loadspritegfx ANIM_TAG_STONE_EDGE
 	loadspritegfx ANIM_TAG_SLASH
+	monbg ANIM_DEF_PARTNER
 	createsprite gFlintBladeSpriteTemplate, 130, 7, -96, -32, 528, 30, 13, 50, 1
 	delay 8
 	createsprite gFlintBladeSpriteTemplate, 130, 7, -32, -48, 528, 30, 13, 50, 1
@@ -23786,7 +23787,6 @@ Move_FLINT_BLADE:
 
 Move_BLAZE_IMPACT:
 	loadspritegfx ANIM_TAG_IMPACT
-	@loadspritegfx ANIM_TAG_HANDS_AND_FEET
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	monbg ANIM_DEF_PARTNER
 	setalpha 12, 8
@@ -23838,34 +23838,24 @@ Move_BLAZE_IMPACT:
 	blendoff
 	end
 
-@TODO: using Move_KINGS_SHIELD animation
+@TODO why does gShadowBallSpriteTemplate not move when given x and y pos?
 Move_SINGULARITY:
-	loadspritegfx ANIM_TAG_PROTECT  @protect
-	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_PROTECT, 0x0, 0xC, 0xC, 0x318C   @Gray
-	goto Move_PROTECT
+	loadspritegfx ANIM_TAG_SHADOW_BALL
+	waitplaysewithpan SE_M_COSMIC_POWER, SOUND_PAN_ATTACKER, 16
+	createsprite gShadowBallSpriteTemplate, ANIM_ATTACKER, 3, 64, 16, 16
+	waitforvisualfinish
+	end
 
-@TODO: using Move_QUIVER_DANCE animation
 Move_SERPENT_DANCE:
-	loadspritegfx ANIM_TAG_HOLLOW_ORB
+	loadspritegfx ANIM_TAG_MOVEMENT_WAVES
 	monbg ANIM_ATTACKER
-	call SetBugBg
-	createvisualtask AnimTask_DragonDanceWaver, 5
-	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
-	delay 8
-	createvisualtask AnimTask_BlendPalInAndOutByTag, 5, ANIM_TAG_HOLLOW_ORB, RGB_GREEN, 14, 0, 3
-	createsprite gDragonDanceOrbSpriteTemplate, ANIM_ATTACKER, 2, 0
-	createsprite gDragonDanceOrbSpriteTemplate, ANIM_ATTACKER, 2, 43
-	createsprite gDragonDanceOrbSpriteTemplate, ANIM_ATTACKER, 2, 85
-	createsprite gDragonDanceOrbSpriteTemplate, ANIM_ATTACKER, 2, 128
-	createsprite gDragonDanceOrbSpriteTemplate, ANIM_ATTACKER, 2, 170
-	createsprite gDragonDanceOrbSpriteTemplate, ANIM_ATTACKER, 2, 213
-	delay 30
-	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
-	delay 30
-	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
+	playsewithpan SE_M_TEETER_DANCE, SOUND_PAN_ATTACKER
+	createsprite gMovementWavesSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, 2
+	createsprite gMovementWavesSpriteTemplate, ANIM_ATTACKER, 2, 0, 1, 2
+	createvisualtask AnimTask_DragonDanceWaver, 2
+	createvisualtask AnimTask_TeeterDanceMovement, 8
 	waitforvisualfinish
 	clearmonbg ANIM_ATTACKER
-	call UnsetBugBg
 	end
 
 @TODO: using Move_CRABHAMMER animation
