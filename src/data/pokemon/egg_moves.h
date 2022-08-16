@@ -879,7 +879,8 @@ const u16 gEggMoves[] = {
         MOVE_FLARE_BLITZ,
         MOVE_EXTRASENSORY,
         MOVE_NATURE_POWER,
-        MOVE_FLAME_BURST),
+        MOVE_FLAME_BURST,
+        MOVE_DISCHARGE),
 
     egg_moves(TOTODILE,
         MOVE_CRUNCH,

@@ -2951,7 +2951,7 @@ static const u8 sFlintBladeDescription[] = _(
     "High critical-hit ratio.");
 
 static const u8 sBlazeImpactDescription[] = _(
-    "User tackles hard into the\n"
+    "User slams hard into the\n"
     "foe but has Speed reduced.");
 
 static const u8 sSingularityDescription[] = _(

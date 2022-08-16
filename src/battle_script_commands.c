@@ -12749,8 +12749,12 @@ static void Cmd_setstealthrock(void)
             {
                 gSideStatuses[targetSide] |= SIDE_STATUS_STEALTH_ROCK;
                 gSideTimers[targetSide].stealthRockAmount = 1;
-                gSideStatuses[targetSide] ^= SIDE_STATUS_HIDDEN_THORNS; //TODO: test this, Stealth Rock should replace Hidden Thorns
-                gSideTimers[targetSide].hiddenThornsAmount = 0;
+                if (gSideStatuses[targetSide] & SIDE_STATUS_HIDDEN_THORNS)
+                {
+                    gSideStatuses[targetSide] ^= SIDE_STATUS_HIDDEN_THORNS; //TODO: test this, Stealth Rock should replace Hidden Thorns
+                    gSideTimers[targetSide].hiddenThornsAmount = 0;
+                }
+                
                 gBattlescriptCurrInstr += 5;
             }
             break;
@@ -12763,8 +12767,11 @@ static void Cmd_setstealthrock(void)
             {
                 gSideStatuses[targetSide] |= SIDE_STATUS_HIDDEN_THORNS;
                 gSideTimers[targetSide].hiddenThornsAmount = 1;
-                gSideStatuses[targetSide] ^= SIDE_STATUS_STEALTH_ROCK; //TODO: test this, Hidden Thorns should replace Stealth Rock
-                gSideTimers[targetSide].stealthRockAmount = 0;
+                if (gSideStatuses[targetSide] & SIDE_STATUS_STEALTH_ROCK)
+                {
+                    gSideStatuses[targetSide] ^= SIDE_STATUS_STEALTH_ROCK; //TODO: test this, Hidden Thorns should replace Stealth Rock
+                    gSideTimers[targetSide].stealthRockAmount = 0;
+                }
                 gBattlescriptCurrInstr += 5;
             }
             break;

@@ -5313,6 +5313,7 @@ static const struct LevelUpMove sSpecies276LevelUpLearnset[] = {
 static const struct LevelUpMove sTreeckoLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
+    LEVEL_UP_MOVE( 1, MOVE_HIDDEN_THORNS),
     LEVEL_UP_MOVE( 6, MOVE_LEAFAGE),
     LEVEL_UP_MOVE( 9, MOVE_QUICK_ATTACK),
     LEVEL_UP_MOVE(13, MOVE_MEGA_DRAIN),
@@ -5596,8 +5597,9 @@ static const struct LevelUpMove sLinooneLevelUpLearnset[] = {
 static const struct LevelUpMove sWurmpleLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_STRING_SHOT),
-    LEVEL_UP_MOVE( 5, MOVE_POISON_STING),
-    LEVEL_UP_MOVE(15, MOVE_BUG_BITE),
+    LEVEL_UP_MOVE( 4, MOVE_STEALTH_ROCK),
+    //LEVEL_UP_MOVE( 5, MOVE_POISON_STING),
+    LEVEL_UP_MOVE(10, MOVE_BUG_BITE),
     LEVEL_UP_END
 };
 
@@ -9823,7 +9825,6 @@ static const struct LevelUpMove sGliscorLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sMamoswineLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_ICE_TUSK),
     LEVEL_UP_MOVE( 1, MOVE_FURY_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_SCARY_FACE),
     LEVEL_UP_MOVE( 1, MOVE_ANCIENT_POWER),
@@ -9843,7 +9844,7 @@ static const struct LevelUpMove sMamoswineLevelUpLearnset[] = {
     LEVEL_UP_MOVE(37, MOVE_MIST),
     LEVEL_UP_MOVE(41, MOVE_THRASH),
     LEVEL_UP_MOVE(46, MOVE_EARTHQUAKE),
-    LEVEL_UP_MOVE(52, MOVE_BLIZZARD),
+    LEVEL_UP_MOVE(52, MOVE_ICE_TUSK),
     LEVEL_UP_MOVE(58, MOVE_SCARY_FACE),
     LEVEL_UP_END
 };
