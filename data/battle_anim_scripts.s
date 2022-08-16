@@ -23838,7 +23838,7 @@ Move_BLAZE_IMPACT:
 	blendoff
 	end
 
-@TODO why does gShadowBallSpriteTemplate not move when given x and y pos?
+@TODO: why does gShadowBallSpriteTemplate not move when given x and y pos?
 Move_SINGULARITY:
 	loadspritegfx ANIM_TAG_SHADOW_BALL
 	waitplaysewithpan SE_M_COSMIC_POWER, SOUND_PAN_ATTACKER, 16
@@ -23885,20 +23885,21 @@ Move_HIDDEN_THORNS:
 	monbg ANIM_DEF_PARTNER
 	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
 	waitplaysewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET, 28
-	createsprite gSpikesSpriteTemplate, ANIM_TARGET, 2, 20, 0, 0, 24, 30
-	createsprite gIngrainRootSpriteTemplate, ANIM_ATTACKER, 2, 16, 26, -1, 2, 150
+	createsprite gIngrainRootSpriteTemplate, ANIM_TARGET, 2, 100, -24, -1, 2, 150
 	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
 	delay 10
 	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
 	waitplaysewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET, 28
-	createsprite gSpikesSpriteTemplate, ANIM_TARGET, 2, 20, 0, -24, 24, 30
-	createsprite gIngrainRootSpriteTemplate, ANIM_ATTACKER, 2, -32, 20, 1, 1, 140
+	createsprite gThornsSpriteTemplate, ANIM_TARGET, 2, 0, 8, 5, 24, 80
+	createsprite gIngrainRootSpriteTemplate, ANIM_TARGET, 2, 110, -24, 1, 1, 140
 	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
 	delay 10
 	waitplaysewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET, 28
-	createsprite gSpikesSpriteTemplate, ANIM_TARGET, 2, 20, 0, 24, 24, 30
-	createsprite gIngrainRootSpriteTemplate, ANIM_ATTACKER, 2, 32, 22, 1, 0, 130
-	createsprite gIngrainRootSpriteTemplate, ANIM_ATTACKER, 2, -16, 25, -1, 3, 120
+	createsprite gThornsSpriteTemplate, ANIM_TARGET, 2, 24, 6, 5, 24, 65
+	createsprite gIngrainRootSpriteTemplate, ANIM_TARGET, 2, 85, -24, 1, 0, 130
+	createsprite gIngrainRootSpriteTemplate, ANIM_TARGET, 2, 125, -24, -1, 3, 120
+	delay 10
+	createsprite gThornsSpriteTemplate, ANIM_TARGET, 2, -24, 10, 5, 24, 50
 	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
 	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
 	waitforvisualfinish
