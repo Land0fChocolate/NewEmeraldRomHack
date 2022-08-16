@@ -1566,7 +1566,7 @@
 #define FLAG_DAILY_OLDALEFARM_POKEMON_GIVEN         (DAILY_FLAGS_START + 0x3)
 #define FLAG_DAILY_DESERT_UNDERPASS_FOSSIL          (DAILY_FLAGS_START + 0x4)
 #define FLAG_DAILY_BATTLE_TENT_TRAINERS             (DAILY_FLAGS_START + 0x5)
-#define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
+#define FLAG_DAILY_BRAWLY_SHARD                     (DAILY_FLAGS_START + 0x6)
 #define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag
 #define FLAG_UNUSED_0x928                           (DAILY_FLAGS_START + 0x8)  // Unused Flag
 #define FLAG_DAILY_GROOM_DONE                       (DAILY_FLAGS_START + 0x9)

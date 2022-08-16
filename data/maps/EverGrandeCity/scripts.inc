@@ -26,7 +26,7 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 	setvar VAR_TEMP_1, 1
 	end
 
-@TODO: remove this. This is test trainer.
+@TODO: remove this. This is a test trainer.
 EverGrandeCity_EventScript_Leaf::
 	cleartrainerflag TRAINER_LEAF
 	trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated

@@ -6,16 +6,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - implement ability description label in the summary screen.
 - Include ORAS dex Pokemon like Budew and Dusknoir and add ways to access them.
-- New Pokemon moves.
-	- new animations for new moves
-	- Add the new moves to the move tutors lists.
-- Update move tutor lists to have tutor moves from later gens.
-- Expand and add new areas, including adding some new wild Pokemon for the area.
-- New NPCs, some of which you acquire new items from.
 - Rework aspects of the Battle Frontier. Change the Battle Palace to be themed around inverse type matchups. Rework the battle Pokemon list. 
-- Add methods to make training easier. Super vitamins (giving 60 EVs per stat), IV boosters and nature mints to be added and accessable.
-- Revert some unnecessary changes Emerald made from Ruby/Sapphire like the Vigoroth movers and Zigzagoon attacking Prof Birch instead of Poochyena.
-- Type resisting berries and Type boosting gems to be accessible somewhere. 
+- Add methods to make training easier. Super vitamins, IV boosters and nature mints to be added and accessable.
 - Remove item use in battle and create a prompt for Poke Balls.
 - Add credits of people whos tutorials and work you have used in the game.
 
@@ -115,6 +107,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Blaze Impact: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Added to Battle Frontier move tutor list. Learned by Growlith/Arcanine/Ponyta/Rapidash/Flareon/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo.
 - Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir on evolution.
 - Serpent Dance: Increases the user's special attack and speed by one stage. Added to Battle Frontier move tutor list. Learned by Seviper/Milotic/Serperior/Dunsparce/Ekans/Arbok/Huntail/Gorebyss/Rayquaza/Silicobra/Sandaconda/Giratina/Gyarados/Furret.
+-Ice Tusk: 100 BP, 90% Acc, Ice type, increased crit ratio. Learned by Walrein/Mamoswine.
 -Hidden Thorns. Grass type Stealth Rock. Will replace Stealth Rock if Stealth Rock is already on the field. Added to Frontier move tutor list. Learned naturally by Roselia/Roserade/Cacnea/Cacturne.
 
 # Updated Moves
@@ -144,6 +137,7 @@ The fine people who worked on pokeemerald and pokeemerald-expansion and helped m
 - SonikkuA-DatH
 - Xavion3
 - GriffinR
+- MGriffin
 - kleeenexfeu
 - Citrus Bolt
 - dunsparce9
