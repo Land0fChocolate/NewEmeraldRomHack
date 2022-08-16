@@ -204,7 +204,6 @@ static const u8 sMapName_LittlerootBeach[] = _("Littleroot Beach");
 static const u8 sMapName_FallarborWasteland[] = _("Fallarbor Wastes");
 static const u8 sMapName_Wildwoods[] = _("Wildwoods");
 static const u8 sMapName_MauvilleMeadow[] = _("Mauville Meadow");
-static const u8 sMapName_FortreeLake[] = _("Fortree Lake");
 static const u8 sMapName_FortreeJungle[] = _("Fortree Jungle");
 static const u8 sMapName_LustrousLair[] = _("Lustrous Lair");
 static const u8 sMapName_DerelictDen[] = _("Derelict Den");

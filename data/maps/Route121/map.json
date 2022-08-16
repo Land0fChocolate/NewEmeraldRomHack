@@ -27,11 +27,6 @@
       "direction": "right",
       "offset": -10,
       "map": "MAP_LILYCOVE_CITY"
-    },
-    {
-      "direction": "left",
-      "offset": 16,
-      "map": "MAP_FORTREE_LAKE"
     }
   ],
   "object_events": [

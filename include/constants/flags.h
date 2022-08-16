@@ -1502,7 +1502,7 @@
 #define FLAG_LANDMARK_FALLARBOR_WASTELAND           (SYSTEM_FLAGS + 0x88)
 #define FLAG_LANDMARK_WILDWOODS                     (SYSTEM_FLAGS + 0x89)
 #define FLAG_LANDMARK_MAUVILLE_MEADOW               (SYSTEM_FLAGS + 0x8A)
-#define FLAG_LANDMARK_FORTREE_LAKE                  (SYSTEM_FLAGS + 0x8B)
+#define FLAG_LANDMARK_FORTREE_LAKE                  (SYSTEM_FLAGS + 0x8B) //unused Flag
 #define FLAG_LANDMARK_FORTREE_JUNGLE                (SYSTEM_FLAGS + 0x8C)
 #define FLAG_LANDMARK_LUSTROUS_LAIR                 (SYSTEM_FLAGS + 0x8D)
 #define FLAG_LANDMARK_DERELICT_DEN                  (SYSTEM_FLAGS + 0x8E)

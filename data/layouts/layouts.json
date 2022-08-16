@@ -3862,16 +3862,6 @@
       "blockdata_filepath": "data/layouts/BattleTentBattleRoom/map.bin"
     },
     {
-      "id": "LAYOUT_VERDANTURF_TOWN_BATTLE_TENT_BATTLE_ROOM",
-      "name": "VerdanturfTown_BattleTentBattleRoom_Layout",
-      "width": 13,
-      "height": 9,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_BattleTent",
-      "border_filepath": "data/layouts/VerdanturfTown_BattleTentBattleRoom/border.bin",
-      "blockdata_filepath": "data/layouts/VerdanturfTown_BattleTentBattleRoom/map.bin"
-    },
-    {
       "id": "LAYOUT_MIRAGE_TOWER_4F",
       "name": "MirageTower_4F_Layout",
       "width": 13,
@@ -4240,46 +4230,6 @@
       "secondary_tileset": "gTileset_NavelRock",
       "border_filepath": "data/layouts/NavelRock_Bottom/border.bin",
       "blockdata_filepath": "data/layouts/NavelRock_Bottom/map.bin"
-    },
-    {
-      "id": "LAYOUT_NAVEL_ROCK_LADDER_ROOM1",
-      "name": "NavelRock_LadderRoom1_Layout",
-      "width": 40,
-      "height": 30,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_NavelRock",
-      "border_filepath": "data/layouts/NavelRock_LadderRoom1/border.bin",
-      "blockdata_filepath": "data/layouts/NavelRock_LadderRoom1/map.bin"
-    },
-    {
-      "id": "LAYOUT_NAVEL_ROCK_LADDER_ROOM2",
-      "name": "NavelRock_LadderRoom2_Layout",
-      "width": 40,
-      "height": 30,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_NavelRock",
-      "border_filepath": "data/layouts/NavelRock_LadderRoom2/border.bin",
-      "blockdata_filepath": "data/layouts/NavelRock_LadderRoom2/map.bin"
-    },
-    {
-      "id": "LAYOUT_NAVEL_ROCK_B1F",
-      "name": "NavelRock_B1F_Layout",
-      "width": 23,
-      "height": 11,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_NavelRock",
-      "border_filepath": "data/layouts/NavelRock_B1F/border.bin",
-      "blockdata_filepath": "data/layouts/NavelRock_B1F/map.bin"
-    },
-    {
-      "id": "LAYOUT_NAVEL_ROCK_FORK",
-      "name": "NavelRock_Fork_Layout",
-      "width": 27,
-      "height": 86,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_NavelRock",
-      "border_filepath": "data/layouts/NavelRock_Fork/border.bin",
-      "blockdata_filepath": "data/layouts/NavelRock_Fork/map.bin"
     },
     {
       "id": "LAYOUT_BATTLE_FRONTIER_LOUNGE2",
@@ -4700,16 +4650,6 @@
       "secondary_tileset": "gTileset_EverGrande",
       "border_filepath": "data/layouts/MauvilleMeadow/border.bin",
       "blockdata_filepath": "data/layouts/MauvilleMeadow/map.bin"
-    },
-    {
-      "id": "LAYOUT_FORTREE_LAKE",
-      "name": "FortreeLake_Layout",
-      "width": 40,
-      "height": 18,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Fortree",
-      "border_filepath": "data/layouts/FortreeLake/border.bin",
-      "blockdata_filepath": "data/layouts/FortreeLake/map.bin"
     },
     {
       "id": "LAYOUT_FORTREE_JUNGLE_AREA1",
