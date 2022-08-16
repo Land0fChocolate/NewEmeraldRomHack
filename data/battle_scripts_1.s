@@ -2409,7 +2409,7 @@ BattleScript_EffectHiddenThorns:
 	attackstring
 	ppreduce
 	setstealthrock BattleScript_ButItFailed
-	attackanimation @TODO: why is this animation not playing?
+	attackanimation
 	waitanimation
 	printstring STRINGID_THORNSSPREADOUT
 	waitmessage B_WAIT_TIME_LONG
