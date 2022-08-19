@@ -7288,8 +7288,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        //.abilities = {ABILITY_THICK_FAT, ABILITY_GUTS, ABILITY_SHEER_FORCE},
-        .abilities = {ABILITY_TIME_TRAVELLER, ABILITY_NONE, ABILITY_NONE},//TODO: test, remove this
+        .abilities = {ABILITY_THICK_FAT, ABILITY_GUTS, ABILITY_SHEER_FORCE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },

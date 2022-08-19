@@ -3604,7 +3604,7 @@ static void Cmd_tryfaintmon(void)
                 gBattlescriptCurrInstr = BattleScript_TimeTravellerAbility;
                 return;
             }
-            
+
             gHitMarker |= HITMARKER_FAINTED(gActiveBattler);
             BattleScriptPush(gBattlescriptCurrInstr + 7);
             gBattlescriptCurrInstr = BS_ptr;
@@ -8232,6 +8232,9 @@ static void Cmd_various(void)
         }
         gBattleStruct->soulheartBattlerId = 0;
         break;
+    case VARIOUS_TRY_RESET_TIME_TRAVELLER:
+        if (HasAbility(ABILITY_TIME_TRAVELLER, GetBattlerAbilities(gActiveBattler)))
+            gSideStatuses[gActiveBattler] &= ~(SIDE_STATUS_TIME_TRAVELLED);
     case VARIOUS_TRY_ACTIVATE_FELL_STINGER:
         if (gBattleMoves[gCurrentMove].effect == EFFECT_FELL_STINGER
             && HasAttackerFaintedTarget()

@@ -1446,6 +1446,10 @@
 	various BS_ATTACKER, VARIOUS_TRY_ACTIVATE_SOULHEART
 	.endm
 
+	.macro tryresettimetraveller battler:req
+	various \battler, VARIOUS_TRY_RESET_TIME_TRAVELLER
+	.endm
+
 	.macro tryactivatefellstinger battler:req
 	various \battler, VARIOUS_TRY_ACTIVATE_FELL_STINGER
 	.endm

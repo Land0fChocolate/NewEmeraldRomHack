@@ -5828,6 +5828,7 @@ BattleScript_FaintTarget::
 	tryactivatebeastboost BS_ATTACKER
 	tryactivategrimneigh BS_ATTACKER	@ and as one shadow rider, wildfire
 	tryactivatebattlebond BS_ATTACKER
+	tryresettimetraveller BS_ATTACKER
 	trytrainerslidefirstdownmsg BS_TARGET
 	return
 
@@ -7133,7 +7134,6 @@ BattleScript_SturdiedMsg::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
-@TODO:
 BattleScript_TimeTravellerAbility::
 	copybyte gBattlerAbility, gBattlerTarget
 	pause 16
