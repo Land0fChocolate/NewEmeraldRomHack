@@ -1150,8 +1150,8 @@ static const u8 sOriginDescription[] = _(
 
 static const u8 sTimeTravellerDescription[] = _(
 	"If user is about to faint\n"
-	"revert to previous state\n"
-	"two turns before.");
+	"revert to previous state.\n"
+	"Reset upon ???.");
 
 static const u8 sWishMakerDescription[] = _(
 	"User creates a wish when\n"

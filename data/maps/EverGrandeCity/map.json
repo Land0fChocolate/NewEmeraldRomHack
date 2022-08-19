@@ -201,7 +201,8 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_EventScript_Leaf",
       "flag": "0"
-    }
+     }
+
   ],
   "warp_events": [
     {

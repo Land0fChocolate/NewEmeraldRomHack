@@ -7133,6 +7133,20 @@ BattleScript_SturdiedMsg::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+@TODO:
+BattleScript_TimeTravellerAbility::
+	copybyte gBattlerAbility, gBattlerTarget
+	pause 16
+	call BattleScript_AbilityPopUp
+	handleformchange BS_TARGET, 0
+	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	waitanimation
+	printstring STRINGID_TIMETRAVELLEDTOPREVIOUSSTATE
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_OneHitKOMsg::
 	printstring STRINGID_ONEHITKO
 	waitmessage B_WAIT_TIME_LONG

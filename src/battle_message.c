@@ -743,6 +743,7 @@ static const u8 sText_MiracleBlossomHeals[] = _("{B_ATK_NAME_WITH_PREFIX} heals\
 static const u8 sText_ThornsSpreadOut[] = _("Thorns spread out\naround {B_DEF_TEAM2} team!");
 static const u8 sText_HiddenThornsDmg[] = _("Thorns cut into\n{B_SCR_ACTIVE_NAME_WITH_PREFIX}!");
 static const u8 sText_PkmnBlewAwayHiddenThorns[] = _("{B_ATK_NAME_WITH_PREFIX} blew away\nHidden Thorns!");
+static const u8 sText_TimeTravelledToPreviousState[] = _("{B_DEF_NAME_WITH_PREFIX} reverted\nto their previous state!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1350,6 +1351,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_THORNSSPREADOUT - 12] = sText_ThornsSpreadOut,
     [STRINGID_HIDDENTHORNSDMG - 12] = sText_HiddenThornsDmg,
     [STRINGID_PKMNBLEWAWAYHIDDENTHORNS - 12] = sText_PkmnBlewAwayHiddenThorns,
+    [STRINGID_TIMETRAVELLEDTOPREVIOUSSTATE - 12] = sText_TimeTravelledToPreviousState,
 };
 
 const u16 gMentalHerbCureStringIds[] = 

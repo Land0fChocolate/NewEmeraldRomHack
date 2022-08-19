@@ -1963,6 +1963,7 @@ static void Cmd_adjustdamage(void)
         && (gBattleMons[gBattlerTarget].maxHP != 1)) // so Shedinja isn't unkillable if it gets Sturdy.
     {
         gSpecialStatuses[gBattlerTarget].sturdied = TRUE;
+        gLastUsedAbility = ABILITY_STURDY;
     }
 
     if (gBattleMoves[gCurrentMove].effect != EFFECT_FALSE_SWIPE
@@ -1987,7 +1988,6 @@ static void Cmd_adjustdamage(void)
     else if (gSpecialStatuses[gBattlerTarget].sturdied)
     {
         gMoveResultFlags |= MOVE_RESULT_STURDIED;
-        gLastUsedAbility = ABILITY_STURDY;
     }
 
 END:
@@ -3591,6 +3591,20 @@ static void Cmd_tryfaintmon(void)
         if (!(gAbsentBattlerFlags & gBitTable[gActiveBattler])
          && gBattleMons[gActiveBattler].hp == 0)
         {
+            if (HasAbility(ABILITY_TIME_TRAVELLER, gBattleMons[gActiveBattler].abilities)
+                && !(gSideStatuses[gActiveBattler] & SIDE_STATUS_TIME_TRAVELLED))
+            {
+                gSideStatuses[gActiveBattler] |= SIDE_STATUS_TIME_TRAVELLED;
+                gLastUsedAbility = ABILITY_TIME_TRAVELLER;
+                gBattleMoveDamage *= -1;
+                if ((gBattleMons[gActiveBattler].status1 & STATUS1_TOXIC_COUNTER) != STATUS1_TOXIC_TURN(1))
+                    gBattleMons[gActiveBattler].status1 -= STATUS1_TOXIC_TURN(1);
+                
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_TimeTravellerAbility;
+                return;
+            }
+            
             gHitMarker |= HITMARKER_FAINTED(gActiveBattler);
             BattleScriptPush(gBattlescriptCurrInstr + 7);
             gBattlescriptCurrInstr = BS_ptr;

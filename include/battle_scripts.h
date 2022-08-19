@@ -251,6 +251,7 @@ extern const u8 BattleScript_PsychicTerrainEnds[];
 extern const u8 BattleScript_MudSportEnds[];
 extern const u8 BattleScript_WaterSportEnds[];
 extern const u8 BattleScript_SturdiedMsg[];
+extern const u8 BattleScript_TimeTravellerAbility[];
 extern const u8 BattleScript_GravityEnds[];
 extern const u8 BattleScript_MoveStatDrain[];
 extern const u8 BattleScript_MoveStatDrain_PPLoss[];
