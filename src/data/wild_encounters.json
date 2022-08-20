@@ -9703,7 +9703,7 @@
               {
                 "min_level": 33,
                 "max_level": 33,
-                "species": "SPECIES_SUNKERN"
+                "species": "SPECIES_RATTATA_ALOLAN"
               },
               {
                 "min_level": 34,
@@ -9855,64 +9855,64 @@
             "encounter_rate": 25,
             "mons": [
               {
-                "min_level": 33,
-                "max_level": 35,
-                "species": "SPECIES_AIPOM"
+                "min_level": 30,
+                "max_level": 33,
+                "species": "SPECIES_DIGLETT_ALOLAN"
               },
               {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_TEDDIURSA"
+                "min_level": 30,
+                "max_level": 33,
+                "species": "SPECIES_GEODUDE_ALOLAN"
               },
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_BONSLY"
-              },
-              {
-                "min_level": 36,
-                "max_level": 36,
-                "species": "SPECIES_TEDDIURSA"
-              },
-              {
-                "min_level": 30,
-                "max_level": 30,
-                "species": "SPECIES_HOUNDOUR"
+                "species": "SPECIES_MEOWTH_GALARIAN"
               },
               {
                 "min_level": 32,
                 "max_level": 32,
-                "species": "SPECIES_LEDYBA"
+                "species": "SPECIES_GRIMER_ALOLAN"
               },
               {
-                "min_level": 33,
-                "max_level": 33,
-                "species": "SPECIES_LEDIAN"
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_GRIMER_ALOLAN"
               },
               {
-                "min_level": 33,
-                "max_level": 33,
-                "species": "SPECIES_PINECO"
+                "min_level": 32,
+                "max_level": 32,
+                "species": "SPECIES_MEOWTH_GALARIAN"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_BELDUM"
+              },
+              {
+                "min_level": 17,
+                "max_level": 17,
+                "species": "SPECIES_BELDUM"
               },
               {
                 "min_level": 36,
                 "max_level": 36,
-                "species": "SPECIES_MILTANK"
+                "species": "SPECIES_PORYGON"
               },
               {
                 "min_level": 37,
                 "max_level": 37,
-                "species": "SPECIES_MILTANK"
+                "species": "SPECIES_PORYGON"
               },
               {
                 "min_level": 39,
                 "max_level": 39,
-                "species": "SPECIES_HOUNDOUR"
+                "species": "SPECIES_PORYGON"
               },
               {
                 "min_level": 40,
                 "max_level": 40,
-                "species": "SPECIES_MILTANK"
+                "species": "SPECIES_PORYGON"
               }
             ]
           },
@@ -9922,27 +9922,27 @@
               {
                 "min_level": 25,
                 "max_level": 30,
-                "species": "SPECIES_SHUCKLE"
+                "species": "SPECIES_GEODUDE_ALOLAN"
               },
               {
                 "min_level": 20,
                 "max_level": 25,
-                "species": "SPECIES_SHUCKLE"
+                "species": "SPECIES_GEODUDE_ALOLAN"
               },
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_SHUCKLE"
+                "species": "SPECIES_GEODUDE_ALOLAN"
               },
               {
                 "min_level": 30,
                 "max_level": 35,
-                "species": "SPECIES_SHUCKLE"
+                "species": "SPECIES_GEODUDE_ALOLAN"
               },
               {
                 "min_level": 35,
                 "max_level": 40,
-                "species": "SPECIES_SHUCKLE"
+                "species": "SPECIES_GEODUDE_ALOLAN"
               }
             ]
           }

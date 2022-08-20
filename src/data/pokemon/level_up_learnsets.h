@@ -5313,7 +5313,6 @@ static const struct LevelUpMove sSpecies276LevelUpLearnset[] = {
 static const struct LevelUpMove sTreeckoLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
-    LEVEL_UP_MOVE( 1, MOVE_HIDDEN_THORNS),
     LEVEL_UP_MOVE( 6, MOVE_LEAFAGE),
     LEVEL_UP_MOVE( 9, MOVE_QUICK_ATTACK),
     LEVEL_UP_MOVE(13, MOVE_MEGA_DRAIN),

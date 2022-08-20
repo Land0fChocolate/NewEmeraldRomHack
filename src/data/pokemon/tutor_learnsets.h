@@ -4451,7 +4451,8 @@ static const u64 sTutorLearnsets[] =
                                             | TUTOR(MOVE_WORK_UP)
                                             | TUTOR(MOVE_WORRY_SEED)
                                             | TUTOR(MOVE_LOW_KICK)
-                                            | TUTOR(MOVE_SEED_BOMB)),
+                                            | TUTOR(MOVE_SEED_BOMB)
+                                            | TUTOR(MOVE_HIDDEN_THORNS)),
 
     [SPECIES_GROVYLE]       = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
                                             | TUTOR(MOVE_COUNTER)
@@ -4472,7 +4473,8 @@ static const u64 sTutorLearnsets[] =
                                             | TUTOR(MOVE_LOW_SWEEP)
                                             | TUTOR(MOVE_WORRY_SEED)
                                             | TUTOR(MOVE_LOW_KICK)
-                                            | TUTOR(MOVE_SEED_BOMB)),
+                                            | TUTOR(MOVE_SEED_BOMB)
+                                            | TUTOR(MOVE_HIDDEN_THORNS)),
 
     [SPECIES_SCEPTILE]      = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
                                             | TUTOR(MOVE_COUNTER)
@@ -4494,7 +4496,8 @@ static const u64 sTutorLearnsets[] =
                                             | TUTOR(MOVE_LOW_SWEEP)
                                             | TUTOR(MOVE_WORRY_SEED)
                                             | TUTOR(MOVE_LOW_KICK)
-                                            | TUTOR(MOVE_SEED_BOMB)),
+                                            | TUTOR(MOVE_SEED_BOMB)
+                                            | TUTOR(MOVE_HIDDEN_THORNS)),
 
     [SPECIES_TORCHIC]       = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
                                             | TUTOR(MOVE_COUNTER)

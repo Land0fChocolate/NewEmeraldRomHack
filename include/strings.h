@@ -765,6 +765,16 @@ extern const u8 gText_BattlePyramid[];
 extern const u8 gText_RankingHall[];
 extern const u8 gText_ExchangeService[];
 
+extern const u8 gText_Treecko[];
+extern const u8 gText_Torchic[];
+extern const u8 gText_Mudkip[];
+extern const u8 gText_Bulbasaur[];
+extern const u8 gText_Charmander[];
+extern const u8 gText_Squirtle[];
+extern const u8 gText_Chikorita[];
+extern const u8 gText_Cyndaquil[];
+extern const u8 gText_Totodile[];
+
 // Battle Frontier Move Tutors
 extern const u8 gText_GastroAcid4BP[];
 extern const u8 gText_RolePlay4BP[];

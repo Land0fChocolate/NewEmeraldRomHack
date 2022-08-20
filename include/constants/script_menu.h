@@ -97,10 +97,10 @@
 #define MULTI_FORCED_START_MENU            86
 #define MULTI_FRONTIER_GAMBLER_BET         87
 #define MULTI_TENT                         88
-#define MULTI_UNUSED_SSTIDAL_1             89 // These were replaced by CreateLilycoveSSTidalMultichoice
-#define MULTI_UNUSED_SSTIDAL_2             90 //
-#define MULTI_UNUSED_SSTIDAL_3             91 //
-#define MULTI_EVO_STONE                    92
+#define OLDALE_STARTERS_HOENN              89
+#define OLDALE_STARTERS_HOENN_KANTO        90
+#define OLDALE_STARTERS_HOENN_JOHTO        91
+#define OLDALE_STARTERS_ALL                92
 #define MULTI_FOSSIL                       93
 #define MULTI_YESNO                        94
 #define MULTI_FRONTIER_RULES               95
@@ -119,7 +119,7 @@
 #define MULTI_TV_LATI                      108
 #define MULTI_BATTLE_TOWER_FEELINGS        109
 #define MULTI_WHERES_RAYQUAZA              110
-#define MULTI_SLATEPORT_TENT_RULES         111
+#define MULTI_EVO_STONE                    111
 #define MULTI_FALLARBOR_TENT_RULES         112
 #define MULTI_TAG_MATCH_TYPE               113
 
