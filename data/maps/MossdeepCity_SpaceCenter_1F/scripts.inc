@@ -1,9 +1,35 @@
+.set LOCALID_SCIENTIST_1, 1
+.set LOCALID_SCIENTIST_2, 2
+.set LOCALID_SAILOR, 3
+.set LOCALID_OLD_MAN, 4
+.set LOCALID_WOMAN, 5
+
 MossdeepCity_SpaceCenter_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_SpaceCenter_1F_OnTransition
 	.byte 0
+
+MossdeepCity_SpaceCenter_1F_OnTransition:
+	compare VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
+	goto_if_ge MossdeepCity_SpaceCenter_1F_EventScript_MoveObjectsForZinnia
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_MoveObjectsForZinnia::
+	setobjectxyperm LOCALID_SAILOR, 5, 7
+	setobjectmovementtype LOCALID_SAILOR, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm LOCALID_WOMAN, 15, 8
+	setobjectmovementtype LOCALID_WOMAN, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_OLD_MAN, 5, 2
+	setobjectmovementtype LOCALID_OLD_MAN, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm LOCALID_SCIENTIST_1, 3, 4
+	setobjectmovementtype LOCALID_SCIENTIST_1, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_SCIENTIST_2, MOVEMENT_TYPE_FACE_RIGHT
+	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_RocketLaunchCounter::
 	lock
 	faceplayer
+	compare VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
+	goto_if_ge MossdeepCity_SpaceCenter_1F_EventScript_RocketLaunchCounterZinnia
 	dotimebasedevents
 	specialvar VAR_RESULT, GetWeekCount
 	buffernumberstring 0, VAR_RESULT
@@ -17,6 +43,28 @@ MossdeepCity_SpaceCenter_1F_EventScript_RocketLaunchCounter::
 	release
 	end
 
+MossdeepCity_SpaceCenter_1F_EventScript_RocketLaunchCounterZinnia::
+	dotimebasedevents
+	specialvar VAR_RESULT, GetWeekCount
+	buffernumberstring 0, VAR_RESULT
+	compare VAR_RESULT, 0
+	call_if_eq MossdeepCity_SpaceCenter_1F_EventScript_NoLaunchesYetZinnia
+	compare VAR_RESULT, 1
+	call_if_ge MossdeepCity_SpaceCenter_1F_EventScript_ShowLaunchNumberZinnia
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_NoLaunchesYetZinnia::
+	msgbox MossdeepCity_SpaceCenter_1F_Text_HaywireButRocketLaunchImminent, MSGBOX_DEFAULT
+	return
+
+MossdeepCity_SpaceCenter_1F_EventScript_ShowLaunchNumberZinnia::
+	msgbox MossdeepCity_SpaceCenter_1F_Text_HaywireButSuccessfulLaunchNumber, MSGBOX_DEFAULT
+	return
+
 MossdeepCity_SpaceCenter_1F_EventScript_NoLaunchesYet::
 	msgbox MossdeepCity_SpaceCenter_1F_Text_RocketLaunchImminent, MSGBOX_DEFAULT
 	return
@@ -28,19 +76,37 @@ MossdeepCity_SpaceCenter_1F_EventScript_ShowLaunchNumber::
 MossdeepCity_SpaceCenter_1F_EventScript_Scientist::
 	lock
 	faceplayer
+	compare VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
+	goto_if_ge MossdeepCity_SpaceCenter_1F_EventScript_ScientistZinnia
 	msgbox MossdeepCity_SpaceCenter_1F_Text_RocketLaunchDemandsPerfection, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_ScientistZinnia::
+	msgbox MossdeepCity_SpaceCenter_1F_Text_WomanCrashedPast, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_SunStoneMan::
 	lock
 	faceplayer
+	clearflag FLAG_HIDE_ARCHIE_MAXIE_SPACE_CENTER
+	compare VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
+	goto_if_ge MossdeepCity_SpaceCenter_1F_EventScript_SunStoneManZinnia
 	msgbox MossdeepCity_SpaceCenter_1F_Text_FoundThisYouCanHaveIt, MSGBOX_DEFAULT
 	giveitem ITEM_SUN_STONE
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_SUN_STONE_MOSSDEEP
 	msgbox MossdeepCity_SpaceCenter_1F_Text_HoennFamousForMeteorShowers, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_SunStoneManZinnia::	
+	msgbox MossdeepCity_SpaceCenter_1F_Text_NotSafe, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_WEATHER_INSTITUTE_TRIGGER_STATE, 0
 	release
 	end
 
@@ -52,19 +118,42 @@ MossdeepCity_SpaceCenter_1F_EventScript_GaveSunStone::
 MossdeepCity_SpaceCenter_1F_EventScript_Woman::
 	lock
 	faceplayer
+	compare VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
+	goto_if_ge MossdeepCity_SpaceCenter_1F_EventScript_WomanZinnia
 	msgbox MossdeepCity_SpaceCenter_1F_Text_MissingRocket, MSGBOX_DEFAULT
+	release
+	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_WomanZinnia::
+	msgbox MossdeepCity_SpaceCenter_1F_Text_CriminalsRunningAround, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_OldMan::
 	lock
 	faceplayer
+	compare VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
+	goto_if_ge MossdeepCity_SpaceCenter_1F_EventScript_OldManZinnia
 	msgbox MossdeepCity_SpaceCenter_1F_Text_RocketsBoggleMyMind, MSGBOX_DEFAULT
 	closemessage
 	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
+
+MossdeepCity_SpaceCenter_1F_EventScript_OldManZinnia::
+	msgbox MossdeepCity_SpaceCenter_1F_Text_AboutToSpoilMyDream, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MossdeepCity_SpaceCenter_1F_Text_AboutToSpoilMyDream:
+	.string "A giant chunk of metal bursts through\n"
+	.string "the skies and flies into space…\p"
+	.string "But some adolescent is about to spoil\n"
+	.string "that dream of mine!\p"
+	.string "I'm not having any of that!$"
 
 MossdeepCity_SpaceCenter_1F_Text_RocketLaunchImminent:
 	.string "The rocket's launch is imminent!$"
@@ -107,10 +196,28 @@ MossdeepCity_SpaceCenter_1F_Text_MissingRocket:
 	.string "launched here.\p"
 	.string "I wanted to see how it was doing, but\n"
 	.string "the scientists here said it went missing\l"
-	.string "and are being weird and dodging the\l"
-	.string "question. What's going on?$"
+	.string "and are being weird and dodging my\l"
+	.string "questions. What's going on?$"
 
 MossdeepCity_SpaceCenter_1F_Text_RocketsBoggleMyMind:
 	.string "A giant chunk of metal bursts through\n"
 	.string "the skies and flies into space…\p"
 	.string "It boggles my mind!$"
+
+MossdeepCity_SpaceCenter_1F_Text_WomanCrashedPast:
+	.string "A woman is causing a ruckus upstairs.\p"
+	.string "We can't allow anything to interfere\n"
+	.string "with our rocket launch, but we are\l"
+	.string "unable to stop her!$"
+
+MossdeepCity_SpaceCenter_1F_Text_NotSafe:
+	.string "Who was that person who walked through?\p"
+	.string "She didn't look like Team Aqua or Team\n"
+	.string "Magma…$"
+
+MossdeepCity_SpaceCenter_1F_Text_CriminalsRunningAround:
+	.string "With all these criminals running around\n"
+	.string "nowadays, we really ought to invest in\l"
+	.string "better security.\p"
+	.string "Or perhaps even a national police\n"
+	.string "force?$"

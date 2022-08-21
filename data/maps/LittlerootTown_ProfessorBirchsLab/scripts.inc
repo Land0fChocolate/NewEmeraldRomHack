@@ -158,8 +158,13 @@ LittlerootTown_ProfessorBirchsLab_EventScript_LegendaryBriefing::
 	closemessage
 	applymovement LOCALID_BIRCH, LittlerootTown_ProfessorBirchsLab_Movement_BirchMovesDown
 	waitmovement 0
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchToDo, MSGBOX_DEFAULT
+	closemessage
 
 	setvar VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
+	setvar VAR_SPACE_CENTER_TRIGGER_STATE, 0
+	clearflag FLAG_HIDE_ZINNIA_SPACE_CENTER
+	clearflag FLAG_HIDE_STEVEN_SPACE_CENTER
 	end @TODO: continue this event, call about Space Center under attack?
 
 LittlerootTown_ProfessorBirchsLab_Text_MaxieMigrationHalting::
@@ -178,6 +183,9 @@ LittlerootTown_ProfessorBirchsLab_Text_ArchieGoodJobPlayer::
 	.string "don't seem to be leaving anytime soon.\p"
 	.string "That means you and the professor's kid\n"
 	.string "can still go out and catch them.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BirchToDo::
+	.string "TODO$"
 
 LittlerootTown_ProfessorBirchsLab_Movement_BirchMovesDown:
 	walk_down

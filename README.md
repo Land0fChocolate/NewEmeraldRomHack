@@ -72,6 +72,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Painful Burn: If the target is burned, the user's moves have triple the chance to flinch (capped at 60%). Learned by Houndour/Houndoom.
 - King's Might: User doesn't need to recharge on moves like Hyper Beam and Giga Impact. Used by Slaking.
 - Pleasant Dreams: Heals sleeping Pokemon 1/4 HP every turn. Used by Cresselia.
+- Time Traveller: When user HP hits 0, they revert back to their previous HP. Used once per battle for all users, but reset if a user faints an opponent Pokemon. Used by Celebi.
 - Wish Maker: User creates a wish on entry. Used by Jirachi.
 - Heart Swap: If user makes contact with target, stat changes are swapped. Used by Manaphy.
 
@@ -102,7 +103,6 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 # New Moves
 
-- War Dance: User have their own attack and speed rise by 1 stage and attempts to confuse the opponent. Learned by Sentret/Furret/Yungoos/Gumshoos via level up.
 - Flint Blade: 80 BP, 100% Acc, Rock type, increased crit ratio. Boosted by Swordmaster ability. Added to Battle Frontier move tutor list. Learned by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian/Rockruff/Lycanroc/Gigalith/Onix/Steelix/Omanite/Omastar/Kabuto/Kabutops/Aerodactyl/Anorith/Armaldo/Shieldon/Bastiodon/Binacle/Barbaracle/Rhyhorn/Rhydon/Rhypherior/Aggron/Kleavor/Seviper.
 - Blaze Impact: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Added to Battle Frontier move tutor list. Learned by Growlith/Arcanine/Ponyta/Rapidash/Flareon/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo.
 - Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir on evolution.
@@ -117,7 +117,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Entrainment: Replaces opponents abilities with the user’s abilities. If opponent has a banned ability such as Stance Change, then they will still keep that ability but the others will be replaced with the user’s abilities in their respective slot.
 - Skill Swap: swaps the user abilities with the target abilities.  If opponent has a banned ability such as Stance Change, then they will still keep that ability but the others will be replaced with the user’s abilities in their respective slot.
 - Gastro Acid: Neutralises target abilities unless it is a banned ability like Stance Change.
-- Role Play: replaces the user’s abilities with the target’s abilities.
+- Role Play: replaces the user’s abilities with the target’s abilities except for banned abilities like Stance Change.
 - Core Enforcer: Nullifies opponent’s abilities.
 - Charge Beam: Now 40 BP, 100% Acc with 100% chance for special attack boost.
 - Rock Smash: Now 50 BP with 100% chance for target defense drop.

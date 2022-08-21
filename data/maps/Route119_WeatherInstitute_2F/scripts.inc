@@ -105,7 +105,6 @@ Route119_WeatherInstitute_2F_BackToFight::
 
 Route119_WeatherInstitute_2F_EventScript_FightScene::
 	lockall
-	setvar VAR_WEATHER_INSTITUTE_TRIGGER_STATE, 1
 	playse SE_NOT_EFFECTIVE
 	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceFastestRight
 	applymovement LOCALID_GRUNT_5, Route119_WeatherInstitute_2F_Knocked_Back
@@ -250,10 +249,12 @@ Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattle::
 
 Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	lockall
+	setvar VAR_WEATHER_INSTITUTE_TRIGGER_STATE, 1
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceLeft
 	msgbox Route119_WeatherInstitute_2F_Text_ArchieLost, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_WEATHER_INSTITUTE_2F_ZINNIA_AQUA
+	addobject LOCALID_ZINNIA_AQUA
 	applymovement LOCALID_ZINNIA_AQUA, Route119_WeatherInstitute_2F_Grunt_Reporting
 	applymovement LOCALID_GRUNT_4, Route119_WeatherInstitute_2F_Grunt_MoveAwayForReporter
 	waitmovement 0
@@ -484,9 +485,9 @@ Route119_WeatherInstitute_2F_EventScript_Zinnia::
 	end
 
 Route119_WeatherInstitute_2F_Text_ZinniaWhatBringsYouHere:
-	.string "Zinnia: Oh my, it's {PLAYER}!\n"
-	.string "We do seem to meet an awful lot,\l"
-	.string "don't we?\p"
+	.string "Zinnia: Oh me, we do seem to keep\n"
+	.string "running into one another.\l"
+	.string "You are a busy kid, {PLAYER}.\p"
 	.string "What brings you here, are you also\n"
 	.string "interested in the weather?\p"
 	.string "… … … … …\p"

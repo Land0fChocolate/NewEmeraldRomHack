@@ -12711,42 +12711,42 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
 static const struct TrainerMonItemCustomMoves sParty_Zinnia[] = {
     {
     .iv = 255,
-    .lvl = 67,
+    .lvl = 62,
     .species = SPECIES_DRAGONITE,
     .heldItem = ITEM_DRAGON_GEM,
     .moves = {MOVE_OUTRAGE, MOVE_FIRE_PUNCH, MOVE_THUNDER_PUNCH, MOVE_THUNDER_WAVE}
     },
     {
     .iv = 255,
-    .lvl = 68,
+    .lvl = 63,
     .species = SPECIES_GYARADOS,
     .heldItem = ITEM_LEFTOVERS,
     .moves = {MOVE_WATERFALL, MOVE_STONE_EDGE, MOVE_IRON_HEAD, MOVE_EARTHQUAKE}
     },
     {
     .iv = 255,
-    .lvl = 68,
+    .lvl = 63,
     .species = SPECIES_TYRANITAR,
     .heldItem = ITEM_KEE_BERRY,
     .moves = {MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_DRAGON_DANCE}
     },
     {
     .iv = 255,
-    .lvl = 69,
+    .lvl = 64,
     .species = SPECIES_LATIAS,
     .heldItem = ITEM_WEAKNESS_POLICY,
     .moves = {MOVE_MIST_BALL, MOVE_ENERGY_BALL, MOVE_ICE_BEAM, MOVE_TAILWIND}
     },
     {
     .iv = 255,
-    .lvl = 69,
+    .lvl = 64,
     .species = SPECIES_LATIOS,
     .heldItem = ITEM_RED_CARD,
     .moves = {MOVE_DRAGON_PULSE, MOVE_LUSTER_PURGE, MOVE_CALM_MIND, MOVE_RECOVER}
     },
     {
     .iv = 255,
-    .lvl = 70,
+    .lvl = 66,
     .species = SPECIES_SALAMENCE,
     .heldItem = ITEM_SALAMENCITE,
     .moves = {MOVE_DOUBLE_EDGE, MOVE_FIRE_FANG, MOVE_IRON_TAIL, MOVE_DRACO_METEOR}
