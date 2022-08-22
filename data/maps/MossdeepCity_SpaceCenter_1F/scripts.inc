@@ -14,11 +14,11 @@ MossdeepCity_SpaceCenter_1F_OnTransition:
 	end
 
 MossdeepCity_SpaceCenter_1F_EventScript_MoveObjectsForZinnia::
-	setobjectxyperm LOCALID_SAILOR, 5, 7
+	setobjectxyperm LOCALID_SAILOR, 5, 6
 	setobjectmovementtype LOCALID_SAILOR, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectxyperm LOCALID_WOMAN, 15, 8
+	setobjectxyperm LOCALID_WOMAN, 14, 8
 	setobjectmovementtype LOCALID_WOMAN, MOVEMENT_TYPE_FACE_UP
-	setobjectxyperm LOCALID_OLD_MAN, 5, 2
+	setobjectxyperm LOCALID_OLD_MAN, 5, 4
 	setobjectmovementtype LOCALID_OLD_MAN, MOVEMENT_TYPE_FACE_RIGHT
 	setobjectxyperm LOCALID_SCIENTIST_1, 3, 4
 	setobjectmovementtype LOCALID_SCIENTIST_1, MOVEMENT_TYPE_FACE_RIGHT
@@ -91,7 +91,6 @@ MossdeepCity_SpaceCenter_1F_EventScript_ScientistZinnia::
 MossdeepCity_SpaceCenter_1F_EventScript_SunStoneMan::
 	lock
 	faceplayer
-	clearflag FLAG_HIDE_ARCHIE_MAXIE_SPACE_CENTER
 	compare VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
 	goto_if_ge MossdeepCity_SpaceCenter_1F_EventScript_SunStoneManZinnia
 	msgbox MossdeepCity_SpaceCenter_1F_Text_FoundThisYouCanHaveIt, MSGBOX_DEFAULT

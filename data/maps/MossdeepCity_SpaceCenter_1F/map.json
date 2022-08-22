@@ -43,7 +43,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 6,
-      "y": 6,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -69,11 +69,11 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
       "x": 14,
-      "y": 7,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MossdeepCity_SpaceCenter_1F_EventScript_Woman",
@@ -82,7 +82,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_NATU",
       "x": 3,
-      "y": 5,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
@@ -96,14 +96,14 @@
   "warp_events": [
     {
       "x": 7,
-      "y": 9,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY",
       "dest_warp_id": 8
     },
     {
       "x": 8,
-      "y": 9,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_MOSSDEEP_CITY",
       "dest_warp_id": 8

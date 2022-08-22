@@ -689,11 +689,11 @@
 #define FLAG_HIDE_ZINNIA_SPACE_CENTER             0x28A
 #define FLAG_HIDE_STEVEN_SPACE_CENTER             0x28B
 #define FLAG_HIDE_ARCHIE_MAXIE_SPACE_CENTER       0x28C
-#define FLAG_UNUSED_0x28D  0x28D // Unused Flag
-#define FLAG_UNUSED_0x28E  0x28E // Unused Flag
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
+#define FLAG_HIDE_ZINNIA_SKY_PILLAR_2F            0x28D
+#define FLAG_HIDE_ZINNIA_SKY_PILLAR_4F            0x28E
+#define FLAG_HIDE_ZINNIA_SKY_PILLAR_5F            0x28F
+#define FLAG_HIDE_ZINNIA_SKY_PILLAR_TOP           0x290
+#define FLAG_RAYQUAZA_CAUGHT                      0x291 //TODO: probably don't need
 #define FLAG_UNUSED_0x292  0x292 // Unused Flag
 #define FLAG_UNUSED_0x293  0x293 // Unused Flag
 #define FLAG_UNUSED_0x294  0x294 // Unused Flag

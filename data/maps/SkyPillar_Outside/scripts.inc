@@ -11,7 +11,14 @@ SkyPillar_Outside_OnTransition:
 	call_if_eq SkyPillar_Outside_EventScript_HideMapNamePopup
 	compare VAR_SOOTOPOLIS_CITY_STATE, 4
 	call_if_ge SkyPillar_Outside_EventScript_CheckSetAbnormalWeather
+	compare VAR_SKY_PILLAR_STATE, 4
+	call_if_ge SkyPillar_Outside_EventScript_MoveJuan
 	end
+
+SkyPillar_Outside_EventScript_MoveJuan::
+	setobjectxyperm LOCALID_JUAN, 14, 8
+	setobjectmovementtype LOCALID_JUAN, MOVEMENT_TYPE_FACE_UP
+	return
 
 SkyPillar_Outside_EventScript_HideMapNamePopup::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
@@ -79,11 +86,19 @@ SkyPillar_Outside_Movement_JuanApproachPlayer:
 SkyPillar_Outside_EventScript_Juan::
 	lockall
 	faceplayer
+	compare VAR_SKY_PILLAR_STATE, 4
+	goto_if_eq SkyPillar_Outside_EventScript_JuanBeatenByZinnia
 	compare VAR_SOOTOPOLIS_CITY_STATE, 4
 	goto_if_eq SkyPillar_Outside_EventScript_JuanGuardEntranceBeforeRayquaza
 	compare VAR_SOOTOPOLIS_CITY_STATE, 5
 	goto_if_eq SkyPillar_Outside_EventScript_JuanGuardEntranceAfterRayquaza
 	msgbox SkyPillar_Outside_Text_JuanGuardEntrance3, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+SkyPillar_Outside_EventScript_JuanBeatenByZinnia::
+	msgbox SkyPillar_Outside_Text_SeverelyBeaten, MSGBOX_DEFAULT
 	closemessage
 	releaseall
 	end
@@ -151,3 +166,7 @@ SkyPillar_Outside_Text_JuanGuardEntrance3:
 	.string "stand watch to prevent any other"
 	.string "miscreants using legendary Pokémon\l"
 	.string "to cause catastrophe.$"
+
+SkyPillar_Outside_Text_SeverelyBeaten:
+	.string "Juan: … … …\p"
+	.string "Forgive me… I barely slowed her down…$"

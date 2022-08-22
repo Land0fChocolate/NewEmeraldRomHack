@@ -38,11 +38,11 @@ MossdeepCity_SpaceCenter_2F_EventScript_MoveCiviliansPostZinnia::
 	setobjectmovementtype LOCALID_RICH_BOY, MOVEMENT_TYPE_FACE_DOWN
 	setobjectxyperm LOCALID_GENTLEMAN, 5, 2
 	setobjectmovementtype LOCALID_GENTLEMAN, MOVEMENT_TYPE_FACE_DOWN
-	setobjectxyperm LOCALID_STEVEN, 3, 6
+	setobjectxyperm LOCALID_STEVEN, 3, 7
 	setobjectmovementtype LOCALID_STEVEN, MOVEMENT_TYPE_FACE_RIGHT
-	setobjectxyperm LOCALID_MAXIE, 4, 5
+	setobjectxyperm LOCALID_MAXIE, 4, 6
 	setobjectmovementtype LOCALID_MAXIE, MOVEMENT_TYPE_FACE_DOWN
-	setobjectxyperm LOCALID_ARCHIE, 5, 5
+	setobjectxyperm LOCALID_ARCHIE, 5, 6
 	setobjectmovementtype LOCALID_ARCHIE, MOVEMENT_TYPE_FACE_DOWN
 	return
 
@@ -115,13 +115,17 @@ MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger::
 	setvar VAR_WEATHER_INSTITUTE_TRIGGER_STATE, 1
 	getplayerxy VAR_0x8004, VAR_0x8005
 	compare VAR_0x8005, 5
-	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY5Y6
+	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY5
 	compare VAR_0x8005, 6
-	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY5Y6
+	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY6Y7
+	compare VAR_0x8005, 7
+	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY6Y7
 	compare VAR_0x8005, 8
 	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY8
-	compare VAR_0x8005, 9
-	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY9
+	compare VAR_0x8005, 10
+	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY10
+	compare VAR_0x8005, 11
+	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY11
 	applymovement LOCALID_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_StevenBackOff
 	waitmovement 0
 	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenLose, MSGBOX_DEFAULT
@@ -162,24 +166,44 @@ MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger::
 	setvar VAR_MOSSDEEP_SPACE_CENTER_STATE, 2
 	setflag FLAG_HIDE_ZINNIA_SPACE_CENTER
 	removeobject LOCALID_ZINNIA
-	@TODO: set flags/vars for Sky Pillar event.
+	setvar VAR_SKY_PILLAR_STATE, 4
+	setvar VAR_SKY_PILLAR_2F_TRIGGER, 0
+	setvar VAR_SKY_PILLAR_4F_TRIGGER, 0
+	setvar VAR_SKY_PILLAR_5F_TRIGGER, 0
+	setvar VAR_SKY_PILLAR_TOP_TRIGGER, 0
+	clearflag FLAG_HIDE_ZINNIA_SKY_PILLAR_2F
+	clearflag FLAG_HIDE_ZINNIA_SKY_PILLAR_4F
+	clearflag FLAG_HIDE_ZINNIA_SKY_PILLAR_5F
+	clearflag FLAG_HIDE_ZINNIA_SKY_PILLAR_TOP
 	fadescreen FADE_FROM_BLACK
-	compare VAR_0x8005, 5
-	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY5
+	getplayerxy VAR_0x8004, VAR_0x8005
 	compare VAR_0x8005, 6
-	call_if_ge MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY6
+	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY6
+	compare VAR_0x8005, 7
+	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY7
 	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenCatchUpToHer, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
-MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY5Y6::
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY5Y6
+MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY5::
+	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY5
 	waitmovement 0
 	return
 
-MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY5Y6:
+MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY5:
 	walk_left
+	walk_down
+	walk_left
+	walk_left
+	step_end
+
+MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY6Y7::
+	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY6Y7
+	waitmovement 0
+	return
+
+MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY6Y7:
 	walk_left
 	walk_left
 	walk_left
@@ -191,24 +215,36 @@ MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY8::
 	return
 
 MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY8:
-	walk_up
+	walk_left
 	walk_up
 	walk_left
+	walk_left
+	step_end
+
+MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY10::
+	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY10
+	waitmovement 0
+	return
+
+MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY10:
+	walk_up
+	walk_up
+	walk_up
 	walk_left
 	walk_left
 	walk_left
 	step_end
 
-MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY9::
-	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY9
+MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY11::
+	applymovement OBJ_EVENT_ID_PLAYER, MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY11
 	waitmovement 0
 	return
 
-MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY9:
+MossdeepCity_SpaceCenter_2F_Movement_PlayerMovesY11:
 	walk_up
 	walk_up
 	walk_up
-	walk_left
+	walk_up
 	walk_left
 	walk_left
 	walk_left
@@ -228,26 +264,6 @@ MossdeepCity_SpaceCenter_2F_Movement_MaxieArchieMove:
 	walk_left
 	walk_left
 	walk_left
-	walk_left
-	step_end
-
-MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY5::
-	applymovement LOCALID_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY5
-	applymovement LOCALID_MAXIE, MossdeepCity_SpaceCenter_2F_Movement_MaxieLookingAround
-	applymovement LOCALID_ARCHIE, MossdeepCity_SpaceCenter_2F_Movement_ArchieLookingAround
-	waitmovement 0
-	return
-
-MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY5:
-	walk_up
-	face_right
-	delay_16
-	face_left
-	delay_16
-	face_down
-	delay_16
-	walk_up
-	walk_right
 	step_end
 
 MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY6::
@@ -265,7 +281,28 @@ MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY6:
 	delay_16
 	face_down
 	delay_16
+	walk_up
 	walk_right
+	delay_16
+	step_end
+
+MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY7::
+	applymovement LOCALID_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY7
+	applymovement LOCALID_MAXIE, MossdeepCity_SpaceCenter_2F_Movement_MaxieLookingAround
+	applymovement LOCALID_ARCHIE, MossdeepCity_SpaceCenter_2F_Movement_ArchieLookingAround
+	waitmovement 0
+	return
+
+MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY7:
+	walk_up
+	face_right
+	delay_16
+	face_left
+	delay_16
+	face_down
+	delay_16
+	walk_right
+	delay_16
 	step_end
 
 MossdeepCity_SpaceCenter_2F_Movement_MaxieLookingAround:
@@ -368,8 +405,7 @@ MossdeepCity_SpaceCenter_2F_Text_ZinniaVictory:
 	.string "from great catastrophe.$"
 
 MossdeepCity_SpaceCenter_2F_Text_ZinniaSeesPlayer:
-	.string "Zinnia: Oh, our audience grows!\n"
-	.string "Come over and say hi, {PLAYER}!$"
+	.string "Zinnia: Oh, our audience grows!$"
 
 MossdeepCity_SpaceCenter_2F_Text_ArchieConfrontingZinnia:
 	.string "Archie: Well, well, well.\n"
@@ -426,7 +462,8 @@ MossdeepCity_SpaceCenter_2F_Text_Maxie:
 	.string "the former Champion, you {PLAYER}\l"
 	.string "remain the only person in Hoenn who can\l"
 	.string "stop her.\p"
-	.string "I'd be well prepared if I were you.$"
+	.string "I would recommend to be well prepared.$"
 
 MossdeepCity_SpaceCenter_2F_Text_Archie:
-	.string "Archie: Go get her, {PLAYER}!$"
+	.string "Archie: Bwahahaha!\n"
+	.string "Go get her, {PLAYER}!$"

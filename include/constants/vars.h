@@ -268,10 +268,10 @@
 #define VAR_NAVEL_ROCK_BOULDER_BUTTON_2      0x40F9
 #define VAR_NAVEL_ROCK_BOULDER_BUTTON_3      0x40FA
 #define VAR_NAVEL_ROCK_BOULDER_BUTTON_4      0x40FB
-#define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                    0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                    0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                    0x40FF // Unused Var
+#define VAR_SKY_PILLAR_2F_TRIGGER            0x40FC
+#define VAR_SKY_PILLAR_4F_TRIGGER            0x40FD
+#define VAR_SKY_PILLAR_5F_TRIGGER            0x40FE
+#define VAR_SKY_PILLAR_TOP_TRIGGER           0x40FF
 
 #define VARS_END                             0x40FF
 #define VARS_COUNT                           (VARS_END - VARS_START + 1)
