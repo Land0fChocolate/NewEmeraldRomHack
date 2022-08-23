@@ -29,7 +29,7 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 @TODO: remove this. This is a test trainer.
 EverGrandeCity_EventScript_Leaf::
 	cleartrainerflag TRAINER_LEAF
-	trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
+	trainerbattle_single TRAINER_ZINNIA, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_AUTOCLOSE
 	end
 

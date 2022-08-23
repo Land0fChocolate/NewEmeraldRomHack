@@ -11916,7 +11916,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ZINNIA] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
-        .trainerClass = TRAINER_CLASS_LORE_KEEPER,
+        .trainerClass = TRAINER_CLASS_LOREKEEPER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_ZINNIA,
         .trainerName = _("Zinnia"),

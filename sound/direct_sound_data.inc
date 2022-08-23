@@ -306,6 +306,10 @@ DirectSoundWaveData_872A5D0::
 DirectSoundWaveData_sc88pro_wind::
 	.incbin "sound/direct_sound_samples/sc88pro_wind.bin"
 
+@	.align 2
+@DirectSoundWaveData_violin::
+@	.incbin "sound/direct_sound_samples/sc88_violin.bin"
+
 	.align 2
 DirectSoundWaveData_sc88pro_bubbles::
 	.incbin "sound/direct_sound_samples/sc88pro_bubbles.bin"

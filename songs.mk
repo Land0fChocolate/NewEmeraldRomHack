@@ -69,6 +69,9 @@ $(MID_SUBDIR)/mus_vs_regi.s: %.s: %.mid
 $(MID_SUBDIR)/mus_vs_elite_four.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G125 -V080 -P1
 
+$(MID_SUBDIR)/mus_vs_zinnia.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G191 -V080 -P1
+
 $(MID_SUBDIR)/mus_roulette.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G038 -V080
 
