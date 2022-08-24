@@ -43,8 +43,8 @@ voicegroup191::
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_accordion, 255, 252, 0, 115 
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_string_ensemble_72, 255, 252, 0, 115 
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_string_ensemble_84, 255, 252, 0, 115 
-	@voice_directsound 60, 0, DirectSoundWaveData_violin, 255, 252, 0, 115 
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	@voice_directsound 60, 0, DirectSoundWaveData_violin_60, 255, 0, 255, 196
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 226 
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0 
