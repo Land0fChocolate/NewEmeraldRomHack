@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "0x0",
       "flag": "FLAG_HIDE_ZINNIA_SKY_PILLAR_4F"
     }
   ],
@@ -52,15 +52,7 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 11,
-      "y": 2,
-      "elevation": 0,
-      "var": "VAR_SKY_PILLAR_4F_TRIGGER",
-      "var_value": "0",
-      "script": "SkyPillar_4F_EventScript_ZinniaTrigger"
-    }
+
   ],
   "bg_events": [
 

@@ -1,10 +1,16 @@
 .set LOCALID_ZINNIA, 1
 
 SkyPillar_4F_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
+	@map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SkyPillar_4F_OnFrame
 	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_4F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, SkyPillar_4F_SetHoleWarp
 	.byte 0
+
+SkyPillar_4F_OnFrame:
+	map_script_2 VAR_SKY_PILLAR_4F_TRIGGER, 0, SkyPillar_4F_EventScript_ZinniaTrigger
+	map_script_2 VAR_ICE_STEP_COUNT, 0, CaveHole_CheckFallDownHole
+	.2byte 0
 
 SkyPillar_4F_OnTransition:
 	compare VAR_SKY_PILLAR_STATE, 2
@@ -31,8 +37,8 @@ SkyPillar_4F_EventScript_ZinniaTrigger::
 	applymovement LOCALID_ZINNIA, SkyPillar_4F_Movement_ZinniaMove
 	waitmovement 0
 	playse SE_EXIT
-	setflag FLAG_HIDE_ZINNIA_SKY_PILLAR_4F
 	removeobject LOCALID_ZINNIA
+	setflag FLAG_HIDE_ZINNIA_SKY_PILLAR_4F
 	releaseall
 	end
 
@@ -48,8 +54,8 @@ SkyPillar_4F_Text_ZinniaStoryPart2:
 	.string "Zinnia: Oh! Here you are!\n"
 	.string "Let me continue. Here we go!\p"
 	.string "Not too long ago, I was visiting a\n"
-	.string "friend of mine, Dr Cozmo.\l"
-	.string "You've met him, he's the meteorite\l"
+	.string "friend of mine, Dr Cozmo.\p"
+	.string "You've met him, he's the meteorite\n"
 	.string "researcher in Fallarbor.\p"
 	.string "He showed me a map of a particular set\n"
 	.string "of meteorites that landed at the same\l"
@@ -63,8 +69,9 @@ SkyPillar_4F_Text_ZinniaStoryPart2:
 	.string "tribe.\p"
 	.string "Their descendants are suspicious of\n"
 	.string "anyone who would want to get into Sky\l"
-	.string "Pillar. They would refuse access, and\l"
-	.string "they wouldn't believe my tale of Deoxys\l"
+	.string "Pillar.\p"
+	.string "They would refuse access, and they\n"
+	.string "wouldn't believe my tale of Deoxys\l"
 	.string "returning.\p"
 	.string "The only way I could get them to open\n"
 	.string "it, would be to force their hand.\p"
@@ -74,8 +81,8 @@ SkyPillar_4F_Text_ZinniaStoryPart2:
 	.string "Their leaders possess a great deal of\n"
 	.string "talent. It's a shame they have both\l"
 	.string "wasted it on their ridiculous\l"
-	.string "idealogies. But I managed to put them\l"
-	.string "to good use.\p"
+	.string "idealogies.\p"
+	.string "But I managed to put them to good use!\p"
 	.string "Team Aqua was supposed to be searching\n"
 	.string "the ocean for Kyogre much earlier, but\l"
 	.string "thanks to your interference in Petalburg\l"
@@ -88,9 +95,8 @@ SkyPillar_4F_Text_ZinniaStoryPart2:
 	.string "getting impatient, so they attempted a\l"
 	.string "raid on the Weather Institute.\p"
 	.string "I had to pull them away from that. I\n"
-	.string "doubt that they could have found a\l"
-	.string "sleeping Kyogre that way. Its powers\l"
-	.string "are inactive.\p"
+	.string "doubt that they could have found an\l"
+	.string "inactive Kyogre that way.\p"
 	.string "Team Magma found Groudon far quicker\n"
 	.string "than I expected. I underestimated the\l"
 	.string "power of those digging machines!\p"
@@ -111,4 +117,4 @@ SkyPillar_4F_Text_ZinniaStoryPart2:
 	.string "Groudon and Kyogre!\l"
 	.string "Very well done!\p"
 	.string "And that's part 2! Climb higher for\n"
-	.string "the last chapter?$"
+	.string "the last chapter!$"

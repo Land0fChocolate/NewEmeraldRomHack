@@ -181,6 +181,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger::
 	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY6
 	compare VAR_0x8005, 7
 	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY7
+	waitmovement 0
 	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenCatchUpToHer, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -270,7 +271,6 @@ MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY6::
 	applymovement LOCALID_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY6
 	applymovement LOCALID_MAXIE, MossdeepCity_SpaceCenter_2F_Movement_MaxieLookingAround
 	applymovement LOCALID_ARCHIE, MossdeepCity_SpaceCenter_2F_Movement_ArchieLookingAround
-	waitmovement 0
 	return
 
 MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY6:
@@ -290,7 +290,6 @@ MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY7::
 	applymovement LOCALID_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY7
 	applymovement LOCALID_MAXIE, MossdeepCity_SpaceCenter_2F_Movement_MaxieLookingAround
 	applymovement LOCALID_ARCHIE, MossdeepCity_SpaceCenter_2F_Movement_ArchieLookingAround
-	waitmovement 0
 	return
 
 MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY7:

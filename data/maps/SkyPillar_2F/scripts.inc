@@ -1,10 +1,16 @@
 .set LOCALID_ZINNIA, 1
 
 SkyPillar_2F_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
+	@map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SkyPillar_2F_OnFrame
 	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_2F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, SkyPillar_2F_SetHoleWarp
 	.byte 0
+
+SkyPillar_2F_OnFrame:
+	map_script_2 VAR_SKY_PILLAR_2F_TRIGGER, 0, SkyPillar_2F_EventScript_ZinniaTrigger
+	map_script_2 VAR_ICE_STEP_COUNT, 0, CaveHole_CheckFallDownHole
+	.2byte 0
 
 SkyPillar_2F_OnTransition:
 	compare VAR_SKY_PILLAR_STATE, 2
@@ -31,10 +37,10 @@ SkyPillar_2F_EventScript_ZinniaTrigger::
 	applymovement LOCALID_ZINNIA, SkyPillar_2F_Movement_ZinniaMove
 	waitmovement 0
 	playse SE_EXIT
-	setflag FLAG_HIDE_ZINNIA_SKY_PILLAR_2F
 	removeobject LOCALID_ZINNIA
+	setflag FLAG_HIDE_ZINNIA_SKY_PILLAR_2F
 	releaseall
-	end
+	return
 
 SkyPillar_2F_Movement_ZinniaMove:
 	walk_left
@@ -64,7 +70,7 @@ SkyPillar_2F_Text_ZinniaStoryPart1:
 	.string "destruction throughout Hoenn.\p"
 	.string "Then, a strange entity arrived. It was\n"
 	.string "like no creature ever seen before.\p"
-	.string "It encountered Rayquaza, and the two.\n"
+	.string "It encountered Rayquaza, and the two\n"
 	.string "Pokémon were engaged in a battle so\l"
 	.string "ferocious the land below was torn to\l"
 	.string "shreds.\l"

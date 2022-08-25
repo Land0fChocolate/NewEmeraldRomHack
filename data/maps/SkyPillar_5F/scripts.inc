@@ -1,8 +1,13 @@
 .set LOCALID_ZINNIA, 1
 
 SkyPillar_5F_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SkyPillar_5F_OnFrame
 	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_5F_OnTransition
 	.byte 0
+
+SkyPillar_5F_OnFrame:
+	map_script_2 VAR_SKY_PILLAR_5F_TRIGGER, 0, SkyPillar_5F_EventScript_ZinniaTrigger
+	.2byte 0
 
 SkyPillar_5F_OnTransition:
 	compare VAR_SKY_PILLAR_STATE, 2
@@ -16,7 +21,7 @@ SkyPillar_5F_EventScript_CleanFloor::
 SkyPillar_5F_EventScript_ZinniaTrigger::
 	lockall
 	setvar VAR_SKY_PILLAR_5F_TRIGGER, 1
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox SkyPillar_5F_Text_ZinniaStoryPart3, MSGBOX_DEFAULT
 	closemessage
@@ -37,8 +42,8 @@ SkyPillar_5F_Movement_ZinniaMove:
 SkyPillar_5F_Text_ZinniaStoryPart3:
 	.string "Zinnia: The Draconids have a very\n"
 	.string "special ritual which calls legendary\l"
-	.string "Pokémon to come before us. It's been\l"
-	.string "passed down to me.\p"
+	.string "Pokémon to come before us.\l"
+	.string "It's been passed down to me.\p"
 	.string "However, it has not been very effective\n"
 	.string "on Groudon, Kyogre or Rayquaza recently.\p"
 	.string "They seem to be far more interested in\n"
@@ -51,13 +56,14 @@ SkyPillar_5F_Text_ZinniaStoryPart3:
 	.string "After many tries, I thought that\n"
 	.string "Rayquaza may settle back down at Sky\l"
 	.string "Pillar if I settled Groudon and Kyogre\l"
-	.string "down first, so I went to the Weather\l"
-	.string "Institute to locate them.\p"
+	.string "down first.\p"
+	.string "So I went to the Weather Institute to\n"
+	.string "locate them.\p"
 	.string "Then you turned up, and you wanted to\n"
 	.string "put a stop to Groudon and Kyogre too!\p"
 	.string "So I just let you do it. You've always\n"
 	.string "been so reliable, I knew you would get\l"
-	.string "it done!\p"
+	.string "the job done!\p"
 	.string "Once I saw Rayquaza returning to Sky\n"
 	.string "Pillar, I knew the other legendaries\l"
 	.string "had been dealt with.\p"

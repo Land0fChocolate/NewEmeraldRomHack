@@ -85,19 +85,23 @@ SkyPillar_Top_EventScript_RayquazaCaught::
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	applymovement LOCALID_ZINNIA, SkyPillar_Top_Movement_ZinniaMoveCaughtRayquaza
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox SkyPillar_Top_Text_CaughtRayquaza, MSGBOX_DEFAULT
 	closemessage
-	@giveitem ITEM_KEY_STONE
+	giveitem ITEM_KEY_STONE
 	msgbox SkyPillar_Top_Text_YouWillNeedThisToo, MSGBOX_DEFAULT
 	closemessage
-	@giveitem ITEM_SPACE_SUIT
+	@giveitem ITEM_SPACE_SUIT @TODO: create this item
 	msgbox SkyPillar_Top_Text_UseDragonAscent, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_ZINNIA, SkyPillar_Top_Movement_ZinniaMoveBackCaughtRayquaza
 	waitmovement 0
 	setvar VAR_SKY_PILLAR_STATE, 6
 	setflag FLAG_HIDE_SKY_PILLAR_JUAN
+	setflag FLAG_HIDE_STEVEN_SPACE_CENTER
+	setflag FLAG_HIDE_ARCHIE_MAXIE_SPACE_CENTER
+	setvar VAR_MOSSDEEP_SPACE_CENTER_STATE, 0
 	releaseall
 	end
 
@@ -266,19 +270,21 @@ SkyPillar_Top_EventScript_Zinnia::
 	playmoncry SPECIES_RAYQUAZA, 2
 	setvar VAR_0x8004, 1  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
-	setvar VAR_0x8006, 1  @ num shakes
+	setvar VAR_0x8006, 2  @ num shakes
 	setvar VAR_0x8007, 5  @ shake delay
 	special ShakeCamera
 	waitstate
+	delay 60
 	msgbox SkyPillar_Top_Text_LendMeAid, MSGBOX_DEFAULT
 	closemessage
 	playmoncry SPECIES_RAYQUAZA, 2
 	setvar VAR_0x8004, 1  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
-	setvar VAR_0x8006, 2  @ num shakes
+	setvar VAR_0x8006, 3  @ num shakes
 	setvar VAR_0x8007, 10  @ shake delay
 	special ShakeCamera
 	waitstate
+	delay 60
 	msgbox SkyPillar_Top_Text_RejectedByRayquaza, MSGBOX_DEFAULT
 	closemessage
 	playmoncry SPECIES_RAYQUAZA, 1
@@ -288,6 +294,7 @@ SkyPillar_Top_EventScript_Zinnia::
 	setvar VAR_0x8007, 5  @ shake delay
 	special ShakeCamera
 	waitstate
+	delay 60
 	applymovement LOCALID_ZINNIA, Common_Movement_FaceDown
 	waitmovement 0
 	delay 60
@@ -421,7 +428,7 @@ SkyPillar_Top_Text_RejectedByRayquaza:
 SkyPillar_Top_Text_PlayerChosenMale:
 	.string "Zinnia: …you chose him over me?\n"
 	.string "…but I worked so hard to get here.\l"
-	.string "This was supposed to be my duty!$"
+	.string "This was supposed to be my duty!\p"
 	.string "I can't accept this.\p"
 	.string "After everything that I've done.\n"
 	.string "This is the end of the line for me?$"
@@ -452,7 +459,7 @@ SkyPillar_Top_Text_FallsToYouNow:
 	.string "Hoenn views as as our great protector!\l"
 	.string "And the only one who can direct it now…\l"
 	.string "It's you! You have to do this!\l"
-	.string "Catch it, and save Hoenn!\p"
+	.string "Catch it, and save Hoenn!$"
 
 SkyPillar_Top_Text_CaughtRayquaza:
 	.string "Zinnia: … Congratulations, {PLAYER}.\n"
