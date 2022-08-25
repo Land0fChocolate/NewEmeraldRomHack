@@ -717,6 +717,7 @@ enum
     FIELD_MOVE_MILK_DRINK,
     FIELD_MOVE_SOFT_BOILED,
     FIELD_MOVE_SWEET_SCENT,
+    FIELD_MOVE_DRAGON_ASCENT,
 };
 
 // What a weird choice of table termination;
@@ -761,6 +762,7 @@ struct
     [MENU_FIELD_MOVES + FIELD_MOVE_MILK_DRINK] = {gMoveNames[MOVE_MILK_DRINK], CursorCb_FieldMove},
     [MENU_FIELD_MOVES + FIELD_MOVE_SOFT_BOILED] = {gMoveNames[MOVE_SOFT_BOILED], CursorCb_FieldMove},
     [MENU_FIELD_MOVES + FIELD_MOVE_SWEET_SCENT] = {gMoveNames[MOVE_SWEET_SCENT], CursorCb_FieldMove},
+    [MENU_FIELD_MOVES + FIELD_MOVE_DRAGON_ASCENT] = {gMoveNames[MOVE_DRAGON_ASCENT], CursorCb_FieldMove},
 };
 
 static const u8 sPartyMenuAction_SummarySwitchCancel[] = {MENU_SUMMARY, MENU_SWITCH, MENU_CANCEL1};
@@ -844,20 +846,21 @@ struct
     u8 msgId;
 } static const sFieldMoveCursorCallbacks[] =
 {
-    [FIELD_MOVE_CUT]          = {SetUpFieldMove_Cut,         PARTY_MSG_NOTHING_TO_CUT},
-    [FIELD_MOVE_FLASH]        = {SetUpFieldMove_Flash,       PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_ROCK_SMASH]   = {SetUpFieldMove_RockSmash,   PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_STRENGTH]     = {SetUpFieldMove_Strength,    PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_SURF]         = {SetUpFieldMove_Surf,        PARTY_MSG_CANT_SURF_HERE},
-    [FIELD_MOVE_FLY]          = {SetUpFieldMove_Fly,         PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_DIVE]         = {SetUpFieldMove_Dive,        PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_WATERFALL]    = {SetUpFieldMove_Waterfall,   PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_TELEPORT]     = {SetUpFieldMove_Teleport,    PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_DIG]          = {SetUpFieldMove_Dig,         PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_SECRET_POWER] = {SetUpFieldMove_SecretPower, PARTY_MSG_CANT_USE_HERE},
-    [FIELD_MOVE_MILK_DRINK]   = {SetUpFieldMove_SoftBoiled,  PARTY_MSG_NOT_ENOUGH_HP},
-    [FIELD_MOVE_SOFT_BOILED]  = {SetUpFieldMove_SoftBoiled,  PARTY_MSG_NOT_ENOUGH_HP},
-    [FIELD_MOVE_SWEET_SCENT]  = {SetUpFieldMove_SweetScent,  PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_CUT]           = {SetUpFieldMove_Cut,          PARTY_MSG_NOTHING_TO_CUT},
+    [FIELD_MOVE_FLASH]         = {SetUpFieldMove_Flash,        PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_ROCK_SMASH]    = {SetUpFieldMove_RockSmash,    PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_STRENGTH]      = {SetUpFieldMove_Strength,     PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_SURF]          = {SetUpFieldMove_Surf,         PARTY_MSG_CANT_SURF_HERE},
+    [FIELD_MOVE_FLY]           = {SetUpFieldMove_Fly,          PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_DIVE]          = {SetUpFieldMove_Dive,         PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_WATERFALL]     = {SetUpFieldMove_Waterfall,    PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_TELEPORT]      = {SetUpFieldMove_Teleport,     PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_DIG]           = {SetUpFieldMove_Dig,          PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_SECRET_POWER]  = {SetUpFieldMove_SecretPower,  PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_MILK_DRINK]    = {SetUpFieldMove_SoftBoiled,   PARTY_MSG_NOT_ENOUGH_HP},
+    [FIELD_MOVE_SOFT_BOILED]   = {SetUpFieldMove_SoftBoiled,   PARTY_MSG_NOT_ENOUGH_HP},
+    [FIELD_MOVE_SWEET_SCENT]   = {SetUpFieldMove_SweetScent,   PARTY_MSG_CANT_USE_HERE},
+    [FIELD_MOVE_DRAGON_ASCENT] = {SetUpFieldMove_DragonAscent, PARTY_MSG_CANT_USE_HERE},
 };
 
 static const u8 *const sUnionRoomTradeMessages[] =

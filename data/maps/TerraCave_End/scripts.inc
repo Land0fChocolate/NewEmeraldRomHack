@@ -25,6 +25,9 @@ TerraCave_End_OnTransition:
 	end
 
 TerraCave_End_EventScript_ShowGroudon::
+	checkitem ITEM_RAINBOW_WING, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_TERRA_CAVE_GROUDON
 	setvar VAR_TEMP_1, 1
 	return
@@ -60,6 +63,8 @@ TerraCave_End_EventScript_Groudon::
 	end
 
 TerraCave_End_EventScript_GroudonKyogreDefeated::
+	compare VAR_BIRCH_LAB_POSTGAME_STATE, 7
+	goto_if_ge Common_EventScript_NopReturn
 	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 6
 	return
 

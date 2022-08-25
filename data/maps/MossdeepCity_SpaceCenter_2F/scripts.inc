@@ -175,6 +175,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger::
 	clearflag FLAG_HIDE_ZINNIA_SKY_PILLAR_4F
 	clearflag FLAG_HIDE_ZINNIA_SKY_PILLAR_5F
 	clearflag FLAG_HIDE_ZINNIA_SKY_PILLAR_TOP
+	setflag FLAG_HIDE_MAXIE_ARCHIE_BIRCH_LAB
 	fadescreen FADE_FROM_BLACK
 	getplayerxy VAR_0x8004, VAR_0x8005
 	compare VAR_0x8005, 6

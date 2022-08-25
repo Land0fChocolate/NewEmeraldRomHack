@@ -693,7 +693,7 @@
 #define FLAG_HIDE_ZINNIA_SKY_PILLAR_4F            0x28E
 #define FLAG_HIDE_ZINNIA_SKY_PILLAR_5F            0x28F
 #define FLAG_HIDE_ZINNIA_SKY_PILLAR_TOP           0x290
-#define FLAG_RAYQUAZA_CAUGHT                      0x291 //TODO: probably don't need
+#define FLAG_OBTAINED_KEY_STONE                   0x291
 #define FLAG_UNUSED_0x292  0x292 // Unused Flag
 #define FLAG_UNUSED_0x293  0x293 // Unused Flag
 #define FLAG_UNUSED_0x294  0x294 // Unused Flag

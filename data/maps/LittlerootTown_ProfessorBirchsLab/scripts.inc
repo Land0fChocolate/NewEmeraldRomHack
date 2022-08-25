@@ -48,7 +48,6 @@ LittlerootTown_ProfessorBirchsLab_OnTransition:
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_DefeatedLegendariesSetScene::
-	setobjectxyperm LOCALID_RIVAL, 7, 4
 	setobjectxyperm LOCALID_ARCHIE, 7, 6
 	setobjectxyperm LOCALID_MAXIE, 5, 6
 	end
@@ -156,38 +155,75 @@ LittlerootTown_ProfessorBirchsLab_EventScript_LegendaryBriefing::
 	closemessage
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieGoodJobPlayer, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_BIRCH, LittlerootTown_ProfessorBirchsLab_Movement_BirchMovesDown
-	waitmovement 0
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchToDo, MSGBOX_DEFAULT
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxieSituationIsStable, MSGBOX_DEFAULT
 	closemessage
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieSeeYa, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAXIE, LittlerootTown_ProfessorBirchsLab_Movement_MaxieLeave
+	applymovement LOCALID_ARCHIE, LittlerootTown_ProfessorBirchsLab_Movement_ArchieLeave
+	waitmovement 0
+	removeobject LOCALID_MAXIE
+	removeobject LOCALID_ARCHIE
+	setflag FLAG_HIDE_MAXIE_ARCHIE_BIRCH_LAB
+	applymovement LOCALID_RIVAL, LittlerootTown_ProfessorBirchsLab_Movement_RivalMovesToPlayer
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	call_if_eq LittlerootTown_ProfessorBirchsLab_Eventscript_MayChallenge
+	compare VAR_RESULT, FEMALE
+	call_if_eq LittlerootTown_ProfessorBirchsLab_Eventscript_BrendanChallenge
+	applymovement LOCALID_RIVAL, LittlerootTown_ProfessorBirchsLab_Movement_RivalLeaves
+	waitmovement 0
+	removeobject LOCALID_RIVAL
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
+	clearflag FLAG_HIDE_LITTLEROOT_BEACH_RIVAL
+	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 7
+	setvar VAR_LIITLEROOT_BEACH_STATE, 2
+	releaseall
+	end
 
-	setvar VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
-	setvar VAR_SPACE_CENTER_TRIGGER_STATE, 0
-	clearflag FLAG_HIDE_ZINNIA_SPACE_CENTER
-	clearflag FLAG_HIDE_STEVEN_SPACE_CENTER
-	end @TODO: continue this event, call about Space Center under attack?
+LittlerootTown_ProfessorBirchsLab_Movement_RivalLeaves:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
 
-LittlerootTown_ProfessorBirchsLab_Text_MaxieMigrationHalting::
-	.string "Maxie: We have received reports that the\n"
-	.string "migration of foreign Pokémon into the\l"
-	.string "new areas is slowing down to a halt.\p"
-	.string "I assume you have taken care of Groudon\n"
-	.string "and Kyogre?$"
+LittlerootTown_ProfessorBirchsLab_Eventscript_MayChallenge:
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayChallenge, MSGBOX_DEFAULT
+	closemessage
+	return
 
-LittlerootTown_ProfessorBirchsLab_Text_ArchieGoodJobPlayer::
-	.string "Archie: Bwahaha!\n"
-	.string "Good job, {PLAYER}!\p"
-	.string "Now with balance restored, we've sunk\n"
-	.string "the chances of an environmental crisis.\p"
-	.string "The Pokémon that already made it here\n"
-	.string "don't seem to be leaving anytime soon.\p"
-	.string "That means you and the professor's kid\n"
-	.string "can still go out and catch them.$"
+LittlerootTown_ProfessorBirchsLab_Eventscript_BrendanChallenge:
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BrendanChallenge, MSGBOX_DEFAULT
+	closemessage
+	return
 
-LittlerootTown_ProfessorBirchsLab_Text_BirchToDo::
-	.string "TODO$"
+LittlerootTown_ProfessorBirchsLab_Movement_RivalMovesToPlayer:
+	walk_down
+	walk_left
+	walk_down
+	step_end
 
-LittlerootTown_ProfessorBirchsLab_Movement_BirchMovesDown:
+LittlerootTown_ProfessorBirchsLab_Movement_MaxieLeave:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_down
+	step_end
+
+LittlerootTown_ProfessorBirchsLab_Movement_ArchieLeave:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
 	walk_down
 	step_end
 
@@ -1533,3 +1569,55 @@ LittlerootTown_ProfessorBirchsLab_Text_ArchieFindingLegendarys:
 	.string "with that.\p"
 	.string "Well… it's kinda why I hit it in the\n"
 	.string "first place.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_MaxieMigrationHalting::
+	.string "Maxie: We have received reports that the\n"
+	.string "migration of foreign Pokémon into the\l"
+	.string "new areas is slowing down to a halt.\p"
+	.string "I assume you have taken care of Groudon\n"
+	.string "and Kyogre?$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ArchieGoodJobPlayer::
+	.string "Archie: Bwahaha!\n"
+	.string "Good job, {PLAYER}!\p"
+	.string "Now with balance restored, we've sunk\n"
+	.string "the chances of an environmental crisis.\p"
+	.string "The Pokémon that already made it here\n"
+	.string "don't seem to be leaving anytime soon.\p"
+	.string "That means you and the professor's kid\n"
+	.string "can still go out and catch them.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_MaxieSituationIsStable:
+	.string "Maxie: As the situation has been\n"
+	.string "stabilized, I think it is safe to say\l"
+	.string "that our business has concluded.\p"
+	.string "I will take my leave. It has been a\n"
+	.string "pleasure working with you all.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ArchieSeeYa:
+	.string "Archie: Aye!\p"
+	.string "We're gonna continue to study the new\n"
+	.string "areas, so we'll still be around.\p"
+	.string "See ya, {PLAYER}, ya little scamp!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_MayChallenge:
+	.string "May: Phew! That has been a busy affair!\p"
+	.string "Anyways, I've been working hard on my\n"
+	.string "Pokémon lately, and I want to challenge\l"
+	.string "them.\p"
+	.string "Do you mind if I put my Pokémon up\n"
+	.string "against yours, {PLAYER}?\p"
+	.string "Well, that's a silly question. I know\n"
+	.string "you love battles!\p"
+	.string "I'll meet you down in Littleroot Beach.\n"
+	.string "See you there!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BrendanChallenge:
+	.string "Brendan: That was some tough business.\p"
+	.string "Now that's out of the way, I've been\n"
+	.string "meaning to ask you for another battle.\p"
+	.string "I've been doing a lot of training and\n"
+	.string "I want to test my Pokémon. Who better\l"
+	.string "than you, {PLAYER}, to help me?\p"
+	.string "I'll be waiting at Littleroot Beach.\n"
+	.string "See ya!$"

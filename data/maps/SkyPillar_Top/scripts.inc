@@ -90,6 +90,7 @@ SkyPillar_Top_EventScript_RayquazaCaught::
 	msgbox SkyPillar_Top_Text_CaughtRayquaza, MSGBOX_DEFAULT
 	closemessage
 	giveitem ITEM_KEY_STONE
+	setflag FLAG_OBTAINED_KEY_STONE
 	msgbox SkyPillar_Top_Text_YouWillNeedThisToo, MSGBOX_DEFAULT
 	closemessage
 	@giveitem ITEM_SPACE_SUIT @TODO: create this item
