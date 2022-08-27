@@ -607,7 +607,9 @@
     "FarawayIsland_Ruin2",
     "FarawayIsland_Ruin3",
     "FarawayIsland_Ruin4",
-    "FarawayIsland_Ruin5"
+    "FarawayIsland_Ruin5",
+    "Space_Area1",
+    "Space_Area2"
   ],
   "gMapGroup_IndoorRoute104Prototype": [
     "Route104_Prototype",

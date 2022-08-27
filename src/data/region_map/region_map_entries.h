@@ -211,6 +211,7 @@ static const u8 sMapName_FieryThrone[] = _("Fiery Throne");
 static const u8 sMapName_ConquerorsCamp[] = _("Conqueror's Camp");
 static const u8 sMapName_RoyalRest[] = _("Royal Rest");
 static const u8 sMapName_SagesSanctuary[] = _("Sage's Sanctuary");
+static const u8 sMapName_Space[] = _("Space");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ABANDONED_SHIP]             = {6, 14, 1, 1, sMapName_AbandonedShip},
@@ -314,6 +315,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_SLATEPORT_CITY]             = {8, 10, 1, 2, sMapName_SlateportCity},
     [MAPSEC_SOOTOPOLIS_CITY]            = {21, 7, 1, 1, sMapName_SootopolisCity},
     [MAPSEC_SOUTHERN_ISLAND]            = {12, 14, 1, 1, sMapName_SouthernIsland},
+    [MAPSEC_SPACE]                      = {0, 0, 1, 1, sMapName_Space},
     [MAPSEC_SPECIAL_AREA]               = {0, 0, 1, 1, sMapName_SpecialArea},
     [MAPSEC_TERRA_CAVE]                 = {0, 0, 1, 1, sMapName_TerraCave},
     [MAPSEC_TRAINER_HILL]               = {8, 4, 1, 1, sMapName_TrainerHill},

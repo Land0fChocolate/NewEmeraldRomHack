@@ -70,6 +70,7 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/maps.h"
+#include "constants/map_types.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
@@ -3701,11 +3702,23 @@ static void CursorCb_FieldMove(u8 taskId)
                 gPartyMenu.exitCallback = CB2_OpenFlyMap;
                 Task_ClosePartyMenu(taskId);
                 break;
-                //TODO: set to warp to space
             case FIELD_MOVE_DRAGON_ASCENT:
-                mapHeader = Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->lastHealLocation.mapGroup, gSaveBlock1Ptr->lastHealLocation.mapNum);
-                GetMapNameGeneric(gStringVar1, mapHeader->regionMapSectionId);
-                StringExpandPlaceholders(gStringVar4, gText_ReturnToHealingSpot);
+                if (gMapHeader.mapType == MAP_TYPE_UNKNOWN)
+                {
+                    mapHeader = Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->lastHealLocation.mapGroup, gSaveBlock1Ptr->lastHealLocation.mapNum);
+                    GetMapNameGeneric(gStringVar1, mapHeader->regionMapSectionId);
+                    StringExpandPlaceholders(gStringVar4, gText_ReturnToHealingSpot);
+                    DoWarp();
+                }
+                else
+                {
+                    GetMapNameGeneric(gStringVar1, MAPSEC_SPACE);
+                    //SetWarpDestination(MAP_GROUP(SPACE_AREA1), MAP_NUM(SPACE_AREA1), -1, 37, 35);
+                    SetWarpDestination(MAP_GROUP(SPACE_AREA2), MAP_NUM(SPACE_AREA2), -1, 19, 16);
+                    DoWarp();
+                    ResetInitialPlayerAvatarState();
+                }
+                
                 DisplayFieldMoveExitAreaMessage(taskId);
                 sPartyMenuInternal->data[0] = fieldMove;
                 break;

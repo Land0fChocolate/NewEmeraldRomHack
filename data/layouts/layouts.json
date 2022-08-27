@@ -4850,6 +4850,26 @@
       "secondary_tileset": "gTileset_BattlePyramid",
       "border_filepath": "data/layouts/FarawayIsland_Ruin5/border.bin",
       "blockdata_filepath": "data/layouts/FarawayIsland_Ruin5/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPACE_AREA1",
+      "name": "Space_Area1_Layout",
+      "width": 50,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/Space_Area1/border.bin",
+      "blockdata_filepath": "data/layouts/Space_Area1/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPACE_AREA2",
+      "name": "Space_Area2_Layout",
+      "width": 55,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/Space_Area2/border.bin",
+      "blockdata_filepath": "data/layouts/Space_Area2/map.bin"
     }
   ]
 }

@@ -3512,17 +3512,17 @@ static const u16 sDeoxysRockPalettes[][16] = {
 };
 
 static const u8 sDeoxysRockCoords[][2] = {
-    { 15, 12 },
-    { 11, 14 },
-    { 15,  8 },
+    { 19, 11 },
+    { 15, 13 },
+    { 19,  7 },
+    { 23, 13 },
+    { 16, 10 },
+    { 22, 10 },
+    { 19, 13 },
+    { 15, 13 },
+    { 23, 13 },
     { 19, 14 },
-    { 12, 11 },
-    { 18, 11 },
-    { 15, 14 },
-    { 11, 14 },
-    { 19, 14 },
-    { 15, 15 },
-    { 15, 10 },
+    { 19, 9 },
 };
 
 static void Task_DeoxysRockInteraction(u8 taskId)
@@ -3580,8 +3580,8 @@ static void ChangeDeoxysRockLevel(u8 rockLevel)
 
     CreateTask(WaitForDeoxysRockMovement, 8);
     gFieldEffectArguments[0] = LOCALID_BIRTH_ISLAND_EXTERIOR_ROCK;
-    gFieldEffectArguments[1] = MAP_NUM(BIRTH_ISLAND_EXTERIOR);
-    gFieldEffectArguments[2] = MAP_GROUP(BIRTH_ISLAND_EXTERIOR);
+    gFieldEffectArguments[1] = MAP_NUM(SPACE_AREA2);
+    gFieldEffectArguments[2] = MAP_GROUP(SPACE_AREA2);
     gFieldEffectArguments[3] = sDeoxysRockCoords[rockLevel][0];
     gFieldEffectArguments[4] = sDeoxysRockCoords[rockLevel][1];
 
@@ -3606,7 +3606,7 @@ static void WaitForDeoxysRockMovement(u8 taskId)
 void IncrementBirthIslandRockStepCount(void)
 {
     u16 var = VarGet(VAR_DEOXYS_ROCK_STEP_COUNT);
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(BIRTH_ISLAND_EXTERIOR) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BIRTH_ISLAND_EXTERIOR))
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(SPACE_AREA2) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SPACE_AREA2))
     {
         var++;
         if (var > 99)

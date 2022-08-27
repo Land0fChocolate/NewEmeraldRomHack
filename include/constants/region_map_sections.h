@@ -227,7 +227,8 @@
 #define MAPSEC_CONQUERORS_CAMP              0xDF
 #define MAPSEC_ROYAL_REST                   0xE0
 #define MAPSEC_SAGES_SANCTUARY              0xE1
-#define MAPSEC_NONE                         0xE2
+#define MAPSEC_SPACE                        0xE2
+#define MAPSEC_NONE                         0xE3
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

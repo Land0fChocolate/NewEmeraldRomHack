@@ -577,6 +577,8 @@
 #define MAP_FARAWAY_ISLAND_RUIN3                            (106 | (26 << 8))
 #define MAP_FARAWAY_ISLAND_RUIN4                            (107 | (26 << 8))
 #define MAP_FARAWAY_ISLAND_RUIN5                            (108 | (26 << 8))
+#define MAP_SPACE_AREA1                                     (109 | (26 << 8))
+#define MAP_SPACE_AREA2                                     (110 | (26 << 8))
 
 // gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))

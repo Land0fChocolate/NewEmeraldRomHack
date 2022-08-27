@@ -1133,3 +1133,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/FarawayIsland_Ruin4/scripts.inc"
 
 	.include "data/maps/FarawayIsland_Ruin5/scripts.inc"
+
+	.include "data/maps/Space_Area1/scripts.inc"
+
+	.include "data/maps/Space_Area2/scripts.inc"

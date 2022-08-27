@@ -8736,6 +8736,18 @@ u8 (*const gMovementActionFuncs_FlyDown[])(struct ObjectEvent *, struct Sprite *
     MovementAction_Fly_Finish,
 };
 
+u8 (*const gMovementActionFuncs_DragonAscentUp[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_DragonAscentUp_Step0,
+    MovementAction_DragonAscentUp_Step1,
+    MovementAction_DragonAscent_Finish,
+};
+
+u8 (*const gMovementActionFuncs_DragonAscentDown[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_DragonAscentDown_Step0,
+    MovementAction_DragonAscentDown_Step1,
+    MovementAction_DragonAscent_Finish,
+};
+
 u8 MovementAction_StoreAndLockAnim_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     bool32 ableToStore = FALSE;
@@ -8906,6 +8918,44 @@ u8 MovementAction_FlyDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *
 
 // though this function returns TRUE without doing anything, this header is required due to being in an array of functions which needs it.
 u8 MovementAction_Fly_Finish(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    return TRUE;
+}
+
+u8 MovementAction_DragonAscentUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    sprite->y2 = 0;
+    sprite->sActionFuncId++;
+    return FALSE;
+}
+
+u8 MovementAction_DragonAscentUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    sprite->y2 -= 8;
+
+    if(sprite->y2 == -DISPLAY_HEIGHT)
+        sprite->sActionFuncId++;
+    return FALSE;
+}
+
+u8 MovementAction_DragonAscentDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    sprite->y2 = -DISPLAY_HEIGHT;
+    sprite->sActionFuncId++;
+    return FALSE;
+}
+
+u8 MovementAction_DragonAscentDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    sprite->y2 += 8;
+
+    if(!sprite->y2)
+        sprite->sActionFuncId++;
+    return FALSE;
+}
+
+// though this function returns TRUE without doing anything, this header is required due to being in an array of functions which needs it.
+u8 MovementAction_DragonAscent_Finish(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     return TRUE;
 }
