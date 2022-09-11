@@ -8044,13 +8044,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
         switch (battlerHoldEffect)
         {
         case HOLD_EFFECT_TOXIC_ORB:
-            memcpy(abilities, GetBattlerAbilities(battlerId), sizeof(abilities));
-
-            if (!gBattleMons[battlerId].status1
-                && CanPoisonType(battlerId, battlerId)
-                && !HasAbility(ABILITY_IMMUNITY, abilities)
-                && !HasAbility(ABILITY_COMATOSE, abilities)
-                && IsBattlerAlive)
+            if (IsBattlerAlive(battlerId) && CanBePoisoned(battlerId, battlerId))
             {
                 effect = ITEM_STATUS_CHANGE;
                 gBattleMons[battlerId].status1 = STATUS1_TOXIC_POISON;
@@ -8059,14 +8053,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
             }
             break;
         case HOLD_EFFECT_FLAME_ORB:
-            memcpy(abilities, GetBattlerAbilities(battlerId), sizeof(abilities));
-
-            if (!gBattleMons[battlerId].status1
-                && !IS_BATTLER_OF_TYPE(battlerId, TYPE_FIRE)
-                && !HasAbility(ABILITY_WATER_VEIL, abilities)
-                && !HasAbility(ABILITY_WATER_BUBBLE, abilities)
-                && !HasAbility(ABILITY_COMATOSE, abilities)
-                && IsBattlerAlive)
+            if (IsBattlerAlive(battlerId) && CanBeBurned(battlerId))
             {
                 effect = ITEM_STATUS_CHANGE;
                 gBattleMons[battlerId].status1 = STATUS1_BURN;
