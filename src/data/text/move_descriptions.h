@@ -1778,7 +1778,7 @@ static const u8 sCHARGE_BEAMDescription[] = _(
     "that raises user Sp. Atk.");
 
 static const u8 sWOOD_HAMMERDescription[] = _(
-    "Slams the body into a foe\n"
+    "Slams the body into a foe.\n"
     "The user gets hurt too.");
 
 static const u8 sAQUA_JETDescription[] = _(
@@ -2307,7 +2307,7 @@ static const u8 sWATER_SHURIKENDescription[] = _(
 
 static const u8 sMYSTICAL_FIREDescription[] = _(
     "Breathes a special, hot\n"
-    "fire. May lower Sp. Atk.");
+    "fire. Lowers Sp. Atk.");
 
 static const u8 sSPIKY_SHIELDDescription[] = _(
     "Evades attack, and damages\n"
@@ -2763,7 +2763,7 @@ static const u8 sBEHEMOTH_BLADEDescription[] = _(
     "2x damage to Dynamaxed foes.");
     
 static const u8 sBEHEMOTH_BASHDescription[] = _(
-    "Attacks as a sheild. Deals\n"
+    "Attacks as a shield. Deals\n"
     "2x damage to Dynamaxed foes.");
     
 static const u8 sAURA_WHEELDescription[] = _(
@@ -3384,7 +3384,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_DRAGON_PULSE - 1] = sDRAGON_PULSEDescription,
     [MOVE_DRAGON_RUSH - 1] = sDRAGON_RUSHDescription,
     [MOVE_POWER_GEM - 1] = sPOWER_GEMDescription,
-    [MOVE_DRAIN_PUNCH - 1] = sDRAINING_KISSDescription,
+    [MOVE_DRAIN_PUNCH - 1] = sMegaDrainDescription,
     [MOVE_VACUUM_WAVE - 1] = sVACUUM_WAVEDescription,
     [MOVE_FOCUS_BLAST - 1] = sFOCUS_BLASTDescription,
     [MOVE_ENERGY_BALL - 1] = sENERGY_BALLDescription,
