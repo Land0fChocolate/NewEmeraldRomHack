@@ -10588,65 +10588,29 @@ static void Cmd_forcerandomswitch(void)
     }
 }
 
-static void Cmd_tryconversiontypechange(void) // randomly changes user's type to one of its moves' type
+static void Cmd_tryconversiontypechange(void)
 {
     u8 validMoves = 0;
     u8 moveChecked;
     u8 moveType;
 
-    while (validMoves < MAX_MON_MOVES)
+    // changes user's type to its first move's type
+    for (moveChecked = 0; moveChecked < MAX_MON_MOVES; moveChecked++)
     {
-        if (gBattleMons[gBattlerAttacker].moves[validMoves] == 0)
-            break;
-
-        validMoves++;
-    }
-
-    for (moveChecked = 0; moveChecked < validMoves; moveChecked++)
-    {
-        moveType = gBattleMoves[gBattleMons[gBattlerAttacker].moves[moveChecked]].type;
-
-        if (moveType == TYPE_MYSTERY)
+        if (gBattleMons[gBattlerAttacker].moves[moveChecked] != MOVE_NONE)
         {
-            if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
-                moveType = TYPE_GHOST;
-            else
-                moveType = TYPE_NORMAL;
-        }
-        if (moveType != gBattleMons[gBattlerAttacker].type1
-            && moveType != gBattleMons[gBattlerAttacker].type2
-            && moveType != gBattleMons[gBattlerAttacker].type3)
-        {
+            moveType = gBattleMoves[gBattleMons[gBattlerAttacker].moves[moveChecked]].type;
             break;
         }
     }
-
-    if (moveChecked == validMoves)
+    if (IS_BATTLER_OF_TYPE(gBattlerAttacker, moveType))
     {
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
     }
     else
     {
-        do
-        {
-
-            while ((moveChecked = Random() & (MAX_MON_MOVES - 1)) >= validMoves);
-
-            moveType = gBattleMoves[gBattleMons[gBattlerAttacker].moves[moveChecked]].type;
-
-            if (moveType == TYPE_MYSTERY)
-            {
-                if (IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST))
-                    moveType = TYPE_GHOST;
-                else
-                    moveType = TYPE_NORMAL;
-            }
-        }
-        while (moveType == gBattleMons[gBattlerAttacker].type1 || moveType == gBattleMons[gBattlerAttacker].type2 || moveType == gBattleMons[gBattlerAttacker].type3);
-
         SET_BATTLER_TYPE(gBattlerAttacker, moveType);
         PREPARE_TYPE_BUFFER(gBattleTextBuff1, moveType);
-
         gBattlescriptCurrInstr += 5;
     }
 }
