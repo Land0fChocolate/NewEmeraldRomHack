@@ -3711,9 +3711,9 @@ static void CursorCb_FieldMove(u8 taskId)
                 else
                 {
                     //SetWarpDestination(MAP_GROUP(SPACE_AREA1), MAP_NUM(SPACE_AREA1), -1, 37, 35);
-                    SetWarpDestination(MAP_GROUP(SPACE_AREA2), MAP_NUM(SPACE_AREA2), -1, 19, 16);
+                    SetWarpDestination(MAP_GROUP(SPACE_AREA2), MAP_NUM(SPACE_AREA2), -1, 20, 12);
                 }
-                FieldCallback_UseDragonAscent();
+                ReturnToFieldFromDragonAscentSelect();
                 
                 sPartyMenuInternal->data[0] = fieldMove;
                 break;
@@ -3848,7 +3848,7 @@ static bool8 SetUpFieldMove_Fly(void)
 
 static bool8 SetUpFieldMove_DragonAscent(void)
 {
-    if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+    if (Overworld_MapTypeAllowsDragonAscent(gMapHeader.mapType) == TRUE)
         return TRUE;
     else
         return FALSE;

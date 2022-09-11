@@ -1272,11 +1272,11 @@ static const union AnimCmd *const sAnimTable_RayquazaSpotlightEffect[] = {
     sAnim_RayquazaSpotlightEffect,
 };
 
-const struct SpriteFrameImage  sPicTable_RayquazaSpotlightEffect[] = {
+const struct SpriteFrameImage sPicTable_RayquazaSpotlightEffect[] = {
     overworld_frame(gObjectEventPic_Rayquaza, 4, 4, 0),
 };
 
-const struct SpriteTemplate gFieldEffectObjectTemplate_Rayquaza = {
+const struct SpriteTemplate gFieldEffectObjectTemplate_RayquazaSpotlight = {
     .tileTag = 0xFFFF,
     .paletteTag = 0xFFFF,
     .oam = &gObjectEventBaseOam_32x32,
@@ -1284,6 +1284,27 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_Rayquaza = {
     .images = sPicTable_RayquazaSpotlightEffect,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateRayquazaSpotlightEffect,
+};
+
+static const union AnimCmd sAnim_DragonAscentRayquaza[] =
+{
+    ANIMCMD_FRAME(4, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnimTable_DragonAscentRayquaza[] =
+{
+    sAnim_DragonAscentRayquaza,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_Rayquaza = {
+    .tileTag = 0xFFFF,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
+    .oam = &gObjectEventBaseOam_64x64,
+    .anims = sAnimTable_DragonAscentRayquaza,
+    .images = sPicTable_Rayquaza,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
 };
 
 static const struct SpritePalette sSpritePalette_Unused = {gObjectEventPal_Npc3, FLDEFF_PAL_TAG_UNKNOWN};

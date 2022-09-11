@@ -1351,6 +1351,18 @@ bool8 Overworld_MapTypeAllowsTeleportAndFly(u8 mapType)
         return FALSE;
 }
 
+bool8 Overworld_MapTypeAllowsDragonAscent(u8 mapType)
+{
+    if (mapType == MAP_TYPE_ROUTE
+     || mapType == MAP_TYPE_TOWN
+     || mapType == MAP_TYPE_OCEAN_ROUTE
+     || mapType == MAP_TYPE_CITY
+     || mapType == MAP_TYPE_UNKNOWN)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 IsMapTypeIndoors(u8 mapType)
 {
     if (mapType == MAP_TYPE_INDOOR

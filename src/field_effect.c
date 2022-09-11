@@ -3103,7 +3103,7 @@ static void SurfFieldEffect_End(struct Task *task)
 u8 FldEff_RayquazaSpotlight(void)
 {
     u8 i, j, k;
-    u8 spriteId = CreateSprite(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_RAYQUAZA], 120, -24, 1);
+    u8 spriteId = CreateSprite(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_RAYQUAZA_SPOTLIGHT], 120, -24, 1);
     struct Sprite *sprite = &gSprites[spriteId];
 
     sprite->oam.priority = 1;
@@ -3920,9 +3920,14 @@ static void Task_MoveDeoxysRock(u8 taskId)
 
 //Dragon Ascent field move functionality
 
-void FieldCallback_UseDragonAscent(void)
+void ReturnToFieldFromDragonAscentSelect(void)
 {
     SetMainCallback2(CB2_ReturnToField);
+    gFieldCallback = FieldCallback_UseDragonAscent;
+}
+
+void FieldCallback_UseDragonAscent(void)
+{
     FreeAllWindowBuffers();
     FadeInFromBlack();
     CreateTask(Task_UseDragonAscent, 0);
@@ -3939,7 +3944,7 @@ static void Task_UseDragonAscent(u8 taskId)
     if (!task->data[0])
     {
         if (!IsWeatherNotFadingIn())
-            return;
+           return;
 
         gFieldEffectArguments[0] = GetCursorSelectionMonId();
         if ((int)gFieldEffectArguments[0] > PARTY_SIZE - 1)
@@ -3948,6 +3953,7 @@ static void Task_UseDragonAscent(u8 taskId)
         FieldEffectStart(FLDEFF_USE_DRAGON_ASCENT);
         task->data[0]++;
     }
+
     if (!FieldEffectActiveListContains(FLDEFF_USE_DRAGON_ASCENT))
     {
         Overworld_ResetStateAfterFly();
@@ -3961,7 +3967,7 @@ static void Task_UseDragonAscent(u8 taskId)
 static void FieldCallback_DragonAscentIntoMap(void)
 {
     Overworld_PlaySpecialMapMusic();
-    //FadeInFromBlack();
+    FadeInFromBlack();
     CreateTask(Task_DragonAscentIntoMap, 0);
     gObjectEvents[gPlayerAvatar.objectEventId].invisible = TRUE;
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
@@ -4072,9 +4078,8 @@ static void DragonAscentOutFieldEffect_JumpOnRayquaza(struct Task *task)
     {
         struct ObjectEvent *objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
         ObjectEventSetGraphicsId(objectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_SURFING));
-        StartSpriteAnim(&gSprites[objectEvent->spriteId], 0x16);
-        objectEvent->inanimate = TRUE;
-        ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_JUMP_IN_PLACE_LEFT);
+        objectEvent->invisible = TRUE;
+        objectEvent->hasShadow = FALSE;
         if (task->tAvatarFlags & PLAYER_AVATAR_FLAG_SURFING)
         {
             DestroySprite(&gSprites[objectEvent->fieldEffectSpriteId]);
@@ -4166,13 +4171,13 @@ static void SpriteCB_DragonAscentRayquazaLeaveBall(struct Sprite *sprite)
             InitSpriteAffineAnim(sprite);
             StartSpriteAffineAnim(sprite, 0);
             sprite->x = 0x76;
-            sprite->y = -0x30;
+            sprite->y = -25;
             sprite->data[0]++;
             sprite->data[1] = 0x40;
             sprite->data[2] = 0x100;
         }
         sprite->data[1] += (sprite->data[2] >> 8);
-        sprite->x2 = Cos(sprite->data[1], 0x78);
+        sprite->x2 = 1;
         sprite->y2 = Sin(sprite->data[1], 0x78);
         if (sprite->data[2] < 0x800)
         {
@@ -4190,9 +4195,10 @@ static void SpriteCB_DragonAscentRayquazaLeaveBall(struct Sprite *sprite)
 
 static void SpriteCB_DragonAscentRayquazaSwoopDown(struct Sprite *sprite)
 {
-    sprite->x2 = Cos(sprite->data[2], 0x8c);
-    sprite->y2 = Sin(sprite->data[2], 0x48);
-    sprite->data[2] = (sprite->data[2] + 4) & 0xff;
+    sprite->y = 192;
+    sprite->x2 = 1;
+    sprite->y2 = sprite->data[2] * -1;
+    sprite->data[2] = (sprite->data[2] + 5) & 0xff;
     if (sprite->sPlayerSpriteId != MAX_SPRITES)
     {
         struct Sprite *sprite1 = &gSprites[sprite->sPlayerSpriteId];
@@ -4326,24 +4332,24 @@ static void DragonAscentInFieldEffect_DragonAscentInWithRayquaza(struct Task *ta
 static void DragonAscentInFieldEffect_JumpOffRayquaza(struct Task *task)
 {
     s16 sYPositions[18] = {
-        -2,
-        -4,
-        -5,
-        -6,
-        -7,
-        -8,
-        -8,
-        -8,
-        -7,
-        -7,
-        -6,
-        -5,
-        -3,
-        -2,
-        0,
-        2,
-        4,
-        8
+        -42,
+        -44,
+        -45,
+        -46,
+        -47,
+        -48,
+        -48,
+        -48,
+        -47,
+        -47,
+        -46,
+        -45,
+        -43,
+        -42,
+        -40,
+        -38,
+        -36,
+        -32
     };
     struct Sprite *sprite = &gSprites[gPlayerAvatar.spriteId];
     sprite->y2 = sYPositions[task->tTimer];
