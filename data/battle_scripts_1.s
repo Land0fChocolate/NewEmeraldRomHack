@@ -1477,7 +1477,7 @@ BattleScript_EffectPsychoShift:
 BattleScript_EffectPsychoShiftCanWork:
 	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_ButItFailed
 	jumpifsafeguard BattleScript_SafeguardProtected
-	trypsychoshift BattleScript_MoveEnd
+	trypsychoshift BattleScript_ButItFailed
 	attackanimation
 	waitanimation
 	copybyte gEffectBattler, gBattlerTarget
