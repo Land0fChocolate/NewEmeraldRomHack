@@ -1488,7 +1488,6 @@ bool32 ShouldSetSandstorm(u8 battler, u16 abilities[], u16 holdEffect)
     if (HasAbility(ABILITY_SAND_VEIL, abilities)
       || HasAbility(ABILITY_SAND_RUSH, abilities)
       || HasAbility(ABILITY_SAND_FORCE, abilities)
-      || HasAbility(ABILITY_SAND_FORCE, abilities)
       || HasAbility(ABILITY_OVERCOAT, abilities)
       || HasAbility(ABILITY_MAGIC_GUARD, abilities)
       || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
