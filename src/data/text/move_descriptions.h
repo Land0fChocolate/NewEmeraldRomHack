@@ -2932,11 +2932,11 @@ static const u8 sTHUNDEROUS_KICKDescription[] = _(
 
 static const u8 sGLACIAL_LANCEDescription[] = _(
     "Strikes by hurling a blizzard-\n"
-    "cloaked icicle lance at a foe.");
+    "cloaked icicle lance at foes.");
 
 static const u8 sASTRAL_BARRAGEDescription[] = _(
     "Strikes by sending a frightful\n"
-    "amount of ghosts at a foe.");
+    "amount of ghosts at foes.");
 
 static const u8 sEERIE_SPELLDescription[] = _(
     "Attacks with psychic power.\n"
