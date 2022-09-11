@@ -22,6 +22,11 @@
       "direction": "up",
       "offset": -26,
       "map": "MAP_ROUTE102"
+    },
+    {
+      "direction": "right",
+      "offset": -20,
+      "map": "MAP_OLDALE_TOWN"
     }
   ],
   "object_events": [
@@ -145,8 +150,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 17,
-      "y": 7,
+      "x": 16,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "OldaleFarm_Eventscript_Sign"

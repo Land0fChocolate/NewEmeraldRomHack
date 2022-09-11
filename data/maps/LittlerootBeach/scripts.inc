@@ -7,11 +7,107 @@ LittlerootBeach_MapScripts::
 
 LittlerootBeach_OnTransition:
 	setflag FLAG_LANDMARK_LITTLEROOT_BEACH
+	compare VAR_LIITLEROOT_BEACH_STATE, 2
+	goto_if_eq LittlerootBeach_EventScript_SetRivalBattleScene
+	end
+
+LittlerootBeach_EventScript_SetRivalBattleScene:
+	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_LOOK_AROUND
+	setobjectxyperm LOCALID_RIVAL, 19, 25
+	end
+
+LittlerootBeach_EventScript_RivalBattle::
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq LittlerootBeach_EventScript_MayBattle
+	compare VAR_RESULT, FEMALE
+	goto_if_eq LittlerootBeach_EventScript_BrendanBattle
+	end
+
+LittlerootBeach_EventScript_MayBattle:
+	msgbox LittlerootBeach_Text_MayLetsBattle, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_STARTER_MON
+	case 0, LittlerootBeach_EventScript_MayBattleTreecko
+	case 1, LittlerootBeach_EventScript_MayBattleTorchic
+	case 2, LittlerootBeach_EventScript_MayBattleMudkip
+	end
+
+LittlerootBeach_EventScript_MayBattleTreecko::
+	trainerbattle_no_intro TRAINER_MAY_POST_GAME_TREECKO, LittlerootBeach_Text_MayDefeated
+	goto LittlerootBeach_EventScript_MayDefeated
+	end
+
+LittlerootBeach_EventScript_MayBattleTorchic::
+	trainerbattle_no_intro TRAINER_MAY_POST_GAME_TORCHIC, LittlerootBeach_Text_MayDefeated
+	goto LittlerootBeach_EventScript_MayDefeated
+	end
+
+LittlerootBeach_EventScript_MayBattleMudkip::
+	trainerbattle_no_intro TRAINER_MAY_POST_GAME_MUDKIP, LittlerootBeach_Text_MayDefeated
+	goto LittlerootBeach_EventScript_MayDefeated
+	end
+
+LittlerootBeach_EventScript_MayDefeated::
+	msgbox LittlerootBeach_Text_MayExit, MSGBOX_DEFAULT
+	closemessage
+	goto LittlerootBeach_EventScript_RivalExit
+	end
+
+LittlerootBeach_EventScript_BrendanBattle:
+	msgbox LittlerootBeach_Text_BrendanLetsBattle, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_STARTER_MON
+	case 0, LittlerootBeach_EventScript_BrendanBattleTreecko
+	case 1, LittlerootBeach_EventScript_BrendanBattleTorchic
+	case 2, LittlerootBeach_EventScript_BrendanBattleMudkip
+	end
+
+LittlerootBeach_EventScript_BrendanBattleTreecko::
+	trainerbattle_no_intro TRAINER_BRENDAN_POST_GAME_TREECKO, LittlerootBeach_Text_BrendanDefeated
+	goto LittlerootBeach_EventScript_BrendanDefeated
+	end
+
+LittlerootBeach_EventScript_BrendanBattleTorchic::
+	trainerbattle_no_intro TRAINER_BRENDAN_POST_GAME_TORCHIC, LittlerootBeach_Text_BrendanDefeated
+	goto LittlerootBeach_EventScript_BrendanDefeated
+	end
+
+LittlerootBeach_EventScript_BrendanBattleMudkip::
+	trainerbattle_no_intro TRAINER_BRENDAN_POST_GAME_MUDKIP, LittlerootBeach_Text_BrendanDefeated
+	goto LittlerootBeach_EventScript_BrendanDefeated
+	end
+
+LittlerootBeach_EventScript_BrendanDefeated::
+	msgbox LittlerootBeach_Text_BrendanExit, MSGBOX_DEFAULT
+	closemessage
+	goto LittlerootBeach_EventScript_RivalExit
+	end
+
+LittlerootBeach_EventScript_RivalExit::
+	delay 50
+	setfieldeffectargument 0, 1
+	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 15
+	removeobject LOCALID_RIVAL
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+	delay 20
+	pokenavcall LittlerootBeach_Text_SpaceCenterCall
+	setvar VAR_LIITLEROOT_BEACH_STATE, 3
+	setflag FLAG_HIDE_LITTLEROOT_BEACH_RIVAL
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
+	setvar VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
+	setvar VAR_SPACE_CENTER_TRIGGER_STATE, 0
+	clearflag FLAG_HIDE_ZINNIA_SPACE_CENTER
+	clearflag FLAG_HIDE_STEVEN_SPACE_CENTER
+	releaseall
 	end
 
 LittlerootBeach_EventScript_Rival::
 	lockall
 	faceplayer
+	compare VAR_LIITLEROOT_BEACH_STATE, 2
+	goto_if_eq LittlerootBeach_EventScript_RivalBattle
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq LittlerootBeach_EventScript_May
@@ -341,3 +437,24 @@ LittlerootBeach_Text_BrendanGivesTM76:
 	.string "Brendan: Oh, and before I forget,\n"
 	.string "I got this a while ago. I don't need\l"
 	.string "it so you can have it.$"
+
+LittlerootBeach_Text_MayLetsBattle:
+	.string "May: TODO$"
+
+LittlerootBeach_Text_MayDefeated:
+	.string "May: TODO$"
+
+LittlerootBeach_Text_MayExit:
+	.string "May: TODO$"
+
+LittlerootBeach_Text_BrendanLetsBattle:
+	.string "Brendan: TODO$"
+
+LittlerootBeach_Text_BrendanDefeated:
+	.string "Brendan: TODO$"
+
+LittlerootBeach_Text_BrendanExit:
+	.string "Brendan: TODO$"
+
+LittlerootBeach_Text_SpaceCenterCall:
+	.string "TODO$"

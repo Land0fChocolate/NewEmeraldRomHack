@@ -1151,7 +1151,7 @@ static const u16 sNaturePowerMoves[BATTLE_TERRAIN_COUNT] =
 static const u16 sPickupItems[] =
 {
     ITEM_POTION,
-    ITEM_ANTIDOTE,
+    ITEM_POKE_BALL,
     ITEM_SUPER_POTION,
     ITEM_GREAT_BALL,
     ITEM_REPEL,
@@ -1963,6 +1963,7 @@ static void Cmd_adjustdamage(void)
         && (gBattleMons[gBattlerTarget].maxHP != 1)) // so Shedinja isn't unkillable if it gets Sturdy.
     {
         gSpecialStatuses[gBattlerTarget].sturdied = TRUE;
+        gLastUsedAbility = ABILITY_STURDY;
     }
 
     if (gBattleMoves[gCurrentMove].effect != EFFECT_FALSE_SWIPE
@@ -1987,7 +1988,6 @@ static void Cmd_adjustdamage(void)
     else if (gSpecialStatuses[gBattlerTarget].sturdied)
     {
         gMoveResultFlags |= MOVE_RESULT_STURDIED;
-        gLastUsedAbility = ABILITY_STURDY;
     }
 
 END:
@@ -3591,6 +3591,20 @@ static void Cmd_tryfaintmon(void)
         if (!(gAbsentBattlerFlags & gBitTable[gActiveBattler])
          && gBattleMons[gActiveBattler].hp == 0)
         {
+            if (HasAbility(ABILITY_TIME_TRAVELLER, gBattleMons[gActiveBattler].abilities)
+                && !(gSideStatuses[gActiveBattler] & SIDE_STATUS_TIME_TRAVELLED))
+            {
+                gSideStatuses[gActiveBattler] |= SIDE_STATUS_TIME_TRAVELLED;
+                gLastUsedAbility = ABILITY_TIME_TRAVELLER;
+                gBattleMoveDamage *= -1;
+                if ((gBattleMons[gActiveBattler].status1 & STATUS1_TOXIC_COUNTER) != STATUS1_TOXIC_TURN(1))
+                    gBattleMons[gActiveBattler].status1 -= STATUS1_TOXIC_TURN(1);
+                
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_TimeTravellerAbility;
+                return;
+            }
+
             gHitMarker |= HITMARKER_FAINTED(gActiveBattler);
             BattleScriptPush(gBattlescriptCurrInstr + 7);
             gBattlescriptCurrInstr = BS_ptr;
@@ -6306,7 +6320,7 @@ static void Cmd_switchineffects(void)
         gBattleMoveDamage = GetStealthHazardDamage(gBattleMoves[MOVE_HIDDEN_THORNS].type, gActiveBattler);
 
         if (gBattleMoveDamage != 0)
-            SetDmgHazardsBattlescript(gActiveBattler, 1);
+            SetDmgHazardsBattlescript(gActiveBattler, 2);
     }
     else if (!(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_TOXIC_SPIKES_DAMAGED)
         && (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_TOXIC_SPIKES)
@@ -8218,6 +8232,9 @@ static void Cmd_various(void)
         }
         gBattleStruct->soulheartBattlerId = 0;
         break;
+    case VARIOUS_TRY_RESET_TIME_TRAVELLER:
+        if (HasAbility(ABILITY_TIME_TRAVELLER, GetBattlerAbilities(gActiveBattler)))
+            gSideStatuses[gActiveBattler] &= ~(SIDE_STATUS_TIME_TRAVELLED);
     case VARIOUS_TRY_ACTIVATE_FELL_STINGER:
         if (gBattleMoves[gCurrentMove].effect == EFFECT_FELL_STINGER
             && HasAttackerFaintedTarget()
@@ -12749,8 +12766,12 @@ static void Cmd_setstealthrock(void)
             {
                 gSideStatuses[targetSide] |= SIDE_STATUS_STEALTH_ROCK;
                 gSideTimers[targetSide].stealthRockAmount = 1;
-                gSideStatuses[targetSide] ^= SIDE_STATUS_HIDDEN_THORNS; //TODO: test this, Stealth Rock should replace Hidden Thorns
-                gSideTimers[targetSide].hiddenThornsAmount = 0;
+                if (gSideStatuses[targetSide] & SIDE_STATUS_HIDDEN_THORNS)
+                {
+                    gSideStatuses[targetSide] ^= SIDE_STATUS_HIDDEN_THORNS; //TODO: test this, Stealth Rock should replace Hidden Thorns
+                    gSideTimers[targetSide].hiddenThornsAmount = 0;
+                }
+                
                 gBattlescriptCurrInstr += 5;
             }
             break;
@@ -12763,8 +12784,11 @@ static void Cmd_setstealthrock(void)
             {
                 gSideStatuses[targetSide] |= SIDE_STATUS_HIDDEN_THORNS;
                 gSideTimers[targetSide].hiddenThornsAmount = 1;
-                gSideStatuses[targetSide] ^= SIDE_STATUS_STEALTH_ROCK; //TODO: test this, Hidden Thorns should replace Stealth Rock
-                gSideTimers[targetSide].stealthRockAmount = 0;
+                if (gSideStatuses[targetSide] & SIDE_STATUS_STEALTH_ROCK)
+                {
+                    gSideStatuses[targetSide] ^= SIDE_STATUS_STEALTH_ROCK; //TODO: test this, Hidden Thorns should replace Stealth Rock
+                    gSideTimers[targetSide].stealthRockAmount = 0;
+                }
                 gBattlescriptCurrInstr += 5;
             }
             break;

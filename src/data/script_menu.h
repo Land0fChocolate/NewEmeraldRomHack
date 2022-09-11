@@ -467,6 +467,50 @@ static const struct MenuAction MultichoiceList_LinkServicesNoBerry[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_StartersHoenn[] =
+{
+    {gText_Treecko},
+    {gText_Torchic},
+    {gText_Mudkip},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_StartersHoennKanto[] =
+{
+    {gText_Treecko},
+    {gText_Torchic},
+    {gText_Mudkip},
+    {gText_Bulbasaur},
+    {gText_Charmander},
+    {gText_Squirtle},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_StartersHoennJohto[] =
+{
+    {gText_Treecko},
+    {gText_Torchic},
+    {gText_Mudkip},
+    {gText_Chikorita},
+    {gText_Cyndaquil},
+    {gText_Totodile},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_StartersAll[] =
+{
+    {gText_Treecko},
+    {gText_Torchic},
+    {gText_Mudkip},
+    {gText_Bulbasaur},
+    {gText_Charmander},
+    {gText_Squirtle},
+    {gText_Chikorita},
+    {gText_Cyndaquil},
+    {gText_Totodile},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_YesNoInfo[] =
 {
     {gText_Yes},
@@ -748,16 +792,6 @@ static const struct MenuAction MultichoiceList_WheresRayquaza[] =
     {gText_DontRemember},
 };
 
-static const struct MenuAction MultichoiceList_SlateportTentRules[] =
-{
-    {gText_BasicRules},
-    {gText_SwapPartners},
-    {gText_SwapNumber},
-    {gText_SwapNotes},
-    {gText_BattlePokemon},
-    {gText_Exit},
-};
-
 static const struct MenuAction MultichoiceList_FallarborTentRules[] =
 {
     {gText_BattleTrainers},
@@ -879,10 +913,10 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FORCED_START_MENU]          = MULTICHOICE(MultichoiceList_ForcedStartMenu),
     [MULTI_FRONTIER_GAMBLER_BET]       = MULTICHOICE(MultichoiceList_FrontierGamblerBet),
     [MULTI_TENT]                       = MULTICHOICE(MultichoiceList_Tent),
-    [MULTI_UNUSED_SSTIDAL_1]           = MULTICHOICE(MultichoiceList_UnusedSSTidal1),
-    [MULTI_UNUSED_SSTIDAL_2]           = MULTICHOICE(MultichoiceList_UnusedSSTidal2),
-    [MULTI_UNUSED_SSTIDAL_3]           = MULTICHOICE(MultichoiceList_UnusedSSTidal3),
-    [MULTI_EVO_STONE]                  = MULTICHOICE(MultichoiceList_EvolutionStone),
+    [OLDALE_STARTERS_HOENN]            = MULTICHOICE(MultichoiceList_StartersHoenn),
+    [OLDALE_STARTERS_HOENN_KANTO]      = MULTICHOICE(MultichoiceList_StartersHoennKanto),
+    [OLDALE_STARTERS_HOENN_JOHTO]      = MULTICHOICE(MultichoiceList_StartersHoennJohto),
+    [OLDALE_STARTERS_ALL]              = MULTICHOICE(MultichoiceList_StartersAll),
     [MULTI_FOSSIL]                     = MULTICHOICE(MultichoiceList_Fossil),
     [MULTI_YESNO]                      = MULTICHOICE(MultichoiceList_YesNo),
     [MULTI_FRONTIER_RULES]             = MULTICHOICE(MultichoiceList_FrontierRules),
@@ -901,7 +935,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TV_LATI]                    = MULTICHOICE(MultichoiceList_TVLati),
     [MULTI_BATTLE_TOWER_FEELINGS]      = MULTICHOICE(MultichoiceList_BattleTowerFeelings),
     [MULTI_WHERES_RAYQUAZA]            = MULTICHOICE(MultichoiceList_WheresRayquaza),
-    [MULTI_SLATEPORT_TENT_RULES]       = MULTICHOICE(MultichoiceList_SlateportTentRules),
+    [MULTI_EVO_STONE]                  = MULTICHOICE(MultichoiceList_EvolutionStone),
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
 };

@@ -67,7 +67,46 @@ Route106_EventScript_Ned::
 	end
 
 Route106_EventScript_Brawly::
+	faceplayer
+	dotimebasedevents
+	goto_if_unset FLAG_DAILY_BRAWLY_SHARD, Route106_EventScript_BrawlyGivesShard
 	msgbox Route106_Text_Brawly, MSGBOX_DEFAULT
+	release
+	end
+
+Route106_EventScript_BrawlyGivesShard::
+	msgbox Route106_Text_BrawlyGivesShard, MSGBOX_DEFAULT
+	random 4
+	copyvar VAR_0x800A, VAR_RESULT
+	switch VAR_RESULT
+	case 0, Route106_EventScript_BrawlyGivesRedShard
+	case 1, Route106_EventScript_BrawlyGivesBlueShard
+	case 2, Route106_EventScript_BrawlyGivesYellowShard
+	case 3, Route106_EventScript_BrawlyGivesGreenShard
+	release
+	end
+
+Route106_EventScript_BrawlyGivesRedShard::
+	giveitem ITEM_RED_SHARD, 1
+	setflag FLAG_DAILY_BRAWLY_SHARD
+	release
+	end
+
+Route106_EventScript_BrawlyGivesBlueShard::
+	giveitem ITEM_BLUE_SHARD, 1
+	setflag FLAG_DAILY_BRAWLY_SHARD
+	release
+	end
+
+Route106_EventScript_BrawlyGivesYellowShard::
+	giveitem ITEM_YELLOW_SHARD, 1
+	setflag FLAG_DAILY_BRAWLY_SHARD
+	release
+	end
+
+Route106_EventScript_BrawlyGivesGreenShard::
+	giveitem ITEM_GREEN_SHARD, 1
+	setflag FLAG_DAILY_BRAWLY_SHARD
 	release
 	end
 
@@ -75,6 +114,13 @@ Route106_Text_Brawly:
 	.string "Brawly: I love to go surfing!\n"
 	.string "I've trained my body so I can enjoy\l"
 	.string "riding the rough waves!$"
+
+Route106_Text_BrawlyGivesShard:
+	.string "Brawly: Hey, {PLAYER}!\n"
+	.string "Riding a wave today, too?\p"
+	.string "I found something pretty neat in the\n"
+	.string "sand. I don't want to break it, so\l"
+	.string "here you go.$"
 
 Route106_Text_TrainerTips:
 	.string "TRAINER TIPS\p"

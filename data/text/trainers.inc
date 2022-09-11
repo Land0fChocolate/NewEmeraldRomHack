@@ -2017,7 +2017,7 @@ Route116_Text_ClarkDefeat:
 
 Route116_Text_ClarkPostBattle:
 	.string "It's no big deal if there's no tunnel.\n"
-	.string "To a HIKER, mountains are roads!$"
+	.string "To a Hiker, mountains are roads!$"
 
 Route116_Text_JoeyIntro:
 	.string "My Pokémon rule!\n"
@@ -2154,15 +2154,16 @@ Route116_Text_DawsonPostBattle:
 	.string "I'll have to call my stylist now!$"
 
 Route116_Text_JohnsonIntro:
-	.string "It's a dead end up here.\n"
+	.string "I can't beat Roxanne so I'm hanging\n"
+	.string "around here.\p"
 	.string "I'm bored, so can we battle?$"
 
 Route116_Text_JohnsonDefeat:
 	.string "That was fun even though I lost.$"
 
 Route116_Text_JohnsonPostBattle:
-	.string "Want to stay here and keep\n"
-	.string "me company?$"
+	.string "Maybe if my Taillow gets thunder armor…\p"
+	.string "No, that idea is stupid.$"
 
 Route117_Text_IsaacIntro:
 	.string "Listen, could I get you to battle\n"
@@ -4631,13 +4632,17 @@ EverGrandeCity_BattleTent_Text_PetePostBattle:
 	.string "of the day.$"
 
 EverGrandeCity_BattleTent_Text_SophieIntro:
-	.string "TODO$"
+	.string "I've come from far away to challenge\n"
+	.string "this region's Pokémon League.\l"
+	.string "I won't back down easily!$"
 
 EverGrandeCity_BattleTent_Text_SophieDefeated:
-	.string "TODO$"
+	.string "Curses!$"
 
 EverGrandeCity_BattleTent_Text_SophiePostBattle:
-	.string "TODO$"
+	.string "This country is weird. The people here\n"
+	.string "for some reason don't mind total\l"
+	.string "strangers walking into their houses.$"
 
 EverGrandeCity_BattleTent_Text_CobyIntro:
 	.string "Check it out.\n"
@@ -4765,7 +4770,7 @@ EverGrandeCity_BattleTent_Text_AndresDefeated:
 	.string "Money, down the drain…$"
 
 EverGrandeCity_BattleTent_Text_AndresPostBattle:
-	.string "Looks like money is no substitute\n"
+	.string "I guess money is no substitute\n"
 	.string "for experience.$"
 
 EverGrandeCity_BattleTent_Text_BrandiIntro:

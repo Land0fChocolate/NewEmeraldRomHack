@@ -5934,7 +5934,7 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
         .comboMoves = {COMBO_STARTER_SWORDS_DANCE}
     },
 
-    [MOVE_FLARE_CRASH] =
+    [MOVE_BLAZE_IMPACT] =
     {
         .effect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_COOL,

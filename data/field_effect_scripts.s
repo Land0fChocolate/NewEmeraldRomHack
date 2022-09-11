@@ -72,6 +72,8 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_RayquazaSpotlight         @ FLDEFF_RAYQUAZA_SPOTLIGHT
 	.4byte gFieldEffectScript_DestroyDeoxysRock         @ FLDEFF_DESTROY_DEOXYS_ROCK
 	.4byte gFieldEffectScript_MoveDeoxysRock            @ FLDEFF_MOVE_DEOXYS_ROCK
+	.4byte gFieldEffectScript_UseDragonAscent           @ FLDEFF_USE_DRAGON_ASCENT
+	.4byte gFieldEffectScript_DragonAscentIn            @ FLDEFF_DRAGON_ASCENT_IN
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -342,4 +344,12 @@ gFieldEffectScript_DestroyDeoxysRock::
 
 gFieldEffectScript_MoveDeoxysRock::
 	field_eff_callnative FldEff_MoveDeoxysRock
+	field_eff_end
+
+gFieldEffectScript_UseDragonAscent::
+	field_eff_callnative FldEff_UseDragonAscent
+	field_eff_end
+
+gFieldEffectScript_DragonAscentIn::
+	field_eff_callnative FldEff_DragonAscentIn
 	field_eff_end

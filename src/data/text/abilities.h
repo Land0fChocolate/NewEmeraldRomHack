@@ -423,7 +423,8 @@ static const u8 sStallDescription[] = _(
 
 static const u8 sTechnicianDescription[] = _(
 	"Increases power of moves\n"
-	"with 60BP or less by 50%.");
+	"with 60 base power or\n"
+	"less by 50%.");
 
 static const u8 sLeafGuardDescription[] = _(
 	"Prevents status affliction\n"
@@ -1149,8 +1150,8 @@ static const u8 sOriginDescription[] = _(
 
 static const u8 sTimeTravellerDescription[] = _(
 	"If user is about to faint\n"
-	"revert to previous state\n"
-	"two turns before.");
+	"revert to previous state.\n"
+	"Resets on defeating foes.");
 
 static const u8 sWishMakerDescription[] = _(
 	"User creates a wish when\n"

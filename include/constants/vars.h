@@ -109,7 +109,7 @@
 #define VAR_RUSTBORO_CITY_STATE              0x405A
 #define VAR_FORTREE_CITY_STATE               0x405B // Unused Var
 #define VAR_LILYCOVE_CITY_STATE              0x405C // Unused Var
-#define VAR_MOSSDEEP_CITY_STATE              0x405D
+#define VAR_MOSSDEEP_CITY_STATE              0x405D // Unused Var
 #define VAR_SOOTOPOLIS_CITY_STATE            0x405E
 #define VAR_EVER_GRANDE_CITY_STATE           0x405F // Unused Var
 #define VAR_ROUTE101_STATE                   0x4060
@@ -147,7 +147,7 @@
 #define VAR_ROUTE133_STATE                   0x4080 // Unused Var
 #define VAR_ROUTE134_STATE                   0x4081 // Unused Var
 #define VAR_LITTLEROOT_HOUSES_STATE_MAY      0x4082
-#define VAR_UNUSED_0x4083                    0x4083 // Unused Var
+#define VAR_DRACONID_ARCHIVES_STATE          0x4083
 #define VAR_BIRCH_LAB_STATE                  0x4084
 #define VAR_PETALBURG_GYM_STATE              0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman 
 #define VAR_CONTEST_HALL_STATE               0x4086
@@ -161,7 +161,7 @@
 #define VAR_BOARD_BRINEY_BOAT_STATE          0x408E
 #define VAR_DEVON_CORP_3F_STATE              0x408F
 #define VAR_BRINEY_HOUSE_STATE               0x4090
-#define VAR_UNUSED_0x4091                    0x4091 // Unused Var
+#define VAR_LIITLEROOT_BEACH_STATE           0x4091
 #define VAR_LITTLEROOT_INTRO_STATE           0x4092
 #define VAR_MAUVILLE_GYM_STATE               0x4093
 #define VAR_LILYCOVE_MUSEUM_2F_STATE         0x4094
@@ -184,7 +184,7 @@
 #define VAR_TRICK_HOUSE_BEING_WATCHED_STATE  0x40A5
 #define VAR_TRICK_HOUSE_FOUND_TRICK_MASTER   0x40A6
 #define VAR_TRICK_HOUSE_ENTRANCE_STATE       0x40A7
-#define VAR_UNUSED_0x40A8                    0x40A8 // Unused Var
+#define VAR_SPACE_CENTER_TRIGGER_STATE       0x40A8
 #define VAR_CYCLING_CHALLENGE_STATE          0x40A9
 #define VAR_SLATEPORT_MUSEUM_1F_STATE        0x40AA
 #define VAR_TRICK_HOUSE_PUZZLE_1_STATE       0x40AB
@@ -268,10 +268,10 @@
 #define VAR_NAVEL_ROCK_BOULDER_BUTTON_2      0x40F9
 #define VAR_NAVEL_ROCK_BOULDER_BUTTON_3      0x40FA
 #define VAR_NAVEL_ROCK_BOULDER_BUTTON_4      0x40FB
-#define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                    0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                    0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                    0x40FF // Unused Var
+#define VAR_SKY_PILLAR_2F_TRIGGER            0x40FC
+#define VAR_SKY_PILLAR_4F_TRIGGER            0x40FD
+#define VAR_SKY_PILLAR_5F_TRIGGER            0x40FE
+#define VAR_SKY_PILLAR_TOP_TRIGGER           0x40FF
 
 #define VARS_END                             0x40FF
 #define VARS_COUNT                           (VARS_END - VARS_START + 1)

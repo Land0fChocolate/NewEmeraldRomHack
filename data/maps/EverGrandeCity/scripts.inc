@@ -26,6 +26,22 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 	setvar VAR_TEMP_1, 1
 	end
 
+@TODO: remove this. This is a test trainer.
+EverGrandeCity_EventScript_Leaf::
+	cleartrainerflag TRAINER_LEAF
+	trainerbattle_single TRAINER_ZINNIA, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
+	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+EverGrandeCity_Text_LeafIntro:
+	.string "Hello, I'm here for testing!$"
+
+EverGrandeCity_Text_LeafDefeated:
+	.string "Test end!$"
+
+EverGrandeCity_Text_LeafPostBattle:
+	.string "Remove me!$"
+
 EverGrandeCity_EventScript_WomanInBattle::
 	locktarget
 	msgbox EverGrandeCity_Text_WomanInBattle, MSGBOX_SIGN

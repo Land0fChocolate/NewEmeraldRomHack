@@ -29,7 +29,7 @@ EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags::
 	call_if_eq EverGrandeCity_HallOfFame_EventScript_ReadyDexUpgradeEvent
 	return
 
-EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries::
+EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries:: @TODO: move feature to Zinnia service
 	clearflag FLAG_DEFEATED_MEW
 	clearflag FLAG_DEFEATED_LATIAS_OR_LATIOS
 	clearflag FLAG_DEFEATED_DEOXYS

@@ -48,7 +48,7 @@ BattleFrontier_Lounge7_EventScript_ChooseLeftTutorMove::
 	case 18, BattleFrontier_Lounge7_EventScript_IronHead
 	case 19, BattleFrontier_Lounge7_EventScript_StealthRock
 	case 20, BattleFrontier_Lounge7_EventScript_SeedBomb
-	case 21, BattleFrontier_Lounge7_EventScript_FlareCrash
+	case 21, BattleFrontier_Lounge7_EventScript_BlazeImpact
 	case 22, BattleFrontier_Lounge7_EventScript_PlayRough
 	case 23, BattleFrontier_Lounge7_EventScript_AquaTail
 	case 24, BattleFrontier_Lounge7_EventScript_FoulPlay
@@ -89,7 +89,7 @@ BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove::
 	case 18, BattleFrontier_Lounge7_EventScript_IronHead
 	case 19, BattleFrontier_Lounge7_EventScript_StealthRock
 	case 20, BattleFrontier_Lounge7_EventScript_SeedBomb
-	case 21, BattleFrontier_Lounge7_EventScript_FlareCrash
+	case 21, BattleFrontier_Lounge7_EventScript_BlazeImpact
 	case 22, BattleFrontier_Lounge7_EventScript_PlayRough
 	case 23, BattleFrontier_Lounge7_EventScript_AquaTail
 	case 24, BattleFrontier_Lounge7_EventScript_FoulPlay
@@ -204,7 +204,7 @@ BattleFrontier_Lounge7_EventScript_SeedBomb::
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
-BattleFrontier_Lounge7_EventScript_FlareCrash::
+BattleFrontier_Lounge7_EventScript_BlazeImpact::
 	setvar VAR_0x8008, 16
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
@@ -857,8 +857,8 @@ BattleFrontier_Lounge7_Text_FlintBladeDesc::
 	.string "with a high\n"
 	.string "critical hit rate.$"
 
-BattleFrontier_Lounge7_Text_FlareCrashDesc::
-	.string "A reckless crash\n"
+BattleFrontier_Lounge7_Text_BlazeImpactDesc::
+	.string "A harsh tackle\n"
 	.string "that lowers the\n"
 	.string "user's Speed.$"
 

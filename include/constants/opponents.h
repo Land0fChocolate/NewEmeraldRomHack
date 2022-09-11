@@ -833,12 +833,12 @@
 #define TRAINER_CRISTIN_3                   829
 #define TRAINER_CRISTIN_4                   830
 #define TRAINER_CRISTIN_5                   831
-#define TRAINER_FERNANDO_2                  832 //unused
-#define TRAINER_FERNANDO_3                  833 //unused
-#define TRAINER_FERNANDO_4                  834 //unused
-#define TRAINER_FERNANDO_5                  835 //unused
-#define TRAINER_SAWYER_2                    836 //unused
-#define TRAINER_SAWYER_3                    837 //unused
+#define TRAINER_MAY_POST_GAME_TREECKO       832
+#define TRAINER_MAY_POST_GAME_TORCHIC       833
+#define TRAINER_MAY_POST_GAME_MUDKIP        834
+#define TRAINER_BRENDAN_POST_GAME_TREECKO   835
+#define TRAINER_BRENDAN_POST_GAME_TORCHIC   836
+#define TRAINER_BRENDAN_POST_GAME_MUDKIP    837
 #define TRAINER_SAWYER_4                    838 //unused
 #define TRAINER_SAWYER_5                    839 //unused
 #define TRAINER_GOMEZ_2                     840
@@ -853,7 +853,7 @@
 #define TRAINER_ALVARO                      849
 #define TRAINER_EVERETT                     850
 #define TRAINER_RED                         851 //unused
-#define TRAINER_LEAF                        852 //unused
+#define TRAINER_LEAF                        852 //unused, except for testing
 #define TRAINER_BRENDAN_PLACEHOLDER         853 //unused
 #define TRAINER_MAY_PLACEHOLDER             854 //unused
 #define TRAINER_CECE                        855

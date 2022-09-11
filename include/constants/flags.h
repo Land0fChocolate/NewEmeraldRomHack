@@ -686,14 +686,14 @@
 #define FLAG_HIDE_CONTEST_HALL_WALLACE            0x287
 #define FLAG_ROXANNE_TRADE_STONES                 0x288
 #define FLAG_RECEIVED_TM75                        0x289
-#define FLAG_UNUSED_0x28A                         0x28A // Unused Flag
-#define FLAG_UNUSED_0x28B  0x28B // Unused Flag
-#define FLAG_UNUSED_0x28C  0x28C // Unused Flag
-#define FLAG_UNUSED_0x28D  0x28D // Unused Flag
-#define FLAG_UNUSED_0x28E  0x28E // Unused Flag
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
+#define FLAG_HIDE_ZINNIA_SPACE_CENTER             0x28A
+#define FLAG_HIDE_STEVEN_SPACE_CENTER             0x28B
+#define FLAG_HIDE_ARCHIE_MAXIE_SPACE_CENTER       0x28C
+#define FLAG_HIDE_ZINNIA_SKY_PILLAR_2F            0x28D
+#define FLAG_HIDE_ZINNIA_SKY_PILLAR_4F            0x28E
+#define FLAG_HIDE_ZINNIA_SKY_PILLAR_5F            0x28F
+#define FLAG_HIDE_ZINNIA_SKY_PILLAR_TOP           0x290
+#define FLAG_OBTAINED_KEY_STONE                   0x291
 #define FLAG_UNUSED_0x292  0x292 // Unused Flag
 #define FLAG_UNUSED_0x293  0x293 // Unused Flag
 #define FLAG_UNUSED_0x294  0x294 // Unused Flag
@@ -791,10 +791,10 @@
 #define FLAG_HIDE_ROUTE_101_ZIGZAGOON                               0x2EE
 #define FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY                           0x2EF
 #define FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE                       0x2F0
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN              0x2F1
+#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN              0x2F1 // unused
 #define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1          0x2F2
 #define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2          0x2F3
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA          0x2F4
+#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA          0x2F4 // unused
 #define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_BEDROOM_MOM               0x2F5
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM                0x2F6
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM                    0x2F7
@@ -861,7 +861,7 @@
 #define FLAG_HIDE_CAVE_OF_ORIGIN_B1F_WALLACE                        0x334
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_1_BLOCKING_ENTRANCE         0x335
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE         0x336
-#define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337
+#define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337 // unused
 #define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338
 #define FLAG_HIDE_LEGEND_MON_CAVE_OF_ORIGIN                         0x339 // Unused, leftover from R/S
 #define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
@@ -900,8 +900,8 @@
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE                     0x35B
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL                    0x35C
 #define FLAG_HIDE_LILYCOVE_HARBOR_SSTIDAL                           0x35D
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA          0x35E
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN              0x35F
+#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA          0x35E // unused
+#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN              0x35F // unused
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_1           0x360
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_2           0x361
 #define FLAG_HIDE_PETALBURG_GYM_WALLY                               0x362
@@ -1502,7 +1502,7 @@
 #define FLAG_LANDMARK_FALLARBOR_WASTELAND           (SYSTEM_FLAGS + 0x88)
 #define FLAG_LANDMARK_WILDWOODS                     (SYSTEM_FLAGS + 0x89)
 #define FLAG_LANDMARK_MAUVILLE_MEADOW               (SYSTEM_FLAGS + 0x8A)
-#define FLAG_LANDMARK_FORTREE_LAKE                  (SYSTEM_FLAGS + 0x8B)
+#define FLAG_LANDMARK_FORTREE_LAKE                  (SYSTEM_FLAGS + 0x8B) //unused Flag
 #define FLAG_LANDMARK_FORTREE_JUNGLE                (SYSTEM_FLAGS + 0x8C)
 #define FLAG_LANDMARK_LUSTROUS_LAIR                 (SYSTEM_FLAGS + 0x8D)
 #define FLAG_LANDMARK_DERELICT_DEN                  (SYSTEM_FLAGS + 0x8E)
@@ -1566,7 +1566,7 @@
 #define FLAG_DAILY_OLDALEFARM_POKEMON_GIVEN         (DAILY_FLAGS_START + 0x3)
 #define FLAG_DAILY_DESERT_UNDERPASS_FOSSIL          (DAILY_FLAGS_START + 0x4)
 #define FLAG_DAILY_BATTLE_TENT_TRAINERS             (DAILY_FLAGS_START + 0x5)
-#define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
+#define FLAG_DAILY_BRAWLY_SHARD                     (DAILY_FLAGS_START + 0x6)
 #define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag
 #define FLAG_UNUSED_0x928                           (DAILY_FLAGS_START + 0x8)  // Unused Flag
 #define FLAG_DAILY_GROOM_DONE                       (DAILY_FLAGS_START + 0x9)

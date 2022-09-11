@@ -2344,7 +2344,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 11;
+            task->tNumItems = 31;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2507,16 +2507,36 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
     {
+        gText_ScopeLens16BP,
+        gText_WideLens16BP,
+        gText_ToxicOrb16BP,
+        gText_FlameOrb16BP,
+        gText_AdrenalineOrb16BP,
+        gText_RedCard16BP,
+        gText_DestinyKnot16BP,
+        gText_Metronome16BP,
+        gText_ShedShell16BP,
+        gText_StickyBarb16BP,
+        gText_LaggingTail16BP,
+        gText_QuickClaw24BP,
+        gText_Snowball24BP,
+        gText_LightClay24BP,
+        gText_BlackSludge24BP,
+        gText_WiseGlasses24BP,
+        gText_MuscleBand24BP,
+        gText_HeatRock24BP,
+        gText_DampRock24BP,
+        gText_SmoothRock24BP,
+        gText_IcyRock24BP,
+        gText_WeaknessPolicy24BP,
+        gText_BlunderPolicy24BP,
         gText_Leftovers32BP,
-        gText_WhiteHerb32BP,
-        gText_QuickClaw32BP,
-        gText_MentalHerb32BP,
-        gText_AirBalloon48BP,
-        gText_ChoiceBand48BP,
-        gText_ChoiceSpecs48BP,
-        gText_ChoiceScarf48BP,
-        gText_FocusSash48BP,
-        gText_ScopeLens48BP,
+        gText_AirBalloon32BP,
+        gText_ChoiceBand32BP,
+        gText_ChoiceSpecs32BP,
+        gText_ChoiceScarf32BP,
+        gText_FocusSash32BP,
+        gText_LifeOrb32BP,
         gText_Exit
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =
@@ -2570,7 +2590,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_IronHead16BP,
         gText_StealthRock16BP,
         gText_SeedBomb16BP,
-        gText_FlareCrash16BP,
+        gText_BlazeImpact16BP,
         gText_PlayRough20BP,
         gText_AquaTail20BP,
         gText_FoulPlay20BP,
@@ -3214,7 +3234,7 @@ static const u16 sBattleFrontier_TutorMoves1[] =
     MOVE_IRON_HEAD,
     MOVE_STEALTH_ROCK,
     MOVE_SEED_BOMB,
-    MOVE_FLARE_CRASH,
+    MOVE_BLAZE_IMPACT,
     MOVE_PLAY_ROUGH,
     MOVE_AQUA_TAIL,
     MOVE_FOUL_PLAY,
@@ -3315,7 +3335,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_IronHeadDesc,
         BattleFrontier_Lounge7_Text_StealthRockDesc,
         BattleFrontier_Lounge7_Text_SeedBombDesc,
-        BattleFrontier_Lounge7_Text_FlareCrashDesc,
+        BattleFrontier_Lounge7_Text_BlazeImpactDesc,
         BattleFrontier_Lounge7_Text_PlayRoughDesc,
         BattleFrontier_Lounge7_Text_AquaTailDesc,
         BattleFrontier_Lounge7_Text_FoulPlayDesc,
@@ -3492,17 +3512,17 @@ static const u16 sDeoxysRockPalettes[][16] = {
 };
 
 static const u8 sDeoxysRockCoords[][2] = {
-    { 15, 12 },
-    { 11, 14 },
-    { 15,  8 },
+    { 19, 11 },
+    { 15, 13 },
+    { 19,  7 },
+    { 23, 13 },
+    { 16, 10 },
+    { 22, 10 },
+    { 19, 13 },
+    { 15, 13 },
+    { 23, 13 },
     { 19, 14 },
-    { 12, 11 },
-    { 18, 11 },
-    { 15, 14 },
-    { 11, 14 },
-    { 19, 14 },
-    { 15, 15 },
-    { 15, 10 },
+    { 19, 9 },
 };
 
 static void Task_DeoxysRockInteraction(u8 taskId)
@@ -3560,8 +3580,8 @@ static void ChangeDeoxysRockLevel(u8 rockLevel)
 
     CreateTask(WaitForDeoxysRockMovement, 8);
     gFieldEffectArguments[0] = LOCALID_BIRTH_ISLAND_EXTERIOR_ROCK;
-    gFieldEffectArguments[1] = MAP_NUM(BIRTH_ISLAND_EXTERIOR);
-    gFieldEffectArguments[2] = MAP_GROUP(BIRTH_ISLAND_EXTERIOR);
+    gFieldEffectArguments[1] = MAP_NUM(SPACE_AREA2);
+    gFieldEffectArguments[2] = MAP_GROUP(SPACE_AREA2);
     gFieldEffectArguments[3] = sDeoxysRockCoords[rockLevel][0];
     gFieldEffectArguments[4] = sDeoxysRockCoords[rockLevel][1];
 
@@ -3586,7 +3606,7 @@ static void WaitForDeoxysRockMovement(u8 taskId)
 void IncrementBirthIslandRockStepCount(void)
 {
     u16 var = VarGet(VAR_DEOXYS_ROCK_STEP_COUNT);
-    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(BIRTH_ISLAND_EXTERIOR) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BIRTH_ISLAND_EXTERIOR))
+    if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(SPACE_AREA2) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(SPACE_AREA2))
     {
         var++;
         if (var > 99)

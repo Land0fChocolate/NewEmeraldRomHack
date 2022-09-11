@@ -489,7 +489,7 @@ const struct Item gItems[] =
         .name = _("Soda Pop"),
         .itemId = ITEM_SODA_POP,
         .price = 300,
-        .holdEffectParam = 60,
+        .holdEffectParam = 50,
         .description = sSodaPopDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -793,8 +793,10 @@ const struct Item gItems[] =
         .price = 150,
         .description = sPewterCrunchiesDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = ITEM_B_USE_MEDICINE,
+        .battleUseFunc = ItemUseInBattle_Medicine,
         .flingPower = 30,
     },
 
@@ -805,8 +807,10 @@ const struct Item gItems[] =
         .price = 250,
         .description = sRageCandyBarDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = ITEM_B_USE_MEDICINE,
+        .battleUseFunc = ItemUseInBattle_Medicine,
         .flingPower = 30,
     },
 
@@ -898,7 +902,8 @@ const struct Item gItems[] =
     {
         .name = _("Jelly Donut"),
         .itemId = ITEM_JELLY_FILLED_DONUT,
-        .price = 450,
+        .price = 300,
+        .holdEffectParam = 50,
         .description = sJellyFilledDonutDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1854,24 +1859,24 @@ const struct Item gItems[] =
 
 // Treasures
 
-    [ITEM_BOTTLE_CAP] = // Todo
+    [ITEM_BOTTLE_CAP] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Bottle Cap"),
+        .itemId = ITEM_BOTTLE_CAP,
+        .price = 1000,
+        .description = sBottleCapDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 30,
     },
 
-    [ITEM_GOLD_BOTTLE_CAP] = // Todo
+    [ITEM_GOLD_BOTTLE_CAP] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("GoldBottlCap"),
+        .itemId = ITEM_GOLD_BOTTLE_CAP,
+        .price = 10000,
+        .description = sGoldBottleCapDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6895,36 +6900,39 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_EJECT_PACK] = // Todo
+    [ITEM_EJECT_PACK] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Eject Pack"),
+        .itemId = ITEM_EJECT_PACK,
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_EJECT_PACK,
+        .description = sEjectPackDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 50,
     },
 
-    [ITEM_HEAVY_DUTY_BOOTS] = // Todo
+    [ITEM_HEAVY_DUTY_BOOTS] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("Heavy-DtyBts"),
+        .itemId = ITEM_HEAVY_DUTY_BOOTS,
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_HEAVY_DUTY_BOOTS,
+        .description = sHeavyDutyBootsDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
     },
 
-    [ITEM_BLUNDER_POLICY] = // Todo
+    [ITEM_BLUNDER_POLICY] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("BlundrPolicy"),
+        .itemId = ITEM_BLUNDER_POLICY,
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_BLUNDER_POLICY,
+        .description = sBlunderPolicyDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6943,12 +6951,13 @@ const struct Item gItems[] =
         .flingPower = 100,
     },
 
-    [ITEM_UTILITY_UMBRELLA] = // Todo
+    [ITEM_UTILITY_UMBRELLA] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("UtltyUmbrlla"),
+        .itemId = ITEM_UTILITY_UMBRELLA,
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_UTILITY_UMBRELLA,
+        .description = sUtilityUmbrellaDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -9340,18 +9349,18 @@ const struct Item gItems[] =
 
     [ITEM_KEY_STONE] = // Todo
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("Key Stone"),
+        .itemId = ITEM_KEY_STONE,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+        .description = sKeyStoneDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_MEGA_RING] = // Todo (Replaces ITEM_MEGA_BRACELET)
+    [ITEM_MEGA_RING] =
     {
-        .name = _("Mega Bracelet"),
+        .name = _("Mega Ring"),
         .itemId = ITEM_MEGA_RING,
         .price = 0,
         .importance = 1,

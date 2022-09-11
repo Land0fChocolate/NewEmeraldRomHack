@@ -13,6 +13,7 @@ u32 FieldEffectStart(u8);
 bool8 FieldEffectActiveListContains(u8 id);
 void FieldEffectActiveListClear(void);
 void ReturnToFieldFromFlyMapSelect(void);
+void ReturnToFieldFromDragonAscentSelect(void);
 u8 AddNewGameBirchObject(s16, s16, u8);
 void FieldEffectStop(struct Sprite *sprite, u8 id);
 u8 CreateTrainerSprite(u8 trainerSpriteID, s16 x, s16 y, u8 subpriority, u8 *buffer);
@@ -46,5 +47,7 @@ void MultiplyPaletteRGBComponents(u16 i, u8 r, u8 g, u8 b);
 void FreeResourcesAndDestroySprite(struct Sprite *sprite, u8 spriteId);
 u8 CreateMonSprite_PicBox(u16 species, s16 x, s16 y, u8 subpriority);
 void StartEscapeRopeFieldEffect(void);
+
+void FieldCallback_UseDragonAscent(void);
 
 #endif // GUARD_FIELD_EFFECTS_H

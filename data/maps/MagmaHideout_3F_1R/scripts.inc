@@ -60,8 +60,8 @@ MagmaHideout_3F_1R_Text_ZinniaMeetsPlayer:
 	.string "can go on through.$"
 
 MagmaHideout_3F_1R_Text_ZinniaIdle:
-	.string "Oh don't mind me. Just do whatever it is\n"
-	.string "you came here to do.$"
+	.string "Oh don't mind me. Just do whatever it\n"
+	.string "is you came here to do.$"
 
 MagmaHideout_3F_1R_Text_Grunt9Intro:
 	.string "What did I do to deserve this guard\n"

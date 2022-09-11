@@ -2950,8 +2950,8 @@ static const u8 sFlintBladeDescription[] = _(
     "Strikes with a hard edge.\n"
     "High critical-hit ratio.");
 
-static const u8 sFlareCrashDescription[] = _(
-    "User tackles hard into the\n"
+static const u8 sBlazeImpactDescription[] = _(
+    "User slams hard into the\n"
     "foe but has Speed reduced.");
 
 static const u8 sSingularityDescription[] = _(
@@ -2959,7 +2959,7 @@ static const u8 sSingularityDescription[] = _(
     "foe Speed if struck.");
 
 static const u8 sSerpentDanceDescription[] = _(
-    "A graceful dance that ups\n"
+    "A soothing dance that ups\n"
     "Sp. Atk and Speed.");
 
 static const u8 sIceTuskDescription[] = _(
@@ -3736,7 +3736,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     //New Emerald
     [MOVE_WAR_DANCE - 1] = sWarDanceDescription,
     [MOVE_FLINT_BLADE - 1] = sFlintBladeDescription,
-    [MOVE_FLARE_CRASH - 1] = sFlareCrashDescription,
+    [MOVE_BLAZE_IMPACT - 1] = sBlazeImpactDescription,
     [MOVE_SINGULARITY - 1] = sSingularityDescription,
     [MOVE_SERPENT_DANCE - 1] = sSerpentDanceDescription,
     [MOVE_ICE_TUSK - 1] = sIceTuskDescription,

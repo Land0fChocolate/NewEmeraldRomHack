@@ -617,8 +617,9 @@
 #define STRINGID_THORNSSPREADOUT                      614
 #define STRINGID_HIDDENTHORNSDMG                      615
 #define STRINGID_PKMNBLEWAWAYHIDDENTHORNS             616
+#define STRINGID_TIMETRAVELLEDTOPREVIOUSSTATE         617
 
-#define BATTLESTRINGS_COUNT                           617
+#define BATTLESTRINGS_COUNT                           618
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.

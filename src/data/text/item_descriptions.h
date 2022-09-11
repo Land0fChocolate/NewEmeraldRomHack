@@ -178,7 +178,7 @@ static const u8 sFreshWaterDesc[] = _(
 static const u8 sSodaPopDesc[] = _(
     "A fizzy soda drink\n"
     "that restores HP\n"
-    "by 60 points.");
+    "by 50 points.");
 
 static const u8 sLemonadeDesc[] = _(
     "A very sweet drink\n"
@@ -349,32 +349,32 @@ static const u8 sCarbosDesc[] = _(
 
 static const u8 sSuperHPUpDesc[] = _(
     "Raises the base HP\n"
-    "of one Pokémon. 4x\n"
+    "of one Pokémon. 5x\n"
     "strength of HP Up.");
 
 static const u8 sSuperProteinDesc[] = _(
     "Raises base Attack\n"
-    "of one Pokémon. 4x\n"
+    "of one Pokémon. 5x\n"
     "potency of Protein.");
 
 static const u8 sSuperIronDesc[] = _(
     "Ups base Defense\n"
-    "of one Pokémon. 4x\n"
+    "of one Pokémon. 5x\n"
     "strength of Iron.");
 
 static const u8 sSuperCalciumDesc[] = _(
     "Raises base Sp. Atk\n"
-    "of one Pokémon. 4x\n"
+    "of one Pokémon. 5x\n"
     "potency of Calcium.");
 
 static const u8 sSuperZincDesc[] = _(
     "Raises base Sp. Def\n"
-    "of one Pokémon. 4x\n"
+    "of one Pokémon. 5x\n"
     "strength of Zinc.");
 
 static const u8 sSuperCarbosDesc[] = _(
     "Raises base Speed\n"
-    "of one Pokémon. 4x\n"
+    "of one Pokémon. 5x\n"
     "potency of Carbos.");
 
 static const u8 sPPUpDesc[] = _(
@@ -671,11 +671,15 @@ static const u8 sMaxMushroomsDesc[] = _( // Todo
     "?????");
 
 // Treasures
-static const u8 sBottleCapDesc[] = _( // Todo
-    "?????");
+static const u8 sBottleCapDesc[] = _(
+    "A beautiful bottle\n"
+    "cap that gives off\n"
+    "a silver gleam.");
 
-static const u8 sGoldBottleCapDesc[] = _( // Todo
-    "?????");
+static const u8 sGoldBottleCapDesc[] = _(
+    "A beautiful bottle\n"
+    "cap that gives off\n"
+    "a golden gleam.");
 
 static const u8 sNuggetDesc[] = _(
     "A nugget of pure\n"
@@ -2242,9 +2246,9 @@ static const u8 sExpShareDesc[] = _(
     "from battles.");
 
 static const u8 sQuickClawDesc[] = _(
-    "A hold item that\n"
-    "occasionally allows\n"
-    "the first strike.");
+    "Ups Speed by 10%\n"
+    "if user is below\n"
+    "half health.");
 
 static const u8 sSootheBellDesc[] = _(
     "A hold item that\n"
@@ -2481,20 +2485,28 @@ static const u8 sProtectivePadsDesc[] = _(
 static const u8 sThroatSprayDesc[] = _( // Todo
     "?????");
 
-static const u8 sEjectPackDesc[] = _( // Todo
-    "?????");
+static const u8 sEjectPackDesc[] = _(
+    "Forces the user to\n"
+    "switch if its stats\n"
+    "are lowered.");
 
-static const u8 sHeavyDutyBootsDesc[] = _( // Todo
-    "?????");
+static const u8 sHeavyDutyBootsDesc[] = _(
+    "Boots that prevent\n"
+    "effects of traps\n"
+    "set in the field.");
 
-static const u8 sBlunderPolicyDesc[] = _( // Todo
-    "?????");
+static const u8 sBlunderPolicyDesc[] = _(
+    "Raises Speed if\n"
+    "the user misses\n"
+    "due to Accuracy.");
 
 static const u8 sRoomServiceDesc[] = _( // Todo
     "?????");
 
-static const u8 sUtilityUmbrellaDesc[] = _( // Todo
-    "?????");
+static const u8 sUtilityUmbrellaDesc[] = _(
+    "An umbrella that\n"
+    "protects from\n"
+    "weather effects.");
 
 // Berries
 static const u8 sCheriBerryDesc[] = _(
@@ -3422,8 +3434,10 @@ static const u8 sReinsOfUnityDesc[] = _( // Todo
     "?????");
 
 // Battle Mechanic Key Items
-static const u8 sKeyStoneDesc[] = _( // Todo
-    "?????");
+static const u8 sKeyStoneDesc[] = _(
+    "A stone of untold\n"
+    "power that allows\n"
+    "Mega Evolution.");
 
 static const u8 sMegaRingDesc[] = _(
     "Enables {PKMN} holding\n"

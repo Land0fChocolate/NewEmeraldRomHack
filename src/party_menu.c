@@ -27,6 +27,7 @@
 #include "frontier_util.h"
 #include "gpu_regs.h"
 #include "graphics.h"
+#include "heal_location.h"
 #include "international_string_util.h"
 #include "item.h"
 #include "item_menu.h"
@@ -70,6 +71,7 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/maps.h"
+#include "constants/map_types.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
@@ -406,6 +408,7 @@ static bool8 SetUpFieldMove_Surf(void);
 static bool8 SetUpFieldMove_Fly(void);
 static bool8 SetUpFieldMove_Waterfall(void);
 static bool8 SetUpFieldMove_Dive(void);
+static bool8 SetUpFieldMove_DragonAscent(void);
 void TryItemHoldFormChange(struct Pokemon *mon);
 
 // static const data
@@ -2549,6 +2552,10 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     if (canUseCommand && FLAG_BADGE02_GET)
         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLASH);
 
+    if ((GetMonData(&mons[slotId], MON_DATA_SPECIES) == SPECIES_RAYQUAZA)
+        && FLAG_OBTAINED_KEY_STONE)
+         AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_DRAGON_ASCENT);
+
     // Add field moves to action list
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
@@ -3696,6 +3703,20 @@ static void CursorCb_FieldMove(u8 taskId)
                 gPartyMenu.exitCallback = CB2_OpenFlyMap;
                 Task_ClosePartyMenu(taskId);
                 break;
+            case FIELD_MOVE_DRAGON_ASCENT:
+                if (gMapHeader.mapType == MAP_TYPE_UNKNOWN)
+                {
+                    SetWarpDestinationToLastHealLocation();
+                }
+                else
+                {
+                    //SetWarpDestination(MAP_GROUP(SPACE_AREA1), MAP_NUM(SPACE_AREA1), -1, 37, 35);
+                    SetWarpDestination(MAP_GROUP(SPACE_AREA2), MAP_NUM(SPACE_AREA2), -1, 20, 12);
+                }
+                ReturnToFieldFromDragonAscentSelect();
+                
+                sPartyMenuInternal->data[0] = fieldMove;
+                break;
             default:
                 gPartyMenu.exitCallback = CB2_ReturnToField;
                 Task_ClosePartyMenu(taskId);
@@ -3820,6 +3841,14 @@ static void DisplayCantUseSurfMessage(void)
 static bool8 SetUpFieldMove_Fly(void)
 {
     if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+static bool8 SetUpFieldMove_DragonAscent(void)
+{
+    if (Overworld_MapTypeAllowsDragonAscent(gMapHeader.mapType) == TRUE)
         return TRUE;
     else
         return FALSE;

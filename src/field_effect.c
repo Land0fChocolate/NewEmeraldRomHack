@@ -233,6 +233,37 @@ static void SpriteCB_DeoxysRockFragment(struct Sprite* sprite);
 
 static void Task_MoveDeoxysRock(u8 taskId);
 
+static void Task_UseDragonAscent(u8);
+static void FieldCallback_DragonAscentIntoMap(void);
+static void Task_DragonAscentIntoMap(u8);
+
+static void Task_DragonAscentOut(u8);
+static void DragonAscentOutFieldEffect_FieldMovePose(struct Task *);
+static void DragonAscentOutFieldEffect_ShowMon(struct Task *);
+static void DragonAscentOutFieldEffect_RayquazaLeaveBall(struct Task *);
+static void DragonAscentOutFieldEffect_WaitRayquazaLeave(struct Task *);
+static void DragonAscentOutFieldEffect_RayquazaSwoopDown(struct Task *);
+static void DragonAscentOutFieldEffect_JumpOnRayquaza(struct Task *);
+static void DragonAscentOutFieldEffect_DragonAscentOffWithRayquaza(struct Task *);
+static void DragonAscentOutFieldEffect_WaitDragonAscentOff(struct Task *);
+static void DragonAscentOutFieldEffect_End(struct Task *);
+
+static u8 CreateDragonAscentRayquazaSprite(void);
+static u8 GetDragonAscentRayquazaAnimCompleted(u8);
+static void StartDragonAscentRayquazaSwoopDown(u8);
+static void SetDragonAscentRayquazaPlayerSpriteId(u8, u8);
+static void SpriteCB_DragonAscentRayquazaLeaveBall(struct Sprite *);
+static void SpriteCB_DragonAscentRayquazaSwoopDown(struct Sprite *);
+
+static void Task_DragonAscentIn(u8);
+static void DragonAscentInFieldEffect_RayquazaSwoopDown(struct Task *);
+static void DragonAscentInFieldEffect_DragonAscentInWithRayquaza(struct Task *);
+static void DragonAscentInFieldEffect_JumpOffRayquaza(struct Task *);
+static void DragonAscentInFieldEffect_FieldMovePose(struct Task *);
+static void DragonAscentInFieldEffect_RayquazaReturnToBall(struct Task *);
+static void DragonAscentInFieldEffect_WaitRayquazaReturn(struct Task *);
+static void DragonAscentInFieldEffect_End(struct Task *);
+
 // Static RAM declarations
 
 static u8 sActiveList[32];
@@ -3072,7 +3103,7 @@ static void SurfFieldEffect_End(struct Task *task)
 u8 FldEff_RayquazaSpotlight(void)
 {
     u8 i, j, k;
-    u8 spriteId = CreateSprite(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_RAYQUAZA], 120, -24, 1);
+    u8 spriteId = CreateSprite(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_RAYQUAZA_SPOTLIGHT], 120, -24, 1);
     struct Sprite *sprite = &gSprites[spriteId];
 
     sprite->oam.priority = 1;
@@ -3887,3 +3918,502 @@ static void Task_MoveDeoxysRock(u8 taskId)
     }
 }
 
+//Dragon Ascent field move functionality
+
+void ReturnToFieldFromDragonAscentSelect(void)
+{
+    SetMainCallback2(CB2_ReturnToField);
+    gFieldCallback = FieldCallback_UseDragonAscent;
+}
+
+void FieldCallback_UseDragonAscent(void)
+{
+    FreeAllWindowBuffers();
+    FadeInFromBlack();
+    CreateTask(Task_UseDragonAscent, 0);
+    ScriptContext2_Enable();
+    FreezeObjectEvents();
+    gFieldCallback = NULL;
+}
+
+static void Task_UseDragonAscent(u8 taskId)
+{
+    struct Task *task;
+    task = &gTasks[taskId];
+
+    if (!task->data[0])
+    {
+        if (!IsWeatherNotFadingIn())
+           return;
+
+        gFieldEffectArguments[0] = GetCursorSelectionMonId();
+        if ((int)gFieldEffectArguments[0] > PARTY_SIZE - 1)
+            gFieldEffectArguments[0] = 0;
+
+        FieldEffectStart(FLDEFF_USE_DRAGON_ASCENT);
+        task->data[0]++;
+    }
+
+    if (!FieldEffectActiveListContains(FLDEFF_USE_DRAGON_ASCENT))
+    {
+        Overworld_ResetStateAfterFly();
+        WarpIntoMap();
+        SetMainCallback2(CB2_LoadMap);
+        gFieldCallback = FieldCallback_DragonAscentIntoMap;
+        DestroyTask(taskId);
+    }
+}
+
+static void FieldCallback_DragonAscentIntoMap(void)
+{
+    Overworld_PlaySpecialMapMusic();
+    FadeInFromBlack();
+    CreateTask(Task_DragonAscentIntoMap, 0);
+    gObjectEvents[gPlayerAvatar.objectEventId].invisible = TRUE;
+    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
+    {
+        ObjectEventTurn(&gObjectEvents[gPlayerAvatar.objectEventId], DIR_WEST);
+    }
+    ScriptContext2_Enable();
+    FreezeObjectEvents();
+    gFieldCallback = NULL;
+}
+
+static void Task_DragonAscentIntoMap(u8 taskId)
+{
+    struct Task *task;
+    task = &gTasks[taskId];
+    if (task->data[0] == 0)
+    {
+        if (gPaletteFade.active)
+        {
+            return;
+        }
+        FieldEffectStart(FLDEFF_DRAGON_ASCENT_IN);
+        task->data[0]++;
+    }
+    if (!FieldEffectActiveListContains(FLDEFF_DRAGON_ASCENT_IN))
+    {
+        ScriptContext2_Disable();
+        UnfreezeObjectEvents();
+        DestroyTask(taskId);
+    }
+}
+
+// Task data for Task_DragonAscentOut/DragonAscentIn
+#define tState          data[0]
+#define tMonId          data[1]
+#define tRayquazaSpriteId   data[1] //re-used
+#define tTimer          data[2]
+#define tAvatarFlags    data[15]
+
+// Sprite data for Rayquaza
+#define sPlayerSpriteId data[6]
+#define sAnimCompleted  data[7]
+
+u8 FldEff_UseDragonAscent(void)
+{
+    u8 taskId = CreateTask(Task_DragonAscentOut, 254);
+    gTasks[taskId].tMonId = gFieldEffectArguments[0];
+    return 0;
+}
+
+void (*const sDragonAscentOutFieldEffectFuncs[])(struct Task *) = {
+    DragonAscentOutFieldEffect_FieldMovePose,
+    DragonAscentOutFieldEffect_ShowMon,
+    DragonAscentOutFieldEffect_RayquazaLeaveBall,
+    DragonAscentOutFieldEffect_JumpOnRayquaza,
+    DragonAscentOutFieldEffect_WaitDragonAscentOff,
+    DragonAscentOutFieldEffect_End,
+};
+
+static void Task_DragonAscentOut(u8 taskId)
+{
+    sDragonAscentOutFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
+}
+
+static void DragonAscentOutFieldEffect_FieldMovePose(struct Task *task)
+{
+    struct ObjectEvent *objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    if (!ObjectEventIsMovementOverridden(objectEvent) || ObjectEventClearHeldMovementIfFinished(objectEvent))
+    {
+        task->tAvatarFlags = gPlayerAvatar.flags;
+        gPlayerAvatar.preventStep = TRUE;
+        SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ON_FOOT);
+        SetPlayerAvatarFieldMove();
+        ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
+        task->tState++;
+    }
+}
+
+static void DragonAscentOutFieldEffect_ShowMon(struct Task *task)
+{
+    struct ObjectEvent *objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    if (ObjectEventClearHeldMovementIfFinished(objectEvent))
+    {
+        task->tState++;
+        gFieldEffectArguments[0] = task->tMonId;
+        FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+    }
+}
+
+static void DragonAscentOutFieldEffect_RayquazaLeaveBall(struct Task *task)
+{
+    if (!FieldEffectActiveListContains(FLDEFF_FIELD_MOVE_SHOW_MON))
+    {
+        struct ObjectEvent *objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+        if (task->tAvatarFlags & PLAYER_AVATAR_FLAG_SURFING)
+        {
+            SetSurfBlob_BobState(objectEvent->fieldEffectSpriteId, BOB_JUST_MON);
+            SetSurfBlob_DontSyncAnim(objectEvent->fieldEffectSpriteId, FALSE);
+        }
+        task->tRayquazaSpriteId = CreateDragonAscentRayquazaSprite(); // Does "leave ball" animation by default
+        task->tState++;
+    }
+}
+
+static void DragonAscentOutFieldEffect_JumpOnRayquaza(struct Task *task)
+{
+    if ((++task->tTimer) >= 8)
+    {
+        struct ObjectEvent *objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+        ObjectEventSetGraphicsId(objectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_SURFING));
+        objectEvent->invisible = TRUE;
+        objectEvent->hasShadow = FALSE;
+        if (task->tAvatarFlags & PLAYER_AVATAR_FLAG_SURFING)
+        {
+            DestroySprite(&gSprites[objectEvent->fieldEffectSpriteId]);
+        }
+        task->tState++;
+        task->tTimer = 0;
+    }
+}
+
+static void DragonAscentOutFieldEffect_WaitDragonAscentOff(struct Task *task)
+{
+    if (GetDragonAscentRayquazaAnimCompleted(task->tRayquazaSpriteId))
+    {
+        WarpFadeOutScreen();
+        task->tState++;
+    }
+}
+
+static void DragonAscentOutFieldEffect_End(struct Task *task)
+{
+    if (!gPaletteFade.active)
+    {
+        FieldEffectActiveListRemove(FLDEFF_USE_DRAGON_ASCENT);
+        DestroyTask(FindTaskIdByFunc(Task_DragonAscentOut));
+    }
+}
+
+static u8 CreateDragonAscentRayquazaSprite(void)
+{
+    u8 spriteId;
+    struct Sprite *sprite;
+
+    LoadFieldEffectPalette(FLDEFFOBJ_RAYQUAZA);
+    spriteId = CreateSprite(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_RAYQUAZA], 0x0, 0x0, 0x1);
+    sprite = &gSprites[spriteId];
+    sprite->oam.priority = 1;
+    sprite->callback = SpriteCB_DragonAscentRayquazaLeaveBall;
+    return spriteId;
+}
+
+static u8 GetDragonAscentRayquazaAnimCompleted(u8 spriteId)
+{
+    return gSprites[spriteId].sAnimCompleted;
+}
+
+static void StartDragonAscentRayquazaSwoopDown(u8 spriteId)
+{
+    struct Sprite *sprite;
+    sprite = &gSprites[spriteId];
+    sprite->callback = SpriteCB_DragonAscentRayquazaSwoopDown;
+    sprite->x = DISPLAY_WIDTH / 2;
+    sprite->y = 0;
+    sprite->x2 = 0;
+    sprite->y2 = 0;
+    memset(&sprite->data[0], 0, 8 * sizeof(u16) /* zero all data cells */);
+    sprite->sPlayerSpriteId = MAX_SPRITES;
+}
+
+static void SetDragonAscentRayquazaPlayerSpriteId(u8 rayquazaSpriteId, u8 playerSpriteId)
+{
+    gSprites[rayquazaSpriteId].sPlayerSpriteId = playerSpriteId;
+}
+
+static const union AffineAnimCmd sAffineAnim_DragonAscentRayquazaLeaveBall[] = {
+    AFFINEANIMCMD_FRAME(8, 8, 0, 0),
+    AFFINEANIMCMD_FRAME(28, 28, 0, 30),
+    AFFINEANIMCMD_END
+};
+
+static const union AffineAnimCmd sAffineAnim_DragonAscentRayquazaReturnToBall[] = {
+    AFFINEANIMCMD_FRAME(256, 256, 64, 0),
+    AFFINEANIMCMD_FRAME(-10, -10, 0, 22),
+    AFFINEANIMCMD_END
+};
+
+static const union AffineAnimCmd *const sAffineAnims_DragonAscentRayquaza[] = {
+    sAffineAnim_DragonAscentRayquazaLeaveBall,
+    sAffineAnim_DragonAscentRayquazaReturnToBall
+};
+
+static void SpriteCB_DragonAscentRayquazaLeaveBall(struct Sprite *sprite)
+{
+    if (sprite->sAnimCompleted == FALSE)
+    {
+        if (sprite->data[0] == 0)
+        {
+            sprite->oam.affineMode = ST_OAM_AFFINE_DOUBLE;
+            sprite->affineAnims = sAffineAnims_DragonAscentRayquaza;
+            InitSpriteAffineAnim(sprite);
+            StartSpriteAffineAnim(sprite, 0);
+            sprite->x = 0x76;
+            sprite->y = -25;
+            sprite->data[0]++;
+            sprite->data[1] = 0x40;
+            sprite->data[2] = 0x100;
+        }
+        sprite->data[1] += (sprite->data[2] >> 8);
+        sprite->x2 = 1;
+        sprite->y2 = Sin(sprite->data[1], 0x78);
+        if (sprite->data[2] < 0x800)
+        {
+            sprite->data[2] += 0x60;
+        }
+        if (sprite->data[1] > 0x81)
+        {
+            sprite->sAnimCompleted++;
+            sprite->oam.affineMode = ST_OAM_AFFINE_OFF;
+            FreeOamMatrix(sprite->oam.matrixNum);
+            CalcCenterToCornerVec(sprite, sprite->oam.shape, sprite->oam.size, ST_OAM_AFFINE_OFF);
+        }
+    }
+}
+
+static void SpriteCB_DragonAscentRayquazaSwoopDown(struct Sprite *sprite)
+{
+    sprite->y = 192;
+    sprite->x2 = 1;
+    sprite->y2 = sprite->data[2] * -1;
+    sprite->data[2] = (sprite->data[2] + 5) & 0xff;
+    if (sprite->sPlayerSpriteId != MAX_SPRITES)
+    {
+        struct Sprite *sprite1 = &gSprites[sprite->sPlayerSpriteId];
+        sprite1->coordOffsetEnabled = FALSE;
+        sprite1->x = sprite->x + sprite->x2;
+        sprite1->y = sprite->y + sprite->y2 - 8;
+        sprite1->x2 = 0;
+        sprite1->y2 = 0;
+    }
+    if (sprite->data[2] >= 0x80)
+    {
+        sprite->sAnimCompleted = TRUE;
+    }
+}
+
+static void SpriteCB_DragonAscentRayquazaReturnToBall(struct Sprite *sprite)
+{
+    if (sprite->sAnimCompleted == FALSE)
+    {
+        if (sprite->data[0] == 0)
+        {
+            sprite->oam.affineMode = ST_OAM_AFFINE_DOUBLE;
+            sprite->affineAnims = sAffineAnims_DragonAscentRayquaza;
+            InitSpriteAffineAnim(sprite);
+            StartSpriteAffineAnim(sprite, 1);
+            sprite->x = 0x5e;
+            sprite->y = -0x20;
+            sprite->data[0]++;
+            sprite->data[1] = 0xf0;
+            sprite->data[2] = 0x800;
+            sprite->data[4] = 0x80;
+        }
+        sprite->data[1] += sprite->data[2] >> 8;
+        sprite->data[3] += sprite->data[2] >> 8;
+        sprite->data[1] &= 0xff;
+        sprite->x2 = Cos(sprite->data[1], 0x20);
+        sprite->y2 = Sin(sprite->data[1], 0x78);
+        if (sprite->data[2] > 0x100)
+        {
+            sprite->data[2] -= sprite->data[4];
+        }
+        if (sprite->data[4] < 0x100)
+        {
+            sprite->data[4] += 24;
+        }
+        if (sprite->data[2] < 0x100)
+        {
+            sprite->data[2] = 0x100;
+        }
+        if (sprite->data[3] >= 60)
+        {
+            sprite->sAnimCompleted++;
+            sprite->oam.affineMode = ST_OAM_AFFINE_OFF;
+            FreeOamMatrix(sprite->oam.matrixNum);
+            sprite->invisible = TRUE;
+        }
+    }
+}
+
+static void StartDragonAscentRayquazaReturnToBall(u8 spriteId)
+{
+    StartDragonAscentRayquazaSwoopDown(spriteId); // Set up is the same, but overrwrites the callback below
+    gSprites[spriteId].callback = SpriteCB_DragonAscentRayquazaReturnToBall;
+}
+
+u8 FldEff_DragonAscentIn(void)
+{
+    CreateTask(Task_DragonAscentIn, 254);
+    return 0;
+}
+
+void (*const sDragonAscentInFieldEffectFuncs[])(struct Task *) = {
+    DragonAscentInFieldEffect_RayquazaSwoopDown,
+    DragonAscentInFieldEffect_DragonAscentInWithRayquaza,
+    DragonAscentInFieldEffect_JumpOffRayquaza,
+    DragonAscentInFieldEffect_FieldMovePose,
+    DragonAscentInFieldEffect_RayquazaReturnToBall,
+    DragonAscentInFieldEffect_WaitRayquazaReturn,
+    DragonAscentInFieldEffect_End,
+};
+
+static void Task_DragonAscentIn(u8 taskId)
+{
+    sDragonAscentInFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId]);
+}
+
+static void DragonAscentInFieldEffect_RayquazaSwoopDown(struct Task *task)
+{
+    struct ObjectEvent *objectEvent;
+    objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    if (!ObjectEventIsMovementOverridden(objectEvent) || ObjectEventClearHeldMovementIfFinished(objectEvent))
+    {
+        task->tState++;
+        task->tTimer = 17;
+        task->tAvatarFlags = gPlayerAvatar.flags;
+        gPlayerAvatar.preventStep = TRUE;
+        SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ON_FOOT);
+        if (task->tAvatarFlags & PLAYER_AVATAR_FLAG_SURFING)
+        {
+            SetSurfBlob_BobState(objectEvent->fieldEffectSpriteId, BOB_NONE);
+        }
+        ObjectEventSetGraphicsId(objectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_SURFING));
+        CameraObjectReset2();
+        ObjectEventTurn(objectEvent, DIR_WEST);
+        StartSpriteAnim(&gSprites[objectEvent->spriteId], 0x16);
+        objectEvent->invisible = FALSE;
+        task->tRayquazaSpriteId = CreateDragonAscentRayquazaSprite();
+        StartDragonAscentRayquazaSwoopDown(task->tRayquazaSpriteId);
+        SetDragonAscentRayquazaPlayerSpriteId(task->tRayquazaSpriteId, objectEvent->spriteId);
+    }
+}
+
+static void DragonAscentInFieldEffect_DragonAscentInWithRayquaza(struct Task *task)
+{
+    struct ObjectEvent *objectEvent;
+    struct Sprite *sprite;
+    if (task->tTimer == 0 || (--task->tTimer) == 0)
+    {
+        objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+        sprite = &gSprites[objectEvent->spriteId];
+        SetDragonAscentRayquazaPlayerSpriteId(task->tRayquazaSpriteId, MAX_SPRITES);
+        sprite->x += sprite->x2;
+        sprite->y += sprite->y2;
+        sprite->x2 = 0;
+        sprite->y2 = 0;
+        task->tState++;
+        task->tTimer = 0;
+    }
+}
+
+static void DragonAscentInFieldEffect_JumpOffRayquaza(struct Task *task)
+{
+    s16 sYPositions[18] = {
+        -42,
+        -44,
+        -45,
+        -46,
+        -47,
+        -48,
+        -48,
+        -48,
+        -47,
+        -47,
+        -46,
+        -45,
+        -43,
+        -42,
+        -40,
+        -38,
+        -36,
+        -32
+    };
+    struct Sprite *sprite = &gSprites[gPlayerAvatar.spriteId];
+    sprite->y2 = sYPositions[task->tTimer];
+
+    if ((++task->tTimer) >= (int)ARRAY_COUNT(sYPositions))
+        task->tState++;
+}
+
+static void DragonAscentInFieldEffect_FieldMovePose(struct Task *task)
+{
+    struct ObjectEvent *objectEvent;
+    struct Sprite *sprite;
+    if (GetDragonAscentRayquazaAnimCompleted(task->tRayquazaSpriteId))
+    {
+        objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+        sprite = &gSprites[objectEvent->spriteId];
+        objectEvent->inanimate = FALSE;
+        MoveObjectEventToMapCoords(objectEvent, objectEvent->currentCoords.x, objectEvent->currentCoords.y);
+        sprite->x2 = 0;
+        sprite->y2 = 0;
+        sprite->coordOffsetEnabled = TRUE;
+        SetPlayerAvatarFieldMove();
+        ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
+        task->tState++;
+    }
+}
+
+static void DragonAscentInFieldEffect_RayquazaReturnToBall(struct Task *task)
+{
+    if (ObjectEventClearHeldMovementIfFinished(&gObjectEvents[gPlayerAvatar.objectEventId]))
+    {
+        task->tState++;
+        StartDragonAscentRayquazaReturnToBall(task->tRayquazaSpriteId);
+    }
+}
+
+static void DragonAscentInFieldEffect_WaitRayquazaReturn(struct Task *task)
+{
+    if (GetDragonAscentRayquazaAnimCompleted(task->tRayquazaSpriteId))
+    {
+        DestroySprite(&gSprites[task->tRayquazaSpriteId]);
+        task->tState++;
+        task->data[1] = 16;
+    }
+}
+
+static void DragonAscentInFieldEffect_End(struct Task *task)
+{
+    u8 state;
+    struct ObjectEvent *objectEvent;
+    if ((--task->data[1]) == 0)
+    {
+        objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+        state = PLAYER_AVATAR_STATE_NORMAL;
+        if (task->tAvatarFlags & PLAYER_AVATAR_FLAG_SURFING)
+        {
+            state = PLAYER_AVATAR_STATE_SURFING;
+            SetSurfBlob_BobState(objectEvent->fieldEffectSpriteId, BOB_PLAYER_AND_MON);
+        }
+        ObjectEventSetGraphicsId(objectEvent, GetPlayerAvatarGraphicsIdByStateId(state));
+        ObjectEventTurn(objectEvent, DIR_SOUTH);
+        gPlayerAvatar.flags = task->tAvatarFlags;
+        gPlayerAvatar.preventStep = FALSE;
+        FieldEffectActiveListRemove(FLDEFF_DRAGON_ASCENT_IN);
+        DestroyTask(FindTaskIdByFunc(Task_DragonAscentIn));
+    }
+}
