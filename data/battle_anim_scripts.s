@@ -836,6 +836,8 @@ gBattleAnims_General::
 	.4byte General_StrongWinds              @ B_ANIM_STRONG_WINDS
 	.4byte General_PrimalReversion          @ B_ANIM_PRIMAL_REVERSION
 	.4byte General_AquaRingHeal             @ B_ANIM_AQUA_RING_HEAL
+	.4byte General_BeakBlastSetUp           @ B_ANIM_BEAK_BLAST_SETUP
+	.4byte General_ShellTrapSetUp           @ B_ANIM_SHELL_TRAP_SETUP
 
 	.align 2
 gBattleAnims_Special::
@@ -11728,7 +11730,7 @@ Move_INSTRUCT::
 	blendoff
 	end
 
-Move_BEAK_BLAST::
+General_BeakBlastSetUp::
 	loadspritegfx ANIM_TAG_SMALL_EMBER @Fire
 	playsewithpan SE_M_DRAGON_RAGE, SOUND_PAN_ATTACKER
 	delay 0x3
@@ -11736,7 +11738,7 @@ Move_BEAK_BLAST::
 	launchtemplate gFireSpiralOutwardSpriteTemplate 0x3 0x4 0x0 0x0 0x38 0x0
 	waitforvisualfinish
 	end
-BeakBlastUnleash:
+Move_BEAK_BLAST:
 	loadspritegfx ANIM_TAG_IMPACT
 	launchtask AnimTask_BlendBattleAnimPal 0xA 0x5 ANIM_PAL_ATK 0x2 0x0 0x9 0x1F
 	waitforvisualfinish
@@ -11885,8 +11887,7 @@ Move_AURORA_VEIL::
 	blendoff
 	end
 
-Move_SHELL_TRAP::
-ShellTrapChargeUp:
+General_ShellTrapSetUp:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_TARGET
@@ -11903,6 +11904,7 @@ ShellTrapChargeUp:
 	clearmonbg ANIM_TARGET
 	blendoff
 	end
+Move_SHELL_TRAP::
 ShellTrapUnleash:
 	loadspritegfx ANIM_TAG_IMPACT @pound
 	loadspritegfx ANIM_TAG_SMALL_RED_EYE @red
@@ -13598,8 +13600,8 @@ Move_DRUM_BEATING::
 	blendoff
 	end
 
-Move_SNAP_TRAP::
-	end @ to do:
+Move_SNAP_TRAP:: @ placeholder
+	goto Move_BITE
 
 Move_PYRO_BALL::
 	loadspritegfx ANIM_TAG_FLAT_ROCK
@@ -24354,6 +24356,7 @@ General_TurnTrap:
 	jumpargeq 0, TRAP_ANIM_SAND_TOMB, Status_SandTomb
 	jumpargeq 0, TRAP_ANIM_MAGMA_STORM, Status_MagmaStorm
 	jumpargeq 0, TRAP_ANIM_INFESTATION, Status_Infestation
+	jumpargeq 0, TRAP_ANIM_SNAP_TRAP, Status_Snap_Trap
 	goto Status_BindWrap
 Status_BindWrap:
 	loadspritegfx ANIM_TAG_TENDRILS
@@ -24439,6 +24442,9 @@ Status_Clamp:
 	blendoff
 	waitforvisualfinish
 	end
+
+Status_Snap_Trap: @ placeholder
+	goto Move_BITE
 
 Status_SandTomb:
 	loadspritegfx ANIM_TAG_MUD_SAND

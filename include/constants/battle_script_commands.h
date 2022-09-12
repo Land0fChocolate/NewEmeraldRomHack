@@ -39,6 +39,7 @@
 #define sABILITY_OVERWRITE gBattleScripting + 0x34
 #define sSWITCH_CASE gBattleScripting + 0x36
 #define sBERRY_OVERRIDE gBattleScripting + 0x37
+#define sSTICKY_WEB_STAT_DROP (gBattleScripting + 0x38) // stickyWebStatDrop
 
 #define cMULTISTRING_CHOOSER gBattleCommunication + 5
 #define cMISS_TYPE gBattleCommunication + 6
@@ -221,9 +222,11 @@
 #define VARIOUS_SAVE_BATTLER_ITEM                   148
 #define VARIOUS_RESTORE_BATTLER_ITEM                149
 #define VARIOUS_BATTLER_ITEM_TO_LAST_USED_ITEM      150
-#define VARIOUS_CHECK_IF_MIRACLE_BLOSSOM_HEALS  	151
-#define VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS      	152
-#define VARIOUS_TRY_RESET_TIME_TRAVELLER        	153
+#define VARIOUS_SET_BEAK_BLAST                      151
+#define VARIOUS_SWAP_SIDE_STATUSES                  152
+#define VARIOUS_CHECK_IF_MIRACLE_BLOSSOM_HEALS  	153
+#define VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS      	154
+#define VARIOUS_TRY_RESET_TIME_TRAVELLER        	155
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

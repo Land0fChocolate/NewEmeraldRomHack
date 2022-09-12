@@ -362,7 +362,10 @@
 #define MOVE_EFFECT_RECOIL_HP_25        0x46
 #define MOVE_EFFECT_RELIC_SONG          0x47
 #define MOVE_EFFECT_TRAP_BOTH           0x48
-#define NUM_MOVE_EFFECTS                0x49
+#define MOVE_EFFECT_SKY_DROP            0x49
+#define MOVE_EFFECT_SCALE_SHOT          0x4A
+
+#define NUM_MOVE_EFFECTS                0x4B
 
 #define MOVE_EFFECT_AFFECTS_USER        0x4000
 #define MOVE_EFFECT_CERTAIN             0x8000

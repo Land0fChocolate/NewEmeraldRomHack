@@ -1940,6 +1940,14 @@
 	various \battler, VARIOUS_BATTLER_ITEM_TO_LAST_USED_ITEM
 	.endm
 
+	.macro setbeakblast battler:req
+	various \battler, VARIOUS_SET_BEAK_BLAST
+	.endm
+
+	.macro swapsidestatuses
+	various BS_ATTACKER, VARIOUS_SWAP_SIDE_STATUSES
+	.endm
+
 	.macro trynoretreat battler:req, ptr:req
 	various \battler, VARIOUS_TRY_NO_RETREAT
 	.4byte \ptr
