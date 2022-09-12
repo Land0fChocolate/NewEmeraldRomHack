@@ -393,9 +393,9 @@
 #define EFFECT_RISING_VOLTAGE 387
 #define EFFECT_BEAK_BLAST 388
 #define EFFECT_COURT_CHANGE 389
+#define EFFECT_STEEL_BEAM 390
 
 //New Emerald move effects
-#define EFFECT_WAR_DANCE 390 // no longer used
 #define EFFECT_SERPENT_DANCE 391
 #define EFFECT_HIDDEN_THORNS 392
 

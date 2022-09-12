@@ -403,7 +403,6 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectOctolock                @ EFFECT_OCTOLOCK
 	.4byte BattleScript_EffectClangorousSoul          @ EFFECT_CLANGOROUS_SOUL
 	.4byte BattleScript_EffectHit                     @ EFFECT_BOLT_BEAK
-	.4byte BattleScript_EffectConfuse                 @ EFFECT_WAR_DANCE @ unused
 	.4byte BattleScript_EffectSerpentDance            @ EFFECT_SERPENT_DANCE
 	.4byte BattleScript_EffectHiddenThorns            @ EFFECT_HIDDEN_THORNS
 	.4byte BattleScript_EffectHit                     @ EFFECT_EXPANDING_FORCE
@@ -412,6 +411,51 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHit                     @ EFFECT_RISING_VOLTAGE
 	.4byte BattleScript_EffectHit                     @ EFFECT_BEAK_BLAST
 	.4byte BattleScript_EffectCourtChange             @ EFFECT_COURT_CHANGE
+	.4byte BattleScript_EffectSteelBeam               @ EFFECT_STEEL_BEAM
+
+BattleScript_EffectSteelBeam::
+	attackcanceler
+	attackstring
+	ppreduce
+	accuracycheck BattleScript_SteelBeamMiss, ACC_CURR_MOVE
+	critcalc
+	damagecalc
+	adjustdamage
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage B_WAIT_TIME_LONG
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	seteffectwithchance
+	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_SteelBeamAfterSelfDamage
+	call BattleScript_SteelBeamSelfDamage
+BattleScript_SteelBeamAfterSelfDamage::
+	waitstate
+	tryfaintmon BS_ATTACKER, FALSE, NULL
+	tryfaintmon BS_TARGET, FALSE, NULL
+	goto BattleScript_MoveEnd
+BattleScript_SteelBeamMiss::
+	pause B_WAIT_TIME_SHORT
+	effectivenesssound
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	jumpifability BS_ATTACKER, ABILITY_MAGIC_GUARD, BattleScript_MoveEnd
+	bichalfword gMoveResultFlags, MOVE_RESULT_MISSED
+	call BattleScript_SteelBeamSelfDamage
+	orhalfword gMoveResultFlags, MOVE_RESULT_MISSED
+	goto BattleScript_SteelBeamAfterSelfDamage
+
+BattleScript_SteelBeamSelfDamage::
+	dmg_1_2_attackerhp
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	return
 
 BattleScript_EffectCourtChange::
 	attackcanceler
