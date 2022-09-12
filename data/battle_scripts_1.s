@@ -1260,6 +1260,7 @@ BattleScript_StrengthSapTryHp:
 	attackanimation
 	waitanimation
 BattleScript_StrengthSapHp:
+	jumpifstatus3 BS_ATTACKER, STATUS3_HEAL_BLOCK, BattleScript_MoveEnd
 	jumpiffullhp BS_ATTACKER, BattleScript_MoveEnd
 	manipulatedamage DMG_BIG_ROOT
 	manipulatedamage DMG_HEMATOPHAGY
@@ -2398,6 +2399,8 @@ BattleScript_EffectHealPulse:
 	attackcanceler
 	attackstring
 	ppreduce
+	jumpifstatus3 BS_ATTACKER, STATUS3_HEAL_BLOCK, BattleScript_MoveUsedHealBlockPrevents @ stops pollen puff
+    jumpifstatus3 BS_TARGET, STATUS3_HEAL_BLOCK, BattleScript_MoveUsedHealBlockPrevents
 	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
 	jumpifsubstituteblocks BattleScript_ButItFailed
 	tryhealpulse BS_TARGET, BattleScript_AlreadyAtFullHp
@@ -3116,6 +3119,7 @@ BattleScript_EffectAbsorb::
 	waitmessage B_WAIT_TIME_LONG
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
+	jumpifstatus3 BS_ATTACKER, STATUS3_HEAL_BLOCK, BattleScript_AbsorbHealBlock
 	setdrainedhp
 	manipulatedamage DMG_BIG_ROOT
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_IGNORE_DISGUISE
@@ -3135,6 +3139,7 @@ BattleScript_AbsorbUpdateHp::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_AbsorbTryFainting::
 	tryfaintmon BS_ATTACKER, FALSE, NULL
+BattleScript_AbsorbHealBlock::
 	tryfaintmon BS_TARGET, FALSE, NULL
 	goto BattleScript_MoveEnd
 
@@ -3241,6 +3246,7 @@ BattleScript_DreamEaterWorked:
 	waitmessage B_WAIT_TIME_LONG
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
+	jumpifstatus3 BS_ATTACKER, STATUS3_HEAL_BLOCK, BattleScript_DreamEaterTryFaintEnd
 	setdrainedhp
 	manipulatedamage DMG_BIG_ROOT
 	manipulatedamage DMG_HEMATOPHAGY

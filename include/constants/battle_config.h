@@ -171,6 +171,8 @@
 #define B_BRICK_BREAK               GEN_7 // In Gen4+, you can destroy your own side's screens. In Gen 5+, screens are not removed if the target is immune.
 #define B_WISH_HP_SOURCE            GEN_7 // In Gen5+, Wish heals half of the user's max HP instead of the target's.
 #define B_RAMPAGE_CANCELLING        GEN_7 // In Gen5+, a failed Thrash, etc, will cancel except on its last turn.
+#define B_HEAL_BLOCKING             GEN_7 // In Gen5+, Heal Block prevents healing by Black Sludge, Leftovers, Shell Bell. Affected Pokémon will not consume held HP-restoring Berries or Berry Juice.
+                                          // Draining abilities will not heal but will prevent damage. In Gen6+, Heal Block prevents the use of most HP-draining moves.
 
 #define B_ROOTED_GROUNDING          GEN_7 // In Gen4+, Ingrain causes the affected Pokémon to become grounded.
 #define B_GROWTH_UNDER_SUN          GEN_7 // In Gen5+, Growth's effects are doubled when under the effects of the sun.
