@@ -168,6 +168,7 @@ void TryToApplyMimicry(u8 battlerId, bool8 various);
 void TryToRevertMimicry(void);
 void RestoreBattlerOriginalTypes(u8 battlerId);
 u32 GetBattlerMoveTargetType(u8 battlerId, u16 move);
+bool32 CanTargetBattler(u8 battlerAtk, u8 battlerDef, u16 move);
 
 // ability checks
 bool32 IsRolePlayBannedAbilityAtk(u16 ability);

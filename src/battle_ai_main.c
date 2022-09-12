@@ -439,6 +439,9 @@ static u8 ChooseMoveOrAction_Doubles(void)
                 {
                     if (gBattleMons[sBattler_AI].moves[j] != 0)
                     {
+                        if (!CanTargetBattler(sBattler_AI, i, gBattleMons[sBattler_AI].moves[j]))
+                            continue;
+
                         if (mostViableMovesScores[0] == AI_THINKING_STRUCT->score[j])
                         {
                             mostViableMovesScores[mostViableMovesNo] = AI_THINKING_STRUCT->score[j];
@@ -2314,6 +2317,8 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_HIT_ENEMY_HEAL_ALLY:    // pollen puff
             if (IsTargetingPartner(battlerAtk, battlerDef))
             {
+                if (gStatuses3[battlerDef] & STATUS3_HEAL_BLOCK)
+                    return 0;
                 if (AtMaxHp(battlerDef))
                     score -= 10;
                 else if (gBattleMons[battlerDef].hp > gBattleMons[battlerDef].maxHP / 2)
@@ -4942,6 +4947,8 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
          || (moveType == TYPE_ELECTRIC && HasAbility(ABILITY_VOLT_ABSORB, AI_DATA->atkPartnerAbilities))
          || (moveType == TYPE_WATER && (HasAbility(ABILITY_DRY_SKIN, AI_DATA->atkPartnerAbilities) || HasAbility(ABILITY_WATER_ABSORB, AI_DATA->atkPartnerAbilities))))
         {
+            if (gStatuses3[battlerDef] & STATUS3_HEAL_BLOCK)
+                return 0;
             if (CanTargetFaintAi(FOE(battlerAtk), AI_DATA->battlerAtkPartner)
               || (CanTargetFaintAi(BATTLE_PARTNER(FOE(battlerAtk)), AI_DATA->battlerAtkPartner)))
                 score--;

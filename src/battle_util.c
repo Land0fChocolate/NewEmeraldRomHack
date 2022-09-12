@@ -10921,6 +10921,15 @@ u32 GetBattlerMoveTargetType(u8 battlerId, u16 move)
         return gBattleMoves[move].target;
 }
 
+bool32 CanTargetBattler(u8 battlerAtk, u8 battlerDef, u16 move)
+{
+    if (gBattleMoves[move].effect == EFFECT_HIT_ENEMY_HEAL_ALLY
+      && GetBattlerSide(battlerAtk) == GetBattlerSide(battlerDef)
+      && gStatuses3[battlerAtk] & STATUS3_HEAL_BLOCK)
+        return FALSE;   // Pokémon affected by Heal Block cannot target allies with Pollen Puff
+    return TRUE;
+}
+
 u16 GetUsedHeldItem(u8 battler)
 {
     return gBattleStruct->usedHeldItems[gBattlerPartyIndexes[battler]][GetBattlerSide(battler)];
