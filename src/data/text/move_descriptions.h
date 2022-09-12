@@ -79,7 +79,7 @@ static const u8 sFlyDescription[] = _(
 
 static const u8 sBindDescription[] = _(
     "Binds and squeezes the foe\n"
-    "for 2 to 5 turns.");
+    "for 4 or 5 turns.");
 
 static const u8 sSlamDescription[] = _(
     "Slams the foe with a long\n"
@@ -139,7 +139,7 @@ static const u8 sBodySlamDescription[] = _(
 
 static const u8 sWrapDescription[] = _(
     "Wraps and squeezes the foe\n"
-    "2 to 5 times with vines, etc.");
+    "4 or 5 times with vines, etc.");
 
 static const u8 sTakeDownDescription[] = _(
     "A reckless charge attack\n"
@@ -331,7 +331,7 @@ static const u8 sDragonRageDescription[] = _(
 
 static const u8 sFireSpinDescription[] = _(
     "Traps the foe in a ring of\n"
-    "fire for 2 to 5 turns.");
+    "fire for 4 or 5 turns.");
 
 static const u8 sThunderShockDescription[] = _(
     "An electrical attack that\n"
@@ -511,7 +511,7 @@ static const u8 sWaterfallDescription[] = _(
 
 static const u8 sClampDescription[] = _(
     "Traps and squeezes the\n"
-    "foe for 2 to 5 turns.");
+    "foe for 4 or 5 turns.");
 
 static const u8 sSwiftDescription[] = _(
     "Sprays star-shaped rays\n"
@@ -999,7 +999,7 @@ static const u8 sRockSmashDescription[] = _(
 
 static const u8 sWhirlpoolDescription[] = _(
     "Traps and hurts the foe in\n"
-    "a whirlpool for 2 to 5 turns.");
+    "a whirlpool for 4 or 5 turns.");
 
 static const u8 sBeatUpDescription[] = _(
     "Summons party Pokémon to\n"
@@ -1311,7 +1311,7 @@ static const u8 sSkyUppercutDescription[] = _(
 
 static const u8 sSandTombDescription[] = _(
     "Traps and hurts the foe in\n"
-    "quicksand for 2 to 5 turns.");
+    "quicksand for 4 or 5 turns.");
 
 static const u8 sSheerColdDescription[] = _(
     "A chilling attack that\n"
@@ -1815,7 +1815,7 @@ static const u8 sSPACIAL_RENDDescription[] = _(
 
 static const u8 sMAGMA_STORMDescription[] = _(
     "Traps the foe in a vortex\n"
-    "of fire for 2 to 5 turns.");
+    "of fire for 4 or 5 turns.");
 
 static const u8 sDARK_VOIDDescription[] = _(
     "Drags the foe into total\n"
@@ -2367,7 +2367,7 @@ static const u8 sNUZZLEDescription[] = _(
 
 static const u8 sINFESTATIONDescription[] = _(
     "The foe is infested and\n"
-    "attacked for 2 to 5 turns.");
+    "attacked for 4 or 5 turns.");
 
 static const u8 sPOWER_UP_PUNCHDescription[] = _(
     "A hard punch that raises\n"
@@ -2912,7 +2912,7 @@ static const u8 sSURGING_STRIKESDescription[] = _(
 
 static const u8 sTHUNDER_CAGEDescription[] = _(
     "Traps the foe in a cage of\n"
-    "electricity for 2 to 5 turns.");
+    "electricity for 4 or 5 turns.");
 
 static const u8 sDRAGON_ENERGYDescription[] = _(
     "The higher the user's HP\n"
