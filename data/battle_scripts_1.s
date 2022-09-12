@@ -7959,7 +7959,7 @@ BattleScript_DrizzleActivates::
 	call BattleScript_WeatherFormChanges
 	end3
 
-BattleScript_DefiantActivates::
+BattleScript_AbilityRaisesDefenderStat::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
 	statbuffchange 0, NULL

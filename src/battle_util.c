@@ -1814,7 +1814,7 @@ void PrepareStringBattle(u16 stringId, u8 battler)
         gBattleScripting.stickyWebStatDrop = 0;
         gBattlerAbility = gBattlerTarget;
         BattleScriptPushCursor();
-        gBattlescriptCurrInstr = BattleScript_DefiantActivates;
+        gBattlescriptCurrInstr = BattleScript_AbilityRaisesDefenderStat;
         if (HasAbility(ABILITY_DEFIANT, targetAbilities))
         {
             gLastUsedAbility = ABILITY_DEFIANT;
@@ -1825,6 +1825,14 @@ void PrepareStringBattle(u16 stringId, u8 battler)
             gLastUsedAbility = ABILITY_COMPETITIVE;
             SET_STATCHANGER(STAT_SPATK, 2, FALSE);
         }
+    }
+    else if (stringId == STRINGID_PKMNCUTSATTACKWITH && HasAbility(ABILITY_RATTLED, targetAbilities)
+            && CompareStat(gBattlerTarget, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN))
+    {
+        gBattlerAbility = gBattlerTarget;
+        BattleScriptPushCursor();
+        gBattlescriptCurrInstr = BattleScript_AbilityRaisesDefenderStat;
+        SET_STATCHANGER(STAT_SPEED, 1, FALSE);
     }
 
     gActiveBattler = battler;
