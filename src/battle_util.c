@@ -8479,7 +8479,8 @@ bool32 IsBattlerProtected(u8 battlerId, u16 move)
     return FALSE;
 }
 
-bool32 IsBattlerGrounded(u8 battlerId)
+// Only called directly when calculating damage type effectiveness
+static bool32 IsBattlerGrounded2(u8 battlerId, bool32 considerInverse)
 {
     u16 abilities[NUM_ABILITY_SLOTS];
 
@@ -8487,24 +8488,29 @@ bool32 IsBattlerGrounded(u8 battlerId)
 
     if (GetBattlerHoldEffect(battlerId, TRUE) == HOLD_EFFECT_IRON_BALL)
         return TRUE;
-    else if (gFieldStatuses & STATUS_FIELD_GRAVITY)
+    if (gFieldStatuses & STATUS_FIELD_GRAVITY)
         return TRUE;
-    else if (gStatuses3[battlerId] & STATUS3_ROOTED)
+    if (gStatuses3[battlerId] & STATUS3_ROOTED)
         return TRUE;
-    else if (gStatuses3[battlerId] & STATUS3_SMACKED_DOWN)
+    if (gStatuses3[battlerId] & STATUS3_SMACKED_DOWN)
         return TRUE;
-    else if (gStatuses3[battlerId] & STATUS3_TELEKINESIS)
+    if (gStatuses3[battlerId] & STATUS3_TELEKINESIS)
         return FALSE;
-    else if (gStatuses3[battlerId] & STATUS3_MAGNET_RISE)
+    if (gStatuses3[battlerId] & STATUS3_MAGNET_RISE)
         return FALSE;
-    else if (GetBattlerHoldEffect(battlerId, TRUE) == HOLD_EFFECT_AIR_BALLOON)
+    if (GetBattlerHoldEffect(battlerId, TRUE) == HOLD_EFFECT_AIR_BALLOON)
         return FALSE;
-    else if (HasAbility(ABILITY_LEVITATE, abilities))
+    if (HasAbility(ABILITY_LEVITATE, abilities))
         return FALSE;
-    else if (IS_BATTLER_OF_TYPE(battlerId, TYPE_FLYING))
+    if ((IS_BATTLER_OF_TYPE(battlerId, TYPE_FLYING)) && (!considerInverse || !FlagGet(B_FLAG_INVERSE_BATTLE)))
         return FALSE;
 
     return TRUE;
+}
+
+bool32 IsBattlerGrounded(u8 battlerId)
+{
+    IsBattlerGrounded2(battlerId, FALSE);
 }
 
 bool32 IsBattlerAlive(u8 battlerId)
@@ -9969,7 +9975,7 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
         && gBattleMons[battlerDef].type3 != gBattleMons[battlerDef].type1)
         MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, gBattleMons[battlerDef].type3, battlerAtk, recordAbilities);
 
-    if (moveType == TYPE_GROUND && !IsBattlerGrounded(battlerDef) && !(gBattleMoves[move].flags & FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING))
+    if (moveType == TYPE_GROUND && !IsBattlerGrounded2(battlerDef, TRUE) && !(gBattleMoves[move].flags & FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING))
     {
         modifier = UQ_4_12(0.0);
         if (/*recordAbilities && */HasAbility(ABILITY_LEVITATE, abilities)) //TODO: probably don't need the recordAbilities check.
