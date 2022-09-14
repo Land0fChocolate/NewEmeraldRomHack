@@ -1938,6 +1938,7 @@ bool32 IsHealBlockPreventingMove(u32 battler, u32 move)
     case EFFECT_STRENGTH_SAP:
     case EFFECT_DREAM_EATER:
     case EFFECT_MORNING_SUN:
+    case EFFECT_SYNTHESIS:
     case EFFECT_MOONLIGHT:
     case EFFECT_RESTORE_HP:
     case EFFECT_REST:
@@ -1945,6 +1946,7 @@ bool32 IsHealBlockPreventingMove(u32 battler, u32 move)
     case EFFECT_HEALING_WISH:
     case EFFECT_WISH:
     case EFFECT_HEAL_PULSE:
+    case EFFECT_JUNGLE_HEALING:
         return TRUE;
     default:
         return FALSE;
