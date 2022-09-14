@@ -374,7 +374,6 @@ static const u16 sEncouragedEncoreEffects[] =
     EFFECT_WATER_SPORT,
     EFFECT_DRAGON_DANCE,
     EFFECT_CAMOUFLAGE,
-    EFFECT_WAR_DANCE,
 };
 
 // For the purposes of determining the most powerful move in a moveset, these
@@ -962,10 +961,9 @@ u16 AI_GetTypeEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef)
     return typeEffectiveness;
 }
 
-u8 AI_GetMoveEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef)
+u32 AI_GetMoveEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef)
 {
-    u8 damageVar;
-    u32 effectivenessMultiplier;
+    u32 damageVar, effectivenessMultiplier;
 
     gMoveResultFlags = 0;
     gCurrentMove = move;
@@ -976,6 +974,9 @@ u8 AI_GetMoveEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef)
     case UQ_4_12(0.0):
     default:
         damageVar = AI_EFFECTIVENESS_x0;
+        break;
+    case UQ_4_12(0.125):
+        damageVar = AI_EFFECTIVENESS_x0_125;
         break;
     case UQ_4_12(0.25):
         damageVar = AI_EFFECTIVENESS_x0_25;
@@ -991,6 +992,9 @@ u8 AI_GetMoveEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef)
         break;
     case UQ_4_12(4.0):
         damageVar = AI_EFFECTIVENESS_x4;
+        break;
+    case UQ_4_12(8.0):
+        damageVar = AI_EFFECTIVENESS_x8;
         break;
     }
 
@@ -1234,6 +1238,16 @@ bool32 AI_WeatherHasEffect(void)
     return TRUE;
 }
 
+u32 AI_GetBattlerMoveTargetType(u8 battlerId, u16 move)
+{
+    u32 target;
+
+    if (gBattleMoves[move].effect == EFFECT_EXPANDING_FORCE && AI_IsTerrainAffected(battlerId, STATUS_FIELD_PSYCHIC_TERRAIN))
+        return MOVE_TARGET_BOTH;
+    else
+        return gBattleMoves[move].target;
+}
+
 bool32 IsAromaVeilProtectedMove(u16 move)
 {
     u32 i;
@@ -1472,6 +1486,8 @@ bool32 ShouldTryOHKO(u8 battlerAtk, u8 battlerDef, u16 atkAbilities[], u16 defAb
     else    // test the odds
     {
         u16 odds = accuracy + (gBattleMons[battlerAtk].level - gBattleMons[battlerDef].level);
+        if (gCurrentMove == MOVE_SHEER_COLD && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_ICE))
+                odds -= 10;
         if (Random() % 100 + 1 < odds && gBattleMons[battlerAtk].level >= gBattleMons[battlerDef].level)
             return TRUE;
     }
@@ -1487,7 +1503,6 @@ bool32 ShouldSetSandstorm(u8 battler, u16 abilities[], u16 holdEffect)
 
     if (HasAbility(ABILITY_SAND_VEIL, abilities)
       || HasAbility(ABILITY_SAND_RUSH, abilities)
-      || HasAbility(ABILITY_SAND_FORCE, abilities)
       || HasAbility(ABILITY_SAND_FORCE, abilities)
       || HasAbility(ABILITY_OVERCOAT, abilities)
       || HasAbility(ABILITY_MAGIC_GUARD, abilities)
@@ -1904,7 +1919,7 @@ bool32 HasMoveWithLowAccuracy(u8 battlerAtk, u8 battlerDef, u8 accCheck, bool32 
             if (ignoreStatus && IS_MOVE_STATUS(moves[i]))
                 continue;
             else if ((!IS_MOVE_STATUS(moves[i]) && gBattleMoves[moves[i]].accuracy == 0)
-              || gBattleMoves[moves[i]].target & (MOVE_TARGET_USER | MOVE_TARGET_OPPONENTS_FIELD))
+              || AI_GetBattlerMoveTargetType(battlerAtk, moves[i]) & (MOVE_TARGET_USER | MOVE_TARGET_OPPONENTS_FIELD))
                 continue;
 
             if (AI_GetMoveAccuracy(battlerAtk, battlerDef, atkAbilities, defAbilities, atkHoldEffect, defHoldEffect, moves[i]) <= accCheck)
@@ -2038,7 +2053,6 @@ bool32 IsAttackBoostMoveEffect(u16 effect)
     case EFFECT_BELLY_DRUM:
     case EFFECT_BULK_UP:
     case EFFECT_GROWTH:
-    case EFFECT_WAR_DANCE:
         return TRUE;
     default:
         return FALSE;
@@ -2082,7 +2096,6 @@ bool32 IsStatRaisingEffect(u16 effect)
     case EFFECT_BULK_UP:
     case EFFECT_GEOMANCY:
     case EFFECT_STOCKPILE:
-    case EFFECT_WAR_DANCE:
     case EFFECT_SERPENT_DANCE:
         return TRUE;
     default:

@@ -58,6 +58,7 @@ bool32 IsAbilityOfRating(u16 ability, s8 rating); //singular ability
 s8 GetTotalAbilityRating(u16 abilities[]);
 bool32 AI_IsAbilityOnSide(u32 battlerId, u32 ability); //singular ability
 bool32 AI_MoveMakesContact(u16 abilities[], u32 holdEffect, u16 move);
+u32 AI_GetBattlerMoveTargetType(u8 battlerId, u16 move);
 
 // stat stage checks
 bool32 AnyStatIsRaised(u8 battlerId);
@@ -82,7 +83,7 @@ s32 AI_CalcDamage(u16 move, u8 battlerAtk, u8 battlerDef);
 u8 GetMoveDamageResult(u16 move);
 u32 GetCurrDamageHpPercent(u8 battlerAtk, u8 battlerDef);
 u16 AI_GetTypeEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef);
-u8 AI_GetMoveEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef);
+u32 AI_GetMoveEffectiveness(u16 move, u8 battlerAtk, u8 battlerDef);
 u16 *GetMovesArray(u32 battler);
 bool32 IsConfusionMoveEffect(u16 moveEffect);
 bool32 HasMove(u32 battlerId, u32 move);

@@ -948,11 +948,6 @@ u8 ItemId_GetSecondaryId(u16 itemId)
     return gItems[SanitizeItemId(itemId)].secondaryId;
 }
 
-u8 ItemId_GetFlingPower(u16 itemId)
-{
-    return gItems[SanitizeItemId(itemId)].flingPower;
-}
-
 bool32 IsPinchBerryItemEffect(u16 holdEffect)
 {
     switch (holdEffect)
@@ -970,6 +965,11 @@ bool32 IsPinchBerryItemEffect(u16 holdEffect)
     }
 
     return FALSE;
+}
+
+u8 ItemId_GetFlingPower(u16 itemId)
+{
+    return gItems[SanitizeItemId(itemId)].flingPower;
 }
 
 void ItemId_GetHoldEffectParam_Script()

@@ -618,8 +618,12 @@
 #define STRINGID_HIDDENTHORNSDMG                      615
 #define STRINGID_PKMNBLEWAWAYHIDDENTHORNS             616
 #define STRINGID_TIMETRAVELLEDTOPREVIOUSSTATE         617
+#define STRINGID_PKMNINSNAPTRAP                       618
+#define STRINGID_METEORBEAMCHARGING                   619
+#define STRINGID_HEATUPBEAK                           620
+#define STRINGID_COURTCHANGE                          621
 
-#define BATTLESTRINGS_COUNT                           618
+#define BATTLESTRINGS_COUNT                           622
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.
@@ -670,6 +674,8 @@
 #define B_MSG_TURN1_PHANTOM_FORCE  8
 #define B_MSG_TURN1_GEOMANCY       9
 #define B_MSG_TURN1_FREEZE_SHOCK   10
+#define B_MSG_TURN1_SKY_DROP       11
+#define B_MSG_TURN1_METEOR_BEAM    12
 
 // gMoveWeatherChangeStringIds
 #define B_MSG_STARTED_RAIN      0
@@ -869,5 +875,17 @@
 #define B_MSG_TERRAINPREVENTS_MISTY     0
 #define B_MSG_TERRAINPREVENTS_ELECTRIC  1
 #define B_MSG_TERRAINPREVENTS_PSYCHIC   2
+
+// gWrappedStringIds
+#define B_MSG_WRAPPED_BIND        0
+#define B_MSG_WRAPPED_WRAP        1
+#define B_MSG_WRAPPED_FIRE_SPIN   2
+#define B_MSG_WRAPPED_CLAMP       3
+#define B_MSG_WRAPPED_WHIRLPOOL   4
+#define B_MSG_WRAPPED_SAND_TOMB   5
+#define B_MSG_WRAPPED_MAGMA_STORM 6
+#define B_MSG_WRAPPED_INFESTATION 7
+#define B_MSG_WRAPPED_SNAP_TRAP   8
+#define TRAPPING_MOVES_COUNT      9
 
 #endif // GUARD_CONSTANTS_BATTLE_STRING_IDS_H

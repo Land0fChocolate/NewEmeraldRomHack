@@ -1568,6 +1568,7 @@ const struct CompressedSpriteSheet gBattleAnimPicTable[] =
     {gBattleAnimSpriteGfx_OmegaSymbol, 0x0200, ANIM_TAG_OMEGA_SYMBOL},
     {gBattleAnimSpriteGfx_PrimalParticles, 0x0180, ANIM_TAG_PRIMAL_PARTICLES},
     {gBattleAnimSpriteGfx_Orbs, 0x0180, ANIM_TAG_STEEL_BEAM},
+    {gBattleAnimSpriteGfx_AuraSphere, 0x200, ANIM_TAG_POLTERGEIST},
 };
 
 const struct CompressedSpritePalette gBattleAnimPaletteTable[] =
@@ -2019,6 +2020,7 @@ const struct CompressedSpritePalette gBattleAnimPaletteTable[] =
     {gBattleAnimSpritePal_OmegaSymbol, ANIM_TAG_OMEGA_SYMBOL},
     {gBattleAnimSpritePal_PrimalParticles, ANIM_TAG_PRIMAL_PARTICLES},
     {gBattleAnimSpritePal_SteelBeam, ANIM_TAG_STEEL_BEAM},
+    {gBattleAnimSpritePal_Poltergeist, ANIM_TAG_POLTERGEIST},
 };
 
 const struct BattleAnimBackground gBattleAnimBackgroundTable[] =
@@ -2195,7 +2197,7 @@ void DoMoveAnim(u16 move)
     gBattleAnimAttacker = gBattlerAttacker;
     gBattleAnimTarget = gBattlerTarget;
     // Make sure the anim target of moves hitting everyone is at the opposite side.
-    if (gBattleMoves[move].target & MOVE_TARGET_FOES_AND_ALLY && IsDoubleBattle())
+    if (GetBattlerMoveTargetType(gBattlerAttacker, move) & MOVE_TARGET_FOES_AND_ALLY && IsDoubleBattle())
     {
         while (GET_BATTLER_SIDE(gBattleAnimAttacker) == GET_BATTLER_SIDE(gBattleAnimTarget))
         {

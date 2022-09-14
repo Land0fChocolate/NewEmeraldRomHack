@@ -104,6 +104,10 @@ enum
 #define POKEBALL_ROTATION_TOP    64
 #define POKEBALL_ROTATION_BOTTOM (POKEBALL_ROTATION_TOP - 16)
 
+// Coordinates of the Pokémon sprite on its page (info/cry screens)
+#define MON_PAGE_X 48
+#define MON_PAGE_Y 56
+
 // EWRAM
 static EWRAM_DATA struct PokedexView *sPokedexView = NULL;
 static EWRAM_DATA u16 sLastSelectedPokemon = 0;
@@ -1785,7 +1789,7 @@ static void Task_HandlePokedexStartMenuInput(u8 taskId)
 
 static void Task_OpenInfoScreenAfterMonMovement(u8 taskId)
 {
-    if (gSprites[sPokedexView->selectedMonSpriteId].x == 48 && gSprites[sPokedexView->selectedMonSpriteId].y == 56)
+    if (gSprites[sPokedexView->selectedMonSpriteId].x == MON_PAGE_X && gSprites[sPokedexView->selectedMonSpriteId].y == MON_PAGE_Y)
     {
         sPokedexView->currentPageBackup = sPokedexView->currentPage;
         gTasks[taskId].tTaskId = LoadInfoScreen(&sPokedexView->pokedexList[sPokedexView->selectedPokemon], sPokedexView->selectedMonSpriteId);
@@ -1987,7 +1991,7 @@ static void Task_HandleSearchResultsStartMenuInput(u8 taskId)
 
 static void Task_OpenSearchResultsInfoScreenAfterMonMovement(u8 taskId)
 {
-    if (gSprites[sPokedexView->selectedMonSpriteId].x == 48 && gSprites[sPokedexView->selectedMonSpriteId].y == 56)
+    if (gSprites[sPokedexView->selectedMonSpriteId].x == MON_PAGE_X && gSprites[sPokedexView->selectedMonSpriteId].y == MON_PAGE_Y)
     {
         sPokedexView->currentPageBackup = sPokedexView->currentPage;
         gTasks[taskId].tTaskId = LoadInfoScreen(&sPokedexView->pokedexList[sPokedexView->selectedPokemon], sPokedexView->selectedMonSpriteId);
@@ -3002,16 +3006,16 @@ void SpriteCB_MoveMonForInfoScreen(struct Sprite *sprite)
     sprite->oam.affineMode = ST_OAM_AFFINE_OFF;
     sprite->x2 = 0;
     sprite->y2 = 0;
-    if (sprite->x != 48 || sprite->y != 56)
+    if (sprite->x != MON_PAGE_X || sprite->y != MON_PAGE_Y)
     {
-        if (sprite->x > 48)
+        if (sprite->x > MON_PAGE_X)
             sprite->x--;
-        if (sprite->x < 48)
+        if (sprite->x < MON_PAGE_X)
             sprite->x++;
 
-        if (sprite->y > 56)
+        if (sprite->y > MON_PAGE_Y)
             sprite->y--;
-        if (sprite->y < 56)
+        if (sprite->y < MON_PAGE_Y)
             sprite->y++;
     }
     else
@@ -3263,7 +3267,7 @@ static void Task_LoadInfoScreen(u8 taskId)
     case 5:
         if (gTasks[taskId].data[1] == 0)
         {
-            gTasks[taskId].tMonSpriteId = (u16)CreateMonSpriteFromNationalDexNumber(sPokedexListItem->dexNum, 48, 56, 0);
+            gTasks[taskId].tMonSpriteId = (u16)CreateMonSpriteFromNationalDexNumber(sPokedexListItem->dexNum, MON_PAGE_X, MON_PAGE_Y, 0);
             gSprites[gTasks[taskId].tMonSpriteId].oam.priority = 0;
         }
         gMain.state++;
@@ -3554,7 +3558,7 @@ static void Task_LoadCryScreen(u8 taskId)
         gMain.state++;
         break;
     case 5:
-        gTasks[taskId].tMonSpriteId = CreateMonSpriteFromNationalDexNumber(sPokedexListItem->dexNum, 48, 56, 0);
+        gTasks[taskId].tMonSpriteId = CreateMonSpriteFromNationalDexNumber(sPokedexListItem->dexNum, MON_PAGE_X, MON_PAGE_Y, 0);
         gSprites[gTasks[taskId].tMonSpriteId].oam.priority = 0;
         gDexCryScreenState = 0;
         gMain.state++;
@@ -3976,7 +3980,7 @@ static void Task_DisplayCaughtMonDexPage(u8 taskId)
         gTasks[taskId].tState++;
         break;
     case 4:
-        spriteId = CreateMonSpriteFromNationalDexNumber(dexNum, 48, 56, 0);
+        spriteId = CreateMonPicSprite(NationalPokedexNumToSpecies(dexNum), 0, ((u16)gTasks[taskId].tPersonalityHi << 16) | (u16)gTasks[taskId].tPersonalityLo, TRUE, MON_PAGE_X, MON_PAGE_Y, 0, TAG_NONE);
         gSprites[spriteId].oam.priority = 0;
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
         SetVBlankCallback(gPokedexVBlankCB);
@@ -4605,12 +4609,12 @@ static u32 GetPokedexMonPersonality(u16 species)
 u16 CreateMonSpriteFromNationalDexNumber(u16 nationalNum, s16 x, s16 y, u16 paletteSlot)
 {
     nationalNum = NationalPokedexNumToSpecies(nationalNum);
-    return CreateMonPicSprite(nationalNum, SHINY_ODDS, GetPokedexMonPersonality(nationalNum), TRUE, x, y, paletteSlot, 0xFFFF);
+    return CreateMonPicSprite(nationalNum, SHINY_ODDS, GetPokedexMonPersonality(nationalNum), TRUE, x, y, paletteSlot, TAG_NONE);
 }
 
 static u16 CreateSizeScreenTrainerPic(u16 species, s16 x, s16 y, s8 paletteSlot)
 {
-    return CreateTrainerPicSprite(species, TRUE, x, y, paletteSlot, 0xFFFF);
+    return CreateTrainerPicSprite(species, TRUE, x, y, paletteSlot, TAG_NONE);
 }
 
 static int DoPokedexSearch(u8 dexMode, u8 order, u8 abcGroup, u8 bodyColor, u8 type1, u8 type2)

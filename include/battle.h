@@ -153,10 +153,12 @@ struct ProtectStruct
     u32 usedMicleBerry:1;
     u32 usedCustapBerry:1;    // also quick claw
     u32 touchedProtectLike:1;
-    u32 disableEjectPack:1;
-    u32 statFell:1;
-    u32 pranksterElevated:1;
-    u32 quickDraw:1;
+    // End of 32-bit bitfield
+    u16 disableEjectPack:1;
+    u16 statFell:1;
+    u16 pranksterElevated:1;
+    u16 quickDraw:1;
+    u16 beakBlastCharge:1;
     u32 physicalDmg;
     u32 specialDmg;
     u8 physicalBattlerId;
@@ -206,20 +208,22 @@ struct SideTimer
     u8 mistBattlerId;
     u8 safeguardTimer;
     u8 safeguardBattlerId;
-    u8 followmeTimer;
-    u8 followmeTarget:3;
-    u8 followmePowder:1; // Rage powder, does not affect grass type pokemon.
     u8 spikesAmount;
     u8 toxicSpikesAmount;
     u8 stealthRockAmount;
     u8 hiddenThornsAmount;
     u8 stickyWebAmount;
+    u8 stickyWebBattlerSide; // Used for Court Change
     u8 auroraVeilTimer;
     u8 auroraVeilBattlerId;
     u8 tailwindTimer;
     u8 tailwindBattlerId;
     u8 luckyChantTimer;
     u8 luckyChantBattlerId;
+    // Timers below this point are not swapped by Court Change
+    u8 followmeTimer;
+    u8 followmeTarget:3;
+    u8 followmePowder:1; // Rage powder, does not affect grass type pokemon.
     u8 retaliateTimer;
 };
 
@@ -307,6 +311,7 @@ struct BattleHistory
     u8 moveHistoryIndex[MAX_BATTLERS_COUNT];
     u16 trainerItems[MAX_BATTLERS_COUNT];
     u8 itemsNo;
+    u16 heldItems[MAX_BATTLERS_COUNT];
 };
 
 struct BattleScriptsStack
@@ -477,7 +482,6 @@ struct MegaEvolutionData
     bool8 playerSelect;
     u8 triggerSpriteId;
     bool8 isWishMegaEvo;
-    bool8 isPrimalReversion;
 };
 
 struct Illusion
@@ -637,7 +641,7 @@ struct BattleStruct
 #define TARGET_TURN_DAMAGED ((gSpecialStatuses[gBattlerTarget].physicalDmg != 0 || gSpecialStatuses[gBattlerTarget].specialDmg != 0))
 #define BATTLER_DAMAGED(battlerId) ((gSpecialStatuses[battlerId].physicalDmg != 0 || gSpecialStatuses[battlerId].specialDmg != 0))
 
-#define IS_BATTLER_OF_TYPE(battlerId, type)((gBattleMons[battlerId].type1 == type || gBattleMons[battlerId].type2 == type || gBattleMons[battlerId].type3 == type))
+#define IS_BATTLER_OF_TYPE(battlerId, type)((gBattleMons[battlerId].type1 == type || gBattleMons[battlerId].type2 == type || (gBattleMons[battlerId].type3 != TYPE_MYSTERY && gBattleMons[battlerId].type3 == type)))
 #define SET_BATTLER_TYPE(battlerId, type)           \
 {                                                   \
     gBattleMons[battlerId].type1 = type;            \
@@ -705,6 +709,7 @@ struct BattleScripting
     u16 abilityPopupOverwrite;
     u8 switchCase;  // Special switching conditions, eg. red card
     u8 overrideBerryRequirements;
+    u8 stickyWebStatDrop; // To prevent Defiant activating on a Court Change'd Sticky Web
 };
 
 // rom_80A5C6C
@@ -938,5 +943,6 @@ extern bool8 gHasFetchedBall;
 extern u8 gLastUsedBall;
 extern u16 gLastThrownBall;
 extern bool8 gSwapDamageCategory; // Photon Geyser, Shell Side Arm, Light That Burns the Sky
+extern u8 gPartyCriticalHits[PARTY_SIZE];
 
 #endif // GUARD_BATTLE_H
