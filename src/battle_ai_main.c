@@ -238,7 +238,6 @@ u8 ComputeBattleAiScores(u8 battler)
 
 static void SetBattlerAiData(u8 battlerId)
 {
-    //AI_DATA->abilities[battlerId] = AI_GetAbilities(battlerId);
     memcpy(AI_DATA->abilities[battlerId], AI_GetAbilities(battlerId), sizeof(AI_DATA->abilities[battlerId]));
     AI_DATA->items[battlerId] = gBattleMons[battlerId].item;
     AI_DATA->holdEffects[battlerId] = AI_GetHoldEffect(battlerId);
@@ -1312,7 +1311,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_SUBSTITUTE:
             if (gBattleMons[battlerAtk].status2 & STATUS2_SUBSTITUTE || HasAbility(ABILITY_INFILTRATOR, AI_DATA->abilities[battlerDef]))
                 score -= 8;
-            else if (GetHealthPercentage(battlerAtk) <= 25)
+            else if (AI_DATA->hpPercents[battlerAtk] <= 25)
                 score -= 10;
             else if (B_SOUND_SUBSTITUTE >= GEN_6 && TestMoveFlagsInMoveset(battlerDef, FLAG_SOUND))
                 score -= 8;
@@ -1350,7 +1349,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
               && (B_MENTAL_HERB >= GEN_5 && AI_DATA->holdEffects[battlerDef] != HOLD_EFFECT_MENTAL_HERB)
               && !DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove))
             {
-                if (AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == 0) // attacker should go first
+                if (AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_FASTER) // attacker should go first
                 {
                     if (gLastMoves[battlerDef] == MOVE_NONE || gLastMoves[battlerDef] == 0xFFFF)
                         score -= 10;    // no anticipated move to encore
@@ -1773,7 +1772,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
               || (IsBattlerGrounded(battlerDef) && AI_IsTerrainAffected(battlerDef, STATUS_FIELD_MISTY_TERRAIN))
               || (DoesSubstituteBlockMove(battlerAtk, battlerDef, move)))
              && ((gBattleMons[BATTLE_PARTNER(battlerDef)].status2 & STATUS2_CONFUSION)
-              || (!DoesBattlerIgnoreAbilityChecks(AI_DATA->abilities[battlerAtk], move) && HasAbility(ABILITY_OWN_TEMPO, AI_DATA->abilities[battlerDef]))
+              || (!DoesBattlerIgnoreAbilityChecks(AI_DATA->abilities[battlerAtk], move) && HasAbility(ABILITY_OWN_TEMPO, AI_DATA->abilities[BATTLE_PARTNER(battlerDef)]))
               || (IsBattlerGrounded(BATTLE_PARTNER(battlerDef)) && AI_IsTerrainAffected(BATTLE_PARTNER(battlerDef), STATUS_FIELD_MISTY_TERRAIN))
               || (DoesSubstituteBlockMove(battlerAtk, BATTLE_PARTNER(battlerDef), move))))
             {
@@ -2392,7 +2391,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         case EFFECT_INSTRUCT:
             {
                 u16 instructedMove;
-                if (AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == 1)
+                if (AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_SLOWER)
                     instructedMove = predictedMove;
                 else
                     instructedMove = gLastMoves[battlerDef];
@@ -2432,21 +2431,21 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         case EFFECT_QUASH:
             if (!isDoubleBattle
-            || AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == 1
+            || AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_SLOWER
             || PartnerMoveIsSameAsAttacker(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove))
                 score -= 10;
             break;
         case EFFECT_AFTER_YOU:
             if (!IsTargetingPartner(battlerAtk, battlerDef)
               || !isDoubleBattle
-              || AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == 1
+              || AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_SLOWER
               || PartnerMoveIsSameAsAttacker(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove))
                 score -= 10;
             break;
         case EFFECT_SUCKER_PUNCH:
             if (predictedMove != MOVE_NONE)
             {
-                if (IS_MOVE_STATUS(predictedMove) || AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == 1) // opponent going first
+                if (IS_MOVE_STATUS(predictedMove) || AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == AI_IS_SLOWER) // opponent going first
                     score -= 10;
             }
             break;
@@ -4219,7 +4218,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             if (IsStatBoostingBerry(item) && AI_DATA->hpPercents[battlerAtk] > 60)
                 score++;
             else if (ShouldRestoreHpBerry(battlerAtk, item) && !CanAIFaintTarget(battlerAtk, battlerDef, 0) 
-              && ((AI_WhoStrikesFirst(battlerAtk, battlerDef, move) == 0 && CanTargetFaintAiWithMod(battlerDef, battlerAtk, 0, 0))
+              && ((GetWhoStrikesFirst(battlerAtk, battlerDef, TRUE) == 0 && CanTargetFaintAiWithMod(battlerDef, battlerAtk, 0, 0))
                || !CanTargetFaintAiWithMod(battlerDef, battlerAtk, toHeal, 0)))
                 score++;    // Recycle healing berry if we can't otherwise faint the target and the target wont kill us after we activate the berry
         }
