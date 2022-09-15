@@ -9409,8 +9409,8 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
             {
                 u16 *partnerAbilities = GetBattlerAbilities(BATTLE_PARTNER(battlerAtk));
 
-                if (HasAbility(ABILITY_PLUS, partnerAbilities),
-                    HasAbility(ABILITY_MINUS, partnerAbilities))
+                if (HasAbility(ABILITY_PLUS, partnerAbilities)
+                    || HasAbility(ABILITY_MINUS, partnerAbilities))
                     MulModifier(&modifier, UQ_4_12(1.5));
             }
             break;
