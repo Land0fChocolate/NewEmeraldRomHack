@@ -4242,8 +4242,10 @@ static bool32 ShouldChangeFormHpBased(u32 battler)
     };
     u8 i;
     u16 abilities[NUM_ABILITY_SLOTS];
-
     memcpy(abilities, GetBattlerAbilities(battler), sizeof(abilities));
+
+    if (gBattleMons[battler].status2 & STATUS2_TRANSFORMED)
+        return FALSE;
 
     for (i = 0; i < ARRAY_COUNT(forms); i++)
     {
