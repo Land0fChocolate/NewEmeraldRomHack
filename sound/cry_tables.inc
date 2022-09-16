@@ -898,6 +898,13 @@ gCryTable::
 	cry Cry_Glastrier
 	cry Cry_Spectrier
 	cry Cry_Calyrex
+	cry Cry_Bulbasaur //Cry_Wyrdeer
+	cry Cry_Bulbasaur //Cry_Kleavor
+	cry Cry_Bulbasaur //Cry_Ursaluna
+	cry Cry_Bulbasaur //Cry_Basculegion
+	cry Cry_Bulbasaur //Cry_Sneasler
+	cry Cry_Bulbasaur //Cry_Overqwil
+	cry Cry_Bulbasaur //Cry_Enamorus
 	@ Megas
 	cry Cry_VenusaurMega
 	cry Cry_CharizardMegaX
@@ -989,6 +996,23 @@ gCryTable::
 	cry Cry_Darmanitan
 	cry Cry_Yamask
 	cry Cry_Stunfisk
+	@ Hisuian Forms
+	cry Cry_Growlithe
+	cry Cry_Arcanine
+	cry Cry_Voltorb
+	cry Cry_Electrode
+	cry Cry_Typhlosion
+	cry Cry_Qwilfish
+	cry Cry_Sneasel
+	cry Cry_Samurott
+	cry Cry_Lilligant
+	cry Cry_Zorua
+	cry Cry_Zoroark
+	cry Cry_Braviary
+	cry Cry_Sliggoo
+	cry Cry_Goodra
+	cry Cry_Avalugg
+	cry Cry_Decidueye
 	@ Misc Forms
 	@ Cosplay Pikachu
 	cry Cry_Pikachu
@@ -1062,7 +1086,9 @@ gCryTable::
 	cry Cry_Rotom
 	cry Cry_Rotom
 	cry Cry_Rotom
-	@ Giratina
+	@ Origin Forme
+	cry Cry_Dialga
+	cry Cry_Palkia
 	cry Cry_Giratina
 	@ Shaymin
 	cry Cry_ShayminSky
@@ -1085,6 +1111,7 @@ gCryTable::
 	cry Cry_Arceus
 	cry Cry_Arceus
 	@ Basculin
+	cry Cry_Basculin
 	cry Cry_Basculin
 	@ Darmanitan
 	cry Cry_Darmanitan
@@ -2172,6 +2199,13 @@ gCryTable2::
 	cry2 Cry_Glastrier
 	cry2 Cry_Spectrier
 	cry2 Cry_Calyrex
+	cry2 Cry_Bulbasaur //Cry_Wyrdeer
+	cry2 Cry_Bulbasaur //Cry_Kleavor
+	cry2 Cry_Bulbasaur //Cry_Ursaluna
+	cry2 Cry_Bulbasaur //Cry_Basculegion
+	cry2 Cry_Bulbasaur //Cry_Sneasler
+	cry2 Cry_Bulbasaur //Cry_Overqwil
+	cry2 Cry_Bulbasaur //Cry_Enamorus
 	@ Megas
 	cry2 Cry_VenusaurMega
 	cry2 Cry_CharizardMegaX
@@ -2263,6 +2297,23 @@ gCryTable2::
 	cry2 Cry_Darmanitan
 	cry2 Cry_Yamask
 	cry2 Cry_Stunfisk
+	@ Hisuian Forms
+	cry2 Cry_Growlithe
+	cry2 Cry_Arcanine
+	cry2 Cry_Voltorb
+	cry2 Cry_Electrode
+	cry2 Cry_Typhlosion
+	cry2 Cry_Qwilfish
+	cry2 Cry_Sneasel
+	cry2 Cry_Samurott
+	cry2 Cry_Lilligant
+	cry2 Cry_Zorua
+	cry2 Cry_Zoroark
+	cry2 Cry_Braviary
+	cry2 Cry_Sliggoo
+	cry2 Cry_Goodra
+	cry2 Cry_Avalugg
+	cry2 Cry_Decidueye
 	@ Misc Forms
 	@ Cosplay Pikachu
 	cry2 Cry_Pikachu
@@ -2336,7 +2387,9 @@ gCryTable2::
 	cry2 Cry_Rotom
 	cry2 Cry_Rotom
 	cry2 Cry_Rotom
-	@ Giratina
+	@ Origin Forme
+	cry2 Cry_Dialga
+	cry2 Cry_Palkia
 	cry2 Cry_Giratina
 	@ Shaymin
 	cry2 Cry_ShayminSky
@@ -2360,6 +2413,7 @@ gCryTable2::
 	cry2 Cry_Arceus
 	@ Basculin
 	cry2 Cry_Basculin
+	cry2 Cry_Basculin
 	@ Darmanitan
 	cry2 Cry_Darmanitan
 	cry2 Cry_Darmanitan
@@ -2375,6 +2429,7 @@ gCryTable2::
 	cry2 Cry_TornadusTherian
 	cry2 Cry_ThundurusTherian
 	cry2 Cry_LandorusTherian
+	cry2 Cry_Bulbasaur
 	@ Kyurem
 	cry2 Cry_KyuremWhite
 	cry2 Cry_KyuremBlack
