@@ -3000,6 +3000,9 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     u16 predictedMove = AI_DATA->predictedMoves[battlerDef];
     bool32 isDoubleBattle = IsValidDoubleBattle(battlerAtk);
     u16 i, x;
+
+    // We only check for moves that have a 20% chance or more for their secondary effect to happen because moves with a smaller chance are rather worthless. We don't want the AI to use those.
+    bool32 sereneGraceBoost = (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->abilities[battlerAtk]) && (gBattleMoves[move].secondaryEffectChance >= 20 && gBattleMoves[move].secondaryEffectChance < 100));
     
     // Targeting partner, check benefits of doing that instead
     if (IsTargetingPartner(battlerAtk, battlerDef))
@@ -3463,7 +3466,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score += 2;
         break;
     case EFFECT_CONFUSE_HIT:
-        if (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->abilities[battlerAtk]))
+        if (sereneGraceBoost)
             score++;
         //fallthrough
     case EFFECT_CONFUSE:
@@ -3482,7 +3485,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_SPECIAL_DEFENSE_DOWN_HIT:
     case EFFECT_ACCURACY_DOWN_HIT:
     case EFFECT_EVASION_DOWN_HIT:
-        if (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->abilities[battlerAtk]) && !HasAbility(ABILITY_CONTRARY, AI_DATA->abilities[battlerDef]))
+        if (sereneGraceBoost && !HasAbility(ABILITY_CONTRARY, AI_DATA->abilities[battlerDef]))
             score += 2;
         break;
     case EFFECT_SPEED_DOWN_HIT:
@@ -3490,12 +3493,10 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score -= 2;
         else if (!AI_RandLessThan(70))
             score++;
-        if (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->abilities[battlerAtk]) && !HasAbility(ABILITY_CONTRARY, AI_DATA->abilities[battlerDef]))
-            score++;
         if (ShouldLowerSpeed(battlerAtk, battlerDef, AI_DATA->abilities[battlerDef]))
         {
-            if (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->abilities[battlerAtk]) && !HasAbility(ABILITY_CONTRARY, AI_DATA->abilities[battlerDef]))
-                score += 4;
+            if (sereneGraceBoost && !HasAbility(ABILITY_CONTRARY, AI_DATA->abilities[battlerDef]))
+                score += 5;
             else
                 score += 2;
         }
@@ -3626,7 +3627,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score++;
         break;
     case EFFECT_SPEED_UP_HIT:
-        if (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->abilities[battlerAtk]) && !HasAbility(ABILITY_CONTRARY, AI_DATA->abilities[battlerDef]) && WillAIStrikeFirst())
+        if (sereneGraceBoost && !HasAbility(ABILITY_CONTRARY, AI_DATA->abilities[battlerDef]) && WillAIStrikeFirst())
             score += 3;
         break;
     case EFFECT_DESTINY_BOND:
@@ -3871,7 +3872,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         }
         break;
     case EFFECT_ATTACK_UP_HIT:
-        if (HasAbility(ABILITY_SERENE_GRACE, AI_DATA->abilities[battlerAtk]))
+        if (sereneGraceBoost)
             IncreaseStatUpScore(battlerAtk, battlerDef, STAT_ATK, &score);
         break;
     case EFFECT_FELL_STINGER:
