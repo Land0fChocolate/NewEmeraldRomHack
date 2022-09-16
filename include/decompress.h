@@ -20,9 +20,9 @@ void DecompressPicFromTable(const struct CompressedSpriteSheet *src, void* buffe
 
 void DecompressPicFromTableGender(void* buffer, s32 species, u32 personality);
 
-void HandleLoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32 species, u32 personality);
+void HandleLoadSpecialPokePic(bool32 isFrontPic, void *dest, s32 species, u32 personality);
 
-void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32 species, u32 personality, bool8 isFrontPic);
+void LoadSpecialPokePic(void *dest, s32 species, u32 personality, bool8 isFrontPic);
 
 u32 GetDecompressedDataSize(const u32 *ptr);
 

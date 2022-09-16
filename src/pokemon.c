@@ -7492,14 +7492,14 @@ const u32 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, u32 otId, u32 p
     shinyValue = HIHALF(otId) ^ LOHALF(otId) ^ HIHALF(personality) ^ LOHALF(personality);
     if (shinyValue < SHINY_ODDS)
     {
-        if ((gBaseStats[species].flags & FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+        if (ShouldShowFemaleDifferences(species, personality))
             return gMonShinyPaletteTableFemale[species].data;
         else
             return gMonShinyPaletteTable[species].data;
     }
     else
     {
-        if ((gBaseStats[species].flags & FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+        if (ShouldShowFemaleDifferences(species, personality))
             return gMonPaletteTableFemale[species].data;
         else
             return gMonPaletteTable[species].data;
@@ -7521,14 +7521,14 @@ const struct CompressedSpritePalette *GetMonSpritePalStructFromOtIdPersonality(u
     shinyValue = HIHALF(otId) ^ LOHALF(otId) ^ HIHALF(personality) ^ LOHALF(personality);
     if (shinyValue < SHINY_ODDS)
     {
-        if ((gBaseStats[species].flags & FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+        if (ShouldShowFemaleDifferences(species, personality))
             return &gMonShinyPaletteTableFemale[species];
         else
             return &gMonShinyPaletteTable[species];
     }
     else
     {
-        if ((gBaseStats[species].flags & FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+        if (ShouldShowFemaleDifferences(species, personality))
             return &gMonPaletteTableFemale[species];
         else
             return &gMonPaletteTable[species];
@@ -8317,4 +8317,9 @@ void TrySpecialOverworldEvo(void)
 
     sTriedEvolving = 0;
     SetMainCallback2(CB2_ReturnToField);
+}
+
+bool32 ShouldShowFemaleDifferences(u16 species, u32 personality)
+{
+    return (gBaseStats[species].flags & FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE;
 }

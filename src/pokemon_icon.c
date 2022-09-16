@@ -22,6 +22,7 @@ struct MonIconSpriteTemplate
 
 // static functions
 static u8 CreateMonIconSprite(struct MonIconSpriteTemplate *, s16, s16, u8);
+static void FreeAndDestroyMonIconSprite_(struct Sprite *sprite);
 
 // .rodata
 
@@ -2578,7 +2579,7 @@ u8 CreateMonIcon(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u
 
     if (species > NUM_SPECIES)
         iconTemplate.paletteTag = POKE_ICON_BASE_PAL_TAG;
-    else if ((gBaseStats[species].flags & FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+    else if (ShouldShowFemaleDifferences(species, personality))
         iconTemplate.paletteTag = POKE_ICON_BASE_PAL_TAG + gMonIconPaletteIndicesFemale[species];
 
     spriteId = CreateMonIconSprite(&iconTemplate, x, y, subpriority);
@@ -2720,11 +2721,12 @@ void SpriteCB_MonIcon(struct Sprite *sprite)
 
 const u8* GetMonIconTiles(u16 species, u32 personality)
 {
-    const u8* iconSprite = gMonIconTable[species];
-    if ((gBaseStats[species].flags & FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
-    {
+        const u8 *iconSprite;
+
+    if (ShouldShowFemaleDifferences(species, personality))
         iconSprite = gMonIconTableFemale[species];
-    }
+    else
+        iconSprite = gMonIconTable[species];
     return iconSprite;
 }
 
