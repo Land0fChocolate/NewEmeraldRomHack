@@ -10514,7 +10514,7 @@ static void Cmd_setmultihitcounter(void)
         {
             gMultiHitCounter = 5;
         }
-        else if (B_MULTI_HIT_CHANCE >= GEN_5)
+        else
         {
             // 2 and 3 hits: 33.3%
             // 4 and 5 hits: 16.7%
@@ -10529,16 +10529,6 @@ static void Cmd_setmultihitcounter(void)
             }
             else
                 gMultiHitCounter += 3;
-        }
-        else
-        {
-            // 2 and 3 hits: 37.5%
-            // 4 and 5 hits: 12.5%
-            gMultiHitCounter = Random() % 4;
-            if (gMultiHitCounter > 1)
-                gMultiHitCounter = (Random() % 4) + 2;
-            else
-                gMultiHitCounter += 2;
         }
     }
 
