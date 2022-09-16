@@ -814,6 +814,9 @@ static bool8 HasAbilityPreventStatus(struct Pokemon *mon, u32 status)
     u16 *abilities = GetMonAbilities(mon);
     bool8 ret = FALSE;
 
+    if (HasAbility(ABILITY_COMATOSE, abilities))
+        return FALSE;
+
     switch (status)
     {
     case STATUS1_FREEZE:
