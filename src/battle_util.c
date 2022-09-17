@@ -4880,7 +4880,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                     break;
                 case ABILITY_INTREPID_SWORD:
-                    if (!gSpecialStatuses[battler].switchInAbilityDone)
+                    if (!gSpecialStatuses[battler].switchInAbilityDone && CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN))
                     {
                         gLastUsedAbility = ABILITY_INTREPID_SWORD;
                         gSpecialStatuses[battler].switchInAbilityDone = TRUE;
@@ -4890,7 +4890,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                     break;
                 case ABILITY_DAUNTLESS_SHIELD:
-                    if (!gSpecialStatuses[battler].switchInAbilityDone)
+                    if (!gSpecialStatuses[battler].switchInAbilityDone && CompareStat(battler, STAT_DEF, MAX_STAT_STAGE, CMP_LESS_THAN))
                     {
                         gLastUsedAbility = ABILITY_DAUNTLESS_SHIELD;
                         gSpecialStatuses[battler].switchInAbilityDone = TRUE;
