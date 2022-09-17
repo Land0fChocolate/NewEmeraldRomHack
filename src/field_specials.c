@@ -2282,6 +2282,16 @@ void ShowScrollableMultichoice(void)
             task->tKeepOpenAfterSelect = FALSE;
             task->tTaskId = taskId;
             break;
+        case SCROLL_MULTI_ASTER_BERRY:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN - 1;
+            task->tNumItems = 19;
+            task->tLeft = 1;
+            task->tTop = 1;
+            task->tWidth = 9;
+            task->tHeight = 10;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
         case SCROLL_MULTI_GLASS_WORKSHOP_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN - 1;
             task->tNumItems = 8;
@@ -2423,6 +2433,28 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
 {
     [SCROLL_MULTI_NONE] = 
     {
+        gText_Exit
+    },
+    [SCROLL_MULTI_ASTER_BERRY] = 
+    {
+        gText_ChilanBerry,
+        gText_OccaBerry,
+        gText_PasshoBerry,
+        gText_WacanBerry,
+        gText_RindoBerry,
+        gText_YacheBerry,
+        gText_ChopleBerry,
+        gText_KebiaBerry,
+        gText_ShucaBerry,
+        gText_CobaBerry,
+        gText_PayapaBerry,
+        gText_TangaBerry,
+        gText_ChartiBerry,
+        gText_KasibBerry,
+        gText_HabanBerry,
+        gText_ColburBerry,
+        gText_BabiriBerry,
+        gText_RoseliBerry,
         gText_Exit
     },
     [SCROLL_MULTI_GLASS_WORKSHOP_VENDOR] = 

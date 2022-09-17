@@ -118,8 +118,7 @@
 #define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
 
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
-
+#define FLAG_HIDE_ZINNIA_DRACONID_ARCHIVES   0x68
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_TM77                   0x6A
 #define FLAG_RECEIVED_TM66                   0x6B
@@ -486,10 +485,10 @@
 #define FLAG_DEFEATED_LATIAS_OR_LATIOS       0x1C8
 #define FLAG_CAUGHT_LATIAS_OR_LATIOS         0x1C9
 #define FLAG_CAUGHT_MEW                      0x1CA
-#define FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE 0x1CB // unused
-#define FLAG_MET_SCOTT_IN_VERDANTURF         0x1CC // unused
-#define FLAG_MET_SCOTT_IN_FALLARBOR          0x1CD // unused
-#define FLAG_MET_SCOTT_IN_LILYCOVE           0x1CE // unused
+#define FLAG_DEFEATED_CELEBI                 0x1CB
+#define FLAG_DEFEATED_JIRACHI                0x1CC
+#define FLAG_DEFEATED_LATIAS                 0x1CD
+#define FLAG_DEFEATED_LATIOS                 0x1CE
 #define FLAG_MET_SCOTT_IN_EVERGRANDE         0x1CF // unused
 #define FLAG_MET_SCOTT_ON_SS_TIDAL           0x1D0
 #define FLAG_SCOTT_GIVES_BATTLE_POINTS       0x1D1
