@@ -1454,7 +1454,6 @@ static void Cmd_attackcanceler(void)
         && !gProtectStructs[gBattlerAttacker].usesBouncedMove)
     {
         PressurePPLose(gBattlerAttacker, gBattlerTarget, MOVE_MAGIC_COAT);
-        gProtectStructs[gBattlerTarget].bounceMove = FALSE;
         gProtectStructs[gBattlerTarget].usesBouncedMove = TRUE;
         gBattleCommunication[MULTISTRING_CHOOSER] = 0;
         if (BlocksPrankster(gCurrentMove, gBattlerTarget, gBattlerAttacker, TRUE))
@@ -3461,7 +3460,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 }
                 break;
             case MOVE_EFFECT_RELIC_SONG:
-                if (!HasAbility(ABILITY_SHEER_FORCE, attackerAbilities))
+                if (!HasAbility(ABILITY_SHEER_FORCE, attackerAbilities) && !(gBattleMons[gBattlerAttacker].status2 & STATUS2_TRANSFORMED))
                 {
                     if (gBattleMons[gBattlerAttacker].species == SPECIES_MELOETTA)
                     {
@@ -4979,6 +4978,20 @@ static bool32 TryKnockOffBattleScript(u32 battlerDef)
     return FALSE;
 }
 
+static u32 GetNextTarget(u32 moveTarget)
+{
+    u32 i;
+    for (i = 0; i < MAX_BATTLERS_COUNT; i++)
+    {
+        if (i != gBattlerAttacker
+            && IsBattlerAlive(i)
+            && !(gBattleStruct->targetsDone[gBattlerAttacker] & gBitTable[i])
+            && (GetBattlerSide(i) != GetBattlerSide(gBattlerAttacker) || moveTarget == MOVE_TARGET_FOES_AND_ALLY))
+                break;
+    }
+    return i;
+}
+
 static void Cmd_moveend(void)
 {
     s32 i;
@@ -5346,6 +5359,8 @@ static void Cmd_moveend(void)
             if (!(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
              && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
                 gProtectStructs[gBattlerAttacker].targetAffected = TRUE;
+            
+            gBattleStruct->targetsDone[gBattlerAttacker] |= gBitTable[gBattlerTarget];
             if (!(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
                 && gBattleTypeFlags & BATTLE_TYPE_DOUBLE
                 && !gProtectStructs[gBattlerAttacker].chargingTurn
@@ -5353,28 +5368,12 @@ static void Cmd_moveend(void)
                     || moveTarget == MOVE_TARGET_FOES_AND_ALLY)
                 && !(gHitMarker & HITMARKER_NO_ATTACKSTRING))
             {
-                u8 battlerId;
+                u32 nextTarget = GetNextTarget(moveTarget);
+                gHitMarker |= HITMARKER_NO_PPDEDUCT;
 
-                if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
+                if (nextTarget != MAX_BATTLERS_COUNT)
                 {
-                    gHitMarker |= HITMARKER_NO_PPDEDUCT;
-                    for (battlerId = gBattlerTarget + 1; battlerId < gBattlersCount; battlerId++)
-                    {
-                        if (battlerId == gBattlerAttacker)
-                            continue;
-                        if (IsBattlerAlive(battlerId))
-                            break;
-                    }
-                }
-                else
-                {
-                    battlerId = GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gBattlerTarget)));
-                    gHitMarker |= HITMARKER_NO_ATTACKSTRING;
-                }
-
-                if (IsBattlerAlive(battlerId))
-                {
-                    gBattleStruct->moveTarget[gBattlerAttacker] = gBattlerTarget = battlerId;
+                    gBattleStruct->moveTarget[gBattlerAttacker] = gBattlerTarget = nextTarget;
                     gBattleScripting.moveendState = 0;
                     MoveValuesCleanUp();
                     gBattleScripting.moveEffect = gBattleScripting.savedMoveEffect;
@@ -5382,11 +5381,31 @@ static void Cmd_moveend(void)
                     gBattlescriptCurrInstr = BattleScript_FlushMessageBox;
                     return;
                 }
-                else
+                // Check if the move used was actually a bounced move. If so, we need to go back to the original attacker and make sure, its move hits all 2 or 3 pokemon.
+                else if (gProtectStructs[gBattlerAttacker].usesBouncedMove)
                 {
-                    gHitMarker |= HITMARKER_NO_ATTACKSTRING;
-                    gHitMarker &= ~(HITMARKER_NO_PPDEDUCT);
+                    u8 originalBounceTarget = gBattlerAttacker;
+                    gBattlerAttacker = gBattleStruct->attackerBeforeBounce;
+                    gBattleStruct->targetsDone[gBattlerAttacker] |= gBitTable[originalBounceTarget];
+                    gBattleStruct->targetsDone[originalBounceTarget] = 0;
+
+                    nextTarget = GetNextTarget(moveTarget);
+                    if (nextTarget != MAX_BATTLERS_COUNT)
+                    {
+                        // We found another target for the original move user.
+                        gBattleStruct->moveTarget[gBattlerAttacker] = gBattlerTarget = nextTarget;
+                        gBattleScripting.moveendState = 0;
+                        gBattleScripting.animTurn = 0;
+                        gBattleScripting.animTargetsHit = 0;
+                        MoveValuesCleanUp();
+                        BattleScriptPush(gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect]);
+                        gBattlescriptCurrInstr = BattleScript_FlushMessageBox;
+                        return;
+                    }
                 }
+
+                gHitMarker |= HITMARKER_NO_ATTACKSTRING;
+                gHitMarker &= ~HITMARKER_NO_PPDEDUCT;
             }
             RecordLastUsedMoveBy(gBattlerAttacker, gCurrentMove);
             gBattleScripting.moveendState++;
@@ -5601,6 +5620,7 @@ static void Cmd_moveend(void)
                 CancelMultiTurnMoves(gBattlerAttacker); // Cancel it
             #endif
 
+            gBattleStruct->targetsDone[gBattlerAttacker] = 0;
             gProtectStructs[gBattlerAttacker].usesBouncedMove = FALSE;
             gProtectStructs[gBattlerAttacker].targetAffected = FALSE;
             gBattleStruct->ateBoost[gBattlerAttacker] = 0;
@@ -8002,6 +8022,7 @@ static void Cmd_various(void)
         CancelMultiTurnMoves(gActiveBattler);
         break;
     case VARIOUS_SET_MAGIC_COAT_TARGET:
+        gBattleStruct->attackerBeforeBounce = gActiveBattler;
         gBattlerAttacker = gBattlerTarget;
         side = GetBattlerSide(gBattlerAttacker) ^ BIT_SIDE;
         if (IsAffectedByFollowMe(gBattlerAttacker, side, gCurrentMove))
@@ -8430,28 +8451,14 @@ static void Cmd_various(void)
         }
         return;
     case VARIOUS_TRY_QUASH:
-        if (GetBattlerTurnOrderNum(gBattlerAttacker) > GetBattlerTurnOrderNum(gBattlerTarget))
+        if (GetBattlerTurnOrderNum(gBattlerAttacker) > GetBattlerTurnOrderNum(gBattlerTarget)) // It's true if foe is faster, has a bigger priority, or switches
         {
-            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3); // This replaces the current battlescript with the "fail" script.
         }
-        else
+        else // If the condition is not true, it means we are faster than the foe, so we can set the quash bit
         {
-            for (i = 0; i < gBattlersCount; i++)
-                data[i] = gBattlerByTurnOrder[i];
-            for (i = 0; i < gBattlersCount; i++)
-            {
-                if (data[i] == gBattlerTarget)
-                {
-                    for (j = i + 1; j < gBattlersCount; j++)
-                        data[i++] = data[j];
-                }
-                else
-                {
-                    gBattlerByTurnOrder[i] = data[i];
-                }
-            }
-            gBattlerByTurnOrder[gBattlersCount - 1] = gBattlerTarget;
-            gBattlescriptCurrInstr += 7;
+            gProtectStructs[gBattlerTarget].quash = TRUE;
+            gBattlescriptCurrInstr += 7; // and then we proceed with the rest of our battlescript
         }
         return;
     case VARIOUS_INVERT_STAT_STAGES:
@@ -10514,7 +10521,7 @@ static void Cmd_setmultihitcounter(void)
         {
             gMultiHitCounter = 5;
         }
-        else if (B_MULTI_HIT_CHANCE >= GEN_5)
+        else
         {
             // 2 and 3 hits: 33.3%
             // 4 and 5 hits: 16.7%
@@ -10529,16 +10536,6 @@ static void Cmd_setmultihitcounter(void)
             }
             else
                 gMultiHitCounter += 3;
-        }
-        else
-        {
-            // 2 and 3 hits: 37.5%
-            // 4 and 5 hits: 12.5%
-            gMultiHitCounter = Random() % 4;
-            if (gMultiHitCounter > 1)
-                gMultiHitCounter = (Random() % 4) + 2;
-            else
-                gMultiHitCounter += 2;
         }
     }
 
@@ -13547,12 +13544,14 @@ static void Cmd_handleballthrow(void)
         {
         case ITEM_ULTRA_BALL:
             ballMultiplier = 20;
+            break;
         case ITEM_GREAT_BALL:
         case ITEM_SAFARI_BALL:
             ballMultiplier = 15;
+            break;
         case ITEM_NET_BALL:
             if (IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_WATER) || IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_BUG))
-                ballMultiplier = 30;
+                ballMultiplier = 35;
             break;
         case ITEM_DIVE_BALL:
             if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
@@ -13601,18 +13600,26 @@ static void Cmd_handleballthrow(void)
                 gBattleCommunication[MULTISTRING_CHOOSER] = 0;
             else
                 gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+
+            if (gLastUsedItem == ITEM_HEAL_BALL)
+            {
+                MonRestorePP(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]]);
+                HealStatusConditions(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], gBattlerPartyIndexes[gBattlerTarget], STATUS1_ANY, gBattlerTarget);
+                gBattleMons[gBattlerTarget].hp = gBattleMons[gBattlerTarget].maxHP;
+                SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_HP, &gBattleMons[gBattlerTarget].hp);
+            }
         }
         else // mon may be caught, calculate shakes
         {
             u8 shakes;
             u8 maxShakes;
 
-            gBattleSpritesDataPtr->animationData->isCriticalCapture = 0;    //initialize
-            gBattleSpritesDataPtr->animationData->criticalCaptureSuccess = 0;
+            gBattleSpritesDataPtr->animationData->isCriticalCapture = FALSE;    //initialize
+            gBattleSpritesDataPtr->animationData->criticalCaptureSuccess = FALSE;
             if (CriticalCapture(odds))
             {
                 maxShakes = 1;  //critical capture doesn't gauarantee capture
-                gBattleSpritesDataPtr->animationData->isCriticalCapture = 1;
+                gBattleSpritesDataPtr->animationData->isCriticalCapture = TRUE;
             }
             else
             {
@@ -13636,7 +13643,7 @@ static void Cmd_handleballthrow(void)
             if (shakes == maxShakes) // mon caught, copy of the code above
             {
                 if (IsCriticalCapture())
-                    gBattleSpritesDataPtr->animationData->criticalCaptureSuccess = 1;
+                    gBattleSpritesDataPtr->animationData->criticalCaptureSuccess = TRUE;
 
                 UndoFormChange(gBattlerPartyIndexes[gBattlerTarget], GET_BATTLER_SIDE(gBattlerTarget), FALSE);
                 gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;

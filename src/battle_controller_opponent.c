@@ -27,6 +27,7 @@
 #include "text.h"
 #include "util.h"
 #include "window.h"
+#include "constants/battle_ai.h"
 #include "constants/battle_anim.h"
 #include "constants/items.h"
 #include "constants/moves.h"
@@ -95,6 +96,7 @@ static void OpponentHandleResetActionMoveSelection(void);
 static void OpponentHandleEndLinkBattle(void);
 static void OpponentHandleDebugMenu(void);
 static void OpponentCmdEnd(void);
+static u8 CountAIAliveNonEggMonsExcept(u8 slotToIgnore);
 
 static void OpponentBufferRunCommand(void);
 static void OpponentBufferExecCompleted(void);
@@ -1579,18 +1581,22 @@ static void OpponentHandleChooseMove(void)
                 BtlController_EmitTwoReturnValues(1, 15, gBattlerTarget);
                 break;
             default:
-                if (GetBattlerMoveTargetType(gActiveBattler, moveInfo->moves[chosenMoveId]) & (MOVE_TARGET_USER_OR_SELECTED | MOVE_TARGET_USER))
-                    gBattlerTarget = gActiveBattler;
-                if (GetBattlerMoveTargetType(gActiveBattler, moveInfo->moves[chosenMoveId]) & MOVE_TARGET_BOTH)
                 {
-                    gBattlerTarget = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
-                    if (gAbsentBattlerFlags & gBitTable[gBattlerTarget])
-                        gBattlerTarget = GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT);
+                    u16 chosenMove = moveInfo->moves[chosenMoveId];
+
+                    if (GetBattlerMoveTargetType(gActiveBattler, chosenMove) & (MOVE_TARGET_USER_OR_SELECTED | MOVE_TARGET_USER))
+                        gBattlerTarget = gActiveBattler;
+                    if (GetBattlerMoveTargetType(gActiveBattler, chosenMove) & MOVE_TARGET_BOTH)
+                    {
+                        gBattlerTarget = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
+                        if (gAbsentBattlerFlags & gBitTable[gBattlerTarget])
+                            gBattlerTarget = GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT);
+                    }
+                    if (CanMegaEvolve(gActiveBattler)) // If opponent can mega evolve, do it.
+                        BtlController_EmitTwoReturnValues(1, 10, (chosenMoveId) | (RET_MEGA_EVOLUTION) | (gBattlerTarget << 8));
+                    else
+                        BtlController_EmitTwoReturnValues(1, 10, (chosenMoveId) | (gBattlerTarget << 8));
                 }
-                if (CanMegaEvolve(gActiveBattler)) // If opponent can mega evolve, do it.
-                    BtlController_EmitTwoReturnValues(1, 10, (chosenMoveId) | (RET_MEGA_EVOLUTION) | (gBattlerTarget << 8));
-                else
-                    BtlController_EmitTwoReturnValues(1, 10, (chosenMoveId) | (gBattlerTarget << 8));
                 break;
             }
             OpponentBufferExecCompleted();
@@ -1665,6 +1671,7 @@ static void OpponentHandleChooseItem(void)
 static void OpponentHandleChoosePokemon(void)
 {
     s32 chosenMonId;
+    s32 pokemonInBattle = 1;
 
     if (*(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) == PARTY_SIZE)
     {
@@ -1682,15 +1689,19 @@ static void OpponentHandleChoosePokemon(void)
             {
                 battler1 = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
                 battler2 = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+                pokemonInBattle = 2;
             }
 
             GetAIPartyIndexes(gActiveBattler, &firstId, &lastId);
 
-            for (chosenMonId = firstId; chosenMonId < lastId; chosenMonId++)
+            for (chosenMonId = (lastId-1); chosenMonId >= firstId; chosenMonId--)
             {
                 if (GetMonData(&gEnemyParty[chosenMonId], MON_DATA_HP) != 0
                     && chosenMonId != gBattlerPartyIndexes[battler1]
-                    && chosenMonId != gBattlerPartyIndexes[battler2])
+                    && chosenMonId != gBattlerPartyIndexes[battler2]
+                    && (AI_THINKING_STRUCT->aiFlags & AI_FLAG_ACE_POKEMON
+                        && (!(chosenMonId == (CalculateEnemyPartyCount()-1))
+                            || CountAIAliveNonEggMonsExcept(PARTY_SIZE) == pokemonInBattle)))
                 {
                     break;
                 }
@@ -1707,6 +1718,24 @@ static void OpponentHandleChoosePokemon(void)
     *(gBattleStruct->monToSwitchIntoId + gActiveBattler) = chosenMonId;
     BtlController_EmitChosenMonReturnValue(1, chosenMonId, NULL);
     OpponentBufferExecCompleted();
+}
+
+static u8 CountAIAliveNonEggMonsExcept(u8 slotToIgnore)
+{
+    u16 i, count;
+
+    for (i = 0, count = 0; i < PARTY_SIZE; i++)
+    {
+        if (i != slotToIgnore
+            && GetMonData(&gEnemyParty[i], MON_DATA_SPECIES) != SPECIES_NONE
+            && !GetMonData(&gEnemyParty[i], MON_DATA_IS_EGG)
+            && GetMonData(&gEnemyParty[i], MON_DATA_HP) != 0)
+        {
+            count++;
+        }
+    }
+
+    return count;
 }
 
 static void OpponentHandleCmd23(void)

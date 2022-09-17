@@ -2562,6 +2562,7 @@ u8 DoFieldEndTurnEffects(void)
             if (!effect)
             {
                 gBattleStruct->turnCountersTracker++;
+                gBattleStruct->turnSideTracker = 0;
             }
             break;
         case ENDTURN_RAIN:
@@ -4242,8 +4243,10 @@ static bool32 ShouldChangeFormHpBased(u32 battler)
     };
     u8 i;
     u16 abilities[NUM_ABILITY_SLOTS];
-
     memcpy(abilities, GetBattlerAbilities(battler), sizeof(abilities));
+
+    if (gBattleMons[battler].status2 & STATUS2_TRANSFORMED)
+        return FALSE;
 
     for (i = 0; i < ARRAY_COUNT(forms); i++)
     {
@@ -4877,7 +4880,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                     break;
                 case ABILITY_INTREPID_SWORD:
-                    if (!gSpecialStatuses[battler].switchInAbilityDone)
+                    if (!gSpecialStatuses[battler].switchInAbilityDone && CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN))
                     {
                         gLastUsedAbility = ABILITY_INTREPID_SWORD;
                         gSpecialStatuses[battler].switchInAbilityDone = TRUE;
@@ -4887,7 +4890,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                     break;
                 case ABILITY_DAUNTLESS_SHIELD:
-                    if (!gSpecialStatuses[battler].switchInAbilityDone)
+                    if (!gSpecialStatuses[battler].switchInAbilityDone && CompareStat(battler, STAT_DEF, MAX_STAT_STAGE, CMP_LESS_THAN))
                     {
                         gLastUsedAbility = ABILITY_DAUNTLESS_SHIELD;
                         gSpecialStatuses[battler].switchInAbilityDone = TRUE;
@@ -8529,7 +8532,7 @@ u8 GetBattleMonMoveSlot(struct BattlePokemon *battleMon, u16 move)
 {
     u8 i;
 
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (battleMon->moves[i] == move)
             break;
@@ -9179,15 +9182,15 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             MulModifier(&modifier, holdEffectModifier);
         break;
     case HOLD_EFFECT_LUSTROUS_ORB:
-        if (gBattleMons[battlerAtk].species == SPECIES_PALKIA && (moveType == TYPE_WATER || moveType == TYPE_DRAGON))
+        if (GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species) == SPECIES_PALKIA && (moveType == TYPE_WATER || moveType == TYPE_DRAGON))
             MulModifier(&modifier, holdEffectModifier);
         break;
     case HOLD_EFFECT_ADAMANT_ORB:
-        if (gBattleMons[battlerAtk].species == SPECIES_DIALGA && (moveType == TYPE_STEEL || moveType == TYPE_DRAGON))
+        if (GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species) == SPECIES_DIALGA && (moveType == TYPE_STEEL || moveType == TYPE_DRAGON))
             MulModifier(&modifier, holdEffectModifier);
         break;
     case HOLD_EFFECT_GRISEOUS_ORB:
-        if (gBattleMons[battlerAtk].species == SPECIES_GIRATINA && (moveType == TYPE_GHOST || moveType == TYPE_DRAGON))
+        if (GET_BASE_SPECIES_ID(gBattleMons[battlerAtk].species) == SPECIES_GIRATINA && (moveType == TYPE_GHOST || moveType == TYPE_DRAGON))
             MulModifier(&modifier, holdEffectModifier);
         break;
     case HOLD_EFFECT_SOUL_DEW:
@@ -9409,8 +9412,8 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
             {
                 u16 *partnerAbilities = GetBattlerAbilities(BATTLE_PARTNER(battlerAtk));
 
-                if (HasAbility(ABILITY_PLUS, partnerAbilities),
-                    HasAbility(ABILITY_MINUS, partnerAbilities))
+                if (HasAbility(ABILITY_PLUS, partnerAbilities)
+                    || HasAbility(ABILITY_MINUS, partnerAbilities))
                     MulModifier(&modifier, UQ_4_12(1.5));
             }
             break;
@@ -10862,7 +10865,7 @@ void DoBurmyFormChange(u32 monId)
 
     currSpecies = GetMonData(&party[monId], MON_DATA_SPECIES, NULL);
 
-    if ((GET_BASE_SPECIES_ID(currSpecies) == SPECIES_BURMY) 
+    if ((GET_BASE_SPECIES_ID(currSpecies) == SPECIES_BURMY)
         && (gBattleStruct->appearedInBattle & gBitTable[monId]) // Burmy appeared in battle
         && GetMonData(&party[monId], MON_DATA_HP, NULL) != 0) // Burmy isn't fainted
     {
