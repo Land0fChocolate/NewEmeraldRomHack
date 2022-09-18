@@ -3905,7 +3905,7 @@
       "id": "LAYOUT_ROUTE111_NO_MIRAGE_TOWER",
       "name": "Route111_NoMirageTower_Layout",
       "width": 40,
-      "height": 140,
+      "height": 132,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/Route111_NoMirageTower/border.bin",
