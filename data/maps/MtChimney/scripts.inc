@@ -530,11 +530,8 @@ MtChimney_EventScript_Sawyer::
 MtChimney_Text_MeteoriteWillActivateVolcano:
 	.string "The power contained in the Meteorite…\p"
 	.string "By amplifying its power with this\n"
-	.string "machine, Mt. Chimney's volcanic\l"
-	.string "activity will instantly intensify…\p"
-	.string "Its energy will grow deep inside\n"
-	.string "the crater and…\l"
-	.string "Fufufu…$"
+	.string "machine, we can intensify Mt. Chimney's\l"
+	.string "volcanic activity to the point of…$"
 
 MtChimney_Text_MaxieIntro:
 	.string "Maxie: Hm?\n"
@@ -676,22 +673,21 @@ MtChimney_Text_ArchieGoStopTeamMagma:
 	.string "the volcano's eruption!$"
 
 MtChimney_Text_ArchieIHaveMyHandsFull:
-	.string "Archie: Grrr…\p"
-	.string "I want to stop that Maxie,\n"
-	.string "but I can't!\p"
-	.string "Not when I have my hands full battling\n"
-	.string "three opponents at once!$"
+	.string "Archie: Get out of my blasted way, ye\n"
+	.string "scurvy Team Magma knaves!\l"
+	.string "Or face a keelhauling!$"
 
 MtChimney_Text_ArchieThankYou:
-	.string "Archie: {PLAYER}!\n"
-	.string "Thank you!\p"
+	.string "Archie: Huh?\n"
+	.string "If it ain't that little scamp!\p"
 	.string "With your help, we thwarted Team\n"
 	.string "Magma's destructive plan!\p"
 	.string "But… You…\n"
 	.string "Whose side are you on?\p"
 	.string "Ah, it doesn't matter.\p"
-	.string "We will remain vigilant and keep up\n"
-	.string "our pursuit of Team Magma.\p"
+	.string "Team Magma failed here, and that's what\n"
+	.string "matters. We won't let them try this\l"
+	.string "again.\p"
 	.string "{PLAYER}, we shall meet again!$"
 
 MtChimney_Text_MagmaOutnumbersUs:

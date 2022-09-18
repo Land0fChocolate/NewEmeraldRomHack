@@ -1,10 +1,19 @@
 FallarborTown_CozmosHouse_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, FallarborTown_CozmosHouse_OnTransition
 	.byte 0
+
+FallarborTown_CozmosHouse_OnTransition:
+	call_if_set FLAG_RETURNED_METEORITE_TO_COZMO, FallarborTown_CozmosHouse_EventScript_PlaceMeteorite
+	end
+
+FallarborTown_CozmosHouse_EventScript_PlaceMeteorite:
+	setmetatile 5, 2, METATILE_GenericBuilding_WoodenFloor_Meteorite, 1
+	return
 
 FallarborTown_CozmosHouse_EventScript_ProfCozmo::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TM82, FallarborTown_CozmosHouse_EventScript_GaveMeteorite
+	goto_if_set FLAG_RETURNED_METEORITE_TO_COZMO, FallarborTown_CozmosHouse_EventScript_GaveMeteorite
 	checkitem ITEM_METEORITE, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite
@@ -23,7 +32,7 @@ FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite::
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setvar VAR_0x8004, ITEM_METEORITE
 	call Common_EventScript_PlayerHandedOverTheItem
-	setflag FLAG_RECEIVED_TM82
+	setflag FLAG_RETURNED_METEORITE_TO_COZMO
 	msgbox FallarborTown_CozmosHouse_Text_ReallyGoingToHelpMyResearch, MSGBOX_DEFAULT
 	release
 	end
@@ -51,7 +60,7 @@ FallarborTown_CozmosHouse_EventScript_GaveMeteorite::
 FallarborTown_CozmosHouse_EventScript_CozmosWife::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_TM82, FallarborTown_CozmosHouse_EventScript_CozmoIsHappy
+	goto_if_set FLAG_RETURNED_METEORITE_TO_COZMO, FallarborTown_CozmosHouse_EventScript_CozmoIsHappy
 	goto_if_set FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, FallarborTown_CozmosHouse_EventScript_CozmoIsSad
 	msgbox FallarborTown_CozmosHouse_Text_CozmoWentToMeteorFalls, MSGBOX_DEFAULT
 	release
@@ -66,6 +75,24 @@ FallarborTown_CozmosHouse_EventScript_CozmoIsHappy::
 	msgbox FallarborTown_CozmosHouse_Text_CozmoIsSoHappy, MSGBOX_DEFAULT
 	release
 	end
+
+FallarborTown_CozmosHouse_EventScript_Journal::
+	msgbox FallarborTown_CozmosHouse_Text_Journal, MSGBOX_SIGN
+	release
+	end
+
+FallarborTown_CozmosHouse_EventScript_Meteorite::
+	goto_if_unset FLAG_RETURNED_METEORITE_TO_COZMO, Common_EventScript_NopReturn
+	@Deoxys change form here
+	end
+
+FallarborTown_CozmosHouse_Text_Journal:
+	.string "This journal is covered in notes with\n"
+	.string "scientific terms and math equations.\p"
+	.string "There is also a map of Hoenn with impact\n"
+	.string "locations. Cozmo has noted that they are\l"
+	.string "unusually positioned in an exact\l"
+	.string "triangle pattern.$"
 
 FallarborTown_CozmosHouse_Text_MeteoriteWillNeverBeMineNow:
 	.string "Prof. Cozmo: Oh…\n"

@@ -236,6 +236,7 @@ DraconidArchives_EventScript_ResetDefeatedLegendaries::
 	clearflag FLAG_DEFEATED_RAYQUAZA
 	clearflag FLAG_DEFEATED_JIRACHI
 	clearflag FLAG_DEFEATED_DEOXYS
+	clearflag FLAG_BATTLED_DEOXYS
 	return
 
 DraconidArchives_EventScript_ZinniaDeoxysBeaten::
