@@ -102,6 +102,7 @@
 #define MAP_FALLARBOR_TOWN_COZMOS_HOUSE          (3 | (5 << 8))
 #define MAP_FALLARBOR_TOWN_MOVE_RELEARNERS_HOUSE (4 | (5 << 8))
 #define MAP_FALLARBOR_TOWN_DRACONID_ARCHIVES     (5 | (5 << 8))
+#define MAP_FALLARBOR_TOWN_COZMOS_HOUSE2         (6 | (5 << 8))
 
 // gMapGroup_IndoorVerdanturf
 #define MAP_VERDANTURF_TOWN_MART                    (0 | (6 << 8))

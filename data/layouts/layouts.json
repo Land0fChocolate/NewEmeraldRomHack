@@ -4870,6 +4870,16 @@
       "secondary_tileset": "gTileset_MeteorFalls",
       "border_filepath": "data/layouts/Space_Area2/border.bin",
       "blockdata_filepath": "data/layouts/Space_Area2/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALLARBOR_TOWN_COZMOS_HOUSE2",
+      "name": "FallarborTown_CozmosHouse2_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/FallarborTown_CozmosHouse2/border.bin",
+      "blockdata_filepath": "data/layouts/FallarborTown_CozmosHouse2/map.bin"
     }
   ]
 }

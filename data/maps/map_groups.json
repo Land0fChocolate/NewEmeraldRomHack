@@ -132,7 +132,8 @@
     "FallarborTown_PokemonCenter_2F",
     "FallarborTown_CozmosHouse",
     "FallarborTown_MoveRelearnersHouse",
-    "FallarborTown_DraconidArchives"
+    "FallarborTown_DraconidArchives",
+    "FallarborTown_CozmosHouse2"
   ],
   "gMapGroup_IndoorVerdanturf": [
     "VerdanturfTown_Mart",
