@@ -9701,64 +9701,64 @@
             "encounter_rate": 25,
             "mons": [
               {
-                "min_level": 33,
+                "min_level": 30,
                 "max_level": 33,
                 "species": "SPECIES_RATTATA_ALOLAN"
               },
               {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_MAREEP"
-              },
-              {
-                "min_level": 35,
-                "max_level": 35,
-                "species": "SPECIES_SUNKERN"
-              },
-              {
-                "min_level": 36,
-                "max_level": 36,
-                "species": "SPECIES_MAREEP"
-              },
-              {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_AIPOM"
-              },
-              {
-                "min_level": 33,
+                "min_level": 30,
                 "max_level": 33,
-                "species": "SPECIES_SPINARAK"
+                "species": "SPECIES_VOLTORB_HISUIAN"
+              },
+              {
+                "min_level": 32,
+                "max_level": 35,
+                "species": "SPECIES_VULPIX_ALOLAN"
               },
               {
                 "min_level": 35,
-                "max_level": 35,
-                "species": "SPECIES_ARIADOS"
+                "max_level": 38,
+                "species": "SPECIES_RATICATE_ALOLAN"
               },
               {
-                "min_level": 34,
-                "max_level": 34,
-                "species": "SPECIES_SNUBBULL"
-              },
-              {
-                "min_level": 36,
+                "min_level": 32,
                 "max_level": 36,
-                "species": "SPECIES_STANTLER"
+                "species": "SPECIES_PONYTA_GALARIAN"
+              },
+              {
+                "min_level": 32,
+                "max_level": 36,
+                "species": "SPECIES_PONYTA_GALARIAN"
+              },
+              {
+                "min_level": 32,
+                "max_level": 35,
+                "species": "SPECIES_VULPIX_ALOLAN"
+              },
+              {
+                "min_level": 32,
+                "max_level": 35,
+                "species": "SPECIES_VOLTORB_HISUIAN"
               },
               {
                 "min_level": 37,
-                "max_level": 37,
-                "species": "SPECIES_GLIGAR"
+                "max_level": 39,
+                "species": "SPECIES_ELECTRODE_HISUIAN"
               },
               {
-                "min_level": 39,
+                "min_level": 38,
                 "max_level": 39,
-                "species": "SPECIES_STANTLER"
+                "species": "SPECIES_RAICHU_ALOLAN"
               },
               {
                 "min_level": 40,
                 "max_level": 40,
-                "species": "SPECIES_GLIGAR"
+                "species": "SPECIES_RAICHU_ALOLAN"
+              },
+              {
+                "min_level": 40,
+                "max_level": 40,
+                "species": "SPECIES_RAPIDASH_GALARIAN"
               }
             ]
           },
@@ -9766,29 +9766,29 @@
             "encounter_rate": 9,
             "mons": [
               {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_WOOPER"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_MARILL"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_MARILL"
+                "min_level": 30,
+                "max_level": 36,
+                "species": "SPECIES_SLOWPOKE_GALARIAN"
               },
               {
                 "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_MARILL"
+                "max_level": 36,
+                "species": "SPECIES_SLOWPOKE_GALARIAN"
               },
               {
-                "min_level": 35,
+                "min_level": 38,
+                "max_level": 38,
+                "species": "SPECIES_SLOWBRO_GALARIAN"
+              },
+              {
+                "min_level": 39,
+                "max_level": 39,
+                "species": "SPECIES_SLOWBRO_GALARIAN"
+              },
+              {
+                "min_level": 40,
                 "max_level": 40,
-                "species": "SPECIES_QUAGSIRE"
+                "species": "SPECIES_SLOWBRO_GALARIAN"
               }
             ]
           },
@@ -9862,73 +9862,63 @@
               {
                 "min_level": 30,
                 "max_level": 33,
-                "species": "SPECIES_GEODUDE_ALOLAN"
+                "species": "SPECIES_SANDSHREW_ALOLAN"
               },
               {
                 "min_level": 30,
-                "max_level": 30,
-                "species": "SPECIES_MEOWTH_GALARIAN"
+                "max_level": 33,
+                "species": "SPECIES_MEOWTH_ALOLAN"
               },
               {
-                "min_level": 32,
-                "max_level": 32,
-                "species": "SPECIES_GRIMER_ALOLAN"
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_GROWLITHE_HISUIAN"
               },
               {
                 "min_level": 30,
-                "max_level": 30,
+                "max_level": 34,
                 "species": "SPECIES_GRIMER_ALOLAN"
               },
               {
-                "min_level": 32,
-                "max_level": 32,
-                "species": "SPECIES_MEOWTH_GALARIAN"
+                "min_level": 35,
+                "max_level": 38,
+                "species": "SPECIES_PERSIAN_ALOLAN"
               },
               {
-                "min_level": 15,
-                "max_level": 15,
-                "species": "SPECIES_BELDUM"
+                "min_level": 35,
+                "max_level": 38,
+                "species": "SPECIES_SANDSLASH_ALOLAN"
               },
               {
-                "min_level": 17,
-                "max_level": 17,
-                "species": "SPECIES_BELDUM"
+                "min_level": 35,
+                "max_level": 38,
+                "species": "SPECIES_DUGTRIO_ALOLAN"
+              },
+              {
+                "min_level": 38,
+                "max_level": 39,
+                "species": "SPECIES_MAROWAK_ALOLAN"
               },
               {
                 "min_level": 36,
-                "max_level": 36,
-                "species": "SPECIES_PORYGON"
-              },
-              {
-                "min_level": 37,
                 "max_level": 37,
-                "species": "SPECIES_PORYGON"
-              },
-              {
-                "min_level": 39,
-                "max_level": 39,
-                "species": "SPECIES_PORYGON"
+                "species": "SPECIES_MUK_ALOLAN"
               },
               {
                 "min_level": 40,
                 "max_level": 40,
-                "species": "SPECIES_PORYGON"
+                "species": "SPECIES_MAROWAK_ALOLAN"
+              },
+              {
+                "min_level": 40,
+                "max_level": 40,
+                "species": "SPECIES_ARCANINE_HISUIAN"
               }
             ]
           },
           "rock_smash_mons": {
             "encounter_rate": 25,
             "mons": [
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_GEODUDE_ALOLAN"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_GEODUDE_ALOLAN"
-              },
               {
                 "min_level": 30,
                 "max_level": 35,
@@ -9941,8 +9931,18 @@
               },
               {
                 "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_GEODUDE_ALOLAN"
+                "max_level": 38,
+                "species": "SPECIES_GRAVELER_ALOLAN"
+              },
+              {
+                "min_level": 35,
+                "max_level": 38,
+                "species": "SPECIES_GRAVELER_ALOLAN"
+              },
+              {
+                "min_level": 35,
+                "max_level": 38,
+                "species": "SPECIES_GRAVELER_ALOLAN"
               }
             ]
           }
