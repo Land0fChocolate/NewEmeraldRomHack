@@ -99,7 +99,7 @@
 #define FLAG_POST_GAME_COMPLETE              0x54
 #define FLAG_JOHTO_STARTERS_AVAILABLE        0x55
 
-#define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
+#define FLAG_HIDE_CONTEST_POKE_BALL          0x56 // Always set after new game, object it hides is added directly
 #define FLAG_MET_RIVAL_MOM                   0x57
 #define FLAG_BIRCH_AIDE_MET                  0x58
 #define FLAG_DECLINED_BIKE                   0x59
@@ -131,7 +131,7 @@
 #define FLAG_SCOTT_CALL_BATTLE_FRONTIER      0x72 // Used in order to activate a phone call from Scott, inviting the player to the SS Tidal.
 #define FLAG_RECEIVED_METEORITE              0x73
 #define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
-#define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // unused
+#define FLAG_HIDE_GAME_CORNER_STREET_THUG    0x75
 #define FLAG_MET_HIDDEN_POWER_GIVER          0x76
 
 #define FLAG_CANCEL_BATTLE_ROOM_CHALLENGE    0x77
