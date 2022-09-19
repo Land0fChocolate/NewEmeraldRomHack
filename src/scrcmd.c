@@ -599,7 +599,16 @@ bool8 ScrCmd_checkflag(struct ScriptContext *ctx)
     return FALSE;
 }
 
-bool8 ScrCmd_checkmultiflags(struct ScriptContext *ctx)
+bool8 ScrCmd_check2flags(struct ScriptContext *ctx)
+{
+    u8 flag1 = FlagGet(ScriptReadHalfword(ctx));
+    u8 flag2 = FlagGet(ScriptReadHalfword(ctx));
+
+    ctx->comparisonResult = flag1 & flag2;
+    return FALSE;
+}
+
+bool8 ScrCmd_check3flags(struct ScriptContext *ctx)
 {
     u8 flag1 = FlagGet(ScriptReadHalfword(ctx));
     u8 flag2 = FlagGet(ScriptReadHalfword(ctx));

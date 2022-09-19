@@ -25,6 +25,7 @@ LittlerootBeach_EventScript_RivalBattle::
 	end
 
 LittlerootBeach_EventScript_MayBattle:
+	call LittlerootBeach_EventScript_PlayMayMusic
 	msgbox LittlerootBeach_Text_MayLetsBattle, MSGBOX_DEFAULT
 	closemessage
 	switch VAR_STARTER_MON
@@ -55,6 +56,7 @@ LittlerootBeach_EventScript_MayDefeated::
 	end
 
 LittlerootBeach_EventScript_BrendanBattle:
+	call LittlerootBeach_EventScript_PlayBrendanMusic
 	msgbox LittlerootBeach_Text_BrendanLetsBattle, MSGBOX_DEFAULT
 	closemessage
 	switch VAR_STARTER_MON
@@ -91,6 +93,7 @@ LittlerootBeach_EventScript_RivalExit::
 	delay 15
 	removeobject LOCALID_RIVAL
 	waitfieldeffect FLDEFF_NPCFLY_OUT
+	fadedefaultbgm
 	delay 20
 	pokenavcall LittlerootBeach_Text_SpaceCenterCall
 	setvar VAR_LIITLEROOT_BEACH_STATE, 3
@@ -415,8 +418,8 @@ LittlerootBeach_Text_MayReport:
 	.string "May: Anyway, I've had a good look around\n"
 	.string "and caught a bunch of Pokémon.\p"
 	.string "You should have a good look around too.\n"
-	.string "Some of these Pokémon might be good for\l"
-	.string "battling.\p"
+	.string "Some of these Pokémon might make good\l"
+	.string "battle partners.\p"
 	.string "I'm going back to the lab to report back\n"
 	.string "to my dad. See you there!$"
 

@@ -1639,9 +1639,16 @@
 	.byte 0xe3
 	.endm
 
-	@ Compares a & b & c to 1.
-	.macro checkmultiflags a:req, b:req, c:req
+	@ Compares a & b to 1.
+	.macro check2flags a:req, b:req
 	.byte 0xe4
+	.2byte \a
+	.2byte \b
+	.endm
+
+	@ Compares a & b & c to 1.
+	.macro check3flags a:req, b:req, c:req
+	.byte 0xe5
 	.2byte \a
 	.2byte \b
 	.2byte \c
@@ -1872,23 +1879,43 @@
 	settotemboost \battler, 0, 0, 0, 0, 0, 0, 2
 	.endm
 
-	.macro mgoto_if_unset flag:req, dest:req
-	checkmultiflags \flag
+	.macro m2goto_if_unset flag:req, dest:req
+	check2flags \flag
 	goto_if FALSE, \dest
 	.endm
 
-	.macro mgoto_if_set flag:req, dest:req
-	checkmultiflags \flag
+	.macro m2goto_if_set flag:req, dest:req
+	check2flags \flag
 	goto_if TRUE, \dest
 	.endm
 
-	.macro mcall_if_unset flag:req, dest:req
-	checkmultiflags \flag
+	.macro m2call_if_unset flag:req, dest:req
+	check2flags \flag
 	call_if FALSE, \dest
 	.endm
 
-	.macro mcall_if_set flag:req, dest:req
-	checkmultiflags \flag
+	.macro m2call_if_set flag:req, dest:req
+	check2flags \flag
+	call_if TRUE, \dest
+	.endm
+
+	.macro m3goto_if_unset flag:req, dest:req
+	check3flags \flag
+	goto_if FALSE, \dest
+	.endm
+
+	.macro m3goto_if_set flag:req, dest:req
+	check3flags \flag
+	goto_if TRUE, \dest
+	.endm
+
+	.macro m3call_if_unset flag:req, dest:req
+	check3flags \flag
+	call_if FALSE, \dest
+	.endm
+
+	.macro m3call_if_set flag:req, dest:req
+	check3flags \flag
 	call_if TRUE, \dest
 	.endm
 

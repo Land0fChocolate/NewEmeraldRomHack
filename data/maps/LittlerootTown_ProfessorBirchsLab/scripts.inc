@@ -519,6 +519,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedCyndaquil::
 	hidemonpic
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting, MSGBOX_DEFAULT
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6
+	setflag FLAG_JOHTO_STARTERS_AVAILABLE
 	releaseall
 	end
 
@@ -564,6 +565,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedTotodile::
 	hidemonpic
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting, MSGBOX_DEFAULT
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6
+	setflag FLAG_JOHTO_STARTERS_AVAILABLE
 	releaseall
 	end
 
@@ -609,6 +611,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedChikorita::
 	hidemonpic
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting, MSGBOX_DEFAULT
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6
+	setflag FLAG_JOHTO_STARTERS_AVAILABLE
 	releaseall
 	end
 
@@ -1443,13 +1446,20 @@ LittlerootTown_ProfessorBirchsLab_Text_NewAreas:
 	.string "provide to Pokémon?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MayHelpWithProf:
-	.string "May: I'm going to stay here and help\n"
-	.string "my dad. Have fun out there!$"
+	.string "May: Oh, we nearly forgot to mention\n"
+	.string "that we referred you to the farmer at\l"
+	.string "Oldale Farm, just north of here.\p"
+	.string "You can get some very rare Pokémon\n"
+	.string "there. It should help you complete\l"
+	.string "the Pokédex.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BrendanHelpWithProf:
-	.string "Brendan: I'll be helping my dad. I'm a\n"
-	.string "bit envious of you\l"
-	.string "get back.$"
+	.string "Brendan: Oh, we nearly forgot to mention\n"
+	.string "that we referred you to the farmer at\l"
+	.string "Oldale Farm, just north of here.\p"
+	.string "You can get some very rare Pokémon\n"
+	.string "there. It should help you complete\l"
+	.string "the Pokédex.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MaxieIntro:
 	.string "Maxie: Child.\p"
@@ -1574,8 +1584,8 @@ LittlerootTown_ProfessorBirchsLab_Text_ArchieFindingLegendarys:
 
 LittlerootTown_ProfessorBirchsLab_Text_MaxieMigrationHalting::
 	.string "Maxie: We have received reports that the\n"
-	.string "migration of foreign Pokémon into the\l"
-	.string "new areas is slowing down to a halt.\p"
+	.string "migration of Pokémon into the new areas\l"
+	.string "is slowing down to a halt.\p"
 	.string "I assume you have taken care of Groudon\n"
 	.string "and Kyogre?$"
 
