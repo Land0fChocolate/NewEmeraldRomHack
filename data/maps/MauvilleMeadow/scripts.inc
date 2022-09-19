@@ -18,14 +18,14 @@ MauvilleMeadow_EventScript_Natasha::
 
 MauvilleMeadow_Eventscript_Shelly::
 	msgbox MauvilleMeadow_Text_Shelly, MSGBOX_NPC
-	setflag FLAG_MET_SHELLY_MAUVILLE_MEADOW
-	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, MauvilleMeadow_Eventscript_CheckForBirchReportCall
+	call_if_unset FLAG_MET_SHELLY_MAUVILLE_MEADOW, MauvilleMeadow_Eventscript_SetMeetFlag
+	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, Wildwoods_Area9_Eventscript_CheckForBirchReportCall
 	end
 
-MauvilleMeadow_Eventscript_CheckForBirchReportCall::
-	checkmultiflags FLAG_MET_COURTNEY_WILDWOODS, FLAG_MET_TABITHA_FALLARBOR_WASTES, FLAG_MET_MATT_FORTREE_JUNGLE 
-	goto_if TRUE, Wildwoods_Area9_Eventscript_SetBirchReportCall
-	end
+MauvilleMeadow_Eventscript_SetMeetFlag::
+	setflag FLAG_MET_SHELLY_MAUVILLE_MEADOW
+	addvar VAR_NEW_AREA_EXPLORE, 1
+	return
 
 MauvilleMeadow_Eventscript_FlowerAqua::
 	msgbox MauvilleMeadow_Text_FlowerAqua, MSGBOX_NPC

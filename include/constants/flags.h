@@ -123,7 +123,7 @@
 #define FLAG_RECEIVED_TM77                   0x6A
 #define FLAG_RECEIVED_TM66                   0x6B
 #define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player cant white out from poison before receiving Go Goggles
-#define FLAG_RECEIVED_HM05                   0x6D // Unused
+#define FLAG_HIDE_ZINNIA_CRUMBLING_GORGE     0x6D
 #define FLAG_RECEIVED_TM76                   0x6E
 #define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
 #define FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE  0x70

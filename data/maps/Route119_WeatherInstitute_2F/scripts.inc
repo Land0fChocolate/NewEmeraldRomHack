@@ -485,8 +485,8 @@ Route119_WeatherInstitute_2F_EventScript_Zinnia::
 	end
 
 Route119_WeatherInstitute_2F_Text_ZinniaWhatBringsYouHere:
-	.string "Zinnia: Oh me, we do seem to keep\n"
-	.string "running into one another.\l"
+	.string "Zinnia: Oh my, we do seem to keep\n"
+	.string "running into one another a lot.\l"
 	.string "You are a busy kid, {PLAYER}.\p"
 	.string "What brings you here, are you also\n"
 	.string "interested in the weather?\p"
@@ -495,7 +495,7 @@ Route119_WeatherInstitute_2F_Text_ZinniaWhatBringsYouHere:
 	.string "sounds exciting!\p"
 	.string "Although, it would be a near impossible\n"
 	.string "task to find Groudon and Kyogre even if\l"
-	.string "you do find their lairs.\p"
+	.string "you do locate their lairs.\p"
 	.string "Unless they deem you worthy of their\n"
 	.string "attention, they won't show themselves\l"
 	.string "to you.\p"

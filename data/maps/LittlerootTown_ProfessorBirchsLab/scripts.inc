@@ -1437,6 +1437,8 @@ LittlerootTown_ProfessorBirchsLab_Text_NewAreas:
 	.string "A flowering island east of Route 110.\p"
 	.string "A rough outland west of Fallarbor.\p"
 	.string "A thick jungle west of Lilycove.\p"
+	.string "And a crumbling gorge between\n"
+	.string "Verdanturf and Rustboro.\p"
 	.string "I wonder what kind of habitats they\n"
 	.string "provide to Pokémon?$"
 

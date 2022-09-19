@@ -3,13 +3,18 @@ Wildwoods_Area9_MapScripts::
 
 Wildwoods_Area9_Eventscript_Courtney::
 	msgbox Wildwoods_Area9_Text_Courtney, MSGBOX_NPC
-	setflag FLAG_MET_COURTNEY_WILDWOODS
+	call_if_unset FLAG_MET_COURTNEY_WILDWOODS, Wildwoods_Area9_Eventscript_SetMeetFlag
 	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, Wildwoods_Area9_Eventscript_CheckForBirchReportCall
 	end
 
+Wildwoods_Area9_Eventscript_SetMeetFlag::
+	setflag FLAG_MET_COURTNEY_WILDWOODS
+	addvar VAR_NEW_AREA_EXPLORE, 1
+	return
+
 Wildwoods_Area9_Eventscript_CheckForBirchReportCall::
-	checkmultiflags FLAG_MET_TABITHA_FALLARBOR_WASTES, FLAG_MET_SHELLY_MAUVILLE_MEADOW, FLAG_MET_MATT_FORTREE_JUNGLE 
-	goto_if TRUE, Wildwoods_Area9_Eventscript_SetBirchReportCall
+	compare VAR_NEW_AREA_EXPLORE, 5
+	goto_if_eq Wildwoods_Area9_Eventscript_SetBirchReportCall
 	end
 
 Wildwoods_Area9_Eventscript_SetBirchReportCall::
