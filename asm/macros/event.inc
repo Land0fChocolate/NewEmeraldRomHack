@@ -1654,6 +1654,12 @@
 	.2byte \c
 	.endm
 
+	@ check if player has mon species in party
+	.macro checkformoninparty index:req
+	.byte 0xe6
+	.2byte \index
+	.endm
+
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req

@@ -2396,3 +2396,17 @@ bool8 ScrCmd_locktarget(struct ScriptContext *ctx)
         return TRUE;
     }
 }
+
+bool8 ScrCmd_checkformoninparty(struct ScriptContext *ctx)
+{
+    u8 i;
+    u16 monId = ScriptReadHalfword(ctx);
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+        if (species == monId)
+            return TRUE;
+    }
+    return FALSE;
+}

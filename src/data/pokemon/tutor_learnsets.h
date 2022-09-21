@@ -11005,13 +11005,61 @@ static const u64 sTutorLearnsets[] =
                                             | TUTOR(MOVE_SNORE)
                                             | TUTOR(MOVE_SUBSTITUTE)),
 
-    [SPECIES_GROWLITHE_HISUIAN]  = TUTOR_LEARNSET(0),
+    [SPECIES_GROWLITHE_HISUIAN]  = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
+                                            | TUTOR(MOVE_DOUBLE_EDGE)
+                                            | TUTOR(MOVE_ENDURE)
+                                            | TUTOR(MOVE_MIMIC)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWAGGER)
+                                            | TUTOR(MOVE_SWIFT)
+                                            | TUTOR(MOVE_BLAZE_IMPACT)
+                                            | TUTOR(MOVE_PSYCHIC_FANGS)
+                                            | TUTOR(MOVE_PLAY_ROUGH)
+                                            | TUTOR(MOVE_HEAT_WAVE)),
 
-    [SPECIES_ARCANINE_HISUIAN]  = TUTOR_LEARNSET(0),
+    [SPECIES_ARCANINE_HISUIAN]  = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
+                                            | TUTOR(MOVE_DOUBLE_EDGE)
+                                            | TUTOR(MOVE_ENDURE)
+                                            | TUTOR(MOVE_MIMIC)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWAGGER)
+                                            | TUTOR(MOVE_SWIFT)
+                                            | TUTOR(MOVE_BLAZE_IMPACT)
+                                            | TUTOR(MOVE_PSYCHIC_FANGS)
+                                            | TUTOR(MOVE_SUPERPOWER)
+                                            | TUTOR(MOVE_PLAY_ROUGH)
+                                            | TUTOR(MOVE_HEAT_WAVE)
+                                            | TUTOR(MOVE_IRON_HEAD)),
 
-    [SPECIES_VOLTORB_HISUIAN]  = TUTOR_LEARNSET(0),
+    [SPECIES_VOLTORB_HISUIAN]  = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
+                                            | TUTOR(MOVE_EXPLOSION)
+                                            | TUTOR(MOVE_MIMIC)
+                                            | TUTOR(MOVE_ROLLOUT)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWAGGER)
+                                            | TUTOR(MOVE_SWIFT)
+                                            | TUTOR(MOVE_SIGNAL_BEAM)
+                                            | TUTOR(MOVE_MAGIC_COAT)
+                                            | TUTOR(MOVE_FOUL_PLAY)),
 
-    [SPECIES_ELECTRODE_HISUIAN]  = TUTOR_LEARNSET(0),
+    [SPECIES_ELECTRODE_HISUIAN]  = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
+                                            | TUTOR(MOVE_EXPLOSION)
+                                            | TUTOR(MOVE_MIMIC)
+                                            | TUTOR(MOVE_ROLLOUT)
+                                            | TUTOR(MOVE_SLEEP_TALK)
+                                            | TUTOR(MOVE_SNORE)
+                                            | TUTOR(MOVE_SUBSTITUTE)
+                                            | TUTOR(MOVE_SWAGGER)
+                                            | TUTOR(MOVE_SWIFT)
+                                            | TUTOR(MOVE_SIGNAL_BEAM)
+                                            | TUTOR(MOVE_MAGIC_COAT)
+                                            | TUTOR(MOVE_FOUL_PLAY)),
 
     [SPECIES_TYPHLOSION_HISUIAN]  = TUTOR_LEARNSET(0),
 

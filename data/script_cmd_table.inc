@@ -230,6 +230,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_locktarget                @ 0xe3
 	.4byte ScrCmd_check2flags               @ 0xe4
 	.4byte ScrCmd_check3flags               @ 0xe5
+	.4byte ScrCmd_checkformoninparty        @ 0xe6
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop
