@@ -33,6 +33,7 @@ FallarborTown_CozmosHouse2_EventScript_PlayerHasMeteorite::
 	setvar VAR_0x8004, ITEM_METEORITE
 	call Common_EventScript_PlayerHandedOverTheItem
 	setflag FLAG_RETURNED_METEORITE_TO_COZMO
+	clearflag FLAG_HIDE_COZMOS_HOUSE_METEORITE
 	msgbox FallarborTown_CozmosHouse2_Text_ReallyGoingToHelpMyResearch, MSGBOX_DEFAULT
 	release
 	end
@@ -82,8 +83,7 @@ FallarborTown_CozmosHouse2_EventScript_Journal::
 	end
 
 FallarborTown_CozmosHouse2_EventScript_Meteorite::
-	goto_if_unset FLAG_RETURNED_METEORITE_TO_COZMO, Common_EventScript_NopReturn
-	@Deoxys change form here
+	@TODO: Deoxys change form here
 	end
 
 FallarborTown_CozmosHouse2_Text_Journal:

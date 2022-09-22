@@ -46,6 +46,7 @@ Route123_EventScript_BerryMastersHouseSign::
 
 Route123_EventScript_Meteorite::
 	msgbox Route123_Text_Meteorite, MSGBOX_SIGN
+	@TODO: Deoxys form change
 	end
 
 Route123_EventScript_Wendy::

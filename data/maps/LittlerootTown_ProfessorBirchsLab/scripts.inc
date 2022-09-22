@@ -1055,6 +1055,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_Meteorite::
+	@TODO: Deoxys form change
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_RockForCozmo, MSGBOX_SIGN
 	end
 

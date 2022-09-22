@@ -1,23 +1,7 @@
 MauvilleCity_GroomerHouse_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, MauvilleCity_GroomerHouse_OnTransition
 	.byte 0
 
-MauvilleCity_GroomerHouse_OnTransition:
-	call MauvilleCity_GroomerHouse_EventScript_IsGroomerHome
-	end
-
-MauvilleCity_GroomerHouse_EventScript_IsGroomerHome::
-	checkflag FLAG_HIDE_MAUVILLE_GROOMER
-	call_if FALSE MauvilleCity_GroomerHouse_EventScript_PlaceMeteorite
-	return
-
-MauvilleCity_GroomerHouse_EventScript_PlaceMeteorite::
-	setmetatile 7, 2, METATILE_GenericBuilding_WoodenFloor_Meteorite, 1
-	return
-
 MauvilleCity_GroomerHouse_EventScript_Meteorite::
-	checkflag FLAG_HIDE_MAUVILLE_GROOMER
-	goto_if TRUE Common_EventScript_NopReturn
 	@TODO: Deoxys form change
 	end
 
