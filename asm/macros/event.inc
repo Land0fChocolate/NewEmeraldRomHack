@@ -1655,9 +1655,15 @@
 	.endm
 
 	@ check if player has mon species in party
-	.macro checkformoninparty index:req
+	.macro checkformoninparty species:req
 	.byte 0xe6
-	.2byte \index
+	.2byte \species
+	.endm
+
+	@ change all Deoxys in party to requested form (0-neutral, 1-attack, 2-defense, 3-speed)
+	.macro changedeoxysform form:req
+	.byte 0xe7
+	.2byte \form
 	.endm
 
 @ Supplementary

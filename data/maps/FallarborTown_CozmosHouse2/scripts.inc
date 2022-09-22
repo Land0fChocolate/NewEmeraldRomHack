@@ -83,8 +83,27 @@ FallarborTown_CozmosHouse2_EventScript_Journal::
 	end
 
 FallarborTown_CozmosHouse2_EventScript_Meteorite::
-	@TODO: Deoxys change form here
+	msgbox FallarborTown_CozmosHouse2_Text_ItsAMeteorite, MSGBOX_SIGN
+	closemessage
+	changedeoxysform 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq FallarborTown_CozmosHouse2_EventScript_DeoxysChangedForm
 	end
+
+FallarborTown_CozmosHouse2_EventScript_DeoxysChangedForm::
+	playmoncry SPECIES_DEOXYS, 0
+	waitse
+	msgbox FallarborTown_CozmosHouse2_Text_DeoxysChangedForm, MSGBOX_SIGN
+	end
+
+FallarborTown_CozmosHouse2_Text_ItsAMeteorite:
+	.string "It's the meteorite given to Professor\n"
+	.string "Cozmo. You feel a radiating warmth\l"
+	.string "coming from it.\p"
+
+FallarborTown_CozmosHouse2_Text_DeoxysChangedForm:
+	.string "The Deoxys in your party changed into\n"
+	.string "a more aggressive form!$"
 
 FallarborTown_CozmosHouse2_Text_Journal:
 	.string "This journal is covered in notes with\n"

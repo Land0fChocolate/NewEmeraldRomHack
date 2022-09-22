@@ -1055,9 +1055,33 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_Meteorite::
-	@TODO: Deoxys form change
+	checkflag FLAG_SYS_GAME_CLEAR
+	goto_if FALSE LittlerootTown_ProfessorBirchsLab_EventScript_MeteoriteEarlyGame
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_ItsAMeteorite, MSGBOX_SIGN
+	closemessage
+	changedeoxysform 2
+	compare VAR_RESULT, TRUE
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_DeoxysChangedForm
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_MeteoriteEarlyGame::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_RockForCozmo, MSGBOX_SIGN
 	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_DeoxysChangedForm::
+	playmoncry SPECIES_DEOXYS, 0
+	waitse
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_DeoxysChangedForm, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_Text_ItsAMeteorite:
+	.string "It's a meteorite in Professor Birch's\n"
+	.string "lab. You feel a radiating warmth\l"
+	.string "coming from it.\p"
+
+LittlerootTown_ProfessorBirchsLab_Text_DeoxysChangedForm:
+	.string "The Deoxys in your party changed into\n"
+	.string "a more defensive form!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_Book::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BookTooHardToRead, MSGBOX_SIGN

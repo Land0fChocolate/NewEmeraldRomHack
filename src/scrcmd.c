@@ -2410,3 +2410,65 @@ bool8 ScrCmd_checkformoninparty(struct ScriptContext *ctx)
     }
     return FALSE;
 }
+
+//TODO: needs testing
+bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
+{
+    // 0 = Neutral Form
+    // 1 = Attack Form
+    // 2 = Defense Form
+    // 3 = Speed Form
+    u8 i;
+    u16 species, targetSpecies;
+    u16 form = ScriptReadHalfword(ctx);
+    bool8 formChange = FALSE;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+        switch (form)
+        {
+            case 0:
+                if (species == SPECIES_DEOXYS_ATTACK
+                    || species == SPECIES_DEOXYS_DEFENSE
+                    || species == SPECIES_DEOXYS_SPEED)
+                {
+                    targetSpecies = SPECIES_DEOXYS;
+                    SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    formChange = TRUE;
+                }
+                break;
+            case 1:
+                if (species == SPECIES_DEOXYS
+                    || species == SPECIES_DEOXYS_DEFENSE
+                    || species == SPECIES_DEOXYS_SPEED)
+                {
+                    targetSpecies = SPECIES_DEOXYS_ATTACK;
+                    SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    formChange = TRUE;
+                }
+                break;
+            case 2:
+                if (species == SPECIES_DEOXYS
+                    || species == SPECIES_DEOXYS_ATTACK
+                    || species == SPECIES_DEOXYS_SPEED)
+                {
+                    targetSpecies = SPECIES_DEOXYS_DEFENSE;
+                    SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    formChange = TRUE;
+                }
+                break;
+            case 3:
+                if (species == SPECIES_DEOXYS
+                    || species == SPECIES_DEOXYS_ATTACK
+                    || species == SPECIES_DEOXYS_DEFENSE)
+                {
+                    targetSpecies = SPECIES_DEOXYS_SPEED;
+                    SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    formChange = TRUE;
+                }
+                break;
+        }
+    }
+    return formChange;
+}
