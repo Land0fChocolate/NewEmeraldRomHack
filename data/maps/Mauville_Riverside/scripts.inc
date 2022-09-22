@@ -63,6 +63,8 @@ Mauville_Riverside_Movement_GruntLeavesDown:
 Mauville_Riverside_Eventscript_GirlMove::
 	delay 40
 	applymovement LOCALID_GIRL, Mauville_Riverside_Movement_GirlMovesToPlayer
+	delay 10
+	playse SE_LEDGE
 	waitmovement 0
 	compare VAR_0x8004, 11
 	goto_if_eq Mauville_Riverside_Eventscript_GirlFacePlayerLeft
@@ -156,6 +158,7 @@ Mauville_Riverside_Eventscript_MagmaEventFinish::
 	removeobject LOCALID_MAGMA_GRUNT
 	removeobject LOCALID_GIRL
 	setflag FLAG_HIDE_MAUVILLE_RIVERSIDE_NPCS
+	clearflag FLAG_HIDE_MAUVILLE_GROOMER
 	release
 	end
 
@@ -183,17 +186,21 @@ Mauville_Riverside_Text_YouHaveMadeAnEnemy:
 	.string "You have made an enemy of us!$"
 
 Mauville_Riverside_Text_GratitudeForRescue:
-	.string "Thank you for chasing away that awful\n"
-	.string "woman!\p"
-	.string "Those Team Magma thugs have been\n"
-	.string "causing trouble for many people.\p"
-	.string "Please take this as my gratitude.$"
+	.string "Young trainer, you have my gratitude\n"
+	.string "for chasing away that awful woman!\p"
+	.string "Please take this.$"
 
 Mauville_Riverside_Text_YoureLoadedWithItems:
 	.string "Oh no, your bag can't hold this\n"
 	.string "Ultra Ball.$"
 
 Mauville_Riverside_Text_BeGoingNow:
-	.string "I'm going back home.\n"
-	.string "You can visit me at any time.\p"
-	.string "Once again, thanks!$"
+	.string "The scoundrels that call themselves\n"
+	.string "Team Magma have been causing trouble\l"
+	.string "everywhere!\p"
+	.string "I shall be heading home immediately.\n"
+	.string "You may visit me at any time at my\l"
+	.string "residence in Mauville.\p"
+	.string "I shall happily groom your Pokémon who\n"
+	.string "fought for my safety.\p"
+	.string "Once again, thank you.$"

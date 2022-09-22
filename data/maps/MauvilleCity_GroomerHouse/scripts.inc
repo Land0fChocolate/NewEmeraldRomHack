@@ -1,5 +1,25 @@
 MauvilleCity_GroomerHouse_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, MauvilleCity_GroomerHouse_OnTransition
 	.byte 0
+
+MauvilleCity_GroomerHouse_OnTransition:
+	call MauvilleCity_GroomerHouse_EventScript_IsGroomerHome
+	end
+
+MauvilleCity_GroomerHouse_EventScript_IsGroomerHome::
+	checkflag FLAG_HIDE_MAUVILLE_GROOMER
+	call_if FALSE MauvilleCity_GroomerHouse_EventScript_PlaceMeteorite
+	return
+
+MauvilleCity_GroomerHouse_EventScript_PlaceMeteorite::
+	setmetatile 7, 2, METATILE_GenericBuilding_WoodenFloor_Meteorite, 1
+	return
+
+MauvilleCity_GroomerHouse_EventScript_Meteorite::
+	checkflag FLAG_HIDE_MAUVILLE_GROOMER
+	goto_if TRUE Common_EventScript_NopReturn
+	@TODO: Deoxys form change
+	end
 
 MauvilleCity_GroomerHouse_EventScript_Girl::
 	lock
@@ -67,12 +87,13 @@ MauvilleCity_GroomerHouse_Text_GirlMakeItLookNice:
 MauvilleCity_GroomerHouse_Text_GirlDoneGrooming:
 	.string "There. All done!\p"
 	.string "Your {STR_VAR_1}'s coat is\n"
-	.string "looking nice and glossy!\l"
+	.string "looking gorgeous and glossy!\l"
 	.string "It's even liking you a little more.\p"
-	.string "Come back tomorrow and I'll give your\n"
-	.string "Pokémon more treatment.$"
+	.string "Return tomorrow and I shall give your\n"
+	.string "Pokémon additional treatment.$"
 
 MauvilleCity_GroomerHouse_Text_GirlOnceADayService:
-	.string "Sorry, I can only perform my grooming\n"
-	.string "services once a day.\l"
-	.string "Come back tomorrow.$"
+	.string "It is my regret to inform you that I\n"
+	.string "can only perform my grooming services\l"
+	.string "once a day.\p"
+	.string "Please, come back tomorrow.$"
