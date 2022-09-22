@@ -11950,7 +11950,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_ICE_TUSK] =
     {
         .power = 100,
-        .accuracy = 90,
+        .accuracy = 95,
         .effect = EFFECT_HIT,
         .type = TYPE_ICE,
         .pp = 10,

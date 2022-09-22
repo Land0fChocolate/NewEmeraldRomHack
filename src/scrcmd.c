@@ -2421,7 +2421,7 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
     u8 i;
     u16 species, targetSpecies;
     u16 form = ScriptReadHalfword(ctx);
-    bool8 formChange = FALSE;
+    bool8 formChanged = FALSE;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -2435,7 +2435,7 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
                 {
                     targetSpecies = SPECIES_DEOXYS;
                     SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
-                    formChange = TRUE;
+                    formChanged = TRUE;
                 }
                 break;
             case 1:
@@ -2445,7 +2445,7 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
                 {
                     targetSpecies = SPECIES_DEOXYS_ATTACK;
                     SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
-                    formChange = TRUE;
+                    formChanged = TRUE;
                 }
                 break;
             case 2:
@@ -2455,7 +2455,7 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
                 {
                     targetSpecies = SPECIES_DEOXYS_DEFENSE;
                     SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
-                    formChange = TRUE;
+                    formChanged = TRUE;
                 }
                 break;
             case 3:
@@ -2465,10 +2465,10 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
                 {
                     targetSpecies = SPECIES_DEOXYS_SPEED;
                     SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
-                    formChange = TRUE;
+                    formChanged = TRUE;
                 }
                 break;
         }
     }
-    return formChange;
+    return formChanged;
 }

@@ -1505,15 +1505,9 @@ SootopolisCity_EventScript_MaxieArchieLeave::
 	releaseall
 	end
 
-@ Unused
-SootopolisCity_Movement_Levitate::
-	levitate
-	step_end
-
-@ Unused
-SootopolisCity_Movement_DestroyTask::
-	destroy_extra_task
-	step_end
+SootopolisCity_EventScript_Juan::
+	msgbox SootopolisCity_Text_Juan, MSGBOX_NPC
+	end
 
 SootopolisCity_Text_GymSign:
 	.string "SOOTOPOLIS CITY POKéMON GYM\n"
@@ -1944,3 +1938,11 @@ SootopolisCity_Text_StevenLeaves:
 	.string "able to show me and my team what you've\l"
 	.string "learned.\p"
 	.string "Until then…$"
+
+SootopolisCity_Text_Juan:
+	.string "Juan: From you, I sense the brilliant\n"
+	.string "shine of skill that will overcome all!\p"
+	.string "However, you are somewhat lacking in\n"
+	.string "elegance. Perhaps I should make you a\l"
+	.string "loan of my outfit?\p"
+	.string "Hahaha, I merely jest!\p"

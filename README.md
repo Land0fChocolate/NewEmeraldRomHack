@@ -5,7 +5,6 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 # TODO
 
 - implement ability description label in the summary screen.
-- Include ORAS dex Pokemon like Budew and Dusknoir and add ways to access them.
 - Rework aspects of the Battle Frontier. Change the Battle Palace to be themed around inverse type matchups. Rework the battle Pokemon list. 
 - Add methods to make training easier. Super vitamins, IV boosters and nature mints to be added and accessable.
 - Remove item use in battle and create a prompt for Poke Balls.
@@ -15,7 +14,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
 	- Including physical/special split, fairy types, new moves, new items, new Pokemon species, regional species variants.
-	- Whilst data for all post gen3 Pokemon are in the game, only those that existed in gens 1-3 or have evolutions linked to Pokemon in those gens are accessible, baring a few exceptions (Namely Alolan Vulpix and evo).
+	- Whilst data for all post gen3 Pokemon are in the game, only those that have evolutions linked to Pokemon in those gens are accessible, baring a few exceptions (Namely regional variants like Alolan Vulpix).
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
 	- Many Pokemon have had their ability sets updated with new abilities (TODO: make a list of ability stat changes somewhere).
 - New moves and abilities (listed below).
@@ -38,14 +37,17 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
-- Map changes, including new areas to explore that have new Pokemon.
-- Graphical updates to overworld sprites and environments.
+- Map changes, including new areas to explore that have new Pokemon (post game).
+- Graphical updates to existing overworld sprites and environments.
+- New overworld sprites and graphics.
 - Various story changes. Includes aspects from ORAS.
 - Gym Leaders do more:
 	- Roxanne trades evolution stones for fossils.
+	- Brawly can give a random shard daily.
 - Item changes: Quick Claw now increases speed by 10% when user is below 50% health.
 - New Items:
 	- Super Vitamins (Adding 100 EVs per use)
+- Deoxys is able to change forms by interacting with meteorites in the overworld.
 
 # New Abilities
 
@@ -107,7 +109,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Blaze Impact: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Added to Battle Frontier move tutor list. Learned by Growlith/Arcanine/Ponyta/Rapidash/Flareon/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo.
 - Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir on evolution.
 - Serpent Dance: Increases the user's special attack and speed by one stage. Added to Battle Frontier move tutor list. Learned by Seviper/Milotic/Serperior/Dunsparce/Ekans/Arbok/Huntail/Gorebyss/Rayquaza/Silicobra/Sandaconda/Giratina/Gyarados/Furret.
--Ice Tusk: 100 BP, 90% Acc, Ice type, increased crit ratio. Learned by Walrein/Mamoswine.
+-Ice Tusk: 100 BP, 95% Acc, Ice type, increased crit ratio. Learned by Walrein/Mamoswine.
 -Hidden Thorns. Grass type Stealth Rock. Will replace Stealth Rock if Stealth Rock is already on the field. Added to Frontier move tutor list. Learned naturally by Roselia/Roserade/Cacnea/Cacturne.
 
 # Updated Moves

@@ -257,6 +257,7 @@ DraconidArchives_EventScript_ZinniaDeoxysBeaten::
 	msgbox DraconidArchives_Text_BringSnacksForAster, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_DRACONID_ARCHIVES_STATE, 2
+	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_JUAN
 	setflag FLAG_POST_GAME_COMPLETE
 	release
 	end
