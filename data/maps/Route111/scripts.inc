@@ -807,13 +807,13 @@ Route111_Text_MagmaGrunt2Complaint:
 
 Route111_Text_MagmaGrunt1Argument:
 	.string "The admin told you already.\n"
-	.string "She wanted the other recruits to get\l"
+	.string "She wanted the other recruit to get\l"
 	.string "some experience.$"
 
 Route111_Text_MagmaGrunt2Reply:
 	.string "Yeah, well, how come they aren't back\n"
 	.string "yet? I'm so tired of waiting.\l"
-	.string "Mauville City isn't that far.$"
+	.string "Route 118 isn't even far.$"
 
 Route111_Text_MagmaGrunt1Reply:
 	.string "It's not nearly as tiring as listening\n"

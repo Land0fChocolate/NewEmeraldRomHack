@@ -328,7 +328,7 @@
 #define FLAG_UNUSED_0X133                    0x133
 #define FLAG_MET_ARCHIE_SOOTOPOLIS           0x134
 #define FLAG_MET_MAXIE_SOOTOPOLIS            0x135
-#define FLAG_MET_SCOTT_RUSTBORO              0x136 // unused
+#define FLAG_HIDE_MAUVILLE_RIVERSIDE_NPCS    0x136
 #define FLAG_JUAN_GOES_TO_SKY_PILLAR         0x137
 #define FLAG_RECEIVED_TM98                   0x138
 #define FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS    0x139
@@ -953,7 +953,7 @@
 #define FLAG_HIDE_MAUVILLE_GYM_WATTSON                              0x391
 #define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                        0x392
 #define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
-#define FLAG_HIDE_ROUTE_111_MAGMA_GRUNTS                            0x394
+#define FLAG_HIDE_ROUTE_111_MAGMA_GRUNTS                            0x394 // unused
 #define FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA                          0x395
 #define FLAG_HIDE_BATTLE_TOWER_REPORTER                             0x396
 #define FLAG_HIDE_ROUTE_110_RIVAL                                   0x397
@@ -1228,8 +1228,8 @@
 #define FLAG_ITEM_FARAWAY_ISLAND_RUIN2_RARE_BONE                    0x4A1
 #define FLAG_ITEM_FARAWAY_ISLAND_RUIN3_LIFE_ORB                     0x4A2
 #define FLAG_ITEM_FARAWAY_ISLAND_RUIN4_LIGHT_CLAY                   0x4A3
-#define FLAG_ITEM_FARAWAY_ISLAND_RUIN5_BLUE_SHARD                   0x4A4
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
+#define FLAG_ITEM_FARAWAY_ISLAND_RUIN5_TWISTED_SPOON                0x4A4
+#define FLAG_ITEM_MAUVILLE_RIVERSIDE_FULL_RESTORE                   0x4A5
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag

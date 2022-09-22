@@ -1139,3 +1139,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Space_Area2/scripts.inc"
 
 	.include "data/maps/FallarborTown_CozmosHouse2/scripts.inc"
+
+	.include "data/maps/Mauville_Riverside/scripts.inc"

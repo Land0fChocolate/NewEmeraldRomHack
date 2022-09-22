@@ -762,6 +762,10 @@ FarawayIsland_Ruin4_Eventscript_ItemLightClay::
 	finditem ITEM_LIGHT_CLAY
 	end
 
-FarawayIsland_Ruin5_Eventscript_ItemBlueShard::
-	finditem ITEM_BLUE_SHARD
+FarawayIsland_Ruin5_Eventscript_ItemTwistedSpoon::
+	finditem ITEM_TWISTED_SPOON
+	end
+
+Mauville_Riverside_Eventscript_ItemFullRestore::
+	finditem ITEM_FULL_RESTORE
 	end

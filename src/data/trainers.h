@@ -7937,18 +7937,18 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_GruntSeafloorCavern5},
     },
 
-    [TRAINER_GRUNT_UNUSED] =
+    [TRAINER_GRUNT_MAUVILLE_RIVERSIDE] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_TEAM_MAGMA,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_MAGMA_GRUNT_F,
         .trainerName = _("Grunt"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_GruntUnused),
-        .party = {.NoItemDefaultMoves = sParty_GruntUnused},
+        .partySize = ARRAY_COUNT(sParty_GruntMauvilleRiverside),
+        .party = {.NoItemDefaultMoves = sParty_GruntMauvilleRiverside},
     },
 
     [TRAINER_GRUNT_MT_PYRE_4] =

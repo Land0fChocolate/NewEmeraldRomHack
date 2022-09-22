@@ -24,8 +24,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FarawayIsland_Ruin5_Eventscript_ItemBlueShard",
-      "flag": "FLAG_ITEM_FARAWAY_ISLAND_RUIN5_BLUE_SHARD"
+      "script": "FarawayIsland_Ruin5_Eventscript_ItemTwistedSpoon",
+      "flag": "FLAG_ITEM_FARAWAY_ISLAND_RUIN5_TWISTED_SPOON"
     }
   ],
   "warp_events": [

@@ -4880,6 +4880,16 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/FallarborTown_CozmosHouse2/border.bin",
       "blockdata_filepath": "data/layouts/FallarborTown_CozmosHouse2/map.bin"
+    },
+    {
+      "id": "LAYOUT_MAUVILLE_RIVERSIDE",
+      "name": "Mauville_Riverside_Layout",
+      "width": 30,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Mauville_Riverside/border.bin",
+      "blockdata_filepath": "data/layouts/Mauville_Riverside/map.bin"
     }
   ]
 }
