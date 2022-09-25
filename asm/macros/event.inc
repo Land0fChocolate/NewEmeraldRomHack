@@ -1666,6 +1666,12 @@
 	.2byte \form
 	.endm
 
+	@ if flag = TRUE set to FALSE, if flag = FALSE set to TRUE.
+	.macro flipflag flag:req
+	.byte 0xe8
+	.2byte \flag
+	.endm
+
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req

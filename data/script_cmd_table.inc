@@ -232,6 +232,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_check3flags               @ 0xe5
 	.4byte ScrCmd_checkformoninparty        @ 0xe6
 	.4byte ScrCmd_changedeoxysform          @ 0xe7
+	.4byte ScrCmd_flipflag                  @ 0xe8
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

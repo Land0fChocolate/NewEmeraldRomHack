@@ -593,6 +593,18 @@ bool8 ScrCmd_clearflag(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_flipflag(struct ScriptContext *ctx)
+{
+    u16 flag = ScriptReadHalfword(ctx);
+
+    if (FlagGet(flag))
+        FlagClear(flag);
+    else
+        FlagSet(flag);
+
+    return FALSE;
+}
+
 bool8 ScrCmd_checkflag(struct ScriptContext *ctx)
 {
     ctx->comparisonResult = FlagGet(ScriptReadHalfword(ctx));

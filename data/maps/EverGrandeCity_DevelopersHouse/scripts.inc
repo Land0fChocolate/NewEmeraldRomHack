@@ -14,7 +14,7 @@ EverGrandeCity_DevelopersHouse_Text_Man:
 	.string "whilst also enhancing the character of\l"
 	.string "the region.\p"
 	.string "It may feel like you're approaching the\n"
-	.string "endgame, but there is a bunch of cool\l"
+	.string "endgame, but there is a load of cool\l"
 	.string "new content after beating the Pokémon\l"
 	.string "League.\p"
 	.string "Have fun!$"

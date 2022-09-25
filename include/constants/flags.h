@@ -693,26 +693,26 @@
 #define FLAG_HIDE_ZINNIA_SKY_PILLAR_5F            0x28F
 #define FLAG_HIDE_ZINNIA_SKY_PILLAR_TOP           0x290
 #define FLAG_OBTAINED_KEY_STONE                   0x291
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
-#define FLAG_UNUSED_0x294  0x294 // Unused Flag
-#define FLAG_UNUSED_0x295  0x295 // Unused Flag
-#define FLAG_UNUSED_0x296  0x296 // Unused Flag
-#define FLAG_UNUSED_0x297  0x297 // Unused Flag
-#define FLAG_UNUSED_0x298  0x298 // Unused Flag
-#define FLAG_UNUSED_0x299  0x299 // Unused Flag
-#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
-#define FLAG_UNUSED_0x29B  0x29B // Unused Flag
-#define FLAG_UNUSED_0x29C  0x29C // Unused Flag
-#define FLAG_UNUSED_0x29D  0x29D // Unused Flag
-#define FLAG_UNUSED_0x29E  0x29E // Unused Flag
-#define FLAG_UNUSED_0x29F  0x29F // Unused Flag
-#define FLAG_UNUSED_0x2A0  0x2A0 // Unused Flag
-#define FLAG_UNUSED_0x2A1  0x2A1 // Unused Flag
-#define FLAG_UNUSED_0x2A2  0x2A2 // Unused Flag
-#define FLAG_UNUSED_0x2A3  0x2A3 // Unused Flag
-#define FLAG_UNUSED_0x2A4  0x2A4 // Unused Flag
-#define FLAG_UNUSED_0x2A5  0x2A5 // Unused Flag
+#define FLAG_NAVEL_ROCK_HOOH_PUZZLE_EXIT_1        0x292
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_1        0x293
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_2        0x294
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_3        0x295
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_4        0x296
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_5        0x297
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_6        0x298
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_7  	  0x299
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_8  	  0x29A
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_9  	  0x29B
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_10  	  0x29C
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_11 	  0x29D
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_12 	  0x29E
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_13 	  0x29F
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_14 	  0x2A0
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_15       0x2A1
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_16  	  0x2A2
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_17  	  0x2A3
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_18  	  0x2A4
+#define FLAG_NAVEL_ROCK_HOOH_PUZZLE_EXIT_2        0x2A5
 #define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag
 #define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
 #define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
