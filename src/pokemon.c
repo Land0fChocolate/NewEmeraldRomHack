@@ -7450,7 +7450,8 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;
         case TRAINER_CLASS_LOREKEEPER:
-            return MUS_VS_ZINNIA;
+            //return MUS_VS_ZINNIA; //TODO: when the music is properly implemented
+            return MUS_VS_CHAMPION;
         case TRAINER_CLASS_SALON_MAIDEN:
         case TRAINER_CLASS_DOME_ACE:
         case TRAINER_CLASS_PALACE_MAVEN:
