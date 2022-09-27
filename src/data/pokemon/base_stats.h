@@ -3544,7 +3544,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_SNOW_WARNING, ABILITY_SNOW_CLOAK},
+        .abilities = {ABILITY_PRESSURE, ABILITY_KEEN_EYE, ABILITY_SUPERCOOLED},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
@@ -3569,7 +3569,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_LIGHTNING_ROD, ABILITY_STATIC},
+        .abilities = {ABILITY_PRESSURE, ABILITY_KEEN_EYE, ABILITY_LIGHTNING_ROD},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
@@ -3594,7 +3594,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_DROUGHT, ABILITY_FLAME_BODY},
+        .abilities = {ABILITY_PRESSURE, ABILITY_KEEN_EYE, ABILITY_WILDFIRE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
@@ -4233,7 +4233,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_STATIC, ABILITY_LIGHTNING_ROD, ABILITY_NONE},
+        .abilities = {ABILITY_STATIC, ABILITY_LIGHTNING_ROD, ABILITY_CHEEK_POUCH},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },
@@ -5882,9 +5882,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 45,
         .expYield = 73,
         .evYield_Speed     = 1,
-        #ifdef ITEM_EXPANSION
-            .item2 = ITEM_MAGMARIZER,
-        #endif
+        .item2 = ITEM_MAGMARIZER,
         .genderRatio = PERCENT_FEMALE(25),
         .eggCycles = 25,
         .friendship = 70,
@@ -6550,19 +6548,13 @@ const struct BaseStats gBaseStats[] =
         .baseDefense   = 50,
         .baseSpeed     = 65,
         .baseSpDefense = 50,
-        #if P_UPDATED_STATS >= GEN_6
-            .baseSpAttack  = 100,
-        #else
-            .baseSpAttack  = 90,
-        #endif
+        .baseSpAttack  = 100,
         .type1 = TYPE_BUG,
         .type2 = TYPE_FLYING,
         .catchRate = 45,
         .expYield = 178,
         .evYield_SpAttack  = 3,
-        #ifdef ITEM_EXPANSION
-            .item2 = ITEM_SHED_SHELL,
-        #endif
+        .item2 = ITEM_SHED_SHELL,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = 70,
@@ -6611,9 +6603,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 45,
         .expYield = 173,
         .evYield_SpDefense = 3,
-        #ifdef ITEM_EXPANSION
-            .item2 = ITEM_SHED_SHELL,
-        #endif
+        .item2 = ITEM_SHED_SHELL,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = 70,
@@ -6836,9 +6826,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 190,
         .expYield = 54,
         .evYield_Speed     = 1,
-        #ifdef ITEM_EXPANSION
-            .item1 = ITEM_PRETTY_FEATHER,
-        #endif
+        .item1 = ITEM_PRETTY_FEATHER,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 70,
@@ -6863,9 +6851,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 45,
         .expYield = 154,
         .evYield_Defense   = 2,
-        #ifdef ITEM_EXPANSION
-            .item1 = ITEM_PRETTY_FEATHER,
-        #endif
+        .item1 = ITEM_PRETTY_FEATHER,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 70,
@@ -6894,11 +6880,7 @@ const struct BaseStats gBaseStats[] =
         .eggCycles = 20,
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
-        #if P_UPDATED_EGG_GROUPS >= GEN_8
-            .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
-        #else
-            .eggGroup1 = EGG_GROUP_AMORPHOUS,
-        #endif
+        .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
         .abilities = {ABILITY_TRACE, ABILITY_SYNCHRONIZE, ABILITY_TELEPATHY},
         .bodyColor = BODY_COLOR_WHITE,
@@ -6922,11 +6904,7 @@ const struct BaseStats gBaseStats[] =
         .eggCycles = 20,
         .friendship = 35,
         .growthRate = GROWTH_SLOW,
-        #if P_UPDATED_EGG_GROUPS >= GEN_8
-            .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
-        #else
-            .eggGroup1 = EGG_GROUP_AMORPHOUS,
-        #endif
+        .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
         .abilities = {ABILITY_TRACE, ABILITY_SYNCHRONIZE, ABILITY_TELEPATHY},
         .bodyColor = BODY_COLOR_WHITE,
@@ -6970,9 +6948,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 200,
         .expYield = 54,
         .evYield_Speed     = 1,
-        #ifdef ITEM_EXPANSION
-            .item1 = ITEM_HONEY,
-        #endif
+        .item1 = ITEM_HONEY,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = 70,
@@ -8066,7 +8042,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_OWN_TEMPO, ABILITY_UNSTEADY, ABILITY_CONTRARY},
+        .abilities = {ABILITY_OWN_TEMPO, ABILITY_UNSTEADY, ABILITY_EARLY_BIRD},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = TRUE,
     },
@@ -8159,9 +8135,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 190,
         .expYield = 67,
         .evYield_SpAttack  = 1,
-        #ifdef ITEM_EXPANSION
-            .item2 = ITEM_STICKY_BARB,
-        #endif
+        .item2 = ITEM_STICKY_BARB,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 35,
@@ -8187,9 +8161,7 @@ const struct BaseStats gBaseStats[] =
         .expYield = 166,
         .evYield_Attack    = 1,
         .evYield_SpAttack  = 1,
-        #ifdef ITEM_EXPANSION
-            .item2 = ITEM_STICKY_BARB,
-        #endif
+        .item2 = ITEM_STICKY_BARB,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 35,
@@ -8288,9 +8260,7 @@ const struct BaseStats gBaseStats[] =
         .expYield = 160,
         .evYield_Attack    = 1,
         .evYield_SpAttack  = 1,
-        #ifdef ITEM_EXPANSION
-            .item2 = ITEM_SHED_SHELL,
-        #endif
+        .item2 = ITEM_SHED_SHELL,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 70,
@@ -8520,7 +8490,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroup1 = EGG_GROUP_WATER_3,
         .eggGroup2 = EGG_GROUP_WATER_3,
-        .abilities = {ABILITY_SUCTION_CUPS, ABILITY_STORM_DRAIN, ABILITY_LEAF_GUARD},
+        .abilities = {ABILITY_SUCTION_CUPS, ABILITY_STORM_DRAIN, ABILITY_RAIN_DISH},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
     },
@@ -8545,7 +8515,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_ERRATIC,
         .eggGroup1 = EGG_GROUP_WATER_3,
         .eggGroup2 = EGG_GROUP_WATER_3,
-        .abilities = {ABILITY_SUCTION_CUPS, ABILITY_STORM_DRAIN, ABILITY_LEAF_GUARD},
+        .abilities = {ABILITY_SUCTION_CUPS, ABILITY_STORM_DRAIN, ABILITY_RAIN_DISH},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
     },
@@ -8908,9 +8878,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 190,
         .expYield = 60,
         .evYield_HP        = 1,
-        #ifdef ITEM_EXPANSION
-            .item2 = ITEM_SNOWBALL,
-        #endif
+        .item2 = ITEM_SNOWBALL,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 70,

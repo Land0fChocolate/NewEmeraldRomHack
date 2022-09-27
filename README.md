@@ -53,7 +53,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - Volume Up: Power of sound based moves are increased by 33%. Used by Loudred/Exploud.
 - Lava Body: Attackers who make contact will always get inflicted with burn unless they have immunity. Used by Slugma/Magargo.
-- Wildfire: Sp.Atk raises one stage after fainting an opponent. Used by Quilava/Typlosion.
+- Wildfire: Sp.Atk raises one stage after fainting an opponent. Used by Moltres/Quilava/Typlosion.
 - Miracle Blossom: User and ally restore 1/8 HP at the end of every turn. Used by Bayleef/Meganium/Xerneas.
 - Scorching Heart: Power of Fire type moves increased by 50%. Used by Solrock/Groudon/Solgaleo.
 - Ice Affinity: Power of Ice type moves increased by 50%. Used by Lunatone/Kyogre/Piplup/Prinplup/Empoleon/Lunala.
@@ -68,7 +68,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Evergreen: User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
 - Swordmaster: Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
-- Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Glaceon/Aurorus.
+- Supercooled: User's Ice type moves are super-effective against Water types. Used by Seel/Dewgong/Lapras/Articuno/Glaceon/Aurorus.
 - Unsteady: User's evasion increases by one stage when hit. Used by Spinda.
 - Disarm: User's contact moves inflict the Embargo status (disable held items) on the target. Used by Meowth/Persian/Pawniard/Bisharp/Meowth(Galarian)
 - Painful Burn: If the target is burned, the user's moves have triple the chance to flinch (capped at 60%). Learned by Houndour/Houndoom.
@@ -102,6 +102,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Multitype: Also includes Adaptability and Filter effects.
 - Victory Star: User and ally accuracy set to 100%.
 - Sturdy will not activate if the user has a max HP of 1.
+- Suction Cups will now trap the opposing target if user makes contact instead of making the user immune to forced switch outs.
 
 # New Moves
 
