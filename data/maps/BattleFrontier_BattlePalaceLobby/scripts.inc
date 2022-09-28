@@ -327,15 +327,15 @@ BattleFrontier_BattlePalaceLobby_EventScript_ShowDoublesResults::
 	end
 
 BattleFrontier_BattlePalaceLobby_EventScript_BlackBelt::
-	msgbox BattleFrontier_BattlePalaceLobby_Text_LadyCanTellWhatMonsThink, MSGBOX_NPC
+	msgbox BattleFrontier_BattlePalaceLobby_Text_HavingARoughTime, MSGBOX_NPC
 	end
 
 BattleFrontier_BattlePalaceLobby_EventScript_Man::
-	msgbox BattleFrontier_BattlePalaceLobby_Text_NatureAndMovesKeyHere, MSGBOX_NPC
+	msgbox BattleFrontier_BattlePalaceLobby_Text_EasierTimeFighting, MSGBOX_NPC
 	end
 
 BattleFrontier_BattlePalaceLobby_EventScript_Beauty::
-	msgbox BattleFrontier_BattlePalaceLobby_Text_MonDocileButTransforms, MSGBOX_NPC
+	msgbox BattleFrontier_BattlePalaceLobby_Text_NoTroubleWithTeamBuilding, MSGBOX_NPC
 	end
 
 BattleFrontier_BattlePalaceLobby_EventScript_Maniac::
@@ -392,8 +392,8 @@ BattleFrontier_BattlePalaceLobby_EventScript_ExitRules::
 	end
 
 BattleFrontier_BattlePalaceLobby_Text_WelcomeForSingleBattle:
-	.string "Where the hearts of Trainers\n"
-	.string "are put to the test.\p"
+	.string "Where the flexibility of Trainers\n"
+	.string "is put to the test.\p"
 	.string "I welcome you to the Battle Palace.\p"
 	.string "I accept challenges to the Single\n"
 	.string "Battle Halls.$"
@@ -406,17 +406,17 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainSingleBattleChallenge:
 	.string "In the Battle Palace, there are\n"
 	.string "several auditoriums for Single Battles\l"
 	.string "that are named Single Battle Halls.\p"
-	.string "The Single Battles are conducted in\n"
-	.string "the usual way, except with one crucial\l"
-	.string "rule that must be obeyed.\p"
-	.string "Trainers are permitted only to switch\n"
-	.string "their Pokémon in and out.\p"
-	.string "Trainers are otherwise forbidden to\n"
-	.string "command their Pokémon.\p"
-	.string "The Pokémon are to behave according\n"
-	.string "to their nature and battle on their own.\p"
-	.string "You must put your trust in your\n"
-	.string "Pokémon and watch over them.\p"
+	.string "The Single Battles operate in the usual\n"
+	.string "way, except that the type matchups are\l"
+	.string "reversed.\p"
+	.string "For example, Fire type moves are now\n"
+	.string "super-effective against Water type\l"
+	.string "Pokémon, and not very effective against\l"
+	.string "Grass type Pokémon.\p"
+	.string "Pokémon that perform well in usual\n"
+	.string "battles due to the strength of their\l"
+	.string "types may not perform well here and\l"
+	.string "vice versa.\p"
 	.string "If you achieve the honor of beating\n"
 	.string "seven Trainers in succession,\l"
 	.string "we will present you with Battle Points.\p"
@@ -426,8 +426,8 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainSingleBattleChallenge:
 	.string "you will be disqualified.$"
 
 BattleFrontier_BattlePalaceLobby_Text_ReturnWhenFortified:
-	.string "When you have fortified your heart\n"
-	.string "and Pokémon, you must return.$"
+	.string "When you have expanded your mind and\n"
+	.string "Pokémon, you must return.$"
 
 BattleFrontier_BattlePalaceLobby_Text_WhichChallenge:
 	.string "There are two Battle Halls,\n"
@@ -517,43 +517,30 @@ BattleFrontier_BattlePalaceLobby_Text_ReceivedPrize:
 	.string "{PLAYER} received the prize\n"
 	.string "{STR_VAR_1}.$"
 
-BattleFrontier_BattlePalaceLobby_Text_LadyCanTellWhatMonsThink:
-	.string "For a hardy fellow like me,\n"
-	.string "hardy Pokémon are the best.\p"
-	.string "Offense is the best defense!\n"
-	.string "A relentless attack is the ultimate!\p"
-	.string "But that's not what I wanted to chat\n"
-	.string "about.\p"
-	.string "Every so often a really cute lady\n"
-	.string "swings by here.\p"
-	.string "She says that she can tell what\n"
-	.string "Pokémon are thinking.\p"
-	.string "I don't know about that part,\n"
-	.string "but she is really cute.\p"
-	.string "Huh?\n"
-	.string "Why are you looking at me like that?$"
+BattleFrontier_BattlePalaceLobby_Text_HavingARoughTime:
+	.string "My Steel type Pokémon are having a\n"
+	.string "rough time in the Palace.\p"
+	.string "It looks like I'll have to find some\n"
+	.string "Pokémon with a much more fragile type.\p"
+	.string "I don't know if I can get used to this…$"
 
-BattleFrontier_BattlePalaceLobby_Text_NatureAndMovesKeyHere:
-	.string "Hmm…\p"
-	.string "It appears that the nature of Pokémon\n"
-	.string "and the moves that they have been\l"
-	.string "taught are the keys to battle here.\p"
-	.string "To be more precise, it's how well\n"
-	.string "the moves match the nature of\l"
-	.string "the Pokémon.\p"
-	.string "If your Pokémon is in trouble and\n"
-	.string "unable to live up to its potential,\l"
-	.string "you may need to examine how well\l"
-	.string "its moves match its nature.$"
+BattleFrontier_BattlePalaceLobby_Text_EasierTimeFighting:
+	.string "My Pokémon are having a much easier time\n"
+	.string "fighting in the Battle Palace than\l"
+	.string "outside.\p"
+	.string "I'm really liking it. I wonder if they\n"
+	.string "would let me live here…$"
 
-BattleFrontier_BattlePalaceLobby_Text_MonDocileButTransforms:
-	.string "My Pokémon is usually very docile.\p"
-	.string "But when it's in a Battle Hall,\n"
-	.string "it sometimes seems to become\l"
-	.string "transformed into something wicked!\p"
-	.string "It becomes totally intimidating.\n"
-	.string "It's shocking, even.$"
+BattleFrontier_BattlePalaceLobby_Text_NoTroubleWithTeamBuilding:
+	.string "I always like to use a variety of\n"
+	.string "different Pokémon types, so I'm having\l"
+	.string "no trouble with building teams.\p"
+	.string "Although, I sometimes forget that the\n"
+	.string "type matchup is reversed. It feels\l"
+	.string "weird having to go against your\l"
+	.string "instincts as a trainer!$"
 
+@TODO: rewrite
 BattleFrontier_BattlePalaceLobby_Text_WhatNatureFavorsChippingAway:
 	.string "I wonder what sort of nature a Pokémon\n"
 	.string "would have if it favored enfeebling its\l"
@@ -562,8 +549,8 @@ BattleFrontier_BattlePalaceLobby_Text_WhatNatureFavorsChippingAway:
 	.string "But, nah, that can't be right.$"
 
 BattleFrontier_BattlePalaceLobby_Text_WelcomeForDoubleBattle:
-	.string "Where the hearts of Trainers\n"
-	.string "are put to the test.\p"
+	.string "Where the flexibility of Trainers\n"
+	.string "is put to the test.\p"
 	.string "I welcome you to the Battle Palace.\p"
 	.string "I accept challenges to the Double\n"
 	.string "Battle Halls.$"
@@ -576,17 +563,17 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainDoubleBattleChallenge:
 	.string "In the Battle Palace, there are\n"
 	.string "several auditoriums for Double Battles\l"
 	.string "that are named Double Battle Halls.\p"
-	.string "The Double Battles are conducted in\n"
-	.string "the usual way, except with one crucial\l"
-	.string "rule that must be obeyed.\p"
-	.string "Trainers are permitted only to switch\n"
-	.string "their Pokémon in and out.\p"
-	.string "Trainers are otherwise forbidden to\n"
-	.string "command their Pokémon.\p"
-	.string "The Pokémon are to behave according\n"
-	.string "to their nature and battle on their own.\p"
-	.string "You must put your trust in your\n"
-	.string "Pokémon and watch over them.\p"
+	.string "The Double Battles operate in the usual\n"
+	.string "way, except that the type matchups are\l"
+	.string "reversed.\p"
+	.string "For example, Fire type moves are now\n"
+	.string "super-effective against Water type\l"
+	.string "Pokémon, and not very effective against\l"
+	.string "Grass type Pokémon.\p"
+	.string "Pokémon that perform well in usual\n"
+	.string "battles due to the strength of their\l"
+	.string "types may not perform well here and\l"
+	.string "vice versa.\p"
 	.string "If you achieve the honor of beating\n"
 	.string "seven Trainers in succession,\l"
 	.string "we will present you with Battle Points.\p"
@@ -615,6 +602,7 @@ BattleFrontier_BattlePalaceLobby_Text_RulesAreListed:
 BattleFrontier_BattlePalaceLobby_Text_ReadWhichHeading:
 	.string "Which heading do you want to read?$"
 
+@TODO: rewrite
 BattleFrontier_BattlePalaceLobby_Text_ExplainRulesBasics:
 	.string "Here, Pokémon are required to think\n"
 	.string "and battle by themselves.\p"
@@ -622,6 +610,7 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainRulesBasics:
 	.string "with people behave differently\l"
 	.string "depending on their nature.$"
 
+@TODO: rewrite
 BattleFrontier_BattlePalaceLobby_Text_ExplainRulesNature:
 	.string "Depending on its nature, a Pokémon\n"
 	.string "may prefer to attack no matter what.\p"
@@ -635,6 +624,7 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainRulesNature:
 	.string "It may also dislike certain moves that\n"
 	.string "it has trouble using.$"
 
+@TODO: rewrite
 BattleFrontier_BattlePalaceLobby_Text_ExplainRulesMoves:
 	.string "There are offensive moves that inflict\n"
 	.string "direct damage on the foe.\p"
@@ -648,6 +638,7 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainRulesMoves:
 	.string "Pokémon will consider using moves in\n"
 	.string "these three categories.$"
 
+@TODO: rewrite
 BattleFrontier_BattlePalaceLobby_Text_ExplainRulesUnderpowered:
 	.string "When not under command by its Trainer,\n"
 	.string "a Pokémon may be unable to effectively\l"
@@ -658,6 +649,7 @@ BattleFrontier_BattlePalaceLobby_Text_ExplainRulesUnderpowered:
 	.string "do not match its nature, it will often\l"
 	.string "be unable to live up to its potential.$"
 
+@TODO: rewrite
 BattleFrontier_BattlePalaceLobby_Text_ExplainRulesWhenInDanger:
 	.string "Depending on its nature, a Pokémon may\n"
 	.string "start using moves that don't match its\l"
