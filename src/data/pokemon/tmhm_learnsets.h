@@ -6618,6 +6618,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM87_TOPSY_TURVY)
                                             | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM92_TRICK_ROOM)
+                                            | TMHM2(TM97_DARK_PULSE)
                                             | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM05_FLASH)
@@ -7911,7 +7912,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
-                                            | TMHM(TM55_SCALD)
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)

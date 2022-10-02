@@ -2553,7 +2553,8 @@ static const u64 sTutorLearnsets[] =
                                             | TUTOR(MOVE_BLAZE_IMPACT)
                                             | TUTOR(MOVE_DEFOG)
                                             | TUTOR(MOVE_TAILWIND)
-                                            | TUTOR(MOVE_HEAT_WAVE)),
+                                            | TUTOR(MOVE_HEAT_WAVE)
+                                            | TUTOR(MOVE_BLAZE_IMPACT)),
 
     [SPECIES_DRATINI]       = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
                                             | TUTOR(MOVE_DOUBLE_EDGE)
