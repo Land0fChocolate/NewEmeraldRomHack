@@ -45,14 +45,14 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_MAGIKARP] = {
         .species = SPECIES_MAGIKARP,
-        .moves = {MOVE_FLAIL, MOVE_NONE, MOVE_NONE, MOVE_NONE},
+        .moves = {MOVE_FLAIL, MOVE_TACKLE, MOVE_NONE, MOVE_NONE},
         .item = ITEM_WACAN_BERRY,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_HARDY
     },
     [FRONTIER_MON_FEEBAS] = {
         .species = SPECIES_FEEBAS,
-        .moves = {MOVE_FLAIL, MOVE_MIRROR_COAT, MOVE_NONE, MOVE_NONE},
+        .moves = {MOVE_FLAIL, MOVE_MIRROR_COAT, MOVE_DRAGON_BREATH, MOVE_SWIFT},
         .item = ITEM_RINDO_BERRY,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_LONELY

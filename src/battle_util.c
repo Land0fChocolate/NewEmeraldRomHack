@@ -255,7 +255,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_CHEEK_POUCH] = 2,
     [ABILITY_CHLOROPHYLL] = 4,
     [ABILITY_CLEAR_BODY] = 3,
-    [ABILITY_CLOUD_NINE] = 3,
+    [ABILITY_CLOUD_NINE] = 2,
     [ABILITY_COLOR_CHANGE] = 3,
     [ABILITY_COMATOSE] = 0,
     [ABILITY_COMPETITIVE] = 4,
@@ -360,6 +360,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_MULTISCALE] = 4,
     [ABILITY_MULTITYPE] = 0,
     [ABILITY_MUMMY] = 2,
+    [ABILITY_MYSTIC_MIND] = 3,
     [ABILITY_NATURAL_CURE] = 2,
     [ABILITY_NEUROFORCE] = 5,
     [ABILITY_NO_GUARD] = 3,
@@ -9054,6 +9055,10 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             break;
         case ABILITY_GARDENER:
             if (moveType == TYPE_GRASS)
+               MulModifier(&modifier, UQ_4_12(1.5));
+            break;
+        case ABILITY_MYSTIC_MIND:
+            if (moveType == TYPE_PSYCHIC)
                MulModifier(&modifier, UQ_4_12(1.5));
             break;
         case ABILITY_PIXILATE:
