@@ -14562,6 +14562,7 @@ static const struct LevelUpMove sAurorusLevelUpLearnset[] = {
 static const struct LevelUpMove sSylveonLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_FAIRY_WIND),
     LEVEL_UP_MOVE( 1, MOVE_FAIRY_WIND),
+    LEVEL_UP_MOVE( 1, MOVE_HYPER_VOICE),
     LEVEL_UP_MOVE( 1, MOVE_DISARMING_VOICE),
     LEVEL_UP_MOVE( 1, MOVE_HELPING_HAND),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),

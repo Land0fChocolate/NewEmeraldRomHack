@@ -9498,6 +9498,7 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM65_SHADOW_CLAW)
                                             | TMHM2(TM68_GIGA_IMPACT)
                                             | TMHM2(TM81_X_SCISSOR)
+                                            | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(HM01_CUT)
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
