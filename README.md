@@ -38,6 +38,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
 - Map changes, including new areas to explore that have new Pokemon (post game).
+- Battle Frontier has its opponent Pokemon list updated.
+- Battle Palace is now inverse battle themed.
 - Graphical updates to existing overworld sprites and environments.
 - New overworld sprites and graphics.
 - Various story changes. Includes aspects from ORAS.
@@ -59,6 +61,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Ice Affinity: Power of Ice type moves increased by 50%. Used by Lunatone/Kyogre/Piplup/Prinplup/Empoleon/Lunala.
 - Aquatic: Power of Water type moves increased by 50%. Used by Anorith/Armaldo/Dhelmise/Clobbopus/Grapploct.
 - Gardener: Power of Grass type moves increased by 50%. Used by Floette/Florges.
+- Mystic Mind: Power of Psychic type moves increased by 50%. Used by Psyduck/Golduck.
 - Prickly Thorns: Effectively like Rough Skin. Used by Cacnea/Cacturne.
 - Aura Sense: User shudders if opponent has super-effective move. Also ignores evasive boosts from target. Used by Riolu/Lucario.
 - Soul Siphon: Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir/Palossand/Dhelmise/Corsola(Galarian).
