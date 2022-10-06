@@ -711,6 +711,8 @@ extern const u8 gText_KingsRock24BP[];
 extern const u8 gText_RazorClaw24BP[];
 extern const u8 gText_RazorFang24BP[];
 extern const u8 gText_MetalCoat24BP[];
+extern const u8 gText_GalaricaCuff24BP[];
+extern const u8 gText_GalaricaWreath24BP[];
 
 extern const u8 gText_ScopeLens16BP[];
 extern const u8 gText_WideLens16BP[];

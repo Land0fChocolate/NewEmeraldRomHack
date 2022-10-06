@@ -2996,27 +2996,27 @@ const struct Item gItems[] =
         .flingPower = 80,
     },
 
-    [ITEM_GALARICA_CUFF] = // Todo
+    [ITEM_GALARICA_CUFF] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("GalaricaCuff"),
+        .itemId = ITEM_GALARICA_CUFF,
+        .price = 6000,
+        .description = sGalaricaCuffDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .flingPower = 30,
     },
 
-    [ITEM_GALARICA_WREATH] = // Todo
+    [ITEM_GALARICA_WREATH] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("GalrcaWreath"),
+        .itemId = ITEM_GALARICA_WREATH,
+        .price = 6000,
+        .description = sGalaricaWreathDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .flingPower = 30,
     },
 

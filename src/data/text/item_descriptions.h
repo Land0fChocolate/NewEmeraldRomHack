@@ -1071,11 +1071,15 @@ static const u8 sCrackedPotDesc[] = _( // Todo
 static const u8 sChippedPotDesc[] = _( // Todo
     "?????");
 
-static const u8 sGalaricaCuffDesc[] = _( // Todo
-    "?????");
+static const u8 sGalaricaCuffDesc[] = _(
+    "A cuff from Galar\n"
+    "that makes certain\n"
+    "Pokémon evolve.");
 
-static const u8 sGalaricaWreathDesc[] = _( // Todo
-    "?????");
+static const u8 sGalaricaWreathDesc[] = _(
+    "A wreath made in\n"
+    "Galar. Makes some\n"
+    "Pokémon evolve.");
 
 static const u8 sDragonScaleDesc[] = _(
     "A strange scale\n"
