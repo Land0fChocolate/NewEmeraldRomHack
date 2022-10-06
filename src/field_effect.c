@@ -4150,7 +4150,7 @@ static const union AffineAnimCmd sAffineAnim_DragonAscentRayquazaLeaveBall[] = {
 };
 
 static const union AffineAnimCmd sAffineAnim_DragonAscentRayquazaReturnToBall[] = {
-    AFFINEANIMCMD_FRAME(256, 256, 64, 0),
+    AFFINEANIMCMD_FRAME(256, 256, 0, 0),
     AFFINEANIMCMD_FRAME(-10, -10, 0, 22),
     AFFINEANIMCMD_END
 };
@@ -4227,9 +4227,9 @@ static void SpriteCB_DragonAscentRayquazaReturnToBall(struct Sprite *sprite)
             sprite->x = 0x5e;
             sprite->y = -0x20;
             sprite->data[0]++;
-            sprite->data[1] = 0xf0;
-            sprite->data[2] = 0x800;
-            sprite->data[4] = 0x80;
+            sprite->data[1] = 0xf0; //end location
+            sprite->data[2] = 0x800; //size
+            sprite->data[4] = 0x8C; //speed
         }
         sprite->data[1] += sprite->data[2] >> 8;
         sprite->data[3] += sprite->data[2] >> 8;
@@ -4379,11 +4379,11 @@ static void DragonAscentInFieldEffect_FieldMovePose(struct Task *task)
 
 static void DragonAscentInFieldEffect_RayquazaReturnToBall(struct Task *task)
 {
-    if (ObjectEventClearHeldMovementIfFinished(&gObjectEvents[gPlayerAvatar.objectEventId]))
-    {
+    //if (ObjectEventClearHeldMovementIfFinished(&gObjectEvents[gPlayerAvatar.objectEventId])) //TODO: remove?
+    //{
         task->tState++;
         StartDragonAscentRayquazaReturnToBall(task->tRayquazaSpriteId);
-    }
+    //}
 }
 
 static void DragonAscentInFieldEffect_WaitRayquazaReturn(struct Task *task)
