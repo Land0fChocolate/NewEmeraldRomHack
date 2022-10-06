@@ -14,15 +14,14 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
 	- Including physical/special split, fairy types, new moves, new items, new Pokemon species, regional species variants.
-	- Whilst data for all post gen3 Pokemon are in the game, only those that have evolutions linked to Pokemon in those gens are accessible, baring a few exceptions (Namely regional variants like Alolan Vulpix).
+	- Whilst data for all post gen3 Pokemon are in the game, only those that have evolutions linked to Pokemon in those gens are accessible, baring some exceptions (Namely regional variants like Alolan Vulpix).
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
 	- Many Pokemon have had their ability sets updated with new abilities (TODO: make a list of ability stat changes somewhere).
+	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
 - New moves and abilities (listed below).
-- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
 - Many gameplay adjustments to vanilla moves (Listed below). 
-	- Changes to level up and TM learnsets of some Pokemon (TODO: make list).
+	- Changes to level up, TM learnsets and Tutor learnsets of Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
-	- OHKO moves have been removed from battle facility movepools.
 - Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko, Spheal lines have Attack and Special Attack swapped. (TODO: make list)
 - HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
 - Berry tree drop rates are tripled. Interaction with berry trees is also quicker.
@@ -38,7 +37,8 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
 - Map changes, including new areas to explore that have new Pokemon (post game).
-- Battle Frontier has its opponent Pokemon list updated.
+- Legendary and Mythical Pokemon can be repeatedly acquired.
+- Battle Frontier has its opponent Pokemon list updated with new Pokemon, new items and new moves.
 - Battle Palace is now inverse battle themed.
 - Graphical updates to existing overworld sprites and environments.
 - New overworld sprites and graphics.
@@ -46,7 +46,10 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Gym Leaders do more:
 	- Roxanne trades evolution stones for fossils.
 	- Brawly can give a random shard daily.
-- Item changes: Quick Claw now increases speed by 10% when user is below 50% health.
+- Item changes
+	- Quick Claw now increases speed by 10% when user is below 50% health.
+	- Vitamins give 20 EVs instead of 10.
+	- Prices of various items adjusted.
 - New Items:
 	- Super Vitamins (Adding 100 EVs per use)
 - Deoxys is able to change forms by interacting with meteorites in the overworld.

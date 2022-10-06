@@ -349,46 +349,8 @@ BattleFrontier_BattlePalaceLobby_EventScript_RulesBoard::
 	end
 
 BattleFrontier_BattlePalaceLobby_EventScript_ReadRulesBoard::
-	message BattleFrontier_BattlePalaceLobby_Text_ReadWhichHeading
-	waitmessage
-	multichoice 16, 0, MULTI_BATTLE_PALACE_RULES, FALSE
-	switch VAR_RESULT
-	case 0, BattleFrontier_BattlePalaceLobby_EventScript_RulesBasics
-	case 1, BattleFrontier_BattlePalaceLobby_EventScript_RulesNature
-	case 2, BattleFrontier_BattlePalaceLobby_EventScript_RulesMoves
-	case 3, BattleFrontier_BattlePalaceLobby_EventScript_RulesUnderpowered
-	case 4, BattleFrontier_BattlePalaceLobby_EventScript_RulesWhenInDanger
-	case 5, BattleFrontier_BattlePalaceLobby_EventScript_ExitRules
-	case MULTI_B_PRESSED, BattleFrontier_BattlePalaceLobby_EventScript_ExitRules
-	end
-
-BattleFrontier_BattlePalaceLobby_EventScript_RulesBasics::
 	msgbox BattleFrontier_BattlePalaceLobby_Text_ExplainRulesBasics, MSGBOX_DEFAULT
-	goto BattleFrontier_BattlePalaceLobby_EventScript_ReadRulesBoard
-	end
-
-BattleFrontier_BattlePalaceLobby_EventScript_RulesNature::
-	msgbox BattleFrontier_BattlePalaceLobby_Text_ExplainRulesNature, MSGBOX_DEFAULT
-	goto BattleFrontier_BattlePalaceLobby_EventScript_ReadRulesBoard
-	end
-
-BattleFrontier_BattlePalaceLobby_EventScript_RulesMoves::
-	msgbox BattleFrontier_BattlePalaceLobby_Text_ExplainRulesMoves, MSGBOX_DEFAULT
-	goto BattleFrontier_BattlePalaceLobby_EventScript_ReadRulesBoard
-	end
-
-BattleFrontier_BattlePalaceLobby_EventScript_RulesUnderpowered::
-	msgbox BattleFrontier_BattlePalaceLobby_Text_ExplainRulesUnderpowered, MSGBOX_DEFAULT
-	goto BattleFrontier_BattlePalaceLobby_EventScript_ReadRulesBoard
-	end
-
-BattleFrontier_BattlePalaceLobby_EventScript_RulesWhenInDanger::
-	msgbox BattleFrontier_BattlePalaceLobby_Text_ExplainRulesWhenInDanger, MSGBOX_DEFAULT
-	goto BattleFrontier_BattlePalaceLobby_EventScript_ReadRulesBoard
-	end
-
-BattleFrontier_BattlePalaceLobby_EventScript_ExitRules::
-	releaseall
+	closemessage
 	end
 
 BattleFrontier_BattlePalaceLobby_Text_WelcomeForSingleBattle:
@@ -602,58 +564,13 @@ BattleFrontier_BattlePalaceLobby_Text_RulesAreListed:
 BattleFrontier_BattlePalaceLobby_Text_ReadWhichHeading:
 	.string "Which heading do you want to read?$"
 
-@TODO: rewrite
 BattleFrontier_BattlePalaceLobby_Text_ExplainRulesBasics:
-	.string "Here, Pokémon are required to think\n"
-	.string "and battle by themselves.\p"
-	.string "Unlike in the wild, Pokémon that live\n"
-	.string "with people behave differently\l"
-	.string "depending on their nature.$"
-
-@TODO: rewrite
-BattleFrontier_BattlePalaceLobby_Text_ExplainRulesNature:
-	.string "Depending on its nature, a Pokémon\n"
-	.string "may prefer to attack no matter what.\p"
-	.string "Another Pokémon may prefer to protect\n"
-	.string "itself from any harm.\p"
-	.string "Yet another may enjoy vexing or\n"
-	.string "confounding its foes.\p"
-	.string "Due to its nature, a Pokémon\n"
-	.string "will have favorite moves that it is good\l"
-	.string "at using.\p"
-	.string "It may also dislike certain moves that\n"
-	.string "it has trouble using.$"
-
-@TODO: rewrite
-BattleFrontier_BattlePalaceLobby_Text_ExplainRulesMoves:
-	.string "There are offensive moves that inflict\n"
-	.string "direct damage on the foe.\p"
-	.string "There are defensive moves that are\n"
-	.string "used to prepare for enemy attacks or\l"
-	.string "used to heal HP and so on.\p"
-	.string "There are also other somewhat-odd\n"
-	.string "moves that may enfeeble the foes with\l"
-	.string "stat problems including poison and \l"
-	.string "paralysis.\p"
-	.string "Pokémon will consider using moves in\n"
-	.string "these three categories.$"
-
-@TODO: rewrite
-BattleFrontier_BattlePalaceLobby_Text_ExplainRulesUnderpowered:
-	.string "When not under command by its Trainer,\n"
-	.string "a Pokémon may be unable to effectively\l"
-	.string "use certain moves.\p"
-	.string "A Pokémon is not good at using any\n"
-	.string "move that it dislikes.\p"
-	.string "If a Pokémon only knows moves that\n"
-	.string "do not match its nature, it will often\l"
-	.string "be unable to live up to its potential.$"
-
-@TODO: rewrite
-BattleFrontier_BattlePalaceLobby_Text_ExplainRulesWhenInDanger:
-	.string "Depending on its nature, a Pokémon may\n"
-	.string "start using moves that don't match its\l"
-	.string "nature when it is in trouble.\p"
-	.string "If a Pokémon begins behaving oddly\n"
-	.string "in a pinch, watch it carefully.$"
+	.string "Here, type matchups in battles are\n"
+	.string "reversed.\p"
+	.string "Types that had resistance or immunity\n"
+	.string "normally, will now be damaged\l"
+	.string "super-effectively and types that took\l"
+	.string "extra damage will be not very effective.\p"
+	.string "Some entry hazards are affected and\n"
+	.string "status moves are also affected.$"
 

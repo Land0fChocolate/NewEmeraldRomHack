@@ -11807,7 +11807,7 @@ static const struct TrainerMonItemCustomMoves sParty_MayPostGameTreecko[] = {
     .lvl = 58,
     .species = SPECIES_MEGANIUM,
     .heldItem = ITEM_LEFTOVERS,
-    .moves = {MOVE_ENERGY_BALL, MOVE_SYNTHESIS, MOVE_LEECH_SEED, MOVE_REFLECT},
+    .moves = {MOVE_ENERGY_BALL, MOVE_SYNTHESIS, MOVE_LEECH_SEED, MOVE_TOXIC},
     },
     {
     .iv = 255,
@@ -11987,7 +11987,7 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanPostGameTorchic[] = 
     .lvl = 58,
     .species = SPECIES_MEGANIUM,
     .heldItem = ITEM_LEFTOVERS,
-    .moves = {MOVE_ENERGY_BALL, MOVE_SYNTHESIS, MOVE_LEECH_SEED, MOVE_REFLECT},
+    .moves = {MOVE_ENERGY_BALL, MOVE_SYNTHESIS, MOVE_LEECH_SEED, MOVE_TOXIC},
     },
     {
     .iv = 255,

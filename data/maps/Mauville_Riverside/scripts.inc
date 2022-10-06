@@ -7,7 +7,9 @@ Mauville_Riverside_MapScripts::
 Mauville_Riverside_Eventscript_MagmaGrunt::
 	lock
 	applymovement LOCALID_MAGMA_GRUNT, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
 	applymovement LOCALID_MAGMA_GRUNT, Common_Movement_WalkInPlaceFastestUp
+	waitmovement 0
 	applymovement LOCALID_MAGMA_GRUNT, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	msgbox Mauville_Riverside_Text_GetDown, MSGBOX_DEFAULT
@@ -196,11 +198,11 @@ Mauville_Riverside_Text_YoureLoadedWithItems:
 
 Mauville_Riverside_Text_BeGoingNow:
 	.string "The scoundrels that call themselves\n"
-	.string "Team Magma have been causing trouble\l"
-	.string "everywhere!\p"
+	.string "Team Magma have been instigating\l"
+	.string "trouble everywhere!\p"
 	.string "I shall be heading home immediately.\n"
-	.string "You may visit me at any time at my\l"
-	.string "residence in Mauville.\p"
+	.string "You may visit me at your convienience\l"
+	.string "by my residence in Mauville.\p"
 	.string "I shall happily groom your Pokémon who\n"
 	.string "fought for my safety.\p"
 	.string "Once again, thank you.$"

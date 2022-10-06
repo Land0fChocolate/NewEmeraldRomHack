@@ -63,7 +63,10 @@ MauvilleCity_TVStation_Text_CameraMan:
 	.string "That stuff is expensive.$"
 
 MauvilleCity_TVStation_Text_Beauty:
-	.string "TODO$"
+	.string "Oh my!\n"
+	.string "My fans just keep coming!\p"
+	.string "I can't give you a kiss, sweetie, but\n"
+	.string "perhaps this will make up for it?$"
 
 MauvilleCity_TVStation_Text_BeautyPostTM:
 	.string "We have a very special guest for our\n"
