@@ -593,13 +593,34 @@ bool8 ScrCmd_clearflag(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_flipflag(struct ScriptContext *ctx)
+{
+    u16 flag = ScriptReadHalfword(ctx);
+
+    if (FlagGet(flag))
+        FlagClear(flag);
+    else
+        FlagSet(flag);
+
+    return FALSE;
+}
+
 bool8 ScrCmd_checkflag(struct ScriptContext *ctx)
 {
     ctx->comparisonResult = FlagGet(ScriptReadHalfword(ctx));
     return FALSE;
 }
 
-bool8 ScrCmd_checkmultiflags(struct ScriptContext *ctx)
+bool8 ScrCmd_check2flags(struct ScriptContext *ctx)
+{
+    u8 flag1 = FlagGet(ScriptReadHalfword(ctx));
+    u8 flag2 = FlagGet(ScriptReadHalfword(ctx));
+
+    ctx->comparisonResult = flag1 & flag2;
+    return FALSE;
+}
+
+bool8 ScrCmd_check3flags(struct ScriptContext *ctx)
 {
     u8 flag1 = FlagGet(ScriptReadHalfword(ctx));
     u8 flag2 = FlagGet(ScriptReadHalfword(ctx));
@@ -2386,4 +2407,80 @@ bool8 ScrCmd_locktarget(struct ScriptContext *ctx)
         SetupNativeScript(ctx, IsFreezePlayerFinished);
         return TRUE;
     }
+}
+
+bool8 ScrCmd_checkformoninparty(struct ScriptContext *ctx)
+{
+    u8 i;
+    u16 monId = ScriptReadHalfword(ctx);
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+        if (species == monId)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+//TODO: needs testing
+bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
+{
+    // 0 = Neutral Form
+    // 1 = Attack Form
+    // 2 = Defense Form
+    // 3 = Speed Form
+    u8 i;
+    u16 species, targetSpecies;
+    u16 form = ScriptReadHalfword(ctx);
+    bool8 formChanged = FALSE;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+        switch (form)
+        {
+            case 0:
+                if (species == SPECIES_DEOXYS_ATTACK
+                    || species == SPECIES_DEOXYS_DEFENSE
+                    || species == SPECIES_DEOXYS_SPEED)
+                {
+                    targetSpecies = SPECIES_DEOXYS;
+                    SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    formChanged = TRUE;
+                }
+                break;
+            case 1:
+                if (species == SPECIES_DEOXYS
+                    || species == SPECIES_DEOXYS_DEFENSE
+                    || species == SPECIES_DEOXYS_SPEED)
+                {
+                    targetSpecies = SPECIES_DEOXYS_ATTACK;
+                    SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    formChanged = TRUE;
+                }
+                break;
+            case 2:
+                if (species == SPECIES_DEOXYS
+                    || species == SPECIES_DEOXYS_ATTACK
+                    || species == SPECIES_DEOXYS_SPEED)
+                {
+                    targetSpecies = SPECIES_DEOXYS_DEFENSE;
+                    SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    formChanged = TRUE;
+                }
+                break;
+            case 3:
+                if (species == SPECIES_DEOXYS
+                    || species == SPECIES_DEOXYS_ATTACK
+                    || species == SPECIES_DEOXYS_DEFENSE)
+                {
+                    targetSpecies = SPECIES_DEOXYS_SPEED;
+                    SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    formChanged = TRUE;
+                }
+                break;
+        }
+    }
+    return formChanged;
 }

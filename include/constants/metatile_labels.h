@@ -272,6 +272,7 @@
 #define METATILE_GenericBuilding_TableEdge               0x2F1
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x21B
 #define METATILE_GenericBuilding_TrickHouse_Stairs_Down  0x219
+#define METATILE_GenericBuilding_WoodenFloor_Meteorite   0x200
 
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
@@ -394,6 +395,10 @@
 #define METATILE_Mossdeep_Door_SpaceCenter  0x2ED
 
 // gTileset_NavelRock
+#define METATILE_NavelRock_GoldCave_BrownWall_BotLeft          0x225
+#define METATILE_NavelRock_GoldCave_BrownWall_BotRight         0x226
+#define METATILE_NavelRock_GoldCave_BrownWall_TopLeft          0x21D
+#define METATILE_NavelRock_GoldCave_BrownWall_TopRight         0x21E
 #define METATILE_NavelRock_GoldCave_Floor                      0x201
 #define METATILE_NavelRock_Ocean_Water                         0x293
 #define METATILE_NavelRock_Ocean_Water_EastShallow             0x3E7

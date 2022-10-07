@@ -4552,16 +4552,22 @@ FieryPath_Text_AishaPostBattle:
 	.string "different ways. A true fighter learns to\l"
 	.string "adapt to all manner of environments.$"
 
-EverGrandeCity_BattleTent_Text_AlyssaIntro:
-	.string "Did you want to battle me?\n"
-	.string "Sure, I'll go with you!$"
+EverGrandeCity_BattleTent_Text_AlyssaIntroMalePlayer:
+	.string "What's wrong big boy?\n"
+	.string "Never seen a woman as beautiful as me\l"
+	.string "before?$"
+
+EverGrandeCity_BattleTent_Text_AlyssaIntroFemalePlayer:
+	.string "What's wrong big girl?\n"
+	.string "Never seen a woman as beautiful as me\l"
+	.string "before?$"
 
 EverGrandeCity_BattleTent_Text_AlyssaDefeated:
-	.string "I wasn't good enough for you.$"
+	.string "Oh my!$"
 
 EverGrandeCity_BattleTent_Text_AlyssaPostBattle:
-	.string "I think you're going to keep getting\n"
-	.string "better. I'll go for it, too!$"
+	.string "I should go to a beach and get myself\n"
+	.string "a good tan.$"
 
 EverGrandeCity_BattleTent_Text_TyronIntro:
 	.string "I've spent months of tearing up my\n"
@@ -4598,13 +4604,17 @@ EverGrandeCity_BattleTent_Text_MelinaPostBattle:
 	.string "Later.$"
 
 EverGrandeCity_BattleTent_Text_PatIntro:
-	.string "TODO$"
+	.string "I've been fighting here on Evergrande\n"
+	.string "longer than anyone else.\l"
+	.string "even before the Pokémon League moved\l"
+	.string "here.$"
 
 EverGrandeCity_BattleTent_Text_PatDefeated:
-	.string "TODO$"
+	.string "A talented youngster you are.$"
 
 EverGrandeCity_BattleTent_Text_PatPostBattle:
-	.string "TODO$"
+	.string "I'll never retire. I'll continue to\n"
+	.string "battle here until the end of my days!$"
 
 EverGrandeCity_BattleTent_Text_CarolinaIntro:
 	.string "Hi! Do you prefer butterscotch cake\n"
@@ -4690,40 +4700,51 @@ EverGrandeCity_BattleTent_Text_JaidenPostBattle:
 	.string "weren't they?$"
 
 EverGrandeCity_BattleTent_Text_KaraIntro:
-	.string "TODO$"
+	.string "I'm on a roll!\n"
+	.string "Let's go, I'm super fired up!$"
 
 EverGrandeCity_BattleTent_Text_KaraDefeated:
-	.string "TODO$"
+	.string "Oh, fiddlesticks!$"
 
 EverGrandeCity_BattleTent_Text_KaraPostBattle:
-	.string "TODO$"
+	.string "I suppose it's a good time to call it\n"
+	.string "quits for today and get back to my job.$"
 
 EverGrandeCity_BattleTent_Text_DavisIntro:
-	.string "TODO$"
+	.string "I love my job.\n"
+	.string "I also love battling!$"
 
 EverGrandeCity_BattleTent_Text_DavisDefeated:
-	.string "TODO$"
+	.string "Geegee.$"
 
 EverGrandeCity_BattleTent_Text_DavisPostBattle:
-	.string "TODO$"
+	.string "Evergrande looks super clean because\n"
+	.string "I pick up all the trash every morning.$"
 
 EverGrandeCity_BattleTent_Text_IsabelleIntro:
-	.string "TODO$"
+	.string "I see…\n"
+	.string "I see… … …\l"
+	.string "I see you losing to me!$"
 
 EverGrandeCity_BattleTent_Text_IsabelleDefeated:
-	.string "TODO$"
+	.string "Yeah, I lied.$"
 
 EverGrandeCity_BattleTent_Text_IsabellePostBattle:
-	.string "TODO$"
+	.string "The trainers in Evergrande don't fall\n"
+	.string "for cheap tricks. I should make sure\l"
+	.string "to train my Pokémon thoroughly.$"
 
 EverGrandeCity_BattleTent_Text_MylesIntro:
-	.string "TODO$"
+	.string "Some wimpy kid wiped the floor with me\n"
+	.string "and that made me mad!\p"
+	.string "I'm going to beat you to make up for it!$"
 
 EverGrandeCity_BattleTent_Text_MylesDefeated:
-	.string "TODO$"
+	.string "Not again!$"
 
 EverGrandeCity_BattleTent_Text_MylesPostBattle:
-	.string "TODO$"
+	.string "The competitiveness of this place is\n"
+	.string "driving me crazy!$"
 
 EverGrandeCity_BattleTent_Text_KevinIntro:
 	.string "I don't like hurtin' people.\p"
@@ -4747,7 +4768,7 @@ EverGrandeCity_BattleTent_Text_BethDefeated:
 
 EverGrandeCity_BattleTent_Text_BethPostBattle:
 	.string "Ever Grande is a beautiful city.\n"
-	.string "I should move here permanently.$"
+	.string "I should live here permanently.$"
 
 EverGrandeCity_BattleTent_Text_JazmynIntro:
 	.string "I want everybody to see the Pokémon\n"
@@ -4786,13 +4807,16 @@ EverGrandeCity_BattleTent_Text_BrandiPostBattle:
 	.string "But often, their looks don't lie…$"
 
 Wildwoods_Area4_Text_CelinaIntro:
-	.string "TODO$"
+	.string "I'm just here to gather cotton that\n"
+	.string "Jumpluff leave behind.\l"
+	.string "Though, I can spare some time to battle!$"
 
 Wildwoods_Area4_Text_CelinaDefeated:
-	.string "TODO$"
+	.string "At least I've gathered plenty of cotton.$"
 
 Wildwoods_Area4_Text_CelinaPostBattle:
-	.string "TODO$"
+	.string "Jumpluff's cotton makes for some\n"
+	.string "wonderfully soft clothing!$"
 
 Wildwoods_Area5_Text_PitahaIntro:
 	.string "G…g…g…ghost!\p"
@@ -4820,83 +4844,111 @@ Wildwoods_Area6_Text_MeggiPostBattle:
 	.string "mystical places.$"
 
 FallarborWasteland_Text_KatIntro:
-	.string "TODO$"
+	.string "Kat: Ohoho! What do we have here?\n"
+	.string "A new sparring buddy?\p"
+	.string "I'm going to show Ashe how to leave you\n"
+	.string "bruised!$"
 
 FallarborWasteland_Text_KatDefeat:
-	.string "TODO$"
+	.string "Kat: Ouch! You're rough!$"
 
 FallarborWasteland_Text_KatPostBattle:
-	.string "TODO$"
+	.string "Kat: Doing tough challenges will make\n"
+	.string "you tougher. I've been trying to teach\l"
+	.string "Ashe that.$"
 
 FallarborWasteland_Text_KatNotEnoughMons:
 	.string "Kat: Are you doing some single Pokémon\n"
 	.string "challenge or something?$"
 
 FallarborWasteland_Text_AsheIntro:
-	.string "TODO$"
+	.string "I don't get why training in this dusty\n"
+	.string "corner of Hoenn is better than training\l"
+	.string "elsewhere, but I'll do whatever it\l"
+	.string "takes to beat Kat!$"
 
 FallarborWasteland_Text_AsheDefeat:
-	.string "TODO$"
+	.string "I need to put in more effort.$"
 
 FallarborWasteland_Text_AshePostBattle:
 	.string "Ashe: There's no way I can beat Kat,\n"
-	.string "except maybe if I aim for the horn…$"
+	.string "as I am now. Except maybe if I aim\l"
+	.string "for the horn…$"
 
 FallarborWasteland_Text_AsheNotEnoughMons:
 	.string "Ashe: You only have one Pokémon with\n"
 	.string "you? So boring!$"
 
 FallarborWasteland_Text_GeordiIntro:
-	.string "TODO$"
+	.string "I was enjoying myself being alone\n"
+	.string "until you came along!$"
 
 FallarborWasteland_Text_GeordiDefeat:
-	.string "TODO$"
+	.string "Shoo!$"
 
 FallarborWasteland_Text_GeordiPostBattle:
-	.string "TODO$"
+	.string "I can't stand being around crowds.\n"
+	.string "Being in the middle of nowhere is\l"
+	.string "perfect for me.$"
 
 MauvilleMeadow_Text_AlistairIntro:
-	.string "TODO$"
+	.string "Take a good look at my moustache!\n"
+	.string "I have groomed and oiled it every day!\l"
+	.string "You will find no finer facial hair in\l"
+	.string "Hoenn!$"
 
 MauvilleMeadow_Text_AlistairDefeat:
-	.string "TODO$"
+	.string "Hmpf! No appreciation!$"
 
 MauvilleMeadow_Text_AlistairPostBattle:
-	.string "TODO$"
+	.string "My moustache is the best!$"
 
 MauvilleMeadow_Text_NatashaIntro:
-	.string "TODO$"
+	.string "La-la-la-la-la.\n"
+	.string "Would you care to join me on a stroll?$"
 
 MauvilleMeadow_Text_NatashaDefeat:
-	.string "TODO$"
+	.string "La-la-la-la-la.$"
 
 MauvilleMeadow_Text_NatashaPostBattle:
-	.string "TODO$"
+	.string "La-la-la-la-la.\n"
+	.string "This pretty field makes me feel like a\l"
+	.string "little girl!$"
 
 FortreeJungle_Area1_Text_ZukoIntro:
-	.string "Ya ha ha!\n"
+	.string "Yahaha!\n"
 	.string "You found me!$"
 
 FortreeJungle_Area1_Text_ZukoDefeat:
-	.string "TODO$"
+	.string "Huh, I'm out of seeds.$"
 
 FortreeJungle_Area1_Text_ZukoPostBattle:
-	.string "TODO$"
+	.string "Buh-bye!$"
 
 FortreeJungle_Area1_Text_JossIntro:
-	.string "TODO$"
+	.string "Fufufu!\n"
+	.string "This jungle is a paradise! So many rare\l"
+	.string "Pokémon just for me!$"
 
 FortreeJungle_Area1_Text_JossDefeat:
-	.string "TODO$"
+	.string "I need more.$"
 
 FortreeJungle_Area1_Text_JossPostBattle:
-	.string "TODO$"
+	.string "My collection is not complete until I\n"
+	.string "can get a Chansey. I saw one running\l"
+	.string "around but they're surprisingly\l"
+	.string "slippery.$"
 
 FortreeJungle_Area2_Text_RyuIntro:
-	.string "TODO$"
+	.string "Cower in fear puny trainer, for you\n"
+	.string "stand in the presence of-\l"
+	.string "cough cough bleh!\l"
+	.string "A bug got in my mouth!$"
 
 FortreeJungle_Area2_Text_RyuDefeat:
-	.string "TODO$"
+	.string "Bleh!$"
 
 FortreeJungle_Area2_Text_RyuPostBattle:
-	.string "TODO$"
+	.string "This jungle is too undignified for a\n"
+	.string "dragon tamer such as myself.\l"
+	.string "I would leave if I could find the exit…$"

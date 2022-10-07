@@ -23,14 +23,14 @@ FallarborWasteland_EventScript_Geordi::
 
 FallarborWasteland_Eventscript_Tabitha::
 	msgbox FallarborWasteland_Text_TabithaFieldWork, MSGBOX_NPC
-	setflag FLAG_MET_TABITHA_FALLARBOR_WASTES
-	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, FallarborWasteland_Eventscript_CheckForBirchReportCall
+	call_if_unset FLAG_MET_TABITHA_FALLARBOR_WASTES, FallarborWasteland_Eventscript_SetMeetFlag
+	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, Wildwoods_Area9_Eventscript_CheckForBirchReportCall
 	end
 
-FallarborWasteland_Eventscript_CheckForBirchReportCall::
-	checkmultiflags FLAG_MET_COURTNEY_WILDWOODS, FLAG_MET_SHELLY_MAUVILLE_MEADOW, FLAG_MET_MATT_FORTREE_JUNGLE 
-	goto_if TRUE, Wildwoods_Area9_Eventscript_SetBirchReportCall
-	end
+FallarborWasteland_Eventscript_SetMeetFlag::
+	setflag FLAG_MET_TABITHA_FALLARBOR_WASTES
+	addvar VAR_NEW_AREA_EXPLORE, 1
+	return
 
 FallarborWasteland_Eventscript_MagmaPostBridge::
 	msgbox FallarborWasteland_Text_BridgeMagma, MSGBOX_NPC
@@ -68,8 +68,8 @@ FallarborWasteland_Text_BridgeMagma:
 
 FallarborWasteland_Text_ObserveMagmaF:
 	.string "The soil is too poor for most plants.\n"
-	.string "This place is very much a wasteland.\p"
-	.string "These caverns cut into the land are\n"
+	.string "This biome is very much a wasteland.\p"
+	.string "These canyons cut into the land are\n"
 	.string "promising though, it could expose some\l"
 	.string "useful minerals.$"
 

@@ -108,7 +108,7 @@ Space_Area2_EventScript_Deoxys::
 Space_Area2_EventScript_DefeatedDeoxys::
 	setflag FLAG_DEFEATED_DEOXYS
 	compare VAR_DRACONID_ARCHIVES_STATE, 0
-	call_if_eq Space_Area2_EventScript_ArchiveState0
+	call_if_eq Space_Area2_EventScript_DraconidArchivesState
 	setvar VAR_0x8004, SPECIES_DEOXYS
 	goto Common_EventScript_LegendaryFlewAway
 	end
@@ -116,7 +116,7 @@ Space_Area2_EventScript_DefeatedDeoxys::
 Space_Area2_EventScript_CaughtDeoxys::
 	setflag FLAG_DEFEATED_DEOXYS
 	compare VAR_DRACONID_ARCHIVES_STATE, 0
-	call_if_eq Space_Area2_EventScript_ArchiveState0
+	call_if_eq Space_Area2_EventScript_DraconidArchivesState
 	end
 
 Space_Area2_EventScript_RanFromDeoxys::
@@ -134,6 +134,8 @@ Space_Area2_Movement_DeoxysApproach:
 	walk_slow_down
 	step_end
 
-Space_Area2_EventScript_ArchiveState0:
+Space_Area2_EventScript_DraconidArchivesState:
 	setvar VAR_DRACONID_ARCHIVES_STATE, 1
+	setflag FLAG_HIDE_ZINNIA_SKY_PILLAR_TOP
+	clearflag FLAG_HIDE_ZINNIA_DRACONID_ARCHIVES
 	return

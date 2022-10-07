@@ -1174,6 +1174,10 @@ static const u8 sPainfulBurnDescription[] = _(
 	"Have a much greater chance\n"
 	"to flinch a burned foe.");
 
+static const u8 sMysticMindDescription[] = _(
+	"Psychic moves increase in\n"
+	"power by 50%.");
+
 #if B_EXPANDED_ABILITY_NAMES == TRUE
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -1472,6 +1476,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_UNSTEADY] = _("Unsteady"),
     [ABILITY_DISARM] = _("Disarm"),
     [ABILITY_PAINFUL_BURN] = _("Painful Burn"),
+    [ABILITY_MYSTIC_MIND] = _("Mystic Mind"),
 };
 #else   // 12 characters
 
@@ -1772,6 +1777,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_UNSTEADY] = "Unsteady",
     [ABILITY_DISARM] = "Disarm",
     [ABILITY_PAINFUL_BURN] = "Painful Burn",
+    [ABILITY_MYSTIC_MIND] = "Mystic Mind",
 };
 #endif
 
@@ -2072,4 +2078,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_UNSTEADY] = sUnsteadyDescription,
     [ABILITY_DISARM] = sDisarmDescription,
     [ABILITY_PAINFUL_BURN] = sPainfulBurnDescription,
+    [ABILITY_MYSTIC_MIND] = sMysticMindDescription,
 };

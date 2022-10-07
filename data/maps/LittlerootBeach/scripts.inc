@@ -25,6 +25,7 @@ LittlerootBeach_EventScript_RivalBattle::
 	end
 
 LittlerootBeach_EventScript_MayBattle:
+	call LittlerootBeach_EventScript_PlayMayMusic
 	msgbox LittlerootBeach_Text_MayLetsBattle, MSGBOX_DEFAULT
 	closemessage
 	switch VAR_STARTER_MON
@@ -55,6 +56,7 @@ LittlerootBeach_EventScript_MayDefeated::
 	end
 
 LittlerootBeach_EventScript_BrendanBattle:
+	call LittlerootBeach_EventScript_PlayBrendanMusic
 	msgbox LittlerootBeach_Text_BrendanLetsBattle, MSGBOX_DEFAULT
 	closemessage
 	switch VAR_STARTER_MON
@@ -91,6 +93,7 @@ LittlerootBeach_EventScript_RivalExit::
 	delay 15
 	removeobject LOCALID_RIVAL
 	waitfieldeffect FLDEFF_NPCFLY_OUT
+	fadedefaultbgm
 	delay 20
 	pokenavcall LittlerootBeach_Text_SpaceCenterCall
 	setvar VAR_LIITLEROOT_BEACH_STATE, 3
@@ -415,8 +418,8 @@ LittlerootBeach_Text_MayReport:
 	.string "May: Anyway, I've had a good look around\n"
 	.string "and caught a bunch of Pokémon.\p"
 	.string "You should have a good look around too.\n"
-	.string "Some of these Pokémon might be good for\l"
-	.string "battling.\p"
+	.string "Some of these Pokémon might make good\l"
+	.string "battle partners.\p"
 	.string "I'm going back to the lab to report back\n"
 	.string "to my dad. See you there!$"
 
@@ -439,22 +442,57 @@ LittlerootBeach_Text_BrendanGivesTM76:
 	.string "it so you can have it.$"
 
 LittlerootBeach_Text_MayLetsBattle:
-	.string "May: TODO$"
+	.string "May: Okay, {PLAYER}.\p"
+	.string "I'm ready. Give it all you've got!$"
 
 LittlerootBeach_Text_MayDefeated:
-	.string "May: TODO$"
+	.string "May: Well, that wasn't unexpected.$"
 
 LittlerootBeach_Text_MayExit:
-	.string "May: TODO$"
+	.string "May: I can't believe it wasn't that long\n"
+	.string "ago when you moved into Littleroot.\p"
+	.string "You know, I'm glad you did.\p"
+	.string "I don't think I would have ever pushed\n"
+	.string "myself this hard if I hadn't met you.\p"
+	.string "Even though I still can't beat you,\n"
+	.string "I've grown so much stronger as a person.\p"
+	.string "I've also had so much enjoyment\n"
+	.string "travelling, raising and catching\l"
+	.string "Pokémon.\p"
+	.string "So thank you for being here,\n"
+	.string "{PLAYER}.\p"
+	.string "Well then, see ya!$"
 
 LittlerootBeach_Text_BrendanLetsBattle:
-	.string "Brendan: TODO$"
+	.string "Brendan: Alright, {PLAYER}.\p"
+	.string "Lets go!$"
 
 LittlerootBeach_Text_BrendanDefeated:
-	.string "Brendan: TODO$"
+	.string "Brendan: Yeah, you're still the best\n"
+	.string "around.$"
 
 LittlerootBeach_Text_BrendanExit:
-	.string "Brendan: TODO$"
+	.string "Brendan: It feels like an age ago that\n"
+	.string "you moved into our town. Though it\l"
+	.string "actually wasn't that long ago.\p"
+	.string "So much has happened since then.\n"
+	.string "I travelled across Hoenn, trained and\l"
+	.string "caught many Pokémon.\p"
+	.string "If I hadn't met you, then I would\n"
+	.string "probably have stayed in Littleroot and\l"
+	.string "never challenged myself like that.\p"
+	.string "So what I'm saying is, thanks for\n"
+	.string "coming into my life, {PLAYER}.\p"
+	.string "That's all I wanted to say.\n"
+	.string "Bye!$"
 
 LittlerootBeach_Text_SpaceCenterCall:
-	.string "TODO$"
+	.string "… … …\p"
+	.string "Steven: Hey, {PLAYER}.\n"
+	.string "It's Steven.\p"
+	.string "Sorry for interupting you but this is\n"
+	.string "quite urgent.\p"
+	.string "There seems to be to trouble brewing\n"
+	.string "at the Space Center.\p"
+	.string "Could you come over and back me up?\p"
+	.string "See you there!$"

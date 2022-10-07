@@ -1,7 +1,6 @@
 EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags::
 	special SetChampionSaveWarp
 	setflag FLAG_IS_CHAMPION
-	call EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries
 	compare VAR_FOSSIL_MANIAC_STATE, 0
 	call_if_eq EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady
 	clearflag FLAG_HIDE_LILYCOVE_MOTEL_GAME_DESIGNERS
@@ -27,14 +26,6 @@ EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags::
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
 	compare VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 0
 	call_if_eq EverGrandeCity_HallOfFame_EventScript_ReadyDexUpgradeEvent
-	return
-
-EverGrandeCity_HallOfFame_EventScript_ResetDefeatedEventLegendaries:: @TODO: move feature to Zinnia service
-	clearflag FLAG_DEFEATED_MEW
-	clearflag FLAG_DEFEATED_LATIAS_OR_LATIOS
-	clearflag FLAG_DEFEATED_DEOXYS
-	clearflag FLAG_DEFEATED_LUGIA
-	clearflag FLAG_DEFEATED_HO_OH
 	return
 
 EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady::

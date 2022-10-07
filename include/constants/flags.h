@@ -96,10 +96,10 @@
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define FLAG_UNUSED_0x054                    0x54  // Unused Flag
-#define FLAG_UNUSED_0x055                    0x55  // Unused Flag
+#define FLAG_POST_GAME_COMPLETE              0x54
+#define FLAG_JOHTO_STARTERS_AVAILABLE        0x55
 
-#define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
+#define FLAG_HIDE_CONTEST_POKE_BALL          0x56 // Always set after new game, object it hides is added directly
 #define FLAG_MET_RIVAL_MOM                   0x57
 #define FLAG_BIRCH_AIDE_MET                  0x58
 #define FLAG_DECLINED_BIKE                   0x59
@@ -118,13 +118,12 @@
 #define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
 
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
-
+#define FLAG_HIDE_ZINNIA_DRACONID_ARCHIVES   0x68
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_TM77                   0x6A
 #define FLAG_RECEIVED_TM66                   0x6B
 #define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player cant white out from poison before receiving Go Goggles
-#define FLAG_RECEIVED_HM05                   0x6D // Unused
+#define FLAG_HIDE_ZINNIA_CRUMBLING_GORGE     0x6D
 #define FLAG_RECEIVED_TM76                   0x6E
 #define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
 #define FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE  0x70
@@ -132,7 +131,7 @@
 #define FLAG_SCOTT_CALL_BATTLE_FRONTIER      0x72 // Used in order to activate a phone call from Scott, inviting the player to the SS Tidal.
 #define FLAG_RECEIVED_METEORITE              0x73
 #define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
-#define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // unused
+#define FLAG_HIDE_GAME_CORNER_STREET_THUG    0x75
 #define FLAG_MET_HIDDEN_POWER_GIVER          0x76
 
 #define FLAG_CANCEL_BATTLE_ROOM_CHALLENGE    0x77
@@ -155,7 +154,7 @@
 #define FLAG_THANKED_FOR_PLAYING_WITH_WALLY  0x87
 #define FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL 0x88 // Set after defeating Wally outside Mauville Gym. Will activate a call later to register Wally.
 #define FLAG_RECEIVED_TM64                   0x89
-#define FLAG_SCOTT_CALL_FORTREE_GYM          0x8A // unused
+#define FLAG_HIDE_COZMOS_HOUSE_METEORITE     0x8A
 #define FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY   0x8B
 #define FLAG_RECEIVED_6_SODA_POP             0x8C
 #define FLAG_DEFEATED_SEASHORE_HOUSE         0x8D
@@ -167,7 +166,7 @@
 #define FLAG_MR_BRINEY_SAILING_INTRO         0x93
 #define FLAG_DOCK_REJECTED_DEVON_GOODS       0x94
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
-#define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
+#define FLAG_HIDE_MAUVILLE_GROOMER           0x96
 #define FLAG_RECEIVED_CASTFORM               0x97
 #define FLAG_RECEIVED_SUPER_ROD              0x98
 #define FLAG_RUSTBORO_NPC_TRADE_COMPLETED    0x99
@@ -248,7 +247,7 @@
 #define FLAG_RECEIVED_STARTER_DOLL           0xE2
 #define FLAG_RECEIVED_GOOD_ROD               0xE3
 #define FLAG_REGI_DOORS_OPENED               0xE4
-#define FLAG_RECEIVED_TM82                   0xE5
+#define FLAG_RETURNED_METEORITE_TO_COZMO     0xE5
 #define FLAG_RECEIVED_TM36                   0xE6
 #define FLAG_RECEIVED_TM05                   0xE7
 #define FLAG_RECEIVED_TM19                   0xE8
@@ -286,7 +285,7 @@
 #define FLAG_RECEIVED_TM10                   0x108
 #define FLAG_RECEIVED_TM41                   0x109
 #define FLAG_RECEIVED_LAVARIDGE_EGG          0x10A
-#define FLAG_RECEIVED_REVIVED_FOSSIL_MON     0x10B
+#define FLAG_RECEIVED_REVIVED_FOSSIL_MON     0x10B // practically unused
 #define FLAG_SECRET_BASE_REGISTRY_ENABLED    0x10C
 #define FLAG_RECEIVED_TM46                   0x10D
 #define FLAG_CONTEST_SKETCH_CREATED          0x10E  // Set but never read
@@ -329,7 +328,7 @@
 #define FLAG_UNUSED_0X133                    0x133
 #define FLAG_MET_ARCHIE_SOOTOPOLIS           0x134
 #define FLAG_MET_MAXIE_SOOTOPOLIS            0x135
-#define FLAG_MET_SCOTT_RUSTBORO              0x136 // unused
+#define FLAG_HIDE_MAUVILLE_RIVERSIDE_NPCS    0x136
 #define FLAG_JUAN_GOES_TO_SKY_PILLAR         0x137
 #define FLAG_RECEIVED_TM98                   0x138
 #define FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS    0x139
@@ -486,10 +485,10 @@
 #define FLAG_DEFEATED_LATIAS_OR_LATIOS       0x1C8
 #define FLAG_CAUGHT_LATIAS_OR_LATIOS         0x1C9
 #define FLAG_CAUGHT_MEW                      0x1CA
-#define FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE 0x1CB // unused
-#define FLAG_MET_SCOTT_IN_VERDANTURF         0x1CC // unused
-#define FLAG_MET_SCOTT_IN_FALLARBOR          0x1CD // unused
-#define FLAG_MET_SCOTT_IN_LILYCOVE           0x1CE // unused
+#define FLAG_DEFEATED_CELEBI                 0x1CB
+#define FLAG_DEFEATED_JIRACHI                0x1CC
+#define FLAG_DEFEATED_LATIAS                 0x1CD
+#define FLAG_DEFEATED_LATIOS                 0x1CE
 #define FLAG_MET_SCOTT_IN_EVERGRANDE         0x1CF // unused
 #define FLAG_MET_SCOTT_ON_SS_TIDAL           0x1D0
 #define FLAG_SCOTT_GIVES_BATTLE_POINTS       0x1D1
@@ -694,26 +693,26 @@
 #define FLAG_HIDE_ZINNIA_SKY_PILLAR_5F            0x28F
 #define FLAG_HIDE_ZINNIA_SKY_PILLAR_TOP           0x290
 #define FLAG_OBTAINED_KEY_STONE                   0x291
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
-#define FLAG_UNUSED_0x294  0x294 // Unused Flag
-#define FLAG_UNUSED_0x295  0x295 // Unused Flag
-#define FLAG_UNUSED_0x296  0x296 // Unused Flag
-#define FLAG_UNUSED_0x297  0x297 // Unused Flag
-#define FLAG_UNUSED_0x298  0x298 // Unused Flag
-#define FLAG_UNUSED_0x299  0x299 // Unused Flag
-#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
-#define FLAG_UNUSED_0x29B  0x29B // Unused Flag
-#define FLAG_UNUSED_0x29C  0x29C // Unused Flag
-#define FLAG_UNUSED_0x29D  0x29D // Unused Flag
-#define FLAG_UNUSED_0x29E  0x29E // Unused Flag
-#define FLAG_UNUSED_0x29F  0x29F // Unused Flag
-#define FLAG_UNUSED_0x2A0  0x2A0 // Unused Flag
-#define FLAG_UNUSED_0x2A1  0x2A1 // Unused Flag
-#define FLAG_UNUSED_0x2A2  0x2A2 // Unused Flag
-#define FLAG_UNUSED_0x2A3  0x2A3 // Unused Flag
-#define FLAG_UNUSED_0x2A4  0x2A4 // Unused Flag
-#define FLAG_UNUSED_0x2A5  0x2A5 // Unused Flag
+#define FLAG_NAVEL_ROCK_HOOH_PUZZLE_EXIT_1        0x292
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_1        0x293
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_2        0x294
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_3        0x295
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_4        0x296
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_5        0x297
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_6        0x298
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_7  	  0x299
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_8  	  0x29A
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_9  	  0x29B
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_10  	  0x29C
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_11 	  0x29D
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_12 	  0x29E
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_13 	  0x29F
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_14 	  0x2A0
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_15       0x2A1
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_16  	  0x2A2
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_17  	  0x2A3
+#define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_18  	  0x2A4
+#define FLAG_NAVEL_ROCK_HOOH_PUZZLE_EXIT_2        0x2A5
 #define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag
 #define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
 #define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
@@ -954,7 +953,7 @@
 #define FLAG_HIDE_MAUVILLE_GYM_WATTSON                              0x391
 #define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                        0x392
 #define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
-#define FLAG_HIDE_ROUTE_111_MAGMA_GRUNTS                            0x394
+#define FLAG_HIDE_ROUTE_111_MAGMA_GRUNTS                            0x394 // unused
 #define FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA                          0x395
 #define FLAG_HIDE_BATTLE_TOWER_REPORTER                             0x396
 #define FLAG_HIDE_ROUTE_110_RIVAL                                   0x397
@@ -1229,8 +1228,8 @@
 #define FLAG_ITEM_FARAWAY_ISLAND_RUIN2_RARE_BONE                    0x4A1
 #define FLAG_ITEM_FARAWAY_ISLAND_RUIN3_LIFE_ORB                     0x4A2
 #define FLAG_ITEM_FARAWAY_ISLAND_RUIN4_LIGHT_CLAY                   0x4A3
-#define FLAG_ITEM_FARAWAY_ISLAND_RUIN5_BLUE_SHARD                   0x4A4
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
+#define FLAG_ITEM_FARAWAY_ISLAND_RUIN5_TWISTED_SPOON                0x4A4
+#define FLAG_ITEM_MAUVILLE_RIVERSIDE_FULL_RESTORE                   0x4A5
 #define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
@@ -1324,7 +1323,7 @@
 #define FLAG_DEFEATED_ELITE_4_GLACIA                                0x4FD
 #define FLAG_DEFEATED_ELITE_4_DRAKE                                 0x4FE
 
-#define FLAG_UNUSED_0x4FF                                           0x4FF // Unused Flag
+#define FLAG_INVERSE_BATTLE                                         0x4FF
 
 // Trainer Flags
 // Trainer flags occupy 0x500 - 0x85F, the last 9 of which are unused

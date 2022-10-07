@@ -171,13 +171,13 @@
 #define VAR_PETALBURG_WOODS_STATE            0x4098
 #define VAR_LILYCOVE_CONTEST_LOBBY_STATE     0x4099
 #define VAR_RUSTURF_TUNNEL_STATE             0x409A
-#define VAR_UNUSED_0x409B                    0x409B // Unused Var
+#define VAR_CRUMBLING_GORGE_TRIGGER_STATE    0x409B
 #define VAR_ELITE_4_STATE                    0x409C
 #define VAR_SOOTOPOLIS_STEVEN_WALLACE_STATE  0x409D
 #define VAR_MOSSDEEP_CITY_RIVAL_STATE        0x409E
 #define VAR_MOSSDEEP_SPACE_CENTER_STATE      0x409F
 #define VAR_SLATEPORT_HARBOR_STATE           0x40A0
-#define VAR_UNUSED_0x40A1                    0x40A1 // Unused var
+#define VAR_NEW_AREA_EXPLORE                 0x40A1
 #define VAR_SEAFLOOR_CAVERN_STATE            0x40A2
 #define VAR_CABLE_CAR_STATION_STATE          0x40A3
 #define VAR_SAFARI_ZONE_STATE                0x40A4  // 0: In or out of SZ, 1: Player exiting SZ, 2: Player entering SZ
@@ -236,7 +236,7 @@
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE             0x40DA
 #define VAR_BIKE_UPGRADE_STATE               0x40DB
-#define VAR_UNUSED_0x40DC                    0x40DC // Unused Var
+#define VAR_NAVEL_ROCK_HOOH_SWITCH           0x40DC
 #define VAR_EVENT_PICHU_SLOT                 0x40DD
 #define VAR_NEVER_READ_0x40DE                0x40DE // Var is written to, but never read
 #define VAR_NEVER_READ_0x40DF                0x40DF // Var is written to, but never read
@@ -262,7 +262,7 @@
 #define VAR_SCOTT_FORTREE_CALL_STEP_COUNTER  0x40F3
 #define VAR_ROXANNE_CALL_STEP_COUNTER        0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER       0x40F5
-#define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER 0x40F6 // unused
+#define VAR_MEW_CLONING_STATE                0x40F6
 #define VAR_BIRCH_CALL_STEP_COUNTER          0x40F7
 #define VAR_NAVEL_ROCK_BOULDER_BUTTON_1      0x40F8
 #define VAR_NAVEL_ROCK_BOULDER_BUTTON_2      0x40F9

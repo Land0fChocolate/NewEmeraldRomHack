@@ -428,7 +428,6 @@ extern const u8 BattleScript_EffectSoulSiphon[];
 extern const u8 BattleScript_WishMaker[];
 extern const u8 BattleScript_HeartSwapAbilityActivates[];
 extern const u8 BattleScript_SuctionCupsActivates[];
-extern const u8 BattleScript_UnsteadyActivates[];
 extern const u8 BattleScript_DisarmActivates[];
 extern const u8 BattleScript_HiddenThornsFree[];
 

@@ -1,6 +1,20 @@
 MauvilleCity_GroomerHouse_MapScripts::
 	.byte 0
 
+MauvilleCity_GroomerHouse_EventScript_Meteorite::
+	msgbox MauvilleCity_GroomerHouse_Text_ItsAMeteorite, MSGBOX_SIGN
+	closemessage
+	changedeoxysform 0
+	compare VAR_RESULT, TRUE
+	goto_if_eq MauvilleCity_GroomerHouse_EventScript_DeoxysChangedForm
+	end
+
+MauvilleCity_GroomerHouse_EventScript_DeoxysChangedForm::
+	playmoncry SPECIES_DEOXYS, 0
+	waitse
+	msgbox MauvilleCity_GroomerHouse_Text_DeoxysChangedForm, MSGBOX_SIGN
+	end
+
 MauvilleCity_GroomerHouse_EventScript_Girl::
 	lock
 	faceplayer
@@ -67,12 +81,22 @@ MauvilleCity_GroomerHouse_Text_GirlMakeItLookNice:
 MauvilleCity_GroomerHouse_Text_GirlDoneGrooming:
 	.string "There. All done!\p"
 	.string "Your {STR_VAR_1}'s coat is\n"
-	.string "looking nice and glossy!\l"
+	.string "looking gorgeous and glossy!\l"
 	.string "It's even liking you a little more.\p"
-	.string "Come back tomorrow and I'll give your\n"
-	.string "Pokémon more treatment.$"
+	.string "Return tomorrow and I shall give your\n"
+	.string "Pokémon additional treatment.$"
 
 MauvilleCity_GroomerHouse_Text_GirlOnceADayService:
-	.string "Sorry, I can only perform my grooming\n"
-	.string "services once a day.\l"
-	.string "Come back tomorrow.$"
+	.string "It is my regret to inform you that I\n"
+	.string "can only perform my grooming services\l"
+	.string "once a day.\p"
+	.string "Please, come back tomorrow.$"
+
+MauvilleCity_GroomerHouse_Text_ItsAMeteorite:
+	.string "It's the meteorite that the Pokémon\n"
+	.string "groomer picked up. You feel a\l"
+	.string "radiating warmth coming from it.\p"
+
+MauvilleCity_GroomerHouse_Text_DeoxysChangedForm:
+	.string "The Deoxys in your party changed into\n"
+	.string "a more balanced form!$"

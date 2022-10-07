@@ -277,7 +277,7 @@ SafariZone_Southeast_Text_FatMan:
 
 SafariZone_Southeast_Text_RichBoy:
 	.string "The Pokémon around here seem to be\n"
-	.string "from somewhere other than Hoenn.$"
+	.string "brought in from very far away regions.$"
 
 SafariZone_Northeast_Text_Boy:
 	.string "I only have a couple Safari Balls left.\p"
@@ -285,7 +285,7 @@ SafariZone_Northeast_Text_Boy:
 	.string "decide what I should catch.$"
 
 SafariZone_Northeast_Text_Woman:
-	.string "I heard that you can see PIKACHU here.\n"
+	.string "I heard that you can see Pikachu here.\n"
 	.string "Where might one be?$"
 
 SafariZone_Northeast_Text_Girl:

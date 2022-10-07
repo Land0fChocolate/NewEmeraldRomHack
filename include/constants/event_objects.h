@@ -320,8 +320,9 @@
 #define OBJ_EVENT_GFX_RAIKOU                     316
 #define OBJ_EVENT_GFX_ENTEI                      317
 #define OBJ_EVENT_GFX_SUICUNE                    318
+#define OBJ_EVENT_GFX_METEORITE                  319
 
-#define NUM_OBJ_EVENT_GFX                        319
+#define NUM_OBJ_EVENT_GFX                        320
 
 
 // These are dynamic object gfx ids.

@@ -102,6 +102,7 @@
 #define MAP_FALLARBOR_TOWN_COZMOS_HOUSE          (3 | (5 << 8))
 #define MAP_FALLARBOR_TOWN_MOVE_RELEARNERS_HOUSE (4 | (5 << 8))
 #define MAP_FALLARBOR_TOWN_DRACONID_ARCHIVES     (5 | (5 << 8))
+#define MAP_FALLARBOR_TOWN_COZMOS_HOUSE2         (6 | (5 << 8))
 
 // gMapGroup_IndoorVerdanturf
 #define MAP_VERDANTURF_TOWN_MART                    (0 | (6 << 8))
@@ -579,6 +580,7 @@
 #define MAP_FARAWAY_ISLAND_RUIN5                            (108 | (26 << 8))
 #define MAP_SPACE_AREA1                                     (109 | (26 << 8))
 #define MAP_SPACE_AREA2                                     (110 | (26 << 8))
+#define MAP_MAUVILLE_RIVERSIDE                              (111 | (26 << 8))
 
 // gMapGroup_IndoorRoute104Prototype
 #define MAP_ROUTE104_PROTOTYPE                          (0 | (27 << 8))

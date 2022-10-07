@@ -539,8 +539,8 @@ const u32 gItemIconPalette_BlackApricorn[] = INCBIN_U32("graphics/items/icon_pal
 //const u32 gItemIcon_WishingPiece[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
 //const u32 gItemIconPalette_WishingPiece[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
 
-//const u32 gItemIcon_GalaricaTwig[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_GalaricaTwig[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
+const u32 gItemIcon_GalaricaTwig[] = INCBIN_U32("graphics/items/icons/galarica_twig.4bpp.lz");
+const u32 gItemIconPalette_GalaricaItem[] = INCBIN_U32("graphics/items/icon_palettes/galarica_item.gbapal.lz");
 
 //const u32 gItemIcon_ArmoriteOre[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
 //const u32 gItemIconPalette_ArmoriteOre[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
@@ -630,11 +630,9 @@ const u32 gItemIconPalette_DawnStone[] = INCBIN_U32("graphics/items/icon_palette
 //const u32 gItemIcon_ChippedPot[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
 //const u32 gItemIconPalette_ChippedPot[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
 
-//const u32 gItemIcon_GalaricaCuff[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_GalaricaCuff[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
+const u32 gItemIcon_GalaricaCuff[] = INCBIN_U32("graphics/items/icons/galarica_cuff.4bpp.lz");
 
-//const u32 gItemIcon_GalaricaWreath[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_GalaricaWreath[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
+const u32 gItemIcon_GalaricaWreath[] = INCBIN_U32("graphics/items/icons/galarica_wreath.4bpp.lz");
 
 const u32 gItemIcon_DragonScale[] = INCBIN_U32("graphics/items/icons/dragon_scale.4bpp.lz");
 const u32 gItemIconPalette_DragonScale[] = INCBIN_U32("graphics/items/icon_palettes/dragon_scale.gbapal.lz");

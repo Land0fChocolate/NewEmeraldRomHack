@@ -541,6 +541,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_RAIKOU                  0x1173
 #define OBJ_EVENT_PAL_TAG_ENTEI                   0x1174
 #define OBJ_EVENT_PAL_TAG_SUICUNE                 0x1175
+#define OBJ_EVENT_PAL_TAG_METEORITE               0x1176
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF //4607
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -671,6 +672,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Raikou,                OBJ_EVENT_PAL_TAG_RAIKOU},
     {gObjectEventPal_Entei,                 OBJ_EVENT_PAL_TAG_ENTEI},
     {gObjectEventPal_Suicune,               OBJ_EVENT_PAL_TAG_SUICUNE},
+    {gObjectEventPal_Meteorite,             OBJ_EVENT_PAL_TAG_METEORITE},
     {NULL,                                  0x0000},
 };
 

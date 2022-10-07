@@ -2282,6 +2282,16 @@ void ShowScrollableMultichoice(void)
             task->tKeepOpenAfterSelect = FALSE;
             task->tTaskId = taskId;
             break;
+        case SCROLL_MULTI_ASTER_BERRY:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN - 1;
+            task->tNumItems = 19;
+            task->tLeft = 1;
+            task->tTop = 1;
+            task->tWidth = 9;
+            task->tHeight = 10;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
         case SCROLL_MULTI_GLASS_WORKSHOP_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN - 1;
             task->tNumItems = 8;
@@ -2324,7 +2334,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 15;
+            task->tNumItems = 17;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2425,6 +2435,28 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     {
         gText_Exit
     },
+    [SCROLL_MULTI_ASTER_BERRY] = 
+    {
+        gText_ChilanBerry,
+        gText_OccaBerry,
+        gText_PasshoBerry,
+        gText_WacanBerry,
+        gText_RindoBerry,
+        gText_YacheBerry,
+        gText_ChopleBerry,
+        gText_KebiaBerry,
+        gText_ShucaBerry,
+        gText_CobaBerry,
+        gText_PayapaBerry,
+        gText_TangaBerry,
+        gText_ChartiBerry,
+        gText_KasibBerry,
+        gText_HabanBerry,
+        gText_ColburBerry,
+        gText_BabiriBerry,
+        gText_RoseliBerry,
+        gText_Exit
+    },
     [SCROLL_MULTI_GLASS_WORKSHOP_VENDOR] = 
     {
         gText_BlueFlute,
@@ -2493,6 +2525,8 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_RazorClaw24BP,
         gText_RazorFang24BP,
         gText_MetalCoat24BP,
+        gText_GalaricaCuff24BP,
+        gText_GalaricaWreath24BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR] =

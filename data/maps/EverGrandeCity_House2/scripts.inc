@@ -18,6 +18,12 @@ EverGrandeCity_House2_EventScript_Man::
 	release
 	end
 
+EverGrandeCity_House2_EventScript_ReceivedBerryToday::
+	msgbox EverGrandeCity_House2_Text_ReceivedBerryToday, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 EverGrandeCity_House2_Text_ManGiveBerry:
 	.string "Those cold hard eyes…\n"
 	.string "That chilling presence…\p"
@@ -30,7 +36,7 @@ EverGrandeCity_House2_Text_ManWooning:
 	.string "Oh, if only she were as appreciative of\n"
 	.string "my berries as you are…$"
 
-EverGrandeCity_House2_EventScript_ReceivedBerryToday:
+EverGrandeCity_House2_Text_ReceivedBerryToday:
 	.string "Glacia, oh Glacia!\p"
 	.string "One day, I will find a song that will\n"
 	.string "heat up your icy heart!$"

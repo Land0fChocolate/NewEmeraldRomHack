@@ -919,7 +919,7 @@ const struct Item gItems[] =
     {
         .name = _("HP Up"),
         .itemId = ITEM_HP_UP,
-        .price = 9800,
+        .price = 4900,
         .description = sHPUpDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -931,7 +931,7 @@ const struct Item gItems[] =
     {
         .name = _("Protein"),
         .itemId = ITEM_PROTEIN,
-        .price = 9800,
+        .price = 4900,
         .description = sProteinDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -943,7 +943,7 @@ const struct Item gItems[] =
     {
         .name = _("Iron"),
         .itemId = ITEM_IRON,
-        .price = 9800,
+        .price = 4900,
         .description = sIronDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -955,7 +955,7 @@ const struct Item gItems[] =
     {
         .name = _("Calcium"),
         .itemId = ITEM_CALCIUM,
-        .price = 9800,
+        .price = 4900,
         .description = sCalciumDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -967,7 +967,7 @@ const struct Item gItems[] =
     {
         .name = _("Zinc"),
         .itemId = ITEM_ZINC,
-        .price = 9800,
+        .price = 4900,
         .description = sZincDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -979,7 +979,7 @@ const struct Item gItems[] =
     {
         .name = _("Carbos"),
         .itemId = ITEM_CARBOS,
-        .price = 9800,
+        .price = 4900,
         .description = sCarbosDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -991,7 +991,7 @@ const struct Item gItems[] =
     {
         .name = _("Super HP Up"),
         .itemId = ITEM_SUPER_HP_UP,
-        .price = 32000,
+        .price = 16000,
         .description = sSuperHPUpDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1003,7 +1003,7 @@ const struct Item gItems[] =
     {
         .name = _("SuperProtein"),
         .itemId = ITEM_SUPER_PROTEIN,
-        .price = 32000,
+        .price = 16000,
         .description = sSuperProteinDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1015,7 +1015,7 @@ const struct Item gItems[] =
     {
         .name = _("Super Iron"),
         .itemId = ITEM_SUPER_IRON,
-        .price = 32000,
+        .price = 16000,
         .description = sSuperIronDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1027,7 +1027,7 @@ const struct Item gItems[] =
     {
         .name = _("Super Calcium"),
         .itemId = ITEM_SUPER_CALCIUM,
-        .price = 32000,
+        .price = 16000,
         .description = sSuperCalciumDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1039,7 +1039,7 @@ const struct Item gItems[] =
     {
         .name = _("Super Zinc"),
         .itemId = ITEM_SUPER_ZINC,
-        .price = 32000,
+        .price = 16000,
         .description = sSuperZincDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1051,7 +1051,7 @@ const struct Item gItems[] =
     {
         .name = _("Super Carbos"),
         .itemId = ITEM_SUPER_CARBOS,
-        .price = 32000,
+        .price = 16000,
         .description = sSuperCarbosDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -2996,27 +2996,27 @@ const struct Item gItems[] =
         .flingPower = 80,
     },
 
-    [ITEM_GALARICA_CUFF] = // Todo
+    [ITEM_GALARICA_CUFF] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("GalaricaCuff"),
+        .itemId = ITEM_GALARICA_CUFF,
+        .price = 6000,
+        .description = sGalaricaCuffDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .flingPower = 30,
     },
 
-    [ITEM_GALARICA_WREATH] = // Todo
+    [ITEM_GALARICA_WREATH] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .name = _("GalrcaWreath"),
+        .itemId = ITEM_GALARICA_WREATH,
+        .price = 6000,
+        .description = sGalaricaWreathDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .flingPower = 30,
     },
 

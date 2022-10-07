@@ -3,14 +3,14 @@ FortreeJungle_Area3_MapScripts::
 
 FortreeJungle_Area3_Eventscript_Matt::
 	msgbox FortreeJungle_Area3_Text_Matt, MSGBOX_NPC
-	setflag FLAG_MET_MATT_FORTREE_JUNGLE
-	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, FortreeJungle_Area3_Eventscript_CheckForBirchReportCall
+	call_if_unset FLAG_MET_MATT_FORTREE_JUNGLE, FortreeJungle_Area3_Eventscript_SetMeetFlag
+	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, Wildwoods_Area9_Eventscript_CheckForBirchReportCall
 	end
 
-FortreeJungle_Area3_Eventscript_CheckForBirchReportCall::
-	checkmultiflags FLAG_MET_COURTNEY_WILDWOODS, FLAG_MET_TABITHA_FALLARBOR_WASTES, FLAG_MET_SHELLY_MAUVILLE_MEADOW 
-	goto_if TRUE, Wildwoods_Area9_Eventscript_SetBirchReportCall
-	end
+FortreeJungle_Area3_Eventscript_SetMeetFlag::
+	setflag FLAG_MET_MATT_FORTREE_JUNGLE
+	addvar VAR_NEW_AREA_EXPLORE, 1
+	return
 
 FortreeJungle_Area3_Eventscript_AquaMemberF::
 	msgbox FortreeJungle_Area3_Text_AquaMemberF, MSGBOX_NPC

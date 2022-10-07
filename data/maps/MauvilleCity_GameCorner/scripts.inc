@@ -15,6 +15,8 @@ MauvilleCity_GameCorner_MapScripts::
 	.set COINS_PRICE_50,  1000
 	.set COINS_PRICE_500, 10000
 
+	.set PORYGON_COINS, 6400
+
 MauvilleCity_GameCorner_EventScript_CoinsClerk::
 	lock
 	faceplayer
@@ -473,6 +475,55 @@ MauvilleCity_GameCorner_EventScript_Gentleman::
 	msgbox MauvilleCity_GameCorner_Text_RouletteOnlyLuck, MSGBOX_NPC
 	end
 
+MauvilleCity_GameCorner_EventScript_StreetThug::
+	showcoinsbox 1, 1
+	msgbox MauvilleCity_GameCorner_Text_OfferPorygon, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq MauvilleCity_GameCorner_Eventscript_StreetThug_Declined
+	checkcoins VAR_TEMP_2
+	compare VAR_TEMP_2, PORYGON_COINS
+	goto_if_lt MauvilleCity_GameCorner_EventScript_StreetThugNotEnoughCoins
+	removecoins PORYGON_COINS
+	updatecoinsbox 1, 1
+	setvar VAR_TEMP_1, SPECIES_PORYGON
+	givemon SPECIES_PORYGON, 5, ITEM_NONE
+	hidecoinsbox 0, 0
+	call MauvilleCity_GameCorner_EventScript_ReceivedPorygonFanfare
+	compare VAR_RESULT, 0
+	goto_if_eq MauvilleCity_GameCorner_Eventscript_FinishReceivingPokemon
+	compare VAR_RESULT, 1
+	goto_if_eq MauvilleCity_GameCorner_EventScript_ReceivePokemonPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+MauvilleCity_GameCorner_Eventscript_StreetThug_Declined::
+	msgbox MauvilleCity_GameCorner_Text_StreetThugDeclined, MSGBOX_NPC
+	release
+	end
+
+MauvilleCity_GameCorner_EventScript_StreetThugNotEnoughCoins::
+	msgbox MauvilleCity_GameCorner_Text_StreetThugNotEnoughCoins, MSGBOX_NPC
+	release
+	end
+
+MauvilleCity_GameCorner_EventScript_ReceivedPorygonFanfare::
+	bufferspeciesname 1, SPECIES_PORYGON
+	playfanfare MUS_OBTAIN_ITEM
+	message MauvilleCity_GameCorner_Text_ReceivedMon
+	waitmessage
+	waitfanfare
+	bufferspeciesname 0, SPECIES_PORYGON
+	return
+
+MauvilleCity_GameCorner_Eventscript_FinishReceivingPokemon::
+	msgbox MauvilleCity_GameCorner_Text_StreetThugEnjoyPokemon, MSGBOX_NPC
+	release
+	end
+
+MauvilleCity_GameCorner_EventScript_ReceivePokemonPC::
+	call Common_EventScript_TransferredToPC
+	goto MauvilleCity_GameCorner_Eventscript_FinishReceivingPokemon
+
 MauvilleCity_GameCorner_EventScript_Girl::
 	lock
 	faceplayer
@@ -906,3 +957,27 @@ MauvilleCity_GameCorner_Text_CantPlayWithNoCoinCase:
 	.string "You can't play if you don't have\n"
 	.string "a Coin Case.$"
 
+MauvilleCity_GameCorner_Text_OfferPorygon:
+	.string "Ladies and gents!\n"
+	.string "Step right up for a limited time prize!\p"
+	.string "All you big winners have the chance to\n"
+	.string "own your very own Porygon!\p"
+	.string "That's right, it's none other than the\n"
+	.string "digital Pokémon itself, and this is the\l"
+	.string "only place in Hoenn you can get it!\p"
+	.string "Heya kiddo, you look like a big winner.\n"
+	.string "Want a Porygon for 6400 coins?$"
+
+MauvilleCity_GameCorner_Text_StreetThugDeclined:
+	.string "Come back if you change your mind!$"
+
+MauvilleCity_GameCorner_Text_StreetThugNotEnoughCoins:
+	.string "You don't have enough coins, kid!\n"
+	.string "Come back later!$"
+
+MauvilleCity_GameCorner_Text_ReceivedMon:
+	.string "{PLAYER} received {STR_VAR_2}!$"
+
+MauvilleCity_GameCorner_Text_StreetThugEnjoyPokemon:
+	.string "A happy prize winner!\n"
+	.string "Take good care of it!$"

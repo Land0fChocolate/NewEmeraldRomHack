@@ -212,6 +212,7 @@ static const u8 sMapName_ConquerorsCamp[] = _("Conqueror's Camp");
 static const u8 sMapName_RoyalRest[] = _("Royal Rest");
 static const u8 sMapName_SagesSanctuary[] = _("Sage's Sanctuary");
 static const u8 sMapName_Space[] = _("Space");
+static const u8 sMapName_MauvilleRiverside[] = _("118 Riverside");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ABANDONED_SHIP]             = {6, 14, 1, 1, sMapName_AbandonedShip},
@@ -333,6 +334,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_VERDANTURF_TOWN]            = {4, 6, 1, 1, sMapName_VerdanturfTown},
     [MAPSEC_VICTORY_ROAD]               = {27, 9, 1, 1, sMapName_VictoryRoad},
     [MAPSEC_WILDWOODS]                  = {4, 7, 1, 1, sMapName_Wildwoods},
+    [MAPSEC_MAUVILLE_RIVERSIDE]         = {10, 5, 1, 1, sMapName_MauvilleRiverside},
 };
 
 #endif // GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H

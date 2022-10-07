@@ -7797,16 +7797,16 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GruntSeafloorCavern5[] =
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_GruntUnused[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_GruntMauvilleRiverside[] = {
     {
     .iv = 0,
-    .lvl = 31,
-    .species = SPECIES_WAILMER,
+    .lvl = 17,
+    .species = SPECIES_NUMEL,
     },
     {
     .iv = 0,
-    .lvl = 31,
-    .species = SPECIES_ZUBAT,
+    .lvl = 17,
+    .species = SPECIES_POOCHYENA,
     }
 };
 
@@ -11807,7 +11807,7 @@ static const struct TrainerMonItemCustomMoves sParty_MayPostGameTreecko[] = {
     .lvl = 58,
     .species = SPECIES_MEGANIUM,
     .heldItem = ITEM_LEFTOVERS,
-    .moves = {MOVE_ENERGY_BALL, MOVE_SYNTHESIS, MOVE_LEECH_SEED, MOVE_REFLECT},
+    .moves = {MOVE_ENERGY_BALL, MOVE_SYNTHESIS, MOVE_LEECH_SEED, MOVE_TOXIC},
     },
     {
     .iv = 255,
@@ -11987,7 +11987,7 @@ static const struct TrainerMonItemCustomMoves sParty_BrendanPostGameTorchic[] = 
     .lvl = 58,
     .species = SPECIES_MEGANIUM,
     .heldItem = ITEM_LEFTOVERS,
-    .moves = {MOVE_ENERGY_BALL, MOVE_SYNTHESIS, MOVE_LEECH_SEED, MOVE_REFLECT},
+    .moves = {MOVE_ENERGY_BALL, MOVE_SYNTHESIS, MOVE_LEECH_SEED, MOVE_TOXIC},
     },
     {
     .iv = 255,

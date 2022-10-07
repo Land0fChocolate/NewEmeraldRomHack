@@ -5,7 +5,6 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 # TODO
 
 - implement ability description label in the summary screen.
-- Include ORAS dex Pokemon like Budew and Dusknoir and add ways to access them.
 - Rework aspects of the Battle Frontier. Change the Battle Palace to be themed around inverse type matchups. Rework the battle Pokemon list. 
 - Add methods to make training easier. Super vitamins, IV boosters and nature mints to be added and accessable.
 - Remove item use in battle and create a prompt for Poke Balls.
@@ -15,15 +14,14 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
 	- Including physical/special split, fairy types, new moves, new items, new Pokemon species, regional species variants.
-	- Whilst data for all post gen3 Pokemon are in the game, only those that existed in gens 1-3 or have evolutions linked to Pokemon in those gens are accessible, baring a few exceptions (Namely Alolan Vulpix and evo).
+	- Whilst data for all post gen3 Pokemon are in the game, only those that have evolutions linked to Pokemon in those gens are accessible, baring some exceptions (Namely regional variants like Alolan Vulpix).
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
 	- Many Pokemon have had their ability sets updated with new abilities (TODO: make a list of ability stat changes somewhere).
+	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
 - New moves and abilities (listed below).
-- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
 - Many gameplay adjustments to vanilla moves (Listed below). 
-	- Changes to level up and TM learnsets of some Pokemon (TODO: make list).
+	- Changes to level up, TM learnsets and Tutor learnsets of Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
-	- OHKO moves have been removed from battle facility movepools.
 - Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko, Spheal lines have Attack and Special Attack swapped. (TODO: make list)
 - HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
 - Berry tree drop rates are tripled. Interaction with berry trees is also quicker.
@@ -38,35 +36,45 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
-- Map changes, including new areas to explore that have new Pokemon.
-- Graphical updates to overworld sprites and environments.
+- Map changes, including new areas to explore that have new Pokemon (post game).
+- Legendary and Mythical Pokemon can be repeatedly acquired.
+- Battle Frontier has its opponent Pokemon list updated with new Pokemon, new items and new moves.
+- Battle Palace is now inverse battle themed.
+- Graphical updates to existing overworld sprites and environments.
+- New overworld sprites and graphics.
 - Various story changes. Includes aspects from ORAS.
 - Gym Leaders do more:
 	- Roxanne trades evolution stones for fossils.
-- Item changes: Quick Claw now increases speed by 10% when user is below 50% health.
+	- Brawly can give a random shard daily.
+- Item changes
+	- Quick Claw now increases speed by 10% when user is below 50% health.
+	- Vitamins give 20 EVs instead of 10.
+	- Prices of various items adjusted.
 - New Items:
 	- Super Vitamins (Adding 100 EVs per use)
+- Deoxys is able to change forms by interacting with meteorites in the overworld.
 
 # New Abilities
 
 - Volume Up: Power of sound based moves are increased by 33%. Used by Loudred/Exploud.
 - Lava Body: Attackers who make contact will always get inflicted with burn unless they have immunity. Used by Slugma/Magargo.
-- Wildfire: Sp.Atk raises one stage after fainting an opponent. Used by Quilava/Typlosion.
+- Wildfire: Sp.Atk raises one stage after fainting an opponent. Used by Moltres/Quilava/Typlosion.
 - Miracle Blossom: User and ally restore 1/8 HP at the end of every turn. Used by Bayleef/Meganium/Xerneas.
 - Scorching Heart: Power of Fire type moves increased by 50%. Used by Solrock/Groudon/Solgaleo.
 - Ice Affinity: Power of Ice type moves increased by 50%. Used by Lunatone/Kyogre/Piplup/Prinplup/Empoleon/Lunala.
 - Aquatic: Power of Water type moves increased by 50%. Used by Anorith/Armaldo/Dhelmise/Clobbopus/Grapploct.
 - Gardener: Power of Grass type moves increased by 50%. Used by Floette/Florges.
+- Mystic Mind: Power of Psychic type moves increased by 50%. Used by Psyduck/Golduck.
 - Prickly Thorns: Effectively like Rough Skin. Used by Cacnea/Cacturne.
 - Aura Sense: User shudders if opponent has super-effective move. Also ignores evasive boosts from target. Used by Riolu/Lucario.
 - Soul Siphon: Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir/Palossand/Dhelmise/Corsola(Galarian).
 - Bad Luck: Opponent cannot land crits and less likely to land status moves against user. Used by Spiritomb/Cofagrigus.
 - Wickedness: User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius/Braixen/Delphox.
-- Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Klink/Klang/Kilinklang.
+- Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Klink/Klang/Kilinklang.
 - Evergreen: User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
 - Swordmaster: Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
-- Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Glaceon/Aurorus.
+- Supercooled: User's Ice type moves are super-effective against Water types. Used by Seel/Dewgong/Lapras/Articuno/Glaceon/Aurorus.
 - Unsteady: User's evasion increases by one stage when hit. Used by Spinda.
 - Disarm: User's contact moves inflict the Embargo status (disable held items) on the target. Used by Meowth/Persian/Pawniard/Bisharp/Meowth(Galarian)
 - Painful Burn: If the target is burned, the user's moves have triple the chance to flinch (capped at 60%). Learned by Houndour/Houndoom.
@@ -100,6 +108,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Multitype: Also includes Adaptability and Filter effects.
 - Victory Star: User and ally accuracy set to 100%.
 - Sturdy will not activate if the user has a max HP of 1.
+- Suction Cups will now trap the opposing target if user makes contact instead of making the user immune to forced switch outs.
 
 # New Moves
 
@@ -107,7 +116,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Blaze Impact: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Added to Battle Frontier move tutor list. Learned by Growlith/Arcanine/Ponyta/Rapidash/Flareon/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo.
 - Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir on evolution.
 - Serpent Dance: Increases the user's special attack and speed by one stage. Added to Battle Frontier move tutor list. Learned by Seviper/Milotic/Serperior/Dunsparce/Ekans/Arbok/Huntail/Gorebyss/Rayquaza/Silicobra/Sandaconda/Giratina/Gyarados/Furret.
--Ice Tusk: 100 BP, 90% Acc, Ice type, increased crit ratio. Learned by Walrein/Mamoswine.
+-Ice Tusk: 100 BP, 95% Acc, Ice type, increased crit ratio. Learned by Walrein/Mamoswine.
 -Hidden Thorns. Grass type Stealth Rock. Will replace Stealth Rock if Stealth Rock is already on the field. Added to Frontier move tutor list. Learned naturally by Roselia/Roserade/Cacnea/Cacturne.
 
 # Updated Moves

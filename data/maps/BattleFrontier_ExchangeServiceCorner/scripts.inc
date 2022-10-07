@@ -331,7 +331,9 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem::
 	case 11, BattleFrontier_ExchangeServiceCorner_EventScript_RazorClaw
 	case 12, BattleFrontier_ExchangeServiceCorner_EventScript_RazorFang
 	case 13, BattleFrontier_ExchangeServiceCorner_EventScript_MetalCoat
-	case 14, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 14, BattleFrontier_ExchangeServiceCorner_EventScript_GalaricaCuff
+	case 15, BattleFrontier_ExchangeServiceCorner_EventScript_GalaricaWreath
+	case 16, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
@@ -458,6 +460,24 @@ BattleFrontier_ExchangeServiceCorner_EventScript_MetalCoat::
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
 	setvar VAR_0x8008, 1
 	setvar VAR_0x8009, ITEM_METAL_COAT
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_GalaricaCuff::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmGalaricaCuff, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	setvar VAR_0x8008, 1
+	setvar VAR_0x8009, ITEM_GALARICA_CUFF
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_GalaricaWreath::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmGalaricaWreath, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	setvar VAR_0x8008, 1
+	setvar VAR_0x8009, ITEM_GALARICA_WREATH
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -1010,6 +1030,14 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmRazorFang:
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmMetalCoat:
 	.string "You've chosen the Metal Coat.\n"
+	.string "Is that correct?$"
+
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmGalaricaCuff:
+	.string "You've chosen the Galarica Cuff.\n"
+	.string "Is that correct?$"
+
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmGalaricaWreath:
+	.string "You've chosen the Galarica Wreath.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmProtein:
