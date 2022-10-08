@@ -622,8 +622,11 @@
 #define STRINGID_METEORBEAMCHARGING                   619
 #define STRINGID_HEATUPBEAK                           620
 #define STRINGID_COURTCHANGE                          621
+#define STRINGID_DEOXYSCHANGEDFORM                    622
+#define STRINGID_DEOXYSCHANGEDFORMCATCHABLE           623
+#define STRINGID_DEOXYSSTRANGEAURA					  624
 
-#define BATTLESTRINGS_COUNT                           622
+#define BATTLESTRINGS_COUNT                           625
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.

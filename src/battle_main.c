@@ -3564,6 +3564,16 @@ static void TryDoEventsBeforeFirstTurn(void)
     if (gBattleControllerExecFlags)
         return;
 
+    if (VarGet(B_VAR_DEOXYS_BOSS_BATTLE_STATE) > 0 && gBattleMons[gActiveBattler].otId == 0)
+    {
+           gBattleMons[gActiveBattler].moves[0] = MOVE_PSYCHO_BOOST;
+           gBattleMons[gActiveBattler].moves[1] = MOVE_THUNDER_PUNCH;
+           gBattleMons[gActiveBattler].moves[2] = MOVE_ICE_PUNCH;
+           gBattleMons[gActiveBattler].moves[3] = MOVE_DRAIN_PUNCH;
+           BattleScriptPushCursor();
+           gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+    }
+
     // Set invalid mons as absent(for example when starting a double battle with only one pokemon).
     if (!(gBattleTypeFlags & BATTLE_TYPE_SAFARI))
     {

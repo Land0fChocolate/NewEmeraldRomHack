@@ -3571,6 +3571,8 @@ static void Cmd_clearstatusfromeffect(void)
 static void Cmd_tryfaintmon(void)
 {
     const u8 *BS_ptr;
+    u32 DeoxysBossBattleState = VarGet(B_VAR_DEOXYS_BOSS_BATTLE_STATE);
+    u8 i;
 
     if (gBattlescriptCurrInstr[2] != 0)
     {
@@ -3618,6 +3620,81 @@ static void Cmd_tryfaintmon(void)
                 
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_TimeTravellerAbility;
+                return;
+            }
+
+            if (DeoxysBossBattleState > 0 && gBattleMons[gActiveBattler].otId == 0) //check OT to make sure that the Pokemon affected is the wild Deoxys
+            {
+                //reset stats and status for each form
+                gBattleMons[gActiveBattler].hp = gBattleMons[gActiveBattler].maxHP;
+                gBattleMons[gActiveBattler].status1 = STATUS1_NONE;
+                gBattleMons[gActiveBattler].status2 = 0;
+                for (i = 0; i < NUM_BATTLE_STATS; i++)
+                    gBattleMons[gActiveBattler].statStages[i] = DEFAULT_STAT_STAGE;
+
+                // changing forms and movesets
+                switch (DeoxysBossBattleState)
+                {
+                    case 1: //transform to defense
+                        gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_DEFENSE;
+                        gBattleMons[gActiveBattler].moves[0] = MOVE_CHARGE_BEAM;
+                        gBattleMons[gActiveBattler].pp[0] = gBattleMoves[MOVE_CHARGE_BEAM].pp;
+                        gBattleMons[gActiveBattler].moves[1] = MOVE_ICY_WIND;
+                        gBattleMons[gActiveBattler].pp[1] = gBattleMoves[MOVE_ICY_WIND].pp;
+                        gBattleMons[gActiveBattler].moves[2] = MOVE_COSMIC_POWER;
+                        gBattleMons[gActiveBattler].pp[2] = gBattleMoves[MOVE_COSMIC_POWER].pp;
+                        gBattleMons[gActiveBattler].moves[3] = MOVE_RECOVER;
+                        gBattleMons[gActiveBattler].pp[3] = gBattleMoves[MOVE_RECOVER].pp;
+                        VarSet(B_VAR_DEOXYS_BOSS_BATTLE_STATE, 2);
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+                        break;
+                    case 2: //transform to attack
+                        gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_ATTACK;
+                        gBattleMons[gActiveBattler].moves[0] = MOVE_PSYSHOCK;
+                        gBattleMons[gActiveBattler].pp[0] = gBattleMoves[MOVE_PSYSHOCK].pp;
+                        gBattleMons[gActiveBattler].moves[1] = MOVE_DARK_PULSE;
+                        gBattleMons[gActiveBattler].pp[1] = gBattleMoves[MOVE_DARK_PULSE].pp;
+                        gBattleMons[gActiveBattler].moves[2] = MOVE_ENERGY_BALL;
+                        gBattleMons[gActiveBattler].pp[2] = gBattleMoves[MOVE_ENERGY_BALL].pp;
+                        gBattleMons[gActiveBattler].moves[3] = MOVE_FLASH_CANNON;
+                        gBattleMons[gActiveBattler].pp[3] = gBattleMoves[MOVE_FLASH_CANNON].pp;
+                        VarSet(B_VAR_DEOXYS_BOSS_BATTLE_STATE, 3);
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+                        break;
+                    case 3: //transform to speed
+                        gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_SPEED;
+                        gBattleMons[gActiveBattler].moves[0] = MOVE_PSYCHIC;
+                        gBattleMons[gActiveBattler].pp[0] = gBattleMoves[MOVE_PSYCHIC].pp;
+                        gBattleMons[gActiveBattler].moves[1] = MOVE_THUNDERBOLT;
+                        gBattleMons[gActiveBattler].pp[1] = gBattleMoves[MOVE_THUNDERBOLT].pp;
+                        gBattleMons[gActiveBattler].moves[2] = MOVE_ICE_BEAM;
+                        gBattleMons[gActiveBattler].pp[2] = gBattleMoves[MOVE_ICE_BEAM].pp;
+                        gBattleMons[gActiveBattler].moves[3] = MOVE_NASTY_PLOT;
+                        gBattleMons[gActiveBattler].pp[3] = gBattleMoves[MOVE_NASTY_PLOT].pp;
+                        VarSet(B_VAR_DEOXYS_BOSS_BATTLE_STATE, 4);
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+                        break;
+                    case 4: //transform back to normal form and be catchable
+                        gBattleMons[gActiveBattler].species = SPECIES_DEOXYS;
+                        gBattleMons[gActiveBattler].moves[0] = MOVE_COSMIC_POWER;
+                        gBattleMons[gActiveBattler].pp[0] = gBattleMoves[MOVE_COSMIC_POWER].pp;
+                        gBattleMons[gActiveBattler].moves[1] = MOVE_RECOVER;
+                        gBattleMons[gActiveBattler].pp[1] = gBattleMoves[MOVE_RECOVER].pp;
+                        gBattleMons[gActiveBattler].moves[2] = MOVE_PSYCHO_BOOST;
+                        gBattleMons[gActiveBattler].pp[2] = gBattleMoves[MOVE_PSYCHO_BOOST].pp;
+                        gBattleMons[gActiveBattler].moves[3] = MOVE_HYPER_BEAM;
+                        gBattleMons[gActiveBattler].pp[3] = gBattleMoves[MOVE_HYPER_BEAM].pp;
+                        VarSet(B_VAR_DEOXYS_BOSS_BATTLE_STATE, 0);
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChangeCatchable;
+                        break;
+                    default:
+                        break;
+                }
+
                 return;
             }
 

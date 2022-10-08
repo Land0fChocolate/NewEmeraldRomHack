@@ -748,6 +748,9 @@ static const u8 sText_ThornsSpreadOut[] = _("Thorns spread out\naround {B_DEF_TE
 static const u8 sText_HiddenThornsDmg[] = _("Thorns cut into\n{B_SCR_ACTIVE_NAME_WITH_PREFIX}!");
 static const u8 sText_PkmnBlewAwayHiddenThorns[] = _("{B_ATK_NAME_WITH_PREFIX} blew away\nHidden Thorns!");
 static const u8 sText_TimeTravelledToPreviousState[] = _("{B_DEF_NAME_WITH_PREFIX} reverted\nto their previous state!");
+static const u8 sText_StrangeAuraInEffect[] = _("A strange aura surrounding Deoxys is\ncausing your Pokeballs to malfunction!");
+static const u8 sText_DeoxysChangedForm[] = _("The opponent Deoxys changed form!");
+static const u8 sText_DeoxysChangedFormCatchable[] = _("The opponent Deoxys changed form!\nThe strange aura surrounding Deoxys\lhas dissipated!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1360,6 +1363,9 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_HIDDENTHORNSDMG - 12] = sText_HiddenThornsDmg,
     [STRINGID_PKMNBLEWAWAYHIDDENTHORNS - 12] = sText_PkmnBlewAwayHiddenThorns,
     [STRINGID_TIMETRAVELLEDTOPREVIOUSSTATE - 12] = sText_TimeTravelledToPreviousState,
+    [STRINGID_DEOXYSSTRANGEAURA - 12] = sText_StrangeAuraInEffect,
+    [STRINGID_DEOXYSCHANGEDFORM - 12] = sText_DeoxysChangedForm,
+    [STRINGID_DEOXYSCHANGEDFORMCATCHABLE - 12] = sText_DeoxysChangedFormCatchable,
 };
 
 const u16 gMentalHerbCureStringIds[] = 
