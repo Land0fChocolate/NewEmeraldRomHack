@@ -3564,16 +3564,6 @@ static void TryDoEventsBeforeFirstTurn(void)
     if (gBattleControllerExecFlags)
         return;
 
-    if (VarGet(B_VAR_DEOXYS_BOSS_BATTLE_STATE) > 0 && gBattleMons[gActiveBattler].otId == 0)
-    {
-           gBattleMons[gActiveBattler].moves[0] = MOVE_PSYCHO_BOOST;
-           gBattleMons[gActiveBattler].moves[1] = MOVE_THUNDER_PUNCH;
-           gBattleMons[gActiveBattler].moves[2] = MOVE_ICE_PUNCH;
-           gBattleMons[gActiveBattler].moves[3] = MOVE_DRAIN_PUNCH;
-           BattleScriptPushCursor();
-           gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
-    }
-
     // Set invalid mons as absent(for example when starting a double battle with only one pokemon).
     if (!(gBattleTypeFlags & BATTLE_TYPE_SAFARI))
     {
@@ -3597,6 +3587,22 @@ static void TryDoEventsBeforeFirstTurn(void)
             }
         }
     }
+
+    // set up Deoxys boss battle
+    if (VarGet(VAR_DEOXYS_BOSS_BATTLE_STATE) == 1 && GetBattlerSide(gActiveBattler) == B_SIDE_OPPONENT)
+    {
+           //gBattleMons[gActiveBattler].moves[0] = MOVE_PSYCHO_BOOST;
+           //gBattleMons[gActiveBattler].moves[1] = MOVE_THUNDER_PUNCH;
+           //gBattleMons[gActiveBattler].moves[2] = MOVE_ICE_PUNCH;
+           //gBattleMons[gActiveBattler].moves[3] = MOVE_DRAIN_PUNCH;
+           SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHO_BOOST, 0);
+           SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_THUNDER_PUNCH, 1);
+           SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICE_PUNCH, 2);
+           SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_DRAIN_PUNCH, 3);
+           VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 2);
+           BattleScriptExecute(BattleScript_DeoxysStrangeAura);
+    }
+
     if (!gBattleStruct->overworldWeatherDone
         && AbilityBattleEffects(0, 0, ABILITYEFFECT_SWITCH_IN_WEATHER, 0) != 0)
     {

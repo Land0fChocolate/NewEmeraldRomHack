@@ -9701,9 +9701,10 @@ BattleScript_SerpentDanceEnd::
 	goto BattleScript_MoveEnd
 
 BattleScript_DeoxysStrangeAura::
+	datahpupdate BS_TARGET
 	printstring STRINGID_DEOXYSSTRANGEAURA
 	waitmessage B_WAIT_TIME_LONG
-	return
+	end
 
 BattleScript_DeoxysBossFormChange::
 	handleformchange BS_TARGET, 0

@@ -624,7 +624,7 @@
 #define STRINGID_COURTCHANGE                          621
 #define STRINGID_DEOXYSCHANGEDFORM                    622
 #define STRINGID_DEOXYSCHANGEDFORMCATCHABLE           623
-#define STRINGID_DEOXYSSTRANGEAURA					  624
+#define STRINGID_DEOXYSSTRANGEAURA                    624
 
 #define BATTLESTRINGS_COUNT                           625
 
