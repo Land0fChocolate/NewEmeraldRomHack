@@ -3623,6 +3623,7 @@ static void Cmd_tryfaintmon(void)
                 return;
             }
 
+            // effects for if the Pokemon is the Deoxys boss
             if (DeoxysBossBattleState > 0 && GetBattlerSide(gActiveBattler) == B_SIDE_OPPONENT)
             {
                 //reset stats and status for each form
