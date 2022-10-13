@@ -828,7 +828,10 @@ void HandleAction_UseItem(void)
 
     if (gLastUsedItem <= LAST_BALL) // is ball
     {
-        gBattlescriptCurrInstr = BattleScript_BallThrow;
+        if (FlagGet(FLAG_DISABLE_CATCHING))
+            gBattlescriptCurrInstr = BattleScript_CantDoBallThrow;
+        else
+            gBattlescriptCurrInstr = BattleScript_BallThrow;
     }
     else if (gLastUsedItem == ITEM_POKE_DOLL || gLastUsedItem == ITEM_FLUFFY_TAIL)
     {
@@ -1075,7 +1078,10 @@ void HandleAction_ThrowBall(void)
     gBattle_BG0_Y = 0;
     gLastUsedItem = gLastThrownBall;
     RemoveBagItem(gLastUsedItem, 1);
-    gBattlescriptCurrInstr = BattleScript_BallThrow;
+    if (FlagGet(FLAG_DISABLE_CATCHING))
+        gBattlescriptCurrInstr = BattleScript_CantDoBallThrow;
+    else
+        gBattlescriptCurrInstr = BattleScript_BallThrow;
     gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
 }
 

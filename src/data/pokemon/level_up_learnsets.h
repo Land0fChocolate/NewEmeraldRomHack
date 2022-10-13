@@ -8105,6 +8105,10 @@ static const struct LevelUpMove sDeoxysLevelUpLearnset[] = {
     LEVEL_UP_MOVE(61, MOVE_RECOVER),
     LEVEL_UP_MOVE(67, MOVE_PSYCHO_BOOST),
     LEVEL_UP_MOVE(73, MOVE_HYPER_BEAM),
+    LEVEL_UP_MOVE(75, MOVE_PSYCHO_BOOST), // for boss battle, remove when better method for assigning moves at battle start is found
+    LEVEL_UP_MOVE(75, MOVE_THUNDER_PUNCH), // for boss battle, remove when better method for assigning moves at battle start is found
+    LEVEL_UP_MOVE(75, MOVE_ICE_PUNCH), // for boss battle, remove when better method for assigning moves at battle start is found
+    LEVEL_UP_MOVE(75, MOVE_DRAIN_PUNCH), // for boss battle, remove when better method for assigning moves at battle start is found
     LEVEL_UP_END
 };
 

@@ -3591,14 +3591,11 @@ static void TryDoEventsBeforeFirstTurn(void)
     // set up Deoxys boss battle
     if (VarGet(VAR_DEOXYS_BOSS_BATTLE_STATE) == 1 && GetBattlerSide(gActiveBattler) == B_SIDE_OPPONENT)
     {
-           //gBattleMons[gActiveBattler].moves[0] = MOVE_PSYCHO_BOOST;
-           //gBattleMons[gActiveBattler].moves[1] = MOVE_THUNDER_PUNCH;
-           //gBattleMons[gActiveBattler].moves[2] = MOVE_ICE_PUNCH;
-           //gBattleMons[gActiveBattler].moves[3] = MOVE_DRAIN_PUNCH;
-           SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHO_BOOST, 0);
-           SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_THUNDER_PUNCH, 1);
-           SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICE_PUNCH, 2);
-           SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_DRAIN_PUNCH, 3);
+           //SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHO_BOOST, 0);
+           //SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_THUNDER_PUNCH, 1);
+           //SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICE_PUNCH, 2);
+           //SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_DRAIN_PUNCH, 3);
+           FlagSet(FLAG_DISABLE_CATCHING);
            VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 2);
            BattleScriptExecute(BattleScript_DeoxysStrangeAura);
     }

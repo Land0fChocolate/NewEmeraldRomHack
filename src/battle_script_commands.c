@@ -3671,6 +3671,7 @@ static void Cmd_tryfaintmon(void)
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 1);
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHO_BOOST, 2);
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_HYPER_BEAM, 3);
+                        FlagClear(FLAG_DISABLE_CATCHING);
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 0);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChangeCatchable;

@@ -94,8 +94,9 @@ Space_Area2_EventScript_Deoxys::
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	setvar VAR_DEOXYS_BOSS_BATTLE_STATE, 0 @may be unnecessary but here for safety
+	setvar VAR_DEOXYS_BOSS_BATTLE_STATE, 0
 	clearflag FLAG_SMART_WILD_AI
+	clearflag FLAG_DISABLE_CATCHING
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq Space_Area2_EventScript_DefeatedDeoxys

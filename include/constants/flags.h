@@ -1281,7 +1281,7 @@
 #define FLAG_UNUSED_0x4D6                                           0x4D6 // Unused Flag
 #define FLAG_UNUSED_0x4D7                                           0x4D7 // Unused Flag
 #define FLAG_UNUSED_0x4D8                                           0x4D8 // Unused Flag
-#define FLAG_UNUSED_0x4D9                                           0x4D9 // Unused Flag
+#define FLAG_DISABLE_CATCHING                                       0x4D9 // If TRUE, Player cannot catch Pokemon with Poke Balls.
 #define FLAG_SMART_WILD_AI                                          0x4DA // battle config flag
 #define FLAG_HIDE_BATTLE_TENT_BEAUTY                                0x4DB
 #define FLAG_HIDE_BATTLE_TENT_BLACK_BELT                            0x4DC

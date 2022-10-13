@@ -9708,6 +9708,7 @@ BattleScript_DeoxysStrangeAura::
 
 BattleScript_DeoxysBossFormChange::
 	handleformchange BS_TARGET, 0
+	handleformchange BS_TARGET, 1
 	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
 	healthbarupdate BS_TARGET
 	datahpupdate BS_TARGET
@@ -9718,6 +9719,7 @@ BattleScript_DeoxysBossFormChange::
 
 BattleScript_DeoxysBossFormChangeCatchable::
 	handleformchange BS_TARGET, 0
+	handleformchange BS_TARGET, 1
 	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
 	healthbarupdate BS_TARGET
 	datahpupdate BS_TARGET
