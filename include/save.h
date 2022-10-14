@@ -29,9 +29,9 @@ struct SaveSectionOffsets
     u16 size;
 };
 
-// Each 4 KiB flash sector contains 3968 bytes of actual data followed by a 128 byte footer
-#define SECTOR_DATA_SIZE 3968 //TODO: Increase to 4084 (Bag Expansion)
-#define SECTOR_FOOTER_SIZE 128  //TODO: Change to 12 (Bag Expansion)
+// Each 4 KiB flash sector contains 4084 bytes of actual data followed by a 12 byte footer
+#define SECTOR_DATA_SIZE 4084
+#define SECTOR_FOOTER_SIZE 12
 #define SECTOR_SIZE (SECTOR_DATA_SIZE + SECTOR_FOOTER_SIZE)
 
 // Emerald changes this definition to be the sectors per slot.
@@ -39,6 +39,8 @@ struct SaveSectionOffsets
 
 #define UNKNOWN_CHECK_VALUE 0x8012025
 #define SPECIAL_SECTION_SENTINEL 0xB39D
+
+#define NUM_HOF_SECTORS 2
 
 // SetDamagedSectorBits states
 enum
@@ -78,6 +80,8 @@ enum
 #define SAVE_STATUS_CORRUPT  2
 #define SAVE_STATUS_NO_FLASH 4
 #define SAVE_STATUS_ERROR    0xFF
+
+#define SECTOR_COUNTER_OFFSET   offsetof(struct SaveSector, counter)
 
 extern u16 gLastWrittenSector;
 extern u32 gLastSaveCounter;
