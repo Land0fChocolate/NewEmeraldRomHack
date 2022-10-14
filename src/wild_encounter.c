@@ -543,6 +543,7 @@ bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavi
 {
     u16 headerId;
     struct Roamer *roamer;
+    u8 roamerEncounter;
 
     if (sWildEncountersDisabled == TRUE)
         return FALSE;
@@ -591,9 +592,18 @@ bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavi
             else if (DoWildEncounterRateTest(gWildMonHeaders[headerId].landMonsInfo->encounterRate, FALSE) != TRUE)
                 return FALSE;
 
-            if (TryStartRoamerEncounter() == TRUE)
+            roamerEncounter = TryStartRoamerEncounter();
+            if (roamerEncounter > 0)
             {
-                roamer = &gSaveBlock1Ptr->roamer;
+                switch (roamerEncounter)
+                {
+                    case 1:
+                        roamer = &gSaveBlock1Ptr->roamer1;
+                        break;
+                    case 2:
+                        roamer = &gSaveBlock1Ptr->roamer2;
+                        break;
+                }
                 if (!IsWildLevelAllowedByRepel(roamer->level))
                     return FALSE;
 
@@ -640,9 +650,18 @@ bool8 StandardWildEncounter(u16 currMetaTileBehavior, u16 previousMetaTileBehavi
             else if (DoWildEncounterRateTest(gWildMonHeaders[headerId].waterMonsInfo->encounterRate, FALSE) != TRUE)
                 return FALSE;
 
-            if (TryStartRoamerEncounter() == TRUE)
+            roamerEncounter = TryStartRoamerEncounter();
+            if (roamerEncounter > 0)
             {
-                roamer = &gSaveBlock1Ptr->roamer;
+                switch (roamerEncounter)
+                {
+                    case 1:
+                        roamer = &gSaveBlock1Ptr->roamer1;
+                        break;
+                    case 2:
+                        roamer = &gSaveBlock1Ptr->roamer2;
+                        break;
+                }
                 if (!IsWildLevelAllowedByRepel(roamer->level))
                     return FALSE;
 
@@ -708,6 +727,8 @@ bool8 SweetScentWildEncounter(void)
 {
     s16 x, y;
     u16 headerId;
+    struct Roamer *roamer;
+    u8 roamerEncounter;
 
     PlayerGetDestCoords(&x, &y);
     headerId = GetCurrentMapWildMonHeaderId();
@@ -741,8 +762,18 @@ bool8 SweetScentWildEncounter(void)
             if (gWildMonHeaders[headerId].landMonsInfo == NULL)
                 return FALSE;
 
-            if (TryStartRoamerEncounter() == TRUE)
+            roamerEncounter = TryStartRoamerEncounter();
+            if (roamerEncounter > 0)
             {
+                switch (roamerEncounter)
+                {
+                    case 1:
+                        roamer = &gSaveBlock1Ptr->roamer1;
+                        break;
+                    case 2:
+                        roamer = &gSaveBlock1Ptr->roamer2;
+                        break;
+                }
                 BattleSetup_StartRoamerBattle();
                 return TRUE;
             }
@@ -762,8 +793,18 @@ bool8 SweetScentWildEncounter(void)
             if (gWildMonHeaders[headerId].waterMonsInfo == NULL)
                 return FALSE;
 
-            if (TryStartRoamerEncounter() == TRUE)
+            roamerEncounter = TryStartRoamerEncounter();
+            if (roamerEncounter > 0)
             {
+                switch (roamerEncounter)
+                {
+                    case 1:
+                        roamer = &gSaveBlock1Ptr->roamer1;
+                        break;
+                    case 2:
+                        roamer = &gSaveBlock1Ptr->roamer2;
+                        break;
+                }
                 BattleSetup_StartRoamerBattle();
                 return TRUE;
             }
