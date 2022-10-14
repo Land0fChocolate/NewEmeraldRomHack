@@ -3571,6 +3571,8 @@ static void Cmd_clearstatusfromeffect(void)
 static void Cmd_tryfaintmon(void)
 {
     const u8 *BS_ptr;
+    u32 DeoxysBossBattleState = VarGet(VAR_DEOXYS_BOSS_BATTLE_STATE);
+    u8 i;
 
     if (gBattlescriptCurrInstr[2] != 0)
     {
@@ -3618,6 +3620,67 @@ static void Cmd_tryfaintmon(void)
                 
                 BattleScriptPushCursor();
                 gBattlescriptCurrInstr = BattleScript_TimeTravellerAbility;
+                return;
+            }
+
+            // effects for if the Pokemon is the Deoxys boss
+            if (DeoxysBossBattleState > 0 && GetBattlerSide(gActiveBattler) == B_SIDE_OPPONENT)
+            {
+                //reset stats and status for each form
+                gBattleMoveDamage *= -gBattleMons[gActiveBattler].maxHP;
+                gBattleMons[gActiveBattler].status1 = STATUS1_NONE;
+                gBattleMons[gActiveBattler].status2 = 0;
+                for (i = 0; i < NUM_BATTLE_STATS; i++)
+                    gBattleMons[gActiveBattler].statStages[i] = DEFAULT_STAT_STAGE;
+
+                // changing forms and movesets
+                switch (DeoxysBossBattleState)
+                {
+                    case 2: //transform to defense
+                        gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_DEFENSE;
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_CHARGE_BEAM, 0);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICY_WIND, 1);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_COSMIC_POWER, 2);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 3);
+                        VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 3);
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+                        break;
+                    case 3: //transform to attack
+                        gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_ATTACK;
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYSHOCK, 0);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_DARK_PULSE, 1);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ENERGY_BALL, 2);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_FLASH_CANNON, 3);
+                        VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 4);
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+                        break;
+                    case 4: //transform to speed
+                        gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_SPEED;
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHIC, 0);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_THUNDERBOLT, 1);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICE_BEAM, 2);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_NASTY_PLOT, 3);
+                        VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 5);
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+                        break;
+                    case 5: //transform back to normal form and be catchable
+                        gBattleMons[gActiveBattler].species = SPECIES_DEOXYS;
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_COSMIC_POWER, 0);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 1);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHO_BOOST, 2);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_HYPER_BEAM, 3);
+                        FlagClear(FLAG_DISABLE_CATCHING);
+                        VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 0);
+                        BattleScriptPushCursor();
+                        gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChangeCatchable;
+                        break;
+                    default:
+                        break;
+                }
+
                 return;
             }
 

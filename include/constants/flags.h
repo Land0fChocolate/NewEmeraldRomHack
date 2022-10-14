@@ -1281,8 +1281,8 @@
 #define FLAG_UNUSED_0x4D6                                           0x4D6 // Unused Flag
 #define FLAG_UNUSED_0x4D7                                           0x4D7 // Unused Flag
 #define FLAG_UNUSED_0x4D8                                           0x4D8 // Unused Flag
-#define FLAG_UNUSED_0x4D9                                           0x4D9 // Unused Flag
-#define FLAG_UNUSED_0x4DA                                           0x4DA // Unused Flag
+#define FLAG_DISABLE_CATCHING                                       0x4D9 // If TRUE, Player cannot catch Pokemon with Poke Balls.
+#define FLAG_SMART_WILD_AI                                          0x4DA // battle config flag
 #define FLAG_HIDE_BATTLE_TENT_BEAUTY                                0x4DB
 #define FLAG_HIDE_BATTLE_TENT_BLACK_BELT                            0x4DC
 #define FLAG_HIDE_BATTLE_TENT_BUG_CATCHER                           0x4DD
@@ -1323,7 +1323,7 @@
 #define FLAG_DEFEATED_ELITE_4_GLACIA                                0x4FD
 #define FLAG_DEFEATED_ELITE_4_DRAKE                                 0x4FE
 
-#define FLAG_INVERSE_BATTLE                                         0x4FF
+#define FLAG_INVERSE_BATTLE                                         0x4FF // battle config flag
 
 // Trainer Flags
 // Trainer flags occupy 0x500 - 0x85F, the last 9 of which are unused

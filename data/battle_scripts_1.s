@@ -9699,3 +9699,31 @@ BattleScript_SerpentDanceTrySpeed::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_SerpentDanceEnd::
 	goto BattleScript_MoveEnd
+
+BattleScript_DeoxysStrangeAura::
+	datahpupdate BS_TARGET
+	printstring STRINGID_DEOXYSSTRANGEAURA
+	waitmessage B_WAIT_TIME_LONG
+	end
+
+BattleScript_DeoxysBossFormChange::
+	handleformchange BS_TARGET, 0
+	handleformchange BS_TARGET, 1
+	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	waitanimation
+	printstring STRINGID_DEOXYSCHANGEDFORM
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_DeoxysBossFormChangeCatchable::
+	handleformchange BS_TARGET, 0
+	handleformchange BS_TARGET, 1
+	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	waitanimation
+	printstring STRINGID_DEOXYSCHANGEDFORMCATCHABLE
+	waitmessage B_WAIT_TIME_LONG
+	return

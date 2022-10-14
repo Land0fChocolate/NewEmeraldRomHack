@@ -205,3 +205,7 @@ BattleScript_TrainerSlideMsgRet::
 BattleScript_TrainerSlideMsgEnd2::
 	call BattleScript_TrainerSlideMsgRet
 	end2
+
+BattleScript_CantDoBallThrow::
+	printstring STRINGID_CANTTHROWBALL
+	end2

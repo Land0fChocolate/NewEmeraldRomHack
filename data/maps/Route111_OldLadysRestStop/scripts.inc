@@ -20,35 +20,30 @@ Route111_OldLadysRestStop_EventScript_Rest::
 	msgbox Route111_OldLadysRestStop_Text_TakeYourTimeRestUp, MSGBOX_DEFAULT
 	closemessage
 	call Common_EventScript_OutOfCenterPartyHeal
-	msgbox Route111_OldLadysRestStop_Text_StillTiredTakeAnotherRest, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq Route111_OldLadysRestStop_EventScript_Rest
-	compare VAR_RESULT, NO
-	goto_if_eq Route111_OldLadysRestStop_EventScript_DeclineRest
+	msgbox Route111_OldLadysRestStop_Text_PokemonRaringToGo, MSGBOX_DEFAULT
+	release
 	end
 
 Route111_OldLadysRestStop_EventScript_DeclineRest::
-	msgbox Route111_OldLadysRestStop_Text_DontNeedToBeShy, MSGBOX_DEFAULT
+	msgbox Route111_OldLadysRestStop_Text_NoRest, MSGBOX_DEFAULT
 	release
 	end
 
 Route111_OldLadysRestStop_Text_RestUpHere:
 	.string "Oh, dear, dear.\n"
-	.string "Aren't your Pokémon exhausted?\p"
-	.string "If you'd like, rest up here.\n"
-	.string "That's a fine idea! You should do that.$"
+	.string "Your Pokémon must be tired from\l"
+	.string "travelling all the way to my home.\p"
+	.string "If you'd like, you may rest up here.$"
 
 Route111_OldLadysRestStop_Text_TakeYourTimeRestUp:
-	.string "That's right.\n"
-	.string "Take your time and rest up!$"
+	.string "Please, take as long as you need.$"
 
-Route111_OldLadysRestStop_Text_StillTiredTakeAnotherRest:
-	.string "Oh, dear, dear.\n"
-	.string "Are your Pokémon still tired?\p"
-	.string "You should take another rest here.\n"
-	.string "That's a fine idea. You should do that.$"
+Route111_OldLadysRestStop_Text_PokemonRaringToGo:
+	.string "Oh, my.\n"
+	.string "Your Pokémon are already raring to go!\l"
+	.string "I wish you good fortune in your travels.$"
 
-Route111_OldLadysRestStop_Text_DontNeedToBeShy:
+Route111_OldLadysRestStop_Text_NoRest:
 	.string "Is that so?\n"
-	.string "You don't need to be shy about it.$"
+	.string "Very well, good fortune in your travels.$"
 

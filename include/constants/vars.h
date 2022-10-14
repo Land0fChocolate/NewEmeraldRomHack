@@ -198,7 +198,7 @@
 #define VAR_WEATHER_INSTITUTE_STATE          0x40B3
 #define VAR_SS_TIDAL_STATE                   0x40B4
 #define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR  0x40B5
-#define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2     0x40B6 // unused. Leftover from RS, never set
+#define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2     0x40B6
 #define VAR_SLATEPORT_FAN_CLUB_STATE         0x40B7
 #define VAR_WEATHER_INSTITUTE_TRIGGER_STATE  0x40B8
 #define VAR_MT_PYRE_STATE                    0x40B9
@@ -245,7 +245,7 @@
 #define VAR_NEVER_READ_0x40E2                0x40E2 // Var is written to, but never read
 #define VAR_NEVER_READ_0x40E3                0x40E3 // Var is written to, but never read
 #define VAR_NEVER_READ_0x40E4                0x40E4 // var is written to, but never read
-#define VAR_UNUSED_0x40E5                    0x40E5 // Unused Var
+#define VAR_DEOXYS_BOSS_BATTLE_STATE         0x40E5 // battle config var
 #define VAR_DAILY_SLOTS                      0x40E6
 #define VAR_DAILY_WILDS                      0x40E7
 #define VAR_DAILY_BLENDER                    0x40E8

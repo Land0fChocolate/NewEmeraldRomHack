@@ -430,5 +430,9 @@ extern const u8 BattleScript_HeartSwapAbilityActivates[];
 extern const u8 BattleScript_SuctionCupsActivates[];
 extern const u8 BattleScript_DisarmActivates[];
 extern const u8 BattleScript_HiddenThornsFree[];
+extern const u8 BattleScript_DeoxysStrangeAura[];
+extern const u8 BattleScript_DeoxysBossFormChange[];
+extern const u8 BattleScript_DeoxysBossFormChangeCatchable[];
+extern const u8 BattleScript_CantDoBallThrow[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H
