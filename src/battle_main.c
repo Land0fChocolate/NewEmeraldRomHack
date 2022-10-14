@@ -5271,13 +5271,13 @@ static void ReturnFromBattleToOverworld(void)
 
     if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
     {
-        if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES2) == SPECIES_LATIAS)
+        if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES) == SPECIES_LATIAS)
         {
             UpdateRoamerHPStatus(&gSaveBlock1Ptr->roamer1, &gEnemyParty[0]);
             if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT)
                 SetRoamerInactive(&gSaveBlock1Ptr->roamer1);
         }
-        if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES2) == SPECIES_LATIOS)
+        if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES) == SPECIES_LATIOS)
         {
             UpdateRoamerHPStatus(&gSaveBlock1Ptr->roamer2, &gEnemyParty[0]);
             if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT)
