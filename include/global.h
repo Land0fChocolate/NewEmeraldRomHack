@@ -563,17 +563,10 @@ struct Roamer
 {
     /*0x00*/ u32 ivs;
     /*0x04*/ u32 personality;
-    /*0x08*/ u16 species;
-    /*0x0A*/ u16 hp;
-    /*0x0C*/ u8 level;
-    /*0x0D*/ u8 status;
-    /*0x0E*/ u8 cool;
-    /*0x0F*/ u8 beauty;
-    /*0x10*/ u8 cute;
-    /*0x11*/ u8 smart;
-    /*0x12*/ u8 tough;
-    /*0x13*/ bool8 active;
-    /*0x14*/ u8 filler[0x8];
+    /*0x08*/ u16 hp;
+    /*0x0A*/ u8 level;
+    /*0x0B*/ u8 status;
+    /*0x0C*/ bool8 active;
 };
 
 struct RamScriptData
@@ -1033,8 +1026,9 @@ struct SaveBlock1
     /*0x31A8*/ u8 giftRibbons[GIFT_RIBBONS_COUNT];
     /*0x31B3*/ struct ExternalEventData externalEventData;
     /*0x31C7*/ struct ExternalEventFlags externalEventFlags;
-    /*0x31DC*/ struct Roamer roamer; //roamer has a size of 21
-    /*0x31F8*/ struct EnigmaBerry enigmaBerry; //TODO: replace with roamer2 (Roamer Expansion). enigmaBerry has a size of 52
+    /*0x31DC*/ struct Roamer roamer1; // Latias
+    /*0x31EA*/ struct Roamer roamer2; // Latios
+    /*0x31F8*/ struct EnigmaBerry enigmaBerry;
     /*0x322C*/ struct MEventBuffers unk_322C;
     /*0x3???*/ u8 dexSeen[DEX_FLAGS_NO];
     /*0x3???*/ u8 dexCaught[DEX_FLAGS_NO];

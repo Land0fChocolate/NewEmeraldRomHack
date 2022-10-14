@@ -332,15 +332,14 @@ static bool8 DrawAreaGlow(void)
 static void FindMapsWithMon(u16 species)
 {
     u16 i;
-    struct Roamer *roamer;
+    struct Roamer *roamer1, *roamer2;
 
     sPokedexAreaScreen->unk6E2 = 0;
     sPokedexAreaScreen->unk6E4 = VarGet(VAR_ALTERING_CAVE_WILD_SET);
     if (sPokedexAreaScreen->unk6E4 > 8)
         sPokedexAreaScreen->unk6E4 = 0;
 
-    roamer = &gSaveBlock1Ptr->roamer;
-    if (species != roamer->species)
+    if (species != SPECIES_LATIAS || species != SPECIES_LATIOS)
     {
         sPokedexAreaScreen->numOverworldAreas = 0;
         sPokedexAreaScreen->numSpecialAreas = 0;
@@ -386,8 +385,10 @@ static void FindMapsWithMon(u16 species)
     }
     else
     {
+        roamer1 = &gSaveBlock1Ptr->roamer1;
+        roamer2 = &gSaveBlock1Ptr->roamer2;
         sPokedexAreaScreen->numSpecialAreas = 0;
-        if (roamer->active)
+        if (roamer1->active || roamer2->active)
         {
             GetRoamerLocation(&sPokedexAreaScreen->overworldAreasWithMons[0].mapGroup, &sPokedexAreaScreen->overworldAreasWithMons[0].mapNum);
             sPokedexAreaScreen->overworldAreasWithMons[0].regionMapSectionId = Overworld_GetMapHeaderByGroupAndId(sPokedexAreaScreen->overworldAreasWithMons[0].mapGroup, sPokedexAreaScreen->overworldAreasWithMons[0].mapNum)->regionMapSectionId;

@@ -32,12 +32,13 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Ice types have their special defense boosted by 50% in hail.
 - Removed badge boosts
 - Wild Encounters adjusted.
+	- Both Latias and Latios are available roaming
+	- All Legendary and Mythical Pokemon can be repeatedly acquired.
 - Trainer parties adjusted.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
-- Map changes, including new areas to explore that have new Pokemon (post game).
-- Legendary and Mythical Pokemon can be repeatedly acquired.
+- Map layout changes, including new areas to explore that have new Pokemon (post game).
 - Battle Frontier has its opponent Pokemon list updated with new Pokemon, new items and new moves.
 - Battle Palace is now inverse battle themed.
 - Graphical updates to existing overworld sprites and environments.
@@ -52,6 +53,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- Prices of various items adjusted.
 - New Items:
 	- Super Vitamins (Adding 100 EVs per use)
+	- Nature Mints
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
 
 # New Abilities
@@ -70,7 +72,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Soul Siphon: Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir/Palossand/Dhelmise/Corsola(Galarian).
 - Bad Luck: Opponent cannot land crits and less likely to land status moves against user. Used by Spiritomb/Cofagrigus.
 - Wickedness: User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius/Braixen/Delphox.
-- Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Klink/Klang/Kilinklang.
+- Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Klink/Klang/Klinklang.
 - Evergreen: User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
 - Swordmaster: Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.

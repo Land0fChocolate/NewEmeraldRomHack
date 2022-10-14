@@ -41,8 +41,8 @@ static const u8 sRoamerLocations[][6] =
 
 void ClearRoamerData(void)
 {
-    memset(&gSaveBlock1Ptr->roamer, 0, sizeof(struct Roamer));
-    (&gSaveBlock1Ptr->roamer)->species = SPECIES_LATIAS;
+    memset(&gSaveBlock1Ptr->roamer1, 0, sizeof(struct Roamer));
+    memset(&gSaveBlock1Ptr->roamer2, 0, sizeof(struct Roamer));
 }
 
 void ClearRoamerLocationData(void)
@@ -59,34 +59,34 @@ void ClearRoamerLocationData(void)
     sRoamerLocation[MAP_NUM] = 0;
 }
 
-static void CreateInitialRoamerMon(bool16 createLatios)
+static void CreateInitialRoamerMon(void)
 {
-    if (!createLatios)
-        (&gSaveBlock1Ptr->roamer)->species = SPECIES_LATIAS;
-    else
-        (&gSaveBlock1Ptr->roamer)->species = SPECIES_LATIOS;
+    CreateMon(&gEnemyParty[0], SPECIES_LATIAS, 40, 0x20, 0, 0, OT_ID_PLAYER_ID, 0);
+    (&gSaveBlock1Ptr->roamer1)->level = 40;
+    (&gSaveBlock1Ptr->roamer1)->status = 0;
+    (&gSaveBlock1Ptr->roamer1)->active = TRUE;
+    (&gSaveBlock1Ptr->roamer1)->ivs = GetMonData(&gEnemyParty[0], MON_DATA_IVS);
+    (&gSaveBlock1Ptr->roamer1)->personality = GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY);
+    (&gSaveBlock1Ptr->roamer1)->hp = GetMonData(&gEnemyParty[0], MON_DATA_MAX_HP);
+    sRoamerLocation[MAP_GRP] = 0;
+    sRoamerLocation[MAP_NUM] = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
 
-    CreateMon(&gEnemyParty[0], (&gSaveBlock1Ptr->roamer)->species, 40, 0x20, 0, 0, OT_ID_PLAYER_ID, 0);
-    (&gSaveBlock1Ptr->roamer)->level = 40;
-    (&gSaveBlock1Ptr->roamer)->status = 0;
-    (&gSaveBlock1Ptr->roamer)->active = TRUE;
-    (&gSaveBlock1Ptr->roamer)->ivs = GetMonData(&gEnemyParty[0], MON_DATA_IVS);
-    (&gSaveBlock1Ptr->roamer)->personality = GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY);
-    (&gSaveBlock1Ptr->roamer)->hp = GetMonData(&gEnemyParty[0], MON_DATA_MAX_HP);
-    (&gSaveBlock1Ptr->roamer)->cool = GetMonData(&gEnemyParty[0], MON_DATA_COOL);
-    (&gSaveBlock1Ptr->roamer)->beauty = GetMonData(&gEnemyParty[0], MON_DATA_BEAUTY);
-    (&gSaveBlock1Ptr->roamer)->cute = GetMonData(&gEnemyParty[0], MON_DATA_CUTE);
-    (&gSaveBlock1Ptr->roamer)->smart = GetMonData(&gEnemyParty[0], MON_DATA_SMART);
-    (&gSaveBlock1Ptr->roamer)->tough = GetMonData(&gEnemyParty[0], MON_DATA_TOUGH);
+    CreateMon(&gEnemyParty[0], SPECIES_LATIOS, 40, 0x20, 0, 0, OT_ID_PLAYER_ID, 0);
+    (&gSaveBlock1Ptr->roamer2)->level = 40;
+    (&gSaveBlock1Ptr->roamer2)->status = 0;
+    (&gSaveBlock1Ptr->roamer2)->active = TRUE;
+    (&gSaveBlock1Ptr->roamer2)->ivs = GetMonData(&gEnemyParty[0], MON_DATA_IVS);
+    (&gSaveBlock1Ptr->roamer2)->personality = GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY);
+    (&gSaveBlock1Ptr->roamer2)->hp = GetMonData(&gEnemyParty[0], MON_DATA_MAX_HP);
     sRoamerLocation[MAP_GRP] = 0;
     sRoamerLocation[MAP_NUM] = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
 }
 
-void InitRoamer(void)
+void InitRoamers(void)
 {
     ClearRoamerData();
     ClearRoamerLocationData();
-    CreateInitialRoamerMon(gSpecialVar_0x8004);
+    CreateInitialRoamerMon();
 }
 
 void UpdateLocationHistoryForRoamer(void)
@@ -104,9 +104,10 @@ void UpdateLocationHistoryForRoamer(void)
 void RoamerMoveToOtherLocationSet(void)
 {
     u8 mapNum = 0;
-    struct Roamer *roamer = &gSaveBlock1Ptr->roamer;
+    struct Roamer *roamer1 = &gSaveBlock1Ptr->roamer1;
+    struct Roamer *roamer2 = &gSaveBlock1Ptr->roamer2;
 
-    if (!roamer->active)
+    if (!roamer1->active && !roamer2->active)
         return;
 
     sRoamerLocation[MAP_GRP] = 0;
@@ -132,9 +133,10 @@ void RoamerMove(void)
     }
     else
     {
-        struct Roamer *roamer = &gSaveBlock1Ptr->roamer;
+        struct Roamer *roamer1 = &gSaveBlock1Ptr->roamer1;
+        struct Roamer *roamer2 = &gSaveBlock1Ptr->roamer2;
 
-        if (!roamer->active)
+        if (!roamer1->active && !roamer2->active)
             return;
 
         while (locSet < (ARRAY_COUNT(sRoamerLocations) - 1))
@@ -156,58 +158,53 @@ void RoamerMove(void)
     }
 }
 
-bool8 IsRoamerAt(u8 mapGroup, u8 mapNum)
+bool8 IsRoamerAt(struct Roamer *roamer, u8 mapGroup, u8 mapNum)
 {
-    struct Roamer *roamer = &gSaveBlock1Ptr->roamer;
-
     if (roamer->active && mapGroup == sRoamerLocation[MAP_GRP] && mapNum == sRoamerLocation[MAP_NUM])
         return TRUE;
     else
         return FALSE;
 }
 
-void CreateRoamerMonInstance(void)
+void CreateRoamerMonInstance(struct Roamer *roamer, u16 species)
 {
     struct Pokemon *mon;
-    struct Roamer *roamer;
 
     mon = &gEnemyParty[0];
     ZeroEnemyPartyMons();
-    roamer = &gSaveBlock1Ptr->roamer;
-    CreateMonWithIVsPersonality(mon, roamer->species, roamer->level, roamer->ivs, roamer->personality);
-    SetMonData(mon, MON_DATA_STATUS, &gSaveBlock1Ptr->roamer.status);
-    SetMonData(mon, MON_DATA_HP, &gSaveBlock1Ptr->roamer.hp);
-    SetMonData(mon, MON_DATA_COOL, &gSaveBlock1Ptr->roamer.cool);
-    SetMonData(mon, MON_DATA_BEAUTY, &gSaveBlock1Ptr->roamer.beauty);
-    SetMonData(mon, MON_DATA_CUTE, &gSaveBlock1Ptr->roamer.cute);
-    SetMonData(mon, MON_DATA_SMART, &gSaveBlock1Ptr->roamer.smart);
-    SetMonData(mon, MON_DATA_TOUGH, &gSaveBlock1Ptr->roamer.tough);
+    CreateMonWithIVsPersonality(mon, species, roamer->level, roamer->ivs, roamer->personality);
+    SetMonData(mon, MON_DATA_STATUS, &roamer->status);
+    SetMonData(mon, MON_DATA_HP, &roamer->hp);
 }
 
-bool8 TryStartRoamerEncounter(void)
+u8 TryStartRoamerEncounter(void)
 {
-    if (IsRoamerAt(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum) == TRUE && (Random() % 4) == 0)
+    if (IsRoamerAt(&gSaveBlock1Ptr->roamer1, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum) == TRUE && (Random() % 4) == 0)
     {
-        CreateRoamerMonInstance();
-        return TRUE;
+        CreateRoamerMonInstance(&gSaveBlock1Ptr->roamer1, SPECIES_LATIAS);
+        return 1;
+    }
+    else if (IsRoamerAt(&gSaveBlock1Ptr->roamer2, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum) == TRUE && (Random() % 4) == 0)
+    {
+        CreateRoamerMonInstance(&gSaveBlock1Ptr->roamer2, SPECIES_LATIOS);
+        return 2;
     }
     else
     {
-        return FALSE;
+        return 0;
     }
 }
 
-void UpdateRoamerHPStatus(struct Pokemon *mon)
+void UpdateRoamerHPStatus(struct Roamer *roamer, struct Pokemon *mon)
 {
-    (&gSaveBlock1Ptr->roamer)->hp = GetMonData(mon, MON_DATA_HP);
-    (&gSaveBlock1Ptr->roamer)->status = GetMonData(mon, MON_DATA_STATUS);
+    roamer->hp = GetMonData(mon, MON_DATA_HP);
+    roamer->status = GetMonData(mon, MON_DATA_STATUS);
 
     RoamerMoveToOtherLocationSet();
 }
 
-void SetRoamerInactive(void)
+void SetRoamerInactive(struct Roamer *roamer)
 {
-    struct Roamer *roamer = &gSaveBlock1Ptr->roamer;
     roamer->active = FALSE;
 }
 
