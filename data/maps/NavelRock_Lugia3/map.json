@@ -69,6 +69,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 4,
+      "y": 4,
+      "elevation": 3,
+      "item": "ITEM_RARE_BONE",
+      "flag": "FLAG_HIDDEN_NAVEL_ROCK_LUGIA_3_RARE_BONE"
+    }
   ]
 }

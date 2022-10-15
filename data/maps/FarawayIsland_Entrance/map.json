@@ -156,6 +156,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "FarawayIsland_Entrance_EventScript_Sign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 22,
+      "y": 47,
+      "elevation": 3,
+      "item": "ITEM_PSYCHIC_GEM",
+      "flag": "FLAG_HIDDEN_ITEM_FARAWAY_ISLAND_PSYCHIC_GEM"
     }
   ]
 }

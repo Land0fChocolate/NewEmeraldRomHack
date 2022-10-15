@@ -646,26 +646,26 @@
 #define FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH           (FLAG_HIDDEN_ITEMS_START + 0x6D)
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
+#define FLAG_HIDDEN_ITEM_CRUMBLING_GORGE_SUPER_ZINC          (FLAG_HIDDEN_ITEMS_START + 0x70)
+#define FLAG_HIDDEN_ITEM_LITTLEROOT_BEACH_SUPER_HP_UP        (FLAG_HIDDEN_ITEMS_START + 0x71)
+#define FLAG_HIDDEN_FALLARBOR_WASTELAND_SUPER_IRON           (FLAG_HIDDEN_ITEMS_START + 0x72)
+#define FLAG_HIDDEN_ITEM_WILDWOODS_AREA_2_SUPER_CARBOS  	 (FLAG_HIDDEN_ITEMS_START + 0x73)
+#define FLAG_HIDDEN_ITEM_MAUVILLE_MEADOW_SUPER_CALCIUM	     (FLAG_HIDDEN_ITEMS_START + 0x74)
+#define FLAG_HIDDEN_ITEM_FORTREE_JUNGLE_AREA_3_SUPER_PROTEIN (FLAG_HIDDEN_ITEMS_START + 0x75)
+#define FLAG_HIDDEN_ITEM_FARAWAY_ISLAND_PSYCHIC_GEM          (FLAG_HIDDEN_ITEMS_START + 0x76)
+#define FLAG_HIDDEN_ITEM_MAUVILLE_RIVERSIDE_BOTTLE_CAP       (FLAG_HIDDEN_ITEMS_START + 0x77)
+#define FLAG_HIDDEN_NAVEL_ROCK_LUGIA_3_RARE_BONE             (FLAG_HIDDEN_ITEMS_START + 0x78)
 
-#define FLAG_ROUTE_119_HIDE_RIVAL        		 0x264
-#define FLAG_MET_RIVAL_ROUTE_119         		 0x265
-#define FLAG_HIDE_MT_PYRE_SUMMIT_PHOEBE  		 0x266
-#define FLAG_MAGMA_HIDEOUT_ZINNIA        		 0x267
-#define FLAG_HIDE_OUTSIDE_ELITE_4       		 0x268
-#define FLAG_HIDE_WEATHER_INSTITUTE_2F_CASTFORM  0x269
-#define FLAG_HIDE_SOOTOPOLIS_OVERWORLD_POKEMON   0x26A
-#define FLAG_HIDE_FLANNERY_HOT_SPRINGS           0x26B
-#define FLAG_HIDE_FLANNERY_GYM                   0x26C
-#define FLAG_MET_COURTNEY_WILDWOODS              0x26D
-#define FLAG_MET_TABITHA_FALLARBOR_WASTES        0x26E
-#define FLAG_MET_SHELLY_MAUVILLE_MEADOW          0x26F
-#define FLAG_MET_MATT_FORTREE_JUNGLE             0x270
-#define FLAG_BIRCH_CALL_NEW_AREAS_REPORT         0x271
-#define FLAG_BIRCH_CALLED_PLAYER                 0x272
-#define FLAG_HIDE_MAXIE_ARCHIE_BIRCH_LAB         0x273
-#define FLAG_HIDE_ZINNIA_WEATHER_INSTITUTE       0x274
-#define FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER4_2    0x275 // Second boulder flag to allow boulders to fall through 2 floors
-#define FLAG_HIDE_DRACONID_ARCHIVES_SCIENTIST    0x276
+#define FLAG_UNUSED_0x26D                         0x26D // Unused Flag
+#define FLAG_UNUSED_0x26E                         0x26E // Unused Flag
+#define FLAG_UNUSED_0x26F                         0x26F // Unused Flag
+#define FLAG_UNUSED_0x270                         0x270 // Unused Flag
+#define FLAG_UNUSED_0x271                         0x271 // Unused Flag
+#define FLAG_UNUSED_0x272                         0x272 // Unused Flag
+#define FLAG_UNUSED_0x273                         0x273 // Unused Flag
+#define FLAG_UNUSED_0x274                         0x274 // Unused Flag
+#define FLAG_UNUSED_0x275                         0x275 // Unused Flag
+#define FLAG_UNUSED_0x276                         0x276 // Unused Flag
 #define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_1 0x277
 #define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_2 0x278
 #define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_3 0x279
@@ -713,25 +713,25 @@
 #define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_17  	  0x2A3
 #define FLAG_NAVEL_ROCK_HOOH_SWITCH_DOOR_18  	  0x2A4
 #define FLAG_NAVEL_ROCK_HOOH_PUZZLE_EXIT_2        0x2A5
-#define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag
-#define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
-#define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
-#define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
-#define FLAG_UNUSED_0x2AA  0x2AA // Unused Flag
-#define FLAG_UNUSED_0x2AB  0x2AB // Unused Flag
-#define FLAG_UNUSED_0x2AC  0x2AC // Unused Flag
-#define FLAG_UNUSED_0x2AD  0x2AD // Unused Flag
-#define FLAG_UNUSED_0x2AE  0x2AE // Unused Flag
-#define FLAG_UNUSED_0x2AF  0x2AF // Unused Flag
-#define FLAG_UNUSED_0x2B0  0x2B0 // Unused Flag
-#define FLAG_UNUSED_0x2B1  0x2B1 // Unused Flag
-#define FLAG_UNUSED_0x2B2  0x2B2 // Unused Flag
-#define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag
-#define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
-#define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
-#define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
-#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
-#define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
+#define FLAG_ROUTE_119_HIDE_RIVAL  				  0x2A6
+#define FLAG_MET_RIVAL_ROUTE_119                  0x2A7
+#define FLAG_HIDE_MT_PYRE_SUMMIT_PHOEBE           0x2A8
+#define FLAG_MAGMA_HIDEOUT_ZINNIA                 0x2A9
+#define FLAG_HIDE_OUTSIDE_ELITE_4                 0x2AA
+#define FLAG_HIDE_WEATHER_INSTITUTE_2F_CASTFORM   0x2AB
+#define FLAG_HIDE_SOOTOPOLIS_OVERWORLD_POKEMON    0x2AC
+#define FLAG_HIDE_FLANNERY_HOT_SPRINGS            0x2AD
+#define FLAG_HIDE_FLANNERY_GYM                    0x2AE
+#define FLAG_MET_COURTNEY_WILDWOODS               0x2AF
+#define FLAG_MET_TABITHA_FALLARBOR_WASTES         0x2B0
+#define FLAG_MET_SHELLY_MAUVILLE_MEADOW           0x2B1
+#define FLAG_MET_MATT_FORTREE_JUNGLE              0x2B2
+#define FLAG_BIRCH_CALL_NEW_AREAS_REPORT          0x2B3
+#define FLAG_BIRCH_CALLED_PLAYER                  0x2B4
+#define FLAG_HIDE_MAXIE_ARCHIE_BIRCH_LAB          0x2B5
+#define FLAG_HIDE_ZINNIA_WEATHER_INSTITUTE        0x2B6
+#define FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER4_2     0x2B7 // Second boulder flag to allow boulders to fall through 2 floors
+#define FLAG_HIDE_DRACONID_ARCHIVES_SCIENTIST     0x2B8
 #define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
 #define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
 #define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
