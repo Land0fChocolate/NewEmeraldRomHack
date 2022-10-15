@@ -78,6 +78,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 7,
+      "y": 8,
+      "elevation": 3,
+      "item": "ITEM_SUPER_CARBOS",
+      "flag": "FLAG_HIDDEN_ITEM_WILDWOODS_AREA_2_SUPER_CARBOS"
+    }
   ]
 }

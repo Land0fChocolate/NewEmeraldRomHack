@@ -12143,7 +12143,7 @@
           "map": "MAP_WILDWOODS_AREA1",
           "base_label": "gWildwoods_Area1",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 15,
@@ -12212,7 +12212,7 @@
           "map": "MAP_WILDWOODS_AREA2",
           "base_label": "gWildwoods_Area2",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 10,
@@ -12281,7 +12281,7 @@
           "map": "MAP_WILDWOODS_AREA4",
           "base_label": "gWildwoods_Area4",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 14,
@@ -12350,7 +12350,7 @@
           "map": "MAP_WILDWOODS_AREA5",
           "base_label": "gWildwoods_Area5",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 14,
@@ -12419,7 +12419,7 @@
           "map": "MAP_WILDWOODS_AREA6",
           "base_label": "gWildwoods_Area6",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 14,
@@ -12488,7 +12488,7 @@
           "map": "MAP_WILDWOODS_AREA7",
           "base_label": "gWildwoods_Area7",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 14,
@@ -12557,7 +12557,7 @@
           "map": "MAP_WILDWOODS_AREA8",
           "base_label": "gWildwoods_Area8",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 30,
             "mons": [
               {
                 "min_level": 16,
