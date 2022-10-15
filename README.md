@@ -82,6 +82,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Painful Burn: If the target is burned, the user's moves have triple the chance to flinch (capped at 60%). Learned by Houndour/Houndoom.
 - King's Might: User doesn't need to recharge on moves like Hyper Beam and Giga Impact. Used by Slaking.
 - Pleasant Dreams: Heals sleeping Pokemon 1/4 HP every turn. Used by Cresselia.
+- Origin: User has 2 additional moveslots that has moves that can be interchangeable outside of battle via the Origin Strand item. Used by Mew.
 - Time Traveller: When user HP hits 0, they revert back to their previous HP. Used once per battle for all users, but reset if a user faints an opponent Pokemon. Used by Celebi.
 - Wish Maker: User creates a wish on entry. Used by Jirachi.
 - Heart Swap: If user makes contact with target, stat changes are swapped. Used by Manaphy.

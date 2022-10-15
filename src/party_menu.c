@@ -6533,6 +6533,18 @@ void MoveDeleterChooseMoveToForget(void)
     gFieldCallback = FieldCB_ContinueScriptHandleMusic;
 }
 
+void OriginChooseMove(void)
+{
+    ShowPokemonSummaryScreen(SUMMARY_MODE_SELECT_MOVE, gPlayerParty, gSpecialVar_0x8004, gPlayerPartyCount - 1, CB2_ReturnToField);
+    gFieldCallback = FieldCB_ContinueScriptHandleMusic;
+}
+
+void SetOriginMove(void)
+{
+    u16 move = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_MOVE1 + gSpecialVar_0x8005);
+    gSaveBlock1Ptr->originMoves[gSpecialVar_0x8006] = move;
+}
+
 void GetNumMovesSelectedMonHas(void)
 {
     u8 i;
