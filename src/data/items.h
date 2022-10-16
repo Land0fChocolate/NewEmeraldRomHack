@@ -9802,17 +9802,17 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_TEA] =
+    [ITEM_ORIGIN_STRAND] =
     {
-        .name = _("Tea"),
-        .itemId = ITEM_TEA,
+        .name = _("Origin Strand"),
+        .itemId = ITEM_ORIGIN_STRAND,
         .price = 0,
-        .description = sTeaDesc,
+        .description = sOriginStrandDesc,
         .importance = 1,
         .unk19 = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, //TODO: Origin Ability
     },
 
     [ITEM_RUBY] =

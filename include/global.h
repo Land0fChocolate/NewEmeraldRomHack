@@ -1045,6 +1045,7 @@ struct SaveBlock1
     /*0x3???*/ struct SaveTrainerHill trainerHill;
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
     /*0x3???*/ u16 originMoves[NUM_ORIGIN_MOVES];
+    /*0x3???*/ u8 originMovesPP[NUM_ORIGIN_MOVES];
     // sizeof: 0x3???
 };
 

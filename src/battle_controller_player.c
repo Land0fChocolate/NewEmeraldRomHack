@@ -2768,6 +2768,7 @@ static void PlayerHandleChooseAction(void)
         ActionSelectionDestroyCursorAt(i);
 
     TryRestoreLastUsedBall();
+    TryRestoreOriginMove();
     ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
     BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
     BattlePutTextOnWindow(gDisplayedStringBattle, 1);

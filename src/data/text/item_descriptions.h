@@ -3697,10 +3697,10 @@ static const u8 sRainbowWingDesc[] = _(
     "feather that\n"
     "sparkles.");
 
-static const u8 sTeaDesc[] = _(
-    "A thirst-quenching\n"
-    "tea prepared by an\n"
-    "old lady.");
+static const u8 sOriginStrandDesc[] = _(
+    "A Mew DNA strand\n"
+    "that gives it\n"
+    "extra moves.");
 
 static const u8 sRubyDesc[] = _(
     "An exquisite, red-\n"
