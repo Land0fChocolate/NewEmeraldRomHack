@@ -1144,9 +1144,9 @@ static const u8 sPleasantDreamsDescription[] = _(
 	"of 1/4 HP per turn.");
 
 static const u8 sOriginDescription[] = _(
-	"User has access to four\n"
+	"User has access to two\n"
 	"additional moves in\n"
-	"battle.");
+	"battle via Origin Strand.");
 
 static const u8 sTimeTravellerDescription[] = _(
 	"If user is about to faint\n"

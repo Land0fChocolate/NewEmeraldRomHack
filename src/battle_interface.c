@@ -784,6 +784,12 @@ static void InitLastUsedBallAssets(void)
     gBattleStruct->ballSpriteIds[1] = MAX_SPRITES;
 }
 
+static void InitOriginMoveAssets(void)
+{
+    gBattleStruct->originSpriteIds[0] = MAX_SPRITES;
+    gBattleStruct->originSpriteIds[1] = MAX_SPRITES;
+}
+
 // This function is here to cover a specific case - one player's mon in a 2 vs 1 double battle. In this scenario - display singles layout.
 u32 WhichBattleCoords(u32 battlerId) // 0 - singles, 1 - doubles
 {
@@ -885,6 +891,9 @@ u8 CreateBattlerHealthboxSprites(u8 battlerId)
 
     gBattleStruct->ballSpriteIds[0] = MAX_SPRITES;
     gBattleStruct->ballSpriteIds[1] = MAX_SPRITES;
+
+    gBattleStruct->originSpriteIds[0] = MAX_SPRITES;
+    gBattleStruct->originSpriteIds[1] = MAX_SPRITES;
 
     return healthboxLeftSpriteId;
 }
@@ -3576,7 +3585,7 @@ void TryRestoreLastUsedBall(void)
 //TODO: change these for better Origin window location
 #define ORIGIN_MOVE_X_F    15
 #define ORIGIN_MOVE_X_0    -15
-#define ORIGIN_MOVE_Y      ((IsDoubleBattle()) ? 78 : 68)
+#define ORIGIN_MOVE_Y      ((IsDoubleBattle()) ? 63 : 53)
 
 #define ORIGIN_MOVE_WIN_X_F       (LAST_USED_BALL_X_F - 1)
 #define ORIGIN_MOVE_WIN_X_0       (LAST_USED_BALL_X_0 - 0)
@@ -3585,13 +3594,13 @@ void TryRestoreLastUsedBall(void)
 void TryAddOriginStrandSprite(void)
 {
     // sprite
-    if (gBattleStruct->ballSpriteIds[0] == MAX_SPRITES)
+    if (gBattleStruct->originSpriteIds[0] == MAX_SPRITES)
     {
-        gBattleStruct->ballSpriteIds[0] = AddItemIconSprite(102, 102, ITEM_ORIGIN_STRAND);
-        gSprites[gBattleStruct->ballSpriteIds[0]].x = ORIGIN_MOVE_X_0;
-        gSprites[gBattleStruct->ballSpriteIds[0]].y = ORIGIN_MOVE_Y;
-        gSprites[gBattleStruct->ballSpriteIds[0]].sHide = FALSE;   // restore
-        gSprites[gBattleStruct->ballSpriteIds[0]].callback = SpriteCB_OriginMove;
+        gBattleStruct->originSpriteIds[0] = AddItemIconSprite(102, 102, ITEM_ORIGIN_STRAND);
+        gSprites[gBattleStruct->originSpriteIds[0]].x = ORIGIN_MOVE_X_0;
+        gSprites[gBattleStruct->originSpriteIds[0]].y = ORIGIN_MOVE_Y;
+        gSprites[gBattleStruct->originSpriteIds[0]].sHide = FALSE;   // restore
+        gSprites[gBattleStruct->originSpriteIds[0]].callback = SpriteCB_OriginMove;
     }
 
     // window
@@ -3599,12 +3608,12 @@ void TryAddOriginStrandSprite(void)
     if (GetSpriteTileStartByTag(LAST_BALL_WINDOW_TAG) == 0xFFFF)
         LoadSpriteSheet(&sSpriteSheet_LastUsedBallWindow);
 
-    if (gBattleStruct->ballSpriteIds[1] == MAX_SPRITES)
+    if (gBattleStruct->originSpriteIds[1] == MAX_SPRITES)
     {
-        gBattleStruct->ballSpriteIds[1] = CreateSprite(&sSpriteTemplate_LastUsedBallWindow,
+        gBattleStruct->originSpriteIds[1] = CreateSprite(&sSpriteTemplate_LastUsedBallWindow,
            ORIGIN_MOVE_X_0,
            ORIGIN_MOVE_Y, 5);
-        gSprites[gBattleStruct->ballSpriteIds[0]].sHide = FALSE;   // restore
+        gSprites[gBattleStruct->originSpriteIds[0]].sHide = FALSE;   // restore
     }
 }
 
@@ -3613,7 +3622,7 @@ static void DestroyOriginMoveWinGfx(struct Sprite *sprite)
     FreeSpriteTilesByTag(LAST_BALL_WINDOW_TAG);
     FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
     DestroySprite(sprite);
-    gBattleStruct->ballSpriteIds[1] = MAX_SPRITES;
+    gBattleStruct->originSpriteIds[1] = MAX_SPRITES;
 }
 
 static void DestroyOriginMoveGfx(struct Sprite *sprite)
@@ -3621,7 +3630,7 @@ static void DestroyOriginMoveGfx(struct Sprite *sprite)
     FreeSpriteTilesByTag(102);
     FreeSpritePaletteByTag(102);
     DestroySprite(sprite);
-    gBattleStruct->ballSpriteIds[0] = MAX_SPRITES;
+    gBattleStruct->originSpriteIds[0] = MAX_SPRITES;
 }
 
 static void SpriteCB_OriginMoveWin(struct Sprite *sprite)
@@ -3649,7 +3658,7 @@ static void SpriteCB_OriginMove(struct Sprite *sprite)
             sprite->x--;
 
         if (sprite->x == ORIGIN_MOVE_X_0)
-            DestroyLastUsedBallGfx(sprite);
+            DestroyOriginMoveGfx(sprite);
     }
     else
     {
@@ -3660,22 +3669,22 @@ static void SpriteCB_OriginMove(struct Sprite *sprite)
 
 static void TryHideOrRestoreOriginMove(u8 caseId)
 {
-    if (gBattleStruct->ballSpriteIds[0] == MAX_SPRITES)
+    if (gBattleStruct->originSpriteIds[0] == MAX_SPRITES)
         return;
 
     switch (caseId)
     {
     case 0: // hide
-        if (gBattleStruct->ballSpriteIds[0] != MAX_SPRITES)
-            gSprites[gBattleStruct->ballSpriteIds[0]].sHide = TRUE;   // hide
-        if (gBattleStruct->ballSpriteIds[1] != MAX_SPRITES)
-            gSprites[gBattleStruct->ballSpriteIds[1]].sHide = TRUE;   // hide
+        if (gBattleStruct->originSpriteIds[0] != MAX_SPRITES)
+            gSprites[gBattleStruct->originSpriteIds[0]].sHide = TRUE;   // hide
+        if (gBattleStruct->originSpriteIds[1] != MAX_SPRITES)
+            gSprites[gBattleStruct->originSpriteIds[1]].sHide = TRUE;   // hide
         break;
     case 1: // restore
-        if (gBattleStruct->ballSpriteIds[0] != MAX_SPRITES)
-            gSprites[gBattleStruct->ballSpriteIds[0]].sHide = FALSE;   // restore
-        if (gBattleStruct->ballSpriteIds[1] != MAX_SPRITES)
-            gSprites[gBattleStruct->ballSpriteIds[1]].sHide = FALSE;   // restore
+        if (gBattleStruct->originSpriteIds[0] != MAX_SPRITES)
+            gSprites[gBattleStruct->originSpriteIds[0]].sHide = FALSE;   // restore
+        if (gBattleStruct->originSpriteIds[1] != MAX_SPRITES)
+            gSprites[gBattleStruct->originSpriteIds[1]].sHide = FALSE;   // restore
         break;
     }
 }
@@ -3692,9 +3701,9 @@ void TryRestoreOriginMove(void)
 
     if (HasAbility(ABILITY_ORIGIN, abilities))
     {
-        if (gBattleStruct->ballSpriteIds[0] != MAX_SPRITES)
-            TryHideOrRestoreLastUsedBall(1);
+        if (gBattleStruct->originSpriteIds[0] != MAX_SPRITES)
+            TryHideOrRestoreOriginMove(1);
         else
-            TryAddLastUsedBallItemSprites();
+            TryAddOriginStrandSprite();
     }
 }
