@@ -692,6 +692,17 @@ u16 GetAshCount(void)
     return *ashGatherCount;
 }
 
+void ItemUseOutOfBattle_OriginStrand(u8 taskId)
+{
+    //TODO: start off with multi choice menu (Moves set|Set first move|Set second move)
+    //Moves set: show the 2 moves set and their PP
+    //Set first move
+    //Set second move
+    ScriptContext2_Enable();
+    ScriptContext1_SetupScript(OriginStrand_EventScript_ChooseOriginSlot);
+    DestroyTask(taskId);
+}    
+
 void ItemUseOutOfBattle_Berry(u8 taskId)
 {
     if (IsPlayerFacingEmptyBerryTreePatch() == TRUE)

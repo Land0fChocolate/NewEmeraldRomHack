@@ -39,69 +39,6 @@ OldaleTown_PokemonCenter_1F_EventScript_WirelessClubAvailable::
 	release
 	end
 
-OldaleTown_PokemonCenter_1F_EventScript_ChooseOriginSlot::
-	setvar VAR_0x8006, 0
-	goto OldaleTown_PokemonCenter_1F_EventScript_ChooseMonMoveForOrigin
-	end
-
-OldaleTown_PokemonCenter_1F_EventScript_ChooseMonMoveForOrigin::
-	msgbox OldaleTown_PokemonCenter_1F_Text_WhichMonForMove, MSGBOX_DEFAULT
-	special ChoosePartyMon
-	waitstate
-	compare VAR_0x8004, 255
-	goto_if_eq OldaleTown_PokemonCenter_1F_EventScript_AnotherTimeThen
-	special IsSelectedMonEgg
-	compare VAR_RESULT, TRUE
-	goto_if_eq OldaleTown_PokemonCenter_1F_EventScript_CantUseEgg
-	msgbox OldaleTown_PokemonCenter_1F_Text_WhichMoveForOrigin, MSGBOX_DEFAULT
-	fadescreen FADE_TO_BLACK
-	special OriginChooseMove @moveslot set to VAR_0x8005?
-	fadescreen FADE_FROM_BLACK
-	special BufferMoveDeleterNicknameAndMove
-	msgbox OldaleTown_PokemonCenter_1F_Text_SetThisAsOriginMove, MSGBOX_YESNO
-	switch VAR_RESULT
-	case YES, OldaleTown_PokemonCenter_1F_EventScript_TrySetOriginMove
-	case NO, OldaleTown_PokemonCenter_1F_EventScript_AnotherTimeThen
-	releaseall
-	end
-
-OldaleTown_PokemonCenter_1F_EventScript_TrySetOriginMove::
-	special SetOriginMove
-	playfanfare MUS_OBTAIN_TMHM
-	waitfanfare
-	msgbox OldaleTown_PokemonCenter_1F_Text_MoveHasBeenSetForOrigin, MSGBOX_DEFAULT
-	releaseall
-	end
-
-OldaleTown_PokemonCenter_1F_EventScript_CantUseEgg::
-	msgbox OldaleTown_PokemonCenter_1F_Text_CantUseEgg, MSGBOX_DEFAULT
-	releaseall
-	end
-
-OldaleTown_PokemonCenter_1F_EventScript_AnotherTimeThen::
-	msgbox OldaleTown_PokemonCenter_1F_Text_AnotherTimeThen, MSGBOX_DEFAULT
-	releaseall
-	end
-
-OldaleTown_PokemonCenter_1F_Text_WhichMonForMove:
-	.string "Choose a Pokémon for an Origin move.$"
-
-OldaleTown_PokemonCenter_1F_Text_WhichMoveForOrigin:
-	.string "Which move to assign to Origin?$"
-
-OldaleTown_PokemonCenter_1F_Text_SetThisAsOriginMove:
-	.string "Assign {STR_VAR_2} to Origin?$"
-
-OldaleTown_PokemonCenter_1F_Text_MoveHasBeenSetForOrigin:
-	.string "{STR_VAR_2} has been set for Origin.$"
-
-OldaleTown_PokemonCenter_1F_Text_CantUseEgg:
-	.string "Egg has no moves. Cannot assign a\n"
-	.string "move from an egg.$"
-
-OldaleTown_PokemonCenter_1F_Text_AnotherTimeThen:
-	.string "Another time then.$"
-
 OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC:
 	.string "That PC in the corner there is\n"
 	.string "for any Pokémon Trainer to use.\p"
