@@ -592,6 +592,10 @@ void HandleAction_UseMove(void)
         gCurrentMove = gChosenMove = gBattleMons[gBattlerAttacker].moves[gCurrMovePos];
         *(gBattleStruct->moveTarget + gBattlerAttacker) = GetMoveTarget(gCurrentMove, 0);
     }
+    //else if ()//TODO: else if for ORIGIN
+    //{
+    //    gCurrentMove = gChosenMove = gSaveBlock1Ptr->originMoves[gCurrMovePos];
+    //}
     else
     {
         gCurrentMove = gChosenMove = gBattleMons[gBattlerAttacker].moves[gCurrMovePos];

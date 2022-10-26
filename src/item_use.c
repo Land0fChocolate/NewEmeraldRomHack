@@ -698,6 +698,8 @@ void ItemUseOutOfBattle_OriginStrand(u8 taskId)
     //Moves set: show the 2 moves set and their PP
     //Set first move
     //Set second move
+    StringCopy(gStringVar1, gMoveNames[gSaveBlock1Ptr->originMoves[0]]);
+    StringCopy(gStringVar2, gMoveNames[gSaveBlock1Ptr->originMoves[1]]);
     ScriptContext2_Enable();
     ScriptContext1_SetupScript(OriginStrand_EventScript_ChooseOriginSlot);
     DestroyTask(taskId);

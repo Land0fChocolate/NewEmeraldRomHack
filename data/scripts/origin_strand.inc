@@ -1,5 +1,10 @@
-OriginStrand_EventScript_ChooseOriginSlot::
+OriginStrand_EventScript_SelectOrigin::
 	lockall
+	msgbox OriginStrand_Text_OriginMovesSet, MSGBOX_DEFAULT
+	@goto OriginStrand_EventScript_ChooseOriginSlot
+	end
+
+OriginStrand_EventScript_ChooseOriginSlot::
 	setvar VAR_0x8006, 0
 	goto OriginStrand_EventScript_ChooseMonMoveForOrigin
 	end
@@ -42,6 +47,10 @@ OriginStrand_EventScript_AnotherTimeThen::
 	msgbox OriginStrand_Text_AnotherTimeThen, MSGBOX_DEFAULT
 	releaseall
 	end
+
+OriginStrand_Text_OriginMovesSet:
+	.string "{STR_VAR_1}\n"
+	.string "{STR_VAR_2}$"
 
 OriginStrand_Text_WhichMonForMove:
 	.string "Choose a Pokémon for an Origin move.$"

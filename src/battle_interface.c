@@ -3582,6 +3582,45 @@ void TryRestoreLastUsedBall(void)
 #endif
 }
 
+// last used ball
+#define ORIGIN_MOVE_WINDOW_TAG 0xD722
+
+static const struct OamData sOamData_OriginMove =
+{
+    .y = 0,
+    .affineMode = 0,
+    .objMode = 0,
+    .mosaic = 0,
+    .bpp = 0,
+    .shape = SPRITE_SHAPE(32x32),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(32x32),
+    .tileNum = 0,
+    .priority = 1,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const struct SpriteTemplate sSpriteTemplate_OriginMoveWindow =
+{
+    .tileTag = ORIGIN_MOVE_WINDOW_TAG,
+    .paletteTag = ABILITY_POP_UP_TAG,
+    .oam = &sOamData_OriginMove,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_OriginMoveWin
+};
+
+
+static const u8 sOriginMoveWindowGfx[] = INCBIN_U8("graphics/battle_interface/last_used_ball_l.4bpp");
+
+static const struct SpriteSheet sSpriteSheet_OriginMoveWindow =
+{
+    sOriginMoveWindowGfx, sizeof(sOriginMoveWindowGfx), ORIGIN_MOVE_WINDOW_TAG
+};
+
 //TODO: change these for better Origin window location
 #define ORIGIN_MOVE_X_F    15
 #define ORIGIN_MOVE_X_0    -15
@@ -3605,12 +3644,12 @@ void TryAddOriginStrandSprite(void)
 
     // window
     LoadSpritePalette(&sSpritePalette_AbilityPopUp);
-    if (GetSpriteTileStartByTag(LAST_BALL_WINDOW_TAG) == 0xFFFF)
+    if (GetSpriteTileStartByTag(ORIGIN_MOVE_WINDOW_TAG) == 0xFFFF)
         LoadSpriteSheet(&sSpriteSheet_LastUsedBallWindow);
 
     if (gBattleStruct->originSpriteIds[1] == MAX_SPRITES)
     {
-        gBattleStruct->originSpriteIds[1] = CreateSprite(&sSpriteTemplate_LastUsedBallWindow,
+        gBattleStruct->originSpriteIds[1] = CreateSprite(&sSpriteTemplate_OriginMoveWindow,
            ORIGIN_MOVE_X_0,
            ORIGIN_MOVE_Y, 5);
         gSprites[gBattleStruct->originSpriteIds[0]].sHide = FALSE;   // restore
@@ -3619,7 +3658,7 @@ void TryAddOriginStrandSprite(void)
 
 static void DestroyOriginMoveWinGfx(struct Sprite *sprite)
 {
-    FreeSpriteTilesByTag(LAST_BALL_WINDOW_TAG);
+    FreeSpriteTilesByTag(ORIGIN_MOVE_WINDOW_TAG);
     FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
     DestroySprite(sprite);
     gBattleStruct->originSpriteIds[1] = MAX_SPRITES;

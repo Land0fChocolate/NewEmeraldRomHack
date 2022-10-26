@@ -28,6 +28,7 @@
 #include "text.h"
 #include "util.h"
 #include "window.h"
+#include "constants/abilities.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_config.h"
 #include "constants/items.h"
@@ -344,6 +345,13 @@ static void HandleInputChooseAction(void)
         PlaySE(SE_SELECT);
         TryHideLastUsedBall();
         BtlController_EmitTwoReturnValues(1, B_ACTION_THROW_BALL, 0);
+        PlayerBufferExecCompleted();
+    }
+    else if (JOY_NEW(L_BUTTON) && HasAbility(ABILITY_ORIGIN, gBattleMons[gActiveBattler].abilities))
+    {
+        PlaySE(SE_SELECT);
+        TryHideOriginMove();
+        BtlController_EmitTwoReturnValues(1, B_ACTION_ORIGIN_MOVE, 0);
         PlayerBufferExecCompleted();
     }
     #endif

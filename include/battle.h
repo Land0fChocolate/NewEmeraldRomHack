@@ -38,6 +38,7 @@
 #define B_ACTION_NOTHING_FAINTED        13 // when choosing an action
 #define B_ACTION_DEBUG                  20
 #define B_ACTION_THROW_BALL             21 // R to throw last used ball
+#define B_ACTION_ORIGIN_MOVE            22 // L to choose an Origin move
 #define B_ACTION_NONE                   0xFF
 
 #define MAX_TRAINER_ITEMS 4
