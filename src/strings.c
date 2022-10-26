@@ -1937,3 +1937,5 @@ const u8 gText_ShinyStone[] = _("Shiny Stone");
 const u8 gText_DuskStone[] = _("Dusk Stone");
 const u8 gText_DawnStone[] = _("Dawn Stone");
 const u8 gText_IceStone[] = _("Ice Stone");
+const u8 gText_Move1[] = _("Move 1");
+const u8 gText_Move2[] = _("Move 2");

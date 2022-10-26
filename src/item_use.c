@@ -701,7 +701,7 @@ void ItemUseOutOfBattle_OriginStrand(u8 taskId)
     StringCopy(gStringVar1, gMoveNames[gSaveBlock1Ptr->originMoves[0]]);
     StringCopy(gStringVar2, gMoveNames[gSaveBlock1Ptr->originMoves[1]]);
     ScriptContext2_Enable();
-    ScriptContext1_SetupScript(OriginStrand_EventScript_ChooseOriginSlot);
+    ScriptContext1_SetupScript(OriginStrand_EventScript_SelectOrigin);
     DestroyTask(taskId);
 }    
 

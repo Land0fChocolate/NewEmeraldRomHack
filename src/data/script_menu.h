@@ -648,6 +648,13 @@ static const struct MenuAction MultichoiceList_EvolutionStone[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_OriginStrand[] =
+{
+    {gText_Move1},
+    {gText_Move2},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Fossil[] =
 {
     {gText_ClawFossil},
@@ -936,7 +943,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BATTLE_TOWER_FEELINGS]      = MULTICHOICE(MultichoiceList_BattleTowerFeelings),
     [MULTI_WHERES_RAYQUAZA]            = MULTICHOICE(MultichoiceList_WheresRayquaza),
     [MULTI_EVO_STONE]                  = MULTICHOICE(MultichoiceList_EvolutionStone),
-    [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
+    [MULTI_ORIGIN_STRAND]              = MULTICHOICE(MultichoiceList_OriginStrand),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
 };
 
