@@ -97,10 +97,10 @@
 #define MULTI_FORCED_START_MENU            86
 #define MULTI_FRONTIER_GAMBLER_BET         87
 #define MULTI_TENT                         88
-#define OLDALE_STARTERS_HOENN              89
-#define OLDALE_STARTERS_HOENN_KANTO        90
-#define OLDALE_STARTERS_HOENN_JOHTO        91
-#define OLDALE_STARTERS_ALL                92
+#define MULTI_OLDALE_STARTERS_HOENN        89
+#define MULTI_OLDALE_STARTERS_HOENN_KANTO  90
+#define MULTI_OLDALE_STARTERS_HOENN_JOHTO  91
+#define MULTI_OLDALE_STARTERS_ALL          92
 #define MULTI_FOSSIL                       93
 #define MULTI_YESNO                        94
 #define MULTI_FRONTIER_RULES               95
