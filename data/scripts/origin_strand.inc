@@ -27,7 +27,7 @@ OriginStrand_EventScript_ChooseMonMoveForOrigin::
 	special ChoosePartyMon
 	waitstate
 	compare VAR_0x8004, 255
-	goto_if_eq OriginStrand_EventScript_AnotherTimeThen
+	goto_if_eq OriginStrand_EventScript_ChooseOriginMoveCancelled
 	special IsSelectedMonEgg
 	compare VAR_RESULT, TRUE
 	goto_if_eq OriginStrand_EventScript_CantUseEgg
@@ -39,7 +39,7 @@ OriginStrand_EventScript_ChooseMonMoveForOrigin::
 	msgbox OriginStrand_Text_SetThisAsOriginMove, MSGBOX_YESNO
 	switch VAR_RESULT
 	case YES, OriginStrand_EventScript_TrySetOriginMove
-	case NO, OriginStrand_EventScript_AnotherTimeThen
+	case NO, OriginStrand_EventScript_ChooseOriginMoveCancelled
 	releaseall
 	end
 
@@ -56,8 +56,7 @@ OriginStrand_EventScript_CantUseEgg::
 	releaseall
 	end
 
-OriginStrand_EventScript_AnotherTimeThen::
-	msgbox OriginStrand_Text_AnotherTimeThen, MSGBOX_DEFAULT
+OriginStrand_EventScript_ChooseOriginMoveCancelled::
 	releaseall
 	end
 
@@ -81,6 +80,3 @@ OriginStrand_Text_MoveHasBeenSetForOrigin:
 OriginStrand_Text_CantUseEgg:
 	.string "Egg has no moves. Cannot assign a\n"
 	.string "move from an egg.$"
-
-OriginStrand_Text_AnotherTimeThen:
-	.string "Another time then.$"

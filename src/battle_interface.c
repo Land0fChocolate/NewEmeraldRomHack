@@ -3582,7 +3582,7 @@ void TryRestoreLastUsedBall(void)
 #endif
 }
 
-// last used ball
+// move for Origin ability
 #define ORIGIN_MOVE_WINDOW_TAG 0xD722
 
 static const struct OamData sOamData_OriginMove =
@@ -3626,9 +3626,9 @@ static const struct SpriteSheet sSpriteSheet_OriginMoveWindow =
 #define ORIGIN_MOVE_X_0    -15
 #define ORIGIN_MOVE_Y      ((IsDoubleBattle()) ? 63 : 53)
 
-#define ORIGIN_MOVE_WIN_X_F       (LAST_USED_BALL_X_F - 1)
-#define ORIGIN_MOVE_WIN_X_0       (LAST_USED_BALL_X_0 - 0)
-#define ORIGIN_MOVE_WIN_Y         (LAST_USED_BALL_Y - 8)
+#define ORIGIN_MOVE_WIN_X_F       (ORIGIN_MOVE_X_F - 1)
+#define ORIGIN_MOVE_WIN_X_0       (ORIGIN_MOVE_X_0 - 0)
+#define ORIGIN_MOVE_WIN_Y         (ORIGIN_MOVE_Y - 8)
 
 void TryAddOriginStrandSprite(void)
 {
