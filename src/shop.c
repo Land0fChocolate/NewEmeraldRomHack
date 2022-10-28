@@ -94,6 +94,17 @@ static void Task_HandleShopMenuSell(u8 taskId);
 static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, struct ListMenu *list);
 static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y);
 
+static const u16 sShopInventory_NoPokedex[] = {
+    ITEM_POTION,
+    ITEM_ANTIDOTE,
+    ITEM_BURN_HEAL,
+    ITEM_ICE_HEAL,
+    ITEM_AWAKENING,
+    ITEM_PARALYZE_HEAL,
+    ITEM_REVIVE,
+    ITEM_NONE
+};
+
 static const u16 sShopInventory_ZeroBadges[] = {
     ITEM_POKE_BALL,
     ITEM_POTION,
@@ -254,6 +265,7 @@ static const u16 sShopInventory_EightBadges[] = {
 
 static const u16 *const sShopInventories[] = 
 {
+    sShopInventory_NoPokedex,
     sShopInventory_ZeroBadges, 
     sShopInventory_OneBadge,
     sShopInventory_TwoBadges,
@@ -504,8 +516,10 @@ static void SetShopItemsForSale(const u16 *items)
     u16 i = 0;
     u8 badgeCount = GetNumberOfBadges();
 
-    if (items == NULL)
-        sMartInfo.itemList = sShopInventories[badgeCount];
+    if (!FlagGet(FLAG_ADVENTURE_STARTED))
+        sMartInfo.itemList = sShopInventories[0];
+    else if (items == NULL)
+        sMartInfo.itemList = sShopInventories[badgeCount + 1];
     else
         sMartInfo.itemList = items;
 
