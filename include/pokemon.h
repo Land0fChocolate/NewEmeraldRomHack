@@ -450,4 +450,6 @@ u16 GetFormChangeTargetSpecies(struct Pokemon *mon, u16 method, u32 arg);
 u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *mon, u16 method, u32 arg);
 u16 MonTryLearningNewMoveEvolution(struct Pokemon *mon, bool8 firstMove);
 bool32 ShouldShowFemaleDifferences(u16 species, u32 personality);
+void CreateShinyMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 nature);
+u8 SendMonToPC(struct Pokemon* mon);
 #endif // GUARD_POKEMON_H
