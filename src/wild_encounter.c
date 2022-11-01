@@ -327,8 +327,7 @@ static u8 PickWildMonNature(void)
     }
     // check synchronize for a pokemon with the same ability
     if (!GetMonData(&gPlayerParty[0], MON_DATA_SANITY_IS_EGG)
-        && HasAbility(ABILITY_SYNCHRONIZE, GetMonAbilities(&gPlayerParty[0]))
-        && ((B_SYNCHRONIZE_NATURE >= GEN_8) || Random() % 2 == 0))
+        && HasAbility(ABILITY_SYNCHRONIZE, GetMonAbilities(&gPlayerParty[0])))
     {
         return GetMonData(&gPlayerParty[0], MON_DATA_PERSONALITY) % NUM_NATURES;
     }

@@ -28,7 +28,7 @@ OldaleFarm_House_Eventscript_Man_PlayerHasNationalDex::
 	end
 
 OldaleFarm_House_Eventscript_Man_PickHoennStarters::
-	multichoice 0, 0, OLDALE_STARTERS_HOENN, FALSE
+	multichoice 0, 0, MULTI_OLDALE_STARTERS_HOENN, FALSE
 	switch VAR_RESULT
 	case 0, OldaleFarm_House_Eventscript_PickTreecko
 	case 1, OldaleFarm_House_Eventscript_PickTorchic
@@ -38,7 +38,7 @@ OldaleFarm_House_Eventscript_Man_PickHoennStarters::
 	end
 
 OldaleFarm_House_Eventscript_Man_PickHoennKantoStarters::
-	multichoice 0, 0, OLDALE_STARTERS_HOENN_KANTO, FALSE
+	multichoice 0, 0, MULTI_OLDALE_STARTERS_HOENN_KANTO, FALSE
 	switch VAR_RESULT
 	case 0, OldaleFarm_House_Eventscript_PickTreecko
 	case 1, OldaleFarm_House_Eventscript_PickTorchic
@@ -51,7 +51,7 @@ OldaleFarm_House_Eventscript_Man_PickHoennKantoStarters::
 	end
 
 OldaleFarm_House_Eventscript_Man_PickHoennJohtoStarters::
-	multichoice 0, 0, OLDALE_STARTERS_HOENN_JOHTO, FALSE
+	multichoice 0, 0, MULTI_OLDALE_STARTERS_HOENN_JOHTO, FALSE
 	switch VAR_RESULT
 	case 0, OldaleFarm_House_Eventscript_PickTreecko
 	case 1, OldaleFarm_House_Eventscript_PickTorchic
@@ -64,7 +64,7 @@ OldaleFarm_House_Eventscript_Man_PickHoennJohtoStarters::
 	end
 
 OldaleFarm_House_Eventscript_Man_PickAllStarters::
-	multichoice 0, 0, OLDALE_STARTERS_ALL, FALSE
+	multichoice 0, 0, MULTI_OLDALE_STARTERS_ALL, FALSE
 	switch VAR_RESULT
 	case 0, OldaleFarm_House_Eventscript_PickTreecko
 	case 1, OldaleFarm_House_Eventscript_PickTorchic

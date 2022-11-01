@@ -98,12 +98,11 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Snow Cloak: Increases Defense instead of evasion by one stage.
 - Slow Start: Timer tuned down to 1 turn from 5.
 - Sweet Veil: Also ignores evasion boosts from target.
-- Corrosion: Also makes user's poison moves super effective against steel types.
+- Corrosion: Also makes user's Poison moves super effective against Steel types.
 - Solar Power: No longer decreases HP. Power modifier changed to 25% from 50%.
-- Normalize: Buffed to 30% from 20%.
+- Normalize: Power buffed to 30% from 20%.
 - Liquid Voice: Also powers up sound moves by 20%.
 - Cursed Body: Now always disables the move for just the next turn.
-- Suction Cups: Also traps target when user strikes it with a contact move.
 - Keen Eye: Also increases move accuracy by 30%.
 - Illuminate: Also ignores opponent evasion boosts.
 - Damp: Also grants user immunity to powder based moves and abilities.

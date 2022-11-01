@@ -430,12 +430,8 @@ static s32 GetParentToInheritNature(struct DayCare *daycare)
     s32 dittoCount;
     s32 parent = -1;
 
-    // search for female gender
     for (i = 0; i < DAYCARE_MON_COUNT; i++)
-    {
-        if (GetBoxMonGender(&daycare->mons[i].mon) == MON_FEMALE)
             parent = i;
-    }
 
     // search for ditto
     for (dittoCount = 0, i = 0; i < DAYCARE_MON_COUNT; i++)
@@ -539,10 +535,13 @@ static void RemoveIVIndexFromList(u8 *ivs, u8 selectedIv)
 
 static void InheritIVs(struct Pokemon *egg, struct DayCare *daycare)
 {
+    u32 motherItem = GetBoxMonData(&daycare->mons[0].mon, MON_DATA_HELD_ITEM);
+    u32 fatherItem = GetBoxMonData(&daycare->mons[1].mon, MON_DATA_HELD_ITEM);
+    u8 inheritNum = (motherItem == ITEM_DESTINY_KNOT || fatherItem == ITEM_DESTINY_KNOT) ? DESTINY_KNOT_INHERITED_IV_COUNT: INHERITED_IV_COUNT;
     u8 i;
-    u8 selectedIvs[INHERITED_IV_COUNT];
+    u8 selectedIvs[inheritNum];
     u8 availableIVs[NUM_STATS];
-    u8 whichParents[INHERITED_IV_COUNT];
+    u8 whichParents[inheritNum];
     u8 iv;
 
     // Initialize a list of IV indices.
@@ -552,7 +551,7 @@ static void InheritIVs(struct Pokemon *egg, struct DayCare *daycare)
     }
 
     // Select the 3 IVs that will be inherited.
-    for (i = 0; i < INHERITED_IV_COUNT; i++)
+    for (i = 0; i < inheritNum; i++)
     {
         // Randomly pick an IV from the available list and stop from being chosen again.
         // BUG: Instead of removing the IV that was just picked, this
@@ -571,13 +570,13 @@ static void InheritIVs(struct Pokemon *egg, struct DayCare *daycare)
     }
 
     // Determine which parent each of the selected IVs should inherit from.
-    for (i = 0; i < INHERITED_IV_COUNT; i++)
+    for (i = 0; i < inheritNum; i++)
     {
         whichParents[i] = Random() % DAYCARE_MON_COUNT;
     }
 
     // Set each of inherited IVs on the egg mon.
-    for (i = 0; i < INHERITED_IV_COUNT; i++)
+    for (i = 0; i < inheritNum; i++)
     {
         switch (selectedIvs[i])
         {
@@ -667,9 +666,8 @@ static void BuildEggMoveset(struct Pokemon *egg, struct BoxPokemon *father, stru
         sHatchedEggFatherMoves[i] = GetBoxMonData(father, MON_DATA_MOVE1 + i);
         sHatchedEggMotherMoves[i] = GetBoxMonData(mother, MON_DATA_MOVE1 + i);
     }
-
+//Inherit egg moves:
     numEggMoves = GetEggMoves(egg, sHatchedEggEggMoves);
-
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (sHatchedEggFatherMoves[i] != MOVE_NONE)
@@ -684,11 +682,24 @@ static void BuildEggMoveset(struct Pokemon *egg, struct BoxPokemon *father, stru
                 }
             }
         }
+        if (sHatchedEggMotherMoves[i] != MOVE_NONE)
+        {
+            for (j = 0; j < numEggMoves; j++)
+            {
+                if (sHatchedEggMotherMoves[i] == sHatchedEggEggMoves[j])
+                {
+                    if (GiveMoveToMon(egg, sHatchedEggMotherMoves[i]) == MON_HAS_MAX_MOVES)
+                        DeleteFirstMoveAndGiveMoveToMon(egg, sHatchedEggMotherMoves[i]);
+                    break;
+                }
+            }
+        }
         else
         {
             break;
         }
     }
+//Inherit TM/HM moves:
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (sHatchedEggFatherMoves[i] != MOVE_NONE)
@@ -702,7 +713,19 @@ static void BuildEggMoveset(struct Pokemon *egg, struct BoxPokemon *father, stru
                 }
             }
         }
+        if (sHatchedEggMotherMoves[i] != MOVE_NONE)
+        {
+            for (j = 0; j < NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES; j++)
+            {
+                if (sHatchedEggMotherMoves[i] == ItemIdToBattleMoveId(ITEM_TM01_FOCUS_PUNCH + j) && CanMonLearnTMHM(egg, j))
+                {
+                    if (GiveMoveToMon(egg, sHatchedEggMotherMoves[i]) == MON_HAS_MAX_MOVES)
+                        DeleteFirstMoveAndGiveMoveToMon(egg, sHatchedEggMotherMoves[i]);
+                }
+            }
+        }
     }
+//Inherit level up moves if both parents know that move?:
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         if (sHatchedEggFatherMoves[i] == MOVE_NONE)

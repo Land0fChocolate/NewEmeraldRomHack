@@ -810,7 +810,7 @@
 #define MOVES_COUNT_GEN8 779
 
 // New Emerald moves.
-#define MOVE_WAR_DANCE 780
+#define MOVE_WAR_DANCE 780 // unused
 #define MOVE_FLINT_BLADE 781
 #define MOVE_BLAZE_IMPACT 782
 #define MOVE_SINGULARITY 783
