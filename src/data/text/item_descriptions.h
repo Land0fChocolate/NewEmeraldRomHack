@@ -428,109 +428,109 @@ static const u8 sAbilityPatchDesc[] = _( // Todo
 
 // Mints
 static const u8 sLonelyMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Attack, but\n"
-    "reduces Defense.");
+    "Changes nature of a\n"
+    "Pokémon to Lonely\n"
+    "(+Atk/-Def).");
 
 static const u8 sAdamantMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Attack, but\n"
-    "reduces Sp. Atk.");
+    "Changes nature of a\n"
+    "Pokémon to Adamant\n"
+    "(+Atk/-S.Atk).");
 
 static const u8 sNaughtyMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Attack, but\n"
-    "reduces Sp. Def.");
+    "Changes nature of a\n"
+    "Pokémon to Naughty\n"
+    "(+Atk/-S.Def).");
 
 static const u8 sBraveMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Attack, but\n"
-    "reduces Speed.");
+    "Changes nature of a\n"
+    "Pokémon to Brave\n"
+    "(+Atk/-Spd).");
 
 static const u8 sBoldMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Defense, but\n"
-    "reduces Attack.");
+    "Changes nature of a\n"
+    "Pokémon to Bold\n"
+    "(+Def/-Atk).");
 
 static const u8 sImpishMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Defense, but\n"
-    "reduces Sp. Atk.");
+    "Changes nature of a\n"
+    "Pokémon to Impish\n"
+    "(+Def/-S.Atk).");
 
 static const u8 sLaxMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Defense, but\n"
-    "reduces Sp. Def.");
+    "Changes nature of a\n"
+    "Pokémon to Lax\n"
+    "(+Def/-S.Def).");
 
 static const u8 sRelaxedMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Defense, but\n"
-    "reduces Speed.");
+    "Changes nature of a\n"
+    "Pokémon to Relaxed\n"
+    "(+Def/-Spd).");
 
 static const u8 sModestMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Sp. Atk, but\n"
-    "reduces Attack.");
+    "Changes nature of a\n"
+    "Pokémon to Modest\n"
+    "(+S.Atk/-Atk).");
 
 static const u8 sMildMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Sp. Atk, but\n"
-    "reduces Defense.");
+    "Changes nature of a\n"
+    "Pokémon to Mild\n"
+    "(+S.Atk/-Def).");
 
 static const u8 sRashMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Sp. Atk, but\n"
-    "reduces Sp. Def.");
+    "Changes nature of a\n"
+    "Pokémon to Rash\n"
+    "(+S.Atk/-S.Def).");
 
 static const u8 sQuietMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Sp. Atk, but\n"
-    "reduces Speed.");
+    "Changes nature of a\n"
+    "Pokémon to Quiet\n"
+    "(+S.Atk/-Spd).");
 
 static const u8 sCalmMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Sp. Def, but\n"
-    "reduces Attack.");
+    "Changes nature of a\n"
+    "Pokémon to Calm\n"
+    "(+S.Def/-Atk).");
 
 static const u8 sGentleMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Sp. Def, but\n"
-    "reduces Defense.");
+    "Changes nature of a\n"
+    "Pokémon to Gentle\n"
+    "(+S.Def/-Def).");
 
 static const u8 sCarefulMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Sp. Def, but\n"
-    "reduces Sp. Atk.");
+    "Changes nature of a\n"
+    "Pokémon to Careful\n"
+    "(+S.Def/-S.Atk).");
 
 static const u8 sSassyMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Sp. Def, but\n"
-    "reduces Speed.");
+    "Changes nature of a\n"
+    "Pokémon to Sassy\n"
+    "(+S.Def/-Spd).");
 
 static const u8 sTimidMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Speed, but\n"
-    "reduces Attack.");
+    "Changes nature of a\n"
+    "Pokémon to Timid\n"
+    "(+Spd/-Atk).");
 
 static const u8 sHastyMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Speed, but\n"
-    "reduces Defense.");
+    "Changes nature of a\n"
+    "Pokémon to Hasty\n"
+    "(+Spd/-Def).");
 
 static const u8 sJollyMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Speed, but\n"
-    "reduces Sp. Atk.");
+    "Changes nature of a\n"
+    "Pokémon to Jolly\n"
+    "(+Spd/-S.Atk).");
 
 static const u8 sNaiveMintDesc[] = _(
-    "Can be smelled. It\n"
-    "ups Speed, but\n"
-    "reduces Sp. Def.");
+    "Changes nature of a\n"
+    "Pokémon to Naive\n"
+    "(+Spd/-S.Def).");
 
 static const u8 sSeriousMintDesc[] = _(
-    "Can be smelled. It\n"
-    "sets no boons\n"
-    "or cons for stats.");
+    "Changes nature of a\n"
+    "Pokémon to a \n"
+    "neutral state.");
 
 // Candy
 static const u8 sRareCandyDesc[] = _(

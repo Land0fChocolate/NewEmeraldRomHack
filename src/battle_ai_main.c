@@ -882,11 +882,11 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             
             if (effectiveness == AI_EFFECTIVENESS_x0)
             {
-                score -= 10;
+                score -= 20;
             }
             else if (IsAbilityOnField(ABILITY_DAMP) && !DoesBattlerIgnoreAbilityChecks(AI_DATA->abilities[battlerAtk], move))
             {
-                score -= 10;
+                score -= 20;
             }
             else if (CountUsablePartyMons(battlerAtk) == 0)
             {
@@ -900,7 +900,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             if (!(gBattleMons[battlerDef].status1 & STATUS1_SLEEP) || HasAbility(ABILITY_COMATOSE, AI_DATA->abilities[battlerDef]))
                 score -= 8;
             else if (effectiveness == AI_EFFECTIVENESS_x0)
-                score -= 10;
+                score -= 20;
             break;
     // stat raising effects
         case EFFECT_ATTACK_UP:
