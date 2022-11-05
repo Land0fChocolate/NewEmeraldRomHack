@@ -33,7 +33,7 @@ OriginStrand_EventScript_ChooseMonMoveForOrigin::
 	goto_if_eq OriginStrand_EventScript_CantUseEgg
 	msgbox OriginStrand_Text_WhichMoveForOrigin, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
-	special OriginChooseMove @moveslot set to VAR_0x8005?
+	special OriginChooseMove
 	fadescreen FADE_FROM_BLACK
 	special BufferMoveDeleterNicknameAndMove
 	msgbox OriginStrand_Text_SetThisAsOriginMove, MSGBOX_YESNO

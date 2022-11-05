@@ -694,10 +694,7 @@ u16 GetAshCount(void)
 
 void ItemUseOutOfBattle_OriginStrand(u8 taskId)
 {
-    //TODO: start off with multi choice menu (Moves set|Set first move|Set second move)
-    //Moves set: show the 2 moves set and their PP
-    //Set first move
-    //Set second move
+    //TODO: display set moves and have a multi choice menu (Set first move|Set second move)
     StringCopy(gStringVar1, gMoveNames[gSaveBlock1Ptr->originMoves[0]]);
     StringCopy(gStringVar2, gMoveNames[gSaveBlock1Ptr->originMoves[1]]);
     ScriptContext2_Enable();

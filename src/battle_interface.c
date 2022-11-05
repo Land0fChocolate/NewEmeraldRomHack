@@ -3645,7 +3645,7 @@ void TryAddOriginStrandSprite(void)
     // window
     LoadSpritePalette(&sSpritePalette_AbilityPopUp);
     if (GetSpriteTileStartByTag(ORIGIN_MOVE_WINDOW_TAG) == 0xFFFF)
-        LoadSpriteSheet(&sSpriteSheet_LastUsedBallWindow);
+        LoadSpriteSheet(&sSpriteSheet_OriginMoveWindow);
 
     if (gBattleStruct->originSpriteIds[1] == MAX_SPRITES)
     {
