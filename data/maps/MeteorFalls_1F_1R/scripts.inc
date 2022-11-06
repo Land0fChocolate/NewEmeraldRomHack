@@ -92,6 +92,7 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	setflag FLAG_HIDE_ROUTE_112_TEAM_MAGMA
 	setflag FLAG_MET_ARCHIE_METEOR_FALLS
 	setvar VAR_METEOR_FALLS_STATE, 1
+	setvar VAR_FALLARBOR_TOWN_RIVAL_STATE, 1
 	releaseall
 	end
 

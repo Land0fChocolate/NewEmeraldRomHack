@@ -19,7 +19,7 @@ Mossdeep_Eventscript_MoveRival::
 
 MossdeepCity_Eventscript_RivalTrigger::
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_RIVAL
-	SETVAR VAR_MOSSDEEP_CITY_RIVAL_STATE, 1
+	setvar VAR_MOSSDEEP_CITY_RIVAL_STATE, 1
 	opendoor 64, 15
 	waitdooranim
 	addobject LOCALID_RIVAL

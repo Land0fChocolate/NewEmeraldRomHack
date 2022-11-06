@@ -1,3 +1,5 @@
+.set LOCALID_RIVAL, 5
+
 FallarborTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, FallarborTown_OnTransition
 	.byte 0
@@ -7,6 +9,68 @@ FallarborTown_OnTransition:
 	setvar VAR_CONTEST_HALL_STATE, 0
 	clearflag FLAG_CONTEST_SKETCH_CREATED
 	end
+
+FallarborTown_EventScript_RivalTrigger::
+	clearflag FLAG_HIDE_FALLARBOR_TOWN_RIVAL
+	setvar VAR_FALLARBOR_TOWN_RIVAL_STATE, 1
+	opendoor 14, 11
+	waitdooranim
+	addobject LOCALID_RIVAL
+	applymovement OBJ_EVENT_ID_PLAYER, FallarborTown_Movement_PlayerMovesOutOfWay
+	applymovement LOCALID_RIVAL, FallarborTown_Movement_RivalExitsPokemonCenter
+	waitmovement 0
+	closedoor 64, 15
+	waitdooranim
+	delay 10
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq FallarborTown_EventScript_May
+	compare VAR_RESULT, FEMALE
+	goto_if_eq FallarborTown_EventScript_Brendan
+	end
+
+FallarborTown_Movement_RivalExitsPokemonCenter:
+	walk_down
+	step_end
+
+FallarborTown_Movement_PlayerMovesOutOfWay:
+	walk_down
+	face_up
+	step_end
+
+FallarborTown_EventScript_May::
+	playbgm MUS_ENCOUNTER_MAY, TRUE
+	msgbox FallarborTown_Text_MayBewareOfTeamMagma, MSGBOX_DEFAULT
+	goto FallarborTown_EventScript_Rival_Leaves
+	end
+
+FallarborTown_EventScript_Brendan::
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	msgbox FallarborTown_Text_BrendanBewareOfTeamMagma, MSGBOX_DEFAULT
+	goto FallarborTown_EventScript_Rival_Leaves
+	end
+
+FallarborTown_EventScript_Rival_Leaves::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	applymovement LOCALID_RIVAL, FallarborTown_Movement_RivalLeaves
+	waitmovement 0
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	removeobject LOCALID_RIVAL
+	setflag FLAG_HIDE_FALLARBOR_TOWN_RIVAL
+	release
+	end
+
+FallarborTown_Movement_RivalLeaves:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
 
 FallarborTown_EventScript_ExpertM::
 	lock
@@ -40,6 +104,27 @@ FallarborTown_EventScript_TownSign::
 FallarborTown_EventScript_MoveTutorSign::
 	msgbox FallarborTown_Text_MoveTutorSign, MSGBOX_SIGN
 	end
+
+FallarborTown_Text_MayBewareOfTeamMagma:
+	.string "May: Hey, {PLAYER}.\n"
+	.string "Am I glad to see a friendly face!\p"
+	.string "I had a run-in with some goons calling\n"
+	.string "themselves Team Magma.\p"
+	.string "They seem to like making trouble around\n"
+	.string "these parts, but my Pokémon were more\l"
+	.string "than a match for them.\p"
+	.string "Just keep a heads up, okay?\p"
+	.string "Alright, see ya!$"
+
+FallarborTown_Text_BrendanBewareOfTeamMagma:
+	.string "Brendan: Hey, {PLAYER}.\n"
+	.string "Great to see you.\p"
+	.string "There are some crooks called Team Magma\n"
+	.string "operating in these parts.\p"
+	.string "I ended up fighting their grunts, but\n"
+	.string "my Pokémon were able to handle them.\p"
+	.string "I'm sure you'll be fine, though.\p"
+	.string "Alright, see ya!$"
 
 FallarborTown_Text_ShadyCharactersCozmosHome:
 	.string "Something's happening,\n"

@@ -732,7 +732,7 @@
 #define FLAG_HIDE_ZINNIA_WEATHER_INSTITUTE        0x2B6
 #define FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER4_2     0x2B7 // Second boulder flag to allow boulders to fall through 2 floors
 #define FLAG_HIDE_DRACONID_ARCHIVES_SCIENTIST     0x2B8
-#define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
+#define FLAG_HIDE_FALLARBOR_TOWN_RIVAL            0x2B9
 #define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
 #define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
 
@@ -1495,13 +1495,13 @@
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_LANDMARK_CRUMBLING_GORGE               (SYSTEM_FLAGS + 0x85)
+#define FLAG_LANDMARK_CRUMBLING_GORGE               (SYSTEM_FLAGS + 0x85) // TODO: may not need these outdoor landmarks
 #define FLAG_LANDMARK_OLDALE_FARM                   (SYSTEM_FLAGS + 0x86)
 #define FLAG_LANDMARK_LITTLEROOT_BEACH              (SYSTEM_FLAGS + 0x87)
 #define FLAG_LANDMARK_FALLARBOR_WASTELAND           (SYSTEM_FLAGS + 0x88)
 #define FLAG_LANDMARK_WILDWOODS                     (SYSTEM_FLAGS + 0x89)
 #define FLAG_LANDMARK_MAUVILLE_MEADOW               (SYSTEM_FLAGS + 0x8A)
-#define FLAG_LANDMARK_FORTREE_LAKE                  (SYSTEM_FLAGS + 0x8B) //unused Flag
+#define FLAG_LANDMARK_MAUVILLE_RIVERSIDE            (SYSTEM_FLAGS + 0x8B)
 #define FLAG_LANDMARK_FORTREE_JUNGLE                (SYSTEM_FLAGS + 0x8C)
 #define FLAG_LANDMARK_LUSTROUS_LAIR                 (SYSTEM_FLAGS + 0x8D)
 #define FLAG_LANDMARK_DERELICT_DEN                  (SYSTEM_FLAGS + 0x8E)
