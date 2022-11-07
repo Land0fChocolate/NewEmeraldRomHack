@@ -4554,8 +4554,8 @@
     {
       "id": "LAYOUT_WILDWOODS_AREA1",
       "name": "Wildwoods_Area1_Layout",
-      "width": 14,
-      "height": 16,
+      "width": 18,
+      "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Wildwoods_Area1/border.bin",
@@ -4564,8 +4564,8 @@
     {
       "id": "LAYOUT_WILDWOODS_AREA2",
       "name": "Wildwoods_Area2_Layout",
-      "width": 14,
-      "height": 16,
+      "width": 18,
+      "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Wildwoods_Area2/border.bin",
@@ -4594,8 +4594,8 @@
     {
       "id": "LAYOUT_WILDWOODS_AREA5",
       "name": "Wildwoods_Area5_Layout",
-      "width": 14,
-      "height": 16,
+      "width": 18,
+      "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Wildwoods_Area5/border.bin",
@@ -4604,8 +4604,8 @@
     {
       "id": "LAYOUT_WILDWOODS_AREA6",
       "name": "Wildwoods_Area6_Layout",
-      "width": 14,
-      "height": 16,
+      "width": 18,
+      "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Wildwoods_Area6/border.bin",
