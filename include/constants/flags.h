@@ -679,8 +679,8 @@
 #define FLAG_HIDE_ROUTE106_BRAWLY                 0x281
 #define FLAG_HIDE_FORTREE_GYM_WINONA              0x282
 #define FLAG_HIDE_TBC_WINONA                      0x283
-#define FLAG_HIDE_MOSSDEEP_GYM_TATE_LISA          0x284
-#define FLAG_HIDE_TBC_TATE_LISA                   0x285
+#define FLAG_HIDE_MOSSDEEP_GYM_TATE_LIZA          0x284
+#define FLAG_HIDE_SLATEPORT_CITY_TATE_LIZA        0x285
 #define FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE          0x286
 #define FLAG_HIDE_CONTEST_HALL_WALLACE            0x287
 #define FLAG_ROXANNE_TRADE_STONES                 0x288
@@ -733,8 +733,8 @@
 #define FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER4_2     0x2B7 // Second boulder flag to allow boulders to fall through 2 floors
 #define FLAG_HIDE_DRACONID_ARCHIVES_SCIENTIST     0x2B8
 #define FLAG_HIDE_FALLARBOR_TOWN_RIVAL            0x2B9
-#define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
-#define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
+#define FLAG_HIDE_SLATEPORT_CITY_JIRACHI          0x2BA
+#define FLAG_UNUSED_0X2BB                         0x2BB // unused
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
@@ -953,7 +953,7 @@
 #define FLAG_HIDE_MAUVILLE_GYM_WATTSON                              0x391
 #define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                        0x392
 #define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
-#define FLAG_HIDE_ROUTE_111_MAGMA_GRUNTS                            0x394 // unused
+#define FLAG_GIVEN_WISH_TAG                                         0x394
 #define FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA                          0x395
 #define FLAG_HIDE_BATTLE_TOWER_REPORTER                             0x396
 #define FLAG_HIDE_ROUTE_110_RIVAL                                   0x397
@@ -1032,7 +1032,7 @@
 #define FLAG_HIDE_WEATHER_INSTITUTE_2F_ZINNIA_AQUA                  0x3E0
 #define FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON          0x3E1
 #define FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY                       0x3E2
-#define FLAG_HIDE_PETALBURG_CITY_SCOTT                              0x3E3 // unused
+#define FLAG_PLACED_WISH_TAG                                        0x3E3
 #define FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA                          0x3E4
 #define FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE                            0x3E5
 #define FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON                           0x3E6

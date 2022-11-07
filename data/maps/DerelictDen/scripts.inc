@@ -27,6 +27,7 @@ DerelictDen_Eventscript_Zapdos::
 	goto_if_eq DerelictDen_EventScript_RanFromZapdos
 	setflag FLAG_DEFEATED_ZAPDOS
 	release
+	end
 
 DerelictDen_EventScript_DefeatedZapdos::
 	setflag FLAG_DEFEATED_ZAPDOS

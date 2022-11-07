@@ -235,6 +235,7 @@ DraconidArchives_EventScript_ResetDefeatedLegendaries::
 	clearflag FLAG_DEFEATED_GROUDON
 	clearflag FLAG_DEFEATED_RAYQUAZA
 	clearflag FLAG_DEFEATED_JIRACHI
+	clearflag FLAG_HIDE_SLATEPORT_CITY_JIRACHI
 	clearflag FLAG_DEFEATED_DEOXYS
 	clearflag FLAG_BATTLED_DEOXYS
 	return

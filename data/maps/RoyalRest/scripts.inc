@@ -27,6 +27,7 @@ RoyalRest_Eventscript_Entei::
 	goto_if_eq RoyalRest_EventScript_RanFromEntei
 	setflag FLAG_DEFEATED_ENTEI
 	release
+	end
 
 RoyalRest_EventScript_DefeatedEntei::
 	setflag FLAG_DEFEATED_ENTEI

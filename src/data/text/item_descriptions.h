@@ -3672,10 +3672,10 @@ static const u8 sGoldTeethDesc[] = _(
     "by the Safari\n"
     "Zone's Warden.");
 
-static const u8 sCardKeyDesc[] = _(
-    "A card-type door\n"
-    "key used in Silph\n"
-    "Co's office.");
+static const u8 sWishTagDesc[] = _(
+    "A strip of paper\n"
+    "used to write\n"
+    "wishes.");
 
 static const u8 sLiftKeyDesc[] = _(
     "An elevator key\n"

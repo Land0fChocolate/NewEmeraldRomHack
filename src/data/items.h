@@ -9761,12 +9761,12 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_CARD_KEY] =
+    [ITEM_WISH_TAG] =
     {
-        .name = _("Card Key"),
-        .itemId = ITEM_CARD_KEY,
+        .name = _("Wish Tag"),
+        .itemId = ITEM_WISH_TAG,
         .price = 0,
-        .description = sCardKeyDesc,
+        .description = sWishTagDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

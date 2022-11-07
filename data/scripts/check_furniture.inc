@@ -29,3 +29,10 @@ EventScript_SweetShopShelf::
 EventScript_Blueprint::
 	msgbox Text_Blueprint, MSGBOX_SIGN
 	end
+
+EventScript_BambooTree::
+	msgbox Text_BambooTree, MSGBOX_SIGN
+	checkitem ITEM_WISH_TAG, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq SlateportCity_EventScript_BambooTree_PlaceWishTag
+	end

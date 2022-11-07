@@ -27,6 +27,7 @@ ConquerorsCamp_Eventscript_Raikou::
 	goto_if_eq ConquerorsCamp_EventScript_RanFromRaikou
 	setflag FLAG_DEFEATED_RAIKOU
 	release
+	end
 
 ConquerorsCamp_EventScript_DefeatedRaikou::
 	setflag FLAG_DEFEATED_RAIKOU

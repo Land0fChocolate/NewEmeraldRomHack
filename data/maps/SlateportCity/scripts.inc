@@ -18,6 +18,8 @@
 .set LOCALID_GRUNT_9, 31
 .set LOCALID_GRUNT_11, 33
 .set LOCALID_SCOTT, 42
+.set LOCALID_TATE, 43
+.set LOCALID_LIZA, 44
 
 SlateportCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_OnTransition
@@ -31,7 +33,27 @@ SlateportCity_OnTransition:
 	call_if_eq SlateportCity_EventScript_MovePeopleForSternInterview
 	compare VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1
 	call_if_eq SlateportCity_EventScript_SetReadyForScottScene
+	call SlateportCity_Eventscript_SetUpTateLiza
 	end
+
+SlateportCity_Eventscript_SetUpTateLiza::
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_TATE_AND_LIZA_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq SlateportCity_Eventscript_TateLizaRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq SlateportCity_Eventscript_TateLizaChilling
+    return
+
+SlateportCity_Eventscript_TateLizaRematch::
+	setflag FLAG_HIDE_SLATEPORT_CITY_TATE_LIZA
+	clearflag FLAG_HIDE_MOSSDEEP_GYM_TATE_LIZA
+	return
+
+SlateportCity_Eventscript_TateLizaChilling::
+	clearflag FLAG_HIDE_SLATEPORT_CITY_TATE_LIZA
+	setflag FLAG_HIDE_MOSSDEEP_GYM_TATE_LIZA
+	return
 
 SlateportCity_EventScript_EnterSlateport::
 	setflag FLAG_VISITED_SLATEPORT_CITY
@@ -951,6 +973,94 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 SlateportCity_EventScript_Drake::
 	msgbox SlateportCity_Text_Drake, MSGBOX_NPC
 	end
+
+SlateportCity_EventScript_TateAndLiza::
+	goto_if_set FLAG_PLACED_WISH_TAG, SlateportCity_EventScript_TateAndLizaWishTagPlaced
+	goto_if_set FLAG_GIVEN_WISH_TAG, SlateportCity_EventScript_TateAndLizaWishTagGiven
+	msgbox SlateportCity_Text_TateAndLizaGiveWishTag, MSGBOX_DEFAULT
+	giveitem ITEM_WISH_TAG
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	setflag FLAG_GIVEN_WISH_TAG
+	goto SlateportCity_EventScript_TateAndLizaWishTagGiven
+	end
+
+SlateportCity_EventScript_TateAndLizaWishTagGiven::
+	msgbox SlateportCity_Text_TateAndLizaMakeAWish, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_EventScript_BambooTree_PlaceWishTag::
+	msgbox Text_BambooTree_PlaceWishTag, MSGBOX_SIGN
+	removeitem ITEM_WISH_TAG
+	setflag FLAG_PLACED_WISH_TAG
+	playmoncry SPECIES_JIRACHI, 0
+	waitmoncry
+	clearflag FLAG_HIDE_SLATEPORT_CITY_JIRACHI
+	end
+
+SlateportCity_EventScript_TateAndLizaWishTagPlaced:
+	msgbox SlateportCity_Text_TateAndLizaPlacedWishTag, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_EventScript_Jirachi::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_JIRACHI, 2
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_JIRACHI, 30, ITEM_NONE
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq SlateportCity_EventScript_DefeatedJirachi
+	compare VAR_RESULT, B_OUTCOME_RAN
+	goto_if_eq SlateportCity_EventScript_RanFromJirachi
+	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
+	goto_if_eq SlateportCity_EventScript_RanFromJirachi
+	setflag FLAG_DEFEATED_JIRACHI
+	setflag FLAG_HIDE_SLATEPORT_CITY_JIRACHI
+	release
+	end
+
+SlateportCity_EventScript_DefeatedJirachi::
+	setflag FLAG_DEFEATED_JIRACHI
+	setflag FLAG_HIDE_SLATEPORT_CITY_JIRACHI
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+SlateportCity_EventScript_RanFromJirachi::
+	setvar VAR_0x8004, SPECIES_JIRACHI
+	goto Common_EventScript_LegendaryFlewAway
+	end
+
+SlateportCity_Text_TateAndLizaGiveWishTag:
+	.string "Liza: Have you ever wished for anything,\n"
+	.string "{PLAYER}?\p"
+	.string "Tate: The people of Hoenn write down\n"
+	.string "their wishes and tie them to one of the\l"
+	.string "bamboo trees.\p"
+	.string "Liza: People believe that the mystical\n"
+	.string "Pokémon of wishes wakes up every\l"
+	.string "millennia to make those wishes come\l"
+	.string "true.\p"
+	.string "Tate: Would you like to try, {PLAYER}?\p"
+	.string "Tate: Here, make a wish.\n"
+	.string "Liza: Here, make a wish.$"
+
+SlateportCity_Text_TateAndLizaMakeAWish:
+	.string "Liza: Go on, {PLAYER}, make a wish!\p"
+	.string "Tate: We are still deciding on what our\n"
+	.string "wish should be.$"
+
+SlateportCity_Text_TateAndLizaPlacedWishTag:
+	.string "Tate: We are still deciding on what our\n"
+	.string "wish should be.$"
 
 SlateportCity_Text_Drake:
 	.string "Ahoy, fellow Trainer!\p"

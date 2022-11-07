@@ -1,6 +1,30 @@
 MossdeepCity_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, MossdeepCity_Gym_OnLoad
+	map_script MAP_SCRIPT_ON_TRANSITION, MossdeepCity_Gym_OnTransition
 	.byte 0
+
+MossdeepCity_Gym_OnTransition::
+	call MossdeepCity_Gym_SetUpTateLiza
+	end
+
+MossdeepCity_Gym_SetUpTateLiza::
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_TATE_AND_LIZA_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq MossdeepCity_Gym_Eventscript_TateLizaRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq MossdeepCity_Gym_Eventscript_TateLizaTrainerSchool
+    return
+
+MossdeepCity_Gym_Eventscript_TateLizaRematch::
+	setflag FLAG_HIDE_SLATEPORT_CITY_TATE_LIZA
+	clearflag FLAG_HIDE_MOSSDEEP_GYM_TATE_LIZA
+	return
+
+MossdeepCity_Gym_Eventscript_TateLizaTrainerSchool::
+	clearflag FLAG_HIDE_SLATEPORT_CITY_TATE_LIZA
+	setflag FLAG_HIDE_MOSSDEEP_GYM_TATE_LIZA
+	return
 
 @ NOTE: Mossdeep Gym was redesigned between R/S and E. Leftover (and now functionally unused) scripts are commented below
 
