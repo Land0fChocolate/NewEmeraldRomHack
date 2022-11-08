@@ -28,7 +28,31 @@
 .set LOCALID_CUTE_AUDIENCE_2, 31
 
 LilycoveCity_ContestHall_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_ContestHall_OnTransition
 	.byte 0
+
+LilycoveCity_ContestHall_OnTransition:
+	call LilycoveCity_ContestHall_SetUpWallace
+	end
+
+LilycoveCity_ContestHall_SetUpWallace::
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_WALLACE_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq LilycoveCity_ContestHall_Eventscript_WallaceRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq LilycoveCity_ContestHall_Eventscript_WallaceAtContestHall
+    return
+
+LilycoveCity_ContestHall_Eventscript_WallaceRematch::
+	setflag FLAG_HIDE_CONTEST_HALL_WALLACE
+	clearflag FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE
+	return
+
+LilycoveCity_ContestHall_Eventscript_WallaceAtContestHall::
+	clearflag FLAG_HIDE_CONTEST_HALL_WALLACE
+	setflag FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE
+	return
 
 LilycoveCity_ContestHall_EventScript_Boy1::
 	msgbox LilycoveCity_ContestHall_Text_TodayWonSmartnessContest, MSGBOX_NPC
@@ -334,6 +358,60 @@ LilycoveCity_ContestHall_EventScript_CuteStageSign::
 LilycoveCity_ContestHall_EventScript_SmartStageSign::
 	msgbox LilycoveCity_ContestHall_Text_SmartContestStage, MSGBOX_SIGN
 	end
+
+LilycoveCity_ContestHall_EventScript_Wallace::
+	locktarget
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_Wallace, MSGBOX_DEFAULT
+	closemessage
+	end
+
+LilycoveCity_ContestHall_EventScript_WallaceFan1::
+	locktarget
+	msgbox LilycoveCity_ContestHall_Text_WallaceFan1, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_EventScript_WallaceFan2::
+	locktarget
+	msgbox LilycoveCity_ContestHall_Text_WallaceFan2, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_EventScript_WallaceFan3::
+	locktarget
+	msgbox LilycoveCity_ContestHall_Text_WallaceFan3, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_Text_Wallace:
+	.string "Wallace: No matter whether you stand in\n"
+	.string "a Pokémon Gym or a Contest Hall, a\l"
+	.string "Trainer who holds to his/her belief in\l"
+	.string "the Pokémon beside him/her…\p"
+	.string "The Pokémon that battles on, believing\n"
+	.string "in the Trainer with whom it stands\l"
+	.string "together…\p" 
+	.string "The settings may differ, but their\n"
+	.string "labors come to fruition in a way that\l"
+	.string "honors their bond!\l"
+	.string "There is equal beauty in both!$"
+
+LilycoveCity_ContestHall_Text_WallaceFan1:
+	.string "Eek! It's Wallace!\n"
+	.string "Wallace! Wallace!\p"
+	.string "Are you here to enter the contests?$"
+
+LilycoveCity_ContestHall_Text_WallaceFan2:
+	.string "Darling! Do you need anyone to show\n"
+	.string "you around? It's no bother to me at all.$"
+
+LilycoveCity_ContestHall_Text_WallaceFan3:
+	.string "Mr. Wallace! I'm your biggest fan!\n"
+	.string "Could you sign my Pikachu?$"
 
 LilycoveCity_ContestHall_Text_TodayWonSmartnessContest:
 	.string "This Pokémon won the Beauty Contest\n"

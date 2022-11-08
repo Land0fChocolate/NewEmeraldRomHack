@@ -271,6 +271,7 @@ LilycoveCity_EventScript_DontKnowAboutBerryBlender::
 
 LilycoveCity_EventScript_LisiaEvent::
 	lockall
+	setvar VAR_LISIA_EVENT_TRIGGER_STATE, 1
 	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaSpin
 	waitmovement 0
 	msgbox LilycoveCity_Text_LisiaIntro, MSGBOX_DEFAULT

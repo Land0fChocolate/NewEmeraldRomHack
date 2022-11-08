@@ -7,7 +7,27 @@ SootopolisCity_Gym_1F_MapScripts::
 
 SootopolisCity_Gym_1F_OnTransition:
 	setvar VAR_ICE_STEP_COUNT, 1
+	call SootopolisCity_Gym_1F_SetUpWallace
 	end
+
+SootopolisCity_Gym_1F_SetUpWallace::
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_WALLACE_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq SootopolisCity_Gym_1F_Eventscript_WallaceRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq SootopolisCity_Gym_1F_Eventscript_WallaceAtContestHall
+    return
+
+SootopolisCity_Gym_1F_Eventscript_WallaceRematch::
+	setflag FLAG_HIDE_CONTEST_HALL_WALLACE
+	clearflag FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE
+	return
+
+SootopolisCity_Gym_1F_Eventscript_WallaceAtContestHall::
+	clearflag FLAG_HIDE_CONTEST_HALL_WALLACE
+	setflag FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE
+	return
 
 SootopolisCity_Gym_1F_OnResume:
 	setstepcallback STEP_CB_SOOTOPOLIS_ICE

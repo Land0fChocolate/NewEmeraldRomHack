@@ -574,7 +574,7 @@
       "x": 25,
       "y": 25,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_LISIA_EVENT_TRIGGER_STATE",
       "var_value": "0",
       "script": "LilycoveCity_EventScript_LisiaEvent"
     },
@@ -583,7 +583,7 @@
       "x": 25,
       "y": 26,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_LISIA_EVENT_TRIGGER_STATE",
       "var_value": "0",
       "script": "LilycoveCity_EventScript_LisiaEvent"
     },
@@ -592,7 +592,7 @@
       "x": 25,
       "y": 27,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_LISIA_EVENT_TRIGGER_STATE",
       "var_value": "0",
       "script": "LilycoveCity_EventScript_LisiaEvent"
     }
