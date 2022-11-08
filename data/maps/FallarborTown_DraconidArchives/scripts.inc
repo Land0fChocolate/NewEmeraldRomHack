@@ -349,7 +349,7 @@ DraconidArchives_Text_BringSnacksForAster:
 	.string "Aster here, I can call any and all\l"
 	.string "legendary Pokémon back to their lairs.\p"
 	.string "Aster has rather expensive taste.\n"
-	.string "He'll only eat very rare berries, like\l"
+	.string "She'll only eat very rare berries, like\l"
 	.string "the ones that reduce damage taken.$"
 
 DraconidArchives_Text_HaveYouBroughtBerries:
@@ -411,8 +411,8 @@ DraconidArchives_Text_MapFellOut:
 	.string "Do you mind taking this?$"
 
 DraconidArchives_Text_TooAbsorbedInBooks:
-	.string "… … … … … …\n"
-	.string "This person is too absorbed in books\l"
+	.string "… … … … … …\p"
+	.string "This person is too absorbed in books\n"
 	.string "to notice you.$"
 
 DraconidArchives_Text_Sculpture:

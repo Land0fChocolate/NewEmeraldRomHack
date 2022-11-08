@@ -19,7 +19,7 @@ MagmaHideout_1F_EventScript_Grunt2::
 MagmaHideout_1F_Text_Grunt1Intro:
 	.string "You!\p"
 	.string "You're the brat who stopped us from\n"
-	.string "blowing up Mt Chimney!\p"
+	.string "erupting Mt Chimney!\p"
 	.string "You've taken from humanity all that\n"
 	.string "land and rare metals the volcano would\l"
 	.string "have churned up!\p"

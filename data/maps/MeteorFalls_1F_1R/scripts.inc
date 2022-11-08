@@ -1,4 +1,4 @@
-.set LOCALID_MAGMA_GRUNT_1, 5
+.set LOCALID_TABITHA, 5
 .set LOCALID_MAGMA_GRUNT_2, 6
 .set LOCALID_ARCHIE, 7
 .set LOCALID_AQUA_GRUNT_1, 8
@@ -25,26 +25,26 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	delay 30
-	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_WithThisMeteorite, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFastestUp
+	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFastestUp
 	applymovement LOCALID_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	playse SE_PIN
-	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_ExclamationMark
+	applymovement LOCALID_TABITHA, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_Delay48
+	applymovement LOCALID_TABITHA, Common_Movement_Delay48
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_MAGMA_GRUNT_1, MeteorFalls_1F_1R_Movement_MagmaGruntApproachPlayer
+	applymovement LOCALID_TABITHA, MeteorFalls_1F_1R_Movement_MagmaGruntApproachPlayer
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_HoldItRightThereMagma, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
-	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFastestLeft
+	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFastestLeft
 	applymovement LOCALID_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
 	addobject LOCALID_ARCHIE
@@ -55,16 +55,16 @@ MeteorFalls_1F_1R_EventScript_MagmaStealsMeteoriteScene::
 	applymovement LOCALID_AQUA_GRUNT_1, MeteorFalls_1F_1R_Movement_AquaGrunt1Arrive
 	applymovement LOCALID_AQUA_GRUNT_2, MeteorFalls_1F_1R_Movement_AquaGrunt2Arrive
 	waitmovement 0
-	applymovement LOCALID_MAGMA_GRUNT_1, Common_Movement_WalkInPlaceFastestLeft
+	applymovement LOCALID_TABITHA, Common_Movement_WalkInPlaceFastestLeft
 	applymovement LOCALID_MAGMA_GRUNT_2, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
 	msgbox MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, MeteorFalls_1F_1R_Movement_PushPlayerOutOfWay
-	applymovement LOCALID_MAGMA_GRUNT_1, MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit
+	applymovement LOCALID_TABITHA, MeteorFalls_1F_1R_Movement_MagmaGrunt1Exit
 	applymovement LOCALID_MAGMA_GRUNT_2, MeteorFalls_1F_1R_Movement_MagmaGrunt2Exit
 	waitmovement 0
-	removeobject LOCALID_MAGMA_GRUNT_1
+	removeobject LOCALID_TABITHA
 	removeobject LOCALID_MAGMA_GRUNT_2
 	applymovement LOCALID_ARCHIE, MeteorFalls_1F_1R_Movement_ArchieApproachPlayer
 	waitmovement 0
@@ -243,10 +243,13 @@ MeteorFalls_1F_1R_Text_WithThisMeteorite:
 	.string "Mt. Chimney will…$"
 
 MeteorFalls_1F_1R_Text_DontExpectMercyFromMagma:
-	.string "Heh?\p"
+	.string "Hyuh?\p"
+	.string "What have we here?\n"
+	.string "Why has this child suddenly appeared?\p"
 	.string "I don't know who you are, but if you get\n"
 	.string "in the way of Team Magma, don't\l"
-	.string "expect any mercy!$"
+	.string "expect any mercy!\p"
+	.string "That will be your only warning, kid.$"
 
 MeteorFalls_1F_1R_Text_HoldItRightThereMagma:
 	.string "Hold it right there, Team Magma!\p"
@@ -254,44 +257,44 @@ MeteorFalls_1F_1R_Text_HoldItRightThereMagma:
 	.string "can have your way with the world!$"
 
 MeteorFalls_1F_1R_Text_BeSeeingYouTeamAqua:
-	.string "Hehehe!\n"
-	.string "Even Team Aqua joins us!\p"
+	.string "Hyuhn?!\n"
+	.string "Even Team Aqua makes an appearance!\p"
 	.string "But it's too much trouble to deal with\n"
 	.string "you all…\p"
 	.string "Heh, it doesn't matter!\p"
-	.string "We've got the Meteorite, so off to\n"
-	.string "Mt. Chimney we go!\p"
-	.string "Hehehe! Be seeing you, you Team\n"
-	.string "Aqua dingbats!$"
+	.string "Ahyahya! The Meteorite is in the palm\n"
+	.string "of my hand!\p"
+	.string "Adios to each and every one of you!\n"
+	.string "At long last I'm off to Mt. Chimney!$"
 
 MeteorFalls_1F_1R_Text_ArchieSeenYouBefore:
-	.string "Archie: Didn't I see you before?\n"
-	.string "At Slateport's Museum?\p"
-	.string "Ah, so your name is {PLAYER}.\p"
+	.string "Archie: Well, ain't it the scamp from\n"
+	.string "Slateport's Museum!\p"
 	.string "At the time, I thought you were one\n"
 	.string "of Team Magma's goons.\p"
-	.string "Humph…\n"
+	.string "Hmph…\n"
 	.string "You're one odd kid.\p"
 	.string "Team Magma is a dangerous group of\n"
 	.string "total fanatics.\p"
 	.string "They engage in destruction, claiming\n"
-	.string "to expand the land mass.\p"
-	.string "They are the rivals to us,\n"
-	.string "the sea-loving Team Aqua!$"
+	.string "to help humanity and expand the land.\p"
+	.string "Their mission is heavily opposed to\n"
+	.string "ours, making them our enemy.$"
 
 MeteorFalls_1F_1R_Text_BossWeShouldChaseMagma:
 	.string "Boss, we should give chase to\n"
 	.string "Team Magma…$"
 
 MeteorFalls_1F_1R_Text_ArchieYesNoTellingWhatMagmaWillDo:
-	.string "Archie: Yes, yes, we must!\n"
-	.string "We've got to hurry.\p"
+	.string "Archie: That's right!\n"
+	.string "We're not letting them get away!\p"
 	.string "There's no telling what Team Magma\n"
 	.string "will do at Mt. Chimney!$"
 
 MeteorFalls_1F_1R_Text_ArchieFarewell:
-	.string "Archie: {PLAYER}, you should keep\n"
-	.string "an eye out for Team Magma, too.\p"
+	.string "Archie: Keep an eye out, Scamp.\n"
+	.string "I imagine I'll be seeing you again!\p"
+	.string "Waha! Bwahahahahah!\n"
 	.string "Farewell!$"
 
 MeteorFalls_1F_1R_Text_MeetProfCozmo:

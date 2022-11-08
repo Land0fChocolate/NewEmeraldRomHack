@@ -71,5 +71,9 @@ MagmaHideout_2F_1R_Text_Grunt5Defeat:
 	.string "Mutter…$"
 
 MagmaHideout_2F_1R_Text_Grunt5PostBattle:
-	.string "Actually, I'm no expert at battling…$"
+	.string "We don't need to use most of this\n"
+	.string "equipment anymore now that we found\l"
+	.string "what we are looking for.\p"
+	.string "Perhaps we should give it back to that\n"
+	.string "Devon Company…$"
 

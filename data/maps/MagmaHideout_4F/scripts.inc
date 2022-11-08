@@ -178,7 +178,7 @@ MagmaHideout_4F_Text_CourtneyIntro:
 	.string "…Analyzing.\p"
 	.string "The anomaly that interfered with the\n"
 	.string "Mt. Chimney eruption plan.\p"
-	.string "High risk of interfering with\n"
+	.string "High probability of interfering with\n"
 	.string "Awaken the Continent plan.\p"
 	.string "Deleting…$"
 
@@ -192,6 +192,15 @@ MagmaHideout_4F_Text_CourtneyPostBattle:
 
 MagmaHideout_4F_Text_MaxieAwakenGroudon:
 	.string "Maxie: Groudon…\p"
+	.string "So long have I waited for this day…\n"
+	.string "Immeasurably long!\p"
+	.string "This foolish world has held back\n"
+	.string "humanity's progress out of misguided\l"
+	.string "idealism.\p"
+	.string "But this ancient creature can bring that\n"
+	.string "to its rightful end, creating a new land\l"
+	.string "upon which humanity may stride freely\l"
+	.string "forward.$"
 	.string "Nothing could awaken you from your\n"
 	.string "sleep bathed in magma…\p"
 	.string "This Red Orb is what you sought.\n"
