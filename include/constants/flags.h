@@ -734,7 +734,7 @@
 #define FLAG_HIDE_DRACONID_ARCHIVES_SCIENTIST     0x2B8
 #define FLAG_HIDE_FALLARBOR_TOWN_RIVAL            0x2B9
 #define FLAG_HIDE_SLATEPORT_CITY_JIRACHI          0x2BA
-#define FLAG_UNUSED_0X2BB                         0x2BB // unused
+#define FLAG_HIDE_LILYCOVE_CITY_LISIA             0x2BB
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC

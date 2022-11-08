@@ -234,10 +234,14 @@ DraconidArchives_EventScript_ResetDefeatedLegendaries::
 	clearflag FLAG_DEFEATED_KYOGRE
 	clearflag FLAG_DEFEATED_GROUDON
 	clearflag FLAG_DEFEATED_RAYQUAZA
-	clearflag FLAG_DEFEATED_JIRACHI
-	clearflag FLAG_HIDE_SLATEPORT_CITY_JIRACHI
 	clearflag FLAG_DEFEATED_DEOXYS
 	clearflag FLAG_BATTLED_DEOXYS
+	call_if_set FLAG_PLACED_WISH_TAG, DraconidArchives_EventScript_ResetJirachi
+	return
+
+DraconidArchives_EventScript_ResetJirachi::
+	clearflag FLAG_DEFEATED_JIRACHI
+	clearflag FLAG_HIDE_SLATEPORT_CITY_JIRACHI
 	return
 
 DraconidArchives_EventScript_ZinniaDeoxysBeaten::
