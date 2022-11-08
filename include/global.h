@@ -1044,7 +1044,8 @@ struct SaveBlock1
     /*0x3???*/ u8 registeredTexts[UNION_ROOM_KB_ROW_COUNT][21];
     /*0x3???*/ struct SaveTrainerHill trainerHill;
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
-    // sizeof: 0x3???
+    /*0x3???*/ u16 originMoves[NUM_ORIGIN_MOVES];
+    /*0x3???*/ u8 originMovesPP[NUM_ORIGIN_MOVES];
 };
 
 extern struct SaveBlock1* gSaveBlock1Ptr;
