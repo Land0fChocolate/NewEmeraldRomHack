@@ -395,6 +395,24 @@ LilycoveCity_ContestHall_EventScript_WallaceFan3::
 	release
 	end
 
+LilycoveCity_ContestHall_EventScript_Glacia::
+	locktarget
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_Glacia, MSGBOX_DEFAULT
+	closemessage
+	end
+
+LilycoveCity_ContestHall_Text_Glacia:
+	.string "A kaleidoscope of polished moves…\p"
+	.string "Synchronized collaboration between\n"
+	.string "Trainer and Pokémon.\p"
+	.string "Their souls like burning hot flames…\p"
+	.string "Watching a Pokémon contest is as\n"
+	.string "enjoyable as watching a Pokémon battle.\p"
+	.string "I wonder if I could participate in\n"
+	.string "contests without jeopardizing my\l"
+	.string "training for battles?$"
+
 LilycoveCity_ContestHall_Text_Wallace:
 	.string "Wallace: No matter whether you stand in\n"
 	.string "a Pokémon Gym or a Contest Hall, a\l"
