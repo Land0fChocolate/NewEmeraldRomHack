@@ -70,6 +70,14 @@ LilycoveCity_ContestHall_EventScript_Sailor::
 	msgbox LilycoveCity_ContestHall_Text_IsntThisPlaceHumongous, MSGBOX_NPC
 	end
 
+LilycoveCity_ContestHall_EventScript_Delinquent::
+	msgbox LilycoveCity_ContestHall_Text_Delinquent, MSGBOX_NPC
+	end
+
+LilycoveCity_ContestHall_EventScript_FairyTaleGirl::
+	msgbox LilycoveCity_ContestHall_Text_FairyTaleGirl, MSGBOX_NPC
+	end
+
 LilycoveCity_ContestHall_EventScript_SmartContestMC::
 	lock
 	faceplayer
@@ -438,6 +446,17 @@ LilycoveCity_ContestHall_Text_IsntThisPlaceHumongous:
 	.string "Whoa, isn't this place humongous!\p"
 	.string "The tension in the air… It's not\n"
 	.string "like a Contest hall in the sticks.$"
+
+LilycoveCity_ContestHall_Text_Delinquent:
+	.string "One day, I'm going to be up on that\n"
+	.string "stage and be a contest superstar.\p"
+	.string "Until then, I'll need to grow lots of\n"
+	.string "berries for {POKEBLOCK}s.$"
+
+LilycoveCity_ContestHall_Text_FairyTaleGirl:
+	.string "I don't know what the rules are in\n"
+	.string "contests. I just like seeing all\l"
+	.string "the gorgeous Pokémon.$"
 
 LilycoveCity_ContestHall_Text_GiveItBestSmartAppeal:
 	.string "MC: Okay, Smart Pokémon and their\n"

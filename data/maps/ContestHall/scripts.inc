@@ -135,7 +135,7 @@ ContestHall_EventScript_SetRandomAudience7::
 	return
 
 ContestHall_EventScript_GetRandomAudienceGfxId::
-	setvar VAR_RESULT, 32
+	setvar VAR_RESULT, 38
 	special GenerateContestRand
 	addvar VAR_RESULT, 1
 	switch VAR_RESULT
@@ -171,6 +171,12 @@ ContestHall_EventScript_GetRandomAudienceGfxId::
 	case 30, ContestHall_EventScript_RandomAudienceBlackBelt
 	case 31, ContestHall_EventScript_RandomAudienceBeauty
 	case 32, ContestHall_EventScript_RandomAudienceScientist1
+	case 33, ContestHall_EventScript_RandomAudienceDelinquent
+	case 34, ContestHall_EventScript_RandomAudienceStreetThug
+	case 35, ContestHall_EventScript_RandomAudienceFairyTaleGirl
+	case 36, ContestHall_EventScript_RandomAudiencePokemonRangerM
+	case 37, ContestHall_EventScript_RandomAudiencePokemonRangerF
+	case 38, ContestHall_EventScript_RandomAudienceHexManiac
 	end
 
 ContestHall_EventScript_RandomAudienceNinjaBoy::
@@ -299,6 +305,30 @@ ContestHall_EventScript_RandomAudienceBeauty::
 
 ContestHall_EventScript_RandomAudienceScientist1::
 	setvar VAR_TEMP_1, OBJ_EVENT_GFX_SCIENTIST_1
+	return
+
+ContestHall_EventScript_RandomAudienceDelinquent::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_DELINQUENT
+	return
+
+ContestHall_EventScript_RandomAudienceStreetThug::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_STREET_THUG
+	return
+
+ContestHall_EventScript_RandomAudienceFairyTaleGirl::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_FAIRY_TALE_GIRL
+	return
+
+ContestHall_EventScript_RandomAudiencePokemonRangerM::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_POKEMON_RANGER_M
+	return
+
+ContestHall_EventScript_RandomAudiencePokemonRangerF::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_POKEMON_RANGER_F
+	return
+
+ContestHall_EventScript_RandomAudienceHexManiac::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_HEX_MANIAC
 	return
 
 ContestHall_EventScript_CreateAudience::

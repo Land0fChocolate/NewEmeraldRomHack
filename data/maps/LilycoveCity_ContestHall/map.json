@@ -559,6 +559,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OverworldPokemon_EventScript_Abra",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DELINQUENT",
+      "x": 13,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LilycoveCity_ContestHall_EventScript_Delinquent",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FAIRY_TALE_GIRL",
+      "x": 36,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LilycoveCity_ContestHall_EventScript_FairyTaleGirl",
+      "flag": "0"
     }
   ],
   "warp_events": [
