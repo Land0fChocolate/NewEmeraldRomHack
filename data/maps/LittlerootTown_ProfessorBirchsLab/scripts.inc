@@ -1254,7 +1254,7 @@ LittlerootTown_ProfessorBirchsLab_Text_CrammedWithBooksOnPokemon:
 LittlerootTown_ProfessorBirchsLab_Text_RockForCozmo:
 	.string "It's an unusual looking rock.\n"
 	.string "There is a note stuck to it that says:\l"
-	.string "'To deliver to Professor Cozmo'.$"
+	.string "“To deliver to Professor Cozmo”.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BookTooHardToRead:
 	.string "It's a book on Pokemon biology.\n"

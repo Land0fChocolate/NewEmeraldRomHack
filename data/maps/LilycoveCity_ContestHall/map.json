@@ -597,7 +597,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_ContestHall_EventScript_Glacia",
-      "flag": "0"
+      "flag": "FLAG_HIDE_OUTSIDE_ELITE_4"
     }
   ],
   "warp_events": [
