@@ -146,7 +146,7 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
         return FALSE;
     if (gLastLandedMoves[gActiveBattler] == 0xFFFF)
         return FALSE;
-    if (gBattleMoves[gLastLandedMoves[gActiveBattler]].power == 0)
+    if (IS_MOVE_STATUS(gLastLandedMoves[gActiveBattler]))
         return FALSE;
 
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
@@ -531,7 +531,7 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
         return FALSE;
     if (gLastHitBy[gActiveBattler] == 0xFF)
         return FALSE;
-    if (gBattleMoves[gLastLandedMoves[gActiveBattler]].power == 0)
+    if (IS_MOVE_STATUS(gLastLandedMoves[gActiveBattler]))
         return FALSE;
 
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
@@ -737,7 +737,8 @@ void AI_TrySwitchOrUseItem(void)
 
                     GetAIPartyIndexes(gActiveBattler, &firstId, &lastId);
 
-                    for (monToSwitchId = (lastId-1); monToSwitchId >= firstId; monToSwitchId--)                    {
+                    for (monToSwitchId = (lastId-1); monToSwitchId >= firstId; monToSwitchId--)
+                    {
                         if (GetMonData(&party[monToSwitchId], MON_DATA_HP) == 0)
                             continue;
                         if (monToSwitchId == gBattlerPartyIndexes[battlerIn1])
@@ -950,8 +951,8 @@ u8 GetMostSuitableMonToSwitchInto(void)
             || i == *(gBattleStruct->monToSwitchIntoId + battlerIn1)
             || i == *(gBattleStruct->monToSwitchIntoId + battlerIn2)
             || (HasAbility(ABILITY_TRUANT, GetMonAbilities(&party[i])) && IsTruantMonVulnerable(gActiveBattler, opposingBattler)) // While not really invalid per say, not really wise to switch into this mon.
-            || (AI_THINKING_STRUCT->aiFlags & AI_FLAG_ACE_POKEMON 
-                && i == (CalculateEnemyPartyCount()-1))) //Save Ace Pokemon for last
+            || ((AI_THINKING_STRUCT->aiFlags & AI_FLAG_ACE_POKEMON)
+                && i == (CalculateEnemyPartyCount() - 1))) //Save Ace Pokemon for last
             invalidMons |= gBitTable[i];
         else
             aliveCount++;

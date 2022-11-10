@@ -4634,24 +4634,21 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Andrew[] = {
     }
 };
 
-static const struct TrainerMonItemDefaultMoves sParty_Ivan[] = { //CONTINUE: bug is with AI. AI switches to blank party space rather than Magikarp with Splash.
+static const struct TrainerMonNoItemDefaultMoves sParty_Ivan[] = {
     {
     .iv = 0,
     .lvl = 6,
     .species = SPECIES_MAGIKARP,
-    .heldItem = ITEM_NONE
     },
     {
     .iv = 0,
     .lvl = 6,
     .species = SPECIES_MAGIKARP,
-    .heldItem = ITEM_NONE
     },
     {
     .iv = 0,
     .lvl = 7,
     .species = SPECIES_MAGIKARP,
-    .heldItem = ITEM_NONE
     }
 };
 

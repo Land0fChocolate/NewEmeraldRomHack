@@ -4770,7 +4770,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = ARRAY_COUNT(sParty_Ivan),
-        .party = {.ItemDefaultMoves = sParty_Ivan},
+        .party = {.NoItemDefaultMoves = sParty_Ivan},
     },
 
     [TRAINER_CLAUDE] =
