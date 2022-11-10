@@ -2342,7 +2342,7 @@ const struct ContestPokemon gContestOpponents[] =
         .personality = 0,
         .otId = 0xFFFF
     },
-    [CONTEST_OPPONENT_MAYRA] = {
+    [CONTEST_OPPONENT_MAYRA] = { //TODO: change to Lisia
         .species = SPECIES_ALTARIA,
         .nickname = _("TARIA"),
         .trainerName = _("MAYRA"),

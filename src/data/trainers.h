@@ -4761,7 +4761,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_IVAN] =
     {
-        .partyFlags = 0,
+        .partyFlags = F_TRAINER_PARTY_HELD_ITEM,
         .trainerClass = TRAINER_CLASS_FISHERMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_FISHERMAN,
@@ -4770,7 +4770,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = ARRAY_COUNT(sParty_Ivan),
-        .party = {.NoItemDefaultMoves = sParty_Ivan},
+        .party = {.ItemDefaultMoves = sParty_Ivan},
     },
 
     [TRAINER_CLAUDE] =
