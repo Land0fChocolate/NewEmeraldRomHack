@@ -11,6 +11,7 @@ SootopolisCity_Gym_1F_OnTransition:
 	end
 
 SootopolisCity_Gym_1F_SetUpWallace::
+	goto_if_unset FLAG_BADGE08_GET, SootopolisCity_Gym_1F_Eventscript_WallaceRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_WALLACE_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE
@@ -25,6 +26,7 @@ SootopolisCity_Gym_1F_Eventscript_WallaceRematch::
 	return
 
 SootopolisCity_Gym_1F_Eventscript_WallaceAtContestHall::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_CONTEST_HALL_WALLACE
 	setflag FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE
 	return

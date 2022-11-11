@@ -26,7 +26,8 @@ static const u8 sSturdyDescription[] = _(
 
 static const u8 sDampDescription[] = _(
 	"Prevents self-destruct\n"
-	"and powder moves.");
+	"and powder moves of all\n"
+	"Pokémon on field.");
 
 static const u8 sLimberDescription[] = _(
 	"Grants paralysis immunity.");
@@ -173,7 +174,7 @@ static const u8 sWaterVeilDescription[] = _(
 	"Grants burn immunity.");
 
 static const u8 sMagnetPullDescription[] = _(
-	"Stops Steel-type Pokemon\n"
+	"Stops Steel-type Pokémon\n"
 	"from switching out.");
 
 static const u8 sSoundproofDescription[] = _(
@@ -402,8 +403,8 @@ static const u8 sQuickFeetDescription[] = _(
 
 static const u8 sNormalizeDescription[] = _(
 	"All moves become Normal\n"
-	"type and increase in power\n"
-	"by 30%.");
+	"type, increase in power\n"
+	"by 30% and can hit ghosts.");
 
 static const u8 sSniperDescription[] = _(
 	"Critical hits triple\n"
@@ -415,7 +416,7 @@ static const u8 sMagicGuardDescription[] = _(
 
 static const u8 sNoGuardDescription[] = _(
 	"All moves used by or\n"
-	"against this Pokemon\n"
+	"against this Pokémon\n"
 	"cannot miss.");
 
 static const u8 sStallDescription[] = _(
@@ -609,7 +610,7 @@ static const u8 sAnalyticDescription[] = _(
 
 static const u8 sIllusionDescription[] = _(
 	"Comes out disguised as the\n"
-	"Pokemon in the back of the\n"
+	"Pokémon in the back of the\n"
 	"party.");
 
 static const u8 sImposterDescription[] = _(
@@ -753,12 +754,12 @@ static const u8 sParentalBondDescription[] = _(
 static const u8 sDarkAuraDescription[] = _(
 	"Increases damage of dark\n"
 	"type moves by 33% for all\n"
-	"Pokemon on the field.");
+	"Pokémon on the field.");
 
 static const u8 sFairyAuraDescription[] = _(
 	"Increases damage of fairy\n"
 	"type moves by 33% for all\n"
-	"Pokemon on the field.");
+	"Pokémon on the field.");
 
 static const u8 sAuraBreakDescription[] = _(
 	"Inverts the effect of aura\n"
@@ -1010,7 +1011,7 @@ static const u8 sGorillaTacticsDescription[] = _(
 	"but locked to one move.");
 
 static const u8 sNeutralizingGasDescription[] = _(
-	"Other Pokemon abilities\n"
+	"Other Pokémon abilities\n"
 	"are nullified.");
 
 static const u8 sPastelVeilDescription[] = _(

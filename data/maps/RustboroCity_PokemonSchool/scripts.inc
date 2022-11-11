@@ -6,6 +6,7 @@ RustboroCity_PokemonSchool_MapScripts::
 	.byte 0
 
 RustboroCity_PokemonSchool_OnTransition::
+	goto_if_unset FLAG_BADGE04_GET, RustboroCity_PokemonSchool_Eventscript_RoxanneRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_ROXANNE_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE
@@ -390,8 +391,8 @@ RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw:
 
 RustboroCity_PokemonSchool_Text_ExplainQuickClaw:
 	.string "A Pokémon holding the Quick Claw will\n"
-	.string "occasionally speed up and get to move\l"
-	.string "before its opponent.\p"
+	.string "slightly speed up if it has taken\l"
+	.string "significant damage.\p"
 	.string "There are many other items that are\n"
 	.string "meant to be held by Pokémon.\p"
 	.string "Just those alone will give you many\n"

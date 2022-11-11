@@ -9935,11 +9935,12 @@ static void MulByTypeEffectiveness(u16 *modifier, u16 move, u8 moveType, u8 batt
         if (recordAbilities)
             RecordItemEffectBattle(battlerDef, HOLD_EFFECT_RING_TARGET);
     }
-    else if ((moveType == TYPE_FIGHTING || moveType == TYPE_NORMAL) && defType == TYPE_GHOST && gBattleMons[battlerDef].status2 & STATUS2_FORESIGHT && mod == UQ_4_12(0.0))
-    {
-        mod = UQ_4_12(1.0);
-    }
-    else if ((moveType == TYPE_FIGHTING || moveType == TYPE_NORMAL) && defType == TYPE_GHOST && HasAbility(ABILITY_SCRAPPY, abilities) && mod == UQ_4_12(0.0))
+    else if ((moveType == TYPE_FIGHTING || moveType == TYPE_NORMAL) 
+        && defType == TYPE_GHOST 
+        && ((gBattleMons[battlerDef].status2 & STATUS2_FORESIGHT) 
+            || HasAbility(ABILITY_SCRAPPY, abilities) 
+            || HasAbility(ABILITY_NORMALIZE, abilities))
+        && mod == UQ_4_12(0.0))
     {
         mod = UQ_4_12(1.0);
     }

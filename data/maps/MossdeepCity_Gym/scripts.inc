@@ -8,12 +8,13 @@ MossdeepCity_Gym_OnTransition::
 	end
 
 MossdeepCity_Gym_SetUpTateLiza::
+	goto_if_unset FLAG_BADGE07_GET, MossdeepCity_Gym_Eventscript_TateLizaRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_TATE_AND_LIZA_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE
     goto_if_eq MossdeepCity_Gym_Eventscript_TateLizaRematch
     compare VAR_RESULT, FALSE
-    goto_if_eq MossdeepCity_Gym_Eventscript_TateLizaTrainerSchool
+    goto_if_eq MossdeepCity_Gym_Eventscript_TateLizaSlateport
     return
 
 MossdeepCity_Gym_Eventscript_TateLizaRematch::
@@ -21,7 +22,8 @@ MossdeepCity_Gym_Eventscript_TateLizaRematch::
 	clearflag FLAG_HIDE_MOSSDEEP_GYM_TATE_LIZA
 	return
 
-MossdeepCity_Gym_Eventscript_TateLizaTrainerSchool::
+MossdeepCity_Gym_Eventscript_TateLizaSlateport::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_SLATEPORT_CITY_TATE_LIZA
 	setflag FLAG_HIDE_MOSSDEEP_GYM_TATE_LIZA
 	return

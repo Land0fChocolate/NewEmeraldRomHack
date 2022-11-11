@@ -17,6 +17,8 @@ MauvilleCity_OnTransition:
 	end
 
 MauvilleCity_EventScript_SetUpWattson::
+	goto_if_unset FLAG_BADGE03_GET, MauvilleCity_Eventscript_WattsonRematch
+	goto_if_unset FLAG_BADGE05_GET, MauvilleCity_Eventscript_WattsonRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_WATTSON_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE
@@ -31,6 +33,7 @@ MauvilleCity_Eventscript_WattsonRematch::
 	return
 
 MauvilleCity_Eventscript_WattsonInMauvilleCity::
+	goto_if_unset FLAG_BADGE05_GET, Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_MAUVILLE_CITY_WATTSON
 	setflag FLAG_HIDE_MAUVILLE_GYM_WATTSON
 	return

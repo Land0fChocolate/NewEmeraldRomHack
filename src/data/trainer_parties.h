@@ -7869,7 +7869,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Cristian[] = {
     {
     .iv = 200,
     .lvl = 13,
-    .species = SPECIES_MAKUHITA,
+    .species = SPECIES_MACHOP,
     }
 };
 
@@ -8435,6 +8435,11 @@ static const struct TrainerMonNoItemDefaultMoves sParty_James1[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_James2[] = {
     {
     .iv = 10,
+    .lvl = 26,
+    .species = SPECIES_CASCOON,
+    },
+    {
+    .iv = 10,
     .lvl = 27,
     .species = SPECIES_NINJASK,
     }
@@ -8475,7 +8480,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_James5[] = {
     {
     .iv = 40,
     .lvl = 33,
-    .species = SPECIES_SURSKIT,
+    .species = SPECIES_MASQUERAIN,
     },
     {
     .iv = 40,

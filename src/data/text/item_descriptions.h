@@ -3168,9 +3168,9 @@ static const u8 sTM63Desc[] = _(
     "used sequentially.");
 
 static const u8 sTM64Desc[] = _(
-    "User sacrifices\n"
-    "itself to deal\n"
-    "massive damage.");
+    "A small precise\n"
+    "slash that always\n"
+    "critically hits.");
 
 static const u8 sTM65Desc[] = _(
     "Claws from the\n"

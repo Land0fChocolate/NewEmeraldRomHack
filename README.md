@@ -100,7 +100,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Sweet Veil: Also ignores evasion boosts from target.
 - Corrosion: Also makes user's Poison moves super effective against Steel types.
 - Solar Power: No longer decreases HP. Power modifier changed to 25% from 50%.
-- Normalize: Power buffed to 30% from 20%.
+- Normalize: Power buffed to 30% from 20%. Also allows user to hit Ghost types.
 - Liquid Voice: Also powers up sound moves by 20%.
 - Cursed Body: Now always disables the move for just the next turn.
 - Keen Eye: Also increases move accuracy by 30%.

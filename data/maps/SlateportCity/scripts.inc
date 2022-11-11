@@ -37,6 +37,7 @@ SlateportCity_OnTransition:
 	end
 
 SlateportCity_Eventscript_SetUpTateLiza::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, SlateportCity_Eventscript_TateLizaRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_TATE_AND_LIZA_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE
@@ -288,7 +289,7 @@ SlateportCity_EventScript_RichBoy::
 	faceplayer
 	compare VAR_SLATEPORT_CITY_STATE, 1
 	call_if_eq SlateportCity_EventScript_RichBoySternInterview
-	msgbox SlateportCity_Text_GoingToCompeteInBattleTent, MSGBOX_DEFAULT
+	msgbox SlateportCity_Text_BuildABoat, MSGBOX_DEFAULT
 	release
 	end
 
@@ -332,10 +333,6 @@ SlateportCity_EventScript_Woman1::
 SlateportCity_EventScript_Woman1AquaGone::
 	msgbox SlateportCity_Text_VisitedMuseumOften, MSGBOX_DEFAULT
 	release
-	end
-
-SlateportCity_EventScript_BattleTentSign::
-	msgbox SlateportCity_Text_BattleTentSign, MSGBOX_SIGN
 	end
 
 SlateportCity_EventScript_SternsShipyardSign::
@@ -420,7 +417,7 @@ SlateportCity_EventScript_PokefanF::
 	end
 
 SlateportCity_EventScript_Man2::
-	msgbox SlateportCity_Text_BattleTentBuiltRecently, MSGBOX_NPC
+	msgbox SlateportCity_Text_OtherCityHasContests, MSGBOX_NPC
 	end
 
 SlateportCity_EventScript_AquaGrunt1::
@@ -1142,11 +1139,14 @@ SlateportCity_Text_BuyBricksSoDecorWontGetDirty:
 	.string "dolls and cusions won't get dirty\l"
 	.string "when I leave them out.$"
 
-SlateportCity_Text_GoingToCompeteInBattleTent:
-	.string "Wroooar! I'm going to compete in\n"
-	.string "the Battle Tent, too!\p"
-	.string "But before that, I need to catch\n"
-	.string "some Pokémon!$"
+SlateportCity_Text_BuildABoat:
+	.string "There's a shipyard here.\n"
+	.string "I'm going to see if they can build\l"
+	.string "me my own boat.\p"
+	.string "Then I can venture out to sea on\n"
+	.string "adventures!\p"
+	.string "Well, it's easier than beating gyms\n"
+	.string "and learn to Surf on your own Pokémon.$"
 
 SlateportCity_Text_BushedHikingFromMauville:
 	.string "Whew… I'm just bushed…\p"
@@ -1260,13 +1260,13 @@ SlateportCity_Text_CantChangeTradeMonName:
 	.string "The original Trainer's love for that\n"
 	.string "Pokémon is in the nickname.$"
 
-SlateportCity_Text_BattleTentBuiltRecently:
-	.string "Recently, a Battle Tent was built\n"
-	.string "in Slateport.\p"
-	.string "Gyms are fun, but the Battle Tent's\n"
-	.string "awesome in its own way.\p"
-	.string "You should go find tough Pokémon\n"
-	.string "for the Battle Tent!$"
+SlateportCity_Text_OtherCityHasContests:
+	.string "I've heard that in another port city\n"
+	.string "like this one, they have Pokémon\l"
+	.string "contests there.\p"
+	.string "Gyms are fun, but I can't help feel the\n"
+	.string "allure of my Pokémon performing before\l"
+	.string "an audience like an idol.$"
 
 SlateportCity_Text_CaptSternBeingInterviewed:
 	.string "I was hoping that it was a famous star\n"
@@ -1358,10 +1358,6 @@ SlateportCity_Text_FromHarborTryingToTakeSub:
 SlateportCity_Text_PleaseComeWithMe:
 	.string "{PLAYER}{KUN}!\n"
 	.string "Please, come with me!$"
-
-SlateportCity_Text_BattleTentSign:
-	.string "BATTLE TENT SLATEPORT SITE\n"
-	.string "“Find it! The ultimate Pokémon!”$"
 
 SlateportCity_Text_SternsShipyardWantedSign:
 	.string "STERN'S SHIPYARD\p"

@@ -447,8 +447,8 @@ RusturfTunnel_Text_GruntIntro:
 	.string "That hostage Pokémon turned out to\n"
 	.string "be worthless!\p"
 	.string "And to think I made a getaway…\n"
-	.string "Why is this place called a\l"
-	.string "tunnel? It goes nowhere!\p"
+	.string "Why is this place called a tunnel?\l"
+	.string "It goes nowhere!\p"
 	.string "Hey! You!\n"
 	.string "So you want to battle me?$"
 

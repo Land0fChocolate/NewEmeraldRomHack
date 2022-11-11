@@ -518,13 +518,14 @@ RustboroCity_DevonCorp_2F_EventScript_WorkOnNext::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_CloningScientist::
+	lock
+	faceplayer
 	compare VAR_MEW_CLONING_STATE, 3
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_CloneIsComplete
 	compare VAR_MEW_CLONING_STATE, 2
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_CloningOngoing
 	compare VAR_MEW_CLONING_STATE, 1
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_CloningScientistPostCloning
-	@VAR_MEW_CLONING_STATE, 0 - not cloned yet
 	msgbox RustboroCity_DevonCorp_2F_Text_AcquiredCloningResearch, MSGBOX_DEFAULT
 	checkformoninparty SPECIES_MEW
 	compare VAR_RESULT, TRUE
@@ -635,8 +636,8 @@ RustboroCity_DevonCorp_2F_Text_AcquiredCloningResearch:
 	.string "We've acquired some peculiar research\n"
 	.string "materials from a lab on Cinnabar island\l"
 	.string "in Kanto.\p"
-	.string "Among them are extensive Pokémon cloning\n"
-	.string "and bioengineering techniques.\p"
+	.string "Among them are extensive Pokémon\n"
+	.string "cloning and bioengineering techniques.\p"
 	.string "It's all very interesting, but I don't\n"
 	.string "have enough data to make use of it.\p"
 	.string "We don't even have the Pokémon the\n"
@@ -651,9 +652,9 @@ RustboroCity_DevonCorp_2F_Text_YouHaveMew:
 	.string "It was originally developed for the\l"
 	.string "purpose of cloning Mew.\p"
 	.string "However, the project obtained new\n"
-	.string "funding from a shady backer who demanded\l"
-	.string "that Mew's DNA be altered to make the\l"
-	.string "clone stronger.\p"
+	.string "funding from a shady backer who\l"
+	.string "demanded that Mew's DNA be altered to\l"
+	.string "make the clone stronger.\p"
 	.string "It's a bit of a sordid history.\p"
 	.string "Ah! But I'm not interested in making\n"
 	.string "horrifically powerful Pokémon.\l"

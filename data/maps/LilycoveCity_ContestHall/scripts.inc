@@ -36,6 +36,7 @@ LilycoveCity_ContestHall_OnTransition:
 	end
 
 LilycoveCity_ContestHall_SetUpWallace::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_ContestHall_Eventscript_WallaceRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_WALLACE_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE

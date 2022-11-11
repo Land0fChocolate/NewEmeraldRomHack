@@ -217,6 +217,10 @@ DewfordTown_Movement_SailToPetalburg:
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
+	walk_fastest_up
+	walk_fastest_up
+	walk_fastest_up
+	walk_fastest_up
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
@@ -389,10 +393,10 @@ DewfordTown_Movement_SailToPetalburg:
 	walk_fastest_up
 	walk_fastest_up
 	walk_fastest_up
-	walk_fastest_up
-	walk_fastest_up
-	walk_fastest_up
-	walk_fastest_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
@@ -405,6 +409,10 @@ DewfordTown_Movement_SailToPetalburg:
 
 DewfordTown_Movement_SailToSlateport:
 	walk_right
+	walk_up
+	walk_up
+	walk_fast_up
+	walk_fast_up
 	walk_fast_right
 	walk_fast_right
 	walk_fastest_right
