@@ -424,9 +424,10 @@ DraconidArchives_Text_DisplayCase:
 
 DraconidArchives_Text_Scroll:
 	.string "A scroll written in a primitive language\n"
-	.string "you don't understand. The illustration\l"
-	.string "depicts some monstrous looking Pokémon\l"
-	.string "engaged in an epic battle.$"
+	.string "you don't understand.\p"
+	.string "The illustration depicts some monstrous\n"
+	.string "looking Pokémon engaged in an epic\l"
+	.string "battle.$"
 
 DraconidArchives_Text_Book:
 	.string "A book on historical meteorite events.\n"

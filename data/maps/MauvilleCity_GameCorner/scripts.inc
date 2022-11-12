@@ -2,7 +2,6 @@ MauvilleCity_GameCorner_MapScripts::
 	.byte 0
 
     @ Game Corner prices
-	.set TM32_COINS,  500
 	.set TM29_COINS,  3500
 	.set TM53_COINS,  3500
 	.set TM56_COINS,  3500
@@ -255,23 +254,16 @@ MauvilleCity_GameCorner_EventScript_ReturnToChooseTMPrize::
 MauvilleCity_GameCorner_EventScript_ChooseTMPrize::
 	multichoice 12, 0, MULTI_GAME_CORNER_TMS, FALSE
 	switch VAR_RESULT
-	case 0, MauvilleCity_GameCorner_EventScript_TM32
-	case 1, MauvilleCity_GameCorner_EventScript_TM29
-	case 2, MauvilleCity_GameCorner_EventScript_TM53
-	case 3, MauvilleCity_GameCorner_EventScript_TM56
-	case 4, MauvilleCity_GameCorner_EventScript_TM13
-	case 5, MauvilleCity_GameCorner_EventScript_TM24
-	case 6, MauvilleCity_GameCorner_EventScript_TM35
-	case 7, MauvilleCity_GameCorner_EventScript_TM94
-	case 8, MauvilleCity_GameCorner_EventScript_CancelTMSelect
+	case 0, MauvilleCity_GameCorner_EventScript_TM29
+	case 1, MauvilleCity_GameCorner_EventScript_TM53
+	case 2, MauvilleCity_GameCorner_EventScript_TM56
+	case 3, MauvilleCity_GameCorner_EventScript_TM13
+	case 4, MauvilleCity_GameCorner_EventScript_TM24
+	case 5, MauvilleCity_GameCorner_EventScript_TM35
+	case 6, MauvilleCity_GameCorner_EventScript_TM94
+	case 7, MauvilleCity_GameCorner_EventScript_CancelTMSelect
 	goto MauvilleCity_GameCorner_EventScript_CancelTMSelect
 	end
-
-MauvilleCity_GameCorner_EventScript_TM32::
-	setvar VAR_TEMP_1, 1
-	bufferitemname 0, ITEM_TM32
-	setvar VAR_0x8004, ITEM_TM32
-	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
 
 MauvilleCity_GameCorner_EventScript_TM29::
 	setvar VAR_TEMP_1, 2
@@ -321,7 +313,6 @@ MauvilleCity_GameCorner_EventScript_ConfirmTMPrize::
 	compare VAR_RESULT, NO
 	goto_if_eq MauvilleCity_GameCorner_EventScript_CancelTMSelect
 	switch VAR_TEMP_1
-	case 1, MauvilleCity_GameCorner_EventScript_BuyTM32
 	case 2, MauvilleCity_GameCorner_EventScript_BuyTM29
 	case 3, MauvilleCity_GameCorner_EventScript_BuyTM53
 	case 4, MauvilleCity_GameCorner_EventScript_BuyTM56
@@ -329,21 +320,6 @@ MauvilleCity_GameCorner_EventScript_ConfirmTMPrize::
 	case 6, MauvilleCity_GameCorner_EventScript_BuyTM24
 	case 7, MauvilleCity_GameCorner_EventScript_BuyTM35
 	case 8, MauvilleCity_GameCorner_EventScript_BuyTM94
-	end
-
-MauvilleCity_GameCorner_EventScript_BuyTM32::
-	checkcoins VAR_TEMP_2
-	compare VAR_TEMP_2, TM32_COINS
-	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForTM
-	checkitem ITEM_TM32, 1
-	compare VAR_RESULT, TRUE
-	goto_if_eq MauvilleCity_GameCorner_EventScript_YouAlreadyHaveThis
-	removecoins TM32_COINS
-	additem ITEM_TM32
-	updatecoinsbox 1, 1
-	playse SE_SHOP
-	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
-	goto MauvilleCity_GameCorner_EventScript_ReturnToChooseTMPrize
 	end
 
 MauvilleCity_GameCorner_EventScript_BuyTM29::
@@ -476,6 +452,11 @@ MauvilleCity_GameCorner_EventScript_Gentleman::
 	end
 
 MauvilleCity_GameCorner_EventScript_StreetThug::
+	lock
+	faceplayer
+	checkitem ITEM_COIN_CASE, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq MauvilleCity_GameCorner_EventScript_PorygonNeedCoinCase
 	showcoinsbox 1, 1
 	msgbox MauvilleCity_GameCorner_Text_OfferPorygon, MSGBOX_YESNO
 	compare VAR_RESULT, NO
@@ -494,15 +475,23 @@ MauvilleCity_GameCorner_EventScript_StreetThug::
 	compare VAR_RESULT, 1
 	goto_if_eq MauvilleCity_GameCorner_EventScript_ReceivePokemonPC
 	goto Common_EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+MauvilleCity_GameCorner_EventScript_PorygonNeedCoinCase::
+	msgbox MauvilleCity_GameCorner_Text_NeedCoinCaseForPorygon, MSGBOX_NPC
+	release
 	end
 
 MauvilleCity_GameCorner_Eventscript_StreetThug_Declined::
 	msgbox MauvilleCity_GameCorner_Text_StreetThugDeclined, MSGBOX_NPC
+	hidecoinsbox 0, 0
 	release
 	end
 
 MauvilleCity_GameCorner_EventScript_StreetThugNotEnoughCoins::
 	msgbox MauvilleCity_GameCorner_Text_StreetThugNotEnoughCoins, MSGBOX_NPC
+	hidecoinsbox 0, 0
 	release
 	end
 
@@ -956,6 +945,17 @@ MauvilleCity_GameCorner_Text_HeresSomeSlotsInfo:
 MauvilleCity_GameCorner_Text_CantPlayWithNoCoinCase:
 	.string "You can't play if you don't have\n"
 	.string "a Coin Case.$"
+
+MauvilleCity_GameCorner_Text_NeedCoinCaseForPorygon:
+	.string "Ladies and gents!\n"
+	.string "Step right up for a limited time prize!\p"
+	.string "All you big winners have the chance to\n"
+	.string "own your very own Porygon!\p"
+	.string "That's right, it's none other than the\n"
+	.string "digital Pokémon itself, and this is the\l"
+	.string "only place in Hoenn you can get it!\p"
+	.string "…Eh? Watchya doin' here, kid?\n"
+	.string "Get a coin case if you want a prize!$"
 
 MauvilleCity_GameCorner_Text_OfferPorygon:
 	.string "Ladies and gents!\n"

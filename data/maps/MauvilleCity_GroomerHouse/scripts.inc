@@ -4,6 +4,18 @@ MauvilleCity_GroomerHouse_MapScripts::
 MauvilleCity_GroomerHouse_EventScript_Meteorite::
 	msgbox MauvilleCity_GroomerHouse_Text_ItsAMeteorite, MSGBOX_SIGN
 	closemessage
+	checkformoninparty SPECIES_DEOXYS_ATTACK
+	compare VAR_RESULT, TRUE
+	goto_if_eq MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_DEFENSE
+	compare VAR_RESULT, TRUE
+	goto_if_eq MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_SPEED
+	compare VAR_RESULT, TRUE
+	goto_if_eq MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm
+	end
+
+MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm::
 	changedeoxysform 0
 	compare VAR_RESULT, TRUE
 	goto_if_eq MauvilleCity_GroomerHouse_EventScript_DeoxysChangedForm

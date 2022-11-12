@@ -5,6 +5,7 @@ MossdeepCity_MapScripts::
 	.byte 0
 
 MossdeepCity_OnTransition:
+	call Common_EventScript_SetupRivalGfxId
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_1
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_2
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_3

@@ -58,7 +58,6 @@ SlateportCity_Eventscript_TateLizaChilling::
 
 SlateportCity_EventScript_EnterSlateport::
 	setflag FLAG_VISITED_SLATEPORT_CITY
-	setvar VAR_CONTEST_HALL_STATE, 0
 	setflag FLAG_HIDE_SLATEPORT_CITY_CONTEST_REPORTER
 	return
 
@@ -564,6 +563,10 @@ SlateportCity_EventScript_DollClerk::
 
 	.align 2
 SlateportCity_PokemartDecor_Dolls:
+	.2byte ITEM_HEAL_BALL
+	.2byte ITEM_NEST_BALL
+	.2byte ITEM_NET_BALL
+	.2byte ITEM_LUXURY_BALL
 	.2byte DECOR_AZURILL_DOLL
 	.2byte DECOR_MARILL_DOLL
 	.2byte DECOR_SKITTY_DOLL

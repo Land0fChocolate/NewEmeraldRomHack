@@ -702,7 +702,6 @@ const u8 gText_GreenShard[] = _("Green Shard");
 const u8 gText_BattleFrontier[] = _("Battle Frontier");
 const u8 gText_Right[] = _("Right");
 const u8 gText_Left[] = _("Left");
-const u8 gText_TM32AndPrice[] = _("TM32{CLEAR_TO 0x48}1,500 COINS");
 const u8 gText_TM29AndPrice[] = _("TM29{CLEAR_TO 0x48}3,500 COINS");
 const u8 gText_TM53AndPrice[] = _("TM53{CLEAR_TO 0x48}3,500 COINS");
 const u8 gText_TM56AndPrice[] = _("TM56{CLEAR_TO 0x48}3,500 COINS");

@@ -114,8 +114,8 @@ Route112_Text_YeahWeNeedMeteorite:
 	.string "we need a meteorite to do it.$"
 
 Route112_Text_OhThatsWhyCrewWentToFallarbor:
-	.string "Oh, I get it now. That's why the rest\n"
-	.string "of the crew went out to Fallarbor.$"
+	.string "Huh, so that must be why he got us\n"
+	.string "hunting for meteorites.$"
 
 Route112_Text_CantLetAnyonePassUntilTheyreBack:
 	.string "You got it. And until they come back,\n"

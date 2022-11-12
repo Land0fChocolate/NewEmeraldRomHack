@@ -1,14 +1,5 @@
 FallarborTown_CozmosHouse2_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, FallarborTown_CozmosHouse2_OnTransition
 	.byte 0
-
-FallarborTown_CozmosHouse2_OnTransition:
-	call_if_set FLAG_RETURNED_METEORITE_TO_COZMO, FallarborTown_CozmosHouse2_EventScript_PlaceMeteorite
-	end
-
-FallarborTown_CozmosHouse2_EventScript_PlaceMeteorite:
-	setmetatile 5, 2, METATILE_GenericBuilding_WoodenFloor_Meteorite, 1
-	return
 
 FallarborTown_CozmosHouse2_EventScript_ProfCozmo::
 	lock
@@ -85,6 +76,18 @@ FallarborTown_CozmosHouse2_EventScript_Journal::
 FallarborTown_CozmosHouse2_EventScript_Meteorite::
 	msgbox FallarborTown_CozmosHouse2_Text_ItsAMeteorite, MSGBOX_SIGN
 	closemessage
+	checkformoninparty SPECIES_DEOXYS
+	compare VAR_RESULT, TRUE
+	goto_if_eq FallarborTown_CozmosHouse2_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_DEFENSE
+	compare VAR_RESULT, TRUE
+	goto_if_eq FallarborTown_CozmosHouse2_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_SPEED
+	compare VAR_RESULT, TRUE
+	goto_if_eq FallarborTown_CozmosHouse2_EventScript_ChangeDeoxysForm
+	end
+
+FallarborTown_CozmosHouse2_EventScript_ChangeDeoxysForm::
 	changedeoxysform 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq FallarborTown_CozmosHouse2_EventScript_DeoxysChangedForm

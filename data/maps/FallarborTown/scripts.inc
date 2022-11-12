@@ -5,8 +5,8 @@ FallarborTown_MapScripts::
 	.byte 0
 
 FallarborTown_OnTransition:
+	call Common_EventScript_SetupRivalGfxId
 	setflag FLAG_VISITED_FALLARBOR_TOWN
-	setvar VAR_CONTEST_HALL_STATE, 0
 	clearflag FLAG_CONTEST_SKETCH_CREATED
 	end
 
@@ -19,7 +19,7 @@ FallarborTown_EventScript_RivalTrigger::
 	applymovement OBJ_EVENT_ID_PLAYER, FallarborTown_Movement_PlayerMovesOutOfWay
 	applymovement LOCALID_RIVAL, FallarborTown_Movement_RivalExitsPokemonCenter
 	waitmovement 0
-	closedoor 64, 15
+	closedoor 14, 11
 	waitdooranim
 	delay 10
 	checkplayergender
@@ -41,12 +41,14 @@ FallarborTown_Movement_PlayerMovesOutOfWay:
 FallarborTown_EventScript_May::
 	playbgm MUS_ENCOUNTER_MAY, TRUE
 	msgbox FallarborTown_Text_MayBewareOfTeamMagma, MSGBOX_DEFAULT
+	closemessage
 	goto FallarborTown_EventScript_Rival_Leaves
 	end
 
 FallarborTown_EventScript_Brendan::
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
 	msgbox FallarborTown_Text_BrendanBewareOfTeamMagma, MSGBOX_DEFAULT
+	closemessage
 	goto FallarborTown_EventScript_Rival_Leaves
 	end
 

@@ -186,7 +186,10 @@ Route111_EventScript_Girl::
 	dotimebasedevents
 	goto_if_set FLAG_DAILY_ROUTE_111_RECEIVED_BERRY, Route111_EventScript_ReceivedBerry
 	msgbox Route111_Text_WateredPlantsEveryDayTakeBerry, MSGBOX_DEFAULT
-	giveitem ITEM_RAZZ_BERRY
+	random NUM_ROUTE_111_GIRL_BERRIES
+	addvar VAR_RESULT, NUM_ROUTE_111_GIRL_BERRIES_SKIPPED
+	addvar VAR_RESULT, FIRST_BERRY_INDEX
+	giveitem VAR_RESULT
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_DAILY_ROUTE_111_RECEIVED_BERRY

@@ -592,6 +592,10 @@ static const u8 sMoodyDescription[] = _(
 static const u8 sOvercoatDescription[] = _(
 	"Blocks weather and powder.");
 
+static const u8 sPoisonTouchDescription[] = _(
+	"User may poison the\n"
+	"target on contact.");
+
 static const u8 sBigPecksDescription[] = _(
 	"Prevents Defense stat\n"
 	"reduction.");
@@ -1927,7 +1931,7 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_TELEPATHY] = sTelepathyDescription,
     [ABILITY_MOODY] = sMoodyDescription,
     [ABILITY_OVERCOAT] = sOvercoatDescription,
-    [ABILITY_POISON_TOUCH] = sPoisonPointDescription,
+    [ABILITY_POISON_TOUCH] = sPoisonTouchDescription,
     [ABILITY_REGENERATOR] = sNaturalCureDescription,
     [ABILITY_BIG_PECKS] = sBigPecksDescription,
     [ABILITY_SAND_RUSH] = sSandRushDescription,

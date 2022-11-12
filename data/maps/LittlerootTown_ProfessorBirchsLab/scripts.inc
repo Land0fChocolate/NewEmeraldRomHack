@@ -1055,17 +1055,28 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_Meteorite::
-	checkflag FLAG_SYS_GAME_CLEAR
-	goto_if FALSE LittlerootTown_ProfessorBirchsLab_EventScript_MeteoriteEarlyGame
+	goto_if_unset FLAG_SYS_GAME_CLEAR, LittlerootTown_ProfessorBirchsLab_EventScript_MeteoriteEarlyGame
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ItsAMeteorite, MSGBOX_SIGN
 	closemessage
-	changedeoxysform 2
+	checkformoninparty SPECIES_DEOXYS
 	compare VAR_RESULT, TRUE
-	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_DeoxysChangedForm
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_ATTACK
+	compare VAR_RESULT, TRUE
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_SPEED
+	compare VAR_RESULT, TRUE
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ChangeDeoxysForm
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_MeteoriteEarlyGame::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_RockForCozmo, MSGBOX_SIGN
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ChangeDeoxysForm::
+	changedeoxysform 2
+	compare VAR_RESULT, TRUE
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_DeoxysChangedForm
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_DeoxysChangedForm::

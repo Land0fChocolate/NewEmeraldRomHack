@@ -1350,6 +1350,7 @@ static bool8 LoadGraphics(void)
         gMain.state++;
         break;
     case 19:
+        SetMonTypeIcons();
         CreateCaughtBallSprite(&sMonSummaryScreen->currentMon);
         gMain.state++;
         break;
@@ -1780,6 +1781,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
         data[1] = 0;
         break;
     case 9:
+        SetMonTypeIcons();
         SetTypeIcons();
         break;
     case 10:
@@ -2223,8 +2225,7 @@ static void ChangeSelectedMove(s16 *taskData, s8 direction, u8 *moveIndexPtr)
         ClearWindowTilemap(PSS_LABEL_WINDOW_MOVES_POWER_ACC);
         ClearWindowTilemap(PSS_LABEL_WINDOW_MOVES_APPEAL_JAM);
         DestroySplitIcon();
-        SetSpriteInvisibility(SPRITE_ARR_ID_MON_TYPE1, FALSE);
-        SetSpriteInvisibility(SPRITE_ARR_ID_MON_TYPE2, FALSE);
+        SetMonTypeIcons();
         ScheduleBgCopyTilemapToVram(0);
         HandlePowerAccTilemap(0, 3);
         HandleAppealJamTilemap(0, 3, 0);
@@ -2243,8 +2244,7 @@ static void CloseMoveSelectMode(u8 taskId)
     DestroyMoveSelectorSprites(SPRITE_ARR_ID_MOVE_SELECTOR1);
     ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_SWITCH);
     PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_INFO);
-    SetSpriteInvisibility(SPRITE_ARR_ID_MON_TYPE1, FALSE);
-    SetSpriteInvisibility(SPRITE_ARR_ID_MON_TYPE2, FALSE);
+    SetMonTypeIcons();
     PrintMoveDetails(0);
     TilemapFiveMovesDisplay(sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_BATTLE_MOVES][0], 3, TRUE);
     TilemapFiveMovesDisplay(sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_CONTEST_MOVES][0], 1, TRUE);
@@ -2407,6 +2407,8 @@ static void SwapBoxMonMoves(struct BoxPokemon *mon, u8 moveIndex1, u8 moveIndex2
 
 static void Task_SetHandleReplaceMoveInput(u8 taskId)
 {
+    SetSpriteInvisibility(SPRITE_ARR_ID_MON_TYPE1, TRUE);
+    SetSpriteInvisibility(SPRITE_ARR_ID_MON_TYPE2, TRUE);
     SetNewMoveTypeIcon();
     CreateMoveSelectorSprites(SPRITE_ARR_ID_MOVE_SELECTOR1);
     gTasks[taskId].func = Task_HandleReplaceMoveInput;
@@ -4110,7 +4112,6 @@ static void HidePageSpecificSprites(void)
 
 static void SetTypeIcons(void)
 {
-    SetMonTypeIcons();
     switch (sMonSummaryScreen->currPageIndex)
     {
     case PSS_PAGE_BATTLE_MOVES:

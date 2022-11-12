@@ -247,6 +247,7 @@ LittlerootTown_EventScript_BirchIntroducingPlayerToLittlerootBeachScene::
 	waitmessage
 	waitfanfare
 	setflag FLAG_SYS_NATIONAL_DEX
+	clearflag FLAG_HIDE_GAME_CORNER_STREET_THUG
 	special EnableNationalPokedex
 	msgbox LittlerootTown_Text_BirchBackToLab, MSGBOX_DEFAULT
 	closemessage

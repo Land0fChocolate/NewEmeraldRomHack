@@ -987,7 +987,7 @@ Route110_Text_AbigailPostBattle:
 
 Route110_Text_AbigailRegister:
 	.string "You know, I like you!\n"
-	.string "Let's have a rematch on CYCLING ROAD.$"
+	.string "Let's have a rematch on Cycling Road.$"
 
 Route110_Text_AbigailRematchIntro:
 	.string "Isn't it neat to hold a battle while\n"
@@ -1049,7 +1049,7 @@ Route110_Text_EdwinPostBattle:
 	.string "my passion as a collector is ignited!$"
 
 Route110_Text_EdwinRegister:
-	.string "I like collecting MATCH CALL\n"
+	.string "I like collecting Match Call\n"
 	.string "registrations, too…$"
 
 Route110_Text_EdwinRematchIntro:
@@ -1086,7 +1086,7 @@ Route110_Text_IsabelDefeated:
 
 Route110_Text_IsabelPostBattle:
 	.string "Rather than battling, perhaps I should\n"
-	.string "show off my Pokémon at the FAN CLUB.$"
+	.string "show off my Pokémon at the Fan Club.$"
 
 Route110_Text_IsabelRegister:
 	.string "That wasn't close to what I could\n"
@@ -1471,7 +1471,7 @@ FieryPath_Text_BryantPostBattle:
 
 FieryPath_Text_ShaylaIntro:
 	.string "This place blows!\n"
-	.string "I don't know why I came here.\p"
+	.string "I don't know why I came here.$"
 
 FieryPath_Text_ShaylaDefeat:
 	.string "Figures.$"
@@ -1505,8 +1505,8 @@ Route113_Text_FrannyDefeat:
 	.string "Oh, dear!$"
 
 Route113_Text_FrannyPostBattle:
-	.string "My dress is absolutely ruined, but I\p"
-	.string "cannot help myself to not play around\l"
+	.string "My dress is absolutely ruined, but I\n"
+	.string "cannot help myself to play around\l"
 	.string "in the ashfalls.$"
 
 Route113_Text_DillonIntro:
@@ -4540,8 +4540,8 @@ FieryPath_Text_DaytonPostBattle:
 
 FieryPath_Text_AishaIntro:
 	.string "This place makes for a unique training\n"
-	.string "environment. Is that why you have come\l"
-	.string "here too?$"
+	.string "environment.\l"
+	.string "Is that why you have come here too?$"
 
 FieryPath_Text_AishaDefeat:
 	.string "I don't waste any time being angry\n"

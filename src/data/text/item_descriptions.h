@@ -3223,7 +3223,7 @@ static const u8 sTM74Desc[] = _(
     "are to the target.");
 
 static const u8 sTM75Desc[] = _(
-    "Steals half\n"
+    "Steals over half\n"
     "damage dealt to\n"
     "heal the user.");
 
@@ -3234,8 +3234,8 @@ static const u8 sTM76Desc[] = _(
 
 static const u8 sTM77Desc[] = _(
     "User strikes the\n"
-    "vocal chords to\n"
-    "disable sound moves.");
+    "throat to disable\n"
+    "sound moves.");
 
 static const u8 sTM78Desc[] = _(
     "User stomps about\n"
