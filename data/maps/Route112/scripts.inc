@@ -63,11 +63,6 @@ Route112_EventScript_Hiker::
 	msgbox Route112_Text_NotEasyToGetBackToLavaridge, MSGBOX_NPC
 	end
 
-Route112_EventScript_Brice::
-	trainerbattle_single TRAINER_BRICE, Route112_Text_BriceIntro, Route112_Text_BriceDefeat
-	msgbox Route112_Text_BricePostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route112_EventScript_Jaylin::
 	trainerbattle_single TRAINER_JAYLIN, Route112_Text_JaylinIntro, Route112_Text_JaylinDefeat
 	msgbox Route112_Text_JaylinPostBattle, MSGBOX_AUTOCLOSE

@@ -122,11 +122,6 @@ Route115_EventScript_Alix::
 	msgbox Route115_Text_AlixPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route115_EventScript_Marlene::
-	trainerbattle_single TRAINER_MARLENE, Route115_Text_MarleneIntro, Route115_Text_MarleneDefeat
-	msgbox Route115_Text_MarlenePostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route115_Text_NeverKnowWhenCavePokemonWillAppear:
 	.string "Exploring a cave isn't like walking\n"
 	.string "on a road.\p"

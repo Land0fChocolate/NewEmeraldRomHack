@@ -1023,8 +1023,8 @@
     },
     {
       "type": "secret_base",
-      "x": 34,
-      "y": 50,
+      "x": 36,
+      "y": 58,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_YELLOW_CAVE3_1"
     },

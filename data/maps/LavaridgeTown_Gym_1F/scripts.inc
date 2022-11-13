@@ -1,7 +1,6 @@
 .set LOCALID_COLE, 2
 .set LOCALID_GERALD, 3
-.set LOCALID_AXLE, 4
-.set LOCALID_DANIELLE, 5
+.set LOCALID_DANIELLE, 4
 
 LavaridgeTown_Gym_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LavaridgeTown_Gym_1F_OnTransition
@@ -37,11 +36,8 @@ LavaridgeTown_Gym_1F_EventScript_CheckBuryTrainers::
 	goto_if_defeated TRAINER_COLE, LavaridgeTown_Gym_1F_EventScript_CheckBuryGerald
 	setobjectmovementtype LOCALID_COLE, MOVEMENT_TYPE_BURIED
 LavaridgeTown_Gym_1F_EventScript_CheckBuryGerald::
-	goto_if_defeated TRAINER_GERALD, LavaridgeTown_Gym_1F_EventScript_CheckBuryAxle
+	goto_if_defeated TRAINER_GERALD, LavaridgeTown_Gym_1F_EventScript_CheckBuryDanielle
 	setobjectmovementtype LOCALID_GERALD, MOVEMENT_TYPE_BURIED
-LavaridgeTown_Gym_1F_EventScript_CheckBuryAxle::
-	goto_if_defeated TRAINER_AXLE, LavaridgeTown_Gym_1F_EventScript_CheckBuryDanielle
-	setobjectmovementtype LOCALID_AXLE, MOVEMENT_TYPE_BURIED
 LavaridgeTown_Gym_1F_EventScript_CheckBuryDanielle::
 	goto_if_defeated TRAINER_DANIELLE, LavaridgeTown_Gym_1F_EventScript_EndCheckBuryTrainers
 	setobjectmovementtype LOCALID_DANIELLE, MOVEMENT_TYPE_BURIED
@@ -59,6 +55,7 @@ LavaridgeTown_Gym_1F_EventScript_Flannery::
 	end
 
 LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
+	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostDefeat, MSGBOX_DEFAULT
 	message LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -138,21 +135,6 @@ LavaridgeTown_Gym_1F_EventScript_Danielle::
 LavaridgeTown_Gym_1F_EventScript_Gerald::
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_GERALD, LOCALID_GERALD, LavaridgeTown_Gym_1F_Text_GeraldIntro, LavaridgeTown_Gym_1F_Text_GeraldDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
 	msgbox LavaridgeTown_Gym_1F_Text_GeraldPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-LavaridgeTown_Gym_B1F_EventScript_Jace::
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_JACE, LOCALID_JACE, LavaridgeTown_Gym_B1F_Text_JaceIntro, LavaridgeTown_Gym_B1F_Text_JaceDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
-	msgbox LavaridgeTown_Gym_B1F_Text_JacePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-LavaridgeTown_Gym_B1F_EventScript_Jeff::
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_JEFF, LOCALID_JEFF, LavaridgeTown_Gym_B1F_Text_JeffIntro, LavaridgeTown_Gym_B1F_Text_JeffDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
-	msgbox LavaridgeTown_Gym_B1F_Text_JeffPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-LavaridgeTown_Gym_B1F_EventScript_Eli::
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_ELI, LOCALID_ELI, LavaridgeTown_Gym_B1F_Text_EliIntro, LavaridgeTown_Gym_B1F_Text_EliDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
-	msgbox LavaridgeTown_Gym_B1F_Text_EliPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GymGuide::
@@ -270,70 +252,35 @@ LavaridgeTown_Gym_1F_Text_DaniellePostBattle:
 	.string "I'm going to be a pretty and strong\n"
 	.string "Trainer just like Flannery.$"
 
-LavaridgeTown_Gym_B1F_Text_JaceIntro:
-	.string "Come on, get with it!\n"
-	.string "Let's go before my feelings cool!$"
-
-LavaridgeTown_Gym_B1F_Text_JaceDefeat:
-	.string "It's so hot, and yet my heart is\n"
-	.string "clutched by ice…$"
-
-LavaridgeTown_Gym_B1F_Text_JacePostBattle:
-	.string "The way the battling spirit burns\n"
-	.string "within you, you may stand a chance\l"
-	.string "against our Leader.$"
-
-LavaridgeTown_Gym_B1F_Text_JeffIntro:
-	.string "See how the flames blaze wildly?\n"
-	.string "They flare in anticipation of my win!$"
-
-LavaridgeTown_Gym_B1F_Text_JeffDefeat:
-	.string "Something didn't go right.$"
-
-LavaridgeTown_Gym_B1F_Text_JeffPostBattle:
-	.string "Well, so what? I say so what?\n"
-	.string "I can walk on hot coals barefoot!\p"
-	.string "…Don't even think about trying it!$"
-
-LavaridgeTown_Gym_B1F_Text_EliIntro:
-	.string "As much as I love mountains,\n"
-	.string "I especially love volcanoes.$"
-
-LavaridgeTown_Gym_B1F_Text_EliDefeat:
-	.string "Well, it seems to me I lost without\n"
-	.string "ever being in control.$"
-
-LavaridgeTown_Gym_B1F_Text_EliPostBattle:
-	.string "I stay here because I became a fan\n"
-	.string "of Flannery's power.\p"
-	.string "Hehehehe.$"
-
 LavaridgeTown_Gym_1F_Text_FlanneryIntro:
 	.string "Welcome… No, wait.\p"
-	.string "Puny Trainer, how good to see you've\n"
-	.string "made it here!\p"
-	.string "I have been entrusted with the…\n"
-	.string "No, wait.\p"
-	.string "I am Flannery, and I'm the Gym\n"
-	.string "Leader here!\p"
-	.string "Uh…\n"
-	.string "Dare not underestimate me, though\l"
-	.string "I have been Leader only a short time!\p"
-	.string "With skills inherited from my grand-\n"
-	.string "father, I shall, uh…demonstrate the\l"
-	.string "hot moves we have honed on this land!$"
+	.string "Puny Trainer, you've done well to make\n"
+	.string "it this far!\p"
+	.string "Let's see. I'm, uh, honored to be\n"
+	.string "serving as the Gym Leader of…\p"
+	.string "No, I mean… I'm Flannery, and I'm in\n"
+	.string "charge here!\p"
+	.string "Uh…\p"
+	.string "You'd better not underestimate me just\n"
+	.string "'cause I've only been Leader a short\l"
+	.string "time!\p"
+	.string "With the skills inherited from my\n"
+	.string "grandfather, I'm gonna, uh, demonstrate\l"
+	.string "the hot moves we've honed in this land!\p"
+	.string "Haiyaaaaaaaaaaaaa!$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryDefeat:
-	.string "Oh…\n"
-	.string "I guess I was trying too hard…\p"
-	.string "I… I've only recently become\n"
-	.string "a Gym Leader.\p"
-	.string "I tried too hard to be someone\n"
-	.string "I'm not.\p"
-	.string "I have to do things my natural way. If\n"
-	.string "I don't, my Pokémon will be confused.\p"
+	.string "Oh… I guess I was trying too hard…$"
+
+LavaridgeTown_Gym_1F_Text_FlanneryPostDefeat:
+	.string "I…I've only recently become a Gym\n"
+	.string "Leader. I guess I was trying too hard\l"
+	.string "to be someone I'm not.\p"
+	.string "When I don't act like myself, no wonder\n"
+	.string "Pokémon that battle at my side get\l"
+	.string "confused.\p"
 	.string "Thanks for teaching me that.\n"
-	.string "For that, you deserve this.$"
+	.string "You deserve this.$"
 
 LavaridgeTown_Gym_1F_Text_ReceivedHeatBadge:
 	.string "{PLAYER} received the Heat Badge\n"

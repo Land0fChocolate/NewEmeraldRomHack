@@ -39,9 +39,6 @@ LavaridgeTown_Gym_SetGymTrainers::
 	settrainerflag TRAINER_KEEGAN
 	settrainerflag TRAINER_GERALD
 	settrainerflag TRAINER_DANIELLE
-	settrainerflag TRAINER_JACE
-	settrainerflag TRAINER_JEFF
-	settrainerflag TRAINER_ELI
 	return
 
 PetalburgCity_Gym_SetGymTrainers::
@@ -63,6 +60,7 @@ FortreeCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_DARIUS
 	return
 
+@TODO: may need to unset some of these
 MossdeepCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_PRESTON
 	settrainerflag TRAINER_VIRGIL

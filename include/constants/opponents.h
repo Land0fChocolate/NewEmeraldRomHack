@@ -203,9 +203,9 @@
 #define TRAINER_DALTON_4                    199
 #define TRAINER_DALTON_5                    200
 #define TRAINER_COLE                        201
-#define TRAINER_JEFF                        202
+#define TRAINER_JEFF                        202 //unused, though data remains
 #define TRAINER_AXLE                        203
-#define TRAINER_JACE                        204
+#define TRAINER_JACE                        204 //unused, though data remains
 #define TRAINER_KEEGAN                      205
 #define TRAINER_BERNIE_1                    206
 #define TRAINER_BERNIE_2                    207
@@ -502,7 +502,7 @@
 #define TRAINER_ERNEST_3                    498
 #define TRAINER_ERNEST_4                    499
 #define TRAINER_ERNEST_5                    500
-#define TRAINER_ELI                         501
+#define TRAINER_ELI                         501 //unused, though data remains
 #define TRAINER_ANNIKA                      502
 #define TRAINER_JAZMYN                      503
 #define TRAINER_JONAS                       504
@@ -515,7 +515,7 @@
 #define TRAINER_CONOR                       511
 #define TRAINER_EDWIN_1                     512
 #define TRAINER_HECTOR                      513
-#define TRAINER_TABITHA_MOSSDEEP            514
+#define TRAINER_TABITHA_MOSSDEEP            514 //unused, though data remains
 #define TRAINER_EDWIN_2                     515
 #define TRAINER_EDWIN_3                     516
 #define TRAINER_EDWIN_4                     517
@@ -627,7 +627,7 @@
 #define TRAINER_JAMES_3                     623
 #define TRAINER_JAMES_4                     624
 #define TRAINER_JAMES_5                     625
-#define TRAINER_BRICE                       626
+#define TRAINER_BRICE                       626 //unused, but data remains
 #define TRAINER_TRENT_1                     627
 #define TRAINER_LENNY                       628
 #define TRAINER_LUCAS_1                     629
@@ -713,7 +713,7 @@
 #define TRAINER_COBY                        709
 #define TRAINER_LAWRENCE                    710
 #define TRAINER_WYATT                       711
-#define TRAINER_ANGELINA                    712
+#define TRAINER_ANGELINA                    712 //unused, though data remains
 #define TRAINER_KAI                         713
 #define TRAINER_CHARLOTTE                   714
 #define TRAINER_DEANDRE                     715
@@ -753,7 +753,7 @@
 #define TRAINER_JAIDEN                      749
 #define TRAINER_ALIX                        750
 #define TRAINER_HELENE                      751 //unused
-#define TRAINER_MARLENE                     752
+#define TRAINER_MARLENE                     752 //unused, but data remains
 #define TRAINER_DEVAN                       753
 #define TRAINER_JOHNSON                     754
 #define TRAINER_MELINA                      755

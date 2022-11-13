@@ -364,7 +364,8 @@ LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 	.string "See you around!$"
 
 LavaridgeTown_Text_HaveEggWillYouTakeIt:
-	.string "I have here an egg.\p"
+	.string "Some tourists have left this egg\n"
+	.string "behind.\p"
 	.string "I'd hoped to hatch it by covering it in\n"
 	.string "hot sand by the hot springs.\l"
 	.string "But that doesn't seem to be enough…\p"

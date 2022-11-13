@@ -3507,6 +3507,9 @@ void IncreasePoisonScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
         if (!HasDamagingMove(battlerDef))
             *score += 2;
 
+        if (HasAbility(ABILITY_POISON_HEAL, AI_DATA->abilities[battlerDef]))
+            *score -= 10;
+
         if (AI_THINKING_STRUCT->aiFlags & AI_FLAG_STALL && HasMoveEffect(battlerAtk, EFFECT_PROTECT))
             (*score)++;    // stall tactic
 
