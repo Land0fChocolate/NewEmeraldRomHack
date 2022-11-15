@@ -551,6 +551,26 @@ SlateportCity_EventScript_AquaGrunt11::
 	release
 	end
 
+SlateportCity_EventScript_BallClerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart SlateportCity_Pokemart_Balls
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_Balls:
+	.2byte ITEM_HEAL_BALL
+	.2byte ITEM_NEST_BALL
+	.2byte ITEM_NET_BALL
+	.2byte ITEM_LUXURY_BALL
+	.2byte ITEM_NONE
+	release
+	end
+
 SlateportCity_EventScript_DollClerk::
 	lock
 	faceplayer
@@ -563,10 +583,6 @@ SlateportCity_EventScript_DollClerk::
 
 	.align 2
 SlateportCity_PokemartDecor_Dolls:
-	.2byte ITEM_HEAL_BALL
-	.2byte ITEM_NEST_BALL
-	.2byte ITEM_NET_BALL
-	.2byte ITEM_LUXURY_BALL
 	.2byte DECOR_AZURILL_DOLL
 	.2byte DECOR_MARILL_DOLL
 	.2byte DECOR_SKITTY_DOLL

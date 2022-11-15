@@ -418,8 +418,8 @@ NewMauville_Inside_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
 
-NewMauville_Inside_EventScript_ItemElectirizer::
-	finditem ITEM_ELECTIRIZER
+NewMauville_Inside_EventScript_ItemThunderStone::
+	finditem ITEM_THUNDER_STONE
 	end
 
 NewMauville_Inside_EventScript_ItemFullHeal::

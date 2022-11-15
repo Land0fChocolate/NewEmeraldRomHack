@@ -56,8 +56,6 @@ FortreeCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_FLINT
 	settrainerflag TRAINER_ASHLEY
 	settrainerflag TRAINER_EDWARDO
-	settrainerflag TRAINER_HUMBERTO
-	settrainerflag TRAINER_DARIUS
 	return
 
 @TODO: may need to unset some of these

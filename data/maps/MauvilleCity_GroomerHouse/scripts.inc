@@ -94,7 +94,7 @@ MauvilleCity_GroomerHouse_Text_GirlDoneGrooming:
 	.string "There. All done!\p"
 	.string "Your {STR_VAR_1}'s coat is\n"
 	.string "looking gorgeous and glossy!\l"
-	.string "It's even liking you a little more.\p"
+	.string "It's even become more fond of you.\p"
 	.string "Return tomorrow and I shall give your\n"
 	.string "Pokémon additional treatment.$"
 

@@ -261,7 +261,7 @@ RustboroCity_DevonCorp_2F_EventScript_AerodactylReady::
 
 RustboroCity_DevonCorp_2F_EventScript_ReceiveLileep::
 	setvar VAR_TEMP_1, SPECIES_LILEEP
-	givemon SPECIES_LILEEP, 20, ITEM_NONE
+	givemon SPECIES_LILEEP, 25, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepParty
 	compare VAR_RESULT, 1
@@ -304,7 +304,7 @@ RustboroCity_DevonCorp_2F_EventScript_ReceivedLileepFanfare::
 
 RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorith::
 	setvar VAR_TEMP_1, SPECIES_ANORITH
-	givemon SPECIES_ANORITH, 20, ITEM_NONE
+	givemon SPECIES_ANORITH, 25, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorithParty
 	compare VAR_RESULT, 1
@@ -347,7 +347,7 @@ RustboroCity_DevonCorp_2F_EventScript_ReceivedAnorithFanfare::
 
 RustboroCity_DevonCorp_2F_EventScript_ReceiveOmanyte::
 	setvar VAR_TEMP_1, SPECIES_OMANYTE
-	givemon SPECIES_OMANYTE, 20, ITEM_NONE
+	givemon SPECIES_OMANYTE, 25, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_ReceiveOmanyteParty
 	compare VAR_RESULT, 1
@@ -390,7 +390,7 @@ RustboroCity_DevonCorp_2F_EventScript_ReceivedOmanyteFanfare::
 
 RustboroCity_DevonCorp_2F_EventScript_ReceiveKabuto::
 	setvar VAR_TEMP_1, SPECIES_KABUTO
-	givemon SPECIES_KABUTO, 20, ITEM_NONE
+	givemon SPECIES_KABUTO, 25, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_ReceiveKabutoParty
 	compare VAR_RESULT, 1
@@ -433,7 +433,7 @@ RustboroCity_DevonCorp_2F_EventScript_ReceivedKabutoFanfare::
 
 RustboroCity_DevonCorp_2F_EventScript_ReceiveAerodactyl::
 	setvar VAR_TEMP_1, SPECIES_AERODACTYL
-	givemon SPECIES_AERODACTYL, 20, ITEM_NONE
+	givemon SPECIES_AERODACTYL, 25, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_ReceiveAerodactylParty
 	compare VAR_RESULT, 1

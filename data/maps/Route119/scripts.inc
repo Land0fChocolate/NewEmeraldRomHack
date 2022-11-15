@@ -27,7 +27,7 @@ Route119_OnTransition:
 	end
 
 Route119_OnLoad:
-	call_if_set FLAG_SET_HIDE_HEX_MANIAC_BIKE_QUEST, Route119_EventScript_HideBirdKeeperBikeQuest
+	call_if_set FLAG_SET_HIDE_BIRD_KEEPER_BIKE_QUEST, Route119_EventScript_HideBirdKeeperBikeQuest
 	call_if_unset FLAG_SYS_GAME_CLEAR, Route119_EventScript_CloseConquerorsCamp
 	end
 
@@ -88,14 +88,15 @@ Route119_EventScript_Rival::
 	setflag FLAG_MET_RIVAL_ROUTE_119
 	checkplayergender
 	compare VAR_RESULT, MALE
-	goto Route119_EventScript_IntroMay
+	goto_if_eq Route119_EventScript_IntroMay
 	compare VAR_RESULT, FEMALE
-	goto Route119_EventScript_IntroBrendan
+	goto_if_eq Route119_EventScript_IntroBrendan
 	release
 	end
 
 Route119_EventScript_MoveInstituteWorkersDownstairs::
 	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS
+	clearflag FLAG_HIDE_WEATHER_INSTITUTE_2F_CASTFORM
 	clearflag FLAG_HIDE_WEATHER_INSTITUTE_1F_WORKERS
 	setvar VAR_WEATHER_INSTITUTE_STATE, 2
 	return
