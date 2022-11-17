@@ -3313,8 +3313,8 @@ Route123_Text_HannibalDefeat:
 
 Route123_Text_HannibalPostBattle:
 	.string "My Pokémon and I have been together\n"
-	.string "since I was barely walking. I could\l"
-	.string "never leave them.$"
+	.string "since I was barely walking.\l"
+	.string "I could never leave them.$"
 
 Route123_Text_KylieIntro:
 	.string "Did you know that if your Pokémon fight\n"

@@ -416,11 +416,11 @@ Route120_EventScript_RematchGomez::
 	end
 
 Route120_EventScript_Sharlene::
-	trainerbattle_single TRAINER_SHARLENE_1, Route120_Text_GomezIntro, Route120_Text_GomezDefeat, Route120_EventScript_RegisterGomez
+	trainerbattle_single TRAINER_SHARLENE_1, Route120_Text_SharleneIntro, Route120_Text_SharleneDefeat, Route120_EventScript_RegisterSharlene
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
-	goto_if_eq Route120_EventScript_RematchGomez
-	msgbox Route120_Text_GomezPostBattle, MSGBOX_DEFAULT
+	goto_if_eq Route120_EventScript_RematchSharlene
+	msgbox Route120_Text_SharlenePostBattle, MSGBOX_DEFAULT
 	release
 	end
 

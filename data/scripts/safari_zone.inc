@@ -42,12 +42,21 @@ SafariZone_EventScript_OutOfBalls::
 
 EventScript_PokeBlockFeeder::
 	lockall
+	checkitem ITEM_POKEBLOCK_CASE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_NoPokeblockCase
 	special GetPokeblockFeederInFront
 	compare VAR_RESULT, 0xFFFF
 	goto_if_ne SafariZone_EventScript_PokeblockPresent
 	msgbox SafariZone_Text_PlacePokeblockOnFeeder, MSGBOX_YESNO
 	compare VAR_RESULT, YES
 	goto_if_eq SafariZone_EventScript_ChoosePokeblock
+	releaseall
+	end
+
+EventScript_NoPokeblockCase::
+	msgbox SafariZone_Text_NoPokeblockCase, MSGBOX_DEFAULT
+	closemessage
 	releaseall
 	end
 
@@ -88,6 +97,11 @@ SafariZone_Text_OutOfBalls:
 SafariZone_Text_PlacePokeblockOnFeeder:
 	.string "Would you like to place a {POKEBLOCK}\n"
 	.string "on the {POKEBLOCK} Feeder?$"
+
+SafariZone_Text_NoPokeblockCase:
+	.string "It's a {POKEBLOCK} Feeder.\p"
+	.string "Unfortunately, you have no {POKEBLOCK}s\n"
+	.string "to place on the Feeder.$"
 
 SafariZone_Text_PokeblockStillHere:
 	.string "The {STR_VAR_1} you left\n"

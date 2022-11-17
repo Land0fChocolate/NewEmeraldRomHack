@@ -3515,7 +3515,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_KAYLA] =
     {
-        .partyFlags = 0,
+        .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET,
         .trainerClass = TRAINER_CLASS_PSYCHIC,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
@@ -3524,7 +3524,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = ARRAY_COUNT(sParty_Kayla),
-        .party = {.NoItemDefaultMoves = sParty_Kayla},
+        .party = {.NoItemCustomMoves = sParty_Kayla},
     },
 
     [TRAINER_ALEXIS] =

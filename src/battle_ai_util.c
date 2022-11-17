@@ -3170,7 +3170,7 @@ bool32 ShouldUseWishAromatherapy(u8 battlerAtk, u8 battlerDef, u16 move)
 
             if (GetMonData(&party[i], MON_DATA_STATUS, NULL) != STATUS1_NONE)
             {
-                if (move != MOVE_HEAL_BELL || !HasAbility(ABILITY_SOUNDPROOF, GetMonAbilities(&party[i])))
+                if (move == MOVE_HEAL_BELL)
                     hasStatus = TRUE;
             }
         }

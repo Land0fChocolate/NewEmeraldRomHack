@@ -93,9 +93,45 @@
   "coord_events": [
     {
       "type": "trigger",
+      "x": 22,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_MAGMA_HIDEOUT_ZINNIA_TRIGGER_STATE",
+      "var_value": "0",
+      "script": "MagmaHideout_3F_1R_EventScript_Zinnia_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 5,
+      "elevation": 3,
+      "var": "VAR_MAGMA_HIDEOUT_ZINNIA_TRIGGER_STATE",
+      "var_value": "0",
+      "script": "MagmaHideout_3F_1R_EventScript_Zinnia_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_MAGMA_HIDEOUT_ZINNIA_TRIGGER_STATE",
+      "var_value": "0",
+      "script": "MagmaHideout_3F_1R_EventScript_Zinnia_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 7,
+      "elevation": 3,
+      "var": "VAR_MAGMA_HIDEOUT_ZINNIA_TRIGGER_STATE",
+      "var_value": "0",
+      "script": "MagmaHideout_3F_1R_EventScript_Zinnia_Trigger"
+    },
+    {
+      "type": "trigger",
       "x": 23,
       "y": 4,
-      "elevation": 0,
+      "elevation": 3,
       "var": "VAR_MAGMA_HIDEOUT_ZINNIA_TRIGGER_STATE",
       "var_value": "0",
       "script": "MagmaHideout_3F_1R_EventScript_Zinnia_Trigger"

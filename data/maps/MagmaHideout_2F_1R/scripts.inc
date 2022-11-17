@@ -60,8 +60,8 @@ MagmaHideout_2F_1R_Text_Grunt4Defeat:
 
 MagmaHideout_2F_1R_Text_Grunt4PostBattle:
 	.string "We really should have built an alarm\n"
-	.string "system for this place. We trust that\l"
-	.string "secret door too much.$"
+	.string "system for this place.\l"
+	.string "We trust that secret door too much.$"
 
 MagmaHideout_2F_1R_Text_Grunt5Intro:
 	.string "Oh, oh!\n"

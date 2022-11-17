@@ -650,8 +650,8 @@ MagmaHideout_2F_2R_EventScript_ItemMaxElixir::
 	finditem ITEM_MAX_ELIXIR
 	end
 
-MagmaHideout_2F_2R_EventScript_ItemMagmarizer::
-	finditem ITEM_MAGMARIZER
+MagmaHideout_2F_2R_EventScript_ItemCarbos::
+	finditem ITEM_CARBOS
 	end
 
 MagmaHideout_3F_1R_EventScript_ItemNugget::

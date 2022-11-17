@@ -2270,8 +2270,8 @@
                 "species": "SPECIES_SHUPPET"
               },
               {
-                "min_level": 36,
-                "max_level": 36,
+                "min_level": 34,
+                "max_level": 34,
                 "species": "SPECIES_BANETTE"
               },
               {
@@ -2368,8 +2368,8 @@
                 "species": "SPECIES_ODDISH"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 29,
+                "max_level": 29,
                 "species": "SPECIES_GIRAFARIG"
               },
               {
@@ -2403,8 +2403,8 @@
                 "species": "SPECIES_PIKACHU"
               },
               {
-                "min_level": 27,
-                "max_level": 27,
+                "min_level": 29,
+                "max_level": 29,
                 "species": "SPECIES_WOBBUFFET"
               },
               {
@@ -2413,8 +2413,8 @@
                 "species": "SPECIES_PIKACHU"
               },
               {
-                "min_level": 29,
-                "max_level": 29,
+                "min_level": 32,
+                "max_level": 32,
                 "species": "SPECIES_WOBBUFFET"
               }
             ]
@@ -4340,8 +4340,8 @@
                 "species": "SPECIES_SHUPPET"
               },
               {
-                "min_level": 35,
-                "max_level": 35,
+                "min_level": 34,
+                "max_level": 34,
                 "species": "SPECIES_BANETTE"
               },
               {
@@ -4409,8 +4409,8 @@
                 "species": "SPECIES_SHUPPET"
               },
               {
-                "min_level": 35,
-                "max_level": 35,
+                "min_level": 34,
+                "max_level": 34,
                 "species": "SPECIES_BANETTE"
               },
               {
@@ -4478,8 +4478,8 @@
                 "species": "SPECIES_DUSKULL"
               },
               {
-                "min_level": 35,
-                "max_level": 35,
+                "min_level": 34,
+                "max_level": 34,
                 "species": "SPECIES_BANETTE"
               },
               {
@@ -4547,8 +4547,8 @@
                 "species": "SPECIES_DUSKULL"
               },
               {
-                "min_level": 35,
-                "max_level": 35,
+                "min_level": 34,
+                "max_level": 34,
                 "species": "SPECIES_BANETTE"
               },
               {
@@ -4616,8 +4616,8 @@
                 "species": "SPECIES_DUSKULL"
               },
               {
-                "min_level": 35,
-                "max_level": 35,
+                "min_level": 34,
+                "max_level": 34,
                 "species": "SPECIES_BANETTE"
               },
               {
@@ -7121,8 +7121,8 @@
                 "species": "SPECIES_ODDISH"
               },
               {
-                "min_level": 25,
-                "max_level": 25,
+                "min_level": 29,
+                "max_level": 29,
                 "species": "SPECIES_GIRAFARIG"
               },
               {
@@ -7166,8 +7166,8 @@
                 "species": "SPECIES_PIKACHU"
               },
               {
-                "min_level": 29,
-                "max_level": 29,
+                "min_level": 32,
+                "max_level": 32,
                 "species": "SPECIES_WOBBUFFET"
               }
             ]
@@ -7310,8 +7310,8 @@
                 "species": "SPECIES_XATU"
               },
               {
-                "min_level": 27,
-                "max_level": 27,
+                "min_level": 30,
+                "max_level": 30,
                 "species": "SPECIES_HERACROSS"
               },
               {
@@ -7320,8 +7320,8 @@
                 "species": "SPECIES_XATU"
               },
               {
-                "min_level": 29,
-                "max_level": 29,
+                "min_level": 32,
+                "max_level": 32,
                 "species": "SPECIES_HERACROSS"
               }
             ]
@@ -7409,8 +7409,8 @@
                 "species": "SPECIES_DODRIO"
               },
               {
-                "min_level": 27,
-                "max_level": 27,
+                "min_level": 30,
+                "max_level": 30,
                 "species": "SPECIES_PINSIR"
               },
               {
@@ -7419,8 +7419,8 @@
                 "species": "SPECIES_DODRIO"
               },
               {
-                "min_level": 29,
-                "max_level": 29,
+                "min_level": 32,
+                "max_level": 32,
                 "species": "SPECIES_PINSIR"
               }
             ]

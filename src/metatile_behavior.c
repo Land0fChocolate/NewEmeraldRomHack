@@ -54,7 +54,7 @@ static const u8 sTileBitAttributes[] =
     [MB_LAVARIDGE_GYM_B1F_WARP] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
     [MB_SEAWEED_NO_SURFACING] = TILE_ATTRIBUTES(TRUE, TRUE, TRUE),
     [MB_REFLECTION_UNDER_BRIDGE] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
-    [MB_UNUSED_2C] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
+    [MB_PUDDLE_EDGE] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
     [MB_UNUSED_2D] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_UNUSED_2E] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_UNUSED_2F] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
@@ -325,6 +325,7 @@ bool8 MetatileBehavior_IsReflective(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_POND_WATER
      || metatileBehavior == MB_PUDDLE
+     || metatileBehavior == MB_PUDDLE_EDGE
      || metatileBehavior == MB_UNUSED_SOOTOPOLIS_DEEP_WATER_2
      || metatileBehavior == MB_ICE
      || metatileBehavior == MB_SOOTOPOLIS_DEEP_WATER

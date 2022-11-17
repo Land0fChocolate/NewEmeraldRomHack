@@ -636,8 +636,9 @@ static const u8 sMoxieDescription[] = _(
 	"one stage.");
 
 static const u8 sJustifiedDescription[] = _(
-	"Hits by dark moves raise\n"
-	"Attack by one stage.");
+	"Taking hits from Dark\n"
+	"type moves raise Attack\n"
+	"by one stage.");
 
 static const u8 sRattledDescription[] = _(
 	"Hits by Bug, Dark or Ghost\n"

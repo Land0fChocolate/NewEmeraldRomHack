@@ -1,13 +1,14 @@
 .set LOCALID_MAN_2, 3
+.set LOCALID_WOMAN_2, 6
 .set LOCALID_SCHOOL_KID, 17
 .set LOCALID_WOMAN_1, 19
 .set LOCALID_MAN_1, 20
 .set LOCALID_LISIA, 29
 .set LOCALID_CAMERAMAN, 30
-.set LOCALID_MANIAC, 31
-.set LOCALID_TWIN, 32
+.set LOCALID_TWIN, 31
+.set LOCALID_STREET_THUG, 32
 .set LOCALID_GIRL, 33
-.set LOCALID_STREET_THUG, 34
+.set LOCALID_MANIAC, 34
 
 LilycoveCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_OnTransition
@@ -28,9 +29,9 @@ LilycoveCity_OnLoad:
 	end
 
 LilycoveCity_EventScript_SetUpLisiaEvent:
-	setobjectxyperm LOCALID_MAN_2, 26, 27
-	setobjectmovementtype LOCALID_MAN_2, MOVEMENT_TYPE_FACE_LEFT
-	setobjectxyperm LOCALID_SCHOOL_KID, 19, 27
+	setobjectxyperm LOCALID_WOMAN_2, 31, 26
+	setobjectmovementtype LOCALID_WOMAN_2, MOVEMENT_TYPE_FACE_LEFT
+	setobjectxyperm LOCALID_SCHOOL_KID, 23, 27
 	setobjectmovementtype LOCALID_SCHOOL_KID, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
@@ -272,6 +273,8 @@ LilycoveCity_EventScript_DontKnowAboutBerryBlender::
 LilycoveCity_EventScript_LisiaEvent::
 	lockall
 	setvar VAR_LISIA_EVENT_TRIGGER_STATE, 1
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
 	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaSpin
 	waitmovement 0
 	msgbox LilycoveCity_Text_LisiaIntro, MSGBOX_DEFAULT
@@ -279,25 +282,35 @@ LilycoveCity_EventScript_LisiaEvent::
 	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaLookAround
 	waitmovement 0
 	applymovement LOCALID_LISIA, Common_Movement_ExclamationMark
-	waitmovement 0
+	playse SE_PIN
+	waitse
+	delay 20
 	getplayerxy VAR_0x8004, VAR_0x8005
-	compare VAR_0x8004, 25
+	compare VAR_0x8005, 25
 	goto_if_eq LilycoveCity_EventScript_LisiaMoveToPlayerTop
-	compare VAR_0x8004, 26
+	compare VAR_0x8005, 26
 	goto_if_eq LilycoveCity_EventScript_LisiaMoveToPlayerMid
-	compare VAR_0x8004, 27
+	compare VAR_0x8005, 27
 	goto_if_eq LilycoveCity_EventScript_LisiaMoveToPlayerBot
 	end
 
 LilycoveCity_Movement_LisiaSpin:
 	face_up
+	delay_8
 	face_right
+	delay_8
 	face_down
+	delay_8
 	face_left
+	delay_8
 	face_up
+	delay_8
 	face_right
+	delay_8
 	face_down
+	delay_8
 	face_left
+	delay_8
 	step_end
 
 LilycoveCity_Movement_LisiaLookAround:
@@ -312,9 +325,12 @@ LilycoveCity_Movement_LisiaLookAround:
 LilycoveCity_EventScript_LisiaMoveToPlayerTop::
 	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaMoveToPlayerTop
 	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
 	goto LilycoveCity_EventScript_LisiaTalksToPlayer
 
 LilycoveCity_Movement_LisiaMoveToPlayerTop:
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -329,10 +345,13 @@ LilycoveCity_EventScript_LisiaMoveToPlayerMid::
 LilycoveCity_Movement_LisiaMoveToPlayerMid:
 	walk_right
 	walk_right
+	walk_right
 	step_end
 
 LilycoveCity_EventScript_LisiaMoveToPlayerBot::
 	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaMoveToPlayerBot
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
 	goto LilycoveCity_EventScript_LisiaTalksToPlayer
 
@@ -340,15 +359,16 @@ LilycoveCity_Movement_LisiaMoveToPlayerBot:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
 	face_down
 	step_end
 
 LilycoveCity_EventScript_LisiaTalksToPlayer::
-	applymovement LOCALID_TWIN, Common_Movement_FaceDown
-	applymovement LOCALID_STREET_THUG, Common_Movement_FaceUp
+	applymovement LOCALID_CAMERAMAN, LilycoveCity_Movement_CameramanStepsForward
+	applymovement LOCALID_TWIN, Common_Movement_FaceRight
+	applymovement LOCALID_STREET_THUG, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox LilycoveCity_Text_LisiaBaffledExpression, MSGBOX_DEFAULT
-	closemessage
 	giveitem ITEM_POKEBLOCK_CASE
 	setflag FLAG_RECEIVED_POKEBLOCK_CASE
 	msgbox LilycoveCity_Text_LisiaThisIsAPokeblockKit, MSGBOX_DEFAULT
@@ -357,229 +377,26 @@ LilycoveCity_EventScript_LisiaTalksToPlayer::
 	waitmovement 0
 	msgbox LilycoveCity_Text_LisiaPlayerStoryBegins, MSGBOX_DEFAULT
 	closemessage
-	getplayerxy VAR_0x8004, VAR_0x8005
-	compare VAR_0x8004, 25
-	goto_if_eq LilycoveCity_EventScript_LisiaLeavesPlayerTopBot
-	compare VAR_0x8004, 26
-	goto_if_eq LilycoveCity_EventScript_LisiaLeavesPlayerMid
-	compare VAR_0x8004, 27
-	goto_if_eq LilycoveCity_EventScript_LisiaLeavesPlayerTopBot
-	end
-
-LilycoveCity_EventScript_LisiaLeavesPlayerTopBot::
-	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaLeavesTopBot
-	applymovement LOCALID_CAMERAMAN, LilycoveCity_Movement_CameramanLeavesTopBot
-	applymovement LOCALID_TWIN, LilycoveCity_Movement_TwinLeavesTopBot
-	applymovement LOCALID_STREET_THUG, LilycoveCity_Movement_StreetThugLeavesTopBot
-	applymovement LOCALID_MANIAC, LilycoveCity_Movement_ManiacLeavesTopBot
-	applymovement LOCALID_GIRL, LilycoveCity_Movement_GirlLeavesTopBot
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaSpin
 	waitmovement 0
-	goto LilycoveCity_EventScript_LisiaEventEnd
-	end
-
-LilycoveCity_EventScript_LisiaLeavesPlayerMid::
-	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaLeavesMid
-	applymovement LOCALID_CAMERAMAN, LilycoveCity_Movement_CameramanLeavesMid
-	applymovement LOCALID_TWIN, LilycoveCity_Movement_TwinLeavesMid
-	applymovement LOCALID_STREET_THUG, LilycoveCity_Movement_StreetThugLeavesMid
-	applymovement LOCALID_MANIAC, LilycoveCity_Movement_ManiacLeavesMid
-	applymovement LOCALID_GIRL, LilycoveCity_Movement_GirlLeavesMid
-	applymovement OBJ_EVENT_ID_PLAYER, LilycoveCity_Movement_PlayerWatchesLisiaLeave
-	waitmovement 0
-	goto LilycoveCity_EventScript_LisiaEventEnd
-	end
-
-LilycoveCity_Movement_LisiaLeavesTopBot:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-LilycoveCity_Movement_CameramanLeavesTopBot:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-LilycoveCity_Movement_TwinLeavesTopBot:
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-LilycoveCity_Movement_StreetThugLeavesTopBot:
-	delay_16
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-LilycoveCity_Movement_ManiacLeavesTopBot:
-	walk_right
-	walk_right
-	walk_right
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-LilycoveCity_Movement_GirlLeavesTopBot:
-	delay_16
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-LilycoveCity_Movement_LisiaLeavesMid:
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-LilycoveCity_Movement_CameramanLeavesMid:
-	walk_right
-	walk_right
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-LilycoveCity_Movement_TwinLeavesMid:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-LilycoveCity_Movement_StreetThugLeavesMid:
-	delay_16
-	delay_16
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-LilycoveCity_Movement_ManiacLeavesMid:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-LilycoveCity_Movement_GirlLeavesMid:
-	walk_right
-	walk_right
-	walk_right
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-LilycoveCity_Movement_PlayerWatchesLisiaLeave:
-	delay_16
-	delay_16
-	face_right
-	step_end
-
-LilycoveCity_EventScript_LisiaEventEnd::
+	fadescreen FADE_TO_BLACK
+	delay 60
 	setflag FLAG_HIDE_LILYCOVE_CITY_LISIA
+	removeobject LOCALID_LISIA
+	removeobject LOCALID_CAMERAMAN
+	removeobject LOCALID_TWIN
+	removeobject LOCALID_STREET_THUG
+	removeobject LOCALID_GIRL
+	removeobject LOCALID_MANIAC
+	setobjectmovementtype LOCALID_SCHOOL_KID, MOVEMENT_TYPE_LOOK_AROUND
+	setobjectmovementtype LOCALID_WOMAN_2, MOVEMENT_TYPE_WANDER_AROUND
+	fadescreen FADE_FROM_BLACK
 	releaseall
 	end
+
+LilycoveCity_Movement_CameramanStepsForward:
+	walk_right
+	step_end
 
 LilycoveCity_Text_LisiaIntro:
 	.string "Hiiiiii, ev-er-y-bo-dy! Lisia here!\p"
@@ -602,7 +419,7 @@ LilycoveCity_Text_LisiaBaffledExpression:
 	.string "I don't just want to see your Pokémon\n"
 	.string "strong. I want to see you bringing out\l"
 	.string "a whole new side of them to show off!\p"
-	.string "So here you go, take this!\p"
+	.string "So here you go, take this!$"
 
 LilycoveCity_Text_LisiaThisIsAPokeblockKit:
 	.string "Lisia: That is a Pokéblock Kit, which\n"
