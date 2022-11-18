@@ -442,8 +442,10 @@ DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
 	.string "trades, obey without question.\p"
 	.string "And, you'll be able to command your\n"
 	.string "Pokémon to light up super dark places.\p"
-	.string "If you'd like, use this Technical\n"
-	.string "Machine, too.$"
+	.string "Hmm… You know what?\p"
+	.string "I think you can make full use of this,\n"
+	.string "too. I'm sure this will help your\l"
+	.string "Pokémon bulk up muscle!$"
 
 DewfordTown_Gym_Text_ExplainBulkUp:
 	.string "That TM08 contains Bulk Up.\p"

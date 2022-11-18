@@ -341,15 +341,18 @@ MauvilleCity_Gym_Text_AngeloPostBattle:
 	.string "forehead. It makes me happy!$"
 
 MauvilleCity_Gym_Text_WattsonIntro:
-	.string "I've given up on my plans to convert\n"
-	.string "the city, I have.\p"
-	.string "And so, I put my time into making\n"
-	.string "door traps in my Gym.\p"
-	.string "Oh? Now, what are you doing here?\p"
+	.string "Hmm…?\n"
+	.string "Now, what are you doing here?\p"
 	.string "What's that? You say you've gotten\n"
 	.string "past all my rigged doors?\p"
 	.string "Wahahahah!\n"
 	.string "Now, that is amusing!\p"
+	.string "I've given up on my plans to convert\n"
+	.string "the city, I have.\p"
+	.string "And so, I put my time into making\n"
+	.string "door traps in my Gym and battling\l"
+	.string "with young trainers like you!\l"
+	.string "That's what I live for now!\p"
 	.string "Then, I, Wattson, the Leader of\n"
 	.string "Mauville Gym, shall electrify you!$"
 
@@ -366,11 +369,10 @@ MauvilleCity_Gym_Text_ReceivedDynamoBadge:
 MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
 	.string "With the Dynamo Badge, Pokémon can\n"
 	.string "use the Rock Smash command out of\l"
-	.string "battle.\p"
-	.string "And, it will make your Pokémon a little\n"
-	.string "bit faster, too.\p"
+	.string "battle to open up paths.\p"
 	.string "Hmm…\n"
-	.string "You should take this, too!$"
+	.string "All righty then, this here's for you,\l"
+	.string "too! Go on, take it with you!$"
 
 MauvilleCity_Gym_Text_ExplainShockWave:
 	.string "That TM34 there contains Shock Wave.\p"

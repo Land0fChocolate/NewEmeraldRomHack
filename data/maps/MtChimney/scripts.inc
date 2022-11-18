@@ -688,8 +688,8 @@ MtChimney_Text_ArchieThankYou:
 	.string "Whose side are you on?\p"
 	.string "Ah, it doesn't matter.\p"
 	.string "Team Magma failed here, and that's what\n"
-	.string "matters. We won't let them try this\l"
-	.string "again.\p"
+	.string "matters.\l"
+	.string "We won't let them try this again.\p"
 	.string "Till next time, Scamp!$"
 
 MtChimney_Text_MagmaOutnumbersUs:
@@ -831,6 +831,6 @@ MtChimney_Text_SawyerDefeat:
 	.string "Oh, you're a real firebrand, too!$"
 
 MtChimney_Text_SawyerPostBattle:
-	.string "I think I need a dip in Lavaridge\n"
-	.string "Hot Spring with the locals!$"
+	.string "I think I need a dip in a Lavaridge\n"
+	.string "hot spring with the locals!$"
 

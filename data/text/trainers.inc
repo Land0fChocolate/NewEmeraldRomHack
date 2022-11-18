@@ -2163,7 +2163,7 @@ Route116_Text_JohnsonDefeat:
 
 Route116_Text_JohnsonPostBattle:
 	.string "Maybe if my Taillow gets thunder armor…\p"
-	.string "No, that idea is stupid.$"
+	.string "No, that idea doesn't make sense.$"
 
 Route117_Text_IsaacIntro:
 	.string "Listen, could I get you to battle\n"

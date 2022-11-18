@@ -1,6 +1,7 @@
 .set LOCALID_COLE, 2
 .set LOCALID_GERALD, 3
 .set LOCALID_DANIELLE, 4
+.set LOCALID_ELI, 6
 
 LavaridgeTown_Gym_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LavaridgeTown_Gym_1F_OnTransition
@@ -39,8 +40,11 @@ LavaridgeTown_Gym_1F_EventScript_CheckBuryGerald::
 	goto_if_defeated TRAINER_GERALD, LavaridgeTown_Gym_1F_EventScript_CheckBuryDanielle
 	setobjectmovementtype LOCALID_GERALD, MOVEMENT_TYPE_BURIED
 LavaridgeTown_Gym_1F_EventScript_CheckBuryDanielle::
-	goto_if_defeated TRAINER_DANIELLE, LavaridgeTown_Gym_1F_EventScript_EndCheckBuryTrainers
+	goto_if_defeated TRAINER_DANIELLE, LavaridgeTown_Gym_1F_EventScript_CheckBuryEli
 	setobjectmovementtype LOCALID_DANIELLE, MOVEMENT_TYPE_BURIED
+LavaridgeTown_Gym_1F_EventScript_CheckBuryEli::
+	goto_if_defeated TRAINER_ELI, LavaridgeTown_Gym_1F_EventScript_EndCheckBuryTrainers
+	setobjectmovementtype LOCALID_ELI, MOVEMENT_TYPE_BURIED
 LavaridgeTown_Gym_1F_EventScript_EndCheckBuryTrainers::
 	return
 
@@ -135,6 +139,11 @@ LavaridgeTown_Gym_1F_EventScript_Danielle::
 LavaridgeTown_Gym_1F_EventScript_Gerald::
 	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_GERALD, LOCALID_GERALD, LavaridgeTown_Gym_1F_Text_GeraldIntro, LavaridgeTown_Gym_1F_Text_GeraldDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
 	msgbox LavaridgeTown_Gym_1F_Text_GeraldPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+LavaridgeTown_Gym_1F_EventScript_Eli::
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_ELI, LOCALID_ELI, LavaridgeTown_Gym_1F_Text_EliIntro, LavaridgeTown_Gym_1F_Text_EliDefeat, LavaridgeTown_Gym_EventScript_CheckTrainerScript
+	msgbox LavaridgeTown_Gym_1F_Text_EliPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GymGuide::
@@ -251,6 +260,19 @@ LavaridgeTown_Gym_1F_Text_DanielleDefeat:
 LavaridgeTown_Gym_1F_Text_DaniellePostBattle:
 	.string "I'm going to be a pretty and strong\n"
 	.string "Trainer just like Flannery.$"
+
+LavaridgeTown_Gym_1F_Text_EliIntro:
+	.string "As much as I love mountains,\n"
+	.string "I especially love volcanoes.$"
+
+LavaridgeTown_Gym_1F_Text_EliDefeat:
+	.string "Well, it seems to me I lost without\n"
+	.string "ever being in control.$"
+
+LavaridgeTown_Gym_1F_Text_EliPostBattle:
+	.string "I stay here because I became a fan\n"
+	.string "of Flannery's power.\p"
+	.string "Hehehehe.$"
 
 LavaridgeTown_Gym_1F_Text_FlanneryIntro:
 	.string "Welcome… No, wait.\p"

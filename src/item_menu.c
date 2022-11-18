@@ -2131,7 +2131,9 @@ static void Task_ChooseHowManyToSell(u8 taskId)
 
     if (AdjustQuantityAccordingToDPadInput(&tItemCount, tQuantity) == TRUE)
     {
-        PrintItemSoldAmount(gBagMenu->windowIds[ITEMWIN_QUANTITY_WIDE], tItemCount, (ItemId_GetPrice(gSpecialVar_ItemId) / 2) * tItemCount);
+        //TODO: There is a bug where the sell price is missing the last digit. A patch has been made where the sell price is simply multiplied by 10.
+        //      Remove this patch if a proper fix has been found.
+        PrintItemSoldAmount(gBagMenu->windowIds[ITEMWIN_QUANTITY_WIDE], tItemCount, (ItemId_GetPrice(gSpecialVar_ItemId) / 2) * tItemCount * 10);
     }
     else if (JOY_NEW(A_BUTTON))
     {

@@ -415,9 +415,11 @@ LavaridgeTown_Text_PokemonNippedBackside:
 	.string "A Pokémon nipped my backside!$"
 
 LavaridgeTown_Text_OhYouLikeHotSprings:
-	.string "Oh, you like hot springs, do you?\p"
-	.string "That's surprising for one as young\n"
-	.string "as you.$"
+	.string "I like to go fight with other Trainers\n"
+	.string "on Mt. Chimney, but those Team Magma\l"
+	.string "bullies pushed us out.\p"
+	.string "If Team Magma are gone now, then the\n"
+	.string "Trainers should be coming back.$"
 
 LavaridgeTown_Text_BatheInHotSpringsEveryDay:
 	.string "I bathe in the hot springs every day.\p"

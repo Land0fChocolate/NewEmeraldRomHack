@@ -1,5 +1,5 @@
 .set LOCALID_GRUNT_1, 1
-.set LOCALID_GRUNT_2, 6
+.set LOCALID_GRUNT_2, 5
 
 Route112_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route112_OnTransition

@@ -3884,6 +3884,11 @@ u8 AtkCanceller_UnableToUseMove(void)
                     || HasAbility(ABILITY_OVERCOAT, GetBattlerAbilities(gBattlerTarget))
                     || HasAbility(ABILITY_DAMP, GetBattlerAbilities(gBattlerTarget)))
                 {
+                    if (HasAbility(ABILITY_OVERCOAT, GetBattlerAbilities(gBattlerTarget)))
+                        gLastUsedAbility = ABILITY_OVERCOAT;
+                    if (HasAbility(ABILITY_DAMP, GetBattlerAbilities(gBattlerTarget)))
+                        gLastUsedAbility = ABILITY_DAMP;
+
                     gBattlerAbility = gBattlerTarget;
                     effect = 1;
                 }

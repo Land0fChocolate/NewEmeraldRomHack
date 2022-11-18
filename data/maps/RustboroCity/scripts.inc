@@ -1036,8 +1036,9 @@ RustboroCity_Movement_RivalApproachPlayer7:
 	walk_down
 	walk_right
 	walk_right
-	walk_right
 	walk_down
+	walk_right
+	face_down
 	step_end
 
 RustboroCity_EventScript_Boy1::
