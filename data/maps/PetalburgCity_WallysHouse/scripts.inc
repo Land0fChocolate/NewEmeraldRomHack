@@ -106,7 +106,10 @@ PetalburgCity_WallysHouse_Text_PleaseExcuseUs:
 PetalburgCity_WallysHouse_Text_FathersBadgeTravel:
 	.string "I see you have your father's Badge.\n"
 	.string "You be able to travel across the water\l"
-	.string "as you please.$"
+	.string "as you please.\p"
+	.string "I've always wanted to explore the seas\n"
+	.string "around Dewford.\l"
+	.string "I've heard of a shipwreck there.$"
 
 PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon:
 	.string "Wally's coming home soon.\n"

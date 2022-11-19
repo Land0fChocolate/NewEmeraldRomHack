@@ -2,13 +2,13 @@ MauvilleCity_GameCorner_MapScripts::
 	.byte 0
 
     @ Game Corner prices
-	.set TM29_COINS,  3500
-	.set TM53_COINS,  3500
-	.set TM56_COINS,  3500
-	.set TM13_COINS,  4000
-	.set TM24_COINS,  4000
-	.set TM35_COINS,  4000
-	.set TM94_COINS,  4000
+	.set TM29_COINS,  3000
+	.set TM53_COINS,  3000
+	.set TM56_COINS,  3000
+	.set TM13_COINS,  3500
+	.set TM24_COINS,  3500
+	.set TM35_COINS,  3500
+	.set TM94_COINS,  3500
 	.set DOLL_COINS,  1000
 
 	.set COINS_PRICE_50,  1000

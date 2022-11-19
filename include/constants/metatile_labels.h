@@ -192,6 +192,7 @@
 #define METATILE_Fortree_BridgeOverGrass_Raised            0x24E
 #define METATILE_Fortree_BridgeOverTrees_Lowered           0x257
 #define METATILE_Fortree_BridgeOverTrees_Raised            0x256
+#define METATILE_Fortree_Grass_TreeUp_PuddleEdge           0x33D
 #define METATILE_Fortree_LongGrass_Root                    0x208
 #define METATILE_Fortree_OceanWater                        0x206
 #define METATILE_Fortree_SecretBase_LongGrass_BottomLeft   0x281

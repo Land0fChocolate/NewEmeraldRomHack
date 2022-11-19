@@ -66,8 +66,8 @@ Route120_EventScript_SetBridgeKecleonMovement::
 	return
 
 Route120_EventScript_CloseFortreeJunglePath::
-	setmetatile 23, 93, METATILE_General_Grass_TreeUp, 0
-	setmetatile 24, 93, METATILE_General_Grass_TreeUp, 0
+	setmetatile 23, 93, METATILE_Fortree_Grass_TreeUp_PuddleEdge, 0
+	setmetatile 24, 93, METATILE_Fortree_Grass_TreeUp_PuddleEdge, 0
 	setmetatile 23, 94, METATILE_General_SmallTree_GrassBase, 1
 	setmetatile 24, 94, METATILE_General_SmallTree_GrassBase, 1
 	setmetatile 23, 95, METATILE_General_RockWall_RockBase, 1

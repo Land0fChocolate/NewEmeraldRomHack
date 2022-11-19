@@ -97,6 +97,7 @@ Route119_WeatherInstitute_2F_EventScript_Worker2::
 	end
 
 Route119_WeatherInstitute_2F_EventScript_FightTrigger::
+	setvar VAR_WEATHER_INSTITUTE_TRIGGER_STATE, 1
 	goto Route119_WeatherInstitute_2F_EventScript_FightScene
 	end
 
@@ -132,6 +133,7 @@ Route119_WeatherInstitute_2F_EventScript_FightScenePart2::
 	applymovement LOCALID_SHELLY, Common_Movement_FaceLeft
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceLeft
 	waitmovement 0
+	delay 20
 	compare VAR_RESULT, MALE
 	goto_if_eq Route119_WeatherInstitute_2F_MayAsksPlayerToJoinFight
 	compare VAR_RESULT, FEMALE
@@ -251,7 +253,6 @@ Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattle::
 
 Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	lockall
-	setvar VAR_WEATHER_INSTITUTE_TRIGGER_STATE, 1
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceLeft
 	msgbox Route119_WeatherInstitute_2F_Text_ArchieLost, MSGBOX_DEFAULT
 	closemessage

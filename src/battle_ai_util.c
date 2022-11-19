@@ -576,7 +576,7 @@ void SetBattlerData(u8 battlerId)
         struct Pokemon *illusionMon;
         u16 i;
 
-        memcpy(gBattleMons[battlerId].abilities, GetAbilitiesBySpecies(gBattleMons[battlerId].species), sizeof(gBattleMons[battlerId].abilities));
+        memcpy(gBattleMons[battlerId].abilities, GetBattlerAbilities(battlerId), sizeof(gBattleMons[battlerId].abilities));
 
         if (BATTLE_HISTORY->itemEffects[battlerId] == 0)
             gBattleMons[battlerId].item = 0;
