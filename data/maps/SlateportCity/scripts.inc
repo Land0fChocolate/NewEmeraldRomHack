@@ -675,6 +675,8 @@ SlateportCity_EventScript_CaptStern::
 	applymovement LOCALID_CAPT_STERN, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	msgbox SlateportCity_Text_OhPlayerWeMadeDiscovery, MSGBOX_DEFAULT
+	closemessage
+	delay 10
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 	msgbox SlateportCity_Text_AquaWillAssumeControlOfSubmarine, MSGBOX_DEFAULT
 	applymovement LOCALID_COOK, Common_Movement_WalkInPlaceFastestLeft
@@ -1352,15 +1354,16 @@ SlateportCity_Text_OhPlayerWeMadeDiscovery:
 	.string "that's said to have been long extinct.$"
 
 SlateportCity_Text_AquaWillAssumeControlOfSubmarine:
-	.string "Fufufu…\n"
-	.string "Capt. Stern, I presume.\p"
-	.string "We of Team Aqua will assume\n"
-	.string "control of your submarine!\p"
-	.string "Your objections are meaningless!\n"
-	.string "We expect your total cooperation!\p"
-	.string "Fufufu…\n"
-	.string "Just watch and learn what Team\l"
-	.string "Aqua has planned!$"
+	.string "Ahh… Ahh…\n"
+	.string "Testing, testing. One, two, three… OK.\p"
+	.string "I hope you're listening out there,\n"
+	.string "Captain Stern!\p"
+	.string "We of Team Aqua will now be assuming\n"
+	.string "control of your lovely submarine!\p"
+	.string "You'll contribute to our great plan of\n"
+	.string "returning everything to the beginning.\p"
+	.string "I hope you appreciate this great honor!\n"
+	.string "Bwahahahahahahahah!$"
 
 SlateportCity_Text_SternWhatWasAllThat:
 	.string "Capt. Stern: What was that all about?\p"

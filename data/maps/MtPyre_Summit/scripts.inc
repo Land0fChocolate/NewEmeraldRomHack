@@ -7,7 +7,7 @@
 .set LOCALID_PHOEBE, 8
 
 MtPyre_Summit_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, MtPyre_Summit_OnTransition
+	@map_script MAP_SCRIPT_ON_TRANSITION, MtPyre_Summit_OnTransition
 	.byte 0
 
 MtPyre_Summit_OnTransition:
@@ -15,7 +15,7 @@ MtPyre_Summit_OnTransition:
 	end
 
 MtPyre_Summit_EventScript_Position_Phoebe::
-	setobjectxyperm LOCALID_PHOEBE, 24, 5
+	setobjectxyperm LOCALID_PHOEBE, 23, 13
 	return
 
 MtPyre_Summit_EventScript_TeamAquaTrigger0::
@@ -76,6 +76,7 @@ MtPyre_Summit_EventScript_TeamAquaExits::
 	setflag FLAG_RECEIVED_RED_OR_BLUE_ORB
 	setflag FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD
 	clearflag FLAG_HIDE_MT_PYRE_SUMMIT_PHOEBE
+	setobjectxyperm LOCALID_PHOEBE, 23, 13
 	addobject LOCALID_PHOEBE
 	getplayerxy VAR_0x8004, VAR_0x8005
 	compare VAR_0x8004, 22
@@ -159,11 +160,13 @@ MtPyre_Summit_EventScript_PhoebeWalkMiddle:
 	applymovement OBJ_EVENT_ID_PLAYER, MtPyre_Summit_Movement_PlayerMoveOutOfWay
 	applymovement LOCALID_PHOEBE, MtPyre_Summit_Movement_PhoebeMiddle
 	waitmovement 0
+	setobjectxyperm LOCALID_PHOEBE, 23, 7
 	goto MtPyre_Summit_EventScript_TeamAquaExitsPart2
 
 MtPyre_Summit_EventScript_PhoebeWalkLeftRight:
 	applymovement LOCALID_PHOEBE, MtPyre_Summit_Movement_PhoebeLeftRight
 	waitmovement 0
+	setobjectxyperm LOCALID_PHOEBE, 23, 8
 	goto MtPyre_Summit_EventScript_TeamAquaExitsPart2
 
 MtPyre_Summit_Movement_PhoebeMiddle:

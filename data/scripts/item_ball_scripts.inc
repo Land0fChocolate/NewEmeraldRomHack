@@ -518,8 +518,8 @@ MtPyre_Exterior_EventScript_ItemMaxPotion::
 	finditem ITEM_MAX_POTION
 	end
 
-MtPyre_Exterior_EventScript_ItemTM48::
-	finditem ITEM_TM48
+MtPyre_Exterior_EventScript_ItemBottleCap::
+	finditem ITEM_BOTTLE_CAP
 	end
 
 AquaHideout_B1F_EventScript_ItemPPMax::
@@ -556,6 +556,10 @@ Route119_EventScript_ItemNestBall::
 
 ShoalCave_LowTideEntranceRoom_EventScript_ItemBigPearl::
 	finditem ITEM_BIG_PEARL
+	end
+
+ShoalCave_LowTideEntranceRoom_EventScript_ItemTM48::
+	finditem ITEM_TM48
 	end
 
 ShoalCave_LowTideInnerRoom_EventScript_ItemRareCandy::

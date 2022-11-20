@@ -165,7 +165,8 @@ static const u8 sPoisonPointDescription[] = _(
 	"poisoned.");
 
 static const u8 sInnerFocusDescription[] = _(
-	"Grants flinch immunity.");
+	"Grants flinch and\n"
+	"intimidate immunity.");
 
 static const u8 sMagmaArmorDescription[] = _(
 	"Grants freeze immunity.");

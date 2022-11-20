@@ -567,7 +567,7 @@ LilycoveCity_Text_CitySign:
 	.string "sea begins.”$"
 
 LilycoveCity_Text_ContestHallSign:
-	.string "Pokémon CONTEST HALL\n"
+	.string "POKéMON CONTEST HALL\n"
 	.string "“The gathering place for Trainers!”$"
 
 LilycoveCity_Text_MotelSign:

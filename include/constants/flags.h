@@ -1113,7 +1113,7 @@
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_MAX_ELIXIR                       0x42F
 #define FLAG_ITEM_AQUA_HIDEOUT_B2F_NEST_BALL                        0x430
 #define FLAG_ITEM_MT_PYRE_EXTERIOR_MAX_POTION                       0x431
-#define FLAG_ITEM_MT_PYRE_EXTERIOR_TM_48                            0x432
+#define FLAG_ITEM_MT_PYRE_EXTERIOR_BOTTLE_CAP                       0x432
 #define FLAG_ITEM_NEW_MAUVILLE_ULTRA_BALL                           0x433
 #define FLAG_ITEM_NEW_MAUVILLE_ESCAPE_ROPE                          0x434
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_6_LUXURY_BALL    0x435
@@ -1230,7 +1230,7 @@
 #define FLAG_ITEM_FARAWAY_ISLAND_RUIN4_LIGHT_CLAY                   0x4A3
 #define FLAG_ITEM_FARAWAY_ISLAND_RUIN5_TWISTED_SPOON                0x4A4
 #define FLAG_ITEM_MAUVILLE_RIVERSIDE_FULL_RESTORE                   0x4A5
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
+#define FLAG_ITEM_SHOAL_CAVE_ENTRANCE_ROOM_TM48                     0x4A6
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag

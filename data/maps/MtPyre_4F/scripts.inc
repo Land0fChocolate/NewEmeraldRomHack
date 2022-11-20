@@ -44,8 +44,8 @@ MtPyre_5F_Text_AtsushiPostBattle:
 
 MtPyre_5F_Text_MomoIntro:
 	.string "When I told everyone that I can talk\n"
-	.string "with Pokémon, they became concerned for\l"
-	.string "me…$"
+	.string "with Pokémon, they became concerned\l"
+	.string "for me…$"
 
 MtPyre_5F_Text_MomoDefeat:
 	.string "My Pokémon! You aren't in pain, are you?$"

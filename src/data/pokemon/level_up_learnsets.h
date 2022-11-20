@@ -6779,7 +6779,6 @@ static const struct LevelUpMove sGlalieLevelUpLearnset[] = {
 
 static const struct LevelUpMove sLunatoneLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_POWER_GEM),
-    LEVEL_UP_MOVE( 1, MOVE_PSYSHOCK),
     LEVEL_UP_MOVE( 1, MOVE_MOONBLAST),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_HARDEN),
@@ -6801,6 +6800,7 @@ static const struct LevelUpMove sLunatoneLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sSolrockLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_POWER_GEM),
     LEVEL_UP_MOVE( 1, MOVE_FLARE_BLITZ),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_HARDEN),

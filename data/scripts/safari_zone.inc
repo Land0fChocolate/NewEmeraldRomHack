@@ -252,7 +252,7 @@ SafariZone_RestHouse_Text_Youngster:
 	.string "a good number of Pokémon.\p"
 	.string "You can improve your chances of making\n"
 	.string "a catch by getting closer to them\l"
-	.string "before throwing a Safari BALL.$"
+	.string "before throwing a Safari Ball.$"
 
 SafariZone_RestHouse_Text_PsychicM:
 	.string "If you use {POKEBLOCK}S, wild Pokémon won't\n"
