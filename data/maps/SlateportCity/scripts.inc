@@ -992,6 +992,9 @@ SlateportCity_EventScript_Drake::
 	end
 
 SlateportCity_EventScript_TateAndLiza::
+	applymovement LOCALID_TATE, Common_Movement_FacePlayer
+	applymovement LOCALID_LIZA, Common_Movement_FacePlayer
+	waitmovement 0
 	goto_if_set FLAG_PLACED_WISH_TAG, SlateportCity_EventScript_TateAndLizaWishTagPlaced
 	goto_if_set FLAG_GIVEN_WISH_TAG, SlateportCity_EventScript_TateAndLizaWishTagGiven
 	msgbox SlateportCity_Text_TateAndLizaGiveWishTag, MSGBOX_DEFAULT

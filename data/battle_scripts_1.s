@@ -403,7 +403,6 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectOctolock                @ EFFECT_OCTOLOCK
 	.4byte BattleScript_EffectClangorousSoul          @ EFFECT_CLANGOROUS_SOUL
 	.4byte BattleScript_EffectHit                     @ EFFECT_BOLT_BEAK
-	.4byte BattleScript_EffectSerpentDance            @ EFFECT_SERPENT_DANCE
 	.4byte BattleScript_EffectHiddenThorns            @ EFFECT_HIDDEN_THORNS
 	.4byte BattleScript_EffectHit                     @ EFFECT_EXPANDING_FORCE
 	.4byte BattleScript_EffectScaleShot               @ EFFECT_SCALE_SHOT
@@ -412,6 +411,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHit                     @ EFFECT_BEAK_BLAST
 	.4byte BattleScript_EffectCourtChange             @ EFFECT_COURT_CHANGE
 	.4byte BattleScript_EffectSteelBeam               @ EFFECT_STEEL_BEAM
+	.4byte BattleScript_EffectSerpentDance            @ EFFECT_SERPENT_DANCE
 
 BattleScript_EffectSteelBeam::
 	attackcanceler

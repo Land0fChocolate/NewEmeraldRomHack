@@ -712,9 +712,9 @@ RustboroCity_DevonCorp_2F_Text_DeviceForTalkingToPokemon:
 	.string "But we haven't had much success…$"
 
 RustboroCity_DevonCorp_2F_Text_DevelopingNewBalls:
-	.string "I'm developing new kinds of\n"
-	.string "Poké Balls…\p"
-	.string "But I haven't made much headway…$"
+	.string "I've been developing new kinds of\n"
+	.string "Poké Balls.\p"
+	.string "Though, only select stores sell them…$"
 
 RustboroCity_DevonCorp_2F_Text_WeFinallyMadeNewBalls:
 	.string "We finally made new kinds of\n"

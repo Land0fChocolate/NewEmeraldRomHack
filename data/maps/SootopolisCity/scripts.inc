@@ -697,12 +697,12 @@ SootopolisCity_Movement_UnusedPanBack:
 SootopolisCity_EventScript_CaveOfOriginExpert::
 	lock
 	faceplayer
-	compare VAR_SOOTOPOLIS_CITY_STATE, 6
-	goto_if_ge SootopolisCity_EventScript_ExpertPostLegendaries
-	compare VAR_SOOTOPOLIS_CITY_STATE, 5
-	goto_if_eq SootopolisCity_EventScript_ExpertLegendaries
-	compare VAR_SOOTOPOLIS_CITY_STATE, 2
-	goto_if_ge SootopolisCity_EventScript_ExpertLeadToCave
+	@compare VAR_SOOTOPOLIS_CITY_STATE, 6
+	@goto_if_ge SootopolisCity_EventScript_ExpertPostLegendaries
+	@compare VAR_SOOTOPOLIS_CITY_STATE, 5
+	@goto_if_eq SootopolisCity_EventScript_ExpertLegendaries
+	@compare VAR_SOOTOPOLIS_CITY_STATE, 2
+	@goto_if_ge SootopolisCity_EventScript_ExpertLeadToCave
 	msgbox SootopolisCity_Text_CaveOfOriginPleaseLeave, MSGBOX_DEFAULT
 	release
 	end
@@ -1263,6 +1263,8 @@ SootopolisCity_EventScript_JuanIntro::
 	clearflag FLAG_HIDE_SKY_PILLAR_JUAN
 	setvar VAR_SOOTOPOLIS_STEVEN_WALLACE_STATE, 1
 	setvar VAR_SOOTOPOLIS_CITY_STATE, 3
+	setobjectxyperm LOCALID_STEVEN, 23, 7
+	setobjectxyperm LOCALID_WALLACE, 24, 7
 	releaseall
 	end
 
@@ -1291,7 +1293,6 @@ SootopolisCity_EventScript_StevenRayquazaStoppedIt::
 
 SootopolisCity_EventScript_StevenThanksPlayerAndLeaves::
 	msgbox SootopolisCity_Text_StevenThanksPlayerAndGivesMasterBall, MSGBOX_DEFAULT
-	closemessage
 	giveitem ITEM_MASTER_BALL
 	msgbox SootopolisCity_Text_StevenLeaves, MSGBOX_DEFAULT
 	closemessage
@@ -1717,7 +1718,7 @@ SootopolisCity_Text_IHaveCausedHarm:
 	.string "deserve the chance to start anything\l"
 	.string "over.\p"
 	.string "Child, you… No. I have no right to call\n"
-	.string "you 'child.' Fellow Trainer.\p"
+	.string "you “child.” Fellow Trainer.\p"
 	.string "Farewell.$"
 
 SootopolisCity_Text_KyogreCalmDown:
@@ -1736,7 +1737,7 @@ SootopolisCity_Text_TryingMeaninglessToPokemon:
 	.string "to its normal state…\p"
 	.string "Haha…\n"
 	.string "Hahaha…\p"
-	.string "The world I believed to be ideal… The\n"
+	.string "The world I believed to be ideal… the\n"
 	.string "kind of world that I dreamed of making,\l"
 	.string "where I could live alongside my beloved\l"
 	.string "Pokémon…\p"
@@ -1796,7 +1797,7 @@ SootopolisCity_Text_MattRayquaza:
 	.string "Matt: Whew! I'm glad that's over.\p"
 	.string "Me and my bro, Archie…\n"
 	.string "We ain't gonna cause trouble for\l"
-	.string "anyone else anymore.\p"
+	.string "anyone else anymore.$"
 
 SootopolisCity_Text_StevenGreetsPlayer:
 	.string "Steven: {PLAYER}!\n"
@@ -1821,8 +1822,8 @@ SootopolisCity_Text_StevenDiscussStorm::
 	.string "growing even more intense. Soon it will\l"
 	.string "extend to all of Hoenn…\p"
 	.string "If that were to happen… Hoenn will\n"
-	.string "become devastated. If we had a way of\l"
-	.string "clearing the sky…$"
+	.string "become devastated.\l"
+	.string "If we had a way of clearing the sky…$"
 
 SootopolisCity_Text_WallaceFollowToJuan::
 	.string "Wallace: Clearing the sky…\p"
@@ -1864,7 +1865,7 @@ SootopolisCity_Text_JuanPerhaps:
 SootopolisCity_Text_JuanAsksWherePlayerFrom:
 	.string "Juan: You are unfamiliar.\n"
 	.string "May I ask where you are from?\p"
-	.string "Ah, Littleroot. A quiant little place.\n"
+	.string "Ah, Littleroot. A quaint little place.\n"
 	.string "Very much distant from the troubles of\l"
 	.string "the world.\p"
 	.string "If you are a friend of Steven, then I\n"

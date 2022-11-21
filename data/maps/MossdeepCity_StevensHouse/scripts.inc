@@ -92,7 +92,6 @@ MossdeepCity_StevensHouse_EventScript_Steven::
 MossdeepCity_StevensHouse_EventScript_StevenGreetingPlayer::
 	setflag FLAG_MOSSDEEP_CITY_STEVEN
 	msgbox MossdeepCity_StevensHouse_Text_GreetingPlayer, MSGBOX_DEFAULT
-	closemessage
 	giveitem ITEM_TM91
 	setflag FLAG_RECEIVED_TM91
 	releaseall

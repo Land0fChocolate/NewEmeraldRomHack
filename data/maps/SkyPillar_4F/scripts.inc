@@ -1,7 +1,7 @@
 .set LOCALID_ZINNIA, 1
 
 SkyPillar_4F_MapScripts::
-	@map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SkyPillar_4F_OnFrame
 	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_4F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, SkyPillar_4F_SetHoleWarp

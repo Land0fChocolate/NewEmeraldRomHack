@@ -568,22 +568,22 @@ MossdeepCity_Gym_Text_NicholasPostBattle:
 	.string "invincible Pokémon power next.$"
 
 MossdeepCity_Gym_Text_TateAndLizaIntro:
-	.string "Tate: Hehehe… Were you surprised?\p"
-	.string "Liza: Fufufu… Were you surprised?\p"
+	.string "Tate: Heh heh heh… Were you surprised?\p"
+	.string "Liza: Tee hee hee… Were you surprised?\p"
 	.string "Tate: That there are two Gym Leaders?\n"
 	.string "Liza: That there are two Gym Leaders?\p"
 	.string "Tate: We're twins!\n"
 	.string "Liza: We're twins!\p"
 	.string "Tate: We don't need to talk because…\n"
-	.string "Liza: We can each determine what…\p"
-	.string "Tate: The other is thinking…\n"
-	.string "Liza: All in our minds!\p"
+	.string "Liza: …we can each tell…\p"
+	.string "Tate: …what the other is thinking…\n"
+	.string "Liza: …all in our minds!\p"
 	.string "Tate: This combination of ours…\n"
 	.string "Liza: Can you beat it?$"
 
 MossdeepCity_Gym_Text_TateAndLizaDefeat:
 	.string "Tate: What?! Our combination…\n"
-	.string "Liza: Was shattered!\p"
+	.string "Liza: …was shattered!\p"
 	.string "Tate: It can't be helped. You've won…\n"
 	.string "Liza: So, in recognition, take this.$"
 
@@ -595,16 +595,17 @@ MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
 	.string "Tate: The Mind Badge enhances the\n"
 	.string "Sp. Atk and Sp. Def of Pokémon.\p"
 	.string "Liza: It also grants your Pokémon the\n"
-	.string "power to carry you deep underwater.\p"
+	.string "power to carry you deep underwater\l"
+	.string "with the Dive field move.\p"
 	.string "Tate: You should also take this, too.$"
 
 MossdeepCity_Gym_Text_ExplainCalmMind:
 	.string "Tate: That TM04 contains…\n"
 	.string "Liza: Calm Mind!\p"
 	.string "Tate: It raises Sp. Atk and…\n"
-	.string "Liza: It raises Sp. Def!\p"
+	.string "Liza: …it raises Sp. Def!\p"
 	.string "Tate: It's a move that's perfect…\n"
-	.string "Liza: For Psychic Pokémon!\p"
+	.string "Liza: …for Psychic Pokémon!\p"
 	.string "… … … … … …$"
 
 MossdeepCity_Gym_Text_RegisteredTateAndLiza:

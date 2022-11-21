@@ -3999,9 +3999,8 @@ Route128_Text_RubenPostBattle:
 	.string "than you!$"
 
 Route128_Text_WayneIntro:
-	.string "I want to visit Ever Grande, so I\n"
-	.string "caught myself a Pokémon that knows\l"
-	.string "the move Waterfall to crest the falls.$"
+	.string "I'm catching strong water Pokémon that\n"
+	.string "can climb the waterfall at Ever Grande.$"
 
 Route128_Text_WayneDefeat:
 	.string "I'm crestfallen!$"

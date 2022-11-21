@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
@@ -78,6 +78,45 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "SeafloorCavern_Room1_EventScript_Grunt2",
       "flag": "FLAG_HIDE_SEAFLOOR_CAVERN_AQUA_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 7,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 7,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_13"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 6,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "FLAG_TEMP_12"
     }
   ],
   "warp_events": [
@@ -103,6 +142,10 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

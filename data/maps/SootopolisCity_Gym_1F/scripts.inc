@@ -264,7 +264,8 @@ SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
 	.string "command you make.\p"
 	.string "The Rain Badge also gifts your Pokémon\n"
 	.string "the strength to carry you up walls of\l"
-	.string "cascading water.\p"
+	.string "cascading water with the Waterfall\l"
+	.string "field move.\p"
 	.string "And, so you never forget the battle\n"
 	.string "we shared…$"
 
@@ -278,7 +279,7 @@ SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
 	.string "One path would take you to the Pokemon\n"
 	.string "League.\p"
 	.string "It is the goal that all trainers in\n"
-	.string "Hoenn aspire to reach after obtaining\p"
+	.string "Hoenn aspire to reach after obtaining\l"
 	.string "all 8 Gym Badges.\p"
 	.string "You can reach it from Evergrande City.$"
 

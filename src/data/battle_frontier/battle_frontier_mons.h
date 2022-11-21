@@ -6765,7 +6765,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_GARDEVOIR_8] = {
         .species = SPECIES_GARDEVOIR,
-        .moves = {MOVE_MOONBLAST, MOVE_THUNDERBOLT, MOVE_ATTRACT, MOVE_THUNDER_WAVE},
+        .moves = {MOVE_MOONBLAST, MOVE_THUNDERBOLT, MOVE_ATTRACT, MOVE_FUTURE_SIGHT},
         .item = ITEM_QUICK_CLAW,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_MODEST

@@ -29,6 +29,7 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre::
 	msgbox SeafloorCavern_Room9_Text_ArchieYouMustDisappear, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_ARCHIE, SeafloorCavern_Room9_Text_ArchieDefeat
 	msgbox SeafloorCavern_Room9_Text_ArchieWithThisBlueOrb, MSGBOX_DEFAULT
+	closemessage
 	setweather WEATHER_NONE
 	doweather
 	special Script_FadeOutMapMusic
@@ -75,6 +76,8 @@ SeafloorCavern_Room9_EventScript_ArchieAwakenKyogre::
 	delay 30
 	setvar VAR_0x8004, LOCALID_ARCHIE
 	msgbox SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo, MSGBOX_DEFAULT
+	closemessage
+	delay 20
 	playse SE_PC_LOGIN
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
 	waitmovement 0
@@ -198,20 +201,22 @@ SeafloorCavern_Room9_Text_ArchieBeholdKyogre:
 
 SeafloorCavern_Room9_Text_ArchieYouMustDisappear:
 	.string "Archie: I've been waiting so long for\n"
-	.string "this day to come. We humans have\l"
-	.string "disregarded Pokémon and nature both in\l"
-	.string "our endless pursuit of our own desires\l"
-	.string "and needs…\p"
+	.string "this day to come.\p"
+	.string "We humans have disregarded Pokémon and\n"
+	.string "nature both in our endless pursuit of\l"
+	.string "our own desires and needs…\p"
 	.string "And in the process, we've created this\n"
-	.string "broken and disordered world… But this\l"
-	.string "is the day when I finally obtain the\l"
-	.string "power to return everything to how it\l"
-	.string "once was, to return to our beginnings!\p"
+	.string "broken and disordered world…\p"
+	.string "But this is the day when I finally\n"
+	.string "obtain the power to return everything\l"
+	.string "to how it once was, to return to our\l"
+	.string "beginnings!\p"
 	.string "I can release the ancient power!\p"
 	.string "And now, you are the last token\n"
 	.string "resistance that's trying to ruin my\l"
-	.string "day. I'll use everything my team and\l"
-	.string "I have to crush you once and for all!$"
+	.string "day.\p"
+	.string "I'll use everything my team and I have\n"
+	.string "to crush you once and for all!$"
 
 SeafloorCavern_Room9_Text_ArchieDefeat:
 	.string "Like I figured…$"
@@ -226,7 +231,7 @@ SeafloorCavern_Room9_Text_ArchieWithThisBlueOrb:
 	.string "But it changes nothing!\n"
 	.string "I can still use the Blue Orb!\p"
 	.string "Now! AWAKEN, KYOGRE!\n"
-	.string "RETURN EVERYTHING TO THE WAY IT WAS!!\p"
+	.string "RETURN EVERYTHING TO THE WAY IT WAS!!$"
 
 SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo:
 	.string "Archie: Bwahahahaha! At last… AT LAST!\p"
