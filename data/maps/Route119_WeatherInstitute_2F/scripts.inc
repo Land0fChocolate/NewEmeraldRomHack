@@ -11,6 +11,7 @@
 .set LOCALID_CASTFORM1, 13
 .set LOCALID_CASTFORM2, 14
 .set LOCALID_ZINNIA, 18
+.set LOCALID_DELINQUENT, 19
 
 Route119_WeatherInstitute_2F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route119_WeatherInstitute_2F_OnTransition
@@ -47,6 +48,8 @@ Route119_WeatherInstitute_2F_EventScript_SetZinniaMeetUpScene::
 Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaHere::
 	setobjectxyperm LOCALID_SCIENTIST, 1, 6
 	setobjectmovementtype LOCALID_SCIENTIST, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm LOCALID_DELINQUENT, 2, 7
+	setobjectmovementtype LOCALID_DELINQUENT, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
 Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaGone::
@@ -490,6 +493,48 @@ Route119_WeatherInstitute_2F_EventScript_ZinniaTrigger::
 Route119_WeatherInstitute_2F_EventScript_Zinnia::
 	msgbox Route119_WeatherInstitute_2F_Text_ZinniaNavelRock, MSGBOX_NPC
 	end
+
+	.align 2
+Route119_WeatherInstitute_2F_Pokemart_WeatherRocks:
+	.2byte ITEM_HEAT_ROCK
+	.2byte ITEM_DAMP_ROCK
+	.2byte ITEM_SMOOTH_ROCK
+	.2byte ITEM_ICY_ROCK
+	.2byte ITEM_NONE
+	release
+	end
+
+Route119_WeatherInstitute_2F_EventScript_Delinquent::
+	lock
+	faceplayer
+	compare VAR_WEATHER_INSTITUTE_STATE, 1
+	goto_if_le Route119_WeatherInstitute_2F_EventScript_AquaTrouble
+	msgbox Route119_WeatherInstitute_2F_Text_SellWeatherRocks, MSGBOX_DEFAULT
+	pokemart Route119_WeatherInstitute_2F_Pokemart_WeatherRocks
+	msgbox Route119_WeatherInstitute_2F_Text_SeeYa, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_DELINQUENT, Common_Movement_FaceRight
+	waitmovement 0
+	release
+	end
+
+Route119_WeatherInstitute_2F_EventScript_AquaTrouble:
+	msgbox Route119_WeatherInstitute_2F_Text_ThanksHero, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route119_WeatherInstitute_2F_Text_ThanksHero:
+	.string "Thanks, little hero.\n"
+	.string "Give my thanks to your friend as well.$"
+
+Route119_WeatherInstitute_2F_Text_SellWeatherRocks:
+	.string "Hey, little hero.\p"
+	.string "Are you looking to buy some weather\n"
+	.string "rocks?$"
+
+Route119_WeatherInstitute_2F_Text_SeeYa:
+	.string "Okay, see ya.$"
 
 Route119_WeatherInstitute_2F_Text_ZinniaWhatBringsYouHere:
 	.string "Zinnia: Oh my, we do seem to keep\n"

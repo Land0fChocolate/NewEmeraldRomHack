@@ -252,7 +252,11 @@ MauvilleCity_GameCorner_EventScript_ReturnToChooseTMPrize::
 	goto MauvilleCity_GameCorner_EventScript_ChooseTMPrize
 
 MauvilleCity_GameCorner_EventScript_ChooseTMPrize::
-	multichoice 12, 0, MULTI_GAME_CORNER_TMS, FALSE
+	@multichoice 12, 0, MULTI_GAME_CORNER_TMS, FALSE
+	@switch VAR_RESULT
+	setvar VAR_0x8004, SCROLL_MULTI_GAME_CORNER_TM_VENDOR
+	special ShowScrollableMultichoice
+	waitstate
 	switch VAR_RESULT
 	case 0, MauvilleCity_GameCorner_EventScript_TM29
 	case 1, MauvilleCity_GameCorner_EventScript_TM53
@@ -266,13 +270,13 @@ MauvilleCity_GameCorner_EventScript_ChooseTMPrize::
 	end
 
 MauvilleCity_GameCorner_EventScript_TM29::
-	setvar VAR_TEMP_1, 2
+	setvar VAR_TEMP_1, 0
 	bufferitemname 0, ITEM_TM29
 	setvar VAR_0x8004, ITEM_TM29
 	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
 
 MauvilleCity_GameCorner_EventScript_TM53::
-	setvar VAR_TEMP_1, 2
+	setvar VAR_TEMP_1, 1
 	bufferitemname 0, ITEM_TM53
 	setvar VAR_0x8004, ITEM_TM53
 	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
@@ -290,19 +294,19 @@ MauvilleCity_GameCorner_EventScript_TM13::
 	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
 
 MauvilleCity_GameCorner_EventScript_TM24::
-	setvar VAR_TEMP_1, 3
+	setvar VAR_TEMP_1, 4
 	bufferitemname 0, ITEM_TM24
 	setvar VAR_0x8004, ITEM_TM24
 	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
 
 MauvilleCity_GameCorner_EventScript_TM35::
-	setvar VAR_TEMP_1, 3
+	setvar VAR_TEMP_1, 5
 	bufferitemname 0, ITEM_TM35
 	setvar VAR_0x8004, ITEM_TM35
 	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
 
 MauvilleCity_GameCorner_EventScript_TM94::
-	setvar VAR_TEMP_1, 5
+	setvar VAR_TEMP_1, 6
 	bufferitemname 0, ITEM_TM94
 	setvar VAR_0x8004, ITEM_TM94
 	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
@@ -313,13 +317,13 @@ MauvilleCity_GameCorner_EventScript_ConfirmTMPrize::
 	compare VAR_RESULT, NO
 	goto_if_eq MauvilleCity_GameCorner_EventScript_CancelTMSelect
 	switch VAR_TEMP_1
-	case 2, MauvilleCity_GameCorner_EventScript_BuyTM29
-	case 3, MauvilleCity_GameCorner_EventScript_BuyTM53
-	case 4, MauvilleCity_GameCorner_EventScript_BuyTM56
-	case 5, MauvilleCity_GameCorner_EventScript_BuyTM13
-	case 6, MauvilleCity_GameCorner_EventScript_BuyTM24
-	case 7, MauvilleCity_GameCorner_EventScript_BuyTM35
-	case 8, MauvilleCity_GameCorner_EventScript_BuyTM94
+	case 0, MauvilleCity_GameCorner_EventScript_BuyTM29
+	case 1, MauvilleCity_GameCorner_EventScript_BuyTM53
+	case 2, MauvilleCity_GameCorner_EventScript_BuyTM56
+	case 3, MauvilleCity_GameCorner_EventScript_BuyTM13
+	case 4, MauvilleCity_GameCorner_EventScript_BuyTM24
+	case 5, MauvilleCity_GameCorner_EventScript_BuyTM35
+	case 6, MauvilleCity_GameCorner_EventScript_BuyTM94
 	end
 
 MauvilleCity_GameCorner_EventScript_BuyTM29::

@@ -60,7 +60,6 @@ FortreeCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_HUMBERTO
 	return
 
-@TODO: may need to unset some of these
 MossdeepCity_Gym_SetGymTrainers::
 	settrainerflag TRAINER_PRESTON
 	settrainerflag TRAINER_VIRGIL

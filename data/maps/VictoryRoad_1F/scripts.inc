@@ -5,7 +5,13 @@ VictoryRoad_1F_MapScripts::
 	.byte 0
 
 VictoryRoad_1F_OnTransition:
+	call_if_set FLAG_DEFEATED_WALLY_VICTORY_ROAD, VictoryRoad_1F_EventScript_SetUpPostDefeatWally
 	end
+
+VictoryRoad_1F_EventScript_SetUpPostDefeatWally::
+	setflag FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY
+	clearflag FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY
+	return
 
 VictoryRoad_1F_EventScript_SetEntranceWallyPos1::
 	setobjectxyperm LOCALID_WALLY_EXIT, 2, 24
@@ -44,14 +50,11 @@ VictoryRoad_1F_EventScript_WallyBattleTrigger3::
 VictoryRoad_1F_EventScript_WallyExitBattle::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	msgbox VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_WALLY_VR_1, VictoryRoad_1F_Text_WallyEntranceDefeat
+	@trainerbattle_no_intro TRAINER_WALLY_VR_1, VictoryRoad_1F_Text_WallyEntranceDefeat
 	msgbox VictoryRoad_1F_Text_WallyPostEntranceBattle, MSGBOX_DEFAULT
-	clearflag FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY
 	copyobjectxytoperm LOCALID_WALLY_EXIT
 	setflag FLAG_DEFEATED_WALLY_VICTORY_ROAD
 	setvar VAR_VICTORY_ROAD_1F_STATE, 1
-	setflag FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY
-	clearflag FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY
 	releaseall
 	end
 
@@ -104,16 +107,19 @@ VictoryRoad_1F_EventScript_EntranceWally::
 
 @ This Wally appears and remains at the exit after the Hall of Fame is entered 
 VictoryRoad_1F_EventScript_ExitWally::
-	trainerbattle_single TRAINER_WALLY_VR_2, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
+	lock
+	faceplayer
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
 	goto_if_eq VictoryRoad_1F_EventScript_RematchWally
 	msgbox VictoryRoad_1F_Text_WallyPostBattle, MSGBOX_AUTOCLOSE
+	release
 	end
 
 VictoryRoad_1F_EventScript_RematchWally::
 	trainerbattle_rematch TRAINER_WALLY_VR_2, VictoryRoad_1F_Text_WallyIntro, VictoryRoad_1F_Text_WallyDefeat
 	msgbox VictoryRoad_1F_Text_WallyPostBattle, MSGBOX_AUTOCLOSE
+	release
 	end
 
 VictoryRoad_1F_EventScript_Edgar::
@@ -148,19 +154,19 @@ VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore:
 	.string "really all thanks to you that I made\l"
 	.string "it all this way.\p"
 	.string "{PLAYER}, it was only because I lost\n"
-	.string "to you that I realized just how far I\l"
-	.string "my potential can reach.\p"
+	.string "to you that I realized just how far my\l"
+	.string "potential can reach.\p"
 	.string "I'm sure you and your Pokémon have grown\n"
-	.string "a lot since then, to make it all the\l"
-	.string "way here but so have we!\p"
+	.string "a lot since then, to make it all the way\l"
+	.string "here but so have we!\p"
 	.string "My Pokémon have given me the courage\n"
 	.string "and the strength to fight!\p"
 	.string "I have to win for them, and for me.\n"
 	.string "Get ready. Here I come.$"
 
 VictoryRoad_1F_Text_WallyEntranceDefeat:
-	.string "…\n"
-	.string "{PLAYER}, all this time you never\l"
+	.string "…\p"
+	.string "{PLAYER}, all this time you never\n"
 	.string "skipped on your training, have you?$"
 
 VictoryRoad_1F_Text_WallyPostEntranceBattle:
@@ -168,8 +174,8 @@ VictoryRoad_1F_Text_WallyPostEntranceBattle:
 	.string "{PLAYER}, but I'm not sorry.\l"
 	.string "It only shows that I have more\l"
 	.string "mountains yet to climb!\p"
-	.string "I will continue training. I will catch\n"
-	.string "up to you one day!$"
+	.string "I will continue training.\n"
+	.string "I will catch up to you one day!$"
 
 VictoryRoad_1F_Text_WallyIntro:
 	.string "Wally: Hi! {PLAYER}!\p"

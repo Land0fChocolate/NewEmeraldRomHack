@@ -857,12 +857,12 @@
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL       0x331
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL           0x332
 #define FLAG_HIDE_ROUTE_112_TEAM_MAGMA                              0x333
-#define FLAG_HIDE_CAVE_OF_ORIGIN_B1F_WALLACE                        0x334 // unused
+#define FLAG_OBTAINED_EVER_GRANDE_CITY_LUCKY_EGG                    0x334
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_1_BLOCKING_ENTRANCE         0x335
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE         0x336
 #define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337 // unused
 #define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338
-#define FLAG_HIDE_LEGEND_MON_CAVE_OF_ORIGIN                         0x339 // Unused, leftover from R/S
+#define FLAG_OBTAINED_LILYCOVE_CITY_ICE_STONE                       0x339
 #define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
 #define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_ARCHIE                     0x33C
@@ -1084,7 +1084,7 @@
 #define FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL                           0x412
 #define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0x413
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_23                          0x414
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_EVIOLITE                       0x415
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_BOTTLE_CAP                     0x415
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_MOON_STONE                     0x416
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP                          0x417
 #define FLAG_ITEM_RUSTURF_TUNNEL_TM63                               0x418

@@ -67,8 +67,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_CheckReadyForJohtoStarter::
 	specialvar VAR_RESULT, HasAllHoennMons
 	compare VAR_RESULT, TRUE
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_SetReadyForJohtoStarter
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_WANDER_AROUND
-	setobjectxyperm LOCALID_RIVAL, 5, 10
+	@setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_WANDER_AROUND
+	@setobjectxyperm LOCALID_RIVAL, 5, 10
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_SetReadyForJohtoStarter::
@@ -81,8 +81,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetJohtoStarterLayout::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_SetAfterJohtoStarterLayout::
 	setmaplayoutindex LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB_WITH_TABLE
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_WANDER_UP_AND_DOWN
-	setobjectxyperm LOCALID_RIVAL, 5, 10
+	@setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_WANDER_UP_AND_DOWN
+	@setobjectxyperm LOCALID_RIVAL, 5, 10
 	end
 
 LittlerootTown_ProfessorBirchsLab_OnWarp:
@@ -1439,9 +1439,9 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "It's Scott, remember me?\p"
 	.string "There's this place that I'd like to\n"
 	.string "invite you to for a visit.\p"
-	.string "It will give you even more challenging\n"
-	.string "battles than what you'd find at the\l"
-	.string "Pokémon League.\p"
+	.string "It will give you even more\n"
+	.string "challenging battles than what you'd\l"
+	.string "find at the Pokémon League.\p"
 	.string "If you're interested, board a ferry\n"
 	.string "at either Slateport or Lilycove.\p"
 	.string "I'll fill you in on the details when\n"
@@ -1467,8 +1467,8 @@ LittlerootTown_ProfessorBirchsLab_Text_ReviewingBeachFindings:
 	.string "Pokémon residing in Littleroot Beach\l"
 	.string "did not originate there.\p"
 	.string "{PLAYER}, would you mind checking\n"
-	.string "out the other new areas? It would\l"
-	.string "surely be of great help!$"
+	.string "out the other new areas?\l"
+	.string "It would surely be of great help!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_NewAreas:
 	.string "Prof. Birch: I have reports of a newly\n"

@@ -20,11 +20,17 @@
 .set LOCALID_SCOTT, 42
 .set LOCALID_TATE, 43
 .set LOCALID_LIZA, 44
+.set LOCALID_JIRACHI, 45
 
 SlateportCity_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, SlateportCity_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SlateportCity_OnFrame
 	.byte 0
+
+SlateportCity_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, SlateportCity_EventScript_TryRemoveJirachi
+	end
 
 SlateportCity_OnTransition:
 	setvar VAR_SLATEPORT_MUSEUM_1F_STATE, 0
@@ -1024,6 +1030,13 @@ SlateportCity_EventScript_TateAndLizaWishTagPlaced:
 	release
 	end
 
+SlateportCity_EventScript_TryRemoveJirachi::
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_ne Common_EventScript_NopReturn
+	removeobject LOCALID_JIRACHI
+	return
+
 SlateportCity_EventScript_Jirachi::
 	lock
 	faceplayer
@@ -1036,6 +1049,7 @@ SlateportCity_EventScript_Jirachi::
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setvar VAR_TEMP_1, 0
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq SlateportCity_EventScript_DefeatedJirachi

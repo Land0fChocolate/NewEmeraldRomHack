@@ -28,9 +28,10 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 
 @TODO: remove this. This is a test trainer.
 EverGrandeCity_EventScript_Leaf::
-	cleartrainerflag TRAINER_LEAF
-	trainerbattle_single TRAINER_ZINNIA, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
+	@cleartrainerflag TRAINER_LEAF
+	@trainerbattle_single TRAINER_ZINNIA, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_AUTOCLOSE
+	giveitem ITEM_MASTER_BALL, 20
 	end
 
 EverGrandeCity_Text_LeafIntro:
@@ -153,8 +154,8 @@ EverGrandeCity_Text_HexManiac:
 
 EverGrandeCity_Text_Man:
 	.string "We get people coming in from all over\n"
-	.string "to test themselves here. The city\l"
-	.string "practically never sleeps.$"
+	.string "to test themselves here.\l"
+	.string "The city practically never sleeps.$"
 
 EverGrandeCity_Text_Triathlete:
 	.string "It might be fun to jump into the sea\n"

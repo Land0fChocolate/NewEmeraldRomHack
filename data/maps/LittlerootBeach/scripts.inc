@@ -335,6 +335,7 @@ LittlerootBeach_EventScript_RivalLeavesPart2::
 	setflag FLAG_HIDE_LITTLEROOT_BEACH_RIVAL
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
 	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 2
+	savebgm MUS_DUMMY
 	fadedefaultbgm
 	releaseall
 	end
@@ -411,7 +412,7 @@ LittlerootBeach_Text_MayComment:
 	.string "May: …well that was weird.$"
 
 LittlerootBeach_Text_BrendanComment:
-	.string "Brendan: Huh… was that a fan of yours,"
+	.string "Brendan: Huh… was that a fan of yours,\n"
 	.string "{PLAYER}?$"
 
 LittlerootBeach_Text_MayReport:

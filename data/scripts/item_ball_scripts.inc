@@ -394,8 +394,8 @@ MeteorFalls_1F_1R_EventScript_ItemTM23::
 	finditem ITEM_TM23
 	end
 
-MeteorFalls_1F_1R_EventScript_ItemEviolite::
-	finditem ITEM_EVIOLITE
+MeteorFalls_1F_1R_EventScript_ItemBottleCap::
+	finditem ITEM_BOTTLE_CAP
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemMoonStone::

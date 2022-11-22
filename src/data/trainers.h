@@ -11129,6 +11129,34 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Brandon},
     },
 
+    [TRAINER_JAYCE] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_DRAGON_TAMER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_DRAGON_TAMER,
+        .trainerName = _("Jayce"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
+        .partySize = ARRAY_COUNT(sParty_Jayce),
+        .party = {.NoItemDefaultMoves = sParty_Jayce},
+    },
+
+    [TRAINER_WILSON] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_COLLECTOR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_COLLECTOR,
+        .trainerName = _("Wilson"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_Wilson),
+        .party = {.NoItemDefaultMoves = sParty_Wilson},
+    },
+
     [TRAINER_PABLO_2] =
     {
         .partyFlags = 0,

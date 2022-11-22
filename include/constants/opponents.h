@@ -12,7 +12,7 @@
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
 #define TRAINER_GOMEZ_1                       9
 #define TRAINER_GRUNT_PETALBURG_WOODS        10
-#define TRAINER_MARCEL                       11 // unused, though data remains
+#define TRAINER_MARCEL                       11 //unused, though data remains
 #define TRAINER_ALBERTO                      12
 #define TRAINER_ED                           13
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_4      14
@@ -399,7 +399,7 @@
 #define TRAINER_NICOLAS_4                   395
 #define TRAINER_NICOLAS_5                   396
 #define TRAINER_AARON                       397
-#define TRAINER_PERRY                       398 // unused, though data remains
+#define TRAINER_PERRY                       398 //unused, though data remains
 #define TRAINER_HUGH                        399
 #define TRAINER_PHIL                        400
 #define TRAINER_JARED                       401
@@ -768,7 +768,7 @@
 #define TRAINER_CALE                        764
 #define TRAINER_MYLES                       765
 #define TRAINER_PAT                         766
-#define TRAINER_CRISTIN_1                   767 // unused, though data remains
+#define TRAINER_CRISTIN_1                   767 //unused, though data remains
 #define TRAINER_MAY_RUSTBORO_TREECKO        768
 #define TRAINER_MAY_RUSTBORO_TORCHIC        769
 #define TRAINER_ROXANNE_2                   770
@@ -804,7 +804,7 @@
 #define TRAINER_WALLACE_4                   800
 #define TRAINER_WALLACE_5                   801
 #define TRAINER_ANGELO                      802
-#define TRAINER_DARIUS                      803 // unused, though data remains
+#define TRAINER_DARIUS                      803 //unused, though data remains
 #define TRAINER_STEVEN                      804
 #define TRAINER_ANABEL                      805
 #define TRAINER_TUCKER                      806
@@ -825,8 +825,8 @@
 #define TRAINER_PABLO_3                     821
 #define TRAINER_PABLO_4                     822
 #define TRAINER_PABLO_5                     823
-#define TRAINER_KOJI_2                      824 //unused
-#define TRAINER_KOJI_3                      825 //unused
+#define TRAINER_JAYCE                       824
+#define TRAINER_WILSON                      825
 #define TRAINER_KOJI_4                      826 //unused
 #define TRAINER_KOJI_5                      827 //unused
 #define TRAINER_CRISTIN_2                   828

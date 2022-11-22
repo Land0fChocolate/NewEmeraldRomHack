@@ -2292,6 +2292,16 @@ void ShowScrollableMultichoice(void)
             task->tKeepOpenAfterSelect = FALSE;
             task->tTaskId = taskId;
             break;
+        case SCROLL_MULTI_GAME_CORNER_TM_VENDOR:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN - 1;
+            task->tNumItems = 8;
+            task->tLeft = 14;
+            task->tTop = 1;
+            task->tWidth = 7;
+            task->tHeight = 10;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
         case SCROLL_MULTI_GLASS_WORKSHOP_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN - 1;
             task->tNumItems = 8;
@@ -2354,7 +2364,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 31;
+            task->tNumItems = 28;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2457,6 +2467,17 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_RoseliBerry,
         gText_Exit
     },
+    [SCROLL_MULTI_GAME_CORNER_TM_VENDOR] = 
+    {
+        gText_TM29AndPrice,
+        gText_TM53AndPrice,
+        gText_TM56AndPrice,
+        gText_TM13AndPrice,
+        gText_TM24AndPrice,
+        gText_TM35AndPrice,
+        gText_TM94AndPrice,
+        gText_Exit
+    },
     [SCROLL_MULTI_GLASS_WORKSHOP_VENDOR] = 
     {
         gText_BlueFlute,
@@ -2543,27 +2564,24 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
     {
-        gText_ScopeLens16BP,
-        gText_WideLens16BP,
-        gText_ToxicOrb16BP,
-        gText_FlameOrb16BP,
-        gText_AdrenalineOrb16BP,
-        gText_RedCard16BP,
-        gText_DestinyKnot16BP,
-        gText_Metronome16BP,
-        gText_ShedShell16BP,
-        gText_StickyBarb16BP,
-        gText_LaggingTail16BP,
-        gText_QuickClaw24BP,
-        gText_Snowball24BP,
-        gText_LightClay24BP,
-        gText_BlackSludge24BP,
-        gText_WiseGlasses24BP,
-        gText_MuscleBand24BP,
-        gText_HeatRock24BP,
-        gText_DampRock24BP,
-        gText_SmoothRock24BP,
-        gText_IcyRock24BP,
+        gText_ScopeLens12BP,
+        gText_WideLens12BP,
+        gText_ToxicOrb12BP,
+        gText_FlameOrb12BP,
+        gText_AdrenalineOrb12BP,
+        gText_RedCard12BP,
+        gText_DestinyKnot12BP,
+        gText_Metronome12BP,
+        gText_ShedShell12BP,
+        gText_StickyBarb12BP,
+        gText_LaggingTail12BP,
+        gText_QuickClaw20BP,
+        gText_Snowball20BP,
+        gText_LightClay20BP,
+        gText_BlackSludge20BP,
+        gText_WiseGlasses20BP,
+        gText_MuscleBand20BP,
+        gText_Eviolite20BP,
         gText_WeaknessPolicy24BP,
         gText_BlunderPolicy24BP,
         gText_Leftovers32BP,

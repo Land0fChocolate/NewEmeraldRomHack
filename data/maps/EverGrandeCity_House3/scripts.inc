@@ -33,7 +33,7 @@ EverGrandeCity_House3_Text_GiveFalseSwipe:
 EverGrandeCity_House3_Text_ExplainFalseSwipe:
 	.string "That's False Swipe.\p"
 	.string "It's a really smart move. It does damage\n"
-	.string "but never lets the opponent faint.\l"
+	.string "but never lets the opponent faint.\p"
 	.string "That way, Pokémon become much easier to\n"
 	.string "catch!$"
 
@@ -42,7 +42,7 @@ EverGrandeCity_House3_Text_Girl:
 	.string "Pokédexes.\p"
 	.string "How can a Magcargo be twice as hot as\n"
 	.string "the surface of the sun?\p"
-	.string "How can a Machamp punch a thousand times\n"
-	.string "in two seconds?\p"
+	.string "How can a Machamp punch a thousand\n"
+	.string "times in two seconds?\p"
 	.string "I should find the author and demand\n"
 	.string "answers!$"

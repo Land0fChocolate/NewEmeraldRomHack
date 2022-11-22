@@ -5411,6 +5411,7 @@ static void Cmd_moveend(void)
               && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
               && (!HasAbility(ABILITY_STICKY_HOLD, GetBattlerAbilities(gBattlerTarget)) || !IsBattlerAlive(gBattlerTarget)))
             {
+                gLastUsedAbility = ABILITY_MAGICIAN;
                 StealTargetItem(gBattlerAttacker, gBattlerTarget);
                 gBattleScripting.battler = gBattlerAbility = gBattlerAttacker;
                 gEffectBattler = gBattlerTarget;

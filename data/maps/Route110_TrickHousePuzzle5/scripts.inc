@@ -368,7 +368,7 @@ Route110_TrickHousePuzzle5_EventScript_Mechadoll2Quiz2::
 	msgbox Route110_TrickHousePuzzle5_Text_Mechadoll2Quiz2, MSGBOX_DEFAULT
 	multichoice 0, 0, MULTI_MECHADOLL2_Q2, TRUE
 	switch VAR_RESULT
-	case 2, Route110_TrickHousePuzzle5_EventScript_CorrectAnswer
+	case 0, Route110_TrickHousePuzzle5_EventScript_CorrectAnswer
 	goto Route110_TrickHousePuzzle5_EventScript_IncorrectAnswer
 	end
 
@@ -392,7 +392,7 @@ Route110_TrickHousePuzzle5_EventScript_Mechadoll3Quiz2::
 	msgbox Route110_TrickHousePuzzle5_Text_Mechadoll3Quiz2, MSGBOX_DEFAULT
 	multichoice 0, 0, MULTI_MECHADOLL3_Q2, TRUE
 	switch VAR_RESULT
-	case 2, Route110_TrickHousePuzzle5_EventScript_CorrectAnswer
+	case 0, Route110_TrickHousePuzzle5_EventScript_CorrectAnswer
 	goto Route110_TrickHousePuzzle5_EventScript_IncorrectAnswer
 	end
 
@@ -400,7 +400,7 @@ Route110_TrickHousePuzzle5_EventScript_Mechadoll3Quiz3::
 	msgbox Route110_TrickHousePuzzle5_Text_Mechadoll3Quiz3, MSGBOX_DEFAULT
 	multichoice 0, 0, MULTI_MECHADOLL3_Q3, TRUE
 	switch VAR_RESULT
-	case 1, Route110_TrickHousePuzzle5_EventScript_CorrectAnswer
+	case 2, Route110_TrickHousePuzzle5_EventScript_CorrectAnswer
 	goto Route110_TrickHousePuzzle5_EventScript_IncorrectAnswer
 	end
 
@@ -424,7 +424,7 @@ Route110_TrickHousePuzzle5_EventScript_Mechadoll4Quiz3::
 	msgbox Route110_TrickHousePuzzle5_Text_Mechadoll4Quiz3, MSGBOX_DEFAULT
 	multichoice 0, 0, MULTI_MECHADOLL4_Q3, TRUE
 	switch VAR_RESULT
-	case 1, Route110_TrickHousePuzzle5_EventScript_CorrectAnswer
+	case 2, Route110_TrickHousePuzzle5_EventScript_CorrectAnswer
 	goto Route110_TrickHousePuzzle5_EventScript_IncorrectAnswer
 	end
 
@@ -440,7 +440,7 @@ Route110_TrickHousePuzzle5_EventScript_Mechadoll5Quiz2::
 	msgbox Route110_TrickHousePuzzle5_Text_Mechadoll5Quiz2, MSGBOX_DEFAULT
 	multichoice 0, 0, MULTI_MECHADOLL5_Q2, TRUE
 	switch VAR_RESULT
-	case 0, Route110_TrickHousePuzzle5_EventScript_CorrectAnswer
+	case 1, Route110_TrickHousePuzzle5_EventScript_CorrectAnswer
 	goto Route110_TrickHousePuzzle5_EventScript_IncorrectAnswer
 	end
 
@@ -1001,7 +1001,7 @@ Route110_TrickHousePuzzle5_Text_Mechadoll1Quiz2:
 Route110_TrickHousePuzzle5_Text_Mechadoll1Quiz3:
 	.string "MECHADOLL 1 QUIZ.\p"
 	.string "One of these Pokémon does not use\n"
-	.string "Leech Life. Which one is it?$"
+	.string "Absorb. Which one is it?$"
 
 Route110_TrickHousePuzzle5_Text_CorrectGoThrough:
 	.string "CONGRATULATIONS. CORRECT YOU ARE.\n"

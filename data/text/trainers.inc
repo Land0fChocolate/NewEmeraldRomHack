@@ -4629,12 +4629,12 @@ EverGrandeCity_BattleTent_Text_CarolinaPostBattle:
 
 EverGrandeCity_BattleTent_Text_PeteIntro:
 	.string "Climbing up the cliff was a good\n"
-	.string "workout. Time to cool off with a\l"
-	.string "battle!$"
+	.string "workout.\l"
+	.string "Time to cool off with a battle!$"
 
 EverGrandeCity_BattleTent_Text_PeteDefeated:
 	.string "Oof… that was tougher than the\n"
-	.string "cliff."
+	.string "cliff.$"
 
 EverGrandeCity_BattleTent_Text_PetePostBattle:
 	.string "I'll be climbing back down at the end\n"
@@ -4669,7 +4669,7 @@ EverGrandeCity_BattleTent_Text_ClarenceIntro:
 	.string "Wanna buy some NFTs?$"
 
 EverGrandeCity_BattleTent_Text_ClarenceDefeated:
-	.string "I guess that's a no…?"
+	.string "I guess that's a no…?$"
 
 EverGrandeCity_BattleTent_Text_ClarencePostBattle:
 	.string "Blast! The value of my NFTs have\n"

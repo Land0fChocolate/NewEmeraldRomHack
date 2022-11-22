@@ -247,7 +247,6 @@ LittlerootTown_EventScript_BirchIntroducingPlayerToLittlerootBeachScene::
 	waitmessage
 	waitfanfare
 	setflag FLAG_SYS_NATIONAL_DEX
-	clearflag FLAG_HIDE_GAME_CORNER_STREET_THUG
 	special EnableNationalPokedex
 	msgbox LittlerootTown_Text_BirchBackToLab, MSGBOX_DEFAULT
 	closemessage
@@ -261,6 +260,7 @@ LittlerootTown_EventScript_BirchIntroducingPlayerToLittlerootBeachScene::
 	closedoor 7, 16
 	waitdooranim
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2
 	setvar VAR_SCOTT_BF_CALL_STEP_COUNTER, 0
 	setflag FLAG_SCOTT_CALL_BATTLE_FRONTIER
@@ -333,7 +333,6 @@ LittlerootTown_Movement_BirchToLittlerootBeachPathGirl:
 	walk_down
 	walk_down
 	walk_down
-	walk_down
 	walk_left
 	face_right
 	step_end
@@ -343,7 +342,6 @@ LittlerootTown_Movement_PlayerToLittlerootBeachPathGirl:
 	walk_left
 	walk_left
 	walk_left
-	walk_down
 	walk_down
 	walk_down
 	walk_down

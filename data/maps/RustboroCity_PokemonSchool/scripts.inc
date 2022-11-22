@@ -338,6 +338,16 @@ RustboroCity_PokemonSchool_Movement_TeacherCheckOnStudentsEast:
 	walk_left
 	step_end
 
+RustboroCity_PokemonSchool_EventScript_Girl::
+	msgbox RustboroCity_PokemonSchool_Text_Natures, MSGBOX_NPC
+	end
+
+RustboroCity_PokemonSchool_Text_Natures:
+	.string "Even Pokémon of the same species can\n"
+	.string "have different natures.\p"
+	.string "Natures affect Pokémon stats, and what\n"
+	.string "foods they like to eat.$"
+
 RustboroCity_PokemonSchool_Text_BlackboardListsStatusChanges:
 	.string "The blackboard lists status changes\n"
 	.string "that may affect Pokémon in battle.$"
@@ -399,12 +409,16 @@ RustboroCity_PokemonSchool_Text_ExplainQuickClaw:
 	.string "topics to study!$"
 
 RustboroCity_PokemonSchool_Text_TradingRightNow:
-	.string "I'm trading Pokémon with my friend\n"
-	.string "right now.$"
+	.string "Did you know that when a Pokémon uses\n"
+	.string "a move the same type as itself, that\l"
+	.string "move does much more damage?$"
 
 RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot:
-	.string "I always wanted a Seedot, and\n"
-	.string "I'm finally getting one!$"
+	.string "Electric type Pokémon don't get\n"
+	.string "paralyzed, and Fire type Pokémon don't\l"
+	.string "get burned.\p"
+	.string "There's more to types than just type\n"
+	.string "matchups.$"
 
 RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems:
 	.string "Pokémon can hold items, but they\n"
