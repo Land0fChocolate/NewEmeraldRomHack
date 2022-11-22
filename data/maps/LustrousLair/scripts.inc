@@ -27,6 +27,7 @@ LustrousLair_Eventscript_Articuno::
 	goto_if_eq LustrousLair_EventScript_RanFromArticuno
 	setflag FLAG_DEFEATED_ARTICUNO
 	release
+	end
 
 LustrousLair_EventScript_DefeatedArticuno::
 	setflag FLAG_DEFEATED_ARTICUNO

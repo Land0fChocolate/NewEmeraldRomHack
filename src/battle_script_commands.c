@@ -1399,6 +1399,10 @@ static void Cmd_attackcanceler(void)
             (gBattleMons[gBattlerAttacker].type3 != moveType && gBattleMons[gBattlerAttacker].type3 != TYPE_MYSTERY))
         && gCurrentMove != MOVE_STRUGGLE)
     {
+        if (HasAbility(ABILITY_PROTEAN, abilities))
+            gLastUsedAbility = ABILITY_PROTEAN;
+        if (HasAbility(ABILITY_LIBERO, abilities))
+            gLastUsedAbility = ABILITY_LIBERO;
         PREPARE_TYPE_BUFFER(gBattleTextBuff1, moveType);
         SET_BATTLER_TYPE(gBattlerAttacker, moveType);
         gBattlerAbility = gBattlerAttacker;
@@ -1473,6 +1477,7 @@ static void Cmd_attackcanceler(void)
              && gBattleMoves[gCurrentMove].flags & FLAG_MAGIC_COAT_AFFECTED
              && !gProtectStructs[gBattlerAttacker].usesBouncedMove)
     {
+        gLastUsedAbility = ABILITY_MAGIC_BOUNCE;
         gProtectStructs[gBattlerTarget].usesBouncedMove = TRUE;
         gBattleCommunication[MULTISTRING_CHOOSER] = 1;
         BattleScriptPushCursor();
@@ -5406,6 +5411,7 @@ static void Cmd_moveend(void)
               && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
               && (!HasAbility(ABILITY_STICKY_HOLD, GetBattlerAbilities(gBattlerTarget)) || !IsBattlerAlive(gBattlerTarget)))
             {
+                gLastUsedAbility = ABILITY_MAGICIAN;
                 StealTargetItem(gBattlerAttacker, gBattlerTarget);
                 gBattleScripting.battler = gBattlerAbility = gBattlerAttacker;
                 gEffectBattler = gBattlerTarget;
@@ -11738,15 +11744,8 @@ static void Cmd_healpartystatus(void)
         else
             party = gEnemyParty;
 
-        if (!HasAbility(ABILITY_SOUNDPROOF, GetBattlerAbilities(gBattlerAttacker)))
-        {
-            gBattleMons[gBattlerAttacker].status1 = 0;
-            gBattleMons[gBattlerAttacker].status2 &= ~(STATUS2_NIGHTMARE);
-        }
-        else
-        {
-            gBattleCommunication[MULTISTRING_CHOOSER] |= B_MSG_BELL_SOUNDPROOF_ATTACKER;
-        }
+        gBattleMons[gBattlerAttacker].status1 = 0;
+        gBattleMons[gBattlerAttacker].status2 &= ~(STATUS2_NIGHTMARE);
 
         gActiveBattler = gBattleScripting.battler = GetBattlerAtPosition(GetBattlerPosition(gBattlerAttacker) ^ BIT_FLANK);
 

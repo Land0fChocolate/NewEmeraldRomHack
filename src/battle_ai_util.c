@@ -159,7 +159,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_NATURAL_CURE] = 7,
     [ABILITY_NEUROFORCE] = 6,
     [ABILITY_NO_GUARD] = 8,
-    [ABILITY_NORMALIZE] = -1,
+    [ABILITY_NORMALIZE] = 0,
     [ABILITY_OBLIVIOUS] = 2,
     [ABILITY_ORIGIN] = 0,
     [ABILITY_OVERCOAT] = 5,
@@ -576,7 +576,7 @@ void SetBattlerData(u8 battlerId)
         struct Pokemon *illusionMon;
         u16 i;
 
-        memcpy(gBattleMons[battlerId].abilities, GetAbilitiesBySpecies(gBattleMons[battlerId].species), sizeof(gBattleMons[battlerId].abilities));
+        memcpy(gBattleMons[battlerId].abilities, GetBattlerAbilities(battlerId), sizeof(gBattleMons[battlerId].abilities));
 
         if (BATTLE_HISTORY->itemEffects[battlerId] == 0)
             gBattleMons[battlerId].item = 0;
@@ -3170,7 +3170,7 @@ bool32 ShouldUseWishAromatherapy(u8 battlerAtk, u8 battlerDef, u16 move)
 
             if (GetMonData(&party[i], MON_DATA_STATUS, NULL) != STATUS1_NONE)
             {
-                if (move != MOVE_HEAL_BELL || !HasAbility(ABILITY_SOUNDPROOF, GetMonAbilities(&party[i])))
+                if (move == MOVE_HEAL_BELL)
                     hasStatus = TRUE;
             }
         }
@@ -3506,6 +3506,9 @@ void IncreasePoisonScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
     {
         if (!HasDamagingMove(battlerDef))
             *score += 2;
+
+        if (HasAbility(ABILITY_POISON_HEAL, AI_DATA->abilities[battlerDef]))
+            *score -= 10;
 
         if (AI_THINKING_STRUCT->aiFlags & AI_FLAG_STALL && HasMoveEffect(battlerAtk, EFFECT_PROTECT))
             (*score)++;    // stall tactic

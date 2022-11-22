@@ -27,6 +27,7 @@ FieryThrone_Eventscript_Moltres::
 	goto_if_eq FieryThrone_EventScript_RanFromMoltres
 	setflag FLAG_DEFEATED_MOLTRES
 	release
+	end
 
 FieryThrone_EventScript_DefeatedMoltres::
 	setflag FLAG_DEFEATED_MOLTRES

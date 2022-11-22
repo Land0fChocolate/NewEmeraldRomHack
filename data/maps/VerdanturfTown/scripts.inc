@@ -6,7 +6,6 @@ VerdanturfTown_MapScripts::
 
 VerdanturfTown_OnTransition:
 	setflag FLAG_VISITED_VERDANTURF_TOWN
-	setvar VAR_CONTEST_HALL_STATE, 0
 	end
 
 VerdanturfTown_EventScript_Twin::
@@ -28,10 +27,6 @@ VerdanturfTown_EventScript_TwinTunnelOpen::
 
 VerdanturfTown_EventScript_Man::
 	msgbox VerdanturfTown_Text_AirCleanHere, MSGBOX_NPC
-	end
-
-VerdanturfTown_EventScript_Camper::
-	msgbox VerdanturfTown_Text_MakeBattleTentDebut, MSGBOX_NPC
 	end
 
 VerdanturfTown_EventScript_Boy::
@@ -85,12 +80,6 @@ VerdanturfTown_Text_AirCleanHere:
 	.string "The air is clean and delicious here.\n"
 	.string "Living here should do wonders for even\l"
 	.string "frail and sickly people.$"
-
-VerdanturfTown_Text_MakeBattleTentDebut:
-	.string "My Pokémon and I, we've been riding\n"
-	.string "a hot winning streak.\p"
-	.string "So I decided to make my Battle Tent\n"
-	.string "debut in this town.$"
 
 VerdanturfTown_Text_GuyTryingToBustThroughCave:
 	.string "Did you see the cave next to the\n"

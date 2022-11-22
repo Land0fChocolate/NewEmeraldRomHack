@@ -805,6 +805,7 @@ gBattleAnims_Moves::
 	.4byte Move_TAKE_HEART
 @@@@@@@@@ NEW EMERALD @@@@@@@@@
 	.4byte Move_WAR_DANCE
+	.4byte Move_DUMMY
 	.4byte Move_FLINT_BLADE
 	.4byte Move_BLAZE_IMPACT
 	.4byte Move_SINGULARITY
@@ -23839,6 +23840,11 @@ WeatherBallIce:
 
 @using Dragon Dance animation
 Move_WAR_DANCE:
+	goto Move_DRAGON_DANCE
+	end
+
+@Dummy. Not used by anything. Used to make the other moves use the correct animations.
+Move_DUMMY:
 	goto Move_DRAGON_DANCE
 	end
 

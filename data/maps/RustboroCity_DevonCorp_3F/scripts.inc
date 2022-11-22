@@ -199,7 +199,7 @@ RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay::
 	end
 
 RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor:
-	.string "I'm Mr. Stone, the Presidents of\n"
+	.string "I'm Mr. Stone, the President of\n"
 	.string "the Devon Corporation.\p"
 	.string "I'd just got word about you!\p"
 	.string "You saved our staff not just once,\n"
@@ -215,7 +215,7 @@ RustboroCity_DevonCorp_3F_Text_MrStoneIHaveFavor:
 
 RustboroCity_DevonCorp_3F_Text_MrStoneWantYouToHaveThis:
 	.string "Mr. Stone: Now, you should know that\n"
-	.string "I am a great Presidents.\p"
+	.string "I am a great President.\p"
 	.string "So, I'd never be so cheap as to ask\n"
 	.string "a favor for nothing in return.\p"
 	.string "That's why I want you to have this!$"
@@ -271,7 +271,7 @@ RustboroCity_DevonCorp_3F_Text_NotFamiliarWithTrends:
 RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloorWaitHere:
 	.string "This is the Devon Corporation's\n"
 	.string "third floor.\p"
-	.string "Our Presidents's office is on\n"
+	.string "Our President's office is on\n"
 	.string "this floor.\p"
 	.string "Anyway, I can't tell you how much I'm\n"
 	.string "grateful for what you've done.\p"
@@ -287,7 +287,7 @@ RustboroCity_DevonCorp_3F_Text_ThisIs3rdFloorWaitHere:
 	.string "Could you wait here a second?$"
 
 RustboroCity_DevonCorp_3F_Text_WordWithPresidentComeWithMe:
-	.string "Our Presidents would like to have\n"
+	.string "Our President would like to have\n"
 	.string "a word with you.\p"
 	.string "Please come with me.$"
 
@@ -305,5 +305,5 @@ RustboroCity_DevonCorp_3F_Text_RepeatAndTimerHugelyPopular:
 
 RustboroCity_DevonCorp_3F_Text_RareRocksDisplay:
 	.string "It's a collection of rare rocks and\n"
-	.string "stones assembled by the Presidents.$"
+	.string "stones assembled by the President.$"
 

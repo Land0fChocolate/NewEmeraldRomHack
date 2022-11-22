@@ -87,16 +87,22 @@ GraniteCave_StevensRoom_Movement_StevenExitSouth:
 	step_end
 
 GraniteCave_StevensRoom_Text_ImStevenLetterForMe:
+	.string "Hm?\p"
+	.string "You are…?\p"
+	.string "Ah, I see. It's a pleasure, {PLAYER}.\n"
 	.string "My name is Steven.\p"
 	.string "I'm interested in rare stones,\n"
 	.string "so I travel here and there.\p"
+	.string "My journey brought me here, but what\n"
+	.string "about you?\p"
 	.string "Oh?\n"
 	.string "A letter for me?$"
 
 GraniteCave_StevensRoom_Text_ThankYouTakeThis:
-	.string "Steven: Okay, thank you.\p"
+	.string "Steven: Why, thank you.\p"
 	.string "You went through all this trouble to\n"
-	.string "deliver that. I need to thank you.\p"
+	.string "track me down and deliver that.\l"
+	.string "I need to thank you.\p"
 	.string "Let me see…\n"
 	.string "I'll give you this TM.\p"
 	.string "It contains my favorite move,\n"
@@ -118,7 +124,8 @@ GraniteCave_StevensRoom_Text_RegisteredSteven:
 	.string "in the Pokénav.$"
 
 GraniteCave_StevensRoom_Text_IveGotToHurryAlong:
-	.string "Now, I've got to hurry along.$"
+	.string "Now, I've got to hurry along.\n"
+	.string "Good luck to you.$"
 
 GraniteCave_StevensRoom_Text_OhBagIsFull:
 	.string "Oh, your Bag is full…\n"

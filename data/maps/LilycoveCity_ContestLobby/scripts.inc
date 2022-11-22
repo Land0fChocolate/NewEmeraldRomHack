@@ -499,8 +499,22 @@ LilycoveCity_ContestLobby_EventScript_FatMan::
 	msgbox LilycoveCity_ContestLobby_Text_ToughContestIsExtreme, MSGBOX_NPC
 	end
 
+@TODO: perhaps check if player has Alolan Vulpix in party before giving Ice Stone?
 LilycoveCity_ContestLobby_EventScript_Fisherman::
-	msgbox LilycoveCity_ContestLobby_Text_LavishedCareOnMon, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_unset FLAG_OBTAINED_LILYCOVE_CITY_ICE_STONE, LilycoveCity_ContestLobby_EventScript_FishermanGiveIceStone
+	msgbox LilycoveCity_ContestLobby_Text_LavishedCareOnMon, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestLobby_EventScript_FishermanGiveIceStone::
+	msgbox LilycoveCity_ContestLobby_Text_GiveIceStone, MSGBOX_DEFAULT
+	giveitem ITEM_ICE_STONE
+	setflag FLAG_OBTAINED_LILYCOVE_CITY_ICE_STONE
+	closemessage
+	release
 	end
 
 LilycoveCity_ContestLobby_EventScript_NinjaBoy::
@@ -1021,13 +1035,17 @@ LilycoveCity_ContestLobby_EventScript_LittleGirlHaveCase::
 	release
 	end
 
+LilycoveCity_ContestLobby_Text_GiveIceStone:
+	.string "My Pokémon was running around with this\n"
+	.string "thing in its mouth. Is this yours?$"
+
 LilycoveCity_ContestLobby_Text_LadyGaveMePokeblockCase:
 	.string "Yippee!\p"
 	.string "The lady at the reception counter\n"
-	.string "gave me a case for {POKEBLOCK}S!$"
+	.string "gave me a case for {POKEBLOCK}s!$"
 
 LilycoveCity_ContestLobby_Text_MakePokeblocksDifferentBerries:
-	.string "Make {POKEBLOCK}S and put them in there.\p"
+	.string "Make {POKEBLOCK}s and put them in there.\p"
 	.string "When you make a {POKEBLOCK}, everyone\n"
 	.string "has to put in a different berry.$"
 
@@ -1118,8 +1136,8 @@ LilycoveCity_ContestLobby_Text_LavishedCareOnMon:
 	.string "Today, victory is mine!$"
 
 LilycoveCity_ContestLobby_Text_MadePokeblocksWithFamily:
-	.string "I made {POKEBLOCK}S with Mom, Dad, and\n"
+	.string "I made {POKEBLOCK}s with Mom, Dad, and\n"
 	.string "Big Sister. They turned out great!\p"
 	.string "I bet you can make smoother, better\n"
-	.string "{POKEBLOCK}S if you have more people.$"
+	.string "{POKEBLOCK}s if you have more people.$"
 

@@ -679,8 +679,8 @@
 #define FLAG_HIDE_ROUTE106_BRAWLY                 0x281
 #define FLAG_HIDE_FORTREE_GYM_WINONA              0x282
 #define FLAG_HIDE_TBC_WINONA                      0x283
-#define FLAG_HIDE_MOSSDEEP_GYM_TATE_LISA          0x284
-#define FLAG_HIDE_TBC_TATE_LISA                   0x285
+#define FLAG_HIDE_MOSSDEEP_GYM_TATE_LIZA          0x284
+#define FLAG_HIDE_SLATEPORT_CITY_TATE_LIZA        0x285
 #define FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE          0x286
 #define FLAG_HIDE_CONTEST_HALL_WALLACE            0x287
 #define FLAG_ROXANNE_TRADE_STONES                 0x288
@@ -732,9 +732,9 @@
 #define FLAG_HIDE_ZINNIA_WEATHER_INSTITUTE        0x2B6
 #define FLAG_NAVEL_ROCK_LUGIA_HIDE_BOULDER4_2     0x2B7 // Second boulder flag to allow boulders to fall through 2 floors
 #define FLAG_HIDE_DRACONID_ARCHIVES_SCIENTIST     0x2B8
-#define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
-#define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
-#define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
+#define FLAG_HIDE_FALLARBOR_TOWN_RIVAL            0x2B9
+#define FLAG_HIDE_SLATEPORT_CITY_JIRACHI          0x2BA
+#define FLAG_HIDE_LILYCOVE_CITY_LISIA             0x2BB
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
@@ -857,12 +857,12 @@
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL       0x331
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL           0x332
 #define FLAG_HIDE_ROUTE_112_TEAM_MAGMA                              0x333
-#define FLAG_HIDE_CAVE_OF_ORIGIN_B1F_WALLACE                        0x334
+#define FLAG_OBTAINED_EVER_GRANDE_CITY_LUCKY_EGG                    0x334
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_1_BLOCKING_ENTRANCE         0x335
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE         0x336
 #define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337 // unused
 #define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338
-#define FLAG_HIDE_LEGEND_MON_CAVE_OF_ORIGIN                         0x339 // Unused, leftover from R/S
+#define FLAG_OBTAINED_LILYCOVE_CITY_ICE_STONE                       0x339
 #define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
 #define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_ARCHIE                     0x33C
@@ -953,7 +953,7 @@
 #define FLAG_HIDE_MAUVILLE_GYM_WATTSON                              0x391
 #define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                        0x392
 #define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
-#define FLAG_HIDE_ROUTE_111_MAGMA_GRUNTS                            0x394 // unused
+#define FLAG_GIVEN_WISH_TAG                                         0x394
 #define FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA                          0x395
 #define FLAG_HIDE_BATTLE_TOWER_REPORTER                             0x396
 #define FLAG_HIDE_ROUTE_110_RIVAL                                   0x397
@@ -1032,7 +1032,7 @@
 #define FLAG_HIDE_WEATHER_INSTITUTE_2F_ZINNIA_AQUA                  0x3E0
 #define FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON          0x3E1
 #define FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY                       0x3E2
-#define FLAG_HIDE_PETALBURG_CITY_SCOTT                              0x3E3 // unused
+#define FLAG_PLACED_WISH_TAG                                        0x3E3
 #define FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA                          0x3E4
 #define FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE                            0x3E5
 #define FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON                           0x3E6
@@ -1084,7 +1084,7 @@
 #define FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL                           0x412
 #define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0x413
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_23                          0x414
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_EVIOLITE                       0x415
+#define FLAG_ITEM_METEOR_FALLS_1F_1R_BOTTLE_CAP                     0x415
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_MOON_STONE                     0x416
 #define FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP                          0x417
 #define FLAG_ITEM_RUSTURF_TUNNEL_TM63                               0x418
@@ -1113,7 +1113,7 @@
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_MAX_ELIXIR                       0x42F
 #define FLAG_ITEM_AQUA_HIDEOUT_B2F_NEST_BALL                        0x430
 #define FLAG_ITEM_MT_PYRE_EXTERIOR_MAX_POTION                       0x431
-#define FLAG_ITEM_MT_PYRE_EXTERIOR_TM_48                            0x432
+#define FLAG_ITEM_MT_PYRE_EXTERIOR_BOTTLE_CAP                       0x432
 #define FLAG_ITEM_NEW_MAUVILLE_ULTRA_BALL                           0x433
 #define FLAG_ITEM_NEW_MAUVILLE_ESCAPE_ROPE                          0x434
 #define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_6_LUXURY_BALL    0x435
@@ -1149,7 +1149,7 @@
 #define FLAG_ITEM_ROUTE_120_HYPER_POTION                            0x453
 #define FLAG_ITEM_ROUTE_120_NEST_BALL                               0x454
 #define FLAG_ITEM_ROUTE_123_ELIXIR                                  0x455
-#define FLAG_ITEM_NEW_MAUVILLE_ELECTIRIZER                          0x456
+#define FLAG_ITEM_NEW_MAUVILLE_THUNDER_STONE                        0x456
 #define FLAG_ITEM_FIERY_PATH_FIRE_STONE                             0x457
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_07                         0x458
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_NEVER_MELT_ICE                0x459
@@ -1204,7 +1204,7 @@
 #define FLAG_ITEM_ARTISAN_CAVE_B1F_HP_UP                            0x48A
 #define FLAG_ITEM_ARTISAN_CAVE_1F_CARBOS                            0x48B
 #define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAX_ELIXIR                    0x48C
-#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAGMARIZER                    0x48D
+#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_CARBOS                        0x48D
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_1R_NUGGET                        0x48E
 #define FLAG_ITEM_MAGMA_HIDEOUT_3F_2R_PP_MAX                        0x48F
 #define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                       0x490
@@ -1230,7 +1230,7 @@
 #define FLAG_ITEM_FARAWAY_ISLAND_RUIN4_LIGHT_CLAY                   0x4A3
 #define FLAG_ITEM_FARAWAY_ISLAND_RUIN5_TWISTED_SPOON                0x4A4
 #define FLAG_ITEM_MAUVILLE_RIVERSIDE_FULL_RESTORE                   0x4A5
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
+#define FLAG_ITEM_SHOAL_CAVE_ENTRANCE_ROOM_TM48                     0x4A6
 #define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
@@ -1495,13 +1495,13 @@
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_LANDMARK_CRUMBLING_GORGE               (SYSTEM_FLAGS + 0x85)
+#define FLAG_LANDMARK_CRUMBLING_GORGE               (SYSTEM_FLAGS + 0x85) // TODO: may not need these outdoor landmarks
 #define FLAG_LANDMARK_OLDALE_FARM                   (SYSTEM_FLAGS + 0x86)
 #define FLAG_LANDMARK_LITTLEROOT_BEACH              (SYSTEM_FLAGS + 0x87)
 #define FLAG_LANDMARK_FALLARBOR_WASTELAND           (SYSTEM_FLAGS + 0x88)
 #define FLAG_LANDMARK_WILDWOODS                     (SYSTEM_FLAGS + 0x89)
 #define FLAG_LANDMARK_MAUVILLE_MEADOW               (SYSTEM_FLAGS + 0x8A)
-#define FLAG_LANDMARK_FORTREE_LAKE                  (SYSTEM_FLAGS + 0x8B) //unused Flag
+#define FLAG_LANDMARK_MAUVILLE_RIVERSIDE            (SYSTEM_FLAGS + 0x8B)
 #define FLAG_LANDMARK_FORTREE_JUNGLE                (SYSTEM_FLAGS + 0x8C)
 #define FLAG_LANDMARK_LUSTROUS_LAIR                 (SYSTEM_FLAGS + 0x8D)
 #define FLAG_LANDMARK_DERELICT_DEN                  (SYSTEM_FLAGS + 0x8E)

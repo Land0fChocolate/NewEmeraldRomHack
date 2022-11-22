@@ -4,6 +4,18 @@ MauvilleCity_GroomerHouse_MapScripts::
 MauvilleCity_GroomerHouse_EventScript_Meteorite::
 	msgbox MauvilleCity_GroomerHouse_Text_ItsAMeteorite, MSGBOX_SIGN
 	closemessage
+	checkformoninparty SPECIES_DEOXYS_ATTACK
+	compare VAR_RESULT, TRUE
+	goto_if_eq MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_DEFENSE
+	compare VAR_RESULT, TRUE
+	goto_if_eq MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_SPEED
+	compare VAR_RESULT, TRUE
+	goto_if_eq MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm
+	end
+
+MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm::
 	changedeoxysform 0
 	compare VAR_RESULT, TRUE
 	goto_if_eq MauvilleCity_GroomerHouse_EventScript_DeoxysChangedForm
@@ -82,7 +94,7 @@ MauvilleCity_GroomerHouse_Text_GirlDoneGrooming:
 	.string "There. All done!\p"
 	.string "Your {STR_VAR_1}'s coat is\n"
 	.string "looking gorgeous and glossy!\l"
-	.string "It's even liking you a little more.\p"
+	.string "It's even become more fond of you.\p"
 	.string "Return tomorrow and I shall give your\n"
 	.string "Pokémon additional treatment.$"
 

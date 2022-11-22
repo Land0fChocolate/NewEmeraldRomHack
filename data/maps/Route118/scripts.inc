@@ -1,4 +1,4 @@
-.set LOCALID_STEVEN, 19
+.set LOCALID_STEVEN, 17
 
 Route118_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route118_OnTransition
@@ -246,11 +246,6 @@ Route118_EventScript_RematchDalton::
 	msgbox Route118_Text_DaltonPostRematch, MSGBOX_AUTOCLOSE
 	end
 
-Route118_EventScript_Perry::
-	trainerbattle_single TRAINER_PERRY, Route118_Text_PerryIntro, Route118_Text_PerryDefeat
-	msgbox Route118_Text_PerryPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route118_EventScript_Chester::
 	trainerbattle_single TRAINER_CHESTER, Route118_Text_ChesterIntro, Route118_Text_ChesterDefeat
 	msgbox Route118_Text_ChesterPostBattle, MSGBOX_AUTOCLOSE
@@ -305,7 +300,8 @@ Route118_Text_CanCrossRiversWithSurf:
 
 Route118_Text_RouteSignMauville:
 	.string "ROUTE 118\n"
-	.string "{LEFT_ARROW} MAUVILLE CITY$"
+	.string "{LEFT_ARROW} MAUVILLE CITY\l"
+	.string "{UP_ARROW} MAUVILLE RIVERSIDE$"
 
 Route118_Text_RouteSign119:
 	.string "ROUTE 118\n"

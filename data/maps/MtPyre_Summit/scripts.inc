@@ -4,17 +4,19 @@
 .set LOCALID_GRUNT_2, 5
 .set LOCALID_GRUNT_3, 6
 .set LOCALID_GRUNT_4, 7
-.set LOCALID_MAXIE, 8
-.set LOCALID_PHOEBE, 9
+.set LOCALID_PHOEBE, 8
 
 MtPyre_Summit_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, MtPyre_Summit_OnTransition
+	@map_script MAP_SCRIPT_ON_TRANSITION, MtPyre_Summit_OnTransition
 	.byte 0
 
 MtPyre_Summit_OnTransition:
-	checkflag FLAG_HIDE_MT_PYRE_SUMMIT_PHOEBE
-	goto_if FALSE, MtPyre_Summit_Position_Phoebe
+	call_if_unset FLAG_HIDE_MT_PYRE_SUMMIT_PHOEBE, MtPyre_Summit_EventScript_Position_Phoebe
 	end
+
+MtPyre_Summit_EventScript_Position_Phoebe::
+	setobjectxyperm LOCALID_PHOEBE, 23, 13
+	return
 
 MtPyre_Summit_EventScript_TeamAquaTrigger0::
 	lockall
@@ -74,6 +76,8 @@ MtPyre_Summit_EventScript_TeamAquaExits::
 	setflag FLAG_RECEIVED_RED_OR_BLUE_ORB
 	setflag FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD
 	clearflag FLAG_HIDE_MT_PYRE_SUMMIT_PHOEBE
+	setobjectxyperm LOCALID_PHOEBE, 23, 13
+	addobject LOCALID_PHOEBE
 	getplayerxy VAR_0x8004, VAR_0x8005
 	compare VAR_0x8004, 22
 	goto_if_eq MtPyre_Summit_EventScript_PhoebeWalkLeftRight
@@ -153,14 +157,16 @@ MtPyre_Summit_Movement_ArchieFacePlayer2:
 	step_end
 
 MtPyre_Summit_EventScript_PhoebeWalkMiddle:
-	applymovement OBJ_EVENT_ID_PLAYER, MtPyre_Summit_EventScript_MovementPlayerMoveOutOfWay
+	applymovement OBJ_EVENT_ID_PLAYER, MtPyre_Summit_Movement_PlayerMoveOutOfWay
 	applymovement LOCALID_PHOEBE, MtPyre_Summit_Movement_PhoebeMiddle
 	waitmovement 0
+	setobjectxyperm LOCALID_PHOEBE, 23, 7
 	goto MtPyre_Summit_EventScript_TeamAquaExitsPart2
 
 MtPyre_Summit_EventScript_PhoebeWalkLeftRight:
 	applymovement LOCALID_PHOEBE, MtPyre_Summit_Movement_PhoebeLeftRight
 	waitmovement 0
+	setobjectxyperm LOCALID_PHOEBE, 23, 8
 	goto MtPyre_Summit_EventScript_TeamAquaExitsPart2
 
 MtPyre_Summit_Movement_PhoebeMiddle:
@@ -180,15 +186,7 @@ MtPyre_Summit_Movement_PhoebeLeftRight:
 	walk_up
 	step_end
 
-MtPyre_Summit_Position_Phoebe:
-	setobjectxy LOCALID_PHOEBE, 24, 5
-	end
-
-MtPyre_Summit_EventScript_PlayerMoveOutOfWay::
-	applymovement OBJ_EVENT_ID_PLAYER, MtPyre_Summit_EventScript_MovementPlayerMoveOutOfWay
-	goto MtPyre_Summit_EventScript_TeamAquaExitsPart2
-
-MtPyre_Summit_EventScript_MovementPlayerMoveOutOfWay:
+MtPyre_Summit_Movement_PlayerMoveOutOfWay:
 	delay_16
 	delay_16
 	delay_16
@@ -348,7 +346,8 @@ MtPyre_Summit_Text_ArchieWeGotTheOrb:
 	.string "Archie: The Blue Orb!\n"
 	.string "I knew the legend but I didn't know\l"
 	.string "where it was or if it really existed…\p"
-	.string "Thanks for the tip, Maxie! Bwhahahaha!$"
+	.string "Thanks for the tip, Maxie!\n"
+	.string "Bwhahahaha!$"
 
 MtPyre_Summit_Text_ArchieWeArePullingOut:
 	.string "I thought something was a bit noisy,\n"
@@ -379,20 +378,21 @@ MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis:
 	.string "Perhaps it will be useful in some way.$"
 
 MtPyre_Summit_Text_PhoebeIntro:
-	.string "Phoebe: Grandma! Are you alright?\n"
+	.string "Grandma! Are you alright?\n"
 	.string "I heard some shifty group was\l"
 	.string "occupying Mt. Pyre.$"
 
 MtPyre_Summit_Text_PhoebeTalksToPlayer:
-	.string "Phoebe: Oh, and you are…?\p"
-	.string "{PLAYER}. Thanks for watching\n"
-	.string "over my grandma.\p"
+	.string "Oh, and you are…?\p"
+	.string "{PLAYER}.\n"
+	.string "Thanks for watching over my grandma.\p"
 	.string "Here, a token of my gratitude.$"
 
 MtPyre_Summit_Text_PhoebeBonds:
 	.string "I can sense that the bonds between you\n"
-	.string "and your Pokémon are strong. We'll\l"
-	.string "probably run into each other again.$"
+	.string "and your Pokémon are strong.\p"
+	.string "We'll probably run into each other\n"
+	.string "again.$"
 
 MtPyre_Summit_Text_OrbsHaveBeenTaken:
 	.string "The Blue Orb and Red Orb stolen by\n"

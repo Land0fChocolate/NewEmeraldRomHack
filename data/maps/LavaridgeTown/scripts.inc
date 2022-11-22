@@ -20,6 +20,8 @@ LavaridgeTown_OnTransition:
 	end
 
 LavaridgeTown_Eventscript_SetUpFlannery::
+	goto_if_unset FLAG_BADGE04_GET, LavaridgeTown_Eventscript_FlanneryRematch
+	goto_if_unset FLAG_BADGE05_GET, LavaridgeTown_Eventscript_FlanneryRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_FLANNERY_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE
@@ -34,6 +36,7 @@ LavaridgeTown_Eventscript_FlanneryRematch::
 	return
 
 LavaridgeTown_Eventscript_FlanneryHotSprings::
+	goto_if_unset FLAG_BADGE05_GET, Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_FLANNERY_HOT_SPRINGS
 	setflag FLAG_HIDE_FLANNERY_GYM
 	return
@@ -361,7 +364,8 @@ LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 	.string "See you around!$"
 
 LavaridgeTown_Text_HaveEggWillYouTakeIt:
-	.string "I have here an egg.\p"
+	.string "Some tourists have left this egg\n"
+	.string "behind.\p"
 	.string "I'd hoped to hatch it by covering it in\n"
 	.string "hot sand by the hot springs.\l"
 	.string "But that doesn't seem to be enough…\p"
@@ -411,9 +415,11 @@ LavaridgeTown_Text_PokemonNippedBackside:
 	.string "A Pokémon nipped my backside!$"
 
 LavaridgeTown_Text_OhYouLikeHotSprings:
-	.string "Oh, you like hot springs, do you?\p"
-	.string "That's surprising for one as young\n"
-	.string "as you.$"
+	.string "I like to go fight with other Trainers\n"
+	.string "on Mt. Chimney, but those Team Magma\l"
+	.string "bullies pushed us out.\p"
+	.string "If Team Magma are gone now, then the\n"
+	.string "Trainers should be coming back.$"
 
 LavaridgeTown_Text_BatheInHotSpringsEveryDay:
 	.string "I bathe in the hot springs every day.\p"

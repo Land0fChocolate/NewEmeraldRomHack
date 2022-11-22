@@ -7,6 +7,7 @@ Route106_OnTransition:
 	end
 
 Route106_Eventscript_SetUpBrawly::
+	goto_if_unset FLAG_BADGE07_GET, Route106_Eventscript_BrawlyRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_BRAWLY_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE
@@ -21,6 +22,7 @@ Route106_Eventscript_BrawlyRematch::
 	return
 
 Route106_Eventscript_BrawlyBeach::
+	goto_if_unset FLAG_BADGE02_GET, Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_ROUTE106_BRAWLY
 	setflag FLAG_HIDE_DEWFORD_GYM_BRAWLY
 	return

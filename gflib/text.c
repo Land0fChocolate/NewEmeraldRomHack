@@ -219,10 +219,10 @@ void RunTextPrinters(void)
             if (gTextPrinters[i].active)
             {
                 u16 temp = RenderFont(&gTextPrinters[i]);
-                CopyWindowToVram(gTextPrinters[i].printerTemplate.windowId, 2);
                 switch (temp)
                 {
                 case 0:
+                    CopyWindowToVram(gTextPrinters[i].printerTemplate.windowId, 2);
                 case 3:
                     if (gTextPrinters[i].callback != 0)
                         gTextPrinters[i].callback(&gTextPrinters[i].printerTemplate, temp);
@@ -839,7 +839,6 @@ u16 RenderText(struct TextPrinter *textPrinter)
     u16 currChar;
     s32 width;
     s32 widthHelper;
-    u8 repeats;
 
     switch (textPrinter->state)
     {
@@ -862,24 +861,9 @@ u16 RenderText(struct TextPrinter *textPrinter)
             textPrinter->delayCounter = 3;
         else
             textPrinter->delayCounter = textPrinter->textSpeed;
-
-        switch (GetPlayerTextSpeed())
-        {
-            case OPTIONS_TEXT_SPEED_SLOW:
-                repeats = 1;
-                break;
-            case OPTIONS_TEXT_SPEED_MID:
-                repeats = 2;
-                break;
-            case OPTIONS_TEXT_SPEED_FAST:
-                repeats = 4;
-                break;
-        }
         
-        do {
-
-            currChar = *textPrinter->printerTemplate.currentChar;
-            textPrinter->printerTemplate.currentChar++;
+        currChar = *textPrinter->printerTemplate.currentChar;
+        textPrinter->printerTemplate.currentChar++;
 
             switch (currChar)
             {
@@ -1081,9 +1065,6 @@ u16 RenderText(struct TextPrinter *textPrinter)
                 else
                     textPrinter->printerTemplate.currentX += gCurGlyph.width;
             }
-
-            repeats--;
-        } while (repeats > 0);
 
         return 0;
     case 1:

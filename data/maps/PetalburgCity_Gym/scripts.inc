@@ -1315,7 +1315,7 @@ PetalburgCity_Gym_Text_DadGoCollectBadges:
 	.string "There, you should challenge\n"
 	.string "the Gym Leader, Roxanne.\p"
 	.string "After her, go on to other Pokémon\n"
-	.string "Gyms and defeat their LeaderS.\p"
+	.string "Gyms and defeat their Leaders.\p"
 	.string "Collect Badges from them,\n"
 	.string "understood?\p"
 	.string "Of course, I'm a Gym Leader, too.\n"
@@ -1354,33 +1354,33 @@ PetalburgCity_Gym_Text_NormanIntro:
 	.string "Fine, as I promised, we will have\n"
 	.string "a Pokémon battle.\p"
 	.string "{PLAYER}…\p"
-	.string "I'm so happy that I can have\n"
-	.string "a real battle with my own child.\p"
+	.string "It makes me happier than I can really\n"
+	.string "describe. Being able to have a real\l"
+	.string "battle with my own child like this.\p"
 	.string "But, a battle is a battle!\p"
-	.string "I will do everything in my power as\n"
-	.string "a Gym Leader to win.\p"
-	.string "{PLAYER}, you'd better give it your\n"
-	.string "best shot, too!$"
+	.string "I will do everything within my power as\n"
+	.string "a Gym Leader to win!\p"
+	.string "You'd better give it your\n"
+	.string "best shot, too, {PLAYER}!$"
 
 PetalburgCity_Gym_Text_NormanDefeat:
 	.string "…\p"
 	.string "I… I can't…\p"
-	.string "I can't believe it. {PLAYER}…\p"
-	.string "I lost to {PLAYER}?\p"
-	.string "But, rules are rules!\n"
-	.string "Here, take this.$"
+	.string "I can't believe it…\p"
+	.string "You've already come so far, {PLAYER}…\p"
+	.string "That's how it is, then!\n"
+	.string "I will give you this.$"
 
 PetalburgCity_Gym_Text_ReceivedBalanceBadge:
 	.string "{PLAYER} received the Balance Badge\n"
 	.string "from Dad!$"
 
 PetalburgCity_Gym_Text_ExplainBalanceBadgeTakeThis:
-	.string "Dad: With that Badge, the Defense\n"
-	.string "of all your Pokémon will increase.\p"
-	.string "Pokémon that are able to swim will\n"
-	.string "be able to carry you over water.\p"
-	.string "This is my gift to you. {PLAYER}, I'm\n"
-	.string "sure you can use it correctly.$"
+	.string "Dad: With that Badge, Pokémon that are\n"
+	.string "able to swim will be able to carry you\l"
+	.string "over water.\p"
+	.string "And this is my gift to you. {PLAYER},\n"
+	.string "I'm sure you can use it correctly.$"
 
 PetalburgCity_Gym_Text_ExplainFacade:
 	.string "Dad: TM42 contains Facade.\p"
@@ -1392,7 +1392,7 @@ PetalburgCity_Gym_Text_ExplainFacade:
 
 PetalburgCity_Gym_Text_DadHappyAndSad:
 	.string "Dad: As the Gym Leader, I can't\n"
-	.string "express how upset I am…\p"
+	.string "express how frustrated I am…\p"
 	.string "But as a father, it makes me both\n"
 	.string "happy and a little sad. It's odd…$"
 

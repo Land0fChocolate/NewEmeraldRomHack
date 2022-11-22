@@ -3798,7 +3798,8 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         //TODO - track entire opponent party data to determine hazard effectiveness 
         break;
     case EFFECT_FORESIGHT:
-        if (HasAbility(ABILITY_SCRAPPY, AI_DATA->abilities[battlerAtk]))
+        if (HasAbility(ABILITY_SCRAPPY, AI_DATA->abilities[battlerAtk])
+            || HasAbility(ABILITY_NORMALIZE, AI_DATA->abilities[battlerAtk]))
             break;
         else if (gBattleMons[battlerDef].statStages[STAT_EVASION] > DEFAULT_STAT_STAGE
          || (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GHOST)

@@ -27,6 +27,7 @@ SagesSanctuary_Eventscript_Suicune::
 	goto_if_eq SagesSanctuary_EventScript_RanFromSuicune
 	setflag FLAG_DEFEATED_SUICUNE
 	release
+	end
 
 SagesSanctuary_EventScript_DefeatedSuicune::
 	setflag FLAG_DEFEATED_SUICUNE

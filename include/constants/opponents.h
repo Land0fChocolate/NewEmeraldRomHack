@@ -12,7 +12,7 @@
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
 #define TRAINER_GOMEZ_1                       9
 #define TRAINER_GRUNT_PETALBURG_WOODS        10
-#define TRAINER_MARCEL                       11
+#define TRAINER_MARCEL                       11 //unused, though data remains
 #define TRAINER_ALBERTO                      12
 #define TRAINER_ED                           13
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_4      14
@@ -158,7 +158,7 @@
 #define TRAINER_DARRIN                      154
 #define TRAINER_TONY_1                      155
 #define TRAINER_JEROME                      156
-#define TRAINER_MATTHEW                     157
+#define TRAINER_MATTHEW                     157 //unused, though data remains
 #define TRAINER_DAVID                       158
 #define TRAINER_SPENCER                     159
 #define TRAINER_ROLAND                      160
@@ -203,9 +203,9 @@
 #define TRAINER_DALTON_4                    199
 #define TRAINER_DALTON_5                    200
 #define TRAINER_COLE                        201
-#define TRAINER_JEFF                        202
+#define TRAINER_JEFF                        202 //unused, though data remains
 #define TRAINER_AXLE                        203
-#define TRAINER_JACE                        204
+#define TRAINER_JACE                        204 //unused, though data remains
 #define TRAINER_KEEGAN                      205
 #define TRAINER_BERNIE_1                    206
 #define TRAINER_BERNIE_2                    207
@@ -399,7 +399,7 @@
 #define TRAINER_NICOLAS_4                   395
 #define TRAINER_NICOLAS_5                   396
 #define TRAINER_AARON                       397
-#define TRAINER_PERRY                       398
+#define TRAINER_PERRY                       398 //unused, though data remains
 #define TRAINER_HUGH                        399
 #define TRAINER_PHIL                        400
 #define TRAINER_JARED                       401
@@ -515,7 +515,7 @@
 #define TRAINER_CONOR                       511
 #define TRAINER_EDWIN_1                     512
 #define TRAINER_HECTOR                      513
-#define TRAINER_TABITHA_MOSSDEEP            514
+#define TRAINER_TABITHA_MOSSDEEP            514 //unused, though data remains
 #define TRAINER_EDWIN_2                     515
 #define TRAINER_EDWIN_3                     516
 #define TRAINER_EDWIN_4                     517
@@ -627,7 +627,7 @@
 #define TRAINER_JAMES_3                     623
 #define TRAINER_JAMES_4                     624
 #define TRAINER_JAMES_5                     625
-#define TRAINER_BRICE                       626
+#define TRAINER_BRICE                       626 //unused, but data remains
 #define TRAINER_TRENT_1                     627
 #define TRAINER_LENNY                       628
 #define TRAINER_LUCAS_1                     629
@@ -652,7 +652,7 @@
 #define TRAINER_GERALD                      648
 #define TRAINER_VIVIAN                      649
 #define TRAINER_DANIELLE                    650
-#define TRAINER_HIDEO                       651
+#define TRAINER_HIDEO                       651 //unused, though data remains
 #define TRAINER_KEIGO                       652
 #define TRAINER_RILEY                       653
 #define TRAINER_FLINT                       654
@@ -713,7 +713,7 @@
 #define TRAINER_COBY                        709
 #define TRAINER_LAWRENCE                    710
 #define TRAINER_WYATT                       711
-#define TRAINER_ANGELINA                    712
+#define TRAINER_ANGELINA                    712 //unused, though data remains
 #define TRAINER_KAI                         713
 #define TRAINER_CHARLOTTE                   714
 #define TRAINER_DEANDRE                     715
@@ -753,7 +753,7 @@
 #define TRAINER_JAIDEN                      749
 #define TRAINER_ALIX                        750
 #define TRAINER_HELENE                      751 //unused
-#define TRAINER_MARLENE                     752
+#define TRAINER_MARLENE                     752 //unused, but data remains
 #define TRAINER_DEVAN                       753
 #define TRAINER_JOHNSON                     754
 #define TRAINER_MELINA                      755
@@ -768,7 +768,7 @@
 #define TRAINER_CALE                        764
 #define TRAINER_MYLES                       765
 #define TRAINER_PAT                         766
-#define TRAINER_CRISTIN_1                   767
+#define TRAINER_CRISTIN_1                   767 //unused, though data remains
 #define TRAINER_MAY_RUSTBORO_TREECKO        768
 #define TRAINER_MAY_RUSTBORO_TORCHIC        769
 #define TRAINER_ROXANNE_2                   770
@@ -804,7 +804,7 @@
 #define TRAINER_WALLACE_4                   800
 #define TRAINER_WALLACE_5                   801
 #define TRAINER_ANGELO                      802
-#define TRAINER_DARIUS                      803
+#define TRAINER_DARIUS                      803 //unused, though data remains
 #define TRAINER_STEVEN                      804
 #define TRAINER_ANABEL                      805
 #define TRAINER_TUCKER                      806
@@ -825,8 +825,8 @@
 #define TRAINER_PABLO_3                     821
 #define TRAINER_PABLO_4                     822
 #define TRAINER_PABLO_5                     823
-#define TRAINER_KOJI_2                      824 //unused
-#define TRAINER_KOJI_3                      825 //unused
+#define TRAINER_JAYCE                       824
+#define TRAINER_WILSON                      825
 #define TRAINER_KOJI_4                      826 //unused
 #define TRAINER_KOJI_5                      827 //unused
 #define TRAINER_CRISTIN_2                   828

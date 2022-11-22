@@ -3,6 +3,7 @@
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "fieldmap.h"
+#include "field_weather.h"
 #include "sound.h"
 #include "sprite.h"
 #include "constants/maps.h"
@@ -199,7 +200,7 @@ static const struct RotatingGatePuzzle sRotatingGate_FortreePuzzleConfig[] =
     { 3, 19, GATE_SHAPE_T2, GATE_ORIENTATION_90},
     { 2,  6, GATE_SHAPE_T1, GATE_ORIENTATION_90},
     { 9, 12, GATE_SHAPE_T1, GATE_ORIENTATION_0},
-    { 6, 23, GATE_SHAPE_T1, GATE_ORIENTATION_0},
+    { 7, 23, GATE_SHAPE_T3, GATE_ORIENTATION_0},
     {12, 22, GATE_SHAPE_T1, GATE_ORIENTATION_0},
     { 6,  3, GATE_SHAPE_L4, GATE_ORIENTATION_180},
 };
@@ -242,7 +243,6 @@ static const struct OamData sOamData_RotatingGateLarge =
     .size = SPRITE_SIZE(64x64),
     .tileNum = 0,
     .priority = 2,
-    .paletteNum = 2,
     .affineParam = 0,
 };
 
@@ -259,7 +259,6 @@ static const struct OamData sOamData_RotatingGateRegular =
     .size = SPRITE_SIZE(32x32),
     .tileNum = 0,
     .priority = 2,
-    .paletteNum = 2,
     .affineParam = 0,
 };
 
@@ -461,7 +460,7 @@ static const union AffineAnimCmd *const sSpriteAffineAnimTable_RotatingGate[] =
 static const struct SpriteTemplate sSpriteTemplate_RotatingGateLarge =
 {
     .tileTag = ROTATING_GATE_TILE_TAG,
-    .paletteTag = 0xFFFF,
+    .paletteTag = 0x1103, // OBJ_EVENT_PAL_TAG_NPC_1
     .oam = &sOamData_RotatingGateLarge,
     .anims = sSpriteAnimTable_RotatingGateLarge,
     .images = NULL,
@@ -472,7 +471,7 @@ static const struct SpriteTemplate sSpriteTemplate_RotatingGateLarge =
 static const struct SpriteTemplate sSpriteTemplate_RotatingGateRegular =
 {
     .tileTag = ROTATING_GATE_TILE_TAG,
-    .paletteTag = 0xFFFF,
+    .paletteTag = 0x1103, // OBJ_EVENT_PAL_TAG_NPC_1
     .oam = &sOamData_RotatingGateRegular,
     .anims = sSpriteAnimTable_RotatingGateRegular,
     .images = NULL,
@@ -751,9 +750,16 @@ static u8 RotatingGate_CreateGate(u8 gateId, s16 deltaX, s16 deltaY)
     x = gate->x + 7;
     y = gate->y + 7;
 
+    if (template.paletteTag != 0xFFFF)
+    {
+        LoadObjectEventPalette(template.paletteTag);
+        UpdatePaletteGammaType(IndexOfSpritePaletteTag(template.paletteTag), GAMMA_ALT);
+    }
+
     sprite = &gSprites[spriteId];
     sprite->data[0] = gateId;
     sprite->coordOffsetEnabled = 1;
+    sprite->oam.paletteNum = IndexOfSpritePaletteTag(template.paletteTag);
 
     GetMapCoordsFromSpritePos(x + deltaX, y + deltaY, &sprite->x, &sprite->y);
     RotatingGate_HideGatesOutsideViewport(sprite);

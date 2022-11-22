@@ -8697,9 +8697,9 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(HM04_STRENGTH)
                                             | TMHM2(HM06_ROCK_SMASH)),
 
-    [SPECIES_WURMPLE]     = TMHM_LEARNSET(0, 0),
+    [SPECIES_WURMPLE]     = TMHM_LEARNSET(0, TMHM2(TM83_INFESTATION)),
 
-    [SPECIES_SILCOON]     = TMHM_LEARNSET(0, 0),
+    [SPECIES_SILCOON]     = TMHM_LEARNSET(0, TMHM2(TM83_INFESTATION)),
 
     [SPECIES_BEAUTIFLY]   = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
                                             | TMHM(TM45_ATTRACT)
@@ -8731,7 +8731,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM89_U_TURN)
                                             | TMHM2(HM05_FLASH)),
 
-    [SPECIES_CASCOON]     = TMHM_LEARNSET(0, 0),
+    [SPECIES_CASCOON]     = TMHM_LEARNSET(0, TMHM2(TM83_INFESTATION)),
 
     [SPECIES_DUSTOX]      = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
                                             | TMHM(TM45_ATTRACT)

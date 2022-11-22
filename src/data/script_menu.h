@@ -119,7 +119,7 @@ static const struct MenuAction MultichoiceList_Mechadoll1_Q2[] =
 
 static const struct MenuAction MultichoiceList_Mechadoll1_Q3[] = 
 {
-    {gTrickHouse_Mechadoll_Dustox},
+    {gTrickHouse_Mechadoll_Seedot},
     {gTrickHouse_Mechadoll_Zubat},
     {gTrickHouse_Mechadoll_Nincada},
 };
@@ -154,8 +154,8 @@ static const struct MenuAction MultichoiceList_Mechadoll3_Q1[] =
 
 static const struct MenuAction MultichoiceList_Mechadoll3_Q2[] = 
 {
-    {gTrickHouse_Mechadoll_60Yen},
-    {gTrickHouse_Mechadoll_55Yen},
+    {gTrickHouse_Mechadoll_100Yen},
+    {gTrickHouse_Mechadoll_50Yen},
     {gTrickHouse_Mechadoll_Nothing},
 };
 
@@ -267,7 +267,6 @@ static const struct MenuAction MultichoiceList_GameCornerDolls[] =
 
 static const struct MenuAction MultichoiceList_GameCornerTMs[] =
 {
-    {gText_TM32AndPrice},
     {gText_TM29AndPrice},
     {gText_TM53AndPrice},
     {gText_TM56AndPrice},

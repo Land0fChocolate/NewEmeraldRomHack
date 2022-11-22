@@ -22,7 +22,7 @@ GraniteCave_1F_Text_GetsDarkAheadNoBadge:
 	.string "Steven, I think it was.\p"
 	.string "His Pokémon were able to make light,\n"
 	.string "so he ought to be all right, but…\p"
-	.string "if you don't have the Badge from the\n"
+	.string "If you don't have the Badge from the\n"
 	.string "Dewford Gym then you're gonna have\l"
 	.string "a hard time.$"
 

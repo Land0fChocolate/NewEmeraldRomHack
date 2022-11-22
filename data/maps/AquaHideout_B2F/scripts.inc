@@ -90,45 +90,48 @@ AquaHideout_B2F_EventScript_Grunt8::
 	end
 
 AquaHideout_B2F_Text_MattIntro:
-	.string "Hehehe…\p"
-	.string "Got here already, did you?\n"
-	.string "We underestimated you!\p"
-	.string "But this is it!\p"
-	.string "I'm a cut above the grunts you've seen\n"
-	.string "so far.\p"
-	.string "I'm not stalling for time.\n"
-	.string "I'm going to pulverize you!$"
+	.string "Woah!\p"
+	.string "You're the first punk ever to sneak\n"
+	.string "into this hideout and make it this far!\p"
+	.string "But I've got some bad news for you!\p"
+	.string "We already completely finished\n"
+	.string "upgrading the sub!\p"
+	.string "My bro Archie's in the sub!\n"
+	.string "If you take me out fast, you might\l"
+	.string "be able to catch up to him!\p"
+	.string "That is, if your sorry Pokémon can beat\n"
+	.string "my not-so-sorry Pokémon.\p"
+	.string "Come at me!$"
 
 AquaHideout_B2F_Text_MattDefeat:
-	.string "Hehehe…\n"
-	.string "So, I lost, too…$"
+	.string "Oho!\n"
+	.string "That hurt!$"
 
 AquaHideout_B2F_Text_OurBossGotThroughHisPreparations:
-	.string "Hehehe!\p"
-	.string "While I was toying with you, our Boss\n"
-	.string "got through his preparations!$"
+	.string "Hah… Hah… Hah… Bro!\n"
+	.string "It's all…on you…now…\p"
+	.string "While we were battling it out…\n"
+	.string "My bro Archie finished getting ready…$"
 
 AquaHideout_B2F_Text_MattPostBattle:
-	.string "Hehehe!\p"
-	.string "Our Boss has already gone on his way to\n"
-	.string "some cave under the sea!\p"
-	.string "If you're going to give chase, you'd\n"
-	.string "better search the big, wide sea beyond\l"
-	.string "Lilycove.\p"
-	.string "But will you find it then?\n"
-	.string "Hehehe!$"
+	.string "My bro is headed for the big blue sea\n"
+	.string "that stretches out from Lilycove City.\p"
+	.string "There's a cave out there deep under\n"
+	.string "the water.\p"
+	.string "I don't see how you can follow him,\n"
+	.string "unless you have a sub.$"
 
 AquaHideout_B2F_Text_Grunt4Intro:
-	.string "Wahahah, I grew weary of waiting!\n"
-	.string "You owe me a battle, too!$"
+	.string "There you are!\n"
+	.string "The boss said you'll be coming!$"
 
 AquaHideout_B2F_Text_Grunt4Defeat:
-	.string "Tired of waiting…\n"
-	.string "Lost and dazed…$"
+	.string "Well, whatever…$"
 
 AquaHideout_B2F_Text_Grunt4PostBattle:
-	.string "Boss…\n"
-	.string "Is this good enough?$"
+	.string "I already loaded the supplies and\n"
+	.string "equipment onto the sub.\l"
+	.string "My job is done.$"
 
 AquaHideout_B2F_Text_Grunt6Intro:
 	.string "Warp panels, the Hideout's pride\n"

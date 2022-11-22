@@ -18,11 +18,19 @@
 .set LOCALID_GRUNT_9, 31
 .set LOCALID_GRUNT_11, 33
 .set LOCALID_SCOTT, 42
+.set LOCALID_TATE, 43
+.set LOCALID_LIZA, 44
+.set LOCALID_JIRACHI, 45
 
 SlateportCity_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, SlateportCity_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, SlateportCity_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SlateportCity_OnFrame
 	.byte 0
+
+SlateportCity_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, SlateportCity_EventScript_TryRemoveJirachi
+	end
 
 SlateportCity_OnTransition:
 	setvar VAR_SLATEPORT_MUSEUM_1F_STATE, 0
@@ -31,11 +39,31 @@ SlateportCity_OnTransition:
 	call_if_eq SlateportCity_EventScript_MovePeopleForSternInterview
 	compare VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1
 	call_if_eq SlateportCity_EventScript_SetReadyForScottScene
+	call SlateportCity_Eventscript_SetUpTateLiza
 	end
+
+SlateportCity_Eventscript_SetUpTateLiza::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, SlateportCity_Eventscript_TateLizaRematch
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_TATE_AND_LIZA_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq SlateportCity_Eventscript_TateLizaRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq SlateportCity_Eventscript_TateLizaChilling
+    return
+
+SlateportCity_Eventscript_TateLizaRematch::
+	setflag FLAG_HIDE_SLATEPORT_CITY_TATE_LIZA
+	clearflag FLAG_HIDE_MOSSDEEP_GYM_TATE_LIZA
+	return
+
+SlateportCity_Eventscript_TateLizaChilling::
+	clearflag FLAG_HIDE_SLATEPORT_CITY_TATE_LIZA
+	setflag FLAG_HIDE_MOSSDEEP_GYM_TATE_LIZA
+	return
 
 SlateportCity_EventScript_EnterSlateport::
 	setflag FLAG_VISITED_SLATEPORT_CITY
-	setvar VAR_CONTEST_HALL_STATE, 0
 	setflag FLAG_HIDE_SLATEPORT_CITY_CONTEST_REPORTER
 	return
 
@@ -266,7 +294,7 @@ SlateportCity_EventScript_RichBoy::
 	faceplayer
 	compare VAR_SLATEPORT_CITY_STATE, 1
 	call_if_eq SlateportCity_EventScript_RichBoySternInterview
-	msgbox SlateportCity_Text_GoingToCompeteInBattleTent, MSGBOX_DEFAULT
+	msgbox SlateportCity_Text_BuildABoat, MSGBOX_DEFAULT
 	release
 	end
 
@@ -310,10 +338,6 @@ SlateportCity_EventScript_Woman1::
 SlateportCity_EventScript_Woman1AquaGone::
 	msgbox SlateportCity_Text_VisitedMuseumOften, MSGBOX_DEFAULT
 	release
-	end
-
-SlateportCity_EventScript_BattleTentSign::
-	msgbox SlateportCity_Text_BattleTentSign, MSGBOX_SIGN
 	end
 
 SlateportCity_EventScript_SternsShipyardSign::
@@ -398,7 +422,7 @@ SlateportCity_EventScript_PokefanF::
 	end
 
 SlateportCity_EventScript_Man2::
-	msgbox SlateportCity_Text_BattleTentBuiltRecently, MSGBOX_NPC
+	msgbox SlateportCity_Text_OtherCityHasContests, MSGBOX_NPC
 	end
 
 SlateportCity_EventScript_AquaGrunt1::
@@ -533,6 +557,26 @@ SlateportCity_EventScript_AquaGrunt11::
 	release
 	end
 
+SlateportCity_EventScript_BallClerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart SlateportCity_Pokemart_Balls
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_Balls:
+	.2byte ITEM_HEAL_BALL
+	.2byte ITEM_NEST_BALL
+	.2byte ITEM_NET_BALL
+	.2byte ITEM_LUXURY_BALL
+	.2byte ITEM_NONE
+	release
+	end
+
 SlateportCity_EventScript_DollClerk::
 	lock
 	faceplayer
@@ -600,9 +644,7 @@ SlateportCity_EventScript_PowerTMClerk::
 
 	.align 2
 SlateportCity_Pokemart_PowerTMs:
-	.2byte ITEM_TM10  @ Hidden Power
 	.2byte ITEM_TM43  @ Secret Power
-	.2byte ITEM_TM96  @ Nature Power
 	.2byte ITEM_TM57  @ Charge Beam
 	.2byte ITEM_TM59  @ Venoshock
 	.2byte ITEM_TM62  @ Acrobatics
@@ -611,6 +653,7 @@ SlateportCity_Pokemart_PowerTMs:
 	.2byte ITEM_TM89  @ U-Turn
 	.2byte ITEM_TM90  @ Rock Smash
 	.2byte ITEM_TM95  @ Snarl
+	.2byte ITEM_TM96  @ Nature Power
 	.2byte ITEM_NONE
 	release
 	end
@@ -638,6 +681,8 @@ SlateportCity_EventScript_CaptStern::
 	applymovement LOCALID_CAPT_STERN, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	msgbox SlateportCity_Text_OhPlayerWeMadeDiscovery, MSGBOX_DEFAULT
+	closemessage
+	delay 10
 	playbgm MUS_ENCOUNTER_AQUA, FALSE
 	msgbox SlateportCity_Text_AquaWillAssumeControlOfSubmarine, MSGBOX_DEFAULT
 	applymovement LOCALID_COOK, Common_Movement_WalkInPlaceFastestLeft
@@ -952,6 +997,105 @@ SlateportCity_EventScript_Drake::
 	msgbox SlateportCity_Text_Drake, MSGBOX_NPC
 	end
 
+SlateportCity_EventScript_TateAndLiza::
+	applymovement LOCALID_TATE, Common_Movement_FacePlayer
+	applymovement LOCALID_LIZA, Common_Movement_FacePlayer
+	waitmovement 0
+	goto_if_set FLAG_PLACED_WISH_TAG, SlateportCity_EventScript_TateAndLizaWishTagPlaced
+	goto_if_set FLAG_GIVEN_WISH_TAG, SlateportCity_EventScript_TateAndLizaWishTagGiven
+	msgbox SlateportCity_Text_TateAndLizaGiveWishTag, MSGBOX_DEFAULT
+	giveitem ITEM_WISH_TAG
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	setflag FLAG_GIVEN_WISH_TAG
+	goto SlateportCity_EventScript_TateAndLizaWishTagGiven
+	end
+
+SlateportCity_EventScript_TateAndLizaWishTagGiven::
+	msgbox SlateportCity_Text_TateAndLizaMakeAWish, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_EventScript_BambooTree_PlaceWishTag::
+	msgbox Text_BambooTree_PlaceWishTag, MSGBOX_SIGN
+	removeitem ITEM_WISH_TAG
+	setflag FLAG_PLACED_WISH_TAG
+	playmoncry SPECIES_JIRACHI, 0
+	waitmoncry
+	clearflag FLAG_HIDE_SLATEPORT_CITY_JIRACHI
+	end
+
+SlateportCity_EventScript_TateAndLizaWishTagPlaced:
+	msgbox SlateportCity_Text_TateAndLizaPlacedWishTag, MSGBOX_DEFAULT
+	release
+	end
+
+SlateportCity_EventScript_TryRemoveJirachi::
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_ne Common_EventScript_NopReturn
+	removeobject LOCALID_JIRACHI
+	return
+
+SlateportCity_EventScript_Jirachi::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_JIRACHI, 2
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_JIRACHI, 30, ITEM_NONE
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setvar VAR_TEMP_1, 0
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq SlateportCity_EventScript_DefeatedJirachi
+	compare VAR_RESULT, B_OUTCOME_RAN
+	goto_if_eq SlateportCity_EventScript_RanFromJirachi
+	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
+	goto_if_eq SlateportCity_EventScript_RanFromJirachi
+	setflag FLAG_DEFEATED_JIRACHI
+	setflag FLAG_HIDE_SLATEPORT_CITY_JIRACHI
+	release
+	end
+
+SlateportCity_EventScript_DefeatedJirachi::
+	setflag FLAG_DEFEATED_JIRACHI
+	setflag FLAG_HIDE_SLATEPORT_CITY_JIRACHI
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+SlateportCity_EventScript_RanFromJirachi::
+	setvar VAR_0x8004, SPECIES_JIRACHI
+	goto Common_EventScript_LegendaryFlewAway
+	end
+
+SlateportCity_Text_TateAndLizaGiveWishTag:
+	.string "Liza: Have you ever wished for anything,\n"
+	.string "{PLAYER}?\p"
+	.string "Tate: The people of Hoenn write down\n"
+	.string "their wishes and tie them to one of the\l"
+	.string "bamboo trees.\p"
+	.string "Liza: People believe that the mystical\n"
+	.string "Pokémon of wishes wakes up every\l"
+	.string "millennia to make those wishes come\l"
+	.string "true.\p"
+	.string "Tate: Would you like to try, {PLAYER}?\p"
+	.string "Tate: Here, make a wish.\n"
+	.string "Liza: Here, make a wish.$"
+
+SlateportCity_Text_TateAndLizaMakeAWish:
+	.string "Liza: Go on, {PLAYER}, make a wish!\p"
+	.string "Tate: We are still deciding on what our\n"
+	.string "wish should be.$"
+
+SlateportCity_Text_TateAndLizaPlacedWishTag:
+	.string "Tate: We are still deciding on what our\n"
+	.string "wish should be.$"
+
 SlateportCity_Text_Drake:
 	.string "Ahoy, fellow Trainer!\p"
 	.string "Gazing outwards towards the horizon,\n"
@@ -1032,11 +1176,14 @@ SlateportCity_Text_BuyBricksSoDecorWontGetDirty:
 	.string "dolls and cusions won't get dirty\l"
 	.string "when I leave them out.$"
 
-SlateportCity_Text_GoingToCompeteInBattleTent:
-	.string "Wroooar! I'm going to compete in\n"
-	.string "the Battle Tent, too!\p"
-	.string "But before that, I need to catch\n"
-	.string "some Pokémon!$"
+SlateportCity_Text_BuildABoat:
+	.string "There's a shipyard here.\n"
+	.string "I'm going to see if they can build\l"
+	.string "me my own boat.\p"
+	.string "Then I can venture out to sea on\n"
+	.string "adventures!\p"
+	.string "Well, it's easier than beating gyms\n"
+	.string "and learn to Surf on your own Pokémon.$"
 
 SlateportCity_Text_BushedHikingFromMauville:
 	.string "Whew… I'm just bushed…\p"
@@ -1150,13 +1297,13 @@ SlateportCity_Text_CantChangeTradeMonName:
 	.string "The original Trainer's love for that\n"
 	.string "Pokémon is in the nickname.$"
 
-SlateportCity_Text_BattleTentBuiltRecently:
-	.string "Recently, a Battle Tent was built\n"
-	.string "in Slateport.\p"
-	.string "Gyms are fun, but the Battle Tent's\n"
-	.string "awesome in its own way.\p"
-	.string "You should go find tough Pokémon\n"
-	.string "for the Battle Tent!$"
+SlateportCity_Text_OtherCityHasContests:
+	.string "I've heard that in another port city\n"
+	.string "like this one, they have Pokémon\l"
+	.string "contests there.\p"
+	.string "Gyms are fun, but I can't help feel the\n"
+	.string "allure of my Pokémon performing before\l"
+	.string "an audience like an idol.$"
 
 SlateportCity_Text_CaptSternBeingInterviewed:
 	.string "I was hoping that it was a famous star\n"
@@ -1224,15 +1371,16 @@ SlateportCity_Text_OhPlayerWeMadeDiscovery:
 	.string "that's said to have been long extinct.$"
 
 SlateportCity_Text_AquaWillAssumeControlOfSubmarine:
-	.string "Fufufu…\n"
-	.string "Capt. Stern, I presume.\p"
-	.string "We of Team Aqua will assume\n"
-	.string "control of your submarine!\p"
-	.string "Your objections are meaningless!\n"
-	.string "We expect your total cooperation!\p"
-	.string "Fufufu…\n"
-	.string "Just watch and learn what Team\l"
-	.string "Aqua has planned!$"
+	.string "Ahh… Ahh…\n"
+	.string "Testing, testing. One, two, three… OK.\p"
+	.string "I hope you're listening out there,\n"
+	.string "Captain Stern!\p"
+	.string "We of Team Aqua will now be assuming\n"
+	.string "control of your lovely submarine!\p"
+	.string "You'll contribute to our great plan of\n"
+	.string "returning everything to the beginning.\p"
+	.string "I hope you appreciate this great honor!\n"
+	.string "Bwahahahahahahahah!$"
 
 SlateportCity_Text_SternWhatWasAllThat:
 	.string "Capt. Stern: What was that all about?\p"
@@ -1248,10 +1396,6 @@ SlateportCity_Text_FromHarborTryingToTakeSub:
 SlateportCity_Text_PleaseComeWithMe:
 	.string "{PLAYER}{KUN}!\n"
 	.string "Please, come with me!$"
-
-SlateportCity_Text_BattleTentSign:
-	.string "BATTLE TENT SLATEPORT SITE\n"
-	.string "“Find it! The ultimate Pokémon!”$"
 
 SlateportCity_Text_SternsShipyardWantedSign:
 	.string "STERN'S SHIPYARD\p"

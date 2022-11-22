@@ -59,10 +59,10 @@ AquaHideout_1F_Text_OurBossIsSnatchingSomething:
 	.string "Where did he go?\p"
 	.string "Wahaha! Do you really think I'd tell\n"
 	.string "you something that crucial?\p"
-	.string "But seriously, I have no idea.$\n"
+	.string "But seriously, I have no idea.$"
 
 AquaHideout_1F_Text_WhereMightMagmaHideoutBe:
-	.string "Access denied, pal.\n"
+	.string "Access denied, pal.\p"
 	.string "Go mess about in Team Magma's hideout.\n"
 	.string "It's somewhere around Mt. Chimney.$"
 
@@ -90,7 +90,8 @@ AquaHideout_1F_Text_BossIsOnRoute122:
 
 AquaHideout_1F_Text_TeamMagmaAtMtChimney:
 	.string "Why are you here, come to borrow a cup\n"
-	.string "of sugar? Beat it, kid.$"
+	.string "of sugar?\l"
+	.string "Beat it, kid.$"
 
 AquaHideout_1F_Text_BossIsInSlateportCity:
 	.string "What? What? What do you want with\n"

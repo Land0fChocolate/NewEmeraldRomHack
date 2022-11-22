@@ -177,12 +177,13 @@ Route109_SeashoreHouse_Text_DestineeIntro:
 	.string "The burger I ordered is taking forever!\n"
 	.string "It's making me totally crabby!$"
 
-Route109_SeashoreHouse_Text_DestineePostBattle:
+Route109_SeashoreHouse_Text_DestineeDefeated:
 	.string "Gosh! I'm starving!$"
 
-Route109_SeashoreHouse_Text_DestineeDefeated:
-	.string "There's something special about the food\n"
-	.string "at the Seashore House, isn't there?\p"
+Route109_SeashoreHouse_Text_DestineePostBattle:
+	.string "There's something special about the\n"
+	.string "food at the Seashore House, isn't\l"
+	.string "there?\p"
 	.string "It's not like it's particulary good or\n"
 	.string "anything, but I never want to miss out.$"
 
@@ -190,10 +191,10 @@ Route109_SeashoreHouse_Text_BlairIntro:
 	.string "Hey! Hey, hey, hey! What's the deal?\n"
 	.string "Are you after my ice cream!?$"
 
-Route109_SeashoreHouse_Text_BlairPostBattle:
+Route109_SeashoreHouse_Text_BlairDefeated:
 	.string "Wh-where did you come from?$"
 
-Route109_SeashoreHouse_Text_BlairDefeated:
+Route109_SeashoreHouse_Text_BlairPostBattle:
 	.string "Oh!\p"
 	.string "It melted…\n"
 	.string "My… my ice cream…$"

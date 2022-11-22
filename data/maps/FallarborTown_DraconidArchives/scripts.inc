@@ -234,9 +234,14 @@ DraconidArchives_EventScript_ResetDefeatedLegendaries::
 	clearflag FLAG_DEFEATED_KYOGRE
 	clearflag FLAG_DEFEATED_GROUDON
 	clearflag FLAG_DEFEATED_RAYQUAZA
-	clearflag FLAG_DEFEATED_JIRACHI
 	clearflag FLAG_DEFEATED_DEOXYS
 	clearflag FLAG_BATTLED_DEOXYS
+	call_if_set FLAG_PLACED_WISH_TAG, DraconidArchives_EventScript_ResetJirachi
+	return
+
+DraconidArchives_EventScript_ResetJirachi::
+	clearflag FLAG_DEFEATED_JIRACHI
+	clearflag FLAG_HIDE_SLATEPORT_CITY_JIRACHI
 	return
 
 DraconidArchives_EventScript_ZinniaDeoxysBeaten::
@@ -344,7 +349,7 @@ DraconidArchives_Text_BringSnacksForAster:
 	.string "Aster here, I can call any and all\l"
 	.string "legendary Pokémon back to their lairs.\p"
 	.string "Aster has rather expensive taste.\n"
-	.string "He'll only eat very rare berries, like\l"
+	.string "She'll only eat very rare berries, like\l"
 	.string "the ones that reduce damage taken.$"
 
 DraconidArchives_Text_HaveYouBroughtBerries:
@@ -406,8 +411,8 @@ DraconidArchives_Text_MapFellOut:
 	.string "Do you mind taking this?$"
 
 DraconidArchives_Text_TooAbsorbedInBooks:
-	.string "… … … … … …\n"
-	.string "This person is too absorbed in books\l"
+	.string "… … … … … …\p"
+	.string "This person is too absorbed in books\n"
 	.string "to notice you.$"
 
 DraconidArchives_Text_Sculpture:
@@ -419,9 +424,10 @@ DraconidArchives_Text_DisplayCase:
 
 DraconidArchives_Text_Scroll:
 	.string "A scroll written in a primitive language\n"
-	.string "you don't understand. The illustration\l"
-	.string "depicts some monstrous looking Pokémon\l"
-	.string "engaged in an epic battle.$"
+	.string "you don't understand.\p"
+	.string "The illustration depicts some monstrous\n"
+	.string "looking Pokémon engaged in an epic\l"
+	.string "battle.$"
 
 DraconidArchives_Text_Book:
 	.string "A book on historical meteorite events.\n"

@@ -5,23 +5,9 @@ Route119_House_EventScript_Woman::
 	msgbox Route119_House_Text_RumorAboutCaveOfOrigin, MSGBOX_NPC
 	end
 
-Route119_House_EventScript_Wingull::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_WINGULL, 0
-	msgbox Route119_House_Text_Wingull, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
 Route119_House_Text_RumorAboutCaveOfOrigin:
-	.string "I heard about a cave called the Cave\n"
-	.string "of Origin.\p"
-	.string "People rumor that the spirits of\n"
-	.string "Pokémon are revived there. Could\l"
-	.string "something like that really happen?$"
-
-Route119_House_Text_Wingull:
-	.string "Wingull: Pihyoh!$"
-
+	.string "There's a very rare fish Pokémon that\n"
+	.string "can only be found in this river.\p"
+	.string "They like to congregate in specific\n"
+	.string "random patches of water.\p"
+	.string "Though, sometimes those patches change.$"

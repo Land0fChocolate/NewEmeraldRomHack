@@ -144,7 +144,9 @@ SkyPillar_Outside_Text_JuanEarthquake:
 	.string "earthquakes. I will keep you no longer.\p"
 	.string "Since I am unable to close the door,\n"
 	.string "I will be staying here to watch over the\l"
-	.string "entrance. You go on ahead. Best of luck.$"
+	.string "entrance.\p"
+	.string "You go on ahead.\n"
+	.string "Best of luck.$"
 
 SkyPillar_Outside_Text_JuanGuardEntrance1:
 	.string "Juan: I shall be guarding the entrance,\n"

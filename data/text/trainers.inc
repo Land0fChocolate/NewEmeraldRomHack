@@ -424,7 +424,7 @@ Route104_Text_DarianDefeat:
 	.string "What the…$"
 
 Route104_Text_DarianPostBattle:
-	.string "Hey, MAGIKARP, you sure don't live up\n"
+	.string "Hey, Magikarp, you sure don't live up\n"
 	.string "to your name, do you?$"
 
 Route105_Text_FosterIntro:
@@ -987,7 +987,7 @@ Route110_Text_AbigailPostBattle:
 
 Route110_Text_AbigailRegister:
 	.string "You know, I like you!\n"
-	.string "Let's have a rematch on CYCLING ROAD.$"
+	.string "Let's have a rematch on Cycling Road.$"
 
 Route110_Text_AbigailRematchIntro:
 	.string "Isn't it neat to hold a battle while\n"
@@ -1049,7 +1049,7 @@ Route110_Text_EdwinPostBattle:
 	.string "my passion as a collector is ignited!$"
 
 Route110_Text_EdwinRegister:
-	.string "I like collecting MATCH CALL\n"
+	.string "I like collecting Match Call\n"
 	.string "registrations, too…$"
 
 Route110_Text_EdwinRematchIntro:
@@ -1086,7 +1086,7 @@ Route110_Text_IsabelDefeated:
 
 Route110_Text_IsabelPostBattle:
 	.string "Rather than battling, perhaps I should\n"
-	.string "show off my Pokémon at the FAN CLUB.$"
+	.string "show off my Pokémon at the Fan Club.$"
 
 Route110_Text_IsabelRegister:
 	.string "That wasn't close to what I could\n"
@@ -1471,7 +1471,7 @@ FieryPath_Text_BryantPostBattle:
 
 FieryPath_Text_ShaylaIntro:
 	.string "This place blows!\n"
-	.string "I don't know why I came here.\p"
+	.string "I don't know why I came here.$"
 
 FieryPath_Text_ShaylaDefeat:
 	.string "Figures.$"
@@ -1505,8 +1505,8 @@ Route113_Text_FrannyDefeat:
 	.string "Oh, dear!$"
 
 Route113_Text_FrannyPostBattle:
-	.string "My dress is absolutely ruined, but I\p"
-	.string "cannot help myself to not play around\l"
+	.string "My dress is absolutely ruined, but I\n"
+	.string "cannot help myself to play around\l"
 	.string "in the ashfalls.$"
 
 Route113_Text_DillonIntro:
@@ -2163,7 +2163,7 @@ Route116_Text_JohnsonDefeat:
 
 Route116_Text_JohnsonPostBattle:
 	.string "Maybe if my Taillow gets thunder armor…\p"
-	.string "No, that idea is stupid.$"
+	.string "No, that idea doesn't make sense.$"
 
 Route117_Text_IsaacIntro:
 	.string "Listen, could I get you to battle\n"
@@ -3313,8 +3313,8 @@ Route123_Text_HannibalDefeat:
 
 Route123_Text_HannibalPostBattle:
 	.string "My Pokémon and I have been together\n"
-	.string "since I was barely walking. I could\l"
-	.string "never leave them.$"
+	.string "since I was barely walking.\l"
+	.string "I could never leave them.$"
 
 Route123_Text_KylieIntro:
 	.string "Did you know that if your Pokémon fight\n"
@@ -3999,9 +3999,8 @@ Route128_Text_RubenPostBattle:
 	.string "than you!$"
 
 Route128_Text_WayneIntro:
-	.string "I want to visit Ever Grande, so I\n"
-	.string "caught myself a Pokémon that knows\l"
-	.string "the move Waterfall to crest the falls.$"
+	.string "I'm catching strong water Pokémon that\n"
+	.string "can climb the waterfall at Ever Grande.$"
 
 Route128_Text_WayneDefeat:
 	.string "I'm crestfallen!$"
@@ -4540,8 +4539,8 @@ FieryPath_Text_DaytonPostBattle:
 
 FieryPath_Text_AishaIntro:
 	.string "This place makes for a unique training\n"
-	.string "environment. Is that why you have come\l"
-	.string "here too?$"
+	.string "environment.\l"
+	.string "Is that why you have come here too?$"
 
 FieryPath_Text_AishaDefeat:
 	.string "I don't waste any time being angry\n"
@@ -4630,12 +4629,12 @@ EverGrandeCity_BattleTent_Text_CarolinaPostBattle:
 
 EverGrandeCity_BattleTent_Text_PeteIntro:
 	.string "Climbing up the cliff was a good\n"
-	.string "workout. Time to cool off with a\l"
-	.string "battle!$"
+	.string "workout.\l"
+	.string "Time to cool off with a battle!$"
 
 EverGrandeCity_BattleTent_Text_PeteDefeated:
 	.string "Oof… that was tougher than the\n"
-	.string "cliff."
+	.string "cliff.$"
 
 EverGrandeCity_BattleTent_Text_PetePostBattle:
 	.string "I'll be climbing back down at the end\n"
@@ -4670,7 +4669,7 @@ EverGrandeCity_BattleTent_Text_ClarenceIntro:
 	.string "Wanna buy some NFTs?$"
 
 EverGrandeCity_BattleTent_Text_ClarenceDefeated:
-	.string "I guess that's a no…?"
+	.string "I guess that's a no…?$"
 
 EverGrandeCity_BattleTent_Text_ClarencePostBattle:
 	.string "Blast! The value of my NFTs have\n"

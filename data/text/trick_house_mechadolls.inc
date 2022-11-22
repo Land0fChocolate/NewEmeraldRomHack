@@ -16,8 +16,8 @@ gTrickHouse_Mechadoll_Lotad::
 gTrickHouse_Mechadoll_Wingull::
 	.string "WINGULL$"
 
-gTrickHouse_Mechadoll_Dustox::
-	.string "DUSTOX$"
+gTrickHouse_Mechadoll_Seedot::
+	.string "SEEDOT$"
 
 gTrickHouse_Mechadoll_Zubat::
 	.string "ZUBAT$"
@@ -61,11 +61,11 @@ gTrickHouse_Mechadoll_HarborMail::
 gTrickHouse_Mechadoll_SamePrice::
 	.string "Same price$"
 
-gTrickHouse_Mechadoll_60Yen::
-	.string "¥60$"
+gTrickHouse_Mechadoll_100Yen::
+	.string "¥100$"
 
-gTrickHouse_Mechadoll_55Yen::
-	.string "¥55$"
+gTrickHouse_Mechadoll_50Yen::
+	.string "¥50$"
 
 gTrickHouse_Mechadoll_Nothing::
 	.string "Nothing$"

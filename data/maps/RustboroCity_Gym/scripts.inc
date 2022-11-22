@@ -7,6 +7,7 @@ RustboroCity_Gym_OnTransition::
 	end
 
 RustboroCity_Gym_SetUpRoxanne::
+	goto_if_unset FLAG_BADGE01_GET, RustboroCity_PokemonSchool_Eventscript_RoxanneRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_ROXANNE_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE
@@ -21,6 +22,7 @@ RustboroCity_Gym_Eventscript_RoxanneRematch::
 	return
 
 RustboroCity_Gym_Eventscript_RoxanneTrainerSchool::
+	goto_if_unset FLAG_BADGE04_GET, Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_TRAINERS_SCHOOL_ROXANNE
 	setflag FLAG_HIDE_RUSTBORO_GYM_ROXANNE
 	return
@@ -230,10 +232,9 @@ RustboroCity_Gym_Text_ReceivedStoneBadge:
 	.string "from Roxanne.$"
 
 RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
-	.string "The Stone Badge heightens the Attack\n"
-	.string "power of your Pokémon.\p"
-	.string "It also enables them to cut down\n"
-	.string "foliage that blocks your path.\p"
+	.string "The Stone Badge enables your Pokémon\n"
+	.string "to cut down foliage that blocks your\l"
+	.string "path.\p"
 	.string "Please take this with you, too.$"
 
 RustboroCity_Gym_Text_ExplainRockTomb:
@@ -270,7 +271,7 @@ RustboroCity_Gym_Text_RoxanneRegisterCall:
 	.string "Trainers at an incredible clip.\p"
 	.string "Well, I'd rather not think that\n"
 	.string "I can't beat you.\p"
-	.string "I promise, I will shape up my GYM\n"
+	.string "I promise, I will shape up my Gym\n"
 	.string "so that you may challenge us again.\p"
 	.string "I hope you'll be looking forward to\n"
 	.string "that occasion as much as me!\p"

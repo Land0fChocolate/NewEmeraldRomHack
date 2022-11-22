@@ -428,7 +428,7 @@ SkyPillar_Top_Text_RejectedByRayquaza:
 
 SkyPillar_Top_Text_PlayerChosenMale:
 	.string "Zinnia: …you chose him over me?\n"
-	.string "…but I worked so hard to get here.\l"
+	.string "…but I worked so hard to get here.\p"
 	.string "This was supposed to be my duty!\p"
 	.string "I can't accept this.\p"
 	.string "After everything that I've done.\n"
@@ -436,7 +436,7 @@ SkyPillar_Top_Text_PlayerChosenMale:
 
 SkyPillar_Top_Text_PlayerChosenFemale:
 	.string "Zinnia: …you chose her over me?\n"
-	.string "…but I worked so hard to get here.\l"
+	.string "…but I worked so hard to get here.\p"
 	.string "This was supposed to be my duty!\p"
 	.string "I can't accept this.\p"
 	.string "After everything that I've done.\n"
@@ -463,7 +463,7 @@ SkyPillar_Top_Text_FallsToYouNow:
 	.string "Catch it, and save Hoenn!$"
 
 SkyPillar_Top_Text_CaughtRayquaza:
-	.string "Zinnia: … Congratulations, {PLAYER}.\n"
+	.string "Zinnia: …Congratulations, {PLAYER}.\n"
 	.string "History has chosen you…\p"
 	.string "Rayquaza chose you and not me…\n"
 	.string "I think I understand why…\p"

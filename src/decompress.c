@@ -112,6 +112,8 @@ void LoadSpecialPokePic(void *dest, s32 species, u32 personality, bool8 isFrontP
         else
             LZ77UnCompWram(gMonBackPicTable[species].data, dest);
     }
+
+    DrawSpindaSpots(species, personality, dest, isFrontPic);
 }
 
 void Unused_LZDecompressWramIndirect(const void **src, void *dest)

@@ -2,7 +2,12 @@
 .set LOCALID_MAGMA_GRUNT, 2
 
 Mauville_Riverside_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Mauville_Riverside_OnTransition
 	.byte 0
+
+Mauville_Riverside_OnTransition:
+	setflag FLAG_LANDMARK_MAUVILLE_RIVERSIDE
+	end
 
 Mauville_Riverside_Eventscript_MagmaGrunt::
 	lock

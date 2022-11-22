@@ -25,7 +25,7 @@ SootopolisCity_House3_Text_WallaceHasManyFans:
 	.string "of his contest and battling careers.\p"
 	.string "I've been lucky enough to get an\n"
 	.string "autograph!\p"
-	.string "Do you have any fans?"
+	.string "Do you have any fans?$"
 
 SootopolisCity_House3_Text_YouMustBePrettyStrong:
 	.string "Oh, then you must be pretty strong.$"
