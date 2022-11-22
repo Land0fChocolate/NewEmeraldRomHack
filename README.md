@@ -29,13 +29,14 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - TMs have infinite use.
 - TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
 - New shops and updates to existing shops to stock later gen items and new TMs.
-- Ice types have their special defense boosted by 50% in hail.
 - Removed badge boosts
 - Wild Encounters adjusted.
 	- Both Latias and Latios are available roaming
 	- All Legendary and Mythical Pokemon can be repeatedly acquired.
+- Repeatedly acquirable fossils.
 - Trainer parties adjusted.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
+- Ice types have their special defense boosted by 50% in hail.
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
 - Map layout changes, including new areas to explore that have new Pokemon (post game).
@@ -47,6 +48,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Gym Leaders do more:
 	- Roxanne trades evolution stones for fossils.
 	- Brawly can give a random shard daily.
+	- Tate and Liza grant access to Jirachi.
 - Item changes
 	- Quick Claw now increases speed by 10% when user is below 50% health.
 	- Vitamins give 20 EVs instead of 10.
