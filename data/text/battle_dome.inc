@@ -106,8 +106,8 @@ BattleDome_Text_StyleCleverlyDodgesAttacks::
 BattleDome_Text_StyleUsesUpsettingMoves::
 	.string "Skilled at using upsetting attacks.$"
 
-BattleDome_Text_StyleUsesPopularMoves::
-	.string "Uses many popular moves.$"
+BattleDome_Text_StyleUsesHighRiskHighPowerMoves::
+	.string "Uses high risk, high power moves.$"
 
 BattleDome_Text_StyleHasPowerfulComboMoves::
 	.string "Has moves for powerful combinations.$"
@@ -124,8 +124,8 @@ BattleDome_Text_StyleEmphasizesOffenseOverDefense::
 BattleDome_Text_StyleEmphasizesDefenseOverOffense::
 	.string "Emphasizes defense over offense.$"
 
-BattleDome_Text_StyleAttacksQuicklyStrongMoves::
-	.string "Attacks quickly with strong moves.$"
+BattleDome_Text_StyleStrongMovesEffects::
+	.string "Likes strong moves and effects.$"
 
 BattleDome_Text_StyleUsesAddedEffectMoves::
 	.string "Often uses moves with added effects.$"
