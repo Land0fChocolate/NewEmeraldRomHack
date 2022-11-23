@@ -28,10 +28,14 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 
 @TODO: remove this. This is a test trainer.
 EverGrandeCity_EventScript_Leaf::
-	@cleartrainerflag TRAINER_LEAF
-	@trainerbattle_single TRAINER_ZINNIA, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
+	cleartrainerflag TRAINER_LEAF
+	trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_AUTOCLOSE
-	giveitem ITEM_MASTER_BALL, 20
+	end
+
+EverGrandeCity_EventScript_TestAbra2::
+	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
+	givemon SPECIES_WURMPLE, 5, ITEM_NONE
 	end
 
 EverGrandeCity_Text_LeafIntro:

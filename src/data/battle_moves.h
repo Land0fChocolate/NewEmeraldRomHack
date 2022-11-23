@@ -11851,20 +11851,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .split = SPLIT_STATUS,
     },
 
-    [MOVE_WAR_DANCE] =
-    {
-        .effect = EFFECT_CONFUSE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED | FLAG_DANCE | FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-    },
-
     [MOVE_FLINT_BLADE] =
     {
         .effect = EFFECT_HIT,

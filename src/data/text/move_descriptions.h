@@ -3038,10 +3038,6 @@ static const u8 sTakeHeartDescription[] = _(
     "The user lifts its spirits to\n"
     "heal and strengthen itself.");
 
-static const u8 sWarDanceDescription[] = _(
-    "Ups user Attack and Speed\n"
-    "and confuses opponent.");
-
 static const u8 sFlintBladeDescription[] = _(
     "Strikes with a hard edge.\n"
     "High critical-hit ratio.");
@@ -3854,7 +3850,6 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_TAKE_HEART - 1] = sTakeHeartDescription,
 
     //New Emerald
-    [MOVE_WAR_DANCE - 1] = sWarDanceDescription,
     [MOVE_FLINT_BLADE - 1] = sFlintBladeDescription,
     [MOVE_BLAZE_IMPACT - 1] = sBlazeImpactDescription,
     [MOVE_SINGULARITY - 1] = sSingularityDescription,

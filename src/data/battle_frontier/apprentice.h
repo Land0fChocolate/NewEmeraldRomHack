@@ -927,7 +927,6 @@ static const bool8 sValidApprenticeMoves[MOVES_COUNT] =
     [MOVE_WATER_PULSE] = TRUE,
     [MOVE_DOOM_DESIRE] = TRUE,
     [MOVE_PSYCHO_BOOST] = TRUE,
-    [MOVE_WAR_DANCE] = TRUE,
     [MOVE_FLINT_BLADE] = TRUE,
     [MOVE_BLAZE_IMPACT] = TRUE,
 };
