@@ -6,28 +6,28 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
 	- Including physical/special split, fairy types, new moves, new items, new Pokemon species, regional species variants.
-	- Whilst data for all post gen3 Pokemon are in the game, only those that have evolutions linked to Pokemon in those gens are accessible, baring some exceptions (Namely regional variants like Alolan Vulpix).
+- All Pokemon from gens 1, 2 and 3 are accessible. 
+	- Those Pokemon with post gen 3 evolutions and pre-evolutions have those available as well.
+	- Many regional variants of gen 1, 2 and 3 Pokemon are available.
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
 	- Many Pokemon have had their ability sets updated with new abilities (TODO: make a list of ability stat changes somewhere).
 	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
+	- Moves that work around abilities have been updated as well.
 - New moves and abilities (listed below).
 - Many gameplay adjustments to vanilla moves (Listed below). 
 	- Changes to level up, TM learnsets and Tutor learnsets of Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
-- Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko, Spheal lines have Attack and Special Attack swapped. (TODO: make list)
+- Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko, Spheal lines have Attack and Special Attack swapped for example. (TODO: make list)
 - HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
 - Berry tree drop rates are tripled. Interaction with berry trees is also quicker.
 - Number of Feebas spots is tripled.
-- TMs have infinite use.
-- TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
-- New shops and updates to existing shops to stock later gen items and new TMs.
 - Removed badge boosts
 - Pokemon IVs and EVs can be viewed in the summary screen by pressing the L and R buttons.
 - Wild Encounters adjusted.
 	- Both Latias and Latios are available roaming
 	- All Legendary and Mythical Pokemon can be repeatedly acquired.
 - Repeatedly acquirable fossils.
-- Trainer parties adjusted.
+- Trainer parties updated.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
 - Ice types have their special defense boosted by 50% in hail.
 - Steven is back to being champion and Wallace back to being a gym leader.
@@ -40,7 +40,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- Battle Factory has its opponent tips updated.
 - Graphical updates to existing overworld sprites and environments.
 - New overworld sprites and graphics.
-- Various story changes. Includes aspects from ORAS.
+- Various story changes. Includes aspects from ORAS, though has an entirely new story.
 - Gym Leaders do more:
 	- Roxanne trades evolution stones for fossils.
 	- Brawly can give a random shard daily.
@@ -51,6 +51,9 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- Vitamins give 20 EVs instead of 10.
 	- Prices of various items adjusted.
 	- Nature Mints added
+	- TMs have infinite use.
+	- TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
+- New shops and updates to existing shops to stock later gen items and new TMs.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
 
 # New Abilities
@@ -69,7 +72,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Soul Siphon: Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir/Palossand/Dhelmise/Corsola(Galarian).
 - Bad Luck: Opponent cannot land crits and less likely to land status moves against user. Used by Spiritomb/Cofagrigus.
 - Wickedness: User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius/Braixen/Delphox.
-- Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Klink/Klang/Klinklang.
+- Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Solrock/Klink/Klang/Klinklang.
 - Evergreen: User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
 - Swordmaster: Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
@@ -85,14 +88,14 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 # Updated Abilities
 
-- Trace: copies the opponent’s highest rated ability that the user doesn’t already have.
-- Receiver: copies fainted ally’s strongest ability that the user doesn’t already have.
+- Trace: copies the opponent’s highest rated ability that the user doesn’t already have in place of Trace.
+- Receiver: copies fainted ally’s highest rated ability that the user doesn’t already have.
 - Mummy: replaces all the contact attacker’s abilities with just the Mummy ability.
 - Wandering Spirit: replaces each respective ability with the attacker if hit by a contact move unless it is a banned ability.
 - Neutralizing Gas: Nullifies other Pokemon abilities unless it is a banned ability like Stance Change. User abilities still active.
 - Shell Armor/Battle Armor: Also reduces damage of neutral effective moves by 25%.
-- Sand Veil: Increases Sp.Def instead of evasion by one stage.
-- Snow Cloak: Increases Defense instead of evasion by one stage.
+- Sand Veil: Increases Sp.Def instead of evasion by one stage in Sandstorm.
+- Snow Cloak: Increases Defense instead of evasion by one stage in Hail.
 - Slow Start: Timer tuned down to 1 turn from 5.
 - Sweet Veil: Also ignores evasion boosts from target.
 - Corrosion: Also makes user's Poison moves super effective against Steel types.

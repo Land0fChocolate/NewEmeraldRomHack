@@ -4910,7 +4910,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_BRELOOM_3] = {
         .species = SPECIES_BRELOOM,
-        .moves = {MOVE_STONE_EDGE, MOVE_FOCUS_PUNCH, MOVE_ATTRACT, MOVE_SPORE},
+        .moves = {MOVE_ROCK_TOMB, MOVE_FOCUS_PUNCH, MOVE_ATTRACT, MOVE_SPORE},
         .item = ITEM_TOXIC_ORB,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT
