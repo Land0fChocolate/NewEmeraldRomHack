@@ -791,13 +791,14 @@ static const struct MenuAction MultichoiceList_WheresRayquaza[] =
     {gText_DontRemember},
 };
 
-static const struct MenuAction MultichoiceList_FallarborTentRules[] =
+static const struct MenuAction MultichoiceList_StatEVTrain[] =
 {
-    {gText_BattleTrainers},
-    {gText_BattleRules},
-    {gText_JudgeMind},
-    {gText_JudgeSkill},
-    {gText_JudgeBody},
+    {gText_HP4},
+    {gText_Attack3},
+    {gText_Defense3},
+    {gText_SpAtk4},
+    {gText_SpDef4},
+    {gText_Speed2},
     {gText_Exit},
 };
 
@@ -935,7 +936,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BATTLE_TOWER_FEELINGS]      = MULTICHOICE(MultichoiceList_BattleTowerFeelings),
     [MULTI_WHERES_RAYQUAZA]            = MULTICHOICE(MultichoiceList_WheresRayquaza),
     [MULTI_EVO_STONE]                  = MULTICHOICE(MultichoiceList_EvolutionStone),
-    [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
+    [MULTI_STAT_EV_TRAIN]              = MULTICHOICE(MultichoiceList_StatEVTrain),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
 };
 

@@ -83,7 +83,7 @@
       "x": 7,
       "y": 26,
       "elevation": 3,
-      "item": "ITEM_SUPER_ZINC",
+      "item": "ITEM_ZINC",
       "flag": "FLAG_HIDDEN_ITEM_CRUMBLING_GORGE_SUPER_ZINC"
     }
   ]

@@ -79,7 +79,7 @@
       "x": 3,
       "y": 4,
       "elevation": 3,
-      "item": "ITEM_SUPER_PROTEIN",
+      "item": "ITEM_PROTEIN",
       "flag": "FLAG_HIDDEN_ITEM_FORTREE_JUNGLE_AREA_3_SUPER_PROTEIN"
     }
   ]

@@ -2,14 +2,6 @@
 
 This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: https://github.com/rh-hideout/pokeemerald-expansion.
 
-# TODO
-
-- implement ability description label in the summary screen.
-- Rework aspects of the Battle Frontier. Change the Battle Palace to be themed around inverse type matchups. Rework the battle Pokemon list. 
-- Add methods to make training easier. Super vitamins, IV boosters and nature mints to be added and accessable.
-- Remove item use in battle and create a prompt for Poke Balls.
-- Add credits of people whos tutorials and work you have used in the game.
-
 # Changelog
 
 - Many post gen 3 features from pokeemerald Expansion are in this ROM.
@@ -30,6 +22,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
 - New shops and updates to existing shops to stock later gen items and new TMs.
 - Removed badge boosts
+- Pokemon IVs and EVs can be viewed in the summary screen by pressing the L and R buttons.
 - Wild Encounters adjusted.
 	- Both Latias and Latios are available roaming
 	- All Legendary and Mythical Pokemon can be repeatedly acquired.
@@ -40,22 +33,24 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
 - Map layout changes, including new areas to explore that have new Pokemon (post game).
-- Battle Frontier has its opponent Pokemon list updated with new Pokemon, new items and new moves.
-- Battle Palace is now inverse battle themed.
+- Battle Frontier changes
+	- Opponent Pokemon list updated with new Pokemon, new items and new moves.
+	- Battle Palace is now inverse battle themed.
+	- Battle Dome has its move scores updated.
+	- Battle Factory has its opponent tips updated.
 - Graphical updates to existing overworld sprites and environments.
 - New overworld sprites and graphics.
 - Various story changes. Includes aspects from ORAS.
 - Gym Leaders do more:
 	- Roxanne trades evolution stones for fossils.
 	- Brawly can give a random shard daily.
+	- Flannery can EV train one of your Pokemon daily.
 	- Tate and Liza grant access to Jirachi.
 - Item changes
 	- Quick Claw now increases speed by 10% when user is below 50% health.
 	- Vitamins give 20 EVs instead of 10.
 	- Prices of various items adjusted.
-- New Items:
-	- Super Vitamins (Adding 100 EVs per use)
-	- Nature Mints
+	- Nature Mints added
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
 
 # New Abilities

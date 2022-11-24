@@ -304,7 +304,137 @@ LavaridgeTown_EventScript_DeclineEgg::
 	end
 
 LavaridgeTown_EventScript_Flannery::
-	msgbox LavaridgeTown_Text_Flannery, MSGBOX_NPC
+	faceplayer
+	goto_if_unset FLAG_MET_FLANNERY_HOT_SPRINGS, LavaridgeTown_EventScript_FlanneryHotSpringsFirstMeet
+LavaridgeTown_EventScript_FlanneryPart2::
+	dotimebasedevents
+	goto_if_set FLAG_DAILY_FLANNERY_TRAINING, LavaridgeTown_EventScript_ComeBackTomorrow
+	msgbox LavaridgeTown_Text_WouldYouLikeTraining, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq LavaridgeTown_EventScript_FlanneryDeclined
+	msgbox LavaridgeTown_Text_FlanneryChoosePokemon, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	waitstate
+	compare VAR_0x8004, 255
+	goto_if_eq LavaridgeTown_EventScript_FlanneryDeclined
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	compare VAR_RESULT, SPECIES_EGG
+	goto_if_eq LavaridgeTown_EventScript_CantTrainEgg
+	multichoice 0, 0, MULTI_STAT_EV_TRAIN, FALSE
+	switch VAR_RESULT
+	case 0, LavaridgeTown_Eventscript_EVTrainHP
+	case 1, LavaridgeTown_Eventscript_EVTrainAttack
+	case 2, LavaridgeTown_Eventscript_EVTrainDefense
+	case 3, LavaridgeTown_Eventscript_EVTrainSpecialAttack
+	case 4, LavaridgeTown_Eventscript_EVTrainSpecialDefense
+	case 5, LavaridgeTown_Eventscript_EVTrainSpeed
+	case 6, LavaridgeTown_EventScript_FlanneryDeclined
+	goto LavaridgeTown_EventScript_FlanneryDeclined
+LavaridgeTown_Eventscript_FlanneryPart3::
+	msgbox LavaridgeTown_Text_TrainingTime, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playfanfare MUS_LEVEL_UP
+	waitfanfare
+	special EVTrainPokemon
+	fadescreen FADE_FROM_BLACK
+	special BufferMonNickname
+	msgbox LavaridgeTown_Text_DoneTraining, MSGBOX_DEFAULT
+	setflag FLAG_DAILY_FLANNERY_TRAINING
+	release
+	end
+
+LavaridgeTown_Eventscript_EVTrainHP::
+	setvar VAR_0x8009, STAT_HP
+	goto LavaridgeTown_Eventscript_FlanneryPart3
+	end
+
+LavaridgeTown_Eventscript_EVTrainAttack::
+	setvar VAR_0x8009, STAT_ATK
+	goto LavaridgeTown_Eventscript_FlanneryPart3
+	end
+
+LavaridgeTown_Eventscript_EVTrainDefense::
+	setvar VAR_0x8009, STAT_DEF
+	goto LavaridgeTown_Eventscript_FlanneryPart3
+	end
+
+LavaridgeTown_Eventscript_EVTrainSpeed::
+	setvar VAR_0x8009, STAT_SPEED
+	goto LavaridgeTown_Eventscript_FlanneryPart3
+	end
+
+LavaridgeTown_Eventscript_EVTrainSpecialAttack::
+	setvar VAR_0x8009, STAT_SPATK
+	goto LavaridgeTown_Eventscript_FlanneryPart3
+	end
+
+LavaridgeTown_Eventscript_EVTrainSpecialDefense::
+	setvar VAR_0x8009, STAT_SPDEF
+	goto LavaridgeTown_Eventscript_FlanneryPart3
+	end
+
+LavaridgeTown_EventScript_FlanneryHotSpringsFirstMeet::
+	msgbox LavaridgeTown_Text_FlanneryCanTrainYourPokemon, MSGBOX_DEFAULT
+	setflag FLAG_MET_FLANNERY_HOT_SPRINGS
+	goto LavaridgeTown_EventScript_FlanneryPart2
+	end
+
+LavaridgeTown_Text_FlanneryCanTrainYourPokemon:
+	.string "Flannery: Hey, {PLAYER}.\p"
+	.string "I didn't know you liked the hot springs\n"
+	.string "too, or did you come over to see me?\p"
+	.string "Bathing here isn't just for relaxation,\n"
+	.string "it's a key part of my training.\p"
+	.string "Your Pokemon can join in too, I have\n"
+	.string "some free space.$"
+
+LavaridgeTown_Text_WouldYouLikeTraining:
+	.string "Flannery: So… how about it,\n"
+	.string "would you like me to train one of your\l"
+	.string "Pokémon's effort values?$"
+
+LavaridgeTown_Text_FlanneryChoosePokemon:
+	.string "All right!\n"
+	.string "Which Pokémon needs training?$"
+
+LavaridgeTown_Text_TrainingTime:
+	.string "Yes! Let's get fired up!$"
+
+LavaridgeTown_Text_ComeBackTomorrow:
+	.string "Flannery: I like meeting the kind of\n"
+	.string "Pokémon you raise, {PLAYER}.\p"
+	.string "You should join me for training\n"
+	.string "tomorrow as well, if you'd care to\l"
+	.string "join me.$"
+
+LavaridgeTown_Text_FlanneryDeclined:
+	.string "Flannery: Oh… okay, we can do it some\n"
+	.string "other time.$"
+
+LavaridgeTown_Text_CantTrainEgg:
+	.string "Flannery: Umm… this is an egg.\n"
+	.string "I can't train it.$"
+
+LavaridgeTown_Text_DoneTraining:
+	.string "All right, that was cool,\n"
+	.string "oh I mean- hot!\p"
+	.string "Your Pokémon did great, and is looking\n"
+	.string "stronger.$"
+
+LavaridgeTown_EventScript_ComeBackTomorrow::
+	msgbox LavaridgeTown_Text_ComeBackTomorrow, MSGBOX_DEFAULT
+	release
+	end
+
+LavaridgeTown_EventScript_FlanneryDeclined::
+	msgbox LavaridgeTown_Text_FlanneryDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+LavaridgeTown_EventScript_CantTrainEgg::
+	msgbox LavaridgeTown_Text_CantTrainEgg, MSGBOX_DEFAULT
+	release
 	end
 
 LavaridgeTown_EventScript_TownSign::

@@ -176,7 +176,7 @@
       "x": 22,
       "y": 17,
       "elevation": 3,
-      "item": "ITEM_SUPER_CALCIUM",
+      "item": "ITEM_CALCIUM",
       "flag": "FLAG_HIDDEN_ITEM_MAUVILLE_MEADOW_SUPER_CALCIUM"
     }
   ]

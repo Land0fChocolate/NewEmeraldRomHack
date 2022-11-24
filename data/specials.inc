@@ -538,3 +538,4 @@ gSpecials::
 	def_special TrySpecialOverworldEvo
 	def_special SetTotemBoost
 	def_special GroomPokemon
+	def_special EVTrainPokemon
