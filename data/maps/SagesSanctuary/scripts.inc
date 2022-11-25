@@ -1,10 +1,24 @@
+.set LOCALID_SUICUNE, 1
+
 SagesSanctuary_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, SagesSantuary_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, SagesSanctuary_OnTransition
 	.byte 0
+
+SagesSantuary_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, SagesSantuary_EventScript_TryRemoveSuicune
+	end
 
 SagesSanctuary_OnTransition:
 	setflag FLAG_LANDMARK_SAGES_SANCTUARY
 	end
+
+SagesSantuary_EventScript_TryRemoveSuicune::
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_ne Common_EventScript_NopReturn
+	removeobject LOCALID_SUICUNE
+	return
 
 SagesSanctuary_Eventscript_Suicune::
 	lock
@@ -26,11 +40,13 @@ SagesSanctuary_Eventscript_Suicune::
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq SagesSanctuary_EventScript_RanFromSuicune
 	setflag FLAG_DEFEATED_SUICUNE
+	setflag FLAG_HIDE_SUICUNE
 	release
 	end
 
 SagesSanctuary_EventScript_DefeatedSuicune::
 	setflag FLAG_DEFEATED_SUICUNE
+	setflag FLAG_HIDE_SUICUNE
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 

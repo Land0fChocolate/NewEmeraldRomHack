@@ -482,14 +482,14 @@
 #define FLAG_DEFEATED_ELECTRODE_2_AQUA_HIDEOUT 0x1C5
 #define FLAG_DEFEATED_SUDOWOODO              0x1C6
 #define FLAG_DEFEATED_MEW                    0x1C7
-#define FLAG_DEFEATED_LATIAS_OR_LATIOS       0x1C8 // unused
-#define FLAG_CAUGHT_LATIAS_OR_LATIOS         0x1C9 // unused
+#define FLAG_HIDE_ARTICUNO                   0x1C8
+#define FLAG_HIDE_ZAPDOS                     0x1C9
 #define FLAG_CAUGHT_MEW                      0x1CA
 #define FLAG_DEFEATED_CELEBI                 0x1CB
 #define FLAG_DEFEATED_JIRACHI                0x1CC
 #define FLAG_DEFEATED_LATIAS                 0x1CD
 #define FLAG_DEFEATED_LATIOS                 0x1CE
-#define FLAG_MET_SCOTT_IN_EVERGRANDE         0x1CF // unused
+#define FLAG_HIDE_MOLTRES                    0x1CF
 #define FLAG_MET_SCOTT_ON_SS_TIDAL           0x1D0
 #define FLAG_SCOTT_GIVES_BATTLE_POINTS       0x1D1
 #define FLAG_COLLECTED_ALL_GOLD_SYMBOLS      0x1D2
@@ -1278,9 +1278,9 @@
 #define FLAG_UNUSED_0x4D3                                           0x4D3 // Unused Flag
 #define FLAG_UNUSED_0x4D4                                           0x4D4 // Unused Flag
 #define FLAG_UNUSED_0x4D5                                           0x4D5 // Unused Flag
-#define FLAG_UNUSED_0x4D6                                           0x4D6 // Unused Flag
-#define FLAG_UNUSED_0x4D7                                           0x4D7 // Unused Flag
-#define FLAG_UNUSED_0x4D8                                           0x4D8 // Unused Flag
+#define FLAG_HIDE_RAIKOU                                            0x4D6
+#define FLAG_HIDE_ENTEI                                             0x4D7
+#define FLAG_HIDE_SUICUNE                                           0x4D8
 #define FLAG_DISABLE_CATCHING                                       0x4D9 // If TRUE, Player cannot catch Pokemon with Poke Balls.
 #define FLAG_SMART_WILD_AI                                          0x4DA // battle config flag
 #define FLAG_HIDE_BATTLE_TENT_BEAUTY                                0x4DB
