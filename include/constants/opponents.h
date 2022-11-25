@@ -707,8 +707,8 @@
 #define TRAINER_RHETT                       703
 #define TRAINER_TYRON                       704
 #define TRAINER_CELINA                      705
-#define TRAINER_BIANCA                      706 //unused
-#define TRAINER_HAYDEN                      707 //unused
+#define TRAINER_ALI_AND_LILY                706
+#define TRAINER_HAYDEN                      707
 #define TRAINER_SOPHIE                      708
 #define TRAINER_COBY                        709
 #define TRAINER_LAWRENCE                    710
@@ -752,7 +752,7 @@
 #define TRAINER_KYRA                        748
 #define TRAINER_JAIDEN                      749
 #define TRAINER_ALIX                        750
-#define TRAINER_HELENE                      751 //unused
+#define TRAINER_RITA_AND_SAM                751
 #define TRAINER_MARLENE                     752 //unused, but data remains
 #define TRAINER_DEVAN                       753
 #define TRAINER_JOHNSON                     754
@@ -827,7 +827,7 @@
 #define TRAINER_PABLO_5                     823
 #define TRAINER_JAYCE                       824
 #define TRAINER_WILSON                      825
-#define TRAINER_KOJI_4                      826 //unused
+#define TRAINER_GABRIELLE                   826
 #define TRAINER_KOJI_5                      827 //unused
 #define TRAINER_CRISTIN_2                   828
 #define TRAINER_CRISTIN_3                   829

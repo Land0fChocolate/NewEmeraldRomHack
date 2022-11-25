@@ -4842,6 +4842,37 @@ Wildwoods_Area6_Text_MeggiPostBattle:
 	.string "where time moves more slowly in\l$"
 	.string "mystical places.$"
 
+Wildwoods_Area7_Text_AliIntro:
+	.string "My wife and I are out for a pleasant\n"
+	.string "stroll. Would you care to join us?$"
+
+Wildwoods_Area7_Text_AliDefeat:
+	.string "So much energy…$"
+
+Wildwoods_Area7_Text_AliNotEnoughMons:
+	.string "Hmm… it's quite brave of you to travel\n"
+	.string "with just one Pokémon.$"
+
+Wildwoods_Area7_Text_AliPostBattle:
+	.string "Very well, Lily. Let's see if we can\n"
+	.string "burn some of that energy of yours.$"
+
+Wildwoods_Area7_Text_LilyIntro:
+	.string "A trainer!\n"
+	.string "Now this walk won't be so dull!$"
+
+Wildwoods_Area7_Text_LilyDefeat:
+	.string "Good show, young one.$"
+
+Wildwoods_Area7_Text_LilyNotEnoughMons:
+	.string "You should get some more Pokémon, dear.\n"
+	.string "It would be more enjoyable to travel.$"
+
+Wildwoods_Area7_Text_LilyPostBattle:
+	.string "Ali, let's find another Trainer.\n"
+	.string "to challenge. There's bound to be more\l"
+	.string "wandering lost in here. Kekekeke.$"
+
 FallarborWasteland_Text_KatIntro:
 	.string "Kat: Ohoho! What do we have here?\n"
 	.string "A new sparring buddy?\p"
@@ -4890,11 +4921,54 @@ FallarborWasteland_Text_GeordiPostBattle:
 	.string "Being in the middle of nowhere is\l"
 	.string "perfect for me.$"
 
+FallarborWasteland_Text_HaydenIntro:
+	.string "I'm raising a brand new batch of\n"
+	.string "Pokémon. Want to have a look?$"
+
+FallarborWasteland_Text_HaydenDefeat:
+	.string "You're better at raising Pokémon than\n"
+	.string "I am.$"
+
+FallarborWasteland_Text_HaydenPostBattle:
+	.string "Have you ever thought about becoming a\n"
+	.string "Pokémon Breeder?$"
+
+MauvilleMeadow_Text_RitaIntro:
+	.string "Excuse me. You're in the way of our\n"
+	.string "swimming lessons.$"
+
+MauvilleMeadow_Text_RitaDefeat:
+	.string "You definitely don't need lessons in\n"
+	.string "battling.$"
+
+MauvilleMeadow_Text_RitaNotEnoughMons:
+	.string "Excuse me. You're in the way of our\n"
+	.string "swimming lessons.$"
+
+MauvilleMeadow_Text_RitaPostBattle:
+	.string "Are you riding on your Pokémon because\n"
+	.string "you don't know how to swim?\l"
+	.string "I can give swimming lessons to you too.$"
+
+MauvilleMeadow_Text_SamIntro:
+	.string "I'm not good at swimming, but I'm good\n"
+	.string "at battling!$"
+
+MauvilleMeadow_Text_SamDefeat:
+	.string "Aww, do I need battle lessons too?$"
+
+MauvilleMeadow_Text_SamNotEnoughMons:
+	.string "Why do you only have one Pokémon?\n"
+	.string "I wanna battle!$"
+
+MauvilleMeadow_Text_SamPostBattle:
+	.string "My big sis is teaching me how to swim!$"
+
 MauvilleMeadow_Text_AlistairIntro:
 	.string "Take a good look at my moustache!\n"
-	.string "I have groomed and oiled it every day!\l"
-	.string "You will find no finer facial hair in\l"
-	.string "Hoenn!$"
+	.string "I have groomed and oiled it every day!\p"
+	.string "You will find no finer facial hair in\n"
+	.string "all of Hoenn!$"
 
 MauvilleMeadow_Text_AlistairDefeat:
 	.string "Hmpf! No appreciation!$"
@@ -4924,15 +4998,15 @@ FortreeJungle_Area1_Text_ZukoDefeat:
 FortreeJungle_Area1_Text_ZukoPostBattle:
 	.string "Buh-bye!$"
 
-FortreeJungle_Area1_Text_JossIntro:
+FortreeJungle_Area2_Text_JossIntro:
 	.string "Fufufu!\n"
 	.string "This jungle is a paradise! So many rare\l"
 	.string "Pokémon just for me!$"
 
-FortreeJungle_Area1_Text_JossDefeat:
+FortreeJungle_Area2_Text_JossDefeat:
 	.string "I need more.$"
 
-FortreeJungle_Area1_Text_JossPostBattle:
+FortreeJungle_Area2_Text_JossPostBattle:
 	.string "My collection is not complete until I\n"
 	.string "can get a Chansey. I saw one running\l"
 	.string "around but they're surprisingly\l"

@@ -16,6 +16,16 @@ MauvilleMeadow_EventScript_Natasha::
 	msgbox MauvilleMeadow_Text_NatashaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+MauvilleMeadow_EventScript_Rita::
+	trainerbattle_double TRAINER_RITA_AND_SAM, MauvilleMeadow_Text_RitaIntro, MauvilleMeadow_Text_RitaDefeat, MauvilleMeadow_Text_RitaNotEnoughMons
+	msgbox MauvilleMeadow_Text_RitaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+MauvilleMeadow_EventScript_Sam::
+	trainerbattle_double TRAINER_RITA_AND_SAM, MauvilleMeadow_Text_SamIntro, MauvilleMeadow_Text_SamDefeat, MauvilleMeadow_Text_SamNotEnoughMons
+	msgbox MauvilleMeadow_Text_SamPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 MauvilleMeadow_Eventscript_Shelly::
 	msgbox MauvilleMeadow_Text_Shelly, MSGBOX_NPC
 	call_if_unset FLAG_MET_SHELLY_MAUVILLE_MEADOW, MauvilleMeadow_Eventscript_SetMeetFlag

@@ -10331,6 +10331,20 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Alix},
     },
 
+    [TRAINER_RITA_AND_SAM] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_SIS_AND_BRO,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SIS_AND_BRO,
+        .trainerName = _("Rita & Sam"),
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_RitaAndSam),
+        .party = {.NoItemDefaultMoves = sParty_RitaAndSam},
+    },
+
     [TRAINER_MARLENE] =
     {
         .partyFlags = 0,
@@ -11157,6 +11171,20 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Wilson},
     },
 
+    [TRAINER_GABRIELLE] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerName = _("Gabrielle"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_Gabrielle),
+        .party = {.NoItemDefaultMoves = sParty_Gabrielle},
+    },
+
     [TRAINER_PABLO_2] =
     {
         .partyFlags = 0,
@@ -11617,6 +11645,34 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_Celina),
         .party = {.NoItemDefaultMoves = sParty_Celina},
+    },
+
+    [TRAINER_ALI_AND_LILY] =
+    {
+        .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .trainerClass = TRAINER_CLASS_OLD_COUPLE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_OLD_COUPLE,
+        .trainerName = _("Ali & Lily"),
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_AliAndLily),
+        .party = {.NoItemCustomMoves = sParty_AliAndLily},
+    },
+
+    [TRAINER_HAYDEN] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
+        .trainerName = _("Hayden"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .partySize = ARRAY_COUNT(sParty_Hayden),
+        .party = {.NoItemDefaultMoves = sParty_Hayden},
     },
 
     [TRAINER_DEANDRE] =
