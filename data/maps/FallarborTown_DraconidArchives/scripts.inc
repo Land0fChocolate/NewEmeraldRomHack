@@ -220,23 +220,43 @@ DraconidArchives_EventScript_ResetDefeatedLegendaries::
 	clearflag FLAG_DEFEATED_ZAPDOS
 	clearflag FLAG_DEFEATED_MOLTRES
 	clearflag FLAG_DEFEATED_MEW
+	clearflag FLAG_HIDE_MEW
 	clearflag FLAG_DEFEATED_RAIKOU
 	clearflag FLAG_DEFEATED_ENTEI
 	clearflag FLAG_DEFEATED_SUICUNE
 	clearflag FLAG_DEFEATED_LUGIA
+	clearflag FLAG_HIDE_LUGIA
 	clearflag FLAG_DEFEATED_HO_OH
+	clearflag FLAG_HIDE_HO_OH
 	clearflag FLAG_DEFEATED_CELEBI
-	clearflag FLAG_DEFEATED_LATIAS
-	clearflag FLAG_DEFEATED_LATIOS
+	call_if_set FLAG_DEFEATED_LATIAS, DraconidArchives_EventScript_ResetLatias
+	call_if_set FLAG_DEFEATED_LATIOS, DraconidArchives_EventScript_ResetLatios
 	clearflag FLAG_DEFEATED_REGIROCK
+	clearflag FLAG_HIDE_REGIROCK
 	clearflag FLAG_DEFEATED_REGICE
+	clearflag FLAG_HIDE_REGICE
 	clearflag FLAG_DEFEATED_REGISTEEL
+	clearflag FLAG_HIDE_REGISTEEL
 	clearflag FLAG_DEFEATED_KYOGRE
+	clearflag FLAG_HIDE_MARINE_CAVE_KYOGRE
 	clearflag FLAG_DEFEATED_GROUDON
+	clearflag FLAG_HIDE_TERRA_CAVE_GROUDON
 	clearflag FLAG_DEFEATED_RAYQUAZA
+	clearflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA
 	clearflag FLAG_DEFEATED_DEOXYS
 	clearflag FLAG_BATTLED_DEOXYS
+	clearflag FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE
 	call_if_set FLAG_PLACED_WISH_TAG, DraconidArchives_EventScript_ResetJirachi
+	return
+
+DraconidArchives_EventScript_ResetLatias::
+	special InitNewRoamerLatias
+	clearflag FLAG_DEFEATED_LATIAS
+	return
+
+DraconidArchives_EventScript_ResetLatios::
+	special InitNewRoamerLatios
+	clearflag FLAG_DEFEATED_LATIOS
 	return
 
 DraconidArchives_EventScript_ResetJirachi::

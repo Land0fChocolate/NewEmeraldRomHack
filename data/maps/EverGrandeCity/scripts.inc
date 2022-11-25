@@ -30,12 +30,12 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 EverGrandeCity_EventScript_Leaf::
 	cleartrainerflag TRAINER_LEAF
 	trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
-	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_AUTOCLOSE
+	closemessage
 	end
 
 EverGrandeCity_EventScript_TestAbra2::
-	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
-	givemon SPECIES_WURMPLE, 5, ITEM_NONE
+	faceplayer
+	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 EverGrandeCity_Text_LeafIntro:
@@ -46,6 +46,18 @@ EverGrandeCity_Text_LeafDefeated:
 
 EverGrandeCity_Text_LeafPostBattle:
 	.string "Remove me!$"
+
+EverGrandeCity_Text_Debug1:
+	.string "Roamer 1 location map group is\n"
+	.string "{STR_VAR_1}.\p"
+	.string "Roamer 1 location map num is\n"
+	.string "{STR_VAR_2}.$"
+
+EverGrandeCity_Text_Debug2:
+	.string "Roamer 2 location map group is\n"
+	.string "{STR_VAR_1}.\p"
+	.string "Roamer 2 location map num is\n"
+	.string "{STR_VAR_2}.$"
 
 EverGrandeCity_EventScript_WomanInBattle::
 	locktarget

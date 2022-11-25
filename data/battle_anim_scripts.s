@@ -3536,7 +3536,6 @@ GunkShotImpact:
 	createsprite gGunkShotImpactSpriteTemplate, 4, 4, 0, 15, 1, 1
 	createsprite gGunkShotImpactSpriteTemplate, 4, 4, 0, -15, 1, 1
 	return
-
 SetGunkShotBG:
 	fadetobg BG_GUNK_SHOT
 	goto SetHighSpeedBgFade

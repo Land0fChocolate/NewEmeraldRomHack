@@ -5276,13 +5276,19 @@ static void ReturnFromBattleToOverworld(void)
         {
             UpdateRoamerHPStatus(&gSaveBlock1Ptr->roamer1, &gEnemyParty[0]);
             if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT)
+            {
                 SetRoamerInactive(&gSaveBlock1Ptr->roamer1);
+                FlagSet(FLAG_DEFEATED_LATIAS);
+            }
         }
         if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES) == SPECIES_LATIOS)
         {
             UpdateRoamerHPStatus(&gSaveBlock1Ptr->roamer2, &gEnemyParty[0]);
             if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT)
+            {
                 SetRoamerInactive(&gSaveBlock1Ptr->roamer2);
+                FlagSet(FLAG_DEFEATED_LATIOS);
+            }
         }
     }
 

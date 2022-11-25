@@ -480,7 +480,8 @@ PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV::
 	call_if_eq PlayersHouse_1F_EventScript_MomApproachPlayerAfterTVMale
 	compare VAR_0x8008, FEMALE
 	call_if_eq PlayersHouse_1F_EventScript_MomApproachPlayerAfterTVFemale
-	special InitRoamers
+	special InitNewRoamerLatias
+	special InitNewRoamerLatios
 	msgbox PlayersHouse_1F_Text_StillUnknownPokemon, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 4

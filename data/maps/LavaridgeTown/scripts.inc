@@ -380,6 +380,33 @@ LavaridgeTown_EventScript_FlanneryHotSpringsFirstMeet::
 	goto LavaridgeTown_EventScript_FlanneryPart2
 	end
 
+LavaridgeTown_EventScript_ComeBackTomorrow::
+	msgbox LavaridgeTown_Text_ComeBackTomorrow, MSGBOX_DEFAULT
+	release
+	end
+
+LavaridgeTown_EventScript_FlanneryDeclined::
+	msgbox LavaridgeTown_Text_FlanneryDeclined, MSGBOX_DEFAULT
+	release
+	end
+
+LavaridgeTown_EventScript_CantTrainEgg::
+	msgbox LavaridgeTown_Text_CantTrainEgg, MSGBOX_DEFAULT
+	release
+	end
+
+LavaridgeTown_EventScript_TownSign::
+	msgbox LavaridgeTown_Text_TownSign, MSGBOX_SIGN
+	end
+
+LavaridgeTown_EventScript_GymSign::
+	msgbox LavaridgeTown_Text_GymSign, MSGBOX_SIGN
+	end
+
+LavaridgeTown_EventScript_HerbShopSign::
+	msgbox LavaridgeTown_Text_HerbShopSign, MSGBOX_SIGN
+	end
+
 LavaridgeTown_Text_FlanneryCanTrainYourPokemon:
 	.string "Flannery: Hey, {PLAYER}.\p"
 	.string "I didn't know you liked the hot springs\n"
@@ -421,33 +448,6 @@ LavaridgeTown_Text_DoneTraining:
 	.string "oh I mean- hot!\p"
 	.string "Your Pokémon did great, and is looking\n"
 	.string "stronger.$"
-
-LavaridgeTown_EventScript_ComeBackTomorrow::
-	msgbox LavaridgeTown_Text_ComeBackTomorrow, MSGBOX_DEFAULT
-	release
-	end
-
-LavaridgeTown_EventScript_FlanneryDeclined::
-	msgbox LavaridgeTown_Text_FlanneryDeclined, MSGBOX_DEFAULT
-	release
-	end
-
-LavaridgeTown_EventScript_CantTrainEgg::
-	msgbox LavaridgeTown_Text_CantTrainEgg, MSGBOX_DEFAULT
-	release
-	end
-
-LavaridgeTown_EventScript_TownSign::
-	msgbox LavaridgeTown_Text_TownSign, MSGBOX_SIGN
-	end
-
-LavaridgeTown_EventScript_GymSign::
-	msgbox LavaridgeTown_Text_GymSign, MSGBOX_SIGN
-	end
-
-LavaridgeTown_EventScript_HerbShopSign::
-	msgbox LavaridgeTown_Text_HerbShopSign, MSGBOX_SIGN
-	end
 
 LavaridgeTown_Text_MayNiceBadgesTakeThis:
 	.string "May: {PLAYER}{KUN}! Long time no see!\p"
