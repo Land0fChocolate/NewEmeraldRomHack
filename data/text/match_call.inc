@@ -783,7 +783,7 @@ MatchCall_PersonalizedText13::
 MatchCall_PersonalizedText14::
 	.string "Oh, it's {STR_VAR_1}!\p"
 	.string "I was just thinking I'm getting\n"
-	.string "bored of the ABANDONED SHIP.\p"
+	.string "bored of the Abandoned Ship.\p"
 	.string "But since I'm already here,\n"
 	.string "and I want to beat you once,\l"
 	.string "I'll be sticking around a bit more.\p"

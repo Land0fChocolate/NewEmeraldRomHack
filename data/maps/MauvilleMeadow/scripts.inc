@@ -68,7 +68,8 @@ MauvilleMeadow_Text_FlowerAqua:
 	.string "Huh?!\p"
 	.string "I'm not goofing off!\p"
 	.string "I'm err… analyzing the flowers here.\n"
-	.string "All botanist-like. Yeah!$"
+	.string "All botanist-like.\l"
+	.string "Yeah!$"
 
 MauvilleMeadow_Text_ObserveAquaM:
 	.string "Those fissures in the land are a feature\n"

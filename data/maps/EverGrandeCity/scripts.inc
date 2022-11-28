@@ -28,14 +28,23 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 
 @TODO: remove this. This is a test trainer.
 EverGrandeCity_EventScript_Leaf::
-	cleartrainerflag TRAINER_LEAF
-	trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
-	closemessage
+	@cleartrainerflag TRAINER_LEAF
+	@trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
+	goto_if_set FLAG_BIRCH_CALL_NEW_AREAS_REPORT, EverGrandeCity_EventScript_LeafDebug1
+	end
+
+EverGrandeCity_EventScript_LeafDebug1::
+	msgbox EverGrandeCity_Text_Debug1, MSGBOX_NPC
 	end
 
 EverGrandeCity_EventScript_TestAbra2::
-	faceplayer
-	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_AUTOCLOSE
+	compare VAR_NEW_AREA_EXPLORE, 5
+	goto_if_eq EverGrandeCity_EventScript_LeafDebug2
+	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
+	end
+
+EverGrandeCity_EventScript_LeafDebug2::
+	msgbox EverGrandeCity_Text_Debug2, MSGBOX_NPC
 	end
 
 EverGrandeCity_Text_LeafIntro:
@@ -48,16 +57,10 @@ EverGrandeCity_Text_LeafPostBattle:
 	.string "Remove me!$"
 
 EverGrandeCity_Text_Debug1:
-	.string "Roamer 1 location map group is\n"
-	.string "{STR_VAR_1}.\p"
-	.string "Roamer 1 location map num is\n"
-	.string "{STR_VAR_2}.$"
+	.string "New areas report call flag is set$"
 
 EverGrandeCity_Text_Debug2:
-	.string "Roamer 2 location map group is\n"
-	.string "{STR_VAR_1}.\p"
-	.string "Roamer 2 location map num is\n"
-	.string "{STR_VAR_2}.$"
+	.string "New area explore var is 5!$"
 
 EverGrandeCity_EventScript_WomanInBattle::
 	locktarget

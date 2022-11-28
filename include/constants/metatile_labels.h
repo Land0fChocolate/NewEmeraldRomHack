@@ -243,10 +243,13 @@
 #define METATILE_General_RedCaveOpen                     0x1A1
 #define METATILE_General_ReflectiveWater                 0x0A1
 #define METATILE_General_RockFloor                       0x071
+#define METATILE_General_RockFloor_CliffTop              0x06C
 #define METATILE_General_RockWallEast_Ocean              0x17C
 #define METATILE_General_RockWallWest_Ocean              0x17A
 #define METATILE_General_RockWall_BottomLeftCorner       0x07B
 #define METATILE_General_RockWall_BottomRightCorner      0x07D
+#define METATILE_General_RockWall_Corner_TopLeft         0x093
+#define METATILE_General_RockWall_Corner_TopRight        0x094
 #define METATILE_General_RockWall_EastFace               0x075
 #define METATILE_General_RockWall_GrassBase              0x079
 #define METATILE_General_RockWall_RockBase               0x07C

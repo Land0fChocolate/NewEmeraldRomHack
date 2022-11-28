@@ -5212,7 +5212,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Zuko[] = {
     {
     .iv = 100,
     .lvl = 50,
-    .species = SPECIES_PRIMEAPE,
+    .species = SPECIES_ARIADOS,
     },
     {
     .iv = 100,
@@ -5224,12 +5224,12 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Zuko[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_Ryu[] = {
     {
     .iv = 100,
-    .lvl = 52,
+    .lvl = 51,
     .species = SPECIES_ARBOK,
     },
     {
     .iv = 100,
-    .lvl = 52,
+    .lvl = 51,
     .species = SPECIES_DRAGONAIR,
     }
 };
@@ -5237,12 +5237,12 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Ryu[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_Joss[] = {
     {
     .iv = 100,
-    .lvl = 52,
+    .lvl = 51,
     .species = SPECIES_EXEGGUTOR,
     },
     {
     .iv = 100,
-    .lvl = 52,
+    .lvl = 51,
     .species = SPECIES_LICKILICKY,
     }
 };

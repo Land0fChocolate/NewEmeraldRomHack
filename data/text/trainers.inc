@@ -4811,7 +4811,8 @@ Wildwoods_Area4_Text_CelinaIntro:
 	.string "Though, I can spare some time to battle!$"
 
 Wildwoods_Area4_Text_CelinaDefeated:
-	.string "At least I've gathered plenty of cotton.$"
+	.string "At least I've gathered plenty of\n"
+	.string "cotton.$"
 
 Wildwoods_Area4_Text_CelinaPostBattle:
 	.string "Jumpluff's cotton makes for some\n"
@@ -4839,7 +4840,7 @@ Wildwoods_Area6_Text_MeggiDefeated:
 Wildwoods_Area6_Text_MeggiPostBattle:
 	.string "I'm just kidding about the age thing.\p"
 	.string "Being here reminded me of fairy tales\n"
-	.string "where time moves more slowly in\l$"
+	.string "where time moves more slowly in\l"
 	.string "mystical places.$"
 
 Wildwoods_Area7_Text_AliIntro:
@@ -4999,9 +5000,9 @@ FortreeJungle_Area1_Text_ZukoPostBattle:
 	.string "Buh-bye!$"
 
 FortreeJungle_Area2_Text_JossIntro:
-	.string "Fufufu!\n"
-	.string "This jungle is a paradise! So many rare\l"
-	.string "Pokémon just for me!$"
+	.string "Fufufu!\p"
+	.string "This jungle is a paradise!\n"
+	.string "So many rare Pokémon just for me!$"
 
 FortreeJungle_Area2_Text_JossDefeat:
 	.string "I need more.$"
