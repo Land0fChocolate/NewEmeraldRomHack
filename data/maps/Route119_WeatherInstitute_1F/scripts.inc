@@ -59,7 +59,42 @@ Route119_WeatherInstitute_1F_EventScript_StudyingRain::
 	end
 
 Route119_WeatherInstitute_1F_EventScript_InstituteWorker2::
-	msgbox Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Route119_WeatherInstitute_1F_EventScript_InstituteWorker2PreHallOfFame
+	dotimebasedevents
+	goto_if_set FLAG_DAILY_CASTFORM, Route119_WeatherInstitute_1F_EventScript_BreedingMoreCastform
+	msgbox Route119_WeatherInstitute_1F_Text_WouldYouLikeACastform, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Route119_WeatherInstitute_1F_EventScript_DeclinedCastform
+	setvar VAR_TEMP_1, SPECIES_CASTFORM
+	givemon SPECIES_CASTFORM, 30, ITEM_NONE
+	compare VAR_RESULT, 0
+	goto_if_eq Route119_WeatherInstitute_1F_EventScript_ReceiveCastform
+	compare VAR_RESULT, 1
+	goto_if_eq Route119_WeatherInstitute_1F_EventScript_ReceiveCastform
+	goto Common_EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+Route119_WeatherInstitute_1F_EventScript_InstituteWorker2PreHallOfFame::
+	msgbox Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo, MSGBOX_DEFAULT
+	release
+	end
+
+Route119_WeatherInstitute_1F_EventScript_BreedingMoreCastform::
+	msgbox Route119_WeatherInstitute_1F_Text_BreedingMoreCastform, MSGBOX_DEFAULT
+	release
+	end
+
+Route119_WeatherInstitute_1F_EventScript_DeclinedCastform::
+	msgbox Route119_WeatherInstitute_1F_Text_DeclinedCastform, MSGBOX_DEFAULT
+	release
+	end
+
+Route119_WeatherInstitute_1F_EventScript_ReceiveCastform::
+	setflag FLAG_DAILY_CASTFORM
+	release
 	end
 
 Route119_WeatherInstitute_1F_EventScript_Bed::
@@ -138,6 +173,20 @@ Route119_WeatherInstitute_1F_Text_WhatWereAquasUpTo:
 	.string "We've been saved by your actions!\p"
 	.string "What I don't understand is what on\n"
 	.string "earth the Aquas were up to.$"
+
+Route119_WeatherInstitute_1F_Text_BreedingMoreCastform:
+	.string "Be sure to give the Castform a nice\n"
+	.string "home.$"
+
+Route119_WeatherInstitute_1F_Text_WouldYouLikeACastform:
+	.string "Somehow more Castform keep showing up.\n"
+	.string "Where do they keep coming from?\p"
+	.string "We don't need all of them. Perhaps you\n"
+	.string "would like to take one off our hands?$"
+
+Route119_WeatherInstitute_1F_Text_DeclinedCastform:
+	.string "That's okay. The Castform is quite\n"
+	.string "happy here anyway.$"
 
 Route119_WeatherInstitute_1F_Text_TakeRestInBed:
 	.string "There's a bed…\n"

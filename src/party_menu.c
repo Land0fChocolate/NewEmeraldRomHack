@@ -3727,8 +3727,8 @@ static void CursorCb_FieldMove(u8 taskId)
                 }
                 else
                 {
-                    //SetWarpDestination(MAP_GROUP(SPACE_AREA1), MAP_NUM(SPACE_AREA1), -1, 37, 35); //TODO:
-                    SetWarpDestination(MAP_GROUP(SPACE_AREA2), MAP_NUM(SPACE_AREA2), -1, 20, 12);
+                    SetWarpDestination(MAP_GROUP(SPACE_AREA1), MAP_NUM(SPACE_AREA1), -1, 37, 35);
+                    //SetWarpDestination(MAP_GROUP(SPACE_AREA2), MAP_NUM(SPACE_AREA2), -1, 20, 12); //TODO: kept for testing
                 }
                 ReturnToFieldFromDragonAscentSelect();
                 

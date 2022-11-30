@@ -5,13 +5,13 @@ gText_PkmnTransferredSomeonesPC::
 	.string "BOX “{STR_VAR_1}.”$"
 
 gText_PkmnTransferredLanettesPC::
-	.string "{STR_VAR_2} was transferred to\nLANETTE'S PC.\p"
+	.string "{STR_VAR_2} was transferred to\nLanette's PC.\p"
 	.string "It was placed in \n"
 	.string "BOX “{STR_VAR_1}.”$"
 
 gText_PkmnTransferredSomeonesPCBoxFull::
 	.string "BOX “{STR_VAR_3}” on\n"
-	.string "SOMEONE'S PC was full.\p"
+	.string "someone's PC was full.\p"
 	.string "{STR_VAR_2} was transferred to\n"
 	.string "BOX “{STR_VAR_1}.”$"
 

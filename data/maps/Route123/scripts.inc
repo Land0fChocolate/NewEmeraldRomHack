@@ -208,7 +208,7 @@ Route123_Text_BerryMastersHouse:
 Route123_Text_ItsAMeteorite:
 	.string "It's a meteorite that has been left\n"
 	.string "alone. You feel a radiating warmth\l"
-	.string "coming from it.\p"
+	.string "coming from it.$"
 
 Route123_Text_DeoxysChangedForm:
 	.string "The Deoxys in your party changed into\n"

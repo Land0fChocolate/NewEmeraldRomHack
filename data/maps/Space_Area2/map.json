@@ -44,7 +44,7 @@
   "warp_events": [
     {
       "x": 44,
-      "y": 17,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_SPACE_AREA1",
       "dest_warp_id": 0

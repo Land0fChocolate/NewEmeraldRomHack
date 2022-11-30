@@ -3219,7 +3219,7 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
                 break;
             case SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR:
                 AddTextPrinterParameterized2(0, 1, sFrontierExchangeCorner_EvoItemsDescriptions[selection], 0, NULL, 2, 1, 3);
-                ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Vitamins[selection]);
+                ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_EvoItems[selection]);
                 break;
             case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
                 AddTextPrinterParameterized2(0, 1, sFrontierExchangeCorner_VitaminsDescriptions[selection], 0, NULL, 2, 1, 3);

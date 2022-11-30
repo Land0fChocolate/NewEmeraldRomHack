@@ -1328,21 +1328,27 @@ BattleFrontier_ExchangeServiceCorner_Text_MetalCoatDesc::
 	.string "Evolves mantis and rock snake Pokémon\n"
 	.string "and powers up steel moves.\n"
 
+BattleFrontier_ExchangeServiceCorner_Text_GalaricaCuffDesc::
+	.string "Evolves a dopey Pokémon.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_GalaricaWreathDesc::
+	.string "Evolves a dopey Pokémon.$"
+
 BattleFrontier_ExchangeServiceCorner_Text_ProteinDesc::
 	.string "Raises the Attack stat of one\n"
 	.string "Pokémon.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_CalciumDesc::
-	.string "Raises the SP. ATK stat of one\n"
-	.string "Pokémon.$"
+	.string "Raises the Special Attack\n"
+	.string "stat of one Pokémon.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_IronDesc::
 	.string "Raises the Defense stat of one\n"
 	.string "Pokémon.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ZincDesc::
-	.string "Raises the SP. DEF stat of one\n"
-	.string "Pokémon.$"
+	.string "Raises the Special Defense\n"
+	.string "stat of one Pokémon.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_CarbosDesc::
 	.string "Raises the Speed stat of one\n"
@@ -1350,6 +1356,13 @@ BattleFrontier_ExchangeServiceCorner_Text_CarbosDesc::
 
 BattleFrontier_ExchangeServiceCorner_Text_HPUpDesc::
 	.string "Raises the HP of one Pokémon.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_PPUpDesc::
+	.string "Raises the PP of one move.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_PPMaxDesc::
+	.string "Raises the PP of one move to\n"
+	.string "max possible value.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc::
 	.string "A hold item that raises the\n"
@@ -1416,21 +1429,9 @@ BattleFrontier_ExchangeServiceCorner_Text_MuscleBandDesc::
 	.string "Raises the power of the holder's\n"
 	.string "physical moves by 10%.$"
 
-BattleFrontier_ExchangeServiceCorner_Text_HeatRockDesc::
-	.string "A hold item that extends the\n"
-	.string "duration of harsh sunlight weather.$"
-
-BattleFrontier_ExchangeServiceCorner_Text_DampRockDesc::
-	.string "A hold item that extends the\n"
-	.string "duration of heavy rain weather.$"
-
-BattleFrontier_ExchangeServiceCorner_Text_SmoothRockDesc::
-	.string "A hold item that extends the\n"
-	.string "duration of sandstorm weather.$"
-
-BattleFrontier_ExchangeServiceCorner_Text_IcyRockDesc::
-	.string "A hold item that extends the\n"
-	.string "duration of hail weather.$"
+BattleFrontier_ExchangeServiceCorner_Text_EvioliteDesc::
+	.string "A hold item that boosts defenses\n"
+	.string "of unevolved Pokémon.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_WeaknessPolicyDesc::
 	.string "Raises user attack stats by 2 stages\n"

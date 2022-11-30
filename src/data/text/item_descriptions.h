@@ -3677,10 +3677,10 @@ static const u8 sWishTagDesc[] = _(
     "used to write\n"
     "wishes.");
 
-static const u8 sLiftKeyDesc[] = _(
-    "An elevator key\n"
-    "used in Team\n"
-    "Rocket's Hideout.");
+static const u8 sSpaceBeltDesc[] = _(
+    "A high tech device\n"
+    "used to travel\n"
+    "through space.");
 
 static const u8 sSilphScopeDesc[] = _(
     "Silph Co's scope\n"

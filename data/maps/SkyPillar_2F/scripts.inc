@@ -1,7 +1,6 @@
 .set LOCALID_ZINNIA, 1
 
 SkyPillar_2F_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SkyPillar_2F_OnFrame
 	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_2F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, SkyPillar_2F_SetHoleWarp
@@ -9,7 +8,7 @@ SkyPillar_2F_MapScripts::
 
 SkyPillar_2F_OnFrame:
 	map_script_2 VAR_SKY_PILLAR_2F_TRIGGER, 0, SkyPillar_2F_EventScript_ZinniaTrigger
-	map_script_2 VAR_ICE_STEP_COUNT, 0, CaveHole_CheckFallDownHole
+	map_script_2 VAR_ICE_STEP_COUNT, 0, EventScript_FallDownHole
 	.2byte 0
 
 SkyPillar_2F_OnTransition:
@@ -55,7 +54,7 @@ SkyPillar_2F_Text_ZinniaStoryPart1:
 	.string "I'm sorry you had to see it like this.\n"
 	.string "The entire structure has been left in a\l"
 	.string "state of disrepair…\p"
-	.string "At least the paintings on the walls\n"
+	.string "At least the carvings on the walls\n"
 	.string "still remain. They tell of an important\l"
 	.string "tale in Hoenn history.\p"
 	.string "Thousands of years ago, my ancestors\n"

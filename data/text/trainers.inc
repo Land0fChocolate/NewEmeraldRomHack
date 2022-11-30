@@ -4594,7 +4594,8 @@ EverGrandeCity_BattleTent_Text_DeandrePostBattle:
 	.string "He'll tease me for it.$"
 
 EverGrandeCity_BattleTent_Text_MelinaIntro:
-	.string "Sure, whatever. You can battle me.$"
+	.string "Sure, whatever.\n"
+	.string "You can battle me.$"
 
 EverGrandeCity_BattleTent_Text_MelinaDefeated:
 	.string "Wow, you're like, really strong.$"

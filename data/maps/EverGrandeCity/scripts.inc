@@ -28,24 +28,23 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 
 @TODO: remove this. This is a test trainer.
 EverGrandeCity_EventScript_Leaf::
-	@cleartrainerflag TRAINER_LEAF
-	@trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
-	goto_if_set FLAG_BIRCH_CALL_NEW_AREAS_REPORT, EverGrandeCity_EventScript_LeafDebug1
-	end
-
-EverGrandeCity_EventScript_LeafDebug1::
-	msgbox EverGrandeCity_Text_Debug1, MSGBOX_NPC
+	cleartrainerflag TRAINER_LEAF
+	trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
 	end
 
 EverGrandeCity_EventScript_TestAbra2::
-	compare VAR_NEW_AREA_EXPLORE, 5
-	goto_if_eq EverGrandeCity_EventScript_LeafDebug2
+	faceplayer
+	@goto_if_set FLAG_HIDE_COZMOS_HOUSE_METEORITE, EverGrandeCity_EventScript_TestAbra2Set
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
+	clearflag FLAG_HIDE_COZMOS_HOUSE_METEORITE
 	end
 
-EverGrandeCity_EventScript_LeafDebug2::
-	msgbox EverGrandeCity_Text_Debug2, MSGBOX_NPC
+EverGrandeCity_EventScript_TestAbra2Set::
+	msgbox EverGrandeCity_Text_FlagIsSet, MSGBOX_NPC
 	end
+
+EverGrandeCity_Text_FlagIsSet:
+	.string "Cozmo house meteorite flag is set"
 
 EverGrandeCity_Text_LeafIntro:
 	.string "Hello, I'm here for testing!$"
@@ -55,12 +54,6 @@ EverGrandeCity_Text_LeafDefeated:
 
 EverGrandeCity_Text_LeafPostBattle:
 	.string "Remove me!$"
-
-EverGrandeCity_Text_Debug1:
-	.string "New areas report call flag is set$"
-
-EverGrandeCity_Text_Debug2:
-	.string "New area explore var is 5!$"
 
 EverGrandeCity_EventScript_WomanInBattle::
 	locktarget

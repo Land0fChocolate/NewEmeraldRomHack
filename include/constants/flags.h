@@ -1567,7 +1567,7 @@
 #define FLAG_DAILY_BATTLE_TENT_TRAINERS             (DAILY_FLAGS_START + 0x5)
 #define FLAG_DAILY_BRAWLY_SHARD                     (DAILY_FLAGS_START + 0x6)
 #define FLAG_DAILY_FLANNERY_TRAINING                (DAILY_FLAGS_START + 0x7)
-#define FLAG_UNUSED_0x928                           (DAILY_FLAGS_START + 0x8)  // Unused Flag
+#define FLAG_DAILY_CASTFORM                         (DAILY_FLAGS_START + 0x8)
 #define FLAG_DAILY_GROOM_DONE                       (DAILY_FLAGS_START + 0x9)
 #define FLAG_DAILY_PICKED_LOTO_TICKET               (DAILY_FLAGS_START + 0xA)
 #define FLAG_DAILY_ROUTE_114_RECEIVED_BERRY         (DAILY_FLAGS_START + 0xB)

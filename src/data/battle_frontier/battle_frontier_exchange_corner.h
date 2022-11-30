@@ -26,6 +26,27 @@ static const u16 sFrontierExchangeCorner_Decor2[] =
     0xFFFF 
 };
 
+static const u16 sFrontierExchangeCorner_EvoItems[] =
+{ 
+    ITEM_OVAL_STONE,
+    ITEM_REAPER_CLOTH,
+    ITEM_PROTECTOR,
+    ITEM_ELECTIRIZER,
+    ITEM_MAGMARIZER,
+    ITEM_DEEP_SEA_SCALE,
+    ITEM_DEEP_SEA_TOOTH,
+    ITEM_DRAGON_SCALE,
+    ITEM_UPGRADE,
+    ITEM_DUBIOUS_DISC,
+    ITEM_KINGS_ROCK,
+    ITEM_RAZOR_CLAW,
+    ITEM_RAZOR_FANG,
+    ITEM_METAL_COAT,
+    ITEM_GALARICA_CUFF,
+    ITEM_GALARICA_WREATH,
+    0xFFFF 
+};
+
 static const u16 sFrontierExchangeCorner_Vitamins[] =
 { 
     ITEM_PROTEIN, 
@@ -34,6 +55,8 @@ static const u16 sFrontierExchangeCorner_Vitamins[] =
     ITEM_ZINC, 
     ITEM_CARBOS, 
     ITEM_HP_UP, 
+    ITEM_PP_UP, 
+    ITEM_PP_MAX, 
     0xFFFF 
 };
 
@@ -56,10 +79,7 @@ static const u16 sFrontierExchangeCorner_HoldItems[] =
     ITEM_BLACK_SLUDGE,
     ITEM_WISE_GLASSES,
     ITEM_MUSCLE_BAND,
-    ITEM_HEAT_ROCK,
-    ITEM_DAMP_ROCK,
-    ITEM_SMOOTH_ROCK,
-    ITEM_ICY_ROCK,
+    ITEM_EVIOLITE,
     ITEM_WEAKNESS_POLICY,
     ITEM_BLUNDER_POLICY,
     ITEM_LEFTOVERS, 
@@ -116,6 +136,8 @@ static const u8 *const sFrontierExchangeCorner_EvoItemsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_RazorClawDesc,
     BattleFrontier_ExchangeServiceCorner_Text_RazorFangDesc,
     BattleFrontier_ExchangeServiceCorner_Text_MetalCoatDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_GalaricaCuffDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_GalaricaWreathDesc,
     gText_Exit
 };
 
@@ -127,6 +149,8 @@ static const u8 *const sFrontierExchangeCorner_VitaminsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_ZincDesc,
     BattleFrontier_ExchangeServiceCorner_Text_CarbosDesc,
     BattleFrontier_ExchangeServiceCorner_Text_HPUpDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_PPUpDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_PPMaxDesc,
     gText_Exit
 };
 
@@ -149,10 +173,7 @@ static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_BlackSludgeDesc,
     BattleFrontier_ExchangeServiceCorner_Text_WiseGlassesDesc,
     BattleFrontier_ExchangeServiceCorner_Text_MuscleBandDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_HeatRockDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_DampRockDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_SmoothRockDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_IcyRockDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_EvioliteDesc,
     BattleFrontier_ExchangeServiceCorner_Text_WeaknessPolicyDesc,
     BattleFrontier_ExchangeServiceCorner_Text_BlunderPolicyDesc,
     BattleFrontier_ExchangeServiceCorner_Text_LeftoversDesc,

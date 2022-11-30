@@ -121,7 +121,7 @@ static const u8 sTileBitAttributes[] =
     [MB_WATER_DOOR] = TILE_ATTRIBUTES(TRUE, TRUE, FALSE),
     [MB_WATER_SOUTH_ARROW_WARP] = TILE_ATTRIBUTES(TRUE, TRUE, FALSE),
     [MB_DEEP_SOUTH_WARP] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
-    [MB_UNUSED_6F] = TILE_ATTRIBUTES(TRUE, TRUE, FALSE),
+    [MB_FALLARBOR_WASTELAND_BRIDGE] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
     [MB_WARP_OR_BRIDGE] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_UNUSED_71] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
     [MB_ROUTE120_NORTH_BRIDGE_1] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
@@ -892,7 +892,8 @@ bool8 MetatileBehavior_IsFootprints(u8 metatileBehavior)
 bool8 MetatileBehavior_IsBridge(u8 metatileBehavior)
 {
     if ((metatileBehavior == MB_WARP_OR_BRIDGE || metatileBehavior == MB_UNUSED_71 || metatileBehavior == MB_ROUTE120_NORTH_BRIDGE_1 || metatileBehavior == MB_ROUTE120_NORTH_BRIDGE_2)
-        || (metatileBehavior == MB_ROUTE120_NORTH_BRIDGE_3 || metatileBehavior == MB_ROUTE120_NORTH_BRIDGE_4 || metatileBehavior == MB_UNUSED_7E || metatileBehavior == MB_ROUTE110_BRIDGE))
+        || (metatileBehavior == MB_ROUTE120_NORTH_BRIDGE_3 || metatileBehavior == MB_ROUTE120_NORTH_BRIDGE_4 || metatileBehavior == MB_UNUSED_7E || metatileBehavior == MB_ROUTE110_BRIDGE)
+        || MB_FALLARBOR_WASTELAND_BRIDGE)
         return TRUE;
     else
         return FALSE;

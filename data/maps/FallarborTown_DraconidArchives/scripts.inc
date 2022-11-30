@@ -1,4 +1,5 @@
 .set LOCALID_WHISMUR, 3
+.set LOCALID_SCIENTIST, 6
 .set LOCALID_ZINNIA, 7
 
 FallarborTown_DraconidArchives_MapScripts::
@@ -317,6 +318,7 @@ DraconidArchives_Eventscript_Scientist::
 	closemessage
 	giveitem ITEM_OLD_SEA_MAP
 	setflag FLAG_RECEIVED_OLD_SEA_MAP
+	applymovement LOCALID_SCIENTIST, Common_Movement_FaceUp
 	release
 	end
 
@@ -326,12 +328,12 @@ DraconidArchives_Eventscript_ScientistAbsorbedInBooks::
 	release
 	end
 
-DraconidArchives_Eventscript_Sculpture::
-	msgbox DraconidArchives_Text_Sculpture, MSGBOX_SIGN
+DraconidArchives_Eventscript_DisplayCaseStones::
+	msgbox DraconidArchives_Text_DisplayCaseStones, MSGBOX_SIGN
 	end
 
-DraconidArchives_Eventscript_DisplayCase::
-	msgbox DraconidArchives_Text_DisplayCase, MSGBOX_SIGN
+DraconidArchives_Eventscript_DisplayCaseInstrument::
+	msgbox DraconidArchives_Text_DisplayCaseInstrument, MSGBOX_SIGN
 	end
 
 DraconidArchives_Eventscript_Scroll::
@@ -435,10 +437,11 @@ DraconidArchives_Text_TooAbsorbedInBooks:
 	.string "This person is too absorbed in books\n"
 	.string "to notice you.$"
 
-DraconidArchives_Text_Sculpture:
-	.string "A worn down looking statue.$"
+DraconidArchives_Text_DisplayCaseStones:
+	.string "The display case contains numerous\n"
+	.string "colorful ball-shaped stones.$"
 
-DraconidArchives_Text_DisplayCase:
+DraconidArchives_Text_DisplayCaseInstrument:
 	.string "The display case contains a very\n"
 	.string "elegant looking stringed instrument.$"
 

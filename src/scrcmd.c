@@ -2452,6 +2452,7 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
                 {
                     targetSpecies = SPECIES_DEOXYS;
                     SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    CalculateMonStats(&gPlayerParty[i]);
                     formChanged = TRUE;
                 }
                 break;
@@ -2462,6 +2463,7 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
                 {
                     targetSpecies = SPECIES_DEOXYS_ATTACK;
                     SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    CalculateMonStats(&gPlayerParty[i]);
                     formChanged = TRUE;
                 }
                 break;
@@ -2472,6 +2474,7 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
                 {
                     targetSpecies = SPECIES_DEOXYS_DEFENSE;
                     SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    CalculateMonStats(&gPlayerParty[i]);
                     formChanged = TRUE;
                 }
                 break;
@@ -2482,12 +2485,13 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
                 {
                     targetSpecies = SPECIES_DEOXYS_SPEED;
                     SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    CalculateMonStats(&gPlayerParty[i]);
                     formChanged = TRUE;
                 }
                 break;
         }
     }
-    return formChanged;
+    return FALSE;
 }
 
 bool8 ScrCmd_givecustommon(struct ScriptContext *ctx)

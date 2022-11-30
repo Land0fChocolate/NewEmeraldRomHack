@@ -22,13 +22,16 @@ EventTicket_Text_BrineyLetsSail:
     .string "this Old Sea Map!$"
 
 EventTicket_Text_OddTicketGetOnBoard:
-    .string "Is it you who brought that odd\n"
-    .string "ticket?\p"
-    .string "Where you're trying to go is an island\n"
-    .string "that's far, far away.\p"
-    .string "No one knows what awaits there…\p"
-    .string "The very thought excites my blood\n"
-    .string "as a sailing man!\p"
+    .string "Is it you who brought that Mystic\n"
+    .string "Ticket?\p"
+    .string "Where you're trying to go is a very\n"
+    .string "isolated island.\p"
+    .string "There are sea tales of very powerful\n"
+    .string "Pokémon that dwell in that place.\p"
+    .string "Few people venture there…\p"
+    .string "You must be looking for adventure, no?\n"
+    .string "I must admit, I'm coming up with the\l"
+    .string "feeling of adventure too!\p"
     .string "Get on board, youngster!$"
 
 FarawayIsland_Entrance_Text_SailorReturn:

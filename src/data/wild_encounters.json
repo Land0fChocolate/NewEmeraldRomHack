@@ -13072,7 +13072,7 @@
           "map": "MAP_NAVEL_ROCK_LUGIA1",
           "base_label": "gNavelRock_Lugia1",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 27,
@@ -13137,7 +13137,7 @@
             ]
           },
           "water_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 30,
@@ -13226,7 +13226,7 @@
           "map": "MAP_NAVEL_ROCK_HOOH1",
           "base_label": "gNavelRock_Hooh1",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 27,
@@ -13295,7 +13295,7 @@
           "map": "MAP_NAVEL_ROCK_ENTRANCE",
           "base_label": "gNavelRock_Entrance",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 27,
@@ -13364,7 +13364,7 @@
           "map": "MAP_NAVEL_ROCK_LUGIA2",
           "base_label": "gNavelRock_Lugia2",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 27,
@@ -13429,7 +13429,7 @@
             ]
           },
           "water_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 30,
@@ -13518,7 +13518,7 @@
           "map": "MAP_NAVEL_ROCK_LUGIA3",
           "base_label": "gNavelRock_Lugia3",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 27,
@@ -13583,7 +13583,7 @@
             ]
           },
           "water_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 30,
@@ -13672,7 +13672,7 @@
           "map": "MAP_NAVEL_ROCK_HOOH2",
           "base_label": "gNavelRock_Hooh2",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 27,

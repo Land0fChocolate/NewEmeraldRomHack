@@ -17,11 +17,6 @@ MauvilleCity_GroomerHouse_EventScript_Meteorite::
 
 MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm::
 	changedeoxysform 0
-	compare VAR_RESULT, TRUE
-	goto_if_eq MauvilleCity_GroomerHouse_EventScript_DeoxysChangedForm
-	end
-
-MauvilleCity_GroomerHouse_EventScript_DeoxysChangedForm::
 	playmoncry SPECIES_DEOXYS, 0
 	waitse
 	msgbox MauvilleCity_GroomerHouse_Text_DeoxysChangedForm, MSGBOX_SIGN
@@ -107,7 +102,7 @@ MauvilleCity_GroomerHouse_Text_GirlOnceADayService:
 MauvilleCity_GroomerHouse_Text_ItsAMeteorite:
 	.string "It's the meteorite that the Pokémon\n"
 	.string "groomer picked up. You feel a\l"
-	.string "radiating warmth coming from it.\p"
+	.string "radiating warmth coming from it.$"
 
 MauvilleCity_GroomerHouse_Text_DeoxysChangedForm:
 	.string "The Deoxys in your party changed into\n"
