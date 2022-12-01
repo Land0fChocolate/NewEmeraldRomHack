@@ -83,7 +83,7 @@
       "x": 8,
       "y": 10,
       "elevation": 3,
-      "item": "ITEM_SUPER_CARBOS",
+      "item": "ITEM_CARBOS",
       "flag": "FLAG_HIDDEN_ITEM_WILDWOODS_AREA_2_SUPER_CARBOS"
     }
   ]

@@ -6984,6 +6984,28 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
     }
 }
 
+void MonGiveEVs(struct Pokemon *mon, u8 stat, u8 evIncrease)
+{
+    u8 i;
+    u8 evs[NUM_STATS];
+    u16 totalEVs = 0;
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        evs[i] = GetMonData(mon, MON_DATA_HP_EV + i, 0);
+        totalEVs += evs[i];
+    }
+
+    if (totalEVs + (s16)evIncrease > MAX_TOTAL_EVS)
+        evIncrease = ((s16)evIncrease + MAX_TOTAL_EVS) - (totalEVs + evIncrease);
+
+    if (evs[stat] + (s16)evIncrease > MAX_PER_STAT_EVS)
+        evIncrease = ((s16)evIncrease + MAX_PER_STAT_EVS) - (evs[stat] + evIncrease);
+
+    evs[stat] += evIncrease;
+    SetMonData(mon, MON_DATA_HP_EV + stat, &evs[stat]);
+}
+
 void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
 {
     u8 evs[NUM_STATS];

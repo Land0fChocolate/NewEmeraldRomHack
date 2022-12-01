@@ -19,6 +19,7 @@ Wildwoods_Area9_Eventscript_CheckForBirchReportCall::
 
 Wildwoods_Area9_Eventscript_SetBirchReportCall::
 	setflag FLAG_BIRCH_CALL_NEW_AREAS_REPORT
+	release
 	end
 
 Wildwoods_Area9_EventScript_BirchNewAreasCall::

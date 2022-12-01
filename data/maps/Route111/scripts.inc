@@ -9,8 +9,8 @@
 @ Note: LOCALID_ROUTE111_PLAYER_FALLING is a local id for this map used elsewhere. It's defined in event_objects.h
 
 Route111_MapScripts::
-	map_script MAP_SCRIPT_ON_LOAD, Route111_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, Route111_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, Route111_OnLoad
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route111_OnWarp
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route111_OnFrame
 	.byte 0
@@ -20,8 +20,19 @@ Route111_OnLoad:
 	compare VAR_MIRAGE_TOWER_STATE, 1
 	call_if_eq Route111_EventScript_ShowTemporaryMirageTower
 	call_if_set FLAG_SET_HIDE_HEX_MANIAC_BIKE_QUEST, Route111_EventScript_HideHexManiacBikeQuest
-	call_if_unset FLAG_SYS_GAME_CLEAR, Route111_EventScript_CloseRoyalRest
+	@call_if_unset FLAG_SYS_GAME_CLEAR, Route111_EventScript_CloseRoyalRest @doesn't work for some reason
+	call_if_set FLAG_SYS_GAME_CLEAR, Route111_EventScript_OpenRoyalRest
 	end
+
+Route111_EventScript_OpenRoyalRest::
+	setmetatile 30, 0, METATILE_General_RockWall_Corner_TopLeft, 1
+	setmetatile 31, 0, METATILE_General_RockFloor_CliffTop, 0
+	setmetatile 32, 0, METATILE_General_RockWall_Corner_TopRight, 1
+	setmetatile 30, 1, METATILE_General_RockWall_BottomLeftCorner, 1
+	setmetatile 31, 1, METATILE_General_CaveEntrance_Top, 0
+	setmetatile 32, 1, METATILE_General_RockWall_BottomRightCorner, 1
+	setmetatile 31, 2, METATILE_General_CaveEntrance_Bottom, 0
+	return
 
 Route111_EventScript_HideHexManiacBikeQuest::
 	setflag FLAG_HIDE_HEX_MANIAC_BIKE_QUEST
@@ -55,12 +66,12 @@ Route111_EventScript_ShowTemporaryMirageTower::
 	return
 
 Route111_EventScript_CloseRoyalRest::
-	setmetatile 30, 0, METATILE_General_RockFloor, 0
-	setmetatile 32, 0, METATILE_General_RockFloor, 0
-	setmetatile 30, 1, METATILE_General_RockFloor, 0
-	setmetatile 31, 1, METATILE_General_RockFloor, 0
-	setmetatile 32, 1, METATILE_General_RockFloor, 0
-	setmetatile 31, 2, METATILE_General_RockWall_RockBase, 1
+	setmetatile 30, 6, METATILE_General_RockFloor, 0
+	setmetatile 32, 6, METATILE_General_RockFloor, 0
+	setmetatile 30, 7, METATILE_General_RockFloor, 0
+	setmetatile 31, 7, METATILE_General_RockFloor, 0
+	setmetatile 32, 7, METATILE_General_RockFloor, 0
+	setmetatile 31, 8, METATILE_General_RockWall_RockBase, 1
 	return
 
 Route111_OnTransition:

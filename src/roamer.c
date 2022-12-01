@@ -11,8 +11,13 @@ enum
     MAP_NUM = 1, // map number
 };
 
-EWRAM_DATA static u8 sLocationHistory[3][2] = {0};
-EWRAM_DATA static u8 sRoamerLocation[2] = {0};
+#define ROAMER1 (&gSaveBlock1Ptr->roamer1)
+#define ROAMER2 (&gSaveBlock1Ptr->roamer2)
+
+EWRAM_DATA static u8 sLocation1History[3][2] = {0};
+EWRAM_DATA static u8 sLocation2History[3][2] = {0};
+EWRAM_DATA static u8 sRoamer1Location[2] = {0};
+EWRAM_DATA static u8 sRoamer2Location[2] = {0};
 
 static const u8 sRoamerLocations[][6] =
 {
@@ -39,88 +44,136 @@ static const u8 sRoamerLocations[][6] =
     { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF },
 };
 
-void ClearRoamerData(void)
+void ClearRoamerLatiasData(void)
 {
-    memset(&gSaveBlock1Ptr->roamer1, 0, sizeof(struct Roamer));
-    memset(&gSaveBlock1Ptr->roamer2, 0, sizeof(struct Roamer));
+    memset(ROAMER1, 0, sizeof(*ROAMER1));
 }
 
-void ClearRoamerLocationData(void)
+void ClearRoamerLatiosData(void)
+{
+    memset(ROAMER2, 0, sizeof(*ROAMER2));
+}
+
+void ClearRoamerLatiasLocationData(void)
 {
     u8 i;
 
     for (i = 0; i < 3; i++)
     {
-        sLocationHistory[i][MAP_GRP] = 0;
-        sLocationHistory[i][MAP_NUM] = 0;
+        sLocation1History[i][MAP_GRP] = 0;
+        sLocation1History[i][MAP_NUM] = 0;
     }
 
-    sRoamerLocation[MAP_GRP] = 0;
-    sRoamerLocation[MAP_NUM] = 0;
+    sRoamer1Location[MAP_GRP] = 0;
+    sRoamer1Location[MAP_NUM] = 0;
 }
 
-static void CreateInitialRoamerMon(void)
+void ClearRoamerLatiosLocationData(void)
+{
+    u8 i;
+
+    for (i = 0; i < 3; i++)
+    {
+        sLocation2History[i][MAP_GRP] = 0;
+        sLocation2History[i][MAP_NUM] = 0;
+    }
+
+    sRoamer2Location[MAP_GRP] = 0;
+    sRoamer2Location[MAP_NUM] = 0;
+}
+
+void CreateNewRoamerLatias(void)
 {
     CreateMon(&gEnemyParty[0], SPECIES_LATIAS, 40, 0x20, 0, 0, OT_ID_PLAYER_ID, 0);
-    (&gSaveBlock1Ptr->roamer1)->level = 40;
-    (&gSaveBlock1Ptr->roamer1)->status = 0;
-    (&gSaveBlock1Ptr->roamer1)->active = TRUE;
-    (&gSaveBlock1Ptr->roamer1)->ivs = GetMonData(&gEnemyParty[0], MON_DATA_IVS);
-    (&gSaveBlock1Ptr->roamer1)->personality = GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY);
-    (&gSaveBlock1Ptr->roamer1)->hp = GetMonData(&gEnemyParty[0], MON_DATA_MAX_HP);
-    sRoamerLocation[MAP_GRP] = 0;
-    sRoamerLocation[MAP_NUM] = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
-
-    CreateMon(&gEnemyParty[0], SPECIES_LATIOS, 40, 0x20, 0, 0, OT_ID_PLAYER_ID, 0);
-    (&gSaveBlock1Ptr->roamer2)->level = 40;
-    (&gSaveBlock1Ptr->roamer2)->status = 0;
-    (&gSaveBlock1Ptr->roamer2)->active = TRUE;
-    (&gSaveBlock1Ptr->roamer2)->ivs = GetMonData(&gEnemyParty[0], MON_DATA_IVS);
-    (&gSaveBlock1Ptr->roamer2)->personality = GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY);
-    (&gSaveBlock1Ptr->roamer2)->hp = GetMonData(&gEnemyParty[0], MON_DATA_MAX_HP);
-    sRoamerLocation[MAP_GRP] = 0;
-    sRoamerLocation[MAP_NUM] = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
+    ROAMER1->level = 40;
+    ROAMER1->status = 0;
+    ROAMER1->active = TRUE;
+    ROAMER1->ivs = GetMonData(&gEnemyParty[0], MON_DATA_IVS);
+    ROAMER1->personality = GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY);
+    ROAMER1->hp = GetMonData(&gEnemyParty[0], MON_DATA_MAX_HP);
+    sRoamer1Location[MAP_GRP] = 0;
+    sRoamer1Location[MAP_NUM] = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
 }
 
-void InitRoamers(void)
+void CreateNewRoamerLatios(void)
 {
-    ClearRoamerData();
-    ClearRoamerLocationData();
-    CreateInitialRoamerMon();
+    CreateMon(&gEnemyParty[0], SPECIES_LATIOS, 40, 0x20, 0, 0, OT_ID_PLAYER_ID, 0);
+    ROAMER2->level = 40;
+    ROAMER2->status = 0;
+    ROAMER2->active = TRUE;
+    ROAMER2->ivs = GetMonData(&gEnemyParty[0], MON_DATA_IVS);
+    ROAMER2->personality = GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY);
+    ROAMER2->hp = GetMonData(&gEnemyParty[0], MON_DATA_MAX_HP);
+    sRoamer2Location[MAP_GRP] = 0;
+    sRoamer2Location[MAP_NUM] = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
+}
+
+void InitNewRoamerLatias(void)
+{
+    ClearRoamerLatiasData();
+    ClearRoamerLatiasLocationData();
+    CreateNewRoamerLatias();
+}
+
+void InitNewRoamerLatios(void)
+{
+    ClearRoamerLatiosData();
+    ClearRoamerLatiosLocationData();
+    CreateNewRoamerLatios();
 }
 
 void UpdateLocationHistoryForRoamer(void)
 {
-    sLocationHistory[2][MAP_GRP] = sLocationHistory[1][MAP_GRP];
-    sLocationHistory[2][MAP_NUM] = sLocationHistory[1][MAP_NUM];
+    sLocation1History[2][MAP_GRP] = sLocation1History[1][MAP_GRP];
+    sLocation1History[2][MAP_NUM] = sLocation1History[1][MAP_NUM];
 
-    sLocationHistory[1][MAP_GRP] = sLocationHistory[0][MAP_GRP];
-    sLocationHistory[1][MAP_NUM] = sLocationHistory[0][MAP_NUM];
+    sLocation1History[1][MAP_GRP] = sLocation1History[0][MAP_GRP];
+    sLocation1History[1][MAP_NUM] = sLocation1History[0][MAP_NUM];
 
-    sLocationHistory[0][MAP_GRP] = gSaveBlock1Ptr->location.mapGroup;
-    sLocationHistory[0][MAP_NUM] = gSaveBlock1Ptr->location.mapNum;
+    sLocation1History[0][MAP_GRP] = gSaveBlock1Ptr->location.mapGroup;
+    sLocation1History[0][MAP_NUM] = gSaveBlock1Ptr->location.mapNum;
+
+    sLocation2History[2][MAP_GRP] = sLocation2History[1][MAP_GRP];
+    sLocation2History[2][MAP_NUM] = sLocation2History[1][MAP_NUM];
+
+    sLocation2History[1][MAP_GRP] = sLocation2History[0][MAP_GRP];
+    sLocation2History[1][MAP_NUM] = sLocation2History[0][MAP_NUM];
+
+    sLocation2History[0][MAP_GRP] = gSaveBlock1Ptr->location.mapGroup;
+    sLocation2History[0][MAP_NUM] = gSaveBlock1Ptr->location.mapNum;
 }
 
 void RoamerMoveToOtherLocationSet(void)
 {
     u8 mapNum = 0;
-    struct Roamer *roamer1 = &gSaveBlock1Ptr->roamer1;
-    struct Roamer *roamer2 = &gSaveBlock1Ptr->roamer2;
 
-    if (!roamer1->active && !roamer2->active)
+    if (!ROAMER1->active && !ROAMER2->active)
         return;
 
-    sRoamerLocation[MAP_GRP] = 0;
+    sRoamer1Location[MAP_GRP] = 0;
+    sRoamer2Location[MAP_GRP] = 0;
 
     while (1)
     {
         mapNum = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
-        if (sRoamerLocation[MAP_NUM] != mapNum)
+        if (sRoamer1Location[MAP_NUM] != mapNum)
         {
-            sRoamerLocation[MAP_NUM] = mapNum;
-            return;
+            sRoamer1Location[MAP_NUM] = mapNum;
+            break;
         }
     }
+
+    while (1)
+    {
+        mapNum = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
+        if (sRoamer2Location[MAP_NUM] != mapNum)
+        {
+            sRoamer2Location[MAP_NUM] = mapNum;
+            break;
+        }
+    }
+
+    return;
 }
 
 void RoamerMove(void)
@@ -133,34 +186,71 @@ void RoamerMove(void)
     }
     else
     {
-        struct Roamer *roamer1 = &gSaveBlock1Ptr->roamer1;
-        struct Roamer *roamer2 = &gSaveBlock1Ptr->roamer2;
-
-        if (!roamer1->active && !roamer2->active)
-            return;
-
-        while (locSet < (ARRAY_COUNT(sRoamerLocations) - 1))
+        if (ROAMER1->active)
         {
-            if (sRoamerLocation[MAP_NUM] == sRoamerLocations[locSet][0])
+            while (locSet < (ARRAY_COUNT(sRoamerLocations) - 1))
             {
-                u8 mapNum;
-                while (1)
+                if (sRoamer1Location[MAP_NUM] == sRoamerLocations[locSet][0])
                 {
-                    mapNum = sRoamerLocations[locSet][(Random() % 5) + 1];
-                    if (!(sLocationHistory[2][MAP_GRP] == 0 && sLocationHistory[2][MAP_NUM] == mapNum) && mapNum != 0xFF)
-                        break;
+                    u8 mapNum;
+                    while (1)
+                    {
+                        mapNum = sRoamerLocations[locSet][(Random() % 5) + 1];
+                        if (!(sLocation1History[2][MAP_GRP] == 0 
+                            && sLocation1History[2][MAP_NUM] == mapNum) 
+                            && mapNum != 0xFF)
+                            break;
+                    }
+                    sRoamer1Location[MAP_NUM] = mapNum;
+                    break;
                 }
-                sRoamerLocation[MAP_NUM] = mapNum;
-                return;
+                locSet++;
             }
-            locSet++;
+        }
+
+        if (ROAMER2->active)
+        {
+            locSet = 0;
+
+            while (locSet < (ARRAY_COUNT(sRoamerLocations) - 1))
+            {
+                if (sRoamer2Location[MAP_NUM] == sRoamerLocations[locSet][0])
+                {
+                    u8 mapNum;
+                    while (1)
+                    {
+                        mapNum = sRoamerLocations[locSet][(Random() % 5) + 1];
+                        if (!(sLocation2History[2][MAP_GRP] == 0 
+                            && sLocation2History[2][MAP_NUM] == mapNum) 
+                            && mapNum != 0xFF)
+                            break;
+                    }
+                    sRoamer2Location[MAP_NUM] = mapNum;
+                    break;;
+                }
+                locSet++;
+            }
         }
     }
+
+    return;
 }
 
-bool8 IsRoamerAt(struct Roamer *roamer, u8 mapGroup, u8 mapNum)
+bool8 IsRoamer1At(u8 mapGroup, u8 mapNum)
 {
-    if (roamer->active && mapGroup == sRoamerLocation[MAP_GRP] && mapNum == sRoamerLocation[MAP_NUM])
+    if (ROAMER1->active 
+        && mapGroup == sRoamer1Location[MAP_GRP] 
+        && mapNum == sRoamer1Location[MAP_NUM])
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 IsRoamer2At(u8 mapGroup, u8 mapNum)
+{
+    if (ROAMER2->active 
+        && mapGroup == sRoamer2Location[MAP_GRP] 
+        && mapNum == sRoamer2Location[MAP_NUM])
         return TRUE;
     else
         return FALSE;
@@ -169,24 +259,26 @@ bool8 IsRoamerAt(struct Roamer *roamer, u8 mapGroup, u8 mapNum)
 void CreateRoamerMonInstance(struct Roamer *roamer, u16 species)
 {
     struct Pokemon *mon;
+    u32 status;
 
     mon = &gEnemyParty[0];
     ZeroEnemyPartyMons();
     CreateMonWithIVsPersonality(mon, species, roamer->level, roamer->ivs, roamer->personality);
-    SetMonData(mon, MON_DATA_STATUS, &roamer->status);
+    status = roamer->status;
+    SetMonData(mon, MON_DATA_STATUS, &status);
     SetMonData(mon, MON_DATA_HP, &roamer->hp);
 }
 
 u8 TryStartRoamerEncounter(void)
 {
-    if (IsRoamerAt(&gSaveBlock1Ptr->roamer1, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum) == TRUE && (Random() % 4) == 0)
+    if (IsRoamer1At(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum) == TRUE && (Random() % 4) == 0)
     {
-        CreateRoamerMonInstance(&gSaveBlock1Ptr->roamer1, SPECIES_LATIAS);
+        CreateRoamerMonInstance(ROAMER1, SPECIES_LATIAS);
         return 1;
     }
-    else if (IsRoamerAt(&gSaveBlock1Ptr->roamer2, gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum) == TRUE && (Random() % 4) == 0)
+    else if (IsRoamer2At(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum) == TRUE && (Random() % 4) == 0)
     {
-        CreateRoamerMonInstance(&gSaveBlock1Ptr->roamer2, SPECIES_LATIOS);
+        CreateRoamerMonInstance(ROAMER2, SPECIES_LATIOS);
         return 2;
     }
     else
@@ -208,8 +300,14 @@ void SetRoamerInactive(struct Roamer *roamer)
     roamer->active = FALSE;
 }
 
-void GetRoamerLocation(u8 *mapGroup, u8 *mapNum)
+void GetRoamer1Location(u8 *mapGroup, u8 *mapNum)
 {
-    *mapGroup = sRoamerLocation[MAP_GRP];
-    *mapNum = sRoamerLocation[MAP_NUM];
+    *mapGroup = sRoamer1Location[MAP_GRP];
+    *mapNum = sRoamer1Location[MAP_NUM];
+}
+
+void GetRoamer2Location(u8 *mapGroup, u8 *mapNum)
+{
+    *mapGroup = sRoamer2Location[MAP_GRP];
+    *mapNum = sRoamer2Location[MAP_NUM];
 }

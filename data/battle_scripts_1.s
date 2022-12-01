@@ -403,7 +403,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectOctolock                @ EFFECT_OCTOLOCK
 	.4byte BattleScript_EffectClangorousSoul          @ EFFECT_CLANGOROUS_SOUL
 	.4byte BattleScript_EffectHit                     @ EFFECT_BOLT_BEAK
-	.4byte BattleScript_EffectHiddenThorns            @ EFFECT_HIDDEN_THORNS
+	.4byte BattleScript_EffectSkyDrop                 @ EFFECT_SKY_DROP
 	.4byte BattleScript_EffectHit                     @ EFFECT_EXPANDING_FORCE
 	.4byte BattleScript_EffectScaleShot               @ EFFECT_SCALE_SHOT
 	.4byte BattleScript_EffectMeteorBeam              @ EFFECT_METEOR_BEAM
@@ -412,6 +412,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectCourtChange             @ EFFECT_COURT_CHANGE
 	.4byte BattleScript_EffectSteelBeam               @ EFFECT_STEEL_BEAM
 	.4byte BattleScript_EffectSerpentDance            @ EFFECT_SERPENT_DANCE
+	.4byte BattleScript_EffectHiddenThorns            @ EFFECT_HIDDEN_THORNS
 
 BattleScript_EffectSteelBeam::
 	attackcanceler
@@ -563,6 +564,16 @@ BattleScript_ScaleShotEnd::
 	moveendcase MOVEEND_SYNCHRONIZE_TARGET
 	moveendfrom MOVEEND_STATUS_IMMUNITY_ABILITIES
 	end
+
+@Sky Drop functionality not coded in
+BattleScript_EffectSkyDrop:
+	goto BattleScript_EffectHit
+
+BattleScript_SkyDropWork:
+	goto BattleScript_EffectHit
+
+BattleScript_SkyDropFlyingConfuseLock:
+	goto BattleScript_EffectHit
 
 BattleScript_EffectFling:
 	jumpifcantfling BS_ATTACKER, BattleScript_ButItFailedAtkStringPpReduce

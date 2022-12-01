@@ -262,6 +262,11 @@ void GroomPokemon(void)
     AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_GROOM);
 }
 
+void EVTrainPokemon(void)
+{
+    MonGiveEVs(&gPlayerParty[gSpecialVar_0x8004], gSpecialVar_0x8009, MAX_EV_TRAINING_EVS);
+}
+
 u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny)
 {
     u16 nationalDexNum;

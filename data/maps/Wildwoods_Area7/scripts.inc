@@ -1,2 +1,12 @@
 Wildwoods_Area7_MapScripts::
 	.byte 0
+
+Wildwoods_Area7_EventScript_Ali::
+	trainerbattle_double TRAINER_ALI_AND_LILY, Wildwoods_Area7_Text_AliIntro, Wildwoods_Area7_Text_AliDefeat, Wildwoods_Area7_Text_AliNotEnoughMons
+	msgbox Wildwoods_Area7_Text_AliPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Wildwoods_Area7_EventScript_Lily::
+	trainerbattle_double TRAINER_ALI_AND_LILY, Wildwoods_Area7_Text_LilyIntro, Wildwoods_Area7_Text_LilyDefeat, Wildwoods_Area7_Text_LilyNotEnoughMons
+	msgbox Wildwoods_Area7_Text_LilyPostBattle, MSGBOX_AUTOCLOSE
+	end

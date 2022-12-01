@@ -11,10 +11,21 @@ FortreeJungle_Area1_Eventscript_Zuko::
 	msgbox FortreeJungle_Area1_Text_ZukoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-FortreeJungle_Area1_Eventscript_Joss::
-	trainerbattle_single TRAINER_JOSS, FortreeJungle_Area1_Text_JossIntro, FortreeJungle_Area1_Text_JossDefeat
-	msgbox FortreeJungle_Area1_Text_JossPostBattle, MSGBOX_AUTOCLOSE
+FortreeJungle_Area1_Eventscript_Gabrielle::
+	trainerbattle_single TRAINER_GABRIELLE, FortreeJungle_Area1_Text_GabrielleIntro, FortreeJungle_Area1_Text_GabrielleDefeat
+	msgbox FortreeJungle_Area1_Text_GabriellePostBattle, MSGBOX_AUTOCLOSE
 	end
+
+FortreeJungle_Area1_Text_GabrielleIntro:
+	.string "Look, my children.\n"
+	.string "A Trainer to play with!$"
+
+FortreeJungle_Area1_Text_GabrielleDefeat:
+	.string "You play hard!$"
+
+FortreeJungle_Area1_Text_GabriellePostBattle:
+	.string "Letting your Pokémon enjoy themselves\n"
+	.string "is an integral part of their growth.$"
 
 FortreeJungle_Area1_Eventscript_AquaMember::
 	msgbox FortreeJungle_Area1_Text_AquaMember, MSGBOX_NPC

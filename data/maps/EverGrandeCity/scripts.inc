@@ -28,11 +28,23 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 
 @TODO: remove this. This is a test trainer.
 EverGrandeCity_EventScript_Leaf::
-	@cleartrainerflag TRAINER_LEAF
-	@trainerbattle_single TRAINER_ZINNIA, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
-	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_AUTOCLOSE
-	giveitem ITEM_MASTER_BALL, 20
+	cleartrainerflag TRAINER_LEAF
+	trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
 	end
+
+EverGrandeCity_EventScript_TestAbra2::
+	faceplayer
+	@goto_if_set FLAG_HIDE_COZMOS_HOUSE_METEORITE, EverGrandeCity_EventScript_TestAbra2Set
+	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
+	clearflag FLAG_HIDE_COZMOS_HOUSE_METEORITE
+	end
+
+EverGrandeCity_EventScript_TestAbra2Set::
+	msgbox EverGrandeCity_Text_FlagIsSet, MSGBOX_NPC
+	end
+
+EverGrandeCity_Text_FlagIsSet:
+	.string "Cozmo house meteorite flag is set"
 
 EverGrandeCity_Text_LeafIntro:
 	.string "Hello, I'm here for testing!$"

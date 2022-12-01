@@ -222,7 +222,7 @@
 #define FLAG_RECEIVED_GREEN_SCARF            0xCB
 #define FLAG_RECEIVED_YELLOW_SCARF           0xCC
 #define FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER    0xCD
-#define FLAG_ENCOUNTERED_LATIAS_OR_LATIOS    0xCE
+#define FLAG_ENCOUNTERED_LATIAS_OR_LATIOS    0xCE // unused
 #define FLAG_MET_ARCHIE_METEOR_FALLS         0xCF
 #define FLAG_GOT_BASEMENT_KEY_FROM_WATTSON   0xD0
 #define FLAG_GOT_TM72_FROM_WATTSON           0xD1
@@ -273,7 +273,7 @@
 #define FLAG_RECEIVED_BELUE_BERRY            0xFC
 #define FLAG_ENABLE_RIVAL_MATCH_CALL         0xFD
 #define FLAG_RECEIVED_CHARCOAL               0xFE
-#define FLAG_LATIOS_OR_LATIAS_ROAMING        0xFF
+#define FLAG_LATIOS_OR_LATIAS_ROAMING        0xFF // unused, though set
 #define FLAG_RECEIVED_REPEAT_BALL            0x100
 #define FLAG_RECEIVED_OLD_ROD                0x101
 #define FLAG_RECEIVED_COIN_CASE              0x102
@@ -482,14 +482,14 @@
 #define FLAG_DEFEATED_ELECTRODE_2_AQUA_HIDEOUT 0x1C5
 #define FLAG_DEFEATED_SUDOWOODO              0x1C6
 #define FLAG_DEFEATED_MEW                    0x1C7
-#define FLAG_DEFEATED_LATIAS_OR_LATIOS       0x1C8
-#define FLAG_CAUGHT_LATIAS_OR_LATIOS         0x1C9
+#define FLAG_HIDE_ARTICUNO                   0x1C8
+#define FLAG_HIDE_ZAPDOS                     0x1C9
 #define FLAG_CAUGHT_MEW                      0x1CA
 #define FLAG_DEFEATED_CELEBI                 0x1CB
 #define FLAG_DEFEATED_JIRACHI                0x1CC
 #define FLAG_DEFEATED_LATIAS                 0x1CD
 #define FLAG_DEFEATED_LATIOS                 0x1CE
-#define FLAG_MET_SCOTT_IN_EVERGRANDE         0x1CF // unused
+#define FLAG_HIDE_MOLTRES                    0x1CF
 #define FLAG_MET_SCOTT_ON_SS_TIDAL           0x1D0
 #define FLAG_SCOTT_GIVES_BATTLE_POINTS       0x1D1
 #define FLAG_COLLECTED_ALL_GOLD_SYMBOLS      0x1D2
@@ -1036,7 +1036,7 @@
 #define FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA                          0x3E4
 #define FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE                            0x3E5
 #define FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON                           0x3E6
-#define FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT                0x3E7 // unused
+#define FLAG_MET_FLANNERY_HOT_SPRINGS                               0x3E7
 
 // Item Ball Flags
 #define FLAG_ITEM_ROUTE_102_POTION                                  0x3E8
@@ -1278,9 +1278,9 @@
 #define FLAG_UNUSED_0x4D3                                           0x4D3 // Unused Flag
 #define FLAG_UNUSED_0x4D4                                           0x4D4 // Unused Flag
 #define FLAG_UNUSED_0x4D5                                           0x4D5 // Unused Flag
-#define FLAG_UNUSED_0x4D6                                           0x4D6 // Unused Flag
-#define FLAG_UNUSED_0x4D7                                           0x4D7 // Unused Flag
-#define FLAG_UNUSED_0x4D8                                           0x4D8 // Unused Flag
+#define FLAG_HIDE_RAIKOU                                            0x4D6
+#define FLAG_HIDE_ENTEI                                             0x4D7
+#define FLAG_HIDE_SUICUNE                                           0x4D8
 #define FLAG_DISABLE_CATCHING                                       0x4D9 // If TRUE, Player cannot catch Pokemon with Poke Balls.
 #define FLAG_SMART_WILD_AI                                          0x4DA // battle config flag
 #define FLAG_HIDE_BATTLE_TENT_BEAUTY                                0x4DB
@@ -1566,8 +1566,8 @@
 #define FLAG_DAILY_DESERT_UNDERPASS_FOSSIL          (DAILY_FLAGS_START + 0x4)
 #define FLAG_DAILY_BATTLE_TENT_TRAINERS             (DAILY_FLAGS_START + 0x5)
 #define FLAG_DAILY_BRAWLY_SHARD                     (DAILY_FLAGS_START + 0x6)
-#define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag
-#define FLAG_UNUSED_0x928                           (DAILY_FLAGS_START + 0x8)  // Unused Flag
+#define FLAG_DAILY_FLANNERY_TRAINING                (DAILY_FLAGS_START + 0x7)
+#define FLAG_DAILY_CASTFORM                         (DAILY_FLAGS_START + 0x8)
 #define FLAG_DAILY_GROOM_DONE                       (DAILY_FLAGS_START + 0x9)
 #define FLAG_DAILY_PICKED_LOTO_TICKET               (DAILY_FLAGS_START + 0xA)
 #define FLAG_DAILY_ROUTE_114_RECEIVED_BERRY         (DAILY_FLAGS_START + 0xB)
@@ -1578,7 +1578,7 @@
 #define FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY       (DAILY_FLAGS_START + 0x10)
 #define FLAG_DAILY_BERRY_MASTERS_WIFE               (DAILY_FLAGS_START + 0x11)
 #define FLAG_DAILY_SOOTOPOLIS_RECEIVED_BERRY        (DAILY_FLAGS_START + 0x12)
-#define FLAG_DAILY_EVER_GRANDE_RECEIVED_BERRY        (DAILY_FLAGS_START + 0x13)
+#define FLAG_DAILY_EVER_GRANDE_RECEIVED_BERRY       (DAILY_FLAGS_START + 0x13)
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
 
 #define FLAG_UNUSED_0x935                           (DAILY_FLAGS_START + 0x15) // Unused Flag

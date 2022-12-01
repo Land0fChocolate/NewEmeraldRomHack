@@ -21,6 +21,11 @@ FallarborWasteland_EventScript_Geordi::
 	msgbox FallarborWasteland_Text_GeordiPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+FallarborWasteland_EventScript_Hayden::
+	trainerbattle_single TRAINER_HAYDEN, FallarborWasteland_Text_HaydenIntro, FallarborWasteland_Text_HaydenDefeat
+	msgbox FallarborWasteland_Text_HaydenPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 FallarborWasteland_Eventscript_Tabitha::
 	msgbox FallarborWasteland_Text_TabithaFieldWork, MSGBOX_NPC
 	call_if_unset FLAG_MET_TABITHA_FALLARBOR_WASTES, FallarborWasteland_Eventscript_SetMeetFlag

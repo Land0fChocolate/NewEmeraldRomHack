@@ -1281,7 +1281,6 @@ static const struct LevelUpMove sKadabraLevelUpLearnset[] = {
     LEVEL_UP_MOVE(28, MOVE_PSYCHO_CUT),
     LEVEL_UP_MOVE(31, MOVE_RECOVER),
     LEVEL_UP_MOVE(33, MOVE_TELEKINESIS),
-    LEVEL_UP_MOVE(36, MOVE_ALLY_SWITCH),
     LEVEL_UP_MOVE(38, MOVE_PSYCHIC),
     LEVEL_UP_MOVE(41, MOVE_ROLE_PLAY),
     LEVEL_UP_MOVE(43, MOVE_FUTURE_SIGHT),
@@ -1302,7 +1301,6 @@ static const struct LevelUpMove sAlakazamLevelUpLearnset[] = {
     LEVEL_UP_MOVE(28, MOVE_PSYCHO_CUT),
     LEVEL_UP_MOVE(31, MOVE_RECOVER),
     LEVEL_UP_MOVE(33, MOVE_TELEKINESIS),
-    LEVEL_UP_MOVE(36, MOVE_ALLY_SWITCH),
     LEVEL_UP_MOVE(38, MOVE_PSYCHIC),
     LEVEL_UP_MOVE(41, MOVE_CALM_MIND),
     LEVEL_UP_MOVE(43, MOVE_FUTURE_SIGHT),
@@ -2984,7 +2982,7 @@ static const struct LevelUpMove sArticunoLevelUpLearnset[] = {
     LEVEL_UP_MOVE(22, MOVE_MIND_READER),
     LEVEL_UP_MOVE(29, MOVE_ANCIENT_POWER),
     LEVEL_UP_MOVE(36, MOVE_AGILITY),
-    LEVEL_UP_MOVE(43, MOVE_FREEZE_DRY),
+    LEVEL_UP_MOVE(43, MOVE_FROST_BREATH),
     LEVEL_UP_MOVE(50, MOVE_REFLECT),
     LEVEL_UP_MOVE(57, MOVE_HAIL),
     LEVEL_UP_MOVE(64, MOVE_TAILWIND),
@@ -8109,10 +8107,6 @@ static const struct LevelUpMove sDeoxysLevelUpLearnset[] = {
     LEVEL_UP_MOVE(61, MOVE_RECOVER),
     LEVEL_UP_MOVE(67, MOVE_PSYCHO_BOOST),
     LEVEL_UP_MOVE(73, MOVE_HYPER_BEAM),
-    LEVEL_UP_MOVE(75, MOVE_PSYCHO_BOOST), // for boss battle, remove when better method for assigning moves at battle start is found
-    LEVEL_UP_MOVE(75, MOVE_THUNDER_PUNCH), // for boss battle, remove when better method for assigning moves at battle start is found
-    LEVEL_UP_MOVE(75, MOVE_ICE_PUNCH), // for boss battle, remove when better method for assigning moves at battle start is found
-    LEVEL_UP_MOVE(75, MOVE_DRAIN_PUNCH), // for boss battle, remove when better method for assigning moves at battle start is found
     LEVEL_UP_END
 };
 
@@ -18564,7 +18558,7 @@ static const struct LevelUpMove sVulpixAlolanLevelUpLearnset[] = {
     LEVEL_UP_MOVE(28, MOVE_AURORA_BEAM),
     LEVEL_UP_MOVE(31, MOVE_EXTRASENSORY),
     LEVEL_UP_MOVE(34, MOVE_SAFEGUARD),
-    LEVEL_UP_MOVE(36, MOVE_ICE_BEAM),
+    LEVEL_UP_MOVE(36, MOVE_FREEZE_DRY),
     LEVEL_UP_MOVE(39, MOVE_IMPRISON),
     LEVEL_UP_MOVE(42, MOVE_GRUDGE),
     LEVEL_UP_MOVE(44, MOVE_BLIZZARD),
@@ -18591,7 +18585,7 @@ static const struct LevelUpMove sNinetalesAlolanLevelUpLearnset[] = {
     LEVEL_UP_MOVE(28, MOVE_AURORA_BEAM),
     LEVEL_UP_MOVE(31, MOVE_EXTRASENSORY),
     LEVEL_UP_MOVE(34, MOVE_SAFEGUARD),
-    LEVEL_UP_MOVE(36, MOVE_ICE_BEAM),
+    LEVEL_UP_MOVE(36, MOVE_FREEZE_DRY),
     LEVEL_UP_MOVE(39, MOVE_IMPRISON),
     LEVEL_UP_MOVE(42, MOVE_GRUDGE),
     LEVEL_UP_MOVE(44, MOVE_BLIZZARD),

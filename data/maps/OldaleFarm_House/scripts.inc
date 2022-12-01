@@ -28,7 +28,7 @@ OldaleFarm_House_Eventscript_Man_PlayerHasNationalDex::
 	end
 
 OldaleFarm_House_Eventscript_Man_PickHoennStarters::
-	multichoice 0, 0, MULTI_OLDALE_STARTERS_HOENN, FALSE
+	multichoice 16, 0, MULTI_OLDALE_STARTERS_HOENN, FALSE
 	switch VAR_RESULT
 	case 0, OldaleFarm_House_Eventscript_PickTreecko
 	case 1, OldaleFarm_House_Eventscript_PickTorchic

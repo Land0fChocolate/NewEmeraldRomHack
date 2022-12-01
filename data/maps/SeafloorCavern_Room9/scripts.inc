@@ -234,10 +234,8 @@ SeafloorCavern_Room9_Text_ArchieWithThisBlueOrb:
 	.string "RETURN EVERYTHING TO THE WAY IT WAS!!$"
 
 SeafloorCavern_Room9_Text_ArchieWhereDidKyogreGo:
-	.string "Archie: Bwahahahaha! At last… AT LAST!\p"
-	.string "I've finally done it!!! It hasn't even\n"
-	.string "finished reversion, and it still has\l"
-	.string "this much power!!!\p"
+	.string "Archie: Bwahahahaha! At last… AT LAST!\n"
+	.string "I've finally done it!!!\p"
 	.string "With this I can return everything to its\n"
 	.string "natural beginning! It's time at last!$"
 

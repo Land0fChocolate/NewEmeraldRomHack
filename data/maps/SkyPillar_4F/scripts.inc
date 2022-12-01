@@ -1,7 +1,6 @@
 .set LOCALID_ZINNIA, 1
 
 SkyPillar_4F_MapScripts::
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, CaveHole_CheckFallDownHole
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SkyPillar_4F_OnFrame
 	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_4F_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, SkyPillar_4F_SetHoleWarp
@@ -9,7 +8,7 @@ SkyPillar_4F_MapScripts::
 
 SkyPillar_4F_OnFrame:
 	map_script_2 VAR_SKY_PILLAR_4F_TRIGGER, 0, SkyPillar_4F_EventScript_ZinniaTrigger
-	map_script_2 VAR_ICE_STEP_COUNT, 0, CaveHole_CheckFallDownHole
+	map_script_2 VAR_ICE_STEP_COUNT, 0, EventScript_FallDownHole
 	.2byte 0
 
 SkyPillar_4F_OnTransition:
@@ -67,7 +66,7 @@ SkyPillar_4F_Text_ZinniaStoryPart2:
 	.string "Rayquaza to fight Deoxys again.\p"
 	.string "However, my ancestors were locked out of\n"
 	.string "Sky Pillar long ago by the Sootopolis\l"
-	.string "tribe.\p"
+	.string "clan.\p"
 	.string "Their descendants are suspicious of\n"
 	.string "anyone who would want to get into Sky\l"
 	.string "Pillar.\p"
@@ -77,12 +76,12 @@ SkyPillar_4F_Text_ZinniaStoryPart2:
 	.string "The only way I could get them to open\n"
 	.string "it, would be to force their hand.\p"
 	.string "So, I infiltrated two gangs and gave\n"
-	.string "them the idea to wake up other legendary\l"
-	.string "Pokémon.\p"
+	.string "them the idea to wake up other\l"
+	.string "legendary Pokémon.\p"
 	.string "Their leaders possess a great deal of\n"
-	.string "talent. It's a shame they have both\l"
-	.string "wasted it on their ridiculous\l"
-	.string "idealogies.\p"
+	.string "talent.\l"
+	.string "It's a shame they have both wasted it\l"
+	.string "on their ridiculous idealogies.\p"
 	.string "But I managed to put them to good use!\p"
 	.string "Team Aqua was supposed to be searching\n"
 	.string "the ocean for Kyogre much earlier, but\l"
@@ -95,8 +94,8 @@ SkyPillar_4F_Text_ZinniaStoryPart2:
 	.string "Progress was slow and Team Aqua were\n"
 	.string "getting impatient, so they attempted a\l"
 	.string "raid on the Weather Institute.\p"
-	.string "I had to pull them away from that. I\n"
-	.string "doubt that they could have found an\l"
+	.string "I had to pull them away from that.\n"
+	.string "I doubt that they could have found an\l"
 	.string "inactive Kyogre that way.\p"
 	.string "Team Magma found Groudon far quicker\n"
 	.string "than I expected. I underestimated the\l"

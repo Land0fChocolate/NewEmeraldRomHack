@@ -12835,7 +12835,7 @@ static void Cmd_tryswapabilities(void) // skill swap
                 gBattleMons[gBattlerAttacker].abilities[x] = gBattleMons[gBattlerTarget].abilities[x];
                 gBattleMons[gBattlerTarget].abilities[x] = atkAbilities[x];
             }
-        }        
+        }
 
         gBattlescriptCurrInstr += 5;
     }
@@ -12900,7 +12900,7 @@ static void Cmd_setstealthrock(void)
                 gSideTimers[targetSide].stealthRockAmount = 1;
                 if (gSideStatuses[targetSide] & SIDE_STATUS_HIDDEN_THORNS)
                 {
-                    gSideStatuses[targetSide] ^= SIDE_STATUS_HIDDEN_THORNS; //TODO: test this, Stealth Rock should replace Hidden Thorns
+                    gSideStatuses[targetSide] ^= SIDE_STATUS_HIDDEN_THORNS;
                     gSideTimers[targetSide].hiddenThornsAmount = 0;
                 }
                 
@@ -12918,7 +12918,7 @@ static void Cmd_setstealthrock(void)
                 gSideTimers[targetSide].hiddenThornsAmount = 1;
                 if (gSideStatuses[targetSide] & SIDE_STATUS_STEALTH_ROCK)
                 {
-                    gSideStatuses[targetSide] ^= SIDE_STATUS_STEALTH_ROCK; //TODO: test this, Hidden Thorns should replace Stealth Rock
+                    gSideStatuses[targetSide] ^= SIDE_STATUS_STEALTH_ROCK;
                     gSideTimers[targetSide].stealthRockAmount = 0;
                 }
                 gBattlescriptCurrInstr += 5;
@@ -14104,16 +14104,22 @@ static void Cmd_trygetbaddreamstarget(void)
 
 static void Cmd_tryworryseed(void)
 {
-    u16 *abilities = gBattleMons[gBattlerTarget].abilities;
     u8 x;
 
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {
-        if (!IsWorrySeedBannedAbility(gBattleMons[gBattlerTarget].abilities[x]))
+        if (IsWorrySeedBannedAbility(gBattleMons[gBattlerTarget].abilities[x]))
+        {
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+        }
+        else
         {
             gBattleMons[gBattlerTarget].abilities[x] = ABILITY_INSOMNIA;
+            gLastUsedAbility = ABILITY_INSOMNIA;
         }
     }
+
+    gBattlescriptCurrInstr += 5;
 }
 
 static void Cmd_metalburstdamagecalculator(void)

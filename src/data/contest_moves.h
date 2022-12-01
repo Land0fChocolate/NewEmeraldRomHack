@@ -5966,14 +5966,6 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
 
     [MOVE_TAKE_HEART] = {0}, // TODO
 
-    [MOVE_WAR_DANCE] =
-    {
-        .effect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .comboStarterId = 0,
-        .comboMoves = {0},
-    },
-
     [MOVE_FLINT_BLADE] =
     {
         .effect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,

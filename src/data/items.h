@@ -9773,12 +9773,12 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_LIFT_KEY] =
+    [ITEM_SPACE_BELT] =
     {
-        .name = _("Lift Key"),
-        .itemId = ITEM_LIFT_KEY,
+        .name = _("Space Belt"),
+        .itemId = ITEM_SPACE_BELT,
         .price = 0,
-        .description = sLiftKeyDesc,
+        .description = sSpaceBeltDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

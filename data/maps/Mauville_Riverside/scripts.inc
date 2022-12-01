@@ -109,7 +109,7 @@ Mauville_Riverside_Eventscript_GirlFacePlayerRight:
 
 Mauville_Riverside_Eventscript_GirlRescued:
 	msgbox Mauville_Riverside_Text_GratitudeForRescue, MSGBOX_DEFAULT
-	giveitem ITEM_ULTRA_BALL
+	giveitem ITEM_DUSK_BALL
 	compare VAR_RESULT, FALSE
 	goto_if_eq Mauville_Riverside_EventScript_BagFull
 	goto Mauville_Riverside_EventScript_GirlLeaving
