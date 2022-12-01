@@ -533,12 +533,16 @@ void RecordKnownMove(u8 battlerId, u32 move)
         if (BATTLE_HISTORY->usedMoves[battlerId][i] == MOVE_NONE)
         {
             BATTLE_HISTORY->usedMoves[battlerId][i] = move;
+            AI_PARTY->mons[GetBattlerSide(battlerId)][gBattlerPartyIndexes[battlerId]].moves[i] = move;
             break;
         }
     }
 }
 
-void RecordAbilityBattle(u8 battlerId, u16 abilityId) {}
+void RecordAbilityBattle(u8 battlerId, u16 abilityId) 
+{
+    AI_PARTY->mons[GetBattlerSide(battlerId)][gBattlerPartyIndexes[battlerId]].ability = abilityId;
+}
 
 void ClearBattlerAbilityHistory(u8 battlerId) //TODO: this func may not be needed, if so remove usages.
 {
@@ -548,6 +552,7 @@ void ClearBattlerAbilityHistory(u8 battlerId) //TODO: this func may not be neede
 void RecordItemEffectBattle(u8 battlerId, u8 itemEffect)
 {
     BATTLE_HISTORY->itemEffects[battlerId] = itemEffect;
+    AI_PARTY->mons[GetBattlerSide(battlerId)][gBattlerPartyIndexes[battlerId]].heldEffect = itemEffect;
 }
 
 void ClearBattlerItemEffectHistory(u8 battlerId)
