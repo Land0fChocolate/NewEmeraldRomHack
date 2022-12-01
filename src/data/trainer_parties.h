@@ -12827,10 +12827,10 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Red[] = {
 static const struct TrainerMonItemCustomMoves sParty_Leaf[] = {
     {
     .iv = 255,
-    .lvl = 5,
-    .species = SPECIES_SHUCKLE,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_SAFEGUARD, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    .lvl = 65,
+    .species = SPECIES_TYRANITAR,
+    .heldItem = ITEM_KEE_BERRY,
+    .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }
 };
 

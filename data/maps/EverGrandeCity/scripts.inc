@@ -28,8 +28,8 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 
 @TODO: remove this. This is a test trainer.
 EverGrandeCity_EventScript_Leaf::
-	cleartrainerflag TRAINER_MEGGI
-	trainerbattle_single TRAINER_MEGGI, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
+	cleartrainerflag TRAINER_LEAF
+	trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
 	end
 
 EverGrandeCity_EventScript_TestAbra2::
