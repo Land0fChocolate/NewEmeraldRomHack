@@ -12274,7 +12274,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Meggi[] = {
     },
     {
     .iv = 0,
-    .lvl = 52,
+    .lvl = 50,
     .species = SPECIES_GRANBULL,
     }
 };
@@ -12828,9 +12828,9 @@ static const struct TrainerMonItemCustomMoves sParty_Leaf[] = {
     {
     .iv = 255,
     .lvl = 5,
-    .species = SPECIES_BUDEW,
+    .species = SPECIES_SHUCKLE,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_FOCUS_BLAST, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    .moves = {MOVE_SAFEGUARD, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }
 };
 

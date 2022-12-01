@@ -1,7 +1,12 @@
 .set LOCALID_ZINNIA, 3
 
 MagmaHideout_3F_1R_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MagmaHideout_3F_1R_OnFrame
 	.byte 0
+
+MagmaHideout_3F_1R_OnFrame:
+	map_script_2 VAR_MAGMA_HIDEOUT_ZINNIA_TRIGGER_STATE, 0, MagmaHideout_3F_1R_EventScript_Zinnia_Trigger
+	.2byte 0
 
 MagmaHideout_3F_1R_EventScript_Zinnia_Trigger::
 	lock
@@ -14,74 +19,22 @@ MagmaHideout_3F_1R_EventScript_Zinnia_Trigger::
 	applymovement LOCALID_ZINNIA, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 60
-	getplayerxy VAR_0x8004, VAR_0x8005
-	compare VAR_0x8005, 4
-	goto_if_eq MagmaHideout_3F_1R_EventScript_ZinniaWalkX4
-	compare VAR_0x8005, 5
-	goto_if_eq MagmaHideout_3F_1R_EventScript_ZinniaWalkX5
-	compare VAR_0x8005, 6
-	goto_if_eq MagmaHideout_3F_1R_EventScript_ZinniaWalkX6
-	compare VAR_0x8005, 7
-	goto_if_eq MagmaHideout_3F_1R_EventScript_ZinniaWalkX7
-	release
-	end
-
-MagmaHideout_3F_1R_EventScript_ZinniaWalkX4::
-	applymovement LOCALID_ZINNIA, MagmaHideout_3F_1R_Movement_ZinniaWalkX4
+	applymovement LOCALID_ZINNIA, MagmaHideout_3F_1R_Movement_ZinniaWalkToPlayer
 	waitmovement 0
-	goto MagmaHideout_3F_1R_EventScript_ZinniaMeetsPlayer
-
-MagmaHideout_3F_1R_EventScript_ZinniaWalkX5::
-	applymovement LOCALID_ZINNIA, MagmaHideout_3F_1R_Movement_ZinniaWalkX5
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
-	goto MagmaHideout_3F_1R_EventScript_ZinniaMeetsPlayer
-
-MagmaHideout_3F_1R_EventScript_ZinniaWalkX6::
-	applymovement LOCALID_ZINNIA, MagmaHideout_3F_1R_Movement_ZinniaWalkX6
-	waitmovement 0
-	goto MagmaHideout_3F_1R_EventScript_ZinniaMeetsPlayer
-
-MagmaHideout_3F_1R_EventScript_ZinniaWalkX7::
-	applymovement LOCALID_ZINNIA, MagmaHideout_3F_1R_Movement_ZinniaWalkX7
-	waitmovement 0
-	goto MagmaHideout_3F_1R_EventScript_ZinniaMeetsPlayer
-
-MagmaHideout_3F_1R_Movement_ZinniaWalkX4:
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-MagmaHideout_3F_1R_Movement_ZinniaWalkX5:
-	walk_right
-	walk_down
-	walk_right
-	walk_right
-	step_end
-
-MagmaHideout_3F_1R_Movement_ZinniaWalkX6:
-	walk_right
-	walk_down
-	walk_down
-	walk_right
-	walk_right
-	step_end
-
-MagmaHideout_3F_1R_Movement_ZinniaWalkX7:
-	walk_right
-	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_right
-	step_end
-
-MagmaHideout_3F_1R_EventScript_ZinniaMeetsPlayer::
 	msgbox MagmaHideout_3F_1R_Text_ZinniaMeetsPlayer, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_MAGMA_HIDEOUT_ZINNIA_TRIGGER_STATE, 1
 	release
 	end
+
+MagmaHideout_3F_1R_Movement_ZinniaWalkToPlayer:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
 
 MagmaHideout_3F_1R_EventScript_Zinnia::
 	msgbox MagmaHideout_3F_1R_Text_ZinniaIdle, MSGBOX_NPC
