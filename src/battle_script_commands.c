@@ -12835,7 +12835,7 @@ static void Cmd_tryswapabilities(void) // skill swap
                 gBattleMons[gBattlerAttacker].abilities[x] = gBattleMons[gBattlerTarget].abilities[x];
                 gBattleMons[gBattlerTarget].abilities[x] = atkAbilities[x];
             }
-        }        
+        }
 
         gBattlescriptCurrInstr += 5;
     }
@@ -14104,16 +14104,22 @@ static void Cmd_trygetbaddreamstarget(void)
 
 static void Cmd_tryworryseed(void)
 {
-    u16 *abilities = gBattleMons[gBattlerTarget].abilities;
     u8 x;
 
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {
-        if (!IsWorrySeedBannedAbility(gBattleMons[gBattlerTarget].abilities[x]))
+        if (IsWorrySeedBannedAbility(gBattleMons[gBattlerTarget].abilities[x]))
+        {
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+        }
+        else
         {
             gBattleMons[gBattlerTarget].abilities[x] = ABILITY_INSOMNIA;
+            gLastUsedAbility = ABILITY_INSOMNIA;
         }
     }
+
+    gBattlescriptCurrInstr += 5;
 }
 
 static void Cmd_metalburstdamagecalculator(void)

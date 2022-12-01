@@ -53,6 +53,9 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- Nature Mints added
 	- TMs have infinite use.
 	- TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
+	- Existing shops sell more stuff, including post gen 3 items.
+	- New shops that sell more stuff, including post gen 3 items.
+	- More daily berry giveaways and of newer berries too.
 - New shops and updates to existing shops to stock later gen items and new TMs.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
 
