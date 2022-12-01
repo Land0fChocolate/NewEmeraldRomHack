@@ -176,6 +176,7 @@
 
 #define B_ROOTED_GROUNDING          GEN_7 // In Gen4+, Ingrain causes the affected Pokémon to become grounded.
 #define B_GROWTH_UNDER_SUN          GEN_7 // In Gen5+, Growth's effects are doubled when under the effects of the sun.
+#define B_TELEPORT_BEHAVIOR         GEN_8 // In Gen7+, starting with Pokémon LGPE, Teleport allows the user to swap out with another party member.
 
 // Ability settings
 #define B_EXPANDED_ABILITY_NAMES    TRUE  // If TRUE, ability names are increased from 12 characters to 16 characters.

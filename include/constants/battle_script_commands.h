@@ -228,6 +228,8 @@
 #define VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS      	154
 #define VARIOUS_TRY_RESET_TIME_TRAVELLER        	155
 #define VARIOUS_TRY_SYMBIOSIS                       156
+#define VARIOUS_CAN_TELEPORT                        157
+#define VARIOUS_GET_BATTLER_SIDE                    158
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

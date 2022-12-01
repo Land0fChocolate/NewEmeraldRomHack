@@ -1948,6 +1948,14 @@
 	various BS_ATTACKER, VARIOUS_SWAP_SIDE_STATUSES
 	.endm
 
+	.macro canteleport battler:req
+	various \battler, VARIOUS_CAN_TELEPORT
+	.endm
+
+	.macro getbattlerside battler:req
+	various \battler, VARIOUS_GET_BATTLER_SIDE
+	.endm
+
 	.macro trynoretreat battler:req, ptr:req
 	various \battler, VARIOUS_TRY_NO_RETREAT
 	.4byte \ptr
