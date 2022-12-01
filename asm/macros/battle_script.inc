@@ -2111,3 +2111,8 @@
 	jumpifsideaffecting BS_TARGET, SIDE_STATUS_SAFEGUARD, \jumpptr
 	1:
 	.endm
+
+	@ Used by effects that may proc Symbiosis but do not call removeitem.
+	.macro trysymbiosis
+	various BS_ATTACKER, VARIOUS_TRY_SYMBIOSIS
+	.endm
