@@ -10553,7 +10553,7 @@ bool32 CanFling(u8 battlerId)
       || HasAbility(ABILITY_KLUTZ, abilities)
       || gFieldStatuses & STATUS_FIELD_MAGIC_ROOM
       || gDisableStructs[battlerId].embargoTimer != 0
-      || ItemId_GetFlingPower(item) != 0
+      || ItemId_GetFlingPower(item) == 0
       || !CanBattlerGetOrLoseItem(battlerId, item))
         return FALSE;
 
