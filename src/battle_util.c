@@ -5093,26 +5093,14 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     gDisableStructs[gBattlerAttacker].truantCounter ^= 1;
                     break;
                 case ABILITY_BAD_DREAMS:
-                    if (gBattleMons[BATTLE_PARTNER(BATTLE_OPPOSITE(battler))].status1 & STATUS1_SLEEP
-                        || gBattleMons[BATTLE_OPPOSITE(battler)].status1 & STATUS1_SLEEP
-                        || HasAbility(ABILITY_COMATOSE, GetBattlerAbilities(BATTLE_PARTNER(BATTLE_OPPOSITE(battler))))
-                        || HasAbility(ABILITY_COMATOSE, GetBattlerAbilities(BATTLE_OPPOSITE(battler))))
-                    {
-                        gLastUsedAbility = ABILITY_BAD_DREAMS;
-                        BattleScriptPushCursorAndCallback(BattleScript_BadDreamsActivates);
-                        effect++;
-                    }
+                    gLastUsedAbility = ABILITY_BAD_DREAMS;
+                    BattleScriptPushCursorAndCallback(BattleScript_BadDreamsActivates);
+                    effect++;
                     break;
                 case ABILITY_PLEASANT_DREAMS:
-                    if (gBattleMons[battler].status1 & STATUS1_SLEEP
-                        || gBattleMons[BATTLE_OPPOSITE(battler)].status1 & STATUS1_SLEEP
-                        || HasAbility(ABILITY_COMATOSE, GetBattlerAbilities(battler))
-                        || HasAbility(ABILITY_COMATOSE, GetBattlerAbilities(BATTLE_OPPOSITE(battler))))
-                    {
-                        gLastUsedAbility = ABILITY_PLEASANT_DREAMS;
-                        BattleScriptPushCursorAndCallback(BattleScript_PleasantDreamsActivates);
-                        effect++;
-                    }
+                    gLastUsedAbility = ABILITY_PLEASANT_DREAMS;
+                    BattleScriptPushCursorAndCallback(BattleScript_PleasantDreamsActivates);
+                    effect++;
                     break;
                 case ABILITY_HEALER:
                     gBattleScripting.battler = BATTLE_PARTNER(battler);
