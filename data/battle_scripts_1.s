@@ -613,11 +613,11 @@ BattleScript_EffectFling:
 BattleScript_EffectFlingConsumeBerry:
 	savebattleritem BS_TARGET
 	battleritemtolastuseditem BS_TARGET
-	setbyte sBERRY_OVERRIDE, TRUE @ override the requirements for eating berries
+	setbyte sBERRY_OVERRIDE, 1 @ override the requirements for eating berries
 	orword gHitMarker, HITMARKER_NO_ANIMATIONS
-	consumeberry BS_TARGET
+	consumeberry BS_TARGET, TRUE
 	bicword gHitMarker, HITMARKER_NO_ANIMATIONS
-	setbyte sBERRY_OVERRIDE, FALSE
+	setbyte sBERRY_OVERRIDE, 0
 	restorebattleritem BS_TARGET
 BattleScript_FlingEnd:
 	tryfaintmon BS_TARGET, FALSE, NULL
@@ -841,11 +841,12 @@ BattleScript_EffectStuffCheeks::
 	attackanimation
 	waitanimation
 BattleScript_StuffCheeksEatBerry:
-	setbyte sBERRY_OVERRIDE, TRUE
+	setbyte sBERRY_OVERRIDE, 1
 	orword gHitMarker, HITMARKER_NO_ANIMATIONS
-	consumeberry BS_ATTACKER
+	consumeberry BS_ATTACKER, TRUE
 	bicword gHitMarker, HITMARKER_NO_ANIMATIONS
-	setbyte sBERRY_OVERRIDE, FALSE
+	setbyte sBERRY_OVERRIDE, 0
+	removeitem BS_ATTACKER
 	setstatchanger STAT_DEF, 2, FALSE
 	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_BUFF_ALLOW_PTR, BattleScript_StuffCheeksEnd
 	setgraphicalstatchangevalues
@@ -1304,11 +1305,13 @@ BattleScript_MoveEffectBugBite::
 	printstring STRINGID_BUGBITE
 	waitmessage B_WAIT_TIME_LONG
 	orword gHitMarker, HITMARKER_NO_ANIMATIONS
-	setbyte sBERRY_OVERRIDE, TRUE   @ override the requirements for eating berries
-	consumeberry BS_ATTACKER, TRUE  @ consume the berry, then restore the item from changedItems
+	setbyte sBERRY_OVERRIDE, 1   @ override the requirements for eating berries
+	savetarget
+	consumeberry BS_ATTACKER, FALSE
 	bicword gHitMarker, HITMARKER_NO_ANIMATIONS
-	setbyte sBERRY_OVERRIDE, FALSE
+	setbyte sBERRY_OVERRIDE, 0
 	trysymbiosis
+	restoretarget
 	return
 
 BattleScript_EffectCoreEnforcer:
@@ -9342,11 +9345,15 @@ BattleScript_BerryStatRaiseRet_Anim:
 BattleScript_BerryStatRaiseRet_End:
 	return
 
-BattleScript_BerryFocusEnergyEnd2::
-	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT, NULL
+BattleScript_BerryFocusEnergyRet::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT, NULL
 	printstring STRINGID_PKMNUSEDXTOGETPUMPED
 	waitmessage B_WAIT_TIME_LONG
-	removeitem BS_ATTACKER
+	removeitem BS_SCRIPTING
+	return
+
+BattleScript_BerryFocusEnergyEnd2::
+	call BattleScript_BerryFocusEnergyRet
 	end2
 
 BattleScript_ActionSelectionItemsCantBeUsed::
