@@ -7319,7 +7319,9 @@ static const union AnimCmd sAnim_AURORUS_1[] =
 
 static const union AnimCmd sAnim_SYLVEON_1[] =
 {
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(0, 5),
     ANIMCMD_END,
 };
 

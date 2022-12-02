@@ -5095,7 +5095,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 case ABILITY_BAD_DREAMS:
                     if (gBattleMons[BATTLE_PARTNER(BATTLE_OPPOSITE(battler))].status1 & STATUS1_SLEEP
                         || gBattleMons[BATTLE_OPPOSITE(battler)].status1 & STATUS1_SLEEP
-                        || GetBattlerAbility(BATTLE_PARTNER(BATTLE_OPPOSITE(battler))) == ABILITY_COMATOSE
+                        || HasAbility(ABILITY_COMATOSE, GetBattlerAbilities(BATTLE_PARTNER(BATTLE_OPPOSITE(battler))))
                         || HasAbility(ABILITY_COMATOSE, GetBattlerAbilities(BATTLE_OPPOSITE(battler))))
                     {
                         gLastUsedAbility = ABILITY_BAD_DREAMS;
