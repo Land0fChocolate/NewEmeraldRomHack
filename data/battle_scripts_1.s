@@ -9707,6 +9707,16 @@ BattleScript_SymbiosisActivates::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+BattleScript_TargetAbilityStatRaiseRet::
+	copybyte gBattlerAbility, gEffectBattler
+	copybyte gBattlerAttacker, gBattlerTarget
+	call BattleScript_AbilityPopUp
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN, BattleScript_TargetAbilityStatRaiseRet_End
+	setgraphicalstatchangevalues
+	call BattleScript_StatUp
+BattleScript_TargetAbilityStatRaiseRet_End:
+	return
+
 BattleScript_WishMaker::
 	call BattleScript_AbilityPopUp
 	trywish 0, BattleScript_ButItFailed

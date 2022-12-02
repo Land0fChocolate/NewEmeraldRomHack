@@ -424,6 +424,7 @@ extern const u8 BattleScript_BeakBlastSetUp[];
 extern const u8 BattleScript_BeakBlastBurn[];
 extern const u8 BattleScript_DefDownSpeedUp[];
 extern const u8 BattleScript_SymbiosisActivates[];
+extern const u8 BattleScript_TargetAbilityStatRaiseRet[];
 extern const u8 BattleScript_MiracleBlossomHeals[];
 extern const u8 BattleScript_EffectSoulSiphon[];
 extern const u8 BattleScript_WishMaker[];
