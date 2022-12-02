@@ -5448,7 +5448,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                  && TARGET_TURN_DAMAGED
                  && IsBattlerAlive(battler)
                 // Had more than half of hp before, now has less
-                 && gBattleStruct->hpBefore[battler] > gBattleMons[battler].maxHP / 2
+                 && gBattleStruct->hpBefore[battler] >= gBattleMons[battler].maxHP / 2
                  && gBattleMons[battler].hp < gBattleMons[battler].maxHP / 2
                  && (gMultiHitCounter == 0 || gMultiHitCounter == 1)
                  && !(TestSheerForceFlag(gBattlerAttacker, gCurrentMove))
