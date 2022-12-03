@@ -528,14 +528,15 @@ bool32 IsAffectedByFollowMe(u32 battlerAtk, u32 defSide, u32 move)
     if (gSideTimers[defSide].followmeTimer == 0
             || gBattleMons[gSideTimers[defSide].followmeTarget].hp == 0
             || gBattleMoves[move].effect == EFFECT_SNIPE_SHOT
-            || (gSideTimers[defSide].followmePowder && !IsAffectedByPowder(battlerAtk, abilities, GetBattlerHoldEffect(battlerAtk, TRUE)))
             || HasAbility(ABILITY_PROPELLER_TAIL, abilities) || HasAbility(ABILITY_STALWART, abilities))
+        return FALSE;
+
+    if (gSideTimers[defSide].followmePowder && !IsAffectedByPowder(battlerAtk, abilities, GetBattlerHoldEffect(battlerAtk, TRUE)))
         return FALSE;
 
     return TRUE;
 }
 
-// Functions
 void HandleAction_UseMove(void)
 {
     u32 i, side, moveType, var = 4;
@@ -1231,7 +1232,7 @@ void HandleAction_ActionFinished(void)
             {
                 if (GetWhoStrikesFirst(battler1, battler2, TRUE)) // If the actions chosen are switching, we recalc order but ignoring the moves
                     SwapTurnOrder(i, j);
-            }  
+            }
         }
     }
 }
@@ -1375,6 +1376,7 @@ static const u8 sAbilitiesNotTraced[ABILITIES_COUNT] =
     [ABILITY_STANCE_CHANGE] = 1,
     [ABILITY_TRACE] = 1,
     [ABILITY_ZEN_MODE] = 1,
+    [ABILITY_ORIGIN] = 1,
 };
 
 static const u8 sHoldEffectToType[][2] =
@@ -1573,7 +1575,6 @@ static const u16 sInverseTypeEffectivenessTable[NUMBER_OF_MON_TYPES][NUMBER_OF_M
 
 #undef X
 
-// code
 u8 GetBattlerForBattleScript(u8 caseId)
 {
     u8 ret = 0;
@@ -3896,6 +3897,7 @@ u8 AtkCanceller_UnableToUseMove(void)
                 else if (GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_SAFETY_GOGGLES)
                 {
                     RecordItemEffectBattle(gBattlerTarget, HOLD_EFFECT_SAFETY_GOGGLES);
+                    gLastUsedItem = gBattleMons[gBattlerTarget].item;
                     effect = 1;
                 }
 
@@ -4896,6 +4898,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     if (!gSpecialStatuses[battler].switchInAbilityDone && CompareStat(battler, STAT_ATK, MAX_STAT_STAGE, CMP_LESS_THAN))
                     {
                         gLastUsedAbility = ABILITY_INTREPID_SWORD;
+                        gBattlerAttacker = battler;
                         gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                         SET_STATCHANGER(STAT_ATK, 1, FALSE);
                         BattleScriptPushCursorAndCallback(BattleScript_BattlerAbilityStatRaiseOnSwitchIn);
@@ -4906,6 +4909,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     if (!gSpecialStatuses[battler].switchInAbilityDone && CompareStat(battler, STAT_DEF, MAX_STAT_STAGE, CMP_LESS_THAN))
                     {
                         gLastUsedAbility = ABILITY_DAUNTLESS_SHIELD;
+                        gBattlerAttacker = battler;
                         gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                         SET_STATCHANGER(STAT_DEF, 1, FALSE);
                         BattleScriptPushCursorAndCallback(BattleScript_BattlerAbilityStatRaiseOnSwitchIn);
@@ -5543,7 +5547,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         case ABILITY_SCHOOLING:
                         case ABILITY_SHIELDS_DOWN:
                         case ABILITY_STANCE_CHANGE:
-                        case ABILITY_TIME_TRAVELLER:
                             continue;
                         default:
                             gLastUsedAbilities[y] = gBattleMons[gBattlerAttacker].abilities[y] = ABILITY_MUMMY;
@@ -5579,7 +5582,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         case ABILITY_STANCE_CHANGE:
                         case ABILITY_WONDER_GUARD:
                         case ABILITY_ZEN_MODE:
-                        case ABILITY_TIME_TRAVELLER:
                             break;
                         default:
                             switch (gBattleMons[gBattlerTarget].abilities[x])
@@ -5597,7 +5599,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                             case ABILITY_STANCE_CHANGE:
                             case ABILITY_WONDER_GUARD:
                             case ABILITY_ZEN_MODE:
-                            case ABILITY_TIME_TRAVELLER:
                                 break;
                             default:
                                 gLastUsedAbilities[x] = gBattleMons[gBattlerAttacker].abilities[x];
@@ -5759,7 +5760,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     if (gLastUsedAbilities[x] == ABILITY_POISON_POINT)
                         gLastUsedAbility = ABILITY_POISON_POINT;
                     gBattleScripting.moveEffect = MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_POISON;
-                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, ABILITY_POISON_POINT);
+                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
                     gHitMarker |= HITMARKER_IGNORE_SAFEGUARD;
@@ -6088,7 +6089,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                  && gBattleMons[gBattlerTarget].hp != 0
                  && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
                  && IsMoveMakingContact(move, gBattlerAttacker)
-                 && !(gStatuses3[gBattlerTarget] & STATUS3_EMBARGO))
+                 && !(gStatuses3[gBattlerTarget] & STATUS3_EMBARGO)
+                 && TARGET_TURN_DAMAGED)
                 {
                     gLastUsedAbility = ABILITY_DISARM;
                     BattleScriptPushCursor();
@@ -6246,7 +6248,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
             }
         }
         break;
-    case ABILITYEFFECT_FORECAST: // 6 //continue from here
+    case ABILITYEFFECT_FORECAST: // 6
         for (battler = 0; battler < gBattlersCount; battler++)
         {
             if (HasAbility(ABILITY_FORECAST, GetBattlerAbilities(battler)) || HasAbility(ABILITY_FLOWER_GIFT, GetBattlerAbilities(battler)))
@@ -6338,7 +6340,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 u8 side = (GetBattlerPosition(i) ^ BIT_SIDE) & BIT_SIDE; // side of the opposing pokemon
                 u8 target1 = GetBattlerAtPosition(side);
                 u8 target2 = GetBattlerAtPosition(side + BIT_FLANK);
-                u16 tracedAbility;
+                u16 tracedAbility = 0;
 
                 if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
                 {
@@ -6453,7 +6455,6 @@ bool32 IsNeutralizingGasBannedAbility(u16 ability)
     case ABILITY_ICE_FACE:
     case ABILITY_AS_ONE_ICE_RIDER:
     case ABILITY_AS_ONE_SHADOW_RIDER:
-    case ABILITY_TIME_TRAVELLER:
         return TRUE;
     default:
         return FALSE;
@@ -8265,12 +8266,13 @@ u32 GetMoveTarget(u16 move, u8 setTarget)
 
 static bool32 IsMonEventLegal(u8 battlerId)
 {
-    if (GetBattlerSide(battlerId) == B_SIDE_OPPONENT)
-        return TRUE;
-    if (GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS
-        && GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL) != SPECIES_MEW)
-            return TRUE;
-    return GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_EVENT_LEGAL, NULL);
+    //if (GetBattlerSide(battlerId) == B_SIDE_OPPONENT)
+    //    return TRUE;
+    //if (GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS
+    //    && GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL) != SPECIES_MEW)
+    //        return TRUE;
+    //return GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_EVENT_LEGAL, NULL);
+    return TRUE;
 }
 
 u8 IsMonDisobedient(void)

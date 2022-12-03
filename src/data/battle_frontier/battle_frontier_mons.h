@@ -3867,7 +3867,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_TOGEKISS_2] = {
         .species = SPECIES_TOGEKISS,
-        .moves = {MOVE_AIR_SLASH, MOVE_AURA_SPHERE, MOVE_THUNDER_WAVE, MOVE_ROOST},
+        .moves = {MOVE_AIR_SLASH, MOVE_AURA_SPHERE, MOVE_ENCORE, MOVE_ROOST},
         .item = ITEM_SAFETY_GOGGLES,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SPEED | F_EV_SPREAD_SP_ATTACK,
         .nature = NATURE_BOLD

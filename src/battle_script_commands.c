@@ -289,7 +289,6 @@ static const u16 sTrappingMoves[TRAPPING_MOVES_COUNT] =
 #define STAT_CHANGE_WORKED      0
 #define STAT_CHANGE_DIDNT_WORK  1
 
-// this file's functions
 static bool8 IsTwoTurnsMove(u16 move);
 static void TrySetDestinyBondToHappen(void);
 static u8 AttacksThisTurn(u8 battlerId, u16 move); // Note: returns 1 if it's a charging turn, otherwise 2.
@@ -1162,7 +1161,7 @@ static const u16 sPickupItems[] =
     ITEM_ULTRA_BALL,
     ITEM_HYPER_POTION,
     ITEM_RARE_CANDY,
-    ITEM_PROTEIN,
+    ITEM_BOTTLE_CAP,
     ITEM_REVIVE,
     ITEM_PP_UP,
     ITEM_FULL_RESTORE,
@@ -1736,6 +1735,7 @@ static void Cmd_accuracycheck(void)
         if (AccuracyCalcHelper(move))
             return;
 
+        MgbaPrintf(MGBA_LOG_INFO, "gBattlerAttacker:%d,gBattlerTarget:%d", gBattlerAttacker, gBattlerTarget);
         // final calculation
         if ((Random() % 100 + 1) > GetTotalAccuracy(gBattlerAttacker, gBattlerTarget, move, GetBattlerAbilities(gBattlerAttacker), GetBattlerAbilities(gBattlerTarget),
             GetBattlerHoldEffect(gBattlerAttacker, TRUE), GetBattlerHoldEffect(gBattlerTarget, TRUE)))
