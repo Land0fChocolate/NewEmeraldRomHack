@@ -1735,7 +1735,6 @@ static void Cmd_accuracycheck(void)
         if (AccuracyCalcHelper(move))
             return;
 
-        MgbaPrintf(MGBA_LOG_INFO, "gBattlerAttacker:%d,gBattlerTarget:%d", gBattlerAttacker, gBattlerTarget);
         // final calculation
         if ((Random() % 100 + 1) > GetTotalAccuracy(gBattlerAttacker, gBattlerTarget, move, GetBattlerAbilities(gBattlerAttacker), GetBattlerAbilities(gBattlerTarget),
             GetBattlerHoldEffect(gBattlerAttacker, TRUE), GetBattlerHoldEffect(gBattlerTarget, TRUE)))
