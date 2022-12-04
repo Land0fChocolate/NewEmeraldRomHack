@@ -8966,6 +8966,9 @@ static void Cmd_various(void)
     case VARIOUS_ABILITY_POPUP:
         CreateAbilityPopUp(gActiveBattler, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0);
         break;
+    case VARIOUS_MULTI_ABILITY_POPUP:
+        CreateMultiAbilityPopUp(gActiveBattler, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0);
+        break;
     case VARIOUS_UPDATE_ABILITY_POPUP:
         UpdateAbilityPopup(gActiveBattler);
         break;

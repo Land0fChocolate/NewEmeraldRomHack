@@ -230,6 +230,7 @@
 #define VARIOUS_TRY_SYMBIOSIS                       156
 #define VARIOUS_CAN_TELEPORT                        157
 #define VARIOUS_GET_BATTLER_SIDE                    158
+#define VARIOUS_MULTI_ABILITY_POPUP                 159
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

@@ -5609,7 +5609,7 @@ BattleScript_EffectRolePlay::
 	waitanimation
 .if B_ABILITY_POP_UP == TRUE
 	setbyte sFIXED_ABILITY_POPUP, TRUE
-	showabilitypopup BS_ATTACKER
+	@showmultiabilitypopup BS_ATTACKER
 	pause 60
 	sethword sABILITY_OVERWRITE, 0
 	updateabilitypopup BS_ATTACKER
@@ -5770,10 +5770,10 @@ BattleScript_EffectSkillSwap:
 	waitanimation
 .if B_ABILITY_POP_UP == TRUE
 	copybyte gBattlerAbility, gBattlerTarget
-	call BattleScript_AbilityPopUp
+	@call BattleScript_MultiAbilityPopUp
 	pause 20
 	copybyte gBattlerAbility, gBattlerAttacker
-	call BattleScript_AbilityPopUp
+	@call BattleScript_MultiAbilityPopUp
 .endif
 	printstring STRINGID_PKMNSWAPPEDABILITIES
 	waitmessage B_WAIT_TIME_LONG
@@ -8024,6 +8024,14 @@ BattleScript_AbilityRaisesDefenderStat::
 BattleScript_AbilityPopUp:
 	.if B_ABILITY_POP_UP == TRUE
 	showabilitypopup BS_ABILITY_BATTLER
+	pause 40
+	.endif
+	sethword sABILITY_OVERWRITE, 0
+	return
+
+BattleScript_MultiAbilityPopUp:
+	.if B_ABILITY_POP_UP == TRUE
+	showmultiabilitypopup BS_ABILITY_BATTLER
 	pause 40
 	.endif
 	sethword sABILITY_OVERWRITE, 0
