@@ -1630,13 +1630,18 @@ static bool32 AccuracyCalcHelper(u16 move)
     return FALSE;
 }
 
-u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u16 atkAbilities[], u16 defAbilities[], u32 atkHoldEffect, u32 defHoldEffect)
+u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkHoldEffect, u32 defHoldEffect)
 {
     u32 calc, moveAcc;
     s8 buff, accStage, evasionStage;
+    u16 atkAbilities[NUM_ABILITY_SLOTS];
+    u16 defAbilities[NUM_ABILITY_SLOTS];
     u8 atkParam = GetBattlerHoldEffectParam(battlerAtk);
     u8 defParam = GetBattlerHoldEffectParam(battlerDef);
     gPotentialItemEffectBattler = battlerDef;
+
+    memcpy(atkAbilities, GetBattlerAbilities(battlerAtk), sizeof(atkAbilities));
+    memcpy(defAbilities, GetBattlerAbilities(battlerDef), sizeof(defAbilities));
 
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
@@ -1713,7 +1718,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u16 atkAbilities[
 static void Cmd_accuracycheck(void)
 {
     u16 type, move = T2_READ_16(gBattlescriptCurrInstr + 5);
-    u16 moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, move);
+    u16 moveTarget = GetBattlerMoveTargetType(gActiveBattler, move);
 
     if (move == ACC_CURR_MOVE)
         move = gCurrentMove;
@@ -1736,7 +1741,7 @@ static void Cmd_accuracycheck(void)
             return;
 
         // final calculation
-        if ((Random() % 100 + 1) > GetTotalAccuracy(gBattlerAttacker, gBattlerTarget, move, GetBattlerAbilities(gBattlerAttacker), GetBattlerAbilities(gBattlerTarget),
+        if ((Random() % 100 + 1) > GetTotalAccuracy(gBattlerAttacker, gBattlerTarget, move, 
             GetBattlerHoldEffect(gBattlerAttacker, TRUE), GetBattlerHoldEffect(gBattlerTarget, TRUE)))
         {
             gMoveResultFlags |= MOVE_RESULT_MISSED;
@@ -13184,7 +13189,10 @@ static void Cmd_trygetintimidatetarget(void)
 
 static void Cmd_switchoutabilities(void)
 {
-    u16 x, *abilities = GetBattlerAbilities(gActiveBattler);
+    u16 x;
+    u16 abilities[NUM_ABILITY_SLOTS];
+
+    memcpy(abilities, GetBattlerAbilities(gActiveBattler), sizeof(abilities));
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
 
