@@ -6417,7 +6417,8 @@ static void SetDmgHazardsBattlescript(u8 battlerId, u8 multistringId)
 static void Cmd_switchineffects(void)
 {
     s32 i;
-    u16 *abilities = GetBattlerAbilities(gActiveBattler);
+    u16 abilities[NUM_ABILITY_SLOTS];
+    memcpy(abilities, GetBattlerAbilities(gActiveBattler), sizeof(abilities));
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
     UpdateSentPokesToOpponentValue(gActiveBattler);
@@ -12939,15 +12940,16 @@ static void Cmd_tryswapabilities(void) // skill swap
     else
     {
         u8 x;
-        u16 *atkAbilities = gBattleMons[gBattlerAttacker].abilities;
+        u16 abilities[NUM_ABILITY_SLOTS];
 
         for (x = 0; x < NUM_ABILITY_SLOTS; x++)
         {
             if (!IsSkillSwapBannedAbility(gBattleMons[gBattlerAttacker].abilities[x])
                 && !IsSkillSwapBannedAbility(gBattleMons[gBattlerTarget].abilities[x]))
             {
+                abilities[x] = gBattleMons[gBattlerAttacker].abilities[x];
                 gBattleMons[gBattlerAttacker].abilities[x] = gBattleMons[gBattlerTarget].abilities[x];
-                gBattleMons[gBattlerTarget].abilities[x] = atkAbilities[x];
+                gBattleMons[gBattlerTarget].abilities[x] = abilities[x];
             }
         }
 
