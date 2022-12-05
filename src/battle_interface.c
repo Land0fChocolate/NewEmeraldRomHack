@@ -199,7 +199,7 @@ static u8 CalcBarFilledPixels(s32 maxValue, s32 oldValue, s32 receivedValue, s32
 
 static void SpriteCb_AbilityPopUp(struct Sprite *sprite);
 static void Task_FreeAbilityPopUpGfx(u8 taskId);
-static void Task_FreeAbilityMultiPopUpGfx(u8 taskId);
+static void Task_FreeMultiAbilityPopUpGfx(u8 taskId);
 
 static void SpriteCB_LastUsedBall(struct Sprite *sprite);
 static void SpriteCB_LastUsedBallWin(struct Sprite *sprite);
@@ -2778,7 +2778,7 @@ static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 wi
 }
 
 #define ABILITY_POP_UP_TAG 0xD720
-#define ABILITY_MULTI_POP_UP_TAG 0xD722
+#define MULTI_ABILITY_POP_UP_TAG 0xD722
 
 // for sprite
 #define tOriginalX      data[0]
@@ -2793,16 +2793,16 @@ static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 wi
 #define tSpriteId2      data[7]
 
 static const u8 sAbilityPopUpGfx[] = INCBIN_U8("graphics/battle_interface/ability_pop_up.4bpp");
-static const u32 sAbilityMultiPopUpGfx[] = INCBIN_U32("graphics/battle_interface/ability_multi_pop_up.4bpp");
+static const u32 sMultiAbilityPopUpGfx[] = INCBIN_U32("graphics/battle_interface/ability_multi_pop_up.4bpp");
 static const u16 sAbilityPopUpPalette[] = INCBIN_U16("graphics/battle_interface/ability_pop_up.gbapal");
 
 static const struct SpriteSheet sSpriteSheet_AbilityPopUp =
 {
     sAbilityPopUpGfx, sizeof(sAbilityPopUpGfx), ABILITY_POP_UP_TAG
 };
-static const struct SpriteSheet sSpriteSheet_AbilityMultiPopUp =
+static const struct SpriteSheet sSpriteSheet_MultiAbilityPopUp =
 {
-    sAbilityMultiPopUpGfx, sizeof(sAbilityMultiPopUpGfx), ABILITY_MULTI_POP_UP_TAG
+    sMultiAbilityPopUpGfx, sizeof(sMultiAbilityPopUpGfx), MULTI_ABILITY_POP_UP_TAG
 };
 static const struct SpritePalette sSpritePalette_AbilityPopUp =
 {
@@ -2826,7 +2826,7 @@ static const struct OamData sOamData_AbilityPopUp =
     .affineParam = 0,
 };
 
-static const struct OamData sOamData_AbilityMultiPopUp =
+static const struct OamData sOamData_MultiAbilityPopUp =
 {
     .y = 0,
     .affineMode = 0,
@@ -2865,11 +2865,11 @@ static const struct SpriteTemplate sSpriteTemplate_AbilityPopUp1 =
     .callback = SpriteCb_AbilityPopUp
 };
 
-static const struct SpriteTemplate sSpriteTemplate_AbilityMultiPopUp1 =
+static const struct SpriteTemplate sSpriteTemplate_MultiAbilityPopUp1 =
 {
-    .tileTag = ABILITY_MULTI_POP_UP_TAG,
+    .tileTag = MULTI_ABILITY_POP_UP_TAG,
     .paletteTag = ABILITY_POP_UP_TAG,
-    .oam = &sOamData_AbilityMultiPopUp,
+    .oam = &sOamData_MultiAbilityPopUp,
     .anims = sSpriteAnimTable_AbilityPopUp1,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
@@ -2898,11 +2898,11 @@ static const struct SpriteTemplate sSpriteTemplate_AbilityPopUp2 =
     .callback = SpriteCb_AbilityPopUp
 };
 
-static const struct SpriteTemplate sSpriteTemplate_AbilityMultiPopUp2 =
+static const struct SpriteTemplate sSpriteTemplate_MultiAbilityPopUp2 =
 {
-    .tileTag = ABILITY_MULTI_POP_UP_TAG,
+    .tileTag = MULTI_ABILITY_POP_UP_TAG,
     .paletteTag = ABILITY_POP_UP_TAG,
-    .oam = &sOamData_AbilityMultiPopUp,
+    .oam = &sOamData_MultiAbilityPopUp,
     .anims = sSpriteAnimTable_AbilityPopUp2,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
@@ -3075,20 +3075,20 @@ static void PrintAbilitiesOnAbilityPopUp(u16 abilities[], u8 spriteId1, u8 sprit
                         TRUE);
 
     PrintOnAbilityPopUp(gAbilityNames[abilities[1]],
-                       (void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32) + 640,
-                       (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 640,
+                       (void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32) + 768,
+                       (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 768,
                        6, 0,
-                       8,
+                       2,
                        7, 9, 1,
                        TRUE);
 
-    //PrintOnAbilityPopUp(gAbilityNames[abilities[2]],
-    //                   (void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32) + 368,
-    //                   (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 368,
-    //                   6, 0,
-    //                   12,
-    //                   7, 9, 1,
-    //                   TRUE);
+    PrintOnAbilityPopUp(gAbilityNames[abilities[2]],
+                      (void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32) + 1280,
+                      (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 1280,
+                      6, 0,
+                      0,
+                      7, 9, 1,
+                      TRUE);
 }
 
 #define PIXEL_COORDS_TO_OFFSET(x, y)(            \
@@ -3314,7 +3314,7 @@ void CreateMultiAbilityPopUp(u8 battlerId, bool32 isDoubleBattle)
 
     if (!gBattleStruct->activeAbilityPopUps)
     {
-        LoadSpriteSheet(&sSpriteSheet_AbilityMultiPopUp);
+        LoadSpriteSheet(&sSpriteSheet_MultiAbilityPopUp);
         LoadSpritePalette(&sSpritePalette_AbilityPopUp);
     }
     gBattleStruct->activeAbilityPopUps |= gBitTable[battlerId];
@@ -3327,10 +3327,10 @@ void CreateMultiAbilityPopUp(u8 battlerId, bool32 isDoubleBattle)
 
     if ((battlerPosition & BIT_SIDE) == B_SIDE_PLAYER)
     {
-        spriteId1 = CreateSprite(&sSpriteTemplate_AbilityMultiPopUp1,
+        spriteId1 = CreateSprite(&sSpriteTemplate_MultiAbilityPopUp1,
                                 coords[battlerPosition][0] - ABILITY_POP_UP_POS_X_SLIDE,
                                 coords[battlerPosition][1], 0);
-        spriteId2 = CreateSprite(&sSpriteTemplate_AbilityMultiPopUp2,
+        spriteId2 = CreateSprite(&sSpriteTemplate_MultiAbilityPopUp2,
                                 coords[battlerPosition][0] - ABILITY_POP_UP_POS_X_SLIDE + ABILITY_POP_UP_POS_X_DIFF,
                                 coords[battlerPosition][1], 0);
 
@@ -3342,10 +3342,10 @@ void CreateMultiAbilityPopUp(u8 battlerId, bool32 isDoubleBattle)
     }
     else
     {
-        spriteId1 = CreateSprite(&sSpriteTemplate_AbilityMultiPopUp1,
+        spriteId1 = CreateSprite(&sSpriteTemplate_MultiAbilityPopUp1,
                                 coords[battlerPosition][0] + ABILITY_POP_UP_POS_X_SLIDE,
                                 coords[battlerPosition][1], 0);
-        spriteId2 = CreateSprite(&sSpriteTemplate_AbilityMultiPopUp2,
+        spriteId2 = CreateSprite(&sSpriteTemplate_MultiAbilityPopUp2,
                                 coords[battlerPosition][0] + ABILITY_POP_UP_POS_X_SLIDE + ABILITY_POP_UP_POS_X_DIFF,
                                 coords[battlerPosition][1], 0);
 
@@ -3359,7 +3359,7 @@ void CreateMultiAbilityPopUp(u8 battlerId, bool32 isDoubleBattle)
     gBattleStruct->abilityPopUpSpriteIds[battlerId][0] = spriteId1;
     gBattleStruct->abilityPopUpSpriteIds[battlerId][1] = spriteId2;
 
-    taskId = CreateTask(Task_FreeAbilityMultiPopUpGfx, 5);
+    taskId = CreateTask(Task_FreeMultiAbilityPopUpGfx, 5);
     gTasks[taskId].tSpriteId1 = spriteId1;
     gTasks[taskId].tSpriteId2 = spriteId2;
 
@@ -3442,13 +3442,13 @@ static void Task_FreeAbilityPopUpGfx(u8 taskId)
     }
 }
 
-static void Task_FreeAbilityMultiPopUpGfx(u8 taskId)
+static void Task_FreeMultiAbilityPopUpGfx(u8 taskId)
 {
     if (!gSprites[gTasks[taskId].tSpriteId1].inUse
         && !gSprites[gTasks[taskId].tSpriteId2].inUse
         && !gBattleStruct->activeAbilityPopUps)
     {
-        FreeSpriteTilesByTag(ABILITY_MULTI_POP_UP_TAG);
+        FreeSpriteTilesByTag(MULTI_ABILITY_POP_UP_TAG);
         FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
         DestroyTask(taskId);
     }

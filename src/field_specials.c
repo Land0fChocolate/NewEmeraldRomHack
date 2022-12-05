@@ -2354,7 +2354,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 9;
+            task->tNumItems = 11;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2560,6 +2560,8 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_HpUp1BP,
         gText_PPUp2BP,
         gText_PPMax5BP,
+        gText_BottleCap2BP,
+        gText_GoldBottleCap30BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
@@ -4571,3 +4573,73 @@ u8 Script_TryGainNewFanFromCounter(void)
 {
     return TryGainNewFanFromCounter(gSpecialVar_0x8004);
 }
+
+void CheckForMaxMonIVs(void)
+{
+    u8 i;
+    u32 ivStorage[NUM_STATS];
+
+    ivStorage[STAT_HP] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV);
+    ivStorage[STAT_ATK] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV);
+    ivStorage[STAT_DEF] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV);
+    ivStorage[STAT_SPEED] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV);
+    ivStorage[STAT_SPATK] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV);
+    ivStorage[STAT_SPDEF] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV);
+
+    gSpecialVar_0x8007 = 0;
+    
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        gSpecialVar_0x8007 += ivStorage[i];
+    }
+
+    if (gSpecialVar_0x8007 >= (MAX_PER_STAT_IVS * 6))
+        gSpecialVar_Result = TRUE;
+    else
+        gSpecialVar_Result = FALSE;
+}
+
+void MaximizeMonIVs(void)
+{
+    u8 maxIV = MAX_PER_STAT_IVS;
+
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &maxIV);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &maxIV);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &maxIV);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &maxIV);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &maxIV);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &maxIV);
+
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void CheckForMaxMonIV(void)
+{
+    u8 i;
+    u32 statIV;
+
+    statIV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005);
+
+    if (statIV >= MAX_PER_STAT_IVS)
+        gSpecialVar_Result = TRUE;
+    else
+        gSpecialVar_Result = FALSE;
+}
+
+void BuffMonIV(void)
+{
+    u8 i;
+    u32 statIV;
+
+    statIV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005);
+
+    if (statIV + IVS_PER_BOTTLE_CAP_BUFF >= MAX_PER_STAT_IVS)
+        statIV = MAX_PER_STAT_IVS;
+    else
+        statIV += IVS_PER_BOTTLE_CAP_BUFF;
+
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005, &statIV);
+
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+

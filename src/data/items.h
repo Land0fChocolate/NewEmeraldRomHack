@@ -1063,7 +1063,7 @@ const struct Item gItems[] =
     {
         .name = _("PP Up"),
         .itemId = ITEM_PP_UP,
-        .price = 10000,
+        .price = 8000,
         .description = sPPUpDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -1075,7 +1075,7 @@ const struct Item gItems[] =
     {
         .name = _("PP Max"),
         .itemId = ITEM_PP_MAX,
-        .price = 25000,
+        .price = 20000,
         .description = sPPMaxDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,

@@ -2428,7 +2428,6 @@ bool8 ScrCmd_checkformoninparty(struct ScriptContext *ctx)
     return FALSE;
 }
 
-//TODO: needs testing
 bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
 {
     // 0 = Neutral Form

@@ -209,6 +209,14 @@ RustboroCity_EventScript_GymSign::
 	msgbox RustboroCity_Text_GymSign, MSGBOX_SIGN
 	end
 
+RustboroCity_EventScript_IVBufferSign::
+	msgbox RustboroCity_Text_IVBufferSign, MSGBOX_SIGN
+	end
+
+RustboroCity_Text_IVBufferSign::
+	.string "IV BUFFER\p"
+	.string "“Raise your Pokémon's limits!”$"
+
 @ Unused
 RustboroCity_EventScript_DevonCorpBranchOfficeSign::
 	msgbox RustboroCity_Text_DevonCorpBranchOfficeSign, MSGBOX_SIGN

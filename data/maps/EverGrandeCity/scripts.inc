@@ -35,12 +35,12 @@ EverGrandeCity_EventScript_Leaf::
 EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	@goto_if_set FLAG_HIDE_COZMOS_HOUSE_METEORITE, EverGrandeCity_EventScript_TestAbra2Set
+	giveitem ITEM_GOLD_BOTTLE_CAP, 1
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
-	clearflag FLAG_HIDE_COZMOS_HOUSE_METEORITE
 	end
 
 EverGrandeCity_EventScript_TestAbra2Set::
-	msgbox EverGrandeCity_Text_FlagIsSet, MSGBOX_NPC
+	faceplayer
 	end
 
 EverGrandeCity_Text_FlagIsSet:
