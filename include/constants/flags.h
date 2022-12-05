@@ -861,7 +861,7 @@
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_1_BLOCKING_ENTRANCE         0x335
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE         0x336
 #define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337 // unused
-#define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338
+#define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338 // unused
 #define FLAG_OBTAINED_LILYCOVE_CITY_ICE_STONE                       0x339
 #define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
 #define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B
