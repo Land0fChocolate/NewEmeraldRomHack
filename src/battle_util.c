@@ -4949,14 +4949,14 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                     break;
                 case ABILITY_WISH_MAKER:
-                if (!gSpecialStatuses[battler].switchInAbilityDone)
-                {
-                    gLastUsedAbility = ABILITY_WISH_MAKER;
-                    gLastUsedMove = MOVE_WISH;
-                    BattleScriptPushCursorAndCallback(BattleScript_WishMaker);
-                    effect++;
-                    break;
-                }
+                    if (!gSpecialStatuses[battler].switchInAbilityDone)
+                    {
+                        gLastUsedAbility = ABILITY_WISH_MAKER;
+                        gLastUsedMove = MOVE_WISH;
+                        BattleScriptPushCursorAndCallback(BattleScript_WishMaker);
+                        effect++;
+                        break;
+                    }
             }
         }
         break;
@@ -6335,7 +6335,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
     case ABILITYEFFECT_TRACE2:
         for (i = 0; i < gBattlersCount; i++)
         {
-            if (HasAbility(ABILITY_TRACE, gBattleMons[i].abilities) && (gBattleResources->flags->flags[i] & RESOURCE_FLAG_TRACED))
+            if (HasAbility(ABILITY_TRACE, gBattleMons[i].abilities) && (gBattleResources->flags->flags[i] & RESOURCE_FLAG_TRACED)
+                && (IsBattlerAlive(BATTLE_OPPOSITE(i)) || IsBattlerAlive(BATTLE_PARTNER(BATTLE_OPPOSITE(i)))))
             {
                 u8 side = (GetBattlerPosition(i) ^ BIT_SIDE) & BIT_SIDE; // side of the opposing pokemon
                 u8 target1 = GetBattlerAtPosition(side);
