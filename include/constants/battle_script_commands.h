@@ -224,13 +224,14 @@
 #define VARIOUS_BATTLER_ITEM_TO_LAST_USED_ITEM      150
 #define VARIOUS_SET_BEAK_BLAST                      151
 #define VARIOUS_SWAP_SIDE_STATUSES                  152
-#define VARIOUS_CHECK_IF_MIRACLE_BLOSSOM_HEALS  	153
-#define VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS      	154
-#define VARIOUS_TRY_RESET_TIME_TRAVELLER        	155
+#define VARIOUS_CHECK_IF_MIRACLE_BLOSSOM_HEALS      153
+#define VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS          154
+#define VARIOUS_TRY_RESET_TIME_TRAVELLER            155
 #define VARIOUS_TRY_SYMBIOSIS                       156
 #define VARIOUS_CAN_TELEPORT                        157
 #define VARIOUS_GET_BATTLER_SIDE                    158
 #define VARIOUS_MULTI_ABILITY_POPUP                 159
+#define VARIOUS_SET_LAST_USED_ABILITY               160
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

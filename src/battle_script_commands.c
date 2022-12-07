@@ -9763,6 +9763,9 @@ static void Cmd_various(void)
             return;
         }
         break;
+    case VARIOUS_SET_LAST_USED_ABILITY:
+        gLastUsedAbility = T1_READ_16(gBattlescriptCurrInstr + 3);
+        break;
     case VARIOUS_CAN_TELEPORT:
         gBattleCommunication[0] = CanTeleport(gActiveBattler);
         break;
@@ -12792,7 +12795,7 @@ static void Cmd_trycopyability(void) // role play
             if (!IsRolePlayBannedAbility(defAbilities[x]) && IsRolePlayBannedAbilityAtk(gBattleMons[gBattlerAttacker].abilities[x]))
                 gBattleMons[gBattlerAttacker].abilities[x] = defAbilities[x];
         }
-        //gBattleScripting.abilityPopupOverwrite = gBattleMons[gBattlerAttacker].ability; //TODO: do I need this line?
+        //*gBattleScripting.abilityPopupOverwrite = gBattleMons[gBattlerAttacker].abilities; //TODO: use when multi-ability pop-up works
         memcpy(gLastUsedAbilities, defAbilities, sizeof(gLastUsedAbilities));
         gBattlescriptCurrInstr += 5;
     }

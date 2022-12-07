@@ -3305,7 +3305,7 @@ void CreateMultiAbilityPopUp(u8 battlerId, bool32 isDoubleBattle)
     if (!B_ABILITY_POP_UP)
         return;
 
-    //TODO: do I need this check?
+    //TODO: for Role Play. Currently unused.
     //for (i = 0; i < NUM_ABILITY_SLOTS; i++)
     //{
     //    if (gBattleScripting.abilityPopupOverwrite[i] != 0)

@@ -8171,6 +8171,7 @@ BattleScript_HealerActivates::
 
 BattleScript_SandstreamActivates::
 	pause B_WAIT_TIME_SHORT
+	@setlastusedability ABILITY_SAND_STREAM @Piece of shit command doesn't fucking work when used before BattleScript_AbilityPopUp
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNSXWHIPPEDUPSANDSTORM
 	waitstate
