@@ -12781,9 +12781,14 @@ static void Cmd_tryswapitems(void) // trick
 
 static void Cmd_trycopyability(void) // role play
 {
-    u16 *defAbilities = gBattleMons[gBattlerTarget].abilities, noAbilities[NUM_ABILITY_SLOTS] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE}, x;
+    u8 x;
+    u16 atkAbilities[NUM_ABILITY_SLOTS], defAbilities[NUM_ABILITY_SLOTS];
+    u16 noAbilities[NUM_ABILITY_SLOTS] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE};
 
-    if (AbilitiesMatch(gBattleMons[gBattlerAttacker].abilities, defAbilities)
+    memcpy(atkAbilities, gBattleMons[gBattlerAttacker].abilities, sizeof(atkAbilities));
+    memcpy(defAbilities, gBattleMons[gBattlerTarget].abilities, sizeof(defAbilities));
+
+    if (AbilitiesMatch(atkAbilities, defAbilities)
       || AbilitiesMatch(defAbilities, noAbilities))
     {
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
@@ -12792,10 +12797,10 @@ static void Cmd_trycopyability(void) // role play
     {
         for (x = 0; x < NUM_ABILITY_SLOTS; x++)
         {
-            if (!IsRolePlayBannedAbility(defAbilities[x]) && IsRolePlayBannedAbilityAtk(gBattleMons[gBattlerAttacker].abilities[x]))
+            if (!IsRolePlayBannedAbility(defAbilities[x]) && !IsRolePlayBannedAbilityAtk(atkAbilities[x]))
                 gBattleMons[gBattlerAttacker].abilities[x] = defAbilities[x];
         }
-        //*gBattleScripting.abilityPopupOverwrite = gBattleMons[gBattlerAttacker].abilities; //TODO: use when multi-ability pop-up works
+        //*gBattleScripting.abilityPopupOverwrite = atkAbilities; //TODO: use when multi-ability pop-up works
         memcpy(gLastUsedAbilities, defAbilities, sizeof(gLastUsedAbilities));
         gBattlescriptCurrInstr += 5;
     }

@@ -5608,14 +5608,14 @@ BattleScript_EffectRolePlay::
 	attackanimation
 	waitanimation
 .if B_ABILITY_POP_UP == TRUE
-	setbyte sFIXED_ABILITY_POPUP, TRUE
+	@setbyte sFIXED_ABILITY_POPUP, TRUE
 	@showmultiabilitypopup BS_ATTACKER
-	pause 60
-	sethword sABILITY_OVERWRITE, 0
-	updateabilitypopup BS_ATTACKER
-	pause 20
-	destroyabilitypopup
-	pause 40
+	@pause 60
+	@sethword sABILITY_OVERWRITE, 0
+	@updateabilitypopup BS_ATTACKER
+	@pause 20
+	@destroyabilitypopup
+	@pause 40
 .endif
 	printstring STRINGID_PKMNCOPIEDFOE
 	waitmessage B_WAIT_TIME_LONG
