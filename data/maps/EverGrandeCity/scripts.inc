@@ -34,13 +34,8 @@ EverGrandeCity_EventScript_Leaf::
 
 EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
-	@goto_if_set FLAG_HIDE_COZMOS_HOUSE_METEORITE, EverGrandeCity_EventScript_TestAbra2Set
-	giveitem ITEM_GOLD_BOTTLE_CAP, 1
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
-	end
-
-EverGrandeCity_EventScript_TestAbra2Set::
-	faceplayer
+	setflag FLAG_DISABLE_BAG_USE_IN_BATTLE_EXCEPT_BALLS
 	end
 
 EverGrandeCity_Text_FlagIsSet:

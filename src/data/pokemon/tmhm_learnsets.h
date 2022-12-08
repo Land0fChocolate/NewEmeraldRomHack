@@ -10974,6 +10974,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM71_STONE_EDGE)
                                             | TMHM2(TM74_GYRO_BALL)
                                             | TMHM2(TM78_BULLDOZE)
+                                            | TMHM2(TM79_FROST_BREATH)
                                             | TMHM2(TM80_ROCK_SLIDE)
                                             | TMHM2(TM86_GRASS_KNOT)
                                             | TMHM2(TM92_TRICK_ROOM)

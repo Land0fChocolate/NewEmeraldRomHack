@@ -1277,7 +1277,7 @@
 #define FLAG_UNUSED_0x4D2                                           0x4D2 // Unused Flag
 #define FLAG_UNUSED_0x4D3                                           0x4D3 // Unused Flag
 #define FLAG_UNUSED_0x4D4                                           0x4D4 // Unused Flag
-#define FLAG_UNUSED_0x4D5                                           0x4D5 // Unused Flag
+#define FLAG_DISABLE_BAG_USE_IN_BATTLE_EXCEPT_BALLS                 0x4D5
 #define FLAG_HIDE_RAIKOU                                            0x4D6
 #define FLAG_HIDE_ENTEI                                             0x4D7
 #define FLAG_HIDE_SUICUNE                                           0x4D8

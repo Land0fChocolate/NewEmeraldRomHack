@@ -149,7 +149,7 @@
 #define B_KINGS_SHIELD_LOWER_ATK    GEN_7 // In Gen7+, it lowers Atk by 1 stage instead of 2 of oponents that hit it.
 #define B_SPEED_BUFFING_RAPID_SPIN  GEN_8 // In Gen8, Rapid Spin raises the user's Speed by 1 stage.
 #define B_RECOIL_IF_MISS_DMG        GEN_7 // In Gen5+, Jump Kick and High Jump Kick will always do half of the user's max HP when missing.
-#define B_KLUTZ_FLING_INTERACTION   GEN_7 // In Gen5+, Pokémon with the Klutz ability can't use Fling.
+#define B_KLUTZ_FLING_INTERACTION   GEN_4 // In Gen5+, Pokémon with the Klutz ability can't use Fling.
 #define B_UPDATED_CONVERSION        GEN_7 // In Gen6+, Conversion changes the user's type to match their first move's. Before, it would choose a move at random.
 #define B_PP_REDUCED_BY_SPITE       GEN_7 // In Gen4+, Spite reduces the foe's last move's PP by 4, instead of 2 to 5.
 #define B_MINIMIZE_EVASION          GEN_7 // In Gen5+, Minimize raises evasion by 2 stages instead of 1.
@@ -214,16 +214,17 @@
 // Flag settings
 // To use the following features in scripting, replace the 0s with the flag ID you're assigning it to.
 // Eg: Replace with FLAG_UNUSED_0x264 so you can use that flag to toggle the feature.
-#define B_FLAG_INVERSE_BATTLE       0x4FF // If this flag is set, the battle's type effectiveness are inversed. For example, fire is super effective against water.
-#define B_FLAG_FORCE_DOUBLE_WILD    0     // If this flag is set, all land and surfing wild battles will be double battles.
-#define B_SMART_WILD_AI_FLAG        0x4DA // If not 0, you can set this flag in a script to enable smart wild pokemon
+#define B_FLAG_INVERSE_BATTLE           FLAG_INVERSE_BATTLE // If this flag is set, the battle's type effectiveness are inversed. For example, fire is super effective against water.
+#define B_FLAG_FORCE_DOUBLE_WILD        0     // If this flag is set, all land and surfing wild battles will be double battles.
+#define B_SMART_WILD_AI_FLAG            FLAG_SMART_WILD_AI // If not 0, you can set this flag in a script to enable smart wild pokemon
+#define B_FLAG_NO_BAG_USE_EXCEPT_BALLS  FLAG_DISABLE_BAG_USE_IN_BATTLE_EXCEPT_BALLS     // If this flag is set, the ability to use the bag in battle is disabled except for Poke Balls.
 
 // Var Settings
 // To use the following features in scripting, replace the 0s with the var ID you're assigning it to.
 // Eg: Replace with VAR_UNUSED_0x40F7 so you can use VAR_TERRAIN for that feature.
 #define VAR_TERRAIN                    0      // If this var has a value, assigning a STATUS_FIELD_xx_TERRAIN to it before battle causes the battle to start with that terrain active
 #define B_VAR_WILD_AI_FLAGS            0      // If not 0, you can use this var to add to default wild AI flags. NOT usable with flags above (1 << 15)
-#define B_VAR_DEOXYS_BOSS_BATTLE_STATE 0x40B6 // 0 = No boss/normal Deoxys, 1 = start of boss battle, 2 = boss Deoxys neutral form, 3 = boss Deoxys defense form, 4 = boss Deoxys attack form, 5 = boss Deoxys speed form
+#define B_VAR_DEOXYS_BOSS_BATTLE_STATE VAR_DEOXYS_BOSS_BATTLE_STATE // 0 = No boss/normal Deoxys, 1 = start of boss battle, 2 = boss Deoxys neutral form, 3 = boss Deoxys defense form, 4 = boss Deoxys attack form, 5 = boss Deoxys speed form
 
 // Terrain settings
 #define B_TERRAIN_BG_CHANGE         TRUE  // If set to TRUE, terrain moves permanently change the default battle background until the effect fades.
@@ -248,10 +249,10 @@
 #define B_CRITICAL_CAPTURE          TRUE     // If set to TRUE, Critical Capture will be enabled.
 #define B_LAST_USED_BALL            TRUE     // If TRUE, the "last used ball" feature from Gen 7 will be implemented
 #define B_LAST_USED_BALL_BUTTON     R_BUTTON // If last used ball is implemented, this button (or button combo) will trigger throwing the last used ball.
-#define B_DISABLE_CATCHING          0x4DA    // If FALSE, Player cannot use Poke Balls to catch Pokemon //TODO
+#define B_DISABLE_CATCHING          FLAG_DISABLE_CATCHING    // If FALSE, Player cannot use Poke Balls to catch Pokemon
 
 // Other settings
-#define B_DOUBLE_WILD_CHANCE        0     // % chance of encountering two Pokémon in a Wild Encounter.
+#define B_DOUBLE_WILD_CHANCE        10    // % chance of encountering two Pokémon in a Wild Encounter.
 #define B_MULTI_BATTLE_WHITEOUT     GEN_8 // In Gen4+, multi battles end when the Player and also their Partner don't have any more Pokémon to fight.
 #define B_EVOLUTION_AFTER_WHITEOUT  GEN_6 // In Gen6+, Pokemon that qualify for evolution after battle will evolve even if the player loses.
 #define B_WILD_NATURAL_ENEMIES      TRUE  // If set to TRUE, certain wild mon species will attack other species when partnered in double wild battles (eg. Zangoose vs Seviper)

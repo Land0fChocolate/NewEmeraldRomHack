@@ -633,7 +633,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_BALTOY] = {
         .species = SPECIES_BALTOY,
-        .moves = {MOVE_PSYBEAM, MOVE_ANCIENT_POWER, MOVE_LIGHT_SCREEN, MOVE_MUD_SLAP},
+        .moves = {MOVE_PSYBEAM, MOVE_ANCIENT_POWER, MOVE_HEAL_BLOCK, MOVE_MUD_SLAP},
         .item = ITEM_PERSIM_BERRY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_ATTACK,
         .nature = NATURE_NAUGHTY
@@ -1746,14 +1746,14 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_LUNATONE_1] = {
         .species = SPECIES_LUNATONE,
-        .moves = {MOVE_CONFUSION, MOVE_COSMIC_POWER, MOVE_LIGHT_SCREEN, MOVE_PAIN_SPLIT},
+        .moves = {MOVE_PSYWAVE, MOVE_COSMIC_POWER, MOVE_LIGHT_SCREEN, MOVE_HEAL_BLOCK},
         .item = ITEM_SITRUS_BERRY,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_QUIET
     },
     [FRONTIER_MON_SOLROCK_1] = {
         .species = SPECIES_SOLROCK,
-        .moves = {MOVE_CONFUSION, MOVE_FIRE_SPIN, MOVE_REFLECT, MOVE_TRICK_ROOM},
+        .moves = {MOVE_POWER_GEM, MOVE_FIRE_SPIN, MOVE_REFLECT, MOVE_TRICK_ROOM},
         .item = ITEM_SITRUS_BERRY,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_QUIET
@@ -2565,7 +2565,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_LUNATONE_2] = {
         .species = SPECIES_LUNATONE,
-        .moves = {MOVE_PSYCHIC, MOVE_ICE_BEAM, MOVE_POWER_GEM, MOVE_COSMIC_POWER},
+        .moves = {MOVE_PSYCHIC, MOVE_FROST_BREATH, MOVE_POWER_GEM, MOVE_COSMIC_POWER},
         .item = ITEM_ABSORB_BULB,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_QUIET
