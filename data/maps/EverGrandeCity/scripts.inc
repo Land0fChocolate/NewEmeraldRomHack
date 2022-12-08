@@ -35,7 +35,6 @@ EverGrandeCity_EventScript_Leaf::
 EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
-	setflag FLAG_DISABLE_BAG_USE_IN_BATTLE_EXCEPT_BALLS
 	end
 
 EverGrandeCity_Text_FlagIsSet:
