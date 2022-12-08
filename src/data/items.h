@@ -913,6 +913,21 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
+    [ITEM_JELLY_FILLED_DONUT2] = //unused, here so I can remove the item in game
+    {
+        .name = _("Jelly Donut"),
+        .itemId = ITEM_JELLY_FILLED_DONUT2,
+        .price = 300,
+        .holdEffectParam = 50,
+        .description = sJellyFilledDonutDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = ITEM_B_USE_MEDICINE,
+        .battleUseFunc = ItemUseInBattle_Medicine,
+        .flingPower = 30,
+    },
+
 // Vitamins
 
     [ITEM_HP_UP] =
@@ -1155,33 +1170,6 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .flingPower = 20,
-    },
-
-// Ability Modifiers
-
-    [ITEM_ABILITY_CAPSULE] =
-    {
-        .name = _("AbilityCapsle"),
-        .itemId = ITEM_ABILITY_CAPSULE,
-        .price = 10000,
-        .holdEffectParam = 0,
-        .description = sAbilityCapsuleDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_AbilityCapsule,
-        .flingPower = 10,
-    },
-
-    [ITEM_ABILITY_PATCH] = // Todo
-    {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 10,
     },
 
 // Mints
