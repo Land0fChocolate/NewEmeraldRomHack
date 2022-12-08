@@ -9795,23 +9795,29 @@ BattleScript_DeoxysStrangeAura::
 	end
 
 BattleScript_DeoxysBossFormChange::
+	copybyte gBattlerAbility, gBattlerTarget
+	pause 5
 	handleformchange BS_TARGET, 0
 	handleformchange BS_TARGET, 1
 	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	waitanimation
+	handleformchange BS_TARGET, 2 
 	healthbarupdate BS_TARGET
 	datahpupdate BS_TARGET
-	waitanimation
 	printstring STRINGID_DEOXYSCHANGEDFORM
 	waitmessage B_WAIT_TIME_LONG
 	return
 
 BattleScript_DeoxysBossFormChangeCatchable::
+	copybyte gBattlerAbility, gBattlerTarget
+	pause 5
 	handleformchange BS_TARGET, 0
 	handleformchange BS_TARGET, 1
 	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	waitanimation
+	handleformchange BS_TARGET, 2 
 	healthbarupdate BS_TARGET
 	datahpupdate BS_TARGET
-	waitanimation
 	printstring STRINGID_DEOXYSCHANGEDFORMCATCHABLE
 	waitmessage B_WAIT_TIME_LONG
 	return

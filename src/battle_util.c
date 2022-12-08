@@ -3231,7 +3231,7 @@ u8 DoBattlerEndTurnEffects(void)
                 if (!(gStatuses3[gActiveBattler] & STATUS3_YAWN) && !(gBattleMons[gActiveBattler].status1 & STATUS1_ANY)
                  && !HasAbility(ABILITY_VITAL_SPIRIT, abilities)
                  && !HasAbility(ABILITY_INSOMNIA, abilities) && !UproarWakeUpCheck(gActiveBattler)
-                 && !IsLeafGuardProtected(gActiveBattler))
+                 && !IsLeafGuardProtected(gActiveBattler)) //&& (IsBattlerAlive(BATTLE_OPPOSITE(gActiveBattler)))
                 {
                     CancelMultiTurnMoves(gActiveBattler);
                     gEffectBattler = gActiveBattler;

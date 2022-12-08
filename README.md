@@ -4,7 +4,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 # Changelog
 
-- Many post gen 3 features from pokeemerald Expansion are in this ROM.
+- Many post gen 3 features from pokeemerald-expansion are in this ROM.
 	- Including physical/special split, fairy types, new moves, new items, new Pokemon species, regional species variants.
 - All Pokemon from gens 1, 2 and 3 are accessible. 
 	- Those Pokemon with post gen 3 evolutions and pre-evolutions have those available as well.
@@ -19,27 +19,24 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- Pokemon will attempt to learn a new move upon evolution.
 - Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko, Spheal lines have Attack and Special Attack swapped for example. (TODO: make list)
 - HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
-- Berry tree drop rates are tripled. Interaction with berry trees is also quicker.
-- Number of Feebas spots is tripled.
-- Removed badge boosts
 - Pokemon IVs and EVs can be viewed in the summary screen by pressing the L and R buttons.
 - Wild Encounters adjusted.
-	- Both Latias and Latios are available roaming
+	- Both Latias and Latios are available roaming at the same time.
 	- All Legendary and Mythical Pokemon can be repeatedly acquired.
 - Repeatedly acquirable fossils.
-- Trainer parties updated.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
 - Ice types have their special defense boosted by 50% in hail.
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
-- Map layout changes, including new areas to explore that have new Pokemon (post game).
+- Opponent Trainer parties have been updated.
 - Battle Frontier changes
 	- Opponent Pokemon list updated with new Pokemon, new items and new moves.
 	- Battle Palace is now inverse battle themed.
 	- Battle Dome has its move scores updated.
 	- Battle Factory has its opponent tips updated.
-- Graphical updates to existing overworld sprites and environments.
+- Map layout changes, including new areas to explore that have new Pokemon (post game).
 - New overworld sprites and graphics.
+- Graphical updates to many existing overworld sprites and environments.
 - Various story changes. Includes aspects from ORAS, though has an entirely new story.
 - Gym Leaders do more:
 	- Roxanne trades evolution stones for fossils.
@@ -55,9 +52,12 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
 	- Existing shops sell more stuff, including post gen 3 items.
 	- New shops that sell more stuff, including post gen 3 items.
-	- More daily berry giveaways and of newer berries too.
+	- More daily berry giveaways and of newer gen berries too.
 - New shops and updates to existing shops to stock later gen items and new TMs.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
+- Berry tree drop rates are tripled. Interaction with berry trees is also quicker.
+- Number of Feebas spots is tripled.
+- Removed badge boosts
 
 # New Abilities
 
@@ -136,6 +136,12 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Rock Smash: Now 50 BP with 100% chance for target defense drop.
 - Poison Fang: Now has a 100% chance to poison target.
 - Cut: Now has 100% Acc and always crits.
+
+# Known Bugs
+
+- Many switch-in abilities (like Frisk and Imposter) don’t activate when both Player Pokemon and opponent Pokemon fainted previous turn (e.g. Destiny Bond) and the Player sends out a Pokemon before the opponent sends out theirs. Solving this will probably involve having to rewrite the code that deals with switch-in abilities.
+- Abilities that activate at the same time as other abilities on the same Pokemon can have their names in the ability pop-up overwritten. (e.g. Tyranitar with Sand Stream and Unnerve). This is due to how switch-in abilities are handled. This could be fixed by setting gLastUsedAbility during the ability battle script with the new setlastusedability command, but this freezes the game when used before calling the ability pop-up. Why? Have no fucking clue.
+- Wild Deoxys may not regenerate HP bar properly in battle.
 
 # Credits
 

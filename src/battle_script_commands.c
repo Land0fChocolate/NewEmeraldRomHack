@@ -3647,8 +3647,8 @@ static void Cmd_tryfaintmon(void)
                         gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_DEFENSE;
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_CHARGE_BEAM, 0);
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICY_WIND, 1);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_COSMIC_POWER, 2);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 3);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 2);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_COSMIC_POWER, 3);
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 3);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
@@ -3678,7 +3678,7 @@ static void Cmd_tryfaintmon(void)
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_COSMIC_POWER, 0);
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 1);
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHO_BOOST, 2);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_HYPER_BEAM, 3);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_GIGA_IMPACT, 3);
                         FlagClear(FLAG_DISABLE_CATCHING);
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 0);
                         BattleScriptPushCursor();
@@ -8609,7 +8609,7 @@ static void Cmd_various(void)
             }
         }
         return;
-    case VARIOUS_SET_LAST_USED_ABILITIES: // entrainment //TODO: make sure this is properly updated for multi ability (use it in MultiAbilityPopUp)
+    case VARIOUS_SET_LAST_USED_ABILITIES: // entrainment //TODO: may need to use it in MultiAbilityPopUp
         memcpy(gLastUsedAbilities, gBattleMons[gActiveBattler].abilities, sizeof(gLastUsedAbilities));
         break;
     case VARIOUS_TRY_HEAL_PULSE:
