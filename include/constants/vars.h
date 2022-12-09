@@ -239,7 +239,7 @@
 #define VAR_NAVEL_ROCK_HOOH_SWITCH           0x40DC
 #define VAR_EVENT_PICHU_SLOT                 0x40DD
 #define VAR_LISIA_EVENT_TRIGGER_STATE        0x40DE
-#define VAR_NEVER_READ_0x40DF                0x40DF // unused
+#define VAR_PETALBURG_SHRINE_TRIGGER_STATE   0x40DF
 #define VAR_NEVER_READ_0x40E0                0x40E0 // unused
 #define VAR_NEVER_READ_0x40E1                0x40E1 // unused
 #define VAR_NEVER_READ_0x40E2                0x40E2 // unused

@@ -7449,13 +7449,15 @@ BattleScript_SturdiedMsg::
 
 BattleScript_TimeTravellerAbility::
 	copybyte gBattlerAbility, gBattlerTarget
-	pause 16
+	pause 10
 	call BattleScript_AbilityPopUp
 	handleformchange BS_TARGET, 0
+	handleformchange BS_TARGET, 1
 	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	waitanimation
+	handleformchange BS_TARGET, 2
 	healthbarupdate BS_TARGET
 	datahpupdate BS_TARGET
-	waitanimation
 	printstring STRINGID_TIMETRAVELLEDTOPREVIOUSSTATE
 	waitmessage B_WAIT_TIME_LONG
 	return

@@ -1953,6 +1953,14 @@ static void Cmd_adjustdamage(void)
     if (gBattleMons[gBattlerTarget].hp > gBattleMoveDamage)
         goto END;
 
+    // recalculate damage so Time Traveller can replenish it back later
+    if (HasAbility(ABILITY_TIME_TRAVELLER, GetBattlerAbilities(gBattlerTarget))
+        && gBattleMons[gBattlerTarget].hp < gBattleMoveDamage)
+    {
+        gBattleMoveDamage = gBattleMons[gBattlerTarget].hp;
+        goto END;
+    }
+
     holdEffect = GetBattlerHoldEffect(gBattlerTarget, TRUE);
     param = GetBattlerHoldEffectParam(gBattlerTarget);
 

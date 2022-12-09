@@ -23,6 +23,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Wild Encounters adjusted.
 	- Both Latias and Latios are available roaming at the same time.
 	- All Legendary and Mythical Pokemon can be repeatedly acquired.
+	- There is a small chance for a wild encounter to be a double battle.
 - Repeatedly acquirable fossils.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
 - Ice types have their special defense boosted by 50% in hail.
@@ -53,8 +54,10 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- Existing shops sell more stuff, including post gen 3 items.
 	- New shops that sell more stuff, including post gen 3 items.
 	- More daily berry giveaways and of newer gen berries too.
+	- All item use, except for Poke Balls, is disabled from battles by default. NPCs don't use items either. Players may re-enable items in the options menu if they wish.
 - New shops and updates to existing shops to stock later gen items and new TMs.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
+- Groomer, EV trainer and IV trainer NPCs have been added.
 - Berry tree drop rates are tripled. Interaction with berry trees is also quicker.
 - Number of Feebas spots is tripled.
 - Removed badge boosts
@@ -142,6 +145,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Many switch-in abilities (like Frisk and Imposter) don’t activate when both Player Pokemon and opponent Pokemon fainted previous turn (e.g. Destiny Bond) and the Player sends out a Pokemon before the opponent sends out theirs. Solving this will probably involve having to rewrite the code that deals with switch-in abilities.
 - Abilities that activate at the same time as other abilities on the same Pokemon can have their names in the ability pop-up overwritten. (e.g. Tyranitar with Sand Stream and Unnerve). This is due to how switch-in abilities are handled. This could be fixed by setting gLastUsedAbility during the ability battle script with the new setlastusedability command, but this freezes the game when used before calling the ability pop-up. Why? Have no fucking clue.
 - Grassy Terrain background is jank
+- Some door animations don't work. The Player just runs into the door without it opening.
 - Wild Deoxys may not regenerate HP bar properly in battle.
 
 # Credits

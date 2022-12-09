@@ -126,8 +126,8 @@ Route115_EventScript_ItemPPUp::
 	finditem ITEM_PP_UP
 	end
 
-Route116_EventScript_ItemXSpecial::
-	finditem ITEM_X_SP_ATK
+Route116_EventScript_ItemBottleCap::
+	finditem ITEM_BOTTLE_CAP
 	end
 
 Route116_EventScript_ItemEther::
@@ -707,7 +707,7 @@ NavelRock_Entrance_Eventscript_ItemEscapeRope::
 	end
 
 NavelRock_Lugia1_Eventscript_ItemImpishMint::
-	finditem ITEM_IMPISH_MINT
+	finditem ITEM_MODEST_MINT
 	end
 
 NavelRock_Lugia2_Eventscript_ItemRareCandy::
@@ -719,7 +719,7 @@ NavelRock_Lugia3_Eventscript_ItemTM60::
 	end
 
 NavelRock_Hooh1_Eventscript_ItemBoldMint::
-	finditem ITEM_BOLD_MINT
+	finditem ITEM_ADAMANT_MINT
 	end
 
 NavelRock_Hooh2_Eventscript_ItemTM97::
