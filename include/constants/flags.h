@@ -266,11 +266,11 @@
 #define FLAG_RECEIVED_WAILMER_DOLL           0xF5
 #define FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104 0xF6
 #define FLAG_DEFEATED_SS_TIDAL_TRAINERS      0xF7
-#define FLAG_RECEIVED_SPELON_BERRY           0xF8
-#define FLAG_RECEIVED_PAMTRE_BERRY           0xF9
-#define FLAG_RECEIVED_WATMEL_BERRY           0xFA
-#define FLAG_RECEIVED_DURIN_BERRY            0xFB
-#define FLAG_RECEIVED_BELUE_BERRY            0xFC
+#define FLAG_RECEIVED_SPELON_BERRY           0xF8 // unused
+#define FLAG_RECEIVED_PAMTRE_BERRY           0xF9 // unused
+#define FLAG_RECEIVED_WATMEL_BERRY           0xFA // unused
+#define FLAG_RECEIVED_DURIN_BERRY            0xFB // unused
+#define FLAG_RECEIVED_BELUE_BERRY            0xFC // unused
 #define FLAG_ENABLE_RIVAL_MATCH_CALL         0xFD
 #define FLAG_RECEIVED_CHARCOAL               0xFE
 #define FLAG_LATIOS_OR_LATIAS_ROAMING        0xFF // unused, though set

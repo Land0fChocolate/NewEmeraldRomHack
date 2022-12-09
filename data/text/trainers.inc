@@ -578,10 +578,11 @@ Route107_Text_TonyDefeated:
 	.string "I'm in shock!$"
 
 Route107_Text_TonyPostBattle:
-	.string "I swim the seas with a heart full of\n"
-	.string "dreams…\p"
-	.string "It's a song!\n"
-	.string "Anyways, I'm swimming some more.$"
+	.string "I tried to introduce a new phrase at\n"
+	.string "the Dewford Town Hall, but it didn't\l"
+	.string "take off at all…\p"
+	.string "At least the wife of that berry guy\n"
+	.string "appreciates “Overwhelming Latias”.$"
 
 Route107_Text_TonyRegister:
 	.string "You've shocked me to the bone!\n"
@@ -1891,17 +1892,17 @@ Route115_Text_TimothyPostRematch:
 	.string "effort!$"
 
 Route115_Text_KoichiIntro:
-	.string "You!\p"
-	.string "My Machop!\p"
-	.string "Demand a battle!$"
+	.string "RAWR!\p"
+	.string "SUPER HUSTLE!!!!!$"
 
 Route115_Text_KoichiDefeat:
-	.string "Ouch, ouch, ouch!$"
+	.string "Super Hustle!$"
 
 Route115_Text_KoichiPostBattle:
-	.string "My Machop crew!\p"
-	.string "So long as they seek power, I will\n"
-	.string "grow strong with them!$"
+	.string "Super Hustle! Super Hustle!\n"
+	.string "That's my catchphrase!\p"
+	.string "One old lady liked it so much, she\n"
+	.string "gave me a rare berry!$"
 
 Route115_Text_NobIntro:
 	.string "My strongest skill is busting bricks\n"
@@ -3352,10 +3353,11 @@ Route123_Text_AlbertoDefeat:
 	.string "Even in defeat, Bird Pokémon are cool!$"
 
 Route123_Text_AlbertoPostBattle:
-	.string "I gather Bird Pokémon feathers that\n"
-	.string "scatter during battles.\p"
-	.string "I'm going to make a hat with\n"
-	.string "Bird Pokémon feathers.$"
+	.string "I complemented another Trainer for a\n"
+	.string "“Great Battle” the other day.\p"
+	.string "The old lady that lives in the house\n"
+	.string "down there gave me a cool berry for my\l"
+	.string "politeness.$"
 
 Route123_Text_EdIntro:
 	.string "When there are no Trainers around,\n"

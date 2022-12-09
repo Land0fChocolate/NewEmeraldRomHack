@@ -106,41 +106,10 @@ PetalburgCity_Movement_WalkDown:
 	walk_down
 	step_end
 
-PetalburgCity_Text_ShrineIsClosed:
-	.string "Oh, hello!\p"
-	.string "I'm so sorry, but the shrine is closed\n"
-	.string "for maintainance.\p"
-	.string "Please visit another time.$"
-
-PetalburgCity_Text_ImpressShrine:
-	.string "Have you come to pray at the shrine?\n"
-	.string "It may be difficult to get a blessing…\p"
-	.string "If someone had collected at least one\n"
-	.string "of every berry in Hoenn, I am sure\l"
-	.string "that the Pokémon of the shrine would\l"
-	.string "be impressed.$"
-
-PetalburgCity_Text_ShrineIsHappy:
-	.string "The shrine is looking more vibrant\n"
-	.string "than usual.\p"
-	.string "You must have made the shrine Pokémon\n"
-	.string "very happy.$"
-
 PetalburgCity_EventScript_Shrine::
 	msgbox PetalburgCity_Text_Shrine, MSGBOX_SIGN
 	goto_if_unset FLAG_OBTAINED_ALL_BERRIES_FOR_SHRINE, PetalburgCity_EventScript_CheckForEveryBerry
 	end
-
-PetalburgCity_Text_Shrine:
-	.string "An immaculately kept shrine.$"
-
-@ TODO: NPCs from all over give tips for phrases to use for the Berry Master's wife to get a rare berry
-@ GREAT BATTLE, CHALLENGE CONTEST, OVERWHELMING LATIAS, COOL LATIOS, SUPER HUSTLE
-@ Possible examples:
-@ "Yo. All I said was 'Cool Latios' and this old lady gave me a berry I'd never seen before."
-@ "Rawr! Super Hustle! That's my catch phrase! The Berry Master's wife even loves it!"
-
-@ TODO: need a check so the shrine can only be activated post Hall of Fame (shrine maiden blocks the entrance?)
 
 @ Checks for every berry up to Starf
 PetalburgCity_EventScript_CheckForEveryBerry::
@@ -367,11 +336,6 @@ PetalburgCity_Movement_CelebiEntrance:
 	delay_16
 	face_down
 	step_end
-
-PetalburgCity_Text_ShrineWarpsAndGlows:
-	.string "The shrine warps and glows.\p"
-	.string "A rift appears!\p"
-	.string "A Pokémon came out!$"
 
 PetalburgCity_EventScript_AddToBerryCount::
 	addvar VAR_TEMP_1, 1
@@ -880,6 +844,34 @@ PetalburgCity_Text_FullPartyExplanation:
 	.string "If you catch another one…\p"
 	.string "It is automatically sent to a Storage\n"
 	.string "Box over a PC connection.$"
+
+PetalburgCity_Text_ShrineIsClosed:
+	.string "Oh, hello!\p"
+	.string "I'm so sorry, but the shrine is closed\n"
+	.string "for maintainance.\p"
+	.string "Please visit another time.$"
+
+PetalburgCity_Text_ImpressShrine:
+	.string "Have you come to pray at the shrine?\n"
+	.string "It may be difficult to get a blessing…\p"
+	.string "If someone had collected at least one\n"
+	.string "of every berry in Hoenn, I am sure\l"
+	.string "that the Pokémon of the shrine would\l"
+	.string "be impressed.$"
+
+PetalburgCity_Text_ShrineIsHappy:
+	.string "The shrine is looking more vibrant\n"
+	.string "than usual.\p"
+	.string "You must have made the shrine Pokémon\n"
+	.string "very happy.$"
+
+PetalburgCity_Text_Shrine:
+	.string "An immaculately kept shrine.$"
+
+PetalburgCity_Text_ShrineWarpsAndGlows:
+	.string "The shrine warps and glows.\p"
+	.string "A rift appears!\p"
+	.string "A Pokémon came out!$"
 
 PetalburgCity_Text_GymSign:
 	.string "PETALBURG CITY POKéMON GYM\n"

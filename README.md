@@ -54,6 +54,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- Existing shops sell more stuff, including post gen 3 items.
 	- New shops that sell more stuff, including post gen 3 items.
 	- More daily berry giveaways and of newer gen berries too.
+	- The Berry Master's wife phrases for rare berries are now hinted at by NPCs in game. You can also now repeatedly get those rare berries from her. 
 	- All item use, except for Poke Balls, is disabled from battles by default. NPCs don't use items either. Players may re-enable items in the options menu if they wish.
 - New shops and updates to existing shops to stock later gen items and new TMs.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
