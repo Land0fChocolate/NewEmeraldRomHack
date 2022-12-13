@@ -229,25 +229,30 @@ DraconidArchives_EventScript_ResetDefeatedLegendaries::
 	clearflag FLAG_HIDE_LUGIA
 	clearflag FLAG_DEFEATED_HO_OH
 	clearflag FLAG_HIDE_HO_OH
-	clearflag FLAG_DEFEATED_CELEBI
-	call_if_set FLAG_DEFEATED_LATIAS, DraconidArchives_EventScript_ResetLatias
-	call_if_set FLAG_DEFEATED_LATIOS, DraconidArchives_EventScript_ResetLatios
+	call_if_set FLAG_OBTAINED_ALL_BERRIES_FOR_SHRINE, DraconidArchives_EventScript_ResetCelebi
 	clearflag FLAG_DEFEATED_REGIROCK
 	clearflag FLAG_HIDE_REGIROCK
 	clearflag FLAG_DEFEATED_REGICE
 	clearflag FLAG_HIDE_REGICE
 	clearflag FLAG_DEFEATED_REGISTEEL
 	clearflag FLAG_HIDE_REGISTEEL
+	call_if_set FLAG_DEFEATED_LATIAS, DraconidArchives_EventScript_ResetLatias
+	call_if_set FLAG_DEFEATED_LATIOS, DraconidArchives_EventScript_ResetLatios
 	clearflag FLAG_DEFEATED_KYOGRE
 	clearflag FLAG_HIDE_MARINE_CAVE_KYOGRE
 	clearflag FLAG_DEFEATED_GROUDON
 	clearflag FLAG_HIDE_TERRA_CAVE_GROUDON
 	clearflag FLAG_DEFEATED_RAYQUAZA
 	clearflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA
+	call_if_set FLAG_PLACED_WISH_TAG, DraconidArchives_EventScript_ResetJirachi
 	clearflag FLAG_DEFEATED_DEOXYS
 	clearflag FLAG_BATTLED_DEOXYS
 	clearflag FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE
-	call_if_set FLAG_PLACED_WISH_TAG, DraconidArchives_EventScript_ResetJirachi
+	return
+
+DraconidArchives_EventScript_ResetCelebi::
+	clearflag FLAG_DEFEATED_CELEBI
+	clearflag FLAG_HIDE_PETALBURG_CITY_CELEBI
 	return
 
 DraconidArchives_EventScript_ResetLatias::

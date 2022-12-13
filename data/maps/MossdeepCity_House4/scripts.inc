@@ -30,16 +30,6 @@ MossdeepCity_House4_EventScript_NoSecretBase::
 	release
 	end
 
-MossdeepCity_House4_EventScript_Skitty::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_SKITTY, 0
-	msgbox MossdeepCity_House4_Text_Skitty, MSGBOX_DEFAULT
-	waitmoncry
-	release
-	end
-
 MossdeepCity_House4_Text_BrotherLikesToFindBases:
 	.string "My little brother says he likes to go\n"
 	.string "find people's Secret Bases.$"
@@ -56,7 +46,4 @@ MossdeepCity_House4_Text_YouMadeSecretBaseNearX:
 MossdeepCity_House4_Text_MakeSecretBase:
 	.string "You should make a Secret Base\n"
 	.string "somewhere. I'll go find it!$"
-
-MossdeepCity_House4_Text_Skitty:
-	.string "Skitty: Miyaan?$"
 

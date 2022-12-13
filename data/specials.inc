@@ -540,3 +540,7 @@ gSpecials::
 	def_special EVTrainPokemon
 	def_special InitNewRoamerLatias
 	def_special InitNewRoamerLatios
+	def_special CheckForMaxMonIVs
+	def_special MaximizeMonIVs
+	def_special CheckForMaxMonIV
+	def_special BuffMonIV

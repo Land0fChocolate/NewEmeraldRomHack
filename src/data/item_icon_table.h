@@ -91,9 +91,6 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_GENIUS_FEATHER] = {gItemIcon_GeniusFeather, gItemIconPalette_GeniusFeather},
     [ITEM_CLEVER_FEATHER] = {gItemIcon_CleverFeather, gItemIconPalette_CleverFeather},
     [ITEM_SWIFT_FEATHER] = {gItemIcon_SwiftFeather, gItemIconPalette_SwiftFeather},
-    // Ability Modifiers
-    [ITEM_ABILITY_CAPSULE] = {gItemIcon_AbilityCapsule, gItemIconPalette_AbilityCapsule},
-    [ITEM_ABILITY_PATCH] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
     // Mints
     [ITEM_LONELY_MINT] = {gItemIcon_Mint, gItemIconPalette_RedMint},
     [ITEM_ADAMANT_MINT] = {gItemIcon_Mint, gItemIconPalette_RedMint},

@@ -112,7 +112,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_RichBoyZinnia::
 
 MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger::
 	lockall
-	setvar VAR_WEATHER_INSTITUTE_TRIGGER_STATE, 1
+	setvar VAR_SPACE_CENTER_TRIGGER_STATE, 1
 	getplayerxy VAR_0x8004, VAR_0x8005
 	compare VAR_0x8005, 5
 	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY5

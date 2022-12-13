@@ -556,6 +556,7 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_RAIKOU:
     case SPECIES_ENTEI:
     case SPECIES_SUICUNE:
+    case SPECIES_CELEBI:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_C_VS_LEGEND_BEAST);
         break;
     case SPECIES_MEW:

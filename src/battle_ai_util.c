@@ -1372,8 +1372,7 @@ bool32 IsMoveRedirectionPrevented(u16 move, u16 atkAbilities[])
 // differs from GetTotalAccuracy in that we need to check AI history for item, ability, etc
 u32 AI_GetMoveAccuracy(u8 battlerAtk, u8 battlerDef, u16 move)
 {
-        return GetTotalAccuracy(battlerAtk, battlerDef, move, AI_DATA->abilities[battlerAtk], AI_DATA->abilities[battlerDef],
-                            AI_DATA->holdEffects[battlerAtk], AI_DATA->holdEffects[battlerDef]);
+        return GetTotalAccuracy(battlerAtk, battlerDef, move, AI_DATA->holdEffects[battlerAtk], AI_DATA->holdEffects[battlerDef]);
 }
 
 bool32 IsSemiInvulnerable(u8 battlerDef, u16 move)

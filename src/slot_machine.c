@@ -21,8 +21,10 @@
 #include "tv.h"
 #include "text_window.h"
 #include "main_menu.h"
+#include "battle_util.h"
 #include "bg.h"
 #include "window.h"
+#include "constants/abilities.h"
 #include "constants/coins.h"
 #include "constants/rgb.h"
 #include "constants/slot_machine.h"
@@ -1695,6 +1697,12 @@ static u8 GetBiasTag(u8 luckyFlags)
 static bool8 IsThisRoundLucky(void)
 {
     u8 rval = Random();
+    //More luck when Player has a Super Luck Pokemon in front of their party
+    u16 *abilities = GetMonAbilities(&gPlayerParty[0]);
+    if (HasAbility(ABILITY_SUPER_LUCK, abilities))
+        {
+            rval = rval / 2;
+        }
     if (sLuckyRoundProbabilities[sSlotMachine->machineId][sSlotMachine->bet - 1] > rval)
         return TRUE;
     return FALSE;

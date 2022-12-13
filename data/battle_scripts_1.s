@@ -5608,14 +5608,14 @@ BattleScript_EffectRolePlay::
 	attackanimation
 	waitanimation
 .if B_ABILITY_POP_UP == TRUE
-	setbyte sFIXED_ABILITY_POPUP, TRUE
-	showabilitypopup BS_ATTACKER
-	pause 60
-	sethword sABILITY_OVERWRITE, 0
-	updateabilitypopup BS_ATTACKER
-	pause 20
-	destroyabilitypopup
-	pause 40
+	@setbyte sFIXED_ABILITY_POPUP, TRUE
+	@showmultiabilitypopup BS_ATTACKER
+	@pause 60
+	@sethword sABILITY_OVERWRITE, 0
+	@updateabilitypopup BS_ATTACKER
+	@pause 20
+	@destroyabilitypopup
+	@pause 40
 .endif
 	printstring STRINGID_PKMNCOPIEDFOE
 	waitmessage B_WAIT_TIME_LONG
@@ -5770,10 +5770,10 @@ BattleScript_EffectSkillSwap:
 	waitanimation
 .if B_ABILITY_POP_UP == TRUE
 	copybyte gBattlerAbility, gBattlerTarget
-	call BattleScript_AbilityPopUp
+	@call BattleScript_MultiAbilityPopUp
 	pause 20
 	copybyte gBattlerAbility, gBattlerAttacker
-	call BattleScript_AbilityPopUp
+	@call BattleScript_MultiAbilityPopUp
 .endif
 	printstring STRINGID_PKMNSWAPPEDABILITIES
 	waitmessage B_WAIT_TIME_LONG
@@ -7449,13 +7449,15 @@ BattleScript_SturdiedMsg::
 
 BattleScript_TimeTravellerAbility::
 	copybyte gBattlerAbility, gBattlerTarget
-	pause 16
+	pause 10
 	call BattleScript_AbilityPopUp
 	handleformchange BS_TARGET, 0
+	handleformchange BS_TARGET, 1
 	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	waitanimation
+	handleformchange BS_TARGET, 2
 	healthbarupdate BS_TARGET
 	datahpupdate BS_TARGET
-	waitanimation
 	printstring STRINGID_TIMETRAVELLEDTOPREVIOUSSTATE
 	waitmessage B_WAIT_TIME_LONG
 	return
@@ -8029,6 +8031,14 @@ BattleScript_AbilityPopUp:
 	sethword sABILITY_OVERWRITE, 0
 	return
 
+BattleScript_MultiAbilityPopUp:
+	.if B_ABILITY_POP_UP == TRUE
+	showmultiabilitypopup BS_ABILITY_BATTLER
+	pause 40
+	.endif
+	sethword sABILITY_OVERWRITE, 0
+	return
+
 BattleScript_SpeedBoostActivates::
 	call BattleScript_AbilityPopUp
 	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
@@ -8163,6 +8173,7 @@ BattleScript_HealerActivates::
 
 BattleScript_SandstreamActivates::
 	pause B_WAIT_TIME_SHORT
+	@setlastusedability ABILITY_SAND_STREAM @Piece of shit command doesn't fucking work when used before BattleScript_AbilityPopUp
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNSXWHIPPEDUPSANDSTORM
 	waitstate
@@ -9786,23 +9797,29 @@ BattleScript_DeoxysStrangeAura::
 	end
 
 BattleScript_DeoxysBossFormChange::
+	copybyte gBattlerAbility, gBattlerTarget
+	pause 5
 	handleformchange BS_TARGET, 0
 	handleformchange BS_TARGET, 1
 	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	waitanimation
+	handleformchange BS_TARGET, 2 
 	healthbarupdate BS_TARGET
 	datahpupdate BS_TARGET
-	waitanimation
 	printstring STRINGID_DEOXYSCHANGEDFORM
 	waitmessage B_WAIT_TIME_LONG
 	return
 
 BattleScript_DeoxysBossFormChangeCatchable::
+	copybyte gBattlerAbility, gBattlerTarget
+	pause 5
 	handleformchange BS_TARGET, 0
 	handleformchange BS_TARGET, 1
 	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	waitanimation
+	handleformchange BS_TARGET, 2 
 	healthbarupdate BS_TARGET
 	datahpupdate BS_TARGET
-	waitanimation
 	printstring STRINGID_DEOXYSCHANGEDFORMCATCHABLE
 	waitmessage B_WAIT_TIME_LONG
 	return

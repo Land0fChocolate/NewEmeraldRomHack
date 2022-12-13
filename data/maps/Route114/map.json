@@ -511,6 +511,14 @@
       "elevation": 3,
       "item": "ITEM_REVIVE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_REVIVE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 29,
+      "y": 47,
+      "elevation": 3,
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_BOTTLE_CAP"
     }
   ]
 }

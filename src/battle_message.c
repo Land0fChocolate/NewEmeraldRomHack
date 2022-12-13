@@ -750,8 +750,9 @@ static const u8 sText_PkmnBlewAwayHiddenThorns[] = _("{B_ATK_NAME_WITH_PREFIX} b
 static const u8 sText_TimeTravelledToPreviousState[] = _("{B_DEF_NAME_WITH_PREFIX} reverted\nto their previous state!");
 static const u8 sText_StrangeAuraInEffect[] = _("A strange aura surrounding Deoxys is\ncausing your Poké Balls to malfunction!");
 static const u8 sText_DeoxysChangedForm[] = _("The opponent Deoxys changed form!");
-static const u8 sText_DeoxysChangedFormCatchable[] = _("The opponent Deoxys changed form!\nThe strange aura surrounding Deoxys\lhas dissipated!");
+static const u8 sText_DeoxysChangedFormCatchable[] = _("The opponent Deoxys changed form!\nThe aura surrounding Deoxys\lhas dissipated!");
 static const u8 sText_CantThrowBall[] = _("The Poké Ball is inoperative!");
+static const u8 sText_OnlyPokeBallsCanBeUsed[] = _("Only Poké Balls can be used in battle!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {

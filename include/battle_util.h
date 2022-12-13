@@ -25,8 +25,8 @@
 #define ABILITYEFFECT_MOVE_END_OTHER             14
 #define ABILITYEFFECT_NEUTRALIZINGGAS            15
 // Special cases
-#define ABILITYEFFECT_SWITCH_IN_TERRAIN          0xFE
-#define ABILITYEFFECT_SWITCH_IN_WEATHER          0xFF
+#define ABILITYEFFECT_SWITCH_IN_TERRAIN          254
+#define ABILITYEFFECT_SWITCH_IN_WEATHER          255
 
 #define ITEMEFFECT_ON_SWITCH_IN                 0x0
 #define ITEMEFFECT_MOVE_END                     0x3

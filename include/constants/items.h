@@ -98,8 +98,8 @@
 #define ITEM_SWIFT_FEATHER 78
 
 // Ability Modifiers
-#define ITEM_ABILITY_CAPSULE 79
-#define ITEM_ABILITY_PATCH 80
+#define ITEM_JELLY_FILLED_DONUT 79
+#define ITEM_ABILITY_PATCH 80 // unused
 
 // Mints
 #define ITEM_LONELY_MINT 81
@@ -977,7 +977,7 @@
 #define ITEM_RUBY 758
 #define ITEM_SAPPHIRE 759
 
-#define ITEM_JELLY_FILLED_DONUT 760
+#define ITEM_JELLY_FILLED_DONUT2 760 //unused, got moved to 79
 
 #define ITEM_SUPER_HP_UP   761
 #define ITEM_SUPER_PROTEIN 762

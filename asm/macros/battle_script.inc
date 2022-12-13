@@ -2130,3 +2130,12 @@
 	.macro trysymbiosis
 	various BS_ATTACKER, VARIOUS_TRY_SYMBIOSIS
 	.endm
+
+	.macro showmultiabilitypopup battler:req
+	various \battler, VARIOUS_MULTI_ABILITY_POPUP
+	.endm
+
+	.macro setlastusedability ability:req
+	various 0, VARIOUS_SET_LAST_USED_ABILITY
+	.2byte \ability
+	.endm

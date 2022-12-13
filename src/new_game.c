@@ -96,6 +96,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_STEREO;
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
+    gSaveBlock2Ptr->optionsBattleBagUse = OPTIONS_BATTLE_BAG_USE_POKE_BALLS_ONLY;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
 }
 

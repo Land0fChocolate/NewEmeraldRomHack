@@ -470,7 +470,10 @@ LilycoveCity_ContestHall_Text_Delinquent:
 	.string "One day, I'm going to be up on that\n"
 	.string "stage and be a contest superstar.\p"
 	.string "Until then, I'll need to grow lots of\n"
-	.string "berries for {POKEBLOCK}s.$"
+	.string "berries for {POKEBLOCK}s.\p"
+	.string "The berry master's wife kindly helped\n"
+	.string "me out when I told her I was going to\l"
+	.string "Challenge Contest”.$"
 
 LilycoveCity_ContestHall_Text_FairyTaleGirl:
 	.string "I don't know what the rules are in\n"

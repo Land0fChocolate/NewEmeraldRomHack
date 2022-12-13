@@ -289,7 +289,6 @@ static const u16 sTrappingMoves[TRAPPING_MOVES_COUNT] =
 #define STAT_CHANGE_WORKED      0
 #define STAT_CHANGE_DIDNT_WORK  1
 
-// this file's functions
 static bool8 IsTwoTurnsMove(u16 move);
 static void TrySetDestinyBondToHappen(void);
 static u8 AttacksThisTurn(u8 battlerId, u16 move); // Note: returns 1 if it's a charging turn, otherwise 2.
@@ -1162,7 +1161,7 @@ static const u16 sPickupItems[] =
     ITEM_ULTRA_BALL,
     ITEM_HYPER_POTION,
     ITEM_RARE_CANDY,
-    ITEM_PROTEIN,
+    ITEM_BOTTLE_CAP,
     ITEM_REVIVE,
     ITEM_PP_UP,
     ITEM_FULL_RESTORE,
@@ -1631,13 +1630,18 @@ static bool32 AccuracyCalcHelper(u16 move)
     return FALSE;
 }
 
-u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u16 atkAbilities[], u16 defAbilities[], u32 atkHoldEffect, u32 defHoldEffect)
+u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkHoldEffect, u32 defHoldEffect)
 {
     u32 calc, moveAcc;
     s8 buff, accStage, evasionStage;
+    u16 atkAbilities[NUM_ABILITY_SLOTS];
+    u16 defAbilities[NUM_ABILITY_SLOTS];
     u8 atkParam = GetBattlerHoldEffectParam(battlerAtk);
     u8 defParam = GetBattlerHoldEffectParam(battlerDef);
     gPotentialItemEffectBattler = battlerDef;
+
+    memcpy(atkAbilities, GetBattlerAbilities(battlerAtk), sizeof(atkAbilities));
+    memcpy(defAbilities, GetBattlerAbilities(battlerDef), sizeof(defAbilities));
 
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
@@ -1714,7 +1718,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u16 atkAbilities[
 static void Cmd_accuracycheck(void)
 {
     u16 type, move = T2_READ_16(gBattlescriptCurrInstr + 5);
-    u16 moveTarget = GetBattlerMoveTargetType(gBattlerAttacker, move);
+    u16 moveTarget = GetBattlerMoveTargetType(gActiveBattler, move);
 
     if (move == ACC_CURR_MOVE)
         move = gCurrentMove;
@@ -1737,7 +1741,7 @@ static void Cmd_accuracycheck(void)
             return;
 
         // final calculation
-        if ((Random() % 100 + 1) > GetTotalAccuracy(gBattlerAttacker, gBattlerTarget, move, GetBattlerAbilities(gBattlerAttacker), GetBattlerAbilities(gBattlerTarget),
+        if ((Random() % 100 + 1) > GetTotalAccuracy(gBattlerAttacker, gBattlerTarget, move, 
             GetBattlerHoldEffect(gBattlerAttacker, TRUE), GetBattlerHoldEffect(gBattlerTarget, TRUE)))
         {
             gMoveResultFlags |= MOVE_RESULT_MISSED;
@@ -1948,6 +1952,14 @@ static void Cmd_adjustdamage(void)
         goto END;
     if (gBattleMons[gBattlerTarget].hp > gBattleMoveDamage)
         goto END;
+
+    // recalculate damage so Time Traveller can replenish it back later in tryfaintmon
+    if (HasAbility(ABILITY_TIME_TRAVELLER, GetBattlerAbilities(gBattlerTarget))
+        && gBattleMons[gBattlerTarget].hp < gBattleMoveDamage)
+    {
+        gBattleMoveDamage = gBattleMons[gBattlerTarget].hp;
+        goto END;
+    }
 
     holdEffect = GetBattlerHoldEffect(gBattlerTarget, TRUE);
     param = GetBattlerHoldEffectParam(gBattlerTarget);
@@ -3643,8 +3655,8 @@ static void Cmd_tryfaintmon(void)
                         gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_DEFENSE;
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_CHARGE_BEAM, 0);
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICY_WIND, 1);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_COSMIC_POWER, 2);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 3);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 2);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_COSMIC_POWER, 3);
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 3);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
@@ -3674,7 +3686,7 @@ static void Cmd_tryfaintmon(void)
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_COSMIC_POWER, 0);
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 1);
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHO_BOOST, 2);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_HYPER_BEAM, 3);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_GIGA_IMPACT, 3);
                         FlagClear(FLAG_DISABLE_CATCHING);
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 0);
                         BattleScriptPushCursor();
@@ -6413,7 +6425,8 @@ static void SetDmgHazardsBattlescript(u8 battlerId, u8 multistringId)
 static void Cmd_switchineffects(void)
 {
     s32 i;
-    u16 *abilities = GetBattlerAbilities(gActiveBattler);
+    u16 abilities[NUM_ABILITY_SLOTS];
+    memcpy(abilities, GetBattlerAbilities(gActiveBattler), sizeof(abilities));
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
     UpdateSentPokesToOpponentValue(gActiveBattler);
@@ -8604,7 +8617,7 @@ static void Cmd_various(void)
             }
         }
         return;
-    case VARIOUS_SET_LAST_USED_ABILITIES: // entrainment //TODO: make sure this is properly updated for multi ability (use it in MultiAbilityPopUp)
+    case VARIOUS_SET_LAST_USED_ABILITIES: // entrainment //TODO: may need to use it in MultiAbilityPopUp
         memcpy(gLastUsedAbilities, gBattleMons[gActiveBattler].abilities, sizeof(gLastUsedAbilities));
         break;
     case VARIOUS_TRY_HEAL_PULSE:
@@ -8960,6 +8973,9 @@ static void Cmd_various(void)
         return;
     case VARIOUS_ABILITY_POPUP:
         CreateAbilityPopUp(gActiveBattler, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0);
+        break;
+    case VARIOUS_MULTI_ABILITY_POPUP:
+        CreateMultiAbilityPopUp(gActiveBattler, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0);
         break;
     case VARIOUS_UPDATE_ABILITY_POPUP:
         UpdateAbilityPopup(gActiveBattler);
@@ -9754,6 +9770,9 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr = BattleScript_SymbiosisActivates;
             return;
         }
+        break;
+    case VARIOUS_SET_LAST_USED_ABILITY:
+        gLastUsedAbility = T1_READ_16(gBattlescriptCurrInstr + 3);
         break;
     case VARIOUS_CAN_TELEPORT:
         gBattleCommunication[0] = CanTeleport(gActiveBattler);
@@ -12770,9 +12789,14 @@ static void Cmd_tryswapitems(void) // trick
 
 static void Cmd_trycopyability(void) // role play
 {
-    u16 *defAbilities = gBattleMons[gBattlerTarget].abilities, noAbilities[NUM_ABILITY_SLOTS] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE}, x;
+    u8 x;
+    u16 atkAbilities[NUM_ABILITY_SLOTS], defAbilities[NUM_ABILITY_SLOTS];
+    u16 noAbilities[NUM_ABILITY_SLOTS] = {ABILITY_NONE, ABILITY_NONE, ABILITY_NONE};
 
-    if (AbilitiesMatch(gBattleMons[gBattlerAttacker].abilities, defAbilities)
+    memcpy(atkAbilities, gBattleMons[gBattlerAttacker].abilities, sizeof(atkAbilities));
+    memcpy(defAbilities, gBattleMons[gBattlerTarget].abilities, sizeof(defAbilities));
+
+    if (AbilitiesMatch(atkAbilities, defAbilities)
       || AbilitiesMatch(defAbilities, noAbilities))
     {
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
@@ -12781,10 +12805,10 @@ static void Cmd_trycopyability(void) // role play
     {
         for (x = 0; x < NUM_ABILITY_SLOTS; x++)
         {
-            if (!IsRolePlayBannedAbility(defAbilities[x]) && IsRolePlayBannedAbilityAtk(gBattleMons[gBattlerAttacker].abilities[x]))
+            if (!IsRolePlayBannedAbility(defAbilities[x]) && !IsRolePlayBannedAbilityAtk(atkAbilities[x]))
                 gBattleMons[gBattlerAttacker].abilities[x] = defAbilities[x];
         }
-        //gBattleScripting.abilityPopupOverwrite = gBattleMons[gBattlerAttacker].ability; //TODO: do I need this line?
+        //*gBattleScripting.abilityPopupOverwrite = atkAbilities; //TODO: use when multi-ability pop-up works
         memcpy(gLastUsedAbilities, defAbilities, sizeof(gLastUsedAbilities));
         gBattlescriptCurrInstr += 5;
     }
@@ -12935,15 +12959,16 @@ static void Cmd_tryswapabilities(void) // skill swap
     else
     {
         u8 x;
-        u16 *atkAbilities = gBattleMons[gBattlerAttacker].abilities;
+        u16 abilities[NUM_ABILITY_SLOTS];
 
         for (x = 0; x < NUM_ABILITY_SLOTS; x++)
         {
             if (!IsSkillSwapBannedAbility(gBattleMons[gBattlerAttacker].abilities[x])
                 && !IsSkillSwapBannedAbility(gBattleMons[gBattlerTarget].abilities[x]))
             {
+                abilities[x] = gBattleMons[gBattlerAttacker].abilities[x];
                 gBattleMons[gBattlerAttacker].abilities[x] = gBattleMons[gBattlerTarget].abilities[x];
-                gBattleMons[gBattlerTarget].abilities[x] = atkAbilities[x];
+                gBattleMons[gBattlerTarget].abilities[x] = abilities[x];
             }
         }
 
@@ -13185,7 +13210,10 @@ static void Cmd_trygetintimidatetarget(void)
 
 static void Cmd_switchoutabilities(void)
 {
-    u16 x, *abilities = GetBattlerAbilities(gActiveBattler);
+    u16 x;
+    u16 abilities[NUM_ABILITY_SLOTS];
+
+    memcpy(abilities, GetBattlerAbilities(gActiveBattler), sizeof(abilities));
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
 

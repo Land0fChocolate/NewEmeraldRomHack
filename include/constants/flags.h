@@ -12,7 +12,7 @@
 #define FLAG_TEMP_2      (TEMP_FLAGS_START + 0x2)
 #define FLAG_TEMP_3      (TEMP_FLAGS_START + 0x3)
 #define FLAG_TEMP_4      (TEMP_FLAGS_START + 0x4)
-#define FLAG_TEMP_5      (TEMP_FLAGS_START + 0x5)  // Unused Flag
+#define FLAG_TEMP_5      (TEMP_FLAGS_START + 0x5) // For Bottle Cap man
 #define FLAG_TEMP_6      (TEMP_FLAGS_START + 0x6)  // Unused Flag
 #define FLAG_TEMP_7      (TEMP_FLAGS_START + 0x7)  // Unused Flag
 #define FLAG_TEMP_8      (TEMP_FLAGS_START + 0x8)  // Unused Flag
@@ -266,11 +266,11 @@
 #define FLAG_RECEIVED_WAILMER_DOLL           0xF5
 #define FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104 0xF6
 #define FLAG_DEFEATED_SS_TIDAL_TRAINERS      0xF7
-#define FLAG_RECEIVED_SPELON_BERRY           0xF8
-#define FLAG_RECEIVED_PAMTRE_BERRY           0xF9
-#define FLAG_RECEIVED_WATMEL_BERRY           0xFA
-#define FLAG_RECEIVED_DURIN_BERRY            0xFB
-#define FLAG_RECEIVED_BELUE_BERRY            0xFC
+#define FLAG_RECEIVED_SPELON_BERRY           0xF8 // unused
+#define FLAG_RECEIVED_PAMTRE_BERRY           0xF9 // unused
+#define FLAG_RECEIVED_WATMEL_BERRY           0xFA // unused
+#define FLAG_RECEIVED_DURIN_BERRY            0xFB // unused
+#define FLAG_RECEIVED_BELUE_BERRY            0xFC // unused
 #define FLAG_ENABLE_RIVAL_MATCH_CALL         0xFD
 #define FLAG_RECEIVED_CHARCOAL               0xFE
 #define FLAG_LATIOS_OR_LATIAS_ROAMING        0xFF // unused, though set
@@ -655,11 +655,11 @@
 #define FLAG_HIDDEN_ITEM_FARAWAY_ISLAND_PSYCHIC_GEM          (FLAG_HIDDEN_ITEMS_START + 0x76)
 #define FLAG_HIDDEN_ITEM_MAUVILLE_RIVERSIDE_BOTTLE_CAP       (FLAG_HIDDEN_ITEMS_START + 0x77)
 #define FLAG_HIDDEN_NAVEL_ROCK_LUGIA_3_RARE_BONE             (FLAG_HIDDEN_ITEMS_START + 0x78)
+#define FLAG_HIDDEN_ITEM_UNDERWATER_124_BOTTLE_CAP           (FLAG_HIDDEN_ITEMS_START + 0x79)
+#define FLAG_HIDDEN_ITEM_ROUTE_113_BOTTLE_CAP                (FLAG_HIDDEN_ITEMS_START + 0x7A)
+#define FLAG_HIDDEN_ITEM_ROUTE_109_BOTTLE_CAP                (FLAG_HIDDEN_ITEMS_START + 0x7B)
+#define FLAG_HIDDEN_NAVEL_ROCK_HOOH_1_GOLD_BOTTLE_CAP        (FLAG_HIDDEN_ITEMS_START + 0x7C)
 
-#define FLAG_UNUSED_0x26D                         0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E                         0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F                         0x26F // Unused Flag
-#define FLAG_UNUSED_0x270                         0x270 // Unused Flag
 #define FLAG_UNUSED_0x271                         0x271 // Unused Flag
 #define FLAG_UNUSED_0x272                         0x272 // Unused Flag
 #define FLAG_UNUSED_0x273                         0x273 // Unused Flag
@@ -824,7 +824,7 @@
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM          0x310
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM              0x311
 #define FLAG_HIDE_PETALBURG_GYM_SCOTT                               0x312
-#define FLAG_HIDE_LILYCOVE_MOTEL_SCOTT                              0x313 // unused
+#define FLAG_OBTAINED_ALL_BERRIES_FOR_SHRINE                        0x313
 #define FLAG_HIDE_MOSSDEEP_CITY_SCOTT                               0x314 // unused
 #define FLAG_HIDE_FANCLUB_OLD_LADY                                  0x315
 #define FLAG_HIDE_FANCLUB_BOY                                       0x316
@@ -861,7 +861,7 @@
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_1_BLOCKING_ENTRANCE         0x335
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE         0x336
 #define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337 // unused
-#define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338
+#define FLAG_HIDE_PETALBURG_CITY_CELEBI                             0x338
 #define FLAG_OBTAINED_LILYCOVE_CITY_ICE_STONE                       0x339
 #define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
 #define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B
@@ -1040,7 +1040,7 @@
 
 // Item Ball Flags
 #define FLAG_ITEM_ROUTE_102_POTION                                  0x3E8
-#define FLAG_ITEM_ROUTE_116_X_SPECIAL                               0x3E9
+#define FLAG_ITEM_ROUTE_116_BOTTLE_CAP                              0x3E9
 #define FLAG_ITEM_ROUTE_104_PP_UP                                   0x3EA
 #define FLAG_ITEM_ROUTE_105_IRON                                    0x3EB
 #define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC

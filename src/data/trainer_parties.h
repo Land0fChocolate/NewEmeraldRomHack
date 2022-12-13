@@ -12827,9 +12827,16 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Red[] = {
 static const struct TrainerMonItemCustomMoves sParty_Leaf[] = {
     {
     .iv = 255,
-    .lvl = 65,
-    .species = SPECIES_TYRANITAR,
-    .heldItem = ITEM_KEE_BERRY,
+    .lvl = 30,
+    .species = SPECIES_SHUCKLE,
+    .heldItem = ITEM_LUM_BERRY,
+    .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = 255,
+    .lvl = 30,
+    .species = SPECIES_BLISSEY,
+    .heldItem = ITEM_LUM_BERRY,
     .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }
 };
@@ -12869,7 +12876,7 @@ static const struct TrainerMonItemCustomMoves sParty_Zinnia[] = {
     .iv = 255,
     .lvl = 63,
     .species = SPECIES_TYRANITAR,
-    .heldItem = ITEM_KEE_BERRY,
+    .heldItem = ITEM_MUSCLE_BAND,
     .moves = {MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_DRAGON_DANCE}
     },
     {

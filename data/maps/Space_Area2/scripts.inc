@@ -90,6 +90,7 @@ Space_Area2_EventScript_Deoxys::
 	special CreateEventLegalEnemyMon
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	setvar VAR_DEOXYS_BOSS_BATTLE_STATE, 1
+	settotemboost B_POSITION_OPPONENT_LEFT, 0, 2, 0, 0, 2, 0, 0
 	setflag FLAG_SMART_WILD_AI
 	special BattleSetup_StartLegendaryBattle
 	waitstate
