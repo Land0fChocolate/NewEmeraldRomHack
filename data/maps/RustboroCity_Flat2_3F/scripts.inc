@@ -15,5 +15,6 @@ RustboroCity_Flat2_3F_Text_PresidentCollectsRareStones:
 
 RustboroCity_Flat2_3F_Text_PresidentsSonAlsoCollectsRareStones:
 	.string "I think the President's son also\n"
-	.string "collects rare stones.$"
-
+	.string "collects rare stones.\p"
+	.string "Come to think of it even more, so does\n"
+	.string "the Gym Leader.$"

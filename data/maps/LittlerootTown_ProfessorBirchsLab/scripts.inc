@@ -67,8 +67,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_CheckReadyForJohtoStarter::
 	specialvar VAR_RESULT, HasAllHoennMons
 	compare VAR_RESULT, TRUE
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_SetReadyForJohtoStarter
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_WANDER_AROUND
-	setobjectxyperm LOCALID_RIVAL, 5, 10
+	@setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_WANDER_AROUND
+	@setobjectxyperm LOCALID_RIVAL, 5, 10
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_SetReadyForJohtoStarter::
@@ -81,16 +81,14 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetJohtoStarterLayout::
 
 LittlerootTown_ProfessorBirchsLab_EventScript_SetAfterJohtoStarterLayout::
 	setmaplayoutindex LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB_WITH_TABLE
-	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_WANDER_UP_AND_DOWN
-	setobjectxyperm LOCALID_RIVAL, 5, 10
+	@setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_WANDER_UP_AND_DOWN
+	@setobjectxyperm LOCALID_RIVAL, 5, 10
 	end
 
 LittlerootTown_ProfessorBirchsLab_OnWarp:
 	map_script_2 VAR_BIRCH_LAB_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_SetPlayerPosForReceiveStarter
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForDexUpgrade
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForDexUpgrade
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3, LittlerootTown_ProfessorBirchsLab_EventScript_AddRivalObject
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 6, LittlerootTown_ProfessorBirchsLab_EventScript_AddRivalObject
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForJohtoStarters
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 5, LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForJohtoStarters
 	.2byte 0
@@ -109,10 +107,6 @@ LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForDexUpgrade::
 	setobjectxy LOCALID_BIRCH, 6, 4
 	turnobject LOCALID_AIDE, DIR_EAST
 	setobjectxy LOCALID_AIDE, 10, 10
-	end
-
-LittlerootTown_ProfessorBirchsLab_EventScript_AddRivalObject::
-	addobject LOCALID_RIVAL
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_SetObjectPosForJohtoStarters::
@@ -152,13 +146,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_LegendaryBriefing::
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxieMigrationHalting, MSGBOX_DEFAULT
-	closemessage
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieGoodJobPlayer, MSGBOX_DEFAULT
-	closemessage
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxieSituationIsStable, MSGBOX_DEFAULT
-	closemessage
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieSeeYa, MSGBOX_DEFAULT
-	closemessage
 	applymovement LOCALID_MAXIE, LittlerootTown_ProfessorBirchsLab_Movement_MaxieLeave
 	applymovement LOCALID_ARCHIE, LittlerootTown_ProfessorBirchsLab_Movement_ArchieLeave
 	waitmovement 0
@@ -675,16 +665,14 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ResultOfFindingsPart2::
 	applymovement LOCALID_BIRCH, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BirchConclusion, MSGBOX_DEFAULT
-	closemessage
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxieDots, MSGBOX_DEFAULT
-	closemessage
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieDots, MSGBOX_DEFAULT
 	closemessage
+	delay 30
 	applymovement LOCALID_MAXIE, Common_Movement_FaceDown
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxieStopLegendarys, MSGBOX_DEFAULT
-	closemessage
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieFindingLegendarys, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 5
@@ -1055,33 +1043,37 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf::
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_Meteorite::
-	checkflag FLAG_SYS_GAME_CLEAR
-	goto_if FALSE LittlerootTown_ProfessorBirchsLab_EventScript_MeteoriteEarlyGame
+	goto_if_unset FLAG_SYS_GAME_CLEAR, LittlerootTown_ProfessorBirchsLab_EventScript_MeteoriteEarlyGame
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ItsAMeteorite, MSGBOX_SIGN
 	closemessage
+	checkformoninparty SPECIES_DEOXYS
+	compare VAR_RESULT, TRUE
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_ATTACK
+	compare VAR_RESULT, TRUE
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_SPEED
+	compare VAR_RESULT, TRUE
+	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_ChangeDeoxysForm
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_MeteoriteEarlyGame::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_RockForCozmo, MSGBOX_DEFAULT
+	closemessage
+	end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_ChangeDeoxysForm::
 	changedeoxysform 2
 	compare VAR_RESULT, TRUE
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_DeoxysChangedForm
 	end
 
-LittlerootTown_ProfessorBirchsLab_EventScript_MeteoriteEarlyGame::
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_RockForCozmo, MSGBOX_SIGN
-	end
-
 LittlerootTown_ProfessorBirchsLab_EventScript_DeoxysChangedForm::
 	playmoncry SPECIES_DEOXYS, 0
 	waitse
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_DeoxysChangedForm, MSGBOX_SIGN
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_DeoxysChangedForm, MSGBOX_DEFAULT
+	closemessage
 	end
-
-LittlerootTown_ProfessorBirchsLab_Text_ItsAMeteorite:
-	.string "It's a meteorite in Professor Birch's\n"
-	.string "lab. You feel a radiating warmth\l"
-	.string "coming from it.\p"
-
-LittlerootTown_ProfessorBirchsLab_Text_DeoxysChangedForm:
-	.string "The Deoxys in your party changed into\n"
-	.string "a more defensive form!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_Book::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BookTooHardToRead, MSGBOX_SIGN
@@ -1254,7 +1246,7 @@ LittlerootTown_ProfessorBirchsLab_Text_CrammedWithBooksOnPokemon:
 LittlerootTown_ProfessorBirchsLab_Text_RockForCozmo:
 	.string "It's an unusual looking rock.\n"
 	.string "There is a note stuck to it that says:\l"
-	.string "'To deliver to Professor Cozmo'.$"
+	.string "“To deliver to Professor Cozmo”.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BookTooHardToRead:
 	.string "It's a book on Pokemon biology.\n"
@@ -1428,9 +1420,9 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "It's Scott, remember me?\p"
 	.string "There's this place that I'd like to\n"
 	.string "invite you to for a visit.\p"
-	.string "It will give you even more challenging\n"
-	.string "battles than what you'd find at the\l"
-	.string "Pokémon League.\p"
+	.string "It will give you even more\n"
+	.string "challenging battles than what you'd\l"
+	.string "find at the Pokémon League.\p"
 	.string "If you're interested, board a ferry\n"
 	.string "at either Slateport or Lilycove.\p"
 	.string "I'll fill you in on the details when\n"
@@ -1456,8 +1448,8 @@ LittlerootTown_ProfessorBirchsLab_Text_ReviewingBeachFindings:
 	.string "Pokémon residing in Littleroot Beach\l"
 	.string "did not originate there.\p"
 	.string "{PLAYER}, would you mind checking\n"
-	.string "out the other new areas? It would\l"
-	.string "surely be of great help!$"
+	.string "out the other new areas?\l"
+	.string "It would surely be of great help!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_NewAreas:
 	.string "Prof. Birch: I have reports of a newly\n"
@@ -1544,14 +1536,14 @@ LittlerootTown_ProfessorBirchsLab_Text_MaxieQuestionAnswer:
 	.string "had awakened.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ArchieWhyMakePokemonMigrate:
-	.string "Archie: Aye, The legends are almost\n"
+	.string "Archie: Aye, the legends are almost\n"
 	.string "surely behind it, but a better question\l"
 	.string "is why make those Pokémon migrate all\l"
 	.string "the way over here?\l"
 	.string "Their original habitats are doing fine.\p"
-	.string "I don't know what the legends have to\n"
-	.string "gain from this. Perhaps they just do\l"
-	.string "what comes naturally to them?$"
+	.string "I don't know why the legends are\n"
+	.string "influencing them. Perhaps they just do\l"
+	.string "what comes naturally?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MaxiePeopleNotPrepared:
 	.string "Maxie: Whatever the reason, the people\n"
@@ -1561,8 +1553,8 @@ LittlerootTown_ProfessorBirchsLab_Text_MaxiePeopleNotPrepared:
 	.string "vulnerable to the new Pokémon.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ArchieEcosystemCatastrophe:
-	.string "Archie: I am concerned with what the\n"
-	.string "teams have been reporting.\p"
+	.string "Archie: I am also concerned with what\n"
+	.string "my team has have been reporting.\p"
 	.string "The population numbers for the new areas\n"
 	.string "are increasing. If they get too high\l"
 	.string "the new Pokémon could be forced to\l"
@@ -1658,3 +1650,12 @@ LittlerootTown_ProfessorBirchsLab_Text_BrendanChallenge:
 	.string "than you, {PLAYER}, to help me?\p"
 	.string "I'll be waiting at Littleroot Beach.\n"
 	.string "See ya!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_ItsAMeteorite:
+	.string "It's a meteorite in Professor Birch's\n"
+	.string "lab. You feel a radiating warmth\l"
+	.string "coming from it.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_DeoxysChangedForm:
+	.string "The Deoxys in your party changed into\n"
+	.string "a more defensive form!$"

@@ -47,13 +47,25 @@ Route123_EventScript_BerryMastersHouseSign::
 Route123_EventScript_Meteorite::
 	msgbox Route123_Text_ItsAMeteorite, MSGBOX_SIGN
 	closemessage
-	changedeoxysform 1
+	checkformoninparty SPECIES_DEOXYS
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route123_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_ATTACK
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route123_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_DEFENSE
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route123_EventScript_ChangeDeoxysForm
+	end
+
+Route123_EventScript_ChangeDeoxysForm::
+	changedeoxysform 3
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route123_EventScript_DeoxysChangedForm
 	end
 
 Route123_EventScript_DeoxysChangedForm::
-	playmoncry SPECIES_DEOXYS, 3
+	playmoncry SPECIES_DEOXYS, 0
 	waitse
 	msgbox Route123_Text_DeoxysChangedForm, MSGBOX_SIGN
 	end
@@ -196,7 +208,7 @@ Route123_Text_BerryMastersHouse:
 Route123_Text_ItsAMeteorite:
 	.string "It's a meteorite that has been left\n"
 	.string "alone. You feel a radiating warmth\l"
-	.string "coming from it.\p"
+	.string "coming from it.$"
 
 Route123_Text_DeoxysChangedForm:
 	.string "The Deoxys in your party changed into\n"

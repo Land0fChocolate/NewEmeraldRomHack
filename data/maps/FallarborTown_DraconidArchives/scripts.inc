@@ -1,4 +1,5 @@
 .set LOCALID_WHISMUR, 3
+.set LOCALID_SCIENTIST, 6
 .set LOCALID_ZINNIA, 7
 
 FallarborTown_DraconidArchives_MapScripts::
@@ -220,23 +221,53 @@ DraconidArchives_EventScript_ResetDefeatedLegendaries::
 	clearflag FLAG_DEFEATED_ZAPDOS
 	clearflag FLAG_DEFEATED_MOLTRES
 	clearflag FLAG_DEFEATED_MEW
+	clearflag FLAG_HIDE_MEW
 	clearflag FLAG_DEFEATED_RAIKOU
 	clearflag FLAG_DEFEATED_ENTEI
 	clearflag FLAG_DEFEATED_SUICUNE
 	clearflag FLAG_DEFEATED_LUGIA
+	clearflag FLAG_HIDE_LUGIA
 	clearflag FLAG_DEFEATED_HO_OH
-	clearflag FLAG_DEFEATED_CELEBI
-	clearflag FLAG_DEFEATED_LATIAS
-	clearflag FLAG_DEFEATED_LATIOS
+	clearflag FLAG_HIDE_HO_OH
+	call_if_set FLAG_OBTAINED_ALL_BERRIES_FOR_SHRINE, DraconidArchives_EventScript_ResetCelebi
 	clearflag FLAG_DEFEATED_REGIROCK
+	clearflag FLAG_HIDE_REGIROCK
 	clearflag FLAG_DEFEATED_REGICE
+	clearflag FLAG_HIDE_REGICE
 	clearflag FLAG_DEFEATED_REGISTEEL
+	clearflag FLAG_HIDE_REGISTEEL
+	call_if_set FLAG_DEFEATED_LATIAS, DraconidArchives_EventScript_ResetLatias
+	call_if_set FLAG_DEFEATED_LATIOS, DraconidArchives_EventScript_ResetLatios
 	clearflag FLAG_DEFEATED_KYOGRE
+	clearflag FLAG_HIDE_MARINE_CAVE_KYOGRE
 	clearflag FLAG_DEFEATED_GROUDON
+	clearflag FLAG_HIDE_TERRA_CAVE_GROUDON
 	clearflag FLAG_DEFEATED_RAYQUAZA
-	clearflag FLAG_DEFEATED_JIRACHI
+	clearflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA
+	call_if_set FLAG_PLACED_WISH_TAG, DraconidArchives_EventScript_ResetJirachi
 	clearflag FLAG_DEFEATED_DEOXYS
 	clearflag FLAG_BATTLED_DEOXYS
+	clearflag FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE
+	return
+
+DraconidArchives_EventScript_ResetCelebi::
+	clearflag FLAG_DEFEATED_CELEBI
+	clearflag FLAG_HIDE_PETALBURG_CITY_CELEBI
+	return
+
+DraconidArchives_EventScript_ResetLatias::
+	special InitNewRoamerLatias
+	clearflag FLAG_DEFEATED_LATIAS
+	return
+
+DraconidArchives_EventScript_ResetLatios::
+	special InitNewRoamerLatios
+	clearflag FLAG_DEFEATED_LATIOS
+	return
+
+DraconidArchives_EventScript_ResetJirachi::
+	clearflag FLAG_DEFEATED_JIRACHI
+	clearflag FLAG_HIDE_SLATEPORT_CITY_JIRACHI
 	return
 
 DraconidArchives_EventScript_ZinniaDeoxysBeaten::
@@ -292,6 +323,7 @@ DraconidArchives_Eventscript_Scientist::
 	closemessage
 	giveitem ITEM_OLD_SEA_MAP
 	setflag FLAG_RECEIVED_OLD_SEA_MAP
+	applymovement LOCALID_SCIENTIST, Common_Movement_FaceUp
 	release
 	end
 
@@ -301,12 +333,12 @@ DraconidArchives_Eventscript_ScientistAbsorbedInBooks::
 	release
 	end
 
-DraconidArchives_Eventscript_Sculpture::
-	msgbox DraconidArchives_Text_Sculpture, MSGBOX_SIGN
+DraconidArchives_Eventscript_DisplayCaseStones::
+	msgbox DraconidArchives_Text_DisplayCaseStones, MSGBOX_SIGN
 	end
 
-DraconidArchives_Eventscript_DisplayCase::
-	msgbox DraconidArchives_Text_DisplayCase, MSGBOX_SIGN
+DraconidArchives_Eventscript_DisplayCaseInstrument::
+	msgbox DraconidArchives_Text_DisplayCaseInstrument, MSGBOX_SIGN
 	end
 
 DraconidArchives_Eventscript_Scroll::
@@ -344,7 +376,7 @@ DraconidArchives_Text_BringSnacksForAster:
 	.string "Aster here, I can call any and all\l"
 	.string "legendary Pokémon back to their lairs.\p"
 	.string "Aster has rather expensive taste.\n"
-	.string "He'll only eat very rare berries, like\l"
+	.string "She'll only eat very rare berries, like\l"
 	.string "the ones that reduce damage taken.$"
 
 DraconidArchives_Text_HaveYouBroughtBerries:
@@ -406,22 +438,24 @@ DraconidArchives_Text_MapFellOut:
 	.string "Do you mind taking this?$"
 
 DraconidArchives_Text_TooAbsorbedInBooks:
-	.string "… … … … … …\n"
-	.string "This person is too absorbed in books\l"
+	.string "… … … … … …\p"
+	.string "This person is too absorbed in books\n"
 	.string "to notice you.$"
 
-DraconidArchives_Text_Sculpture:
-	.string "A worn down looking statue.$"
+DraconidArchives_Text_DisplayCaseStones:
+	.string "The display case contains numerous\n"
+	.string "colorful ball-shaped stones.$"
 
-DraconidArchives_Text_DisplayCase:
+DraconidArchives_Text_DisplayCaseInstrument:
 	.string "The display case contains a very\n"
 	.string "elegant looking stringed instrument.$"
 
 DraconidArchives_Text_Scroll:
 	.string "A scroll written in a primitive language\n"
-	.string "you don't understand. The illustration\l"
-	.string "depicts some monstrous looking Pokémon\l"
-	.string "engaged in an epic battle.$"
+	.string "you don't understand.\p"
+	.string "The illustration depicts some monstrous\n"
+	.string "looking Pokémon engaged in an epic\l"
+	.string "battle.$"
 
 DraconidArchives_Text_Book:
 	.string "A book on historical meteorite events.\n"

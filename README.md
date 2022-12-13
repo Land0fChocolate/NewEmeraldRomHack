@@ -2,59 +2,66 @@
 
 This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: https://github.com/rh-hideout/pokeemerald-expansion.
 
-# TODO
-
-- implement ability description label in the summary screen.
-- Rework aspects of the Battle Frontier. Change the Battle Palace to be themed around inverse type matchups. Rework the battle Pokemon list. 
-- Add methods to make training easier. Super vitamins, IV boosters and nature mints to be added and accessable.
-- Remove item use in battle and create a prompt for Poke Balls.
-- Add credits of people whos tutorials and work you have used in the game.
-
 # Changelog
 
-- Many post gen 3 features from pokeemerald Expansion are in this ROM.
+- Many post gen 3 features from pokeemerald-expansion are in this ROM.
 	- Including physical/special split, fairy types, new moves, new items, new Pokemon species, regional species variants.
-	- Whilst data for all post gen3 Pokemon are in the game, only those that have evolutions linked to Pokemon in those gens are accessible, baring some exceptions (Namely regional variants like Alolan Vulpix).
+- All Pokemon from gens 1, 2 and 3 are accessible. 
+	- Those Pokemon with post gen 3 evolutions and pre-evolutions have those available as well.
+	- Many regional variants of gen 1, 2 and 3 Pokemon are available.
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
 	- Many Pokemon have had their ability sets updated with new abilities (TODO: make a list of ability stat changes somewhere).
 	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
+	- Moves that work around abilities have been updated as well.
 - New moves and abilities (listed below).
 - Many gameplay adjustments to vanilla moves (Listed below). 
 	- Changes to level up, TM learnsets and Tutor learnsets of Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
-- Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko, Spheal lines have Attack and Special Attack swapped. (TODO: make list)
+- Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko, Spheal lines have Attack and Special Attack swapped for example. (TODO: make list)
 - HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
-- Berry tree drop rates are tripled. Interaction with berry trees is also quicker.
-- Number of Feebas spots is tripled.
-- TMs have infinite use.
-- TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
-- New shops and updates to existing shops to stock later gen items and new TMs.
-- Ice types have their special defense boosted by 50% in hail.
-- Removed badge boosts
+- Pokemon IVs and EVs can be viewed in the summary screen by pressing the L and R buttons.
 - Wild Encounters adjusted.
-	- Both Latias and Latios are available roaming
+	- Both Latias and Latios are available roaming at the same time.
 	- All Legendary and Mythical Pokemon can be repeatedly acquired.
-- Trainer parties adjusted.
+	- There is a small chance for a wild encounter to be a double battle.
+- Repeatedly acquirable fossils.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
+- Ice types have their special defense boosted by 50% in hail.
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
+- Opponent Trainer parties have been updated.
+- Battle Frontier changes
+	- Opponent Pokemon list updated with new Pokemon, new items and new moves.
+	- Battle Palace is now inverse battle themed.
+	- Battle Dome has its move scores updated.
+	- Battle Factory has its opponent tips updated.
 - Map layout changes, including new areas to explore that have new Pokemon (post game).
-- Battle Frontier has its opponent Pokemon list updated with new Pokemon, new items and new moves.
-- Battle Palace is now inverse battle themed.
-- Graphical updates to existing overworld sprites and environments.
 - New overworld sprites and graphics.
-- Various story changes. Includes aspects from ORAS.
+- Graphical updates to many existing overworld sprites and environments.
+- Various story changes. Includes aspects from ORAS, though has an entirely new story.
 - Gym Leaders do more:
 	- Roxanne trades evolution stones for fossils.
 	- Brawly can give a random shard daily.
+	- Flannery can EV train one of your Pokemon daily.
+	- Tate and Liza grant access to Jirachi.
 - Item changes
 	- Quick Claw now increases speed by 10% when user is below 50% health.
 	- Vitamins give 20 EVs instead of 10.
 	- Prices of various items adjusted.
-- New Items:
-	- Super Vitamins (Adding 100 EVs per use)
-	- Nature Mints
+	- Nature Mints added
+	- TMs have infinite use.
+	- TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
+	- Existing shops sell more stuff, including post gen 3 items.
+	- New shops that sell more stuff, including post gen 3 items.
+	- More daily berry giveaways and of newer gen berries too.
+	- The Berry Master's wife phrases for rare berries are now hinted at by NPCs in game. You can also now repeatedly get those rare berries from her. 
+	- All item use, except for Poke Balls, is disabled from battles by default. NPCs don't use items either. Players may re-enable items in the options menu if they wish.
+- New shops and updates to existing shops to stock later gen items and new TMs.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
+- Groomer, EV trainer and IV trainer NPCs have been added.
+- Berry tree drop rates are tripled. Interaction with berry trees is also quicker.
+- Number of Feebas spots is tripled.
+- Removed badge boosts
 
 # New Abilities
 
@@ -72,7 +79,7 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Soul Siphon: Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir/Palossand/Dhelmise/Corsola(Galarian).
 - Bad Luck: Opponent cannot land crits and less likely to land status moves against user. Used by Spiritomb/Cofagrigus.
 - Wickedness: User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius/Braixen/Delphox.
-- Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Klink/Klang/Klinklang.
+- Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Solrock/Klink/Klang/Klinklang.
 - Evergreen: User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
 - Swordmaster: Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
@@ -89,19 +96,19 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 
 # Updated Abilities
 
-- Trace: copies the opponent’s highest rated ability that the user doesn’t already have.
-- Receiver: copies fainted ally’s strongest ability that the user doesn’t already have.
+- Trace: copies the opponent’s highest rated ability that the user doesn’t already have in place of Trace.
+- Receiver: copies fainted ally’s highest rated ability that the user doesn’t already have.
 - Mummy: replaces all the contact attacker’s abilities with just the Mummy ability.
 - Wandering Spirit: replaces each respective ability with the attacker if hit by a contact move unless it is a banned ability.
 - Neutralizing Gas: Nullifies other Pokemon abilities unless it is a banned ability like Stance Change. User abilities still active.
 - Shell Armor/Battle Armor: Also reduces damage of neutral effective moves by 25%.
-- Sand Veil: Increases Sp.Def instead of evasion by one stage.
-- Snow Cloak: Increases Defense instead of evasion by one stage.
+- Sand Veil: Increases Sp.Def instead of evasion by one stage in Sandstorm.
+- Snow Cloak: Increases Defense instead of evasion by one stage in Hail.
 - Slow Start: Timer tuned down to 1 turn from 5.
 - Sweet Veil: Also ignores evasion boosts from target.
 - Corrosion: Also makes user's Poison moves super effective against Steel types.
 - Solar Power: No longer decreases HP. Power modifier changed to 25% from 50%.
-- Normalize: Power buffed to 30% from 20%.
+- Normalize: Power buffed to 30% from 20%. Also allows user to hit Ghost types.
 - Liquid Voice: Also powers up sound moves by 20%.
 - Cursed Body: Now always disables the move for just the next turn.
 - Keen Eye: Also increases move accuracy by 30%.
@@ -133,7 +140,15 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - Charge Beam: Now 40 BP, 100% Acc with 100% chance for special attack boost.
 - Rock Smash: Now 50 BP with 100% chance for target defense drop.
 - Poison Fang: Now has a 100% chance to poison target.
-- Cut: Now has 30 BP and always crits.
+- Cut: Now has 100% Acc and always crits.
+
+# Known Bugs
+
+- Many switch-in abilities (like Frisk and Imposter) don’t activate when both Player Pokemon and opponent Pokemon fainted previous turn (e.g. Destiny Bond) and the Player sends out a Pokemon before the opponent sends out theirs. Solving this will probably involve having to rewrite the code that deals with switch-in abilities.
+- Abilities that activate at the same time as other abilities on the same Pokemon can have their names in the ability pop-up overwritten. (e.g. Tyranitar with Sand Stream and Unnerve). This is due to how switch-in abilities are handled. This could be fixed by setting gLastUsedAbility during the ability battle script with the new setlastusedability command, but this freezes the game when used before calling the ability pop-up. Why? Have no fucking clue.
+- Grassy Terrain background is jank
+- Some door animations don't work. The Player just runs into the door without it opening.
+- Wild Deoxys may not regenerate HP bar properly in battle.
 
 # Credits
 

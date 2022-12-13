@@ -198,15 +198,14 @@ JaggedPass_Text_NellieIntro:
 	.string "This little piggy went to market,\n"
 	.string "this little piggy stayed at home.\p"
 	.string "And this little piggy is about to\n"
-	.string "become bacon for this little girl!$"
+	.string "get whacked!$"
 
 JaggedPass_Text_NellieDefeat:
 	.string "This little piggy bites back!$"
 
 JaggedPass_Text_NelliePostBattle:
 	.string "I love watching the Spoink bounce around\n"
-	.string "here. I wonder if I can catch one?\l"
-	.string "Hehehehe$"
+	.string "here. I wonder if I can catch one?$"
 
 JaggedPass_Text_EthanIntro:
 	.string "Jagged Pass is hard to walk on.\n"

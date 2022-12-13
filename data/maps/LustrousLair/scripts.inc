@@ -1,10 +1,24 @@
+.set LOCALID_ARTICUNO, 1
+
 LustrousLair_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, LustrousLair_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, LustrousLair_OnTransition
 	.byte 0
+
+LustrousLair_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, LustrousLair_EventScript_TryRemoveArticuno
+	end
 
 LustrousLair_OnTransition:
 	setflag FLAG_LANDMARK_LUSTROUS_LAIR
 	end
+
+LustrousLair_EventScript_TryRemoveArticuno::
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_ne Common_EventScript_NopReturn
+	removeobject LOCALID_ARTICUNO
+	return
 
 LustrousLair_Eventscript_Articuno::
 	lock
@@ -26,10 +40,13 @@ LustrousLair_Eventscript_Articuno::
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq LustrousLair_EventScript_RanFromArticuno
 	setflag FLAG_DEFEATED_ARTICUNO
+	setflag FLAG_HIDE_ARTICUNO
 	release
+	end
 
 LustrousLair_EventScript_DefeatedArticuno::
 	setflag FLAG_DEFEATED_ARTICUNO
+	setflag FLAG_HIDE_ARTICUNO
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 

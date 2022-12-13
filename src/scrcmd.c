@@ -2413,17 +2413,21 @@ bool8 ScrCmd_checkformoninparty(struct ScriptContext *ctx)
 {
     u8 i;
     u16 monId = ScriptReadHalfword(ctx);
+    u16 species = 0;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
-        if (species == monId)
+        species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+        if ((u16)species == monId)
+        {
+            gSpecialVar_Result = TRUE;
             return TRUE;
+        }
     }
+    gSpecialVar_Result = FALSE;
     return FALSE;
 }
 
-//TODO: needs testing
 bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
 {
     // 0 = Neutral Form
@@ -2447,6 +2451,7 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
                 {
                     targetSpecies = SPECIES_DEOXYS;
                     SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    CalculateMonStats(&gPlayerParty[i]);
                     formChanged = TRUE;
                 }
                 break;
@@ -2457,6 +2462,7 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
                 {
                     targetSpecies = SPECIES_DEOXYS_ATTACK;
                     SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    CalculateMonStats(&gPlayerParty[i]);
                     formChanged = TRUE;
                 }
                 break;
@@ -2467,6 +2473,7 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
                 {
                     targetSpecies = SPECIES_DEOXYS_DEFENSE;
                     SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    CalculateMonStats(&gPlayerParty[i]);
                     formChanged = TRUE;
                 }
                 break;
@@ -2477,12 +2484,13 @@ bool8 ScrCmd_changedeoxysform(struct ScriptContext *ctx)
                 {
                     targetSpecies = SPECIES_DEOXYS_SPEED;
                     SetMonData(&gPlayerParty[i], MON_DATA_SPECIES, &targetSpecies);
+                    CalculateMonStats(&gPlayerParty[i]);
                     formChanged = TRUE;
                 }
                 break;
         }
     }
-    return formChanged;
+    return FALSE;
 }
 
 bool8 ScrCmd_givecustommon(struct ScriptContext *ctx)

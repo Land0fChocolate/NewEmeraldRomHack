@@ -66,8 +66,8 @@ Route120_EventScript_SetBridgeKecleonMovement::
 	return
 
 Route120_EventScript_CloseFortreeJunglePath::
-	setmetatile 23, 93, METATILE_General_Grass_TreeUp, 0
-	setmetatile 24, 93, METATILE_General_Grass_TreeUp, 0
+	setmetatile 23, 93, METATILE_Fortree_Grass_TreeUp_PuddleEdge, 0
+	setmetatile 24, 93, METATILE_Fortree_Grass_TreeUp_PuddleEdge, 0
 	setmetatile 23, 94, METATILE_General_SmallTree_GrassBase, 1
 	setmetatile 24, 94, METATILE_General_SmallTree_GrassBase, 1
 	setmetatile 23, 95, METATILE_General_RockWall_RockBase, 1
@@ -416,11 +416,11 @@ Route120_EventScript_RematchGomez::
 	end
 
 Route120_EventScript_Sharlene::
-	trainerbattle_single TRAINER_SHARLENE_1, Route120_Text_GomezIntro, Route120_Text_GomezDefeat, Route120_EventScript_RegisterGomez
+	trainerbattle_single TRAINER_SHARLENE_1, Route120_Text_SharleneIntro, Route120_Text_SharleneDefeat, Route120_EventScript_RegisterSharlene
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	compare VAR_RESULT, TRUE
-	goto_if_eq Route120_EventScript_RematchGomez
-	msgbox Route120_Text_GomezPostBattle, MSGBOX_DEFAULT
+	goto_if_eq Route120_EventScript_RematchSharlene
+	msgbox Route120_Text_SharlenePostBattle, MSGBOX_DEFAULT
 	release
 	end
 

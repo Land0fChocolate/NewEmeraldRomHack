@@ -469,14 +469,16 @@ SlateportCity_Harbor_Text_SameThugsTriedToRobAtMuseum:
 
 SlateportCity_Harbor_Text_ArchieYouAgainHideoutInLilycove:
 	.string "Archie: Oh?\n"
-	.string "Not you again…\p"
-	.string "You are tenacious to track us here,\n"
-	.string "that much I will give you.\p"
-	.string "But now…\n"
-	.string "No one can stop us! No one!\p"
-	.string "Or, will you follow us back to our\n"
-	.string "Hideout in Lilycove City?\p"
-	.string "Fwahahahaha…$"
+	.string "You actually followed us all the way\l"
+	.string "from Mt. Pyre?\p"
+	.string "I bow to your persistence and love of\n"
+	.string "justice!\l"
+	.string "Bwahaha!\p"
+	.string "If ya gonna keep chasing us…\n"
+	.string "Then follow us all the way to our\l"
+	.string "hideout in Lilycove, if that's what\l"
+	.string "your honor demands.\p"
+	.string "Bwahahahahahahah!$"
 
 SlateportCity_Harbor_Text_CaptSternWhyStealMySubmarine:
 	.string "Capt. Stern: Why…\p"

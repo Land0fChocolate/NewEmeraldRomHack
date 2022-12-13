@@ -60,8 +60,8 @@ MagmaHideout_2F_1R_Text_Grunt4Defeat:
 
 MagmaHideout_2F_1R_Text_Grunt4PostBattle:
 	.string "We really should have built an alarm\n"
-	.string "system for this place. We trust that\l"
-	.string "secret door too much.$"
+	.string "system for this place.\l"
+	.string "We trust that secret door too much.$"
 
 MagmaHideout_2F_1R_Text_Grunt5Intro:
 	.string "Oh, oh!\n"
@@ -71,5 +71,9 @@ MagmaHideout_2F_1R_Text_Grunt5Defeat:
 	.string "Mutter…$"
 
 MagmaHideout_2F_1R_Text_Grunt5PostBattle:
-	.string "Actually, I'm no expert at battling…$"
+	.string "We don't need to use most of this\n"
+	.string "equipment anymore now that we found\l"
+	.string "what we are looking for.\p"
+	.string "Perhaps we should give it back to that\n"
+	.string "Devon Company…$"
 

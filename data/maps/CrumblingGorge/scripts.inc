@@ -13,10 +13,12 @@ CrumblingGorge_EventScript_ZinniaTrigger::
 	setvar VAR_CRUMBLING_GORGE_TRIGGER_STATE, 1
 	msgbox CrumblingGorge_Text_NotAppearing, MSGBOX_DEFAULT
 	closemessage
+	delay 30
 	playse SE_PIN
 	applymovement LOCALID_ZINNIA, Common_Movement_FaceUp
 	applymovement LOCALID_ZINNIA, Common_Movement_ExclamationMark
 	waitmovement 0
+	delay 60
 	getplayerxy VAR_0x8004, VAR_0x8005
 	compare VAR_0x8004, 10
 	goto_if_eq CrumblingGorge_EventScript_ZinniaTriggerLeft
@@ -77,8 +79,8 @@ CrumblingGorge_Text_GorgeHistory:
 	.string "This gorge we are standing in, was not\n"
 	.string "made naturally.\p"
 	.string "It's actually a battle wound from when\n"
-	.string "two powerful Pokémon fought one another\l"
-	.string "long ago.\p"
+	.string "two powerful Pokémon fought one\l"
+	.string "another long ago.\p"
 	.string "It must have been quite the spectacle.\p"
 	.string "I'll be taking my leave, since I haven't\n"
 	.string "found what I'm looking for.\p"

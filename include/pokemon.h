@@ -22,6 +22,20 @@ struct PokemonSubstruct0
              u16 filler:11;
 }; /* size = 12 */
 
+//TODO: Mint expansion, this will be the new PokemonSubstruct0
+//struct PokemonSubstruct0
+//{
+//    /*0x00*/ u16 species;
+//    /*0x02*/ u16 heldItem;
+//    /*0x04*/ u32 experience;
+//    /*0x08*/ u8 ppBonuses;
+//    /*0x09*/ u8 friendship;
+//    /*0x0A*/ u16 pokeball:5; //31 balls
+//             u16 hiddenNature:5;  // 25 natures
+//             u16 filler:6;
+//}; /* size = 12 */
+
+
 struct PokemonSubstruct1
 {
     /*0x00*/ u16 moves[MAX_MON_MOVES];
@@ -231,10 +245,13 @@ struct BattleMove
     u8 argument;
 };
 
+#define SPINDA_SPOT_WIDTH 16
+#define SPINDA_SPOT_HEIGHT 16
+
 struct SpindaSpot
 {
     u8 x, y;
-    u16 image[16];
+    u16 image[SPINDA_SPOT_HEIGHT];
 };
 
 struct LevelUpMove
@@ -389,6 +406,7 @@ s32 GetBattlerMultiplayerId(u16 a1);
 u8 GetTrainerEncounterMusicId(u16 trainerOpponentId);
 u16 ModifyStatByNature(u8 nature, u16 n, u8 statIndex);
 void AdjustFriendship(struct Pokemon *mon, u8 event);
+void MonGiveEVs(struct Pokemon *mon, u8 stat, u8 evIncrease);
 void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies);
 u16 GetMonEVCount(struct Pokemon *mon);
 void RandomlyGivePartyPokerus(struct Pokemon *party);

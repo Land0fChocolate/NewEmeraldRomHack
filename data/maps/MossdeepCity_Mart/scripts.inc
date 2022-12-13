@@ -51,10 +51,11 @@ MossdeepCity_Mart_Text_MaxRepelLastsLongest:
 	.string "the longest.$"
 
 MossdeepCity_Mart_Text_NetAndDiveBallsRare:
-	.string "The Net and Dive Balls are rare Poké\n"
-	.string "Balls that are only made in Mossdeep.\p"
-	.string "A Net Ball is effective against\n"
-	.string "Bug-type and Water-type Pokémon.\p"
-	.string "A Dive Ball works best on Pokémon\n"
-	.string "at the bottom of the sea.$"
+	.string "I want to get a souvenir for my kid\n"
+	.string "back home, but nothing in this store\l"
+	.string "looks interesting.\p"
+	.string "I heard you can get something called\n"
+	.string "a Shell Bell from a cave just to the\l"
+	.string "north.\p"
+	.string "I should probably take a look.$"
 

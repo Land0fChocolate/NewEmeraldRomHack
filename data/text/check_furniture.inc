@@ -29,3 +29,11 @@ Text_SweetShopShelf:
 Text_Blueprint:
 	.string "A blueprint of some sort?\n"
 	.string "It's too complicated!$"
+
+Text_BambooTree:
+	.string "It's a bamboo tree with many pieces\n"
+	.string "of paper tied to it with ribbons.$"
+
+Text_BambooTree_PlaceWishTag:
+	.string "{PLAYER} placed the Wish Tag on the\n"
+	.string "bamboo tree.$"

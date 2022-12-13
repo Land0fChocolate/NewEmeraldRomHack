@@ -81,19 +81,14 @@ SkyPillar_Top_EventScript_RayquazaCaught::
 	compare VAR_SKY_PILLAR_STATE, 6
 	goto_if_eq Common_EventScript_NopReturn
 	setflag FLAG_DEFEATED_RAYQUAZA
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
-	fadescreenswapbuffers FADE_FROM_BLACK
 	applymovement LOCALID_ZINNIA, SkyPillar_Top_Movement_ZinniaMoveCaughtRayquaza
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox SkyPillar_Top_Text_CaughtRayquaza, MSGBOX_DEFAULT
 	closemessage
-	giveitem ITEM_KEY_STONE
+	giveitem ITEM_SPACE_BELT
 	setflag FLAG_OBTAINED_KEY_STONE
-	msgbox SkyPillar_Top_Text_YouWillNeedThisToo, MSGBOX_DEFAULT
-	closemessage
-	@giveitem ITEM_SPACE_SUIT @TODO: create this item
+	msgbox SkyPillar_Top_Text_DescribeSpaceBelt, MSGBOX_DEFAULT
 	msgbox SkyPillar_Top_Text_UseDragonAscent, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_ZINNIA, SkyPillar_Top_Movement_ZinniaMoveBackCaughtRayquaza
@@ -253,7 +248,6 @@ SkyPillar_Top_EventScript_Zinnia::
 	applymovement LOCALID_ZINNIA, Common_Movement_FaceUp
 	waitmovement 0
 	msgbox SkyPillar_Top_Text_HereWeAre, MSGBOX_DEFAULT
-	closemessage
 	faceplayer
 	msgbox SkyPillar_Top_Text_NoNeedToWait, MSGBOX_DEFAULT
 	closemessage
@@ -270,8 +264,8 @@ SkyPillar_Top_EventScript_Zinnia::
 	closemessage
 	playmoncry SPECIES_RAYQUAZA, 2
 	setvar VAR_0x8004, 1  @ vertical pan
-	setvar VAR_0x8005, 1  @ horizontal pan
-	setvar VAR_0x8006, 2  @ num shakes
+	setvar VAR_0x8005, 2  @ horizontal pan
+	setvar VAR_0x8006, 3  @ num shakes
 	setvar VAR_0x8007, 5  @ shake delay
 	special ShakeCamera
 	waitstate
@@ -280,19 +274,19 @@ SkyPillar_Top_EventScript_Zinnia::
 	closemessage
 	playmoncry SPECIES_RAYQUAZA, 2
 	setvar VAR_0x8004, 1  @ vertical pan
-	setvar VAR_0x8005, 1  @ horizontal pan
-	setvar VAR_0x8006, 3  @ num shakes
+	setvar VAR_0x8005, 3  @ horizontal pan
+	setvar VAR_0x8006, 5  @ num shakes
 	setvar VAR_0x8007, 10  @ shake delay
 	special ShakeCamera
 	waitstate
 	delay 60
 	msgbox SkyPillar_Top_Text_RejectedByRayquaza, MSGBOX_DEFAULT
 	closemessage
-	playmoncry SPECIES_RAYQUAZA, 1
+	playmoncry SPECIES_RAYQUAZA, 2
 	setvar VAR_0x8004, 1  @ vertical pan
-	setvar VAR_0x8005, 1  @ horizontal pan
-	setvar VAR_0x8006, 1  @ num shakes
-	setvar VAR_0x8007, 5  @ shake delay
+	setvar VAR_0x8005, 2  @ horizontal pan
+	setvar VAR_0x8006, 3  @ num shakes
+	setvar VAR_0x8007, 6  @ shake delay
 	special ShakeCamera
 	waitstate
 	delay 60
@@ -308,6 +302,7 @@ SkyPillar_Top_EventScript_Zinnia::
 	call_if_eq SkyPillar_Top_EventScript_PlayerChosenFemale
 	closemessage
 	applymovement LOCALID_ZINNIA, SkyPillar_Top_Movement_ZinniaMoveToPlayer
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox SkyPillar_Top_Text_AreYouWorthy, MSGBOX_DEFAULT
@@ -409,26 +404,26 @@ SkyPillar_Top_Text_NoNeedToWait:
 SkyPillar_Top_Text_GreatRayquaza:
 	.string "Zinnia: Great Rayquaza! Hear my wish!\p"
 	.string "Catastrophe threatens Hoenn!\n"
-	.string "Come with me and we shall defeat the\l"
-	.string "danger together!\p"
-	.string "Achieve your Mega Evolution!\n"
-	.string "Take hold of your true power!\l"
-	.string "Show me your true face!\l"
-	.string "The Rayquaza that will save this planet!$"
+	.string "An old foe has returned!\p"
+	.string "I, the last in the line of Lorekeepers\n"
+	.string "request your aid!\p"
+	.string "Come with me and we shall defeat the\n"
+	.string "danger together!$"
 
 SkyPillar_Top_Text_LendMeAid:
 	.string "Zinnia: … … …huh?\p"
 	.string "Rayquaza, I am the last in line of the\n"
 	.string "Draconid Lorekeepers.\l"
+	.string "Your faithful servant.\l"
 	.string "Please, lend me your aid!$"
 
 SkyPillar_Top_Text_RejectedByRayquaza:
 	.string "Zinnia: … … but… why…\p"
-	.string "Why won't you work with me!?\p"
+	.string "Why won't you work with me!?$"
 
 SkyPillar_Top_Text_PlayerChosenMale:
 	.string "Zinnia: …you chose him over me?\n"
-	.string "…but I worked so hard to get here.\l"
+	.string "…but I worked so hard to get here.\p"
 	.string "This was supposed to be my duty!\p"
 	.string "I can't accept this.\p"
 	.string "After everything that I've done.\n"
@@ -436,7 +431,7 @@ SkyPillar_Top_Text_PlayerChosenMale:
 
 SkyPillar_Top_Text_PlayerChosenFemale:
 	.string "Zinnia: …you chose her over me?\n"
-	.string "…but I worked so hard to get here.\l"
+	.string "…but I worked so hard to get here.\p"
 	.string "This was supposed to be my duty!\p"
 	.string "I can't accept this.\p"
 	.string "After everything that I've done.\n"
@@ -453,17 +448,18 @@ SkyPillar_Top_Text_ZinniaDefeated:
 	.string "Zinnia: …$"
 
 SkyPillar_Top_Text_FallsToYouNow:
-	.string "Zinnia: I guess it falls to you now.\p"
-	.string "{PLAYER}, use everything you've got\n"
+	.string "Zinnia: …sigh.\p"
+	.string "I guess it falls to you now.\n"
+	.string "{PLAYER}, use everything you've got\l"
 	.string "and win over Rayquaza!\p"
 	.string "This is the Legendary Pokémon that all\n"
-	.string "Hoenn views as as our great protector!\l"
-	.string "And the only one who can direct it now…\l"
+	.string "Hoenn views as as our great protector!\p"
+	.string "And the only one who can direct it now…\n"
 	.string "It's you! You have to do this!\l"
 	.string "Catch it, and save Hoenn!$"
 
 SkyPillar_Top_Text_CaughtRayquaza:
-	.string "Zinnia: … Congratulations, {PLAYER}.\n"
+	.string "Zinnia: …Congratulations, {PLAYER}.\n"
 	.string "History has chosen you…\p"
 	.string "Rayquaza chose you and not me…\n"
 	.string "I think I understand why…\p"
@@ -473,19 +469,27 @@ SkyPillar_Top_Text_CaughtRayquaza:
 	.string "ends justify the means…\p"
 	.string "As your heart is purer than mine,\n"
 	.string "Rayquaza has chosen you over me.\p"
-	.string "The duty to defend Hoenn is now yours,\n"
-	.string "and so I pass the final key to\l"
-	.string "Rayquaza's true power onto you.$"
+	.string "The duty to defend Hoenn is now yours.\p"
+	.string "Since you'll be heading into space,\n"
+	.string "you'll be needing this.$"
 
-SkyPillar_Top_Text_YouWillNeedThisToo:
-	.string "Zinnia: You'll need this too.$"
+SkyPillar_Top_Text_DescribeSpaceBelt:
+	.string "Zinnia: Those clever scientists at the\n"
+	.string "Space Center made this device.\p"
+	.string "It creates a field of air around itself,\n"
+	.string "allowing the wearer to safely travel\l"
+	.string "through space.\p"
+	.string "It can also expand to allow your\n"
+	.string "Pokémon to breathe too.\p"
+	.string "I have no idea how it works, but it's\n"
+	.string "simple to use.$"
 
 SkyPillar_Top_Text_UseDragonAscent:
-	.string "Zinnia: With that keystone I just gave\n"
-	.string "to you, you'll be able to unlock\l"
-	.string "Rayquaza's Mega Evolution.\p"
-	.string "In its Mega Evolved form, Rayquaza can\n"
-	.string "take you beyond the skies.\p"
+	.string "Zinnia: Rayquaza can take you beyond\n"
+	.string "the skies.\p"
 	.string "Much like how your Pokémon can carry you\n"
 	.string "across water, Rayquaza can carry you to\l"
-	.string "space.$"
+	.string "space.\p"
+	.string "I must say… I'm more than a little\n"
+	.string "jealous that you will be the one riding\l"
+	.string "Rayquaza into space.$"

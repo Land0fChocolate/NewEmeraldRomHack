@@ -19,7 +19,7 @@ MagmaHideout_1F_EventScript_Grunt2::
 MagmaHideout_1F_Text_Grunt1Intro:
 	.string "You!\p"
 	.string "You're the brat who stopped us from\n"
-	.string "blowing up Mt Chimney!\p"
+	.string "erupting Mt Chimney!\p"
 	.string "You've taken from humanity all that\n"
 	.string "land and rare metals the volcano would\l"
 	.string "have churned up!\p"
@@ -34,7 +34,7 @@ MagmaHideout_1F_Text_Grunt1PostBattle:
 	.string "We'll reach our goals sooner or later.$"
 
 MagmaHideout_1F_Text_Grunt2Intro:
-	.string "Drat! Team Aqua found us!\n"
+	.string "Drat! Team Aqua found us!\p"
 	.string "Wait, you're not Team Aqua.\n"
 	.string "Who are you?$"
 
@@ -43,7 +43,7 @@ MagmaHideout_1F_Text_Grunt2Defeat:
 
 MagmaHideout_1F_Text_Grunt2PostBattle:
 	.string "It took a while getting the boss back\n"
-	.string "to base, we were attacked by an Aqua\l"
-	.string "hit squad. They somehow knew what we\l"
-	.string "were up to.$"
+	.string "to base.\p"
+	.string "We were attacked by an Aqua hit squad.\n"
+	.string "They somehow knew what we were up to.$"
 

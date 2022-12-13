@@ -8,6 +8,7 @@ DewfordTown_Gym_OnTransition:
 	end
 
 DewfordTown_Gym_Eventscript_SetUpBrawly::
+	goto_if_unset FLAG_BADGE02_GET, DewfordTown_Gym_Eventscript_BrawlyRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_BRAWLY_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE
@@ -22,6 +23,7 @@ DewfordTown_Gym_Eventscript_BrawlyRematch::
 	return
 
 DewfordTown_Gym_Eventscript_BrawlyBeach::
+	goto_if_unset FLAG_BADGE07_GET, Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_ROUTE106_BRAWLY
 	setflag FLAG_HIDE_DEWFORD_GYM_BRAWLY
 	return
@@ -440,8 +442,10 @@ DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
 	.string "trades, obey without question.\p"
 	.string "And, you'll be able to command your\n"
 	.string "Pokémon to light up super dark places.\p"
-	.string "If you'd like, use this Technical\n"
-	.string "Machine, too.$"
+	.string "Hmm… You know what?\p"
+	.string "I think you can make full use of this,\n"
+	.string "too. I'm sure this will help your\l"
+	.string "Pokémon bulk up muscle!$"
 
 DewfordTown_Gym_Text_ExplainBulkUp:
 	.string "That TM08 contains Bulk Up.\p"

@@ -1,19 +1,27 @@
 .set LOCALID_ZINNIA, 3
 
 MagmaHideout_3F_1R_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, MagmaHideout_3F_1R_OnFrame
 	.byte 0
+
+MagmaHideout_3F_1R_OnFrame:
+	map_script_2 VAR_MAGMA_HIDEOUT_ZINNIA_TRIGGER_STATE, 0, MagmaHideout_3F_1R_EventScript_Zinnia_Trigger
+	.2byte 0
 
 MagmaHideout_3F_1R_EventScript_Zinnia_Trigger::
 	lock
 	msgbox MagmaHideout_3F_1R_Text_ZinniaPreIntro, MSGBOX_DEFAULT
 	closemessage
 	faceplayer
+	applymovement LOCALID_ZINNIA, Common_Movement_FaceRight
+	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_ZINNIA, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_ZINNIA, Common_Movement_Delay48
+	delay 60
+	applymovement LOCALID_ZINNIA, MagmaHideout_3F_1R_Movement_ZinniaWalkToPlayer
 	waitmovement 0
-	applymovement LOCALID_ZINNIA, MagmaHideout_3F_1R_Movement_Zinnia
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox MagmaHideout_3F_1R_Text_ZinniaMeetsPlayer, MSGBOX_DEFAULT
 	closemessage
@@ -21,16 +29,16 @@ MagmaHideout_3F_1R_EventScript_Zinnia_Trigger::
 	release
 	end
 
-MagmaHideout_3F_1R_EventScript_Zinnia::
-	msgbox MagmaHideout_3F_1R_Text_ZinniaIdle, MSGBOX_NPC
-	end
-
-MagmaHideout_3F_1R_Movement_Zinnia:
+MagmaHideout_3F_1R_Movement_ZinniaWalkToPlayer:
 	walk_right
 	walk_right
 	walk_right
 	walk_right
 	step_end
+
+MagmaHideout_3F_1R_EventScript_Zinnia::
+	msgbox MagmaHideout_3F_1R_Text_ZinniaIdle, MSGBOX_NPC
+	end
 
 MagmaHideout_3F_1R_EventScript_Grunt9::
 	trainerbattle_single TRAINER_GRUNT_MAGMA_HIDEOUT_9, MagmaHideout_3F_1R_Text_Grunt9Intro, MagmaHideout_3F_1R_Text_Grunt9Defeat

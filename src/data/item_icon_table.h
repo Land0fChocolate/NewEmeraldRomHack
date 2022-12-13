@@ -91,9 +91,6 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_GENIUS_FEATHER] = {gItemIcon_GeniusFeather, gItemIconPalette_GeniusFeather},
     [ITEM_CLEVER_FEATHER] = {gItemIcon_CleverFeather, gItemIconPalette_CleverFeather},
     [ITEM_SWIFT_FEATHER] = {gItemIcon_SwiftFeather, gItemIconPalette_SwiftFeather},
-    // Ability Modifiers
-    [ITEM_ABILITY_CAPSULE] = {gItemIcon_AbilityCapsule, gItemIconPalette_AbilityCapsule},
-    [ITEM_ABILITY_PATCH] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
     // Mints
     [ITEM_LONELY_MINT] = {gItemIcon_Mint, gItemIconPalette_RedMint},
     [ITEM_ADAMANT_MINT] = {gItemIcon_Mint, gItemIconPalette_RedMint},
@@ -805,8 +802,8 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_SECRET_KEY] = {gItemIcon_SecretKey, gItemIconPalette_SecretKey},
     [ITEM_BIKE_VOUCHER] = {gItemIcon_BikeVoucher, gItemIconPalette_BikeVoucher},
     [ITEM_GOLD_TEETH] = {gItemIcon_GoldTeeth, gItemIconPalette_GoldTeeth},
-    [ITEM_CARD_KEY] = {gItemIcon_CardKey, gItemIconPalette_CardKey},
-    [ITEM_LIFT_KEY] = {gItemIcon_LiftKey, gItemIconPalette_Key},
+    [ITEM_WISH_TAG] = {gItemIcon_WishTag, gItemIconPalette_WishTag},
+    [ITEM_SPACE_BELT] = {gItemIcon_SpaceBelt, gItemIconPalette_SpaceBelt},
     [ITEM_SILPH_SCOPE] = {gItemIcon_SilphScope, gItemIconPalette_SilphScope},
     [ITEM_SILVER_WING] = {gItemIcon_SilverWing, gItemIconPalette_SilverWing},
     [ITEM_RAINBOW_WING] = {gItemIcon_RainbowWing, gItemIconPalette_RainbowWing},

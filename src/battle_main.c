@@ -72,7 +72,6 @@ extern struct MusicPlayerInfo gMPlayInfo_SE2;
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
 
-// this file's functions
 static void CB2_InitBattleInternal(void);
 static void CB2_PreInitMultiBattle(void);
 static void CB2_PreInitIngamePlayerPartnerBattle(void);
@@ -122,7 +121,6 @@ static void HandleEndTurn_MonFled(void);
 static void HandleEndTurn_FinishBattle(void);
 static void TrySpecialEvolution(void);
 
-// EWRAM vars
 EWRAM_DATA u16 gBattle_BG0_X = 0;
 EWRAM_DATA u16 gBattle_BG0_Y = 0;
 EWRAM_DATA u16 gBattle_BG1_X = 0;
@@ -243,7 +241,6 @@ EWRAM_DATA u8 gPartyCriticalHits[PARTY_SIZE] = {0};
 EWRAM_DATA static u8 sTriedEvolving = 0;
 EWRAM_DATA u8 gOriginMove = 0;
 
-// IWRAM common vars
 void (*gPreBattleCallback1)(void);
 void (*gBattleMainFunc)(void);
 struct BattleResults gBattleResults;
@@ -517,7 +514,6 @@ const u8 * const gStatusConditionStringsTable[7][2] =
     {gStatusConditionString_LoveJpn, gText_Love}
 };
 
-// code
 void CB2_InitBattle(void)
 {
     MoveSaveBlocks_ResetHeap();
@@ -972,8 +968,10 @@ static void CB2_HandleStartBattle(void)
         }
         break;
     case 3:
+        // Link battle, send/receive party Pokémon 2 at a time
         if (IsLinkTaskFinished())
         {
+            // Send Pokémon 1-2
             SendBlock(bitmask_all_link_players_but_self(), gPlayerParty, sizeof(struct Pokemon) * 2);
             gBattleCommunication[MULTIUSE_STATE]++;
         }
@@ -981,6 +979,7 @@ static void CB2_HandleStartBattle(void)
     case 4:
         if ((GetBlockReceivedStatus() & 3) == 3)
         {
+            // Recv Pokémon 1-2
             ResetBlockReceivedFlags();
             memcpy(gEnemyParty, gBlockRecvBuffer[enemyMultiplayerId], sizeof(struct Pokemon) * 2);
             gBattleCommunication[MULTIUSE_STATE]++;
@@ -989,6 +988,7 @@ static void CB2_HandleStartBattle(void)
     case 7:
         if (IsLinkTaskFinished())
         {
+            // Send Pokémon 3-4
             SendBlock(bitmask_all_link_players_but_self(), gPlayerParty + 2, sizeof(struct Pokemon) * 2);
             gBattleCommunication[MULTIUSE_STATE]++;
         }
@@ -996,6 +996,7 @@ static void CB2_HandleStartBattle(void)
     case 8:
         if ((GetBlockReceivedStatus() & 3) == 3)
         {
+            // Recv Pokémon 3-4
             ResetBlockReceivedFlags();
             memcpy(gEnemyParty + 2, gBlockRecvBuffer[enemyMultiplayerId], sizeof(struct Pokemon) * 2);
             gBattleCommunication[MULTIUSE_STATE]++;
@@ -1004,6 +1005,7 @@ static void CB2_HandleStartBattle(void)
     case 11:
         if (IsLinkTaskFinished())
         {
+            // Send Pokémon 5-6
             SendBlock(bitmask_all_link_players_but_self(), gPlayerParty + 4, sizeof(struct Pokemon) * 2);
             gBattleCommunication[MULTIUSE_STATE]++;
         }
@@ -1011,6 +1013,7 @@ static void CB2_HandleStartBattle(void)
     case 12:
         if ((GetBlockReceivedStatus() & 3) == 3)
         {
+            // Recv Pokémon 5-6
             ResetBlockReceivedFlags();
             memcpy(gEnemyParty + 4, gBlockRecvBuffer[enemyMultiplayerId], sizeof(struct Pokemon) * 2);
             TryCorrectShedinjaLanguage(&gEnemyParty[0]);
@@ -1029,6 +1032,9 @@ static void CB2_HandleStartBattle(void)
         gBattleCommunication[SPRITES_INIT_STATE2] = 0;
         if (gBattleTypeFlags & BATTLE_TYPE_LINK)
         {
+            // Check if both players are using Emerald
+            // to determine if the recorded battle rng
+            // seed needs to be sent
             s32 i;
 
             for (i = 0; i < 2 && (gLinkPlayers[i].version & 0xFF) == VERSION_EMERALD; i++);
@@ -1044,6 +1050,7 @@ static void CB2_HandleStartBattle(void)
         }
         break;
     case 16:
+        // Both players are using Emerald, send rng seed for recorded battle
         if (IsLinkTaskFinished())
         {
             SendBlock(bitmask_all_link_players_but_self(), &gRecordedBattleRngSeed, sizeof(gRecordedBattleRngSeed));
@@ -1051,6 +1058,7 @@ static void CB2_HandleStartBattle(void)
         }
         break;
     case 17:
+        // Receive rng seed for recorded battle (only read it if partner is the link master)
         if ((GetBlockReceivedStatus() & 3) == 3)
         {
             ResetBlockReceivedFlags();
@@ -1060,17 +1068,17 @@ static void CB2_HandleStartBattle(void)
         }
         break;
     case 18:
+        // Finish, start battle
         if (BattleInitAllSprites(&gBattleCommunication[SPRITES_INIT_STATE1], &gBattleCommunication[SPRITES_INIT_STATE2]))
         {
             gPreBattleCallback1 = gMain.callback1;
             gMain.callback1 = BattleMainCB1;
             SetMainCallback2(BattleMainCB2);
             if (gBattleTypeFlags & BATTLE_TYPE_LINK)
-            {
                 gBattleTypeFlags |= BATTLE_TYPE_LINK_IN_BATTLE;
-            }
         }
         break;
+    // Introduce short delays between sending party Pokémon for link
     case 5:
     case 9:
     case 13:
@@ -1172,8 +1180,10 @@ static void CB2_HandleStartMultiPartnerBattle(void)
         }
         break;
     case 3:
+        // Link battle, send/receive party Pokémon in groups
         if (IsLinkTaskFinished())
         {
+            // Send Pokémon 1-2
             SendBlock(bitmask_all_link_players_but_self(), gPlayerParty, sizeof(struct Pokemon) * 2);
             gBattleCommunication[MULTIUSE_STATE]++;
         }
@@ -1181,6 +1191,7 @@ static void CB2_HandleStartMultiPartnerBattle(void)
     case 4:
         if ((GetBlockReceivedStatus() & 3) == 3)
         {
+            // Recv partner's Pokémon 1-2, and copy partner's and own Pokémon into party positions
             ResetBlockReceivedFlags();
             if (gLinkPlayers[playerMultiplayerId].id != 0)
             {
@@ -1198,6 +1209,7 @@ static void CB2_HandleStartMultiPartnerBattle(void)
     case 5:
         if (IsLinkTaskFinished())
         {
+            // Send Pokémon 3
             SendBlock(bitmask_all_link_players_but_self(), gPlayerParty + 2, sizeof(struct Pokemon));
             gBattleCommunication[MULTIUSE_STATE]++;
         }
@@ -1231,9 +1243,7 @@ static void CB2_HandleStartMultiPartnerBattle(void)
         {
             ResetBlockReceivedFlags();
             if (GetMultiplayerId() != 0)
-            {
                 memcpy(gEnemyParty, gBlockRecvBuffer[0], sizeof(struct Pokemon) * 2);
-            }
             gBattleCommunication[MULTIUSE_STATE]++;
         }
         break;
@@ -1249,9 +1259,7 @@ static void CB2_HandleStartMultiPartnerBattle(void)
         {
             ResetBlockReceivedFlags();
             if (GetMultiplayerId() != 0)
-            {
                 memcpy(gEnemyParty + 2, gBlockRecvBuffer[0], sizeof(struct Pokemon) * 2);
-            }
             gBattleCommunication[MULTIUSE_STATE]++;
         }
         break;
@@ -1289,13 +1297,9 @@ static void CB2_HandleStartMultiPartnerBattle(void)
         gBattleCommunication[SPRITES_INIT_STATE1] = 0;
         gBattleCommunication[SPRITES_INIT_STATE2] = 0;
         if (gBattleTypeFlags & BATTLE_TYPE_LINK)
-        {
             gBattleCommunication[MULTIUSE_STATE] = 14;
-        }
         else
-        {
             gBattleCommunication[MULTIUSE_STATE] = 16;
-        }
         break;
     case 14:
         if (IsLinkTaskFinished())
@@ -1907,7 +1911,6 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 
         for (i = 0; i < monsCount; i++)
         {
-
             if (gTrainers[trainerNum].doubleBattle == TRUE)
                 personalityValue = 0x80;
             else if (gTrainers[trainerNum].encounterMusic_gender & F_TRAINER_FEMALE)
@@ -3132,9 +3135,7 @@ void SwitchInClearSetData(void)
     gSpecialStatuses[gActiveBattler].physicalDmg = 0;
     gSpecialStatuses[gActiveBattler].specialDmg = 0;
 
-    ClearBattlerMoveHistory(gActiveBattler);
-    ClearBattlerAbilityHistory(gActiveBattler);
-    ClearBattlerItemEffectHistory(gActiveBattler);
+    Ai_UpdateSwitchInData(gActiveBattler);
 }
 
 void FaintClearSetData(void)
@@ -3145,6 +3146,7 @@ void FaintClearSetData(void)
         gBattleMons[gActiveBattler].statStages[i] = DEFAULT_STAT_STAGE;
 
     gBattleMons[gActiveBattler].status2 = 0;
+    gStatuses3[gActiveBattler] = 0;
     gStatuses4[gActiveBattler] = 0;
 
     for (i = 0; i < gBattlersCount; i++)
@@ -3230,9 +3232,7 @@ void FaintClearSetData(void)
     gBattleMons[gActiveBattler].type2 = gBaseStats[gBattleMons[gActiveBattler].species].type2;
     gBattleMons[gActiveBattler].type3 = TYPE_MYSTERY;
 
-    ClearBattlerMoveHistory(gActiveBattler);
-    ClearBattlerAbilityHistory(gActiveBattler);
-    ClearBattlerItemEffectHistory(gActiveBattler);
+    Ai_UpdateFaintData(gActiveBattler);
     UndoFormChange(gBattlerPartyIndexes[gActiveBattler], GET_BATTLER_SIDE(gActiveBattler), FALSE);
     if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER)
         UndoMegaEvolution(gBattlerPartyIndexes[gActiveBattler]);
@@ -3548,9 +3548,8 @@ static void DoBattleIntro(void)
                 }
             }
 
-            gBattleStruct->switchInAbilitiesCounter = 0;
-            gBattleStruct->switchInItemsCounter = 0;
-            gBattleStruct->overworldWeatherDone = FALSE;
+            GetAiLogicData(); // get assumed abilities, hold effects, etc of all battlers
+            Ai_InitPartyStruct(); // Save mons party counts, and first 2/4 mons on the battlefield.
 
             gBattleMainFunc = TryDoEventsBeforeFirstTurn;
         }
@@ -3592,13 +3591,14 @@ static void TryDoEventsBeforeFirstTurn(void)
     // set up Deoxys boss battle
     if (VarGet(VAR_DEOXYS_BOSS_BATTLE_STATE) == 1 && GetBattlerSide(gActiveBattler) == B_SIDE_OPPONENT)
     {
-           //SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHO_BOOST, 0);
-           //SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_THUNDER_PUNCH, 1);
-           //SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICE_PUNCH, 2);
-           //SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_DRAIN_PUNCH, 3);
+           SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHO_BOOST, 0);
+           SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_FIRE_PUNCH, 1);
+           SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICE_PUNCH, 2);
+           SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_DRAIN_PUNCH, 3);
            FlagSet(FLAG_DISABLE_CATCHING);
            VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 2);
            BattleScriptExecute(BattleScript_DeoxysStrangeAura);
+           return;
     }
 
     if (!gBattleStruct->overworldWeatherDone
@@ -3861,8 +3861,6 @@ void SwitchPartyOrder(u8 battler)
     u8 partyId1;
     u8 partyId2;
 
-    // gBattleStruct->field_60[battler][i]
-
     for (i = 0; i < (int)ARRAY_COUNT(gBattlePartyCurrentOrder); i++)
         gBattlePartyCurrentOrder[i] = *(battler * 3 + i + (u8*)(gBattleStruct->field_60));
 
@@ -3915,7 +3913,8 @@ static void HandleTurnActionSelectionState(void)
             gBattleCommunication[gActiveBattler] = STATE_BEFORE_ACTION_CHOSEN;
 
             // Do AI score computations here so we can use them in AI_TrySwitchOrUseItem
-            if ((gBattleTypeFlags & BATTLE_TYPE_HAS_AI || IsWildMonSmart()) && IsBattlerAIControlled(gActiveBattler)) {
+            if ((gBattleTypeFlags & BATTLE_TYPE_HAS_AI || IsWildMonSmart())
+                && (IsBattlerAIControlled(gActiveBattler) && !(gBattleTypeFlags & BATTLE_TYPE_PALACE))) {
                 gBattleStruct->aiMoveOrAction[gActiveBattler] = ComputeBattleAiScores(gActiveBattler);
             }
             break;
@@ -4236,13 +4235,9 @@ static void HandleTurnActionSelectionState(void)
                     break;
                 case B_ACTION_SAFARI_POKEBLOCK:
                     if ((gBattleResources->bufferB[gActiveBattler][1] | (gBattleResources->bufferB[gActiveBattler][2] << 8)) != 0)
-                    {
                         gBattleCommunication[gActiveBattler]++;
-                    }
                     else
-                    {
                         gBattleCommunication[gActiveBattler] = STATE_BEFORE_ACTION_CHOSEN;
-                    }
                     break;
                 case B_ACTION_SAFARI_GO_NEAR:
                     gBattleCommunication[gActiveBattler]++;
@@ -4461,6 +4456,7 @@ u32 GetBattlerTotalSpeedStat(u8 battlerId)
     if (gBattleMons[battlerId].status1 & STATUS1_PARALYSIS && !HasAbility(ABILITY_QUICK_FEET, abilities))
         speed /= (B_PARALYSIS_SPEED >= GEN_7 ? 2 : 4);
 
+    // Quick Claw
     if (GetBattlerHoldEffect(battlerId, TRUE) == HOLD_EFFECT_QUICK_CLAW && (gBattleMons[battlerId].hp < gBattleMons[battlerId].maxHP / 2)) 
         speed *= 1.1;
 
@@ -4483,7 +4479,9 @@ s8 GetChosenMovePriority(u32 battlerId)
 s8 GetMovePriority(u32 battlerId, u16 move)
 {
     s8 priority;
-    u16 *abilities = GetBattlerAbilities(battlerId);
+    u16 abilities[NUM_ABILITY_SLOTS];
+
+    memcpy(abilities, GetBattlerAbilities(battlerId), sizeof(abilities));
 
     priority = gBattleMoves[move].priority;
     if (HasAbility(ABILITY_GALE_WINGS, abilities)
@@ -4543,7 +4541,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
     // Quick Draw
     if (!ignoreChosenMoves && HasAbility(ABILITY_QUICK_DRAW, abilities) && !IS_MOVE_STATUS(gChosenMoveByBattler[battler1]) && Random() % 100 < 30)
         gProtectStructs[battler1].quickDraw = TRUE;
-    // Quick Claw and Custap Berry
+    // Custap Berry
     if (holdEffectBattler1 == HOLD_EFFECT_CUSTAP_BERRY && HasEnoughHpToEatBerry(battler1, 4, gBattleMons[battler1].item))
         gProtectStructs[battler1].usedCustapBerry = TRUE;
 
@@ -4568,7 +4566,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
 
     if (priority1 == priority2)
     {
-        // QUICK CLAW / CUSTAP - always first
+        // CUSTAP - always first
         // LAGGING TAIL - always last
         // STALL - always last
 
@@ -4698,7 +4696,9 @@ static void SetActionsAndBattlersTurnOrder(void)
             }
             for (gActiveBattler = 0; gActiveBattler < gBattlersCount; gActiveBattler++)
             {
-                if (gChosenActionByBattler[gActiveBattler] != B_ACTION_USE_ITEM && gChosenActionByBattler[gActiveBattler] != B_ACTION_SWITCH)
+                if (gChosenActionByBattler[gActiveBattler] != B_ACTION_USE_ITEM 
+                    && gChosenActionByBattler[gActiveBattler] != B_ACTION_SWITCH
+                    && gChosenActionByBattler[gActiveBattler] != B_ACTION_THROW_BALL)
                 {
                     gActionsByTurnOrder[turnOrderId] = gChosenActionByBattler[gActiveBattler];
                     gBattlerByTurnOrder[turnOrderId] = gActiveBattler;
@@ -4800,7 +4800,7 @@ static void CheckMegaEvolutionBeforeTurn(void)
         gBattleStruct->focusPunchBattlerId = 0;
     #else
         gBattleMainFunc = TryChangeTurnOrder; // This will just do nothing if no mon has mega evolved
-    #endif  
+    #endif
 }
 
 // In gen7, priority and speed are recalculated during the turn in which a pokemon mega evolves
@@ -5276,13 +5276,19 @@ static void ReturnFromBattleToOverworld(void)
         {
             UpdateRoamerHPStatus(&gSaveBlock1Ptr->roamer1, &gEnemyParty[0]);
             if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT)
+            {
                 SetRoamerInactive(&gSaveBlock1Ptr->roamer1);
+                FlagSet(FLAG_DEFEATED_LATIAS);
+            }
         }
         if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES) == SPECIES_LATIOS)
         {
             UpdateRoamerHPStatus(&gSaveBlock1Ptr->roamer2, &gEnemyParty[0]);
             if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT)
+            {
                 SetRoamerInactive(&gSaveBlock1Ptr->roamer2);
+                FlagSet(FLAG_DEFEATED_LATIOS);
+            }
         }
     }
 

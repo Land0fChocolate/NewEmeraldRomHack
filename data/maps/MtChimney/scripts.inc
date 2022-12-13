@@ -540,7 +540,7 @@ MtChimney_Text_MaxieIntro:
 	.string "… … … … … …\p"
 	.string "Your eyes tell me of your fierce\n"
 	.string "determination, and your presence here\l"
-	.string "tells me that you have defeated Tabitha.\l"
+	.string "tells me that you have defeated Tabitha.\p"
 	.string "Hmph. You show true promise.\p"
 	.string "I am called Maxie. I stand as the head\n"
 	.string "of Team Magma, a noble organization\l"
@@ -589,21 +589,23 @@ MtChimney_Text_MaxieYouHaventSeenLastOfMagma:
 	.string "battle!$"
 
 MtChimney_Text_TabithaIntro:
-	.string "Hehehe!\p"
-	.string "So you've come all the way here!\p"
-	.string "But you're too late!\n"
-	.string "I've already delivered the Meteorite\l"
-	.string "from Meteor Falls to the boss!$"
+	.string "Hyahyahya?! It's you!\p"
+	.string "You're the one who tried to interrupt\n"
+	.string "me, Tabitha, at Meteor Falls!\p"
+	.string "Do you intend to get in my way?\n"
+	.string "I will crush you, you obnoxious child!$"
 
 MtChimney_Text_TabithaDefeat:
-	.string "Hehehe…\p"
-	.string "Even though I've lost, if our leader\n"
-	.string "awakens that thing…$"
+	.string "Hyuhn!\p"
+	.string "How did that happen!?$"
 
 MtChimney_Text_TabithaPostBattle:
-	.string "Boss, hurry!\n"
-	.string "Give it the Meteorite's energy!\p"
-	.string "Hehehe…$"
+	.string "All that effort and it doesn't matter.\n"
+	.string "The Meteorite we got from Professor\l"
+	.string "Whoever is already in our Boss's hands!\p"
+	.string "The boss will put you in your place,\n"
+	.string "and he will show you the true power\l"
+	.string "of Team Magma!$"
 
 MtChimney_Text_Grunt2Intro:
 	.string "We of Team Magma are working hard for\n"
@@ -686,9 +688,9 @@ MtChimney_Text_ArchieThankYou:
 	.string "Whose side are you on?\p"
 	.string "Ah, it doesn't matter.\p"
 	.string "Team Magma failed here, and that's what\n"
-	.string "matters. We won't let them try this\l"
-	.string "again.\p"
-	.string "{PLAYER}, we shall meet again!$"
+	.string "matters.\l"
+	.string "We won't let them try this again.\p"
+	.string "Till next time, Scamp!$"
 
 MtChimney_Text_MagmaOutnumbersUs:
 	.string "Darn… Team Magma outnumbers us!\n"
@@ -829,6 +831,6 @@ MtChimney_Text_SawyerDefeat:
 	.string "Oh, you're a real firebrand, too!$"
 
 MtChimney_Text_SawyerPostBattle:
-	.string "I think I need a dip in Lavaridge\n"
-	.string "Hot Spring with the locals!$"
+	.string "I think I need a dip in a Lavaridge\n"
+	.string "hot spring with the locals!$"
 

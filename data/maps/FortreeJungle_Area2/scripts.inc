@@ -6,6 +6,11 @@ FortreeJungle_Area2_Eventscript_Ryu::
 	msgbox FortreeJungle_Area2_Text_RyuPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+FortreeJungle_Area2_Eventscript_Joss::
+	trainerbattle_single TRAINER_JOSS, FortreeJungle_Area2_Text_JossIntro, FortreeJungle_Area2_Text_JossDefeat
+	msgbox FortreeJungle_Area2_Text_JossPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 FortreeJungle_Area2_Eventscript_AquaMember::
 	msgbox FortreeJungle_Area2_Text_AquaMember, MSGBOX_NPC
 	end

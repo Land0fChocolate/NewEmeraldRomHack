@@ -1,3 +1,5 @@
+.set LOCALID_METEORITE, 4
+
 FallarborTown_CozmosHouse2_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, FallarborTown_CozmosHouse2_OnTransition
 	.byte 0
@@ -7,7 +9,7 @@ FallarborTown_CozmosHouse2_OnTransition:
 	end
 
 FallarborTown_CozmosHouse2_EventScript_PlaceMeteorite:
-	setmetatile 5, 2, METATILE_GenericBuilding_WoodenFloor_Meteorite, 1
+	addobject LOCALID_METEORITE
 	return
 
 FallarborTown_CozmosHouse2_EventScript_ProfCozmo::
@@ -26,14 +28,14 @@ FallarborTown_CozmosHouse2_EventScript_PlayerHasMeteorite::
 	call_if_set FLAG_TEMP_2, FallarborTown_CozmosHouse2_EventScript_AskForMeteorite
 	compare VAR_RESULT, NO
 	goto_if_eq FallarborTown_CozmosHouse2_EventScript_DeclineGiveMeteorite
+	setflag FLAG_RETURNED_METEORITE_TO_COZMO
+	clearflag FLAG_HIDE_COZMOS_HOUSE_METEORITE
 	msgbox FallarborTown_CozmosHouse2_Text_PleaseUseThisTM, MSGBOX_DEFAULT
 	giveitem ITEM_TM82
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setvar VAR_0x8004, ITEM_METEORITE
 	call Common_EventScript_PlayerHandedOverTheItem
-	setflag FLAG_RETURNED_METEORITE_TO_COZMO
-	clearflag FLAG_HIDE_COZMOS_HOUSE_METEORITE
 	msgbox FallarborTown_CozmosHouse2_Text_ReallyGoingToHelpMyResearch, MSGBOX_DEFAULT
 	release
 	end
@@ -85,12 +87,19 @@ FallarborTown_CozmosHouse2_EventScript_Journal::
 FallarborTown_CozmosHouse2_EventScript_Meteorite::
 	msgbox FallarborTown_CozmosHouse2_Text_ItsAMeteorite, MSGBOX_SIGN
 	closemessage
-	changedeoxysform 1
+	checkformoninparty SPECIES_DEOXYS
 	compare VAR_RESULT, TRUE
-	goto_if_eq FallarborTown_CozmosHouse2_EventScript_DeoxysChangedForm
+	goto_if_eq FallarborTown_CozmosHouse2_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_DEFENSE
+	compare VAR_RESULT, TRUE
+	goto_if_eq FallarborTown_CozmosHouse2_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_SPEED
+	compare VAR_RESULT, TRUE
+	goto_if_eq FallarborTown_CozmosHouse2_EventScript_ChangeDeoxysForm
 	end
 
-FallarborTown_CozmosHouse2_EventScript_DeoxysChangedForm::
+FallarborTown_CozmosHouse2_EventScript_ChangeDeoxysForm::
+	changedeoxysform 1
 	playmoncry SPECIES_DEOXYS, 0
 	waitse
 	msgbox FallarborTown_CozmosHouse2_Text_DeoxysChangedForm, MSGBOX_SIGN
@@ -99,7 +108,7 @@ FallarborTown_CozmosHouse2_EventScript_DeoxysChangedForm::
 FallarborTown_CozmosHouse2_Text_ItsAMeteorite:
 	.string "It's the meteorite given to Professor\n"
 	.string "Cozmo. You feel a radiating warmth\l"
-	.string "coming from it.\p"
+	.string "coming from it.$"
 
 FallarborTown_CozmosHouse2_Text_DeoxysChangedForm:
 	.string "The Deoxys in your party changed into\n"

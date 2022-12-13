@@ -6,13 +6,34 @@ MauvilleCity_SweetShop_EventScript_OldMan::
 	faceplayer
 	message MauvilleCity_SweetShop_Text_OldMan
 	waitmessage
-	pokemart MauvilleCity_SweetShop_Pokemart_OldMan
+	goto_if_unset FLAG_POST_GAME_COMPLETE, MauvilleCity_SweetShop_EventScript_StandardShop
+	pokemart MauvilleCity_SweetShop_Pokemart_OldManFinalShop
+MauvilleCity_SweetShop_EventScript_ExitShop::
 	msgbox gText_LookForwardToSeeingYouAgain, MSGBOX_DEFAULT
 	release
 	end
 
+MauvilleCity_SweetShop_EventScript_StandardShop::
+	pokemart MauvilleCity_SweetShop_Pokemart_OldManStandardShop
+	goto MauvilleCity_SweetShop_EventScript_ExitShop
+	end
+
 	.align 2
-MauvilleCity_SweetShop_Pokemart_OldMan:
+MauvilleCity_SweetShop_Pokemart_OldManStandardShop:
+	.2byte ITEM_PEWTER_CRUNCHIES
+	.2byte ITEM_RAGE_CANDY_BAR
+	.2byte ITEM_JELLY_FILLED_DONUT
+	.2byte ITEM_OLD_GATEAU
+	.2byte ITEM_SHALOUR_SABLE
+	.2byte ITEM_BIG_MALASADA
+	.2byte ITEM_LUMIOSE_GALETTE
+	.2byte ITEM_CASTELIACONE
+	.2byte ITEM_NONE
+	release
+	end
+
+MauvilleCity_SweetShop_Pokemart_OldManFinalShop:
+	.2byte ITEM_RARE_CANDY
 	.2byte ITEM_PEWTER_CRUNCHIES
 	.2byte ITEM_RAGE_CANDY_BAR
 	.2byte ITEM_JELLY_FILLED_DONUT

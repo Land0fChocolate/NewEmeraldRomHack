@@ -273,7 +273,7 @@ static const u16 sQuizLadyPrizes[] =
     ITEM_PAMTRE_BERRY,
     ITEM_SPELON_BERRY,
     ITEM_PP_UP,
-    ITEM_PP_UP,
+    ITEM_BOTTLE_CAP,
     ITEM_MAX_ETHER,
     ITEM_MAX_ELIXIR,
     ITEM_WATMEL_BERRY,
@@ -426,7 +426,7 @@ static const u16 sFavorLadyPrizes[] =
     ITEM_PP_UP,
     ITEM_NUGGET,
     ITEM_HEART_SCALE,
-    ITEM_HEART_SCALE,
+    ITEM_BOTTLE_CAP,
     ITEM_RARE_CANDY,
     ITEM_PP_MAX
 };

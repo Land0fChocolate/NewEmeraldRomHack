@@ -307,7 +307,6 @@ gSpecials::
 	def_special Special_AreLeadMonEVsMaxedOut
 	def_special Script_FacePlayer
 	def_special Script_ClearHeldMovement
-	def_special InitRoamers
 	def_special TryUpdateRusturfTunnelState
 	def_special IsGrassTypeInParty
 	def_special DoContestHallWarp
@@ -538,5 +537,12 @@ gSpecials::
 	def_special TrySpecialOverworldEvo
 	def_special SetTotemBoost
 	def_special GroomPokemon
+	def_special EVTrainPokemon
+	def_special InitNewRoamerLatias
+	def_special InitNewRoamerLatios
+	def_special CheckForMaxMonIVs
+	def_special MaximizeMonIVs
+	def_special CheckForMaxMonIV
+	def_special BuffMonIV
 	def_special OriginChooseMove
 	def_special SetOriginMove

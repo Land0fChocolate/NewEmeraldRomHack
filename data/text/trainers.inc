@@ -424,7 +424,7 @@ Route104_Text_DarianDefeat:
 	.string "What the…$"
 
 Route104_Text_DarianPostBattle:
-	.string "Hey, MAGIKARP, you sure don't live up\n"
+	.string "Hey, Magikarp, you sure don't live up\n"
 	.string "to your name, do you?$"
 
 Route105_Text_FosterIntro:
@@ -578,10 +578,11 @@ Route107_Text_TonyDefeated:
 	.string "I'm in shock!$"
 
 Route107_Text_TonyPostBattle:
-	.string "I swim the seas with a heart full of\n"
-	.string "dreams…\p"
-	.string "It's a song!\n"
-	.string "Anyways, I'm swimming some more.$"
+	.string "I tried to introduce a new phrase at\n"
+	.string "the Dewford Town Hall, but it didn't\l"
+	.string "take off at all…\p"
+	.string "At least the wife of that berry guy\n"
+	.string "appreciates “Overwhelming Latias”.$"
 
 Route107_Text_TonyRegister:
 	.string "You've shocked me to the bone!\n"
@@ -987,7 +988,7 @@ Route110_Text_AbigailPostBattle:
 
 Route110_Text_AbigailRegister:
 	.string "You know, I like you!\n"
-	.string "Let's have a rematch on CYCLING ROAD.$"
+	.string "Let's have a rematch on Cycling Road.$"
 
 Route110_Text_AbigailRematchIntro:
 	.string "Isn't it neat to hold a battle while\n"
@@ -1049,7 +1050,7 @@ Route110_Text_EdwinPostBattle:
 	.string "my passion as a collector is ignited!$"
 
 Route110_Text_EdwinRegister:
-	.string "I like collecting MATCH CALL\n"
+	.string "I like collecting Match Call\n"
 	.string "registrations, too…$"
 
 Route110_Text_EdwinRematchIntro:
@@ -1086,7 +1087,7 @@ Route110_Text_IsabelDefeated:
 
 Route110_Text_IsabelPostBattle:
 	.string "Rather than battling, perhaps I should\n"
-	.string "show off my Pokémon at the FAN CLUB.$"
+	.string "show off my Pokémon at the Fan Club.$"
 
 Route110_Text_IsabelRegister:
 	.string "That wasn't close to what I could\n"
@@ -1471,7 +1472,7 @@ FieryPath_Text_BryantPostBattle:
 
 FieryPath_Text_ShaylaIntro:
 	.string "This place blows!\n"
-	.string "I don't know why I came here.\p"
+	.string "I don't know why I came here.$"
 
 FieryPath_Text_ShaylaDefeat:
 	.string "Figures.$"
@@ -1505,8 +1506,8 @@ Route113_Text_FrannyDefeat:
 	.string "Oh, dear!$"
 
 Route113_Text_FrannyPostBattle:
-	.string "My dress is absolutely ruined, but I\p"
-	.string "cannot help myself to not play around\l"
+	.string "My dress is absolutely ruined, but I\n"
+	.string "cannot help myself to play around\l"
 	.string "in the ashfalls.$"
 
 Route113_Text_DillonIntro:
@@ -1891,17 +1892,17 @@ Route115_Text_TimothyPostRematch:
 	.string "effort!$"
 
 Route115_Text_KoichiIntro:
-	.string "You!\p"
-	.string "My Machop!\p"
-	.string "Demand a battle!$"
+	.string "RAWR!\p"
+	.string "SUPER HUSTLE!!!!!$"
 
 Route115_Text_KoichiDefeat:
-	.string "Ouch, ouch, ouch!$"
+	.string "Super Hustle!$"
 
 Route115_Text_KoichiPostBattle:
-	.string "My Machop crew!\p"
-	.string "So long as they seek power, I will\n"
-	.string "grow strong with them!$"
+	.string "Super Hustle! Super Hustle!\n"
+	.string "That's my catchphrase!\p"
+	.string "One old lady liked it so much, she\n"
+	.string "gave me a rare berry!$"
 
 Route115_Text_NobIntro:
 	.string "My strongest skill is busting bricks\n"
@@ -2163,7 +2164,7 @@ Route116_Text_JohnsonDefeat:
 
 Route116_Text_JohnsonPostBattle:
 	.string "Maybe if my Taillow gets thunder armor…\p"
-	.string "No, that idea is stupid.$"
+	.string "No, that idea doesn't make sense.$"
 
 Route117_Text_IsaacIntro:
 	.string "Listen, could I get you to battle\n"
@@ -3313,8 +3314,8 @@ Route123_Text_HannibalDefeat:
 
 Route123_Text_HannibalPostBattle:
 	.string "My Pokémon and I have been together\n"
-	.string "since I was barely walking. I could\l"
-	.string "never leave them.$"
+	.string "since I was barely walking.\l"
+	.string "I could never leave them.$"
 
 Route123_Text_KylieIntro:
 	.string "Did you know that if your Pokémon fight\n"
@@ -3352,10 +3353,11 @@ Route123_Text_AlbertoDefeat:
 	.string "Even in defeat, Bird Pokémon are cool!$"
 
 Route123_Text_AlbertoPostBattle:
-	.string "I gather Bird Pokémon feathers that\n"
-	.string "scatter during battles.\p"
-	.string "I'm going to make a hat with\n"
-	.string "Bird Pokémon feathers.$"
+	.string "I complemented another Trainer for a\n"
+	.string "“Great Battle” the other day.\p"
+	.string "The old lady that lives in the house\n"
+	.string "down there gave me a cool berry for my\l"
+	.string "politeness.$"
 
 Route123_Text_EdIntro:
 	.string "When there are no Trainers around,\n"
@@ -3999,9 +4001,8 @@ Route128_Text_RubenPostBattle:
 	.string "than you!$"
 
 Route128_Text_WayneIntro:
-	.string "I want to visit Ever Grande, so I\n"
-	.string "caught myself a Pokémon that knows\l"
-	.string "the move Waterfall to crest the falls.$"
+	.string "I'm catching strong water Pokémon that\n"
+	.string "can climb the waterfall at Ever Grande.$"
 
 Route128_Text_WayneDefeat:
 	.string "I'm crestfallen!$"
@@ -4540,8 +4541,8 @@ FieryPath_Text_DaytonPostBattle:
 
 FieryPath_Text_AishaIntro:
 	.string "This place makes for a unique training\n"
-	.string "environment. Is that why you have come\l"
-	.string "here too?$"
+	.string "environment.\l"
+	.string "Is that why you have come here too?$"
 
 FieryPath_Text_AishaDefeat:
 	.string "I don't waste any time being angry\n"
@@ -4595,7 +4596,8 @@ EverGrandeCity_BattleTent_Text_DeandrePostBattle:
 	.string "He'll tease me for it.$"
 
 EverGrandeCity_BattleTent_Text_MelinaIntro:
-	.string "Sure, whatever. You can battle me.$"
+	.string "Sure, whatever.\n"
+	.string "You can battle me.$"
 
 EverGrandeCity_BattleTent_Text_MelinaDefeated:
 	.string "Wow, you're like, really strong.$"
@@ -4630,12 +4632,12 @@ EverGrandeCity_BattleTent_Text_CarolinaPostBattle:
 
 EverGrandeCity_BattleTent_Text_PeteIntro:
 	.string "Climbing up the cliff was a good\n"
-	.string "workout. Time to cool off with a\l"
-	.string "battle!$"
+	.string "workout.\l"
+	.string "Time to cool off with a battle!$"
 
 EverGrandeCity_BattleTent_Text_PeteDefeated:
 	.string "Oof… that was tougher than the\n"
-	.string "cliff."
+	.string "cliff.$"
 
 EverGrandeCity_BattleTent_Text_PetePostBattle:
 	.string "I'll be climbing back down at the end\n"
@@ -4670,7 +4672,7 @@ EverGrandeCity_BattleTent_Text_ClarenceIntro:
 	.string "Wanna buy some NFTs?$"
 
 EverGrandeCity_BattleTent_Text_ClarenceDefeated:
-	.string "I guess that's a no…?"
+	.string "I guess that's a no…?$"
 
 EverGrandeCity_BattleTent_Text_ClarencePostBattle:
 	.string "Blast! The value of my NFTs have\n"
@@ -4812,7 +4814,8 @@ Wildwoods_Area4_Text_CelinaIntro:
 	.string "Though, I can spare some time to battle!$"
 
 Wildwoods_Area4_Text_CelinaDefeated:
-	.string "At least I've gathered plenty of cotton.$"
+	.string "At least I've gathered plenty of\n"
+	.string "cotton.$"
 
 Wildwoods_Area4_Text_CelinaPostBattle:
 	.string "Jumpluff's cotton makes for some\n"
@@ -4840,8 +4843,39 @@ Wildwoods_Area6_Text_MeggiDefeated:
 Wildwoods_Area6_Text_MeggiPostBattle:
 	.string "I'm just kidding about the age thing.\p"
 	.string "Being here reminded me of fairy tales\n"
-	.string "where time moves more slowly in\l$"
+	.string "where time moves more slowly in\l"
 	.string "mystical places.$"
+
+Wildwoods_Area7_Text_AliIntro:
+	.string "My wife and I are out for a pleasant\n"
+	.string "stroll. Would you care to join us?$"
+
+Wildwoods_Area7_Text_AliDefeat:
+	.string "So much energy…$"
+
+Wildwoods_Area7_Text_AliNotEnoughMons:
+	.string "Hmm… it's quite brave of you to travel\n"
+	.string "with just one Pokémon.$"
+
+Wildwoods_Area7_Text_AliPostBattle:
+	.string "Very well, Lily. Let's see if we can\n"
+	.string "burn some of that energy of yours.$"
+
+Wildwoods_Area7_Text_LilyIntro:
+	.string "A trainer!\n"
+	.string "Now this walk won't be so dull!$"
+
+Wildwoods_Area7_Text_LilyDefeat:
+	.string "Good show, young one.$"
+
+Wildwoods_Area7_Text_LilyNotEnoughMons:
+	.string "You should get some more Pokémon, dear.\n"
+	.string "It would be more enjoyable to travel.$"
+
+Wildwoods_Area7_Text_LilyPostBattle:
+	.string "Ali, let's find another Trainer.\n"
+	.string "to challenge. There's bound to be more\l"
+	.string "wandering lost in here. Kekekeke.$"
 
 FallarborWasteland_Text_KatIntro:
 	.string "Kat: Ohoho! What do we have here?\n"
@@ -4891,11 +4925,54 @@ FallarborWasteland_Text_GeordiPostBattle:
 	.string "Being in the middle of nowhere is\l"
 	.string "perfect for me.$"
 
+FallarborWasteland_Text_HaydenIntro:
+	.string "I'm raising a brand new batch of\n"
+	.string "Pokémon. Want to have a look?$"
+
+FallarborWasteland_Text_HaydenDefeat:
+	.string "You're better at raising Pokémon than\n"
+	.string "I am.$"
+
+FallarborWasteland_Text_HaydenPostBattle:
+	.string "Have you ever thought about becoming a\n"
+	.string "Pokémon Breeder?$"
+
+MauvilleMeadow_Text_RitaIntro:
+	.string "Excuse me. You're in the way of our\n"
+	.string "swimming lessons.$"
+
+MauvilleMeadow_Text_RitaDefeat:
+	.string "You definitely don't need lessons in\n"
+	.string "battling.$"
+
+MauvilleMeadow_Text_RitaNotEnoughMons:
+	.string "Excuse me. You're in the way of our\n"
+	.string "swimming lessons.$"
+
+MauvilleMeadow_Text_RitaPostBattle:
+	.string "Are you riding on your Pokémon because\n"
+	.string "you don't know how to swim?\l"
+	.string "I can give swimming lessons to you too.$"
+
+MauvilleMeadow_Text_SamIntro:
+	.string "I'm not good at swimming, but I'm good\n"
+	.string "at battling!$"
+
+MauvilleMeadow_Text_SamDefeat:
+	.string "Aww, do I need battle lessons too?$"
+
+MauvilleMeadow_Text_SamNotEnoughMons:
+	.string "Why do you only have one Pokémon?\n"
+	.string "I wanna battle!$"
+
+MauvilleMeadow_Text_SamPostBattle:
+	.string "My big sis is teaching me how to swim!$"
+
 MauvilleMeadow_Text_AlistairIntro:
 	.string "Take a good look at my moustache!\n"
-	.string "I have groomed and oiled it every day!\l"
-	.string "You will find no finer facial hair in\l"
-	.string "Hoenn!$"
+	.string "I have groomed and oiled it every day!\p"
+	.string "You will find no finer facial hair in\n"
+	.string "all of Hoenn!$"
 
 MauvilleMeadow_Text_AlistairDefeat:
 	.string "Hmpf! No appreciation!$"
@@ -4925,15 +5002,15 @@ FortreeJungle_Area1_Text_ZukoDefeat:
 FortreeJungle_Area1_Text_ZukoPostBattle:
 	.string "Buh-bye!$"
 
-FortreeJungle_Area1_Text_JossIntro:
-	.string "Fufufu!\n"
-	.string "This jungle is a paradise! So many rare\l"
-	.string "Pokémon just for me!$"
+FortreeJungle_Area2_Text_JossIntro:
+	.string "Fufufu!\p"
+	.string "This jungle is a paradise!\n"
+	.string "So many rare Pokémon just for me!$"
 
-FortreeJungle_Area1_Text_JossDefeat:
+FortreeJungle_Area2_Text_JossDefeat:
 	.string "I need more.$"
 
-FortreeJungle_Area1_Text_JossPostBattle:
+FortreeJungle_Area2_Text_JossPostBattle:
 	.string "My collection is not complete until I\n"
 	.string "can get a Chansey. I saw one running\l"
 	.string "around but they're surprisingly\l"

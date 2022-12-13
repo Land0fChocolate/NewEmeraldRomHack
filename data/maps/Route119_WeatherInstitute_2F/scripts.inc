@@ -8,8 +8,10 @@
 .set LOCALID_RIVAL, 8
 .set LOCALID_SCIENTIST, 10
 .set LOCALID_ZINNIA_AQUA, 12
+.set LOCALID_CASTFORM1, 13
 .set LOCALID_CASTFORM2, 14
 .set LOCALID_ZINNIA, 18
+.set LOCALID_DELINQUENT, 19
 
 Route119_WeatherInstitute_2F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route119_WeatherInstitute_2F_OnTransition
@@ -46,6 +48,8 @@ Route119_WeatherInstitute_2F_EventScript_SetZinniaMeetUpScene::
 Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaHere::
 	setobjectxyperm LOCALID_SCIENTIST, 1, 6
 	setobjectmovementtype LOCALID_SCIENTIST, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm LOCALID_DELINQUENT, 2, 7
+	setobjectmovementtype LOCALID_DELINQUENT, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
 Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaGone::
@@ -96,6 +100,7 @@ Route119_WeatherInstitute_2F_EventScript_Worker2::
 	end
 
 Route119_WeatherInstitute_2F_EventScript_FightTrigger::
+	setvar VAR_WEATHER_INSTITUTE_TRIGGER_STATE, 1
 	goto Route119_WeatherInstitute_2F_EventScript_FightScene
 	end
 
@@ -124,12 +129,14 @@ Route119_WeatherInstitute_2F_EventScript_FightScenePart2::
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox Route119_WeatherInstitute_2F_Text_ArchieSeesPlayer, MSGBOX_DEFAULT
+	closemessage
 	applymovement LOCALID_RIVAL, Route119_WeatherInstitute_2F_Move_Up_To_Shelly
 	applymovement LOCALID_GRUNT_5, Route119_WeatherInstitute_2F_Shove_Grunt_OutOfWay
 	waitmovement 0
 	applymovement LOCALID_SHELLY, Common_Movement_FaceLeft
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceLeft
 	waitmovement 0
+	delay 20
 	compare VAR_RESULT, MALE
 	goto_if_eq Route119_WeatherInstitute_2F_MayAsksPlayerToJoinFight
 	compare VAR_RESULT, FEMALE
@@ -249,7 +256,6 @@ Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattle::
 
 Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	lockall
-	setvar VAR_WEATHER_INSTITUTE_TRIGGER_STATE, 1
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceLeft
 	msgbox Route119_WeatherInstitute_2F_Text_ArchieLost, MSGBOX_DEFAULT
 	closemessage
@@ -261,14 +267,16 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	msgbox Route119_WeatherInstitute_2F_Text_TeamMagmaJustPassedBy, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceRight
+	waitmovement 0
+	applymovement LOCALID_ARCHIE, Common_Movement_ExclamationMark
+	waitmovement 0
 	msgbox Route119_WeatherInstitute_2F_Text_WeHaveToHurryToMtPyre, MSGBOX_DEFAULT
 	closemessage
+	delay 30
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceLeft
 	msgbox Route119_WeatherInstitute_2F_Text_ArchieLetsMeetAgain, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_WEATHER_INSTITUTE_STATE, 1
-	clearflag FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS
-	clearflag FLAG_HIDE_WEATHER_INSTITUTE_2F_CASTFORM
 	fadedefaultbgm
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_HIDE_ROUTE_119_TEAM_AQUA
@@ -286,6 +294,7 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	setobjectxy LOCALID_RIVAL, 8, 6
 	applymovement LOCALID_RIVAL, Common_Movement_FaceRight
 	fadescreen FADE_FROM_BLACK
+	delay 60
 	applymovement LOCALID_RIVAL, Common_Movement_FaceLeft
 	waitmovement 0
 	checkplayergender
@@ -296,6 +305,7 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShellyPart2::
 	applymovement LOCALID_RIVAL, Route119_WeatherInstitute_2F_Movement_RivalLeaves
 	waitmovement 0
+	applymovement LOCALID_CASTFORM1, Common_Movement_WalkUp
 	applymovement LOCALID_SCIENTIST, Route119_WeatherInstitute_2F_Movement_ScientistApproachPlayer
 	waitmovement 0
 	removeobject LOCALID_RIVAL
@@ -484,6 +494,48 @@ Route119_WeatherInstitute_2F_EventScript_Zinnia::
 	msgbox Route119_WeatherInstitute_2F_Text_ZinniaNavelRock, MSGBOX_NPC
 	end
 
+	.align 2
+Route119_WeatherInstitute_2F_Pokemart_WeatherRocks:
+	.2byte ITEM_HEAT_ROCK
+	.2byte ITEM_DAMP_ROCK
+	.2byte ITEM_SMOOTH_ROCK
+	.2byte ITEM_ICY_ROCK
+	.2byte ITEM_NONE
+	release
+	end
+
+Route119_WeatherInstitute_2F_EventScript_Delinquent::
+	lock
+	faceplayer
+	compare VAR_WEATHER_INSTITUTE_STATE, 1
+	goto_if_le Route119_WeatherInstitute_2F_EventScript_AquaTrouble
+	msgbox Route119_WeatherInstitute_2F_Text_SellWeatherRocks, MSGBOX_DEFAULT
+	pokemart Route119_WeatherInstitute_2F_Pokemart_WeatherRocks
+	msgbox Route119_WeatherInstitute_2F_Text_SeeYa, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_DELINQUENT, Common_Movement_FaceRight
+	waitmovement 0
+	release
+	end
+
+Route119_WeatherInstitute_2F_EventScript_AquaTrouble:
+	msgbox Route119_WeatherInstitute_2F_Text_ThanksHero, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route119_WeatherInstitute_2F_Text_ThanksHero:
+	.string "Thanks, little hero.\n"
+	.string "Give my thanks to your friend as well.$"
+
+Route119_WeatherInstitute_2F_Text_SellWeatherRocks:
+	.string "Hey, little hero.\p"
+	.string "Are you looking to buy some weather\n"
+	.string "rocks?$"
+
+Route119_WeatherInstitute_2F_Text_SeeYa:
+	.string "Okay, see ya.$"
+
 Route119_WeatherInstitute_2F_Text_ZinniaWhatBringsYouHere:
 	.string "Zinnia: Oh my, we do seem to keep\n"
 	.string "running into one another a lot.\l"
@@ -491,8 +543,8 @@ Route119_WeatherInstitute_2F_Text_ZinniaWhatBringsYouHere:
 	.string "What brings you here, are you also\n"
 	.string "interested in the weather?\p"
 	.string "… … … … …\p"
-	.string "Hunting for legendary Pokémon… that\n"
-	.string "sounds exciting!\p"
+	.string "Hunting for legendary Pokémon…\n"
+	.string "That sounds exciting!\p"
 	.string "Although, it would be a near impossible\n"
 	.string "task to find Groudon and Kyogre even if\l"
 	.string "you do locate their lairs.\p"
@@ -575,7 +627,7 @@ Route119_WeatherInstitute_2F_Text_RivalMaySeesPlayer:
 	.string "Pokémon here!$"
 
 Route119_WeatherInstitute_2F_Text_RivalBrendanSeesPlayer:
-	.string "Brendan: {PLAYER}! Glad you're here.\n"
+	.string "Brendan: {PLAYER}! Glad you're here.\p"
 	.string "Team Aqua is trying to steal the\n"
 	.string "Weather Institute's Pokémon!$"
 
@@ -620,7 +672,7 @@ Route119_WeatherInstitute_2F_Text_MayAreYouReadyToBattle:
 	.string "Are you ready?$"
 
 Route119_WeatherInstitute_2F_Text_BrendanAreYouReadyToBattle:
-	.string "Brendan: {PLAYER}!\n"
+	.string "Brendan: {PLAYER}!\p"
 	.string "Let's fight them together!\n"
 	.string "Are you ready?$"
 
@@ -648,7 +700,7 @@ Route119_WeatherInstitute_2F_Text_ArchieLetsMeetAgain:
 	.string "But when you're a grown-up, y'see,\l"
 	.string "sometimes things crop up.\p"
 	.string "We'll settle the score later.\n"
-	.string "I'll be sure to remember that face.$"
+	.string "I promise I won't forget!$"
 
 Route119_WeatherInstitute_2F_Text_MayThanksForTheHelp:
 	.string "May: Thanks for the help {PLAYER},\n"
@@ -691,10 +743,10 @@ Route119_WeatherInstitute_2F_Text_PokemonChangesWithWeather:
 	.string "There're plenty of them in the\n"
 	.string "Institute--go ahead and take it.\p"
 	.string "That Pokémon changes shape according\n"
-	.string "to the weather conditions. It's very\l"
-	.string "sensitive to atmospheric changes,\l"
-	.string "hence why we use it to help with our\l"
-	.string "research at the Institute.\p"
+	.string "to the weather conditions.\p"
+	.string "It's very sensitive to atmospheric\n"
+	.string "changes, hence why we use it to help\l"
+	.string "with our research at the Institute.\p"
 	.string "I don't know why Team Aqua wanted\n"
 	.string "the equipment and the Castform, but\l"
 	.string "I'm glad they're all safe.$"

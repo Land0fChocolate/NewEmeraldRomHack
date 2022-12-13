@@ -7,7 +7,29 @@ SootopolisCity_Gym_1F_MapScripts::
 
 SootopolisCity_Gym_1F_OnTransition:
 	setvar VAR_ICE_STEP_COUNT, 1
+	call SootopolisCity_Gym_1F_SetUpWallace
 	end
+
+SootopolisCity_Gym_1F_SetUpWallace::
+	goto_if_unset FLAG_BADGE08_GET, SootopolisCity_Gym_1F_Eventscript_WallaceRematch
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_WALLACE_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq SootopolisCity_Gym_1F_Eventscript_WallaceRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq SootopolisCity_Gym_1F_Eventscript_WallaceAtContestHall
+    return
+
+SootopolisCity_Gym_1F_Eventscript_WallaceRematch::
+	setflag FLAG_HIDE_CONTEST_HALL_WALLACE
+	clearflag FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE
+	return
+
+SootopolisCity_Gym_1F_Eventscript_WallaceAtContestHall::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_CONTEST_HALL_WALLACE
+	setflag FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE
+	return
 
 SootopolisCity_Gym_1F_OnResume:
 	setstepcallback STEP_CB_SOOTOPOLIS_ICE
@@ -242,7 +264,8 @@ SootopolisCity_Gym_1F_Text_ExplainRainBadgeTakeThis:
 	.string "command you make.\p"
 	.string "The Rain Badge also gifts your Pokémon\n"
 	.string "the strength to carry you up walls of\l"
-	.string "cascading water.\p"
+	.string "cascading water with the Waterfall\l"
+	.string "field move.\p"
 	.string "And, so you never forget the battle\n"
 	.string "we shared…$"
 
@@ -256,7 +279,7 @@ SootopolisCity_Gym_1F_Text_ExplainWaterPulse:
 	.string "One path would take you to the Pokemon\n"
 	.string "League.\p"
 	.string "It is the goal that all trainers in\n"
-	.string "Hoenn aspire to reach after obtaining\p"
+	.string "Hoenn aspire to reach after obtaining\l"
 	.string "all 8 Gym Badges.\p"
 	.string "You can reach it from Evergrande City.$"
 

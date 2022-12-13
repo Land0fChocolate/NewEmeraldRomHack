@@ -14,11 +14,6 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "up",
-      "offset": 0,
-      "map": "MAP_ROUTE121"
-    },
-    {
       "direction": "down",
       "offset": -80,
       "map": "MAP_ROUTE123"
@@ -27,6 +22,11 @@
       "direction": "left",
       "offset": -100,
       "map": "MAP_ROUTE120"
+    },
+    {
+      "direction": "up",
+      "offset": 0,
+      "map": "MAP_ROUTE121"
     }
   ],
   "object_events": [
@@ -34,7 +34,7 @@
   ],
   "warp_events": [
     {
-      "x": 22,
+      "x": 42,
       "y": 29,
       "elevation": 0,
       "dest_map": "MAP_MT_PYRE_1F",

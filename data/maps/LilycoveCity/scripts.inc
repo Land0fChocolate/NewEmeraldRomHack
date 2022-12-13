@@ -1,5 +1,14 @@
+.set LOCALID_MAN_2, 3
+.set LOCALID_WOMAN_2, 6
+.set LOCALID_SCHOOL_KID, 17
 .set LOCALID_WOMAN_1, 19
 .set LOCALID_MAN_1, 20
+.set LOCALID_LISIA, 29
+.set LOCALID_CAMERAMAN, 30
+.set LOCALID_TWIN, 31
+.set LOCALID_STREET_THUG, 32
+.set LOCALID_GIRL, 33
+.set LOCALID_MANIAC, 34
 
 LilycoveCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_OnTransition
@@ -12,11 +21,19 @@ LilycoveCity_OnTransition:
 	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	call Common_EventScript_SetupRivalGfxId
+	call_if_unset FLAG_HIDE_LILYCOVE_CITY_LISIA, LilycoveCity_EventScript_SetUpLisiaEvent
 	end
 
 LilycoveCity_OnLoad:
 	call_if_unset FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, LilycoveCity_EventScript_SetWailmerMetatiles
 	end
+
+LilycoveCity_EventScript_SetUpLisiaEvent:
+	setobjectxyperm LOCALID_WOMAN_2, 31, 26
+	setobjectmovementtype LOCALID_WOMAN_2, MOVEMENT_TYPE_FACE_LEFT
+	setobjectxyperm LOCALID_SCHOOL_KID, 23, 27
+	setobjectmovementtype LOCALID_SCHOOL_KID, MOVEMENT_TYPE_FACE_RIGHT
+	return
 
 LilycoveCity_EventScript_SetWailmerMetatiles::
 	setmetatile 76, 12, METATILE_Lilycove_Wailmer0, 1
@@ -253,6 +270,176 @@ LilycoveCity_EventScript_DontKnowAboutBerryBlender::
 	msgbox LilycoveCity_Text_ExplainBerryBlender, MSGBOX_DEFAULT
 	return
 
+LilycoveCity_EventScript_LisiaEvent::
+	lockall
+	setvar VAR_LISIA_EVENT_TRIGGER_STATE, 1
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaSpin
+	waitmovement 0
+	msgbox LilycoveCity_Text_LisiaIntro, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaLookAround
+	waitmovement 0
+	applymovement LOCALID_LISIA, Common_Movement_ExclamationMark
+	playse SE_PIN
+	waitse
+	delay 20
+	getplayerxy VAR_0x8004, VAR_0x8005
+	compare VAR_0x8005, 25
+	goto_if_eq LilycoveCity_EventScript_LisiaMoveToPlayerTop
+	compare VAR_0x8005, 26
+	goto_if_eq LilycoveCity_EventScript_LisiaMoveToPlayerMid
+	compare VAR_0x8005, 27
+	goto_if_eq LilycoveCity_EventScript_LisiaMoveToPlayerBot
+	end
+
+LilycoveCity_Movement_LisiaSpin:
+	face_up
+	delay_8
+	face_right
+	delay_8
+	face_down
+	delay_8
+	face_left
+	delay_8
+	face_up
+	delay_8
+	face_right
+	delay_8
+	face_down
+	delay_8
+	face_left
+	delay_8
+	step_end
+
+LilycoveCity_Movement_LisiaLookAround:
+	face_right
+	delay_16
+	face_left
+	delay_16
+	face_right
+	delay_16
+	step_end
+
+LilycoveCity_EventScript_LisiaMoveToPlayerTop::
+	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaMoveToPlayerTop
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	goto LilycoveCity_EventScript_LisiaTalksToPlayer
+
+LilycoveCity_Movement_LisiaMoveToPlayerTop:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+LilycoveCity_EventScript_LisiaMoveToPlayerMid::
+	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaMoveToPlayerMid
+	waitmovement 0
+	goto LilycoveCity_EventScript_LisiaTalksToPlayer
+
+LilycoveCity_Movement_LisiaMoveToPlayerMid:
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+LilycoveCity_EventScript_LisiaMoveToPlayerBot::
+	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaMoveToPlayerBot
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	goto LilycoveCity_EventScript_LisiaTalksToPlayer
+
+LilycoveCity_Movement_LisiaMoveToPlayerBot:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+LilycoveCity_EventScript_LisiaTalksToPlayer::
+	applymovement LOCALID_CAMERAMAN, LilycoveCity_Movement_CameramanStepsForward
+	applymovement LOCALID_TWIN, Common_Movement_FaceRight
+	applymovement LOCALID_STREET_THUG, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox LilycoveCity_Text_LisiaBaffledExpression, MSGBOX_DEFAULT
+	giveitem ITEM_POKEBLOCK_CASE
+	setflag FLAG_RECEIVED_POKEBLOCK_CASE
+	msgbox LilycoveCity_Text_LisiaThisIsAPokeblockKit, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LISIA, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox LilycoveCity_Text_LisiaPlayerStoryBegins, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LISIA, LilycoveCity_Movement_LisiaSpin
+	waitmovement 0
+	fadescreen FADE_TO_BLACK
+	delay 60
+	setflag FLAG_HIDE_LILYCOVE_CITY_LISIA
+	removeobject LOCALID_LISIA
+	removeobject LOCALID_CAMERAMAN
+	removeobject LOCALID_TWIN
+	removeobject LOCALID_STREET_THUG
+	removeobject LOCALID_GIRL
+	removeobject LOCALID_MANIAC
+	setobjectmovementtype LOCALID_SCHOOL_KID, MOVEMENT_TYPE_LOOK_AROUND
+	setobjectmovementtype LOCALID_WOMAN_2, MOVEMENT_TYPE_WANDER_AROUND
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	end
+
+LilycoveCity_Movement_CameramanStepsForward:
+	walk_right
+	step_end
+
+LilycoveCity_Text_LisiaIntro:
+	.string "Hiiiiii, ev-er-y-bo-dy! Lisia here!\p"
+	.string "I'm going to bring another fantastic\n"
+	.string "Trainer into the wild world of\l"
+	.string "contesting!\p"
+	.string "Eenie… meenie… miney…$"
+
+LilycoveCity_Text_LisiaBaffledExpression:
+	.string "Lisia: You there, watching me with that\n"
+	.string "baffled expression on your face!\p"
+	.string "Hi! Have you never joined in a contest?\n"
+	.string "That's just what I want to hear!\p"
+	.string "This is the Trainer I'm gonna scout\n"
+	.string "today! And their name is…\p"
+	.string "{PLAYER}! I can easily see that\n"
+	.string "{PLAYER} is a powerful Trainer, with\l"
+	.string "several badges of their own already!\p"
+	.string "Now listen up, {PLAYER}!\p"
+	.string "I don't just want to see your Pokémon\n"
+	.string "strong. I want to see you bringing out\l"
+	.string "a whole new side of them to show off!\p"
+	.string "So here you go, take this!$"
+
+LilycoveCity_Text_LisiaThisIsAPokeblockKit:
+	.string "Lisia: That is a Pokéblock Kit, which\n"
+	.string "will let you make Pokéblocks for your\l"
+	.string "Pokémon out of Berries!\p"
+	.string "It also acts as your ticket to enter\n"
+	.string "contests!$"
+
+LilycoveCity_Text_LisiaPlayerStoryBegins:
+	.string "{PLAYER}'s story begins today!\n"
+	.string "Yep! And this chapter should be titled…\p"
+	.string "'A Sudden Encounter!\n"
+	.string "Miraculous Contest Scouting!'\l"
+	.string "That's what I'd call it!\p"
+	.string "Now, everybody out there watching…\n"
+	.string "You'd better expect great things from\l"
+	.string "{PLAYER}, because I do!\p"
+	.string "That's it for today's Lisia's Miraculous\n"
+	.string "Contest Scouting! See you all next time!$"
+
 LilycoveCity_Text_MovedLootIntoHideoutToday:
 	.string "Fufufu…\p"
 	.string "We moved more loot into our secret\n"
@@ -380,7 +567,7 @@ LilycoveCity_Text_CitySign:
 	.string "sea begins.”$"
 
 LilycoveCity_Text_ContestHallSign:
-	.string "Pokémon CONTEST HALL\n"
+	.string "POKéMON CONTEST HALL\n"
 	.string "“The gathering place for Trainers!”$"
 
 LilycoveCity_Text_MotelSign:

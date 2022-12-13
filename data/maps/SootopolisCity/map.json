@@ -480,7 +480,7 @@
       "elevation": 3,
       "var": "VAR_SOOTOPOLIS_STEVEN_WALLACE_STATE",
       "var_value": "0",
-      "script": ""
+      "script": "SootopolisCity_EventScript_Steven_Wallace_Encounter"
     },
     {
       "type": "trigger",

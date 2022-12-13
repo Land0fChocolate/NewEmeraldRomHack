@@ -64,6 +64,10 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 	waitmovement 0
 	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieWarning, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_ARCHIE, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox SlateportCity_OceanicMuseum_2F_Text_ArchieMovingOut, MSGBOX_DEFAULT
+	closemessage
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	fadescreen FADE_TO_BLACK
@@ -281,9 +285,10 @@ SlateportCity_OceanicMuseum_2F_EventScript_MuseumPatron3::
 SlateportCity_OceanicMuseum_2F_Text_ThankYouForTheParts:
 	.string "Yes? If you're looking for Stern,\n"
 	.string "that would be me.\p"
-	.string "Ah! Those must be the parts I ordered\n"
-	.string "from Mr. Stone of Devon.\p"
-	.string "Thank you! That's great!\n"
+	.string "Ah! Those must be the submarine parts\n"
+	.string "I ordered from Mr. Stone of Devon.\p"
+	.string "Thank you for delivering them all this\n"
+	.string "way.\l"
 	.string "We can prepare for our expedition now.$"
 
 SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts:
@@ -291,8 +296,8 @@ SlateportCity_OceanicMuseum_2F_Text_WellTakeThoseParts:
 	.string "We'll take those parts!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternWhoAreYou:
-	.string "Capt. Stern: Wh-what?\n"
-	.string "Who are you people?$"
+	.string "Capt. Stern: Wh-what was that?!\n"
+	.string "Who are you people?!$"
 
 SlateportCity_OceanicMuseum_2F_Text_WereTeamAqua:
 	.string "We're Team Aqua!\p"
@@ -318,40 +323,54 @@ SlateportCity_OceanicMuseum_2F_Text_Grunt2Defeat:
 SlateportCity_OceanicMuseum_2F_Text_MeddlingKid:
 	.string "Now what? If we don't get the parts,\n"
 	.string "we're in for it!\p"
-	.string "Arrgh, I didn't count on being meddled\n"
+	.string "Arrgh, I didn't count on being messed\n"
 	.string "with by some meddling kid!$"
 
 SlateportCity_OceanicMuseum_2F_Text_CameToSeeWhatsTakingSoLong:
-	.string "I came to see what was taking so\n"
-	.string "long to snatch some parts, and you\l"
-	.string "simps are held up by a mere child?$"
+	.string "What do we have here?\n"
+	.string "I came to see what was taking so long\l"
+	.string "just to steal a few parts, and I find\l"
+	.string "you simps getting beat by this kid?$"
 
 SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
-	.string "We are Team Aqua,\n"
-	.string "and we love the sea!\p"
-	.string "And I am Team Aqua's leader,\n"
-	.string "Archie!\p"
-	.string "What makes you interfere with us?\p"
-	.string "…No! You can't be!\n"
-	.string "You're not one of Team Magma?\p"
-	.string "Wait, that can't be right.\n"
-	.string "You're not dressed for the part.\p"
-	.string "… … … … … …\n"
-	.string "… … … … … …\p"
-	.string "Pokémon, people… All life depends on\n"
-	.string "the sea.\p"
-	.string "So, Team Aqua is dedicated to\n"
-	.string "the expansion of the sea.\p"
-	.string "Don't you agree? What we are doing\n"
-	.string "is a magnificent undertaking.\p"
-	.string "Ah, fine…\n"
-	.string "You're still too young to understand\l"
-	.string "our noble objective.\p"
-	.string "But, I warn you, don't even consider\n"
-	.string "interfering with our plans again.\p"
-	.string "The consequences will cost you\n"
-	.string "dearly!\p"
-	.string "And don't you forget it!$"
+	.string "Heh! That face tells me you're not just\n"
+	.string "another mindless Trainer brat.\p"
+	.string "The name is Archie.\p"
+	.string "The rough-looking lot you see here are\n"
+	.string "members of my team, Team Aqua.\p"
+	.string "So tell me, scamp. Do you know that\n"
+	.string "Pokémon, people, and all life in this\l"
+	.string "world depend on the sea for life?\p"
+	.string "The sea is an irreplaceable treasure\n"
+	.string "for every living thing on this planet.\p"
+	.string "But with our selfish extravagance,\n"
+	.string "humanity dirties the great ocean,\l"
+	.string "destroying this source of all life.\p"
+	.string "But what about the Pokémon in our world?\n"
+	.string "The Pokémon that no longer have a place\l"
+	.string "to live because we stole and soiled\l"
+	.string "their seas?\p"
+	.string "The Pokémon that won't have a place to\n"
+	.string "raise their young and watch them grow?\p"
+	.string "We are creating a world in which\n"
+	.string "innocent Pokémon suffer as a result of\l"
+	.string "our actions!\p"
+	.string "I came to a decision, see?\n"
+	.string "The foolish actions of my fellow humans,\l"
+	.string "the seas we have blighted, nature\l"
+	.string "itself…\p"
+	.string "I will return everything to its\n"
+	.string "unspoiled beginnings!\p"
+	.string "…Heh! It's not like me to talk so much.\n"
+	.string "Never mind, little scamp…\l"
+	.string "I'll withdraw for now and leave you be.\p"
+	.string "But understand this… Get in my way\n"
+	.string "again, and you won't walk away unscathed\l"
+	.string "next time.\p"
+	.string "Remember that, at least!$"
+
+SlateportCity_OceanicMuseum_2F_Text_ArchieMovingOut:
+	.string "Archie: We're moving out, lads!$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs:
 	.string "Capt. Stern: You're…\n"

@@ -13,13 +13,29 @@ MauvilleCity_OnTransition:
 	setflag FLAG_SYS_TV_START
 	clearflag FLAG_MAUVILLE_GYM_BARRIERS_STATE
 	setvar VAR_MAUVILLE_GYM_STATE, 0
-	call_if_set FLAG_GOT_TM72_FROM_WATTSON, MauvilleCity_EventScript_MoveWattsonBackToGym
+	call MauvilleCity_EventScript_SetUpWattson
 	end
 
-MauvilleCity_EventScript_MoveWattsonBackToGym::
-	clearflag FLAG_HIDE_MAUVILLE_GYM_WATTSON
+MauvilleCity_EventScript_SetUpWattson::
+	goto_if_unset FLAG_BADGE03_GET, MauvilleCity_Eventscript_WattsonRematch
+	goto_if_unset FLAG_BADGE05_GET, MauvilleCity_Eventscript_WattsonRematch
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_WATTSON_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq MauvilleCity_Eventscript_WattsonRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq MauvilleCity_Eventscript_WattsonInMauvilleCity
+    return
+
+MauvilleCity_Eventscript_WattsonRematch::
 	setflag FLAG_HIDE_MAUVILLE_CITY_WATTSON
-	setflag FLAG_WATTSON_REMATCH_AVAILABLE
+	clearflag FLAG_HIDE_MAUVILLE_GYM_WATTSON
+	return
+
+MauvilleCity_Eventscript_WattsonInMauvilleCity::
+	goto_if_unset FLAG_BADGE05_GET, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_MAUVILLE_CITY_WATTSON
+	setflag FLAG_HIDE_MAUVILLE_GYM_WATTSON
 	return
 
 MauvilleCity_EventScript_Boy::
@@ -343,6 +359,7 @@ MauvilleCity_EventScript_CompletedNewMauville::
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_GOT_TM72_FROM_WATTSON
+	setflag FLAG_WATTSON_REMATCH_AVAILABLE
 	msgbox MauvilleCity_Text_WattsonYoungTakeCharge, MSGBOX_DEFAULT
 	release
 	end
@@ -496,7 +513,7 @@ MauvilleCity_Text_WattsonThanksTakeTM:
 	.string "I knew it, {PLAYER}{KUN}! I knew I'd made\n"
 	.string "the right choice asking you!\p"
 	.string "This is my thanks--a TM containing\n"
-	.string "Thunderbolt!\p"
+	.string "Volt Switch!\p"
 	.string "Go on, you've earned it!$"
 
 MauvilleCity_Text_WattsonYoungTakeCharge:

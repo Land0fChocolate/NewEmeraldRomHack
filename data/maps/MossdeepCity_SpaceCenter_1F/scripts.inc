@@ -105,7 +105,7 @@ MossdeepCity_SpaceCenter_1F_EventScript_SunStoneMan::
 MossdeepCity_SpaceCenter_1F_EventScript_SunStoneManZinnia::	
 	msgbox MossdeepCity_SpaceCenter_1F_Text_NotSafe, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_WEATHER_INSTITUTE_TRIGGER_STATE, 0
+	setvar VAR_SPACE_CENTER_TRIGGER_STATE, 0
 	release
 	end
 

@@ -30,13 +30,13 @@ MossdeepCity_SpaceCenter_2F_EventScript_MoveCivilians::
 	return
 
 MossdeepCity_SpaceCenter_2F_EventScript_MoveCiviliansPostZinnia::
-	setobjectxyperm LOCALID_SCIENTIST_1, 2, 3
+	setobjectxyperm LOCALID_SCIENTIST_1, 4, 3
 	setobjectmovementtype LOCALID_SCIENTIST_1, MOVEMENT_TYPE_FACE_DOWN
-	setobjectxyperm LOCALID_SCIENTIST_2, 3, 3
+	setobjectxyperm LOCALID_SCIENTIST_2, 5, 3
 	setobjectmovementtype LOCALID_SCIENTIST_2, MOVEMENT_TYPE_FACE_DOWN
-	setobjectxyperm LOCALID_RICH_BOY, 1, 2
+	setobjectxyperm LOCALID_RICH_BOY, 3, 2
 	setobjectmovementtype LOCALID_RICH_BOY, MOVEMENT_TYPE_FACE_DOWN
-	setobjectxyperm LOCALID_GENTLEMAN, 5, 2
+	setobjectxyperm LOCALID_GENTLEMAN, 7, 2
 	setobjectmovementtype LOCALID_GENTLEMAN, MOVEMENT_TYPE_FACE_DOWN
 	setobjectxyperm LOCALID_STEVEN, 3, 7
 	setobjectmovementtype LOCALID_STEVEN, MOVEMENT_TYPE_FACE_RIGHT
@@ -112,7 +112,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_RichBoyZinnia::
 
 MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger::
 	lockall
-	setvar VAR_WEATHER_INSTITUTE_TRIGGER_STATE, 1
+	setvar VAR_SPACE_CENTER_TRIGGER_STATE, 1
 	getplayerxy VAR_0x8004, VAR_0x8005
 	compare VAR_0x8005, 5
 	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_PlayerMovesFromY5
@@ -182,7 +182,6 @@ MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger::
 	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY6
 	compare VAR_0x8005, 7
 	call_if_eq MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY7
-	waitmovement 0
 	msgbox MossdeepCity_SpaceCenter_2F_Text_StevenCatchUpToHer, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -272,6 +271,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY6::
 	applymovement LOCALID_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY6
 	applymovement LOCALID_MAXIE, MossdeepCity_SpaceCenter_2F_Movement_MaxieLookingAround
 	applymovement LOCALID_ARCHIE, MossdeepCity_SpaceCenter_2F_Movement_ArchieLookingAround
+	waitmovement 0
 	return
 
 MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY6:
@@ -291,6 +291,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_StevenLookingAroundY7::
 	applymovement LOCALID_STEVEN, MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY7
 	applymovement LOCALID_MAXIE, MossdeepCity_SpaceCenter_2F_Movement_MaxieLookingAround
 	applymovement LOCALID_ARCHIE, MossdeepCity_SpaceCenter_2F_Movement_ArchieLookingAround
+	waitmovement 0
 	return
 
 MossdeepCity_SpaceCenter_2F_Movement_StevenLookingAroundY7:
@@ -356,21 +357,21 @@ MossdeepCity_SpaceCenter_2F_Text_StrangeReadings:
 	.string "amount of energy?$"
 
 MossdeepCity_SpaceCenter_2F_Text_WouldveLikedToBeAstronaut:
-	.string "If only I was a little younger, I would\n"
-	.string "have liked being an astronaut…\p"
-	.string "No… It's not too late!\n"
-	.string "I can and will try!$"
+	.string "Hahaha!\p"
+	.string "Our research into space exploration\n"
+	.string "has produced new technological\l"
+	.string "advancements!\p"
+	.string "Travelling through the vacuum of space\n"
+	.string "will become far easier!$"
 
 MossdeepCity_SpaceCenter_2F_Text_WishOrdinaryPeopleCouldGoIntoSpace:
 	.string "I wish ordinary people could go into\n"
 	.string "space one day…$"
 
 MossdeepCity_SpaceCenter_2F_Text_WhyStealSpaceSuit:
-	.string "Why would anyone need to steal a space\n"
-	.string "suit? They're only good for exploring\l"
-	.string "in space.\p"
-	.string "Unless that young lady plans to somehow\n"
-	.string "get into space.$"
+	.string "Why would anyone need to steal a Space\n"
+	.string "Belt? They're only good for travelling\l"
+	.string "in space.$"
 
 MossdeepCity_SpaceCenter_2F_Text_WomanHasScaryPokemon:
 	.string "I've never seen such terrifying Pokémon\n"
@@ -384,8 +385,8 @@ MossdeepCity_SpaceCenter_2F_Text_DisruptingScientificWork:
 
 MossdeepCity_SpaceCenter_2F_Text_CouldSheNotJustBuyTheSuits:
 	.string "Why is she stealing from the Space\n"
-	.string "Center. Could she not just buy the\l"
-	.string "suits?$"
+	.string "Center.\l"
+	.string "Could she not just buy their tech?$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenLose:
 	.string "Steven: I've heard that the Lorekeeper\n"
@@ -418,8 +419,8 @@ MossdeepCity_SpaceCenter_2F_Text_ArchieConfrontingZinnia:
 	.string "Our info was just a little too\n"
 	.string "convienient.\p"
 	.string "And it was peculiar how we were making\n"
-	.string "similar progress with our goals as Team\l"
-	.string "Magma was.\p"
+	.string "similar progress with our goals as our\l"
+	.string "rivals, Team Magma.\p"
 	.string "Me an' Maxie got to talking, and we've\n"
 	.string "got it worked out now.$"
 
@@ -454,8 +455,8 @@ MossdeepCity_SpaceCenter_2F_Text_StevenCatchUpToHer:
 	.string "trouble.\p"
 	.string "You should run after her.\p"
 	.string "If she is really going after Rayquaza\n"
-	.string "then she is probably heading for Sky\l"
-	.string "Pillar.$"
+	.string "then she is probably heading for\l"
+	.string "Sky Pillar.$"
 
 MossdeepCity_SpaceCenter_2F_Text_Maxie:
 	.string "Maxie: Since that woman just defeated\n"

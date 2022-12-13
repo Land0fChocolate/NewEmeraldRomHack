@@ -159,7 +159,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_NATURAL_CURE] = 7,
     [ABILITY_NEUROFORCE] = 6,
     [ABILITY_NO_GUARD] = 8,
-    [ABILITY_NORMALIZE] = -1,
+    [ABILITY_NORMALIZE] = 0,
     [ABILITY_OBLIVIOUS] = 2,
     [ABILITY_ORIGIN] = 0,
     [ABILITY_OVERCOAT] = 5,
@@ -533,12 +533,16 @@ void RecordKnownMove(u8 battlerId, u32 move)
         if (BATTLE_HISTORY->usedMoves[battlerId][i] == MOVE_NONE)
         {
             BATTLE_HISTORY->usedMoves[battlerId][i] = move;
+            AI_PARTY->mons[GetBattlerSide(battlerId)][gBattlerPartyIndexes[battlerId]].moves[i] = move;
             break;
         }
     }
 }
 
-void RecordAbilityBattle(u8 battlerId, u16 abilityId) {}
+void RecordAbilityBattle(u8 battlerId, u16 abilityId) 
+{
+    AI_PARTY->mons[GetBattlerSide(battlerId)][gBattlerPartyIndexes[battlerId]].ability = abilityId;
+}
 
 void ClearBattlerAbilityHistory(u8 battlerId) //TODO: this func may not be needed, if so remove usages.
 {
@@ -548,6 +552,7 @@ void ClearBattlerAbilityHistory(u8 battlerId) //TODO: this func may not be neede
 void RecordItemEffectBattle(u8 battlerId, u8 itemEffect)
 {
     BATTLE_HISTORY->itemEffects[battlerId] = itemEffect;
+    AI_PARTY->mons[GetBattlerSide(battlerId)][gBattlerPartyIndexes[battlerId]].heldEffect = itemEffect;
 }
 
 void ClearBattlerItemEffectHistory(u8 battlerId)
@@ -576,7 +581,7 @@ void SetBattlerData(u8 battlerId)
         struct Pokemon *illusionMon;
         u16 i;
 
-        memcpy(gBattleMons[battlerId].abilities, GetAbilitiesBySpecies(gBattleMons[battlerId].species), sizeof(gBattleMons[battlerId].abilities));
+        memcpy(gBattleMons[battlerId].abilities, GetBattlerAbilities(battlerId), sizeof(gBattleMons[battlerId].abilities));
 
         if (BATTLE_HISTORY->itemEffects[battlerId] == 0)
             gBattleMons[battlerId].item = 0;
@@ -1302,7 +1307,7 @@ bool32 IsConfusionMoveEffect(u16 moveEffect)
 {
     switch (moveEffect)
     {
-    case EFFECT_CONFUSE_HIT:
+    case EFFECT_CONFUSE:
     case EFFECT_SWAGGER:
     case EFFECT_FLATTER:
     case EFFECT_TEETER_DANCE:
@@ -1367,8 +1372,7 @@ bool32 IsMoveRedirectionPrevented(u16 move, u16 atkAbilities[])
 // differs from GetTotalAccuracy in that we need to check AI history for item, ability, etc
 u32 AI_GetMoveAccuracy(u8 battlerAtk, u8 battlerDef, u16 move)
 {
-        return GetTotalAccuracy(battlerAtk, battlerDef, move, AI_DATA->abilities[battlerAtk], AI_DATA->abilities[battlerDef],
-                            AI_DATA->holdEffects[battlerAtk], AI_DATA->holdEffects[battlerDef]);
+        return GetTotalAccuracy(battlerAtk, battlerDef, move, AI_DATA->holdEffects[battlerAtk], AI_DATA->holdEffects[battlerDef]);
 }
 
 bool32 IsSemiInvulnerable(u8 battlerDef, u16 move)
@@ -3170,7 +3174,7 @@ bool32 ShouldUseWishAromatherapy(u8 battlerAtk, u8 battlerDef, u16 move)
 
             if (GetMonData(&party[i], MON_DATA_STATUS, NULL) != STATUS1_NONE)
             {
-                if (move != MOVE_HEAL_BELL || !HasAbility(ABILITY_SOUNDPROOF, GetMonAbilities(&party[i])))
+                if (move == MOVE_HEAL_BELL)
                     hasStatus = TRUE;
             }
         }
@@ -3506,6 +3510,9 @@ void IncreasePoisonScore(u8 battlerAtk, u8 battlerDef, u16 move, s16 *score)
     {
         if (!HasDamagingMove(battlerDef))
             *score += 2;
+
+        if (HasAbility(ABILITY_POISON_HEAL, AI_DATA->abilities[battlerDef]))
+            *score -= 10;
 
         if (AI_THINKING_STRUCT->aiFlags & AI_FLAG_STALL && HasMoveEffect(battlerAtk, EFFECT_PROTECT))
             (*score)++;    // stall tactic

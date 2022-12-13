@@ -1278,7 +1278,7 @@
 	.4byte \ptr
 	.endm
 
-	.macro trygetbaddreamstarget ptr:req
+	.macro unused ptr:req
 	.byte 0xfd
 	.4byte \ptr
 	.endm
@@ -1288,8 +1288,14 @@
 	.4byte \ptr
 	.endm
 
-	.macro metalburstdamagecalculator ptr:req
+.macro callnative func:req
 	.byte 0xff
+	.4byte \func
+	.endm
+
+@ callnative macros
+	.macro metalburstdamagecalculator ptr:req
+	callnative BS_CalcMetalBurstDmg
 	.4byte \ptr
 	.endm
 
@@ -1787,9 +1793,9 @@
 	various \battler, VARIOUS_TRY_ACTIVATE_GRIM_NEIGH
 	.endm
 
-	.macro consumeberry battler:req, restoreItem=FALSE
+	.macro consumeberry battler:req, frombattler:req
 	various \battler, VARIOUS_CONSUME_BERRY
-	.byte \restoreItem
+	.byte \frombattler
 	.endm
 
 	.macro activateitemeffects battler:req
@@ -1946,6 +1952,14 @@
 
 	.macro swapsidestatuses
 	various BS_ATTACKER, VARIOUS_SWAP_SIDE_STATUSES
+	.endm
+
+	.macro canteleport battler:req
+	various \battler, VARIOUS_CAN_TELEPORT
+	.endm
+
+	.macro getbattlerside battler:req
+	various \battler, VARIOUS_GET_BATTLER_SIDE
 	.endm
 
 	.macro trynoretreat battler:req, ptr:req
@@ -2110,4 +2124,18 @@
 	jumpifability BS_ATTACKER, ABILITY_INFILTRATOR, 1f
 	jumpifsideaffecting BS_TARGET, SIDE_STATUS_SAFEGUARD, \jumpptr
 	1:
+	.endm
+
+	@ Used by effects that may proc Symbiosis but do not call removeitem.
+	.macro trysymbiosis
+	various BS_ATTACKER, VARIOUS_TRY_SYMBIOSIS
+	.endm
+
+	.macro showmultiabilitypopup battler:req
+	various \battler, VARIOUS_MULTI_ABILITY_POPUP
+	.endm
+
+	.macro setlastusedability ability:req
+	various 0, VARIOUS_SET_LAST_USED_ABILITY
+	.2byte \ability
 	.endm

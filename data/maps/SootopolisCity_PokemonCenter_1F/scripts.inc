@@ -28,7 +28,6 @@ SootopolisCity_PokemonCenter_1F_EventScript_Gentleman::
 	end
 
 SootopolisCity_PokemonCenter_1F_EventScript_GentlemanNoLegendaries::
-	setvar VAR_SOOTOPOLIS_CITY_STATE, 6
 	msgbox SootopolisCity_PokemonCenter_1F_Text_WallaceMentor, MSGBOX_DEFAULT
 	release
 	end

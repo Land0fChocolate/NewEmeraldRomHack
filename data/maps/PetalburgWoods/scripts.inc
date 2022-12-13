@@ -362,22 +362,19 @@ PetalburgWoods_Text_YouveGotSomeNerve:
 	.string "Come on and battle me again!\p"
 	.string "I wish I could say that, but I'm out of\n"
 	.string "Pokémon…\p"
-	.string "And, hey, we of Team Aqua are also\n"
-	.string "after something in Rustboro.\p"
 	.string "I'll let you go today!$"
 
 PetalburgWoods_Text_ThatWasAwfullyClose:
 	.string "Whew…\n"
 	.string "That was awfully close!\p"
 	.string "Thanks to you, he didn't rob me of\n"
-	.string "these important papers.\p"
+	.string "these important documents.\p"
 	.string "I know, I'll give you a Great Ball as\n"
 	.string "my thanks!$"
 
 PetalburgWoods_Text_TeamAquaAfterSomethingInRustboro:
-	.string "Didn't that Team Aqua thug say\n"
-	.string "they were after something in\l"
-	.string "Rustboro, too?$"
+	.string "It feels like everyone is out to get\n"
+	.string "something from the company these days…$"
 
 PetalburgWoods_Text_ICantBeWastingTime:
 	.string "Uh-oh! It's a crisis!\n"

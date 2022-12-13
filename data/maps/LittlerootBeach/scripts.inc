@@ -96,6 +96,8 @@ LittlerootBeach_EventScript_RivalExit::
 	fadedefaultbgm
 	delay 20
 	pokenavcall LittlerootBeach_Text_SpaceCenterCall
+	waitmessage
+	delay 30
 	setvar VAR_LIITLEROOT_BEACH_STATE, 3
 	setflag FLAG_HIDE_LITTLEROOT_BEACH_RIVAL
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
@@ -335,6 +337,7 @@ LittlerootBeach_EventScript_RivalLeavesPart2::
 	setflag FLAG_HIDE_LITTLEROOT_BEACH_RIVAL
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
 	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 2
+	savebgm MUS_DUMMY
 	fadedefaultbgm
 	releaseall
 	end
@@ -411,7 +414,7 @@ LittlerootBeach_Text_MayComment:
 	.string "May: …well that was weird.$"
 
 LittlerootBeach_Text_BrendanComment:
-	.string "Brendan: Huh… was that a fan of yours,"
+	.string "Brendan: Huh… was that a fan of yours,\n"
 	.string "{PLAYER}?$"
 
 LittlerootBeach_Text_MayReport:
@@ -441,6 +444,7 @@ LittlerootBeach_Text_BrendanGivesTM76:
 	.string "I got this a while ago. I don't need\l"
 	.string "it so you can have it.$"
 
+@TODO: Rival battle introduction could use more dialogue
 LittlerootBeach_Text_MayLetsBattle:
 	.string "May: Okay, {PLAYER}.\p"
 	.string "I'm ready. Give it all you've got!$"
@@ -478,9 +482,9 @@ LittlerootBeach_Text_BrendanExit:
 	.string "So much has happened since then.\n"
 	.string "I travelled across Hoenn, trained and\l"
 	.string "caught many Pokémon.\p"
-	.string "If I hadn't met you, then I would\n"
-	.string "probably have stayed in Littleroot and\l"
-	.string "never challenged myself like that.\p"
+	.string "If I hadn't met you, then I would have\n"
+	.string "probably stayed in Littleroot and never\l"
+	.string "challenged myself like that.\p"
 	.string "So what I'm saying is, thanks for\n"
 	.string "coming into my life, {PLAYER}.\p"
 	.string "That's all I wanted to say.\n"

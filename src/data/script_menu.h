@@ -119,7 +119,7 @@ static const struct MenuAction MultichoiceList_Mechadoll1_Q2[] =
 
 static const struct MenuAction MultichoiceList_Mechadoll1_Q3[] = 
 {
-    {gTrickHouse_Mechadoll_Dustox},
+    {gTrickHouse_Mechadoll_Seedot},
     {gTrickHouse_Mechadoll_Zubat},
     {gTrickHouse_Mechadoll_Nincada},
 };
@@ -154,8 +154,8 @@ static const struct MenuAction MultichoiceList_Mechadoll3_Q1[] =
 
 static const struct MenuAction MultichoiceList_Mechadoll3_Q2[] = 
 {
-    {gTrickHouse_Mechadoll_60Yen},
-    {gTrickHouse_Mechadoll_55Yen},
+    {gTrickHouse_Mechadoll_100Yen},
+    {gTrickHouse_Mechadoll_50Yen},
     {gTrickHouse_Mechadoll_Nothing},
 };
 
@@ -267,7 +267,6 @@ static const struct MenuAction MultichoiceList_GameCornerDolls[] =
 
 static const struct MenuAction MultichoiceList_GameCornerTMs[] =
 {
-    {gText_TM32AndPrice},
     {gText_TM29AndPrice},
     {gText_TM53AndPrice},
     {gText_TM56AndPrice},
@@ -799,13 +798,14 @@ static const struct MenuAction MultichoiceList_WheresRayquaza[] =
     {gText_DontRemember},
 };
 
-static const struct MenuAction MultichoiceList_FallarborTentRules[] =
+static const struct MenuAction MultichoiceList_StatEVTrain[] =
 {
-    {gText_BattleTrainers},
-    {gText_BattleRules},
-    {gText_JudgeMind},
-    {gText_JudgeSkill},
-    {gText_JudgeBody},
+    {gText_HP4},
+    {gText_Attack3},
+    {gText_Defense3},
+    {gText_SpAtk4},
+    {gText_SpDef4},
+    {gText_Speed2},
     {gText_Exit},
 };
 
@@ -943,8 +943,9 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_BATTLE_TOWER_FEELINGS]      = MULTICHOICE(MultichoiceList_BattleTowerFeelings),
     [MULTI_WHERES_RAYQUAZA]            = MULTICHOICE(MultichoiceList_WheresRayquaza),
     [MULTI_EVO_STONE]                  = MULTICHOICE(MultichoiceList_EvolutionStone),
-    [MULTI_ORIGIN_STRAND]              = MULTICHOICE(MultichoiceList_OriginStrand),
+    [MULTI_STAT_EV_TRAIN]              = MULTICHOICE(MultichoiceList_StatEVTrain),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
+    [MULTI_ORIGIN_STRAND]              = MULTICHOICE(MultichoiceList_OriginStrand),
 };
 
 const u8 *const gStdStrings[] =

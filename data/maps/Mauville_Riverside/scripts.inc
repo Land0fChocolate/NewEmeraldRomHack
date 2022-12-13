@@ -2,7 +2,12 @@
 .set LOCALID_MAGMA_GRUNT, 2
 
 Mauville_Riverside_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Mauville_Riverside_OnTransition
 	.byte 0
+
+Mauville_Riverside_OnTransition:
+	setflag FLAG_LANDMARK_MAUVILLE_RIVERSIDE
+	end
 
 Mauville_Riverside_Eventscript_MagmaGrunt::
 	lock
@@ -104,7 +109,7 @@ Mauville_Riverside_Eventscript_GirlFacePlayerRight:
 
 Mauville_Riverside_Eventscript_GirlRescued:
 	msgbox Mauville_Riverside_Text_GratitudeForRescue, MSGBOX_DEFAULT
-	giveitem ITEM_ULTRA_BALL
+	giveitem ITEM_DUSK_BALL
 	compare VAR_RESULT, FALSE
 	goto_if_eq Mauville_Riverside_EventScript_BagFull
 	goto Mauville_Riverside_EventScript_GirlLeaving

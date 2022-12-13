@@ -28,7 +28,32 @@
 .set LOCALID_CUTE_AUDIENCE_2, 31
 
 LilycoveCity_ContestHall_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_ContestHall_OnTransition
 	.byte 0
+
+LilycoveCity_ContestHall_OnTransition:
+	call LilycoveCity_ContestHall_SetUpWallace
+	end
+
+LilycoveCity_ContestHall_SetUpWallace::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, LilycoveCity_ContestHall_Eventscript_WallaceRematch
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_WALLACE_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq LilycoveCity_ContestHall_Eventscript_WallaceRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq LilycoveCity_ContestHall_Eventscript_WallaceAtContestHall
+    return
+
+LilycoveCity_ContestHall_Eventscript_WallaceRematch::
+	setflag FLAG_HIDE_CONTEST_HALL_WALLACE
+	clearflag FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE
+	return
+
+LilycoveCity_ContestHall_Eventscript_WallaceAtContestHall::
+	clearflag FLAG_HIDE_CONTEST_HALL_WALLACE
+	setflag FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE
+	return
 
 LilycoveCity_ContestHall_EventScript_Boy1::
 	msgbox LilycoveCity_ContestHall_Text_TodayWonSmartnessContest, MSGBOX_NPC
@@ -44,6 +69,14 @@ LilycoveCity_ContestHall_EventScript_Girl::
 
 LilycoveCity_ContestHall_EventScript_Sailor::
 	msgbox LilycoveCity_ContestHall_Text_IsntThisPlaceHumongous, MSGBOX_NPC
+	end
+
+LilycoveCity_ContestHall_EventScript_Delinquent::
+	msgbox LilycoveCity_ContestHall_Text_Delinquent, MSGBOX_NPC
+	end
+
+LilycoveCity_ContestHall_EventScript_FairyTaleGirl::
+	msgbox LilycoveCity_ContestHall_Text_FairyTaleGirl, MSGBOX_NPC
 	end
 
 LilycoveCity_ContestHall_EventScript_SmartContestMC::
@@ -335,6 +368,78 @@ LilycoveCity_ContestHall_EventScript_SmartStageSign::
 	msgbox LilycoveCity_ContestHall_Text_SmartContestStage, MSGBOX_SIGN
 	end
 
+LilycoveCity_ContestHall_EventScript_Wallace::
+	locktarget
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_Wallace, MSGBOX_DEFAULT
+	closemessage
+	end
+
+LilycoveCity_ContestHall_EventScript_WallaceFan1::
+	locktarget
+	msgbox LilycoveCity_ContestHall_Text_WallaceFan1, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_EventScript_WallaceFan2::
+	locktarget
+	msgbox LilycoveCity_ContestHall_Text_WallaceFan2, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_EventScript_WallaceFan3::
+	locktarget
+	msgbox LilycoveCity_ContestHall_Text_WallaceFan3, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+LilycoveCity_ContestHall_EventScript_Glacia::
+	locktarget
+	faceplayer
+	msgbox LilycoveCity_ContestHall_Text_Glacia, MSGBOX_DEFAULT
+	closemessage
+	end
+
+LilycoveCity_ContestHall_Text_Glacia:
+	.string "A kaleidoscope of polished moves…\p"
+	.string "Synchronized collaboration between\n"
+	.string "Trainer and Pokémon.\p"
+	.string "Their souls like burning hot flames…\p"
+	.string "Watching a Pokémon contest is as\n"
+	.string "enjoyable as watching a Pokémon battle.\p"
+	.string "I wonder if I could participate in\n"
+	.string "contests without jeopardizing my\l"
+	.string "training for battles?$"
+
+LilycoveCity_ContestHall_Text_Wallace:
+	.string "Wallace: No matter whether you stand in\n"
+	.string "a Pokémon Gym or a Contest Hall, a\l"
+	.string "Trainer who holds to his/her belief in\l"
+	.string "the Pokémon beside him/her…\p"
+	.string "The Pokémon that battles on, believing\n"
+	.string "in the Trainer with whom it stands\l"
+	.string "together…\p" 
+	.string "The settings may differ, but their\n"
+	.string "labors come to fruition in a way that\l"
+	.string "honors their bond!\l"
+	.string "There is equal beauty in both!$"
+
+LilycoveCity_ContestHall_Text_WallaceFan1:
+	.string "Eek! It's Wallace!\n"
+	.string "Wallace! Wallace!\p"
+	.string "Are you here to enter the contests?$"
+
+LilycoveCity_ContestHall_Text_WallaceFan2:
+	.string "Darling! Do you need anyone to show\n"
+	.string "you around? It's no bother to me at all.$"
+
+LilycoveCity_ContestHall_Text_WallaceFan3:
+	.string "Mr. Wallace! I'm your biggest fan!\n"
+	.string "Could you sign my Pikachu?$"
+
 LilycoveCity_ContestHall_Text_TodayWonSmartnessContest:
 	.string "This Pokémon won the Beauty Contest\n"
 	.string "here before.\p"
@@ -360,6 +465,20 @@ LilycoveCity_ContestHall_Text_IsntThisPlaceHumongous:
 	.string "Whoa, isn't this place humongous!\p"
 	.string "The tension in the air… It's not\n"
 	.string "like a Contest hall in the sticks.$"
+
+LilycoveCity_ContestHall_Text_Delinquent:
+	.string "One day, I'm going to be up on that\n"
+	.string "stage and be a contest superstar.\p"
+	.string "Until then, I'll need to grow lots of\n"
+	.string "berries for {POKEBLOCK}s.\p"
+	.string "The berry master's wife kindly helped\n"
+	.string "me out when I told her I was going to\l"
+	.string "Challenge Contest”.$"
+
+LilycoveCity_ContestHall_Text_FairyTaleGirl:
+	.string "I don't know what the rules are in\n"
+	.string "contests. I just like seeing all\l"
+	.string "the gorgeous Pokémon.$"
 
 LilycoveCity_ContestHall_Text_GiveItBestSmartAppeal:
 	.string "MC: Okay, Smart Pokémon and their\n"
@@ -483,7 +602,7 @@ LilycoveCity_ContestHall_Text_SuchCharmingCuteAppeals:
 	.string "Judge: Oh, such charming and cute\n"
 	.string "appeals!\p"
 	.string "Oh, my goodness! What a perfectly\n"
-	.string "adorable WATER SPORT appeal!$"
+	.string "adorable Water Sport appeal!$"
 
 LilycoveCity_ContestHall_Text_MyAzurillWasDistracted:
 	.string "Oh, no… My sweet Azurill was\n"

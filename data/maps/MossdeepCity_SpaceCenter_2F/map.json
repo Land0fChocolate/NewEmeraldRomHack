@@ -134,7 +134,7 @@
       "x": 7,
       "y": 5,
       "elevation": 0,
-      "var": "VAR_WEATHER_INSTITUTE_TRIGGER_STATE",
+      "var": "VAR_SPACE_CENTER_TRIGGER_STATE",
       "var_value": "0",
       "script": "MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger"
     },
@@ -143,7 +143,7 @@
       "x": 7,
       "y": 6,
       "elevation": 0,
-      "var": "VAR_WEATHER_INSTITUTE_TRIGGER_STATE",
+      "var": "VAR_SPACE_CENTER_TRIGGER_STATE",
       "var_value": "0",
       "script": "MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger"
     },
@@ -152,7 +152,7 @@
       "x": 7,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_WEATHER_INSTITUTE_TRIGGER_STATE",
+      "var": "VAR_SPACE_CENTER_TRIGGER_STATE",
       "var_value": "0",
       "script": "MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger"
     },
@@ -161,7 +161,7 @@
       "x": 7,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_WEATHER_INSTITUTE_TRIGGER_STATE",
+      "var": "VAR_SPACE_CENTER_TRIGGER_STATE",
       "var_value": "0",
       "script": "MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger"
     },
@@ -170,7 +170,7 @@
       "x": 7,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_WEATHER_INSTITUTE_TRIGGER_STATE",
+      "var": "VAR_SPACE_CENTER_TRIGGER_STATE",
       "var_value": "0",
       "script": "MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger"
     },
@@ -179,7 +179,7 @@
       "x": 7,
       "y": 11,
       "elevation": 0,
-      "var": "VAR_WEATHER_INSTITUTE_TRIGGER_STATE",
+      "var": "VAR_SPACE_CENTER_TRIGGER_STATE",
       "var_value": "0",
       "script": "MossdeepCity_SpaceCenter_2F_EventScript_ZinniaTrigger"
     }

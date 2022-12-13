@@ -101,7 +101,7 @@ void UpdateAbilityPopup(u8 battlerId);
 void DestroyAbilityPopUp(u8 battlerId);
 void CreateMultiAbilityPopUp(u8 battlerId, bool32 isDoubleBattle);
 void UpdateMultiAbilityPopup(u8 battlerId);
-void DestroyMultiAbilityPopUp(u8 battlerId); //TODO: could I just use DestroyAbilityPopUp for the multi ability pop-up? 
+void DestroyMultiAbilityPopUp(u8 battlerId); //TODO: could I use DestroyAbilityPopUp for the multi ability pop-up? 
 bool32 CanThrowLastUsedBall(void);
 void TryHideLastUsedBall(void);
 void TryRestoreLastUsedBall(void);

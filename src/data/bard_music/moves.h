@@ -2846,14 +2846,6 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND
     },
-    [MOVE_WAR_DANCE] = {
-        { 0x0, 0x0, 0x0, 0x0, 0x0},
-        { 0x1b, 0x0, 0x0, 0x0, 0x0},
-        { 0x0, 0x0, 0x0, 0x0, 0x0},
-        { 0x33, 0x0, 0x0, 0x0, 0x0},
-        NULL_BARD_SOUND,
-        NULL_BARD_SOUND
-    },
 };
 
 #endif //GUARD_DATA_BARD_MUSIC_MOVES_H

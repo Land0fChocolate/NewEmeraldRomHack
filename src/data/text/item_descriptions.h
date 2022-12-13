@@ -3168,9 +3168,9 @@ static const u8 sTM63Desc[] = _(
     "used sequentially.");
 
 static const u8 sTM64Desc[] = _(
-    "User sacrifices\n"
-    "itself to deal\n"
-    "massive damage.");
+    "A small precise\n"
+    "slash that always\n"
+    "critically hits.");
 
 static const u8 sTM65Desc[] = _(
     "Claws from the\n"
@@ -3223,7 +3223,7 @@ static const u8 sTM74Desc[] = _(
     "are to the target.");
 
 static const u8 sTM75Desc[] = _(
-    "Steals half\n"
+    "Steals over half\n"
     "damage dealt to\n"
     "heal the user.");
 
@@ -3234,8 +3234,8 @@ static const u8 sTM76Desc[] = _(
 
 static const u8 sTM77Desc[] = _(
     "User strikes the\n"
-    "vocal chords to\n"
-    "disable sound moves.");
+    "throat to disable\n"
+    "sound moves.");
 
 static const u8 sTM78Desc[] = _(
     "User stomps about\n"
@@ -3672,15 +3672,15 @@ static const u8 sGoldTeethDesc[] = _(
     "by the Safari\n"
     "Zone's Warden.");
 
-static const u8 sCardKeyDesc[] = _(
-    "A card-type door\n"
-    "key used in Silph\n"
-    "Co's office.");
+static const u8 sWishTagDesc[] = _(
+    "A strip of paper\n"
+    "used to write\n"
+    "wishes.");
 
-static const u8 sLiftKeyDesc[] = _(
-    "An elevator key\n"
-    "used in Team\n"
-    "Rocket's Hideout.");
+static const u8 sSpaceBeltDesc[] = _(
+    "A high tech device\n"
+    "used to travel\n"
+    "through space.");
 
 static const u8 sSilphScopeDesc[] = _(
     "Silph Co's scope\n"

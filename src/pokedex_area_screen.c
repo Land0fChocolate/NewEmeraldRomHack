@@ -339,7 +339,7 @@ static void FindMapsWithMon(u16 species)
     if (sPokedexAreaScreen->unk6E4 > 8)
         sPokedexAreaScreen->unk6E4 = 0;
 
-    if (species != SPECIES_LATIAS || species != SPECIES_LATIOS)
+    if (species != SPECIES_LATIAS && species != SPECIES_LATIOS)
     {
         sPokedexAreaScreen->numOverworldAreas = 0;
         sPokedexAreaScreen->numSpecialAreas = 0;
@@ -388,9 +388,15 @@ static void FindMapsWithMon(u16 species)
         roamer1 = &gSaveBlock1Ptr->roamer1;
         roamer2 = &gSaveBlock1Ptr->roamer2;
         sPokedexAreaScreen->numSpecialAreas = 0;
-        if (roamer1->active || roamer2->active)
+        if (species == SPECIES_LATIAS && roamer1->active)
         {
-            GetRoamerLocation(&sPokedexAreaScreen->overworldAreasWithMons[0].mapGroup, &sPokedexAreaScreen->overworldAreasWithMons[0].mapNum);
+            GetRoamer1Location(&sPokedexAreaScreen->overworldAreasWithMons[0].mapGroup, &sPokedexAreaScreen->overworldAreasWithMons[0].mapNum);
+            sPokedexAreaScreen->overworldAreasWithMons[0].regionMapSectionId = Overworld_GetMapHeaderByGroupAndId(sPokedexAreaScreen->overworldAreasWithMons[0].mapGroup, sPokedexAreaScreen->overworldAreasWithMons[0].mapNum)->regionMapSectionId;
+            sPokedexAreaScreen->numOverworldAreas = 1;
+        }
+        else if (species == SPECIES_LATIOS && roamer2->active)
+        {
+            GetRoamer2Location(&sPokedexAreaScreen->overworldAreasWithMons[0].mapGroup, &sPokedexAreaScreen->overworldAreasWithMons[0].mapNum);
             sPokedexAreaScreen->overworldAreasWithMons[0].regionMapSectionId = Overworld_GetMapHeaderByGroupAndId(sPokedexAreaScreen->overworldAreasWithMons[0].mapGroup, sPokedexAreaScreen->overworldAreasWithMons[0].mapNum)->regionMapSectionId;
             sPokedexAreaScreen->numOverworldAreas = 1;
         }

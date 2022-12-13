@@ -782,7 +782,6 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_LUNAR_BLESSING] = _("Lunar Blessing"),
     [MOVE_TAKE_HEART] = _("Take Heart"),
     //New Emerald
-    [MOVE_WAR_DANCE] = _("War Dance"),
     [MOVE_FLINT_BLADE] = _("Flint Blade"),
     [MOVE_BLAZE_IMPACT] = _("Blaze Impact"),
     [MOVE_SINGULARITY] = _("Singularity"),
@@ -1575,7 +1574,6 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_TAKE_HEART] = _("Take Heart"),
 
     //New Emerald
-    [MOVE_WAR_DANCE] = _("War Dance"),
     [MOVE_FLINT_BLADE] = _("Flint Blade"),
     [MOVE_BLAZE_IMPACT] = _("Blaze Impact"),
     [MOVE_SINGULARITY] = _("Singularity"),

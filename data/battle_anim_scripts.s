@@ -804,14 +804,14 @@ gBattleAnims_Moves::
 	.4byte Move_LUNAR_BLESSING
 	.4byte Move_TAKE_HEART
 @@@@@@@@@ NEW EMERALD @@@@@@@@@
-	.4byte Move_WAR_DANCE
 	.4byte Move_FLINT_BLADE
 	.4byte Move_BLAZE_IMPACT
 	.4byte Move_SINGULARITY
 	.4byte Move_SERPENT_DANCE
 	.4byte Move_ICE_TUSK
 	.4byte Move_HIDDEN_THORNS
-	.4byte Move_COUNT @ cannot be reached, because last move is Hidden Thorns
+@@@ Last Move - cannot be reached
+	.4byte Move_COUNT
 
 	.align 2
 gBattleAnims_StatusConditions::
@@ -3536,7 +3536,6 @@ GunkShotImpact:
 	createsprite gGunkShotImpactSpriteTemplate, 4, 4, 0, 15, 1, 1
 	createsprite gGunkShotImpactSpriteTemplate, 4, 4, 0, -15, 1, 1
 	return
-
 SetGunkShotBG:
 	fadetobg BG_GUNK_SHOT
 	goto SetHighSpeedBgFade
@@ -23836,11 +23835,6 @@ WeatherBallIce:
 	end
 
 @New Emerald moves
-
-@using Dragon Dance animation
-Move_WAR_DANCE:
-	goto Move_DRAGON_DANCE
-	end
 
 Move_FLINT_BLADE:
 	loadspritegfx ANIM_TAG_STONE_EDGE

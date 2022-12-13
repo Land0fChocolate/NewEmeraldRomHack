@@ -166,7 +166,7 @@ static const u8 sMapName_TanobyRuins[] = _("TANOBY Ruins");
 static const u8 sMapName_SeviiIsle22[] = _("SEVII ISLE 22");
 static const u8 sMapName_SeviiIsle23[] = _("SEVII ISLE 23");
 static const u8 sMapName_SeviiIsle24[] = _("SEVII ISLE 24");
-static const u8 sMapName_NavelRock[] = _("NAVEL ROCK");
+static const u8 sMapName_NavelRock[] = _("Navel Rock");
 static const u8 sMapName_MtEmber[] = _("MT. EMBER");
 static const u8 sMapName_BerryForest[] = _("BERRY FOREST");
 static const u8 sMapName_IcefallCave[] = _("ICEFALL Cave");
@@ -179,7 +179,7 @@ static const u8 sMapName_AlteringCave[] = _("ALTERING Cave");
 static const u8 sMapName_TanobyChambers[] = _("TANOBY ChamberS");
 static const u8 sMapName_ThreeIslePath[] = _("THREE ISLE PATH");
 static const u8 sMapName_TanobyKey[] = _("TANOBY KEY");
-static const u8 sMapName_BirthIsland[] = _("BIRTH Island");
+static const u8 sMapName_BirthIsland[] = _("Birth Island");
 static const u8 sMapName_MoneanChamber[] = _("MONEAN Chamber");
 static const u8 sMapName_LiptooChamber[] = _("LIPTOO Chamber");
 static const u8 sMapName_WeepthChamber[] = _("WEEPTH Chamber");
@@ -212,7 +212,7 @@ static const u8 sMapName_ConquerorsCamp[] = _("Conqueror's Camp");
 static const u8 sMapName_RoyalRest[] = _("Royal Rest");
 static const u8 sMapName_SagesSanctuary[] = _("Sage's Sanctuary");
 static const u8 sMapName_Space[] = _("Space");
-static const u8 sMapName_MauvilleRiverside[] = _("118 Riverside");
+static const u8 sMapName_MauvilleRiverside[] = _("Mauvl' Riverside");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ABANDONED_SHIP]             = {6, 14, 1, 1, sMapName_AbandonedShip},
@@ -254,6 +254,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_MARINE_CAVE]                = {0, 0, 1, 1, sMapName_MarineCave},
     [MAPSEC_MAUVILLE_CITY]              = {8, 6, 2, 1, sMapName_MauvilleCity},
     [MAPSEC_MAUVILLE_MEADOW]            = {10, 8, 2, 2, sMapName_MauvilleMeadow},
+    [MAPSEC_MAUVILLE_RIVERSIDE]         = {10, 5, 1, 1, sMapName_MauvilleRiverside},
     [MAPSEC_METEOR_FALLS]               = {0, 3, 1, 1, sMapName_MeteorFalls},
     [MAPSEC_METEOR_FALLS2]              = {1, 2, 1, 1, sMapName_MeteorFalls},
     [MAPSEC_MIRAGE_ISLAND]              = {17, 10, 1, 1, sMapName_MirageIsland},
@@ -334,7 +335,6 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_VERDANTURF_TOWN]            = {4, 6, 1, 1, sMapName_VerdanturfTown},
     [MAPSEC_VICTORY_ROAD]               = {27, 9, 1, 1, sMapName_VictoryRoad},
     [MAPSEC_WILDWOODS]                  = {4, 7, 1, 1, sMapName_Wildwoods},
-    [MAPSEC_MAUVILLE_RIVERSIDE]         = {10, 5, 1, 1, sMapName_MauvilleRiverside},
 };
 
 #endif // GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H

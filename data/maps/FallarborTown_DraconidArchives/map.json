@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
-      "x": 14,
-      "y": 11,
+      "x": 13,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -132,7 +132,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "DraconidArchives_Eventscript_Sculpture"
+      "script": "DraconidArchives_Eventscript_DisplayCaseStones"
     },
     {
       "type": "sign",
@@ -140,7 +140,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "DraconidArchives_Eventscript_DisplayCase"
+      "script": "DraconidArchives_Eventscript_DisplayCaseInstrument"
     },
     {
       "type": "sign",
@@ -148,7 +148,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "DraconidArchives_Eventscript_DisplayCase"
+      "script": "DraconidArchives_Eventscript_DisplayCaseInstrument"
     },
     {
       "type": "sign",
@@ -173,6 +173,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "DraconidArchives_Eventscript_Book"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DraconidArchives_Eventscript_DisplayCaseStones"
     }
   ]
 }

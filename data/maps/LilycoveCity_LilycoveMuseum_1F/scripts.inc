@@ -272,7 +272,7 @@ LilycoveCity_LilycoveMuseum_1F_Text_ThisPokemonIsAdorable:
 LilycoveCity_LilycoveMuseum_1F_Text_HeardMuseumGotNewPaintings:
 	.string "I'd heard that this Art Museum got\n"
 	.string "in some new paintings.\p"
-	.string "So, naturally I hurried over.\p"
+	.string "So, I came to check it out.\p"
 	.string "Are the new paintings up on\n"
 	.string "the second floor?$"
 

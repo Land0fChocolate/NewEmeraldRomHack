@@ -21,7 +21,8 @@ SeafloorCavern_Room3_EventScript_Zinnia::
 SeafloorCavern_Room3_Text_Zinnia:
 	.string "Ah, you!\n"
 	.string "Well, of course it's you!\p"
-	.string "You don't know me. Nope!\p"
+	.string "You don't know me.\n"
+	.string "Nope!\p"
 	.string "Archie is a little further up ahead.\n"
 	.string "That's the place to go to if you want\l"
 	.string "to stop him.$"
@@ -31,9 +32,10 @@ SeafloorCavern_Room3_Text_ShellyIntro:
 	.string "How did you manage to get here without\n"
 	.string "a submarine? Well, it doesn't matter.\p"
 	.string "The world Archie dreams of would be a\n"
-	.string "utopia for Pokémon. I can't let you get\l"
-	.string "in the way of someone who's pushing on\l"
-	.string "toward a perfect world!$"
+	.string "utopia for Pokémon.\p"
+	.string "I can't let you get in the way of\n"
+	.string "someone who's pushing on toward a\l"
+	.string "perfect world!$"
 
 SeafloorCavern_Room3_Text_ShellyDefeat:
 	.string "Wh-what was that!?$"

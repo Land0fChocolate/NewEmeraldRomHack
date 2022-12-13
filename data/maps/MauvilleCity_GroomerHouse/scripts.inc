@@ -4,12 +4,19 @@ MauvilleCity_GroomerHouse_MapScripts::
 MauvilleCity_GroomerHouse_EventScript_Meteorite::
 	msgbox MauvilleCity_GroomerHouse_Text_ItsAMeteorite, MSGBOX_SIGN
 	closemessage
-	changedeoxysform 0
+	checkformoninparty SPECIES_DEOXYS_ATTACK
 	compare VAR_RESULT, TRUE
-	goto_if_eq MauvilleCity_GroomerHouse_EventScript_DeoxysChangedForm
+	goto_if_eq MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_DEFENSE
+	compare VAR_RESULT, TRUE
+	goto_if_eq MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm
+	checkformoninparty SPECIES_DEOXYS_SPEED
+	compare VAR_RESULT, TRUE
+	goto_if_eq MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm
 	end
 
-MauvilleCity_GroomerHouse_EventScript_DeoxysChangedForm::
+MauvilleCity_GroomerHouse_EventScript_ChangeDeoxysForm::
+	changedeoxysform 0
 	playmoncry SPECIES_DEOXYS, 0
 	waitse
 	msgbox MauvilleCity_GroomerHouse_Text_DeoxysChangedForm, MSGBOX_SIGN
@@ -82,7 +89,7 @@ MauvilleCity_GroomerHouse_Text_GirlDoneGrooming:
 	.string "There. All done!\p"
 	.string "Your {STR_VAR_1}'s coat is\n"
 	.string "looking gorgeous and glossy!\l"
-	.string "It's even liking you a little more.\p"
+	.string "It's even become more fond of you.\p"
 	.string "Return tomorrow and I shall give your\n"
 	.string "Pokémon additional treatment.$"
 
@@ -95,7 +102,7 @@ MauvilleCity_GroomerHouse_Text_GirlOnceADayService:
 MauvilleCity_GroomerHouse_Text_ItsAMeteorite:
 	.string "It's the meteorite that the Pokémon\n"
 	.string "groomer picked up. You feel a\l"
-	.string "radiating warmth coming from it.\p"
+	.string "radiating warmth coming from it.$"
 
 MauvilleCity_GroomerHouse_Text_DeoxysChangedForm:
 	.string "The Deoxys in your party changed into\n"

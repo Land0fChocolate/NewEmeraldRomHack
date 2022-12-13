@@ -3175,8 +3175,8 @@ static void FillPartnerParty(u16 trainerId)
     }
     else if (trainerId == TRAINER_RIVAL_PARTNER)
     {
-        *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
-        starter = GetStarterPokemon(gSpecialVar_Result);
+        //*GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
+        starter = SpeciesToNationalPokedexNum(GetStarterPokemon(VarGet(VAR_STARTER_MON)));
 
         if (starter == SPECIES_TREECKO)
         {

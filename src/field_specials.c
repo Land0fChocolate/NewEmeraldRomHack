@@ -2292,6 +2292,16 @@ void ShowScrollableMultichoice(void)
             task->tKeepOpenAfterSelect = FALSE;
             task->tTaskId = taskId;
             break;
+        case SCROLL_MULTI_GAME_CORNER_TM_VENDOR:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN - 1;
+            task->tNumItems = 8;
+            task->tLeft = 14;
+            task->tTop = 1;
+            task->tWidth = 7;
+            task->tHeight = 10;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
         case SCROLL_MULTI_GLASS_WORKSHOP_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN - 1;
             task->tNumItems = 8;
@@ -2344,7 +2354,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 7;
+            task->tNumItems = 11;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2354,7 +2364,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 31;
+            task->tNumItems = 28;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2457,6 +2467,17 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_RoseliBerry,
         gText_Exit
     },
+    [SCROLL_MULTI_GAME_CORNER_TM_VENDOR] = 
+    {
+        gText_TM29AndPrice,
+        gText_TM53AndPrice,
+        gText_TM56AndPrice,
+        gText_TM13AndPrice,
+        gText_TM24AndPrice,
+        gText_TM35AndPrice,
+        gText_TM94AndPrice,
+        gText_Exit
+    },
     [SCROLL_MULTI_GLASS_WORKSHOP_VENDOR] = 
     {
         gText_BlueFlute,
@@ -2537,31 +2558,32 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Zinc1BP,
         gText_Carbos1BP,
         gText_HpUp1BP,
+        gText_PPUp2BP,
+        gText_PPMax5BP,
+        gText_BottleCap2BP,
+        gText_GoldBottleCap30BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
     {
-        gText_ScopeLens16BP,
-        gText_WideLens16BP,
-        gText_ToxicOrb16BP,
-        gText_FlameOrb16BP,
-        gText_AdrenalineOrb16BP,
-        gText_RedCard16BP,
-        gText_DestinyKnot16BP,
-        gText_Metronome16BP,
-        gText_ShedShell16BP,
-        gText_StickyBarb16BP,
-        gText_LaggingTail16BP,
-        gText_QuickClaw24BP,
-        gText_Snowball24BP,
-        gText_LightClay24BP,
-        gText_BlackSludge24BP,
-        gText_WiseGlasses24BP,
-        gText_MuscleBand24BP,
-        gText_HeatRock24BP,
-        gText_DampRock24BP,
-        gText_SmoothRock24BP,
-        gText_IcyRock24BP,
+        gText_ScopeLens12BP,
+        gText_WideLens12BP,
+        gText_ToxicOrb12BP,
+        gText_FlameOrb12BP,
+        gText_AdrenalineOrb12BP,
+        gText_RedCard12BP,
+        gText_DestinyKnot12BP,
+        gText_Metronome12BP,
+        gText_ShedShell12BP,
+        gText_StickyBarb12BP,
+        gText_LaggingTail12BP,
+        gText_QuickClaw20BP,
+        gText_Snowball20BP,
+        gText_LightClay20BP,
+        gText_BlackSludge20BP,
+        gText_WiseGlasses20BP,
+        gText_MuscleBand20BP,
+        gText_Eviolite20BP,
         gText_WeaknessPolicy24BP,
         gText_BlunderPolicy24BP,
         gText_Leftovers32BP,
@@ -3199,7 +3221,7 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
                 break;
             case SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR:
                 AddTextPrinterParameterized2(0, 1, sFrontierExchangeCorner_EvoItemsDescriptions[selection], 0, NULL, 2, 1, 3);
-                ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Vitamins[selection]);
+                ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_EvoItems[selection]);
                 break;
             case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
                 AddTextPrinterParameterized2(0, 1, sFrontierExchangeCorner_VitaminsDescriptions[selection], 0, NULL, 2, 1, 3);
@@ -4551,3 +4573,73 @@ u8 Script_TryGainNewFanFromCounter(void)
 {
     return TryGainNewFanFromCounter(gSpecialVar_0x8004);
 }
+
+void CheckForMaxMonIVs(void)
+{
+    u8 i;
+    u32 ivStorage[NUM_STATS];
+
+    ivStorage[STAT_HP] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV);
+    ivStorage[STAT_ATK] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV);
+    ivStorage[STAT_DEF] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV);
+    ivStorage[STAT_SPEED] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV);
+    ivStorage[STAT_SPATK] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV);
+    ivStorage[STAT_SPDEF] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV);
+
+    gSpecialVar_0x8007 = 0;
+    
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        gSpecialVar_0x8007 += ivStorage[i];
+    }
+
+    if (gSpecialVar_0x8007 >= (MAX_PER_STAT_IVS * 6))
+        gSpecialVar_Result = TRUE;
+    else
+        gSpecialVar_Result = FALSE;
+}
+
+void MaximizeMonIVs(void)
+{
+    u8 maxIV = MAX_PER_STAT_IVS;
+
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &maxIV);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &maxIV);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &maxIV);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &maxIV);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &maxIV);
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &maxIV);
+
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void CheckForMaxMonIV(void)
+{
+    u8 i;
+    u32 statIV;
+
+    statIV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005);
+
+    if (statIV >= MAX_PER_STAT_IVS)
+        gSpecialVar_Result = TRUE;
+    else
+        gSpecialVar_Result = FALSE;
+}
+
+void BuffMonIV(void)
+{
+    u8 i;
+    u32 statIV;
+
+    statIV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005);
+
+    if (statIV + IVS_PER_BOTTLE_CAP_BUFF >= MAX_PER_STAT_IVS)
+        statIV = MAX_PER_STAT_IVS;
+    else
+        statIV += IVS_PER_BOTTLE_CAP_BUFF;
+
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005, &statIV);
+
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+

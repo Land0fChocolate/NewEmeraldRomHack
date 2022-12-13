@@ -63,7 +63,7 @@ PetalburgCity_Mart_EventScript_Boy::
 	end
 
 PetalburgCity_Mart_EventScript_Man::
-	msgbox PetalburgCity_Mart_Text_TakeSomeAntidotesWithYou, MSGBOX_NPC
+	msgbox PetalburgCity_Mart_Text_StrongPokemonAbout, MSGBOX_NPC
 	end
 
 PetalburgCity_Mart_Text_WeakWillGrowStronger:
@@ -77,10 +77,9 @@ PetalburgCity_Mart_Text_RepelIsUseful:
 	.string "It keeps Pokémon away, so it's\l"
 	.string "useful when you're in a hurry.$"
 
-PetalburgCity_Mart_Text_TakeSomeAntidotesWithYou:
-	.string "Do you have any Antidotes with\n"
-	.string "you?\p"
-	.string "If you walk around with a poisoned\n"
-	.string "Pokémon, it will lose HP until it faints.\l"
-	.string "Take some Antidotes with you.$"
+PetalburgCity_Mart_Text_StrongPokemonAbout:
+	.string "Occasionally, you may run into an\n"
+	.string "unusually high leveled Pokémon.\p"
+	.string "It's always good to be well prepared\n"
+	.string "for any situation.$"
 

@@ -5,6 +5,7 @@ MossdeepCity_MapScripts::
 	.byte 0
 
 MossdeepCity_OnTransition:
+	call Common_EventScript_SetupRivalGfxId
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_1
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_2
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_3
@@ -19,7 +20,7 @@ Mossdeep_Eventscript_MoveRival::
 
 MossdeepCity_Eventscript_RivalTrigger::
 	clearflag FLAG_HIDE_MOSSDEEP_CITY_RIVAL
-	SETVAR VAR_MOSSDEEP_CITY_RIVAL_STATE, 1
+	setvar VAR_MOSSDEEP_CITY_RIVAL_STATE, 1
 	opendoor 64, 15
 	waitdooranim
 	addobject LOCALID_RIVAL
@@ -245,6 +246,10 @@ MossdeepCity_EventScript_Woman::
 	msgbox MossdeepCity_Text_SpecialSpaceCenterRock, MSGBOX_NPC
 	end
 
+MossdeepCity_EventScript_Lass::
+	msgbox MossdeepCity_Text_BerryWifePhrase, MSGBOX_NPC
+	end
+
 MossdeepCity_EventScript_WhiteRock::
 	msgbox MossdeepCity_Text_ItsAWhiteRock, MSGBOX_SIGN
 	end
@@ -303,6 +308,11 @@ MossdeepCity_EventScript_DeclineKingsRock::
 MossdeepCity_EventScript_BlackBelt::
 	msgbox MossdeepCity_Text_WavesOverFeet, MSGBOX_NPC
 	end
+
+MossdeepCity_Text_BerryWifePhrase:
+	.string "I remarked on a “Cool Latios” when I\n"
+	.string "was visiting the mainland and this nice\l"
+	.string "elderly lady gave me a berry!$"
 
 MossdeepCity_Text_MaySpaceCenterLetsBattle:
 	.string "May: Oh, hey {PLAYER},\n"
@@ -467,12 +477,6 @@ MossdeepCity_Text_WailmerWatching:
 	.string "What was it now…\p"
 	.string "Wai, Wai, Wai…\p"
 	.string "Wailmer watching!$"
-
-MossdeepCity_Text_SpaceCenterReceivedLetter:
-	.string "The island's Space Center has been\n"
-	.string "launching huge rockets.\p"
-	.string "There's been some kind of an uproar\n"
-	.string "over a letter they received recently.$"
 
 MossdeepCity_Text_SpaceCenterLaunchingRockets:
 	.string "The island's Space Center has been\n"

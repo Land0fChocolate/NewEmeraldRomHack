@@ -2925,7 +2925,7 @@ const struct SpriteTemplate gStoneEdgeSpriteTemplate =
     .anims = gAnims_BasicFire,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = AnimSlidingHit,
+    .callback = AnimParticleInVortex,
 };
 
 const struct SpriteTemplate gFlintBladeSpriteTemplate =

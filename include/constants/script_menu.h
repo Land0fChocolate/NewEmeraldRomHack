@@ -120,8 +120,9 @@
 #define MULTI_BATTLE_TOWER_FEELINGS        109
 #define MULTI_WHERES_RAYQUAZA              110
 #define MULTI_EVO_STONE                    111
-#define MULTI_ORIGIN_STRAND                112
+#define MULTI_STAT_EV_TRAIN                112
 #define MULTI_TAG_MATCH_TYPE               113
+#define MULTI_ORIGIN_STRAND                114
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

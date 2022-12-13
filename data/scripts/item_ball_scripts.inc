@@ -126,8 +126,8 @@ Route115_EventScript_ItemPPUp::
 	finditem ITEM_PP_UP
 	end
 
-Route116_EventScript_ItemXSpecial::
-	finditem ITEM_X_SP_ATK
+Route116_EventScript_ItemBottleCap::
+	finditem ITEM_BOTTLE_CAP
 	end
 
 Route116_EventScript_ItemEther::
@@ -394,8 +394,8 @@ MeteorFalls_1F_1R_EventScript_ItemTM23::
 	finditem ITEM_TM23
 	end
 
-MeteorFalls_1F_1R_EventScript_ItemEviolite::
-	finditem ITEM_EVIOLITE
+MeteorFalls_1F_1R_EventScript_ItemBottleCap::
+	finditem ITEM_BOTTLE_CAP
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemMoonStone::
@@ -418,8 +418,8 @@ NewMauville_Inside_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
 
-NewMauville_Inside_EventScript_ItemElectirizer::
-	finditem ITEM_ELECTIRIZER
+NewMauville_Inside_EventScript_ItemThunderStone::
+	finditem ITEM_THUNDER_STONE
 	end
 
 NewMauville_Inside_EventScript_ItemFullHeal::
@@ -518,8 +518,8 @@ MtPyre_Exterior_EventScript_ItemMaxPotion::
 	finditem ITEM_MAX_POTION
 	end
 
-MtPyre_Exterior_EventScript_ItemTM48::
-	finditem ITEM_TM48
+MtPyre_Exterior_EventScript_ItemBottleCap::
+	finditem ITEM_BOTTLE_CAP
 	end
 
 AquaHideout_B1F_EventScript_ItemPPMax::
@@ -556,6 +556,10 @@ Route119_EventScript_ItemNestBall::
 
 ShoalCave_LowTideEntranceRoom_EventScript_ItemBigPearl::
 	finditem ITEM_BIG_PEARL
+	end
+
+ShoalCave_LowTideEntranceRoom_EventScript_ItemTM48::
+	finditem ITEM_TM48
 	end
 
 ShoalCave_LowTideInnerRoom_EventScript_ItemRareCandy::
@@ -650,8 +654,8 @@ MagmaHideout_2F_2R_EventScript_ItemMaxElixir::
 	finditem ITEM_MAX_ELIXIR
 	end
 
-MagmaHideout_2F_2R_EventScript_ItemMagmarizer::
-	finditem ITEM_MAGMARIZER
+MagmaHideout_2F_2R_EventScript_ItemCarbos::
+	finditem ITEM_CARBOS
 	end
 
 MagmaHideout_3F_1R_EventScript_ItemNugget::
@@ -703,7 +707,7 @@ NavelRock_Entrance_Eventscript_ItemEscapeRope::
 	end
 
 NavelRock_Lugia1_Eventscript_ItemImpishMint::
-	finditem ITEM_IMPISH_MINT
+	finditem ITEM_MODEST_MINT
 	end
 
 NavelRock_Lugia2_Eventscript_ItemRareCandy::
@@ -715,7 +719,7 @@ NavelRock_Lugia3_Eventscript_ItemTM60::
 	end
 
 NavelRock_Hooh1_Eventscript_ItemBoldMint::
-	finditem ITEM_BOLD_MINT
+	finditem ITEM_ADAMANT_MINT
 	end
 
 NavelRock_Hooh2_Eventscript_ItemTM97::
