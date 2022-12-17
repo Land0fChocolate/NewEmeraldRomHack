@@ -35,6 +35,7 @@ EverGrandeCity_EventScript_Leaf::
 EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
+	giveitem ITEM_ORIGIN_STRAND
 	end
 
 EverGrandeCity_Text_FlagIsSet:

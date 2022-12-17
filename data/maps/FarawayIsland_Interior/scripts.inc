@@ -156,6 +156,13 @@ FarawayIsland_Interior_EventScript_Mew::
 	compare VAR_RESULT, B_OUTCOME_MON_TELEPORTED
 	goto_if_eq FarawayIsland_Interior_EventScript_PlayerOrMewRan
 	setflag FLAG_CAUGHT_MEW
+	goto_if_unset FLAG_OBTAINED_ORIGIN_STRAND, FarawayIsland_Interior_EventScript_GiveOriginStrand
+	release
+	end
+
+FarawayIsland_Interior_EventScript_GiveOriginStrand::
+	giveitem ITEM_ORIGIN_STRAND
+	setflag FLAG_OBTAINED_ORIGIN_STRAND
 	release
 	end
 

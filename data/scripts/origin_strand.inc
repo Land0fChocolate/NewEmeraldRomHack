@@ -6,10 +6,9 @@ OriginStrand_EventScript_SelectOrigin::
 	case 0, OriginStrand_EventScript_ChooseOriginSlot1
 	case 1, OriginStrand_EventScript_ChooseOriginSlot2
 	case 2, OriginStrand_EventScript_Exit
-	goto OriginStrand_EventScript_Exit
-	end
-
 OriginStrand_EventScript_Exit::
+	closemessage
+	releaseall
 	end
 
 OriginStrand_EventScript_ChooseOriginSlot1::
@@ -45,7 +44,7 @@ OriginStrand_EventScript_ChooseMonMoveForOrigin::
 
 OriginStrand_EventScript_TrySetOriginMove::
 	special SetOriginMove
-	playfanfare MUS_OBTAIN_TMHM
+	playfanfare MUS_LEVEL_UP
 	waitfanfare
 	msgbox OriginStrand_Text_MoveHasBeenSetForOrigin, MSGBOX_DEFAULT
 	releaseall

@@ -266,7 +266,7 @@
 #define FLAG_RECEIVED_WAILMER_DOLL           0xF5
 #define FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104 0xF6
 #define FLAG_DEFEATED_SS_TIDAL_TRAINERS      0xF7
-#define FLAG_RECEIVED_SPELON_BERRY           0xF8 // unused
+#define FLAG_OBTAINED_ORIGIN_STRAND          0xF8
 #define FLAG_RECEIVED_PAMTRE_BERRY           0xF9 // unused
 #define FLAG_RECEIVED_WATMEL_BERRY           0xFA // unused
 #define FLAG_RECEIVED_DURIN_BERRY            0xFB // unused

@@ -3534,8 +3534,8 @@ static const u8 sPokeRadarDesc[] = _( // Todo
 
 static const u8 sPokeblockCaseDesc[] = _(
     "A case for holding\n"
-    "{POKEBLOCK}s made wi-\n"
-    "th a Berry Blender.");
+    "{POKEBLOCK}s made with\n"
+    "a Berry Blender.");
 
 static const u8 sSootSackDesc[] = _(
     "A sack used to\n"
@@ -3699,7 +3699,7 @@ static const u8 sRainbowWingDesc[] = _(
 
 static const u8 sOriginStrandDesc[] = _(
     "A Mew DNA strand\n"
-    "that gives it\n"
+    "that gives them\n"
     "extra moves.");
 
 static const u8 sRubyDesc[] = _(
