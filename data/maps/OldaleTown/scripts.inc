@@ -349,18 +349,6 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 	walk_left
 	step_end
 
-@TODO: remove
-OldaleTown_EventScript_TestAbra::
-	msgbox OldaleTown_Text_TestAbra, MSGBOX_DEFAULT
-	givemon SPECIES_MEW, 5, ITEM_NONE
-	giveitem ITEM_ORIGIN_STRAND
-	release
-	end
-
-OldaleTown_Text_TestAbra:
-	.string "I'm here for testing.\n"
-	.string "Remove me!$"
-
 OldaleTown_Text_SavingMyProgress:
 	.string "I want to take a rest, so I'm saving my\n"
 	.string "progress.$"

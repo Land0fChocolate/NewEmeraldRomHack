@@ -597,6 +597,7 @@ void HandleAction_UseMove(void)
     else if (gOriginMove > 0) //TODO: When Origin move is picked, set gOriginMove to move index + 1.
     {
        gCurrentMove = gChosenMove = gSaveBlock1Ptr->originMoves[gOriginMove - 1];
+       gOriginMove = 0;
     }
     else
     {

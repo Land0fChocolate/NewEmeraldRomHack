@@ -175,6 +175,7 @@ enum
     CONTROLLER_ENDLINKBATTLE,
     CONTROLLER_DEBUGMENU,
     /*new controllers should go here*/
+    CONTROLLER_CHOOSEORIGINMOVE,
     CONTROLLER_TERMINATOR_NOP,
     CONTROLLER_CMDS_COUNT
 };
@@ -211,6 +212,7 @@ void BtlController_EmitPrintSelectionString(u8 bufferId, u16 stringId);
 void BtlController_EmitChooseAction(u8 bufferId, u8 arg1, u16 arg2);
 void BtlController_EmitYesNoBox(u8 bufferId);
 void BtlController_EmitChooseMove(u8 bufferId, bool8 isDoubleBattle, bool8 NoPpNumber, struct ChooseMoveStruct *movePpData);
+void BtlController_EmitChooseOriginMove(u8 bufferId, bool8 isDoubleBattle, bool8 NoPpNumber, struct ChooseMoveStruct *movePpData);
 void BtlController_EmitChooseItem(u8 bufferId, u8* arg1);
 void BtlController_EmitChoosePokemon(u8 bufferId, u8 caseId, u8 arg2, u8* arg4);
 void BtlController_EmitCmd23(u8 bufferId); // unused
@@ -260,6 +262,7 @@ void Task_PlayerController_RestoreBgmAfterCry(u8 taskId);
 void ActionSelectionCreateCursorAt(u8 cursorPos, u8 unused);
 void ActionSelectionDestroyCursorAt(u8 cursorPos);
 void InitMoveSelectionsVarsAndStrings(void);
+void InitOriginMoveSelectionsVarsAndStrings(void);
 
 // recorded player controller
 void SetControllerToRecordedPlayer(void);

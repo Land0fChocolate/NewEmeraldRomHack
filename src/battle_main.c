@@ -240,6 +240,7 @@ EWRAM_DATA bool8 gSwapDamageCategory = FALSE; // Photon Geyser, Shell Side Arm, 
 EWRAM_DATA u8 gPartyCriticalHits[PARTY_SIZE] = {0};
 EWRAM_DATA static u8 sTriedEvolving = 0;
 EWRAM_DATA u8 gOriginMove = 0;
+EWRAM_DATA bool8 gUseOriginMove = FALSE;
 
 void (*gPreBattleCallback1)(void);
 void (*gBattleMainFunc)(void);
@@ -3992,17 +3993,33 @@ static void HandleTurnActionSelectionState(void)
                         moveInfo.monType2 = gBattleMons[gActiveBattler].type2;
                         moveInfo.monType3 = gBattleMons[gActiveBattler].type3;
 
-                        for (i = 0; i < MAX_MON_MOVES; i++)
+                        if (gUseOriginMove)
                         {
-                            moveInfo.moves[i] = gBattleMons[gActiveBattler].moves[i];
-                            moveInfo.currentPp[i] = gBattleMons[gActiveBattler].pp[i];
-                            moveInfo.maxPp[i] = CalculatePPWithBonus(
-                                                            gBattleMons[gActiveBattler].moves[i],
-                                                            gBattleMons[gActiveBattler].ppBonuses,
-                                                            i);
+                            for (i = 0; i < NUM_ORIGIN_MOVES; i++)
+                            {
+                                moveInfo.moves[i] = gSaveBlock1Ptr->originMoves[i];
+                                moveInfo.currentPp[i] = gSaveBlock1Ptr->originMovesPP[i];
+                                moveInfo.maxPp[i] = gBattleMoves[gSaveBlock1Ptr->originMoves[i]].pp;
+                            }
+
+                            gUseOriginMove = FALSE;
+                            BtlController_EmitChooseOriginMove(0, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0, FALSE, &moveInfo);
+                        }
+                        else
+                        {
+                            for (i = 0; i < MAX_MON_MOVES; i++)
+                            {
+                                moveInfo.moves[i] = gBattleMons[gActiveBattler].moves[i];
+                                moveInfo.currentPp[i] = gBattleMons[gActiveBattler].pp[i];
+                                moveInfo.maxPp[i] = CalculatePPWithBonus(
+                                                                gBattleMons[gActiveBattler].moves[i],
+                                                                gBattleMons[gActiveBattler].ppBonuses,
+                                                                i);
+                            }
+
+                            BtlController_EmitChooseMove(0, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0, FALSE, &moveInfo);
                         }
 
-                        BtlController_EmitChooseMove(0, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0, FALSE, &moveInfo);
                         MarkBattlerForControllerExec(gActiveBattler);
                     }
                     break;

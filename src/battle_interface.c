@@ -3708,11 +3708,11 @@ static const struct SpriteSheet sSpriteSheet_OriginMoveWindow =
 //TODO: change these for better Origin window location
 #define ORIGIN_MOVE_X_F    15
 #define ORIGIN_MOVE_X_0    -15
-#define ORIGIN_MOVE_Y      ((IsDoubleBattle()) ? 76 : 68)
+#define ORIGIN_MOVE_Y      ((IsDoubleBattle()) ? 91 : 83)
 
 #define ORIGIN_MOVE_WIN_X_F       (ORIGIN_MOVE_X_F - 1)
 #define ORIGIN_MOVE_WIN_X_0       (ORIGIN_MOVE_X_0 - 0)
-#define ORIGIN_MOVE_WIN_Y         (ORIGIN_MOVE_Y - 8)
+#define ORIGIN_MOVE_WIN_Y         (ORIGIN_MOVE_Y - 24)
 
 void TryAddOriginStrandSprite(void)
 {

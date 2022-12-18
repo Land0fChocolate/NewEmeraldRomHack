@@ -57,6 +57,10 @@ void HealPlayerParty(void)
         arg[3] = 0;
         SetMonData(&gPlayerParty[i], MON_DATA_STATUS, arg);
     }
+
+    // restore Origin move PP
+    gSaveBlock1Ptr->originMovesPP[0] = gBattleMoves[gSaveBlock1Ptr->originMoves[0]].pp;
+    gSaveBlock1Ptr->originMovesPP[1] = gBattleMoves[gSaveBlock1Ptr->originMoves[1]].pp;
 }
 
 u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 unused3)

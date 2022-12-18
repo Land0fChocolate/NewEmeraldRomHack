@@ -97,6 +97,7 @@ static void PlayerHandleLinkStandbyMsg(void);
 static void PlayerHandleResetActionMoveSelection(void);
 static void PlayerHandleEndLinkBattle(void);
 static void PlayerHandleBattleDebug(void);
+static void PlayerHandleChooseOriginMove(void);
 static void PlayerCmdEnd(void);
 
 static void PlayerBufferRunCommand(void);
@@ -109,6 +110,9 @@ static void MoveSelectionDisplayPpNumber(void);
 static void MoveSelectionDisplayPpString(void);
 static void MoveSelectionDisplayMoveType(void);
 static void MoveSelectionDisplayMoveNames(void);
+static void OriginMoveSelectionDisplayMoveNames(void);
+static void OriginMoveSelectionDisplayPpNumber(void);
+static void OriginMoveSelectionDisplayMoveType(void);
 static void HandleMoveSwitching(void);
 static void SwitchIn_HandleSoundAndEnd(void);
 static void WaitForMonSelection(void);
@@ -186,6 +190,7 @@ static void (*const sPlayerBufferCommands[CONTROLLER_CMDS_COUNT])(void) =
     [CONTROLLER_RESETACTIONMOVESELECTION] = PlayerHandleResetActionMoveSelection,
     [CONTROLLER_ENDLINKBATTLE]            = PlayerHandleEndLinkBattle,
     [CONTROLLER_DEBUGMENU]                = PlayerHandleBattleDebug,
+    [CONTROLLER_CHOOSEORIGINMOVE]         = PlayerHandleChooseOriginMove,
     [CONTROLLER_TERMINATOR_NOP]           = PlayerCmdEnd
 };
 
@@ -353,7 +358,8 @@ static void HandleInputChooseAction(void)
     {
         PlaySE(SE_SELECT);
         TryHideOriginMove();
-        BtlController_EmitTwoReturnValues(1, B_ACTION_USE_MOVE, 0);
+        gUseOriginMove = TRUE;
+        BtlController_EmitTwoReturnValues(1, B_ACTION_USE_MOVE, 0); //TODO: B_ACTION_USE_MOVE should be changed?
         PlayerBufferExecCompleted();
     }
 }
@@ -799,7 +805,7 @@ static void HandleInputChooseOriginMove(void)
 {
     u16 moveTarget;
     u32 canSelectTarget = 0;
-    struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct*)(&gBattleResources->bufferA[gActiveBattler][4]);
+    u16 originMove = gSaveBlock1Ptr->originMoves[gMoveSelectionCursor[gActiveBattler]];
 
     if (gMain.heldKeys & DPAD_ANY && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_L_EQUALS_A)
         gPlayerDpadHoldFrames++;
@@ -809,16 +815,16 @@ static void HandleInputChooseOriginMove(void)
     if (gMain.newKeys & A_BUTTON)
     {
         PlaySE(SE_SELECT);
-        if (moveInfo->moves[gMoveSelectionCursor[gActiveBattler]] == MOVE_CURSE)
+        if (originMove == MOVE_CURSE)
         {
-            if (moveInfo->monType1 != TYPE_GHOST && moveInfo->monType2 != TYPE_GHOST && moveInfo->monType3 != TYPE_GHOST)
+            if (gBattleMons[gActiveBattler].type1 != TYPE_GHOST && gBattleMons[gActiveBattler].type2 != TYPE_GHOST && gBattleMons[gActiveBattler].type3 != TYPE_GHOST)
                 moveTarget = MOVE_TARGET_USER;
             else
                 moveTarget = MOVE_TARGET_SELECTED;
         }
         else
         {
-            moveTarget = GetBattlerMoveTargetType(gActiveBattler, moveInfo->moves[gMoveSelectionCursor[gActiveBattler]]);
+            moveTarget = GetBattlerMoveTargetType(gActiveBattler, originMove);
         }
 
         if (moveTarget & MOVE_TARGET_USER)
@@ -838,7 +844,7 @@ static void HandleInputChooseOriginMove(void)
             if (moveTarget == (MOVE_TARGET_USER | MOVE_TARGET_ALLY) && IsBattlerAlive(BATTLE_PARTNER(gActiveBattler)))
                 canSelectTarget = 1;
 
-            if (moveInfo->currentPp[gMoveSelectionCursor[gActiveBattler]] == 0)
+            if (gSaveBlock1Ptr->originMovesPP[gMoveSelectionCursor[gActiveBattler]] == 0)
             {
                 canSelectTarget = 0;
             }
@@ -935,6 +941,8 @@ static void HandleInputChooseOriginMove(void)
             MoveSelectionDisplayMoveType();
         }
     }
+
+    gOriginMove = gMoveSelectionCursor[gActiveBattler] + 1;
 }
 
 static u32 HandleMoveInputUnused(void)
@@ -2953,6 +2961,16 @@ static void HandleChooseMoveAfterDma3(void)
     }
 }
 
+static void HandleChooseOriginMoveAfterDma3(void)
+{
+    if (!IsDma3ManagerBusyWithBgCopy())
+    {
+        gBattle_BG0_X = 0;
+        gBattle_BG0_Y = DISPLAY_HEIGHT * 2;
+        gBattlerControllerFuncs[gActiveBattler] = HandleInputChooseOriginMove;
+    }
+}
+
 // arenaMindPoints is used here as a placeholder for a timer.
 
 static void PlayerChooseMoveInBattlePalace(void)
@@ -2992,6 +3010,79 @@ void InitMoveSelectionsVarsAndStrings(void)
     MoveSelectionDisplayPpString();
     MoveSelectionDisplayPpNumber();
     MoveSelectionDisplayMoveType();
+}
+
+static void PlayerHandleChooseOriginMove(void)
+{
+    if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
+    {
+        *(gBattleStruct->arenaMindPoints + gActiveBattler) = 8;
+        gBattlerControllerFuncs[gActiveBattler] = PlayerChooseMoveInBattlePalace;
+    }
+    else
+    {
+        InitOriginMoveSelectionsVarsAndStrings();
+        gBattleStruct->mega.playerSelect = FALSE;
+        if (!IsMegaTriggerSpriteActive())
+            gBattleStruct->mega.triggerSpriteId = 0xFF;
+        if (CanMegaEvolve(gActiveBattler))
+            CreateMegaTriggerSprite(gActiveBattler, 0);
+        gBattlerControllerFuncs[gActiveBattler] = HandleChooseOriginMoveAfterDma3;
+    }
+}
+
+//gBattlerControllerFuncs[gActiveBattler] = HandleInputChooseOriginMove // TODO: might need this somewhere
+void InitOriginMoveSelectionsVarsAndStrings(void)
+{
+    OriginMoveSelectionDisplayMoveNames();
+    gMultiUsePlayerCursor = 0xFF;
+    MoveSelectionCreateCursorAt(gMoveSelectionCursor[gActiveBattler], 0);
+    MoveSelectionDisplayPpString();
+    OriginMoveSelectionDisplayPpNumber();
+    OriginMoveSelectionDisplayMoveType();
+}
+
+static void OriginMoveSelectionDisplayMoveNames(void)
+{
+    s32 i;
+    gNumberOfMovesToChoose = 0;
+
+    for (i = 0; i < NUM_ORIGIN_MOVES; i++)
+    {
+        MoveSelectionDestroyCursorAt(i);
+        StringCopy(gDisplayedStringBattle, gMoveNames[gSaveBlock1Ptr->originMoves[i]]);
+        BattlePutTextOnWindow(gDisplayedStringBattle, i + 3);
+        if (gSaveBlock1Ptr->originMoves[i] != MOVE_NONE)
+            gNumberOfMovesToChoose++;
+    }
+}
+
+static void OriginMoveSelectionDisplayPpNumber(void)
+{
+    u8 *txtPtr;
+
+    if (gBattleResources->bufferA[gActiveBattler][2] == TRUE) // check if we didn't want to display pp number
+        return;
+
+    SetPpNumbersPaletteInMoveSelection();
+    txtPtr = ConvertIntToDecimalStringN(gDisplayedStringBattle, gSaveBlock1Ptr->originMovesPP[gMoveSelectionCursor[gActiveBattler]], STR_CONV_MODE_RIGHT_ALIGN, 2);
+    *(txtPtr)++ = CHAR_SLASH;
+    ConvertIntToDecimalStringN(txtPtr, gBattleMoves[gSaveBlock1Ptr->originMoves[gMoveSelectionCursor[gActiveBattler]]].pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
+
+    BattlePutTextOnWindow(gDisplayedStringBattle, 9);
+}
+
+static void OriginMoveSelectionDisplayMoveType(void)
+{
+    u8 *txtPtr;
+
+    txtPtr = StringCopy(gDisplayedStringBattle, gText_MoveInterfaceType);
+    *(txtPtr)++ = EXT_CTRL_CODE_BEGIN;
+    *(txtPtr)++ = EXT_CTRL_CODE_SIZE;
+    *(txtPtr)++ = 1;
+
+    StringCopy(txtPtr, gTypeNames[gBattleMoves[gSaveBlock1Ptr->originMoves[gMoveSelectionCursor[gActiveBattler]]].type]);
+    BattlePutTextOnWindow(gDisplayedStringBattle, 10);
 }
 
 static void PlayerHandleChooseItem(void)

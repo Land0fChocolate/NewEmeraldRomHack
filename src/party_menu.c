@@ -6569,6 +6569,7 @@ void SetOriginMove(void)
 {
     u16 move = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_MOVE1 + gSpecialVar_0x8005);
     gSaveBlock1Ptr->originMoves[gSpecialVar_0x8006] = move;
+    gSaveBlock1Ptr->originMovesPP[gSpecialVar_0x8006] = gBattleMoves[gSaveBlock1Ptr->originMoves[gSpecialVar_0x8006]].pp;
 }
 
 void GetNumMovesSelectedMonHas(void)

@@ -46,6 +46,7 @@
 #include "mevent.h"
 #include "union_room_chat.h"
 #include "constants/items.h"
+#include "constants/moves.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -208,6 +209,10 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
+    gSaveBlock1Ptr->originMoves[0] = MOVE_POUND;
+    gSaveBlock1Ptr->originMoves[1] = MOVE_REFLECT_TYPE;
+    gSaveBlock1Ptr->originMovesPP[0] = gBattleMoves[gSaveBlock1Ptr->originMoves[0]].pp;
+    gSaveBlock1Ptr->originMovesPP[1] = gBattleMoves[gSaveBlock1Ptr->originMoves[1]].pp;
 }
 
 static void ResetMiniGamesRecords(void)
