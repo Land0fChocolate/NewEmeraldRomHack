@@ -1806,6 +1806,8 @@ static void Cmd_ppreduce(void)
         }
     }
 
+    //TODO: somehow have a check for Origin moves here?
+
     if (!(gHitMarker & (HITMARKER_NO_PPDEDUCT | HITMARKER_NO_ATTACKSTRING)) && gBattleMons[gBattlerAttacker].pp[gCurrMovePos])
     {
         gProtectStructs[gBattlerAttacker].notFirstStrike = TRUE;

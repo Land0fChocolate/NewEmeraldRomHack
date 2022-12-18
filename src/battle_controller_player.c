@@ -258,6 +258,7 @@ static void HandleInputChooseAction(void)
         PlaySE(SE_SELECT);
 
         TryHideLastUsedBall();
+        TryHideOriginMove();
 
         switch (gActionSelectionCursor[gActiveBattler])
         {
@@ -359,7 +360,7 @@ static void HandleInputChooseAction(void)
         PlaySE(SE_SELECT);
         TryHideOriginMove();
         gUseOriginMove = TRUE;
-        BtlController_EmitTwoReturnValues(1, B_ACTION_USE_MOVE, 0); //TODO: B_ACTION_USE_MOVE should be changed?
+        BtlController_EmitTwoReturnValues(1, B_ACTION_USE_MOVE, 0);
         PlayerBufferExecCompleted();
     }
 }
@@ -694,6 +695,7 @@ static void HandleInputChooseMove(void)
                 BtlController_EmitTwoReturnValues(1, 10, gMoveSelectionCursor[gActiveBattler] | (gMultiUsePlayerCursor << 8));
             HideMegaTriggerSprite();
             TryHideLastUsedBall();
+            TryHideOriginMove();
             PlayerBufferExecCompleted();
             break;
         case 1:
@@ -886,6 +888,7 @@ static void HandleInputChooseOriginMove(void)
                 BtlController_EmitTwoReturnValues(1, 10, gMoveSelectionCursor[gActiveBattler] | (gMultiUsePlayerCursor << 8));
             HideMegaTriggerSprite();
             TryHideLastUsedBall();
+            TryHideOriginMove();
             PlayerBufferExecCompleted();
             break;
         case 1:
@@ -3027,18 +3030,21 @@ static void PlayerHandleChooseOriginMove(void)
             gBattleStruct->mega.triggerSpriteId = 0xFF;
         if (CanMegaEvolve(gActiveBattler))
             CreateMegaTriggerSprite(gActiveBattler, 0);
+
+        if (gMoveSelectionCursor[gActiveBattler] > NUM_ORIGIN_MOVES)
+            gMoveSelectionCursor[gActiveBattler] = 0;
         gBattlerControllerFuncs[gActiveBattler] = HandleChooseOriginMoveAfterDma3;
     }
 }
 
-//gBattlerControllerFuncs[gActiveBattler] = HandleInputChooseOriginMove // TODO: might need this somewhere
 void InitOriginMoveSelectionsVarsAndStrings(void)
 {
     OriginMoveSelectionDisplayMoveNames();
     gMultiUsePlayerCursor = 0xFF;
     MoveSelectionCreateCursorAt(gMoveSelectionCursor[gActiveBattler], 0);
-    MoveSelectionDisplayPpString();
-    OriginMoveSelectionDisplayPpNumber();
+    //TODO: Origin PP not currently shown as it currently doesn't change.
+    //MoveSelectionDisplayPpString();
+    //OriginMoveSelectionDisplayPpNumber();
     OriginMoveSelectionDisplayMoveType();
 }
 
@@ -3055,6 +3061,10 @@ static void OriginMoveSelectionDisplayMoveNames(void)
         if (gSaveBlock1Ptr->originMoves[i] != MOVE_NONE)
             gNumberOfMovesToChoose++;
     }
+
+    StringCopy(gDisplayedStringBattle, gMoveNames[MOVE_NONE]);
+    BattlePutTextOnWindow(gDisplayedStringBattle, NUM_ORIGIN_MOVES + 3);
+    BattlePutTextOnWindow(gDisplayedStringBattle, NUM_ORIGIN_MOVES + 4);
 }
 
 static void OriginMoveSelectionDisplayPpNumber(void)

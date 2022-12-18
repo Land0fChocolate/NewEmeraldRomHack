@@ -3721,7 +3721,7 @@ void TryAddOriginStrandSprite(void)
     {
         gBattleStruct->originSpriteIds[0] = AddItemIconSprite(102, 102, ITEM_ORIGIN_STRAND);
         gSprites[gBattleStruct->originSpriteIds[0]].x = ORIGIN_MOVE_X_0;
-        gSprites[gBattleStruct->originSpriteIds[0]].y = ORIGIN_MOVE_Y;
+        gSprites[gBattleStruct->originSpriteIds[0]].y = ORIGIN_MOVE_Y + 8;
         gSprites[gBattleStruct->originSpriteIds[0]].sHide = FALSE;   // restore
         gSprites[gBattleStruct->originSpriteIds[0]].callback = SpriteCB_OriginMove;
     }

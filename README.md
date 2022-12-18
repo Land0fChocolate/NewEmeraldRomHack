@@ -1,6 +1,9 @@
-# Pokémon Emerald
+# Pokémon Energized Emerald
+
+A reimagining of Pokemon Emerald with the aim to expand and enhance the game. 
 
 This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: https://github.com/rh-hideout/pokeemerald-expansion.
+The project started in December 2021, using the version of pokeemerald-expansion at the time. Most updates to pokeemerald-expansion have been implemented in Energized Emerald. 
 
 # Changelog
 
@@ -56,7 +59,6 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 	- More daily berry giveaways and of newer gen berries too.
 	- The Berry Master's wife phrases for rare berries are now hinted at by NPCs in game. You can also now repeatedly get those rare berries from her. 
 	- All item use, except for Poke Balls, is disabled from battles by default. NPCs don't use items either. Players may re-enable items in the options menu if they wish.
-- New shops and updates to existing shops to stock later gen items and new TMs.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
 - Groomer, EV trainer and IV trainer NPCs have been added.
 - Berry tree drop rates are tripled. Interaction with berry trees is also quicker.
@@ -150,6 +152,17 @@ This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: h
 - When a Pokemon eats a berry in battle, sometimes berry name is shown as '????????'.
 - Some door animations don't work when the Player runs into them from an angle. The Player just runs into the door without it opening.
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there.
+- Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
+
+# Post Launch TODOs
+
+Possible future additions if I ever feel like doing more work on Energized Emerald.
+
+- Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
+- Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
+- An event for Winona.
+- A contest side-quest with Lisia, much like in ORAS.
+- Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
 
 # Credits
 
