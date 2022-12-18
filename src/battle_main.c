@@ -4002,6 +4002,9 @@ static void HandleTurnActionSelectionState(void)
                                 moveInfo.maxPp[i] = gBattleMoves[gSaveBlock1Ptr->originMoves[i]].pp;
                             }
 
+                            if (gMoveSelectionCursor[gActiveBattler] > NUM_ORIGIN_MOVES - 1)
+                                gMoveSelectionCursor[gActiveBattler] = 0;
+
                             gUseOriginMove = FALSE;
                             BtlController_EmitChooseOriginMove(0, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0, FALSE, &moveInfo);
                         }

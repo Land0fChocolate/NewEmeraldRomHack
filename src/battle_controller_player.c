@@ -3030,9 +3030,6 @@ static void PlayerHandleChooseOriginMove(void)
             gBattleStruct->mega.triggerSpriteId = 0xFF;
         if (CanMegaEvolve(gActiveBattler))
             CreateMegaTriggerSprite(gActiveBattler, 0);
-
-        if (gMoveSelectionCursor[gActiveBattler] > NUM_ORIGIN_MOVES)
-            gMoveSelectionCursor[gActiveBattler] = 0;
         gBattlerControllerFuncs[gActiveBattler] = HandleChooseOriginMoveAfterDma3;
     }
 }
