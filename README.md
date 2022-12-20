@@ -153,6 +153,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Some door animations don't work when the Player runs into them from an angle. The Player just runs into the door without it opening.
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there.
 - Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
+- Origin has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
 
 # Post Launch TODOs
 

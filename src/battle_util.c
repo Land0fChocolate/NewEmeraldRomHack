@@ -594,7 +594,7 @@ void HandleAction_UseMove(void)
         gCurrentMove = gChosenMove = gBattleMons[gBattlerAttacker].moves[gCurrMovePos];
         *(gBattleStruct->moveTarget + gBattlerAttacker) = GetMoveTarget(gCurrentMove, 0);
     }
-    else if (gOriginMove > 0) //TODO: When Origin move is picked, set gOriginMove to move index + 1.
+    else if (gOriginMove > 0)
     {
        gCurrentMove = gChosenMove = gSaveBlock1Ptr->originMoves[gOriginMove - 1];
        gOriginMove = 0;
@@ -1228,7 +1228,8 @@ void HandleAction_ActionFinished(void)
             u8 battler2 = gBattlerByTurnOrder[j];
             // We recalculate order only for action of the same priority. If any action other than switch/move has been taken, they should
             // have been executed before. The only recalculation needed is for moves/switch. Mega evolution is handled in src/battle_main.c/TryChangeOrder
-            if((gActionsByTurnOrder[i] == B_ACTION_USE_MOVE && gActionsByTurnOrder[j] == B_ACTION_USE_MOVE))
+            if((gActionsByTurnOrder[i] == B_ACTION_USE_MOVE && gActionsByTurnOrder[j] == B_ACTION_USE_MOVE)
+                || (gActionsByTurnOrder[i] == B_ACTION_USE_ORIGIN_MOVE && gActionsByTurnOrder[j] == B_ACTION_USE_ORIGIN_MOVE))
             {
                 if (GetWhoStrikesFirst(battler1, battler2, FALSE))
                     SwapTurnOrder(i, j);
@@ -6510,7 +6511,7 @@ u16 *GetBattlerAbilities(u8 battlerId)
             && !(gStatuses3[gBattlerAttacker] & STATUS3_GASTRO_ACID))
             && sAbilitiesAffectedByMoldBreaker[gBattleMons[battlerId].abilities[x]]
             && gBattlerByTurnOrder[gCurrentTurnActionNumber] == gBattlerAttacker
-            && gActionsByTurnOrder[gBattlerByTurnOrder[gBattlerAttacker]] == B_ACTION_USE_MOVE
+            && (gActionsByTurnOrder[gBattlerByTurnOrder[gBattlerAttacker]] == B_ACTION_USE_MOVE || gActionsByTurnOrder[gBattlerByTurnOrder[gBattlerAttacker]] == B_ACTION_USE_ORIGIN_MOVE)
             && gCurrentTurnActionNumber < gBattlersCount)
                 abilities[x] = ABILITY_NONE;
                 break; 

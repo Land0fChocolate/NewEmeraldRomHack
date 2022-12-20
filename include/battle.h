@@ -38,7 +38,7 @@
 #define B_ACTION_NOTHING_FAINTED        13 // when choosing an action
 #define B_ACTION_DEBUG                  20
 #define B_ACTION_THROW_BALL             21 // R to throw last used ball
-#define B_ACTION_CHOOSE_ORIGIN_MOVE     22 // L to choose an Origin move
+#define B_ACTION_USE_ORIGIN_MOVE        22 // L to choose an Origin move
 #define B_ACTION_NONE                   0xFF
 
 #define MAX_TRAINER_ITEMS 4
@@ -947,7 +947,6 @@ extern u8 gBattlerAbility; //NOTE: probably don't need to update for multi abili
 extern u16 gPartnerSpriteId;
 extern struct TotemBoost gTotemBoosts[MAX_BATTLERS_COUNT];
 extern u8 gOriginMove; // 0 = no Origin move, 1 = Origin move 1, 2 = Origin move 2
-extern bool8 gUseOriginMove;
 
 extern void (*gPreBattleCallback1)(void);
 extern void (*gBattleMainFunc)(void);

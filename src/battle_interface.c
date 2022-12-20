@@ -3705,7 +3705,6 @@ static const struct SpriteSheet sSpriteSheet_OriginMoveWindow =
     sOriginMoveWindowGfx, sizeof(sOriginMoveWindowGfx), ORIGIN_MOVE_WINDOW_TAG
 };
 
-//TODO: change these for better Origin window location
 #define ORIGIN_MOVE_X_F    15
 #define ORIGIN_MOVE_X_0    -15
 #define ORIGIN_MOVE_Y      ((IsDoubleBattle()) ? 91 : 83)
@@ -3814,13 +3813,17 @@ static void TryHideOrRestoreOriginMove(u8 caseId)
 
 void TryHideOriginMove(void)
 {
-    TryHideOrRestoreOriginMove(0);
+    u16 abilities[NUM_ABILITY_SLOTS];
+    memcpy(abilities, GetMonAbilities(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]]), sizeof(abilities));
+
+    if (!HasAbility(ABILITY_ORIGIN, abilities))
+        TryHideOrRestoreOriginMove(0);
 }
 
 void TryRestoreOriginMove(void)
 {
     u16 abilities[NUM_ABILITY_SLOTS];
-    memcpy(abilities, GetMonAbilities(&gPlayerParty[0]), sizeof(abilities));
+    memcpy(abilities, GetMonAbilities(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]]), sizeof(abilities));
 
     if (HasAbility(ABILITY_ORIGIN, abilities))
     {

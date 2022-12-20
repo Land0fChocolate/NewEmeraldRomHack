@@ -359,11 +359,14 @@ static void HandleInputChooseAction(void)
     {
         PlaySE(SE_SELECT);
         TryHideOriginMove();
-        gUseOriginMove = TRUE;
-        BtlController_EmitTwoReturnValues(1, B_ACTION_USE_MOVE, 0);
+        BtlController_EmitTwoReturnValues(1, B_ACTION_USE_ORIGIN_MOVE, 0);
         PlayerBufferExecCompleted();
     }
 }
+
+// TODO: opponent using Origin move after you open Origin move menu and then switch out.
+//       user using Origin move after opening Origin move menu, cancelling, go to normal move menu and selcting a move.
+//       line 362 being moved when an Origin move is actually selected could fix this.
 
 static void UnusedEndBounceEffect(void)
 {
@@ -927,7 +930,7 @@ static void HandleInputChooseOriginMove(void)
             gMoveSelectionCursor[gActiveBattler] ^= 1;
             PlaySE(SE_SELECT);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[gActiveBattler], 0);
-            MoveSelectionDisplayPpNumber();
+            //MoveSelectionDisplayPpNumber();
             MoveSelectionDisplayMoveType();
         }
     }
@@ -940,7 +943,7 @@ static void HandleInputChooseOriginMove(void)
             gMoveSelectionCursor[gActiveBattler] ^= 1;
             PlaySE(SE_SELECT);
             MoveSelectionCreateCursorAt(gMoveSelectionCursor[gActiveBattler], 0);
-            MoveSelectionDisplayPpNumber();
+            //MoveSelectionDisplayPpNumber();
             MoveSelectionDisplayMoveType();
         }
     }
@@ -2932,6 +2935,7 @@ static void PlayerHandleChooseAction(void)
         ActionSelectionDestroyCursorAt(i);
 
     TryRestoreLastUsedBall();
+    TryHideOriginMove();
     TryRestoreOriginMove();
     ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
     BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
