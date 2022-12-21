@@ -364,10 +364,6 @@ static void HandleInputChooseAction(void)
     }
 }
 
-// TODO: opponent using Origin move after you open Origin move menu and then switch out.
-//       user using Origin move after opening Origin move menu, cancelling, go to normal move menu and selcting a move.
-//       line 362 being moved when an Origin move is actually selected could fix this.
-
 static void UnusedEndBounceEffect(void)
 {
     EndBounceEffect(gActiveBattler, BOUNCE_HEALTHBOX);
