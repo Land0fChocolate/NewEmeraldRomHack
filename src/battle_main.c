@@ -478,7 +478,7 @@ static void (* const sTurnActionsFuncsTable[])(void) =
     [B_ACTION_FINISHED] = HandleAction_ActionFinished,
     [B_ACTION_NOTHING_FAINTED] = HandleAction_NothingIsFainted,
     [B_ACTION_THROW_BALL] = HandleAction_ThrowBall,
-    [B_ACTION_USE_ORIGIN_MOVE] = HandleAction_UseMove,
+    [B_ACTION_USE_ORIGIN_MOVE] = HandleAction_UseOriginMove,
 };
 
 static void (* const sEndTurnFuncsTable[])(void) =
@@ -3968,7 +3968,8 @@ static void HandleTurnActionSelectionState(void)
                 switch (gBattleResources->bufferB[gActiveBattler][1])
                 {
                 case B_ACTION_USE_MOVE:
-                    if (AreAllMovesUnusable())
+                    if ((HasAbility(ABILITY_ORIGIN, GetBattlerAbilities(gActiveBattler)) && AreAllMovesUnusable() && AreAllOriginMovesUnusable())
+                        || (!HasAbility(ABILITY_ORIGIN, GetBattlerAbilities(gActiveBattler)) && AreAllMovesUnusable()))
                     {
                         gBattleCommunication[gActiveBattler] = STATE_SELECTION_SCRIPT;
                         *(gBattleStruct->selectionScriptFinished + gActiveBattler) = FALSE;
@@ -4009,7 +4010,7 @@ static void HandleTurnActionSelectionState(void)
                     }
                     break;
                 case B_ACTION_USE_ORIGIN_MOVE:
-                    if (AreAllMovesUnusable())
+                    if (AreAllMovesUnusable() && AreAllOriginMovesUnusable())
                     {
                         gBattleCommunication[gActiveBattler] = STATE_SELECTION_SCRIPT;
                         *(gBattleStruct->selectionScriptFinished + gActiveBattler) = FALSE;
