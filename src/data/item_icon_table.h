@@ -807,7 +807,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_SILPH_SCOPE] = {gItemIcon_SilphScope, gItemIconPalette_SilphScope},
     [ITEM_SILVER_WING] = {gItemIcon_SilverWing, gItemIconPalette_SilverWing},
     [ITEM_RAINBOW_WING] = {gItemIcon_RainbowWing, gItemIconPalette_RainbowWing},
-    [ITEM_TEA] = {gItemIcon_Tea, gItemIconPalette_Tea},
+    [ITEM_ORIGIN_STRAND] = {gItemIcon_OriginStrand, gItemIconPalette_OriginStrand},
     [ITEM_RUBY] = {gItemIcon_Gem, gItemIconPalette_Ruby},
     [ITEM_SAPPHIRE] = {gItemIcon_Gem, gItemIconPalette_Sapphire},
     // Return to field arrow

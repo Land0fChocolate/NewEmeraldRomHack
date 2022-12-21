@@ -106,5 +106,8 @@ bool32 CanThrowLastUsedBall(void);
 void TryHideLastUsedBall(void);
 void TryRestoreLastUsedBall(void);
 void TryAddLastUsedBallItemSprites(void);
+void TryHideOriginMove(void);
+void TryRestoreOriginMove(void);
+void TryAddOriginStrandSprite(void);
 
 #endif // GUARD_BATTLE_INTERFACE_H

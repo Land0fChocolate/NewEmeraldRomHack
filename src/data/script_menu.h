@@ -647,6 +647,13 @@ static const struct MenuAction MultichoiceList_EvolutionStone[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_OriginStrand[] =
+{
+    {gText_Move1},
+    {gText_Move2},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Fossil[] =
 {
     {gText_ClawFossil},
@@ -938,6 +945,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_EVO_STONE]                  = MULTICHOICE(MultichoiceList_EvolutionStone),
     [MULTI_STAT_EV_TRAIN]              = MULTICHOICE(MultichoiceList_StatEVTrain),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
+    [MULTI_ORIGIN_STRAND]              = MULTICHOICE(MultichoiceList_OriginStrand),
 };
 
 const u8 *const gStdStrings[] =

@@ -38,6 +38,7 @@
 #define B_ACTION_NOTHING_FAINTED        13 // when choosing an action
 #define B_ACTION_DEBUG                  20
 #define B_ACTION_THROW_BALL             21 // R to throw last used ball
+#define B_ACTION_USE_ORIGIN_MOVE        22 // L to choose an Origin move
 #define B_ACTION_NONE                   0xFF
 
 #define MAX_TRAINER_ITEMS 4
@@ -633,6 +634,7 @@ struct BattleStruct
     struct StolenItem itemStolen[PARTY_SIZE];  // Player's team that had items stolen (two bytes per party member)
     u8 blunderPolicy:1; // should blunder policy activate
     u8 ballSpriteIds[2];    // item gfx, window gfx
+    u8 originSpriteIds[2];  // item gfx, window gfx
     u8 stickyWebUser;
     u8 appearedInBattle; // Bitfield to track which Pokemon appeared in battle. Used for Burmy's form change
     // When using a move which hits multiple opponents which is then bounced by a target, we need to make sure, the move hits both opponents, the one with bounce, and the one without.
@@ -944,6 +946,7 @@ extern struct FieldTimer gFieldTimers;
 extern u8 gBattlerAbility; //NOTE: probably don't need to update for multi ability. Confusing name.
 extern u16 gPartnerSpriteId;
 extern struct TotemBoost gTotemBoosts[MAX_BATTLERS_COUNT];
+extern u8 gOriginMove; // 0 = no Origin move, 1 = Origin move 1, 2 = Origin move 2
 
 extern void (*gPreBattleCallback1)(void);
 extern void (*gBattleMainFunc)(void);

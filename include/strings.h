@@ -3213,6 +3213,8 @@ extern const u8 gText_Summary2[];
 extern const u8 gText_PkmnForSwap[];
 extern const u8 gText_SamePkmnInPartyAlready[];
 extern const u8 gText_Cancel3[];
+extern const u8 gText_Move1[];
+extern const u8 gText_Move2[];
 
 extern const u8 gText_AshQty[];
 

@@ -239,6 +239,7 @@ EWRAM_DATA u16 gLastThrownBall = 0;
 EWRAM_DATA bool8 gSwapDamageCategory = FALSE; // Photon Geyser, Shell Side Arm, Light That Burns the Sky
 EWRAM_DATA u8 gPartyCriticalHits[PARTY_SIZE] = {0};
 EWRAM_DATA static u8 sTriedEvolving = 0;
+EWRAM_DATA u8 gOriginMove = 0;
 
 void (*gPreBattleCallback1)(void);
 void (*gBattleMainFunc)(void);
@@ -477,6 +478,7 @@ static void (* const sTurnActionsFuncsTable[])(void) =
     [B_ACTION_FINISHED] = HandleAction_ActionFinished,
     [B_ACTION_NOTHING_FAINTED] = HandleAction_NothingIsFainted,
     [B_ACTION_THROW_BALL] = HandleAction_ThrowBall,
+    [B_ACTION_USE_ORIGIN_MOVE] = HandleAction_UseOriginMove,
 };
 
 static void (* const sEndTurnFuncsTable[])(void) =
@@ -3966,7 +3968,8 @@ static void HandleTurnActionSelectionState(void)
                 switch (gBattleResources->bufferB[gActiveBattler][1])
                 {
                 case B_ACTION_USE_MOVE:
-                    if (AreAllMovesUnusable())
+                    if ((HasAbility(ABILITY_ORIGIN, GetBattlerAbilities(gActiveBattler)) && AreAllMovesUnusable() && AreAllOriginMovesUnusable())
+                        || (!HasAbility(ABILITY_ORIGIN, GetBattlerAbilities(gActiveBattler)) && AreAllMovesUnusable()))
                     {
                         gBattleCommunication[gActiveBattler] = STATE_SELECTION_SCRIPT;
                         *(gBattleStruct->selectionScriptFinished + gActiveBattler) = FALSE;
@@ -4002,6 +4005,48 @@ static void HandleTurnActionSelectionState(void)
                         }
 
                         BtlController_EmitChooseMove(0, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0, FALSE, &moveInfo);
+
+                        MarkBattlerForControllerExec(gActiveBattler);
+                    }
+                    break;
+                case B_ACTION_USE_ORIGIN_MOVE:
+                    if (AreAllMovesUnusable() && AreAllOriginMovesUnusable())
+                    {
+                        gBattleCommunication[gActiveBattler] = STATE_SELECTION_SCRIPT;
+                        *(gBattleStruct->selectionScriptFinished + gActiveBattler) = FALSE;
+                        *(gBattleStruct->stateIdAfterSelScript + gActiveBattler) = STATE_WAIT_ACTION_CONFIRMED_STANDBY;
+                        *(gBattleStruct->moveTarget + gActiveBattler) = gBattleResources->bufferB[gActiveBattler][3];
+                        return;
+                    }
+                    else if (gDisableStructs[gActiveBattler].encoredMove != 0)
+                    {
+                        gChosenMoveByBattler[gActiveBattler] = gDisableStructs[gActiveBattler].encoredMove;
+                        *(gBattleStruct->chosenMovePositions + gActiveBattler) = gDisableStructs[gActiveBattler].encoredMovePos;
+                        gBattleCommunication[gActiveBattler] = STATE_WAIT_ACTION_CONFIRMED_STANDBY;
+                        return;
+                    }
+                    else
+                    {
+                        struct ChooseMoveStruct moveInfo;
+
+                        moveInfo.mega = gBattleStruct->mega;
+                        moveInfo.species = gBattleMons[gActiveBattler].species;
+                        moveInfo.monType1 = gBattleMons[gActiveBattler].type1;
+                        moveInfo.monType2 = gBattleMons[gActiveBattler].type2;
+                        moveInfo.monType3 = gBattleMons[gActiveBattler].type3;
+
+                        for (i = 0; i < NUM_ORIGIN_MOVES; i++)
+                            {
+                                moveInfo.moves[i] = gSaveBlock1Ptr->originMoves[i];
+                                moveInfo.currentPp[i] = gSaveBlock1Ptr->originMovesPP[i];
+                                moveInfo.maxPp[i] = gBattleMoves[gSaveBlock1Ptr->originMoves[i]].pp;
+                            }
+
+                            if (gMoveSelectionCursor[gActiveBattler] > NUM_ORIGIN_MOVES - 1)
+                                gMoveSelectionCursor[gActiveBattler] = 0;
+
+                            BtlController_EmitChooseOriginMove(0, (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) != 0, FALSE, &moveInfo);
+
                         MarkBattlerForControllerExec(gActiveBattler);
                     }
                     break;
@@ -4080,14 +4125,16 @@ static void HandleTurnActionSelectionState(void)
                     {
                         RecordedBattle_ClearBattlerAction(GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler))), 1);
                     }
-                    else if (gChosenActionByBattler[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler)))] == B_ACTION_USE_MOVE
-                             && (gProtectStructs[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler)))].noValidMoves
-                                || gDisableStructs[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler)))].encoredMove))
+                    else if ((gChosenActionByBattler[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler)))] == B_ACTION_USE_MOVE 
+                        || gChosenActionByBattler[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler)))] == B_ACTION_USE_ORIGIN_MOVE)
+                        && (gProtectStructs[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler)))].noValidMoves
+                            || gDisableStructs[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler)))].encoredMove))
                     {
                         RecordedBattle_ClearBattlerAction(GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler))), 1);
                     }
                     else if (gBattleTypeFlags & BATTLE_TYPE_PALACE
-                             && gChosenActionByBattler[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler)))] == B_ACTION_USE_MOVE)
+                             && (gChosenActionByBattler[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler)))] == B_ACTION_USE_MOVE
+                                || gChosenActionByBattler[GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler)))] == B_ACTION_USE_ORIGIN_MOVE))
                     {
                         gRngValue = gBattlePalaceMoveSelectionRngValue;
                         RecordedBattle_ClearBattlerAction(GetBattlerAtPosition(BATTLE_PARTNER(GetBattlerPosition(gActiveBattler))), 1);
@@ -4144,6 +4191,7 @@ static void HandleTurnActionSelectionState(void)
             {
                 switch (gChosenActionByBattler[gActiveBattler])
                 {
+                case B_ACTION_USE_ORIGIN_MOVE:
                 case B_ACTION_USE_MOVE:
                     switch (gBattleResources->bufferB[gActiveBattler][1])
                     {
@@ -4557,9 +4605,9 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
 
     if (!ignoreChosenMoves)
     {
-        if (gChosenActionByBattler[battler1] == B_ACTION_USE_MOVE)
+        if (gChosenActionByBattler[battler1] == B_ACTION_USE_MOVE || gChosenActionByBattler[battler1] == B_ACTION_USE_ORIGIN_MOVE)
             priority1 = GetChosenMovePriority(battler1);
-        if (gChosenActionByBattler[battler2] == B_ACTION_USE_MOVE)
+        if (gChosenActionByBattler[battler2] == B_ACTION_USE_MOVE || gChosenActionByBattler[battler2] == B_ACTION_USE_ORIGIN_MOVE)
             priority2 = GetChosenMovePriority(battler2);
     }
 
@@ -4812,8 +4860,8 @@ static void TryChangeTurnOrder(void)
         {
             u8 battler1 = gBattlerByTurnOrder[i];
             u8 battler2 = gBattlerByTurnOrder[j];
-            if (gActionsByTurnOrder[i] == B_ACTION_USE_MOVE
-                && gActionsByTurnOrder[j] == B_ACTION_USE_MOVE)
+            if ((gActionsByTurnOrder[i] == B_ACTION_USE_MOVE || gActionsByTurnOrder[i] == B_ACTION_USE_ORIGIN_MOVE)
+                && (gActionsByTurnOrder[j] == B_ACTION_USE_MOVE || gActionsByTurnOrder[j] == B_ACTION_USE_ORIGIN_MOVE))
             {
                 if (GetWhoStrikesFirst(battler1, battler2, FALSE))
                     SwapTurnOrder(i, j);
@@ -4865,7 +4913,7 @@ static void CheckQuickClaw_CustapBerryActivation(void)
         {
             gActiveBattler = gBattlerAttacker = gBattleStruct->quickClawBattlerId;
             gBattleStruct->quickClawBattlerId++;
-            if (gChosenActionByBattler[gActiveBattler] == B_ACTION_USE_MOVE
+            if ((gChosenActionByBattler[gActiveBattler] == B_ACTION_USE_MOVE || gChosenActionByBattler[gActiveBattler] == B_ACTION_USE_ORIGIN_MOVE)
              && gChosenMoveByBattler[gActiveBattler] != MOVE_FOCUS_PUNCH   // quick claw message doesn't need to activate here
              && (gProtectStructs[gActiveBattler].usedCustapBerry || gProtectStructs[gActiveBattler].quickDraw)
              && !(gBattleMons[gActiveBattler].status1 & STATUS1_SLEEP)

@@ -1806,6 +1806,8 @@ static void Cmd_ppreduce(void)
         }
     }
 
+    //TODO: Origin update: somehow have a check for Origin moves here?
+
     if (!(gHitMarker & (HITMARKER_NO_PPDEDUCT | HITMARKER_NO_ATTACKSTRING)) && gBattleMons[gBattlerAttacker].pp[gCurrMovePos])
     {
         gProtectStructs[gBattlerAttacker].notFirstStrike = TRUE;
@@ -6533,7 +6535,7 @@ static void Cmd_switchineffects(void)
         // There is a hack here to ensure the truant counter will be 0 when the battler's next turn starts.
         // The truant counter is not updated in the case where a mon switches in after a lost judgement in the battle arena.
         if (HasAbility(ABILITY_TRUANT, abilities)
-            && gCurrentActionFuncId != B_ACTION_USE_MOVE
+            && (gCurrentActionFuncId != B_ACTION_USE_MOVE || gCurrentActionFuncId != B_ACTION_USE_ORIGIN_MOVE)
             && !gDisableStructs[gActiveBattler].truantSwitchInHack)
             gDisableStructs[gActiveBattler].truantCounter = 1;
 
@@ -12203,7 +12205,7 @@ static void Cmd_jumpifnopursuitswitchdmg(void)
             gBattlerTarget = GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT);
     }
 
-    if (gChosenActionByBattler[gBattlerTarget] == B_ACTION_USE_MOVE
+    if ((gChosenActionByBattler[gBattlerTarget] == B_ACTION_USE_MOVE || gChosenActionByBattler[gBattlerTarget] == B_ACTION_USE_ORIGIN_MOVE)
         && gBattlerAttacker == *(gBattleStruct->moveTarget + gBattlerTarget)
         && !(gBattleMons[gBattlerTarget].status1 & (STATUS1_SLEEP | STATUS1_FREEZE))
         && gBattleMons[gBattlerAttacker].hp
@@ -13620,7 +13622,7 @@ static void Cmd_pursuitrelated(void)
 
     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
         && !(gAbsentBattlerFlags & gBitTable[gActiveBattler])
-        && gChosenActionByBattler[gActiveBattler] == B_ACTION_USE_MOVE
+        && (gChosenActionByBattler[gActiveBattler] == B_ACTION_USE_MOVE || gChosenActionByBattler[gActiveBattler] == B_ACTION_USE_ORIGIN_MOVE)
         && gChosenMoveByBattler[gActiveBattler] == MOVE_PURSUIT)
     {
         gActionsByTurnOrder[gActiveBattler] = 11;

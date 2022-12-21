@@ -60,6 +60,7 @@ static void ItemUseOnFieldCB_Bike(u8 taskId);
 static void ItemUseOnFieldCB_Rod(u8);
 static void ItemUseOnFieldCB_Itemfinder(u8);
 static void ItemUseOnFieldCB_Berry(u8 taskId);
+static void ItemUseOnFieldCB_OriginStrand(u8 taskId);
 static void ItemUseOnFieldCB_WailmerPailBerry(u8 taskId);
 static void ItemUseOnFieldCB_WailmerPailSudowoodo(u8 taskId);
 static bool8 TryToWaterSudowoodo(void);
@@ -692,6 +693,31 @@ u16 GetAshCount(void)
     u16 *ashGatherCount;
     ashGatherCount = GetVarPointer(VAR_ASH_GATHER_COUNT);
     return *ashGatherCount;
+}
+
+void ItemUseOutOfBattle_OriginStrand(u8 taskId)
+{
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_OriginStrand;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else
+    {
+        sItemUseOnFieldCB = ItemUseOnFieldCB_OriginStrand;
+        SetUpItemUseOnFieldCallback(taskId);
+    }
+}
+
+static void ItemUseOnFieldCB_OriginStrand(u8 taskId)
+{
+    StringCopy(gStringVar1, gMoveNames[gSaveBlock1Ptr->originMoves[0]]);
+    StringCopy(gStringVar2, gMoveNames[gSaveBlock1Ptr->originMoves[1]]);
+    ScriptContext2_Enable();
+    ScriptContext1_SetupScript(OriginStrand_EventScript_SelectOrigin);
+    DestroyTask(taskId);
 }
 
 void ItemUseOutOfBattle_Berry(u8 taskId)

@@ -3534,8 +3534,8 @@ static const u8 sPokeRadarDesc[] = _( // Todo
 
 static const u8 sPokeblockCaseDesc[] = _(
     "A case for holding\n"
-    "{POKEBLOCK}s made wi-\n"
-    "th a Berry Blender.");
+    "{POKEBLOCK}s made with\n"
+    "a Berry Blender.");
 
 static const u8 sSootSackDesc[] = _(
     "A sack used to\n"
@@ -3697,10 +3697,10 @@ static const u8 sRainbowWingDesc[] = _(
     "feather that\n"
     "sparkles.");
 
-static const u8 sTeaDesc[] = _(
-    "A thirst-quenching\n"
-    "tea prepared by an\n"
-    "old lady.");
+static const u8 sOriginStrandDesc[] = _(
+    "A Mew DNA strand\n"
+    "that gives them\n"
+    "extra moves.");
 
 static const u8 sRubyDesc[] = _(
     "An exquisite, red-\n"

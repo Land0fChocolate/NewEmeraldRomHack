@@ -30,6 +30,7 @@
 #include "item_icon.h"
 #include "item_use.h"
 #include "item.h"
+#include "constants/abilities.h"
 #include "constants/items.h"
 
 enum
@@ -203,6 +204,9 @@ static void Task_FreeMultiAbilityPopUpGfx(u8 taskId);
 
 static void SpriteCB_LastUsedBall(struct Sprite *sprite);
 static void SpriteCB_LastUsedBallWin(struct Sprite *sprite);
+
+static void SpriteCB_OriginMove(struct Sprite *sprite);
+static void SpriteCB_OriginMoveWin(struct Sprite *sprite);
 
 // const rom data
 static const struct OamData sUnknown_0832C138 =
@@ -781,6 +785,12 @@ static void InitLastUsedBallAssets(void)
     gBattleStruct->ballSpriteIds[1] = MAX_SPRITES;
 }
 
+static void InitOriginMoveAssets(void)
+{
+    gBattleStruct->originSpriteIds[0] = MAX_SPRITES;
+    gBattleStruct->originSpriteIds[1] = MAX_SPRITES;
+}
+
 // This function is here to cover a specific case - one player's mon in a 2 vs 1 double battle. In this scenario - display singles layout.
 u32 WhichBattleCoords(u32 battlerId) // 0 - singles, 1 - doubles
 {
@@ -884,6 +894,9 @@ u8 CreateBattlerHealthboxSprites(u8 battlerId)
 
     gBattleStruct->ballSpriteIds[0] = MAX_SPRITES;
     gBattleStruct->ballSpriteIds[1] = MAX_SPRITES;
+
+    gBattleStruct->originSpriteIds[0] = MAX_SPRITES;
+    gBattleStruct->originSpriteIds[1] = MAX_SPRITES;
 
     return healthboxLeftSpriteId;
 }
@@ -3651,4 +3664,172 @@ void TryRestoreLastUsedBall(void)
     else
         TryAddLastUsedBallItemSprites();
 #endif
+}
+
+// move for Origin ability
+#define ORIGIN_MOVE_WINDOW_TAG 0xD722
+
+static const struct OamData sOamData_OriginMove =
+{
+    .y = 0,
+    .affineMode = 0,
+    .objMode = 0,
+    .mosaic = 0,
+    .bpp = 0,
+    .shape = SPRITE_SHAPE(32x32),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(32x32),
+    .tileNum = 0,
+    .priority = 1,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const struct SpriteTemplate sSpriteTemplate_OriginMoveWindow =
+{
+    .tileTag = ORIGIN_MOVE_WINDOW_TAG,
+    .paletteTag = ABILITY_POP_UP_TAG,
+    .oam = &sOamData_OriginMove,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_OriginMoveWin
+};
+
+
+static const u8 sOriginMoveWindowGfx[] = INCBIN_U8("graphics/battle_interface/last_used_ball_l.4bpp");
+
+static const struct SpriteSheet sSpriteSheet_OriginMoveWindow =
+{
+    sOriginMoveWindowGfx, sizeof(sOriginMoveWindowGfx), ORIGIN_MOVE_WINDOW_TAG
+};
+
+#define ORIGIN_MOVE_X_F    15
+#define ORIGIN_MOVE_X_0    -15
+#define ORIGIN_MOVE_Y      ((IsDoubleBattle()) ? 91 : 83)
+
+#define ORIGIN_MOVE_WIN_X_F       (ORIGIN_MOVE_X_F - 1)
+#define ORIGIN_MOVE_WIN_X_0       (ORIGIN_MOVE_X_0 - 0)
+#define ORIGIN_MOVE_WIN_Y         (ORIGIN_MOVE_Y - 24)
+
+void TryAddOriginStrandSprite(void)
+{
+    // sprite
+    if (gBattleStruct->originSpriteIds[0] == MAX_SPRITES)
+    {
+        gBattleStruct->originSpriteIds[0] = AddItemIconSprite(102, 102, ITEM_ORIGIN_STRAND);
+        gSprites[gBattleStruct->originSpriteIds[0]].x = ORIGIN_MOVE_X_0;
+        gSprites[gBattleStruct->originSpriteIds[0]].y = ORIGIN_MOVE_Y + 8;
+        gSprites[gBattleStruct->originSpriteIds[0]].sHide = FALSE;   // restore
+        gSprites[gBattleStruct->originSpriteIds[0]].callback = SpriteCB_OriginMove;
+    }
+
+    // window
+    LoadSpritePalette(&sSpritePalette_AbilityPopUp);
+    if (GetSpriteTileStartByTag(ORIGIN_MOVE_WINDOW_TAG) == 0xFFFF)
+        LoadSpriteSheet(&sSpriteSheet_OriginMoveWindow);
+
+    if (gBattleStruct->originSpriteIds[1] == MAX_SPRITES)
+    {
+        gBattleStruct->originSpriteIds[1] = CreateSprite(&sSpriteTemplate_OriginMoveWindow,
+           ORIGIN_MOVE_X_0,
+           ORIGIN_MOVE_Y, 5);
+        gSprites[gBattleStruct->originSpriteIds[0]].sHide = FALSE;   // restore
+    }
+}
+
+static void DestroyOriginMoveWinGfx(struct Sprite *sprite)
+{
+    FreeSpriteTilesByTag(ORIGIN_MOVE_WINDOW_TAG);
+    FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
+    DestroySprite(sprite);
+    gBattleStruct->originSpriteIds[1] = MAX_SPRITES;
+}
+
+static void DestroyOriginMoveGfx(struct Sprite *sprite)
+{
+    FreeSpriteTilesByTag(102);
+    FreeSpritePaletteByTag(102);
+    DestroySprite(sprite);
+    gBattleStruct->originSpriteIds[0] = MAX_SPRITES;
+}
+
+static void SpriteCB_OriginMoveWin(struct Sprite *sprite)
+{    
+    if (sprite->sHide)
+    {
+        if (sprite->x != ORIGIN_MOVE_WIN_X_0)
+            sprite->x--;
+
+        if (sprite->x == ORIGIN_MOVE_WIN_X_0)
+            DestroyOriginMoveWinGfx(sprite);
+    }
+    else
+    {
+        if (sprite->x != ORIGIN_MOVE_WIN_X_F)
+            sprite->x++;
+    }
+}
+
+static void SpriteCB_OriginMove(struct Sprite *sprite)
+{    
+    if (sprite->sHide)
+    {
+        if (sprite->x != ORIGIN_MOVE_X_0)
+            sprite->x--;
+
+        if (sprite->x == ORIGIN_MOVE_X_0)
+            DestroyOriginMoveGfx(sprite);
+    }
+    else
+    {
+        if (sprite->x != ORIGIN_MOVE_X_F)
+            sprite->x++;
+    }
+}
+
+static void TryHideOrRestoreOriginMove(u8 caseId)
+{
+    if (gBattleStruct->originSpriteIds[0] == MAX_SPRITES)
+        return;
+
+    switch (caseId)
+    {
+    case 0: // hide
+        if (gBattleStruct->originSpriteIds[0] != MAX_SPRITES)
+            gSprites[gBattleStruct->originSpriteIds[0]].sHide = TRUE;   // hide
+        if (gBattleStruct->originSpriteIds[1] != MAX_SPRITES)
+            gSprites[gBattleStruct->originSpriteIds[1]].sHide = TRUE;   // hide
+        break;
+    case 1: // restore
+        if (gBattleStruct->originSpriteIds[0] != MAX_SPRITES)
+            gSprites[gBattleStruct->originSpriteIds[0]].sHide = FALSE;   // restore
+        if (gBattleStruct->originSpriteIds[1] != MAX_SPRITES)
+            gSprites[gBattleStruct->originSpriteIds[1]].sHide = FALSE;   // restore
+        break;
+    }
+}
+
+void TryHideOriginMove(void)
+{
+    u16 abilities[NUM_ABILITY_SLOTS];
+    memcpy(abilities, GetMonAbilities(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]]), sizeof(abilities));
+
+    if (!HasAbility(ABILITY_ORIGIN, abilities))
+        TryHideOrRestoreOriginMove(0);
+}
+
+void TryRestoreOriginMove(void)
+{
+    u16 abilities[NUM_ABILITY_SLOTS];
+    memcpy(abilities, GetMonAbilities(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]]), sizeof(abilities));
+
+    if (HasAbility(ABILITY_ORIGIN, abilities))
+    {
+        if (gBattleStruct->originSpriteIds[0] != MAX_SPRITES)
+            TryHideOrRestoreOriginMove(1);
+        else
+            TryAddOriginStrandSprite();
+    }
 }

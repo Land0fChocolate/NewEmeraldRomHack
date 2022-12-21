@@ -544,3 +544,5 @@ gSpecials::
 	def_special MaximizeMonIVs
 	def_special CheckForMaxMonIV
 	def_special BuffMonIV
+	def_special OriginChooseMove
+	def_special SetOriginMove

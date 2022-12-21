@@ -122,6 +122,7 @@
 #define MULTI_EVO_STONE                    111
 #define MULTI_STAT_EV_TRAIN                112
 #define MULTI_TAG_MATCH_TYPE               113
+#define MULTI_ORIGIN_STRAND                114
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0
