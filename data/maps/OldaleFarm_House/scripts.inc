@@ -38,7 +38,9 @@ OldaleFarm_House_Eventscript_Man_PickHoennStarters::
 	end
 
 OldaleFarm_House_Eventscript_Man_PickHoennKantoStarters::
-	multichoice 0, 0, MULTI_OLDALE_STARTERS_HOENN_KANTO, FALSE
+	setvar VAR_0x8004, SCROLL_MULTI_OLDALE_STARTERS_HOENN_KANTO
+	special ShowScrollableMultichoice
+	waitstate
 	switch VAR_RESULT
 	case 0, OldaleFarm_House_Eventscript_PickTreecko
 	case 1, OldaleFarm_House_Eventscript_PickTorchic
@@ -51,7 +53,9 @@ OldaleFarm_House_Eventscript_Man_PickHoennKantoStarters::
 	end
 
 OldaleFarm_House_Eventscript_Man_PickHoennJohtoStarters::
-	multichoice 0, 0, MULTI_OLDALE_STARTERS_HOENN_JOHTO, FALSE
+	setvar VAR_0x8004, SCROLL_MULTI_OLDALE_STARTERS_HOENN_JOHTO
+	special ShowScrollableMultichoice
+	waitstate
 	switch VAR_RESULT
 	case 0, OldaleFarm_House_Eventscript_PickTreecko
 	case 1, OldaleFarm_House_Eventscript_PickTorchic
@@ -64,7 +68,9 @@ OldaleFarm_House_Eventscript_Man_PickHoennJohtoStarters::
 	end
 
 OldaleFarm_House_Eventscript_Man_PickAllStarters::
-	multichoice 0, 0, MULTI_OLDALE_STARTERS_ALL, FALSE
+	setvar VAR_0x8004, SCROLL_MULTI_OLDALE_STARTERS_ALL
+	special ShowScrollableMultichoice
+	waitstate
 	switch VAR_RESULT
 	case 0, OldaleFarm_House_Eventscript_PickTreecko
 	case 1, OldaleFarm_House_Eventscript_PickTorchic

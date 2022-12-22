@@ -252,8 +252,6 @@ MauvilleCity_GameCorner_EventScript_ReturnToChooseTMPrize::
 	goto MauvilleCity_GameCorner_EventScript_ChooseTMPrize
 
 MauvilleCity_GameCorner_EventScript_ChooseTMPrize::
-	@multichoice 12, 0, MULTI_GAME_CORNER_TMS, FALSE
-	@switch VAR_RESULT
 	setvar VAR_0x8004, SCROLL_MULTI_GAME_CORNER_TM_VENDOR
 	special ShowScrollableMultichoice
 	waitstate
