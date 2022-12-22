@@ -10,12 +10,12 @@ OldaleFarm_House_Eventscript_Man::
 
 OldaleFarm_House_Eventscript_Man_PlayerHasNationalDex::
 	lock
-	dotimebasedevents
 	faceplayer
+	dotimebasedevents
 	goto_if_set FLAG_DAILY_OLDALEFARM_POKEMON_GIVEN, OldaleFarm_House_Eventscript_Man_OnceADayService
 	msgbox OldaleFarm_House_Text_Man_AskIfBuying, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq OldaleFarm_House_Eventscript_Man_Declined
+	goto_if_eq OldaleFarm_House_Eventscript_Man_DeclinedNoMoneyBox
 	showmoneybox 0, 0, 0
 	msgbox OldaleFarm_House_Text_Man_ChoosePokemon, MSGBOX_DEFAULT
 	check3flags FLAG_SYS_NATIONAL_DEX, FLAG_JOHTO_STARTERS_AVAILABLE, FLAG_POST_GAME_COMPLETE
@@ -353,6 +353,12 @@ OldaleFarm_House_Eventscript_FinishReceivingPokemon::
 
 OldaleFarm_House_Eventscript_Man_OnceADayService::
 	msgbox OldaleFarm_House_Text_Man_OnceADayService, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+OldaleFarm_House_Eventscript_Man_DeclinedNoMoneyBox::
+	msgbox OldaleFarm_House_Text_Man_Declined, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
