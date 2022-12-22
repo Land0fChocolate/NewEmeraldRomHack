@@ -33,6 +33,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
 - Opponent Trainer parties have been updated.
+- New opponent Trainer classes.
 - Battle Frontier changes
 	- Opponent Pokemon list updated with new Pokemon, new items and new moves.
 	- Battle Palace is now inverse battle themed.
@@ -148,7 +149,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 
 - Many switch-in abilities (like Frisk and Imposter) don’t activate when both Player Pokemon and opponent Pokemon fainted previous turn (e.g. Destiny Bond) and the Player sends out a Pokemon before the opponent sends out theirs. Solving this will probably involve having to rewrite the code that deals with switch-in abilities.
 - Abilities that activate at the same time as other abilities on the same Pokemon can have their names in the ability pop-up overwritten. (e.g. Tyranitar with Sand Stream and Unnerve). This is due to how switch-in (and other types) abilities are handled. This could be fixed by setting gLastUsedAbility during the ability battle script with the new setlastusedability command, but this freezes the game when used before calling the ability pop-up. Why? Have no fucking clue.
-- Grassy Terrain background is jank
+- Grassy Terrain background is jank.
 - When a Pokemon eats a berry in battle, sometimes berry name is shown as '????????'.
 - Some door animations don't work when the Player runs into them from an angle. The Player just runs into the door without it opening.
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there.
@@ -163,6 +164,7 @@ Possible future additions if I ever feel like doing more work on Energized Emera
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
 - An event for Winona.
 - A contest side-quest with Lisia, much like in ORAS.
+- Perhaps a more interesting Tate & Liza event to get Jirachi?
 - Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
 
 # Credits
