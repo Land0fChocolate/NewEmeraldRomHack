@@ -160,6 +160,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 
 Possible future additions if I ever feel like doing more work on Energized Emerald.
 
+- Labels for ability description and IV/EV stats in Pokemon summary screen.
 - Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
 - An event for Winona.
