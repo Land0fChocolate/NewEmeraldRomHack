@@ -1962,12 +1962,6 @@
 	various \battler, VARIOUS_GET_BATTLER_SIDE
 	.endm
 
-	.macro checkparentalbondcounter counter:req, ptr:req
-	various BS_ATTACKER, VARIOUS_CHECK_PARENTAL_BOND_COUNTER
-	.byte \counter
-	.4byte \ptr
-	.endm
-
 	.macro trynoretreat battler:req, ptr:req
 	various \battler, VARIOUS_TRY_NO_RETREAT
 	.4byte \ptr
