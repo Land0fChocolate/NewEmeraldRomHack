@@ -5566,6 +5566,7 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
     u16 bestScore = 0;
     u16 bestId = 0;
     int movePower = 0;
+    u16 targetAbilities[NUM_ABILITY_SLOTS];
     SetFacilityPtrsGetLevel();
 
     // Calc move points of all 4 moves for all 3 pokemon hitting all 3 target mons.
@@ -5594,7 +5595,8 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
                 u32 personality = 0;
                 u32 targetSpecies = 0;
                 u32 typeMultiplier = 0;
-                u16 *targetAbilities = gBaseStats[targetSpecies].abilities;
+
+                memcpy(targetAbilities, gBaseStats[targetSpecies].abilities, sizeof(targetAbilities));
                 do
                 {
                     personality = Random32();
