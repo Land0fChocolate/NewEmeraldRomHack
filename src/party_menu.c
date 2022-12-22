@@ -6733,7 +6733,7 @@ static void Task_Mints(u8 taskId)
             tState++;
         break;
     case 5:
-        SetMonData(&gPlayerParty[tMonId], MON_DATA_PERSONALITY, &tNewNature); //TODO: change to MON_DATA_HIDDEN_NATURE
+        SetMonData(&gPlayerParty[tMonId], MON_DATA_HIDDEN_NATURE, &tNewNature);
         CalculateMonStats(&gPlayerParty[tMonId]);
 
         RemoveBagItem(gSpecialVar_ItemId, 1);

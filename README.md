@@ -155,6 +155,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there.
 - Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
 - Origin has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
+- Some Pokemon in PC boxes have a corner of their front sprite snipped off.
 
 # Post Launch TODOs
 

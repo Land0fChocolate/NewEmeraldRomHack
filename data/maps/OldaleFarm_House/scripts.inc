@@ -9,6 +9,7 @@ OldaleFarm_House_Eventscript_Man::
 	end
 
 OldaleFarm_House_Eventscript_Man_PlayerHasNationalDex::
+	lock
 	dotimebasedevents
 	faceplayer
 	goto_if_set FLAG_DAILY_OLDALEFARM_POKEMON_GIVEN, OldaleFarm_House_Eventscript_Man_OnceADayService
@@ -25,6 +26,7 @@ OldaleFarm_House_Eventscript_Man_PlayerHasNationalDex::
 	goto_if TRUE OldaleFarm_House_Eventscript_Man_PickHoennKantoStarters
 	checkflag FLAG_SYS_NATIONAL_DEX
 	goto_if TRUE, OldaleFarm_House_Eventscript_Man_PickHoennStarters
+	release
 	end
 
 OldaleFarm_House_Eventscript_Man_PickHoennStarters::
@@ -350,17 +352,23 @@ OldaleFarm_House_Eventscript_FinishReceivingPokemon::
 	end
 
 OldaleFarm_House_Eventscript_Man_OnceADayService::
-	msgbox OldaleFarm_House_Text_Man_OnceADayService, MSGBOX_NPC
+	msgbox OldaleFarm_House_Text_Man_OnceADayService, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 
 OldaleFarm_House_Eventscript_Man_Declined::
 	hidemoneybox
-	msgbox OldaleFarm_House_Text_Man_Declined, MSGBOX_NPC
+	msgbox OldaleFarm_House_Text_Man_Declined, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 
 OldaleFarm_House_EventScript_NotEnoughMoney::
 	hidemoneybox
-	msgbox OldaleFarm_House_Text_Man_NotEnoughMoney, MSGBOX_NPC
+	msgbox OldaleFarm_House_Text_Man_NotEnoughMoney, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 
 OldaleFarm_House_Text_Man:
