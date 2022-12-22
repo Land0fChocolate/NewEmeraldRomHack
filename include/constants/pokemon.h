@@ -408,6 +408,11 @@
 
 #define MON_PIC_SIZE (64 * 64 / 2)
 
+#define BATTLE_ALIVE_EXCEPT_ACTIVE   0
+#define BATTLE_ALIVE_ATK_SIDE        1
+#define BATTLE_ALIVE_DEF_SIDE        2
+#define BATTLE_ALIVE_EXCEPT_ATTACKER 3
+
 #define NUM_ABILITY_SLOTS 3
 
 #define HIDDEN_COMMAND_CUT         0
