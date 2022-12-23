@@ -357,14 +357,9 @@ OldaleFarm_House_Eventscript_Man_OnceADayService::
 	release
 	end
 
-OldaleFarm_House_Eventscript_Man_DeclinedNoMoneyBox::
-	msgbox OldaleFarm_House_Text_Man_Declined, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
 OldaleFarm_House_Eventscript_Man_Declined::
 	hidemoneybox
+OldaleFarm_House_Eventscript_Man_DeclinedNoMoneyBox::
 	msgbox OldaleFarm_House_Text_Man_Declined, MSGBOX_DEFAULT
 	closemessage
 	release

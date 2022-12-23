@@ -1806,7 +1806,7 @@ static void Cmd_ppreduce(void)
         }
     }
 
-    //TODO: Origin update: somehow have a check for Origin moves here?
+    //TODO: Origin update: somehow have a check for Origin moves here? Maybe check for B_ACTION_USE_MOVE?
 
     if (!(gHitMarker & (HITMARKER_NO_PPDEDUCT | HITMARKER_NO_ATTACKSTRING)) && gBattleMons[gBattlerAttacker].pp[gCurrMovePos])
     {
