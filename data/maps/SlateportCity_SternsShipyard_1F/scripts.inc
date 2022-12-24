@@ -18,6 +18,7 @@ SlateportCity_SternsShipyard_1F_EventScript_Dock::
 	waitmovement 0
 	setflag FLAG_DOCK_REJECTED_DEVON_GOODS
 	setflag FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA
+	clearflag FLAG_HIDE_SLATEPORT_CITY_NPCS_FOR_AQUA_QUEUE
 	releaseall
 	end
 

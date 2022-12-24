@@ -643,8 +643,8 @@ static const u8 sJustifiedDescription[] = _(
 
 static const u8 sRattledDescription[] = _(
 	"Hits by Bug, Dark or Ghost\n"
-	"moves raise Attack by one\n"
-	"stage.");
+	"moves or Intimidate raise \n"
+	"Speed by one stage.");
 
 static const u8 sMagicBounceDescription[] = _(
 	"Reflects non-damaging\n"

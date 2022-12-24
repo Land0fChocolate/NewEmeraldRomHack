@@ -22,6 +22,7 @@ FortreeCity_Pokemart_ShopLady:
 	.2byte ITEM_GRASSY_SEED
 	.2byte ITEM_ABSORB_BULB
 	.2byte ITEM_LUMINOUS_MOSS
+	.2byte ITEM_BIG_ROOT
 	.2byte ITEM_NONE
 	release
 	end

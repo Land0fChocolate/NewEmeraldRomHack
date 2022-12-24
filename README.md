@@ -27,7 +27,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- Both Latias and Latios are available roaming at the same time.
 	- All Legendary and Mythical Pokemon can be repeatedly acquired.
 	- There is a small chance for a wild encounter to be a double battle.
-	- There is small chance to encounter a wild Pokemon a much higher level than others in the same area.
+	- There is a small chance to encounter a wild Pokemon a much higher level than others in the same area.
 - Repeatedly acquirable fossils.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
 - Ice types have their special defense boosted by 50% in hail.
@@ -58,7 +58,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
 	- Existing shops sell more stuff, including post gen 3 items.
 	- New shops that sell more stuff, including post gen 3 items.
-	- More daily berry giveaways and of newer gen berries too.
+	- More daily berry giveaways and of newer gen berries too. All berries up to Starf are accessible.
 	- The Berry Master's wife phrases for rare berries are now hinted at by NPCs in game. You can also now repeatedly get those rare berries from her. 
 	- All item use, except for Poke Balls, is disabled from battles by default. NPCs don't use items either. Players may re-enable items in the options menu if they wish.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
@@ -151,13 +151,13 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Many switch-in abilities (like Frisk and Imposter) don’t activate when both Player Pokemon and opponent Pokemon fainted previous turn (e.g. Destiny Bond) and the Player sends out a Pokemon before the opponent sends out theirs. Solving this will probably involve having to rewrite the code that deals with switch-in abilities. This is probably the same behavior as in vanilla Pokemon Emerald, but I don't see why Trace and Intimidate are allowed to activate whilst others don't, so I'm considering this a bug.
 - Abilities that activate at the same time as other abilities on the same Pokemon can have their names in the ability pop-up overwritten. (e.g. Tyranitar with Sand Stream and Unnerve). This is due to how switch-in (and other types) abilities are handled. This could be fixed by setting gLastUsedAbility during the ability battle script with the new setlastusedability command, but this freezes the game when used before calling the ability pop-up. Why? Have no fucking clue.
 - Grassy Terrain background is jank.
-- When a Pokemon eats a berry in battle, sometimes berry name is shown as '????????'.
 - Some door animations don't work when the Player runs into them from an angle. The Player just runs into the door without it opening. (Ever Grande City Battle Tent, Fortree City Pokemon Center.)
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there.
 - Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
 - Origin has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
 - Some Pokemon in PC boxes have a corner of their front sprite snipped off.
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
+- Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
 
 # Post Launch TODOs
 

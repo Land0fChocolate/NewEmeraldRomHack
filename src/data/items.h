@@ -902,7 +902,7 @@ const struct Item gItems[] =
     {
         .name = _("Jelly Donut"),
         .itemId = ITEM_JELLY_FILLED_DONUT,
-        .price = 300,
+        .price = 500,
         .holdEffectParam = 50,
         .description = sJellyFilledDonutDesc,
         .pocket = POCKET_ITEMS,

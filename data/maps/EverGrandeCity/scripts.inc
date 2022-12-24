@@ -35,6 +35,7 @@ EverGrandeCity_EventScript_Leaf::
 EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
+	setflag FLAG_HIDE_SLATEPORT_CITY_NPCS_FOR_AQUA_QUEUE
 	@giveitem ITEM_ORIGIN_STRAND
 	end
 
@@ -48,6 +49,7 @@ EverGrandeCity_Text_LeafDefeated:
 	.string "Test end!$"
 
 EverGrandeCity_Text_LeafPostBattle:
+	.string "I'm here for testing!\n"
 	.string "Remove me!$"
 
 EverGrandeCity_EventScript_WomanInBattle::

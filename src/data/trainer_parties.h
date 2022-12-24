@@ -8330,7 +8330,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Robin[] = {
     {
     .iv = 0,
     .lvl = 13,
-    .species = SPECIES_SKITTY,
+    .species = SPECIES_ZIGZAGOON,
     },
     {
     .iv = 0,

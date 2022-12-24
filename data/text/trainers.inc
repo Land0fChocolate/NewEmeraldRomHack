@@ -816,8 +816,8 @@ Route109_Text_SimonDefeated:
 	.string "…I lost, but I won't cry…$"
 
 Route109_Text_SimonPostBattle:
-	.string "If one of my Pokémon knew the move\n"
-	.string "for carrying me across water on its\l"
+	.string "If I had that badge that lets my\n"
+	.string "Pokémon carry me across water on its\l"
 	.string "back, I could get rid of this inner tube.$"
 
 Route109_Text_AustinaIntro:

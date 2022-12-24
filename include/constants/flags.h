@@ -825,7 +825,7 @@
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM              0x311
 #define FLAG_HIDE_PETALBURG_GYM_SCOTT                               0x312
 #define FLAG_OBTAINED_ALL_BERRIES_FOR_SHRINE                        0x313
-#define FLAG_HIDE_MOSSDEEP_CITY_SCOTT                               0x314 // unused
+#define FLAG_HIDE_SLATEPORT_CITY_NPCS_FOR_AQUA_QUEUE                0x314 // this is for easing object events count in Slateport City while Team Aqua are queuing at the museum
 #define FLAG_HIDE_FANCLUB_OLD_LADY                                  0x315
 #define FLAG_HIDE_FANCLUB_BOY                                       0x316
 #define FLAG_HIDE_FANCLUB_LITTLE_BOY                                0x317

@@ -217,7 +217,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_CUT] =
     {
         .effect = EFFECT_ALWAYS_CRIT,
-        .power = 50,
+        .power = 40,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 30,

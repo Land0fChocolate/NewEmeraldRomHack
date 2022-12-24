@@ -460,7 +460,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_TANGLED_FEET] = 2,
     [ABILITY_TANGLING_HAIR] = 3,
     [ABILITY_TECHNICIAN] = 4,
-    [ABILITY_TELEPATHY] = 3,
+    [ABILITY_TELEPATHY] = 2,
     [ABILITY_TERAVOLT] = 4,
     [ABILITY_THICK_FAT] = 4,
     [ABILITY_TIME_TRAVELLER] = 0,
@@ -7432,7 +7432,6 @@ static u8 ItemEffectMoveEnd(u32 battlerId, u16 holdEffect)
         effect = TrySetMicleBerry(battlerId, gLastUsedItem, FALSE);
         break;
     case HOLD_EFFECT_RESTORE_HP:
-        gLastUsedItem = gBattleMons[battlerId].item;
         effect = ItemHealHp(battlerId, gLastUsedItem, FALSE, FALSE);
         break;
 #endif
@@ -8173,6 +8172,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
     case ITEMEFFECT_MOVE_END:
         for (battlerId = 0; battlerId < gBattlersCount; battlerId++)
         {
+            gLastUsedItem = gBattleMons[battlerId].item;
             effect = ItemEffectMoveEnd(battlerId, GetBattlerHoldEffect(battlerId, TRUE));
             if (effect)
             {

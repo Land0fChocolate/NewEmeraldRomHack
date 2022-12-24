@@ -64,126 +64,126 @@ DraconidArchives_EventScript_WhichBerryToGive::
 	end
 
 DraconidArchives_EventScript_ChilanBerry::
-	checkitem ITEM_CHILAN_BERRY, 1
+	checkitem ITEM_CHILAN_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_CHILAN_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_OccaBerry::
-	checkitem ITEM_OCCA_BERRY, 1
+	checkitem ITEM_OCCA_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_OCCA_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_PasshoBerry::
-	checkitem ITEM_PASSHO_BERRY, 1
+	checkitem ITEM_PASSHO_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_PASSHO_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_WacanBerry::
-	checkitem ITEM_WACAN_BERRY, 1
+	checkitem ITEM_WACAN_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_WACAN_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_RindoBerry::
-	checkitem ITEM_RINDO_BERRY, 1
+	checkitem ITEM_RINDO_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_RINDO_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_YacheBerry::
-	checkitem ITEM_YACHE_BERRY, 1
+	checkitem ITEM_YACHE_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_YACHE_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_ChopleBerry::
-	checkitem ITEM_CHOPLE_BERRY, 1
+	checkitem ITEM_CHOPLE_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_CHOPLE_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_KebiaBerry::
-	checkitem ITEM_KEBIA_BERRY, 1
+	checkitem ITEM_KEBIA_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_KEBIA_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_ShucaBerry::
-	checkitem ITEM_SHUCA_BERRY, 1
+	checkitem ITEM_SHUCA_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_SHUCA_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_CobaBerry::
-	checkitem ITEM_COBA_BERRY, 1
+	checkitem ITEM_COBA_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_COBA_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_PayapaBerry::
-	checkitem ITEM_PAYAPA_BERRY, 1
+	checkitem ITEM_PAYAPA_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_PAYAPA_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_TangaBerry::
-	checkitem ITEM_TANGA_BERRY, 1
+	checkitem ITEM_TANGA_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_TANGA_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_ChartiBerry::
-	checkitem ITEM_CHARTI_BERRY, 1
+	checkitem ITEM_CHARTI_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_CHARTI_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_KasibBerry::
-	checkitem ITEM_KASIB_BERRY, 1
+	checkitem ITEM_KASIB_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_KASIB_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_HabanBerry::
-	checkitem ITEM_HABAN_BERRY, 1
+	checkitem ITEM_HABAN_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_HABAN_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_ColburBerry::
-	checkitem ITEM_COLBUR_BERRY, 1
+	checkitem ITEM_COLBUR_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_COLBUR_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_BabiriBerry::
-	checkitem ITEM_BABIRI_BERRY, 1
+	checkitem ITEM_BABIRI_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_BABIRI_BERRY
 	goto DraconidArchives_EventScript_GiveBerry
 
 DraconidArchives_EventScript_RoseliBerry::
-	checkitem ITEM_ROSELI_BERRY, 1
+	checkitem ITEM_ROSELI_BERRY, 5
 	compare VAR_RESULT, FALSE
 	call_if_eq DraconidArchives_EventScript_YouDoNotHaveThisBerry
 	setvar VAR_0x8008, ITEM_ROSELI_BERRY
@@ -200,7 +200,7 @@ DraconidArchives_EventScript_GiveBerry::
 	msgbox DraconidArchives_Text_YoullGiveXBerry, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq DraconidArchives_EventScript_WhichBerryToGive
-	removeitem VAR_0x8008, 1
+	removeitem VAR_0x8008, 5
 	goto DraconidArchives_EventScript_ZinniaResetsLegendaries
 	end
 
@@ -372,17 +372,18 @@ DraconidArchives_Text_BringSnacksForAster:
 	.string "Pokémon on your travels, haven't you?\p"
 	.string "With my particular skills, I can give\n"
 	.string "you the opportunity to meet them again.\p"
-	.string "If you can get me a tasty treat for my\n"
-	.string "Aster here, I can call any and all\l"
+	.string "If you can get me some tasty treats for\n"
+	.string "my Aster here, I can call any and all\l"
 	.string "legendary Pokémon back to their lairs.\p"
-	.string "Aster has rather expensive taste.\n"
+	.string "Aster has a rather expensive taste.\n"
 	.string "She'll only eat very rare berries, like\l"
-	.string "the ones that reduce damage taken.$"
+	.string "the ones that reduce damage taken.\p"
+	.string "Come back when you have 5 of a kind.$"
 
 DraconidArchives_Text_HaveYouBroughtBerries:
 	.string "Zinnia: Hey, {PLAYER}.\n"
 	.string "It's good to see you.\p"
-	.string "Did you bring a treat for Aster?$"
+	.string "Did you bring some treats for Aster?$"
 
 DraconidArchives_Text_SomeOtherTime:
 	.string "Zinnia: Perhaps another time then.$"

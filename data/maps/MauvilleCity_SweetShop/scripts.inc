@@ -127,5 +127,5 @@ MauvilleCity_SweetShop_Text_FairyTaleGirl:
 MauvilleCity_SweetShop_Text_Boy:
 	.string "I wanna get one of those mints the lady\n"
 	.string "sells, but they're super expensive.\p"
-	.string "A mint could buff up my Pokémon by\n"
-	.string "giving it a different personality.$"
+	.string "A mint could make my Pokémon stronger\n"
+	.string "by giving it a different nature.$"

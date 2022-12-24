@@ -1727,7 +1727,8 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             break;
         case EFFECT_MUD_SPORT:
             if (gFieldStatuses & STATUS_FIELD_MUDSPORT
-                || PartnerHasSameMoveEffectWithoutTarget(BATTLE_PARTNER(battlerAtk), move, AI_DATA->partnerMove))
+                || PartnerHasSameMoveEffectWithoutTarget(BATTLE_PARTNER(battlerAtk), move, AI_DATA->partnerMove)
+                || (gBattleMons[battlerAtk].type1 == TYPE_GROUND || gBattleMons[battlerAtk].type2 == TYPE_GROUND))
                 score -= 10;
             break;
         case EFFECT_WATER_SPORT:
@@ -4371,10 +4372,28 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_MUD_SPORT:
         if (!HasMoveWithType(battlerAtk, TYPE_ELECTRIC) && HasMoveWithType(battlerDef, TYPE_ELECTRIC))
             score++;
+        if ((gBattleMons[battlerAtk].type1 == TYPE_WATER || gBattleMons[battlerAtk].type2 == TYPE_WATER
+            || gBattleMons[battlerAtk].type1 == TYPE_FLYING || gBattleMons[battlerAtk].type2 == TYPE_FLYING)
+            && (gBattleMons[battlerAtk].type1 != TYPE_GROUND || gBattleMons[battlerAtk].type2 != TYPE_GROUND))
+            score += 2;
+        if ((gBattleMons[BATTLE_PARTNER(battlerAtk)].type1 == TYPE_WATER || gBattleMons[BATTLE_PARTNER(battlerAtk)].type2 == TYPE_WATER
+            || gBattleMons[BATTLE_PARTNER(battlerAtk)].type1 == TYPE_FLYING || gBattleMons[BATTLE_PARTNER(battlerAtk)].type2 == TYPE_FLYING)
+            && (gBattleMons[BATTLE_PARTNER(battlerAtk)].type1 != TYPE_GROUND || gBattleMons[BATTLE_PARTNER(battlerAtk)].type2 != TYPE_GROUND))
+            score += 6;
         break;
     case EFFECT_WATER_SPORT:
         if (!HasMoveWithType(battlerAtk, TYPE_FIRE) && (HasMoveWithType(battlerDef, TYPE_FIRE)))
             score++;
+        if (gBattleMons[battlerAtk].type1 == TYPE_GRASS || gBattleMons[battlerAtk].type2 == TYPE_GRASS
+            || gBattleMons[battlerAtk].type1 == TYPE_BUG || gBattleMons[battlerAtk].type2 == TYPE_BUG
+            || gBattleMons[battlerAtk].type1 == TYPE_ICE || gBattleMons[battlerAtk].type2 == TYPE_ICE
+            || gBattleMons[battlerAtk].type1 == TYPE_STEEL || gBattleMons[battlerAtk].type2 == TYPE_STEEL)
+            score += 2;
+        if (gBattleMons[BATTLE_PARTNER(battlerAtk)].type1 == TYPE_GRASS || gBattleMons[BATTLE_PARTNER(battlerAtk)].type2 == TYPE_GRASS
+            || gBattleMons[BATTLE_PARTNER(battlerAtk)].type1 == TYPE_BUG || gBattleMons[BATTLE_PARTNER(battlerAtk)].type2 == TYPE_BUG
+            || gBattleMons[BATTLE_PARTNER(battlerAtk)].type1 == TYPE_ICE || gBattleMons[BATTLE_PARTNER(battlerAtk)].type2 == TYPE_ICE
+            || gBattleMons[BATTLE_PARTNER(battlerAtk)].type1 == TYPE_STEEL || gBattleMons[BATTLE_PARTNER(battlerAtk)].type2 == TYPE_STEEL)
+            score += 2;
         break;
     case EFFECT_TICKLE:
         if (gBattleMons[battlerDef].statStages[STAT_DEF] > 4 && HasMoveWithSplit(battlerAtk, SPLIT_PHYSICAL)

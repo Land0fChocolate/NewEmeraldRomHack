@@ -7892,13 +7892,13 @@ void SetWildMonHeldItem(void)
         && (HasAbility(ABILITY_COMPOUND_EYES, abilities)
             || HasAbility(ABILITY_SUPER_LUCK, abilities)))
     {
-        var1 = 15;
-        var2 = 30;
+        var1 = 5;
+        var2 = 60;
     }
     else
     {
-        var1 = 25;
-        var2 = 50;
+        var1 = 20;
+        var2 = 80;
     }
 
     for (i = 0; i < count; i++)

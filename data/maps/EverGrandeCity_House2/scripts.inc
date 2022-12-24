@@ -7,12 +7,8 @@ EverGrandeCity_House2_EventScript_Man::
 	dotimebasedevents
 	goto_if_set FLAG_DAILY_EVER_GRANDE_RECEIVED_BERRY, EverGrandeCity_House2_EventScript_ReceivedBerryToday
 	msgbox EverGrandeCity_House2_Text_ManGiveBerry, MSGBOX_DEFAULT
-	random NUM_EVER_GRANDE_BERRIES
-	addvar VAR_RESULT, NUM_EVER_GRANDE_BERRIES_SKIPPED
-	addvar VAR_RESULT, FIRST_BERRY_INDEX
-	giveitem VAR_RESULT
-	compare VAR_RESULT, FALSE
-	goto_if_eq Common_EventScript_ShowBagIsFull
+	call EverGrandeCity_House2_EventScript_GiveRandomBerry
+	call EverGrandeCity_House2_EventScript_GiveRandomBerry
 	setflag FLAG_DAILY_EVER_GRANDE_RECEIVED_BERRY
 	msgbox EverGrandeCity_House2_Text_ManWooning, MSGBOX_DEFAULT
 	release
@@ -23,6 +19,15 @@ EverGrandeCity_House2_EventScript_ReceivedBerryToday::
 	closemessage
 	release
 	end
+
+EverGrandeCity_House2_EventScript_GiveRandomBerry::
+	random NUM_EVER_GRANDE_BERRIES
+	addvar VAR_RESULT, NUM_EVER_GRANDE_BERRIES_SKIPPED
+	addvar VAR_RESULT, FIRST_BERRY_INDEX
+	giveitem VAR_RESULT
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	return
 
 EverGrandeCity_House2_Text_ManGiveBerry:
 	.string "Those cold hard eyes…\n"
@@ -39,4 +44,4 @@ EverGrandeCity_House2_Text_ManWooning:
 EverGrandeCity_House2_Text_ReceivedBerryToday:
 	.string "Glacia, oh Glacia!\p"
 	.string "One day, I will find a song that will\n"
-	.string "heat up your icy heart!$"
+	.string "warm up your icy heart!$"
