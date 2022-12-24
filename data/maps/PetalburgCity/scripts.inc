@@ -298,6 +298,10 @@ PetalburgCity_EventScript_CheckForEveryBerry::
 	goto_if_ge PetalburgCity_EventScript_ObtainedAllBerries
 	return
 
+PetalburgCity_EventScript_AddToBerryCount::
+	addvar VAR_TEMP_1, 1
+	return
+
 PetalburgCity_EventScript_ObtainedAllBerries::
 	msgbox PetalburgCity_Text_ShrineWarpsAndGlows, MSGBOX_DEFAULT
 	closemessage
@@ -336,10 +340,6 @@ PetalburgCity_Movement_CelebiEntrance:
 	delay_16
 	face_down
 	step_end
-
-PetalburgCity_EventScript_AddToBerryCount::
-	addvar VAR_TEMP_1, 1
-	return
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
 	setobjectxyperm LOCALID_GYM_BOY, 5, 19

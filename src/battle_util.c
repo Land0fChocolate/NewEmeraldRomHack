@@ -7331,8 +7331,6 @@ u8 TryHandleSeed(u8 battler, u32 terrainFlag, u8 statId, u16 itemId, bool32 exec
 
 static u8 ItemHealHp(u32 battlerId, u32 itemId, bool32 end2, bool32 percentHeal)
 {
-    u16 abilities[NUM_ABILITY_SLOTS];
-
     if (HasEnoughHpToEatBerry(battlerId, 2, itemId) && !(gStatuses3[battlerId] & STATUS3_HEAL_BLOCK)
       && !(gBattleScripting.overrideBerryRequirements && gBattleMons[battlerId].hp == gBattleMons[battlerId].maxHP))
     {
@@ -7341,10 +7339,8 @@ static u8 ItemHealHp(u32 battlerId, u32 itemId, bool32 end2, bool32 percentHeal)
         else
             gBattleMoveDamage = GetBattlerItemHoldEffectParam(battlerId, itemId) * -1;
 
-        memcpy(abilities, GetBattlerAbilities(battlerId), sizeof(abilities));
-
         // check ripen
-        if (ItemId_GetPocket(itemId) == POCKET_BERRIES && HasAbility(ABILITY_RIPEN, abilities))
+        if (ItemId_GetPocket(itemId) == POCKET_BERRIES && HasAbility(ABILITY_RIPEN, GetBattlerAbilities(battlerId)))
             gBattleMoveDamage *= 2;
 
         gBattlerAbility = battlerId;    // in SWSH, berry juice shows ability pop up but has no effect. This is mimicked here
@@ -7436,6 +7432,7 @@ static u8 ItemEffectMoveEnd(u32 battlerId, u16 holdEffect)
         effect = TrySetMicleBerry(battlerId, gLastUsedItem, FALSE);
         break;
     case HOLD_EFFECT_RESTORE_HP:
+        gLastUsedItem = gBattleMons[battlerId].item;
         effect = ItemHealHp(battlerId, gLastUsedItem, FALSE, FALSE);
         break;
 #endif
@@ -9402,7 +9399,7 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             break;
         case ABILITY_SWORDMASTER:
             if (gBattleMoves[move].flags & FLAG_SWORDMASTER_BOOST)
-               MulModifier(&modifier, UQ_4_12(1.3));
+               MulModifier(&modifier, UQ_4_12(1.25));
             break;
         case ABILITY_VOLUME_UP:
             if (gBattleMoves[move].flags & FLAG_SOUND)

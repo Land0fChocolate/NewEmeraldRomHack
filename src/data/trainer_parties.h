@@ -8457,7 +8457,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_James1[] = {
     {
     .iv = 0,
     .lvl = 6,
-    .species = SPECIES_NINCADA,
+    .species = SPECIES_SILCOON,
     }
 };
 
@@ -12827,9 +12827,9 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Red[] = {
 static const struct TrainerMonItemCustomMoves sParty_Leaf[] = {
     {
     .iv = 255,
-    .lvl = 30,
-    .species = SPECIES_SHUCKLE,
-    .heldItem = ITEM_LUM_BERRY,
+    .lvl = 15,
+    .species = SPECIES_GEODUDE,
+    .heldItem = ITEM_ORAN_BERRY,
     .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     },
     {

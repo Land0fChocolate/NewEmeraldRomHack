@@ -39,7 +39,7 @@ RustboroCity_CuttersHouse_Text_ExplainCut:
 	.string "You can use it to teach a suitable\n"
 	.string "Pokémon the Cut move.\p"
 	.string "Cut always critically strikes, meaning\n"
-	.string "it deals double damage and ignores\l"
+	.string "it deals 50% bonus damage and ignores\l"
 	.string "the opponent's defense boosts.$"
 
 RustboroCity_CuttersHouse_Text_DadHelpedClearLandOfTrees:

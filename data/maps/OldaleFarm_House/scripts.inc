@@ -433,7 +433,8 @@ OldaleFarm_House_Text_ReceivedMon:
 	.string "the farmer.$"
 
 OldaleFarm_House_Text_Man_Declined:
-	.string "Come along again if you change your mind.$"
+	.string "Come along again if you change your\n"
+	.string "mind.$"
 
 OldaleFarm_House_Text_Man_NotEnoughMoney:
 	.string "You don't have enough money.$"

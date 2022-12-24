@@ -366,7 +366,7 @@ RustboroCity_PokemonSchool_Text_ExplainPoison:
 
 RustboroCity_PokemonSchool_Text_ExplainParalysis:
 	.string "If a Pokémon becomes paralyzed,\n"
-	.string "its Speed drops.\p"
+	.string "its Speed halves.\p"
 	.string "It may also not be able to move while\n"
 	.string "it is in battle.\p"
 	.string "Paralysis remains after battle.\n"

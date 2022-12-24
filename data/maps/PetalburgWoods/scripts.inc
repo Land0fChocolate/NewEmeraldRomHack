@@ -62,6 +62,8 @@ PetalburgWoods_EventScript_DevonResearcherRight::
 	applymovement LOCALID_DEVON_EMPLOYEE, PetalburgWoods_Movement_DevonResearcherFleeToPlayerRight
 	waitmovement 0
 	msgbox PetalburgWoods_Text_YouHaveToHelpMe, MSGBOX_DEFAULT
+	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_MoveToPlayer
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	msgbox PetalburgWoods_Text_NoOneCrossesTeamAqua, MSGBOX_DEFAULT
@@ -191,6 +193,11 @@ PetalburgWoods_Movement_DevonResearcherFleeToPlayerRight:
 	walk_fast_down
 	walk_fast_right
 	walk_in_place_fastest_up
+	step_end
+
+PetalburgWoods_Movement_MoveToPlayer:
+	walk_fast_right
+	face_down
 	step_end
 
 PetalburgWoods_Movement_DevonResearcherStartExit:

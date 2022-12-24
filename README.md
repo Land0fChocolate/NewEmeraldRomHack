@@ -27,6 +27,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- Both Latias and Latios are available roaming at the same time.
 	- All Legendary and Mythical Pokemon can be repeatedly acquired.
 	- There is a small chance for a wild encounter to be a double battle.
+	- There is small chance to encounter a wild Pokemon a much higher level than others in the same area.
 - Repeatedly acquirable fossils.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
 - Ice types have their special defense boosted by 50% in hail.
@@ -85,7 +86,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Solrock/Klink/Klang/Klinklang.
 - Evergreen: User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
-- Swordmaster: Power of sword/blade moves increased by 33% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
+- Swordmaster: Power of sword/blade moves increased by 25% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Grovyle/Sceptile/Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
 - Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Articuno/Glaceon/Aurorus.
 - Unsteady: User's evasion increases by one stage when hit. Used by Spinda.
 - Disarm: User's contact moves inflict the Embargo status (disable held items) on the target. Used by Meowth/Persian/Pawniard/Bisharp/Meowth(Galarian)
