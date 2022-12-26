@@ -3617,7 +3617,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wattson1[] = {
     .lvl = 21,
     .species = SPECIES_VOLTORB,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_ROLLOUT, MOVE_LIGHT_SCREEN, MOVE_SELF_DESTRUCT, MOVE_SHOCK_WAVE}
+    .moves = {MOVE_ROLLOUT, MOVE_SONIC_BOOM, MOVE_SELF_DESTRUCT, MOVE_SHOCK_WAVE}
     },
     {
     .iv = 200,
@@ -3638,7 +3638,7 @@ static const struct TrainerMonItemCustomMoves sParty_Wattson1[] = {
     .lvl = 24,
     .species = SPECIES_MANECTRIC,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_FIRE_FANG, MOVE_THUNDER_WAVE, MOVE_SHOCK_WAVE, MOVE_SNARL}
+    .moves = {MOVE_SHOCK_WAVE, MOVE_THUNDER_WAVE, MOVE_QUICK_ATTACK, MOVE_SNARL}
     }
 };
 
@@ -8205,7 +8205,7 @@ static const struct TrainerMonItemCustomMoves sParty_MaxieMtChimney[] = {
     .iv = 180,
     .lvl = 28,
     .species = SPECIES_CAMERUPT,
-    .moves = {MOVE_LAVA_PLUME, MOVE_BULLDOZE, MOVE_AMNESIA, MOVE_TACKLE}
+    .moves = {MOVE_LAVA_PLUME, MOVE_BULLDOZE, MOVE_AMNESIA, MOVE_ROCK_SLIDE}
     }
 };
 

@@ -445,6 +445,11 @@ static const u16 sEncouragedEncoreEffects[] =
     EFFECT_DECORATE,
     EFFECT_SERPENT_DANCE,
     EFFECT_HIDDEN_THORNS,
+    EFFECT_SPEED_DOWN_2,
+    EFFECT_SPECIAL_ATTACK_DOWN_2,
+    EFFECT_SPECIAL_DEFENSE_DOWN_2,
+    EFFECT_ACCURACY_DOWN_2,
+    EFFECT_EVASION_DOWN_2,
 };
 
 // For the purposes of determining the most powerful move in a moveset, these

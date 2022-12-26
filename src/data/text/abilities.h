@@ -191,7 +191,8 @@ static const u8 sSandStreamDescription[] = _(
 	"entering battle.");
 
 static const u8 sPressureDescription[] = _(
-	"Opponent's moves use 2 PP.\n");
+	"Opponent's moves cost an.\n"
+	"extra PP.");
 
 static const u8 sThickFatDescription[] = _(
 	"User takes half damage\n"
@@ -1134,7 +1135,7 @@ static const u8 sHematophagyDescription[] = _(
 
 static const u8 sSwordmasterDescription[] = _(
 	"Power of sword/blade moves\n"
-	"is increased by 30%.");
+	"is increased by 25%.");
 
 static const u8 sSupercooledDescription[] = _(
 	"User's ice moves are\n"

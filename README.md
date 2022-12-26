@@ -86,7 +86,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Solrock/Klink/Klang/Klinklang.
 - Evergreen: User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
-- Swordmaster: Power of sword/blade moves increased by 25% (Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Grovyle/Sceptile/Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
+- Swordmaster: Power of sword/blade moves increased by 25% (Cut/Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Grovyle/Sceptile/Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
 - Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Articuno/Glaceon/Aurorus.
 - Unsteady: User's evasion increases by one stage when hit. Used by Spinda.
 - Disarm: User's contact moves inflict the Embargo status (disable held items) on the target. Used by Meowth/Persian/Pawniard/Bisharp/Meowth(Galarian)
@@ -144,12 +144,13 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Charge Beam: Now 40 BP, 100% Acc with 100% chance for special attack boost.
 - Rock Smash: Now 50 BP with 100% chance for target defense drop.
 - Poison Fang: Now has a 100% chance to poison target.
-- Cut: Now has 100% Acc and always crits.
+- Cut: Now has 40 BP, 100% Acc and always crits.
 
 # Known Bugs
 
 - Many switch-in abilities (like Frisk and Imposter) don’t activate when both Player Pokemon and opponent Pokemon fainted previous turn (e.g. Destiny Bond) and the Player sends out a Pokemon before the opponent sends out theirs. Solving this will probably involve having to rewrite the code that deals with switch-in abilities. This is probably the same behavior as in vanilla Pokemon Emerald, but I don't see why Trace and Intimidate are allowed to activate whilst others don't, so I'm considering this a bug.
 - Abilities that activate at the same time as other abilities on the same Pokemon can have their names in the ability pop-up overwritten. (e.g. Tyranitar with Sand Stream and Unnerve). This is due to how switch-in (and other types) abilities are handled. This could be fixed by setting gLastUsedAbility during the ability battle script with the new setlastusedability command, but this freezes the game when used before calling the ability pop-up. Why? Have no fucking clue.
+- When Rattled is activated, the wrong ability is shown on the pop-up.
 - Grassy Terrain background is jank.
 - Some door animations don't work when the Player runs into them from an angle. The Player just runs into the door without it opening. (Ever Grande City Battle Tent, Fortree City Pokemon Center.)
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there.
@@ -158,6 +159,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Some Pokemon in PC boxes have a corner of their front sprite snipped off.
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
+- HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. 
 
 # Post Launch TODOs
 

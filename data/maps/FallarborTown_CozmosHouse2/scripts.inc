@@ -118,9 +118,9 @@ FallarborTown_CozmosHouse2_Text_Journal:
 	.string "This journal is covered in notes with\n"
 	.string "scientific terms and math equations.\p"
 	.string "There is also a map of Hoenn with impact\n"
-	.string "locations. Cozmo has noted that they are\l"
-	.string "unusually positioned in an exact\l"
-	.string "triangle pattern.$"
+	.string "locations.\p"
+	.string "Cozmo has noted that they are unusually\n"
+	.string "positioned in an exact triangle pattern.$"
 
 FallarborTown_CozmosHouse2_Text_MeteoriteWillNeverBeMineNow:
 	.string "Prof. Cozmo: Oh…\n"
