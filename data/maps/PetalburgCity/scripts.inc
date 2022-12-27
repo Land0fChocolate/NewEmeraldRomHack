@@ -95,6 +95,7 @@ PetalburgCity_EventScript_ShrineIsClosedTrigger::
 	waitmovement 0
 	applymovement LOCALID_SHRINE_MAIDEN, Common_Movement_ExclamationMark
 	waitmovement 0
+	delay 20
 	msgbox PetalburgCity_Text_ShrineIsClosed, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_WalkDown

@@ -6205,6 +6205,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                  && gBattleMons[gBattlerAttacker].hp != 0
                  && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && (IsMoveMakingContact(move, gBattlerAttacker))
                  && TARGET_TURN_DAMAGED)
                 {
                     gLastUsedAbility = ABILITY_COTTON_DOWN;

@@ -1625,6 +1625,9 @@ static void CloseSummaryScreen(u8 taskId)
 
 static void Task_HandleInput(u8 taskId)
 {
+    struct Pokemon *mon = sMonSummaryScreen->monList.mons;
+    s8 index = sMonSummaryScreen->curMonIndex;
+
     if (MenuHelpers_CallLinkSomething() != TRUE && !gPaletteFade.active)
     {
         if (JOY_NEW(DPAD_UP))
@@ -1643,7 +1646,7 @@ static void Task_HandleInput(u8 taskId)
         {
             ChangePage(taskId, 1);
         }
-        else if (JOY_NEW(A_BUTTON))
+        else if (JOY_NEW(A_BUTTON) && !GetMonData(&mon[index], MON_DATA_IS_EGG))
         {
             if (sMonSummaryScreen->currPageIndex != PSS_PAGE_SKILLS)
             {

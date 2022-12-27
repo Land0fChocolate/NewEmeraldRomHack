@@ -9,6 +9,7 @@ FallarborTown_CozmosHouse2_OnTransition:
 	end
 
 FallarborTown_CozmosHouse2_EventScript_PlaceMeteorite:
+	clearflag FLAG_HIDE_COZMOS_HOUSE_METEORITE
 	addobject LOCALID_METEORITE
 	return
 
@@ -29,7 +30,6 @@ FallarborTown_CozmosHouse2_EventScript_PlayerHasMeteorite::
 	compare VAR_RESULT, NO
 	goto_if_eq FallarborTown_CozmosHouse2_EventScript_DeclineGiveMeteorite
 	setflag FLAG_RETURNED_METEORITE_TO_COZMO
-	clearflag FLAG_HIDE_COZMOS_HOUSE_METEORITE
 	msgbox FallarborTown_CozmosHouse2_Text_PleaseUseThisTM, MSGBOX_DEFAULT
 	giveitem ITEM_TM82
 	compare VAR_RESULT, FALSE
@@ -106,9 +106,9 @@ FallarborTown_CozmosHouse2_EventScript_ChangeDeoxysForm::
 	end
 
 FallarborTown_CozmosHouse2_Text_ItsAMeteorite:
-	.string "It's the meteorite given to Professor\n"
-	.string "Cozmo. You feel a radiating warmth\l"
-	.string "coming from it.$"
+	.string "It's the meteorite you returned to\n"
+	.string "Professor Cozmo. You feel a radiating\l"
+	.string "warmth coming from it.$"
 
 FallarborTown_CozmosHouse2_Text_DeoxysChangedForm:
 	.string "The Deoxys in your party changed into\n"
@@ -127,8 +127,8 @@ FallarborTown_CozmosHouse2_Text_MeteoriteWillNeverBeMineNow:
 	.string "I never should have let myself be\l"
 	.string "conned into telling Team Magma where\l"
 	.string "you can find Meteorites…\p"
-	.string "That Meteorite from Meteor Falls…\n"
-	.string "It's never going to be mine now…$"
+	.string "That special Meteorite I discovered…\n"
+	.string "I'm never going to get it back now…$"
 
 FallarborTown_CozmosHouse2_Text_IsThatMeteoriteMayIHaveIt:
 	.string "Oh!\n"
@@ -136,8 +136,8 @@ FallarborTown_CozmosHouse2_Text_IsThatMeteoriteMayIHaveIt:
 	.string "That item…\p"
 	.string "Could it be?\p"
 	.string "Is it the Meteorite that Team Magma\n"
-	.string "took from Meteor Falls?\p"
-	.string "Please, may I have it?\p"
+	.string "stole from me in Meteor Falls?\p"
+	.string "Thank you so much for bringing it back!\p"
 	.string "I'm not asking for it for free.\n"
 	.string "How about in exchange for this TM?$"
 

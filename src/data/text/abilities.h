@@ -191,7 +191,7 @@ static const u8 sSandStreamDescription[] = _(
 	"entering battle.");
 
 static const u8 sPressureDescription[] = _(
-	"Opponent's moves cost an.\n"
+	"Opponent's moves cost an\n"
 	"extra PP.");
 
 static const u8 sThickFatDescription[] = _(

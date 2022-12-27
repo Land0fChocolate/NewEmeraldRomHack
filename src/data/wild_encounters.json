@@ -10641,7 +10641,7 @@
           "map": "MAP_MIRAGE_TOWER_3F",
           "base_label": "gMirageTower_3F",
           "land_mons": {
-            "encounter_rate": 5,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 21,
@@ -10710,7 +10710,7 @@
           "map": "MAP_MIRAGE_TOWER_4F",
           "base_label": "gMirageTower_4F",
           "land_mons": {
-            "encounter_rate": 5,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 21,

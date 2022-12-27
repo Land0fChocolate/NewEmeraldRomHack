@@ -151,6 +151,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Many switch-in abilities (like Frisk and Imposter) don’t activate when both Player Pokemon and opponent Pokemon fainted previous turn (e.g. Destiny Bond) and the Player sends out a Pokemon before the opponent sends out theirs. Solving this will probably involve having to rewrite the code that deals with switch-in abilities. This is probably the same behavior as in vanilla Pokemon Emerald, but I don't see why Trace and Intimidate are allowed to activate whilst others don't, so I'm considering this a bug.
 - Abilities that activate at the same time as other abilities on the same Pokemon can have their names in the ability pop-up overwritten. (e.g. Tyranitar with Sand Stream and Unnerve). This is due to how switch-in (and other types) abilities are handled. This could be fixed by setting gLastUsedAbility during the ability battle script with the new setlastusedability command, but this freezes the game when used before calling the ability pop-up. Why? Have no fucking clue.
 - When Rattled is activated, the wrong ability is shown on the pop-up.
+- Sometimes when Truant triggers, the wrong ability is shown on the pop-up.
 - Grassy Terrain background is jank.
 - Some door animations don't work when the Player runs into them from an angle. The Player just runs into the door without it opening. (Ever Grande City Battle Tent, Fortree City Pokemon Center.)
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there.
@@ -166,6 +167,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 Possible future additions if I ever feel like doing more work on Energized Emerald.
 
 - Labels for ability description and IV/EV stats in Pokemon summary screen.
+- Improve various art assets, mostly trainer pics.
 - Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
 - An event for Winona.
@@ -193,3 +195,4 @@ The fine people who worked on pokeemerald and pokeemerald-expansion and helped m
 - Sapphire Jester
 - TheXaman
 - MeekRhino
+- AsparagusEduardo
