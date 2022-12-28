@@ -63,7 +63,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- All item use, except for Poke Balls, is disabled from battles by default. NPCs don't use items either. Players may re-enable items in the options menu if they wish.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
 - Groomer, EV trainer and IV trainer NPCs have been added.
-- Berry tree drop rates are tripled. Interaction with berry trees is also quicker.
+- Berry tree yield rates have increased. Interaction with berry trees is also quicker.
 - Number of Feebas spots is tripled.
 - Removed badge boosts
 
@@ -161,12 +161,15 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
 - HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. 
+- Intimidate may trigger on fainted mons.
 
 # Post Launch TODOs
 
 Possible future additions if I ever feel like doing more work on Energized Emerald.
 
 - Labels for ability description and IV/EV stats in Pokemon summary screen.
+- Pokedex to support regional variants
+- Pokedex to have other data as well. Moves, evolution, abilities?
 - Improve various art assets, mostly trainer pics.
 - Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.

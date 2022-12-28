@@ -845,10 +845,10 @@
 #define TRAINER_GOMEZ_3                     841
 #define TRAINER_GOMEZ_4                     842
 #define TRAINER_GOMEZ_5                     843
-#define TRAINER_THALIA_2                    844
-#define TRAINER_THALIA_3                    845
-#define TRAINER_THALIA_4                    846
-#define TRAINER_THALIA_5                    847
+#define TRAINER_THALIA_2                    844 //unused
+#define TRAINER_THALIA_3                    845 //unused
+#define TRAINER_THALIA_4                    846 //unused
+#define TRAINER_THALIA_5                    847 //unused
 #define TRAINER_MARIELA                     848
 #define TRAINER_ALVARO                      849
 #define TRAINER_EVERETT                     850

@@ -1,8 +1,8 @@
 .set LOCALID_MAN_2, 3
 .set LOCALID_WOMAN_2, 6
 .set LOCALID_SCHOOL_KID, 17
-.set LOCALID_WOMAN_1, 19
-.set LOCALID_MAN_1, 20
+.set LOCALID_WOMAN_1, 18
+.set LOCALID_MAN_1, 19
 .set LOCALID_LISIA, 29
 .set LOCALID_CAMERAMAN, 30
 .set LOCALID_TWIN, 31
@@ -367,6 +367,7 @@ LilycoveCity_EventScript_LisiaTalksToPlayer::
 	applymovement LOCALID_CAMERAMAN, LilycoveCity_Movement_CameramanStepsForward
 	applymovement LOCALID_TWIN, Common_Movement_FaceRight
 	applymovement LOCALID_STREET_THUG, Common_Movement_FaceRight
+	applymovement LOCALID_MAN_2, Common_Movement_FaceUp
 	waitmovement 0
 	msgbox LilycoveCity_Text_LisiaBaffledExpression, MSGBOX_DEFAULT
 	giveitem ITEM_POKEBLOCK_CASE

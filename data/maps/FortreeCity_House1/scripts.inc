@@ -5,7 +5,7 @@ FortreeCity_House1_EventScript_Trader::
 	lock
 	faceplayer
 	goto_if_set FLAG_FORTREE_NPC_TRADE_COMPLETED, FortreeCity_House1_EventScript_TradeCompleted
-	setvar VAR_0x8008, INGAME_TRADE_PLUSLE
+	setvar VAR_0x8008, INGAME_TRADE_WOBBUFFET
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
 	copyvar VAR_0x8009, VAR_RESULT
@@ -45,22 +45,12 @@ FortreeCity_House1_EventScript_NotRequestedMon::
 	end
 
 FortreeCity_House1_EventScript_TradeCompleted::
-	msgbox FortreeCity_House1_Text_GoingToMakeVolbeatStrong, MSGBOX_DEFAULT
+	msgbox FortreeCity_House1_Text_GoingToMakeTropiusStrong, MSGBOX_DEFAULT
 	release
 	end
 
 FortreeCity_House1_EventScript_ExpertF::
 	msgbox FortreeCity_House1_Text_TradingMemoriesWithOthers, MSGBOX_NPC
-	end
-
-FortreeCity_House1_EventScript_Zigzagoon::
-	lock
-	faceplayer
-	waitse
-	playmoncry SPECIES_ZIGZAGOON, 0
-	msgbox FortreeCity_House1_Text_Zigzagoon, MSGBOX_DEFAULT
-	waitmoncry
-	release
 	end
 
 FortreeCity_House1_Text_YouWillTradeWontYou:
@@ -86,16 +76,12 @@ FortreeCity_House1_Text_YouWontTradeMe:
 	.string "No? You won't trade me?\n"
 	.string "Even after I bared my heart to you?$"
 
-FortreeCity_House1_Text_GoingToMakeVolbeatStrong:
-	.string "I'm going to make Volbeat super\n"
+FortreeCity_House1_Text_GoingToMakeTropiusStrong:
+	.string "I'm going to make Tropius super\n"
 	.string "strong from this moment on!\p"
-	.string "I hope you do the same with Plusle!$"
+	.string "I hope you do the same with Wobbuffet!$"
 
 FortreeCity_House1_Text_TradingMemoriesWithOthers:
 	.string "Trading Pokémon with others…\p"
 	.string "It's as if you're trading your own\n"
 	.string "memories with other people.$"
-
-FortreeCity_House1_Text_Zigzagoon:
-	.string "Zigzagoon: Gumomoh?$"
-

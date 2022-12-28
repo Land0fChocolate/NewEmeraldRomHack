@@ -8,7 +8,7 @@
 
 // In-game Trade IDs
 #define INGAME_TRADE_ABRA 0
-#define INGAME_TRADE_PLUSLE 1
+#define INGAME_TRADE_WOBBUFFET 1
 #define INGAME_TRADE_HORSEA 2
 #define INGAME_TRADE_MEOWTH 3
 

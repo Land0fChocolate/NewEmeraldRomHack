@@ -543,8 +543,8 @@ static const u8 sDefeatistDescription[] = _(
 
 static const u8 sCursedBodyDescription[] = _(
 	"If contact, opponent has\n"
-	"their move disabled on the\n"
-	"next turn.");
+	"their move disabled for\n"
+	"the next turn.");
 
 static const u8 sHealerDescription[] = _(
 	"User has 30% chance of\n"

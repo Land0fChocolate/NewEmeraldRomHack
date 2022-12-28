@@ -383,7 +383,7 @@
 #define FLAG_REMATCH_WILTON                  0x165
 #define FLAG_REMATCH_VALERIE                 0x166
 #define FLAG_REMATCH_CINDY                   0x167
-#define FLAG_REMATCH_THALIA                  0x168
+#define FLAG_REMATCH_THALIA                  0x168 // unused (though set in the game in playthrough #3)
 #define FLAG_REMATCH_JESSICA                 0x169
 #define FLAG_REMATCH_WINSTON                 0x16A
 #define FLAG_REMATCH_STEVE                   0x16B
