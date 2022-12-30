@@ -254,8 +254,8 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 8),
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 8),
     },
-    { //TODO: unused, remove
-        .trainerId = TRAINER_KOJI,
+    { //TODO: unused, remove in future playthroughs
+        .trainerId = TRAINER_THALIA_1,
         .unused = 0,
         // Thalia and Sawyer are the only ones who use different msg ids for their battle topics
         .battleTopicTextIds = { TEXT_ID(B_TOPIC_WILD, 8), TEXT_ID(B_TOPIC_NEGATIVE, 10), TEXT_ID(B_TOPIC_POSITIVE, 10) },
@@ -2021,6 +2021,7 @@ static const u8 *const sBirchDexRatingTexts[] =
     gBirchDexRatingText_LessThan180,
     gBirchDexRatingText_LessThan190,
     gBirchDexRatingText_LessThan200,
+    gBirchDexRatingText_LessThan211,
     gBirchDexRatingText_DexCompleted,
 };
 

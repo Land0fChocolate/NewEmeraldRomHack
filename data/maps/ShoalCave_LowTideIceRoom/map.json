@@ -12,12 +12,12 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 12,
-      "y": 8,
+      "x": 22,
+      "y": 20,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -29,8 +29,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 12,
-      "y": 21,
+      "x": 22,
+      "y": 8,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -43,13 +43,17 @@
   ],
   "warp_events": [
     {
-      "x": 17,
+      "x": 27,
       "y": 10,
       "elevation": 3,
       "dest_map": "MAP_SHOAL_CAVE_LOW_TIDE_LOWER_ROOM",
       "dest_warp_id": 3
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

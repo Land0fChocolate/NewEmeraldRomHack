@@ -44,5 +44,5 @@ EverGrandeCity_House3_Text_Girl:
 	.string "the surface of the sun?\p"
 	.string "How can a Machamp punch a thousand\n"
 	.string "times in two seconds?\p"
-	.string "I should find the author and demand\n"
+	.string "I should find the authors and demand\n"
 	.string "answers!$"

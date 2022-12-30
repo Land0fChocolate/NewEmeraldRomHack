@@ -171,7 +171,7 @@ static const u8 sTileBitAttributes[] =
     [MB_UNUSED_9E] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_UNUSED_9F] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_BERRY_TREE_SOIL] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
-    [MB_UNUSED_A1] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
+    [MB_UNUSED_ICE_CAVE] = TILE_ATTRIBUTES(TRUE, FALSE, TRUE),
     [MB_UNUSED_A2] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_UNUSED_A3] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_UNUSED_A4] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
@@ -328,6 +328,7 @@ bool8 MetatileBehavior_IsReflective(u8 metatileBehavior)
      || metatileBehavior == MB_PUDDLE_EDGE
      || metatileBehavior == MB_UNUSED_SOOTOPOLIS_DEEP_WATER_2
      || metatileBehavior == MB_ICE
+     || metatileBehavior == MB_UNUSED_ICE_CAVE
      || metatileBehavior == MB_SOOTOPOLIS_DEEP_WATER
      || metatileBehavior == MB_REFLECTION_UNDER_BRIDGE)
         return TRUE;

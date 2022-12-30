@@ -7903,7 +7903,6 @@ static const struct LevelUpMove sMetagrossLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sRegirockLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_EXPLOSION),
     LEVEL_UP_MOVE( 1, MOVE_STOMP),
     LEVEL_UP_MOVE( 1, MOVE_ROCK_THROW),
     LEVEL_UP_MOVE( 1, MOVE_CHARGE_BEAM),
@@ -7924,7 +7923,6 @@ static const struct LevelUpMove sRegirockLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sRegiceLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_EXPLOSION),
     LEVEL_UP_MOVE( 1, MOVE_STOMP),
     LEVEL_UP_MOVE( 1, MOVE_ICY_WIND),
     LEVEL_UP_MOVE( 1, MOVE_CHARGE_BEAM),
@@ -7945,7 +7943,6 @@ static const struct LevelUpMove sRegiceLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sRegisteelLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_EXPLOSION),
     LEVEL_UP_MOVE( 1, MOVE_STOMP),
     LEVEL_UP_MOVE( 1, MOVE_METAL_CLAW),
     LEVEL_UP_MOVE( 1, MOVE_CHARGE_BEAM),

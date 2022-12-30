@@ -4371,8 +4371,8 @@ Route133_Text_WarrenPostBattle:
 	.string "I mean, that's obvious!$"
 
 Route133_Text_BeckIntro:
-	.string "I came all the way out here with my\n"
-	.string "Bird Pokémon.$"
+	.string "I came all the way out here on the back\n"
+	.string "of my Pokémon.$"
 
 Route133_Text_BeckDefeat:
 	.string "You…\n"
@@ -4581,7 +4581,7 @@ EverGrandeCity_BattleTent_Text_TyronDefeated:
 
 EverGrandeCity_BattleTent_Text_TyronPostBattle:
 	.string "Maybe I should train my Pokémon rather\n"
-	.string "than myself…"
+	.string "than myself…$"
 
 EverGrandeCity_BattleTent_Text_DeandreIntro:
 	.string "These are my awesome Bug Pokémon!\n"

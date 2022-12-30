@@ -1157,3 +1157,10 @@ void SetMatchCallRegisteredFlag(void)
     if (r0 >= 0)
         FlagSet(FLAG_MATCH_CALL_REGISTERED + r0);
 }
+
+void ClearMatchCallRegisteredFlag(void)
+{
+    int r0 = GetRematchIdxByTrainerIdx(gSpecialVar_0x8004);
+    if (r0 >= 0)
+        FlagClear(FLAG_MATCH_CALL_REGISTERED + r0);
+}

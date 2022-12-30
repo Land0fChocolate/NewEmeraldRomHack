@@ -390,7 +390,7 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_WILTON] = MCFLAVOR(Cooltrainer_Wilton),
     [REMATCH_VALERIE] = MCFLAVOR(HexManiac_Valerie),
     [REMATCH_CINDY] = MCFLAVOR(Lady_Cindy),
-    [REMATCH_THALIA] = MCFLAVOR(Beauty_Thalia),
+    [REMATCH_THALIA] = MCFLAVOR(Beauty_Thalia), //TODO: unused, remove in future playthroughs
     [REMATCH_JESSICA] = MCFLAVOR(Beauty_Jessica),
     [REMATCH_WINSTON] = MCFLAVOR(RichBoy_Winston),
     [REMATCH_STEVE] = MCFLAVOR(PokeManiac_Steve),

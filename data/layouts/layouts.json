@@ -3274,7 +3274,7 @@
     {
       "id": "LAYOUT_SHOAL_CAVE_LOW_TIDE_ICE_ROOM",
       "name": "ShoalCave_LowTideIceRoom_Layout",
-      "width": 20,
+      "width": 30,
       "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",

@@ -5519,7 +5519,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_ROSERADE_4] = {
         .species = SPECIES_ROSERADE,
-        .moves = {MOVE_LEAF_STORM, MOVE_SLUDGE_BOMB, MOVE_DAZZLING_GLEAM, MOVE_TOXIC_SPIKES},
+        .moves = {MOVE_LEAF_STORM, MOVE_VENOSHOCK, MOVE_DAZZLING_GLEAM, MOVE_TOXIC_SPIKES},
         .item = ITEM_WHITE_HERB,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_TIMID

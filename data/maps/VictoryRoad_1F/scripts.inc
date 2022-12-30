@@ -50,7 +50,7 @@ VictoryRoad_1F_EventScript_WallyBattleTrigger3::
 VictoryRoad_1F_EventScript_WallyExitBattle::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	msgbox VictoryRoad_1F_Text_WallyNotGoingToLoseAnymore, MSGBOX_DEFAULT
-	@trainerbattle_no_intro TRAINER_WALLY_VR_1, VictoryRoad_1F_Text_WallyEntranceDefeat
+	trainerbattle_no_intro TRAINER_WALLY_VR_1, VictoryRoad_1F_Text_WallyEntranceDefeat
 	msgbox VictoryRoad_1F_Text_WallyPostEntranceBattle, MSGBOX_DEFAULT
 	copyobjectxytoperm LOCALID_WALLY_EXIT
 	setflag FLAG_DEFEATED_WALLY_VICTORY_ROAD

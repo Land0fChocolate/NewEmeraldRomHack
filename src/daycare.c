@@ -957,7 +957,7 @@ static bool8 TryProduceOrHatchEgg(struct DayCare *daycare)
     if (daycare->offspringPersonality == 0 && validEggs == DAYCARE_MON_COUNT && (daycare->mons[1].steps & 0xFF) == 0xFF)
     {
         u8 compatibility = ModifyBreedingScoreForOvalCharm(GetDaycareCompatibilityScore(daycare));
-        if (compatibility > (Random() * 100u) / USHRT_MAX)
+        if (compatibility > (Random() * 50u) / USHRT_MAX)
             TriggerPendingDaycareEgg();
     }
 

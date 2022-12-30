@@ -70,13 +70,8 @@ AquaHideout_B2F_Movement_SumbarineDepartRight:
 	step_end
 
 AquaHideout_B2F_EventScript_Grunt4::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_4, AquaHideout_B2F_Text_Grunt4Intro, AquaHideout_B2F_Text_Grunt4Defeat, AquaHideout_B2F_EventScript_Grunt4Defeated
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_4, AquaHideout_B2F_Text_Grunt4Intro, AquaHideout_B2F_Text_Grunt4Defeat
 	msgbox AquaHideout_B2F_Text_Grunt4PostBattle, MSGBOX_AUTOCLOSE
-	end
-
-AquaHideout_B2F_EventScript_Grunt4Defeated::
-	msgbox AquaHideout_B2F_Text_Grunt4PostBattle, MSGBOX_DEFAULT
-	release
 	end
 
 AquaHideout_B2F_EventScript_Grunt6::
@@ -119,7 +114,7 @@ AquaHideout_B2F_Text_MattPostBattle:
 	.string "There's a cave out there deep under\n"
 	.string "the water.\p"
 	.string "I don't see how you can follow him,\n"
-	.string "unless you have a sub.$"
+	.string "unless you can dive deep underwater.$"
 
 AquaHideout_B2F_Text_Grunt4Intro:
 	.string "There you are!\n"

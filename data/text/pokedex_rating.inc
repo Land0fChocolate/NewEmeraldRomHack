@@ -100,6 +100,11 @@ gBirchDexRatingText_LessThan190::
 	.string "you're a real professional at this!$"
 
 gBirchDexRatingText_LessThan200::
+	.string "There are many legendary Pokémon\n"
+	.string "found in Hoenn.\l"
+	.string "Be sure to catch those too!$"
+
+gBirchDexRatingText_LessThan211::
 	.string "You're very close to completing\n"
 	.string "this Pokédex.\l"
 	.string "I can feel it in my bones!$"

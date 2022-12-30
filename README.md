@@ -20,6 +20,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Many gameplay adjustments to vanilla moves (Listed below). 
 	- Changes to level up, Egg learnsets, TM learnsets and Tutor learnsets of Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
+	- Hoenn move tutors can now teach their moves endlessly.
 - Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko, Spheal lines have Attack and Special Attack swapped for example. (TODO: make list)
 - HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
 - Pokemon IVs and EVs can be viewed in the summary screen by pressing the L and R buttons.
@@ -30,6 +31,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- There is a small chance to encounter a wild Pokemon a much higher level than others in the same area.
 - Repeatedly acquirable fossils.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
+- Tradeback guy added. Provides a service for the player to trade Pokemon with themselves and trigger trade evolutions.
 - Ice types have their special defense boosted by 50% in hail.
 - Steven is back to being champion and Wallace back to being a gym leader.
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
@@ -153,6 +155,8 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - When Rattled is activated, the wrong ability is shown on the pop-up.
 - Sometimes when Truant triggers, the wrong ability is shown on the pop-up.
 - Grassy Terrain background is jank.
+- Electric Terrain background is jank.
+- Gunk Shot background is slightly jank.
 - Some door animations don't work when the Player runs into them from an angle. The Player just runs into the door without it opening. (Ever Grande City Battle Tent, Fortree City Pokemon Center.)
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there.
 - Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
@@ -162,6 +166,11 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
 - HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. 
 - Intimidate may trigger on fainted mons.
+- Tradeback guy service has broken strings and plays exp sound instead of Pokemon cry when a Pokemon evolves via trade.
+- A party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files.
+	- Pokemon can also turn into bad eggs just by viewing their summary screen in the PC.
+	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
+- Planting a Payapa (and perhaps others) berry freezes the game.
 
 # Post Launch TODOs
 
@@ -176,6 +185,7 @@ Possible future additions if I ever feel like doing more work on Energized Emera
 - An event for Winona.
 - A contest side-quest with Lisia, much like in ORAS.
 - Perhaps a more interesting Tate & Liza event to get Jirachi?
+- Sort out the online/wireless features. Either find out how to make them work or remove them.
 - Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
 
 # Credits

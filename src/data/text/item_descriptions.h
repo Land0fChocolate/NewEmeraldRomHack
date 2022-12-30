@@ -1112,7 +1112,7 @@ static const u8 sDubiousDiscDesc[] = _(
 
 static const u8 sReaperClothDesc[] = _(
     "Loved by a certain\n"
-    "Pokémon. Imbued with\n"
+    "Pokémon. Full with\n"
     "spiritual energy.");
 
 static const u8 sPrismScaleDesc[] = _(
