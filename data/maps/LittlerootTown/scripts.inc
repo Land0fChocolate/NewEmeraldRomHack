@@ -1217,8 +1217,7 @@ LittlerootTown_Text_BirchNewAreas:
 	.string "There have been some remarkable\n"
 	.string "discoveries recently.\p"
 	.string "New areas have opened up, and they have\n"
-	.string "wild Pokemon never before seen in this\l"
-	.string "region!\p"
+	.string "wild Pokemon never before seen in Hoenn!\p"
 	.string "There's even one right next to\n"
 	.string "Littleroot! Come and see!$"
 

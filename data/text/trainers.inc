@@ -4607,9 +4607,8 @@ EverGrandeCity_BattleTent_Text_MelinaPostBattle:
 
 EverGrandeCity_BattleTent_Text_PatIntro:
 	.string "I've been fighting here on Evergrande\n"
-	.string "longer than anyone else.\l"
-	.string "even before the Pokémon League moved\l"
-	.string "here.$"
+	.string "longer than anyone else, even before\l"
+	.string "the Pokémon League moved here.$"
 
 EverGrandeCity_BattleTent_Text_PatDefeated:
 	.string "A talented youngster you are.$"

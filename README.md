@@ -169,8 +169,8 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
 - HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. 
 - Intimidate may trigger on fainted mons.
-- Tradeback guy service has broken strings and plays exp sound instead of Pokemon cry when a Pokemon evolves via trade.
-- A party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files.
+- Tradeback guy service has broken strings and plays exp sound over Pokemon cry when a Pokemon evolves via trade.
+- Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files.
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
 - Planting a Payapa (and perhaps others) berry freezes the game.
 
