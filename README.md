@@ -65,7 +65,10 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- All item use, except for Poke Balls, is disabled from battles by default. NPCs don't use items either. Players may re-enable items in the options menu if they wish.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
 - Groomer, EV trainer and IV trainer NPCs have been added.
-- Berry tree yield rates have increased. Interaction with berry trees is also quicker.
+- Better berry trees
+	- Yield rates have increased.
+	- Interaction with berry trees and soil patches is quicker.
+	- Rain waters berry trees.
 - Number of Feebas spots is tripled.
 - Removed badge boosts
 
@@ -168,7 +171,6 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Intimidate may trigger on fainted mons.
 - Tradeback guy service has broken strings and plays exp sound instead of Pokemon cry when a Pokemon evolves via trade.
 - A party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files.
-	- Pokemon can also turn into bad eggs just by viewing their summary screen in the PC.
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
 - Planting a Payapa (and perhaps others) berry freezes the game.
 
