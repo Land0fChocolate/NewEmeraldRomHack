@@ -91,7 +91,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Solrock/Klink/Klang/Klinklang.
 - Evergreen: User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
-- Swordmaster: Power of sword/blade moves increased by 25% (Cut/Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Grovyle/Sceptile/Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
+- Swordmaster: Power of sword/blade moves increased by 25% (Cut/Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Grovyle/Sceptile/Gallade/Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
 - Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Articuno/Glaceon/Aurorus.
 - Unsteady: User's evasion increases by one stage when hit. Used by Spinda.
 - Disarm: User's contact moves inflict the Embargo status (disable held items) on the target. Used by Meowth/Persian/Pawniard/Bisharp/Meowth(Galarian)
@@ -172,7 +172,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Tradeback guy service has broken strings and plays exp sound over Pokemon cry when a Pokemon evolves via trade.
 - Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files.
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
-- Planting a Payapa (and perhaps others) berry freezes the game.
+- Occa berry tree has a broken palette.
 
 # Post Launch TODOs
 

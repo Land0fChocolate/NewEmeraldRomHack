@@ -11709,7 +11709,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_TRACE, ABILITY_STEADFAST, ABILITY_JUSTIFIED},
+        .abilities = {ABILITY_TRACE, ABILITY_SWORDMASTER, ABILITY_JUSTIFIED},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
     },
