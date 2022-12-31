@@ -172,7 +172,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Tradeback guy service has broken strings and plays exp sound over Pokemon cry when a Pokemon evolves via trade.
 - Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files.
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
-- Occa berry tree has a broken palette.
+- Many berry trees have broken palettes.
 
 # Post Launch TODOs
 

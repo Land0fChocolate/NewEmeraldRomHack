@@ -31,7 +31,7 @@ RustboroCity_PokemonSchool_EventScript_Roxanne::
 	lock
 	faceplayer
 	goto_if_set FLAG_ROXANNE_TRADE_STONES, RustboroCity_PokemonSchool_EventScript_RoxanneTrade
-	msgbox RustboroCity_PokemonSchool_Text_RoxanneTeaching, MSGBOX_DEFAULT
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneTradeStones, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_ROXANNE_TRADE_STONES
 	release
@@ -252,6 +252,7 @@ RustboroCity_PokemonSchool_EventScript_StudentNotebook::
 RustboroCity_PokemonSchool_EventScript_Teacher::
 	lock
 	faceplayer
+	goto_if_unset FLAG_HIDE_TRAINERS_SCHOOL_ROXANNE, RustboroCity_PokemonSchool_EventScript_TeacherAndRoxanne
 	goto_if_set FLAG_RECEIVED_QUICK_CLAW, RustboroCity_PokemonSchool_EventScript_GaveQuickClaw
 	compare VAR_FACING, DIR_EAST
 	call_if_eq RustboroCity_PokemonSchool_EventScript_TeacherCheckOnStudentsEast
@@ -265,6 +266,11 @@ RustboroCity_PokemonSchool_EventScript_Teacher::
 	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFastestDown
 	waitmovement 0
 	setflag FLAG_RECEIVED_QUICK_CLAW
+	release
+	end
+
+RustboroCity_PokemonSchool_EventScript_TeacherAndRoxanne::
+	msgbox RustboroCity_PokemonSchool_Text_RoxanneTeaching, MSGBOX_DEFAULT
 	release
 	end
 
@@ -392,6 +398,12 @@ RustboroCity_PokemonSchool_Text_ExplainFreeze:
 	.string "It will remain frozen after battle.\n"
 	.string "Thaw it out using an Ice Heal.$"
 
+RustboroCity_PokemonSchool_Text_RoxanneTeaching:
+	.string "It doesn't feel all that long ago when\n"
+	.string "I was teaching Roxanne.\p"
+	.string "Now, she is the one teaching.\n"
+	.string "It makes me swell with pride!$"
+
 RustboroCity_PokemonSchool_Text_StudentsWhoDontStudyGetQuickClaw:
 	.string "Students who don't study get a little\n"
 	.string "taste of my Quick Claw.\p"
@@ -454,7 +466,7 @@ RustboroCity_PokemonSchool_Text_StudentsNotes:
 	.string "the strong Trainers who await\l"
 	.string "challengers in Pokémon Gyms.$"
 
-RustboroCity_PokemonSchool_Text_RoxanneTeaching:
+RustboroCity_PokemonSchool_Text_RoxanneTradeStones:
 	.string "Roxanne: Hello, {PLAYER}.\n"
 	.string "Have you also come here to teach?\p"
 	.string "Or perhaps you would be more interested\n"
