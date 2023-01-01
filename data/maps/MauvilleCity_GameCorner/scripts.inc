@@ -12,7 +12,8 @@ MauvilleCity_GameCorner_MapScripts::
 	.set DOLL_COINS,  1000
 
 	.set COINS_PRICE_50,  1000
-	.set COINS_PRICE_500, 10000
+	.set COINS_PRICE_500, 9000
+	.set COINS_PRICE_5000, 80000
 
 	.set PORYGON_COINS, 6400
 
@@ -34,6 +35,7 @@ MauvilleCity_GameCorner_EventScript_ChooseCoinsDefault50::
 	switch VAR_RESULT
 	case 0, MauvilleCity_GameCorner_EventScript_Buy50Coins
 	case 1, MauvilleCity_GameCorner_EventScript_Buy500Coins
+	case 2, MauvilleCity_GameCorner_EventScript_Buy5000Coins
 	goto MauvilleCity_GameCorner_EventScript_CancelBuyCoins
 	end
 
@@ -73,6 +75,24 @@ MauvilleCity_GameCorner_EventScript_Buy500Coins::
 	goto_if_eq MauvilleCity_GameCorner_EventScript_NotEnoughMoney
 	addcoins 500
 	removemoney COINS_PRICE_500, 0
+	updatemoneybox 0, 0
+	updatecoinsbox 1, 6
+	playse SE_SHOP
+	msgbox MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT
+	hidemoneybox
+	hidecoinsbox 0, 5
+	release
+	end
+
+MauvilleCity_GameCorner_EventScript_Buy5000Coins::
+	checkcoins VAR_TEMP_1
+	compare VAR_TEMP_1, (MAX_COINS + 1 - 500)
+	goto_if_ge MauvilleCity_GameCorner_EventScript_NoRoomForCoins
+	checkmoney COINS_PRICE_5000, 0
+	compare VAR_RESULT, FALSE
+	goto_if_eq MauvilleCity_GameCorner_EventScript_NotEnoughMoney
+	addcoins 5000
+	removemoney COINS_PRICE_5000, 0
 	updatemoneybox 0, 0
 	updatecoinsbox 1, 6
 	playse SE_SHOP

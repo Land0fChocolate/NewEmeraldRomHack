@@ -390,7 +390,7 @@ BattleFrontier_ReceptionGate_Text_BattleFactoryInfo:
 
 BattleFrontier_ReceptionGate_Text_BattlePikeInfo:
 	.string "The Battle Pike is the building shaped\n"
-	.string "like a Pokémon at the center-left of\l"
+	.string "like a Seviper at the center-left of\l"
 	.string "the Battle Frontier.\p"
 	.string "An event called the Battle Choice\n"
 	.string "is conducted there.$"

@@ -2404,7 +2404,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_MOVE_TUTOR_2:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 28;
+            task->tNumItems = 27;
             task->tLeft = 15;
             task->tTop = 1;
             task->tWidth = 14;
@@ -2669,7 +2669,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_MegaPunch8BP,
         gText_MegaKick8BP,
         gText_BodySlam12BP,
-        gText_RockSlide12BP,
+        gText_StoredPower12BP,
         gText_SwordsDance16BP,
         gText_KnockOff16BP,
         gText_PsychicFang16BP,
@@ -2700,7 +2700,6 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_BreakingSwipe8BP,
         gText_SerpentDance12BP,
         gText_Tailwind12BP,
-        gText_StoredPower12BP,
         gText_Avalanche12BP,
         gText_HiddenThorns16BP,
         gText_IcePunch16BP,
@@ -3447,7 +3446,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_MegaPunchDesc,
         BattleFrontier_Lounge7_Text_MegaKickDesc,
         BattleFrontier_Lounge7_Text_BodySlamDesc,
-        BattleFrontier_Lounge7_Text_RockSlideDesc,
+        BattleFrontier_Lounge7_Text_StoredPowerDesc,
         BattleFrontier_Lounge7_Text_SwordsDanceDesc,
         BattleFrontier_Lounge7_Text_KnockOffDesc,
         BattleFrontier_Lounge7_Text_PsychicFangsDesc,
@@ -3479,7 +3478,6 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_BreakingSwipeDesc,
         BattleFrontier_Lounge7_Text_SerpentDanceDesc,
         BattleFrontier_Lounge7_Text_TailwindDesc,
-        BattleFrontier_Lounge7_Text_StoredPowerDesc,
         BattleFrontier_Lounge7_Text_AvalancheDesc,
         BattleFrontier_Lounge7_Text_HiddenThornsDesc,
         BattleFrontier_Lounge7_Text_IcePunchDesc,

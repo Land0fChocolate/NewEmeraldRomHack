@@ -2625,9 +2625,9 @@ void SetMoveEffect(bool32 primary, u32 certain)
     bool32 mirrorArmorReflected = (HasAbility(ABILITY_MIRROR_ARMOR, GetBattlerAbilities(gBattlerTarget)));
     bool32 hasWaterVeil, hasWaterBubble;
     u32 flags = 0;
-    u16 *battlerAbilities = GetBattlerAbilities(gEffectBattler);
-    u16 *attackerAbilities = GetBattlerAbilities(gBattlerAttacker);
-    u16 *targetAbilities = GetBattlerAbilities(gBattlerTarget);
+    u16 battlerAbilities[NUM_ABILITY_SLOTS];
+    u16 attackerAbilities[NUM_ABILITY_SLOTS];
+    u16 targetAbilities[NUM_ABILITY_SLOTS];
 
     switch (gBattleScripting.moveEffect) // Set move effects which happen later on
     {
@@ -2640,7 +2640,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
     if (gBattleScripting.moveEffect & MOVE_EFFECT_AFFECTS_USER)
     {
         gEffectBattler = gBattlerAttacker; // battlerId that effects get applied on
-        gBattleScripting.moveEffect &= ~(MOVE_EFFECT_AFFECTS_USER);
+        gBattleScripting.moveEffect &= ~MOVE_EFFECT_AFFECTS_USER;
         affectsUser = MOVE_EFFECT_AFFECTS_USER;
         gBattleScripting.battler = gBattlerTarget; // theoretically the attacker
     }
@@ -2649,8 +2649,13 @@ void SetMoveEffect(bool32 primary, u32 certain)
         gEffectBattler = gBattlerTarget;
         gBattleScripting.battler = gBattlerAttacker;
     }
+
+    memcpy(battlerAbilities, GetBattlerAbilities(gEffectBattler), sizeof(battlerAbilities));
+    memcpy(attackerAbilities, GetBattlerAbilities(gBattlerAttacker), sizeof(attackerAbilities));
+    memcpy(targetAbilities, GetBattlerAbilities(gBattlerTarget), sizeof(targetAbilities));
+
      // Just in case this flag is still set
-    gBattleScripting.moveEffect &= ~(MOVE_EFFECT_CERTAIN);
+    gBattleScripting.moveEffect &= ~MOVE_EFFECT_CERTAIN;
 
     if (HasAbility(ABILITY_SHIELD_DUST, battlerAbilities) && !(gHitMarker & HITMARKER_IGNORE_SAFEGUARD)
         && !primary && gBattleScripting.moveEffect <= 9)
@@ -3123,8 +3128,8 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 if (mirrorArmorReflected && !affectsUser)
                     flags |= STAT_BUFF_ALLOW_PTR;
                 if (ChangeStatBuffs(SET_STAT_BUFF_VALUE(2) | STAT_BUFF_NEGATIVE,
-                                    gBattleScripting.moveEffect - MOVE_EFFECT_ATK_MINUS_2 + 1,
-                                    flags | STAT_BUFF_UPDATE_MOVE_EFFECT, gBattlescriptCurrInstr + 1))
+                    gBattleScripting.moveEffect - MOVE_EFFECT_ATK_MINUS_2 + 1,
+                    flags | STAT_BUFF_UPDATE_MOVE_EFFECT, gBattlescriptCurrInstr + 1))
                 {
                     if (!mirrorArmorReflected)
                         gBattlescriptCurrInstr++;
@@ -10468,6 +10473,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             return STAT_CHANGE_DIDNT_WORK;
         }
 
+        //TODO: Clear Body & Hammer Arm bugfix
         else if ((HasAbility(ABILITY_CLEAR_BODY, battlerAbilities)
                   || HasAbility(ABILITY_FULL_METAL_BODY, battlerAbilities)
                   || HasAbility(ABILITY_WHITE_SMOKE, battlerAbilities))

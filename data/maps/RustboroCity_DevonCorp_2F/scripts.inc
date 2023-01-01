@@ -205,7 +205,7 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeOldAmber::
 RustboroCity_DevonCorp_2F_EventScript_GiveOldAmber::
 	bufferitemname 0, ITEM_OLD_AMBER
 	msgbox RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher, MSGBOX_DEFAULT
-	removeitem ITEM_HELIX_FOSSIL
+	removeitem ITEM_OLD_AMBER
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 1
 	setvar VAR_WHICH_FOSSIL_REVIVED, 5
 	release

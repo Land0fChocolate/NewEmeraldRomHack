@@ -165,46 +165,6 @@ BattleFrontier_ScottsHouse_EventScript_WelcomeToFrontier::
 	msgbox BattleFrontier_ScottsHouse_Text_HowMuchEffortItTookToMakeReal, MSGBOX_DEFAULT
 	applymovement LOCALID_SCOTT, Common_Movement_FacePlayer
 	waitmovement 0
-	msgbox BattleFrontier_ScottsHouse_Text_HaveThisAsMementoOfOurPathsCrossing, MSGBOX_DEFAULT
-	compare VAR_SCOTT_STATE, 13
-	goto_if_eq BattleFrontier_ScottsHouse_EventScript_Give4BattlePoints
-	compare VAR_SCOTT_STATE, 9
-	goto_if_ge BattleFrontier_ScottsHouse_EventScript_Give3BattlePoints
-	compare VAR_SCOTT_STATE, 6
-	goto_if_ge BattleFrontier_ScottsHouse_EventScript_Give2BattlePoints
-	goto BattleFrontier_ScottsHouse_EventScript_Give1BattlePoint
-	end
-
-BattleFrontier_ScottsHouse_EventScript_Give4BattlePoints::
-	buffernumberstring 0, 4
-	setvar VAR_0x8004, 4
-	goto BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints
-	end
-
-BattleFrontier_ScottsHouse_EventScript_Give3BattlePoints::
-	buffernumberstring 0, 3
-	setvar VAR_0x8004, 3
-	goto BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints
-	end
-
-BattleFrontier_ScottsHouse_EventScript_Give2BattlePoints::
-	buffernumberstring 0, 2
-	setvar VAR_0x8004, 2
-	goto BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints
-	end
-
-BattleFrontier_ScottsHouse_EventScript_Give1BattlePoint::
-	buffernumberstring 0, 1
-	setvar VAR_0x8004, 1
-	goto BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints
-	end
-
-BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints::
-	special GiveFrontierBattlePoints
-	msgbox BattleFrontier_ScottsHouse_Text_ObtainedXBattlePoints, MSGBOX_GETPOINTS
-	msgbox BattleFrontier_ScottsHouse_Text_ExplainBattlePoints, MSGBOX_DEFAULT
-	setflag FLAG_SCOTT_GIVES_BATTLE_POINTS
-	setflag FLAG_TEMP_2
 	release
 	end
 

@@ -155,24 +155,27 @@ The project started in December 2021, using the version of pokeemerald-expansion
 
 - Many switch-in abilities (like Frisk and Imposter) don’t activate when both Player Pokemon and opponent Pokemon fainted previous turn (e.g. Destiny Bond) and the Player sends out a Pokemon before the opponent sends out theirs. Solving this will probably involve having to rewrite the code that deals with switch-in abilities. This is probably the same behavior as in vanilla Pokemon Emerald, but I don't see why Trace and Intimidate are allowed to activate whilst others don't, so I'm considering this a bug.
 - Abilities that activate at the same time as other abilities on the same Pokemon can have their names in the ability pop-up overwritten. (e.g. Tyranitar with Sand Stream and Unnerve). This is due to how switch-in (and other types) abilities are handled. This could be fixed by setting gLastUsedAbility during the ability battle script with the new setlastusedability command, but this freezes the game when used before calling the ability pop-up. Why? Have no fucking clue.
+- Abilities that activate at the same time as other abilities can use wrong strings in the battle message.
 - When Rattled is activated, the wrong ability is shown on the pop-up.
 - Sometimes when Truant triggers, the wrong ability is shown on the pop-up.
 - Grassy Terrain background is jank.
 - Electric Terrain background is jank.
+- Misty Terrain background is jank.
 - Gunk Shot background is slightly jank.
+- Hurricane background is jank.
+- When a Pokemon with Clear Body uses Hammer Arm, its speed doesn't go down.
 - Some door animations don't work when the Player runs into them from an angle. The Player just runs into the door without it opening. (Ever Grande City Battle Tent, Fortree City Pokemon Center.)
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there.
 - Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
 - Origin has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
-- Some Pokemon in PC boxes have a corner of their front sprite snipped off.
+- Some Pokemon in PC boxes have the top left corner of their front sprite snipped off.
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
-- HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. 
+- HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce.
 - Intimidate may trigger on fainted mons.
 - Tradeback guy service has broken strings and plays exp sound over Pokemon cry when a Pokemon evolves via trade.
-- Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files.
+- Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety.
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
-- Many berry trees have broken palettes.
 
 # Post Launch TODOs
 
@@ -180,14 +183,17 @@ Possible future additions if I ever feel like doing more work on Energized Emera
 
 - Labels for ability description and IV/EV stats in Pokemon summary screen.
 - Pokedex to support regional variants
-- Pokedex to have other data as well. Moves, evolution, abilities?
+- Pokedex to have other data as well. Moves, base stats, evolution requirements, abilities?
 - Improve various art assets, mostly trainer pics.
+- The berry trees of the type resist berries should have their own colours.
 - Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
-- An event for Winona.
+- An event for Winona, like with the other gym leaders. I just haven't thought of a suitable one for her.
 - A contest side-quest with Lisia, much like in ORAS.
 - Perhaps a more interesting Tate & Liza event to get Jirachi?
+- In-game resource that teaches the player braile. 
 - Sort out the online/wireless features. Either find out how to make them work or remove them.
+- Better Game Corner games. Instead of crappy gambling, have fun minigames instead. Will be a ton of work though.
 - Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
 
 # Credits
@@ -204,10 +210,14 @@ The fine people who worked on pokeemerald and pokeemerald-expansion and helped m
 - Xavion3
 - GriffinR
 - MGriffin
+- AsparagusEduardo
 - kleeenexfeu
 - Citrus Bolt
 - dunsparce9
 - Sapphire Jester
 - TheXaman
 - MeekRhino
-- AsparagusEduardo
+- MandL127
+- Pyredrid
+- ghoulslash
+- UltimaSoul

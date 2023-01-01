@@ -274,8 +274,8 @@ SSTidalCorridor_Text_ScottBattleFrontierInvite:
 	.string "I've spoken with the ship's Captain\n"
 	.string "about this.\p"
 	.string "The next time you take a ferry,\n"
-	.string "you should be able to sail to\l"
-	.string "the Battle Frontier.\p"
+	.string "you should be able to sail to the\l"
+	.string "Battle Frontier.\p"
 	.string "Okay, {PLAYER}{KUN}, I'll be waiting for you\n"
 	.string "at the Battle Frontier!$"
 
