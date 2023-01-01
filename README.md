@@ -163,6 +163,8 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Misty Terrain background is jank.
 - Gunk Shot background is slightly jank.
 - Hurricane background is jank.
+- Cloud reflection can be seen in the very tall grass in Route 120.
+- Jumping into very tall grass from ledge and moving produces incorrect grass animation.
 - When a Pokemon with Clear Body uses Hammer Arm, its speed doesn't go down.
 - Some door animations don't work when the Player runs into them from an angle. The Player just runs into the door without it opening. (Ever Grande City Battle Tent, Fortree City Pokemon Center.)
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there.
@@ -174,6 +176,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce.
 - Intimidate may trigger on fainted mons.
 - Tradeback guy service has broken strings and plays exp sound over Pokemon cry when a Pokemon evolves via trade.
+- Pokenav calls talking about Battle Frontier win streaks can get the wrong facility.
 - Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety.
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
 
@@ -195,6 +198,7 @@ Possible future additions if I ever feel like doing more work on Energized Emera
 - Sort out the online/wireless features. Either find out how to make them work or remove them.
 - Better Game Corner games. Instead of crappy gambling, have fun minigames instead. Will be a ton of work though.
 - Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
+- Increase number of PC Pokemon storage boxes.
 
 # Credits
 

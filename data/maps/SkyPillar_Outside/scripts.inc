@@ -165,7 +165,7 @@ SkyPillar_Outside_Text_JuanGuardEntrance3:
 	.string "be delighted to dance with you one day.\p"
 	.string "However, even though Rayquaza has not\n"
 	.string "yet returned to its throne, I must\l"
-	.string "stand watch to prevent any other"
+	.string "stand watch to prevent any other\l"
 	.string "miscreants using legendary Pokémon\l"
 	.string "to cause catastrophe.$"
 

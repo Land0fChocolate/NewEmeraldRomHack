@@ -55,7 +55,7 @@ static const u8 sTileBitAttributes[] =
     [MB_SEAWEED_NO_SURFACING] = TILE_ATTRIBUTES(TRUE, TRUE, TRUE),
     [MB_REFLECTION_UNDER_BRIDGE] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
     [MB_PUDDLE_EDGE] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
-    [MB_UNUSED_2D] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
+    [MB_TALL_GRASS_PUDDLE_EDGE] = TILE_ATTRIBUTES(TRUE, FALSE, TRUE),
     [MB_UNUSED_2E] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_UNUSED_2F] = TILE_ATTRIBUTES(FALSE, FALSE, FALSE),
     [MB_IMPASSABLE_EAST] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
@@ -299,7 +299,7 @@ bool8 MetatileBehavior_IsJumpSouth(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsPokeGrass(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_LONG_GRASS)
+    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_LONG_GRASS || metatileBehavior == MB_TALL_GRASS_PUDDLE_EDGE)
         return TRUE;
     else
         return FALSE;
@@ -326,6 +326,7 @@ bool8 MetatileBehavior_IsReflective(u8 metatileBehavior)
     if (metatileBehavior == MB_POND_WATER
      || metatileBehavior == MB_PUDDLE
      || metatileBehavior == MB_PUDDLE_EDGE
+     || metatileBehavior == MB_TALL_GRASS_PUDDLE_EDGE
      || metatileBehavior == MB_UNUSED_SOOTOPOLIS_DEEP_WATER_2
      || metatileBehavior == MB_ICE
      || metatileBehavior == MB_UNUSED_ICE_CAVE
@@ -851,7 +852,7 @@ bool8 MetatileBehavior_IsPuddle(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsTallGrass(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_TALL_GRASS)
+    if (metatileBehavior == MB_TALL_GRASS || metatileBehavior == MB_TALL_GRASS_PUDDLE_EDGE)
         return TRUE;
     else
         return FALSE;
@@ -1367,9 +1368,10 @@ bool8 MetatileBehavior_IsRunningDisallowed(u8 metatileBehavior)
 bool8 MetatileBehavior_IsCuttableGrass(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_TALL_GRASS
-     || metatileBehavior == MB_LONG_GRASS
-     || metatileBehavior == MB_ASHGRASS
-     || metatileBehavior == MB_LONG_GRASS_SOUTH_EDGE)
+        || metatileBehavior == MB_TALL_GRASS_PUDDLE_EDGE
+        || metatileBehavior == MB_LONG_GRASS
+        || metatileBehavior == MB_ASHGRASS
+        || metatileBehavior == MB_LONG_GRASS_SOUTH_EDGE)
         return TRUE;
     else
         return FALSE;
