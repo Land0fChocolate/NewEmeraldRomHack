@@ -518,7 +518,12 @@ static const u8 sBadDreamsDescription[] = _(
 	"of 1/4 HP per turn.");
 
 static const u8 sPickpocketDescription[] = _(
-	"Steals the foe's held item.");
+	"Steals the foe's held item\n"
+	"if struck.");
+
+static const u8 sMagicianDescription[] = _(
+	"Steals the foe's held item\n"
+	"on hit.");
 
 static const u8 sSheerForceDescription[] = _(
 	"Moves with extra effects\n"
@@ -1961,7 +1966,7 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_CHEEK_POUCH] = sCheekPouchDescription,
     [ABILITY_PROTEAN] = sProteanDescription,
     [ABILITY_FUR_COAT] = sFurCoatDescription,
-    [ABILITY_MAGICIAN] = sPickpocketDescription,
+    [ABILITY_MAGICIAN] = sMagicianDescription,
     [ABILITY_BULLETPROOF] = sBulletproofDescription,
     [ABILITY_COMPETITIVE] = sCompetitiveDescription,
     [ABILITY_STRONG_JAW] = sStrongJawDescription,
