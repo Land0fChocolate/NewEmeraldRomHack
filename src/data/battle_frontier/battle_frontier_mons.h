@@ -3580,7 +3580,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_FLAREON_1] = {
         .species = SPECIES_FLAREON,
-        .moves = {MOVE_BLAZE_IMPACT, MOVE_SUPERPOWER, MOVE_IRON_TAIL, MOVE_WILL_O_WISP},
+        .moves = {MOVE_BLAZE_IMPACT, MOVE_BODY_SLAM, MOVE_IRON_TAIL, MOVE_WILL_O_WISP},
         .item = ITEM_SITRUS_BERRY,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_JOLLY
@@ -4385,7 +4385,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_AERODACTYL_2] = {
         .species = SPECIES_AERODACTYL,
-        .moves = {MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_AERIAL_ACE, MOVE_DOUBLE_EDGE},
+        .moves = {MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_PSYCHIC_FANGS, MOVE_DOUBLE_EDGE},
         .item = ITEM_CHOICE_BAND,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_ADAMANT
