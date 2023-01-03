@@ -35,8 +35,14 @@ EverGrandeCity_EventScript_Leaf::
 EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
-	setflag FLAG_HIDE_SLATEPORT_CITY_NPCS_FOR_AQUA_QUEUE
-	@giveitem ITEM_ORIGIN_STRAND
+	@giveitem ITEM_PROTEIN, 97
+	@giveitem ITEM_IRON, 90
+	@giveitem ITEM_CALCIUM, 97
+	@giveitem ITEM_ZINC, 90
+	@giveitem ITEM_CARBOS, 98
+	@giveitem ITEM_HP_UP, 90
+	giveitem ITEM_RARE_CANDY, 90
+	closemessage
 	end
 
 EverGrandeCity_Text_FlagIsSet:

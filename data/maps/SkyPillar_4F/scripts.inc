@@ -61,7 +61,7 @@ SkyPillar_4F_Text_ZinniaStoryPart2:
 	.string "time and in a triangle pattern.\p"
 	.string "That was when I knew, that Deoxys was\n"
 	.string "about to return and bring destruction\l"
-	.string "to Hoenn once more.\p"
+	.string "to Hoenn once again.\p"
 	.string "The solution is simple. Reawaken\n"
 	.string "Rayquaza to fight Deoxys again.\p"
 	.string "However, my ancestors were locked out of\n"

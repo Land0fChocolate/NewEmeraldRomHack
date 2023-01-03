@@ -149,6 +149,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_LegendaryBriefing::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieGoodJobPlayer, MSGBOX_DEFAULT
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MaxieSituationIsStable, MSGBOX_DEFAULT
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ArchieSeeYa, MSGBOX_DEFAULT
+	closemessage
 	applymovement LOCALID_MAXIE, LittlerootTown_ProfessorBirchsLab_Movement_MaxieLeave
 	applymovement LOCALID_ARCHIE, LittlerootTown_ProfessorBirchsLab_Movement_ArchieLeave
 	waitmovement 0
@@ -1301,8 +1302,7 @@ LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2:
 
 LittlerootTown_ProfessorBirchsLab_Text_MayTakeBreakFromFieldwork:
 	.string "May: I think I'll take a short break\n"
-	.string "from fieldwork.\p"
-	.string "I think I'll help my dad here for\n"
+	.string "from fieldwork and help my dad here for\l"
 	.string "a while.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BrendanTakeBreakFromFieldwork:

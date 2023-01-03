@@ -21,6 +21,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- Changes to level up, Egg learnsets, TM learnsets and Tutor learnsets of Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
 	- Hoenn move tutors can now teach their moves endlessly.
+- New tutor moves added.
 - Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko, Spheal lines have Attack and Special Attack swapped for example. (TODO: make list)
 - HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
 - Pokemon IVs and EVs can be viewed in the summary screen by pressing the L and R buttons.
@@ -163,12 +164,14 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Misty Terrain background is jank.
 - Gunk Shot background is slightly jank.
 - Hurricane background is jank.
+- Origin Pulse background is jank.
 - Cloud reflection can be seen in the very tall grass in Route 120.
 - Jumping into very tall grass from ledge and moving produces incorrect grass animation.
 - When a Pokemon with Clear Body uses Hammer Arm, its speed doesn't go down.
 - Some door animations don't work when the Player runs into them from an angle. The Player just runs into the door without it opening. (Ever Grande City Battle Tent, Fortree City Pokemon Center.)
-- Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there.
+- Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there. Repeatedly occurs when KOing it from 100% HP.
 - Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
+- Deoxys sometimes skips a form change. Repeatedly occurs with Draining Kiss.
 - Origin has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
 - Some Pokemon in PC boxes have the top left corner of their front sprite snipped off.
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.

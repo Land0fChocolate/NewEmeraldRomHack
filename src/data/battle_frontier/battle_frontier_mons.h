@@ -6184,7 +6184,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_FLAREON_4] = {
         .species = SPECIES_FLAREON,
-        .moves = {MOVE_BLAZE_IMPACT, MOVE_OVERHEAT, MOVE_SUPERPOWER, MOVE_STORED_POWER},
+        .moves = {MOVE_BLAZE_IMPACT, MOVE_OVERHEAT, MOVE_SUPERPOWER, MOVE_BATON_PASS},
         .item = ITEM_LEFTOVERS,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_ATTACK,
         .nature = NATURE_SERIOUS

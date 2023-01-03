@@ -2404,7 +2404,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_MOVE_TUTOR_2:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 27;
+            task->tNumItems = 26;
             task->tLeft = 15;
             task->tTop = 1;
             task->tWidth = 14;
@@ -2688,7 +2688,6 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     {
         gText_DefenseCurl4BP,
         gText_Snore4BP,
-        gText_MudSlap4BP,
         gText_Swift4BP,
         gText_PainSplit6BP,
         gText_Recycle6BP,
@@ -3338,14 +3337,14 @@ static const u16 sBattleFrontier_TutorMoves1[] =
     MOVE_SOFT_BOILED,
     MOVE_WORK_UP,
     MOVE_DEFOG,
+    MOVE_COUNTER,
     MOVE_MAGIC_COAT,
     MOVE_LOW_KICK, 
     MOVE_SEISMIC_TOSS,  
     MOVE_MEGA_PUNCH,
     MOVE_MEGA_KICK,
     MOVE_BODY_SLAM,
-    MOVE_ROCK_SLIDE,
-    MOVE_COUNTER,
+    MOVE_STORED_POWER,
     MOVE_SWORDS_DANCE,
     MOVE_KNOCK_OFF,
     MOVE_PSYCHIC_FANGS,
@@ -3364,7 +3363,6 @@ static const u16 sBattleFrontier_TutorMoves2[] =
 { 
     MOVE_DEFENSE_CURL,
     MOVE_SNORE,
-    MOVE_MUD_SLAP,
     MOVE_SWIFT,
     MOVE_PAIN_SPLIT,
     MOVE_RECYCLE,
@@ -3376,7 +3374,6 @@ static const u16 sBattleFrontier_TutorMoves2[] =
     MOVE_BREAKING_SWIPE,
     MOVE_SERPENT_DANCE,
     MOVE_TAILWIND,
-    MOVE_STORED_POWER,
     MOVE_AVALANCHE,
     MOVE_HIDDEN_THORNS,
     MOVE_ICE_PUNCH,
@@ -3466,7 +3463,6 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
     {
         BattleFrontier_Lounge7_Text_DefenseCurlDesc,
         BattleFrontier_Lounge7_Text_SnoreDesc,
-        BattleFrontier_Lounge7_Text_MudSlapDesc,
         BattleFrontier_Lounge7_Text_SwiftDesc,
         BattleFrontier_Lounge7_Text_PainSplitDesc,
         BattleFrontier_Lounge7_Text_RecycleDesc,
