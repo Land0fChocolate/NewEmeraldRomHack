@@ -297,7 +297,7 @@ PetalburgCity_EventScript_CheckForEveryBerry::
 	call_if_eq PetalburgCity_EventScript_AddToBerryCount
 	compare VAR_TEMP_1, 60
 	goto_if_ge PetalburgCity_EventScript_ObtainedAllBerries
-	return
+	end
 
 PetalburgCity_EventScript_AddToBerryCount::
 	addvar VAR_TEMP_1, 1
