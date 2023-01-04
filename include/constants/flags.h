@@ -678,7 +678,7 @@
 #define FLAG_HIDE_DEWFORD_GYM_BRAWLY              0x280
 #define FLAG_HIDE_ROUTE106_BRAWLY                 0x281
 #define FLAG_HIDE_FORTREE_GYM_WINONA              0x282
-#define FLAG_HIDE_TBC_WINONA                      0x283
+#define FLAG_HIDE_MOSSDEEP_CITY_WINONA            0x283
 #define FLAG_HIDE_MOSSDEEP_GYM_TATE_LIZA          0x284
 #define FLAG_HIDE_SLATEPORT_CITY_TATE_LIZA        0x285
 #define FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE          0x286
@@ -1559,7 +1559,7 @@
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
 #define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91F + (8 - FLAG_UNUSED_0x91F % 8))
-#define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
+#define FLAG_DAILY_WINONA_RECEIVED_BERRY            (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
 #define FLAG_DAILY_OLDALEFARM_POKEMON_GIVEN         (DAILY_FLAGS_START + 0x3)

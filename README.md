@@ -51,6 +51,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- Roxanne trades evolution stones for fossils.
 	- Brawly can give a random shard daily.
 	- Flannery can EV train one of your Pokemon daily.
+	- Winona gives a random rare berry daily.
 	- Tate and Liza grant access to Jirachi.
 - Item changes
 	- Quick Claw now increases speed by 10% when user is below 50% health.
@@ -195,8 +196,8 @@ Possible future additions if I ever feel like doing more work on Energized Emera
 - The berry trees of the type resist berries should have their own colours.
 - Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
-- An event for Winona, like with the other gym leaders. I just haven't thought of a suitable one for her.
 - A contest side-quest with Lisia, much like in ORAS.
+- Perhaps a more interesting Winona berry giving event.
 - Perhaps a more interesting Tate & Liza event to get Jirachi?
 - In-game resource that teaches the player braile. 
 - Sort out the online/wireless features. Either find out how to make them work or remove them.

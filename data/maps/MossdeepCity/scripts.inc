@@ -12,10 +12,54 @@ MossdeepCity_OnTransition:
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_4
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	call_if_set FLAG_HIDE_MOSSDEEP_CITY_RIVAL, Mossdeep_Eventscript_MoveRival
+	call MossdeepCity_Eventscript_SetUpWinona
 	end
 
 Mossdeep_Eventscript_MoveRival::
 	setobjectxyperm LOCALID_RIVAL, 64, 15
+	end
+
+MossdeepCity_Eventscript_SetUpWinona::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, MossdeepCity_Eventscript_WinonaRematch
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_WINONA_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq MossdeepCity_Eventscript_WinonaRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq MossdeepCity_Eventscript_WinonaInMossdeep
+    return
+
+MossdeepCity_Eventscript_WinonaRematch::
+	setflag FLAG_HIDE_MOSSDEEP_CITY_WINONA
+	clearflag FLAG_HIDE_FORTREE_GYM_WINONA
+	return
+
+MossdeepCity_Eventscript_WinonaInMossdeep::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_MOSSDEEP_CITY_WINONA
+	setflag FLAG_HIDE_FORTREE_GYM_WINONA
+	return
+
+MossdeepCity_EventScript_Winona::
+	faceplayer
+	dotimebasedevents
+	goto_if_unset FLAG_DAILY_WINONA_RECEIVED_BERRY, MossdeepCity_EventScript_WinonaGivesBerry
+	msgbox MossdeepCity_Text_WinonaLookingForLegendary, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MossdeepCity_EventScript_WinonaGivesBerry::
+	msgbox MossdeepCity_Text_WinonaGiveBerry, MSGBOX_DEFAULT
+	closemessage
+	random NUM_WINONA_BERRIES
+	addvar VAR_RESULT, NUM_WINONA_BERRIES_SKIPPED
+	addvar VAR_RESULT, FIRST_BERRY_INDEX
+	giveitem VAR_RESULT
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	setflag FLAG_DAILY_WINONA_RECEIVED_BERRY
+	release
 	end
 
 MossdeepCity_Eventscript_RivalTrigger::
@@ -308,6 +352,22 @@ MossdeepCity_EventScript_DeclineKingsRock::
 MossdeepCity_EventScript_BlackBelt::
 	msgbox MossdeepCity_Text_WavesOverFeet, MSGBOX_NPC
 	end
+
+MossdeepCity_Text_WinonaGiveBerry::
+	.string "Winona: Hello, {PLAYER}.\p"
+	.string "I have heard tales of legendary Pokémon\n"
+	.string "roaming the land and skies around these\l"
+	.string "parts.\p"
+	.string "I was hoping to find them for myself,\n"
+	.string "or find the whereabouts of their lairs.\p"
+	.string "Sadly, I haven't found them.\n"
+	.string "Although, I have found some unusual\l"
+	.string "berries.\p"
+	.string "Here. Sharing is caring.$"
+
+MossdeepCity_Text_WinonaLookingForLegendary::
+	.string "Winona: The legendary birds and beasts…\p"
+	.string "I would love to see their grace.$"
 
 MossdeepCity_Text_BerryWifePhrase:
 	.string "I remarked on a “Cool Latios” when I\n"
