@@ -178,6 +178,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
 - HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce.
 - Intimidate may trigger on fainted mons.
+- Frisk may trigger on the wrong Pokemon.
 - Tradeback guy service has broken strings and plays exp sound over Pokemon cry when a Pokemon evolves via trade.
 - Pokenav calls talking about Battle Frontier win streaks can get the wrong facility.
 - Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety.
@@ -200,6 +201,7 @@ Possible future additions if I ever feel like doing more work on Energized Emera
 - In-game resource that teaches the player braile. 
 - Sort out the online/wireless features. Either find out how to make them work or remove them.
 - Better Game Corner games. Instead of crappy gambling, have fun minigames instead. Will be a ton of work though.
+- Better Battle Frontier level scaling. Open level puts opponent Pokemon to your highest level Pokemon. Should scale all Pokemon to a certain level.
 - Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
 - Increase number of PC Pokemon storage boxes.
 

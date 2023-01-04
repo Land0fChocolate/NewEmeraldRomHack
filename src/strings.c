@@ -1301,6 +1301,7 @@ const u8 gText_PsychUp8BP[] = _("Psych Up{CLEAR_TO 0x4E}8BP");
 const u8 gText_DreamEater8BP[] = _("Dream Eater{CLEAR_TO 0x4E}8BP");
 const u8 gText_LowSweep8BP[] = _("Low Sweep{CLEAR_TO 0x4E}8BP");
 const u8 gText_BreakingSwipe8BP[] = _("Breaking Swipe{CLEAR_TO 0x4E}8BP");
+const u8 gText_BugBite12BP[] = _("Bug Bite{CLEAR_TO 0x4E}12BP");
 const u8 gText_SerpentDance12BP[] = _("Serpent Dance{CLEAR_TO 0x4E}12BP");
 const u8 gText_Tailwind12BP[] = _("Tailwind{CLEAR_TO 0x4E}12BP");
 const u8 gText_StoredPower12BP[] = _("Stored Power{CLEAR_TO 0x4E}12BP");

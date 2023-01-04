@@ -271,22 +271,23 @@ BattleFrontier_Lounge7_EventScript_ChooseRightTutorMove::
 	case 8, BattleFrontier_Lounge7_EventScript_DreamEater
 	case 9, BattleFrontier_Lounge7_EventScript_LowSweep
 	case 10, BattleFrontier_Lounge7_EventScript_BreakingSwipe
-	case 11, BattleFrontier_Lounge7_EventScript_SerpentDance
-	case 12, BattleFrontier_Lounge7_EventScript_Tailwind
-	case 13, BattleFrontier_Lounge7_EventScript_Avalanche
-	case 14, BattleFrontier_Lounge7_EventScript_HiddenThorns
-	case 15, BattleFrontier_Lounge7_EventScript_IcePunch
-	case 16, BattleFrontier_Lounge7_EventScript_ThunderPunch
-	case 17, BattleFrontier_Lounge7_EventScript_FirePunch
-	case 18, BattleFrontier_Lounge7_EventScript_FlintBlade
-	case 19, BattleFrontier_Lounge7_EventScript_SignalBeam
-	case 20, BattleFrontier_Lounge7_EventScript_ZenHeadbutt
-	case 21, BattleFrontier_Lounge7_EventScript_HeatWave
-	case 22, BattleFrontier_Lounge7_EventScript_EarthPower
-	case 23, BattleFrontier_Lounge7_EventScript_BodyPress
-	case 24, BattleFrontier_Lounge7_EventScript_GunkShot
-	case 25, BattleFrontier_Lounge7_EventScript_NastyPlot
-	case 26, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case 11, BattleFrontier_Lounge7_EventScript_BugBite
+	case 12, BattleFrontier_Lounge7_EventScript_SerpentDance
+	case 13, BattleFrontier_Lounge7_EventScript_Tailwind
+	case 14, BattleFrontier_Lounge7_EventScript_Avalanche
+	case 15, BattleFrontier_Lounge7_EventScript_HiddenThorns
+	case 16, BattleFrontier_Lounge7_EventScript_IcePunch
+	case 17, BattleFrontier_Lounge7_EventScript_ThunderPunch
+	case 18, BattleFrontier_Lounge7_EventScript_FirePunch
+	case 19, BattleFrontier_Lounge7_EventScript_FlintBlade
+	case 20, BattleFrontier_Lounge7_EventScript_SignalBeam
+	case 21, BattleFrontier_Lounge7_EventScript_ZenHeadbutt
+	case 22, BattleFrontier_Lounge7_EventScript_HeatWave
+	case 23, BattleFrontier_Lounge7_EventScript_EarthPower
+	case 24, BattleFrontier_Lounge7_EventScript_BodyPress
+	case 25, BattleFrontier_Lounge7_EventScript_GunkShot
+	case 26, BattleFrontier_Lounge7_EventScript_NastyPlot
+	case 27, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 
@@ -311,22 +312,23 @@ BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove::
 	case 8, BattleFrontier_Lounge7_EventScript_DreamEater
 	case 9, BattleFrontier_Lounge7_EventScript_LowSweep
 	case 10, BattleFrontier_Lounge7_EventScript_BreakingSwipe
-	case 11, BattleFrontier_Lounge7_EventScript_SerpentDance
-	case 12, BattleFrontier_Lounge7_EventScript_Tailwind
-	case 13, BattleFrontier_Lounge7_EventScript_Avalanche
-	case 14, BattleFrontier_Lounge7_EventScript_HiddenThorns
-	case 15, BattleFrontier_Lounge7_EventScript_IcePunch
-	case 16, BattleFrontier_Lounge7_EventScript_ThunderPunch
-	case 17, BattleFrontier_Lounge7_EventScript_FirePunch
-	case 18, BattleFrontier_Lounge7_EventScript_FlintBlade
-	case 19, BattleFrontier_Lounge7_EventScript_SignalBeam
-	case 20, BattleFrontier_Lounge7_EventScript_ZenHeadbutt
-	case 21, BattleFrontier_Lounge7_EventScript_HeatWave
-	case 22, BattleFrontier_Lounge7_EventScript_EarthPower
-	case 23, BattleFrontier_Lounge7_EventScript_BodyPress
-	case 24, BattleFrontier_Lounge7_EventScript_GunkShot
-	case 25, BattleFrontier_Lounge7_EventScript_NastyPlot
-	case 26, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
+	case 11, BattleFrontier_Lounge7_EventScript_BugBite
+	case 12, BattleFrontier_Lounge7_EventScript_SerpentDance
+	case 13, BattleFrontier_Lounge7_EventScript_Tailwind
+	case 14, BattleFrontier_Lounge7_EventScript_Avalanche
+	case 15, BattleFrontier_Lounge7_EventScript_HiddenThorns
+	case 16, BattleFrontier_Lounge7_EventScript_IcePunch
+	case 17, BattleFrontier_Lounge7_EventScript_ThunderPunch
+	case 18, BattleFrontier_Lounge7_EventScript_FirePunch
+	case 19, BattleFrontier_Lounge7_EventScript_FlintBlade
+	case 20, BattleFrontier_Lounge7_EventScript_SignalBeam
+	case 21, BattleFrontier_Lounge7_EventScript_ZenHeadbutt
+	case 22, BattleFrontier_Lounge7_EventScript_HeatWave
+	case 23, BattleFrontier_Lounge7_EventScript_EarthPower
+	case 24, BattleFrontier_Lounge7_EventScript_BodyPress
+	case 25, BattleFrontier_Lounge7_EventScript_GunkShot
+	case 26, BattleFrontier_Lounge7_EventScript_NastyPlot
+	case 27, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	case MULTI_B_PRESSED, BattleFrontier_Lounge7_EventScript_ExitTutorMoveSelect
 	end
 
@@ -382,6 +384,11 @@ BattleFrontier_Lounge7_EventScript_LowSweep::
 
 BattleFrontier_Lounge7_EventScript_BreakingSwipe::
 	setvar VAR_0x8008, 8
+	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
+	end
+
+BattleFrontier_Lounge7_EventScript_BugBite::
+	setvar VAR_0x8008, 12
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 
@@ -740,6 +747,11 @@ BattleFrontier_Lounge7_Text_SuperpowerDesc::
 	.string "Lowers user\n"
 	.string "Atk and Def\n"
 	.string "after attack.$"
+
+BattleFrontier_Lounge7_Text_BugBiteDesc::
+	.string "A creepy bite\n"
+	.string "that eats the\n"
+	.string "target's berry.$"
 
 BattleFrontier_Lounge7_Text_SerpentDanceDesc::
 	.string "A graceful dance\n"

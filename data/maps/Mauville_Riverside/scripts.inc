@@ -11,6 +11,7 @@ Mauville_Riverside_OnTransition:
 
 Mauville_Riverside_Eventscript_MagmaGrunt::
 	lock
+	playbgm MUS_ENCOUNTER_MAGMA, FALSE
 	applymovement LOCALID_MAGMA_GRUNT, Common_Movement_WalkInPlaceFastestUp
 	waitmovement 0
 	applymovement LOCALID_MAGMA_GRUNT, Common_Movement_WalkInPlaceFastestUp

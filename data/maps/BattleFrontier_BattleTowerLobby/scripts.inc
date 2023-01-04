@@ -1212,7 +1212,7 @@ BattleFrontier_BattleTowerLobby_Text_WelcomSingleBattle:
 	.string "are put to the test!\p"
 	.string "Welcome to the Battle Tower!\p"
 	.string "I am your guide to the Single\n"
-	.string "Battle RoomS.$"
+	.string "Battle Rooms.$"
 
 BattleFrontier_BattleTowerLobby_Text_TakeSinglesChallenge:
 	.string "Would you like to take the Single\n"
@@ -1222,9 +1222,9 @@ BattleFrontier_BattleTowerLobby_Text_ExplainSinglesChallenge:
 	.string "The Battle Tower's Single Battle\n"
 	.string "Rooms are facilities for conducting\l"
 	.string "Single Battles with three Pokémon.\p"
-	.string "There are many Single Battle RoomS\n"
+	.string "There are many Single Battle Rooms\n"
 	.string "in the Battle Tower for team battles.\p"
-	.string "In each of the Single Battle RoomS,\n"
+	.string "In each of the Single Battle Rooms,\n"
 	.string "seven Trainers await your challenge.\p"
 	.string "If you manage to defeat all seven,\n"
 	.string "you will earn Battle Points.\p"
@@ -1242,7 +1242,7 @@ BattleFrontier_BattleTowerLobby_Text_WelcomeDoubleBattle:
 	.string "are put to the test!\p"
 	.string "Welcome to the Battle Tower!\p"
 	.string "I am your guide to the Double\n"
-	.string "Battle RoomS.$"
+	.string "Battle Rooms.$"
 
 BattleFrontier_BattleTowerLobby_Text_TakeDoublesChallenge:
 	.string "Would you like to take the Double\n"
@@ -1272,7 +1272,7 @@ BattleFrontier_BattleTowerLobby_Text_WelcomeMultiBattle:
 	.string "are put to the test!\p"
 	.string "Welcome to the Battle Tower!\p"
 	.string "I am your guide to the Multi\n"
-	.string "Battle RoomS.$"
+	.string "Battle Rooms.$"
 
 BattleFrontier_BattleTowerLobby_Text_TakeMultisChallenge:
 	.string "Would you like to take the Multi\n"
@@ -1310,7 +1310,7 @@ BattleFrontier_BattleTowerLobby_Text_WelcomeLinkMultiBattle:
 	.string "are put to the test!\p"
 	.string "Welcome to the Battle Tower!\p"
 	.string "I am your guide to the Link Multi\n"
-	.string "Battle RoomS.$"
+	.string "Battle Rooms.$"
 
 BattleFrontier_BattleTowerLobby_Text_TakeLinkMultisChallenge:
 	.string "Would you like to take the Link Multi\n"
@@ -1325,7 +1325,7 @@ BattleFrontier_BattleTowerLobby_Text_ExplainLinkMultisChallenge:
 	.string "Advance Game Link cable.\p"
 	.string "You must partner with your friend and\n"
 	.string "enter two different kinds of Pokémon.\p"
-	.string "There are many Multi Battle RoomS\n"
+	.string "There are many Multi Battle Rooms\n"
 	.string "in the Battle Tower for team battles.\p"
 	.string "In a Multi Battle Room, seven\n"
 	.string "tag teams await you and your friend\l"
@@ -1412,7 +1412,7 @@ BattleFrontier_BattleTowerLobby_Text_ExplainTowerRules:
 	.string "Single Battle, Double Battle, Multi\l"
 	.string "Battle, and Link Multi Battle.\p"
 	.string "For each of these types, there are\n"
-	.string "separate Battle RoomS.\p"
+	.string "separate Battle Rooms.\p"
 	.string "Please speak with a guide offering\n"
 	.string "the type of battle you wish to enter.$"
 

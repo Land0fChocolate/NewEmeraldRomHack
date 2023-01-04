@@ -2404,7 +2404,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_MOVE_TUTOR_2:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 26;
+            task->tNumItems = 27;
             task->tLeft = 15;
             task->tTop = 1;
             task->tWidth = 14;
@@ -2697,6 +2697,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_DreamEater8BP,
         gText_LowSweep8BP,
         gText_BreakingSwipe8BP,
+        gText_BugBite12BP,
         gText_SerpentDance12BP,
         gText_Tailwind12BP,
         gText_Avalanche12BP,
@@ -3372,6 +3373,7 @@ static const u16 sBattleFrontier_TutorMoves2[] =
     MOVE_DREAM_EATER,
     MOVE_LOW_SWEEP,
     MOVE_BREAKING_SWIPE,
+    MOVE_BUG_BITE,
     MOVE_SERPENT_DANCE,
     MOVE_TAILWIND,
     MOVE_AVALANCHE,
@@ -3472,6 +3474,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_DreamEaterDesc,
         BattleFrontier_Lounge7_Text_LowSweepDesc,
         BattleFrontier_Lounge7_Text_BreakingSwipeDesc,
+        BattleFrontier_Lounge7_Text_BugBiteDesc,
         BattleFrontier_Lounge7_Text_SerpentDanceDesc,
         BattleFrontier_Lounge7_Text_TailwindDesc,
         BattleFrontier_Lounge7_Text_AvalancheDesc,
