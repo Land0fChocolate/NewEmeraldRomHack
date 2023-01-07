@@ -164,6 +164,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Electric Terrain background is jank.
 - Misty Terrain background is jank.
 - Gunk Shot background is slightly jank.
+- Aura Sphere background is slightly jank.
 - Hurricane background is jank.
 - Origin Pulse background is jank.
 - Cloud reflection can be seen in the very tall grass in Route 120.
@@ -180,6 +181,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce.
 - Intimidate may trigger on fainted mons.
 - Frisk may trigger on the wrong Pokemon.
+- Arena Trap battle message when trying to switch doesn't show the ability string.
 - Tradeback guy service has broken strings and plays exp sound over Pokemon cry when a Pokemon evolves via trade.
 - Pokenav calls talking about Battle Frontier win streaks can get the wrong facility.
 - Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety.
@@ -187,21 +189,21 @@ The project started in December 2021, using the version of pokeemerald-expansion
 
 # Post Launch TODOs
 
-Possible future additions if I ever feel like doing more work on Energized Emerald.
+Possible future additions/changes.
 
 - Labels for ability description and IV/EV stats in Pokemon summary screen.
-- Pokedex to support regional variants
+- Pokedex to support regional variants.
 - Pokedex to have other data as well. Moves, base stats, evolution requirements, abilities?
 - Improve various art assets, mostly trainer pics.
 - The berry trees of the type resist berries should have their own colours.
 - Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
 - A contest side-quest with Lisia, much like in ORAS.
-- Perhaps a more interesting Winona berry giving event.
+- Perhaps a more interesting Winona berry giving event. It's a bit boring to just be given a berry.
 - Perhaps a more interesting Tate & Liza event to get Jirachi?
 - In-game resource that teaches the player braile. 
 - Sort out the online/wireless features. Either find out how to make them work or remove them.
-- Better Game Corner games. Instead of crappy gambling, have fun minigames instead. Will be a ton of work though.
+- Better Game Corner games. May be a ton of work though. (Perhaps one could be a Battle Palace style battle where the Player places a bet?)
 - Better Battle Frontier level scaling. Open level puts opponent Pokemon to your highest level Pokemon. Should scale all Pokemon to a certain level.
 - Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
 - Increase number of PC Pokemon storage boxes.

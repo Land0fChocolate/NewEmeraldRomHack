@@ -51,7 +51,6 @@ MossdeepCity_EventScript_Winona::
 
 MossdeepCity_EventScript_WinonaGivesBerry::
 	msgbox MossdeepCity_Text_WinonaGiveBerry, MSGBOX_DEFAULT
-	closemessage
 	random NUM_WINONA_BERRIES
 	addvar VAR_RESULT, NUM_WINONA_BERRIES_SKIPPED
 	addvar VAR_RESULT, FIRST_BERRY_INDEX
@@ -59,6 +58,7 @@ MossdeepCity_EventScript_WinonaGivesBerry::
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	setflag FLAG_DAILY_WINONA_RECEIVED_BERRY
+	closemessage
 	release
 	end
 
@@ -363,7 +363,8 @@ MossdeepCity_Text_WinonaGiveBerry::
 	.string "Sadly, I haven't found them.\n"
 	.string "Although, I have found some unusual\l"
 	.string "berries.\p"
-	.string "Here. Sharing is caring.$"
+	.string "Here.\n"
+	.string "Sharing is caring.$"
 
 MossdeepCity_Text_WinonaLookingForLegendary::
 	.string "Winona: The legendary birds and beasts…\p"

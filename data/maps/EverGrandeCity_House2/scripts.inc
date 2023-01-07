@@ -33,7 +33,7 @@ EverGrandeCity_House2_Text_ManGiveBerry:
 	.string "Those cold hard eyes…\n"
 	.string "That chilling presence…\p"
 	.string "How I long to be hers, yet she casts me\n"
-	.string "away like trash…\p"
+	.string "aside like trash…\p"
 	.string "In the meantime, I make a living growing\n"
 	.string "berries. Here.$"
 

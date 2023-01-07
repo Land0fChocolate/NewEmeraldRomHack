@@ -168,7 +168,6 @@ RustboroCity_PokemonSchool_Eventscript_BagFull::
 
 RustboroCity_PokemonSchool_Eventscript_RoxanneCommenceTrade::
 	msgbox RustboroCity_PokemonSchool_Text_RoxanneCommenceTrade, MSGBOX_DEFAULT
-	closemessage
 	bufferitemname 1, VAR_0x8009
 	giveitem VAR_0x8009
 	removeitem VAR_0x8008

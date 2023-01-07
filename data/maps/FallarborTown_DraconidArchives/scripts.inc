@@ -320,7 +320,6 @@ DraconidArchives_Eventscript_Scientist::
 	goto_if_set FLAG_RECEIVED_OLD_SEA_MAP, DraconidArchives_Eventscript_ScientistAbsorbedInBooks
 	faceplayer
 	msgbox DraconidArchives_Text_MapFellOut, MSGBOX_DEFAULT
-	closemessage
 	giveitem ITEM_OLD_SEA_MAP
 	setflag FLAG_RECEIVED_OLD_SEA_MAP
 	applymovement LOCALID_SCIENTIST, Common_Movement_FaceUp

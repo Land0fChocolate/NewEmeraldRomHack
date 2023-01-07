@@ -50,8 +50,9 @@ static const u8 sWaterAbsorbDescription[] = _(
 	"hit by a water move.");
 
 static const u8 sObliviousDescription[] = _(
-	"Grants attraction and\n"
-	"taunt immunity.");
+	"Grants immunity to\n"
+	"attraction, taunts and\n"
+	"intimidation.");
 
 static const u8 sCloudNineDescription[] = _(
 	"Negates weather effects.");

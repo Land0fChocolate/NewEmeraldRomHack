@@ -1471,7 +1471,7 @@ BattleFrontier_ExchangeServiceCorner_Text_EvioliteDesc::
 
 BattleFrontier_ExchangeServiceCorner_Text_WeaknessPolicyDesc::
 	.string "Raises user attack stats by 2 stages\n"
-	.string "each if hit by super-effective move.$"
+	.string "each if hit by a super-effective move.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_BlunderPolicyDesc::
 	.string "Raises user Speed stat by 2 stages\n"

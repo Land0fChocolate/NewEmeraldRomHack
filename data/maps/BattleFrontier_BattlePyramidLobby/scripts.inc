@@ -615,8 +615,8 @@ BattleFrontier_BattlePyramidLobby_Text_WeWillHoldBagForSafekeeping:
 	.string "{PLAYER}, while you are exploring.$"
 
 BattleFrontier_BattlePyramidLobby_Text_PleaseTakePreviousBattleBag:
-	.string "In exchange, please take this BATTLE\n"
-	.string "bag, the one you used previously.$"
+	.string "In exchange, please take this Battle\n"
+	.string "Bag, the one you used previously.$"
 
 BattleFrontier_BattlePyramidLobby_Text_PleaseTakeThisBattleBag:
 	.string "In exchange, please take this\n"
@@ -865,10 +865,9 @@ BattleFrontier_BattlePyramidLobby_Text_LostLotOfItems:
 	.string "Awaaaaaaarrrrgh!$"
 
 BattleFrontier_BattlePyramidLobby_Text_PokemonUsePickUp:
-	.string "I have a nifty strategy when tackling\n"
-	.string "the pyramid.\p"
-	.string "My Pokémon has the Pick Up ability, so\n"
-	.string "it can find extra items after battles.$"
+	.string "Hehehe!\p"
+	.string "My Pokémon's Pick Up ability is finding\n"
+	.string "extra items after battles!$"
 
 BattleFrontier_BattlePyramidLobby_Text_YouveDefeatedPyramidKing:
 	.string "Welcome back!\n"

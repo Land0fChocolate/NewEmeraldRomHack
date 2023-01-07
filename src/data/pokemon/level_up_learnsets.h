@@ -2974,6 +2974,8 @@ static const struct LevelUpMove sSnorlaxLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sArticunoLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_HURRICANE),
+    LEVEL_UP_MOVE( 1, MOVE_SHEER_COLD),
     LEVEL_UP_MOVE( 1, MOVE_GUST),
     LEVEL_UP_MOVE( 1, MOVE_POWDER_SNOW),
     LEVEL_UP_MOVE( 8, MOVE_MIST),
@@ -2994,6 +2996,8 @@ static const struct LevelUpMove sArticunoLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sZapdosLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
+    LEVEL_UP_MOVE( 1, MOVE_ZAP_CANNON),
     LEVEL_UP_MOVE( 1, MOVE_PECK),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE( 8, MOVE_THUNDER_WAVE),
@@ -3014,6 +3018,8 @@ static const struct LevelUpMove sZapdosLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sMoltresLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_HURRICANE),
+    LEVEL_UP_MOVE( 1, MOVE_BURN_UP),
     LEVEL_UP_MOVE( 1, MOVE_WING_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_EMBER),
     LEVEL_UP_MOVE( 8, MOVE_FIRE_SPIN),
