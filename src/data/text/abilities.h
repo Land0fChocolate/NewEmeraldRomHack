@@ -83,7 +83,9 @@ static const u8 sShieldDustDescription[] = _(
 	"flinching.");
 
 static const u8 sOwnTempoDescription[] = _(
-	"Grants confusion immunity.\n");
+	"Grants immunity to\n"
+	"confusion and\n"
+	"intimidation.");
 
 static const u8 sSuctionCupsDescription[] = _(
 	"User's contact moves trap\n"
@@ -1035,7 +1037,8 @@ static const u8 sHungerSwitchDescription[] = _(
 	"Changes form each turn.");
 
 static const u8 sQuickDrawDescription[] = _(
-	"Moves first occasionally.");
+	"User speed is doubled when\n"
+	"below half health.");
 
 static const u8 sUnseenFistDescription[] = _(
 	"Contact evades protection.");

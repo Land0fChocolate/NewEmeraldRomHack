@@ -4506,6 +4506,8 @@ u32 GetBattlerTotalSpeedStat(u8 battlerId)
     // Quick Claw
     if (GetBattlerHoldEffect(battlerId, TRUE) == HOLD_EFFECT_QUICK_CLAW && (gBattleMons[battlerId].hp < gBattleMons[battlerId].maxHP / 2)) 
         speed *= 1.1;
+    if (HasAbility(ABILITY_QUICK_DRAW, abilities) && (gBattleMons[battlerId].hp < gBattleMons[battlerId].maxHP / 2))
+        speed *= 2;
 
     return speed;
 }
@@ -4585,9 +4587,6 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
     speedBattler1 = GetBattlerTotalSpeedStat(battler1);
     holdEffectBattler1 = GetBattlerHoldEffect(battler1, TRUE);
     memcpy(abilities, GetBattlerAbilities(battler1), sizeof(abilities));
-    // Quick Draw
-    if (!ignoreChosenMoves && HasAbility(ABILITY_QUICK_DRAW, abilities) && !IS_MOVE_STATUS(gChosenMoveByBattler[battler1]) && Random() % 100 < 30)
-        gProtectStructs[battler1].quickDraw = TRUE;
     // Custap Berry
     if (holdEffectBattler1 == HOLD_EFFECT_CUSTAP_BERRY && HasEnoughHpToEatBerry(battler1, 4, gBattleMons[battler1].item))
         gProtectStructs[battler1].usedCustapBerry = TRUE;
@@ -4596,9 +4595,6 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
     speedBattler2 = GetBattlerTotalSpeedStat(battler2);
     holdEffectBattler2 = GetBattlerHoldEffect(battler2, TRUE);
     memcpy(abilities, GetBattlerAbilities(battler2), sizeof(abilities));
-    // Quick Draw
-    if (!ignoreChosenMoves && HasAbility(ABILITY_QUICK_DRAW, abilities) && !IS_MOVE_STATUS(gChosenMoveByBattler[battler2]) && Random() % 100 < 30)
-        gProtectStructs[battler2].quickDraw = TRUE;
     // Quick Claw and Custap Berry
     if (holdEffectBattler2 == HOLD_EFFECT_CUSTAP_BERRY && HasEnoughHpToEatBerry(battler2, 4, gBattleMons[battler2].item))
         gProtectStructs[battler2].usedCustapBerry = TRUE;
@@ -4935,14 +4931,6 @@ static void CheckQuickClaw_CustapBerryActivation(void)
                         RecordItemEffectBattle(gActiveBattler, GetBattlerHoldEffect(gActiveBattler, FALSE));
                         BattleScriptExecute(BattleScript_QuickClawActivation);
                     }
-                }
-                else if (gProtectStructs[gActiveBattler].quickDraw)
-                {
-                    gBattlerAbility = gActiveBattler;
-                    gProtectStructs[gActiveBattler].quickDraw = FALSE;
-                    gLastUsedAbility = ABILITY_QUICK_DRAW;
-                    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
-                    BattleScriptExecute(BattleScript_QuickDrawActivation);
                 }
                 return;
             }

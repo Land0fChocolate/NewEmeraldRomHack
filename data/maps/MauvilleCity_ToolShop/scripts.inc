@@ -24,7 +24,6 @@ MauvilleCity_ToolShop_Pokemart_ShopKeeper:
 	.2byte ITEM_SAFETY_GOGGLES
 	.2byte ITEM_ZOOM_LENS
 	.2byte ITEM_HEAVY_DUTY_BOOTS
-	.2byte ITEM_ASSAULT_VEST
 	.2byte ITEM_EJECT_PACK
 	.2byte ITEM_PROTECTIVE_PADS
 	.2byte ITEM_IRON_BALL

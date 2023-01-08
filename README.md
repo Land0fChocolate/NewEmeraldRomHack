@@ -129,6 +129,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Victory Star: User and ally accuracy set to 100%.
 - Sturdy will not activate if the user has a max HP of 1.
 - Suction Cups will now trap the opposing target if user makes contact instead of making the user immune to forced switch outs.
+- Quick Draw: Instead doubles speed when equal or below half health.
 
 # New Moves
 
@@ -160,17 +161,20 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Abilities that activate at the same time as other abilities can use wrong strings in the battle message.
 - When Rattled is activated, the wrong ability is shown on the pop-up.
 - Sometimes when Truant triggers, the wrong ability is shown on the pop-up.
+- Intimidate may trigger on fainted mons.
+- Frisk may trigger on the wrong Pokemon.
+- Arena Trap battle message when trying to switch doesn't show the ability string.
 - Grassy Terrain background is jank.
 - Electric Terrain background is jank.
 - Misty Terrain background is jank.
 - Gunk Shot background is slightly jank.
 - Aura Sphere background is slightly jank.
 - Hurricane background is jank.
+- Burn Up background is jank.
 - Origin Pulse background is jank.
 - Cloud reflection can be seen in the very tall grass in Route 120.
-- Jumping into very tall grass from ledge and moving produces incorrect grass animation.
-- When a Pokemon with Clear Body uses Hammer Arm, its speed doesn't go down.
-- Some door animations don't work when the Player runs into them from an angle. The Player just runs into the door without it opening. (Ever Grande City Battle Tent, Fortree City Pokemon Center.)
+- Jumping into long grass from ledge and moving produces incorrect grass animation.
+- When a Pokemon evolves by trading, an exp gain sound plays over the Pokemon's cry.
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there. Repeatedly occurs when KOing it from 100% HP.
 - Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
 - Deoxys sometimes skips a form change. Repeatedly occurs with Draining Kiss.
@@ -179,10 +183,6 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
 - HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce.
-- Intimidate may trigger on fainted mons.
-- Frisk may trigger on the wrong Pokemon.
-- Arena Trap battle message when trying to switch doesn't show the ability string.
-- Tradeback guy service has broken strings and plays exp sound over Pokemon cry when a Pokemon evolves via trade.
 - Pokenav calls talking about Battle Frontier win streaks can get the wrong facility.
 - Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety.
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.

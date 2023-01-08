@@ -41,6 +41,7 @@ MossdeepCity_Eventscript_WinonaInMossdeep::
 	return
 
 MossdeepCity_EventScript_Winona::
+	lock
 	faceplayer
 	dotimebasedevents
 	goto_if_unset FLAG_DAILY_WINONA_RECEIVED_BERRY, MossdeepCity_EventScript_WinonaGivesBerry
