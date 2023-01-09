@@ -3041,7 +3041,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_WEAVILE_1] = {
         .species = SPECIES_WEAVILE,
-        .moves = {MOVE_ICICLE_CRASH, MOVE_KNOCK_OFF, MOVE_BRICK_BREAK, MOVE_AERIAL_ACE},
+        .moves = {MOVE_ICICLE_CRASH, MOVE_PUNISHMENT, MOVE_BRICK_BREAK, MOVE_AERIAL_ACE},
         .item = ITEM_DARK_GEM,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT
@@ -4609,7 +4609,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_SLAKING_2] = {
         .species = SPECIES_SLAKING,
-        .moves = {MOVE_GIGA_IMPACT, MOVE_KNOCK_OFF, MOVE_YAWN, MOVE_SWAGGER},
+        .moves = {MOVE_GIGA_IMPACT, MOVE_PUNISHMENT, MOVE_YAWN, MOVE_SWAGGER},
         .item = ITEM_LEFTOVERS,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE,
         .nature = NATURE_ADAMANT

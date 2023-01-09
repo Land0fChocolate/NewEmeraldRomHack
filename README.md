@@ -13,7 +13,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- Those Pokemon with post gen 3 evolutions and pre-evolutions have those available as well.
 	- Many regional variants of gen 1, 2 and 3 Pokemon are available.
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
-	- Many Pokemon have had their ability sets updated with new abilities (TODO: make a list of ability stat changes somewhere).
+	- Many Pokemon have had their ability sets updated to better fit their theme and gameplay. (TODO: make a list of ability stat changes somewhere).
 	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
 	- Moves that work around abilities have been updated as well.
 - New moves and abilities (listed below).
@@ -184,6 +184,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
 - HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce.
 - Pokenav calls talking about Battle Frontier win streaks can get the wrong facility.
+- Sometimes when battling in the Battle Frontier, a Pokemon will repeatedly consume its held berry. Cause unknown. Haven't been able to reproduce.
 - Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety.
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
 

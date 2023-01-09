@@ -979,6 +979,15 @@
       "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 36,
+      "elevation": 3,
+      "var": "0",
+      "var_value": "0",
+      "script": "Route111_EventScript_SunTrigger"
     }
   ],
   "bg_events": [

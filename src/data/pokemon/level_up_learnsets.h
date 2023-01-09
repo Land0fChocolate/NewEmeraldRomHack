@@ -3708,6 +3708,7 @@ static const struct LevelUpMove sXatuLevelUpLearnset[] = {
 static const struct LevelUpMove sMareepLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_FLASH),
     LEVEL_UP_MOVE( 4, MOVE_THUNDER_WAVE),
     LEVEL_UP_MOVE( 8, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE(11, MOVE_COTTON_SPORE),
@@ -3727,6 +3728,7 @@ static const struct LevelUpMove sMareepLevelUpLearnset[] = {
 static const struct LevelUpMove sFlaaffyLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_FLASH),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_WAVE),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE( 4, MOVE_THUNDER_WAVE),
@@ -3755,6 +3757,7 @@ static const struct LevelUpMove sAmpharosLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TAIL_GLOW),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 1, MOVE_FLASH),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_WAVE),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE( 4, MOVE_THUNDER_WAVE),
