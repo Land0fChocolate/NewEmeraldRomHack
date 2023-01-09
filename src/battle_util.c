@@ -9404,7 +9404,7 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             break;
         case ABILITY_VOLUME_UP:
             if (gBattleMoves[move].flags & FLAG_SOUND)
-               MulModifier(&modifier, UQ_4_12(1.33));
+               MulModifier(&modifier, UQ_4_12(1.3));
             break;
         case ABILITY_LIQUID_VOICE:
             if (gBattleMoves[move].flags & FLAG_SOUND)

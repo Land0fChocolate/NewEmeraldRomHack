@@ -36,10 +36,10 @@ EverGrandeCity_EventScript_TestAbra1::
 	@giveitem ITEM_ZINC, 90
 	@giveitem ITEM_CARBOS, 98
 	@giveitem ITEM_HP_UP, 90
-	giveitem ITEM_RAZOR_CLAW, 5
-	closemessage
-	@cleartrainerflag TRAINER_LEAF
-	@trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
+	@giveitem ITEM_RAZOR_CLAW, 5
+	@closemessage
+	cleartrainerflag TRAINER_LEAF
+	trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
 	end
 
 EverGrandeCity_EventScript_TestAbra2::

@@ -5,6 +5,7 @@ MossdeepCity_MapScripts::
 	.byte 0
 
 MossdeepCity_OnTransition:
+	call MossdeepCity_Eventscript_SetUpWinona
 	call Common_EventScript_SetupRivalGfxId
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_1
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_2
@@ -12,12 +13,11 @@ MossdeepCity_OnTransition:
 	clearflag FLAG_MOSSDEEP_GYM_SWITCH_4
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	call_if_set FLAG_HIDE_MOSSDEEP_CITY_RIVAL, Mossdeep_Eventscript_MoveRival
-	call MossdeepCity_Eventscript_SetUpWinona
 	end
 
 Mossdeep_Eventscript_MoveRival::
 	setobjectxyperm LOCALID_RIVAL, 64, 15
-	end
+	return
 
 MossdeepCity_Eventscript_SetUpWinona::
 	goto_if_unset FLAG_SYS_GAME_CLEAR, MossdeepCity_Eventscript_WinonaRematch

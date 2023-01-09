@@ -38,6 +38,11 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
 - Opponent Trainer parties have been updated.
 - New opponent Trainer classes.
+- Contests have been updated to take on the various changes.
+	- More Pokemon added to opponent lists, especially new Pokemon.
+	- Opponents have updated movesets.
+	- Contest moves have been updated to be more like gen 6.
+	- More move combos.
 - Battle Frontier changes
 	- Opponent Pokemon list updated with new Pokemon, new items and new moves.
 	- Battle Palace is now inverse battle themed.
@@ -76,7 +81,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 
 # New Abilities
 
-- Volume Up: Power of sound based moves are increased by 33%. Used by Loudred/Exploud.
+- Volume Up: Power of sound based moves are increased by 30%. Used by Loudred/Exploud.
 - Lava Body: Attackers who make contact will always get inflicted with burn unless they have immunity. Used by Slugma/Magargo.
 - Wildfire: Sp.Atk raises one stage after fainting an opponent. Used by Moltres/Quilava/Typlosion.
 - Miracle Blossom: User and ally restore 1/8 HP at the end of every turn. Used by Bayleef/Meganium/Xerneas.
@@ -162,7 +167,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - When Rattled is activated, the wrong ability is shown on the pop-up.
 - Sometimes when Truant triggers, the wrong ability is shown on the pop-up.
 - Intimidate may trigger on fainted mons.
-- Frisk may trigger on the wrong Pokemon.
+- Frisk may trigger on the wrong Pokemon. Often occurs in Battle Frontier.
 - Arena Trap battle message when trying to switch doesn't show the ability string.
 - Grassy Terrain background is jank.
 - Electric Terrain background is jank.
@@ -175,6 +180,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Cloud reflection can be seen in the very tall grass in Route 120.
 - Jumping into long grass from ledge and moving produces incorrect grass animation.
 - When a Pokemon evolves by trading, an exp gain sound plays over the Pokemon's cry.
+- Pokenav calls talking about Battle Frontier win streaks can get the wrong facility (Factory/Palace). Though may be fixed.
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there. Repeatedly occurs when KOing it from 100% HP.
 - Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
 - Deoxys sometimes skips a form change. Repeatedly occurs with Draining Kiss.
@@ -183,7 +189,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
 - HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce.
-- Pokenav calls talking about Battle Frontier win streaks can get the wrong facility.
+- Origin Strand window in battle doesn't hide when using moves. The icon in battle is using other sprites.
 - Sometimes when battling in the Battle Frontier, a Pokemon will repeatedly consume its held berry. Cause unknown. Haven't been able to reproduce.
 - Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety.
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.

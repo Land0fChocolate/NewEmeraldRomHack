@@ -1933,4 +1933,4 @@ SootopolisCity_Text_Juan:
 	.string "However, you are somewhat lacking in\n"
 	.string "elegance. Perhaps I should make you a\l"
 	.string "loan of my outfit?\p"
-	.string "Hahaha, I merely jest!\p"
+	.string "Hahaha, I merely jest!$"
