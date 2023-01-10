@@ -2513,7 +2513,7 @@ static void TryPutRandomPokeNewsOnAir(void)
     if (FlagGet(FLAG_SYS_GAME_CLEAR))
     {
         sCurTVShowSlot = GetFirstEmptyPokeNewsSlot(gSaveBlock1Ptr->pokeNews);
-        if (sCurTVShowSlot != -1 && rbernoulli(1, 100) != TRUE)
+        if (sCurTVShowSlot != -1 && rbernoulli(2, 100) != TRUE)
         {
             u8 newsKind = (Random() % NUM_POKENEWS_TYPES) + POKENEWS_SLATEPORT;
             if (IsAddingPokeNewsDisallowed(newsKind) != TRUE)

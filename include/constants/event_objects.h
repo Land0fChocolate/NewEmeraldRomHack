@@ -324,7 +324,7 @@
 #define OBJ_EVENT_GFX_CELEBI                     320
 #define OBJ_EVENT_GFX_JIRACHI                    321
 
-#define NUM_OBJ_EVENT_GFX                        322
+#define NUM_OBJ_EVENT_GFX                        3252
 
 
 // These are dynamic object gfx ids.
