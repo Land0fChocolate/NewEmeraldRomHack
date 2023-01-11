@@ -1593,7 +1593,7 @@ ALIGNED(4) const u8 gText_123Dot[][3] = {_("1."), _("2."), _("3.")};
 
 const u8 gText_SavingDontTurnOff2[] = _("SAVING…\nDON'T TURN OFF THE POWER.");
 const u8 gText_BlenderMaxSpeedRecord[] = _("Berry Blender\nMaximum Speed Record!");
-const u8 gText_234Players[] = _("2 PlayerS\n3 PlayerS\n4 PlayerS");
+const u8 gText_234Players[] = _("2 Players\n3 Players\n4 Players");
 const u8 gText_YesNo[] = _("YES\nNO");
 const u8 gText_SelectorArrow3[] = _("▶");
 const u8 gText_Peekaboo[] = _("PEEKABOO!");

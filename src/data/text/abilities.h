@@ -1074,7 +1074,7 @@ static const u8 sAsOneShadowRiderDescription[] = _(
 
 static const u8 sVolumeUpDescription[] = _(
 	"Sound based moves are\n"
-	"powered up by 33%.");
+	"powered up by 30%.");
 
 static const u8 sLavaBodyDescription[] = _(
 	"Attackers who make\n"

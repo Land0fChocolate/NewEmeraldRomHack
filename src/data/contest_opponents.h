@@ -975,7 +975,7 @@ const struct ContestPokemon gContestOpponents[] =
             MOVE_BITE,
             MOVE_SAND_ATTACK,
             MOVE_DIG,
-            MOVE_FEINT_ATTACK
+            MOVE_SANDSTORM
         },
         .cool = 75,
         .beauty = 25,
@@ -2024,7 +2024,7 @@ const struct ContestPokemon gContestOpponents[] =
     },
     [CONTEST_OPPONENT_COLTIN] = {
         .species = SPECIES_CUBONE,
-        .nickname = _("Cubin"),
+        .nickname = _("Clubber"),
         .trainerName = _("Coltin"),
         .trainerGfxId = OBJ_EVENT_GFX_MAN_4, 
         .aiFlags = CONTEST_AI_SET_2,
@@ -2206,7 +2206,7 @@ const struct ContestPokemon gContestOpponents[] =
         {
             MOVE_ROAR,
             MOVE_FLAMETHROWER,
-            MOVE_FIRE_FANG,
+            MOVE_BLAZE_IMPACT,
             MOVE_SUNNY_DAY
         },
         .cool = 100,
@@ -2500,7 +2500,7 @@ const struct ContestPokemon gContestOpponents[] =
     },
     [CONTEST_OPPONENT_DEON] = {
         .species = SPECIES_SHARPEDO,
-        .nickname = _("Pedes"),
+        .nickname = _("Shooter"),
         .trainerName = _("Deon"),
         .trainerGfxId = OBJ_EVENT_GFX_SCHOOL_KID_M,
         .aiFlags = CONTEST_AI_SET_A,
@@ -2892,7 +2892,7 @@ const struct ContestPokemon gContestOpponents[] =
     },
     [CONTEST_OPPONENT_LANE] = {
         .species = SPECIES_URSARING,
-        .nickname = _("Ursing"),
+        .nickname = _("Urz"),
         .trainerName = _("Lane"),
         .trainerGfxId = OBJ_EVENT_GFX_STREET_THUG,
         .aiFlags = CONTEST_AI_SET_9,
@@ -3141,7 +3141,7 @@ const struct ContestPokemon gContestOpponents[] =
         .cute = 15,
         .smart = 190,
         .tough = 190,
-        .sheen = 200,
+        .sheen = 255,
         .personality = 0,
         .otId = 0xFFFF
     },

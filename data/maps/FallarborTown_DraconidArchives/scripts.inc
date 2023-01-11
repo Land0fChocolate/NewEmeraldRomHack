@@ -200,7 +200,7 @@ DraconidArchives_EventScript_GiveBerry::
 	msgbox DraconidArchives_Text_YoullGiveXBerry, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq DraconidArchives_EventScript_WhichBerryToGive
-	removeitem VAR_0x8008, 5
+	removeitem VAR_0x8008, 10
 	goto DraconidArchives_EventScript_ZinniaResetsLegendaries
 	end
 

@@ -9108,6 +9108,7 @@ const struct BaseStats gBaseStats[] =
         .expYield = 116,
         .evYield_Speed     = 1,
         .item1 = ITEM_HEART_SCALE,
+        .item2 = ITEM_HEART_SCALE,
         .genderRatio = PERCENT_FEMALE(75),
         .eggCycles = 20,
         .friendship = 70,

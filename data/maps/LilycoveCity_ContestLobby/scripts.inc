@@ -2,7 +2,9 @@
 .set LOCALID_RECEPTIONIST, 1
 .set LOCALID_LINK_RECEPTIONIST, 2
 .set LOCALID_ARTIST, 4
+.set LOCALID_BLACK_BELT, 5
 .set LOCALID_ARTIST_LINK, 11
+.set LOCALID_DELCATTY, 28
 
 LilycoveCity_ContestLobby_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_ContestLobby_OnTransition
@@ -27,6 +29,8 @@ LilycoveCity_ContestLobby_EventScript_TryShowBlendMaster::
 LilycoveCity_ContestLobby_EventScript_ShowBlendMaster::
 	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER_REPLACEMENT
 	clearflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER
+	setobjectxyperm LOCALID_BLACK_BELT, 0, 4
+	setobjectxyperm LOCALID_DELCATTY, 1, 3
 	return
 
 LilycoveCity_ContestLobby_OnFrame:

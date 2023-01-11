@@ -45,7 +45,8 @@ EverGrandeCity_EventScript_TestAbra1::
 EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
-	giveitem ITEM_RARE_CANDY, 90
+	@giveitem ITEM_RARE_CANDY, 90
+	givemon SPECIES_PIKACHU, 10, ITEM_NONE
 	closemessage
 	end
 

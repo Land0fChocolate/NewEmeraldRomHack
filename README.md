@@ -172,17 +172,15 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Arena Trap battle message when trying to switch doesn't show the ability string.
 - Cloud reflection can be seen in the long grass in Route 120.
 - Jumping into long grass from ledge and moving produces incorrect grass animation.
+- NPCs can change colour when picking items at BP exchange corner. Palette bug.
+- Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
+- HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce. Seems to be a very rare bug.
 - When a Pokemon evolves by trading, an exp gain sound plays over the Pokemon's cry.
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there. Repeatedly occurs when KOing it from 100% HP.
 - Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
-- Deoxys sometimes skips a form change. Repeatedly occurs with Draining Kiss.
+- Deoxys may also skip a form change. Repeatedly occurs with Draining Kiss.
 - Origin has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
-- Origin Strand icon uses last used Poke Ball icon in wild battles.
-- Origin Strand window in battle doesn't hide when using moves. The icon in battle is using other sprites.
-- Some Pokemon in PC boxes have the top left corner of their front sprite snipped off.
-- NPCs can change colour when picking items at BP exchange corner. Palette bug.
-- Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
-- HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce.
+- Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, and more)
 - Sometimes when battling in the Battle Frontier, a Pokemon will repeatedly consume its held berry. Cause unknown. Haven't been able to reproduce.
 - Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety.
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.

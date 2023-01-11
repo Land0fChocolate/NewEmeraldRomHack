@@ -1020,7 +1020,7 @@ static const struct InGameTrade sIngameTrades[] =
     }, 
     [INGAME_TRADE_WOBBUFFET] = 
     {
-        .nickname = _("Wubbz"), 
+        .nickname = _("Wobby"), 
         .species = SPECIES_WOBBUFFET,
         .ivs = {4, 4, 4, 5, 5, 4}, 
         .otId = 73996,
