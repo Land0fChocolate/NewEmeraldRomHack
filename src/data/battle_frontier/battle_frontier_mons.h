@@ -920,7 +920,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_CHINCHOU] = {
         .species = SPECIES_CHINCHOU,
-        .moves = {MOVE_SPARK, MOVE_BUBBLE_BEAM, MOVE_ION_DELUGE, MOVE_TAKE_DOWN},
+        .moves = {MOVE_SPARK, MOVE_BUBBLE_BEAM, MOVE_CHARGE, MOVE_TAKE_DOWN},
         .item = ITEM_RINDO_BERRY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_ATTACK,
         .nature = NATURE_HARDY
@@ -1732,7 +1732,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_KECLEON_1] = {
         .species = SPECIES_KECLEON,
-        .moves = {MOVE_SHADOW_SNEAK, MOVE_PSYBEAM, MOVE_MAGIC_COAT, MOVE_BRICK_BREAK},
+        .moves = {MOVE_SHADOW_SNEAK, MOVE_SEISMIC_TOSS, MOVE_MAGIC_COAT, MOVE_BRICK_BREAK},
         .item = ITEM_FOCUS_SASH,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_NAIVE

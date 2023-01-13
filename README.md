@@ -60,7 +60,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- Tate and Liza grant access to Jirachi.
 - Item changes
 	- Quick Claw now increases speed by 10% when user is below 50% health.
-	- Vitamins give 20 EVs instead of 10.
+	- Vitamins give 20 EVs instead of 10. Also can give as many up to max EVs to a Pokemon.
 	- Prices of various items adjusted.
 	- Nature Mints added
 	- TMs have infinite use.
@@ -162,6 +162,8 @@ The project started in December 2021, using the version of pokeemerald-expansion
 
 # Known Bugs
 
+Some of these may have been carried over from pokeemerald-expansion.
+
 - Many switch-in abilities (like Frisk and Imposter) don’t activate when both Player Pokemon and opponent Pokemon fainted previous turn (e.g. Destiny Bond) and the Player sends out a Pokemon before the opponent sends out theirs. Solving this will probably involve having to rewrite the code that deals with switch-in abilities. This is probably the same behavior as in vanilla Pokemon Emerald, but I don't see why Trace and Intimidate are allowed to activate whilst others don't, so I'm considering this a bug.
 - Abilities that activate at the same time as other abilities on the same Pokemon can have their names in the ability pop-up overwritten. (e.g. Tyranitar with Sand Stream and Unnerve). This is due to how switch-in (and other types) abilities are handled. This could be fixed by setting gLastUsedAbility during the ability battle script with the new setlastusedability command, but this freezes the game when used before calling the ability pop-up. Why? Have no fucking clue.
 - Abilities that activate at the same time as other abilities can use wrong strings in the battle message.
@@ -174,6 +176,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Jumping into long grass from ledge and moving produces incorrect grass animation.
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
+- In Contests of super rank and above, Pokemon sprites and NPC overworld sprites can get weird colours. Palette bug.
 - HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce. Seems to be a very rare bug.
 - When a Pokemon evolves by trading, an exp gain sound plays over the Pokemon's cry.
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there. Repeatedly occurs when KOing it from 100% HP.
@@ -181,7 +184,13 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Deoxys may also skip a form change. Repeatedly occurs with Draining Kiss.
 - Origin has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
 - Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, and more)
-- Sometimes when battling in the Battle Frontier, a Pokemon will repeatedly consume its held berry. Cause unknown. Haven't been able to reproduce.
+- When a Pokemon with Volt Absorb uses Ion Deluge, it triggers Volt Absorb.
+- Bug Bite is not taking the effects of the opponent's berry.
+- Move relearner doesn't list all of the possible moves to relearn.
+
+*Really bad bugs*
+- Using Giga Impact in a contest freezes the game.
+- Sometimes when battling, a Pokemon will repeatedly consume its held berry. Cause unknown.
 - Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety.
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
 
@@ -199,7 +208,7 @@ Possible future additions/changes.
 - A contest side-quest with Lisia, much like in ORAS.
 - Perhaps a more interesting Winona berry giving event. It's a bit boring to just be given a berry.
 - Perhaps a more interesting Tate & Liza event to get Jirachi?
-- In-game resource that teaches the player braile. 
+- In-game resource that teaches the player braile. So that it isn't required to look out of the game to solve the braile puzzles.
 - Sort out the online/wireless features. Either find out how to make them work or remove them.
 - Better Game Corner games. May be a ton of work though. (Perhaps one could be a Battle Palace style battle where the Player places a bet?)
 - Better Battle Frontier level scaling. Open level puts opponent Pokemon to your highest level Pokemon. Should scale all Pokemon to a certain level.

@@ -2622,7 +2622,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
 {
     s32 i, byTwo, affectsUser = 0;
     bool32 statusChanged = FALSE;
-    bool32 mirrorArmorReflected = (HasAbility(ABILITY_MIRROR_ARMOR, GetBattlerAbilities(gBattlerTarget)));
+    bool32 mirrorArmorReflected = FALSE;
     bool32 hasWaterVeil, hasWaterBubble;
     u32 flags = 0;
     u16 battlerAbilities[NUM_ABILITY_SLOTS];
@@ -2653,6 +2653,8 @@ void SetMoveEffect(bool32 primary, u32 certain)
     memcpy(battlerAbilities, GetBattlerAbilities(gEffectBattler), sizeof(battlerAbilities));
     memcpy(attackerAbilities, GetBattlerAbilities(gBattlerAttacker), sizeof(attackerAbilities));
     memcpy(targetAbilities, GetBattlerAbilities(gBattlerTarget), sizeof(targetAbilities));
+
+    mirrorArmorReflected = HasAbility(ABILITY_MIRROR_ARMOR, targetAbilities);
 
      // Just in case this flag is still set
     gBattleScripting.moveEffect &= ~MOVE_EFFECT_CERTAIN;
@@ -3458,7 +3460,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
                     CheckSetUnburden(gEffectBattler);
 
                     gActiveBattler = gEffectBattler;
-                    BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gEffectBattler].item);
+                    BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[gEffectBattler].item), &gBattleMons[gEffectBattler].item);
                     MarkBattlerForControllerExec(gActiveBattler);
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_MoveEffectIncinerate;
@@ -3474,7 +3476,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
                     CheckSetUnburden(gEffectBattler);
                     gActiveBattler = gEffectBattler;
 
-                    BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gEffectBattler].item);
+                    BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[gEffectBattler].item), &gBattleMons[gEffectBattler].item);
                     MarkBattlerForControllerExec(gActiveBattler);
 
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
@@ -7257,7 +7259,7 @@ static void Cmd_removeitem(void)
     gBattleMons[gActiveBattler].item = 0;
     CheckSetUnburden(gActiveBattler);
 
-    BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gActiveBattler].item);
+    BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[gActiveBattler].item), &gBattleMons[gActiveBattler].item);
     MarkBattlerForControllerExec(gActiveBattler);
 
     ClearBattlerItemEffectHistory(gActiveBattler);
@@ -7649,7 +7651,7 @@ static void Cmd_useitemonopponent(void)
 {
     gBattlerInMenuId = gBattlerAttacker;
     PokemonUseItemEffects(&gEnemyParty[gBattlerPartyIndexes[gBattlerAttacker]], gLastUsedItem, gBattlerPartyIndexes[gBattlerAttacker], 0, TRUE);
-    gBattlescriptCurrInstr += 1;
+    gBattlescriptCurrInstr++;
 }
 
 static bool32 HasAttackerFaintedTarget(void)
