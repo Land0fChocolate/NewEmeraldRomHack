@@ -488,16 +488,16 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseVitamin::
 	waitstate
 	special CloseFrontierExchangeCornerItemIconWindow
 	switch VAR_RESULT
-	case 0, BattleFrontier_ExchangeServiceCorner_EventScript_Protein
-	case 1, BattleFrontier_ExchangeServiceCorner_EventScript_Calcium
-	case 2, BattleFrontier_ExchangeServiceCorner_EventScript_Iron
-	case 3, BattleFrontier_ExchangeServiceCorner_EventScript_Zinc
-	case 4, BattleFrontier_ExchangeServiceCorner_EventScript_Carbos
-	case 5, BattleFrontier_ExchangeServiceCorner_EventScript_HPUp
-	case 6, BattleFrontier_ExchangeServiceCorner_EventScript_PPUp
-	case 7, BattleFrontier_ExchangeServiceCorner_EventScript_PPMax
-	case 8, BattleFrontier_ExchangeServiceCorner_EventScript_BottleCap
-	case 9, BattleFrontier_ExchangeServiceCorner_EventScript_GoldBottleCap
+	case 0, BattleFrontier_ExchangeServiceCorner_EventScript_BottleCap
+	case 1, BattleFrontier_ExchangeServiceCorner_EventScript_GoldBottleCap
+	case 2, BattleFrontier_ExchangeServiceCorner_EventScript_PPUp
+	case 3, BattleFrontier_ExchangeServiceCorner_EventScript_PPMax
+	case 4, BattleFrontier_ExchangeServiceCorner_EventScript_Protein
+	case 5, BattleFrontier_ExchangeServiceCorner_EventScript_Calcium
+	case 6, BattleFrontier_ExchangeServiceCorner_EventScript_Iron
+	case 7, BattleFrontier_ExchangeServiceCorner_EventScript_Zinc
+	case 8, BattleFrontier_ExchangeServiceCorner_EventScript_Carbos
+	case 9, BattleFrontier_ExchangeServiceCorner_EventScript_HPUp
 	case 10, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
@@ -587,7 +587,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_GoldBottleCap::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmGoldBottleCap, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseVitamin
-	setvar VAR_0x8008, 30
+	setvar VAR_0x8008, 28
 	setvar VAR_0x8009, ITEM_GOLD_BOTTLE_CAP
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end

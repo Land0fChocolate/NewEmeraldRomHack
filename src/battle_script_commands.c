@@ -9219,7 +9219,7 @@ static void Cmd_various(void)
         }
         return;
     case VARIOUS_MOVEEND_ITEM_EFFECTS:
-        if (ItemBattleEffects(1, gActiveBattler, FALSE))
+        if (ItemBattleEffects(ITEMEFFECT_NORMAL, gActiveBattler, FALSE))
             return;
         break;
     case VARIOUS_ROOM_SERVICE:
@@ -9464,19 +9464,18 @@ static void Cmd_various(void)
         }
         break;
     case VARIOUS_CONSUME_BERRY:
-        if (gBattleScripting.overrideBerryRequirements == 2)
+        if (gBattleScripting.overrideBerryRequirements == 0)
         {
             gBattlescriptCurrInstr += 4;
             return;
         }
-
+        
         if (gBattlescriptCurrInstr[3])
             gLastUsedItem = gBattleMons[gActiveBattler].item;
-
+        
         gBattleScripting.battler = gEffectBattler = gBattlerTarget = gActiveBattler;    // Cover all berry effect battlerId cases. e.g. ChangeStatBuffs uses target ID
         if (ItemBattleEffects(ITEMEFFECT_USE_LAST_ITEM, gActiveBattler, FALSE))
             return;
-
         gBattlescriptCurrInstr += 4;
         return;
     case VARIOUS_JUMP_IF_CANT_REVERT_TO_PRIMAL:

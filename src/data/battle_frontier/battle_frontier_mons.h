@@ -1432,7 +1432,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_WARTORTLE_1] = {
         .species = SPECIES_WARTORTLE,
         .moves = {MOVE_WATER_PULSE, MOVE_ICE_PUNCH, MOVE_REFLECT, MOVE_YAWN},
-        .item = ITEM_FOCUS_BAND,
+        .item = ITEM_FOCUS_SASH,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_DOCILE
     },
@@ -2454,7 +2454,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_METANG_2] = {
         .species = SPECIES_METANG,
         .moves = {MOVE_FLASH_CANNON, MOVE_SIGNAL_BEAM, MOVE_PSYCHIC, MOVE_AGILITY},
-        .item = ITEM_FOCUS_BAND,
+        .item = ITEM_FOCUS_SASH,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_QUIRKY
     },
@@ -3706,7 +3706,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_BLISSEY_1] = {
         .species = SPECIES_BLISSEY,
-        .moves = {MOVE_TOXIC, MOVE_SUBSTITUTE, MOVE_SEISMIC_TOSS, MOVE_SOFT_BOILED},
+        .moves = {MOVE_TOXIC, MOVE_HEAL_PULSE, MOVE_SEISMIC_TOSS, MOVE_SOFT_BOILED},
         .item = ITEM_LEFTOVERS,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE,
         .nature = NATURE_BOLD
@@ -4582,7 +4582,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_MILOTIC_2] = {
         .species = SPECIES_MILOTIC,
         .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_TOXIC, MOVE_RECOVER},
-        .item = ITEM_FOCUS_BAND,
+        .item = ITEM_SHELL_BELL,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_MODEST
     },
@@ -4715,7 +4715,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_LEAFEON_3] = {
         .species = SPECIES_LEAFEON,
         .moves = {MOVE_LEAF_BLADE, MOVE_FLINT_BLADE, MOVE_FLAIL, MOVE_TOPSY_TURVY},
-        .item = ITEM_DARK_GEM,
+        .item = ITEM_GRASS_GEM,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SPEED,
         .nature = NATURE_JOLLY
     },

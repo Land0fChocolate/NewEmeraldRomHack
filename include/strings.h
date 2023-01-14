@@ -703,7 +703,7 @@ extern const u8 gText_HpUp1BP[];
 extern const u8 gText_PPUp2BP[];
 extern const u8 gText_PPMax5BP[];
 extern const u8 gText_BottleCap2BP[];
-extern const u8 gText_GoldBottleCap30BP[];
+extern const u8 gText_GoldBottleCap28BP[];
 
 extern const u8 gText_OvalStone4BP[];
 extern const u8 gText_ReaperCloth16BP[];

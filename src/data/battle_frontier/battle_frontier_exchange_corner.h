@@ -49,16 +49,16 @@ static const u16 sFrontierExchangeCorner_EvoItems[] =
 
 static const u16 sFrontierExchangeCorner_Vitamins[] =
 { 
+    ITEM_BOTTLE_CAP,
+    ITEM_GOLD_BOTTLE_CAP,
+    ITEM_PP_UP,
+    ITEM_PP_MAX,
     ITEM_PROTEIN,
     ITEM_CALCIUM,
     ITEM_IRON,
     ITEM_ZINC,
     ITEM_CARBOS,
     ITEM_HP_UP,
-    ITEM_PP_UP,
-    ITEM_PP_MAX,
-    ITEM_BOTTLE_CAP,
-    ITEM_GOLD_BOTTLE_CAP,
     0xFFFF 
 };
 
