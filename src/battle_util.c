@@ -347,7 +347,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_MAGIC_GUARD] = 5,
     [ABILITY_MAGICIAN] = 2,
     [ABILITY_MAGMA_ARMOR] = 1,
-    [ABILITY_MAGNET_PULL] = 5,
+    [ABILITY_MAGNET_PULL] = 4,
     [ABILITY_MARVEL_SCALE] = 3,
     [ABILITY_MEGA_LAUNCHER] = 3,
     [ABILITY_MERCILESS] = 2,
@@ -446,7 +446,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_STICKY_HOLD] = 1,
     [ABILITY_STORM_DRAIN] = 5,
     [ABILITY_STRONG_JAW] = 3,
-    [ABILITY_STURDY] = 4,
+    [ABILITY_STURDY] = 5,
     [ABILITY_SUCTION_CUPS] = 1,
     [ABILITY_SUPER_LUCK] = 2,
     [ABILITY_SUPERCOOLED] = 1,
@@ -1202,24 +1202,9 @@ bool8 TryRunFromBattle(u8 battler)
     }
     else if (HasAbility(ABILITY_RUN_AWAY, GetBattlerAbilities(battler)))
     {
-        if (InBattlePyramid())
-        {
-            gBattleStruct->runTries++;
-            pyramidMultiplier = GetPyramidRunMultiplier();
-            speedVar = (gBattleMons[battler].speed * pyramidMultiplier) / (gBattleMons[BATTLE_OPPOSITE(battler)].speed) + (gBattleStruct->runTries * 30);
-            if (speedVar > (Random() & 0xFF))
-            {
-                gLastUsedAbility = ABILITY_RUN_AWAY;
-                gProtectStructs[battler].fleeFlag = 2;
-                effect++;
-            }
-        }
-        else
-        {
             gLastUsedAbility = ABILITY_RUN_AWAY;
             gProtectStructs[battler].fleeFlag = 2;
             effect++;
-        }
     }
     else if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL) && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {

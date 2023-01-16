@@ -45,7 +45,7 @@ EverGrandeCity_EventScript_TestAbra1::
 EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
-	giveitem ITEM_HEART_SCALE, 30
+	giveitem ITEM_BOTTLE_CAP, 99
 	closemessage
 	end
 

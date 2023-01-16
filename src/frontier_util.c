@@ -88,7 +88,7 @@ static const u8 sFrontierBrainStreakAppearances[NUM_FRONTIER_FACILITIES][4] =
     [FRONTIER_FACILITY_DOME]    = { 4,   9,  5, 0},
     [FRONTIER_FACILITY_PALACE]  = {28,  56, 28, 1},
     [FRONTIER_FACILITY_ARENA]   = {28,  56, 28, 1},
-    [FRONTIER_FACILITY_FACTORY] = {21,  42, 21, 1},
+    [FRONTIER_FACILITY_FACTORY] = {21,  49, 21, 1},
     [FRONTIER_FACILITY_PIKE]    = {28, 140, 56, 1},
     [FRONTIER_FACILITY_PYRAMID] = {21,  70, 35, 0},
 };
@@ -470,10 +470,10 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         {
             {
                 .species = SPECIES_ARTICUNO,
-                .heldItem = ITEM_CHARTI_BERRY,
+                .heldItem = ITEM_BABIRI_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MODEST,
-                .evs = {6, 0, 252, 252, 0, 0},
+                .evs = {6, 0, 0, 252, 252, 0},
                 .moves = {MOVE_BLIZZARD, MOVE_HURRICANE, MOVE_ANCIENT_POWER, MOVE_REFLECT},
             },
             {

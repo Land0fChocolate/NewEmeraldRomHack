@@ -173,14 +173,19 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Frisk may trigger on the wrong Pokemon. Often occurs in Battle Frontier.
 - Arena Trap battle message when trying to switch doesn't show the ability string.
 - When a Pokemon with Volt Absorb uses Ion Deluge, it triggers Volt Absorb.
+- Stench ability may activate for opponent and not user. Scenario: Weezing vs Altaria, Altaria (no King's Rock) used Ice Beam which flinched Weezing, could be a bad gBattlerAttacker assignment or similar.
 - Bug Bite/Pluck is not taking the effects of the opponent's berry.
+- Spinning Body activates on every hit for multi-hit moves (e.g. Hitmontop using Triple Kick). Would rather it takes affect on only the last hit.
+- Trick Room sometimes doesn't seem to be making the trick room effect.
+- Backgrounds of some moves are glitched or have black boxes. (Shadow Bone, Gunk Shot, Hurricane, Focus Blast, Aura Sphere, Burn Up)
+- Blaze Impact fire effects are in the wrong place when used by opponent.
 - Cloud reflection can be seen in the long grass in Route 120.
 - Jumping into long grass from ledge and moving produces incorrect grass animation.
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
 - In Contests of super rank and above, Pokemon sprites and NPC overworld sprites can get weird colours. Palette bug.
 - Pokemon School has black boxes over the windows that make it look like curtains.
-- HP bar in battle may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce. Seems to be a very rare bug.
+- HP bar in battle may look weird, starting with a ?. When hit it may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce. Seems to be a very rare bug.
 - When a Pokemon evolves by trading, an exp gain sound plays over the Pokemon's cry.
 - When trading with the tradeback guy, his name doesn't show up in the trade screen. Instead the name from the previous in-game trade shows up.
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there. Repeatedly occurs when KOing it from 100% HP.

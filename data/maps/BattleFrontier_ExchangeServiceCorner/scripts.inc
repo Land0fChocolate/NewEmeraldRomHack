@@ -350,7 +350,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ReaperCloth::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmReaperCloth, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 10
 	setvar VAR_0x8009, ITEM_REAPER_CLOTH
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -359,7 +359,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_Protector::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmProtector, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 10
 	setvar VAR_0x8009, ITEM_PROTECTOR
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -368,7 +368,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_Electirizer::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmElectirizer, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 10
 	setvar VAR_0x8009, ITEM_ELECTIRIZER
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -377,7 +377,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_Magmarizer::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmMagmarizer, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 10
 	setvar VAR_0x8009, ITEM_MAGMARIZER
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -386,7 +386,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_DeepSeaScale::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmDeepSeaScale, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 10
 	setvar VAR_0x8009, ITEM_DEEP_SEA_SCALE
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -395,7 +395,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_DeepSeaTooth::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmDeepSeaTooth, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 10
 	setvar VAR_0x8009, ITEM_DEEP_SEA_TOOTH
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -404,7 +404,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_DragonScale::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_DragonScale, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 10
 	setvar VAR_0x8009, ITEM_DRAGON_SCALE
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -413,7 +413,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_UpGrade::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmUpGrade, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 10
 	setvar VAR_0x8009, ITEM_UPGRADE
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -422,7 +422,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_DubiousDisc::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmDubiousDisc, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 16
+	setvar VAR_0x8008, 10
 	setvar VAR_0x8009, ITEM_DUBIOUS_DISC
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -431,7 +431,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_KingsRock::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmKingsRock, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 16
 	setvar VAR_0x8009, ITEM_KINGS_ROCK
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -440,7 +440,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_RazorClaw::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmRazorClaw, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 16
 	setvar VAR_0x8009, ITEM_RAZOR_CLAW
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -449,7 +449,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_RazorFang::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmRazorFang, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 16
 	setvar VAR_0x8009, ITEM_RAZOR_FANG
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -458,7 +458,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_MetalCoat::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmMetalCoat, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 16
 	setvar VAR_0x8009, ITEM_METAL_COAT
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -467,7 +467,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_GalaricaCuff::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmGalaricaCuff, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 16
 	setvar VAR_0x8009, ITEM_GALARICA_CUFF
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -476,7 +476,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_GalaricaWreath::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmGalaricaWreath, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
-	setvar VAR_0x8008, 24
+	setvar VAR_0x8008, 16
 	setvar VAR_0x8009, ITEM_GALARICA_WREATH
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -617,7 +617,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem::
 	case 7, BattleFrontier_ExchangeServiceCorner_EventScript_Metronome
 	case 8, BattleFrontier_ExchangeServiceCorner_EventScript_ShedShell
 	case 9, BattleFrontier_ExchangeServiceCorner_EventScript_StickyBarb
-	case 10, BattleFrontier_ExchangeServiceCorner_EventScript_LaggingTail
+	case 10, BattleFrontier_ExchangeServiceCorner_EventScript_ExpertBelt
 	case 11, BattleFrontier_ExchangeServiceCorner_EventScript_QuickClaw
 	case 12, BattleFrontier_ExchangeServiceCorner_EventScript_Snowball
 	case 13, BattleFrontier_ExchangeServiceCorner_EventScript_LightClay
@@ -728,12 +728,12 @@ BattleFrontier_ExchangeServiceCorner_EventScript_StickyBarb::
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
-BattleFrontier_ExchangeServiceCorner_EventScript_LaggingTail::
-	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmLaggingTail, MSGBOX_YESNO
+BattleFrontier_ExchangeServiceCorner_EventScript_ExpertBelt::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmExpertBelt, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setvar VAR_0x8008, 12
-	setvar VAR_0x8009, ITEM_LAGGING_TAIL
+	setvar VAR_0x8008, 20
+	setvar VAR_0x8009, ITEM_EXPERT_BELT
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -1130,8 +1130,8 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmStickyBarb:
 	.string "You've chosen the Sticky Barb.\n"
 	.string "Is that correct?$"
 
-BattleFrontier_ExchangeServiceCorner_Text_ConfirmLaggingTail:
-	.string "You've chosen the Lagging Tail.\n"
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmExpertBelt:
+	.string "You've chosen the Expert Belt.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmQuickClaw:
@@ -1437,9 +1437,9 @@ BattleFrontier_ExchangeServiceCorner_Text_StickyBarbDesc::
 	.string "A hold item that damages the holder\n"
 	.string "every turn.$"
 
-BattleFrontier_ExchangeServiceCorner_Text_LaggingTailDesc::
-	.string "A hold item that makes the holder\n"
-	.string "move last.$"
+BattleFrontier_ExchangeServiceCorner_Text_ExpertBeltDesc::
+	.string "A hold item that increases the power\n"
+	.string "of super-effective moves.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_QuickClawDesc::
 	.string "A hold item that raises user Speed\n"

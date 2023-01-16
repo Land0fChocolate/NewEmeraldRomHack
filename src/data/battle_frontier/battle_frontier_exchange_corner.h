@@ -74,7 +74,7 @@ static const u16 sFrontierExchangeCorner_HoldItems[] =
     ITEM_METRONOME,
     ITEM_SHED_SHELL,
     ITEM_STICKY_BARB,
-    ITEM_LAGGING_TAIL,
+    ITEM_EXPERT_BELT,
     ITEM_QUICK_CLAW,
     ITEM_SNOWBALL,
     ITEM_LIGHT_CLAY,
@@ -145,16 +145,16 @@ static const u8 *const sFrontierExchangeCorner_EvoItemsDescriptions[] =
 
 static const u8 *const sFrontierExchangeCorner_VitaminsDescriptions[] = 
 {
+    BattleFrontier_ExchangeServiceCorner_Text_BottleCapDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_GoldBottleCapDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_PPUpDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_PPMaxDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ProteinDesc,
     BattleFrontier_ExchangeServiceCorner_Text_CalciumDesc,
     BattleFrontier_ExchangeServiceCorner_Text_IronDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ZincDesc,
     BattleFrontier_ExchangeServiceCorner_Text_CarbosDesc,
     BattleFrontier_ExchangeServiceCorner_Text_HPUpDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_PPUpDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_PPMaxDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_BottleCapDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_GoldBottleCapDesc,
     gText_Exit
 };
 
@@ -170,7 +170,7 @@ static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_MetronomeDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ShedShellDesc,
     BattleFrontier_ExchangeServiceCorner_Text_StickyBarbDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_LaggingTailDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_ExpertBeltDesc,
     BattleFrontier_ExchangeServiceCorner_Text_QuickClawDesc,
     BattleFrontier_ExchangeServiceCorner_Text_SnowballDesc,
     BattleFrontier_ExchangeServiceCorner_Text_LightClayDesc,
