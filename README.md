@@ -1,5 +1,7 @@
 # Pokémon Energized Emerald
 
+v1.0 - 19/01/2023
+
 A reimagining of Pokemon Emerald with the aim to expand and enhance the game. 
 
 This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: https://github.com/rh-hideout/pokeemerald-expansion.
