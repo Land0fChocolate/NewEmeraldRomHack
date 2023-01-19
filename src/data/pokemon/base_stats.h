@@ -3302,7 +3302,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_WATER_ABSORB, ABILITY_STAMINA, ABILITY_HYDRATION},
+        .abilities = {ABILITY_WATER_ABSORB, ABILITY_DAMP, ABILITY_HYDRATION},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
     },
@@ -23011,7 +23011,7 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_CAMERUPT_MEGA] =
     {
-        .baseHP        = 70,
+        .baseHP        = 110,
         .baseAttack    = 120,
         .baseDefense   = 100,
         .baseSpeed     = 20,

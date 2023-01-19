@@ -4339,9 +4339,9 @@ bool16 HasAllHoennMons(void)
 {
     u16 i;
 
-    for (i = 0; i < HOENN_DEX_COUNT; i++)
+    for (i = 1; i < HOENN_DEX_COUNT; i++)
     {
-        if (!GetSetPokedexFlag(HoennToNationalOrder(i + 1), FLAG_GET_CAUGHT))
+        if (!GetSetPokedexFlag(HoennToNationalOrder(i), FLAG_GET_CAUGHT))
             return FALSE;
     }
     return TRUE;

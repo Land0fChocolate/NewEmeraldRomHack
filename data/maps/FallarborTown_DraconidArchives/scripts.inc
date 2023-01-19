@@ -332,8 +332,637 @@ DraconidArchives_Eventscript_ScientistAbsorbedInBooks::
 	release
 	end
 
-DraconidArchives_Eventscript_DisplayCaseStones::
+DraconidArchives_Eventscript_DisplayCaseStonesTop::
+	lock
+	checkitem ITEM_MEGA_RING, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq DraconidArchives_Eventscript_PickMegaStoneTop
 	msgbox DraconidArchives_Text_DisplayCaseStones, MSGBOX_SIGN
+	release
+	end
+
+DraconidArchives_Eventscript_PickMegaStoneTop::
+	message DraconidArchives_Text_TopHalfDisplayCase
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_ARCHIVES_MEGA_STONES_GEN_1_2
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, DraconidArchives_EventScript_Venusaurite
+	case 1, DraconidArchives_EventScript_CharizarditeX
+	case 2, DraconidArchives_EventScript_CharizarditeY
+	case 3, DraconidArchives_EventScript_Blastoisinite
+	case 4, DraconidArchives_EventScript_Beedrillite
+	case 5, DraconidArchives_EventScript_Pidgeotite
+	case 6, DraconidArchives_EventScript_Alakazite
+	case 7, DraconidArchives_EventScript_Slowbronite
+	case 8, DraconidArchives_EventScript_Gengarite
+	case 9, DraconidArchives_EventScript_Kangaskhanite
+	case 10, DraconidArchives_EventScript_Pinsirite
+	case 11, DraconidArchives_EventScript_Gyaradosite
+	case 12, DraconidArchives_EventScript_Aerodactylite
+	case 13, DraconidArchives_EventScript_MewtwoniteX
+	case 14, DraconidArchives_EventScript_MewtwoniteY
+	case 15, DraconidArchives_EventScript_Ampharosite
+	case 16, DraconidArchives_EventScript_Steelixite
+	case 17, DraconidArchives_EventScript_Scizorite
+	case 18, DraconidArchives_EventScript_Heracronite
+	case 19, DraconidArchives_EventScript_Houndoominite
+	case 20, DraconidArchives_EventScript_Tyranitarite
+	case 21, DraconidArchives_EventScript_CancelMegaStoneSelect
+	goto DraconidArchives_EventScript_CancelMegaStoneSelect
+	end
+
+DraconidArchives_Eventscript_DisplayCaseStonesBot::
+	lock
+	checkitem ITEM_MEGA_RING, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq DraconidArchives_Eventscript_PickMegaStoneBot
+	msgbox DraconidArchives_Text_DisplayCaseStones, MSGBOX_SIGN
+	release
+	end
+
+DraconidArchives_Eventscript_PickMegaStoneBot::
+	message DraconidArchives_Text_BotHalfDisplayCase
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_ARCHIVES_MEGA_STONES_GEN_3
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, DraconidArchives_EventScript_Sceptilite
+	case 1, DraconidArchives_EventScript_Blazikenite
+	case 2, DraconidArchives_EventScript_Swampertite
+	case 3, DraconidArchives_EventScript_Gardevoirite
+	case 4, DraconidArchives_EventScript_Galladite
+	case 5, DraconidArchives_EventScript_Sablenite
+	case 6, DraconidArchives_EventScript_Mawilite
+	case 7, DraconidArchives_EventScript_Aggronite
+	case 8, DraconidArchives_EventScript_Medichamite
+	case 9, DraconidArchives_EventScript_Manectite
+	case 10, DraconidArchives_EventScript_Sharpedonite
+	case 11, DraconidArchives_EventScript_Cameruptite
+	case 12, DraconidArchives_EventScript_Altarianite
+	case 13, DraconidArchives_EventScript_Banettite
+	case 14, DraconidArchives_EventScript_Absolite
+	case 15, DraconidArchives_EventScript_Glalitite
+	case 16, DraconidArchives_EventScript_Salamencite
+	case 17, DraconidArchives_EventScript_Metagrossite
+	case 18, DraconidArchives_EventScript_Latiasite
+	case 19, DraconidArchives_EventScript_Latiosite
+	case 20, DraconidArchives_EventScript_CancelMegaStoneSelect
+	goto DraconidArchives_EventScript_CancelMegaStoneSelect
+	end
+
+DraconidArchives_EventScript_Venusaurite::
+	setvar VAR_TEMP_1, 0
+	bufferitemname 0, ITEM_VENUSAURITE
+	setvar VAR_0x8004, ITEM_VENUSAURITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_CharizarditeX::
+	setvar VAR_TEMP_1, 1
+	bufferitemname 0, ITEM_CHARIZARDITE_X
+	setvar VAR_0x8004, ITEM_CHARIZARDITE_X
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_CharizarditeY::
+	setvar VAR_TEMP_1, 2
+	bufferitemname 0, ITEM_CHARIZARDITE_Y
+	setvar VAR_0x8004, ITEM_CHARIZARDITE_Y
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Blastoisinite::
+	setvar VAR_TEMP_1, 3
+	bufferitemname 0, ITEM_BLASTOISINITE
+	setvar VAR_0x8004, ITEM_BLASTOISINITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Beedrillite::
+	setvar VAR_TEMP_1, 4
+	bufferitemname 0, ITEM_BEEDRILLITE
+	setvar VAR_0x8004, ITEM_BEEDRILLITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Pidgeotite::
+	setvar VAR_TEMP_1, 5
+	bufferitemname 0, ITEM_PIDGEOTITE
+	setvar VAR_0x8004, ITEM_PIDGEOTITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Alakazite::
+	setvar VAR_TEMP_1, 6
+	bufferitemname 0, ITEM_ALAKAZITE
+	setvar VAR_0x8004, ITEM_ALAKAZITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Slowbronite::
+	setvar VAR_TEMP_1, 7
+	bufferitemname 0, ITEM_SLOWBRONITE
+	setvar VAR_0x8004, ITEM_SLOWBRONITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Gengarite::
+	setvar VAR_TEMP_1, 8
+	bufferitemname 0, ITEM_GENGARITE
+	setvar VAR_0x8004, ITEM_GENGARITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Kangaskhanite::
+	setvar VAR_TEMP_1, 9
+	bufferitemname 0, ITEM_KANGASKHANITE
+	setvar VAR_0x8004, ITEM_KANGASKHANITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Pinsirite::
+	setvar VAR_TEMP_1, 10
+	bufferitemname 0, ITEM_PINSIRITE
+	setvar VAR_0x8004, ITEM_PINSIRITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Gyaradosite::
+	setvar VAR_TEMP_1, 11
+	bufferitemname 0, ITEM_GYARADOSITE
+	setvar VAR_0x8004, ITEM_GYARADOSITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Aerodactylite::
+	setvar VAR_TEMP_1, 12
+	bufferitemname 0, ITEM_AERODACTYLITE
+	setvar VAR_0x8004, ITEM_AERODACTYLITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_MewtwoniteX::
+	setvar VAR_TEMP_1, 13
+	bufferitemname 0, ITEM_MEWTWONITE_X
+	setvar VAR_0x8004, ITEM_MEWTWONITE_X
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_MewtwoniteY::
+	setvar VAR_TEMP_1, 14
+	bufferitemname 0, ITEM_MEWTWONITE_Y
+	setvar VAR_0x8004, ITEM_MEWTWONITE_Y
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Ampharosite::
+	setvar VAR_TEMP_1, 15
+	bufferitemname 0, ITEM_AMPHAROSITE
+	setvar VAR_0x8004, ITEM_AMPHAROSITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Steelixite::
+	setvar VAR_TEMP_1, 16
+	bufferitemname 0, ITEM_STEELIXITE
+	setvar VAR_0x8004, ITEM_STEELIXITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Scizorite::
+	setvar VAR_TEMP_1, 17
+	bufferitemname 0, ITEM_SCIZORITE
+	setvar VAR_0x8004, ITEM_SCIZORITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Heracronite::
+	setvar VAR_TEMP_1, 18
+	bufferitemname 0, ITEM_HERACRONITE
+	setvar VAR_0x8004, ITEM_HERACRONITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Houndoominite::
+	setvar VAR_TEMP_1, 19
+	bufferitemname 0, ITEM_HOUNDOOMINITE
+	setvar VAR_0x8004, ITEM_HOUNDOOMINITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_Tyranitarite::
+	setvar VAR_TEMP_1, 20
+	bufferitemname 0, ITEM_TYRANITARITE
+	setvar VAR_0x8004, ITEM_TYRANITARITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
+
+DraconidArchives_EventScript_ConfirmTakeMegaStoneTop::
+	msgbox DraconidArchives_Text_TakeTheMegaStone, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq DraconidArchives_EventScript_CancelMegaStoneSelect
+	switch VAR_TEMP_1
+	case 0, DraconidArchives_EventScript_TakeVenusaurite
+	case 1, DraconidArchives_EventScript_TakeCharizarditeX
+	case 2, DraconidArchives_EventScript_TakeCharizarditeY
+	case 3, DraconidArchives_EventScript_TakeBlastoisinite
+	case 4, DraconidArchives_EventScript_TakeBeedrillite
+	case 5, DraconidArchives_EventScript_TakePidgeotite
+	case 6, DraconidArchives_EventScript_TakeAlakazite
+	case 7, DraconidArchives_EventScript_TakeSlowbronite
+	case 8, DraconidArchives_EventScript_TakeGengarite
+	case 9, DraconidArchives_EventScript_TakeKangaskhanite
+	case 10, DraconidArchives_EventScript_TakePinsirite
+	case 11, DraconidArchives_EventScript_TakeGyaradosite
+	case 12, DraconidArchives_EventScript_TakeAerodactylite
+	case 13, DraconidArchives_EventScript_TakeMewtwoniteX
+	case 14, DraconidArchives_EventScript_TakeMewtwoniteY
+	case 15, DraconidArchives_EventScript_TakeAmpharosite
+	case 16, DraconidArchives_EventScript_TakeSteelixite
+	case 17, DraconidArchives_EventScript_TakeScizorite
+	case 18, DraconidArchives_EventScript_TakeHeracronite
+	case 19, DraconidArchives_EventScript_TakeHoundoominite
+	case 20, DraconidArchives_EventScript_TakeTyranitarite
+	end
+
+DraconidArchives_EventScript_Sceptilite::
+	setvar VAR_TEMP_1, 0
+	bufferitemname 0, ITEM_SCEPTILITE
+	setvar VAR_0x8004, ITEM_SCEPTILITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Blazikenite::
+	setvar VAR_TEMP_1, 1
+	bufferitemname 0, ITEM_BLAZIKENITE
+	setvar VAR_0x8004, ITEM_BLAZIKENITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Swampertite::
+	setvar VAR_TEMP_1, 2
+	bufferitemname 0, ITEM_SWAMPERTITE
+	setvar VAR_0x8004, ITEM_SWAMPERTITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Gardevoirite::
+	setvar VAR_TEMP_1, 3
+	bufferitemname 0, ITEM_GARDEVOIRITE
+	setvar VAR_0x8004, ITEM_GARDEVOIRITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Galladite::
+	setvar VAR_TEMP_1, 4
+	bufferitemname 0, ITEM_GALLADITE
+	setvar VAR_0x8004, ITEM_GALLADITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Sablenite::
+	setvar VAR_TEMP_1, 5
+	bufferitemname 0, ITEM_SABLENITE
+	setvar VAR_0x8004, ITEM_SABLENITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Mawilite::
+	setvar VAR_TEMP_1, 6
+	bufferitemname 0, ITEM_MAWILITE
+	setvar VAR_0x8004, ITEM_MAWILITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Aggronite::
+	setvar VAR_TEMP_1, 7
+	bufferitemname 0, ITEM_AGGRONITE
+	setvar VAR_0x8004, ITEM_AGGRONITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Medichamite::
+	setvar VAR_TEMP_1, 8
+	bufferitemname 0, ITEM_MEDICHAMITE
+	setvar VAR_0x8004, ITEM_MEDICHAMITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Manectite::
+	setvar VAR_TEMP_1, 9
+	bufferitemname 0, ITEM_MANECTITE
+	setvar VAR_0x8004, ITEM_MANECTITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Sharpedonite::
+	setvar VAR_TEMP_1, 10
+	bufferitemname 0, ITEM_SHARPEDONITE
+	setvar VAR_0x8004, ITEM_SHARPEDONITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Cameruptite::
+	setvar VAR_TEMP_1, 11
+	bufferitemname 0, ITEM_CAMERUPTITE
+	setvar VAR_0x8004, ITEM_CAMERUPTITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Altarianite::
+	setvar VAR_TEMP_1, 12
+	bufferitemname 0, ITEM_ALTARIANITE
+	setvar VAR_0x8004, ITEM_ALTARIANITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Banettite::
+	setvar VAR_TEMP_1, 13
+	bufferitemname 0, ITEM_BANETTITE
+	setvar VAR_0x8004, ITEM_BANETTITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Absolite::
+	setvar VAR_TEMP_1, 14
+	bufferitemname 0, ITEM_ABSOLITE
+	setvar VAR_0x8004, ITEM_ABSOLITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Glalitite::
+	setvar VAR_TEMP_1, 15
+	bufferitemname 0, ITEM_GLALITITE
+	setvar VAR_0x8004, ITEM_GLALITITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Salamencite::
+	setvar VAR_TEMP_1, 16
+	bufferitemname 0, ITEM_SALAMENCITE
+	setvar VAR_0x8004, ITEM_SALAMENCITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Metagrossite::
+	setvar VAR_TEMP_1, 17
+	bufferitemname 0, ITEM_METAGROSSITE
+	setvar VAR_0x8004, ITEM_METAGROSSITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Latiasite::
+	setvar VAR_TEMP_1, 18
+	bufferitemname 0, ITEM_LATIASITE
+	setvar VAR_0x8004, ITEM_LATIASITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_Latiosite::
+	setvar VAR_TEMP_1, 19
+	bufferitemname 0, ITEM_LATIOSITE
+	setvar VAR_0x8004, ITEM_LATIOSITE
+	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
+
+DraconidArchives_EventScript_ConfirmTakeMegaStoneBot::
+	msgbox DraconidArchives_Text_TakeTheMegaStone, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq DraconidArchives_EventScript_CancelMegaStoneSelect
+	switch VAR_TEMP_1
+	case 0, DraconidArchives_EventScript_TakeSceptilite
+	case 1, DraconidArchives_EventScript_TakeBlazikenite
+	case 2, DraconidArchives_EventScript_TakeSwampertite
+	case 3, DraconidArchives_EventScript_TakeGardevoirite
+	case 4, DraconidArchives_EventScript_TakeGalladite
+	case 5, DraconidArchives_EventScript_TakeSablenite
+	case 6, DraconidArchives_EventScript_TakeMawilite
+	case 7, DraconidArchives_EventScript_TakeAggronite
+	case 8, DraconidArchives_EventScript_TakeMedichamite
+	case 9, DraconidArchives_EventScript_TakeManectite
+	case 10, DraconidArchives_EventScript_TakeSharpedonite
+	case 11, DraconidArchives_EventScript_TakeCameruptite
+	case 12, DraconidArchives_EventScript_TakeAltarianite
+	case 13, DraconidArchives_EventScript_TakeBanettite
+	case 14, DraconidArchives_EventScript_TakeAbsolite
+	case 15, DraconidArchives_EventScript_TakeGlalitite
+	case 16, DraconidArchives_EventScript_TakeSalamencite
+	case 17, DraconidArchives_EventScript_TakeMetagrossite
+	case 18, DraconidArchives_EventScript_TakeLatiasite
+	case 19, DraconidArchives_EventScript_TakeLatiosite
+	end
+
+DraconidArchives_EventScript_TakeVenusaurite::
+	giveitem ITEM_VENUSAURITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeCharizarditeX::
+	giveitem ITEM_CHARIZARDITE_X
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeCharizarditeY::
+	giveitem ITEM_CHARIZARDITE_Y
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeBlastoisinite::
+	giveitem ITEM_BLASTOISINITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeBeedrillite::
+	giveitem ITEM_BEEDRILLITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakePidgeotite::
+	giveitem ITEM_PIDGEOTITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeAlakazite::
+	giveitem ITEM_ALAKAZITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeSlowbronite::
+	giveitem ITEM_SLOWBRONITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeGengarite::
+	giveitem ITEM_GENGARITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeKangaskhanite::
+	giveitem ITEM_KANGASKHANITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakePinsirite::
+	giveitem ITEM_PINSIRITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeGyaradosite::
+	giveitem ITEM_GYARADOSITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeAerodactylite::
+	giveitem ITEM_AERODACTYLITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeMewtwoniteX::
+	giveitem ITEM_MEWTWONITE_X
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeMewtwoniteY::
+	giveitem ITEM_MEWTWONITE_Y
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeAmpharosite::
+	giveitem ITEM_AMPHAROSITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeSteelixite::
+	giveitem ITEM_STEELIXITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeScizorite::
+	giveitem ITEM_SCIZORITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeHeracronite::
+	giveitem ITEM_HERACRONITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeHoundoominite::
+	giveitem ITEM_HOUNDOOMINITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeTyranitarite::
+	giveitem ITEM_TYRANITARITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeSceptilite::
+	giveitem ITEM_SCEPTILITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeBlazikenite::
+	giveitem ITEM_BLAZIKENITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeSwampertite::
+	giveitem ITEM_SWAMPERTITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeGardevoirite::
+	giveitem ITEM_GARDEVOIRITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeGalladite::
+	giveitem ITEM_GALLADITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeSablenite::
+	giveitem ITEM_SABLENITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeMawilite::
+	giveitem ITEM_MAWILITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeAggronite::
+	giveitem ITEM_AGGRONITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeMedichamite::
+	giveitem ITEM_MEDICHAMITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeManectite::
+	giveitem ITEM_MANECTITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeSharpedonite::
+	giveitem ITEM_SHARPEDONITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeCameruptite::
+	giveitem ITEM_CAMERUPTITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeAltarianite::
+	giveitem ITEM_ALTARIANITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeBanettite::
+	giveitem ITEM_BANETTITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeAbsolite::
+	giveitem ITEM_ABSOLITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeGlalitite::
+	giveitem ITEM_GLALITITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeSalamencite::
+	giveitem ITEM_SALAMENCITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeMetagrossite::
+	giveitem ITEM_METAGROSSITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeLatiasite::
+	giveitem ITEM_LATIASITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_TakeLatiosite::
+	giveitem ITEM_LATIOSITE
+	closemessage
+	release
+	end
+
+DraconidArchives_EventScript_CancelMegaStoneSelect::
+	closemessage
+	release
 	end
 
 DraconidArchives_Eventscript_DisplayCaseInstrument::
@@ -347,6 +976,21 @@ DraconidArchives_Eventscript_Scroll::
 DraconidArchives_Eventscript_Book::
 	msgbox DraconidArchives_Text_Book, MSGBOX_SIGN
 	end
+
+DraconidArchives_Text_TopHalfDisplayCase:
+	.string "The top half of the display case\n"
+	.string "displays a wide variety of Mega Stones.\p"
+	.string "They are labelled “Kanto” and “Johto”.\n"
+	.string "Pick one?$"
+
+DraconidArchives_Text_BotHalfDisplayCase:
+	.string "The bottom half of the display case\n"
+	.string "displays a wide variety of Mega Stones.\p"
+	.string "They are labelled “Hoenn”.\n"
+	.string "Pick one?$"
+
+DraconidArchives_Text_TakeTheMegaStone:
+	.string "Take the {STR_VAR_1}?$"
 
 DraconidArchives_Text_BeatingDeoxys:
 	.string "Zinnia: {PLAYER}!\p"
@@ -388,7 +1032,7 @@ DraconidArchives_Text_SomeOtherTime:
 	.string "Zinnia: Perhaps another time then.$"
 
 DraconidArchives_Text_YouDoNotHaveThisBerry:
-	.string "You do not have this berry.$"
+	.string "You do not have enough of this berry.$"
 
 DraconidArchives_Text_YoullGiveXBerry:
 	.string "You'll give me your {STR_VAR_1}?$"
@@ -444,7 +1088,7 @@ DraconidArchives_Text_TooAbsorbedInBooks:
 
 DraconidArchives_Text_DisplayCaseStones:
 	.string "The display case contains numerous\n"
-	.string "colorful ball-shaped stones.$"
+	.string "colorful spherical stones.$"
 
 DraconidArchives_Text_DisplayCaseInstrument:
 	.string "The display case contains a very\n"

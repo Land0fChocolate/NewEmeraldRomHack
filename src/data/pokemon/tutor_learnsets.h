@@ -2770,7 +2770,8 @@ static const u64 sTutorLearnsets[] =
                                             | TUTOR(MOVE_WORRY_SEED)
                                             | TUTOR(MOVE_MAGIC_COAT)
                                             | TUTOR(MOVE_SEED_BOMB)
-                                            | TUTOR(MOVE_HIDDEN_THORNS)),
+                                            | TUTOR(MOVE_HIDDEN_THORNS)
+                                            | TUTOR(MOVE_BODY_PRESS)),
 
     [SPECIES_CYNDAQUIL]     = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
                                             | TUTOR(MOVE_DEFENSE_CURL)

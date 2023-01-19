@@ -9960,7 +9960,7 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
         case ABILITY_FUR_COAT:
             if (usesDefStat)
             {
-                MulModifier(&modifier, UQ_4_12(2.0));
+                MulModifier(&modifier, UQ_4_12(1.5));
             }
             break;
         case ABILITY_GRASS_PELT:

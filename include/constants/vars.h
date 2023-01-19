@@ -240,7 +240,7 @@
 #define VAR_EVENT_PICHU_SLOT                 0x40DD
 #define VAR_LISIA_EVENT_TRIGGER_STATE        0x40DE
 #define VAR_PETALBURG_SHRINE_TRIGGER_STATE   0x40DF
-#define VAR_NEVER_READ_0x40E0                0x40E0 // unused
+#define VAR_BATTLE_FRONTIER_STATE            0x40E0
 #define VAR_NEVER_READ_0x40E1                0x40E1 // unused
 #define VAR_NEVER_READ_0x40E2                0x40E2 // unused
 #define VAR_NEVER_READ_0x40E3                0x40E3 // unused

@@ -89,8 +89,8 @@ static const u8 sFrontierBrainStreakAppearances[NUM_FRONTIER_FACILITIES][4] =
     [FRONTIER_FACILITY_PALACE]  = {28,  56, 28, 1},
     [FRONTIER_FACILITY_ARENA]   = {28,  56, 28, 1},
     [FRONTIER_FACILITY_FACTORY] = {21,  49, 21, 1},
-    [FRONTIER_FACILITY_PIKE]    = {28, 140, 56, 1},
-    [FRONTIER_FACILITY_PYRAMID] = {21,  70, 35, 0},
+    [FRONTIER_FACILITY_PIKE]    = {56, 140, 56, 1},
+    [FRONTIER_FACILITY_PYRAMID] = {28,  70, 35, 0},
 };
 
 static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZE] =
@@ -128,7 +128,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         {
             {
                 .species = SPECIES_RAIKOU,
-                .heldItem = ITEM_LUM_BERRY,
+                .heldItem = ITEM_SHUCA_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MODEST,
                 .evs = {158, 0, 252, 100, 0, 0},
@@ -246,7 +246,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_ADAMANT,
                 .evs = {252, 252, 0, 0, 0, 6},
-                .moves = {MOVE_OVERHEAT, MOVE_EXTREME_SPEED, MOVE_FLARE_BLITZ, MOVE_CRUNCH},
+                .moves = {MOVE_CLOSE_COMBAT, MOVE_EXTREME_SPEED, MOVE_FLARE_BLITZ, MOVE_CRUNCH},
             },
             {
                 .species = SPECIES_SLAKING,
@@ -310,7 +310,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .heldItem = ITEM_LUM_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_TIMID,
-                .evs = {252, 0, 252, 0, 6, 0},
+                .evs = {6, 0, 0, 252, 0, 252},
                 .moves = {MOVE_SHADOW_BALL, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
             },
             {
@@ -318,7 +318,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .heldItem = ITEM_TOXIC_ORB,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_JOLLY,
-                .evs = {6, 252, 0, 0, 0, 252},
+                .evs = {0, 252, 6, 0, 0, 252},
                 .moves = {MOVE_SPORE, MOVE_FORCE_PALM, MOVE_SEED_BOMB, MOVE_ROCK_SLIDE},
             },
         },

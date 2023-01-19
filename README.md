@@ -187,13 +187,13 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Pokemon School has black boxes over the windows that make it look like curtains.
 - HP bar in battle may look weird, starting with a ?. When hit it may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce. Seems to be a very rare bug.
 - When a Pokemon evolves by trading, an exp gain sound plays over the Pokemon's cry.
-- When trading with the tradeback guy, his name doesn't show up in the trade screen. Instead the name from the previous in-game trade shows up.
+- When trading with the tradeback guy and you use a Pokemon with a different ID than your own (in-game trade), the trade screen says you are trading with the Pokemon's previous owner.
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there. Repeatedly occurs when KOing it from 100% HP.
 - Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
 - Deoxys may also skip a form change. Repeatedly occurs with Draining Kiss.
 - Origin has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
-- Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, and more)
-- Move relearner doesn't list all of the possible moves to relearn.
+- Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, Flygon, Salamence and more)
+- Move relearner doesn't list all of the possible moves to relearn, only the first ~15.
 
 *Really bad bugs*
 - Using Giga Impact in a contest freezes the game.

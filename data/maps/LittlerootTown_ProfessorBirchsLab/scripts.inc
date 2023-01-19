@@ -1396,12 +1396,16 @@ LittlerootTown_ProfessorBirchsLab_Text_MayWhatNextImStayingHere:
 	.string "and sharpening your skills?\p"
 	.string "Or are you going to try filling\n"
 	.string "the National Pokédex?\p"
-	.string "I'm staying here to help the Prof.$"
+	.string "I'm staying here to help my Dad.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_BrendanPreferCollectingSlowly:
-	.string "Brendan: Rather than collecting\n"
-	.string "Pokémon, I prefer slowly and \l"
-	.string "steadily raising the one I chose.$"
+	.string "Brendan: What are you going to do after\n"
+	.string "this, {PLAYER}{KUN}?\p"
+	.string "Are you going to keep battling\n"
+	.string "and sharpening your skills?\p"
+	.string "Or are you going to try filling\n"
+	.string "the National Pokédex?\p"
+	.string "I'm staying here to help my Dad.$"
 
 LittlerootTown_ProfessorBirchsLab_Text_MayHaveYouGoneToBattleFrontier:
 	.string "May: Oh, hi, {PLAYER}{KUN}!\n"
@@ -1652,7 +1656,7 @@ LittlerootTown_ProfessorBirchsLab_Text_BrendanChallenge:
 	.string "See ya!$"
 
 LittlerootTown_ProfessorBirchsLab_Text_ItsAMeteorite:
-	.string "It's a meteorite in Professor Birch's\n"
+	.string "It's the meteorite in Professor Birch's\n"
 	.string "lab. You feel a radiating warmth\l"
 	.string "coming from it.$"
 

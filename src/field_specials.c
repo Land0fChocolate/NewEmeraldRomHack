@@ -2462,6 +2462,26 @@ void ShowScrollableMultichoice(void)
             task->tKeepOpenAfterSelect = FALSE;
             task->tTaskId = taskId;
             break;
+        case SCROLL_MULTI_ARCHIVES_MEGA_STONES_GEN_1_2:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 22;
+            task->tLeft = 2;
+            task->tTop = 1;
+            task->tWidth = 14;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
+        case SCROLL_MULTI_ARCHIVES_MEGA_STONES_GEN_3:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 21;
+            task->tLeft = 2;
+            task->tTop = 1;
+            task->tWidth = 14;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
         default:
             gSpecialVar_Result = MULTI_B_PRESSED;
             DestroyTask(taskId);
@@ -2766,6 +2786,55 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Chikorita,
         gText_Cyndaquil,
         gText_Totodile,
+        gText_Exit
+    },
+    [SCROLL_MULTI_ARCHIVES_MEGA_STONES_GEN_1_2] = 
+    {
+        gText_Venusaurite,
+        gText_CharizarditeX,
+        gText_CharizarditeY,
+        gText_Blastoisinite,
+        gText_Beedrillite,
+        gText_Pidgeotite,
+        gText_Alakazite,
+        gText_Slowbronite,
+        gText_Gengarite,
+        gText_Kangaskhanite,
+        gText_Pinsirite,
+        gText_Gyaradosite,
+        gText_Aerodactylite,
+        gText_MewtwoniteX,
+        gText_MewtwoniteY,
+        gText_Ampharosite,
+        gText_Steelixite,
+        gText_Scizorite,
+        gText_Heracronite,
+        gText_Houndoominite,
+        gText_Tyranitarite,
+        gText_Exit
+    },
+    [SCROLL_MULTI_ARCHIVES_MEGA_STONES_GEN_3] = 
+    {
+        gText_Sceptilite,
+        gText_Blazikenite,
+        gText_Swampertite,
+        gText_Gardevoirite,
+        gText_Galladite,
+        gText_Sablenite,
+        gText_Mawilite,
+        gText_Aggronite,
+        gText_Medichamite,
+        gText_Manectite,
+        gText_Sharpedonite,
+        gText_Cameruptite,
+        gText_Altarianite,
+        gText_Banettite,
+        gText_Absolite,
+        gText_Glalitite,
+        gText_Salamencite,
+        gText_Metagrossite,
+        gText_Latiasite,
+        gText_Latiosite,
         gText_Exit
     }
 };

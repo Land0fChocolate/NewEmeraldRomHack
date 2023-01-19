@@ -132,7 +132,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "DraconidArchives_Eventscript_DisplayCaseStones"
+      "script": "DraconidArchives_Eventscript_DisplayCaseStonesTop"
     },
     {
       "type": "sign",
@@ -180,7 +180,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "DraconidArchives_Eventscript_DisplayCaseStones"
+      "script": "DraconidArchives_Eventscript_DisplayCaseStonesBot"
     }
   ]
 }

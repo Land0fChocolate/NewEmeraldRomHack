@@ -699,7 +699,8 @@ static const u8 sProteanDescription[] = _(
 	"of used move.");
 
 static const u8 sFurCoatDescription[] = _(
-	"Doubles user defense stat.");
+	"User defense stat is\n"
+	"increased by 50%.");
 
 static const u8 sBulletproofDescription[] = _(
 	"Protects user from ball\n"

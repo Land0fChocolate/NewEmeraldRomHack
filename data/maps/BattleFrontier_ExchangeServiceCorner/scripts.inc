@@ -23,6 +23,8 @@ BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize::
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor2
 	compare VAR_TEMP_2, EXCHANGE_CORNER_VITAMIN_CLERK
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseVitamin
+	compare VAR_TEMP_2, EXCHANGE_CORNER_EVO_ITEM_CLERK
+	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	end
 
@@ -67,6 +69,8 @@ BattleFrontier_ExchangeServiceCorner_EventScript_TryGiveItem::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_HereIsYourPrize, MSGBOX_DEFAULT
 	compare VAR_TEMP_2, EXCHANGE_CORNER_VITAMIN_CLERK
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseVitamin
+	compare VAR_TEMP_2, EXCHANGE_CORNER_EVO_ITEM_CLERK
+	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	end
 
@@ -991,11 +995,11 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmOvalStone:
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmReaperCloth:
-	.string "You've chosen the Oval Stone.\n"
+	.string "You've chosen the Reaper Cloth.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmProtector:
-	.string "You've chosen the Oval Stone.\n"
+	.string "You've chosen the Protector.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmElectirizer:

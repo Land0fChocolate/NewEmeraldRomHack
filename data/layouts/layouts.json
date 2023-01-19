@@ -4268,7 +4268,7 @@
       "height": 13,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Lab",
-      "border_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLabWithTable/border.bin",
+      "border_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLab/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLabWithTable/map.bin"
     },
     {

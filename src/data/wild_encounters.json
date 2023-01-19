@@ -13329,8 +13329,8 @@
               },
               {
                 "min_level": 44,
-                "max_level": 50,
-                "species": "SPECIES_SMEARGLE"
+                "max_level": 46,
+                "species": "SPECIES_CHANSEY"
               },
               {
                 "min_level": 15,
@@ -13338,14 +13338,14 @@
                 "species": "SPECIES_LARVITAR"
               },
               {
-                "min_level": 40,
-                "max_level": 50,
-                "species": "SPECIES_SMEARGLE"
+                "min_level": 27,
+                "max_level": 32,
+                "species": "SPECIES_SWINUB"
               },
               {
-                "min_level": 40,
-                "max_level": 50,
-                "species": "SPECIES_SMEARGLE"
+                "min_level": 27,
+                "max_level": 32,
+                "species": "SPECIES_DIGLETT"
               },
               {
                 "min_level": 32,
