@@ -29,23 +29,20 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 @this stuff is kept around for testing
 EverGrandeCity_EventScript_TestAbra1::
 	faceplayer
-	@msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
-	@giveitem ITEM_PROTEIN, 97
-	@giveitem ITEM_IRON, 90
-	@giveitem ITEM_CALCIUM, 97
-	@giveitem ITEM_ZINC, 90
-	@giveitem ITEM_CARBOS, 98
-	@giveitem ITEM_HP_UP, 90
-	@giveitem ITEM_RAZOR_CLAW, 5
-	@closemessage
-	cleartrainerflag TRAINER_LEAF
-	trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
+	@cleartrainerflag TRAINER_LEAF
+	@trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
+	giveitem ITEM_HP_UP, 90
+	giveitem ITEM_PROTEIN, 90
+	giveitem ITEM_IRON, 90
+	giveitem ITEM_CALCIUM, 90
+	giveitem ITEM_ZINC, 90
+	giveitem ITEM_CARBOS, 90
 	end
 
 EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
-	giveitem ITEM_BOTTLE_CAP, 99
+	giveitem ITEM_RARE_CANDY, 99
 	closemessage
 	end
 
