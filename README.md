@@ -229,6 +229,7 @@ Possible future additions/changes.
 - Increase number of PC Pokemon storage boxes.
 - Add another star to the Trainer Card for completing the National Dex. Create a platinum colour scheme to go along with it.
 - Named NPCs like Gym Leaders, Elite 4, Steven, etc to be possible partners in Battle Tower Multi challenge.
+- Obligatory beach episode.
 
 # Credits
 
