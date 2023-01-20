@@ -144,7 +144,7 @@
       "type": "hidden_item",
       "x": 8,
       "y": 9,
-      "elevation": 3,
+      "elevation": 5,
       "item": "ITEM_GOLD_BOTTLE_CAP",
       "flag": "FLAG_HIDDEN_NAVEL_ROCK_HOOH_1_GOLD_BOTTLE_CAP"
     }

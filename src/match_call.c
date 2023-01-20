@@ -254,7 +254,7 @@ static const struct MatchCallTrainerTextInfo sMatchCallTrainers[] =
         .sameRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_SAME_ROUTE, 8),
         .differentRouteMatchCallTextId = TEXT_ID(REQ_TOPIC_DIFF_ROUTE, 8),
     },
-    { //TODO: unused, remove
+    { //TODO: unused, remove in future playthroughs
         .trainerId = TRAINER_THALIA_1,
         .unused = 0,
         // Thalia and Sawyer are the only ones who use different msg ids for their battle topics
@@ -1875,11 +1875,7 @@ static u16 GetFrontierStreakInfo(u16 facilityId, u32 *topicTextId)
         }
         *topicTextId = GEN_TOPIC_B_DOME - 1;
         break;
-    #ifdef BUGFIX
-    case FRONTIER_FACILITY_PIKE:
-    #else
-    case FRONTIER_FACILITY_FACTORY:
-    #endif
+    case FRONTIER_FACILITY_FACTORY: // Factory and Pike are swapped on purpose
         for (i = 0; i < 2; i++)
         {
             if (streak < gSaveBlock2Ptr->frontier.pikeRecordStreaks[i])
@@ -1909,11 +1905,7 @@ static u16 GetFrontierStreakInfo(u16 facilityId, u32 *topicTextId)
         }
         *topicTextId = GEN_TOPIC_STREAK_RECORD - 1;
         break;
-    #ifdef BUGFIX
-    case FRONTIER_FACILITY_FACTORY:
-    #else
-    case FRONTIER_FACILITY_PIKE:
-    #endif
+    case FRONTIER_FACILITY_PIKE: // Factory and Pike are swapped on purpose
         for (i = 0; i < 2; i++)
         {
             for (j = 0; j < 2; j++)
@@ -2021,6 +2013,7 @@ static const u8 *const sBirchDexRatingTexts[] =
     gBirchDexRatingText_LessThan180,
     gBirchDexRatingText_LessThan190,
     gBirchDexRatingText_LessThan200,
+    gBirchDexRatingText_LessThan211,
     gBirchDexRatingText_DexCompleted,
 };
 

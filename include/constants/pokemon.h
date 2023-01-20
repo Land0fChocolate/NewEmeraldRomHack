@@ -182,6 +182,7 @@
 #define MON_DATA_SPEED2            86
 #define MON_DATA_SPATK2            87
 #define MON_DATA_SPDEF2            88
+#define MON_DATA_HIDDEN_NATURE     89
 
 // Ribbon IDs used by TV and Pokénav
 #define CHAMPION_RIBBON       0
@@ -260,6 +261,8 @@
 #define MON_FEMALE     0xFE
 #define MON_GENDERLESS 0xFF
 
+#define HIDDEN_NATURE_NONE      26  // 25 natures. not 0xFF to conserve bits
+
 // Constants for AdjustFriendship
 #define FRIENDSHIP_EVENT_GROW_LEVEL       0
 #define FRIENDSHIP_EVENT_VITAMIN          1 // unused, handled by PokemonUseItemEffects
@@ -275,7 +278,7 @@
 #define MAX_FRIENDSHIP  0xFF
 
 #define MAX_EV_TRAINING_EVS 120
-#define IVS_PER_BOTTLE_CAP_BUFF 9
+#define IVS_PER_BOTTLE_CAP_BUFF 8
 
 #define MAX_PER_STAT_IVS 31
 #define MAX_IV_MASK 31

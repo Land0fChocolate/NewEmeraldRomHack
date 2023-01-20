@@ -519,14 +519,35 @@ const u8 gText_EggWillTakeSomeTime[] = _("What will hatch from this?\nIt will ta
 const u8 gText_EggWillHatchSoon[] = _("It moves occasionally.\nIt should hatch soon.");
 const u8 gText_EggAboutToHatch[] = _("It's making sounds.\nIt's about to hatch!");
 const u8 gText_HMMovesCantBeForgotten2[] = _("HM moves can't be\nforgotten now.");
-const u8 gText_XNatureMetAtYZ[] = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nmet at {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1},\n{DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}.");
-const u8 gText_XNatureHatchedAtYZ[] = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nhatched at {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1},\n{DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}.");
-const u8 gText_XNatureObtainedInTrade[] = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nobtained in a trade.");
-const u8 gText_XNatureFatefulEncounter[] = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nobtained in a fateful\nencounter at {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
-const u8 gText_XNatureProbablyMetAt[] = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nprobably met at {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1},\n{DYNAMIC 0}{DYNAMIC 4}{DYNAMIC 1}.");
-const u8 gText_XNature[] = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature");
-const u8 gText_XNatureMetSomewhereAt[] = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nmet somewhere at {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
-const u8 gText_XNatureHatchedSomewhereAt[] = _("{DYNAMIC 0}{DYNAMIC 2}{DYNAMIC 1}{DYNAMIC 5} nature,\nhatched somewhere at {LV_2}{DYNAMIC 0}{DYNAMIC 3}{DYNAMIC 1}.");
+const u8 gText_XNatureMetAtYZ[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
+    "met at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01},\n{DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}.");
+
+const u8 gText_XNatureHatchedAtYZ[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
+    "hatched at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01},\n{DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}.");
+
+const u8 gText_XNatureObtainedInTrade[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
+    "obtained in a trade.");
+
+const u8 gText_XNatureFatefulEncounter[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
+    "obtained in a fateful\nencounter at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01}.");
+
+const u8 gText_XNatureProbablyMetAt[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
+    "probably met at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01},\n{DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}.");
+
+const u8 gText_XNature[] = _("{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature");
+
+const u8 gText_XNatureMetSomewhereAt[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
+    "met somewhere at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01}.");
+
+const u8 gText_XNatureHatchedSomewhereAt[] = _(
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
+    "hatched somewhere at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01}.");
 const u8 gText_OddEggFoundByCouple[] = _("An odd Pokémon egg found\nby the day care couple.");
 const u8 gText_PeculiarEggNicePlace[] = _("A peculiar Pokémon egg\nobtained at the nice place.");
 const u8 gText_PeculiarEggTrade[] = _("A peculiar Pokémon egg\nobtained in a trade.");
@@ -692,7 +713,8 @@ const u8 gText_TreeckoDollAndPrice[] = _("Treecko Doll 1,000 COINS");
 const u8 gText_TorchicDollAndPrice[] = _("Torchic Doll 1,000 COINS");
 const u8 gText_MudkipDollAndPrice[] = _("Mudkip Doll   1,000 COINS");
 const u8 gText_50CoinsAndPrice[] = _("  50 COINS    ¥1,000");
-const u8 gText_500CoinsAndPrice[] = _("500 COINS  ¥10,000");
+const u8 gText_500CoinsAndPrice[] = _("500 COINS  ¥9,000");
+const u8 gText_5000CoinsAndPrice[] = _("5000 COINS  ¥80,000");
 const u8 gText_Excellent2[] = _("Excellent");
 const u8 gText_NotSoGood[] = _("Not so good");
 const u8 gText_RedShard[] = _("Red Shard");
@@ -792,7 +814,7 @@ const u8 gText_TwoStyles[] = _("Two Styles");
 const u8 gText_Lv50_3[] = _("LV. 50");
 const u8 gText_OpenLevel2[] = _("Open Level");
 const u8 gText_MonTypeAndNo[] = _("{PKMN} TYPE & NO.");
-const u8 gText_HoldItems[] = _("Hold Items ITEMS");
+const u8 gText_HoldItems[] = _("Hold Items");
 const u8 gText_Symbols2[] = _("Symbols");
 const u8 gText_Record3[] = _("Record");
 const u8 gText_BattlePts[] = _("Battle PTS");
@@ -1197,23 +1219,23 @@ const u8 gText_HpUp1BP[] = _("HP Up{CLEAR_TO 0x64}1BP");
 const u8 gText_PPUp2BP[] = _("PP Up{CLEAR_TO 0x64}2BP");
 const u8 gText_PPMax5BP[] = _("PP Max{CLEAR_TO 0x64}5BP");
 const u8 gText_BottleCap2BP[] = _("Bottle Cap{CLEAR_TO 0x64}2BP");
-const u8 gText_GoldBottleCap30BP[] = _("Gold Bottle Cap{CLEAR_TO 0x64}30BP");
+const u8 gText_GoldBottleCap28BP[] = _("Gold Bottle Cap{CLEAR_TO 0x64}28BP");
 const u8 gText_OvalStone4BP[] = _("Oval Stone{CLEAR_TO 0x5E}4BP");
-const u8 gText_ReaperCloth16BP[] = _("Reaper Cloth{CLEAR_TO 0x5E}16BP");
-const u8 gText_Protector16BP[] = _("Protector{CLEAR_TO 0x5E}16BP");
-const u8 gText_Electirizer16BP[] = _("Electirizer{CLEAR_TO 0x5E}16BP");
-const u8 gText_Magmarizer16BP[] = _("Magmarizer{CLEAR_TO 0x5E}16BP");
-const u8 gText_DeepSeaScale16BP[] = _("DeepSeaScale{CLEAR_TO 0x5E}16BP");
-const u8 gText_DeepSeaTooth16BP[] = _("DeepSeaTooth{CLEAR_TO 0x5E}16BP");
-const u8 gText_DragonScale16BP[] = _("Dragon Scale{CLEAR_TO 0x5E}16BP");
-const u8 gText_UpGrade16BP[] = _("UpGrade{CLEAR_TO 0x5E}16BP");
-const u8 gText_DubiousDisc16BP[] = _("Dubious Disc{CLEAR_TO 0x5E}16BP");
-const u8 gText_KingsRock24BP[] = _("King's Rock{CLEAR_TO 0x5E}24BP");
-const u8 gText_RazorClaw24BP[] = _("Razor Claw{CLEAR_TO 0x5E}24BP");
-const u8 gText_RazorFang24BP[] = _("Razor Fang{CLEAR_TO 0x5E}24BP");
-const u8 gText_MetalCoat24BP[] = _("Metal Coat{CLEAR_TO 0x5E}24BP");
-const u8 gText_GalaricaCuff24BP[] = _("Galarica Cuff{CLEAR_TO 0x5E}24BP");
-const u8 gText_GalaricaWreath24BP[] = _("Galarica Wreath{CLEAR_TO 0x5E}24BP");
+const u8 gText_ReaperCloth10BP[] = _("Reaper Cloth{CLEAR_TO 0x5E}10BP");
+const u8 gText_Protector10BP[] = _("Protector{CLEAR_TO 0x5E}10BP");
+const u8 gText_Electirizer10BP[] = _("Electirizer{CLEAR_TO 0x5E}10BP");
+const u8 gText_Magmarizer10BP[] = _("Magmarizer{CLEAR_TO 0x5E}10BP");
+const u8 gText_DeepSeaScale10BP[] = _("DeepSeaScale{CLEAR_TO 0x5E}10BP");
+const u8 gText_DeepSeaTooth10BP[] = _("DeepSeaTooth{CLEAR_TO 0x5E}10BP");
+const u8 gText_DragonScale10BP[] = _("Dragon Scale{CLEAR_TO 0x5E}10BP");
+const u8 gText_UpGrade10BP[] = _("UpGrade{CLEAR_TO 0x5E}10BP");
+const u8 gText_DubiousDisc10BP[] = _("Dubious Disc{CLEAR_TO 0x5E}10BP");
+const u8 gText_KingsRock16BP[] = _("King's Rock{CLEAR_TO 0x5E}16BP");
+const u8 gText_RazorClaw16BP[] = _("Razor Claw{CLEAR_TO 0x5E}16BP");
+const u8 gText_RazorFang16BP[] = _("Razor Fang{CLEAR_TO 0x5E}16BP");
+const u8 gText_MetalCoat16BP[] = _("Metal Coat{CLEAR_TO 0x5E}16BP");
+const u8 gText_GalaricaCuff16BP[] = _("Galarica Cuff{CLEAR_TO 0x5E}16BP");
+const u8 gText_GalaricaWreath16BP[] = _("Galarica Wreath{CLEAR_TO 0x5E}16BP");
 const u8 gText_ScopeLens12BP[] = _("Scope Lens{CLEAR_TO 0x5E}12BP");
 const u8 gText_WideLens12BP[] = _("Wide Lens{CLEAR_TO 0x5E}12BP");
 const u8 gText_ToxicOrb12BP[] = _("Toxic Orb{CLEAR_TO 0x5E}12BP");
@@ -1224,7 +1246,7 @@ const u8 gText_DestinyKnot12BP[] = _("Destiny Knot{CLEAR_TO 0x5E}12BP");
 const u8 gText_Metronome12BP[] = _("Metronome{CLEAR_TO 0x5E}12BP");
 const u8 gText_ShedShell12BP[] = _("Shed Shell{CLEAR_TO 0x5E}12BP");
 const u8 gText_StickyBarb12BP[] = _("Sticky Barb{CLEAR_TO 0x5E}12BP");
-const u8 gText_LaggingTail12BP[] = _("Lagging Tail{CLEAR_TO 0x5E}12BP");
+const u8 gText_ExpertBelt20BP[] = _("Expert Belt{CLEAR_TO 0x5E}20BP");
 const u8 gText_QuickClaw20BP[] = _("Quick Claw{CLEAR_TO 0x5E}20BP");
 const u8 gText_Snowball20BP[] = _("Snowball{CLEAR_TO 0x5E}20BP");
 const u8 gText_LightClay20BP[] = _("Light Clay{CLEAR_TO 0x5E}20BP");
@@ -1270,7 +1292,6 @@ const u8 gText_Megahorn20BP[] = _("Megahorn{CLEAR_TO 0x4E}20BP");
 const u8 gText_Superpower20BP[] = _("Superpower{CLEAR_TO 0x4E}20BP");        
 const u8 gText_DefenseCurl4BP[] = _("Defense Curl{CLEAR_TO 0x4E}4BP");
 const u8 gText_Snore4BP[] = _("Snore{CLEAR_TO 0x4E}4BP");
-const u8 gText_MudSlap4BP[] = _("Mud Slap{CLEAR_TO 0x4E}4BP");
 const u8 gText_Swift4BP[] = _("Swift{CLEAR_TO 0x4E}4BP");
 const u8 gText_PainSplit6BP[] = _("Pain Split{CLEAR_TO 0x4E}6BP");
 const u8 gText_Recycle6BP[] = _("Recycle{CLEAR_TO 0x4E}6BP");
@@ -1280,10 +1301,11 @@ const u8 gText_PsychUp8BP[] = _("Psych Up{CLEAR_TO 0x4E}8BP");
 const u8 gText_DreamEater8BP[] = _("Dream Eater{CLEAR_TO 0x4E}8BP");
 const u8 gText_LowSweep8BP[] = _("Low Sweep{CLEAR_TO 0x4E}8BP");
 const u8 gText_BreakingSwipe8BP[] = _("Breaking Swipe{CLEAR_TO 0x4E}8BP");
+const u8 gText_BugBite12BP[] = _("Bug Bite{CLEAR_TO 0x4E}12BP");
 const u8 gText_SerpentDance12BP[] = _("Serpent Dance{CLEAR_TO 0x4E}12BP");
 const u8 gText_Tailwind12BP[] = _("Tailwind{CLEAR_TO 0x4E}12BP");
 const u8 gText_StoredPower12BP[] = _("Stored Power{CLEAR_TO 0x4E}12BP");
-const u8 gText_Avalanche12BP[] = _("Avalance{CLEAR_TO 0x4E}12BP");
+const u8 gText_Avalanche12BP[] = _("Avalanche{CLEAR_TO 0x4E}12BP");
 const u8 gText_HiddenThorns16BP[] = _("Hidden Thorns{CLEAR_TO 0x4E}16BP");
 const u8 gText_IcePunch16BP[] = _("Ice Punch{CLEAR_TO 0x4E}16BP");
 const u8 gText_ThunderPunch16BP[] = _("Thunder Punch{CLEAR_TO 0x4E}16BP");
@@ -1331,6 +1353,48 @@ const u8 gText_BattleFactory[] = _("Battle Factory");
 const u8 gText_BattleArena[] = _("Battle Arena");
 const u8 gText_BattlePike[] = _("Battle Pike");
 const u8 gText_BattlePyramid[] = _("Battle Pyramid");
+
+const u8 gText_Venusaurite[] = _("Venusaurite");
+const u8 gText_CharizarditeX[] = _("CharizarditeX");
+const u8 gText_CharizarditeY[] = _("CharizarditeY");
+const u8 gText_Blastoisinite[] = _("Blastoisinite");
+const u8 gText_Beedrillite[] = _("Beedrillite");
+const u8 gText_Pidgeotite[] = _("Pidgeotite");
+const u8 gText_Alakazite[] = _("Alakazite");
+const u8 gText_Slowbronite[] = _("Slowbronite");
+const u8 gText_Gengarite[] = _("Gengarite");
+const u8 gText_Kangaskhanite[] = _("Kangaskhanite");
+const u8 gText_Pinsirite[] = _("Pinsirite");
+const u8 gText_Gyaradosite[] = _("Gyaradosite");
+const u8 gText_Aerodactylite[] = _("Aerodactylite");
+const u8 gText_MewtwoniteX[] = _("MewtwoniteX");
+const u8 gText_MewtwoniteY[] = _("MewtwoniteY");
+const u8 gText_Ampharosite[] = _("Ampharosite");
+const u8 gText_Steelixite[] = _("Steelixite");
+const u8 gText_Scizorite[] = _("Scizorite");
+const u8 gText_Heracronite[] = _("Heracronite");
+const u8 gText_Houndoominite[] = _("Houndoominite");
+const u8 gText_Tyranitarite[] = _("Tyranitarite");
+const u8 gText_Sceptilite[] = _("Sceptilite");
+const u8 gText_Blazikenite[] = _("Blazikenite");
+const u8 gText_Swampertite[] = _("Swampertite");
+const u8 gText_Gardevoirite[] = _("Gardevoirite");
+const u8 gText_Galladite[] = _("Galladite");
+const u8 gText_Sablenite[] = _("Sablenite");
+const u8 gText_Mawilite[] = _("Mawilite");
+const u8 gText_Aggronite[] = _("Aggronite");
+const u8 gText_Medichamite[] = _("Medichamite");
+const u8 gText_Manectite[] = _("Manectite");
+const u8 gText_Sharpedonite[] = _("Sharpedonite");
+const u8 gText_Cameruptite[] = _("Cameruptite");
+const u8 gText_Altarianite[] = _("Altarianite");
+const u8 gText_Banettite[] = _("Banettite");
+const u8 gText_Absolite[] = _("Absolite");
+const u8 gText_Glalitite[] = _("Glalitite");
+const u8 gText_Salamencite[] = _("Salamencite");
+const u8 gText_Metagrossite[] = _("Metagrossite");
+const u8 gText_Latiasite[] = _("Latiasite");
+const u8 gText_Latiosite[] = _("Latiosite");
 
 ALIGNED(4) const u8 gText_FacilitySingle[] = _("{STR_VAR_1} Single");
 ALIGNED(4) const u8 gText_FacilityDouble[] = _("{STR_VAR_1} Double");
@@ -1571,7 +1635,7 @@ ALIGNED(4) const u8 gText_123Dot[][3] = {_("1."), _("2."), _("3.")};
 
 const u8 gText_SavingDontTurnOff2[] = _("SAVING…\nDON'T TURN OFF THE POWER.");
 const u8 gText_BlenderMaxSpeedRecord[] = _("Berry Blender\nMaximum Speed Record!");
-const u8 gText_234Players[] = _("2 PlayerS\n3 PlayerS\n4 PlayerS");
+const u8 gText_234Players[] = _("2 Players\n3 Players\n4 Players");
 const u8 gText_YesNo[] = _("YES\nNO");
 const u8 gText_SelectorArrow3[] = _("▶");
 const u8 gText_Peekaboo[] = _("PEEKABOO!");

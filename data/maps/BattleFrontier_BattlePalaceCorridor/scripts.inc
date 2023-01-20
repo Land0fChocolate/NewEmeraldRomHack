@@ -13,19 +13,19 @@ BattleFrontier_BattlePalaceCorridor_EventScript_WalkThroughCorridor::
 	applymovement LOCALID_ATTENDANT, BattleFrontier_BattlePalaceCorridor_Movement_EnterCorridor
 	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattlePalaceCorridor_Movement_EnterCorridor
 	waitmovement 0
-	lockall
-	palace_getcomment
-	compare VAR_RESULT, 0
-	call_if_eq BattleFrontier_BattlePalaceCorridor_EventScript_RandomComment1
-	compare VAR_RESULT, 1
-	call_if_eq BattleFrontier_BattlePalaceCorridor_EventScript_RandomComment2
-	compare VAR_RESULT, 2
-	call_if_eq BattleFrontier_BattlePalaceCorridor_EventScript_RandomComment3
-	compare VAR_RESULT, 3
-	call_if_eq BattleFrontier_BattlePalaceCorridor_EventScript_StreakComment
-	compare VAR_RESULT, 4
-	call_if_eq BattleFrontier_BattlePalaceCorridor_EventScript_LongStreakComment
-	closemessage
+	@lockall
+	@palace_getcomment
+	@compare VAR_RESULT, 0
+	@call_if_eq BattleFrontier_BattlePalaceCorridor_EventScript_RandomComment1
+	@compare VAR_RESULT, 1
+	@call_if_eq BattleFrontier_BattlePalaceCorridor_EventScript_RandomComment2
+	@compare VAR_RESULT, 2
+	@call_if_eq BattleFrontier_BattlePalaceCorridor_EventScript_RandomComment3
+	@compare VAR_RESULT, 3
+	@call_if_eq BattleFrontier_BattlePalaceCorridor_EventScript_StreakComment
+	@compare VAR_RESULT, 4
+	@call_if_eq BattleFrontier_BattlePalaceCorridor_EventScript_LongStreakComment
+	@closemessage
 	frontier_get FRONTIER_DATA_LVL_MODE
 	compare VAR_RESULT, FRONTIER_LVL_OPEN
 	goto_if_eq BattleFrontier_BattlePalaceCorridor_EventScript_WalkToOpenBattleRoom
@@ -127,6 +127,7 @@ BattleFrontier_BattlePalaceCorridor_Movement_AttendantEnterBattleRoom:
 	set_invisible
 	step_end
 
+@TODO: rewrite these
 BattleFrontier_BattlePalaceCorridor_Text_PeopleAndMonAreSame:
 	.string "People and Pokémon, they are but\n"
 	.string "the same…\p"

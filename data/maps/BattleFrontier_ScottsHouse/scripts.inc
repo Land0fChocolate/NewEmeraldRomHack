@@ -6,6 +6,7 @@ BattleFrontier_ScottsHouse_MapScripts::
 BattleFrontier_ScottsHouse_EventScript_Scott::
 	lock
 	faceplayer
+	call_if_set FLAG_COLLECTED_ALL_GOLD_SYMBOLS, BattleFrontier_ScottsHouse_EventScript_CheckPostGameComplete
 	goto_if_set FLAG_TEMP_4, BattleFrontier_ScottsHouse_EventScript_GivenBerry
 	goto_if_set FLAG_TEMP_3, BattleFrontier_ScottsHouse_EventScript_GivenShield
 	goto_if_set FLAG_TEMP_2, BattleFrontier_ScottsHouse_EventScript_GivenBattlePoints
@@ -55,9 +56,21 @@ BattleFrontier_ScottsHouse_EventScript_CheckGoldSymbols::
 	compare VAR_RESULT, FALSE
 	goto_if_eq BattleFrontier_ScottsHouse_EventScript_BerryPocketFull
 	setflag FLAG_COLLECTED_ALL_GOLD_SYMBOLS
+	call_if_set FLAG_POST_GAME_COMPLETE, BattleFrontier_ScottsHouse_EventScript_SetUpZinniaEvent
 	setflag FLAG_TEMP_4
 	release
 	end
+
+BattleFrontier_ScottsHouse_EventScript_SetUpZinniaEvent::
+	clearflag FLAG_HIDE_BATTLE_FRONTIER_ZINNIA
+	setvar VAR_BATTLE_FRONTIER_STATE, 1
+	return
+
+BattleFrontier_ScottsHouse_EventScript_CheckPostGameComplete::
+	compare VAR_BATTLE_FRONTIER_STATE, 0
+	goto_if_eq Common_EventScript_NopReturn
+	call_if_set FLAG_POST_GAME_COMPLETE, BattleFrontier_ScottsHouse_EventScript_SetUpZinniaEvent
+	return
 
 BattleFrontier_ScottsHouse_EventScript_BerryPocketFull::
 	msgbox BattleFrontier_ScottsHouse_Text_BerryPocketStuffed, MSGBOX_DEFAULT
@@ -165,46 +178,6 @@ BattleFrontier_ScottsHouse_EventScript_WelcomeToFrontier::
 	msgbox BattleFrontier_ScottsHouse_Text_HowMuchEffortItTookToMakeReal, MSGBOX_DEFAULT
 	applymovement LOCALID_SCOTT, Common_Movement_FacePlayer
 	waitmovement 0
-	msgbox BattleFrontier_ScottsHouse_Text_HaveThisAsMementoOfOurPathsCrossing, MSGBOX_DEFAULT
-	compare VAR_SCOTT_STATE, 13
-	goto_if_eq BattleFrontier_ScottsHouse_EventScript_Give4BattlePoints
-	compare VAR_SCOTT_STATE, 9
-	goto_if_ge BattleFrontier_ScottsHouse_EventScript_Give3BattlePoints
-	compare VAR_SCOTT_STATE, 6
-	goto_if_ge BattleFrontier_ScottsHouse_EventScript_Give2BattlePoints
-	goto BattleFrontier_ScottsHouse_EventScript_Give1BattlePoint
-	end
-
-BattleFrontier_ScottsHouse_EventScript_Give4BattlePoints::
-	buffernumberstring 0, 4
-	setvar VAR_0x8004, 4
-	goto BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints
-	end
-
-BattleFrontier_ScottsHouse_EventScript_Give3BattlePoints::
-	buffernumberstring 0, 3
-	setvar VAR_0x8004, 3
-	goto BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints
-	end
-
-BattleFrontier_ScottsHouse_EventScript_Give2BattlePoints::
-	buffernumberstring 0, 2
-	setvar VAR_0x8004, 2
-	goto BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints
-	end
-
-BattleFrontier_ScottsHouse_EventScript_Give1BattlePoint::
-	buffernumberstring 0, 1
-	setvar VAR_0x8004, 1
-	goto BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints
-	end
-
-BattleFrontier_ScottsHouse_EventScript_GiveBattlePoints::
-	special GiveFrontierBattlePoints
-	msgbox BattleFrontier_ScottsHouse_Text_ObtainedXBattlePoints, MSGBOX_GETPOINTS
-	msgbox BattleFrontier_ScottsHouse_Text_ExplainBattlePoints, MSGBOX_DEFAULT
-	setflag FLAG_SCOTT_GIVES_BATTLE_POINTS
-	setflag FLAG_TEMP_2
 	release
 	end
 

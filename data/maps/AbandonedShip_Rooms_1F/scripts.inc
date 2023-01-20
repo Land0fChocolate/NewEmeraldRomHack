@@ -13,6 +13,7 @@ AbandonedShip_Rooms_1F_EventScript_Demetrius::
 AbandonedShip_Rooms_1F_EventScript_Thalia::
 	trainerbattle_single TRAINER_THALIA_1, AbandonedShip_Rooms_1F_Text_ThaliaIntro, AbandonedShip_Rooms_1F_Text_ThaliaDefeat
 	msgbox AbandonedShip_Rooms_1F_Text_ThaliaPostBattle, MSGBOX_AUTOCLOSE
+	unassign_matchcall TRAINER_THALIA_1 @TODO: used to not break playthrough 3, otherwise remove
 	end
 
 AbandonedShip_Rooms_1F_Text_TakingALookAround:

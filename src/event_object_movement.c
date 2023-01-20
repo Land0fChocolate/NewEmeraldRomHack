@@ -544,6 +544,9 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_METEORITE               0x1176
 #define OBJ_EVENT_PAL_TAG_CELEBI                  0x1177
 #define OBJ_EVENT_PAL_TAG_JIRACHI                 0x1178
+#define OBJ_EVENT_PAL_TAG_REGIROCK                0x1179
+#define OBJ_EVENT_PAL_TAG_REGICE                  0x117A
+#define OBJ_EVENT_PAL_TAG_REGISTEEL               0x117B
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF //4607
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -677,6 +680,9 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Meteorite,             OBJ_EVENT_PAL_TAG_METEORITE},
     {gObjectEventPal_Celebi,                OBJ_EVENT_PAL_TAG_CELEBI},
     {gObjectEventPal_Jirachi,               OBJ_EVENT_PAL_TAG_JIRACHI},
+    {gObjectEventPal_Regirock,              OBJ_EVENT_PAL_TAG_REGIROCK},
+    {gObjectEventPal_Regice,                OBJ_EVENT_PAL_TAG_REGICE},
+    {gObjectEventPal_Registeel,             OBJ_EVENT_PAL_TAG_REGISTEEL},
     {NULL,                                  0x0000},
 };
 

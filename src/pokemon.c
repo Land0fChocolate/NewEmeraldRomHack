@@ -3484,6 +3484,9 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         }
     }
 
+    value = HIDDEN_NATURE_NONE;
+    SetBoxMonData(boxMon, MON_DATA_HIDDEN_NATURE, &value);
+
     GiveBoxMonInitialMoveset(boxMon);
 }
 
@@ -3950,7 +3953,7 @@ static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
 {                                                               \
     u8 baseStat = gBaseStats[species].base;                     \
     s32 n = (((2 * baseStat + iv + ev / 4) * level) / 100) + 5; \
-    u8 nature = GetNature(mon);                                 \
+    u8 nature = GetNature(mon, TRUE);                           \
     n = ModifyStatByNature(nature, n, statIndex);               \
     SetMonData(mon, field, &n);                                 \
 }
@@ -4874,6 +4877,9 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
                 | (substruct3->worldRibbon << 26);
         }
         break;
+    case MON_DATA_HIDDEN_NATURE:
+        retVal = substruct0->hiddenNature;
+        break;
     default:
         break;
     }
@@ -5189,6 +5195,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         substruct3->spDefenseIV = (ivs >> 25) & MAX_IV_MASK;
         break;
     }
+    case MON_DATA_HIDDEN_NATURE:
+        SET8(substruct0->hiddenNature);
+        break;
     default:
         break;
     }
@@ -6434,9 +6443,12 @@ u8 *UseStatIncreaseItem(u16 itemId)
     return gDisplayedStringBattle;
 }
 
-u8 GetNature(struct Pokemon *mon)
+u8 GetNature(struct Pokemon *mon, bool32 checkHidden)
 {
-    return GetMonData(mon, MON_DATA_PERSONALITY, 0) % NUM_NATURES;
+    if (!checkHidden || GetMonData(mon, MON_DATA_HIDDEN_NATURE, 0) == HIDDEN_NATURE_NONE)
+        return GetNatureFromPersonality(GetMonData(mon, MON_DATA_PERSONALITY, 0));
+    else
+        return GetMonData(mon, MON_DATA_HIDDEN_NATURE, 0);
 }
 
 u8 GetNatureFromPersonality(u32 personality)
@@ -6498,35 +6510,33 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             switch (gEvolutionTable[species][i].method)
             {
             case EVO_FRIENDSHIP:
-                if (friendship >= 180)
+                if (friendship >= 200)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_FRIENDSHIP_DAY:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= DAY_START && gLocalTime.hours < NIGHT_START && friendship >= 180)
+                if (gLocalTime.hours >= DAY_START && gLocalTime.hours < NIGHT_START && friendship >= 220)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LEVEL_DAY:
                 RtcCalcLocalTime();
-                if ((gLocalTime.hours >= DAY_START && gLocalTime.hours) < (NIGHT_START && gEvolutionTable[species][i].param <= level))
+                if (gLocalTime.hours >= DAY_START && gLocalTime.hours < NIGHT_START && gEvolutionTable[species][i].param <= level)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_FRIENDSHIP_NIGHT:
                 RtcCalcLocalTime();
-                if ((gLocalTime.hours >= NIGHT_START || gLocalTime.hours) < (DAY_START && friendship >= 180))
+                if ((gLocalTime.hours >= NIGHT_START || gLocalTime.hours < DAY_START) && friendship >= 220)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_LEVEL_NIGHT:
                 RtcCalcLocalTime();
-                if ((gLocalTime.hours >= NIGHT_START || gLocalTime.hours) < (DAY_START && gEvolutionTable[species][i].param <= level))
+                if ((gLocalTime.hours >= NIGHT_START || gLocalTime.hours < DAY_START) && gEvolutionTable[species][i].param <= level)
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 break;
             case EVO_ITEM_HOLD_NIGHT:
                 RtcCalcLocalTime();
-                if ((gLocalTime.hours >= NIGHT_START || gLocalTime.hours) < (DAY_START && heldItem == gEvolutionTable[species][i].param))
+                if ((gLocalTime.hours >= NIGHT_START || gLocalTime.hours < DAY_START) && heldItem == gEvolutionTable[species][i].param)
                 {
-                    heldItem = 0;
-                    SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
                     targetSpecies = gEvolutionTable[species][i].targetSpecies;
                 }
                 break;
@@ -6644,7 +6654,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_LEVEL_NATURE_AMPED:
                 if (gEvolutionTable[species][i].param <= level)
                 {
-                    u8 nature = GetNature(mon);
+                    u8 nature = GetNature(mon, TRUE);
                     switch (nature)
                     {
                         case NATURE_HARDY:
@@ -6668,7 +6678,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_LEVEL_NATURE_LOW_KEY:
                 if (gEvolutionTable[species][i].param <= level)
                 {
-                    u8 nature = GetNature(mon);
+                    u8 nature = GetNature(mon, TRUE);
                     switch (nature)
                     {
                         case NATURE_LONELY:
@@ -7635,8 +7645,6 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PKMN_TRAINER_3:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 return MUS_VS_RIVAL;
-            if (!StringCompare(gTrainers[gTrainerBattleOpponent_A].trainerName, gText_BattleWallyName))
-                return MUS_VS_TRAINER;
             return MUS_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;
@@ -7780,7 +7788,7 @@ bool8 IsMonSpriteNotFlipped(u16 species)
 
 s8 GetMonFlavorRelation(struct Pokemon *mon, u8 flavor)
 {
-    u8 nature = GetNature(mon);
+    u8 nature = GetNature(mon, FALSE);
     return gPokeblockFlavorCompatibilityTable[nature * FLAVOR_COUNT + flavor];
 }
 
@@ -7880,13 +7888,13 @@ void SetWildMonHeldItem(void)
         && (HasAbility(ABILITY_COMPOUND_EYES, abilities)
             || HasAbility(ABILITY_SUPER_LUCK, abilities)))
     {
-        var1 = 15;
-        var2 = 30;
+        var1 = 5;
+        var2 = 60;
     }
     else
     {
-        var1 = 25;
-        var2 = 50;
+        var1 = 20;
+        var2 = 80;
     }
 
     for (i = 0; i < count; i++)
@@ -8522,7 +8530,7 @@ void TrySpecialOverworldEvo(void)
     u8 i;
     u8 evoMethod = gSpecialVar_0x8000;
     u16 canStopEvo = gSpecialVar_0x8001;
-    u16 tryMultiple = gSpecialVar_0x8002;    
+    u16 tryMultiple = gSpecialVar_0x8002;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -8539,7 +8547,7 @@ void TrySpecialOverworldEvo(void)
             else
                 gCB2_AfterEvolution = CB2_ReturnToField;
             return;
-        }   
+        }
     }
 
     sTriedEvolving = 0;
@@ -8548,6 +8556,8 @@ void TrySpecialOverworldEvo(void)
 
 bool32 ShouldShowFemaleDifferences(u16 species, u32 personality)
 {
+    if (species >= NUM_SPECIES)
+        return FALSE;
     return (gBaseStats[species].flags & FLAG_GENDER_DIFFERENCE) && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE;
 }
 

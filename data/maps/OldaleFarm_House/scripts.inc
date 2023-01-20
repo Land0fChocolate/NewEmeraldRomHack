@@ -9,12 +9,13 @@ OldaleFarm_House_Eventscript_Man::
 	end
 
 OldaleFarm_House_Eventscript_Man_PlayerHasNationalDex::
-	dotimebasedevents
+	lock
 	faceplayer
+	dotimebasedevents
 	goto_if_set FLAG_DAILY_OLDALEFARM_POKEMON_GIVEN, OldaleFarm_House_Eventscript_Man_OnceADayService
 	msgbox OldaleFarm_House_Text_Man_AskIfBuying, MSGBOX_YESNO
 	compare VAR_RESULT, NO
-	goto_if_eq OldaleFarm_House_Eventscript_Man_Declined
+	goto_if_eq OldaleFarm_House_Eventscript_Man_DeclinedNoMoneyBox
 	showmoneybox 0, 0, 0
 	msgbox OldaleFarm_House_Text_Man_ChoosePokemon, MSGBOX_DEFAULT
 	check3flags FLAG_SYS_NATIONAL_DEX, FLAG_JOHTO_STARTERS_AVAILABLE, FLAG_POST_GAME_COMPLETE
@@ -25,6 +26,7 @@ OldaleFarm_House_Eventscript_Man_PlayerHasNationalDex::
 	goto_if TRUE OldaleFarm_House_Eventscript_Man_PickHoennKantoStarters
 	checkflag FLAG_SYS_NATIONAL_DEX
 	goto_if TRUE, OldaleFarm_House_Eventscript_Man_PickHoennStarters
+	release
 	end
 
 OldaleFarm_House_Eventscript_Man_PickHoennStarters::
@@ -38,7 +40,9 @@ OldaleFarm_House_Eventscript_Man_PickHoennStarters::
 	end
 
 OldaleFarm_House_Eventscript_Man_PickHoennKantoStarters::
-	multichoice 0, 0, MULTI_OLDALE_STARTERS_HOENN_KANTO, FALSE
+	setvar VAR_0x8004, SCROLL_MULTI_OLDALE_STARTERS_HOENN_KANTO
+	special ShowScrollableMultichoice
+	waitstate
 	switch VAR_RESULT
 	case 0, OldaleFarm_House_Eventscript_PickTreecko
 	case 1, OldaleFarm_House_Eventscript_PickTorchic
@@ -51,7 +55,9 @@ OldaleFarm_House_Eventscript_Man_PickHoennKantoStarters::
 	end
 
 OldaleFarm_House_Eventscript_Man_PickHoennJohtoStarters::
-	multichoice 0, 0, MULTI_OLDALE_STARTERS_HOENN_JOHTO, FALSE
+	setvar VAR_0x8004, SCROLL_MULTI_OLDALE_STARTERS_HOENN_JOHTO
+	special ShowScrollableMultichoice
+	waitstate
 	switch VAR_RESULT
 	case 0, OldaleFarm_House_Eventscript_PickTreecko
 	case 1, OldaleFarm_House_Eventscript_PickTorchic
@@ -64,7 +70,9 @@ OldaleFarm_House_Eventscript_Man_PickHoennJohtoStarters::
 	end
 
 OldaleFarm_House_Eventscript_Man_PickAllStarters::
-	multichoice 0, 0, MULTI_OLDALE_STARTERS_ALL, FALSE
+	setvar VAR_0x8004, SCROLL_MULTI_OLDALE_STARTERS_ALL
+	special ShowScrollableMultichoice
+	waitstate
 	switch VAR_RESULT
 	case 0, OldaleFarm_House_Eventscript_PickTreecko
 	case 1, OldaleFarm_House_Eventscript_PickTorchic
@@ -344,17 +352,24 @@ OldaleFarm_House_Eventscript_FinishReceivingPokemon::
 	end
 
 OldaleFarm_House_Eventscript_Man_OnceADayService::
-	msgbox OldaleFarm_House_Text_Man_OnceADayService, MSGBOX_NPC
+	msgbox OldaleFarm_House_Text_Man_OnceADayService, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 
 OldaleFarm_House_Eventscript_Man_Declined::
 	hidemoneybox
-	msgbox OldaleFarm_House_Text_Man_Declined, MSGBOX_NPC
+OldaleFarm_House_Eventscript_Man_DeclinedNoMoneyBox::
+	msgbox OldaleFarm_House_Text_Man_Declined, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 
 OldaleFarm_House_EventScript_NotEnoughMoney::
 	hidemoneybox
-	msgbox OldaleFarm_House_Text_Man_NotEnoughMoney, MSGBOX_NPC
+	msgbox OldaleFarm_House_Text_Man_NotEnoughMoney, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 
 OldaleFarm_House_Text_Man:
@@ -418,7 +433,8 @@ OldaleFarm_House_Text_ReceivedMon:
 	.string "the farmer.$"
 
 OldaleFarm_House_Text_Man_Declined:
-	.string "Come along again if you change your mind.$"
+	.string "Come along again if you change your\n"
+	.string "mind.$"
 
 OldaleFarm_House_Text_Man_NotEnoughMoney:
 	.string "You don't have enough money.$"

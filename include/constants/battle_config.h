@@ -60,35 +60,6 @@
     #define SPECIES_MAREANIE                         0
 #endif
 
-// Items with peculiar battle effects.
-#ifndef ITEM_EXPANSION
-    #define ITEM_CHOPLE_BERRY   177
-    #define ITEM_KEBIA_BERRY    178
-    #define ITEM_SHUCA_BERRY    179
-    #define ITEM_COBA_BERRY     180
-    #define ITEM_PAYAPA_BERRY   181
-    #define ITEM_TANGA_BERRY    182
-    #define ITEM_CHARTI_BERRY   183
-    #define ITEM_KASIB_BERRY    184
-    #define ITEM_HABAN_BERRY    185
-    #define ITEM_COLBUR_BERRY   186
-    #define ITEM_BABIRI_BERRY   187
-    #define ITEM_CHILAN_BERRY   188
-    #define ITEM_ROSELI_BERRY   189
-    #define ITEM_MICLE_BERRY    197
-    #define ITEM_CUSTAP_BERRY   199
-    #define ITEM_JABOCA_BERRY   200
-    #define ITEM_ROWAP_BERRY    201
-    #define ITEM_KEE_BERRY      202
-    #define ITEM_MARANGA_BERRY  203
-    #define ITEM_OCCA_BERRY     204
-    #define ITEM_PASSHO_BERRY   205
-    #define ITEM_WACAN_BERRY    206
-    #define ITEM_RINDO_BERRY    207
-    #define ITEM_YACHE_BERRY    208
-    #define ITEM_GRISEOUS_ORB   369
-#endif
-
 #ifndef GEN_3
     #define GEN_3 0
     #define GEN_4 1
@@ -251,7 +222,7 @@
 #define B_DISABLE_CATCHING          FLAG_DISABLE_CATCHING    // If FALSE, Player cannot use Poke Balls to catch Pokemon
 
 // Other settings
-#define B_DOUBLE_WILD_CHANCE        10    // % chance of encountering two Pokémon in a Wild Encounter.
+#define B_DOUBLE_WILD_CHANCE        12    // % chance of encountering two Pokémon in a Wild Encounter.
 #define B_MULTI_BATTLE_WHITEOUT     GEN_8 // In Gen4+, multi battles end when the Player and also their Partner don't have any more Pokémon to fight.
 #define B_EVOLUTION_AFTER_WHITEOUT  GEN_6 // In Gen6+, Pokemon that qualify for evolution after battle will evolve even if the player loses.
 #define B_WILD_NATURAL_ENEMIES      TRUE  // If set to TRUE, certain wild mon species will attack other species when partnered in double wild battles (eg. Zangoose vs Seviper)

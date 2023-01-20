@@ -491,7 +491,8 @@ LittlerootBeach_Text_BrendanExit:
 	.string "Bye!$"
 
 LittlerootBeach_Text_SpaceCenterCall:
-	.string "… … …\p"
+	.string "… … … … … …\n"
+	.string "… … … … … Beep!\p"
 	.string "Steven: Hey, {PLAYER}.\n"
 	.string "It's Steven.\p"
 	.string "Sorry for interupting you but this is\n"
@@ -499,4 +500,6 @@ LittlerootBeach_Text_SpaceCenterCall:
 	.string "There seems to be to trouble brewing\n"
 	.string "at the Space Center.\p"
 	.string "Could you come over and back me up?\p"
-	.string "See you there!$"
+	.string "See you there!\p"
+	.string "… … … … … …\n"
+	.string "… … … … … Click!$"

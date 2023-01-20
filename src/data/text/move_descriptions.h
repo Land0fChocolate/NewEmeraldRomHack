@@ -58,8 +58,8 @@ static const u8 sSwordsDanceDescription[] = _(
     "sharply raises Attack.");
 
 static const u8 sCutDescription[] = _(
-    "Cuts the foe with sharp\n"
-    "scythes, claws, etc.");
+    "Critically cuts the foe\n"
+    "with scythes, claws, etc.");
 
 static const u8 sGustDescription[] = _(
     "Strikes the foe with a gust\n"
@@ -1102,8 +1102,8 @@ static const u8 sIngrainDescription[] = _(
     "The user can't switch out.");
 
 static const u8 sSuperpowerDescription[] = _(
-    "Boosts strength sharply,\n"
-    "but lowers abilities.");
+    "A powerful attack, but\n"
+    "lowers physical stats.");
 
 static const u8 sMagicCoatDescription[] = _(
     "Reflects special effects\n"

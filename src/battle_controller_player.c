@@ -351,6 +351,7 @@ static void HandleInputChooseAction(void)
     {
         PlaySE(SE_SELECT);
         TryHideLastUsedBall();
+        TryHideOriginMove();
         BtlController_EmitTwoReturnValues(1, B_ACTION_THROW_BALL, 0);
         PlayerBufferExecCompleted();
     }
@@ -358,6 +359,7 @@ static void HandleInputChooseAction(void)
     else if (JOY_NEW(L_BUTTON) && HasAbility(ABILITY_ORIGIN, gBattleMons[gActiveBattler].abilities))
     {
         PlaySE(SE_SELECT);
+        TryHideLastUsedBall();
         TryHideOriginMove();
         BtlController_EmitTwoReturnValues(1, B_ACTION_USE_ORIGIN_MOVE, 0);
         PlayerBufferExecCompleted();

@@ -383,7 +383,7 @@
 #define FLAG_REMATCH_WILTON                  0x165
 #define FLAG_REMATCH_VALERIE                 0x166
 #define FLAG_REMATCH_CINDY                   0x167
-#define FLAG_REMATCH_THALIA                  0x168
+#define FLAG_REMATCH_THALIA                  0x168 // unused (though set in the game in playthrough #3)
 #define FLAG_REMATCH_JESSICA                 0x169
 #define FLAG_REMATCH_WINSTON                 0x16A
 #define FLAG_REMATCH_STEVE                   0x16B
@@ -664,8 +664,8 @@
 #define FLAG_UNUSED_0x272                         0x272 // Unused Flag
 #define FLAG_UNUSED_0x273                         0x273 // Unused Flag
 #define FLAG_UNUSED_0x274                         0x274 // Unused Flag
-#define FLAG_UNUSED_0x275                         0x275 // Unused Flag
-#define FLAG_UNUSED_0x276                         0x276 // Unused Flag
+#define FLAG_RECEIVED_MEGA_RING                   0x275 // Unused Flag
+#define FLAG_HIDE_BATTLE_FRONTIER_ZINNIA          0x276
 #define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_1 0x277
 #define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_2 0x278
 #define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_3 0x279
@@ -678,7 +678,7 @@
 #define FLAG_HIDE_DEWFORD_GYM_BRAWLY              0x280
 #define FLAG_HIDE_ROUTE106_BRAWLY                 0x281
 #define FLAG_HIDE_FORTREE_GYM_WINONA              0x282
-#define FLAG_HIDE_TBC_WINONA                      0x283
+#define FLAG_HIDE_MOSSDEEP_CITY_WINONA            0x283
 #define FLAG_HIDE_MOSSDEEP_GYM_TATE_LIZA          0x284
 #define FLAG_HIDE_SLATEPORT_CITY_TATE_LIZA        0x285
 #define FLAG_HIDE_SOOTOPOLIS_GYM_WALLACE          0x286
@@ -790,7 +790,7 @@
 #define FLAG_HIDE_ROUTE_101_ZIGZAGOON                               0x2EE
 #define FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY                           0x2EF
 #define FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE                       0x2F0
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN              0x2F1 // unused
+#define FLAG_OBTAINED_ALL_TMS_FOR_FARAWAY_ISLAND                    0x2F1
 #define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1          0x2F2
 #define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2          0x2F3
 #define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA          0x2F4 // unused
@@ -825,7 +825,7 @@
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM              0x311
 #define FLAG_HIDE_PETALBURG_GYM_SCOTT                               0x312
 #define FLAG_OBTAINED_ALL_BERRIES_FOR_SHRINE                        0x313
-#define FLAG_HIDE_MOSSDEEP_CITY_SCOTT                               0x314 // unused
+#define FLAG_HIDE_SLATEPORT_CITY_NPCS_FOR_AQUA_QUEUE                0x314 // this is for easing object events count in Slateport City while Team Aqua are queuing at the museum
 #define FLAG_HIDE_FANCLUB_OLD_LADY                                  0x315
 #define FLAG_HIDE_FANCLUB_BOY                                       0x316
 #define FLAG_HIDE_FANCLUB_LITTLE_BOY                                0x317
@@ -1559,7 +1559,7 @@
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
 #define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91F + (8 - FLAG_UNUSED_0x91F % 8))
-#define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
+#define FLAG_DAILY_WINONA_RECEIVED_BERRY            (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
 #define FLAG_DAILY_OLDALEFARM_POKEMON_GIVEN         (DAILY_FLAGS_START + 0x3)

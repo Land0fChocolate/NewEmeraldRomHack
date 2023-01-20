@@ -615,8 +615,8 @@ BattleFrontier_BattlePyramidLobby_Text_WeWillHoldBagForSafekeeping:
 	.string "{PLAYER}, while you are exploring.$"
 
 BattleFrontier_BattlePyramidLobby_Text_PleaseTakePreviousBattleBag:
-	.string "In exchange, please take this BATTLE\n"
-	.string "bag, the one you used previously.$"
+	.string "In exchange, please take this Battle\n"
+	.string "Bag, the one you used previously.$"
 
 BattleFrontier_BattlePyramidLobby_Text_PleaseTakeThisBattleBag:
 	.string "In exchange, please take this\n"
@@ -734,17 +734,20 @@ BattleFrontier_BattlePyramidLobby_Text_Aah:
 	.string "Aah!$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintParalysis:
-	.string "I see a shower of sparks…\p"
+	.string "I see a shower of sparks…\n"
+	.string "A pack of electric Pokémon…\p"
 	.string "…And in it, I see your Pokémon\n"
 	.string "struggling with paralysis…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintPoison:
-	.string "I see poison…\p"
+	.string "I see a coil unravelling…\n"
+	.string "Revealing fangs and venom…"
 	.string "…And, I see your Pokémon suffering\n"
 	.string "from the effects of poison…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintBurn:
-	.string "I see bright red flames…\p"
+	.string "I see bright blazing fire…\n"
+	.string "Figures dancing in the flames…\p"
 	.string "…And, I see your Pokémon suffering\n"
 	.string "from burns…$"
 
@@ -757,7 +760,7 @@ BattleFrontier_BattlePyramidLobby_Text_HintPPWaste:
 	.string "but to use Struggle$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintLevitate:
-	.string "I see Pokémon loftily airborne…\p"
+	.string "I see Pokémon hovering airborne…\p"
 	.string "…And, I see your Pokémon frustrated\n"
 	.string "by powerless Ground-type moves…$"
 
@@ -768,13 +771,13 @@ BattleFrontier_BattlePyramidLobby_Text_HintTrapAbility:
 	.string "escape the power's clutches…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintIce:
-	.string "I see Ice-type Pokémon…\p"
+	.string "I see frost creeping up towards you…\n"
+	.string "Your breath foggy in the cold air…\p"
 	.string "…And, I see your Pokémon fighting\n"
 	.string "the freezing effects of ice…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintExplosion:
-	.string "I see a flurry of moves that imperil\n"
-	.string "the user…\p"
+	.string "I see a bombardment of explosions…\p"
 	.string "…And, I see your Pokémon falling\n"
 	.string "to them…$"
 
@@ -804,7 +807,7 @@ BattleFrontier_BattlePyramidLobby_Text_HintWeather:
 BattleFrontier_BattlePyramidLobby_Text_HintBug:
 	.string "I see Bug-type Pokémon…\p"
 	.string "…And, I see your Pokémon suffering\n"
-	.string "from different kinds of attacks…$"
+	.string "from Bug-type moves…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintDark:
 	.string "I see Dark-type Pokémon…\p"
@@ -822,9 +825,9 @@ BattleFrontier_BattlePyramidLobby_Text_HintGhost:
 	.string "from Ghost-type moves…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintSteel:
-	.string "I see STEEL-type Pokémon…\p"
+	.string "I see Steel-type Pokémon…\p"
 	.string "…And, I see your Pokémon suffering\n"
-	.string "from enormously powerful moves…$"
+	.string "from Steel-type moves…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintFlyingDragon:
 	.string "I see flying Pokémon…\p"
@@ -832,12 +835,13 @@ BattleFrontier_BattlePyramidLobby_Text_HintFlyingDragon:
 	.string "from enormously powerful moves…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintStoneEvolve:
-	.string "I see those that have evolved from\n"
-	.string "the power of stones…\p"
-	.string "I also sense fire, water,\n"
-	.string "and electricity…\p"
+	.string "I see a range of Pokémon from a\n"
+	.string "single family…\p"
+	.string "I also sense various elements…\n"
+	.string "fire, water, electricity, darkness…\l"
+	.string "mystic, plants, ice and… pink?\p"
 	.string "…And, I see your Pokémon suffering\n"
-	.string "from those three powers…$"
+	.string "from those powers…$"
 
 BattleFrontier_BattlePyramidLobby_Text_HintNormal:
 	.string "I see Normal-type Pokémon…\p"
@@ -865,10 +869,11 @@ BattleFrontier_BattlePyramidLobby_Text_LostLotOfItems:
 	.string "Awaaaaaaarrrrgh!$"
 
 BattleFrontier_BattlePyramidLobby_Text_PokemonUsePickUp:
-	.string "I have a nifty strategy when tackling\n"
-	.string "the pyramid.\p"
-	.string "My Pokémon has the Pick Up ability, so\n"
-	.string "it can find extra items after battles.$"
+	.string "Hehehe!\p"
+	.string "My Pokémon's Pick Up ability is finding\n"
+	.string "extra items after battles!\p"
+	.string "Pokémon abilities can help out in\n"
+	.string "unexpected ways.$"
 
 BattleFrontier_BattlePyramidLobby_Text_YouveDefeatedPyramidKing:
 	.string "Welcome back!\n"

@@ -29,7 +29,7 @@ SkyPillar_Top_OnTransition:
 
 SkyPillar_Top_EventScript_MoveZinnia:
 	setobjectxyperm LOCALID_ZINNIA, 15, 9
-	setobjectmovementtype LOCALID_SCIENTIST_1, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_SCIENTIST_1, MOVEMENT_TYPE_FACE_LEFT
 	return
 
 SkyPillar_Top_EventScript_SetCleanLayout::
@@ -82,6 +82,7 @@ SkyPillar_Top_EventScript_RayquazaCaught::
 	goto_if_eq Common_EventScript_NopReturn
 	setflag FLAG_DEFEATED_RAYQUAZA
 	applymovement LOCALID_ZINNIA, SkyPillar_Top_Movement_ZinniaMoveCaughtRayquaza
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
 	msgbox SkyPillar_Top_Text_CaughtRayquaza, MSGBOX_DEFAULT
@@ -289,7 +290,7 @@ SkyPillar_Top_EventScript_Zinnia::
 	setvar VAR_0x8007, 6  @ shake delay
 	special ShakeCamera
 	waitstate
-	delay 60
+	delay 120
 	applymovement LOCALID_ZINNIA, Common_Movement_FaceDown
 	waitmovement 0
 	delay 60
@@ -468,7 +469,8 @@ SkyPillar_Top_Text_CaughtRayquaza:
 	.string "I don't think Rayquaza believes that the\n"
 	.string "ends justify the means…\p"
 	.string "As your heart is purer than mine,\n"
-	.string "Rayquaza has chosen you over me.\p"
+	.string "Rayquaza has deemed you more worthy\l"
+	.string "of fighting alongside it.\p"
 	.string "The duty to defend Hoenn is now yours.\p"
 	.string "Since you'll be heading into space,\n"
 	.string "you'll be needing this.$"
@@ -492,4 +494,4 @@ SkyPillar_Top_Text_UseDragonAscent:
 	.string "space.\p"
 	.string "I must say… I'm more than a little\n"
 	.string "jealous that you will be the one riding\l"
-	.string "Rayquaza into space.$"
+	.string "Rayquaza to battle.$"

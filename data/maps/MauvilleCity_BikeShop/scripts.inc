@@ -27,18 +27,18 @@ MauvilleCity_BikeShop_EventScript_GiveSecondBike::
 	msgbox MauvilleCity_BikeShop_Text_GiveSecondBike, MSGBOX_DEFAULT
 	checkitem ITEM_ACRO_BIKE, 1
 	compare VAR_RESULT, TRUE
-	goto MauvilleCity_BikeShop_EventScript_GiveMachBike
+	goto_if_eq MauvilleCity_BikeShop_EventScript_GiveMachBike
 	giveitem ITEM_ACRO_BIKE
+MauvilleCity_BikeShop_EventScript_GiveSecondBikePart2::
 	msgbox MauvilleCity_BikeShop_Text_SwitchBetweenBikesButton, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_BIKE_UPGRADE_STATE, 4
 	release
 	end
 
 MauvilleCity_BikeShop_EventScript_GiveMachBike::
 	giveitem ITEM_MACH_BIKE
-	msgbox MauvilleCity_BikeShop_Text_SwitchBetweenBikesButton, MSGBOX_DEFAULT
-	closemessage
-	release
+	goto MauvilleCity_BikeShop_EventScript_GiveSecondBikePart2
 	end
 
 MauvilleCity_BikeShop_EventScript_SkipGreeting::

@@ -13,10 +13,6 @@ Route102_EventScript_RouteSignPetalburg::
 	msgbox Route102_Text_RouteSignPetalburg, MSGBOX_SIGN
 	end
 
-Route102_EventScript_Boy::
-	msgbox Route102_Text_CatchWholeBunchOfPokemon, MSGBOX_NPC
-	end
-
 Route102_EventScript_Calvin::
 	trainerbattle_single TRAINER_CALVIN_1, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
 	specialvar VAR_RESULT, ShouldTryRematchBattle

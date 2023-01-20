@@ -2013,7 +2013,7 @@ static u16 GetTutorMove(u8 tutor)
 
 static bool8 CanLearnTutorMove(u16 species, u8 tutor)
 {
-    if (sTutorLearnsets[species] & (1 << tutor))
+    if (sTutorLearnsets[species] & ((u64)1 << tutor))
         return TRUE;
     else
         return FALSE;
@@ -6733,7 +6733,7 @@ static void Task_Mints(u8 taskId)
             tState++;
         break;
     case 5:
-        SetMonData(&gPlayerParty[tMonId], MON_DATA_PERSONALITY, &tNewNature); //TODO: change to MON_DATA_HIDDEN_NATURE
+        SetMonData(&gPlayerParty[tMonId], MON_DATA_HIDDEN_NATURE, &tNewNature);
         CalculateMonStats(&gPlayerParty[tMonId]);
 
         RemoveBagItem(gSpecialVar_ItemId, 1);
@@ -6749,7 +6749,7 @@ void ItemUseCB_Mints(u8 taskId, TaskFunc task)
     tState = 0;
     tMonId = gPartyMenu.slotId;
     tSpecies = GetMonData(&gPlayerParty[tMonId], MON_DATA_SPECIES, NULL);
-    tCurrNature = GetNature(&gPlayerParty[tMonId]);
+    tCurrNature = GetNature(&gPlayerParty[tMonId], TRUE);
     tNewNature = ItemId_GetSecondaryId(gSpecialVar_ItemId);
     SetWordTaskArg(taskId, tOldFunc, (uintptr_t)(gTasks[taskId].func));
     gTasks[taskId].func = Task_Mints;

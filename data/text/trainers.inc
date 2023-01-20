@@ -816,8 +816,8 @@ Route109_Text_SimonDefeated:
 	.string "…I lost, but I won't cry…$"
 
 Route109_Text_SimonPostBattle:
-	.string "If one of my Pokémon knew the move\n"
-	.string "for carrying me across water on its\l"
+	.string "If I had that badge that lets my\n"
+	.string "Pokémon carry me across water on its\l"
 	.string "back, I could get rid of this inner tube.$"
 
 Route109_Text_AustinaIntro:
@@ -4371,8 +4371,8 @@ Route133_Text_WarrenPostBattle:
 	.string "I mean, that's obvious!$"
 
 Route133_Text_BeckIntro:
-	.string "I came all the way out here with my\n"
-	.string "Bird Pokémon.$"
+	.string "I came all the way out here on the back\n"
+	.string "of my Pokémon.$"
 
 Route133_Text_BeckDefeat:
 	.string "You…\n"
@@ -4581,7 +4581,7 @@ EverGrandeCity_BattleTent_Text_TyronDefeated:
 
 EverGrandeCity_BattleTent_Text_TyronPostBattle:
 	.string "Maybe I should train my Pokémon rather\n"
-	.string "than myself…"
+	.string "than myself…$"
 
 EverGrandeCity_BattleTent_Text_DeandreIntro:
 	.string "These are my awesome Bug Pokémon!\n"
@@ -4607,9 +4607,8 @@ EverGrandeCity_BattleTent_Text_MelinaPostBattle:
 
 EverGrandeCity_BattleTent_Text_PatIntro:
 	.string "I've been fighting here on Evergrande\n"
-	.string "longer than anyone else.\l"
-	.string "even before the Pokémon League moved\l"
-	.string "here.$"
+	.string "longer than anyone else, even before\l"
+	.string "the Pokémon League moved here.$"
 
 EverGrandeCity_BattleTent_Text_PatDefeated:
 	.string "A talented youngster you are.$"
@@ -4888,8 +4887,8 @@ FallarborWasteland_Text_KatDefeat:
 
 FallarborWasteland_Text_KatPostBattle:
 	.string "Kat: Doing tough challenges will make\n"
-	.string "you tougher. I've been trying to teach\l"
-	.string "Ashe that.$"
+	.string "you tougher.\l"
+	.string "I've been trying to teach Ashe that.$"
 
 FallarborWasteland_Text_KatNotEnoughMons:
 	.string "Kat: Are you doing some single Pokémon\n"
@@ -4906,8 +4905,8 @@ FallarborWasteland_Text_AsheDefeat:
 
 FallarborWasteland_Text_AshePostBattle:
 	.string "Ashe: There's no way I can beat Kat,\n"
-	.string "as I am now. Except maybe if I aim\l"
-	.string "for the horn…$"
+	.string "as I am now.\l"
+	.string "Except maybe if I aim for the horn…$"
 
 FallarborWasteland_Text_AsheNotEnoughMons:
 	.string "Ashe: You only have one Pokémon with\n"
@@ -5012,9 +5011,9 @@ FortreeJungle_Area2_Text_JossDefeat:
 
 FortreeJungle_Area2_Text_JossPostBattle:
 	.string "My collection is not complete until I\n"
-	.string "can get a Chansey. I saw one running\l"
-	.string "around but they're surprisingly\l"
-	.string "slippery.$"
+	.string "get a Chansey.\p"
+	.string "I saw one running around but they're\n"
+	.string "surprisingly slippery.$"
 
 FortreeJungle_Area2_Text_RyuIntro:
 	.string "Cower in fear puny trainer, for you\n"

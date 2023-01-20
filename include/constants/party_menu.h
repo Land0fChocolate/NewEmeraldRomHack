@@ -72,8 +72,9 @@
 #define TUTOR_MOVE_MEGAHORN        59 //Battle Frontier
 #define TUTOR_MOVE_DRACO_METEOR    60 //Ever Grande City
 #define TUTOR_MOVE_HIDDEN_THORNS   61 //Battle Frontier
+#define TUTOR_MOVE_BUG_BITE        62 //Battle Frontier
 
-#define TUTOR_MOVE_COUNT           62
+#define TUTOR_MOVE_COUNT           63
 
 #define PARTY_LAYOUT_SINGLE          0
 #define PARTY_LAYOUT_DOUBLE          1

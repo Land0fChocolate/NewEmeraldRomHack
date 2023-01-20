@@ -10,8 +10,8 @@
 .set LOCALID_ZINNIA_AQUA, 12
 .set LOCALID_CASTFORM1, 13
 .set LOCALID_CASTFORM2, 14
-.set LOCALID_ZINNIA, 18
-.set LOCALID_DELINQUENT, 19
+.set LOCALID_ZINNIA, 16
+.set LOCALID_DELINQUENT, 17
 
 Route119_WeatherInstitute_2F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route119_WeatherInstitute_2F_OnTransition
@@ -250,6 +250,7 @@ Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattle::
 	special LoadPlayerParty
 	switch VAR_RESULT
 	case 1, Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly
+	goto Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly
 	fadescreen FADE_TO_BLACK
 	special SetCB2WhiteOut
 	waitstate
@@ -259,7 +260,6 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	applymovement LOCALID_ARCHIE, Common_Movement_FaceLeft
 	msgbox Route119_WeatherInstitute_2F_Text_ArchieLost, MSGBOX_DEFAULT
 	closemessage
-	clearflag FLAG_HIDE_WEATHER_INSTITUTE_2F_ZINNIA_AQUA
 	addobject LOCALID_ZINNIA_AQUA
 	applymovement LOCALID_ZINNIA_AQUA, Route119_WeatherInstitute_2F_Grunt_Reporting
 	applymovement LOCALID_GRUNT_4, Route119_WeatherInstitute_2F_Grunt_MoveAwayForReporter
@@ -280,7 +280,6 @@ Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	fadedefaultbgm
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_HIDE_ROUTE_119_TEAM_AQUA
-	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_ZINNIA_AQUA
 	clearflag FLAG_ROUTE_119_HIDE_RIVAL
 	removeobject LOCALID_GRUNT_1
 	removeobject LOCALID_GRUNT_2

@@ -756,27 +756,14 @@ SootopolisCity_EventScript_KiriGiveBerry::
 	giveitem VAR_RESULT
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
-	setflag FLAG_DAILY_SOOTOPOLIS_RECEIVED_BERRY
 	msgbox SootopolisCity_Text_GiveYouThisBerryToo, MSGBOX_DEFAULT
-	random 2
-	compare VAR_RESULT, 0
-	goto_if_eq SootopolisCity_EventScript_GiveFigyBerry
-	compare VAR_RESULT, 1
-	goto_if_eq SootopolisCity_EventScript_GiveIapapaBerry
-	end
-
-SootopolisCity_EventScript_GiveFigyBerry::
-	giveitem ITEM_FIGY_BERRY
+	random NUM_KIRI_BERRIES
+	addvar VAR_RESULT, NUM_KIRI_BERRIES_SKIPPED
+	addvar VAR_RESULT, FIRST_BERRY_INDEX
+	giveitem VAR_RESULT
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
-	msgbox SootopolisCity_Text_WhatKindOfWishInYourName, MSGBOX_DEFAULT
-	release
-	end
-
-SootopolisCity_EventScript_GiveIapapaBerry::
-	giveitem ITEM_IAPAPA_BERRY
-	compare VAR_RESULT, FALSE
-	goto_if_eq Common_EventScript_ShowBagIsFull
+	setflag FLAG_DAILY_SOOTOPOLIS_RECEIVED_BERRY
 	msgbox SootopolisCity_Text_WhatKindOfWishInYourName, MSGBOX_DEFAULT
 	release
 	end
@@ -1916,8 +1903,8 @@ SootopolisCity_Text_StevenThanksPlayerAndGivesMasterBall:
 	.string "went too far and nearly ruined it.\p"
 	.string "I think this crisis has made them\n"
 	.string "realize that.\p"
-	.string "{PLAYER}, I would like to give you\n"
-	.string "this. It's a prototype developed by the\l"
+	.string "{PLAYER}, I would like to give you this.\n"
+	.string "It's a prototype developed by the\l"
 	.string "Devon Corporation.\p"
 	.string "They call it the Master Ball. It can\n"
 	.string "catch any Pokémon without fail.\p"
@@ -1946,4 +1933,4 @@ SootopolisCity_Text_Juan:
 	.string "However, you are somewhat lacking in\n"
 	.string "elegance. Perhaps I should make you a\l"
 	.string "loan of my outfit?\p"
-	.string "Hahaha, I merely jest!\p"
+	.string "Hahaha, I merely jest!$"

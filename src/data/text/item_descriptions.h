@@ -1112,7 +1112,7 @@ static const u8 sDubiousDiscDesc[] = _(
 
 static const u8 sReaperClothDesc[] = _(
     "Loved by a certain\n"
-    "Pokémon. Imbued with\n"
+    "Pokémon. Full with\n"
     "spiritual energy.");
 
 static const u8 sPrismScaleDesc[] = _(
@@ -3640,7 +3640,7 @@ static const u8 sKeyToRoom6Desc[] = _(
 
 static const u8 sMeteoriteDesc[] = _(
     "A meteorite found\n"
-    "at Meteor Falls.");
+    "by Prof. Cozmo.");
 
 static const u8 sMagmaEmblemDesc[] = _(
     "A medal-like item in\n"

@@ -1941,6 +1941,11 @@
 	callstd STD_REGISTER_MATCH_CALL
 	.endm
 
+	.macro unassign_matchcall trainer:req
+	setvar VAR_0x8004, \trainer
+	special ClearMatchCallRegisteredFlag
+	.endm
+
 	.macro dofieldeffectsparkle x:req, y:req, priority:req
 	setfieldeffectargument 0, \x
 	setfieldeffectargument 1, \y

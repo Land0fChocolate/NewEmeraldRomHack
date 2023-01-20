@@ -2701,7 +2701,7 @@ static void InitDomeTrainers(void)
         for (j = 0; j < NUM_STATS; j++)
             gSaveBlock2Ptr->frontier.domePlayerPartyData[i].evs[j] = GetMonData(&gPlayerParty[gSaveBlock2Ptr->frontier.selectedPartyMons[i] - 1], MON_DATA_HP_EV + j, NULL);
 
-        gSaveBlock2Ptr->frontier.domePlayerPartyData[i].nature = GetNature(&gPlayerParty[gSaveBlock2Ptr->frontier.selectedPartyMons[i] - 1]);
+        gSaveBlock2Ptr->frontier.domePlayerPartyData[i].nature = GetNature(&gPlayerParty[gSaveBlock2Ptr->frontier.selectedPartyMons[i] - 1], FALSE);
     }
 
     // Populate the tourney roster with random frontier trainers (dependent on streak)
@@ -5566,6 +5566,7 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
     u16 bestScore = 0;
     u16 bestId = 0;
     int movePower = 0;
+    u16 targetAbilities[NUM_ABILITY_SLOTS];
     SetFacilityPtrsGetLevel();
 
     // Calc move points of all 4 moves for all 3 pokemon hitting all 3 target mons.
@@ -5594,7 +5595,8 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
                 u32 personality = 0;
                 u32 targetSpecies = 0;
                 u32 typeMultiplier = 0;
-                u16 *targetAbilities = gBaseStats[targetSpecies].abilities;
+
+                memcpy(targetAbilities, gBaseStats[targetSpecies].abilities, sizeof(targetAbilities));
                 do
                 {
                     personality = Random32();

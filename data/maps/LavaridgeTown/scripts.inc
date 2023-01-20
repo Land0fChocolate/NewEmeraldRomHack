@@ -431,9 +431,8 @@ LavaridgeTown_Text_TrainingTime:
 LavaridgeTown_Text_ComeBackTomorrow:
 	.string "Flannery: I like meeting the kind of\n"
 	.string "Pokémon you raise, {PLAYER}.\p"
-	.string "You should join me for training\n"
-	.string "tomorrow as well, if you'd care to\l"
-	.string "join me.$"
+	.string "I'm open for training tomorrow as well,\n"
+	.string "if you'd care to join me.$"
 
 LavaridgeTown_Text_FlanneryDeclined:
 	.string "Flannery: Oh… okay, we can do it some\n"

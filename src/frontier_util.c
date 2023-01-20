@@ -86,11 +86,11 @@ static const u8 sFrontierBrainStreakAppearances[NUM_FRONTIER_FACILITIES][4] =
 {
     [FRONTIER_FACILITY_TOWER]   = {35,  70, 35, 1},
     [FRONTIER_FACILITY_DOME]    = { 4,   9,  5, 0},
-    [FRONTIER_FACILITY_PALACE]  = {21,  42, 21, 1},
+    [FRONTIER_FACILITY_PALACE]  = {28,  56, 28, 1},
     [FRONTIER_FACILITY_ARENA]   = {28,  56, 28, 1},
-    [FRONTIER_FACILITY_FACTORY] = {21,  42, 21, 1},
-    [FRONTIER_FACILITY_PIKE]    = {28, 140, 56, 1},
-    [FRONTIER_FACILITY_PYRAMID] = {21,  70, 35, 0},
+    [FRONTIER_FACILITY_FACTORY] = {21,  49, 21, 1},
+    [FRONTIER_FACILITY_PIKE]    = {56, 140, 56, 1},
+    [FRONTIER_FACILITY_PYRAMID] = {28,  70, 35, 0},
 };
 
 static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZE] =
@@ -128,7 +128,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         {
             {
                 .species = SPECIES_RAIKOU,
-                .heldItem = ITEM_LUM_BERRY,
+                .heldItem = ITEM_SHUCA_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MODEST,
                 .evs = {158, 0, 252, 100, 0, 0},
@@ -246,7 +246,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_ADAMANT,
                 .evs = {252, 252, 0, 0, 0, 6},
-                .moves = {MOVE_OVERHEAT, MOVE_EXTREME_SPEED, MOVE_FLARE_BLITZ, MOVE_CRUNCH},
+                .moves = {MOVE_CLOSE_COMBAT, MOVE_EXTREME_SPEED, MOVE_FLARE_BLITZ, MOVE_CRUNCH},
             },
             {
                 .species = SPECIES_SLAKING,
@@ -284,7 +284,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .fixedIV = 20,
                 .nature = NATURE_CALM,
                 .evs = {152, 0, 100, 0, 152, 106},
-                .moves = {MOVE_FOUL_PLAY, MOVE_CONFUSE_RAY, MOVE_DIG, MOVE_MOONLIGHT},
+                .moves = {MOVE_FOUL_PLAY, MOVE_CONFUSE_RAY, MOVE_YAWN, MOVE_MOONLIGHT},
             },
             {
                 .species = SPECIES_SHEDINJA,
@@ -292,34 +292,34 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .fixedIV = 20,
                 .nature = NATURE_ADAMANT,
                 .evs = {0, 252, 6, 0, 0, 252},
-                .moves = {MOVE_SHADOW_CLAW, MOVE_ROCK_SMASH, MOVE_RETURN, MOVE_SHADOW_SNEAK},
+                .moves = {MOVE_SHADOW_CLAW, MOVE_ROCK_SMASH, MOVE_BUG_BITE, MOVE_SHADOW_SNEAK},
             },
         },
         // Gold Symbol.
         {
             {
-                .species = SPECIES_UMBREON,
-                .heldItem = ITEM_ROCKY_HELMET,
+                .species = SPECIES_FLAREON,
+                .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_BOLD,
-                .evs = {252, 0, 252, 0, 6, 0},
-                .moves = {MOVE_FOUL_PLAY, MOVE_CONFUSE_RAY, MOVE_DIG, MOVE_REST},
+                .nature = NATURE_ADAMANT,
+                .evs = {252, 252, 0, 0, 0, 6},
+                .moves = {MOVE_BLAZE_IMPACT, MOVE_SUPERPOWER, MOVE_BODY_SLAM, MOVE_OVERHEAT},
             },
             {
                 .species = SPECIES_GENGAR,
-                .heldItem = ITEM_LEFTOVERS,
+                .heldItem = ITEM_LUM_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_TIMID,
-                .evs = {252, 0, 252, 0, 6, 0},
-                .moves = {MOVE_PSYCHIC, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
+                .evs = {6, 0, 0, 252, 0, 252},
+                .moves = {MOVE_SHADOW_BALL, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
             },
             {
                 .species = SPECIES_BRELOOM,
                 .heldItem = ITEM_TOXIC_ORB,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_JOLLY,
-                .evs = {6, 252, 0, 0, 0, 252},
-                .moves = {MOVE_SPORE, MOVE_FOCUS_PUNCH, MOVE_SEED_BOMB, MOVE_ROCK_SLIDE},
+                .evs = {0, 252, 6, 0, 0, 252},
+                .moves = {MOVE_SPORE, MOVE_FORCE_PALM, MOVE_SEED_BOMB, MOVE_ROCK_SLIDE},
             },
         },
     },
@@ -470,10 +470,10 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         {
             {
                 .species = SPECIES_ARTICUNO,
-                .heldItem = ITEM_CHARTI_BERRY,
+                .heldItem = ITEM_BABIRI_BERRY,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_MODEST,
-                .evs = {6, 0, 252, 252, 0, 0},
+                .evs = {6, 0, 0, 252, 252, 0},
                 .moves = {MOVE_BLIZZARD, MOVE_HURRICANE, MOVE_ANCIENT_POWER, MOVE_REFLECT},
             },
             {
@@ -499,94 +499,94 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
 static const u8 sBattlePointAwards[][NUM_FRONTIER_FACILITIES][FRONTIER_MODE_COUNT] =
 {
     {
-        {1, 2, 3, 3}, {1, 1, 0, 0}, {4, 5, 0, 0}, {1, 0, 0, 0}, {3, 4, 0, 0}, {1, 0, 0, 0}, {5, 0, 0, 0}
+        {2, 3, 4, 4}, {2, 2, 0, 0}, {3, 4, 0, 0}, {2, 0, 0, 0}, {3, 4, 0, 0}, {1, 0, 0, 0}, {5, 0, 0, 0}
     },
     {
-        {2, 3, 4, 4}, {1, 1, 0, 0}, {4, 5, 0, 0}, {1, 0, 0, 0}, {3, 4, 0, 0}, {1, 0, 0, 0}, {5, 0, 0, 0}
+        {3, 4, 5, 5}, {2, 2, 0, 0}, {3, 4, 0, 0}, {2, 0, 0, 0}, {3, 4, 0, 0}, {2, 0, 0, 0}, {6, 0, 0, 0}
     },
     {
-        {3, 4, 5, 5}, {2, 2, 0, 0}, {5, 6, 0, 0}, {1, 0, 0, 0}, {4, 5, 0, 0}, {2, 0, 0, 0}, {6, 0, 0, 0}
+        {4, 5, 6, 6}, {3, 3, 0, 0}, {4, 5, 0, 0}, {2, 0, 0, 0}, {4, 5, 0, 0}, {3, 0, 0, 0}, {6, 0, 0, 0}
     },
     {
-        {4, 5, 6, 6}, {2, 2, 0, 0}, {5, 6, 0, 0}, {2, 0, 0, 0}, {4, 5, 0, 0}, {2, 0, 0, 0}, {6, 0, 0, 0}
+        {5, 6, 7, 7}, {3, 3, 0, 0}, {4, 5, 0, 0}, {3, 0, 0, 0}, {4, 5, 0, 0}, {3, 0, 0, 0}, {7, 0, 0, 0}
     },
     {
-        {5, 6, 7, 7}, {3, 3, 0, 0}, {6, 7, 0, 0}, {2, 0, 0, 0}, {5, 6, 0, 0}, {2, 0, 0, 0}, {7, 0, 0, 0}
+        {6, 7, 8, 8}, {4, 4, 0, 0}, {5, 6, 0, 0}, {3, 0, 0, 0}, {5, 6, 0, 0}, {3, 0, 0, 0}, {7, 0, 0, 0}
     },
     {
-        {6, 7, 8, 8}, {3, 3, 0, 0}, {6, 7, 0, 0}, {2, 0, 0, 0}, {5, 6, 0, 0}, {4, 0, 0, 0}, {7, 0, 0, 0}
+        {7, 8, 9, 9}, {4, 4, 0, 0}, {5, 6, 0, 0}, {3, 0, 0, 0}, {5, 6, 0, 0}, {5, 0, 0, 0}, {8, 0, 0, 0}
     },
     {
-        {7, 8, 9, 9}, {4, 4, 0, 0}, {7, 8, 0, 0}, {3, 0, 0, 0}, {6, 7, 0, 0}, {4, 0, 0, 0}, {8, 0, 0, 0}
+        {8, 9, 10, 10}, {5, 5, 0, 0}, {6, 7, 0, 0}, {4, 0, 0, 0}, {6, 7, 0, 0}, {5, 0, 0, 0}, {8, 0, 0, 0}
     },
     {
-        {8, 9, 10, 10}, {4, 4, 0, 0}, {7, 8, 0, 0}, {3, 0, 0, 0},{6, 7, 0, 0}, {4, 0, 0, 0}, {8, 0, 0, 0}
+        {9, 10, 11, 11}, {5, 5, 0, 0}, {6, 7, 0, 0}, {4, 0, 0, 0},{6, 7, 0, 0}, {5, 0, 0, 0}, {9, 0, 0, 0}
     },
     {
-        {9, 10, 11, 11}, {5, 5, 0, 0}, {8, 9, 0, 0}, {4, 0, 0, 0}, {7, 8, 0, 0}, {8, 0, 0, 0}, {9, 0, 0, 0}
+        {10, 11, 12, 12}, {6, 6, 0, 0}, {7, 8, 0, 0}, {5, 0, 0, 0}, {7, 8, 0, 0}, {9, 0, 0, 0}, {9, 0, 0, 0}
     },
     {
-        {10, 11, 12, 12}, {5, 5, 0, 0}, {8, 9, 0, 0}, {4, 0, 0, 0}, {7, 8, 0, 0}, {8, 0, 0, 0}, {9, 0, 0, 0}
+        {11, 12, 13, 13}, {6, 6, 0, 0}, {7, 8, 0, 0}, {5, 0, 0, 0}, {7, 8, 0, 0}, {9, 0, 0, 0}, {10, 0, 0, 0}
     },
     {
-        {11, 12, 13, 13}, {6, 6, 0, 0}, {9, 10, 0, 0}, {5, 0, 0,0}, {8, 9, 0, 0}, {8, 0, 0, 0}, {10, 0, 0, 0}
+        {12, 13, 14, 14}, {7, 7, 0, 0}, {8, 9, 0, 0}, {6, 0, 0,0}, {8, 9, 0, 0}, {9, 0, 0, 0}, {10, 0, 0, 0}
     },
     {
-        {12, 13, 14, 14}, {6, 6, 0, 0}, {9, 10, 0, 0}, {6, 0, 0,0}, {8, 9, 0, 0}, {8, 0, 0, 0}, {10, 0, 0, 0}
+        {13, 14, 15, 15}, {7, 7, 0, 0}, {8, 9, 0, 0}, {7, 0, 0,0}, {8, 9, 0, 0}, {9, 0, 0, 0}, {11, 0, 0, 0}
     },
     {
-        {13, 14, 15, 15}, {7, 7, 0, 0}, {10, 11, 0, 0}, {7, 0, 0, 0}, {9, 10, 0, 0}, {10, 0, 0, 0}, {11, 0, 0, 0}
+        {14, 15, 16, 16}, {8, 8, 0, 0}, {9, 10, 0, 0}, {8, 0, 0, 0}, {9, 10, 0, 0}, {12, 0, 0, 0}, {11, 0, 0, 0}
     },
     {
-        {14, 15, 15, 15}, {7, 7, 0, 0}, {10, 11, 0, 0}, {8, 0, 0, 0}, {9, 10, 0, 0}, {10, 0, 0, 0}, {11, 0, 0, 0}
+        {15, 16, 17, 17}, {8, 8, 0, 0}, {9, 10, 0, 0}, {9, 0, 0, 0}, {9, 10, 0, 0}, {12, 0, 0, 0}, {12, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {8, 8, 0, 0}, {11, 12, 0, 0}, {9, 0, 0, 0}, {10, 11, 0, 0}, {10, 0, 0, 0}, {12, 0, 0, 0}
+        {16, 17, 18, 18}, {9, 9, 0, 0}, {10, 11, 0, 0}, {10, 0, 0, 0}, {10, 11, 0, 0}, {12, 0, 0, 0}, {12, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {8, 8, 0, 0}, {11, 12, 0, 0}, {10, 0, 0, 0}, {10, 11, 0, 0}, {10, 0, 0, 0}, {12, 0, 0, 0}
+        {17, 18, 19, 19}, {9, 9, 0, 0}, {10, 11, 0, 0}, {11, 0, 0, 0}, {10, 11, 0, 0}, {12, 0, 0, 0}, {13, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {9, 9, 0, 0}, {12, 13, 0, 0}, {11, 0, 0, 0}, {11, 12, 0, 0}, {12, 0, 0, 0}, {13, 0, 0, 0}
+        {18, 19, 20, 20}, {10, 10, 0, 0}, {11, 12, 0, 0}, {12, 0, 0, 0}, {11, 12, 0, 0}, {15, 0, 0, 0}, {13, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {9, 9, 0, 0}, {12, 13, 0, 0}, {12, 0, 0, 0}, {11, 12, 0, 0}, {12, 0, 0, 0}, {13, 0, 0, 0}
+        {20, 20, 20, 20}, {10, 10, 0, 0}, {11, 12, 0, 0}, {13, 0, 0, 0}, {11, 12, 0, 0}, {15, 0, 0, 0}, {14, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {10, 10, 0, 0}, {13, 14, 0, 0}, {13, 0, 0, 0}, {12, 13, 0, 0}, {12, 0, 0, 0}, {14, 0, 0, 0}
+        {20, 20, 20, 20}, {11, 11, 0, 0}, {12, 13, 0, 0}, {14, 0, 0, 0}, {12, 13, 0, 0}, {15, 0, 0, 0}, {14, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {10, 10, 0, 0}, {13, 14, 0, 0}, {14, 0, 0, 0}, {12, 13, 0, 0}, {12, 0, 0, 0}, {14, 0, 0, 0}
+        {20, 20, 20, 20}, {11, 11, 0, 0}, {12, 13, 0, 0}, {15, 0, 0, 0}, {12, 13, 0, 0}, {15, 0, 0, 0}, {15, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {11, 11, 0, 0}, {14, 15, 0, 0}, {15, 0, 0, 0}, {13, 14, 0, 0}, {12, 0, 0, 0}, {15, 0, 0, 0}
+        {20, 20, 20, 20}, {12, 12, 0, 0}, {13, 14, 0, 0}, {16, 0, 0, 0}, {13, 14, 0, 0}, {15, 0, 0, 0}, {15, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {11, 11, 0, 0}, {14, 15, 0, 0}, {15, 0, 0, 0}, {13, 14, 0, 0}, {14, 0, 0, 0}, {15, 0, 0, 0}
+        {20, 20, 20, 20}, {12, 12, 0, 0}, {13, 14, 0, 0}, {17, 0, 0, 0}, {13, 14, 0, 0}, {18, 0, 0, 0}, {16, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {12, 12, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {14, 15, 0, 0}, {14, 0, 0, 0}, {15, 0, 0, 0}
+        {20, 20, 20, 20}, {13, 13, 0, 0}, {14, 15, 0, 0}, {18, 0, 0, 0}, {14, 15, 0, 0}, {18, 0, 0, 0}, {16, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {12, 12, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {14, 15, 0, 0}, {14, 0, 0, 0}, {15, 0, 0, 0}
+        {20, 20, 20, 20}, {13, 13, 0, 0}, {14, 15, 0, 0}, {19, 0, 0, 0}, {14, 15, 0, 0}, {18, 0, 0, 0}, {17, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {13, 13, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {15, 15, 0, 0}, {14, 0, 0, 0}, {15, 0, 0, 0}
+        {20, 20, 20, 20}, {14, 14, 0, 0}, {15, 16, 0, 0}, {20, 0, 0, 0}, {15, 15, 0, 0}, {18, 0, 0, 0}, {17, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {13, 13, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {15, 0, 0, 0}
+        {20, 20, 20, 20}, {14, 14, 0, 0}, {15, 16, 0, 0}, {20, 0, 0, 0}, {15, 15, 0, 0}, {20, 0, 0, 0}, {18, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {14, 14, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {15, 0, 0, 0}
+        {20, 20, 20, 20}, {15, 15, 0, 0}, {16, 17, 0, 0}, {20, 0, 0, 0}, {15, 15, 0, 0}, {20, 0, 0, 0}, {18, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {14, 14, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {15, 0, 0, 0}
+        {20, 20, 20, 20}, {15, 15, 0, 0}, {17, 18, 0, 0}, {20, 0, 0, 0}, {15, 15, 0, 0}, {20, 0, 0, 0}, {19, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {15, 15, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {15, 0, 0, 0}
+        {20, 20, 20, 20}, {16, 16, 0, 0}, {19, 20, 0, 0}, {20, 0, 0, 0}, {15, 15, 0, 0}, {20, 0, 0, 0}, {19, 0, 0, 0}
     },
     {
-        {15, 15, 15, 15}, {15, 15, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {15, 15, 0, 0}, {15, 0, 0, 0}, {15, 0, 0, 0}
+        {20, 20, 20, 20}, {16, 16, 0, 0}, {20, 20, 0, 0}, {20, 0, 0, 0}, {15, 15, 0, 0}, {20, 0, 0, 0}, {20, 0, 0, 0}
     },
 };
 
@@ -1889,7 +1889,7 @@ static void GiveBattlePoints(void)
 
     points = sBattlePointAwards[challengeNum][facility][battleMode];
     if (gTrainerBattleOpponent_A == TRAINER_FRONTIER_BRAIN)
-        points += 10;
+        points += 20;
     gSaveBlock2Ptr->frontier.battlePoints += points;
     ConvertIntToDecimalStringN(gStringVar1, points, STR_CONV_MODE_LEFT_ALIGN, 2);
     if (gSaveBlock2Ptr->frontier.battlePoints > MAX_BATTLE_FRONTIER_POINTS)
@@ -1900,7 +1900,7 @@ static void GiveBattlePoints(void)
     IncrementDailyBattlePoints(sBattlePointAwards[challengeNum][facility][battleMode]);
     if (gTrainerBattleOpponent_A == TRAINER_FRONTIER_BRAIN)
     {
-        points += 10;
+        points += 20;
         IncrementDailyBattlePoints(10);
     }
     if (points > 0xFFFF)

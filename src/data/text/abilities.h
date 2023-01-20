@@ -50,8 +50,9 @@ static const u8 sWaterAbsorbDescription[] = _(
 	"hit by a water move.");
 
 static const u8 sObliviousDescription[] = _(
-	"Grants attraction and\n"
-	"taunt immunity.");
+	"Grants immunity to\n"
+	"attraction, taunts and\n"
+	"intimidation.");
 
 static const u8 sCloudNineDescription[] = _(
 	"Negates weather effects.");
@@ -82,7 +83,9 @@ static const u8 sShieldDustDescription[] = _(
 	"flinching.");
 
 static const u8 sOwnTempoDescription[] = _(
-	"Grants confusion immunity.\n");
+	"Grants immunity to\n"
+	"confusion and\n"
+	"intimidation.");
 
 static const u8 sSuctionCupsDescription[] = _(
 	"User's contact moves trap\n"
@@ -191,7 +194,8 @@ static const u8 sSandStreamDescription[] = _(
 	"entering battle.");
 
 static const u8 sPressureDescription[] = _(
-	"Opponent's moves use 2 PP.\n");
+	"Opponent's moves cost an\n"
+	"extra PP.");
 
 static const u8 sThickFatDescription[] = _(
 	"User takes half damage\n"
@@ -517,7 +521,12 @@ static const u8 sBadDreamsDescription[] = _(
 	"of 1/4 HP per turn.");
 
 static const u8 sPickpocketDescription[] = _(
-	"Steals the foe's held item.");
+	"Steals the foe's held item\n"
+	"if struck.");
+
+static const u8 sMagicianDescription[] = _(
+	"Steals the foe's held item\n"
+	"on hit.");
 
 static const u8 sSheerForceDescription[] = _(
 	"Moves with extra effects\n"
@@ -542,8 +551,8 @@ static const u8 sDefeatistDescription[] = _(
 
 static const u8 sCursedBodyDescription[] = _(
 	"If contact, opponent has\n"
-	"their move disabled on the\n"
-	"next turn.");
+	"their move disabled for\n"
+	"the next turn.");
 
 static const u8 sHealerDescription[] = _(
 	"User has 30% chance of\n"
@@ -643,8 +652,8 @@ static const u8 sJustifiedDescription[] = _(
 
 static const u8 sRattledDescription[] = _(
 	"Hits by Bug, Dark or Ghost\n"
-	"moves raise Attack by one\n"
-	"stage.");
+	"moves or Intimidate raise \n"
+	"Speed by one stage.");
 
 static const u8 sMagicBounceDescription[] = _(
 	"Reflects non-damaging\n"
@@ -690,7 +699,8 @@ static const u8 sProteanDescription[] = _(
 	"of used move.");
 
 static const u8 sFurCoatDescription[] = _(
-	"Doubles user defense stat.");
+	"User defense stat is\n"
+	"increased by 50%.");
 
 static const u8 sBulletproofDescription[] = _(
 	"Protects user from ball\n"
@@ -1028,7 +1038,8 @@ static const u8 sHungerSwitchDescription[] = _(
 	"Changes form each turn.");
 
 static const u8 sQuickDrawDescription[] = _(
-	"Moves first occasionally.");
+	"User speed is doubled when\n"
+	"below half health.");
 
 static const u8 sUnseenFistDescription[] = _(
 	"Contact evades protection.");
@@ -1064,7 +1075,7 @@ static const u8 sAsOneShadowRiderDescription[] = _(
 
 static const u8 sVolumeUpDescription[] = _(
 	"Sound based moves are\n"
-	"powered up by 33%.");
+	"powered up by 30%.");
 
 static const u8 sLavaBodyDescription[] = _(
 	"Attackers who make\n"
@@ -1134,7 +1145,7 @@ static const u8 sHematophagyDescription[] = _(
 
 static const u8 sSwordmasterDescription[] = _(
 	"Power of sword/blade moves\n"
-	"is increased by 30%.");
+	"is increased by 25%.");
 
 static const u8 sSupercooledDescription[] = _(
 	"User's ice moves are\n"
@@ -1960,7 +1971,7 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_CHEEK_POUCH] = sCheekPouchDescription,
     [ABILITY_PROTEAN] = sProteanDescription,
     [ABILITY_FUR_COAT] = sFurCoatDescription,
-    [ABILITY_MAGICIAN] = sPickpocketDescription,
+    [ABILITY_MAGICIAN] = sMagicianDescription,
     [ABILITY_BULLETPROOF] = sBulletproofDescription,
     [ABILITY_COMPETITIVE] = sCompetitiveDescription,
     [ABILITY_STRONG_JAW] = sStrongJawDescription,

@@ -473,7 +473,7 @@ LilycoveCity_ContestHall_Text_Delinquent:
 	.string "berries for {POKEBLOCK}s.\p"
 	.string "The berry master's wife kindly helped\n"
 	.string "me out when I told her I was going to\l"
-	.string "Challenge Contest”.$"
+	.string "“Challenge Contest”.$"
 
 LilycoveCity_ContestHall_Text_FairyTaleGirl:
 	.string "I don't know what the rules are in\n"

@@ -5,7 +5,29 @@ FortreeCity_Gym_MapScripts::
 
 FortreeCity_Gym_OnTransition:
 	special RotatingGate_InitPuzzle
+	call FortreeCity_Gym_SetUpWinona
 	end
+
+FortreeCity_Gym_SetUpWinona::
+	goto_if_unset FLAG_BADGE01_GET, FortreeCity_Gym_Eventscript_WinonaRematch
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_WINONA_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq FortreeCity_Gym_Eventscript_WinonaRematch
+    compare VAR_RESULT, FALSE
+    goto_if_eq FortreeCity_Gym_Eventscript_WinonaInMossdeep
+    return
+
+FortreeCity_Gym_Eventscript_WinonaRematch::
+	setflag FLAG_HIDE_MOSSDEEP_CITY_WINONA
+	clearflag FLAG_HIDE_FORTREE_GYM_WINONA
+	return
+
+FortreeCity_Gym_Eventscript_WinonaInMossdeep::
+	goto_if_unset FLAG_BADGE04_GET, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_MOSSDEEP_CITY_WINONA
+	setflag FLAG_HIDE_FORTREE_GYM_WINONA
+	return
 
 FortreeCity_Gym_OnWarp:
 	map_script_2 VAR_TEMP_0, VAR_TEMP_0, FortreeCity_Gym_EventScript_InitRotatingGates

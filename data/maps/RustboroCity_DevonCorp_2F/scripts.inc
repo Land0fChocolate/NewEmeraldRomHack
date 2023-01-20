@@ -8,10 +8,15 @@ RustboroCity_DevonCorp_2F_MapScripts::
 RustboroCity_DevonCorp_2F_OnTransition:
 	compare VAR_FOSSIL_RESURRECTION_STATE, 1
 	call_if_eq RustboroCity_DevonCorp_2F_EventScript_SetFossilReady
+	compare VAR_MEW_CLONING_STATE, 2
+	call_if_eq RustboroCity_DevonCorp_2F_EventScript_SetMewtwoReady
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_SetFossilReady::
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 2
+	return
+
+RustboroCity_DevonCorp_2F_EventScript_SetMewtwoReady::
 	setvar VAR_MEW_CLONING_STATE, 3 @TODO: Do this via steps instead?
 	return
 
@@ -200,7 +205,7 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeOldAmber::
 RustboroCity_DevonCorp_2F_EventScript_GiveOldAmber::
 	bufferitemname 0, ITEM_OLD_AMBER
 	msgbox RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher, MSGBOX_DEFAULT
-	removeitem ITEM_HELIX_FOSSIL
+	removeitem ITEM_OLD_AMBER
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 1
 	setvar VAR_WHICH_FOSSIL_REVIVED, 5
 	release

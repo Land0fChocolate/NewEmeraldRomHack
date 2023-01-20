@@ -546,3 +546,4 @@ gSpecials::
 	def_special BuffMonIV
 	def_special OriginChooseMove
 	def_special SetOriginMove
+	def_special ClearMatchCallRegisteredFlag

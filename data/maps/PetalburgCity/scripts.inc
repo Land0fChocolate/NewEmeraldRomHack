@@ -95,6 +95,7 @@ PetalburgCity_EventScript_ShrineIsClosedTrigger::
 	waitmovement 0
 	applymovement LOCALID_SHRINE_MAIDEN, Common_Movement_ExclamationMark
 	waitmovement 0
+	delay 20
 	msgbox PetalburgCity_Text_ShrineIsClosed, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, PetalburgCity_Movement_WalkDown
@@ -296,6 +297,10 @@ PetalburgCity_EventScript_CheckForEveryBerry::
 	call_if_eq PetalburgCity_EventScript_AddToBerryCount
 	compare VAR_TEMP_1, 60
 	goto_if_ge PetalburgCity_EventScript_ObtainedAllBerries
+	end
+
+PetalburgCity_EventScript_AddToBerryCount::
+	addvar VAR_TEMP_1, 1
 	return
 
 PetalburgCity_EventScript_ObtainedAllBerries::
@@ -336,10 +341,6 @@ PetalburgCity_Movement_CelebiEntrance:
 	delay_16
 	face_down
 	step_end
-
-PetalburgCity_EventScript_AddToBerryCount::
-	addvar VAR_TEMP_1, 1
-	return
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
 	setobjectxyperm LOCALID_GYM_BOY, 5, 19

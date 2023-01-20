@@ -397,9 +397,10 @@ MtPyre_Summit_Text_PhoebeBonds:
 MtPyre_Summit_Text_OrbsHaveBeenTaken:
 	.string "The Blue Orb and Red Orb stolen by\n"
 	.string "those sinister men…\p"
-	.string "It seems odd that they were taken\n"
-	.string "at the same time by different people.\l"
-	.string "Those orbs are not common knowledge.$"
+	.string "I don't know how the first man learned\n"
+	.string "about them, but if he'd have done his\l"
+	.string "research properly he would know that\l"
+	.string "separating the orbs invites disaster.$"
 
 MtPyre_Summit_Text_GroudonKyogreAwakened:
 	.string "Oh, my goodness…\p"

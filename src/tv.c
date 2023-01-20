@@ -2507,10 +2507,23 @@ void IncrementDailyBattlePoints(u16 delta)
 }
 
 // PokeNews
-
 static void TryPutRandomPokeNewsOnAir(void)
 {
-    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+    if (FlagGet(FLAG_POST_GAME_COMPLETE))
+    {
+        sCurTVShowSlot = GetFirstEmptyPokeNewsSlot(gSaveBlock1Ptr->pokeNews);
+        if (sCurTVShowSlot != -1 && rbernoulli(2, 100) != TRUE)
+        {
+            u8 newsKind = (Random() % NUM_POKENEWS_TYPES) + POKENEWS_SLATEPORT;
+            if (IsAddingPokeNewsDisallowed(newsKind) != TRUE)
+            {
+                gSaveBlock1Ptr->pokeNews[sCurTVShowSlot].kind = newsKind;
+                gSaveBlock1Ptr->pokeNews[sCurTVShowSlot].days = 4;
+                gSaveBlock1Ptr->pokeNews[sCurTVShowSlot].state = 1;
+            }
+        }
+    }
+    else if (FlagGet(FLAG_SYS_GAME_CLEAR))
     {
         sCurTVShowSlot = GetFirstEmptyPokeNewsSlot(gSaveBlock1Ptr->pokeNews);
         if (sCurTVShowSlot != -1 && rbernoulli(1, 100) != TRUE)

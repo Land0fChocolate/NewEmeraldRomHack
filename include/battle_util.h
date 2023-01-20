@@ -7,6 +7,14 @@
 #define MOVE_LIMITATION_TORMENTED               (1 << 3)
 #define MOVE_LIMITATION_TAUNT                   (1 << 4)
 #define MOVE_LIMITATION_IMPRISON                (1 << 5)
+#define MOVE_LIMITATION_ENCORE                  (1 << 6)
+#define MOVE_LIMITATION_CHOICE_ITEM             (1 << 7)
+#define MOVE_LIMITATION_ASSAULT_VEST            (1 << 8)
+#define MOVE_LIMITATION_GRAVITY                 (1 << 9)
+#define MOVE_LIMITATION_HEAL_BLOCK              (1 << 10)
+#define MOVE_LIMITATION_BELCH                   (1 << 11)
+#define MOVE_LIMITATION_THROAT_CHOP             (1 << 12)
+#define MOVE_LIMITATION_STUFF_CHEEKS            (1 << 13)
 
 #define ABILITYEFFECT_ON_SWITCHIN                0
 #define ABILITYEFFECT_ENDTURN                    1
@@ -28,13 +36,15 @@
 #define ABILITYEFFECT_SWITCH_IN_TERRAIN          254
 #define ABILITYEFFECT_SWITCH_IN_WEATHER          255
 
-#define ITEMEFFECT_ON_SWITCH_IN                 0x0
-#define ITEMEFFECT_MOVE_END                     0x3
-#define ITEMEFFECT_KINGSROCK                    0x4
-#define ITEMEFFECT_TARGET                       0x5
-#define ITEMEFFECT_ORBS                         0x6
-#define ITEMEFFECT_LIFEORB_SHELLBELL            0x7
-#define ITEMEFFECT_USE_LAST_ITEM                0x8 // move end effects for just the battler, not whole field
+#define ITEMEFFECT_ON_SWITCH_IN                 0
+#define ITEMEFFECT_NORMAL                       1
+#define ITEMEFFECT_DUMMY                        2 // Unused, empty
+#define ITEMEFFECT_MOVE_END                     3
+#define ITEMEFFECT_KINGSROCK                    4
+#define ITEMEFFECT_TARGET                       5
+#define ITEMEFFECT_ORBS                         6
+#define ITEMEFFECT_LIFEORB_SHELLBELL            7
+#define ITEMEFFECT_USE_LAST_ITEM                8 // move end effects for just the battler, not whole field
 
 #define WEATHER_HAS_EFFECT ((!IsAbilityOnField(ABILITY_CLOUD_NINE) && !IsAbilityOnField(ABILITY_AIR_LOCK)))
 

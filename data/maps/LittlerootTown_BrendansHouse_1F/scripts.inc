@@ -26,7 +26,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_CheckShowShoesManual::
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_ShowRunningShoesManual::
-	setmetatile 3, 7, METATILE_BrendansMaysHouse_BookOnTable, 1
+	setmetatile 4, 7, METATILE_BrendansMaysHouse_BookOnTable2, 1
 	return
 
 LittlerootTown_BrendansHouse_1F_OnTransition:
@@ -391,7 +391,7 @@ PlayersHouse_1F_Text_RunningShoesManual:
 	.string "It's the instruction booklet for the\n"
 	.string "Running Shoes.\p"
 	.string "“Press the B Button to run while\n"
-	.string "wearing your Running Shoes.\p"
+	.string "wearing your Running Shoes.”\p"
 	.string "“Lace up your Running Shoes and hit\n"
 	.string "the road running!”$"
 

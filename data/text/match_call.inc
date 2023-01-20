@@ -2559,7 +2559,7 @@ MatchCall_Text_Wally1::
 MatchCall_Text_Wally2::
 	.string "Wally: {PLAYER}, hello!\p"
 	.string "After Rusturf Tunnel went\n"
-	.string "through, WANDA's been very happy!$"
+	.string "through, Wanda's been very happy!$"
 
 MatchCall_Text_Wally3::
 	.string "Wally: Oh, {PLAYER}!\p"

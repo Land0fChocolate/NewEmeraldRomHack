@@ -1067,7 +1067,7 @@ Route104_Text_TMDescription:
 	.string "You can teach your Pokémon a new\n"
 	.string "move with it.\p"
 	.string "They're reusable, so you can have\n"
-	.string "some fun trying out new moves.!$"
+	.string "some fun trying out new moves!$"
 
 Route104_Text_DontNeedThisTakeIt:
 	.string "This Flower Shop started selling\n"

@@ -36,7 +36,7 @@ const u8 gText_MatchCallCooltrainer_Brooke_Intro2[] = _("Pokémon Champion.");
 const u8 gText_MatchCallCooltrainer_Wilton_Strategy[] = _("Upset the opponent.");
 const u8 gText_MatchCallCooltrainer_Wilton_Pokemon[] = _("Type doesn't matter.");
 const u8 gText_MatchCallCooltrainer_Wilton_Intro1[] = _("I'm a top student at the");
-const u8 gText_MatchCallCooltrainer_Wilton_Intro2[] = _("Trainer'S School.");
+const u8 gText_MatchCallCooltrainer_Wilton_Intro2[] = _("Trainer's School.");
 
 const u8 gText_MatchCallHexManiac_Valerie_Strategy[] = _("Slow, steady suffering.");
 const u8 gText_MatchCallHexManiac_Valerie_Pokemon[] = _("Scary to meet at night.");
@@ -390,7 +390,7 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_WILTON] = MCFLAVOR(Cooltrainer_Wilton),
     [REMATCH_VALERIE] = MCFLAVOR(HexManiac_Valerie),
     [REMATCH_CINDY] = MCFLAVOR(Lady_Cindy),
-    [REMATCH_THALIA] = MCFLAVOR(Beauty_Thalia),
+    [REMATCH_THALIA] = MCFLAVOR(Beauty_Thalia), //TODO: unused, remove in future playthroughs
     [REMATCH_JESSICA] = MCFLAVOR(Beauty_Jessica),
     [REMATCH_WINSTON] = MCFLAVOR(RichBoy_Winston),
     [REMATCH_STEVE] = MCFLAVOR(PokeManiac_Steve),

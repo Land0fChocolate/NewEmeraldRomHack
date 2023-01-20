@@ -12,7 +12,7 @@ enum {
     REMATCH_WILTON,
     REMATCH_VALERIE,
     REMATCH_CINDY,
-    REMATCH_THALIA,
+    REMATCH_THALIA, //TODO: unused, remove in future playthroughs
     REMATCH_JESSICA,
     REMATCH_WINSTON,
     REMATCH_STEVE,

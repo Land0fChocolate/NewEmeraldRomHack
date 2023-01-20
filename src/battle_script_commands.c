@@ -1806,7 +1806,7 @@ static void Cmd_ppreduce(void)
         }
     }
 
-    //TODO: Origin update: somehow have a check for Origin moves here?
+    //TODO: Origin update: somehow have a check for Origin moves here? Maybe check for B_ACTION_USE_MOVE?
 
     if (!(gHitMarker & (HITMARKER_NO_PPDEDUCT | HITMARKER_NO_ATTACKSTRING)) && gBattleMons[gBattlerAttacker].pp[gCurrMovePos])
     {
@@ -2622,12 +2622,12 @@ void SetMoveEffect(bool32 primary, u32 certain)
 {
     s32 i, byTwo, affectsUser = 0;
     bool32 statusChanged = FALSE;
-    bool32 mirrorArmorReflected = (HasAbility(ABILITY_MIRROR_ARMOR, GetBattlerAbilities(gBattlerTarget)));
+    bool32 mirrorArmorReflected = FALSE;
     bool32 hasWaterVeil, hasWaterBubble;
     u32 flags = 0;
-    u16 *battlerAbilities = GetBattlerAbilities(gEffectBattler);
-    u16 *attackerAbilities = GetBattlerAbilities(gBattlerAttacker);
-    u16 *targetAbilities = GetBattlerAbilities(gBattlerTarget);
+    u16 battlerAbilities[NUM_ABILITY_SLOTS];
+    u16 attackerAbilities[NUM_ABILITY_SLOTS];
+    u16 targetAbilities[NUM_ABILITY_SLOTS];
 
     switch (gBattleScripting.moveEffect) // Set move effects which happen later on
     {
@@ -2640,7 +2640,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
     if (gBattleScripting.moveEffect & MOVE_EFFECT_AFFECTS_USER)
     {
         gEffectBattler = gBattlerAttacker; // battlerId that effects get applied on
-        gBattleScripting.moveEffect &= ~(MOVE_EFFECT_AFFECTS_USER);
+        gBattleScripting.moveEffect &= ~MOVE_EFFECT_AFFECTS_USER;
         affectsUser = MOVE_EFFECT_AFFECTS_USER;
         gBattleScripting.battler = gBattlerTarget; // theoretically the attacker
     }
@@ -2649,8 +2649,15 @@ void SetMoveEffect(bool32 primary, u32 certain)
         gEffectBattler = gBattlerTarget;
         gBattleScripting.battler = gBattlerAttacker;
     }
+
+    memcpy(battlerAbilities, GetBattlerAbilities(gEffectBattler), sizeof(battlerAbilities));
+    memcpy(attackerAbilities, GetBattlerAbilities(gBattlerAttacker), sizeof(attackerAbilities));
+    memcpy(targetAbilities, GetBattlerAbilities(gBattlerTarget), sizeof(targetAbilities));
+
+    mirrorArmorReflected = HasAbility(ABILITY_MIRROR_ARMOR, targetAbilities);
+
      // Just in case this flag is still set
-    gBattleScripting.moveEffect &= ~(MOVE_EFFECT_CERTAIN);
+    gBattleScripting.moveEffect &= ~MOVE_EFFECT_CERTAIN;
 
     if (HasAbility(ABILITY_SHIELD_DUST, battlerAbilities) && !(gHitMarker & HITMARKER_IGNORE_SAFEGUARD)
         && !primary && gBattleScripting.moveEffect <= 9)
@@ -3123,8 +3130,8 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 if (mirrorArmorReflected && !affectsUser)
                     flags |= STAT_BUFF_ALLOW_PTR;
                 if (ChangeStatBuffs(SET_STAT_BUFF_VALUE(2) | STAT_BUFF_NEGATIVE,
-                                    gBattleScripting.moveEffect - MOVE_EFFECT_ATK_MINUS_2 + 1,
-                                    flags | STAT_BUFF_UPDATE_MOVE_EFFECT, gBattlescriptCurrInstr + 1))
+                    gBattleScripting.moveEffect - MOVE_EFFECT_ATK_MINUS_2 + 1,
+                    flags | STAT_BUFF_UPDATE_MOVE_EFFECT, gBattlescriptCurrInstr + 1))
                 {
                     if (!mirrorArmorReflected)
                         gBattlescriptCurrInstr++;
@@ -3453,7 +3460,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
                     CheckSetUnburden(gEffectBattler);
 
                     gActiveBattler = gEffectBattler;
-                    BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gEffectBattler].item);
+                    BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[gEffectBattler].item), &gBattleMons[gEffectBattler].item);
                     MarkBattlerForControllerExec(gActiveBattler);
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
                     gBattlescriptCurrInstr = BattleScript_MoveEffectIncinerate;
@@ -3469,7 +3476,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
                     CheckSetUnburden(gEffectBattler);
                     gActiveBattler = gEffectBattler;
 
-                    BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gEffectBattler].item);
+                    BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[gEffectBattler].item), &gBattleMons[gEffectBattler].item);
                     MarkBattlerForControllerExec(gActiveBattler);
 
                     BattleScriptPush(gBattlescriptCurrInstr + 1);
@@ -7252,7 +7259,7 @@ static void Cmd_removeitem(void)
     gBattleMons[gActiveBattler].item = 0;
     CheckSetUnburden(gActiveBattler);
 
-    BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gActiveBattler].item);
+    BtlController_EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[gActiveBattler].item), &gBattleMons[gActiveBattler].item);
     MarkBattlerForControllerExec(gActiveBattler);
 
     ClearBattlerItemEffectHistory(gActiveBattler);
@@ -7644,7 +7651,7 @@ static void Cmd_useitemonopponent(void)
 {
     gBattlerInMenuId = gBattlerAttacker;
     PokemonUseItemEffects(&gEnemyParty[gBattlerPartyIndexes[gBattlerAttacker]], gLastUsedItem, gBattlerPartyIndexes[gBattlerAttacker], 0, TRUE);
-    gBattlescriptCurrInstr += 1;
+    gBattlescriptCurrInstr++;
 }
 
 static bool32 HasAttackerFaintedTarget(void)
@@ -9212,7 +9219,7 @@ static void Cmd_various(void)
         }
         return;
     case VARIOUS_MOVEEND_ITEM_EFFECTS:
-        if (ItemBattleEffects(1, gActiveBattler, FALSE))
+        if (ItemBattleEffects(ITEMEFFECT_NORMAL, gActiveBattler, FALSE))
             return;
         break;
     case VARIOUS_ROOM_SERVICE:
@@ -9457,19 +9464,18 @@ static void Cmd_various(void)
         }
         break;
     case VARIOUS_CONSUME_BERRY:
-        if (gBattleScripting.overrideBerryRequirements == 2)
+        if (gBattleScripting.overrideBerryRequirements == 0)
         {
             gBattlescriptCurrInstr += 4;
             return;
         }
-
+        
         if (gBattlescriptCurrInstr[3])
             gLastUsedItem = gBattleMons[gActiveBattler].item;
-
+        
         gBattleScripting.battler = gEffectBattler = gBattlerTarget = gActiveBattler;    // Cover all berry effect battlerId cases. e.g. ChangeStatBuffs uses target ID
         if (ItemBattleEffects(ITEMEFFECT_USE_LAST_ITEM, gActiveBattler, FALSE))
             return;
-
         gBattlescriptCurrInstr += 4;
         return;
     case VARIOUS_JUMP_IF_CANT_REVERT_TO_PRIMAL:
@@ -10471,7 +10477,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
         else if ((HasAbility(ABILITY_CLEAR_BODY, battlerAbilities)
                   || HasAbility(ABILITY_FULL_METAL_BODY, battlerAbilities)
                   || HasAbility(ABILITY_WHITE_SMOKE, battlerAbilities))
-                 && !certain && gCurrentMove != MOVE_CURSE)
+                 && !affectsUser && !certain && gCurrentMove != MOVE_CURSE)
         {
             if (flags == STAT_BUFF_ALLOW_PTR)
             {

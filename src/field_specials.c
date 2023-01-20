@@ -1284,7 +1284,7 @@ void RemoveCameraObject(void)
 
 u8 GetPokeblockNameByMonNature(void)
 {
-    return CopyMonFavoritePokeblockName(GetNature(&gPlayerParty[GetLeadMonIndex()]), gStringVar1);
+    return CopyMonFavoritePokeblockName(GetNature(&gPlayerParty[GetLeadMonIndex()], FALSE), gStringVar1);
 }
 
 void GetSecretBaseNearbyMapName(void)
@@ -2404,7 +2404,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_MOVE_TUTOR_2:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 28;
+            task->tNumItems = 27;
             task->tLeft = 15;
             task->tTop = 1;
             task->tWidth = 14;
@@ -2428,6 +2428,56 @@ void ShowScrollableMultichoice(void)
             task->tLeft = 17;
             task->tTop = 1;
             task->tWidth = 12;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
+        case SCROLL_MULTI_OLDALE_STARTERS_HOENN_KANTO:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 7;
+            task->tLeft = 19;
+            task->tTop = 1;
+            task->tWidth = 10;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
+        case SCROLL_MULTI_OLDALE_STARTERS_HOENN_JOHTO:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 7;
+            task->tLeft = 19;
+            task->tTop = 1;
+            task->tWidth = 10;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
+        case SCROLL_MULTI_OLDALE_STARTERS_ALL:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 10;
+            task->tLeft = 19;
+            task->tTop = 1;
+            task->tWidth = 10;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
+        case SCROLL_MULTI_ARCHIVES_MEGA_STONES_GEN_1_2:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 22;
+            task->tLeft = 2;
+            task->tTop = 1;
+            task->tWidth = 14;
+            task->tHeight = 12;
+            task->tKeepOpenAfterSelect = FALSE;
+            task->tTaskId = taskId;
+            break;
+        case SCROLL_MULTI_ARCHIVES_MEGA_STONES_GEN_3:
+            task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+            task->tNumItems = 21;
+            task->tLeft = 2;
+            task->tTop = 1;
+            task->tWidth = 14;
             task->tHeight = 12;
             task->tKeepOpenAfterSelect = FALSE;
             task->tTaskId = taskId;
@@ -2533,35 +2583,35 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR] =
     {
         gText_OvalStone4BP,
-        gText_ReaperCloth16BP,
-        gText_Protector16BP,
-        gText_Electirizer16BP,
-        gText_Magmarizer16BP,
-        gText_DeepSeaScale16BP,
-        gText_DeepSeaTooth16BP,
-        gText_DragonScale16BP,
-        gText_UpGrade16BP,
-        gText_DubiousDisc16BP,
-        gText_KingsRock24BP,
-        gText_RazorClaw24BP,
-        gText_RazorFang24BP,
-        gText_MetalCoat24BP,
-        gText_GalaricaCuff24BP,
-        gText_GalaricaWreath24BP,
+        gText_ReaperCloth10BP,
+        gText_Protector10BP,
+        gText_Electirizer10BP,
+        gText_Magmarizer10BP,
+        gText_DeepSeaScale10BP,
+        gText_DeepSeaTooth10BP,
+        gText_DragonScale10BP,
+        gText_UpGrade10BP,
+        gText_DubiousDisc10BP,
+        gText_KingsRock16BP,
+        gText_RazorClaw16BP,
+        gText_RazorFang16BP,
+        gText_MetalCoat16BP,
+        gText_GalaricaCuff16BP,
+        gText_GalaricaWreath16BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR] =
     {
+        gText_BottleCap2BP,
+        gText_GoldBottleCap28BP,
+        gText_PPUp2BP,
+        gText_PPMax5BP,
         gText_Protein1BP,
         gText_Calcium1BP,
         gText_Iron1BP,
         gText_Zinc1BP,
         gText_Carbos1BP,
         gText_HpUp1BP,
-        gText_PPUp2BP,
-        gText_PPMax5BP,
-        gText_BottleCap2BP,
-        gText_GoldBottleCap30BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
@@ -2576,7 +2626,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Metronome12BP,
         gText_ShedShell12BP,
         gText_StickyBarb12BP,
-        gText_LaggingTail12BP,
+        gText_ExpertBelt20BP,
         gText_QuickClaw20BP,
         gText_Snowball20BP,
         gText_LightClay20BP,
@@ -2639,7 +2689,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_MegaPunch8BP,
         gText_MegaKick8BP,
         gText_BodySlam12BP,
-        gText_RockSlide12BP,
+        gText_StoredPower12BP,
         gText_SwordsDance16BP,
         gText_KnockOff16BP,
         gText_PsychicFang16BP,
@@ -2658,7 +2708,6 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     {
         gText_DefenseCurl4BP,
         gText_Snore4BP,
-        gText_MudSlap4BP,
         gText_Swift4BP,
         gText_PainSplit6BP,
         gText_Recycle6BP,
@@ -2668,9 +2717,9 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_DreamEater8BP,
         gText_LowSweep8BP,
         gText_BreakingSwipe8BP,
+        gText_BugBite12BP,
         gText_SerpentDance12BP,
         gText_Tailwind12BP,
-        gText_StoredPower12BP,
         gText_Avalanche12BP,
         gText_HiddenThorns16BP,
         gText_IcePunch16BP,
@@ -2704,6 +2753,88 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_PokemonMoves,
         gText_Underpowered,
         gText_WhenInDanger,
+        gText_Exit
+    },
+    [SCROLL_MULTI_OLDALE_STARTERS_HOENN_KANTO] =
+    {
+        gText_Treecko,
+        gText_Torchic,
+        gText_Mudkip,
+        gText_Bulbasaur,
+        gText_Charmander,
+        gText_Squirtle,
+        gText_Exit
+    },
+    [SCROLL_MULTI_OLDALE_STARTERS_HOENN_JOHTO] =
+    {
+        gText_Treecko,
+        gText_Torchic,
+        gText_Mudkip,
+        gText_Chikorita,
+        gText_Cyndaquil,
+        gText_Totodile,
+        gText_Exit
+    },
+    [SCROLL_MULTI_OLDALE_STARTERS_ALL] =
+    {
+        gText_Treecko,
+        gText_Torchic,
+        gText_Mudkip,
+        gText_Bulbasaur,
+        gText_Charmander,
+        gText_Squirtle,
+        gText_Chikorita,
+        gText_Cyndaquil,
+        gText_Totodile,
+        gText_Exit
+    },
+    [SCROLL_MULTI_ARCHIVES_MEGA_STONES_GEN_1_2] = 
+    {
+        gText_Venusaurite,
+        gText_CharizarditeX,
+        gText_CharizarditeY,
+        gText_Blastoisinite,
+        gText_Beedrillite,
+        gText_Pidgeotite,
+        gText_Alakazite,
+        gText_Slowbronite,
+        gText_Gengarite,
+        gText_Kangaskhanite,
+        gText_Pinsirite,
+        gText_Gyaradosite,
+        gText_Aerodactylite,
+        gText_MewtwoniteX,
+        gText_MewtwoniteY,
+        gText_Ampharosite,
+        gText_Steelixite,
+        gText_Scizorite,
+        gText_Heracronite,
+        gText_Houndoominite,
+        gText_Tyranitarite,
+        gText_Exit
+    },
+    [SCROLL_MULTI_ARCHIVES_MEGA_STONES_GEN_3] = 
+    {
+        gText_Sceptilite,
+        gText_Blazikenite,
+        gText_Swampertite,
+        gText_Gardevoirite,
+        gText_Galladite,
+        gText_Sablenite,
+        gText_Mawilite,
+        gText_Aggronite,
+        gText_Medichamite,
+        gText_Manectite,
+        gText_Sharpedonite,
+        gText_Cameruptite,
+        gText_Altarianite,
+        gText_Banettite,
+        gText_Absolite,
+        gText_Glalitite,
+        gText_Salamencite,
+        gText_Metagrossite,
+        gText_Latiasite,
+        gText_Latiosite,
         gText_Exit
     }
 };
@@ -3006,7 +3137,7 @@ void ShowNatureGirlMessage(void)
         gSpecialVar_0x8004 = 0;
     }
 
-    nature = GetNature(&gPlayerParty[gSpecialVar_0x8004]);
+    nature = GetNature(&gPlayerParty[gSpecialVar_0x8004], FALSE);
     ShowFieldMessage(sNatureGirlMessages[nature]);
 }
 
@@ -3276,14 +3407,14 @@ static const u16 sBattleFrontier_TutorMoves1[] =
     MOVE_SOFT_BOILED,
     MOVE_WORK_UP,
     MOVE_DEFOG,
+    MOVE_COUNTER,
     MOVE_MAGIC_COAT,
     MOVE_LOW_KICK, 
     MOVE_SEISMIC_TOSS,  
     MOVE_MEGA_PUNCH,
     MOVE_MEGA_KICK,
     MOVE_BODY_SLAM,
-    MOVE_ROCK_SLIDE,
-    MOVE_COUNTER,
+    MOVE_STORED_POWER,
     MOVE_SWORDS_DANCE,
     MOVE_KNOCK_OFF,
     MOVE_PSYCHIC_FANGS,
@@ -3302,7 +3433,6 @@ static const u16 sBattleFrontier_TutorMoves2[] =
 { 
     MOVE_DEFENSE_CURL,
     MOVE_SNORE,
-    MOVE_MUD_SLAP,
     MOVE_SWIFT,
     MOVE_PAIN_SPLIT,
     MOVE_RECYCLE,
@@ -3312,9 +3442,9 @@ static const u16 sBattleFrontier_TutorMoves2[] =
     MOVE_DREAM_EATER,
     MOVE_LOW_SWEEP,
     MOVE_BREAKING_SWIPE,
+    MOVE_BUG_BITE,
     MOVE_SERPENT_DANCE,
     MOVE_TAILWIND,
-    MOVE_STORED_POWER,
     MOVE_AVALANCHE,
     MOVE_HIDDEN_THORNS,
     MOVE_ICE_PUNCH,
@@ -3384,7 +3514,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_MegaPunchDesc,
         BattleFrontier_Lounge7_Text_MegaKickDesc,
         BattleFrontier_Lounge7_Text_BodySlamDesc,
-        BattleFrontier_Lounge7_Text_RockSlideDesc,
+        BattleFrontier_Lounge7_Text_StoredPowerDesc,
         BattleFrontier_Lounge7_Text_SwordsDanceDesc,
         BattleFrontier_Lounge7_Text_KnockOffDesc,
         BattleFrontier_Lounge7_Text_PsychicFangsDesc,
@@ -3404,7 +3534,6 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
     {
         BattleFrontier_Lounge7_Text_DefenseCurlDesc,
         BattleFrontier_Lounge7_Text_SnoreDesc,
-        BattleFrontier_Lounge7_Text_MudSlapDesc,
         BattleFrontier_Lounge7_Text_SwiftDesc,
         BattleFrontier_Lounge7_Text_PainSplitDesc,
         BattleFrontier_Lounge7_Text_RecycleDesc,
@@ -3414,9 +3543,9 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_DreamEaterDesc,
         BattleFrontier_Lounge7_Text_LowSweepDesc,
         BattleFrontier_Lounge7_Text_BreakingSwipeDesc,
+        BattleFrontier_Lounge7_Text_BugBiteDesc,
         BattleFrontier_Lounge7_Text_SerpentDanceDesc,
         BattleFrontier_Lounge7_Text_TailwindDesc,
-        BattleFrontier_Lounge7_Text_StoredPowerDesc,
         BattleFrontier_Lounge7_Text_AvalancheDesc,
         BattleFrontier_Lounge7_Text_HiddenThornsDesc,
         BattleFrontier_Lounge7_Text_IcePunchDesc,
