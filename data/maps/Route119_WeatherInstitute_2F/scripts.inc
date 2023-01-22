@@ -250,7 +250,6 @@ Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattle::
 	special LoadPlayerParty
 	switch VAR_RESULT
 	case 1, Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly
-	goto Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly
 	fadescreen FADE_TO_BLACK
 	special SetCB2WhiteOut
 	waitstate
