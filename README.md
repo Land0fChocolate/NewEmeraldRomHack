@@ -1,11 +1,15 @@
 # Pokémon Energized Emerald
 
-v1.0 - 19/01/2023
-
 A reimagining of Pokemon Emerald with the aim to expand and enhance the game. 
 
 This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: https://github.com/rh-hideout/pokeemerald-expansion.
 The project started in December 2021, using the version of pokeemerald-expansion at the time. Most updates to pokeemerald-expansion have been implemented in Energized Emerald. 
+
+# Versions
+
+v1.00 - 19/01/2023
+v1.01 - 22/01/2023
+v1.02 - 
 
 # Changelog
 
@@ -14,6 +18,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - All Pokemon from gens 1, 2 and 3 are accessible. 
 	- Those Pokemon with post gen 3 evolutions and pre-evolutions have those available as well.
 	- Many regional variants of gen 1, 2 and 3 Pokemon are available.
+	- A total of 416 Pokemon species (not counting regional variants) are accessible.
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
 	- Many Pokemon have had their ability sets updated to better fit their theme and gameplay. (TODO: make a list of ability stat changes somewhere).
 	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
@@ -179,8 +184,10 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Intimidate may trigger on fainted Pokemon.
 - Frisk may trigger on the wrong Pokemon. Often occurs in Battle Frontier.
 - Arena Trap battle message when trying to switch doesn't show the ability string.
+- Damp battle message when it by powder move doesn't show the ability string.
 - When a Pokemon with Volt Absorb uses Ion Deluge, it triggers Volt Absorb.
 - Stench ability may activate for opponent and not user. Scenario: Weezing vs Altaria, Altaria (no King's Rock) used Ice Beam which flinched Weezing, could be a bad gBattlerAttacker assignment or similar.
+- When a grass type uses Stun Spore against an opponent with Magic Bounce, it bounces back and paralyzes the grass type. Unsure if this is a bug or intended behavior.
 - Bug Bite/Pluck is not taking the effects of the opponent's berry.
 - Spinning Body activates on every hit for multi-hit moves (e.g. Hitmontop using Triple Kick). Would rather it takes affect on only the last hit.
 - Backgrounds of some moves are glitched or have black boxes. (Shadow Bone, Gunk Shot, Hurricane, Focus Blast, Aura Sphere, Burn Up)
@@ -218,7 +225,7 @@ Possible future additions/changes.
 - Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
 - A contest side-quest with Lisia, much like in ORAS.
-- Perhaps a more interesting Winona berry giving event. It's a bit boring to just be given a berry.
+- Perhaps a more interesting Winona berry giving event. It's a bit boring to just be given a berry. (What if she gives a berry based on what legendary Pokemon you show her?)
 - Perhaps a more interesting Tate & Liza event to get Jirachi?
 - Scott giving more interesting rewards to players who get all silver/gold symbols.
 - In-game resource that teaches the player braile. So that it isn't required to look out of the game to solve the braile puzzles.
@@ -229,6 +236,7 @@ Possible future additions/changes.
 - Increase number of PC Pokemon storage boxes.
 - Add another star to the Trainer Card for completing the National Dex. Create a platinum colour scheme to go along with it.
 - Named NPCs like Gym Leaders, Elite 4, Steven, etc to be possible partners in Battle Tower Multi challenge.
+- A better way for Mirage Island to trigger?
 - Obligatory beach episode.
 
 # Credits

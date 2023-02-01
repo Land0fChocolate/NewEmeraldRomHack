@@ -44,22 +44,157 @@ MossdeepCity_EventScript_Winona::
 	lock
 	faceplayer
 	dotimebasedevents
-	goto_if_unset FLAG_DAILY_WINONA_RECEIVED_BERRY, MossdeepCity_EventScript_WinonaGivesBerry
-	msgbox MossdeepCity_Text_WinonaLookingForLegendary, MSGBOX_DEFAULT
+	goto_if_unset FLAG_DAILY_WINONA_RECEIVED_BERRY, MossdeepCity_EventScript_WinonaLookingForLegends
+	msgbox MossdeepCity_Text_WinonaAlreadyGivenBerry, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
-MossdeepCity_EventScript_WinonaGivesBerry::
-	msgbox MossdeepCity_Text_WinonaGiveBerry, MSGBOX_DEFAULT
-	random NUM_WINONA_BERRIES
-	addvar VAR_RESULT, NUM_WINONA_BERRIES_SKIPPED
-	addvar VAR_RESULT, FIRST_BERRY_INDEX
-	giveitem VAR_RESULT
+MossdeepCity_EventScript_WinonaLookingForLegends::
+	msgbox MossdeepCity_Text_WinonaLookingForLegends, MSGBOX_DEFAULT
+	goto MossdeepCity_EventScript_CheckForLegendary
+
+MossdeepCity_EventScript_CheckForLegendary::
+	checkformoninparty SPECIES_ARTICUNO
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_ARTICUNO
+	goto_if_eq MossdeepCity_EventScript_GiveLiechiBerry
+	checkformoninparty SPECIES_ZAPDOS
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_ZAPDOS
+	goto_if_eq MossdeepCity_EventScript_GiveLiechiBerry
+	checkformoninparty SPECIES_MOLTRES
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_MOLTRES
+	goto_if_eq MossdeepCity_EventScript_GiveLiechiBerry
+	checkformoninparty SPECIES_HO_OH
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_HO_OH
+	goto_if_eq MossdeepCity_EventScript_GiveApicotBerry
+	checkformoninparty SPECIES_LUGIA
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_LUGIA
+	goto_if_eq MossdeepCity_EventScript_GiveApicotBerry
+	checkformoninparty SPECIES_LATIAS
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_LATIAS
+	goto_if_eq MossdeepCity_EventScript_GivePetayaBerry
+	checkformoninparty SPECIES_LATIOS
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_LATIOS
+	goto_if_eq MossdeepCity_EventScript_GivePetayaBerry
+	checkformoninparty SPECIES_RAYQUAZA
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_RAYQUAZA
+	goto_if_eq MossdeepCity_EventScript_GiveLansatBerry
+	checkformoninparty SPECIES_RAIKOU
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_RAIKOU
+	goto_if_eq MossdeepCity_EventScript_GiveSalacBerry
+	checkformoninparty SPECIES_ENTEI
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_ENTEI
+	goto_if_eq MossdeepCity_EventScript_GiveSalacBerry
+	checkformoninparty SPECIES_SUICUNE
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_SUICUNE
+	goto_if_eq MossdeepCity_EventScript_GiveSalacBerry
+	checkformoninparty SPECIES_MEW
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_MEW
+	goto_if_eq MossdeepCity_EventScript_GiveStarfBerry
+	checkformoninparty SPECIES_CELEBI
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_CELEBI
+	goto_if_eq MossdeepCity_EventScript_GiveStarfBerry
+	checkformoninparty SPECIES_JIRACHI
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_JIRACHI
+	goto_if_eq MossdeepCity_EventScript_GiveStarfBerry
+	checkformoninparty SPECIES_DEOXYS
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_DEOXYS
+	goto_if_eq MossdeepCity_EventScript_GiveStarfBerry
+	checkformoninparty SPECIES_MEWTWO
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_MEWTWO
+	goto_if_eq MossdeepCity_EventScript_GiveApicotBerry
+	checkformoninparty SPECIES_KYOGRE
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_KYOGRE
+	goto_if_eq MossdeepCity_EventScript_GiveLansatBerry
+	checkformoninparty SPECIES_GROUDON
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_GROUDON
+	goto_if_eq MossdeepCity_EventScript_GiveLansatBerry
+	checkformoninparty SPECIES_REGIROCK
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_REGIROCK
+	goto_if_eq MossdeepCity_EventScript_GiveGanlonBerry
+	checkformoninparty SPECIES_REGICE
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_REGICE
+	goto_if_eq MossdeepCity_EventScript_GiveGanlonBerry
+	checkformoninparty SPECIES_REGISTEEL
+	compare VAR_RESULT, TRUE
+	bufferspeciesname 1, SPECIES_REGISTEEL
+	goto_if_eq MossdeepCity_EventScript_GiveGanlonBerry
+	closemessage
+	release
+	end
+
+MossdeepCity_EventScript_GiveLiechiBerry::
+	msgbox MossdeepCity_Text_PlayerHasLegendary, MSGBOX_DEFAULT
+	giveitem ITEM_LIECHI_BERRY
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
-	setflag FLAG_DAILY_WINONA_RECEIVED_BERRY
+	goto MossdeepCity_EventScript_WinonaBerryGiven
+
+MossdeepCity_EventScript_GiveGanlonBerry::
+	msgbox MossdeepCity_Text_PlayerHasLegendary, MSGBOX_DEFAULT
+	giveitem ITEM_GANLON_BERRY
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	goto MossdeepCity_EventScript_WinonaBerryGiven
+
+MossdeepCity_EventScript_GiveSalacBerry::
+	msgbox MossdeepCity_Text_PlayerHasLegendary, MSGBOX_DEFAULT
+	giveitem ITEM_SALAC_BERRY
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	goto MossdeepCity_EventScript_WinonaBerryGiven
+
+MossdeepCity_EventScript_GivePetayaBerry::
+	msgbox MossdeepCity_Text_PlayerHasLegendary, MSGBOX_DEFAULT
+	giveitem ITEM_PETAYA_BERRY
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	goto MossdeepCity_EventScript_WinonaBerryGiven
+
+MossdeepCity_EventScript_GiveApicotBerry::
+	msgbox MossdeepCity_Text_PlayerHasLegendary, MSGBOX_DEFAULT
+	giveitem ITEM_APICOT_BERRY
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	goto MossdeepCity_EventScript_WinonaBerryGiven
+
+MossdeepCity_EventScript_GiveLansatBerry::
+	msgbox MossdeepCity_Text_PlayerHasLegendary, MSGBOX_DEFAULT
+	giveitem ITEM_LANSAT_BERRY
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	goto MossdeepCity_EventScript_WinonaBerryGiven
+
+MossdeepCity_EventScript_GiveStarfBerry::
+	msgbox MossdeepCity_Text_PlayerHasLegendary, MSGBOX_DEFAULT
+	giveitem ITEM_STARF_BERRY
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_EventScript_ShowBagIsFull
+	goto MossdeepCity_EventScript_WinonaBerryGiven
+
+MossdeepCity_EventScript_WinonaBerryGiven::
 	closemessage
+	setflag FLAG_DAILY_WINONA_RECEIVED_BERRY
 	release
 	end
 
@@ -354,22 +489,28 @@ MossdeepCity_EventScript_BlackBelt::
 	msgbox MossdeepCity_Text_WavesOverFeet, MSGBOX_NPC
 	end
 
-MossdeepCity_Text_WinonaGiveBerry::
+MossdeepCity_Text_WinonaLookingForLegends::
 	.string "Winona: Hello, {PLAYER}.\p"
 	.string "I have heard tales of legendary Pokémon\n"
 	.string "roaming the land and skies around these\l"
 	.string "parts.\p"
 	.string "I was hoping to find them for myself,\n"
 	.string "or find the whereabouts of their lairs.\p"
-	.string "Sadly, I haven't found them.\n"
-	.string "Although, I have found some unusual\l"
-	.string "berries.\p"
-	.string "Here.\n"
-	.string "Sharing is caring.$"
+	.string "Sadly, I haven't found them…$"
 
-MossdeepCity_Text_WinonaLookingForLegendary::
-	.string "Winona: The legendary birds and beasts…\p"
-	.string "I would love to see their grace.$"
+MossdeepCity_Text_PlayerHasLegendary::
+	.string "Oh…\p"
+	.string "Is that a {STR_VAR_2}?\n"
+	.string "It's marvelous!\p"
+	.string "Thank you for showing it to me.\n"
+	.string "Here, take this berry.\l"
+	.string "I found it whilst searching for\l"
+	.string "legendary Pokémon.$"
+
+MossdeepCity_Text_WinonaAlreadyGivenBerry::
+	.string "Winona: Would you like to try\n"
+	.string "conversing with the wind?\l"
+	.string "It always puts me at ease.$"
 
 MossdeepCity_Text_BerryWifePhrase:
 	.string "I remarked on a “Cool Latios” when I\n"
