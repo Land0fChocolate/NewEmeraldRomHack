@@ -63,7 +63,7 @@ v1.02 -
 	- Roxanne trades evolution stones for fossils.
 	- Brawly can give a random shard daily.
 	- Flannery can EV train one of your Pokemon daily.
-	- Winona gives a random rare berry daily.
+	- Winona gives a rare berry daily. The variety depends on what legendary Pokemon you have in your party.
 	- Tate and Liza grant access to Jirachi.
 	- Gym Leaders have their own places to hang out in the overworld when they aren't looking for a rematch.
 - Item changes
@@ -225,7 +225,6 @@ Possible future additions/changes.
 - Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
 - A contest side-quest with Lisia, much like in ORAS.
-- Perhaps a more interesting Winona berry giving event. It's a bit boring to just be given a berry. (What if she gives a berry based on what legendary Pokemon you show her?)
 - Perhaps a more interesting Tate & Liza event to get Jirachi?
 - Scott giving more interesting rewards to players who get all silver/gold symbols.
 - In-game resource that teaches the player braile. So that it isn't required to look out of the game to solve the braile puzzles.
