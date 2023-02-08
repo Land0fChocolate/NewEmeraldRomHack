@@ -9,7 +9,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 
 v1.00 - 19/01/2023
 v1.01 - 22/01/2023
-v1.02 - 
+v1.02 - 02/02/2023
 
 # Changelog
 
@@ -23,6 +23,7 @@ v1.02 -
 	- Many Pokemon have had their ability sets updated to better fit their theme and gameplay. (TODO: make a list of ability stat changes somewhere).
 	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
 	- Moves that work around abilities have been updated for multiple abilities as well.
+	- The Pokemon summary screen has been updated to show all of a Pokemon's abilities and description with the A button prompt.
 - New moves and abilities (listed below).
 - Many gameplay adjustments to vanilla moves (Listed below). 
 	- Changes to level up, Egg learnsets, TM learnsets and Tutor learnsets of Pokemon (TODO: make list).
@@ -212,6 +213,7 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Using Giga Impact in a contest freezes the game.
 - Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety.
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
+	- Note for players: Restart immediately if bad egg appears. They cannot hatch or be removed.
 
 # Post Launch TODOs
 
