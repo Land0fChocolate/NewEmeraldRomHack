@@ -1558,7 +1558,7 @@ LittlerootTown_ProfessorBirchsLab_Text_MaxiePeopleNotPrepared:
 
 LittlerootTown_ProfessorBirchsLab_Text_ArchieEcosystemCatastrophe:
 	.string "Archie: I am also concerned with what\n"
-	.string "my team has have been reporting.\p"
+	.string "my team have been reporting.\p"
 	.string "The population numbers for the new areas\n"
 	.string "are increasing. If they get too high\l"
 	.string "the new Pokémon could be forced to\l"

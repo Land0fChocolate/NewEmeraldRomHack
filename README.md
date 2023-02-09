@@ -3,7 +3,9 @@
 A reimagining of Pokemon Emerald with the aim to expand and enhance the game. 
 
 This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: https://github.com/rh-hideout/pokeemerald-expansion.
-The project started in December 2021, using the version of pokeemerald-expansion at the time. Most updates to pokeemerald-expansion have been implemented in Energized Emerald. 
+The project started in December 2021, using the version of pokeemerald-expansion at the time. Most updates to pokeemerald-expansion have been implemented in Energized Emerald.
+
+Please leave feedback on the Pokemon Energized Emerald Discord channel: https://discord.gg/4ZF47gWd7K.
 
 # Versions
 
@@ -188,7 +190,8 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Damp battle message when it by powder move doesn't show the ability string.
 - When a Pokemon with Volt Absorb uses Ion Deluge, it triggers Volt Absorb.
 - Stench ability may activate for opponent and not user. Scenario: Weezing vs Altaria, Altaria (no King's Rock) used Ice Beam which flinched Weezing, could be a bad gBattlerAttacker assignment or similar.
-- When a grass type uses Stun Spore against an opponent with Magic Bounce, it bounces back and paralyzes the grass type. Unsure if this is a bug or intended behavior.
+- When a grass type uses Stun Spore against an opponent with Magic Bounce, it bounces back and paralyzes the grass type. pokeemerald-expansion bug.
+- Time Traveller ability ignores False Swipe effect of leaving the user with 1 HP.
 - Bug Bite/Pluck is not taking the effects of the opponent's berry.
 - Spinning Body activates on every hit for multi-hit moves (e.g. Hitmontop using Triple Kick). Would rather it takes affect on only the last hit.
 - Backgrounds of some moves are glitched or have black boxes. (Shadow Bone, Gunk Shot, Hurricane, Focus Blast, Aura Sphere, Burn Up)
@@ -205,9 +208,9 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
 - Deoxys may also skip a form change. Repeatedly occurs with Draining Kiss.
 - Origin move selection has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
-- Time Traveller ability ignores False Swipe effect of leaving the user with 1 HP.
 - Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, Flygon, Salamence and more)
 - Move relearner doesn't list all of the possible moves to relearn, only the first ~15.
+- When picking a rental Pokemon at the Battle Factory, one of the options may be a ?. (May be fixed)
 
 *Really bad bugs*
 - Using Giga Impact in a contest freezes the game.
@@ -230,6 +233,7 @@ Possible future additions/changes.
 - Perhaps a more interesting Tate & Liza event to get Jirachi?
 - Scott giving more interesting rewards to players who get all silver/gold symbols.
 - In-game resource that teaches the player braile. So that it isn't required to look out of the game to solve the braile puzzles.
+- TV advert that tells the player that the Mauville sweet shop has Rare Candy to sell.
 - Sort out the online/wireless features. Either find out how to make them work or remove them.
 - Better Game Corner games. May be a ton of work though. (Perhaps one could be a Battle Palace style battle where the Player places a bet?)
 - Better Battle Frontier level scaling. Open level puts opponent Pokemon to your highest level Pokemon. Should scale all Pokemon to a certain level like the battle facilities in future gens.

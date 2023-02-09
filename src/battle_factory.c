@@ -563,7 +563,8 @@ static void GenerateInitialRentalMons(void)
         else
             monId = GetFactoryMonId(factoryLvlMode, challengeNum, FALSE);
 
-        if (gFacilityTrainerMons[monId].species == SPECIES_UNOWN)
+        if (gFacilityTrainerMons[monId].species == SPECIES_UNOWN
+            || (gFacilityTrainerMons[monId].species == SPECIES_NONE)) //Used to fix ? Pokemon bug, but better fix may be elsewhere.
             continue;
 
         // Cannot have two pokemon of the same species.

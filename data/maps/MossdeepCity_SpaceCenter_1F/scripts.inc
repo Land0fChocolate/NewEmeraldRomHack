@@ -93,6 +93,7 @@ MossdeepCity_SpaceCenter_1F_EventScript_SunStoneMan::
 	faceplayer
 	compare VAR_MOSSDEEP_SPACE_CENTER_STATE, 1
 	goto_if_ge MossdeepCity_SpaceCenter_1F_EventScript_SunStoneManZinnia
+	goto_if_set FLAG_RECEIVED_SUN_STONE_MOSSDEEP, MossdeepCity_SpaceCenter_1F_EventScript_GaveSunStone
 	msgbox MossdeepCity_SpaceCenter_1F_Text_FoundThisYouCanHaveIt, MSGBOX_DEFAULT
 	giveitem ITEM_SUN_STONE
 	compare VAR_RESULT, FALSE
@@ -105,7 +106,6 @@ MossdeepCity_SpaceCenter_1F_EventScript_SunStoneMan::
 MossdeepCity_SpaceCenter_1F_EventScript_SunStoneManZinnia::	
 	msgbox MossdeepCity_SpaceCenter_1F_Text_NotSafe, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_SPACE_CENTER_TRIGGER_STATE, 0
 	release
 	end
 
