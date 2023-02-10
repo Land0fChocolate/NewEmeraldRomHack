@@ -2,8 +2,8 @@
 
 A reimagining of Pokemon Emerald with the aim to expand and enhance the game. 
 
-This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: https://github.com/rh-hideout/pokeemerald-expansion.
-The project started in December 2021, using the version of pokeemerald-expansion at the time. Most updates to pokeemerald-expansion have been implemented in Energized Emerald.
+This is a rom hack of Pokemon Emerald using the pokeemerald-expansion decompilation project as its base: https://github.com/rh-hideout/pokeemerald-expansion.
+The rom hack started in December 2021, using the version of pokeemerald-expansion at the time. Most updates to pokeemerald-expansion have been implemented in Energized Emerald.
 
 Please leave feedback on the Pokemon Energized Emerald Discord channel: https://discord.gg/4ZF47gWd7K.
 
@@ -12,6 +12,7 @@ Please leave feedback on the Pokemon Energized Emerald Discord channel: https://
 v1.00 - 19/01/2023
 v1.01 - 22/01/2023
 v1.02 - 02/02/2023
+v1.03 - 09/02/2023
 
 # Changelog
 
@@ -32,24 +33,27 @@ v1.02 - 02/02/2023
 	- Pokemon will attempt to learn a new move upon evolution.
 	- Hoenn move tutors can now teach their moves endlessly.
 - New tutor moves added. The new tutor set is similar to what was available in future gens (TODO: make list).
-- Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko, Spheal lines have Attack and Special Attack swapped for example. (TODO: make list)
+- Some Pokemon have base stat changes to better fit their theme and gameplay (TODO: make list). 
+	- Treecko, Spheal lines have Attack and Special Attack swapped.
+	- Numel and Camerupt have more base HP.
+	- Dewgong has more base Speed.
 - HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
-- Pokemon IVs and EVs can be viewed in the summary screen by pressing the L and R buttons.
+- Pokemon EVs and IVs can be viewed in the summary screen by pressing the L and R buttons.
 - Wild Encounters adjusted.
-	- Both Latias and Latios are available roaming at the same time.
-	- All Legendary and Mythical Pokemon can be repeatedly acquired.
 	- There is a small chance for a wild encounter to be a double battle.
 	- There is a small chance to encounter a wild Pokemon a much higher level than others in the same area.
+	- Both Latias and Latios are available roaming at the same time.
+	- All Legendary and Mythical Pokemon can be repeatedly acquired.
 - Repeatedly acquirable fossils.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
-- Tradeback guy added. Provides a service for the player to trade Pokemon with themselves and trigger trade evolutions.
+- Tradeback guy added. Provides a service for the player to trade Pokemon with themselves and trigger trade evolutions. He lives in Lilycove.
 - Some Emerald changes have been reverted to how they were in Ruby/Sapphire.
 	- Steven is back to being champion and Wallace back to being a gym leader.
-	- Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
+	- Prof Birch is chased by a Poochyena instead of a Zigzagoon.
 - Opponent Trainer parties have been updated.
 - New opponent Trainer classes.
 - Contests have been updated to take on the various changes.
-	- More Pokemon added to opponent lists, especially new Pokemon.
+	- More Pokemon added to opponent lists, especially new Pokemon species.
 	- Opponents have updated movesets.
 	- Contest moves have been updated to be more like gen 6.
 	- More move combos.
@@ -82,7 +86,7 @@ v1.02 - 02/02/2023
 	- The Berry Master's wife phrases for rare berries are now hinted at by NPCs in game.
 	- All item use, except for Poke Balls, is disabled from battles by default. NPCs don't use items either. Players may re-enable items in the options menu if they wish.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
-- Groomer service added.
+- Groomer service to raise Pokemon friendship is added.
 - IV buffer service added.
 - Better berry trees
 	- Yield rates have increased.
@@ -201,7 +205,6 @@ Some of these may have been carried over from pokeemerald-expansion.
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
 - In Contests of super rank and above, Pokemon sprites and NPC overworld sprites can get weird colours. Palette bug linked to too many NPCs on screen.
-- HP bar in battle may look weird, starting with a ?. When hit it may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce. Seems to be a very rare bug.
 - When a Pokemon evolves by trading, an exp gain sound plays over the Pokemon's cry.
 - When trading with the tradeback guy and you use a Pokemon with a different ID than your own (from in-game trade), the trade screen says you are trading with the Pokemon's previous owner.
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there. Repeatedly occurs when KOing it from 100% HP.
@@ -210,11 +213,12 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Origin move selection has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
 - Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, Flygon, Salamence and more)
 - Move relearner doesn't list all of the possible moves to relearn, only the first ~15.
-- When picking a rental Pokemon at the Battle Factory, one of the options may be a ?. (May be fixed)
+- When picking a rental Pokemon at the Battle Factory, one of the options may be a ?. (may be fixed, requires further testing to make sure)
 
 *Really bad bugs*
 - Using Giga Impact in a contest freezes the game.
-- Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety.
+- HP bar in battle may look weird, starting with a ?. When hit it may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. (may be fixed, requires further testing to make sure)
+- Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety. (may be fixed, requires further testing to make sure)
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
 	- Note for players: Restart immediately if bad egg appears. They cannot hatch or be removed.
 
@@ -238,7 +242,7 @@ Possible future additions/changes.
 - Better Game Corner games. May be a ton of work though. (Perhaps one could be a Battle Palace style battle where the Player places a bet?)
 - Better Battle Frontier level scaling. Open level puts opponent Pokemon to your highest level Pokemon. Should scale all Pokemon to a certain level like the battle facilities in future gens.
 - Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
-- Increase number of PC Pokemon storage boxes.
+- Increase number of PC Pokemon storage boxes (annoying to do late in development since changing the sava data format will invalid previous save data).
 - Add another star to the Trainer Card for completing the National Dex. Create a platinum colour scheme to go along with it.
 - Named NPCs like Gym Leaders, Elite 4, Steven, etc to be possible partners in Battle Tower Multi challenge.
 - A better way for Mirage Island to trigger?
