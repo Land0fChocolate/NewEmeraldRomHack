@@ -826,6 +826,14 @@ gText_MomOrDadMightLikeThisProgram::
 	.string "… … … … … … … … … … … … … … … …\p"
 	.string "Better get going!$"
 
+gText_RareCandyAdvert::
+	.string "Hey Trainers!\p"
+	.string "Are you struggling to beat that Gym\n"
+	.string "Leader?\p"
+	.string "Not enough time to train?\p"
+	.string "Make your team strong with Rare Candy!\n"
+	.string "Only sold at the Mauville Sweet Shop!$"
+
 gText_WhichFloorWouldYouLike::
 	.string "Welcome to Lilycove Department Store.\p"
 	.string "Which floor would you like?$"

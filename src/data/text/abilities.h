@@ -954,8 +954,8 @@ static const u8 sBallFetchDescription[] = _(
 	"Fetches failed Poké Ball.");
 
 static const u8 sCottonDownDescription[] = _(
-	"Lowers Speed of all by one\n"
-	"stage when hit.");
+	"Lowers Speed of all others\n"
+	"by one stage when hit.");
 
 static const u8 sPropellerTailDescription[] = _(
 	"Ignores redirection\n"
