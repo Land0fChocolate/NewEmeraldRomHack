@@ -13,6 +13,7 @@ v1.00 - 19/01/2023
 v1.01 - 22/01/2023
 v1.02 - 02/02/2023
 v1.03 - 09/02/2023
+v1.04 - ??/??/2023
 
 # Changelog
 
@@ -62,6 +63,7 @@ v1.03 - 09/02/2023
 	- Battle Palace is now inverse battle themed.
 	- Battle Dome has its move scores updated.
 	- Battle Factory has its opponent tips updated.
+	- Battle facilities give more Battle Points.
 - Map layout changes, including new areas to explore that have new Pokemon (post game).
 - New overworld sprites and graphics.
 - Graphical updates to many existing overworld sprites and environments.
@@ -77,7 +79,7 @@ v1.03 - 09/02/2023
 	- Quick Claw now increases speed by 10% when user is below 50% health.
 	- Vitamins give 20 EVs instead of 10. Also can give as many up to max usable EVs (252) to a Pokemon.
 	- Prices of various items adjusted.
-	- Nature Mints added
+	- Nature Mints added.
 	- TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
 	- TMs have infinite use.
 	- Existing shops sell more stuff, including post gen 3 items.
@@ -87,7 +89,7 @@ v1.03 - 09/02/2023
 	- All item use, except for Poke Balls, is disabled from battles by default. NPCs don't use items either. Players may re-enable items in the options menu if they wish.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
 - Groomer service to raise Pokemon friendship is added.
-- IV buffer service added.
+- IV buffer service added. Bottle Caps are used to trade for this service. A Pokemon can gain 8 IVs per Bottle Cap, or have all their IVs set to max with a Gold Bottle Cap.
 - Better berry trees
 	- Yield rates have increased.
 	- Interaction with berry trees and soil patches is quicker.
@@ -95,7 +97,7 @@ v1.03 - 09/02/2023
 - Ice types have their special defense boosted by 50% in hail.
 - Number of Feebas spots is tripled.
 - Removed badge boosts
-- Doubled chance for special news bulletins.
+- Doubled chance for special news bulletins, like sales, rooftop shop, etc.
 - EXP gain has been scaled to level difference, rather like in gen 5.
 - Mega Evolution is available after beating the post game and getting all gold Battle Frontier symbols.
 
