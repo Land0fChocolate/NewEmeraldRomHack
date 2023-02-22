@@ -664,7 +664,7 @@
 #define FLAG_UNUSED_0x272                         0x272 // Unused Flag
 #define FLAG_UNUSED_0x273                         0x273 // Unused Flag
 #define FLAG_UNUSED_0x274                         0x274 // Unused Flag
-#define FLAG_RECEIVED_MEGA_RING                   0x275 // Unused Flag
+#define FLAG_TV_RARE_CANDY_ADVERT                 0x275
 #define FLAG_HIDE_BATTLE_FRONTIER_ZINNIA          0x276
 #define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_1 0x277
 #define FLAG_HIDE_DAILY_DESERT_UNDERPASS_FOSSIL_2 0x278

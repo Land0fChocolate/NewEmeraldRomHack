@@ -843,7 +843,7 @@ void UpdateTVScreensOnMap(int width, int height)
             // NPC in Lilycove Hotel is always watching TV
             SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);
         }
-        else if (FlagGet(FLAG_SYS_TV_START) && (FindAnyTVShowOnTheAir() != 0xFF || FindAnyPokeNewsOnTheAir() != 0xFF || IsGabbyAndTyShowOnTheAir()))
+        else if (FlagGet(FLAG_SYS_TV_START) && (FindAnyTVShowOnTheAir() != 0xFF || FindAnyPokeNewsOnTheAir() != 0xFF || IsGabbyAndTyShowOnTheAir() || FlagGet(FLAG_TV_RARE_CANDY_ADVERT)))
         {
             FlagClear(FLAG_SYS_TV_WATCH);
             SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);

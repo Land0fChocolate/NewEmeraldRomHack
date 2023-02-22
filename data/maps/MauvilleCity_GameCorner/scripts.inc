@@ -902,8 +902,9 @@ MauvilleCity_GameCorner_Text_CantWinJackpot:
 MauvilleCity_GameCorner_Text_NeedCoinCaseGoNextDoor:
 	.string "Hey, kid, if you want to play here,\n"
 	.string "you need a Coin Case.\p"
-	.string "I think the young lady next door\n"
-	.string "had one. Go see her!$"
+	.string "I think the young lady in the house\n"
+	.string "next to the TV studio is willing to\l"
+	.string "trade one.$"
 
 MauvilleCity_GameCorner_Text_DescribePrizes:
 	.string "I don't even care for the games,\n"

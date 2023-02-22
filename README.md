@@ -1,11 +1,19 @@
 # Pokémon Energized Emerald
 
-v1.0 - 19/01/2023
+A revamp of Pokemon Emerald with the aim to expand and enhance the game. 
 
-A reimagining of Pokemon Emerald with the aim to expand and enhance the game. 
+This is a rom hack of Pokemon Emerald using the pokeemerald-expansion decompilation project as its base: https://github.com/rh-hideout/pokeemerald-expansion.
+The rom hack started in December 2021, using the version of pokeemerald-expansion at the time. Most updates to pokeemerald-expansion have been implemented in Energized Emerald.
 
-This is a rom hack of Pokemon Emerald using pokeemerald-expansion as its base: https://github.com/rh-hideout/pokeemerald-expansion.
-The project started in December 2021, using the version of pokeemerald-expansion at the time. Most updates to pokeemerald-expansion have been implemented in Energized Emerald. 
+Please leave feedback on the Pokemon Energized Emerald Discord channel: https://discord.gg/4ZF47gWd7K or in the pokecommunity thread: https://www.pokecommunity.com/showthread.php?t=491868.
+
+# Versions
+
+v1.00 - 19/01/2023
+v1.01 - 22/01/2023
+v1.02 - 02/02/2023
+v1.03 - 09/02/2023
+v1.04 - 19/02/2023
 
 # Changelog
 
@@ -14,34 +22,39 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - All Pokemon from gens 1, 2 and 3 are accessible. 
 	- Those Pokemon with post gen 3 evolutions and pre-evolutions have those available as well.
 	- Many regional variants of gen 1, 2 and 3 Pokemon are available.
+	- A total of 416 Pokemon species (not counting regional variants) are accessible.
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
 	- Many Pokemon have had their ability sets updated to better fit their theme and gameplay. (TODO: make a list of ability stat changes somewhere).
 	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
 	- Moves that work around abilities have been updated for multiple abilities as well.
+	- The Pokemon summary screen has been updated to show all of a Pokemon's abilities and description with the A button prompt.
 - New moves and abilities (listed below).
 - Many gameplay adjustments to vanilla moves (Listed below). 
 	- Changes to level up, Egg learnsets, TM learnsets and Tutor learnsets of Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
 	- Hoenn move tutors can now teach their moves endlessly.
 - New tutor moves added. The new tutor set is similar to what was available in future gens (TODO: make list).
-- Some Pokemon have base stat changes to better fit their theme and gameplay. Treecko, Spheal lines have Attack and Special Attack swapped for example. (TODO: make list)
+- Some Pokemon have base stat changes to better fit their theme and gameplay (TODO: make list). 
+	- Treecko, Spheal lines have Attack and Special Attack swapped.
+	- Numel and Camerupt have more base HP.
+	- Dewgong has more base Speed.
 - HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
-- Pokemon IVs and EVs can be viewed in the summary screen by pressing the L and R buttons.
+- Pokemon EVs and IVs can be viewed in the summary screen by pressing the L and R buttons.
 - Wild Encounters adjusted.
-	- Both Latias and Latios are available roaming at the same time.
-	- All Legendary and Mythical Pokemon can be repeatedly acquired.
 	- There is a small chance for a wild encounter to be a double battle.
 	- There is a small chance to encounter a wild Pokemon a much higher level than others in the same area.
+	- Both Latias and Latios are available roaming at the same time.
+	- All Legendary and Mythical Pokemon can be repeatedly acquired.
 - Repeatedly acquirable fossils.
 - Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
-- Tradeback guy added. Provides a service for the player to trade Pokemon with themselves and trigger trade evolutions.
+- Tradeback guy added. Provides a service for the player to trade Pokemon with themselves and trigger trade evolutions. He lives in Lilycove.
 - Some Emerald changes have been reverted to how they were in Ruby/Sapphire.
 	- Steven is back to being champion and Wallace back to being a gym leader.
-	- Prof Birch is chased by a Poochyena instead of a Zigzagoon, just like in Ruby/Sapphire.
+	- Prof Birch is chased by a Poochyena instead of a Zigzagoon.
 - Opponent Trainer parties have been updated.
 - New opponent Trainer classes.
 - Contests have been updated to take on the various changes.
-	- More Pokemon added to opponent lists, especially new Pokemon.
+	- More Pokemon added to opponent lists, especially new Pokemon species.
 	- Opponents have updated movesets.
 	- Contest moves have been updated to be more like gen 6.
 	- More move combos.
@@ -50,6 +63,7 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- Battle Palace is now inverse battle themed.
 	- Battle Dome has its move scores updated.
 	- Battle Factory has its opponent tips updated.
+	- Battle facilities give more Battle Points.
 - Map layout changes, including new areas to explore that have new Pokemon (post game).
 - New overworld sprites and graphics.
 - Graphical updates to many existing overworld sprites and environments.
@@ -58,14 +72,14 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- Roxanne trades evolution stones for fossils.
 	- Brawly can give a random shard daily.
 	- Flannery can EV train one of your Pokemon daily.
-	- Winona gives a random rare berry daily.
+	- Winona gives a rare berry daily. The variety depends on what legendary Pokemon you have in your party.
 	- Tate and Liza grant access to Jirachi.
 	- Gym Leaders have their own places to hang out in the overworld when they aren't looking for a rematch.
 - Item changes
 	- Quick Claw now increases speed by 10% when user is below 50% health.
 	- Vitamins give 20 EVs instead of 10. Also can give as many up to max usable EVs (252) to a Pokemon.
 	- Prices of various items adjusted.
-	- Nature Mints added
+	- Nature Mints added.
 	- TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
 	- TMs have infinite use.
 	- Existing shops sell more stuff, including post gen 3 items.
@@ -74,8 +88,8 @@ The project started in December 2021, using the version of pokeemerald-expansion
 	- The Berry Master's wife phrases for rare berries are now hinted at by NPCs in game.
 	- All item use, except for Poke Balls, is disabled from battles by default. NPCs don't use items either. Players may re-enable items in the options menu if they wish.
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
-- Groomer service added.
-- IV buffer service added.
+- Groomer service to raise Pokemon friendship is added.
+- IV buffer service added. Bottle Caps are used to trade for this service. A Pokemon can gain 8 IVs per Bottle Cap, or have all their IVs set to max with a Gold Bottle Cap.
 - Better berry trees
 	- Yield rates have increased.
 	- Interaction with berry trees and soil patches is quicker.
@@ -83,11 +97,13 @@ The project started in December 2021, using the version of pokeemerald-expansion
 - Ice types have their special defense boosted by 50% in hail.
 - Number of Feebas spots is tripled.
 - Removed badge boosts
-- Doubled chance for special news bulletins.
+- Doubled chance for special news bulletins, like sales, rooftop shop, etc.
 - EXP gain has been scaled to level difference, rather like in gen 5.
 - Mega Evolution is available after beating the post game and getting all gold Battle Frontier symbols.
 
 # New Abilities
+
+Some of the Pokemon that use these aren't accessible in game, but will note their changes here anyway.
 
 - Volume Up: Power of sound based moves are increased by 30%. Used by Loudred/Exploud.
 - Lava Body: Attackers who make contact will always get inflicted with burn unless they have immunity. Used by Slugma/Magargo.
@@ -179,8 +195,11 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Intimidate may trigger on fainted Pokemon.
 - Frisk may trigger on the wrong Pokemon. Often occurs in Battle Frontier.
 - Arena Trap battle message when trying to switch doesn't show the ability string.
+- Damp battle message when it by powder move doesn't show the ability string.
 - When a Pokemon with Volt Absorb uses Ion Deluge, it triggers Volt Absorb.
 - Stench ability may activate for opponent and not user. Scenario: Weezing vs Altaria, Altaria (no King's Rock) used Ice Beam which flinched Weezing, could be a bad gBattlerAttacker assignment or similar.
+- When a grass type uses Stun Spore against an opponent with Magic Bounce, it bounces back and paralyzes the grass type. pokeemerald-expansion bug.
+- Time Traveller ability ignores False Swipe effect of leaving the user with 1 HP.
 - Bug Bite/Pluck is not taking the effects of the opponent's berry.
 - Spinning Body activates on every hit for multi-hit moves (e.g. Hitmontop using Triple Kick). Would rather it takes affect on only the last hit.
 - Backgrounds of some moves are glitched or have black boxes. (Shadow Bone, Gunk Shot, Hurricane, Focus Blast, Aura Sphere, Burn Up)
@@ -190,21 +209,22 @@ Some of these may have been carried over from pokeemerald-expansion.
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
 - In Contests of super rank and above, Pokemon sprites and NPC overworld sprites can get weird colours. Palette bug linked to too many NPCs on screen.
-- HP bar in battle may look weird, starting with a ?. When hit it may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. Cause unknown. Unable to reproduce. Seems to be a very rare bug.
 - When a Pokemon evolves by trading, an exp gain sound plays over the Pokemon's cry.
 - When trading with the tradeback guy and you use a Pokemon with a different ID than your own (from in-game trade), the trade screen says you are trading with the Pokemon's previous owner.
 - Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there. Repeatedly occurs when KOing it from 100% HP.
 - Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
 - Deoxys may also skip a form change. Repeatedly occurs with Draining Kiss.
 - Origin move selection has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
-- Time Traveller ability ignores False Swipe effect of leaving the user with 1 HP.
 - Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, Flygon, Salamence and more)
 - Move relearner doesn't list all of the possible moves to relearn, only the first ~15.
+- When picking a rental Pokemon at the Battle Factory, one of the options may be a ?. (may be fixed, requires further testing to make sure)
 
 *Really bad bugs*
-- Using Giga Impact in a contest freezes the game.
-- Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety.
+- Using Giga Impact in a contest freezes the game (pokeemerald-expansion now has a fix, will implement in future update).
+- HP bar in battle may look weird, starting with a ?. When hit it may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. (may be fixed, requires further testing to make sure)
+- Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety. (may be fixed, requires further testing to make sure)
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
+	- Note for players: Restart immediately if bad egg appears. They cannot hatch or be removed.
 
 # Post Launch TODOs
 
@@ -218,17 +238,18 @@ Possible future additions/changes.
 - Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
 - A contest side-quest with Lisia, much like in ORAS.
-- Perhaps a more interesting Winona berry giving event. It's a bit boring to just be given a berry.
 - Perhaps a more interesting Tate & Liza event to get Jirachi?
 - Scott giving more interesting rewards to players who get all silver/gold symbols.
 - In-game resource that teaches the player braile. So that it isn't required to look out of the game to solve the braile puzzles.
 - Sort out the online/wireless features. Either find out how to make them work or remove them.
 - Better Game Corner games. May be a ton of work though. (Perhaps one could be a Battle Palace style battle where the Player places a bet?)
 - Better Battle Frontier level scaling. Open level puts opponent Pokemon to your highest level Pokemon. Should scale all Pokemon to a certain level like the battle facilities in future gens.
+- Add an Anything Goes challenge to the Battle Tower, where even legendary Pokemon like Rayquaza are allowed.
 - Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
-- Increase number of PC Pokemon storage boxes.
+- Increase number of PC Pokemon storage boxes (annoying to do late in development since changing the sava data format will invalid previous save data).
 - Add another star to the Trainer Card for completing the National Dex. Create a platinum colour scheme to go along with it.
 - Named NPCs like Gym Leaders, Elite 4, Steven, etc to be possible partners in Battle Tower Multi challenge.
+- A better way for Mirage Island to trigger?
 - Obligatory beach episode.
 
 # Credits
@@ -257,3 +278,9 @@ The fine people who worked on the pokeemerald and pokeemerald-expansion decompil
 - Pyredrid
 - ghoulslash
 - UltimaSoul
+
+# Tools used
+
+- Porymap
+- Graphics Gale
+- ROM Patcher JS

@@ -9,7 +9,7 @@ FortreeCity_Gym_OnTransition:
 	end
 
 FortreeCity_Gym_SetUpWinona::
-	goto_if_unset FLAG_BADGE01_GET, FortreeCity_Gym_Eventscript_WinonaRematch
+	goto_if_unset FLAG_BADGE06_GET, FortreeCity_Gym_Eventscript_WinonaRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_WINONA_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE

@@ -2345,7 +2345,7 @@ const struct ContestPokemon gContestOpponents[] =
         {
             MOVE_COUNTER,
             MOVE_YAWN,
-            MOVE_GIGA_IMPACT,
+            MOVE_BOOMBURST, //TODO: change this to Giga Impact when fixed
             MOVE_SLACK_OFF
         },
         .cool = 85,

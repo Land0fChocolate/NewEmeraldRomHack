@@ -497,7 +497,7 @@ LittlerootBeach_Text_SpaceCenterCall:
 	.string "It's Steven.\p"
 	.string "Sorry for interupting you but this is\n"
 	.string "quite urgent.\p"
-	.string "There seems to be to trouble brewing\n"
+	.string "There seems to be trouble brewing\n"
 	.string "at the Space Center.\p"
 	.string "Could you come over and back me up?\p"
 	.string "See you there!\p"

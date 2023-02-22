@@ -290,6 +290,7 @@ DraconidArchives_EventScript_ZinniaDeoxysBeaten::
 	setvar VAR_DRACONID_ARCHIVES_STATE, 2
 	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_JUAN
 	setflag FLAG_POST_GAME_COMPLETE
+	setflag FLAG_TV_RARE_CANDY_ADVERT
 	release
 	end
 
