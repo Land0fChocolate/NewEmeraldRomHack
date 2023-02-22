@@ -4346,7 +4346,7 @@ static void Cmd_unknown_24(void)
 
         for (foundPlayer = 0, i = 0; i < gBattlersCount; i += 2)
         {
-            if ((gHitMarker & HITMARKER_FAINTED2(i)) && (!gSpecialStatuses[i].flag40))
+            if ((gHitMarker & HITMARKER_FAINTED2(i)) && (!gSpecialStatuses[i].faintedHasReplacement))
                 foundPlayer++;
         }
 
@@ -4354,7 +4354,7 @@ static void Cmd_unknown_24(void)
 
         for (i = 1; i < gBattlersCount; i += 2)
         {
-            if ((gHitMarker & HITMARKER_FAINTED2(i)) && (!gSpecialStatuses[i].flag40))
+            if ((gHitMarker & HITMARKER_FAINTED2(i)) && (!gSpecialStatuses[i].faintedHasReplacement))
                 foundOpponent++;
         }
 
@@ -6090,10 +6090,10 @@ static void Cmd_openpartyscreen(void)
                         BtlController_EmitLinkStandbyMsg(0, 2, FALSE);
                         MarkBattlerForControllerExec(gActiveBattler);
                     }
-                    else if (!gSpecialStatuses[gActiveBattler].flag40)
+                    else if (!gSpecialStatuses[gActiveBattler].faintedHasReplacement)
                     {
                         ChooseMonToSendOut(PARTY_SIZE);
-                        gSpecialStatuses[gActiveBattler].flag40 = 1;
+                        gSpecialStatuses[gActiveBattler].faintedHasReplacement = 1;
                     }
                 }
                 else
@@ -6105,7 +6105,7 @@ static void Cmd_openpartyscreen(void)
         }
         else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
         {
-            u8 flag40_0, flag40_1, flag40_2, flag40_3;
+            u8 faintedHasReplacement_0, faintedHasReplacement_1, faintedHasReplacement_2, faintedHasReplacement_3;
 
             hitmarkerFaintBits = gHitMarker >> 28;
 
@@ -6119,10 +6119,10 @@ static void Cmd_openpartyscreen(void)
                     BtlController_EmitCantSwitch(0);
                     MarkBattlerForControllerExec(gActiveBattler);
                 }
-                else if (!gSpecialStatuses[gActiveBattler].flag40)
+                else if (!gSpecialStatuses[gActiveBattler].faintedHasReplacement)
                 {
                     ChooseMonToSendOut(gBattleStruct->monToSwitchIntoId[2]);
-                    gSpecialStatuses[gActiveBattler].flag40 = 1;
+                    gSpecialStatuses[gActiveBattler].faintedHasReplacement = 1;
                 }
                 else
                 {
@@ -6141,10 +6141,10 @@ static void Cmd_openpartyscreen(void)
                     BtlController_EmitCantSwitch(0);
                     MarkBattlerForControllerExec(gActiveBattler);
                 }
-                else if (!gSpecialStatuses[gActiveBattler].flag40)
+                else if (!gSpecialStatuses[gActiveBattler].faintedHasReplacement)
                 {
                     ChooseMonToSendOut(gBattleStruct->monToSwitchIntoId[0]);
-                    gSpecialStatuses[gActiveBattler].flag40 = 1;
+                    gSpecialStatuses[gActiveBattler].faintedHasReplacement = 1;
                 }
                 else if (!(flags & 1))
                 {
@@ -6162,10 +6162,10 @@ static void Cmd_openpartyscreen(void)
                     BtlController_EmitCantSwitch(0);
                     MarkBattlerForControllerExec(gActiveBattler);
                 }
-                else if (!gSpecialStatuses[gActiveBattler].flag40)
+                else if (!gSpecialStatuses[gActiveBattler].faintedHasReplacement)
                 {
                     ChooseMonToSendOut(gBattleStruct->monToSwitchIntoId[3]);
-                    gSpecialStatuses[gActiveBattler].flag40 = 1;
+                    gSpecialStatuses[gActiveBattler].faintedHasReplacement = 1;
                 }
                 else
                 {
@@ -6184,10 +6184,10 @@ static void Cmd_openpartyscreen(void)
                     BtlController_EmitCantSwitch(0);
                     MarkBattlerForControllerExec(gActiveBattler);
                 }
-                else if (!gSpecialStatuses[gActiveBattler].flag40)
+                else if (!gSpecialStatuses[gActiveBattler].faintedHasReplacement)
                 {
                     ChooseMonToSendOut(gBattleStruct->monToSwitchIntoId[1]);
-                    gSpecialStatuses[gActiveBattler].flag40 = 1;
+                    gSpecialStatuses[gActiveBattler].faintedHasReplacement = 1;
                 }
                 else if (!(flags & 2))
                 {
@@ -6196,11 +6196,11 @@ static void Cmd_openpartyscreen(void)
                 }
             }
 
-            flag40_0 = gSpecialStatuses[0].flag40;
-            if (!flag40_0)
+            faintedHasReplacement_0 = gSpecialStatuses[0].faintedHasReplacement;
+            if (!faintedHasReplacement_0)
             {
-                flag40_2 = gSpecialStatuses[2].flag40;
-                if (!flag40_2 && hitmarkerFaintBits != 0)
+                faintedHasReplacement_2 = gSpecialStatuses[2].faintedHasReplacement;
+                if (!faintedHasReplacement_2 && hitmarkerFaintBits != 0)
                 {
                     if (gAbsentBattlerFlags & gBitTable[0])
                         gActiveBattler = 2;
@@ -6212,11 +6212,11 @@ static void Cmd_openpartyscreen(void)
                 }
 
             }
-            flag40_1 = gSpecialStatuses[1].flag40;
-            if (!flag40_1)
+            faintedHasReplacement_1 = gSpecialStatuses[1].faintedHasReplacement;
+            if (!faintedHasReplacement_1)
             {
-                flag40_3 = gSpecialStatuses[3].flag40;
-                if (!flag40_3 && hitmarkerFaintBits != 0)
+                faintedHasReplacement_3 = gSpecialStatuses[3].faintedHasReplacement;
+                if (!faintedHasReplacement_3 && hitmarkerFaintBits != 0)
                 {
                     if (gAbsentBattlerFlags & gBitTable[1])
                         gActiveBattler = 3;
@@ -6247,10 +6247,10 @@ static void Cmd_openpartyscreen(void)
                         BtlController_EmitCantSwitch(0);
                         MarkBattlerForControllerExec(gActiveBattler);
                     }
-                    else if (!gSpecialStatuses[gActiveBattler].flag40)
+                    else if (!gSpecialStatuses[gActiveBattler].faintedHasReplacement)
                     {
                         ChooseMonToSendOut(gBattleStruct->monToSwitchIntoId[0]);
-                        gSpecialStatuses[gActiveBattler].flag40 = 1;
+                        gSpecialStatuses[gActiveBattler].faintedHasReplacement = 1;
                     }
                 }
                 if (gBitTable[3] & hitmarkerFaintBits && hitmarkerFaintBits & gBitTable[1])
@@ -6263,10 +6263,10 @@ static void Cmd_openpartyscreen(void)
                         BtlController_EmitCantSwitch(0);
                         MarkBattlerForControllerExec(gActiveBattler);
                     }
-                    else if (!gSpecialStatuses[gActiveBattler].flag40)
+                    else if (!gSpecialStatuses[gActiveBattler].faintedHasReplacement)
                     {
                         ChooseMonToSendOut(gBattleStruct->monToSwitchIntoId[1]);
-                        gSpecialStatuses[gActiveBattler].flag40 = 1;
+                        gSpecialStatuses[gActiveBattler].faintedHasReplacement = 1;
                     }
                 }
                 gBattlescriptCurrInstr += 6;
@@ -6299,7 +6299,7 @@ static void Cmd_openpartyscreen(void)
             hitmarkerFaintBits = PARTY_ACTION_SEND_OUT;
 
         battlerId = GetBattlerForBattleScript(gBattlescriptCurrInstr[1] & ~(PARTY_SCREEN_OPTIONAL));
-        if (gSpecialStatuses[battlerId].flag40)
+        if (gSpecialStatuses[battlerId].faintedHasReplacement)
         {
             gBattlescriptCurrInstr += 6;
         }
@@ -6441,7 +6441,7 @@ static void Cmd_switchineffects(void)
     UpdateSentPokesToOpponentValue(gActiveBattler);
 
     gHitMarker &= ~(HITMARKER_FAINTED(gActiveBattler));
-    gSpecialStatuses[gActiveBattler].flag40 = 0;
+    gSpecialStatuses[gActiveBattler].faintedHasReplacement = 0;
 
     if (!IsBattlerAIControlled(gActiveBattler))
         gBattleStruct->appearedInBattle |= gBitTable[gBattlerPartyIndexes[gActiveBattler]];
