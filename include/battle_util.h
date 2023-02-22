@@ -26,10 +26,12 @@
 #define ABILITYEFFECT_FORECAST                   7
 #define ABILITYEFFECT_SYNCHRONIZE                8
 #define ABILITYEFFECT_ATK_SYNCHRONIZE            9
-#define ABILITYEFFECT_TRACE1                     10
-#define ABILITYEFFECT_TRACE2                     11
-#define ABILITYEFFECT_MOVE_END_OTHER             12
-#define ABILITYEFFECT_NEUTRALIZINGGAS            13
+#define ABILITYEFFECT_INTIMIDATE1                10
+#define ABILITYEFFECT_INTIMIDATE2                11
+#define ABILITYEFFECT_TRACE1                     12
+#define ABILITYEFFECT_TRACE2                     13
+#define ABILITYEFFECT_MOVE_END_OTHER             14
+#define ABILITYEFFECT_NEUTRALIZINGGAS            15
 // Special cases
 #define ABILITYEFFECT_SWITCH_IN_TERRAIN          254
 #define ABILITYEFFECT_SWITCH_IN_WEATHER          255

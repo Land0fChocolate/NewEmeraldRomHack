@@ -1150,7 +1150,7 @@
 	.4byte \param0
 	.endm
 
-	.macro unused2 param0:req
+	.macro trygetintimidatetarget param0:req
 	.byte 0xe1
 	.4byte \param0
 	.endm
@@ -1320,8 +1320,8 @@
 	various \battler, VARIOUS_GET_BATTLER_FAINTED
 	.endm
 
-	.macro resetswitchinabilitybits battler:req
-	various \battler, VARIOUS_RESET_SWITCH_IN_ABILITY_BITS
+	.macro resetintimidatetracebits battler:req
+	various \battler, VARIOUS_RESET_INTIMIDATE_TRACE_BITS
 	.endm
 
 	.macro updatechoicemoveonlvlup battler:req

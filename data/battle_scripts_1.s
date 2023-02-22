@@ -6162,7 +6162,7 @@ BattleScript_FaintedMonTryChooseAnother:
 	switchhandleorder BS_ATTACKER, 2
 	jumpifbyte CMP_EQUAL, gBattleCommunication, PARTY_SIZE, BattleScript_FaintedMonChooseAnother
 	atknameinbuff1
-	resetswitchinabilitybits BS_ATTACKER
+	resetintimidatetracebits BS_ATTACKER
 	hpthresholds2 BS_ATTACKER
 	printstring STRINGID_RETURNMON
 	switchoutabilities BS_ATTACKER
@@ -8234,15 +8234,19 @@ BattleScript_TryAdrenalineOrb:
 BattleScript_TryAdrenalineOrbRet:
 	return
 
+BattleScript_IntimidateActivatesEnd3::
+	call BattleScript_PauseIntimidateActivates
+	end3
+
+BattleScript_PauseIntimidateActivates:
+	pause B_WAIT_TIME_SHORT
 BattleScript_IntimidateActivates::
-	showabilitypopup BS_ATTACKER
-	pause B_WAIT_TIME_LONG
-	destroyabilitypopup
 	setbyte gBattlerTarget, 0
-BattleScript_IntimidateLoop:
-	jumpifbyteequal gBattlerTarget, gBattlerAttacker, BattleScript_IntimidateLoopIncrement
-	jumpiftargetally BattleScript_IntimidateLoopIncrement
-	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_IntimidateLoopIncrement
+	call BattleScript_AbilityPopUp
+BattleScript_IntimidateActivatesLoop:
+	setstatchanger STAT_ATK, 1, TRUE
+	trygetintimidatetarget BattleScript_IntimidateActivatesReturn
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_IntimidateActivatesLoopIncrement
 	jumpifability BS_TARGET, ABILITY_CLEAR_BODY, BattleScript_IntimidatePrevented
 	jumpifability BS_TARGET, ABILITY_HYPER_CUTTER, BattleScript_IntimidatePrevented
 	jumpifability BS_TARGET, ABILITY_WHITE_SMOKE, BattleScript_IntimidatePrevented
@@ -8252,31 +8256,27 @@ BattleScript_IntimidateLoop:
 	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_IntimidatePrevented
 	jumpifability BS_TARGET, ABILITY_OBLIVIOUS, BattleScript_IntimidatePrevented
 .endif
-BattleScript_IntimidateEffect:
-	copybyte sBATTLER, gBattlerTarget
-	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED | MOVE_EFFECT_CERTAIN, NULL
+	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED | STAT_BUFF_ALLOW_PTR, BattleScript_IntimidateActivatesLoopIncrement
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 1, BattleScript_IntimidateActivatesLoopIncrement
 	setgraphicalstatchangevalues
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	printstring STRINGID_PKMNCUTSATTACKWITH
 	waitmessage B_WAIT_TIME_LONG
 	call BattleScript_TryAdrenalineOrb
-BattleScript_IntimidateLoopIncrement:
+BattleScript_IntimidateActivatesLoopIncrement:
 	addbyte gBattlerTarget, 1
-jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_IntimidateLoop
-BattleScript_IntimidateEnd:
-	destroyabilitypopup
-	pause B_WAIT_TIME_MED
-	end3
-
+	goto BattleScript_IntimidateActivatesLoop
+BattleScript_IntimidateActivatesReturn:
+	return
 BattleScript_IntimidatePrevented:
+	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
-	pause B_WAIT_TIME_LONG
 	setbyte gBattleCommunication STAT_ATK
-	stattextbuffer BS_TARGET
+	stattextbuffer BS_ATTACKER
 	printstring STRINGID_STATWASNOTLOWERED
 	waitmessage B_WAIT_TIME_LONG
 	call BattleScript_TryAdrenalineOrb
-	goto BattleScript_IntimidateLoopIncrement
+	goto BattleScript_IntimidateActivatesLoopIncrement
 
 BattleScript_DroughtActivates::
 	pause B_WAIT_TIME_SHORT

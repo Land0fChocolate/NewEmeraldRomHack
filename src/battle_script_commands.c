@@ -533,7 +533,7 @@ static void Cmd_setuserstatus3(void);
 static void Cmd_assistattackselect(void);
 static void Cmd_trysetmagiccoat(void);
 static void Cmd_trysetsnatch(void);
-static void Cmd_unused2(void);
+static void Cmd_trygetintimidatetarget(void);
 static void Cmd_switchoutabilities(void);
 static void Cmd_jumpifhasnohp(void);
 static void Cmd_getsecretpowereffect(void);
@@ -792,7 +792,7 @@ void (* const gBattleScriptingCommandsTable[])(void) =
     Cmd_assistattackselect,                      //0xDE
     Cmd_trysetmagiccoat,                         //0xDF
     Cmd_trysetsnatch,                            //0xE0
-    Cmd_unused2,                                 //0xE1
+    Cmd_trygetintimidatetarget,                  //0xE1
     Cmd_switchoutabilities,                      //0xE2
     Cmd_jumpifhasnohp,                           //0xE3
     Cmd_getsecretpowereffect,                    //0xE4
@@ -6550,6 +6550,7 @@ static void Cmd_switchineffects(void)
 
         if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, gActiveBattler, 0, 0)
             || ItemBattleEffects(ITEMEFFECT_ON_SWITCH_IN, gActiveBattler, FALSE)
+            || AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE2, 0, 0, 0)
             || AbilityBattleEffects(ABILITYEFFECT_TRACE2, 0, 0, 0)
             || AbilityBattleEffects(ABILITYEFFECT_FORECAST, 0, 0, 0))
             return;
@@ -8237,7 +8238,8 @@ static void Cmd_various(void)
         else
             gBattleCommunication[0] = FALSE;
         break;
-    case VARIOUS_RESET_SWITCH_IN_ABILITY_BITS:
+    case VARIOUS_RESET_INTIMIDATE_TRACE_BITS:
+        gSpecialStatuses[gActiveBattler].intimidatedMon = FALSE;
         gSpecialStatuses[gActiveBattler].traced = FALSE;
         gSpecialStatuses[gActiveBattler].switchInAbilityDone = FALSE;
         break;
@@ -8398,6 +8400,7 @@ static void Cmd_various(void)
         gBattlescriptCurrInstr += 3;
         AbilityBattleEffects(ABILITYEFFECT_NEUTRALIZINGGAS, gActiveBattler, 0, 0);
         AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, gActiveBattler, 0, 0);
+        AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE2, gActiveBattler, 0, 0);
         AbilityBattleEffects(ABILITYEFFECT_TRACE2, gActiveBattler, 0, 0);
         return;
     case VARIOUS_SAVE_TARGET:
@@ -13190,8 +13193,57 @@ static void Cmd_trysetsnatch(void) // snatch
     }
 }
 
-static void Cmd_unused2(void)
-{}
+static void Cmd_trygetintimidatetarget(void)
+{
+    u8 side;
+    u16 ability = ABILITY_NONE, x;
+
+    gBattleScripting.battler = gBattleStruct->intimidateBattler;
+    side = GetBattlerSide(gBattleScripting.battler);
+
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+    {
+        switch (gBattleMons[gBattleScripting.battler].abilities[x])
+        {
+            case ABILITY_CLEAR_BODY:
+                ability = ABILITY_CLEAR_BODY;
+                break;
+            case ABILITY_HYPER_CUTTER:
+                ability = ABILITY_HYPER_CUTTER;
+                break;
+            case ABILITY_WHITE_SMOKE:
+                ability = ABILITY_WHITE_SMOKE;
+                break;
+            case ABILITY_INNER_FOCUS:
+                ability = ABILITY_INNER_FOCUS;
+                break;
+            case ABILITY_SCRAPPY:
+                ability = ABILITY_SCRAPPY;
+                break;
+            case ABILITY_OWN_TEMPO:
+                ability = ABILITY_OWN_TEMPO;
+                break;
+            case ABILITY_OBLIVIOUS:
+                ability = ABILITY_OBLIVIOUS;
+                break;
+        }
+    }
+
+    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, ability)
+
+    for (;gBattlerTarget < gBattlersCount; gBattlerTarget++)
+    {
+        if (GetBattlerSide(gBattlerTarget) == side)
+            continue;
+        if (!(gAbsentBattlerFlags & gBitTable[gBattlerTarget]))
+            break;
+    }
+
+    if (gBattlerTarget >= gBattlersCount)
+        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+    else
+        gBattlescriptCurrInstr += 5;
+}
 
 static void Cmd_switchoutabilities(void)
 {
