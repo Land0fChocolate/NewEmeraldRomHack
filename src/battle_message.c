@@ -753,9 +753,11 @@ static const u8 sText_DeoxysChangedForm[] = _("The opponent Deoxys changed form!
 static const u8 sText_DeoxysChangedFormCatchable[] = _("The opponent Deoxys changed form!\nThe aura surrounding Deoxys\lhas dissipated!");
 static const u8 sText_CantThrowBall[] = _("The Poké Ball is inoperative!");
 static const u8 sText_OnlyPokeBallsCanBeUsed[] = _("Only Poké Balls can be used in battle!");
+static const u8 sText_AttackerSwitchedStatWithTarget[] = _("{B_ATK_NAME_WITH_PREFIX} switched {B_BUFF1}\nwith its target!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
+    [STRINGID_ATTACKERSWITCHEDSTATWITHTARGET - 12] = sText_AttackerSwitchedStatWithTarget,
     [STRINGID_PLAYERLOSTTOENEMYTRAINER - 12] = sText_PlayerLostToEnemyTrainer,
     [STRINGID_PLAYERPAIDPRIZEMONEY - 12] = sText_PlayerPaidPrizeMoney,
     [STRINGID_COURTCHANGE - 12] = sText_CourtChange,
