@@ -1,11 +1,11 @@
 # Pokémon Energized Emerald
 
-A reimagining of Pokemon Emerald with the aim to expand and enhance the game. 
+A revamp of Pokemon Emerald with the aim to expand and enhance the game. 
 
 This is a rom hack of Pokemon Emerald using the pokeemerald-expansion decompilation project as its base: https://github.com/rh-hideout/pokeemerald-expansion.
 The rom hack started in December 2021, using the version of pokeemerald-expansion at the time. Most updates to pokeemerald-expansion have been implemented in Energized Emerald.
 
-Please leave feedback on the Pokemon Energized Emerald Discord channel: https://discord.gg/4ZF47gWd7K.
+Please leave feedback on the Pokemon Energized Emerald Discord channel: https://discord.gg/4ZF47gWd7K or in the pokecommunity thread: https://www.pokecommunity.com/showthread.php?t=491868.
 
 # Versions
 
@@ -102,6 +102,8 @@ v1.04 - 19/02/2023
 - Mega Evolution is available after beating the post game and getting all gold Battle Frontier symbols.
 
 # New Abilities
+
+Some of the Pokemon that use these aren't accessible in game, but will note their changes here anyway.
 
 - Volume Up: Power of sound based moves are increased by 30%. Used by Loudred/Exploud.
 - Lava Body: Attackers who make contact will always get inflicted with burn unless they have immunity. Used by Slugma/Magargo.
@@ -218,7 +220,7 @@ Some of these may have been carried over from pokeemerald-expansion.
 - When picking a rental Pokemon at the Battle Factory, one of the options may be a ?. (may be fixed, requires further testing to make sure)
 
 *Really bad bugs*
-- Using Giga Impact in a contest freezes the game.
+- Using Giga Impact in a contest freezes the game (pokeemerald-expansion now has a fix, will implement in future update).
 - HP bar in battle may look weird, starting with a ?. When hit it may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. (may be fixed, requires further testing to make sure)
 - Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety. (may be fixed, requires further testing to make sure)
 	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
@@ -242,6 +244,7 @@ Possible future additions/changes.
 - Sort out the online/wireless features. Either find out how to make them work or remove them.
 - Better Game Corner games. May be a ton of work though. (Perhaps one could be a Battle Palace style battle where the Player places a bet?)
 - Better Battle Frontier level scaling. Open level puts opponent Pokemon to your highest level Pokemon. Should scale all Pokemon to a certain level like the battle facilities in future gens.
+- Add an Anything Goes challenge to the Battle Tower, where even legendary Pokemon like Rayquaza are allowed.
 - Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
 - Increase number of PC Pokemon storage boxes (annoying to do late in development since changing the sava data format will invalid previous save data).
 - Add another star to the Trainer Card for completing the National Dex. Create a platinum colour scheme to go along with it.
@@ -275,3 +278,9 @@ The fine people who worked on the pokeemerald and pokeemerald-expansion decompil
 - Pyredrid
 - ghoulslash
 - UltimaSoul
+
+# Tools used
+
+- Porymap
+- Graphics Gale
+- ROM Patcher JS
