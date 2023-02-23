@@ -5252,7 +5252,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_HOWL] =
     {
-        .effect = EFFECT_ATTACK_UP,
+        .effect = EFFECT_ATTACK_UP_USER_ALLY,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,

@@ -1809,6 +1809,9 @@ u8 GetBattlerForBattleScript(u8 caseId)
     case BS_ATTACKER:
         ret = gBattlerAttacker;
         break;
+    case BS_ATTACKER_PARTNER:
+        ret = BATTLE_PARTNER(gBattlerAttacker);
+        break;
     case BS_EFFECT_BATTLER:
         ret = gEffectBattler;
         break;
