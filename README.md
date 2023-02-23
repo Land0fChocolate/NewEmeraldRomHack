@@ -14,6 +14,7 @@ v1.01 - 22/01/2023
 v1.02 - 02/02/2023
 v1.03 - 09/02/2023
 v1.04 - 19/02/2023
+v1.0.5 - ??/02/2023
 
 # Changelog
 
@@ -76,6 +77,7 @@ v1.04 - 19/02/2023
 	- Tate and Liza grant access to Jirachi.
 	- Gym Leaders have their own places to hang out in the overworld when they aren't looking for a rematch.
 - Item changes
+	- Bag pockets are much larger.
 	- Quick Claw now increases speed by 10% when user is below 50% health.
 	- Vitamins give 20 EVs instead of 10. Also can give as many up to max usable EVs (252) to a Pokemon.
 	- Prices of various items adjusted.
