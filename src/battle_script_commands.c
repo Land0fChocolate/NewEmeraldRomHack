@@ -3355,7 +3355,9 @@ void SetMoveEffect(bool32 primary, u32 certain)
                 }
                 break;
             case MOVE_EFFECT_FLAME_BURST:
-                if (IsBattlerAlive(BATTLE_PARTNER(gBattlerTarget)) && !HasAbility(ABILITY_MAGIC_GUARD, GetBattlerAbilities(BATTLE_PARTNER(gBattlerTarget))))
+                if (IsBattlerAlive(BATTLE_PARTNER(gBattlerTarget))
+                        && !(gStatuses3[BATTLE_PARTNER(gBattlerTarget)] & STATUS3_SEMI_INVULNERABLE)
+                        && !HasAbility(ABILITY_MAGIC_GUARD, GetBattlerAbilities(BATTLE_PARTNER(gBattlerTarget))))
                 {
                     gBattleScripting.savedBattler = BATTLE_PARTNER(gBattlerTarget);
                     gBattleMoveDamage = gBattleMons[BATTLE_PARTNER(gBattlerTarget)].hp / 16;
