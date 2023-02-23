@@ -1461,6 +1461,7 @@ static void Cmd_attackcanceler(void)
         PressurePPLose(gBattlerAttacker, gBattlerTarget, MOVE_MAGIC_COAT);
         gProtectStructs[gBattlerTarget].usesBouncedMove = TRUE;
         gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+        gBattleStruct->atkCancellerTracker = CANCELLER_POWDER_MOVE; // Edge case for bouncing a powder move against a grass type pokemon.
         if (BlocksPrankster(gCurrentMove, gBattlerTarget, gBattlerAttacker, TRUE))
         {
             // Opponent used a prankster'd magic coat -> reflected status move should fail against a dark-type attacker
@@ -1481,8 +1482,10 @@ static void Cmd_attackcanceler(void)
         gLastUsedAbility = ABILITY_MAGIC_BOUNCE;
         gProtectStructs[gBattlerTarget].usesBouncedMove = TRUE;
         gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+        gBattleStruct->atkCancellerTracker = CANCELLER_POWDER_MOVE; // Edge case for bouncing a powder move against a grass type pokemon.
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_MagicCoatBounce;
+        gBattlerAbility = gBattlerTarget;
         return;
     }
 
