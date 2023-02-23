@@ -20,6 +20,8 @@ Route119_WeatherInstitute_2F_MapScripts::
 Route119_WeatherInstitute_2F_OnTransition:
 	compare VAR_WEATHER_INSTITUTE_STATE, 0
 	call_if_eq Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaHere
+	compare VAR_WEATHER_INSTITUTE_STATE, 6
+	call_if_eq Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaHereReadyBattle
 	compare VAR_WEATHER_INSTITUTE_STATE, 1
 	call_if_eq Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaGone
 	@ 2 is basically a nothing happening state, business as usual.
@@ -50,6 +52,17 @@ Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaHere::
 	setobjectmovementtype LOCALID_SCIENTIST, MOVEMENT_TYPE_FACE_RIGHT
 	setobjectxyperm LOCALID_DELINQUENT, 2, 7
 	setobjectmovementtype LOCALID_DELINQUENT, MOVEMENT_TYPE_FACE_RIGHT
+	return
+
+Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaHereReadyBattle::
+	setobjectxyperm LOCALID_SCIENTIST, 1, 6
+	setobjectmovementtype LOCALID_SCIENTIST, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm LOCALID_DELINQUENT, 2, 7
+	setobjectmovementtype LOCALID_DELINQUENT, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm LOCALID_GRUNT_5, 6, 3
+	setobjectmovementtype LOCALID_GRUNT_5, MOVEMENT_TYPE_FACE_DOWN
+	setobjectxyperm LOCALID_RIVAL, 6, 5
+	setobjectmovementtype LOCALID_RIVAL, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 Route119_WeatherInstitute_2F_EventScript_SetScientistPosAquaGone::
@@ -142,6 +155,7 @@ Route119_WeatherInstitute_2F_EventScript_FightScenePart2::
 	compare VAR_RESULT, FEMALE
 	goto_if_eq Route119_WeatherInstitute_2F_BrendanAsksPlayerToJoinFight
 Route119_WeatherInstitute_2F_EventScript_FightScenePart3::
+	setvar VAR_WEATHER_INSTITUTE_STATE, 6
 	releaseall
 	end
 
@@ -241,8 +255,15 @@ Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattle::
 	frontier_set FRONTIER_DATA_SELECTED_MON_ORDER
 	setvar VAR_0x8004, SPECIAL_BATTLE_RIVAL
 	setvar VAR_0x8005, 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
-	applymovement LOCALID_RIVAL, Common_Movement_FaceRight
+	getplayerxy VAR_0x8006, VAR_0x8007
+	compare VAR_0x8007, 4
+	goto_if_eq Route119_WeatherInstitute_2F_EventScript_PlayerMoveForBattleY4
+	compare VAR_0x8007, 5
+	goto_if_eq Route119_WeatherInstitute_2F_EventScript_PlayerMoveForBattleY5
+	compare VAR_0x8007, 6
+	goto_if_eq Route119_WeatherInstitute_2F_EventScript_PlayerMoveForBattleY6
+Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattleAfterMoving::
+	applymovement LOCALID_SHELLY, Common_Movement_FaceLeft
 	waitmovement 0
 	special DoSpecialTrainerBattle
 	waitstate
@@ -253,6 +274,33 @@ Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattle::
 	fadescreen FADE_TO_BLACK
 	special SetCB2WhiteOut
 	waitstate
+
+Route119_WeatherInstitute_2F_EventScript_PlayerMoveForBattleY4::
+	applymovement OBJ_EVENT_ID_PLAYER, Route119_WeatherInstitute_2F_Movement_PlayerToBattleY4
+	waitmovement 0
+	goto Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattleAfterMoving
+
+Route119_WeatherInstitute_2F_Movement_PlayerToBattleY4:
+	walk_left
+	walk_down
+	walk_down
+	walk_right
+	step_end
+
+Route119_WeatherInstitute_2F_EventScript_PlayerMoveForBattleY5::
+	applymovement OBJ_EVENT_ID_PLAYER, Route119_WeatherInstitute_2F_Movement_PlayerToBattleY5
+	waitmovement 0
+	goto Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattleAfterMoving
+
+Route119_WeatherInstitute_2F_Movement_PlayerToBattleY5:
+	walk_down
+	walk_right
+	step_end
+
+Route119_WeatherInstitute_2F_EventScript_PlayerMoveForBattleY6::
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	goto Route119_WeatherInstitute_2F_EventScript_DoRivalMultiBattleAfterMoving
 
 Route119_WeatherInstitute_2F_EventScript_DefeatedArchieShelly::
 	lockall

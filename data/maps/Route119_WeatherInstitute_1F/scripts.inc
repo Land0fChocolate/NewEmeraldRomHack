@@ -7,6 +7,8 @@ Route119_WeatherInstitute_1F_MapScripts::
 Route119_WeatherInstitute_1F_OnTransition:
 	compare VAR_WEATHER_INSTITUTE_STATE, 0
 	call_if_eq Route119_WeatherInstitute_1F_EventScript_SetLittleBoyPos
+	compare VAR_WEATHER_INSTITUTE_STATE, 6
+	call_if_eq Route119_WeatherInstitute_1F_EventScript_SetLittleBoyPos
 	checkflag FLAG_ARRIVED_AT_NAVEL_ROCK
 	goto_if TRUE Route119_WeatherInstitute_1F_SetWeatherInstituteStateTo5
 	end
@@ -26,6 +28,8 @@ Route119_WeatherInstitute_1F_EventScript_LittleBoy::
 	faceplayer
 	special GetPlayerBigGuyGirlString
 	compare VAR_WEATHER_INSTITUTE_STATE, 0
+	goto_if_eq Route119_WeatherInstitute_1F_EventScript_LittleBoyTeamAquaHere
+	compare VAR_WEATHER_INSTITUTE_STATE, 6
 	goto_if_eq Route119_WeatherInstitute_1F_EventScript_LittleBoyTeamAquaHere
 	msgbox Route119_WeatherInstitute_1F_Text_WowYoureStrong, MSGBOX_DEFAULT
 	release
