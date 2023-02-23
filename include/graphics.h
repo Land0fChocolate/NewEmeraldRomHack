@@ -9827,6 +9827,7 @@ extern const u32 gBattleAnimBgTilemap_GigaImpactPlayer[];
 extern const u32 gBattleAnimBgTilemap_GigaImpactOpponent[];
 extern const u32 gBattleAnimBgTilemap_GigaImpactContest[];
 extern const u32 gBattleAnimBgImage_GigaImpact[];
+extern const u32 gBattleAnimBgImage_GigaImpactContest[];
 extern const u32 gBattleAnimBgPalette_GigaImpact[];
 extern const u32 gBattleAnimBgImage_SpacialRendOpponent[];
 extern const u32 gBattleAnimBgPalette_SpacialRendOpponent[];
