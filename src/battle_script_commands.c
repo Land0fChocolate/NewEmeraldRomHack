@@ -10502,7 +10502,6 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             gBattlescriptCurrInstr = BattleScript_ButItFailed;
             return STAT_CHANGE_DIDNT_WORK;
         }
-
         else if ((HasAbility(ABILITY_CLEAR_BODY, battlerAbilities)
                   || HasAbility(ABILITY_FULL_METAL_BODY, battlerAbilities)
                   || HasAbility(ABILITY_WHITE_SMOKE, battlerAbilities))

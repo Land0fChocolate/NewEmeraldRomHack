@@ -5057,7 +5057,8 @@ void AnimTask_TechnoBlast(u8 taskId)
 
 void AnimTask_PrimalReversion(u8 taskId)
 {
-    if (ItemId_GetId(gBattleMons[gBattleAnimAttacker].item) == ITEM_RED_ORB)
+    if (ItemId_GetId(gBattleMons[gBattleAnimAttacker].item) == ITEM_RED_ORB 
+        || gBattleMons[gBattleAnimAttacker].item == ITEM_BLUE_ORB)
         gBattleAnimArgs[0] = ItemId_GetId(gBattleMons[gBattleAnimAttacker].item);
     else
         gBattleAnimArgs[0] = 0;
