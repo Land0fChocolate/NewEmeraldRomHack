@@ -1343,7 +1343,7 @@ static const u8 sBlockDescription[] = _(
 
 static const u8 sHowlDescription[] = _(
     "Howls to raise the spirit\n"
-    "and boosts Attack.");
+    "and boost team's Attack.");
 
 static const u8 sDragonClawDescription[] = _(
     "Slashes the foe with sharp\n"

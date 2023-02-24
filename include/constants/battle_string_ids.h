@@ -626,8 +626,9 @@
 #define STRINGID_DEOXYSCHANGEDFORMCATCHABLE           623
 #define STRINGID_DEOXYSSTRANGEAURA                    624
 #define STRINGID_CANTTHROWBALL                        625
+#define STRINGID_ATTACKERSWITCHEDSTATWITHTARGET       626
 
-#define BATTLESTRINGS_COUNT                           626
+#define BATTLESTRINGS_COUNT                           627
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.

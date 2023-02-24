@@ -61,6 +61,7 @@
 #define BS_PLAYER2                  13
 #define BS_OPPONENT2                14
 #define BS_ABILITY_BATTLER          15
+#define BS_ATTACKER_PARTNER         16
 
 // Cmd_accuracycheck
 #define NO_ACC_CALC_CHECK_LOCK_ON 0xFFFF
@@ -232,6 +233,7 @@
 #define VARIOUS_GET_BATTLER_SIDE                    158
 #define VARIOUS_MULTI_ABILITY_POPUP                 159
 #define VARIOUS_SET_LAST_USED_ABILITY               160
+#define VARIOUS_SWAP_STATS                          161
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0
