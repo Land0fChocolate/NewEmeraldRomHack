@@ -306,8 +306,8 @@ PetalburgCity_EventScript_ItemMaxRevive::
 	finditem ITEM_MAX_REVIVE
 	end
 
-PetalburgCity_EventScript_ItemEther::
-	finditem ITEM_ETHER
+PetalburgCity_EventScript_ItemDawnStone::
+	finditem ITEM_DAWN_STONE
 	end
 
 MauvilleCity_EventScript_ItemXSpeed::
