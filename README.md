@@ -200,7 +200,7 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Damp battle message when it by powder move doesn't show the ability string.
 - When a Pokemon with Volt Absorb uses Ion Deluge, it triggers Volt Absorb.
 - Stench ability may activate for opponent and not user. Scenario: Weezing vs Altaria, Altaria (no King's Rock) used Ice Beam which flinched Weezing, could be a bad gBattlerAttacker assignment or similar.
-- When a grass type uses Stun Spore against an opponent with Magic Bounce, it bounces back and paralyzes the grass type. pokeemerald-expansion bug.
+- When a grass type uses Stun Spore against an opponent with Magic Bounce, it bounces back and paralyzes the grass type.
 - Time Traveller ability ignores False Swipe effect of leaving the user with 1 HP.
 - Bug Bite/Pluck is not taking the effects of the opponent's berry.
 - Spinning Body activates on every hit for multi-hit moves (e.g. Hitmontop using Triple Kick). Would rather it takes affect on only the last hit.
@@ -219,14 +219,6 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Origin move selection has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
 - Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, Flygon, Salamence and more)
 - Move relearner doesn't list all of the possible moves to relearn, only the first ~15.
-- When picking a rental Pokemon at the Battle Factory, one of the options may be a ?. (may be fixed, requires further testing to make sure)
-
-*Really bad bugs*
-- Using Giga Impact in a contest freezes the game (pokeemerald-expansion now has a fix, will implement in future update).
-- HP bar in battle may look weird, starting with a ?. When hit it may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not. (may be fixed, requires further testing to make sure)
-- Rarely, a party Pokemon may turn into a bad egg during battles. Cause unknown. Seems to happen with switching. Recommend to keep a lot of save files for safety. (may be fixed, requires further testing to make sure)
-	- Note: Bad Eggs mean that the Pokémon data checksum is invalid. Something is corrupting the Pokémon data.
-	- Note for players: Restart immediately if bad egg appears. They cannot hatch or be removed.
 
 # Post Launch TODOs
 
