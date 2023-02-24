@@ -48,7 +48,7 @@ v1.0.6 - ??/02/2023
 	- Both Latias and Latios are available roaming at the same time.
 	- All Legendary and Mythical Pokemon can be repeatedly acquired.
 - Repeatedly acquirable fossils.
-- Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier (TODO: list them below).
+- Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier.
 - Tradeback guy added. Provides a service for the player to trade Pokemon with themselves and trigger trade evolutions. He lives in Lilycove.
 - Some Emerald changes have been reverted to how they were in Ruby/Sapphire.
 	- Steven is back to being champion and Wallace back to being a gym leader.
@@ -186,6 +186,362 @@ Some of the Pokemon that use these aren't accessible in game, but will note thei
 - Poison Fang: Now has a 100% chance to poison target.
 - Cut: Now has 40 BP, 100% Acc and always crits.
 
+# Evolutions list
+
+	- BULBASAUR -> Level Up to 20 -> IVYSAUR
+    - IVYSAUR -> Level Up to 40 -> VENUSAUR
+    - CHARMANDER -> Level Up to 20 -> CHARMELEON
+    - CHARMELEON -> Level Up to 40 -> CHARIZARD
+    - SQUIRTLE -> Level Up to 20 -> WARTORTLE
+    - WARTORTLE -> Level Up to 40 -> BLASTOISE
+    - CATERPIE -> Level Up to 7 -> METAPOD
+    - METAPOD -> Level Up to 10 -> BUTTERFREE
+    - WEEDLE -> Level Up to 7 -> KAKUNA
+    - KAKUNA -> Level Up to 10 -> BEEDRILL
+    - PIDGEY -> Level Up to 17 -> PIDGEOTTO
+    - PIDGEOTTO -> Level Up to 36 -> PIDGEOT
+    - RATTATA -> Level Up to 20 -> RATICATE
+    - SPEAROW -> Level Up to 22 -> FEAROW
+    - EKANS -> Level Up to 22 -> ARBOK
+    - PIKACHU -> Item Thunder Stone -> RAICHU
+    - SANDSHREW -> Level Up to 22 -> SANDSLASH
+    - NIDORAN_F -> Level Up to 18 -> NIDORINA
+    - NIDORINA -> Item Moon Stone -> NIDOQUEEN
+    - NIDORAN_M -> Level Up to 18 -> NIDORINO
+    - NIDORINO -> Item Moon Stone -> NIDOKING
+    - CLEFAIRY -> Item Moon Stone -> CLEFABLE
+    - VULPIX -> Item Fire Stone -> NINETALES
+    - JIGGLYPUFF -> Item Moon Stone -> WIGGLYTUFF
+    - ZUBAT -> Level Up to 22 -> GOLBAT
+    - GOLBAT -> High friendship -> CROBAT
+    - ODDISH -> Level Up to 18 -> GLOOM
+    - GLOOM -> Item Leaf Stone -> VILEPLUME
+            -> Item Sun Stone -> BELLOSSOM
+    - PARAS -> Level Up to 24 -> PARASECT
+    - VENONAT -> Level Up to 26 -> VENOMOTH
+    - DIGLETT -> Level Up to 27 -> DUGTRIO
+    - MEOWTH -> Level Up to 26 -> PERSIAN
+    - PSYDUCK -> Level Up to 24 -> GOLDUCK
+    - MANKEY -> Level Up to 27 -> PRIMEAPE
+    - GROWLITHE -> Item Fire Stone -> ARCANINE
+    - POLIWAG -> Level Up to 18 -> POLIWHIRL
+    - POLIWHIRL -> Item Water Stone -> POLIWRATH
+                -> Trade with hold item Kings Rock -> POLITOED
+    - ABRA -> Level Up to 16 -> KADABRA
+    - KADABRA -> Trade -> ALAKAZAM
+    - MACHOP -> Level Up to 22 -> MACHOKE
+    - MACHOKE -> Trade -> MACHAMP
+    - BELLSPROUT -> Level Up to 18 -> WEEPINBELL
+    - WEEPINBELL -> Item Leaf Stone -> VICTREEBEL
+    - TENTACOOL -> Level Up to 28 -> TENTACRUEL
+    - GEODUDE -> Level Up to 23 -> GRAVELER
+    - GRAVELER -> Trade -> GOLEM
+    - PONYTA -> Level Up to 28 -> RAPIDASH
+    - SLOWPOKE -> Level Up to 28 -> SLOWBRO
+               -> Trade with hold item Kings Rock -> SLOWKING
+    - MAGNEMITE -> Level Up to 27 -> MAGNETON
+    - MAGNETON -> Level Up at location Meteor Falls -> MAGNEZONE
+               -> Level Up at location Victory Road -> MAGNEZONE
+    - DODUO -> Level Up to 27 -> DODRIO
+    - SEEL -> Level Up to 28 -> DEWGONG
+    - GRIMER -> Level Up to 28 -> MUK
+    - SHELLDER -> Item Water Stone -> CLOYSTER
+    - GASTLY -> Level Up to 23 -> HAUNTER
+    - HAUNTER -> Trade -> GENGAR
+    - ONIX -> Trade with hold item ITEM_METAL_COAT -> STEELIX
+    - DROWZEE -> Level Up to 26 -> HYPNO
+    - KRABBY -> Level Up to 28 -> KINGLER
+    - VOLTORB -> Level Up to 26 -> ELECTRODE
+    - EXEGGCUTE -> Item Leaf Stone -> EXEGGUTOR
+    - CUBONE -> Level Up to 26 -> MAROWAK
+    - LICKITUNG -> Have move Rollout -> LICKILICKY
+    - KOFFING -> Level Up to 28 -> WEEZING
+    - RHYHORN -> Level Up to 30 -> RHYDON
+    - RHYDON -> Trade with hold item Protector -> RHYPERIOR
+    - CHANSEY -> High friendship -> BLISSEY
+    - TANGELA -> Have move Ancient Power -> TANGROWTH
+    - HORSEA -> Level Up to 28 -> SEADRA
+    - SEADRA -> Trade with hold item Dragon Scale -> KINGDRA
+    - GOLDEEN -> Level Up to 24 -> SEAKING
+    - STARYU -> Item Water Stone -> STARMIE
+    - SCYTHER -> Trade with hold item ITEM_METAL_COAT -> SCIZOR
+    - ELECTABUZZ -> Trade with hold item Electirizer -> ELECTIVIRE
+    - MAGMAR -> Trade with hold item Magmarizer -> MAGMORTAR
+    - MAGIKARP -> Level Up to 20 -> GYARADOS
+    - EEVEE -> Item Thunder Stone -> JOLTEON
+            -> Item Water Stone -> VAPOREON
+            -> Item Fire Stone -> FLAREON
+            -> High friendship at day -> ESPEON
+            -> High friendship at night -> UMBREON
+            -> Level Up at location Petalburg Woods -> LEAFEON
+            -> Item Leaf Stone -> LEAFEON
+            -> Level Up at location Shoal Cave Ice Room -> GLACEON
+            -> Item Ice Stone -> GLACEON
+            -> Have move of type Fairy -> SYLVEON
+    - PORYGON -> Trade with hold item Upgrade -> PORYGON2
+    - OMANYTE -> Level Up to 34 -> OMASTAR
+    - KABUTO -> Level Up to 34 -> KABUTOPS
+    - DRATINI -> Level Up to 30 -> DRAGONAIR
+    - DRAGONAIR -> Level Up to 50 -> DRAGONITE
+    - CHIKORITA -> Level Up to 20 -> BAYLEEF
+    - BAYLEEF -> Level Up to 40 -> MEGANIUM
+    - CYNDAQUIL -> Level Up to 20 -> QUILAVA
+    - QUILAVA -> Level Up to 40 -> TYPHLOSION
+    - TOTODILE -> Level Up to 20 -> CROCONAW
+    - CROCONAW -> Level Up to 40 -> FERALIGATR
+    - SENTRET -> Level Up to 15 -> FURRET
+    - HOOTHOOT -> Level Up to 19 -> NOCTOWL
+    - LEDYBA -> Level Up to 18 -> LEDIAN
+    - SPINARAK -> Level Up to 18 -> ARIADOS
+    - CHINCHOU -> Level Up to 27 -> LANTURN
+    - PICHU -> High friendship -> PIKACHU
+    - CLEFFA -> High friendship -> CLEFAIRY
+    - IGGLYBUFF -> High friendship -> JIGGLYPUFF
+    - TOGEPI -> High friendship -> TOGETIC
+    - TOGETIC -> Item Shiny Stone -> TOGEKISS
+    - NATU -> Level Up to 25 -> XATU
+    - MAREEP -> Level Up to 16 -> FLAAFFY
+    - FLAAFFY -> Level Up to 32 -> AMPHAROS
+    - MARILL -> Level Up to 26 -> AZUMARILL
+    - HOPPIP -> Level Up to 18 -> SKIPLOOM
+    - SKIPLOOM -> Level Up to 29 -> JUMPLUFF
+    - AIPOM -> Have move Double Hit, AMBIPOM
+    - SUNKERN -> Item Sun Stone -> SUNFLORA
+    - YANMA -> Have move Ancient Power -> YANMEGA
+    - WOOPER -> Level Up to 18 -> QUAGSIRE
+    - MURKROW -> Item Dusk Stone -> HONCHKROW
+    - MISDREAVUS -> Item Dusk Stone -> MISMAGIUS
+    - PINECO -> Level Up to 26 -> FORRETRESS
+    - GLIGAR -> Item Razor Fang at night -> GLISCOR
+    - SNUBBULL -> Level Up to 23 -> GRANBULL
+    - SNEASEL -> Item Razor Claw at night -> WEAVILE
+    - TEDDIURSA -> Level Up to 29 -> URSARING
+    - SLUGMA -> Level Up to 26 -> MAGCARGO
+    - SWINUB -> Level Up to 23 -> PILOSWINE
+    - PILOSWINE -> Have move Ancient Power -> MAMOSWINE
+    - REMORAID -> Level Up to 25 -> OCTILLERY
+    - HOUNDOUR -> Level Up to 26 -> HOUNDOOM
+    - PHANPY -> Level Up to 25 -> DONPHAN
+    - PORYGON2 -> Trade with hold item Dubious Disc -> PORYGON_Z
+    - TYROGUE -> Level Up to 20 with Atk < Def -> HITMONCHAN
+              -> Level Up to 20 with Atk > Def -> HITMONLEE
+              -> Level Up to 20 with Atk = Def -> HITMONTOP
+    - SMOOCHUM -> Level Up to 20 -> JYNX
+    - ELEKID -> Level Up to 20 -> ELECTABUZZ
+    - MAGBY -> Level Up to 20 -> MAGMAR
+    - LARVITAR -> Level Up to 30 -> PUPITAR
+    - PUPITAR -> Level Up to 50 -> TYRANITAR
+    - TREECKO -> Level Up to 20 -> GROVYLE
+    - GROVYLE -> Level Up to 40 -> SCEPTILE
+    - TORCHIC -> Level Up to 20 -> COMBUSKEN
+    - COMBUSKEN -> Level Up to 40 -> BLAZIKEN
+    - MUDKIP -> Level Up to 20 -> MARSHTOMP
+    - MARSHTOMP -> Level Up to 40 -> SWAMPERT
+    - POOCHYENA -> Level Up to 18 -> MIGHTYENA
+    - ZIGZAGOON -> Level Up to 20 -> LINOONE
+    - WURMPLE -> Level Up to 7 -> SILCOON
+              -> Level Up to 7 -> CASCOON
+    - SILCOON -> Level Up to 10 -> BEAUTIFLY
+    - CASCOON -> Level Up to 10 -> DUSTOX
+    - LOTAD -> Level Up to 14 -> LOMBRE
+    - LOMBRE -> Item Water Stone -> LUDICOLO
+    - SEEDOT -> Level Up to 14 -> NUZLEAF
+    - NUZLEAF -> Item Leaf Stone -> SHIFTRY
+    - NINCADA -> Level Up to 20 -> NINJASK
+              -> Level Up to 20 + have free party space -> SHEDINJA
+    - TAILLOW -> Level Up to 24 -> SWELLOW
+    - SHROOMISH -> Level Up to 25 -> BRELOOM
+    - WINGULL -> Level Up to 25 -> PELIPPER
+    - SURSKIT -> Level Up to 22 -> MASQUERAIN
+    - RALTS -> Level Up to 15 -> KIRLIA
+    - KIRLIA -> Level Up to 32 -> GARDEVOIR
+             -> Item Dawn Stone + Male -> GALLADE
+    - WAILMER -> Level Up to 35 -> WAILORD
+    - SKITTY -> Item Moon Stone -> DELCATTY
+    - BALTOY -> Level Up to 33 -> CLAYDOL
+    - NOSEPASS -> Level Up at location Meteor Falls -> PROBOPASS
+               -> Level Up at location Victory Road -> PROBOPASS
+    - BARBOACH -> Level Up to 28 -> WHISCASH
+    - CORPHISH -> Level Up to 28 -> CRAWDAUNT
+    - FEEBAS -> High beauty stat -> MILOTIC
+    - CARVANHA -> Level Up to 30 -> SHARPEDO
+    - TRAPINCH -> Level Up to 28 -> VIBRAVA
+    - VIBRAVA -> Level Up to 45 -> FLYGON
+    - MAKUHITA -> Level Up to 26 -> HARIYAMA
+    - ELECTRIKE -> Level Up to 26 -> MANECTRIC
+    - NUMEL -> Level Up to 30 -> CAMERUPT
+    - CACNEA -> Level Up to 32 -> CACTURNE
+    - SNORUNT -> Level Up to 34 -> GLALIE
+              -> Item Dawn Stone + female -> FROSLASS
+    - AZURILL -> High friendship -> MARILL
+    - SPOINK -> Level Up to 26 -> GRUMPIG
+    - MEDITITE -> Level Up to 27 -> MEDICHAM
+    - SWABLU -> Level Up to 30 -> ALTARIA
+    - WYNAUT -> Level Up to 15 -> WOBBUFFET
+    - DUSKULL -> Level Up to 32 -> DUSCLOPS
+    - DUSCLOPS = Trade with hold item Reaper Cloth -> DUSKNOIR
+    - ROSELIA -> Item Shiny Stone -> ROSERADE
+    - SLAKOTH -> Level Up to 18 -> VIGOROTH
+    - VIGOROTH -> Level Up to 40 -> SLAKING
+    - GULPIN -> Level Up to 26 -> SWALOT
+    - WHISMUR -> Level Up to 18 -> LOUDRED
+    - LOUDRED -> Level Up to 36 -> EXPLOUD
+    - CLAMPERL -> Trade with hold item Deep Sea Tooth -> HUNTAIL
+               -> Trade with hold item Deep Sea Scale -> GOREBYSS
+    - SHUPPET -> Level Up to 34 -> BANETTE
+    - ARON -> Level Up to 22 -> LAIRON
+    - LAIRON -> Level Up to 42 -> AGGRON
+    - LILEEP -> Level Up to 34 -> CRADILY
+    - ANORITH -> Level Up to 38 -> ARMALDO
+    - SPHEAL -> Level Up to 24 -> SEALEO
+    - SEALEO -> Level Up to 42 -> WALREIN
+    - BAGON -> Level Up to 30 -> SHELGON
+    - SHELGON -> Level Up to 50 -> SALAMENCE
+    - BELDUM -> Level Up to 20 -> METANG
+    - METANG -> Level Up to 45 -> METAGROSS
+    - BUDEW -> High friendship -> ROSELIA
+    - MANTYKE -> Level Up with Remoraid in party -> MANTINE
+    - CHINGLING -> High friendship at night -> CHIMECHO
+	- RATTATA_ALOLAN -> Level Up to 20 at night -> RATICATE_ALOLAN
+    - SANDSHREW_ALOLAN -> Item Ice Stone -> SANDSLASH_ALOLAN
+    - VULPIX_ALOLAN -> Item Ice Stone -> NINETALES_ALOLAN
+    - DIGLETT_ALOLAN -> Level Up to 26 -> DUGTRIO_ALOLAN
+    - MEOWTH_ALOLAN -> High friendship at level 28 PERSIAN_ALOLAN
+    - GEODUDE_ALOLAN -> Level Up to 23 -> GRAVELER_ALOLAN
+    - GRAVELER_ALOLAN -> Trade -> GOLEM_ALOLAN
+    - GRIMER_ALOLAN -> Level Up to 38 -> MUK_ALOLAN
+	- PONYTA_GALARIAN -> Level Up to 40 -> RAPIDASH_GALARIAN
+    - SLOWPOKE_GALARIAN -> Item Galarica Cuff -> SLOWBRO_GALARIAN
+    					-> Item Galarica Wreath -> SLOWKING_GALARIAN
+
+# TM List
+
+-TM01 Focus Punch
+-TM02 Dragon Claw
+-TM03 Water Pulse
+-TM04 Calm Mind
+-TM05 Roar
+-TM06 Toxic
+-TM07 Hail
+-TM08 Bulk Up
+-TM09 Bullet Seed
+-TM10 Hidden Power
+-TM11 Sunny Day
+-TM12 Taunt
+-TM13 Ice Beam
+-TM14 Blizzard
+-TM15 Hyper Beam
+-TM16 Light Screen
+-TM17 Protect
+-TM18 Rain Dance
+-TM19 Giga Drain
+-TM20 Safeguard
+-TM21 Frustration
+-TM22 Solarbeam
+-TM23 Iron Tail
+-TM24 Thunderbolt
+-TM25 Thunder
+-TM26 Earthquake
+-TM27 Return
+-TM28 Dig
+-TM29 Psychic
+-TM30 Shadow Ball
+-TM31 Brick Break
+-TM32 Double Team
+-TM33 Reflect
+-TM34 Shock Wave
+-TM35 Flamethrower
+-TM36 Sludge Bomb
+-TM37 Sandstorm
+-TM38 Fire Blast
+-TM39 Rock Tomb
+-TM40 Aerial Ace
+-TM41 Torment
+-TM42 Facade
+-TM43 Secret Power
+-TM44 Rest
+-TM45 Attract
+-TM46 Thief
+-TM47 Steel Wing
+-TM48 Skill Swap
+-TM49 Snatch
+-TM50 Overheat
+-TM51 Leech Life
+-TM52 Focus Blast
+-TM53 Energy Ball
+-TM54 False Swipe
+-TM55 Scald
+-TM56 Dragon Pulse
+-TM57 Charge Beam
+-TM58 Roost
+-TM59 Venoshock
+-TM60 Psyshock
+-TM61 Will-O-Wisp
+-TM62 Acrobatics
+-TM63 Echoed Voice
+-TM64 Cut
+-TM65 Shadow Claw
+-TM66 Payback
+-TM67 Smart Strike
+-TM68 Giga Impact
+-TM69 Rock Polish
+-TM70 Aurora Veil
+-TM71 Stone Edge
+-TM72 Volt Switch
+-TM73 Thunder Wave
+-TM74 Gyro Ball
+-TM75 Draining Kiss
+-TM76 Fly
+-TM77 Throat Chop
+-TM78 Bulldoze
+-TM79 Frost Breath
+-TM80 Rock Slide
+-TM81 X-Scissor
+-TM82 Dragon Tail
+-TM83 Infestation
+-TM84 Poison Jab
+-TM85 Electroweb
+-TM86 Grass Knot
+-TM87 Swagger
+-TM88 Drain Punch
+-TM89 U-Turn
+-TM90 Rock Smash
+-TM91 Flash Cannon
+-TM92 Trick Room
+-TM93 Wild Charge
+-TM94 Surf
+-TM95 Snarl
+-TM96 Nature Power
+-TM97 Dark Pulse
+-TM98 Waterfall
+-TM99 Dazzling Gleam
+
+# Post Launch TODOs
+
+Possible future additions/changes.
+
+- Labels for ability description and IV/EV stats in Pokemon summary screen.
+- Pokedex to support regional variants.
+- Pokedex to have other data as well. Moves, base stats, evolution requirements, abilities?
+- Improve various art assets, mostly trainer pics.
+- The berry trees of the type resist berries should have their own colours.
+- Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
+- Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
+- A contest side-quest with Lisia, much like in ORAS.
+- Perhaps a more interesting Tate & Liza event to get Jirachi?
+- Scott giving more interesting rewards to players who get all silver/gold symbols.
+- In-game resource that teaches the player braile. So that it isn't required to look out of the game to solve the braile puzzles.
+- Sort out the online/wireless features. Either find out how to make them work or remove them.
+- Better Game Corner games. May be a ton of work though. (Perhaps one could be a Battle Palace style battle where the Player places a bet?)
+- Better Battle Frontier level scaling. Open level puts opponent Pokemon to your highest level Pokemon. Should scale all Pokemon to a certain level like the battle facilities in future gens.
+- Add an Anything Goes challenge to the Battle Tower, where even legendary Pokemon like Rayquaza are allowed.
+- Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
+- Increase number of PC Pokemon storage boxes (annoying to do late in development since changing the save data format will invalid previous save data).
+- Add another star to the Trainer Card for completing the National Dex. Create a platinum colour scheme to go along with it.
+- Named NPCs like Gym Leaders, Elite 4, Steven, etc to be possible partners in Battle Tower Multi challenge.
+- A better way for Mirage Island to trigger?
+- Obligatory beach episode.
+
 # Known Bugs
 
 Some of these may have been carried over from pokeemerald-expansion.
@@ -220,32 +576,8 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Origin move selection has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
 - Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, Flygon, Salamence and more)
 - Move relearner doesn't list all of the possible moves to relearn, only the first ~15.
+- HP bar in battle may look weird, starting with a ?. When hit it may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not.
 
-# Post Launch TODOs
-
-Possible future additions/changes.
-
-- Labels for ability description and IV/EV stats in Pokemon summary screen.
-- Pokedex to support regional variants.
-- Pokedex to have other data as well. Moves, base stats, evolution requirements, abilities?
-- Improve various art assets, mostly trainer pics.
-- The berry trees of the type resist berries should have their own colours.
-- Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
-- Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
-- A contest side-quest with Lisia, much like in ORAS.
-- Perhaps a more interesting Tate & Liza event to get Jirachi?
-- Scott giving more interesting rewards to players who get all silver/gold symbols.
-- In-game resource that teaches the player braile. So that it isn't required to look out of the game to solve the braile puzzles.
-- Sort out the online/wireless features. Either find out how to make them work or remove them.
-- Better Game Corner games. May be a ton of work though. (Perhaps one could be a Battle Palace style battle where the Player places a bet?)
-- Better Battle Frontier level scaling. Open level puts opponent Pokemon to your highest level Pokemon. Should scale all Pokemon to a certain level like the battle facilities in future gens.
-- Add an Anything Goes challenge to the Battle Tower, where even legendary Pokemon like Rayquaza are allowed.
-- Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
-- Increase number of PC Pokemon storage boxes (annoying to do late in development since changing the sava data format will invalid previous save data).
-- Add another star to the Trainer Card for completing the National Dex. Create a platinum colour scheme to go along with it.
-- Named NPCs like Gym Leaders, Elite 4, Steven, etc to be possible partners in Battle Tower Multi challenge.
-- A better way for Mirage Island to trigger?
-- Obligatory beach episode.
 
 # Credits
 
