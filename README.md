@@ -16,6 +16,7 @@ v1.03 - 09/02/2023
 v1.04 - 19/02/2023
 v1.0.5 - 24/02/2023
 v1.0.6 - 24/02/2023
+v1.0.7 - 25/02/2023
 
 # Changelog
 
@@ -79,6 +80,7 @@ v1.0.6 - 24/02/2023
 	- Gym Leaders have their own places to hang out in the overworld when they aren't looking for a rematch.
 - Item changes
 	- Bag pockets are much larger.
+	- If the player has both bikes, they can switch between them with the R button.
 	- Quick Claw now increases speed by 10% when user is below 50% health.
 	- Vitamins give 20 EVs instead of 10. Also can give as many up to max usable EVs (252) to a Pokemon.
 	- Prices of various items adjusted.
@@ -576,7 +578,6 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Origin move selection has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
 - Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, Flygon, Salamence and more)
 - Move relearner doesn't list all of the possible moves to relearn, only the first ~15.
-- HP bar in battle may look weird, starting with a ?. When hit it may start subtracting at over a thousand health and looks like it drops down to 100% health. Visual error, looks like a full HP bar but not.
 
 
 # Credits
