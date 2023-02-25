@@ -415,6 +415,8 @@ Some of the Pokemon that use these aren't accessible in game, but will note thei
 	- PONYTA_GALARIAN -> Level Up to 40 -> RAPIDASH_GALARIAN
     - SLOWPOKE_GALARIAN -> Item Galarica Cuff -> SLOWBRO_GALARIAN
     					-> Item Galarica Wreath -> SLOWKING_GALARIAN
+    - GROWLITHE_HISUIAN -> Item Fire Stone -> ARCANINE_HISUIAN
+    - VOLTORB_HISUIAN -> Item Leaf Stone -> ELECTRODE_HISUIAN
 
 # TM List
 
