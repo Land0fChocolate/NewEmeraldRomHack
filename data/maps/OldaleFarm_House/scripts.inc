@@ -1,7 +1,7 @@
 OldaleFarm_House_MapScripts::
 	.byte 0
 
-	.set POKEMON_PRICE, 50000
+	.set POKEMON_PRICE, 20000
 
 OldaleFarm_House_Eventscript_Man::
 	goto_if_set FLAG_SYS_NATIONAL_DEX, OldaleFarm_House_Eventscript_Man_PlayerHasNationalDex
