@@ -27,7 +27,7 @@ v1.0.7 - 25/02/2023
 	- Many regional variants of gen 1, 2 and 3 Pokemon are available.
 	- A total of 416 Pokemon species (not counting regional variants) are accessible.
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
-	- Many Pokemon have had their ability sets updated to better fit their theme and gameplay. (TODO: make a list of ability stat changes somewhere).
+	- Many Pokemon have had their ability sets updated to better fit their theme and gameplay. Gulpin has Corrosion now, the Regis all get Filter and many more! (TODO: make a list of ability stat changes somewhere).
 	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
 	- Moves that work around abilities have been updated for multiple abilities as well.
 	- The Pokemon summary screen has been updated to show all of a Pokemon's abilities and description with the A button prompt.
@@ -37,10 +37,10 @@ v1.0.7 - 25/02/2023
 	- Pokemon will attempt to learn a new move upon evolution.
 	- Hoenn move tutors can now teach their moves endlessly.
 - New tutor moves added. The new tutor set is similar to what was available in future gens (TODO: make list).
-- Some Pokemon have base stat changes to better fit their theme and gameplay (TODO: make list). 
+- A few Pokemon have base stat changes to better fit their theme and gameplay (TODO: make list). 
 	- Treecko, Spheal lines have Attack and Special Attack swapped.
-	- Numel and Camerupt have more base HP.
-	- Dewgong has more base Speed.
+	- Numel and Camerupt have more HP.
+	- Dewgong has more Speed.
 - HMs have been removed and Pokemon can use the HM field commands without needing to learn the move. Only the relevant badge and a compatible Pokemon species are required to traverse obstacles.
 - Pokemon EVs and IVs can be viewed in the summary screen by pressing the L and R buttons.
 - Wild Encounters adjusted.
@@ -242,15 +242,14 @@ Some of the Pokemon that use these aren't accessible in game, but will note thei
     - SLOWPOKE -> Level Up to 28 -> SLOWBRO
                -> Trade with hold item Kings Rock -> SLOWKING
     - MAGNEMITE -> Level Up to 27 -> MAGNETON
-    - MAGNETON -> Level Up at location Meteor Falls -> MAGNEZONE
-               -> Level Up at location Victory Road -> MAGNEZONE
+    - MAGNETON -> Level Up at location Meteor Falls/Victory Road -> MAGNEZONE
     - DODUO -> Level Up to 27 -> DODRIO
     - SEEL -> Level Up to 28 -> DEWGONG
     - GRIMER -> Level Up to 28 -> MUK
     - SHELLDER -> Item Water Stone -> CLOYSTER
     - GASTLY -> Level Up to 23 -> HAUNTER
     - HAUNTER -> Trade -> GENGAR
-    - ONIX -> Trade with hold item ITEM_METAL_COAT -> STEELIX
+    - ONIX -> Trade with hold item Metal Coat -> STEELIX
     - DROWZEE -> Level Up to 26 -> HYPNO
     - KRABBY -> Level Up to 28 -> KINGLER
     - VOLTORB -> Level Up to 26 -> ELECTRODE
@@ -266,7 +265,7 @@ Some of the Pokemon that use these aren't accessible in game, but will note thei
     - SEADRA -> Trade with hold item Dragon Scale -> KINGDRA
     - GOLDEEN -> Level Up to 24 -> SEAKING
     - STARYU -> Item Water Stone -> STARMIE
-    - SCYTHER -> Trade with hold item ITEM_METAL_COAT -> SCIZOR
+    - SCYTHER -> Trade with hold item Metal Coat -> SCIZOR
     - ELECTABUZZ -> Trade with hold item Electirizer -> ELECTIVIRE
     - MAGMAR -> Trade with hold item Magmarizer -> MAGMORTAR
     - MAGIKARP -> Level Up to 20 -> GYARADOS
@@ -361,8 +360,7 @@ Some of the Pokemon that use these aren't accessible in game, but will note thei
     - WAILMER -> Level Up to 35 -> WAILORD
     - SKITTY -> Item Moon Stone -> DELCATTY
     - BALTOY -> Level Up to 33 -> CLAYDOL
-    - NOSEPASS -> Level Up at location Meteor Falls -> PROBOPASS
-               -> Level Up at location Victory Road -> PROBOPASS
+    - NOSEPASS -> Level Up at location Meteor Falls/Victory Road -> PROBOPASS
     - BARBOACH -> Level Up to 28 -> WHISCASH
     - CORPHISH -> Level Up to 28 -> CRAWDAUNT
     - FEEBAS -> High beauty stat -> MILOTIC
@@ -417,6 +415,10 @@ Some of the Pokemon that use these aren't accessible in game, but will note thei
     					-> Item Galarica Wreath -> SLOWKING_GALARIAN
     - GROWLITHE_HISUIAN -> Item Fire Stone -> ARCANINE_HISUIAN
     - VOLTORB_HISUIAN -> Item Leaf Stone -> ELECTRODE_HISUIAN
+
+# Pokemon Ability Sets List
+
+
 
 # TM List
 
