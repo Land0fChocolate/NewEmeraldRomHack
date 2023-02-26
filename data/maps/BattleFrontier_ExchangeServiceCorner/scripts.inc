@@ -502,7 +502,8 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseVitamin::
 	case 7, BattleFrontier_ExchangeServiceCorner_EventScript_Zinc
 	case 8, BattleFrontier_ExchangeServiceCorner_EventScript_Carbos
 	case 9, BattleFrontier_ExchangeServiceCorner_EventScript_HPUp
-	case 10, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 10, BattleFrontier_ExchangeServiceCorner_EventScript_HeartScale
+	case 11, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
@@ -593,6 +594,15 @@ BattleFrontier_ExchangeServiceCorner_EventScript_GoldBottleCap::
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseVitamin
 	setvar VAR_0x8008, 28
 	setvar VAR_0x8009, ITEM_GOLD_BOTTLE_CAP
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_HeartScale::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmHeartScale, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseVitamin
+	setvar VAR_0x8008, 3
+	setvar VAR_0x8009, ITEM_HEART_SCALE
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -1094,6 +1104,10 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmGoldBottleCap:
 	.string "You've chosen the Gold Bottle Cap.\n"
 	.string "Is that correct?$"
 
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmHeartScale:
+	.string "You've chosen the Heart Scale.\n"
+	.string "Is that correct?$"
+
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmScopeLens:
 	.string "You've chosen the Scope Lens.\n"
 	.string "Is that correct?$"
@@ -1403,6 +1417,10 @@ BattleFrontier_ExchangeServiceCorner_Text_BottleCapDesc::
 BattleFrontier_ExchangeServiceCorner_Text_GoldBottleCapDesc::
 	.string "Can be traded for a Pokémon\n"
 	.string "growth service.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_HeartScaleDesc::
+	.string "Can be traded for a Pokémon\n"
+	.string "move relearning service.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc::
 	.string "A hold item that raises the\n"

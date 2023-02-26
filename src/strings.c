@@ -1220,6 +1220,7 @@ const u8 gText_PPUp2BP[] = _("PP Up{CLEAR_TO 0x64}2BP");
 const u8 gText_PPMax5BP[] = _("PP Max{CLEAR_TO 0x64}5BP");
 const u8 gText_BottleCap2BP[] = _("Bottle Cap{CLEAR_TO 0x64}2BP");
 const u8 gText_GoldBottleCap28BP[] = _("Gold Bottle Cap{CLEAR_TO 0x64}28BP");
+const u8 gText_HeartScale3BP[] = _("Heart Scale{CLEAR_TO 0x64}3BP");
 const u8 gText_OvalStone4BP[] = _("Oval Stone{CLEAR_TO 0x5E}4BP");
 const u8 gText_ReaperCloth10BP[] = _("Reaper Cloth{CLEAR_TO 0x5E}10BP");
 const u8 gText_Protector10BP[] = _("Protector{CLEAR_TO 0x5E}10BP");
