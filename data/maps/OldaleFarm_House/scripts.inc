@@ -386,7 +386,7 @@ OldaleFarm_House_Text_Man_OnceADayService:
 OldaleFarm_House_Text_Man_AskIfBuying:
 	.string "Greetings, Champion.\p"
 	.string "I can afford to sell you a Pokémon\n"
-	.string "straight away for today at ¥50,000.\p"
+	.string "straight away for today at ¥20,000.\p"
 	.string "Are you here to buy?$"
 
 OldaleFarm_House_Text_Man_ChoosePokemon:
