@@ -704,6 +704,7 @@ extern const u8 gText_Iron1BP[];
 extern const u8 gText_Zinc1BP[];
 extern const u8 gText_Carbos1BP[];
 extern const u8 gText_HpUp1BP[];
+extern const u8 gText_HeartScale3BP[];
 
 extern const u8 gText_OvalStone4BP[];
 extern const u8 gText_ReaperCloth10BP[];
@@ -955,6 +956,7 @@ extern const u8 BattleFrontier_ExchangeServiceCorner_Text_PPUpDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_PPMaxDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_BottleCapDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_GoldBottleCapDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_HeartScaleDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_WideLensDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ToxicOrbDesc[];

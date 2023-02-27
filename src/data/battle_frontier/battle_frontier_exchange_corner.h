@@ -59,6 +59,7 @@ static const u16 sFrontierExchangeCorner_Vitamins[] =
     ITEM_ZINC,
     ITEM_CARBOS,
     ITEM_HP_UP,
+    ITEM_HEART_SCALE,
     0xFFFF 
 };
 
@@ -155,6 +156,7 @@ static const u8 *const sFrontierExchangeCorner_VitaminsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_ZincDesc,
     BattleFrontier_ExchangeServiceCorner_Text_CarbosDesc,
     BattleFrontier_ExchangeServiceCorner_Text_HPUpDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_HeartScaleDesc,
     gText_Exit
 };
 

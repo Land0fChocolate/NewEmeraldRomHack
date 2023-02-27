@@ -29,8 +29,9 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 @this stuff is kept around for testing
 EverGrandeCity_EventScript_TestAbra1::
 	faceplayer
-	cleartrainerflag TRAINER_LEAF
-	trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
+	@cleartrainerflag TRAINER_LEAF
+	@trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
+	givemon SPECIES_GROWLITHE_HISUIAN, 5, ITEM_NONE
 	end
 
 EverGrandeCity_EventScript_TestAbra2::

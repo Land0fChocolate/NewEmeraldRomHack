@@ -427,7 +427,7 @@ SkyPillar_Top_Text_PlayerChosenMale:
 	.string "…but I worked so hard to get here.\p"
 	.string "This was supposed to be my duty!\p"
 	.string "I can't accept this.\p"
-	.string "After everything that I've done.\n"
+	.string "After everything that I've done…\n"
 	.string "This is the end of the line for me?$"
 
 SkyPillar_Top_Text_PlayerChosenFemale:
@@ -435,7 +435,7 @@ SkyPillar_Top_Text_PlayerChosenFemale:
 	.string "…but I worked so hard to get here.\p"
 	.string "This was supposed to be my duty!\p"
 	.string "I can't accept this.\p"
-	.string "After everything that I've done.\n"
+	.string "After everything that I've done…\n"
 	.string "This is the end of the line for me?$"
 
 SkyPillar_Top_Text_AreYouWorthy:
@@ -494,4 +494,6 @@ SkyPillar_Top_Text_UseDragonAscent:
 	.string "space.\p"
 	.string "I must say… I'm more than a little\n"
 	.string "jealous that you will be the one riding\l"
-	.string "Rayquaza to battle.$"
+	.string "Rayquaza to battle.\p"
+	.string "See me back at the Draconid Archives\n"
+	.string "once you are done, yeah?$"
