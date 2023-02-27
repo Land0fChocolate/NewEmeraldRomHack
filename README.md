@@ -26,6 +26,7 @@ v1.0.8 - 27/02/2023
 - All Pokemon from gens 1, 2 and 3 are accessible. 
 	- Those Pokemon with post gen 3 evolutions and pre-evolutions have those available as well.
 	- Many regional variants of gen 1, 2 and 3 Pokemon are available.
+	- Non-Hoenn Pokemon are available after beating the Pokemon League.
 	- A total of 416 Pokemon species (not counting regional variants) are accessible.
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
 	- Many Pokemon have had their ability sets updated to better fit their theme and gameplay. Gulpin has Corrosion now, the Regis all get Filter and many more! (TODO: make a list of ability stat changes somewhere).

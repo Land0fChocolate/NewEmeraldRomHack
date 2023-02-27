@@ -4,6 +4,8 @@ Potential spoilers here for those who wish to discover things on their own.
 
 # New Pokemon Locations
 
+These Pokemon are available after beating the Pokemon League.
+
 -Bulbasaur - Oldale Farm
 -Charmander - Oldale Farm
 -Squirtle - Oldale Farm
