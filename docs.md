@@ -651,7 +651,7 @@ Potential spoilers here for those who wish to discover things on their own.
 
 # Pokemon base stat changes
 
-- Dewgong  | Speed: 70 -> 90
+- Dewgong  | Speed: 70 -> 85
 - Treecko  | Attack: 45 -> 65
            | Special Attack: 65 -> 45
 - Grovyle  | Attack: 65 -> 85
