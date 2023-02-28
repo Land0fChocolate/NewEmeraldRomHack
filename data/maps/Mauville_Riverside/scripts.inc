@@ -196,11 +196,12 @@ Mauville_Riverside_Text_YouHaveMadeAnEnemy:
 Mauville_Riverside_Text_GratitudeForRescue:
 	.string "Young trainer, you have my gratitude\n"
 	.string "for chasing away that awful woman!\p"
-	.string "Please take this.$"
+	.string "Please accept this as a token of\n"
+	.string "my appreciation.$"
 
 Mauville_Riverside_Text_YoureLoadedWithItems:
 	.string "Oh no, your bag can't hold this\n"
-	.string "Ultra Ball.$"
+	.string "Dusk Ball.$"
 
 Mauville_Riverside_Text_BeGoingNow:
 	.string "The scoundrels that call themselves\n"

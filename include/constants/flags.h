@@ -1231,7 +1231,7 @@
 #define FLAG_ITEM_FARAWAY_ISLAND_RUIN5_TWISTED_SPOON                0x4A4
 #define FLAG_ITEM_MAUVILLE_RIVERSIDE_FULL_RESTORE                   0x4A5
 #define FLAG_ITEM_SHOAL_CAVE_ENTRANCE_ROOM_TM48                     0x4A6
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
+#define FLAG_ITEM_VICTORY_ROAD_B2F_PROTECTOR                        0x4A7
 #define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
 #define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
 #define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
