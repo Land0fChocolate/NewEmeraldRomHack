@@ -18,6 +18,7 @@ v1.0.5 - 24/02/2023
 v1.0.6 - 24/02/2023
 v1.0.7 - 25/02/2023
 v1.0.8 - 27/02/2023
+v1.0.9 - 03/03/2023
 
 # Changelog
 
@@ -26,9 +27,10 @@ v1.0.8 - 27/02/2023
 - All Pokemon from gens 1, 2 and 3 are accessible. 
 	- Those Pokemon with post gen 3 evolutions and pre-evolutions have those available as well.
 	- Many regional variants of gen 1, 2 and 3 Pokemon are available.
+	- Non-Hoenn Pokemon are available after beating the Pokemon League.
 	- A total of 416 Pokemon species (not counting regional variants) are accessible.
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
-	- Many Pokemon have had their ability sets updated to better fit their theme and gameplay. Gulpin has Corrosion now, the Regis all get Filter and many more! (TODO: make a list of ability stat changes somewhere).
+	- Many Pokemon have had their ability sets updated to better fit their theme and gameplay. Gulpin has Corrosion now, the Regis all get Filter and many more! A full list can be found in the docs.
 	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
 	- Moves that work around abilities have been updated for multiple abilities as well.
 	- The Pokemon summary screen has been updated to show all of a Pokemon's abilities and description with the A button prompt.
@@ -37,7 +39,7 @@ v1.0.8 - 27/02/2023
 	- Changes to level up, Egg learnsets, TM learnsets and Tutor learnsets of Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
 	- Hoenn move tutors can now teach their moves endlessly.
-- New tutor moves added. The new tutor set is similar to what was available in future gens (TODO: make list).
+- New tutor moves added. The new tutor set is similar to what was available in future gens.
 - A few Pokemon have base stat buffs to better fit their theme and gameplay:
 	- Treecko, Spheal lines have Attack and Special Attack swapped.
 	- Numel and Camerupt have more HP.
@@ -87,7 +89,7 @@ v1.0.8 - 27/02/2023
 	- Vitamins give 20 EVs instead of 10. Also can give as many up to max usable EVs (252) to a Pokemon.
 	- Prices of various items adjusted.
 	- Nature Mints added.
-	- TMs from #51 to #99 have been added. They are similar to the gen 7 TM set (TODO: make list).
+	- TMs from #51 to #99 have been added. They are similar to the gen 7 TM set. A full list of TMs can be found in the docs.
 	- TMs have infinite use.
 	- Existing shops sell more stuff, including post gen 3 items.
 	- New shops that sell more stuff, including post gen 3 items.

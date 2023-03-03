@@ -638,6 +638,10 @@ VictoryRoad_B2F_EventScript_ItemFullHeal::
 	finditem ITEM_FULL_HEAL
 	end
 
+VictoryRoad_B2F_EventScript_ItemProtector::
+	finditem ITEM_PROTECTOR
+	end
+
 ArtisanCave_B1F_EventScript_ItemHPUp::
 	finditem ITEM_HP_UP
 	end

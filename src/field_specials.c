@@ -2394,7 +2394,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_MOVE_TUTOR_1:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 27;
+            task->tNumItems = 26;
             task->tLeft = 15;
             task->tTop = 1;
             task->tWidth = 14;
@@ -2404,7 +2404,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_MOVE_TUTOR_2:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 27;
+            task->tNumItems = 26;
             task->tLeft = 15;
             task->tTop = 1;
             task->tWidth = 14;
@@ -2687,8 +2687,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_MagicCoat6BP,
         gText_LowKick8BP,
         gText_SeismicToss8BP,
-        gText_MegaPunch8BP,
-        gText_MegaKick8BP,
+        gText_Endure8BP,
         gText_BodySlam12BP,
         gText_StoredPower12BP,
         gText_SwordsDance16BP,
@@ -2713,7 +2712,6 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_PainSplit6BP,
         gText_Recycle6BP,
         gText_IcyWind8BP,
-        gText_Endure8BP,
         gText_PsychUp8BP,
         gText_DreamEater8BP,
         gText_LowSweep8BP,
@@ -3412,8 +3410,7 @@ static const u16 sBattleFrontier_TutorMoves1[] =
     MOVE_MAGIC_COAT,
     MOVE_LOW_KICK, 
     MOVE_SEISMIC_TOSS,  
-    MOVE_MEGA_PUNCH,
-    MOVE_MEGA_KICK,
+    MOVE_ENDURE,
     MOVE_BODY_SLAM,
     MOVE_STORED_POWER,
     MOVE_SWORDS_DANCE,
@@ -3438,7 +3435,6 @@ static const u16 sBattleFrontier_TutorMoves2[] =
     MOVE_PAIN_SPLIT,
     MOVE_RECYCLE,
     MOVE_ICY_WIND,
-    MOVE_ENDURE,
     MOVE_PSYCH_UP,
     MOVE_DREAM_EATER,
     MOVE_LOW_SWEEP,
@@ -3512,8 +3508,7 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_MagicCoatDesc,
         BattleFrontier_Lounge7_Text_LowKickDesc,
         BattleFrontier_Lounge7_Text_SeismicTossDesc,
-        BattleFrontier_Lounge7_Text_MegaPunchDesc,
-        BattleFrontier_Lounge7_Text_MegaKickDesc,
+        BattleFrontier_Lounge7_Text_EndureDesc,
         BattleFrontier_Lounge7_Text_BodySlamDesc,
         BattleFrontier_Lounge7_Text_StoredPowerDesc,
         BattleFrontier_Lounge7_Text_SwordsDanceDesc,
@@ -3539,7 +3534,6 @@ static void ShowBattleFrontierTutorMoveDescription(u8 menu, u16 selection)
         BattleFrontier_Lounge7_Text_PainSplitDesc,
         BattleFrontier_Lounge7_Text_RecycleDesc,
         BattleFrontier_Lounge7_Text_IcyWindDesc,
-        BattleFrontier_Lounge7_Text_EndureDesc,
         BattleFrontier_Lounge7_Text_PsychUpDesc,
         BattleFrontier_Lounge7_Text_DreamEaterDesc,
         BattleFrontier_Lounge7_Text_LowSweepDesc,
