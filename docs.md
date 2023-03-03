@@ -985,3 +985,14 @@ These Pokemon are available after beating the Pokemon League.
 -Draco Meteor - Ever Grande City
 -Hidden Thorns - Battle Frontier
 -Bug Bite - Battle Frontier
+
+# Berry Handouts locations
+
+1 to 8 - Flower Shop Girl (Route 104 Flower Shop)
+1 to 10 - Berry Master's Wife (Route 123)
+11 to 15 - Watering Girl (Route 111)
+16 to 20 - Berry Crush Man (Route 114)
+21 to 30 - Berry Master (Route 123)/Kiri (Sootopolis City)
+31 to 35 - Berry Master's Wife phrase (GREAT BATTLE, CHALLENGE CONTEST, OVERWHELMING LATIAS, COOL LATIOS, SUPER HUSTLE)
+36 to 53 - Glacia obsessed guitarist (Ever Grande City)
+54 to 60 - Winona (Mossdeep City)
