@@ -39,7 +39,7 @@ v1.0.9 - ??/??/2023
 	- Changes to level up, Egg learnsets, TM learnsets and Tutor learnsets of Pokemon (TODO: make list).
 	- Pokemon will attempt to learn a new move upon evolution.
 	- Hoenn move tutors can now teach their moves endlessly.
-- New tutor moves added. The new tutor set is similar to what was available in future gens (TODO: make list).
+- New tutor moves added. The new tutor set is similar to what was available in future gens.
 - A few Pokemon have base stat buffs to better fit their theme and gameplay:
 	- Treecko, Spheal lines have Attack and Special Attack swapped.
 	- Numel and Camerupt have more HP.
