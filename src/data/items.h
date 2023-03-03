@@ -7447,7 +7447,7 @@ const struct Item gItems[] =
     {
         .name = _("Chilan Berry"),
         .itemId = ITEM_CHILAN_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_NORMAL,
         .description = sChilanBerryDesc,
@@ -7461,7 +7461,7 @@ const struct Item gItems[] =
     {
         .name = _("Occa Berry"),
         .itemId = ITEM_OCCA_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_FIRE,
         .description = sOccaBerryDesc,
@@ -7475,7 +7475,7 @@ const struct Item gItems[] =
     {
         .name = _("Passho Berry"),
         .itemId = ITEM_PASSHO_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_WATER,
         .description = sPasshoBerryDesc,
@@ -7489,7 +7489,7 @@ const struct Item gItems[] =
     {
         .name = _("Wacan Berry"),
         .itemId = ITEM_WACAN_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_ELECTRIC,
         .description = sWacanBerryDesc,
@@ -7503,7 +7503,7 @@ const struct Item gItems[] =
     {
         .name = _("Rindo Berry"),
         .itemId = ITEM_RINDO_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_GRASS,
         .description = sRindoBerryDesc,
@@ -7517,7 +7517,7 @@ const struct Item gItems[] =
     {
         .name = _("Yache Berry"),
         .itemId = ITEM_YACHE_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_ICE,
         .description = sYacheBerryDesc,
@@ -7531,7 +7531,7 @@ const struct Item gItems[] =
     {
         .name = _("Chople Berry"),
         .itemId = ITEM_CHOPLE_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_FIGHTING,
         .description = sChopleBerryDesc,
@@ -7545,7 +7545,7 @@ const struct Item gItems[] =
     {
         .name = _("Kebia Berry"),
         .itemId = ITEM_KEBIA_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_POISON,
         .description = sKebiaBerryDesc,
@@ -7559,7 +7559,7 @@ const struct Item gItems[] =
     {
         .name = _("Shuca Berry"),
         .itemId = ITEM_SHUCA_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_GROUND,
         .description = sShucaBerryDesc,
@@ -7573,7 +7573,7 @@ const struct Item gItems[] =
     {
         .name = _("Coba Berry"),
         .itemId = ITEM_COBA_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_FLYING,
         .description = sCobaBerryDesc,
@@ -7587,7 +7587,7 @@ const struct Item gItems[] =
     {
         .name = _("Payapa Berry"),
         .itemId = ITEM_PAYAPA_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_PSYCHIC,
         .description = sPayapaBerryDesc,
@@ -7601,7 +7601,7 @@ const struct Item gItems[] =
     {
         .name = _("Tanga Berry"),
         .itemId = ITEM_TANGA_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_BUG,
         .description = sTangaBerryDesc,
@@ -7615,7 +7615,7 @@ const struct Item gItems[] =
     {
         .name = _("Charti Berry"),
         .itemId = ITEM_CHARTI_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_ROCK,
         .description = sChartiBerryDesc,
@@ -7629,7 +7629,7 @@ const struct Item gItems[] =
     {
         .name = _("Kasib Berry"),
         .itemId = ITEM_KASIB_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_GHOST,
         .description = sKasibBerryDesc,
@@ -7643,7 +7643,7 @@ const struct Item gItems[] =
     {
         .name = _("Haban Berry"),
         .itemId = ITEM_HABAN_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_DRAGON,
         .description = sHabanBerryDesc,
@@ -7657,7 +7657,7 @@ const struct Item gItems[] =
     {
         .name = _("Colbur Berry"),
         .itemId = ITEM_COLBUR_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_DARK,
         .description = sColburBerryDesc,
@@ -7671,7 +7671,7 @@ const struct Item gItems[] =
     {
         .name = _("Babiri Berry"),
         .itemId = ITEM_BABIRI_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_STEEL,
         .description = sBabiriBerryDesc,
@@ -7685,7 +7685,7 @@ const struct Item gItems[] =
     {
         .name = _("Roseli Berry"),
         .itemId = ITEM_ROSELI_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RESIST_BERRY,
         .holdEffectParam = TYPE_FAIRY,
         .description = sRoseliBerryDesc,
@@ -7699,7 +7699,7 @@ const struct Item gItems[] =
     {
         .name = _("Liechi Berry"),
         .itemId = ITEM_LIECHI_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_ATTACK_UP,
         .holdEffectParam = 4,
         .description = sLiechiBerryDesc,
@@ -7713,7 +7713,7 @@ const struct Item gItems[] =
     {
         .name = _("Ganlon Berry"),
         .itemId = ITEM_GANLON_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_DEFENSE_UP,
         .holdEffectParam = 4,
         .description = sGanlonBerryDesc,
@@ -7727,7 +7727,7 @@ const struct Item gItems[] =
     {
         .name = _("Salac Berry"),
         .itemId = ITEM_SALAC_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_SPEED_UP,
         .holdEffectParam = 4,
         .description = sSalacBerryDesc,
@@ -7741,7 +7741,7 @@ const struct Item gItems[] =
     {
         .name = _("Petaya Berry"),
         .itemId = ITEM_PETAYA_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_SP_ATTACK_UP,
         .holdEffectParam = 4,
         .description = sPetayaBerryDesc,
@@ -7755,7 +7755,7 @@ const struct Item gItems[] =
     {
         .name = _("Apicot Berry"),
         .itemId = ITEM_APICOT_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_SP_DEFENSE_UP,
         .holdEffectParam = 4,
         .description = sApicotBerryDesc,
@@ -7769,7 +7769,7 @@ const struct Item gItems[] =
     {
         .name = _("Lansat Berry"),
         .itemId = ITEM_LANSAT_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_CRITICAL_UP,
         .holdEffectParam = 4,
         .description = sLansatBerryDesc,
@@ -7783,7 +7783,7 @@ const struct Item gItems[] =
     {
         .name = _("Starf Berry"),
         .itemId = ITEM_STARF_BERRY,
-        .price = 5000,
+        .price = 2000,
         .holdEffect = HOLD_EFFECT_RANDOM_STAT_UP,
         .holdEffectParam = 4,
         .description = sStarfBerryDesc,
