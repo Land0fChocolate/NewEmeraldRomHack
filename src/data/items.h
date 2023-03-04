@@ -850,9 +850,9 @@ const struct Item gItems[] =
         .description = sCasteliaconeDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .fieldUseFunc = ItemUseOutOfBattle_PPRecovery,
         .battleUsage = ITEM_B_USE_MEDICINE,
-        .battleUseFunc = ItemUseInBattle_Medicine,
+        .battleUseFunc = ItemUseInBattle_PPRecovery,
         .flingPower = 30,
     },
 
@@ -864,9 +864,9 @@ const struct Item gItems[] =
         .description = sLumioseGaletteDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .fieldUseFunc = ItemUseOutOfBattle_PPRecovery,
         .battleUsage = ITEM_B_USE_MEDICINE,
-        .battleUseFunc = ItemUseInBattle_Medicine,
+        .battleUseFunc = ItemUseInBattle_PPRecovery,
         .flingPower = 30,
     },
 
