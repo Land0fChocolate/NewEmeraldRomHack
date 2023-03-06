@@ -2602,8 +2602,8 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR] =
     {
-        gText_BottleCap2BP,
-        gText_GoldBottleCap28BP,
+        gText_BottleCap1BP,
+        gText_GoldBottleCap12BP,
         gText_PPUp2BP,
         gText_PPMax5BP,
         gText_Protein1BP,

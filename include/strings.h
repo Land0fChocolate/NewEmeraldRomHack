@@ -694,8 +694,8 @@ extern const u8 gText_RegirockDoll160BP[];
 extern const u8 gText_RegiceDoll160BP[];
 extern const u8 gText_RegisteelDoll160BP[];
 
-extern const u8 gText_BottleCap2BP[];
-extern const u8 gText_GoldBottleCap28BP[];
+extern const u8 gText_BottleCap1BP[];
+extern const u8 gText_GoldBottleCap12BP[];
 extern const u8 gText_PPUp2BP[];
 extern const u8 gText_PPMax5BP[];
 extern const u8 gText_Protein1BP[];

@@ -583,7 +583,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_BottleCap::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmBottleCap, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseVitamin
-	setvar VAR_0x8008, 2
+	setvar VAR_0x8008, 1
 	setvar VAR_0x8009, ITEM_BOTTLE_CAP
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -592,7 +592,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_GoldBottleCap::
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmGoldBottleCap, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseVitamin
-	setvar VAR_0x8008, 28
+	setvar VAR_0x8008, 12
 	setvar VAR_0x8009, ITEM_GOLD_BOTTLE_CAP
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
