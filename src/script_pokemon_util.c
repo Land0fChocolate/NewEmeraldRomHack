@@ -271,6 +271,40 @@ void EVTrainPokemon(void)
     MonGiveEVs(&gPlayerParty[gSpecialVar_0x8004], gSpecialVar_0x8009, MAX_EV_TRAINING_EVS);
 }
 
+void CheckForMaxedEVStat(void)
+{
+    u8 evs;
+
+    evs = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV + gSpecialVar_0x8009, 0);
+
+    if (evs >= MAX_EV_TRAINING_EVS)
+    {
+        VarSet(VAR_0x8007, TRUE);
+        return;
+    }
+    VarSet(VAR_0x8007, FALSE);
+}
+
+void CheckForMaxedEVTotal(void)
+{
+    u8 i;
+    u8 evs;
+    u16 totalEVs = 0;
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        totalEVs += GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV + i, 0);
+    }
+
+    if (totalEVs >= 510)
+    {
+        VarSet(VAR_0x8007, TRUE);
+        return;
+    }
+
+    VarSet(VAR_0x8007, FALSE);
+}
+
 u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny)
 {
     u16 nationalDexNum;

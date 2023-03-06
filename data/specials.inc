@@ -547,3 +547,5 @@ gSpecials::
 	def_special OriginChooseMove
 	def_special SetOriginMove
 	def_special ClearMatchCallRegisteredFlag
+	def_special CheckForMaxedEVStat
+	def_special CheckForMaxedEVTotal
