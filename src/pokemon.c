@@ -37,7 +37,6 @@
 #include "text.h"
 #include "trainer_hill.h"
 #include "util.h"
-#include "wild_encounter.h"
 #include "constants/abilities.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_move_effects.h"
@@ -3353,30 +3352,11 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     }
     else //Player is the OT
     {
-        u32 rolls = 0;
-        u32 shinyRolls = 0;
-
         value = gSaveBlock2Ptr->playerTrainerId[0]
               | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
               | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
               | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
-
-        #ifdef ITEM_SHINY_CHARM
-        if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
-            shinyRolls += 3;  //if you have the shiny charm, add 3 more rolls
-        #endif
-
-        if (gIsFishingEncounter)
-            shinyRolls += 1 + 2 * gChainFishingStreak; //1 + 2 rolls per streak count. max 41
-
-        if (shinyRolls)
-        {
-            do {
-                personality = Random32();
-                shinyValue = HIHALF(value) ^ LOHALF(value) ^ HIHALF(personality) ^ LOHALF(personality);
-                rolls++;
-            } while (shinyValue >= SHINY_ODDS && rolls < shinyRolls);
-        }
+        
         if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
         {
             u32 shinyValue;
@@ -7141,6 +7121,10 @@ void MonGiveEVs(struct Pokemon *mon, u8 stat, u8 evIncrease)
         evIncrease = ((s16)evIncrease + MAX_PER_STAT_EVS) - (evs[stat] + evIncrease);
 
     evs[stat] += evIncrease;
+
+    if (evs[stat] > MAX_EV_TRAINING_EVS)
+        evs[stat] = MAX_EV_TRAINING_EVS;
+
     SetMonData(mon, MON_DATA_HP_EV + stat, &evs[stat]);
 }
 
@@ -7149,6 +7133,7 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
     u8 evs[NUM_STATS];
     u16 evIncrease = 0;
     u16 totalEVs = 0;
+    u16 remainder;
     u16 heldItem;
     u8 holdEffect;
     int i, multiplier;
@@ -7240,8 +7225,15 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
             evIncrease = val1 - val2;
         }
 
+        remainder = 0;
         evs[i] += evIncrease;
-        totalEVs += evIncrease;
+        if (evs[i] > MAX_EV_TRAINING_EVS)
+        {
+            remainder = evs[i] - MAX_EV_TRAINING_EVS;
+            evs[i] = MAX_EV_TRAINING_EVS;
+        }
+
+        totalEVs = totalEVs + evIncrease - remainder;
         SetMonData(mon, MON_DATA_HP_EV + i, &evs[i]);
     }
 }

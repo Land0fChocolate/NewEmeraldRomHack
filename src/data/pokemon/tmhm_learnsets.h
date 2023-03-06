@@ -23153,6 +23153,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_RATTATA_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
                                                | TMHM(TM28_DIG)
+                                               | TMHM(TM10_HIDDEN_POWER)
                                                | TMHM(TM42_FACADE)
                                                | TMHM(TM13_ICE_BEAM)
                                                | TMHM(TM23_IRON_TAIL)
@@ -23177,6 +23178,7 @@ const u32 gTMHMLearnsets[][4] =
     [SPECIES_RATICATE_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
                                                 | TMHM(TM08_BULK_UP)
                                                 | TMHM(TM28_DIG)
+                                                | TMHM(TM10_HIDDEN_POWER)
                                                 | TMHM(TM42_FACADE)
                                                 | TMHM(TM15_HYPER_BEAM)
                                                 | TMHM(TM13_ICE_BEAM)
@@ -23205,6 +23207,7 @@ const u32 gTMHMLearnsets[][4] =
     [SPECIES_RAICHU_ALOLAN]  = TMHM_LEARNSET(TMHM(TM31_BRICK_BREAK)
                                                    | TMHM(TM04_CALM_MIND)
                                                    | TMHM(TM28_DIG)
+                                                   | TMHM(TM10_HIDDEN_POWER)
                                                    | TMHM(TM42_FACADE)
                                                    | TMHM(TM15_HYPER_BEAM)
                                                    | TMHM(TM23_IRON_TAIL)
@@ -23236,6 +23239,7 @@ const u32 gTMHMLearnsets[][4] =
     [SPECIES_SANDSHREW_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
                                                    | TMHM(TM31_BRICK_BREAK)
                                                    | TMHM(TM28_DIG)
+                                                   | TMHM(TM10_HIDDEN_POWER)
                                                    | TMHM(TM26_EARTHQUAKE)
                                                    | TMHM(TM42_FACADE)
                                                    | TMHM(TM13_ICE_BEAM)
@@ -23261,6 +23265,7 @@ const u32 gTMHMLearnsets[][4] =
     [SPECIES_SANDSLASH_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
                                                    | TMHM(TM31_BRICK_BREAK)
                                                    | TMHM(TM28_DIG)
+                                                   | TMHM(TM10_HIDDEN_POWER)
                                                    | TMHM(TM26_EARTHQUAKE)
                                                    | TMHM(TM42_FACADE)
                                                    | TMHM(TM15_HYPER_BEAM)
@@ -23289,6 +23294,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_VULPIX_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
                                                 | TMHM(TM28_DIG)
+                                                | TMHM(TM10_HIDDEN_POWER)
                                                 | TMHM(TM42_FACADE)
                                                 | TMHM(TM13_ICE_BEAM)
                                                 | TMHM(TM23_IRON_TAIL)
@@ -23306,6 +23312,7 @@ const u32 gTMHMLearnsets[][4] =
     [SPECIES_NINETALES_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
                                                    | TMHM(TM04_CALM_MIND)
                                                    | TMHM(TM28_DIG)
+                                                   | TMHM(TM10_HIDDEN_POWER)
                                                    | TMHM(TM42_FACADE)
                                                    | TMHM(TM15_HYPER_BEAM)
                                                    | TMHM(TM13_ICE_BEAM)
@@ -23326,6 +23333,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_DIGLETT_ALOLAN]  = TMHM_LEARNSET(TMHM(TM28_DIG)
                                                    | TMHM(TM26_EARTHQUAKE)
+                                                   | TMHM(TM10_HIDDEN_POWER)
                                                    | TMHM(TM42_FACADE)
                                                    | TMHM(TM17_PROTECT)
                                                    | TMHM(TM44_REST)
@@ -23344,6 +23352,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_DUGTRIO_ALOLAN]  = TMHM_LEARNSET(TMHM(TM28_DIG)
                                                    | TMHM(TM26_EARTHQUAKE)
+                                                   | TMHM(TM10_HIDDEN_POWER)
                                                    | TMHM(TM42_FACADE)
                                                    | TMHM(TM15_HYPER_BEAM)
                                                    | TMHM(TM17_PROTECT)
@@ -23365,6 +23374,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_MEOWTH_ALOLAN]  = TMHM_LEARNSET(TMHM(TM42_FACADE)
                                                    | TMHM(TM23_IRON_TAIL)
+                                                   | TMHM(TM10_HIDDEN_POWER)
                                                    | TMHM(TM17_PROTECT)
                                                    | TMHM(TM44_REST)
                                                    | TMHM(TM30_SHADOW_BALL)
@@ -23387,6 +23397,7 @@ const u32 gTMHMLearnsets[][4] =
     [SPECIES_PERSIAN_ALOLAN]  = TMHM_LEARNSET(TMHM(TM42_FACADE)
                                                     | TMHM(TM15_HYPER_BEAM)
                                                     | TMHM(TM23_IRON_TAIL)
+                                                    | TMHM(TM10_HIDDEN_POWER)
                                                     | TMHM(TM17_PROTECT)
                                                     | TMHM(TM44_REST)
                                                     | TMHM(TM30_SHADOW_BALL)
@@ -23411,6 +23422,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_GEODUDE_ALOLAN]  = TMHM_LEARNSET(TMHM(TM31_BRICK_BREAK)
                                                    | TMHM(TM28_DIG)
+                                                   | TMHM(TM10_HIDDEN_POWER)
                                                    | TMHM(TM42_FACADE)
                                                    | TMHM(TM38_FIRE_BLAST)
                                                    | TMHM(TM35_FLAMETHROWER)
@@ -23434,6 +23446,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_GRAVELER_ALOLAN]  = TMHM_LEARNSET(TMHM(TM31_BRICK_BREAK)
                                                     | TMHM(TM28_DIG)
+                                                    | TMHM(TM10_HIDDEN_POWER)
                                                     | TMHM(TM26_EARTHQUAKE)
                                                     | TMHM(TM42_FACADE)
                                                     | TMHM(TM38_FIRE_BLAST)
@@ -23457,6 +23470,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_GOLEM_ALOLAN]  = TMHM_LEARNSET(TMHM(TM31_BRICK_BREAK)
                                                  | TMHM(TM28_DIG)
+                                                 | TMHM(TM10_HIDDEN_POWER)
                                                  | TMHM(TM26_EARTHQUAKE)
                                                  | TMHM(TM42_FACADE)
                                                  | TMHM(TM38_FIRE_BLAST)
@@ -23485,6 +23499,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_GRIMER_ALOLAN]  = TMHM_LEARNSET(TMHM(TM28_DIG)
                                                    | TMHM(TM42_FACADE)
+                                                   | TMHM(TM10_HIDDEN_POWER)
                                                    | TMHM(TM38_FIRE_BLAST)
                                                    | TMHM(TM35_FLAMETHROWER)
                                                    | TMHM(TM17_PROTECT)
@@ -23505,6 +23520,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_MUK_ALOLAN]  = TMHM_LEARNSET(TMHM(TM31_BRICK_BREAK)
                                                 | TMHM(TM28_DIG)
+                                                | TMHM(TM10_HIDDEN_POWER)
                                                 | TMHM(TM42_FACADE)
                                                 | TMHM(TM38_FIRE_BLAST)
                                                 | TMHM(TM35_FLAMETHROWER)
@@ -23531,6 +23547,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_EXEGGUTOR_ALOLAN]  = TMHM_LEARNSET(TMHM(TM31_BRICK_BREAK)
                                                    | TMHM(TM26_EARTHQUAKE)
+                                                   | TMHM(TM10_HIDDEN_POWER)
                                                    | TMHM(TM42_FACADE)
                                                    | TMHM(TM35_FLAMETHROWER)
                                                    | TMHM(TM15_HYPER_BEAM)
@@ -23560,6 +23577,7 @@ const u32 gTMHMLearnsets[][4] =
     [SPECIES_MAROWAK_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
                                                    | TMHM(TM31_BRICK_BREAK)
                                                    | TMHM(TM28_DIG)
+                                                   | TMHM(TM10_HIDDEN_POWER)
                                                    | TMHM(TM26_EARTHQUAKE)
                                                    | TMHM(TM42_FACADE)
                                                    | TMHM(TM38_FIRE_BLAST)
@@ -23602,6 +23620,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_PONYTA_GALARIAN]   = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
                                             | TMHM(TM04_CALM_MIND)
+                                            | TMHM(TM10_HIDDEN_POWER)
                                             | TMHM(TM42_FACADE)
                                             | TMHM(TM23_IRON_TAIL)
                                             | TMHM(TM17_PROTECT)
@@ -23617,6 +23636,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_RAPIDASH_GALARIAN] = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
                                             | TMHM(TM04_CALM_MIND)
+                                            | TMHM(TM10_HIDDEN_POWER)
                                             | TMHM(TM42_FACADE)
                                             | TMHM(TM15_HYPER_BEAM)
                                             | TMHM(TM23_IRON_TAIL)
@@ -23636,6 +23656,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM14_BLIZZARD)
                                             | TMHM(TM04_CALM_MIND)
                                             | TMHM(TM28_DIG)
+                                            | TMHM(TM10_HIDDEN_POWER)
                                             | TMHM(TM26_EARTHQUAKE)
                                             | TMHM(TM42_FACADE)
                                             | TMHM(TM38_FIRE_BLAST)
@@ -23664,6 +23685,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_SLOWBRO_GALARIAN]  = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
                                             | TMHM(TM14_BLIZZARD)
+                                            | TMHM(TM10_HIDDEN_POWER)
                                             | TMHM(TM31_BRICK_BREAK)
                                             | TMHM(TM04_CALM_MIND)
                                             | TMHM(TM28_DIG)
@@ -23711,6 +23733,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_WEEZING_GALARIAN]  = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
                                             | TMHM(TM42_FACADE)
+                                            | TMHM(TM10_HIDDEN_POWER)
                                             | TMHM(TM38_FIRE_BLAST)
                                             | TMHM(TM35_FLAMETHROWER)
                                             | TMHM(TM15_HYPER_BEAM)
@@ -23799,6 +23822,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM04_CALM_MIND)
                                             | TMHM(TM28_DIG)
                                             | TMHM(TM26_EARTHQUAKE)
+                                            | TMHM(TM10_HIDDEN_POWER)
                                             | TMHM(TM42_FACADE)
                                             | TMHM(TM38_FIRE_BLAST)
                                             | TMHM(TM35_FLAMETHROWER)
@@ -23960,6 +23984,7 @@ const u32 gTMHMLearnsets[][4] =
     [SPECIES_GROWLITHE_HISUIAN]   = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
                                             | TMHM(TM45_ATTRACT)
                                             | TMHM(TM28_DIG)
+                                            | TMHM(TM10_HIDDEN_POWER)
                                             | TMHM(TM32_DOUBLE_TEAM)
                                             | TMHM(TM42_FACADE)
                                             | TMHM(TM38_FIRE_BLAST)
@@ -23991,6 +24016,7 @@ const u32 gTMHMLearnsets[][4] =
     [SPECIES_ARCANINE_HISUIAN]    = TMHM_LEARNSET(TMHM(TM40_AERIAL_ACE)
                                             | TMHM(TM45_ATTRACT)
                                             | TMHM(TM28_DIG)
+                                            | TMHM(TM10_HIDDEN_POWER)
                                             | TMHM(TM32_DOUBLE_TEAM)
                                             | TMHM(TM42_FACADE)
                                             | TMHM(TM38_FIRE_BLAST)
@@ -24026,6 +24052,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_VOLTORB_HISUIAN]     = TMHM_LEARNSET(TMHM(TM32_DOUBLE_TEAM)
                                             | TMHM(TM42_FACADE)
+                                            | TMHM(TM10_HIDDEN_POWER)
                                             | TMHM(TM21_FRUSTRATION)
                                             | TMHM(TM10_HIDDEN_POWER)
                                             | TMHM(TM16_LIGHT_SCREEN)
@@ -24056,6 +24083,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_ELECTRODE_HISUIAN]   = TMHM_LEARNSET(TMHM(TM32_DOUBLE_TEAM)
                                             | TMHM(TM42_FACADE)
+                                            | TMHM(TM10_HIDDEN_POWER)
                                             | TMHM(TM21_FRUSTRATION)
                                             | TMHM(TM10_HIDDEN_POWER)
                                             | TMHM(TM15_HYPER_BEAM)

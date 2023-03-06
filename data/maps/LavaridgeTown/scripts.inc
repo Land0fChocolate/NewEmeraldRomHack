@@ -306,9 +306,12 @@ LavaridgeTown_EventScript_DeclineEgg::
 LavaridgeTown_EventScript_Flannery::
 	faceplayer
 	goto_if_unset FLAG_MET_FLANNERY_HOT_SPRINGS, LavaridgeTown_EventScript_FlanneryHotSpringsFirstMeet
+	goto_if_set FLAG_FLANNERY_DAILY_LIMIT_LIFTED, LavaridgeTown_EventScript_FlanneryPart3
+	goto_if_set FLAG_POST_GAME_COMPLETE, LavaridgeTown_EventScript_FlanneryNoLimits
 LavaridgeTown_EventScript_FlanneryPart2::
 	dotimebasedevents
 	goto_if_set FLAG_DAILY_FLANNERY_TRAINING, LavaridgeTown_EventScript_ComeBackTomorrow
+LavaridgeTown_EventScript_FlanneryPart3::
 	msgbox LavaridgeTown_Text_WouldYouLikeTraining, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq LavaridgeTown_EventScript_FlanneryDeclined
@@ -320,6 +323,10 @@ LavaridgeTown_EventScript_FlanneryPart2::
 	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
 	compare VAR_RESULT, SPECIES_EGG
 	goto_if_eq LavaridgeTown_EventScript_CantTrainEgg
+	special CheckForMaxedEVTotal
+	compare VAR_0x8007, 1
+	goto_if_eq LavaridgeTown_Eventscript_EVsAreMaxedOut
+LavaridgeTown_EventScript_FlanneryPart4::
 	multichoice 0, 0, MULTI_STAT_EV_TRAIN, FALSE
 	switch VAR_RESULT
 	case 0, LavaridgeTown_Eventscript_EVTrainHP
@@ -330,7 +337,7 @@ LavaridgeTown_EventScript_FlanneryPart2::
 	case 5, LavaridgeTown_Eventscript_EVTrainSpeed
 	case 6, LavaridgeTown_EventScript_FlanneryDeclined
 	goto LavaridgeTown_EventScript_FlanneryDeclined
-LavaridgeTown_Eventscript_FlanneryPart3::
+LavaridgeTown_Eventscript_FlanneryPart5::
 	msgbox LavaridgeTown_Text_TrainingTime, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -344,41 +351,55 @@ LavaridgeTown_Eventscript_FlanneryPart3::
 	release
 	end
 
+LavaridgeTown_Eventscript_EVsAreMaxedOut::
+	msgbox LavaridgeTown_Text_EVsAreMaxedOut, MSGBOX_DEFAULT
+	release
+	end
+
 LavaridgeTown_Eventscript_EVTrainHP::
 	setvar VAR_0x8009, STAT_HP
-	goto LavaridgeTown_Eventscript_FlanneryPart3
-	end
+	goto LavaridgeTown_Eventscript_CheckStat
 
 LavaridgeTown_Eventscript_EVTrainAttack::
 	setvar VAR_0x8009, STAT_ATK
-	goto LavaridgeTown_Eventscript_FlanneryPart3
-	end
+	goto LavaridgeTown_Eventscript_CheckStat
 
 LavaridgeTown_Eventscript_EVTrainDefense::
 	setvar VAR_0x8009, STAT_DEF
-	goto LavaridgeTown_Eventscript_FlanneryPart3
-	end
+	goto LavaridgeTown_Eventscript_CheckStat
 
 LavaridgeTown_Eventscript_EVTrainSpeed::
 	setvar VAR_0x8009, STAT_SPEED
-	goto LavaridgeTown_Eventscript_FlanneryPart3
-	end
+	goto LavaridgeTown_Eventscript_CheckStat
 
 LavaridgeTown_Eventscript_EVTrainSpecialAttack::
 	setvar VAR_0x8009, STAT_SPATK
-	goto LavaridgeTown_Eventscript_FlanneryPart3
-	end
+	goto LavaridgeTown_Eventscript_CheckStat
 
 LavaridgeTown_Eventscript_EVTrainSpecialDefense::
 	setvar VAR_0x8009, STAT_SPDEF
-	goto LavaridgeTown_Eventscript_FlanneryPart3
-	end
+	goto LavaridgeTown_Eventscript_CheckStat
+
+LavaridgeTown_Eventscript_CheckStat::
+	special CheckForMaxedEVStat
+	compare VAR_0x8007, 1
+	goto_if_eq LavaridgeTown_Eventscript_FlanneryStatIsAtMax
+	goto LavaridgeTown_Eventscript_FlanneryPart5
+
+LavaridgeTown_Eventscript_FlanneryStatIsAtMax::
+	msgbox LavaridgeTown_Text_StatIsAtMax, MSGBOX_DEFAULT
+	goto LavaridgeTown_EventScript_FlanneryPart4
 
 LavaridgeTown_EventScript_FlanneryHotSpringsFirstMeet::
 	msgbox LavaridgeTown_Text_FlanneryCanTrainYourPokemon, MSGBOX_DEFAULT
 	setflag FLAG_MET_FLANNERY_HOT_SPRINGS
 	goto LavaridgeTown_EventScript_FlanneryPart2
 	end
+
+LavaridgeTown_EventScript_FlanneryNoLimits::
+	msgbox LavaridgeTown_Text_FlanneryNoLimits, MSGBOX_DEFAULT
+	setflag FLAG_FLANNERY_DAILY_LIMIT_LIFTED
+	goto LavaridgeTown_EventScript_FlanneryPart3
 
 LavaridgeTown_EventScript_ComeBackTomorrow::
 	msgbox LavaridgeTown_Text_ComeBackTomorrow, MSGBOX_DEFAULT
@@ -416,6 +437,13 @@ LavaridgeTown_Text_FlanneryCanTrainYourPokemon:
 	.string "Your Pokemon can join in too, I have\n"
 	.string "some free space.$"
 
+LavaridgeTown_Text_FlanneryNoLimits:
+	.string "Flannery: I've perfected my training\n"
+	.string "regimen to the point where I don't even\l"
+	.string "need to rest!\p"
+	.string "I can even train your Pokémon anytime,\n"
+	.string "{PLAYER}! No more daily limits!$"
+
 LavaridgeTown_Text_WouldYouLikeTraining:
 	.string "Flannery: So… how about it,\n"
 	.string "would you like me to train one of your\l"
@@ -429,18 +457,26 @@ LavaridgeTown_Text_TrainingTime:
 	.string "Yes! Let's get fired up!$"
 
 LavaridgeTown_Text_ComeBackTomorrow:
-	.string "Flannery: I like meeting the kind of\n"
-	.string "Pokémon you raise, {PLAYER}.\p"
+	.string "I like meeting the kind of Pokémon\n"
+	.string "you raise, {PLAYER}.\p"
 	.string "I'm open for training tomorrow as well,\n"
 	.string "if you'd care to join me.$"
 
 LavaridgeTown_Text_FlanneryDeclined:
-	.string "Flannery: Oh… okay, we can do it some\n"
+	.string "Oh… okay, we can do it some\n"
 	.string "other time.$"
 
 LavaridgeTown_Text_CantTrainEgg:
-	.string "Flannery: Umm… this is an egg.\n"
+	.string "Umm… this is an egg.\n"
 	.string "I can't train it.$"
+
+LavaridgeTown_Text_EVsAreMaxedOut:
+	.string "This Pokémon is maxed out in EVs\n"
+	.string "I can't train it further.$"
+
+LavaridgeTown_Text_StatIsAtMax:
+	.string "I can't make that stat any better.\n"
+	.string "It's as good as it can be.$"
 
 LavaridgeTown_Text_DoneTraining:
 	.string "All right, that was cool,\n"
