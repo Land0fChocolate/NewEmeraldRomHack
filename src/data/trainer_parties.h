@@ -12891,6 +12891,6 @@ static const struct TrainerMonItemCustomMoves sParty_Zinnia[] = {
     .lvl = 64,
     .species = SPECIES_SALAMENCE,
     .heldItem = ITEM_SALAMENCITE,
-    .moves = {MOVE_DOUBLE_EDGE, MOVE_FIRE_FANG, MOVE_IRON_TAIL, MOVE_DRACO_METEOR}
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_FIRE_FANG, MOVE_IRON_HEAD, MOVE_DRACO_METEOR}
     }
 };
