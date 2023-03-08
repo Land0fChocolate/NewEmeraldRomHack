@@ -1978,7 +1978,7 @@ const u16 gEggMoves[] = {
         MOVE_RAZOR_LEAF,
         MOVE_MIND_READER,
         MOVE_LEAF_STORM,
-        MOVE_EXTRASENSORY
+        MOVE_EXTRASENSORY,
         MOVE_SEED_BOMB,
         MOVE_GIGA_DRAIN,
         MOVE_NATURAL_GIFT,
@@ -2503,7 +2503,7 @@ const u16 gEggMoves[] = {
         MOVE_RAZOR_LEAF,
         MOVE_MIND_READER,
         MOVE_LEAF_STORM,
-        MOVE_EXTRASENSORY
+        MOVE_EXTRASENSORY,
         MOVE_SEED_BOMB,
         MOVE_GIGA_DRAIN,
         MOVE_NATURAL_GIFT,
