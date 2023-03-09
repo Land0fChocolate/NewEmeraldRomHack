@@ -13589,6 +13589,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM41_TORMENT)
                                             | TMHM(TM06_TOXIC)
+                                            | TMHM(TM53_ENERGY_BALL)
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM61_WILL_O_WISP)
                                             | TMHM(TM63_ECHOED_VOICE),

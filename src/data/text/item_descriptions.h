@@ -2616,32 +2616,32 @@ static const u8 sPinapBerryDesc[] = _(
 static const u8 sPomegBerryDesc[] = _(
     "Makes a Pokémon\n"
     "friendly but lowers\n"
-    "base HP.");
+    "HP EVs.");
 
 static const u8 sKelpsyBerryDesc[] = _(
     "Makes a Pokémon\n"
     "friendly but lowers\n"
-    "base Attack.");
+    "Attack EVs.");
 
 static const u8 sQualotBerryDesc[] = _(
     "Makes a Pokémon\n"
     "friendly but lowers\n"
-    "base Defense.");
+    "Defense EVs.");
 
 static const u8 sHondewBerryDesc[] = _(
     "Makes a Pokémon\n"
     "friendly but lowers\n"
-    "base Sp. Atk.");
+    "Sp. Atk EVs.");
 
 static const u8 sGrepaBerryDesc[] = _(
     "Makes a Pokémon\n"
     "friendly but lowers\n"
-    "base Sp. Def.");
+    "Sp. Def EVs.");
 
 static const u8 sTamatoBerryDesc[] = _(
     "Makes a Pokémon\n"
     "friendly but lowers\n"
-    "base Speed.");
+    "Speed EVs.");
 
 static const u8 sCornnBerryDesc[] = _(
     "{POKEBLOCK} ingredient.\n"

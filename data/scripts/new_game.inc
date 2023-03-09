@@ -346,5 +346,6 @@ EventScript_ResetAllMapFlags::
 	setvar VAR_SKY_PILLAR_4F_TRIGGER, 1
 	setvar VAR_SKY_PILLAR_5F_TRIGGER, 1
 	setvar VAR_SKY_PILLAR_TOP_TRIGGER, 1
+	setvar VAR_BATTLE_FRONTIER_STATE, 0
 	call EventScript_ResetAllBerries
 	end

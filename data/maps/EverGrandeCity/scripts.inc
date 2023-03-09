@@ -29,15 +29,15 @@ EverGrandeCity_EventScript_SetVisitedEverGrande::
 @this stuff is kept around for testing
 EverGrandeCity_EventScript_TestAbra1::
 	faceplayer
-	@cleartrainerflag TRAINER_LEAF
-	@trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
-	givemon SPECIES_GROWLITHE_HISUIAN, 5, ITEM_NONE
+	cleartrainerflag TRAINER_LEAF
+	trainerbattle_single TRAINER_LEAF, EverGrandeCity_Text_LeafIntro, EverGrandeCity_Text_LeafDefeated
 	end
 
 EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
-	giveitem ITEM_RARE_CANDY, 99
+	@giveitem ITEM_RARE_CANDY, 99
+	@givemon SPECIES_GROWLITHE_HISUIAN, 5, ITEM_NONE
 	closemessage
 	end
 
@@ -53,6 +53,20 @@ EverGrandeCity_Text_LeafDefeated:
 EverGrandeCity_Text_LeafPostBattle:
 	.string "I'm here for testing!\n"
 	.string "Remove me!$"
+
+    @{
+    @  "graphics_id": "OBJ_EVENT_GFX_ABRA",
+    @  "x": 30,
+    @  "y": 49,
+    @  "elevation": 3,
+    @  "movement_type": "MOVEMENT_TYPE_NONE",
+    @  "movement_range_x": 0,
+    @  "movement_range_y": 0,
+    @  "trainer_type": "TRAINER_TYPE_NONE",
+    @  "trainer_sight_or_berry_tree_id": "0",
+    @  "script": "EverGrandeCity_EventScript_TestAbra1",
+    @  "flag": "0"
+    @}
 
 EverGrandeCity_EventScript_WomanInBattle::
 	locktarget

@@ -12827,10 +12827,10 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Red[] = {
 static const struct TrainerMonItemCustomMoves sParty_Leaf[] = {
     {
     .iv = 0,
-    .lvl = 70,
-    .species = SPECIES_MILOTIC,
+    .lvl = 50,
+    .species = SPECIES_PICHU,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SERPENT_DANCE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    .moves = {MOVE_THUNDER_WAVE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }
 };
 
@@ -12891,6 +12891,6 @@ static const struct TrainerMonItemCustomMoves sParty_Zinnia[] = {
     .lvl = 64,
     .species = SPECIES_SALAMENCE,
     .heldItem = ITEM_SALAMENCITE,
-    .moves = {MOVE_DOUBLE_EDGE, MOVE_FIRE_FANG, MOVE_IRON_TAIL, MOVE_DRACO_METEOR}
+    .moves = {MOVE_DOUBLE_EDGE, MOVE_FIRE_FANG, MOVE_IRON_HEAD, MOVE_DRACO_METEOR}
     }
 };

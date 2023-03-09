@@ -13258,9 +13258,8 @@ static void Cmd_switchoutabilities(void)
     u16 x;
     u16 abilities[NUM_ABILITY_SLOTS];
 
-    memcpy(abilities, GetBattlerAbilities(gActiveBattler), sizeof(abilities));
-
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
+    memcpy(abilities, GetBattlerAbilities(gActiveBattler), sizeof(abilities));
 
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {

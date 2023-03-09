@@ -69,6 +69,8 @@ BattleFrontier_ScottsHouse_EventScript_SetUpZinniaEvent::
 BattleFrontier_ScottsHouse_EventScript_CheckPostGameComplete::
 	compare VAR_BATTLE_FRONTIER_STATE, 0
 	goto_if_eq Common_EventScript_NopReturn
+	compare VAR_BATTLE_FRONTIER_STATE, 2
+	goto_if_ge Common_EventScript_NopReturn
 	call_if_set FLAG_POST_GAME_COMPLETE, BattleFrontier_ScottsHouse_EventScript_SetUpZinniaEvent
 	return
 
@@ -178,6 +180,7 @@ BattleFrontier_ScottsHouse_EventScript_WelcomeToFrontier::
 	msgbox BattleFrontier_ScottsHouse_Text_HowMuchEffortItTookToMakeReal, MSGBOX_DEFAULT
 	applymovement LOCALID_SCOTT, Common_Movement_FacePlayer
 	waitmovement 0
+	setflag FLAG_SCOTT_GIVES_BATTLE_POINTS
 	release
 	end
 

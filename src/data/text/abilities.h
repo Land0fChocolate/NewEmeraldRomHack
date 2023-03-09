@@ -606,6 +606,10 @@ static const u8 sPoisonTouchDescription[] = _(
 	"User may poison the\n"
 	"target on contact.");
 
+static const u8 sRegeneratorDescription[] = _(
+	"Heals 1/3 health\n"
+	"upon switching out.");
+
 static const u8 sBigPecksDescription[] = _(
 	"Prevents Defense stat\n"
 	"reduction.");
@@ -1945,7 +1949,7 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_MOODY] = sMoodyDescription,
     [ABILITY_OVERCOAT] = sOvercoatDescription,
     [ABILITY_POISON_TOUCH] = sPoisonTouchDescription,
-    [ABILITY_REGENERATOR] = sNaturalCureDescription,
+    [ABILITY_REGENERATOR] = sRegeneratorDescription,
     [ABILITY_BIG_PECKS] = sBigPecksDescription,
     [ABILITY_SAND_RUSH] = sSandRushDescription,
     [ABILITY_WONDER_SKIN] = sWonderSkinDescription,
