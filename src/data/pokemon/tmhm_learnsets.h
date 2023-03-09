@@ -23295,6 +23295,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_VULPIX_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
                                                 | TMHM(TM28_DIG)
+                                                | TMHM(TM07_HAIL)
                                                 | TMHM(TM10_HIDDEN_POWER)
                                                 | TMHM(TM42_FACADE)
                                                 | TMHM(TM13_ICE_BEAM)
@@ -23312,6 +23313,7 @@ const u32 gTMHMLearnsets[][4] =
 
     [SPECIES_NINETALES_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
                                                    | TMHM(TM04_CALM_MIND)
+                                                   | TMHM(TM07_HAIL)
                                                    | TMHM(TM28_DIG)
                                                    | TMHM(TM10_HIDDEN_POWER)
                                                    | TMHM(TM42_FACADE)

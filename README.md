@@ -20,6 +20,7 @@ v1.0.7 - 25/02/2023
 v1.0.8 - 27/02/2023
 v1.0.9 - 03/03/2023
 v1.0.10 - 06/03/2023
+v1.0.11 - 08/03/2023
 
 # Changelog
 
@@ -29,7 +30,7 @@ v1.0.10 - 06/03/2023
 	- Those Pokemon with post gen 3 evolutions and pre-evolutions have those available as well.
 	- Many regional variants of gen 1, 2 and 3 Pokemon are available.
 	- Non-Hoenn Pokemon are available after beating the Pokemon League.
-	- A total of 416 Pokemon species (not counting regional variants) are accessible.
+	- A total of 416 ordinary Pokemon species and 28 regional species are accessible.
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
 	- Many Pokemon have had their ability sets updated to better fit their theme and gameplay. Gulpin has Corrosion now, the Regis all get Filter and many more! A full list can be found in the docs.
 	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
@@ -37,7 +38,7 @@ v1.0.10 - 06/03/2023
 	- The Pokemon summary screen has been updated to show all of a Pokemon's abilities and description with the A button prompt.
 - New moves and abilities (listed below).
 - Many gameplay adjustments to vanilla moves (Listed below). 
-	- Changes to level up, Egg learnsets, TM learnsets and Tutor learnsets of Pokemon (TODO: make list).
+	- Changes to level up, Egg learnsets, TM learnsets and Tutor learnsets of Pokemon. Full lists are provided.
 	- Pokemon will attempt to learn a new move upon evolution.
 	- Hoenn move tutors can now teach their moves endlessly.
 - New tutor moves added. The new tutor set is similar to what was available in future gens.

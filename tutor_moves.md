@@ -7717,7 +7717,7 @@
                       | STEALTH ROCK
                       | IRON HEAD
 
-    GRIMER ALOLAN]    | COUNTER
+    GRIMER ALOLAN     | COUNTER
                       | MIMIC
                       | GASTRO ACID
                       | EXPLOSION
