@@ -8689,6 +8689,8 @@ BattleScript_EffectSoulSiphon::
 	tryfaintmon BS_TARGET, FALSE, NULL
 	printstring STRINGID_PKMNSOULSIPHON
 	checksoulsiphonheal BS_ATTACKER, BattleScript_SoulSiphonHeal
+	setdrainedhp
+	manipulatedamage DMG_BIG_ROOT
 BattleScript_SoulSiphonHeal:
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
