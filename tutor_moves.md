@@ -1420,6 +1420,7 @@
                     | SUBSTITUTE
                     | SWAGGER
                     | SWIFT
+                    | SWORDS DANCE
                     | BLAZE IMPACT
                     | PLAY ROUGH
                     | HEAT WAVE
