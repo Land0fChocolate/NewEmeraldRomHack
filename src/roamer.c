@@ -180,6 +180,11 @@ void RoamerMove(void)
 {
     u8 locSet = 0;
 
+    if ((Random() % 3) == 0)
+    {
+        return;
+    }
+
     if ((Random() % 16) == 0)
     {
         RoamerMoveToOtherLocationSet();
