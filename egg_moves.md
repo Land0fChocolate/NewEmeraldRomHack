@@ -2396,27 +2396,154 @@ BAGON
 BUDEW
             | SPIKES
             | SYNTHESIS
-            | PIN_MISSILE
-            | COTTON_SPORE
-            | SLEEP_POWDER
-            | RAZOR_LEAF
-            | MIND_READER
-            | LEAF_STORM
+            | PIN MISSILE
+            | COTTON SPORE
+            | SLEEP POWDER
+            | RAZOR LEAF
+            | MIND READER
+            | LEAF STORM
             | EXTRASENSORY
-            | SEED_BOMB
-            | GIGA_DRAIN
-            | NATURAL_GIFT
-            | GRASS_WHISTLE
-            | BULLET_SEED
-            | POWER_WHIP
+            | SEED BOMB
+            | GIGA DRAIN
+            | NATURAL GIFT
+            | GRASS WHISTLE
+            | BULLET SEED
+            | POWER WHIP
 
 CHINGLING
             | DISABLE
             | CURSE
             | HYPNOSIS
             | WISH
-            | FUTURE_SIGHT
+            | FUTURE SIGHT
             | RECOVER
-            | STORED_POWER
-            | SKILL_SWAP
-            | COSMIC_POWER
+            | STORED POWER
+            | SKILL SWAP
+            | COSMIC POWER
+
+RATTATA ALOLAN
+        MOVE COUNTER
+        MOVE FINAL GAMBIT
+        MOVE FURY SWIPES
+        MOVE ME FIRST
+        MOVE REVENGE
+        MOVE REVERSAL
+        MOVE SNATCH
+        MOVE STOCKPILE
+        MOVE SWALLOW
+        MOVE SWITCHEROO
+        MOVE UPROAR
+
+SANDSHREW ALOLAN
+        MOVE AMNESIA
+        MOVE CHIP AWAY
+        MOVE COUNTER
+        MOVE CRUSH CLAW
+        MOVE CURSE
+        MOVE ENDURE
+        MOVE FLAIL
+        MOVE HONE CLAWS
+        MOVE ICICLE CRASH
+        MOVE ICICLE SPEAR
+        MOVE METAL CLAW
+        MOVE NIGHT SLASH
+
+VULPIX ALOLAN
+        MOVE AGILITY
+        MOVE CHARM
+        MOVE DISABLE
+        MOVE ENCORE
+        MOVE EXTRASENSORY
+        MOVE FLAIL
+        MOVE FREEZE DRY
+        MOVE HOWL
+        MOVE HYPNOSIS
+        MOVE MOONBLAST
+        MOVE POWER SWAP
+        MOVE SPITE
+        MOVE SECRET POWER
+        MOVE TAIL SLAP
+
+DIGLETT ALOLAN
+        MOVE ANCIENT POWER
+        MOVE BEAT UP
+        MOVE ENDURE
+        MOVE FEINT ATTACK
+        MOVE FINAL GAMBIT
+        MOVE HEADBUTT
+        MOVE MEMENTO
+        MOVE METAL SOUND
+        MOVE PURSUIT
+        MOVE REVERSAL
+        MOVE THRASH
+
+MEOWTH ALOLAN
+        MOVE AMNESIA
+        MOVE ASSIST
+        MOVE CHARM
+        MOVE COVET
+        MOVE FLAIL
+        MOVE FLATTER
+        MOVE FOUL PLAY
+        MOVE HYPNOSIS
+        MOVE PARTING SHOT
+        MOVE PUNISHMENT
+        MOVE SNATCH
+        MOVE SPITE
+
+GEODUDE ALOLAN
+        MOVE AUTOTOMIZE
+        MOVE BLOCK
+        MOVE COUNTER
+        MOVE CURSE
+        MOVE ENDURE
+        MOVE FLAIL
+        MOVE MAGNET RISE
+        MOVE ROCK CLIMB
+        MOVE SCREECH
+        MOVE WIDE GUARD
+
+GRIMER ALOLAN
+        MOVE ASSURANCE
+        MOVE CLEAR SMOG
+        MOVE CURSE
+        MOVE IMPRISON
+        MOVE MEAN LOOK
+        MOVE POWER UP PUNCH
+        MOVE PURSUIT
+        MOVE SCARY FACE
+        MOVE SHADOW SNEAK
+        MOVE SPITE
+        MOVE SPIT UP
+        MOVE STOCKPILE
+        MOVE SWALLOW
+
+egg moves(PONYTA GALARIAN
+        MOVE THRASH
+        MOVE DOUBLE KICK
+        MOVE HYPNOSIS
+        MOVE DOUBLE EDGE
+        MOVE HORN DRILL
+        MOVE MORNING SUN
+
+SLOWPOKE GALARIAN
+        MOVE BELCH
+        MOVE BELLY DRUM
+        MOVE BLOCK
+        MOVE STOMP
+
+GROWLITHE HISUIAN
+        MOVE BODY SLAM
+        MOVE CRUNCH
+        MOVE THRASH
+        MOVE FIRE SPIN
+        MOVE HOWL
+        MOVE HEAT WAVE
+        MOVE DOUBLE EDGE
+        MOVE FLARE BLITZ
+        MOVE MORNING SUN
+        MOVE COVET
+        MOVE IRON TAIL
+        MOVE DOUBLE KICK
+        MOVE CLOSE COMBAT
+        MOVE BURN UP

@@ -1420,6 +1420,7 @@
                     | SUBSTITUTE
                     | SWAGGER
                     | SWIFT
+                    | SWORDS DANCE
                     | BLAZE IMPACT
                     | PLAY ROUGH
                     | HEAT WAVE
@@ -7717,7 +7718,7 @@
                       | STEALTH ROCK
                       | IRON HEAD
 
-    GRIMER ALOLAN]    | COUNTER
+    GRIMER ALOLAN     | COUNTER
                       | MIMIC
                       | GASTRO ACID
                       | EXPLOSION

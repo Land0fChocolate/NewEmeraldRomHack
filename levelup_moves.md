@@ -1571,7 +1571,7 @@
 - Rapidash
              ( 0, MOVE_FURY_ATTACK)
              ( 1, MOVE_FURY_ATTACK)
-             ( 1, MOVE_POISON_JAB)
+             ( 1, MOVE_HIGH_HORSEPOWER)
              ( 1, MOVE_MEGAHORN)
              ( 1, MOVE_GROWL)
              ( 1, MOVE_QUICK_ATTACK)
@@ -9096,6 +9096,7 @@
 - RapidashGalarian
              ( 0, MOVE_PSYCHO_CUT)
              ( 1, MOVE_PSYCHO_CUT)
+             ( 1, MOVE_HIGH_HORSEPOWER)
              ( 1, MOVE_MEGAHORN)
              ( 1, MOVE_TACKLE)
              ( 1, MOVE_QUICK_ATTACK)

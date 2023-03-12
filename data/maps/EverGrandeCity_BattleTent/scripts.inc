@@ -35,6 +35,8 @@ EverGrandeCity_BattleTent_EventScript_SetUpTrainers::
 	call EverGrandeCity_BattleTent_EventScript_SetUpATrainer
 	call EverGrandeCity_BattleTent_EventScript_SetUpATrainer
 	call EverGrandeCity_BattleTent_EventScript_SetUpATrainer
+	call EverGrandeCity_BattleTent_EventScript_SetUpATrainer
+	call EverGrandeCity_BattleTent_EventScript_SetUpATrainer
 	end
 
 EverGrandeCity_BattleTent_EventScript_SetUpATrainer::

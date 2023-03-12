@@ -2152,7 +2152,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_RAPIDASH_GALARIAN_2] = {
         .species = SPECIES_RAPIDASH_GALARIAN,
-        .moves = {MOVE_PSYCHO_CUT, MOVE_PLAY_ROUGH, MOVE_WILD_CHARGE, MOVE_MEGAHORN},
+        .moves = {MOVE_PSYCHO_CUT, MOVE_PLAY_ROUGH, MOVE_WILD_CHARGE, MOVE_HIGH_HORSEPOWER},
         .item = ITEM_QUICK_CLAW,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_JOLLY

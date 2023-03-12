@@ -1426,6 +1426,7 @@ static const u64 sTutorLearnsets[] =
                                             | TUTOR(MOVE_SUBSTITUTE)
                                             | TUTOR(MOVE_SWAGGER)
                                             | TUTOR(MOVE_SWIFT)
+                                            | TUTOR(MOVE_SWORDS_DANCE)
                                             | TUTOR(MOVE_BLAZE_IMPACT)
                                             | TUTOR(MOVE_PLAY_ROUGH)
                                             | TUTOR(MOVE_HEAT_WAVE)
