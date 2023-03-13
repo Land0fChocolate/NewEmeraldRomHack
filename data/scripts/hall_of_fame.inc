@@ -1,5 +1,6 @@
 EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags::
 	special SetChampionSaveWarp
+	special ClearDailyFlags
 	setflag FLAG_IS_CHAMPION
 	compare VAR_FOSSIL_MANIAC_STATE, 0
 	call_if_eq EverGrandeCity_HallOfFame_EventScript_SetDesertUnderpassCommentReady
