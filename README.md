@@ -82,7 +82,7 @@ v1.0.13 - 15/03/2023
 - Gym Leaders do more:
 	- Roxanne trades evolution stones for fossils.
 	- Brawly can give a random shard daily.
-	- Flannery can EV train one of your Pokemon daily.
+	- Flannery can EV train one of your Pokemon daily (or without limit after completing the post game story!).
 	- Winona gives a rare berry daily. The variety depends on what legendary Pokemon you have in your party.
 	- Tate and Liza grant access to Jirachi.
 	- Gym Leaders have their own places to hang out in the overworld when they aren't looking for a rematch.
