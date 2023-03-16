@@ -549,3 +549,4 @@ gSpecials::
 	def_special ClearMatchCallRegisteredFlag
 	def_special CheckForMaxedEVStat
 	def_special CheckForMaxedEVTotal
+	def_special ClearDailyFlags

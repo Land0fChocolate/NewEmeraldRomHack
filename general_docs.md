@@ -353,6 +353,35 @@ These Pokemon are available after beating the Pokemon League.
     - GROWLITHE_HISUIAN -> Item Fire Stone -> ARCANINE_HISUIAN
     - VOLTORB_HISUIAN -> Item Leaf Stone -> ELECTRODE_HISUIAN
 
+# Pokemon Evolution Items Locations
+
+- Fire Stone -> Fiery Path (Strength required)/Treasure hunter trade
+- Water Stone -> Abandoned Ship (No Dive required!)/Treasure hunter trade
+- Thunder Stone -> New Mauville/Treasure hunter trade
+- Leaf Stone -> Route 119/Treasure hunter trade
+- Dawn Stone -> Petalburg City (Surf required)/Roxanne trade (Trainer's School)
+- Shiny Stone -> Route 121/Roxanne trade (Trainer's School)
+- Ice Stone -> Contest Lobby (Fisherman)/Roxanne trade (Trainer's School)
+- Sun Stone -> Mossdeep Space Center/Roxanne trade (Trainer's School)
+- Moon Stone -> Meteor Falls (first room)/Roxanne trade (Trainer's School)
+- Dusk Stone -> Roxanne trade (Trainer's School)
+- Oval Stone -> Frontier exchange shop
+- Reaper Cloth -> Mt Pyre interior/Frontier exchange shop
+- Protector -> Victory Road 3BF/Frontier exchange shop
+- Electirizer -> Frontier exchange shop
+- Magmarizer -> Frontier exchange shop
+- Deep Sea Scale -> Capt Stern trade/Frontier exchange shop
+- Deep Sea Tooth -> Capt Stern trade/Frontier exchange shop
+- Dragon Scale -> Wild Horsea/Frontier exchange shop
+- Upgrade -> Frontier exchange shop
+- Dubious Disc -> Frontier exchange shop
+- King's Rock -> Mossdeep City/Frontier exchange shop
+- Razor Claw -> Frontier exchange shop
+- Razor Fang -> Frontier exchange shop
+- Metal Coat -> Wild Skarmory and Steelix/Frontier exchange shop
+- Galarica Cuff -> Frontier exchange shop
+- Galarica Wreath -> Frontier exchange shop
+
 # Pokemon Ability Sets List
 
 - *Bulbasaur* (Overgrow, Chlorophyll, None)
