@@ -23,6 +23,7 @@ v1.0.10 - 06/03/2023
 v1.0.11 - 08/03/2023
 v1.0.12 - 12/03/2023
 v1.0.13 - 15/03/2023
+v1.0.14 - ??/03/2023
 
 # Changelog
 
@@ -80,12 +81,12 @@ v1.0.13 - 15/03/2023
 - Graphical updates to many existing overworld sprites and environments.
 - Various story changes. Includes aspects from ORAS, though has an entirely new post game story.
 - Gym Leaders do more:
-	- Roxanne trades evolution stones for fossils.
-	- Brawly can give a random shard daily.
-	- Flannery can EV train one of your Pokemon daily (or without limit after completing the post game story!).
-	- Winona gives a rare berry daily. The variety depends on what legendary Pokemon you have in your party.
-	- Tate and Liza grant access to Jirachi.
 	- Gym Leaders have their own places to hang out in the overworld when they aren't looking for a rematch.
+	- Roxanne trades evolution stones for fossils (Rustboro Trainer's School).
+	- Brawly can give a random shard daily (Route 106).
+	- Flannery can EV train one of your Pokemon daily, or without limit after completing the post game story (Lavaridge Town).
+	- Winona gives a rare berry daily. The variety depends on what legendary Pokemon you have in your party (Mossdeep City).
+	- Tate and Liza grant access to Jirachi (Slateport City).
 - Item changes
 	- Bag pockets are much larger.
 	- If the player has both bikes, they can switch between them with the R button.
