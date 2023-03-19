@@ -47,7 +47,7 @@
 -TM45 Attract - Verdanturf House
 -TM46 Thief - Slateport Museum
 -TM47 Steel Wing - Granite Cave
--TM48 Skill Swap - Mt Pyre
+-TM48 Skill Swap - Shoal Cave
 -TM49 Snatch - SS Tidal
 -TM50 Overheat - Lavaridge Gym
 -TM51 Leech Life - Lilycove Store
