@@ -196,14 +196,20 @@ BattleFrontier_BattleTowerLobby_EventScript_AskEnterSinglesChallenge::
 	case 2, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 
+BattleFrontier_BattleTowerLobby_EventScript_AnythingGoesChallenge::
+	frontier_checkineligibleAG
+	compare VAR_0x8004, TRUE
+	goto_if_eq BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMons
+	frontier_set FRONTIER_DATA_LVL_MODE, FRONTIER_LVL_AG
+
 BattleFrontier_BattleTowerLobby_EventScript_TryEnterSinglesChallenge::
 	setvar VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_SINGLES
 	message BattleFrontier_BattleTowerLobby_Text_WhichLevelMode
 	waitmessage
 	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
 	switch VAR_RESULT
-	case FRONTIER_LVL_TENT, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
+	case FRONTIER_LVL_AG, BattleFrontier_BattleTowerLobby_EventScript_AnythingGoesChallenge
 	frontier_checkineligible
 	compare VAR_0x8004, TRUE
 	goto_if_eq BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMons
@@ -268,7 +274,6 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterDoublesChallenge::
 	waitmessage
 	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
 	switch VAR_RESULT
-	case FRONTIER_LVL_TENT, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	frontier_checkineligible
 	compare VAR_0x8004, TRUE
@@ -335,7 +340,6 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterMultisChallenge::
 	waitmessage
 	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
 	switch VAR_RESULT
-	case FRONTIER_LVL_TENT, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	frontier_checkineligible
 	compare VAR_0x8004, TRUE
@@ -401,7 +405,6 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterLinkMultisChallenge::
 	waitmessage
 	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
 	switch VAR_RESULT
-	case FRONTIER_LVL_TENT, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	frontier_checkineligible
 	compare VAR_0x8004, TRUE

@@ -364,8 +364,8 @@ struct BattleFrontier
     /*0xCE0*/ u16 towerWinStreaks[4][2];
     /*0xCF0*/ u16 towerRecordWinStreaks[4][2];
     /*0xD00*/ u16 battledBrainFlags;
-    /*0xD02*/ u16 towerSinglesStreak; // Never read
-    /*0xD04*/ u16 towerNumWins; // Increments to MAX_STREAK but never read otherwise
+    /*0xD02*/ u16 towerAnythingGoesStreak;
+    /*0xD04*/ u16 towerAnythingGoesNumWins;
     /*0xD06*/ u8 towerBattleOutcome;
     /*0xD07*/ u8 towerLvlMode;
     /*0xD08*/ u8 domeAttemptedSingles50:1;

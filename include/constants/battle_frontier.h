@@ -20,7 +20,7 @@
 // Battle Frontier lvl modes.
 #define FRONTIER_LVL_50   0
 #define FRONTIER_LVL_OPEN 1
-#define FRONTIER_LVL_TENT 2
+#define FRONTIER_LVL_AG   2
 
 // Battle Frontier battle modes.
 #define FRONTIER_MODE_SINGLES      0

@@ -810,6 +810,14 @@ static const struct MenuAction MultichoiceList_StatEVTrain[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_LevelModeAG[] =
+{
+    {gText_Lv50},
+    {gText_OpenLevel},
+    {gText_AnythingGoes},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_TagMatchType[] =
 {
     {gText_NormalTagMatch},
@@ -947,6 +955,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_STAT_EV_TRAIN]              = MULTICHOICE(MultichoiceList_StatEVTrain),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_ORIGIN_STRAND]              = MULTICHOICE(MultichoiceList_OriginStrand),
+    [MULTI_LEVEL_MODE_AG]              = MULTICHOICE(MultichoiceList_LevelModeAG),
 };
 
 const u8 *const gStdStrings[] =
