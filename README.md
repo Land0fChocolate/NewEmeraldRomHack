@@ -257,7 +257,6 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, Flygon, Salamence and more)
 - Move relearner doesn't list all of the possible moves to relearn, only the first ~15.
 
-
 # Credits
 
 The fine people who worked on the pokeemerald and pokeemerald-expansion decompilation projects and helped me with problems:
