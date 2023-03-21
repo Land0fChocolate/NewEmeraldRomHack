@@ -12828,9 +12828,9 @@ static const struct TrainerMonItemCustomMoves sParty_Leaf[] = {
     {
     .iv = 0,
     .lvl = 50,
-    .species = SPECIES_MILOTIC,
+    .species = SPECIES_CHINGLING,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    .moves = {MOVE_ENTRAINMENT, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }
 };
 
