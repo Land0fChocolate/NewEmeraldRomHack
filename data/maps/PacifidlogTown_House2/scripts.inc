@@ -4,9 +4,9 @@ PacifidlogTown_House2_MapScripts::
 PacifidlogTown_House2_EventScript_FanClubYoungerBrother::
 	lock
 	faceplayer
-	dotimebasedevents
-	call PacifidlogTown_House2_EventScript_UpdateFanClubTMFlag
-	goto_if_set FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK, PacifidlogTown_House2_EventScript_ComeBackInXDays
+	dotimebasedevents @remove
+	call PacifidlogTown_House2_EventScript_UpdateFanClubTMFlag @remove
+	goto_if_set FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK, PacifidlogTown_House2_EventScript_ComeBackInXDays @remove
 	call_if_set FLAG_MET_FANCLUB_YOUNGER_BROTHER, PacifidlogTown_House2_EventScript_MonAssessment
 	call_if_unset FLAG_MET_FANCLUB_YOUNGER_BROTHER, PacifidlogTown_House2_EventScript_FirstMonAssessment
 	setflag FLAG_MET_FANCLUB_YOUNGER_BROTHER
@@ -40,13 +40,18 @@ PacifidlogTown_House2_EventScript_ClearReceivedFanClubTM::
 	return
 
 PacifidlogTown_House2_EventScript_GiveReturn::
+	goto_if_set FLAG_RECEIVED_TM_27_RETURN, PacifidlogTown_House2_EventScript_AdoringPokemon
 	msgbox PacifidlogTown_House2_Text_AdoringPokemonTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_TM27
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK
-	special SetPacifidlogTMReceivedDay
+	setflag FLAG_RECEIVED_TM_27_RETURN
 	msgbox PacifidlogTown_House2_Text_ExplainReturnFrustration, MSGBOX_DEFAULT
+	release
+	end
+
+PacifidlogTown_House2_EventScript_AdoringPokemon::
+	msgbox PacifidlogTown_House2_Text_AdoringPokemon, MSGBOX_DEFAULT
 	release
 	end
 
@@ -56,13 +61,18 @@ PacifidlogTown_House2_EventScript_PutInEffort::
 	end
 
 PacifidlogTown_House2_EventScript_GiveFrustration::
+	goto_if_set FLAG_RECEIVED_TM_21_FRUSTRATION, PacifidlogTown_House2_EventScript_ViciousPokemon
 	msgbox PacifidlogTown_House2_Text_ViciousPokemonTakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_TM21
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK
-	special SetPacifidlogTMReceivedDay
+	setflag FLAG_RECEIVED_TM_21_FRUSTRATION
 	msgbox PacifidlogTown_House2_Text_ExplainReturnFrustration, MSGBOX_DEFAULT
+	release
+	end
+
+PacifidlogTown_House2_EventScript_ViciousPokemon::
+	msgbox PacifidlogTown_House2_Text_ViciousPokemon, MSGBOX_DEFAULT
 	release
 	end
 
@@ -110,6 +120,11 @@ PacifidlogTown_House2_Text_AdoringPokemonTakeThis:
 	.string "A Pokémon that adoring and adorable\n"
 	.string "deserves a TM like this, no?$"
 
+PacifidlogTown_House2_Text_AdoringPokemon:
+	.string "It clearly likes you very much.\n"
+	.string "You have taken great care in raising\l"
+	.string "this Pokémon.$"
+
 PacifidlogTown_House2_Text_PutInSomeMoreEffort:
 	.string "Hmm…\n"
 	.string "It's not bad, but it's also not good.\p"
@@ -120,6 +135,11 @@ PacifidlogTown_House2_Text_ViciousPokemonTakeThis:
 	.string "It has a vicious look to it.\p"
 	.string "A frightening Pokémon like that\n"
 	.string "deserves a TM like this.$"
+
+PacifidlogTown_House2_Text_ViciousPokemon:
+	.string "It has a vicious look to it.\n"
+	.string "Your contempt in raising it has made\l"
+	.string "it furious.$"
 
 PacifidlogTown_House2_Text_ExplainReturnFrustration:
 	.string "If a Pokémon likes you a lot, Return's\n"

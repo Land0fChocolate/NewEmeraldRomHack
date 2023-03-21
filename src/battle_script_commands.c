@@ -8620,16 +8620,26 @@ static void Cmd_various(void)
             return;
         }
 
-        for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+        if (gBattleMons[gBattlerAttacker].abilities[0] == gBattleMons[gBattlerTarget].abilities[0]
+        && gBattleMons[gBattlerAttacker].abilities[1] == gBattleMons[gBattlerTarget].abilities[1]
+        && gBattleMons[gBattlerAttacker].abilities[2] == gBattleMons[gBattlerTarget].abilities[2])
         {
-            if (!IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gBattlerTarget].abilities[x])
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
+        }
+        else
+        {
+            for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+            {
+                if (!IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gBattlerTarget].abilities[x])
                 && !IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gBattlerAttacker].abilities[x])
                 && gBattleMons[gBattlerTarget].abilities[x] != gBattleMons[gBattlerAttacker].abilities[x])
-            {
-                gBattleMons[gBattlerTarget].abilities[x] = gBattleMons[gBattlerAttacker].abilities[x];
-                gBattlescriptCurrInstr += 7;
+                {
+                    gBattleMons[gBattlerTarget].abilities[x] = gBattleMons[gBattlerAttacker].abilities[x];
+                }
             }
+            gBattlescriptCurrInstr += 7;
         }
+
         return;
     case VARIOUS_SET_LAST_USED_ABILITIES: // entrainment //TODO: may need to use it in MultiAbilityPopUp
         memcpy(gLastUsedAbilities, gBattleMons[gActiveBattler].abilities, sizeof(gLastUsedAbilities));
