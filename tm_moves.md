@@ -601,6 +601,7 @@ SPECIES RATTATA              | TM45 ATTRACT
                              | TM65 SHADOW CLAW
                              | TM73 THUNDER WAVE
                              | TM86 GRASS KNOT
+                             | TM89 U TURN
                              | TM90 ROCK SMASH
                              | HM01 CUT
                              | HM06 ROCK SMASH
@@ -637,6 +638,7 @@ SPECIES RATICATE             | TM45 ATTRACT
                              | TM65 SHADOW CLAW
                              | TM73 THUNDER WAVE
                              | TM86 GRASS KNOT
+                             | TM89 U TURN
                              | TM90 ROCK SMASH
                              | HM01 CUT
                              | HM04 STRENGTH
@@ -779,6 +781,7 @@ SPECIES PIKACHU              | TM45 ATTRACT
                              | TM86 GRASS KNOT
                              | TM90 ROCK SMASH
                              | TM93 WILD CHARGE
+                             | TM94 SURF
                              | HM03 SURF
                              | HM04 STRENGTH
                              | HM05 FLASH
@@ -817,6 +820,7 @@ SPECIES RAICHU               | TM45 ATTRACT
                              | TM86 GRASS KNOT
                              | TM90 ROCK SMASH
                              | TM93 WILD CHARGE
+                             | TM94 SURF
                              | HM03 SURF
                              | HM04 STRENGTH
                              | HM05 FLASH
@@ -5773,6 +5777,7 @@ SPECIES PICHU                | TM45 ATTRACT
                              | TM85 ELECTROWEB
                              | TM86 GRASS KNOT
                              | TM93 WILD CHARGE
+                             | TM94 SURF
                              | HM03 SURF
                              | HM05 FLASH
 
@@ -13900,6 +13905,7 @@ SPECIES RAICHU ALOLAN        | TM31 BRICK BREAK
                              | TM87 TOPSY TURVY
                              | TM92 TRICK ROOM
                              | TM93 WILD CHARGE
+                             | TM94 SURF
                              | TM99 DAZZLING GLEAM
                              | HM05 FLASH
 
