@@ -2512,7 +2512,7 @@ static void TryPutRandomPokeNewsOnAir(void)
     if (FlagGet(FLAG_POST_GAME_COMPLETE))
     {
         sCurTVShowSlot = GetFirstEmptyPokeNewsSlot(gSaveBlock1Ptr->pokeNews);
-        if (sCurTVShowSlot != -1 && rbernoulli(2, 100) != TRUE)
+        if (sCurTVShowSlot != -1 && rbernoulli(1, 10) != TRUE)
         {
             u8 newsKind = (Random() % NUM_POKENEWS_TYPES) + POKENEWS_SLATEPORT;
             if (IsAddingPokeNewsDisallowed(newsKind) != TRUE)
@@ -2526,7 +2526,7 @@ static void TryPutRandomPokeNewsOnAir(void)
     else if (FlagGet(FLAG_SYS_GAME_CLEAR))
     {
         sCurTVShowSlot = GetFirstEmptyPokeNewsSlot(gSaveBlock1Ptr->pokeNews);
-        if (sCurTVShowSlot != -1 && rbernoulli(1, 100) != TRUE)
+        if (sCurTVShowSlot != -1 && rbernoulli(3, 100) != TRUE)
         {
             u8 newsKind = (Random() % NUM_POKENEWS_TYPES) + POKENEWS_SLATEPORT;
             if (IsAddingPokeNewsDisallowed(newsKind) != TRUE)
