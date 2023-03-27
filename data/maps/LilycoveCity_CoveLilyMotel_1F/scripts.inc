@@ -75,6 +75,70 @@ LilycoveCity_CoveLilyMotel_1F_Movement_OwnerReturn:
 	face_up
 	step_end
 
+LilycoveCity_CoveLilyMotel_1F_EventScript_Cook::
+	lock
+	faceplayer
+	showmoneybox 0, 0, 0
+	msgbox LilycoveCity_CoveLilyMotel_1F_Text_SellGalarCurry, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq LilycoveCity_CoveLilyMotel_1F_EventScript_DeclineGalarCurry
+	checkmoney 900, 0
+	compare VAR_RESULT, FALSE
+	goto_if_eq LilycoveCity_CoveLilyMotel_1F_EventScript_NotEnoughMoney
+	msgbox LilycoveCity_CoveLilyMotel_1F_Text_ThankYouEnjoy, MSGBOX_DEFAULT
+	checkitemspace ITEM_GALAR_CURRY, 1
+	compare VAR_RESULT, TRUE
+	call_if_eq LilycoveCity_CoveLilyMotel_1F_EventScript_RemoveMoney
+	giveitem ITEM_GALAR_CURRY
+	compare VAR_RESULT, FALSE
+	goto_if_eq LilycoveCity_CoveLilyMotel_1F_EventScript_BagIsFull
+	hidemoneybox
+	release
+	end
+
+LilycoveCity_CoveLilyMotel_1F_Text_SellGalarCurry:
+	.string "I've gone through a lot of trouble to\n"
+	.string "procure the finest ingredients straight\l"
+	.string "from Galar!\p"
+	.string "My curry is the best and only authentic\n"
+	.string "Galarian curry in all of Hoenn!\p"
+	.string "You have come to me because you would\n"
+	.string "like a plate, yes? It's ¥900.$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_CurryDeclined:
+	.string "Very well.\n"
+	.string "Come back when you have an appetite.$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_YouveNotGotTheMoney:
+	.string "It appears you don't have enough money.\n"
+	.string "I'm not running a soup kitchen here!$"
+
+LilycoveCity_CoveLilyMotel_1F_Text_ThankYouEnjoy:
+	.string "Enjoy your curry!$"
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_BagIsFull::
+	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
+	hidemoneybox
+	release
+	end
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_RemoveMoney::
+	removemoney 900, 0
+	updatemoneybox 0, 0
+	return
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_DeclineGalarCurry::
+	msgbox LilycoveCity_CoveLilyMotel_1F_Text_CurryDeclined, MSGBOX_DEFAULT
+	hidemoneybox
+	release
+	end
+
+LilycoveCity_CoveLilyMotel_1F_EventScript_NotEnoughMoney::
+	msgbox LilycoveCity_CoveLilyMotel_1F_Text_YouveNotGotTheMoney, MSGBOX_DEFAULT
+	hidemoneybox
+	release
+	end
+
 LilycoveCity_CoveLilyMotel_1F_Text_GuestsDoubledByMascot:
 	.string "Hm, so they doubled the guests by\n"
 	.string "using Pokémon as attractions?\p"

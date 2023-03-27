@@ -557,6 +557,7 @@ const u8 *const gItemEffectTable[] =
     [ITEM_SHALOUR_SABLE - ITEM_POTION]    = gItemEffect_FullHeal,
     [ITEM_BIG_MALASADA - ITEM_POTION]     = gItemEffect_FullHeal,
     [ITEM_JELLY_FILLED_DONUT - ITEM_POTION] = gItemEffect_SodaPop,
+    [ITEM_GALAR_CURRY - ITEM_POTION]      = gItemEffect_FullRestore,
 
     // Vitamins
     [ITEM_HP_UP - ITEM_POTION]            = gItemEffect_HPUp,

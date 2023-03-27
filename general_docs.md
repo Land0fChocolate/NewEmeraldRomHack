@@ -381,6 +381,8 @@ These Pokemon are available after beating the Pokemon League.
 - Metal Coat -> Wild Skarmory and Steelix/Frontier exchange shop
 - Galarica Cuff -> Frontier exchange shop
 - Galarica Wreath -> Frontier exchange shop
+- Big Malasada -> Mauville sweet shop
+- Galar Curry -> Lilycove Motel
 
 # Pokemon Ability Sets List
 

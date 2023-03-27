@@ -913,13 +913,13 @@ const struct Item gItems[] =
         .flingPower = 30,
     },
 
-    [ITEM_JELLY_FILLED_DONUT2] = //unused, here so I can remove the item in game
+    [ITEM_GALAR_CURRY] =
     {
-        .name = _("Jelly Donut"),
-        .itemId = ITEM_JELLY_FILLED_DONUT2,
-        .price = 300,
+        .name = _("Galar Curry"),
+        .itemId = ITEM_GALAR_CURRY,
+        .price = 900,
         .holdEffectParam = 50,
-        .description = sJellyFilledDonutDesc,
+        .description = sGalarCurryDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
@@ -1453,7 +1453,7 @@ const struct Item gItems[] =
     {
         .name = _("Rare Candy"),
         .itemId = ITEM_RARE_CANDY,
-        .price = 2000,
+        .price = 500,
         .description = sRareCandyDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,

@@ -97,9 +97,9 @@
 #define ITEM_CLEVER_FEATHER 77
 #define ITEM_SWIFT_FEATHER 78
 
-// Ability Modifiers
+// New Foods
 #define ITEM_JELLY_FILLED_DONUT 79
-#define ITEM_ABILITY_PATCH 80 // unused
+#define ITEM_GALAR_CURRY 80
 
 // Mints
 #define ITEM_LONELY_MINT 81
