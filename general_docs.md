@@ -6,9 +6,9 @@ Potential spoilers here for those who wish to discover things on their own.
 
 These Pokemon are available after beating the Pokemon League.
 
--Bulbasaur - Oldale Farm
--Charmander - Oldale Farm
--Squirtle - Oldale Farm
+-Bulbasaur - Oldale Farm (after beating post game story)
+-Charmander - Oldale Farm (after beating post game story)
+-Squirtle - Oldale Farm (after beating post game story)
 -Caterpie - Wildwoods area 1/2/8
 -Weedle - Fortree Jungle area 1
 -Pidgey - Littleroot Beach
@@ -56,9 +56,9 @@ These Pokemon are available after beating the Pokemon League.
 -Dratini - Fortree Jungle area 2
 -Mewtwo - Devon Corp (bring Mew)
 -Mew - Faraway Island
--Chikorita - Oldale Farm/Birch Lab
--Cyndaquil - Oldale Farm/Birch Lab
--Totodile - Oldale Farm/Birch Lab
+-Chikorita - Oldale Farm (after completing Hoenn dex)/Birch Lab (after completing Hoenn dex)
+-Cyndaquil - Oldale Farm(after completing Hoenn dex)/Birch Lab (after completing Hoenn dex)
+-Totodile - Oldale Farm(after completing Hoenn dex)/Birch Lab (after completing Hoenn dex)
 -Sentret - Mauville Meadow
 -Hoothoot - Wildwoods area 1/4/5/8
 -Ledyba - Littleroot Beach
