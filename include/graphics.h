@@ -7531,6 +7531,8 @@ extern const u32 gItemIcon_BigMalasada[];
 extern const u32 gItemIconPalette_BigMalasada[];
 extern const u32 gItemIcon_JellyFilledDonut[];
 extern const u32 gItemIconPalette_JellyFilledDonut[];
+extern const u32 gItemIcon_GalarCurry[];
+extern const u32 gItemIconPalette_GalarCurry[];
 // Vitamins
 extern const u32 gItemIcon_HPUp[];
 extern const u32 gItemIconPalette_HPUp[];

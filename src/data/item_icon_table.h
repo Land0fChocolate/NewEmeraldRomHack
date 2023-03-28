@@ -69,6 +69,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_SHALOUR_SABLE] = {gItemIcon_ShalourSable, gItemIconPalette_ShalourSable},
     [ITEM_BIG_MALASADA] = {gItemIcon_BigMalasada, gItemIconPalette_BigMalasada},
     [ITEM_JELLY_FILLED_DONUT] = {gItemIcon_JellyFilledDonut, gItemIconPalette_JellyFilledDonut},
+    [ITEM_GALAR_CURRY] = {gItemIcon_GalarCurry, gItemIconPalette_GalarCurry},
     // Vitamins
     [ITEM_HP_UP] = {gItemIcon_HPUp, gItemIconPalette_HPUp},
     [ITEM_PROTEIN] = {gItemIcon_Vitamin, gItemIconPalette_Protein},

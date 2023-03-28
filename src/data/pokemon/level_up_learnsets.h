@@ -160,7 +160,8 @@ static const struct LevelUpMove sWartortleLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sBlastoiseLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_FLASH_CANNON),
+    LEVEL_UP_MOVE( 1, MOVE_SHELL_SMASH),
+    LEVEL_UP_MOVE( 1, MOVE_AURA_SPHERE),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
     LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
@@ -234,6 +235,7 @@ static const struct LevelUpMove sKakunaLevelUpLearnset[] = {
 static const struct LevelUpMove sBeedrillLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_TWINEEDLE),
     LEVEL_UP_MOVE( 1, MOVE_TWINEEDLE),
+    LEVEL_UP_MOVE( 1, MOVE_DRILL_RUN),
     LEVEL_UP_MOVE( 1, MOVE_FURY_ATTACK),
     LEVEL_UP_MOVE(11, MOVE_FURY_ATTACK),
     LEVEL_UP_MOVE(14, MOVE_RAGE),
@@ -19272,6 +19274,7 @@ static const struct LevelUpMove sGrowlitheHisuianLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sArcanineHisuianLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_HEAD_SMASH),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_ROAR),
     LEVEL_UP_MOVE( 5, MOVE_EMBER),
@@ -19293,6 +19296,7 @@ static const struct LevelUpMove sArcanineHisuianLevelUpLearnset[] = {
     LEVEL_UP_MOVE(41, MOVE_HEAT_WAVE),
     LEVEL_UP_MOVE(43, MOVE_OUTRAGE),
     LEVEL_UP_MOVE(47, MOVE_FLARE_BLITZ),
+    LEVEL_UP_MOVE(54, MOVE_HEAD_SMASH),
     LEVEL_UP_END
 };
 

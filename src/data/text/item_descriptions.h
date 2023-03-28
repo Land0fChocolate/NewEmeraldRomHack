@@ -317,6 +317,11 @@ static const u8 sJellyFilledDonutDesc[] = _(
     "of a Pokémon by\n"
     "50 points.");
 
+static const u8 sGalarCurryDesc[] = _(
+    "Fully restores\n"
+    "HP and status of\n"
+    "a Pokémon.");
+
 // Vitamins
 static const u8 sHPUpDesc[] = _(
     "Raises the base HP\n"

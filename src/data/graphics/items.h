@@ -192,6 +192,9 @@ const u32 gItemIconPalette_BigMalasada[] = INCBIN_U32("graphics/items/icon_palet
 const u32 gItemIcon_JellyFilledDonut[] = INCBIN_U32("graphics/items/icons/jelly_filled_donut.4bpp.lz");
 const u32 gItemIconPalette_JellyFilledDonut[] = INCBIN_U32("graphics/items/icon_palettes/jelly_filled_donut.gbapal.lz");
 
+const u32 gItemIcon_GalarCurry[] = INCBIN_U32("graphics/items/icons/galar_curry.4bpp.lz");
+const u32 gItemIconPalette_GalarCurry[] = INCBIN_U32("graphics/items/icon_palettes/galar_curry.gbapal.lz");
+
 // Vitamins
 
 const u32 gItemIcon_HPUp[] = INCBIN_U32("graphics/items/icons/hp_up.4bpp.lz");

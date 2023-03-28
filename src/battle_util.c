@@ -6067,7 +6067,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                  && gBattleMons[gBattlerAttacker].hp != 0
                  && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
                  && TARGET_TURN_DAMAGED
-                 && CanBePoisoned(gBattlerAttacker, gBattlerTarget)
+                 && CanBePoisoned(gBattlerTarget, gBattlerAttacker)
                  && IsMoveMakingContact(move, gBattlerAttacker)
                  && (Random() % 3) == 0)
                 {
@@ -10038,12 +10038,15 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
 static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, u16 typeEffectivenessModifier, bool32 isCrit, bool32 updateFlags)
 {
     u32 percentBoost;
-    u16 *atkAbilities = GetBattlerAbilities(battlerAtk);
-    u16 *defAbilities = GetBattlerAbilities(battlerDef);
+    u16 atkAbilities[NUM_ABILITY_SLOTS];
+    u16 defAbilities[NUM_ABILITY_SLOTS];
     u32 defSide = GET_BATTLER_SIDE(battlerDef);
     u16 finalModifier = UQ_4_12(1.0);
     u16 itemDef = gBattleMons[battlerDef].item;
     u16 x;
+
+    memcpy(atkAbilities, GetBattlerAbilities(battlerAtk), sizeof(atkAbilities));
+    memcpy(defAbilities, GetBattlerAbilities(battlerDef), sizeof(defAbilities));
 
     // check multiple targets in double battle
     if (GetMoveTargetCount(move, battlerAtk, battlerDef) >= 2)
@@ -10058,7 +10061,7 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
 
     // check burn
     if (gBattleMons[battlerAtk].status1 & STATUS1_BURN && IS_MOVE_PHYSICAL(move)
-        && (gBattleMoves[move].effect != EFFECT_FACADE || B_BURN_FACADE_DMG < GEN_6)
+        && gBattleMoves[move].effect != EFFECT_FACADE
         && !HasAbility(ABILITY_GUTS, atkAbilities))
         dmg = ApplyModifier(UQ_4_12(0.5), dmg);
 
