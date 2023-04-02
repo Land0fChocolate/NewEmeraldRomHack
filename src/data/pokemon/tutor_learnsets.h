@@ -8049,7 +8049,8 @@ static const u64 sTutorLearnsets[] =
                                             | TUTOR(MOVE_RECYCLE)
                                             | TUTOR(MOVE_LOW_KICK)
                                             | TUTOR(MOVE_MAGIC_COAT)
-                                            | TUTOR(MOVE_PAIN_SPLIT)),
+                                            | TUTOR(MOVE_PAIN_SPLIT)
+                                            | TUTOR(MOVE_FLINT_BLADE)),
 
     [SPECIES_PROBOPASS]     = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
                                             | TUTOR(MOVE_EXPLOSION)

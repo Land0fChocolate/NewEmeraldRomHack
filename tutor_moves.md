@@ -7474,6 +7474,7 @@
                     | LOW KICK
                     | MAGIC COAT
                     | PAIN SPLIT
+                    | FLINT BLADE
 
     PROBOPASS       | ENDURE
                     | EXPLOSION

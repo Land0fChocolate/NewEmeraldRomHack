@@ -7041,6 +7041,7 @@ static const struct LevelUpMove sSwabluLevelUpLearnset[] = {
 static const struct LevelUpMove sAltariaLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_DRAGON_BREATH),
     LEVEL_UP_MOVE( 1, MOVE_DRAGON_BREATH),
+    LEVEL_UP_MOVE( 1, MOVE_HYPER_VOICE),
     LEVEL_UP_MOVE( 1, MOVE_SKY_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_PLUCK),
     LEVEL_UP_MOVE( 1, MOVE_PECK),
