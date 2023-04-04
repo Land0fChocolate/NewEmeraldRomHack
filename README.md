@@ -209,6 +209,7 @@ Possible future additions/changes.
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
 - A contest side-quest with Lisia, much like in ORAS.
 - Perhaps a more interesting Tate & Liza event to get Jirachi?
+- Perhaps a side quest with a boss battle to acquire Mewtwo? Triggered after giving Mew DNA to the Devon researcher, Mewtwo breaks free.
 - Scott giving more interesting rewards to players who get all silver/gold symbols.
 - In-game resource that teaches the player braile. So that it isn't required to look out of the game to solve the braile puzzles.
 - Sort out the online/wireless features. Either find out how to make them work or remove them.

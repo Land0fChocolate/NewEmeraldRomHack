@@ -8161,8 +8161,8 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_DEOXYS_SPEED,
         .moves = {MOVE_PSYSHOCK, MOVE_ICE_BEAM, MOVE_LIGHT_SCREEN, MOVE_THUNDER_WAVE},
         .item = ITEM_LUM_BERRY,
-        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
-        .nature = NATURE_IMPISH
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_BOLD
     },
     [FRONTIER_MON_DEOXYS_SPEED_4] = {
         .species = SPECIES_DEOXYS_SPEED,
