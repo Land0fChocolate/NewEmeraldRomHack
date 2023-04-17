@@ -392,10 +392,7 @@ static void SetRentalsToOpponentParty(void)
 {
     u8 i;
 
-    if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_TENT)
-        gFacilityTrainerMons = gBattleFrontierMons;
-    else
-        gFacilityTrainerMons = gSlateportBattleTentMons;
+    gFacilityTrainerMons = gBattleFrontierMons;
 
     for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
     {
@@ -712,10 +709,7 @@ static void RestorePlayerPartyHeldItems(void)
 {
     u8 i;
 
-    if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_TENT)
-        gFacilityTrainerMons = gBattleFrontierMons;
-    else
-        gFacilityTrainerMons = gSlateportBattleTentMons;
+    gFacilityTrainerMons = gBattleFrontierMons;
 
     for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
     {

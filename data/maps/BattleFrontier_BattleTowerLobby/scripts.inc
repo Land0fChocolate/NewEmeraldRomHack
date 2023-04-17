@@ -196,11 +196,11 @@ BattleFrontier_BattleTowerLobby_EventScript_AskEnterSinglesChallenge::
 	case 2, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 
-BattleFrontier_BattleTowerLobby_EventScript_AnythingGoesChallenge::
-	frontier_checkineligibleAG
+BattleFrontier_BattleTowerLobby_EventScript_UberChallenge::
+	frontier_checkineligible
 	compare VAR_0x8004, TRUE
 	goto_if_eq BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMons
-	frontier_set FRONTIER_DATA_LVL_MODE, FRONTIER_LVL_AG
+	frontier_set FRONTIER_DATA_LVL_MODE, FRONTIER_LVL_UBER
 
 BattleFrontier_BattleTowerLobby_EventScript_TryEnterSinglesChallenge::
 	setvar VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_SINGLES
@@ -209,7 +209,7 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterSinglesChallenge::
 	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
-	case FRONTIER_LVL_AG, BattleFrontier_BattleTowerLobby_EventScript_AnythingGoesChallenge
+	case FRONTIER_LVL_UBER, BattleFrontier_BattleTowerLobby_EventScript_UberChallenge
 	frontier_checkineligible
 	compare VAR_0x8004, TRUE
 	goto_if_eq BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMons

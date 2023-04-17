@@ -1780,7 +1780,7 @@ void ResetWinStreaks(void)
     gSaveBlock2Ptr->frontier.winStreakActiveFlags = 0;
     for (battleMode = 0; battleMode < FRONTIER_MODE_COUNT; battleMode++)
     {
-        for (lvlMode = 0; lvlMode < FRONTIER_LVL_AG; lvlMode++)
+        for (lvlMode = 0; lvlMode < FRONTIER_LVL_UBER; lvlMode++)
         {
             gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode] = 0;
             if (battleMode < FRONTIER_MODE_MULTIS)
@@ -1974,6 +1974,10 @@ static u8 AppendCaughtBannedMonSpeciesName(u16 species, u8 count, s32 numBannedM
 static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monLevel, u16 *speciesArray, u16 *itemsArray, u8 *count)
 {
     s32 i = 0;
+    bool8 uberFormat;
+
+    if (VarGet(VAR_RESULT) == FRONTIER_LVL_UBER) // note: should change VAR_RESULT to something safer?
+        uberFormat = TRUE;
 
     if (species == SPECIES_EGG || species == SPECIES_NONE)
         return;
@@ -1981,7 +1985,7 @@ static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monL
     for (i = 0; gFrontierBannedSpecies[i] != 0xFFFF && gFrontierBannedSpecies[i] != species; i++)
         ;
 
-    if (gFrontierBannedSpecies[i] != 0xFFFF)
+    if (gFrontierBannedSpecies[i] != 0xFFFF && !uberFormat)
         return;
     if (lvlMode == FRONTIER_LVL_50 && monLevel > 50)
         return;
@@ -1993,6 +1997,9 @@ static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monL
 
     if (heldItem != 0)
     {
+        if (!uberFormat && ItemId_GetHoldEffect(heldItem) == HOLD_EFFECT_MEGA_STONE)
+            return;
+        
         for (i = 0; i < *count && itemsArray[i] != heldItem; i++)
             ;
         if (i != *count)
@@ -2016,6 +2023,10 @@ static void CheckPartyIneligibility(void)
     u8 count = 0;
     s32 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
     s32 monIdLooper;
+    bool8 uberFormat;
+
+    if (VarGet(VAR_RESULT) == FRONTIER_LVL_UBER)
+        uberFormat = TRUE;
 
     // count is re-used, define for clarity
     #define numEligibleMons count
@@ -2053,6 +2064,11 @@ static void CheckPartyIneligibility(void)
                 if (heldItem == ITEM_NONE)
                     AppendIfValid(species, heldItem, hp, gSpecialVar_Result, level, speciesArray, itemArray, &numEligibleMons);
             }
+            else if (!uberFormat)
+            {
+                if (ItemId_GetHoldEffect(heldItem) != HOLD_EFFECT_MEGA_STONE)
+                    AppendIfValid(species, heldItem, hp, gSpecialVar_Result, level, speciesArray, itemArray, &numEligibleMons);
+            }
             else
             {
                 AppendIfValid(species, heldItem, hp, gSpecialVar_Result, level, speciesArray, itemArray, &numEligibleMons);
@@ -2065,7 +2081,7 @@ static void CheckPartyIneligibility(void)
         monIdLooper++;
     } while (monIdLooper < PARTY_SIZE && numEligibleMons < toChoose);
 
-    if (numEligibleMons < toChoose)
+    if (numEligibleMons < toChoose && !uberFormat)
     {
         s32 i;
         s32 caughtBannedMons = 0;
@@ -2114,6 +2130,12 @@ static void IncrementWinStreak(void)
     s32 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
     s32 facility = VarGet(VAR_FRONTIER_FACILITY);
 
+    if (VarGet(VAR_RESULT) == FRONTIER_LVL_UBER) // TODO: use something other than VAR_RESULT for getting format
+    {
+        // TODO: set uber format win streak
+        return;
+    }
+
     switch (facility)
     {
     case FRONTIER_FACILITY_TOWER:
@@ -2123,6 +2145,7 @@ static void IncrementWinStreak(void)
             if (battleMode == FRONTIER_MODE_SINGLES)
             {
                 SetGameStat(GAME_STAT_BATTLE_TOWER_BEST_STREAK, gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode]);
+                gSaveBlock2Ptr->frontier.towerSinglesStreak = gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode];
             }
         }
         break;

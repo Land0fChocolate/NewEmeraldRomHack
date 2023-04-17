@@ -921,6 +921,11 @@ static const u16 sFrontierTrainerIdRangesHard[][2] =
     {FRONTIER_TRAINER_JAXON,   FRONTIER_TRAINER_GRETEL}, // 200 - 299
 };
 
+static const u16 sFrontierTrainerIdRangesUbers[][2] =
+{
+    {FRONTIER_TRAINER_MEGUMIN,    FRONTIER_TRAINER_ZACH2},  // 300 - 309
+};
+
 // Unknown, unused data
 static const u16 sUnused[] = { 179, 141, 200, 183 };
 
