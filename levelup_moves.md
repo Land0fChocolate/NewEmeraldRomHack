@@ -6918,6 +6918,7 @@
 - Altaria
              ( 0, MOVE DRAGON BREATH)
              ( 1, MOVE DRAGON BREATH)
+             ( 1, MOVE HYPER VOICE)
              ( 1, MOVE SKY ATTACK)
              ( 1, MOVE PLUCK)
              ( 1, MOVE PECK)
