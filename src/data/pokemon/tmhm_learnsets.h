@@ -23241,7 +23241,10 @@ const u32 gTMHMLearnsets[][4] =
                                                    | TMHM2(TM93_WILD_CHARGE)
                                                    | TMHM2(TM94_SURF)
                                                    | TMHM2(TM99_DAZZLING_GLEAM)
-                                                   | TMHM2(HM05_FLASH)),
+                                                   | TMHM2(HM03_SURF)
+                                                   | TMHM2(HM04_STRENGTH)
+                                                   | TMHM2(HM05_FLASH)
+                                                   | TMHM2(HM06_ROCK_SMASH)),
 
     [SPECIES_SANDSHREW_ALOLAN]  = TMHM_LEARNSET(TMHM(TM14_BLIZZARD)
                                                    | TMHM(TM31_BRICK_BREAK)

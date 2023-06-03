@@ -13907,7 +13907,10 @@ SPECIES RAICHU ALOLAN        | TM31 BRICK BREAK
                              | TM93 WILD CHARGE
                              | TM94 SURF
                              | TM99 DAZZLING GLEAM
+                             | HM03 SURF
+                             | HM04 STRENGTH
                              | HM05 FLASH
+                             | HM06 ROCK SMASH
 
 SPECIES SANDSHREW ALOLAN     | TM14 BLIZZARD
                              | TM31 BRICK BREAK
