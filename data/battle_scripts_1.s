@@ -414,6 +414,32 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectSerpentDance            @ EFFECT_SERPENT_DANCE
 	.4byte BattleScript_EffectHiddenThorns            @ EFFECT_HIDDEN_THORNS
 	.4byte BattleScript_EffectAttackUpUserAlly        @ EFFECT_ATTACK_UP_USER_ALLY
+	.4byte BattleScript_EffectHitSetEntryHazard       @ EFFECT_HIT_SET_ENTRY_HAZARD
+
+BattleScript_EffectHitSetEntryHazard::
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	critcalc
+	damagecalc
+	adjustdamage
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage B_WAIT_TIME_LONG
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_TARGET, FALSE, NULL
+	argumenttomoveeffect
+	seteffectprimary
+	moveendall
+	end
 
 BattleScript_EffectAttackUpUserAlly:
 	jumpifnoally BS_ATTACKER, BattleScript_EffectAttackUp
@@ -2700,7 +2726,7 @@ BattleScript_EffectStealthRock:
 	setstealthrock BattleScript_ButItFailed
 	attackanimation
 	waitanimation
-	printstring STRINGID_POINTEDSTONESFLOAT
+	printfromtable gDmgHazardsStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -2711,7 +2737,7 @@ BattleScript_EffectHiddenThorns:
 	setstealthrock BattleScript_ButItFailed
 	attackanimation
 	waitanimation
-	printstring STRINGID_THORNSSPREADOUT
+	printfromtable gDmgHazardsStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -4687,7 +4713,7 @@ BattleScript_EffectSpikes::
 	ppreduce
 	attackanimation
 	waitanimation
-	printstring STRINGID_SPIKESSCATTERED
+	printfromtable gDmgHazardsStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

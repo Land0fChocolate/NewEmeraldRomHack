@@ -977,7 +977,7 @@
 #define ITEM_RUBY 758
 #define ITEM_SAPPHIRE 759
 
-#define ITEM_JELLY_FILLED_DONUT2 760 //unused, got moved to 79
+#define ITEM_JELLY_FILLED_DONUT2 760 //TODO: remove in new game. unused, got moved to 79.
 
 #define ITEM_SUPER_HP_UP   761
 #define ITEM_SUPER_PROTEIN 762
@@ -986,7 +986,10 @@
 #define ITEM_SUPER_ZINC    765
 #define ITEM_SUPER_CARBOS  766
 
-#define ITEMS_COUNT 767
+#define ITEM_BLACK_AUGURITE 767
+#define ITEM_PEAT_BLOCK 768
+
+#define ITEMS_COUNT 769
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // Range of berries given out by various NPCS

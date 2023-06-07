@@ -203,6 +203,7 @@ These Pokemon are available after beating the Pokemon League.
     - GOLDEEN -> Level Up to 24 -> SEAKING
     - STARYU -> Item Water Stone -> STARMIE
     - SCYTHER -> Trade with hold item Metal Coat -> SCIZOR
+    - SCYTHER -> Trade with hold item Black Augurite -> KLEAVOR
     - ELECTABUZZ -> Trade with hold item Electirizer -> ELECTIVIRE
     - MAGMAR -> Trade with hold item Magmarizer -> MAGMORTAR
     - MAGIKARP -> Level Up to 20 -> GYARADOS
@@ -225,6 +226,7 @@ These Pokemon are available after beating the Pokemon League.
     - BAYLEEF -> Level Up to 40 -> MEGANIUM
     - CYNDAQUIL -> Level Up to 20 -> QUILAVA
     - QUILAVA -> Level Up to 40 -> TYPHLOSION
+    - QUILAVA -> Trade with hold item Old Gateau -> TYPHLOSION HISUIAN
     - TOTODILE -> Level Up to 20 -> CROCONAW
     - CROCONAW -> Level Up to 40 -> FERALIGATR
     - SENTRET -> Level Up to 15 -> FURRET
@@ -254,12 +256,14 @@ These Pokemon are available after beating the Pokemon League.
     - SNUBBULL -> Level Up to 23 -> GRANBULL
     - SNEASEL -> Item Razor Claw at night -> WEAVILE
     - TEDDIURSA -> Level Up to 29 -> URSARING
+    - URSARING -> Item Peat Block at night -> URSALUNA
     - SLUGMA -> Level Up to 26 -> MAGCARGO
     - SWINUB -> Level Up to 23 -> PILOSWINE
     - PILOSWINE -> Have move Ancient Power -> MAMOSWINE
     - REMORAID -> Level Up to 25 -> OCTILLERY
     - HOUNDOUR -> Level Up to 26 -> HOUNDOOM
     - PHANPY -> Level Up to 25 -> DONPHAN
+    - STANTLER -> Have move Psyshield Bash -> WYRDEER
     - PORYGON2 -> Trade with hold item Dubious Disc -> PORYGON_Z
     - TYROGUE -> Level Up to 20 with Atk < Def -> HITMONCHAN
               -> Level Up to 20 with Atk > Def -> HITMONLEE

@@ -11531,12 +11531,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_PSYSHIELD_BASH] =
     {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_PSYSHIELD_BASH,
+        .effect = EFFECT_DEFENSE_UP_HIT,
         .power = 70,
         .type = TYPE_PSYCHIC,
         .accuracy = 90,
         .pp = 10,
-        .secondaryEffectChance = 50, // TODO: Adjust this value. Currently it's set to Fiery Dance's.
+        .secondaryEffectChance = 100,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
@@ -11559,7 +11559,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_STONE_AXE] =
     {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_STONE_AXE,
+        .effect = EFFECT_HIT_SET_ENTRY_HAZARD, // EFFECT_STONE_AXE,
         .power = 65,
         .type = TYPE_ROCK,
         .accuracy = 90,
@@ -11671,7 +11671,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
 
     [MOVE_HEADLONG_RUSH] =
     {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_HEADLONG_RUSH,
+        .effect = EFFECT_CLOSE_COMBAT,
         .power = 100,
         .type = TYPE_GROUND,
         .accuracy = 100,
