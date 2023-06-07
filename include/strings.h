@@ -722,6 +722,8 @@ extern const u8 gText_RazorFang16BP[];
 extern const u8 gText_MetalCoat16BP[];
 extern const u8 gText_GalaricaCuff16BP[];
 extern const u8 gText_GalaricaWreath16BP[];
+extern const u8 gText_BlackAugurite16BP[];
+extern const u8 gText_PeatBlock16BP[];
 
 extern const u8 gText_ScopeLens12BP[];
 extern const u8 gText_WideLens12BP[];

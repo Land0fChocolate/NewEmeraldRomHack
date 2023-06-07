@@ -337,8 +337,9 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem::
 	case 13, BattleFrontier_ExchangeServiceCorner_EventScript_MetalCoat
 	case 14, BattleFrontier_ExchangeServiceCorner_EventScript_GalaricaCuff
 	case 15, BattleFrontier_ExchangeServiceCorner_EventScript_GalaricaWreath
-	
-	case 16, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 16, BattleFrontier_ExchangeServiceCorner_EventScript_BlackAugurite
+	case 17, BattleFrontier_ExchangeServiceCorner_EventScript_PeatBlock
+	case 18, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
@@ -483,6 +484,24 @@ BattleFrontier_ExchangeServiceCorner_EventScript_GalaricaWreath::
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
 	setvar VAR_0x8008, 16
 	setvar VAR_0x8009, ITEM_GALARICA_WREATH
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_BlackAugurite::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmBlackAugurite, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	setvar VAR_0x8008, 16
+	setvar VAR_0x8009, ITEM_BLACK_AUGURITE
+	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+BattleFrontier_ExchangeServiceCorner_EventScript_PeatBlock::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmPeatBlock, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem
+	setvar VAR_0x8008, 16
+	setvar VAR_0x8009, ITEM_PEAT_BLOCK
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -1063,6 +1082,14 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmGalaricaCuff:
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmGalaricaWreath:
 	.string "You've chosen the Galarica Wreath.\n"
+	.string "Is that correct?$"
+
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmBlackAugurite:
+	.string "You've chosen the Black Augurite.\n"
+	.string "Is that correct?$"
+
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmPeatBlock:
+	.string "You've chosen the Peat Block.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmProtein:

@@ -44,6 +44,8 @@ static const u16 sFrontierExchangeCorner_EvoItems[] =
     ITEM_METAL_COAT,
     ITEM_GALARICA_CUFF,
     ITEM_GALARICA_WREATH,
+    ITEM_BLACK_AUGURITE,
+    ITEM_PEAT_BLOCK,
     0xFFFF 
 };
 

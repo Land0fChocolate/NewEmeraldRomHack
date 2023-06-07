@@ -7125,7 +7125,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_HEAD_SMASH] =
     {
         .effect = EFFECT_RECOIL_50,
-        .power = 150,
+        .power = 120,
         .type = TYPE_ROCK,
         .accuracy = 85,
         .pp = 5,
@@ -10805,7 +10805,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_BODY_PRESS] =
     {
         .effect = EFFECT_BODY_PRESS,
-        .power = 80,
+        .power = 70,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
         .pp = 10,

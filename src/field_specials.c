@@ -2344,7 +2344,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 17;
+            task->tNumItems = 19;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2598,6 +2598,8 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_MetalCoat16BP,
         gText_GalaricaCuff16BP,
         gText_GalaricaWreath16BP,
+        gText_BlackAugurite16BP,
+        gText_PeatBlock16BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR] =
