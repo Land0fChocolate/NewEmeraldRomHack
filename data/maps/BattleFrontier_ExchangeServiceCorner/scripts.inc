@@ -337,6 +337,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseEvoItem::
 	case 13, BattleFrontier_ExchangeServiceCorner_EventScript_MetalCoat
 	case 14, BattleFrontier_ExchangeServiceCorner_EventScript_GalaricaCuff
 	case 15, BattleFrontier_ExchangeServiceCorner_EventScript_GalaricaWreath
+	
 	case 16, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
