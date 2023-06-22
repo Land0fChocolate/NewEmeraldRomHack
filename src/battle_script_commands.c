@@ -2629,6 +2629,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
     u16 battlerAbilities[NUM_ABILITY_SLOTS];
     u16 attackerAbilities[NUM_ABILITY_SLOTS];
     u16 targetAbilities[NUM_ABILITY_SLOTS];
+    bool8 activateAfterFaint = FALSE;
 
     switch (gBattleScripting.moveEffect) // Set move effects which happen later on
     {
@@ -2636,6 +2637,9 @@ void SetMoveEffect(bool32 primary, u32 certain)
         gBattleStruct->moveEffect2 = gBattleScripting.moveEffect;
         gBattlescriptCurrInstr++;
         return;
+    case MOVE_EFFECT_STEALTH_ROCK:
+        activateAfterFaint = TRUE;
+        break;
     }
 
     if (gBattleScripting.moveEffect & MOVE_EFFECT_AFFECTS_USER)
@@ -2676,7 +2680,8 @@ void SetMoveEffect(bool32 primary, u32 certain)
     if (gBattleMons[gEffectBattler].hp == 0
         && gBattleScripting.moveEffect != MOVE_EFFECT_PAYDAY
         && gBattleScripting.moveEffect != MOVE_EFFECT_STEAL_ITEM
-        && gBattleScripting.moveEffect != MOVE_EFFECT_BUG_BITE)
+        && gBattleScripting.moveEffect != MOVE_EFFECT_BUG_BITE
+        && !activateAfterFaint)
         INCREMENT_RESET_RETURN
 
     if (DoesSubstituteBlockMove(gBattlerAttacker, gEffectBattler, gCurrentMove) && affectsUser != MOVE_EFFECT_AFFECTS_USER)
@@ -3521,6 +3526,14 @@ void SetMoveEffect(bool32 primary, u32 certain)
             case MOVE_EFFECT_ROUND:
                 TryUpdateRoundTurnOrder(); // If another Pokémon uses Round before the user this turn, the user will use Round directly after it
                 gBattlescriptCurrInstr++;
+                break;
+            case MOVE_EFFECT_STEALTH_ROCK:
+                if (!(gSideStatuses[GetBattlerSide(gEffectBattler)] & SIDE_STATUS_STEALTH_ROCK))
+                {
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_POINTEDSTONESFLOAT;
+                    BattleScriptPush(gBattlescriptCurrInstr + 1);
+                    gBattlescriptCurrInstr = BattleScript_StealthRockActivates;
+                }
                 break;
             }
         }

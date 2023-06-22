@@ -31,7 +31,8 @@ LilycoveCity_EventScript_SelfTrade_Text_IllTradeIfYouWant:
 	.string "yourself! Are you here to do that?$"
 
 LilycoveCity_EventScript_SelfTrade_Text_ComeBack:
-	.string "Happy to help! Come back anytime.$"
+	.string "Happy to help!\n"
+	.string "Come back anytime.$"
 
 LilycoveCity_EventScript_SelfTrade_Text_YouDontWantToThatsOkay:
 	.string "You dont want to?\n"

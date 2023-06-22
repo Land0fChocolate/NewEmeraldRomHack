@@ -1408,6 +1408,12 @@ BattleFrontier_ExchangeServiceCorner_Text_GalaricaCuffDesc::
 BattleFrontier_ExchangeServiceCorner_Text_GalaricaWreathDesc::
 	.string "Evolves a dopey Pokémon.$"
 
+BattleFrontier_ExchangeServiceCorner_Text_BlackAuguriteDesc::
+	.string "Evolves a mantis Pokémon.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_PeatBlockDesc::
+	.string "Evolves a hibernator Pokémon.$"
+
 BattleFrontier_ExchangeServiceCorner_Text_ProteinDesc::
 	.string "Raises the Attack stat of one\n"
 	.string "Pokémon.$"

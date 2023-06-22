@@ -256,7 +256,7 @@ These Pokemon are available after beating the Pokemon League.
     - SNUBBULL -> Level Up to 23 -> GRANBULL
     - SNEASEL -> Item Razor Claw at night -> WEAVILE
     - TEDDIURSA -> Level Up to 29 -> URSARING
-    - URSARING -> Item Peat Block at night -> URSALUNA
+    - URSARING -> Trade with item Peat Block -> URSALUNA
     - SLUGMA -> Level Up to 26 -> MAGCARGO
     - SWINUB -> Level Up to 23 -> PILOSWINE
     - PILOSWINE -> Have move Ancient Power -> MAMOSWINE

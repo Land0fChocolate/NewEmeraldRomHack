@@ -441,6 +441,12 @@ BattleScript_EffectHitSetEntryHazard::
 	moveendall
 	end
 
+BattleScript_StealthRockActivates::
+	@setstealthrock BattleScript_ButItFailed @ Doesn't work here
+	printstring STRINGID_POINTEDSTONESFLOAT
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_EffectAttackUpUserAlly:
 	jumpifnoally BS_ATTACKER, BattleScript_EffectAttackUp
 	attackcanceler
@@ -2726,7 +2732,7 @@ BattleScript_EffectStealthRock:
 	setstealthrock BattleScript_ButItFailed
 	attackanimation
 	waitanimation
-	printfromtable gDmgHazardsStringIds
+	printstring STRINGID_POINTEDSTONESFLOAT
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -2737,7 +2743,7 @@ BattleScript_EffectHiddenThorns:
 	setstealthrock BattleScript_ButItFailed
 	attackanimation
 	waitanimation
-	printfromtable gDmgHazardsStringIds
+	printstring STRINGID_THORNSSPREADOUT
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -4713,7 +4719,7 @@ BattleScript_EffectSpikes::
 	ppreduce
 	attackanimation
 	waitanimation
-	printfromtable gDmgHazardsStringIds
+	printstring STRINGID_SPIKESSCATTERED
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

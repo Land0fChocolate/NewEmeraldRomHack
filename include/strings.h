@@ -1002,6 +1002,8 @@ extern const u8 BattleFrontier_ExchangeServiceCorner_Text_RazorFangDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_MetalCoatDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_GalaricaCuffDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_GalaricaWreathDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_BlackAuguriteDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_PeatBlockDesc[];
 
 // Battle Frontier Move Tutors
 extern const u8 BattleFrontier_Lounge7_Text_GastroAcidDesc[];
