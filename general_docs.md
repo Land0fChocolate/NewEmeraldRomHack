@@ -387,6 +387,177 @@ These Pokemon are available after beating the Pokemon League.
 - Galarica Wreath -> Frontier exchange shop
 - Big Malasada -> Mauville sweet shop
 - Galar Curry -> Lilycove Motel
+- Black Augurite -> Frontier exchange shop
+- Peat Block -> Frontier exchange shop
+
+# TMs List and locations
+
+-TM01 Focus Punch - Route 115
+-TM02 Dragon Claw - Meteor Falls
+-TM03 Water Pulse - Sootopolis Gym
+-TM04 Calm Mind - Mossdeep Gym
+-TM05 Roar - Route 114
+-TM06 Toxic - Fiery Path
+-TM07 Hail - Shoal Cave
+-TM08 Bulk Up - Dewford Gym
+-TM09 Bullet Seed - Fortree Jungle area 2
+-TM10 Hidden Power - Fortree City
+-TM11 Sunny Day - Scorched Slab
+-TM12 Taunt - Trick House
+-TM13 Ice Beam - Mauville Game Corner
+-TM14 Blizzard - Lilycove Dept Store
+-TM15 Hyper Beam - Lilycove Dept Store
+-TM16 Light Screen - Lilycove Dept Store
+-TM17 Protect - Lilycove Dept Store
+-TM18 Rain Dance - Abandoned Ship
+-TM19 Giga Drain - Route 123
+-TM20 Safeguard - Lilycove Dept Store
+-TM21 Frustration - Pacifidlog Town
+-TM22 Solarbeam - Safari Zone
+-TM23 Iron Tail - Meteor Falls
+-TM24 Thunderbolt - Mauville Game Corner
+-TM25 Thunder - Lilycove Dept Store
+-TM26 Earthquake - Seafloor Cavern
+-TM27 Return - Pacifidlog Town
+-TM28 Dig - Route 114
+-TM29 Psychic - Mauville Game Corner
+-TM30 Shadow Ball - Mt Pyre
+-TM31 Brick Break - Sootopolis City
+-TM32 Double Team - Route 113 (hidden)
+-TM33 Reflect - Lilycove Dept Store
+-TM34 Shock Wave - Mauville Gym
+-TM35 Flamethrower - Mauville Game Corner
+-TM36 Sludge Bomb - Dewford Hall
+-TM37 Sandstorm - Route 111
+-TM38 Fire Blast - Lilycove Dept Store
+-TM39 Rock Tomb - Rustboro Gym
+-TM40 Aerial Ace - Fortree Gym
+-TM41 Torment - Battle Factory Lobby
+-TM42 Facade - Petalburg Gym
+-TM43 Secret Power - Route 111
+-TM44 Rest - Lilycove City
+-TM45 Attract - Verdanturf House
+-TM46 Thief - Slateport Museum
+-TM47 Steel Wing - Granite Cave
+-TM48 Skill Swap - Mt Pyre
+-TM49 Snatch - SS Tidal
+-TM50 Overheat - Lavaridge Gym
+-TM51 Leech Life - Lilycove Store
+-TM52 Focus Blast - Lilycove Store
+-TM53 Energy Ball - Mauville Game Corner
+-TM54 False Swipe - Ever Grande City
+-TM55 Scald - Wally’s House, after beating Norman
+-TM56 Dragon Pulse - Mauville Game Corner
+-TM57 Charge Beam - Slateport Market
+-TM58 Roost - Littleroot Beach
+-TM59 Venoshock - Slateport Market
+-TM60 Psyshock - Navel Rock
+-TM61 Will-O-Wisp - Lilycove Store
+-TM62 Acrobatics - Slateport Market
+-TM63 Echoed Voice - Rusturf Tunnel
+-TM64 Cut - Cutter’s House
+-TM65 Shadow Claw - Given by Phoebe on Mt Pyre Summit
+-TM66 Payback - Mauville City house
+-TM67 Smart Strike - Fallarbor Wastes
+-TM68 Giga Impact - Lilycove Store
+-TM69 Rock Polish - Granite Cave 1F
+-TM70 Aurora Veil - Lilycove Store
+-TM71 Stone Edge - Victory Road
+-TM72 Volt Switch - From Wattson after clearing New Mauville
+-TM73 Thunder Wave - Lilycove Store
+-TM74 Gyro Ball - Slateport Market
+-TM75 Draining Kiss - Mauville TV Station
+-TM76 Fly - Given by Rival on Route 119 or Littleroot Beach
+-TM77 Throat Chop - Rusturf Tunnel digger
+-TM78 Bulldoze - Slateport Market
+-TM79 Frost Breath - Abandoned Ship Storage Room
+-TM80 Rock Slide - Lilycove Store
+-TM81 X-Scissor - Safari Zone South East
+-TM82 Dragon Tail - Prof Cozmo after giving back the meteorite
+-TM83 Infestation - Route 104 (north)
+-TM84 Poison Jab - Lilycove Store
+-TM85 Electroweb - Lilycove Store
+-TM86 Grass Knot - Crumbling Gorge
+-TM87 Swagger - Lilycove Store
+-TM88 Drain Punch - Battle Frontier East
+-TM89 U-Turn - Slateport Market
+-TM90 Rock Smash - Slateport Market
+-TM91 Flash Cannon - Mossdeep City, Steven’s house
+-TM92 Trick Room - Lilycove Store
+-TM93 Wild Charge - Mauville Meadow
+-TM94 Surf - Mauville Game Corner
+-TM95 Snarl - Slateport Market
+-TM96 Nature Power - Slateport Market
+-TM97 Dark Pulse - Navel Rock
+-TM98 Waterfall - Lilycove Store
+-TM99 Dazzling Gleam - Wildwoods area 7
+
+# Berry Handouts locations
+
+1 to 8 - Flower Shop Girl (Route 104 Flower Shop)
+1 to 10 - Berry Master's Wife (Route 123)
+11 to 15 - Watering Girl (Route 111)
+16 to 20 - Berry Crush Man (Route 114)
+21 to 30 - Berry Master (Route 123)/Kiri (Sootopolis City)
+31 to 35 - Berry Master's Wife phrase (GREAT BATTLE, CHALLENGE CONTEST, OVERWHELMING LATIAS, COOL LATIOS, SUPER HUSTLE)
+36 to 53 - Glacia obsessed guitarist (Ever Grande City)
+54 to 60 - Winona (Mossdeep City)
+
+# Useful Items Purchase Locations
+
+- Type Gems -> Slateport Market
+- Rare Candy -> Mauville Sweet Shop (after beating post game)
+- Nature Mints -> Mauville Sweet Shop
+- Cell Battery -> Mauville Tool Shop
+- Utility Umbrella -> Mauville Tool Shop
+- Safety Goggles -> Mauville Tool Shop
+- Zoom Lens -> Mauville Tool Shop
+- Heavy Duty Boots -> Mauville Tool Shop
+- Eject Pack -> Mauville Tool Shop
+- Protective Pads -> Mauville Tool Shop
+- Iron Ball -> Mauville Tool Shop
+- Heat Rock -> Weather Institute 2F
+- Damp Rock -> Weather Institute 2F
+- Smooth Rock -> Weather Institute 2F
+- Icy Rock -> Weather Institute 2F
+- Mental Herb -> Fortree Tree Shop & wild Lotad hold item
+- White Herb -> Fortree Tree Shop & Route 104 Shop
+- Power Herb -> Fortree Tree Shop & wild Seedot hold item
+- Misty Seed -> Fortree Tree Shop
+- Psychic Seed -> Fortree Tree Shop
+- Electric Seed -> Fortree Tree Shop
+- Grassy Seed -> Fortree Tree Shop
+- Absorb Bulb -> Fortree Tree Shop
+- Luminous Moss -> Fortree Tree Shop
+- Big Root -> Fortree Tree Shop & Petalburg Woods
+- EXP Share -> Lilycove Dept. Store & Devon President
+- Scope Lens -> Frontier Exchange Shop
+- Wide Lens -> Frontier Exchange Shop
+- Toxic Orb -> Frontier Exchange Shop
+- Flame Orb -> Frontier Exchange Shop
+- Adrenaline Orb -> Frontier Exchange Shop
+- Red Card -> Frontier Exchange Shop
+- Destiny Knot -> Frontier Exchange Shop & Mt Pyre
+- Metronome -> Frontier Exchange Shop
+- Shed Shell -> Frontier Exchange Shop
+- Sticky Barb -> Frontier Exchange Shop
+- Expert Belt -> Frontier Exchange Shop
+- Quick Claw -> Frontier Exchange Shop & Rustboro School
+- Snowball -> Frontier Exchange Shop
+- Light Clay -> Frontier Exchange Shop
+- Black Sludge -> Frontier Exchange Shop & wild Grimer hold item
+- Wise Glasses -> Frontier Exchange Shop
+- Muscle Band -> Frontier Exchange Shop
+- Eviolite -> Frontier Exchange Shop
+- Weakness Policy -> Frontier Exchange Shop
+- Blunder Policy -> Frontier Exchange Shop
+- Leftovers -> Frontier Exchange Shop & SS Tidal
+- Air Balloon -> Frontier Exchange Shop
+- Choice Band -> Frontier Exchange Shop
+- Choice Specs -> Frontier Exchange Shop
+- Choice Scarf -> Frontier Exchange Shop
+- Focus Sash -> Frontier Exchange Shop
+- Life Orb -> Frontier Exchange Shop & Faraway Island
 
 # Pokemon Ability Sets List
 
@@ -852,14 +1023,3 @@ These Pokemon are available after beating the Pokemon League.
            | Special Attack: 75 -> 60
 - Walrein  | Attack: 80 -> 95
            | Special Attack: 95 -> 80
-
-# Berry Handouts locations
-
-1 to 8 - Flower Shop Girl (Route 104 Flower Shop)
-1 to 10 - Berry Master's Wife (Route 123)
-11 to 15 - Watering Girl (Route 111)
-16 to 20 - Berry Crush Man (Route 114)
-21 to 30 - Berry Master (Route 123)/Kiri (Sootopolis City)
-31 to 35 - Berry Master's Wife phrase (GREAT BATTLE, CHALLENGE CONTEST, OVERWHELMING LATIAS, COOL LATIOS, SUPER HUSTLE)
-36 to 53 - Glacia obsessed guitarist (Ever Grande City)
-54 to 60 - Winona (Mossdeep City)

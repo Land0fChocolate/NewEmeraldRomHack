@@ -9078,7 +9078,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM89_U_TURN)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(HM02_FLY)
-                                            | TMHM2(HM03_SURF)),
+                                            | TMHM2(HM03_SURF)
+                                            | TMHM2(HM08_DIVE)),
 
     [SPECIES_RALTS]       = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
                                             | TMHM(TM04_CALM_MIND)
