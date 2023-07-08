@@ -4752,6 +4752,19 @@ void CheckForMaxMonIV(void)
         gSpecialVar_Result = FALSE;
 }
 
+void CheckForMinMonIV(void)
+{
+    u8 i;
+    u32 statIV;
+
+    statIV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005);
+
+    if (statIV <= 0)
+        gSpecialVar_Result = TRUE;
+    else
+        gSpecialVar_Result = FALSE;
+}
+
 void BuffMonIV(void)
 {
     u8 i;
@@ -4769,3 +4782,21 @@ void BuffMonIV(void)
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
+void NerfMonIV(void)
+{
+    u8 i;
+    u32 statIV;
+
+    statIV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005);
+
+    if (statIV - 1 <= 0)
+        statIV = 0;
+    else
+        statIV -= 1;
+
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005, &statIV);
+
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+
+    AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_FAINT_SMALL);
+}

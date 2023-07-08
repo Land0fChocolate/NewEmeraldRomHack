@@ -550,3 +550,5 @@ gSpecials::
 	def_special CheckForMaxedEVStat
 	def_special CheckForMaxedEVTotal
 	def_special ClearDailyFlags
+	def_special CheckForMinMonIV
+	def_special NerfMonIV
