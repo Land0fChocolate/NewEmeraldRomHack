@@ -70,15 +70,15 @@ LilycoveCity_House5_Eventscript_IVNerfDefense::
 	goto LilycoveCity_House5_Eventscript_CheckMonIV
 
 LilycoveCity_House5_Eventscript_IVNerfSpecialAttack::
-	setvar VAR_0x8005, 3
-	goto LilycoveCity_House5_Eventscript_CheckMonIV
-
-LilycoveCity_House5_Eventscript_IVNerfSpecialDefense::
 	setvar VAR_0x8005, 4
 	goto LilycoveCity_House5_Eventscript_CheckMonIV
 
-LilycoveCity_House5_Eventscript_IVNerfSpeed::
+LilycoveCity_House5_Eventscript_IVNerfSpecialDefense::
 	setvar VAR_0x8005, 5
+	goto LilycoveCity_House5_Eventscript_CheckMonIV
+
+LilycoveCity_House5_Eventscript_IVNerfSpeed::
+	setvar VAR_0x8005, 3
 	goto LilycoveCity_House5_Eventscript_CheckMonIV
 
 LilycoveCity_House5_Eventscript_CheckMonIV::
@@ -94,8 +94,8 @@ LilycoveCity_House5_EventScript_CantDecreaseStat::
 
 LilycoveCity_House5_Text_IMakeBrews:
 	.string "Kekeke…\p"
-	.string "Were your Pokémon attracted to the smell\n"
-	.string "of my brew?\p"
+	.string "Were your Pokémon attracted to the\n"
+	.string "aroma of my brew?\p"
 	.string "They will find it delicious…\n"
 	.string "They all do.\p"
 	.string "But consuming it comes at a terrible\n"

@@ -4787,8 +4787,7 @@ void NerfMonIV(void)
     u8 i;
     u32 statIV;
 
-    //statIV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005);
-    statIV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV);
+    statIV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005);
 
     if (statIV - 1 <= 0)
         statIV = 0;
