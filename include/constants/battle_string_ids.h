@@ -627,8 +627,9 @@
 #define STRINGID_DEOXYSSTRANGEAURA                    624
 #define STRINGID_CANTTHROWBALL                        625
 #define STRINGID_ATTACKERSWITCHEDSTATWITHTARGET       626
+#define STRINGID_SHARPTHORNSGROW                      627
 
-#define BATTLESTRINGS_COUNT                           627
+#define BATTLESTRINGS_COUNT                           628
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.
@@ -892,5 +893,13 @@
 #define B_MSG_WRAPPED_INFESTATION 7
 #define B_MSG_WRAPPED_SNAP_TRAP   8
 #define TRAPPING_MOVES_COUNT      9
+
+// gDmgHazardsStringIds
+#define B_MSG_PKMNHURTBYSPIKES   0
+#define B_MSG_STEALTHROCKDMG     1
+#define B_MSG_HIDDENTHORNSDMG    2
+#define B_MSG_SPIKESSCATTERED    3
+#define B_MSG_POINTEDSTONESFLOAT 4
+#define B_MSG_SHARPTHORNSGROW    5
 
 #endif // GUARD_CONSTANTS_BATTLE_STRING_IDS_H

@@ -898,9 +898,9 @@ gCryTable::
 	cry Cry_Glastrier
 	cry Cry_Spectrier
 	cry Cry_Calyrex
-	cry Cry_Bulbasaur //Cry_Wyrdeer
-	cry Cry_Bulbasaur //Cry_Kleavor
-	cry Cry_Bulbasaur //Cry_Ursaluna
+	cry Cry_Wyrdeer
+	cry Cry_Kleavor
+	cry Cry_Ursaluna
 	cry Cry_Bulbasaur //Cry_Basculegion
 	cry Cry_Bulbasaur //Cry_Sneasler
 	cry Cry_Bulbasaur //Cry_Overqwil
@@ -2199,9 +2199,9 @@ gCryTable2::
 	cry2 Cry_Glastrier
 	cry2 Cry_Spectrier
 	cry2 Cry_Calyrex
-	cry2 Cry_Bulbasaur //Cry_Wyrdeer
-	cry2 Cry_Bulbasaur //Cry_Kleavor
-	cry2 Cry_Bulbasaur //Cry_Ursaluna
+	cry2 Cry_Wyrdeer
+	cry2 Cry_Kleavor
+	cry2 Cry_Ursaluna
 	cry2 Cry_Bulbasaur //Cry_Basculegion
 	cry2 Cry_Bulbasaur //Cry_Sneasler
 	cry2 Cry_Bulbasaur //Cry_Overqwil

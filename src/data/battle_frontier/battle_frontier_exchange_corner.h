@@ -44,6 +44,8 @@ static const u16 sFrontierExchangeCorner_EvoItems[] =
     ITEM_METAL_COAT,
     ITEM_GALARICA_CUFF,
     ITEM_GALARICA_WREATH,
+    ITEM_BLACK_AUGURITE,
+    ITEM_PEAT_BLOCK,
     0xFFFF 
 };
 
@@ -141,6 +143,8 @@ static const u8 *const sFrontierExchangeCorner_EvoItemsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_MetalCoatDesc,
     BattleFrontier_ExchangeServiceCorner_Text_GalaricaCuffDesc,
     BattleFrontier_ExchangeServiceCorner_Text_GalaricaWreathDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_BlackAuguriteDesc,
+    BattleFrontier_ExchangeServiceCorner_Text_PeatBlockDesc,
     gText_Exit
 };
 

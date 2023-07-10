@@ -811,6 +811,8 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_ORIGIN_STRAND] = {gItemIcon_OriginStrand, gItemIconPalette_OriginStrand},
     [ITEM_RUBY] = {gItemIcon_Gem, gItemIconPalette_Ruby},
     [ITEM_SAPPHIRE] = {gItemIcon_Gem, gItemIconPalette_Sapphire},
+    [ITEM_BLACK_AUGURITE] = {gItemIcon_BlackAugurite, gItemIconPalette_BlackAugurite},
+    [ITEM_PEAT_BLOCK] = {gItemIcon_PeatBlock, gItemIconPalette_PeatBlock},
     // Return to field arrow
     [ITEM_FIELD_ARROW] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };

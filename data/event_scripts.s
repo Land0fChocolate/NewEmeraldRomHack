@@ -1152,3 +1152,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Mauville_Riverside/scripts.inc"
 
 	.include "data/maps/RustboroCity_House4/scripts.inc"
+
+	.include "data/maps/LilycoveCity_House5/scripts.inc"

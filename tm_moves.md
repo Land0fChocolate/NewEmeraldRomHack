@@ -1,105 +1,3 @@
-# TM List and their locations
-
--TM01 Focus Punch - Route 115
--TM02 Dragon Claw - Meteor Falls
--TM03 Water Pulse - Sootopolis Gym
--TM04 Calm Mind - Mossdeep Gym
--TM05 Roar - Route 114
--TM06 Toxic - Fiery Path
--TM07 Hail - Shoal Cave
--TM08 Bulk Up - Dewford Gym
--TM09 Bullet Seed - Fortree Jungle area 2
--TM10 Hidden Power - Fortree City
--TM11 Sunny Day - Scorched Slab
--TM12 Taunt - Trick House
--TM13 Ice Beam - Mauville Game Corner
--TM14 Blizzard - Lilycove Dept Store
--TM15 Hyper Beam - Lilycove Dept Store
--TM16 Light Screen - Lilycove Dept Store
--TM17 Protect - Lilycove Dept Store
--TM18 Rain Dance - Abandoned Ship
--TM19 Giga Drain - Route 123
--TM20 Safeguard - Lilycove Dept Store
--TM21 Frustration - Pacifidlog Town
--TM22 Solarbeam - Safari Zone
--TM23 Iron Tail - Meteor Falls
--TM24 Thunderbolt - Mauville Game Corner
--TM25 Thunder - Lilycove Dept Store
--TM26 Earthquake - Seafloor Cavern
--TM27 Return - Pacifidlog Town
--TM28 Dig - Route 114
--TM29 Psychic - Mauville Game Corner
--TM30 Shadow Ball - Mt Pyre
--TM31 Brick Break - Sootopolis City
--TM32 Double Team - Route 113 (hidden)
--TM33 Reflect - Lilycove Dept Store
--TM34 Shock Wave - Mauville Gym
--TM35 Flamethrower - Mauville Game Corner
--TM36 Sludge Bomb - Dewford Hall
--TM37 Sandstorm - Route 111
--TM38 Fire Blast - Lilycove Dept Store
--TM39 Rock Tomb - Rustboro Gym
--TM40 Aerial Ace - Fortree Gym
--TM41 Torment - Battle Factory Lobby
--TM42 Facade - Petalburg Gym
--TM43 Secret Power - Route 111
--TM44 Rest - Lilycove City
--TM45 Attract - Verdanturf House
--TM46 Thief - Slateport Museum
--TM47 Steel Wing - Granite Cave
--TM48 Skill Swap - Shoal Cave
--TM49 Snatch - SS Tidal
--TM50 Overheat - Lavaridge Gym
--TM51 Leech Life - Lilycove Store
--TM52 Focus Blast - Lilycove Store
--TM53 Energy Ball - Mauville Game Corner
--TM54 False Swipe - Ever Grande City
--TM55 Scald - Wally’s House, after beating Norman
--TM56 Dragon Pulse - Mauville Game Corner
--TM57 Charge Beam - Slateport Market
--TM58 Roost - Littleroot Beach
--TM59 Venoshock - Slateport Market
--TM60 Psyshock - Navel Rock
--TM61 Will-O-Wisp - Lilycove Store
--TM62 Acrobatics - Slateport Market
--TM63 Echoed Voice - Rusturf Tunnel
--TM64 Cut - Cutter’s House
--TM65 Shadow Claw - Given by Phoebe on Mt Pyre Summit
--TM66 Payback - Mauville City house
--TM67 Smart Strike - Fallarbor Wastes
--TM68 Giga Impact - Lilycove Store
--TM69 Rock Polish - Granite Cave 1F
--TM70 Aurora Veil - Lilycove Store
--TM71 Stone Edge - Victory Road
--TM72 Volt Switch - From Wattson after clearing New Mauville
--TM73 Thunder Wave - Lilycove Store
--TM74 Gyro Ball - Slateport Market
--TM75 Draining Kiss - Mauville TV Station
--TM76 Fly - Given by Rival on Route 119 or Littleroot Beach
--TM77 Throat Chop - Rusturf Tunnel digger
--TM78 Bulldoze - Slateport Market
--TM79 Frost Breath - Abandoned Ship Storage Room
--TM80 Rock Slide - Lilycove Store
--TM81 X-Scissor - Safari Zone South East
--TM82 Dragon Tail - Prof Cozmo after giving back the meteorite
--TM83 Infestation - Route 104 (north)
--TM84 Poison Jab - Lilycove Store
--TM85 Electroweb - Lilycove Store
--TM86 Grass Knot - Crumbling Gorge
--TM87 Swagger - Lilycove Store
--TM88 Drain Punch - Battle Frontier East
--TM89 U-Turn - Slateport Market
--TM90 Rock Smash - Slateport Market
--TM91 Flash Cannon - Mossdeep City, Steven’s house
--TM92 Trick Room - Lilycove Store
--TM93 Wild Charge - Mauville Meadow
--TM94 Surf - Mauville Game Corner
--TM95 Snarl - Slateport Market
--TM96 Nature Power - Slateport Market
--TM97 Dark Pulse - Navel Rock
--TM98 Waterfall - Lilycove Store
--TM99 Dazzling Gleam - Wildwoods area 7
-
 # TM Moves Learnsets
 
 HMs are included here as they are used for field moves.
@@ -9173,6 +9071,7 @@ SPECIES PELIPPER             | TM40 AERIAL ACE
                              | TM94 SURF
                              | HM02 FLY
                              | HM03 SURF
+                             | HM08 DIVE
 
 SPECIES RALTS                | TM45 ATTRACT
                              | TM04 CALM MIND
@@ -13907,7 +13806,10 @@ SPECIES RAICHU ALOLAN        | TM31 BRICK BREAK
                              | TM93 WILD CHARGE
                              | TM94 SURF
                              | TM99 DAZZLING GLEAM
+                             | HM03 SURF
+                             | HM04 STRENGTH
                              | HM05 FLASH
+                             | HM06 ROCK SMASH
 
 SPECIES SANDSHREW ALOLAN     | TM14 BLIZZARD
                              | TM31 BRICK BREAK
@@ -14576,3 +14478,150 @@ SPECIES ELECTRODE HISUIAN            | TM32 DOUBLE TEAM
                              | TM93 WILD CHARGE
                              | TM96 NATURE POWER
                              | HM05 FLASH
+
+SPECIES WYRDEER              | TM45 ATTRACT
+                             | TM04 CALM MIND
+                             | TM32 DOUBLE TEAM
+                             | TM26 EARTHQUAKE
+                             | TM42 FACADE
+                             | TM21 FRUSTRATION
+                             | TM10 HIDDEN POWER
+                             | TM23 IRON TAIL
+                             | TM16 LIGHT SCREEN
+                             | TM17 PROTECT
+                             | TM29 PSYCHIC
+                             | TM18 RAIN DANCE
+                             | TM33 REFLECT
+                             | TM44 REST
+                             | TM27 RETURN
+                             | TM05 ROAR
+                             | TM43 SECRET POWER
+                             | TM30 SHADOW BALL
+                             | TM34 SHOCK WAVE
+                             | TM48 SKILL SWAP
+                             | TM22 SOLARBEAM
+                             | TM11 SUNNY DAY
+                             | TM46 THIEF
+                             | TM25 THUNDER
+                             | TM24 THUNDERBOLT
+                             | TM06 TOXIC
+                             | TM53 ENERGY BALL
+                             | TM57 CHARGE BEAM
+                             | TM60 PSYSHOCK
+                             | TM68 GIGA IMPACT
+                             | TM73 THUNDER WAVE
+                             | TM78 BULLDOZE
+                             | TM92 TRICK ROOM
+                             | TM93 WILD CHARGE
+                             | HM04 STRENGTH
+                             | HM05 FLASH
+
+SPECIES KLEAVOR              | TM40 AERIAL ACE
+                             | TM45 ATTRACT
+                             | TM31 BRICK BREAK
+                             | TM32 DOUBLE TEAM
+                             | TM42 FACADE
+                             | TM21 FRUSTRATION
+                             | TM10 HIDDEN POWER
+                             | TM15 HYPER BEAM
+                             | TM16 LIGHT SCREEN
+                             | TM17 PROTECT
+                             | TM18 RAIN DANCE
+                             | TM37 SANDSTORM
+                             | TM39 ROCK TOMB
+                             | TM44 REST
+                             | TM27 RETURN
+                             | TM20 SAFEGUARD
+                             | TM43 SECRET POWER
+                             | TM47 STEEL WING
+                             | TM11 SUNNY DAY
+                             | TM46 THIEF
+                             | TM06 TOXIC
+                             | TM54 FALSE SWIPE
+                             | TM58 ROOST
+                             | TM62 ACROBATICS
+                             | TM64 CUT
+                             | TM68 GIGA IMPACT
+                             | TM71 STONE EDGE
+                             | TM80 ROCK SLIDE
+                             | TM81 X SCISSOR
+                             | TM89 U TURN
+                             | TM90 ROCK SMASH
+                             | HM01 CUT
+                             | HM06 ROCK_SMASH
+
+SPECIES URSALUNA             | TM40 AERIAL ACE
+                             | TM45 ATTRACT
+                             | TM31 BRICK BREAK
+                             | TM08 BULK UP
+                             | TM28 DIG
+                             | TM32 DOUBLE TEAM
+                             | TM26 EARTHQUAKE
+                             | TM42 FACADE
+                             | TM01 FOCUS PUNCH
+                             | TM21 FRUSTRATION
+                             | TM10 HIDDEN POWER
+                             | TM15 HYPER BEAM
+                             | TM17 PROTECT
+                             | TM18 RAIN DANCE
+                             | TM44 REST
+                             | TM27 RETURN
+                             | TM05 ROAR
+                             | TM39 ROCK TOMB
+                             | TM43 SECRET POWER
+                             | TM11 SUNNY DAY
+                             | TM12 TAUNT
+                             | TM46 THIEF
+                             | TM41 TORMENT
+                             | TM06 TOXIC
+                             | TM52 FOCUS BLAST
+                             | TM64 CUT
+                             | TM65 SHADOW CLAW
+                             | TM66 PAYBACK
+                             | TM68 GIGA IMPACT
+                             | TM71 STONE EDGE
+                             | TM78 BULLDOZE
+                             | TM80 ROCK SLIDE
+                             | TM90 ROCK SMASH
+                             | HM01 CUT
+                             | HM04 STRENGTH
+                             | HM06 ROCK SMASH
+
+SPECIES TYPHLOSION HISUIAN   | TM40 AERIAL ACE
+                             | TM45 ATTRACT
+                             | TM31 BRICK BREAK
+                             | TM28 DIG
+                             | TM32 DOUBLE TEAM
+                             | TM26 EARTHQUAKE
+                             | TM42 FACADE
+                             | TM38 FIRE BLAST
+                             | TM35 FLAMETHROWER
+                             | TM01 FOCUS PUNCH
+                             | TM21 FRUSTRATION
+                             | TM10 HIDDEN POWER
+                             | TM15 HYPER BEAM
+                             | TM23 IRON TAIL
+                             | TM30 SHADOW BALL
+                             | TM50 OVERHEAT
+                             | TM17 PROTECT
+                             | TM44 REST
+                             | TM27 RETURN
+                             | TM05 ROAR
+                             | TM39 ROCK TOMB
+                             | TM43 SECRET POWER
+                             | TM22 SOLARBEAM
+                             | TM11 SUNNY DAY
+                             | TM06 TOXIC
+                             | TM52 FOCUS BLAST
+                             | TM61 WILL O WISP
+                             | TM64 CUT
+                             | TM68 GIGA IMPACT
+                             | TM74 GYRO BALL
+                             | TM78 BULLDOZE
+                             | TM80 ROCK SLIDE
+                             | TM90 ROCK SMASH
+                             | TM93 WILD CHARGE
+                             | TM96 NATURE POWER
+                             | HM01 CUT
+                             | HM04 STRENGTH
+                             | HM06 ROCK SMASH

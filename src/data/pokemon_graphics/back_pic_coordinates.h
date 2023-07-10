@@ -4507,7 +4507,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_URSALUNA] =
     {
-        .size = 0x64,
+        .size = 0x40,
         .y_offset = 14,
     },
     [SPECIES_BASCULEGION] =
@@ -4992,7 +4992,7 @@ const struct MonCoords gMonBackPicCoords[] =
     },
     [SPECIES_TYPHLOSION_HISUIAN] =
     {
-        .size = 0x64,
+        .size = 0x56,
         .y_offset = 3,
     },
     [SPECIES_QWILFISH_HISUIAN] =
