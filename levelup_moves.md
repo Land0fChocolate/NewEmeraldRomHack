@@ -7893,8 +7893,6 @@
     (55, ME FIRST)
 
 --Kleavor--
-    //( 0, STONE AXE)
-    //( 1, STONE AXE)
     ( 1, STEALTH ROCK)
     ( 1, QUICK ATTACK)
     ( 1, LEER)

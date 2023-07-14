@@ -28,8 +28,10 @@
 #include "save.h"
 #include "load_save.h"
 #include "battle_dome.h"
+#include "item.h"
 #include "constants/battle_frontier.h"
 #include "constants/frontier_util.h"
+#include "constants/hold_effects.h"
 #include "constants/trainers.h"
 #include "constants/game_stat.h"
 #include "constants/moves.h"
@@ -2143,10 +2145,7 @@ static void IncrementWinStreak(void)
         {
             gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode]++;
             if (battleMode == FRONTIER_MODE_SINGLES)
-            {
                 SetGameStat(GAME_STAT_BATTLE_TOWER_BEST_STREAK, gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode]);
-                gSaveBlock2Ptr->frontier.towerSinglesStreak = gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode];
-            }
         }
         break;
     case FRONTIER_FACILITY_DOME:

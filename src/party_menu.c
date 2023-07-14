@@ -5821,7 +5821,7 @@ static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
         return TRUE;
     default: // Battle Frontier
         if (VarGet(VAR_RESULT) == FRONTIER_LVL_UBER) // note: should change VAR_RESULT to something safer?
-            return TRUE
+            return TRUE;
 
         species = GetMonData(mon, MON_DATA_SPECIES);
         for (; gFrontierBannedSpecies[i] != 0xFFFF; i++)
