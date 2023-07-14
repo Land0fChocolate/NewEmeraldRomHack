@@ -754,6 +754,7 @@ static const u8 sText_DeoxysChangedFormCatchable[] = _("The opponent Deoxys chan
 static const u8 sText_CantThrowBall[] = _("The Poké Ball is inoperative!");
 static const u8 sText_OnlyPokeBallsCanBeUsed[] = _("Only Poké Balls can be used in battle!");
 static const u8 sText_AttackerSwitchedStatWithTarget[] = _("{B_ATK_NAME_WITH_PREFIX} switched {B_BUFF1}\nwith its target!");
+static const u8 sText_SharpThornsGrow[] =_("Sharp thorns grow\naround {B_DEF_TEAM2} team!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1371,6 +1372,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_DEOXYSCHANGEDFORM - 12] = sText_DeoxysChangedForm,
     [STRINGID_DEOXYSCHANGEDFORMCATCHABLE - 12] = sText_DeoxysChangedFormCatchable,
     [STRINGID_CANTTHROWBALL - 12] = sText_CantThrowBall,
+    [STRINGID_SHARPTHORNSGROW - 12] = sText_SharpThornsGrow,
 };
 
 const u16 gMentalHerbCureStringIds[] = 
@@ -1412,7 +1414,12 @@ const u16 gHealingWishStringIds[] =
 
 const u16 gDmgHazardsStringIds[] =
 {
-    STRINGID_PKMNHURTBYSPIKES, STRINGID_STEALTHROCKDMG, STRINGID_HIDDENTHORNSDMG
+    [B_MSG_PKMNHURTBYSPIKES]   = STRINGID_PKMNHURTBYSPIKES,
+    [B_MSG_STEALTHROCKDMG]     = STRINGID_STEALTHROCKDMG,
+    [B_MSG_HIDDENTHORNSDMG]    = STRINGID_HIDDENTHORNSDMG,
+    [B_MSG_SPIKESSCATTERED]    = STRINGID_SPIKESSCATTERED,
+    [B_MSG_POINTEDSTONESFLOAT] = STRINGID_POINTEDSTONESFLOAT,
+    [B_MSG_SHARPTHORNSGROW]    = STRINGID_SHARPTHORNSGROW,
 };
 
 const u16 gSwitchInAbilityStringIds[] =

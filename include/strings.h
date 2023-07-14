@@ -723,6 +723,8 @@ extern const u8 gText_RazorFang16BP[];
 extern const u8 gText_MetalCoat16BP[];
 extern const u8 gText_GalaricaCuff16BP[];
 extern const u8 gText_GalaricaWreath16BP[];
+extern const u8 gText_BlackAugurite16BP[];
+extern const u8 gText_PeatBlock16BP[];
 
 extern const u8 gText_ScopeLens12BP[];
 extern const u8 gText_WideLens12BP[];
@@ -1001,6 +1003,8 @@ extern const u8 BattleFrontier_ExchangeServiceCorner_Text_RazorFangDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_MetalCoatDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_GalaricaCuffDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_GalaricaWreathDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_BlackAuguriteDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_PeatBlockDesc[];
 
 // Battle Frontier Move Tutors
 extern const u8 BattleFrontier_Lounge7_Text_GastroAcidDesc[];

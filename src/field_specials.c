@@ -2344,7 +2344,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_EVO_ITEM_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 17;
+            task->tNumItems = 19;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2598,6 +2598,8 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_MetalCoat16BP,
         gText_GalaricaCuff16BP,
         gText_GalaricaWreath16BP,
+        gText_BlackAugurite16BP,
+        gText_PeatBlock16BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR] =
@@ -4750,6 +4752,19 @@ void CheckForMaxMonIV(void)
         gSpecialVar_Result = FALSE;
 }
 
+void CheckForMinMonIV(void)
+{
+    u8 i;
+    u32 statIV;
+
+    statIV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005);
+
+    if (statIV <= 0)
+        gSpecialVar_Result = TRUE;
+    else
+        gSpecialVar_Result = FALSE;
+}
+
 void BuffMonIV(void)
 {
     u8 i;
@@ -4767,3 +4782,21 @@ void BuffMonIV(void)
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
 
+void NerfMonIV(void)
+{
+    u8 i;
+    u32 statIV;
+
+    statIV = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005);
+
+    if (statIV - 1 <= 0)
+        statIV = 0;
+    else
+        statIV -= 1;
+
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV + gSpecialVar_0x8005, &statIV);
+
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+
+    AdjustFriendship(&gPlayerParty[gSpecialVar_0x8004], FRIENDSHIP_EVENT_VITAMIN);
+}

@@ -3870,6 +3870,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         break;
 
     case EFFECT_SPIKES:
+    case EFFECT_HIT_SET_ENTRY_HAZARD:
     case EFFECT_STEALTH_ROCK:
     case EFFECT_HIDDEN_THORNS:
     case EFFECT_STICKY_WEB:
@@ -4919,6 +4920,7 @@ static s16 AI_SetupFirstTurn(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_HAIL:
     case EFFECT_GEOMANCY:
     case EFFECT_SERPENT_DANCE:
+    case EFFECT_HIT_SET_ENTRY_HAZARD:
         score += 2;
         break;
     default:

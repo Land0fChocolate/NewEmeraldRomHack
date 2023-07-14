@@ -69,6 +69,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_SHALOUR_SABLE] = {gItemIcon_ShalourSable, gItemIconPalette_ShalourSable},
     [ITEM_BIG_MALASADA] = {gItemIcon_BigMalasada, gItemIconPalette_BigMalasada},
     [ITEM_JELLY_FILLED_DONUT] = {gItemIcon_JellyFilledDonut, gItemIconPalette_JellyFilledDonut},
+    [ITEM_GALAR_CURRY] = {gItemIcon_GalarCurry, gItemIconPalette_GalarCurry},
     // Vitamins
     [ITEM_HP_UP] = {gItemIcon_HPUp, gItemIconPalette_HPUp},
     [ITEM_PROTEIN] = {gItemIcon_Vitamin, gItemIconPalette_Protein},
@@ -810,6 +811,8 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_ORIGIN_STRAND] = {gItemIcon_OriginStrand, gItemIconPalette_OriginStrand},
     [ITEM_RUBY] = {gItemIcon_Gem, gItemIconPalette_Ruby},
     [ITEM_SAPPHIRE] = {gItemIcon_Gem, gItemIconPalette_Sapphire},
+    [ITEM_BLACK_AUGURITE] = {gItemIcon_BlackAugurite, gItemIconPalette_BlackAugurite},
+    [ITEM_PEAT_BLOCK] = {gItemIcon_PeatBlock, gItemIconPalette_PeatBlock},
     // Return to field arrow
     [ITEM_FIELD_ARROW] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };

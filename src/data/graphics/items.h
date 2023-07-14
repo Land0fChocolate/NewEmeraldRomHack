@@ -192,6 +192,9 @@ const u32 gItemIconPalette_BigMalasada[] = INCBIN_U32("graphics/items/icon_palet
 const u32 gItemIcon_JellyFilledDonut[] = INCBIN_U32("graphics/items/icons/jelly_filled_donut.4bpp.lz");
 const u32 gItemIconPalette_JellyFilledDonut[] = INCBIN_U32("graphics/items/icon_palettes/jelly_filled_donut.gbapal.lz");
 
+const u32 gItemIcon_GalarCurry[] = INCBIN_U32("graphics/items/icons/galar_curry.4bpp.lz");
+const u32 gItemIconPalette_GalarCurry[] = INCBIN_U32("graphics/items/icon_palettes/galar_curry.gbapal.lz");
+
 // Vitamins
 
 const u32 gItemIcon_HPUp[] = INCBIN_U32("graphics/items/icons/hp_up.4bpp.lz");
@@ -690,6 +693,12 @@ const u32 gItemIconPalette_OvalStone[] = INCBIN_U32("graphics/items/icon_palette
 
 const u32 gItemIcon_Everstone[] = INCBIN_U32("graphics/items/icons/everstone.4bpp.lz");
 const u32 gItemIconPalette_Everstone[] = INCBIN_U32("graphics/items/icon_palettes/everstone.gbapal.lz");
+
+const u32 gItemIcon_BlackAugurite[] = INCBIN_U32("graphics/items/icons/black_augurite.4bpp.lz");
+const u32 gItemIconPalette_BlackAugurite[] = INCBIN_U32("graphics/items/icon_palettes/black_augurite.gbapal.lz");
+
+const u32 gItemIcon_PeatBlock[] = INCBIN_U32("graphics/items/icons/peat_block.4bpp.lz");
+const u32 gItemIconPalette_PeatBlock[] = INCBIN_U32("graphics/items/icon_palettes/peat_block.gbapal.lz");
 
 // Nectars
 

@@ -2629,6 +2629,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
     u16 battlerAbilities[NUM_ABILITY_SLOTS];
     u16 attackerAbilities[NUM_ABILITY_SLOTS];
     u16 targetAbilities[NUM_ABILITY_SLOTS];
+    bool8 activateAfterFaint = FALSE;
 
     switch (gBattleScripting.moveEffect) // Set move effects which happen later on
     {
@@ -2636,6 +2637,9 @@ void SetMoveEffect(bool32 primary, u32 certain)
         gBattleStruct->moveEffect2 = gBattleScripting.moveEffect;
         gBattlescriptCurrInstr++;
         return;
+    case MOVE_EFFECT_STEALTH_ROCK:
+        activateAfterFaint = TRUE;
+        break;
     }
 
     if (gBattleScripting.moveEffect & MOVE_EFFECT_AFFECTS_USER)
@@ -2676,7 +2680,8 @@ void SetMoveEffect(bool32 primary, u32 certain)
     if (gBattleMons[gEffectBattler].hp == 0
         && gBattleScripting.moveEffect != MOVE_EFFECT_PAYDAY
         && gBattleScripting.moveEffect != MOVE_EFFECT_STEAL_ITEM
-        && gBattleScripting.moveEffect != MOVE_EFFECT_BUG_BITE)
+        && gBattleScripting.moveEffect != MOVE_EFFECT_BUG_BITE
+        && !activateAfterFaint)
         INCREMENT_RESET_RETURN
 
     if (DoesSubstituteBlockMove(gBattlerAttacker, gEffectBattler, gCurrentMove) && affectsUser != MOVE_EFFECT_AFFECTS_USER)
@@ -3521,6 +3526,14 @@ void SetMoveEffect(bool32 primary, u32 certain)
             case MOVE_EFFECT_ROUND:
                 TryUpdateRoundTurnOrder(); // If another Pokémon uses Round before the user this turn, the user will use Round directly after it
                 gBattlescriptCurrInstr++;
+                break;
+            case MOVE_EFFECT_STEALTH_ROCK:
+                if (!(gSideStatuses[GetBattlerSide(gEffectBattler)] & SIDE_STATUS_STEALTH_ROCK))
+                {
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_POINTEDSTONESFLOAT;
+                    BattleScriptPush(gBattlescriptCurrInstr + 1);
+                    gBattlescriptCurrInstr = BattleScript_StealthRockActivates;
+                }
                 break;
             }
         }
@@ -6473,7 +6486,7 @@ static void Cmd_switchineffects(void)
             gBattleMoveDamage = 1;
 
         gSideStatuses[GetBattlerSide(gActiveBattler)] |= SIDE_STATUS_SPIKES_DAMAGED;
-        SetDmgHazardsBattlescript(gActiveBattler, 0);
+        SetDmgHazardsBattlescript(gActiveBattler, B_MSG_PKMNHURTBYSPIKES);
     }
     else if (!(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_STEALTH_ROCK_DAMAGED)
         && (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_STEALTH_ROCK)
@@ -6484,7 +6497,7 @@ static void Cmd_switchineffects(void)
         gBattleMoveDamage = GetStealthHazardDamage(gBattleMoves[MOVE_STEALTH_ROCK].type, gActiveBattler);
 
         if (gBattleMoveDamage != 0)
-            SetDmgHazardsBattlescript(gActiveBattler, 1);
+            SetDmgHazardsBattlescript(gActiveBattler, B_MSG_STEALTHROCKDMG);
     }
     else if (!(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_HIDDEN_THORNS_DAMAGED)
         && (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_HIDDEN_THORNS)
@@ -6495,7 +6508,7 @@ static void Cmd_switchineffects(void)
         gBattleMoveDamage = GetStealthHazardDamage(gBattleMoves[MOVE_HIDDEN_THORNS].type, gActiveBattler);
 
         if (gBattleMoveDamage != 0)
-            SetDmgHazardsBattlescript(gActiveBattler, 2);
+            SetDmgHazardsBattlescript(gActiveBattler, B_MSG_HIDDENTHORNSDMG);
     }
     else if (!(gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_TOXIC_SPIKES_DAMAGED)
         && (gSideStatuses[GetBattlerSide(gActiveBattler)] & SIDE_STATUS_TOXIC_SPIKES)
@@ -8620,16 +8633,26 @@ static void Cmd_various(void)
             return;
         }
 
-        for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+        if (gBattleMons[gBattlerAttacker].abilities[0] == gBattleMons[gBattlerTarget].abilities[0]
+        && gBattleMons[gBattlerAttacker].abilities[1] == gBattleMons[gBattlerTarget].abilities[1]
+        && gBattleMons[gBattlerAttacker].abilities[2] == gBattleMons[gBattlerTarget].abilities[2])
         {
-            if (!IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gBattlerTarget].abilities[x])
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
+        }
+        else
+        {
+            for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+            {
+                if (!IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gBattlerTarget].abilities[x])
                 && !IsEntrainmentTargetOrSimpleBeamBannedAbility(gBattleMons[gBattlerAttacker].abilities[x])
                 && gBattleMons[gBattlerTarget].abilities[x] != gBattleMons[gBattlerAttacker].abilities[x])
-            {
-                gBattleMons[gBattlerTarget].abilities[x] = gBattleMons[gBattlerAttacker].abilities[x];
-                gBattlescriptCurrInstr += 7;
+                {
+                    gBattleMons[gBattlerTarget].abilities[x] = gBattleMons[gBattlerAttacker].abilities[x];
+                }
             }
+            gBattlescriptCurrInstr += 7;
         }
+
         return;
     case VARIOUS_SET_LAST_USED_ABILITIES: // entrainment //TODO: may need to use it in MultiAbilityPopUp
         memcpy(gLastUsedAbilities, gBattleMons[gActiveBattler].abilities, sizeof(gLastUsedAbilities));
@@ -13072,6 +13095,7 @@ static void Cmd_setstealthrock(void)
         case EFFECT_STEALTH_ROCK:
             if (gSideStatuses[targetSide] & SIDE_STATUS_STEALTH_ROCK)
             {
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_POINTEDSTONESFLOAT;
                 gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
             }
             else
@@ -13090,6 +13114,7 @@ static void Cmd_setstealthrock(void)
         case EFFECT_HIDDEN_THORNS:
             if (gSideStatuses[targetSide] & SIDE_STATUS_HIDDEN_THORNS)
             {
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_POINTEDSTONESFLOAT;
                 gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
             }
             else

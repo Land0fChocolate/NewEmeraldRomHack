@@ -317,6 +317,11 @@ static const u8 sJellyFilledDonutDesc[] = _(
     "of a Pokémon by\n"
     "50 points.");
 
+static const u8 sGalarCurryDesc[] = _(
+    "Fully restores\n"
+    "HP and status of\n"
+    "a Pokémon.");
+
 // Vitamins
 static const u8 sHPUpDesc[] = _(
     "Raises the base HP\n"
@@ -1160,6 +1165,16 @@ static const u8 sEverstoneDesc[] = _(
     "A wondrous hold\n"
     "item that prevents\n"
     "evolution.");
+
+static const u8 sBlackAuguriteDesc[] = _(
+    "A black stone that\n"
+    "makes some Pokémon\n"
+    "evolve.");
+
+static const u8 sPeatBlockDesc[] = _(
+    "A block of material\n"
+    "that makes some\n"
+    "Pokémon evolve.");
 
 // Nectars
 static const u8 sRedNectarDesc[] = _(
