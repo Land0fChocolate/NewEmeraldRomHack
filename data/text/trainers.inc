@@ -5121,7 +5121,7 @@ CrumblingGorge_Text_HoldenDefeat:
 CrumblingGorge_Text_HoldenPostBattle:
 	.string "If I stopped going after strong\n"
 	.string "trainers, I'd have more money.\p"
-	.string "But weaker trainers just aren't as fun$"
+	.string "But weaker trainers just aren't as fun.$"
 
 CrumblingGorge_Text_NagataIntro:
 	.string "Oh this is good timing, our Pokémon\n"
