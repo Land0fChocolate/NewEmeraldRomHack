@@ -1,6 +1,11 @@
 FortreeJungle_Area3_MapScripts::
 	.byte 0
 
+FortreeJungle_Area3_Eventscript_Marcel::
+	trainerbattle_single TRAINER_MARCEL, FortreeJungle_Area3_Text_MarcelIntro, FortreeJungle_Area3_Text_MarcelDefeat
+	msgbox FortreeJungle_Area3_Text_MarcelPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 FortreeJungle_Area3_Eventscript_Matt::
 	msgbox FortreeJungle_Area3_Text_Matt, MSGBOX_NPC
 	call_if_unset FLAG_MET_MATT_FORTREE_JUNGLE, FortreeJungle_Area3_Eventscript_SetMeetFlag

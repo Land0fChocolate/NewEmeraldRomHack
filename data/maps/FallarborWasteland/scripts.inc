@@ -26,6 +26,11 @@ FallarborWasteland_EventScript_Hayden::
 	msgbox FallarborWasteland_Text_HaydenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+FallarborWasteland_EventScript_Darius::
+	trainerbattle_single TRAINER_DARIUS, FallarborWasteland_Text_DariusIntro, FallarborWasteland_Text_DariusDefeat
+	msgbox FallarborWasteland_Text_DariusPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 FallarborWasteland_Eventscript_Tabitha::
 	msgbox FallarborWasteland_Text_TabithaFieldWork, MSGBOX_NPC
 	call_if_unset FLAG_MET_TABITHA_FALLARBOR_WASTES, FallarborWasteland_Eventscript_SetMeetFlag

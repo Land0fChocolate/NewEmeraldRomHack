@@ -390,6 +390,11 @@ Route119_EventScript_Rachel::
 	msgbox Route119_Text_RachelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route119_EventScript_Cristin::
+	trainerbattle_single TRAINER_CRISTIN, Route119_Text_CristinIntro, Route119_Text_CristinDefeat
+	msgbox Route119_Text_CristinPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 Route119_EventScript_BridgeAquaGrunt1::
 	lock
 	faceplayer
