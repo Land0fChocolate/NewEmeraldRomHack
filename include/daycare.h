@@ -23,5 +23,7 @@ void SetDaycareCompatibilityString(void);
 bool8 NameHasGenderSymbol(const u8 *name, u8 genderRatio);
 void ShowDaycareLevelMenu(void);
 void ChooseSendDaycareMon(void);
-
+u8 GetEggTutorMoves(struct Pokemon *mon, u16 *moves);
+u16 GetEggMovesArraySize(void);
+u16 GetEggSpecies(u16 species);
 #endif // GUARD_DAYCARE_H

@@ -2795,6 +2795,19 @@ Route119_Text_RachelPostBattle:
 	.string "Your Bag is filled with more junk than\l"
 	.string "I ever carry around.$"
 
+Route119_Text_CristinIntro:
+	.string "I have this routine.\n"
+	.string "Defeat five Trainers a day.\l"
+	.string "Guess what? You're number five!$"
+
+Route119_Text_CristinDefeat:
+	.string "No!\n"
+	.string "You're horrid!$"
+
+Route119_Text_CristinPostBattle:
+	.string "I didn't expect to lose this easily…\n"
+	.string "I'll have to try harder!$"
+
 Route120_Text_ColinIntro:
 	.string "Do you have any moves that can strike\n"
 	.string "a flying Pokémon?$"
@@ -3107,38 +3120,6 @@ Route121_Text_JessicaRematchDefeat:
 Route121_Text_JessicaPostRematch:
 	.string "Maybe I'll go catch more Pokémon at\n"
 	.string "the Safari.$"
-
-Route121_Text_CristinIntro:
-	.string "I have this routine.\n"
-	.string "Defeat five Trainers a day.\l"
-	.string "Guess what? You're number five!$"
-
-Route121_Text_CristinDefeat:
-	.string "No!\n"
-	.string "You're horrid!$"
-
-Route121_Text_CristinPostBattle:
-	.string "I didn't expect to lose this easily…\n"
-	.string "I'll win next time!$"
-
-Route121_Text_CristinRegister:
-	.string "That was total humiliation!\n"
-	.string "I won't forget you…\l"
-	.string "Hand over your Pokénav!$"
-
-Route121_Text_CristinRematchIntro:
-	.string "I have this new routine.\n"
-	.string "Defeat ten Trainers a day.\l"
-	.string "Guess what? You're number ten!$"
-
-Route121_Text_CristinRematchDefeat:
-	.string "Wait! That's nasty!\n"
-	.string "I demand a rematch!$"
-
-Route121_Text_CristinPostRematch:
-	.string "An opponent I just can't beat…\n"
-	.string "Snivel…\l"
-	.string "I can't believe this is happening…$"
 
 Route121_Text_CaleIntro:
 	.string "Can't you see that I have all this\n"
@@ -4807,6 +4788,41 @@ EverGrandeCity_BattleTent_Text_BrandiPostBattle:
 	.string "by their appearance.\p"
 	.string "But often, their looks don't lie…$"
 
+LittlerootBeach_Text_MathewIntro:
+	.string "Fight on! Fight on! Fight on!$"
+
+LittlerootBeach_Text_MathewDefeat:
+	.string "Fight on!$"
+
+LittlerootBeach_Text_MathewPostBattle:
+	.string "I'm swimming hard several hours a day\n"
+	.string "to give my whole body a big workout.\p"
+	.string "Fight on! Fight on! Fight on!$"
+
+LittlerootBeach_Text_AngelinaIntro:
+	.string "Oh my!\n"
+	.string "Such nice weather we are having!$"
+
+LittlerootBeach_Text_AngelinaDefeat:
+	.string "Oh my!$"
+
+LittlerootBeach_Text_AngelinaPostBattle:
+	.string "I want to have a swim by the beach\n"
+	.string "but my Pokémon don't like the water.$"
+
+LittlerootBeach_Text_JeffIntro:
+	.string "Have you read the new issue of Captain\n"
+	.string "Heracross? It's so cool!$"
+
+LittlerootBeach_Text_JeffDefeat:
+	.string "Huh, you've never heard of it?$"
+
+LittlerootBeach_Text_JeffPostBattle:
+	.string "In the issue, Captain Heracross beats\n"
+	.string "his arch nemesis General Pinsir by\l"
+	.string "flipping him over the Electrode bomb\l"
+	.string "and it went BOOM and man was it awesome.$"
+
 Wildwoods_Area4_Text_CelinaIntro:
 	.string "I'm just here to gather cotton that\n"
 	.string "Jumpluff leave behind.\l"
@@ -4876,6 +4892,18 @@ Wildwoods_Area7_Text_LilyPostBattle:
 	.string "to challenge. There's bound to be more\l"
 	.string "wandering lost in here. Kekekeke.$"
 
+Wildwoods_Area8_Text_MarleneIntro:
+	.string "Hey you!\p"
+	.string "You're not the one leaving trash\n"
+	.string "all over the place are you?$"
+
+Wildwoods_Area8_Text_MarleneDefeat:
+	.string "You don't seem the type.$"
+
+Wildwoods_Area8_Text_MarlenePostBattle:
+	.string "It's so disrespectful when people\n"
+	.string "leave their trash on the ground.$"
+
 FallarborWasteland_Text_KatIntro:
 	.string "Kat: Ohoho! What do we have here?\n"
 	.string "A new sparring buddy?\p"
@@ -4936,6 +4964,20 @@ FallarborWasteland_Text_HaydenPostBattle:
 	.string "Have you ever thought about becoming a\n"
 	.string "Pokémon Breeder?$"
 
+FallarborWasteland_Text_DariusIntro:
+	.string "Gligar makes for a good kite,\n"
+	.string "don't you think?$"
+
+FallarborWasteland_Text_DariusDefeat:
+	.string "Glide, Gligar, Glide!$"
+
+FallarborWasteland_Text_DariusPostBattle:
+	.string "If I could get a glide suit based\n"
+	.string "on Gligar's design, I could fly with\l"
+	.string "my Pokémon!\p"
+	.string "I should propose this idea to Devon\n"
+	.string "Corp.$"
+
 MauvilleMeadow_Text_RitaIntro:
 	.string "Excuse me. You're in the way of our\n"
 	.string "swimming lessons.$"
@@ -4991,6 +5033,18 @@ MauvilleMeadow_Text_NatashaPostBattle:
 	.string "This pretty field makes me feel like a\l"
 	.string "little girl!$"
 
+MauvilleMeadow_Text_JaceIntro:
+	.string "Excuse me, have you seen any\n"
+	.string "tinder boxes lying around?$"
+
+MauvilleMeadow_Text_JaceDefeat:
+	.string "Where did I leave it…$"
+
+MauvilleMeadow_Text_JacePostBattle:
+	.string "Use my Pokémon?\n"
+	.string "Are you nuts!?\l"
+	.string "That could be a fire hazard!$"
+
 FortreeJungle_Area1_Text_ZukoIntro:
 	.string "Yahaha!\n"
 	.string "You found me!$"
@@ -5028,3 +5082,67 @@ FortreeJungle_Area2_Text_RyuPostBattle:
 	.string "This jungle is too undignified for a\n"
 	.string "dragon tamer such as myself.\l"
 	.string "I would leave if I could find the exit…$"
+
+FortreeJungle_Area3_Text_MarcelIntro:
+	.string "Hey.\p"
+	.string "What do you call a low fat Pokémon?\p"
+	.string "A Butterfree!$"
+
+FortreeJungle_Area3_Text_MarcelDefeat:
+	.string "Didn't go down well, huh?$"
+
+FortreeJungle_Area3_Text_MarcelPostBattle:
+	.string "Thanks, I'll be here all week.$"
+
+CrumblingGorge_Text_CaminaIntro:
+	.string "Did you know that some Pokémon only\n"
+	.string "evolve when holding certain items?$"
+
+CrumblingGorge_Text_CaminaDefeat:
+	.string "I wish our lessons taught us how to\n"
+	.string "win battles.$"
+
+CrumblingGorge_Text_CaminaPostBattle:
+	.string "I read that there's a shop in the\n"
+	.string "Battle Frontier that sells items for\l"
+	.string "evolution.\p"
+	.string "I've also read that many of those same\n"
+	.string "items can also be found held by wild\l"
+	.string "Pokémon.$"
+
+CrumblingGorge_Text_HoldenIntro:
+	.string "You look like a strong trainer.\n"
+	.string "I bet beating you would give us\l"
+	.string "a lot of prize money.$"
+
+CrumblingGorge_Text_HoldenDefeat:
+	.string "No risk, no reward.$"
+
+CrumblingGorge_Text_HoldenPostBattle:
+	.string "If I stopped going after strong\n"
+	.string "trainers, I'd have more money.\p"
+	.string "But weaker trainers just aren't as fun.$"
+
+CrumblingGorge_Text_NagataIntro:
+	.string "Oh this is good timing, our Pokémon\n"
+	.string "were in need of some excercise.$"
+
+CrumblingGorge_Text_NagataDefeat:
+	.string "Tired out!$"
+
+CrumblingGorge_Text_NagataPostBattle:
+	.string "I think it's nap time now.\n"
+	.string "Toodleloo!$"
+
+CrumblingGorge_Text_AmosIntro:
+	.string "Have you heard of fossil Pokémon?\n"
+	.string "Some eggheads at Devon can make them\l"
+	.string "from fossils.$"
+
+CrumblingGorge_Text_AmosDefeat:
+	.string "You're a fossil.$"
+
+CrumblingGorge_Text_AmosPostBattle:
+	.string "I've heard of a fossil expert to the\n"
+	.string "north that digs for fossils.\l"
+	.string "Maybe I'll try to get one from him.$"

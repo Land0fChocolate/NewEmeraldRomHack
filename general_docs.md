@@ -863,7 +863,7 @@ These Pokemon are available after beating the Pokemon League.
 - *Skitty* (Cute Charm, Normalize, Wonder Skin)
 - *Delcatty* (Cute Charm, Normalize, Wonder Skin)
 - *Sableye* (Prankster, Keen Eye, Magic Bounce)
-- *Mawile* (Intimidate, Hyper Cutter, Sheer Force)
+- *Mawile* (Intimidate, Hyper Cutter, Huge Power)
 - *Aron* (Sturdy, Rock Head, Heavy Metal)
 - *Lairon* (Sturdy, Rock Head, Heavy Metal)
 - *Aggron* (Sturdy, Rock Head, Heavy Metal)

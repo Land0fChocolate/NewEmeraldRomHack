@@ -16,6 +16,21 @@ LittlerootBeach_EventScript_SetRivalBattleScene:
 	setobjectxyperm LOCALID_RIVAL, 19, 25
 	end
 
+LittlerootBeach_EventScript_Mathew::
+	trainerbattle_single TRAINER_MATTHEW, LittlerootBeach_Text_MathewIntro, LittlerootBeach_Text_MathewDefeat
+	msgbox LittlerootBeach_Text_MathewPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+LittlerootBeach_EventScript_Angelina::
+	trainerbattle_single TRAINER_ANGELINA, LittlerootBeach_Text_AngelinaIntro, LittlerootBeach_Text_AngelinaDefeat
+	msgbox LittlerootBeach_Text_AngelinaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+LittlerootBeach_EventScript_Jeff::
+	trainerbattle_single TRAINER_JEFF, LittlerootBeach_Text_JeffIntro, LittlerootBeach_Text_JeffDefeat
+	msgbox LittlerootBeach_Text_JeffPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 LittlerootBeach_EventScript_RivalBattle::
 	checkplayergender
 	compare VAR_RESULT, MALE

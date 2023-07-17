@@ -2170,6 +2170,47 @@ static void FreeWindowAndBgBuffers(void)
         Free(tilemapBuffer);
 }
 
+bool8 MonIsEnergizedEmeraldAvailable(s32 mon)
+{
+    if (mon <= SPECIES_DEOXYS
+    || mon == SPECIES_BUDEW
+    || mon == SPECIES_ROSERADE
+    || mon == SPECIES_AMBIPOM
+    || mon == SPECIES_MISMAGIUS
+    || mon == SPECIES_HONCHKROW
+    || mon == SPECIES_CHINGLING
+    || mon == SPECIES_BONSLY
+    || mon == SPECIES_MIME_JR
+    || mon == SPECIES_HAPPINY
+    || mon == SPECIES_MUNCHLAX
+    || mon == SPECIES_MANTYKE
+    || mon == SPECIES_WEAVILE
+    || mon == SPECIES_MAGNEZONE
+    || mon == SPECIES_LICKILICKY
+    || mon == SPECIES_RHYPERIOR
+    || mon == SPECIES_TANGROWTH
+    || mon == SPECIES_ELECTIVIRE
+    || mon == SPECIES_MAGMORTAR
+    || mon == SPECIES_TOGEKISS
+    || mon == SPECIES_YANMEGA
+    || mon == SPECIES_LEAFEON
+    || mon == SPECIES_GLACEON
+    || mon == SPECIES_GLISCOR
+    || mon == SPECIES_MAMOSWINE
+    || mon == SPECIES_PORYGON_Z
+    || mon == SPECIES_GALLADE
+    || mon == SPECIES_PROBOPASS
+    || mon == SPECIES_DUSKNOIR
+    || mon == SPECIES_FROSLASS
+    || mon == SPECIES_SYLVEON
+    || mon == SPECIES_WYRDEER
+    || mon == SPECIES_KLEAVOR
+    || mon == SPECIES_URSALUNA)
+        return TRUE;
+
+    return FALSE;
+}
+
 static void CreatePokedexList(u8 dexMode, u8 order)
 {
     u32 vars[3]; //I have no idea why three regular variables are stored in an array, but whatever.
@@ -2222,6 +2263,8 @@ static void CreatePokedexList(u8 dexMode, u8 order)
             for (i = 0, r5 = 0, r10 = 0; i < temp_dexCount; i++)
             {
                 temp_dexNum = i + 1;
+                if (!MonIsEnergizedEmeraldAvailable(temp_dexNum))
+                    continue;
                 if (GetSetPokedexFlag(temp_dexNum, FLAG_GET_SEEN))
                     r10 = 1;
                 if (r10)

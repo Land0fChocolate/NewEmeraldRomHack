@@ -50,8 +50,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NavelRock_Hooh1_Eventscript_ItemBoldMint",
-      "flag": "FLAG_ITEM_NAVEL_ROCK_HOOH_1_BOLD_MINT"
+      "script": "NavelRock_Hooh1_Eventscript_ItemAdamantMint",
+      "flag": "FLAG_ITEM_NAVEL_ROCK_HOOH_1_ADAMANT_MINT"
     }
   ],
   "warp_events": [
