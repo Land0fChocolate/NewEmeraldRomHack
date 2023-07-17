@@ -908,6 +908,10 @@ static void CreateLearnableMovesList(void)
 	{
         sMoveRelearnerStruct->numMenuChoices = GetEggTutorMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
     }
+    else if (FlagGet(FLAG_PRE_EVO_TUTOR))
+    {
+        sMoveRelearnerStruct->numMenuChoices = GetPreEvolutionMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
+    }
     else
     {
         sMoveRelearnerStruct->numMenuChoices = GetMoveRelearnerMoves(&gPlayerParty[sMoveRelearnerStruct->partyMon], sMoveRelearnerStruct->movesToLearn);
