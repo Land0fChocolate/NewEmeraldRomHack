@@ -1216,10 +1216,10 @@
 #define FLAG_ITEM_FIERY_PATH_GREAT_BALL                             0x495
 #define FLAG_ITEM_FIERY_PATH_FRESH_WATER                            0x496
 #define FLAG_ITEM_NAVEL_ROCK_ENTRANCE_ESCAPE_ROPE                   0x497
-#define FLAG_ITEM_NAVEL_ROCK_LUGIA_1_IMPISH_MINT                    0x498
+#define FLAG_ITEM_NAVEL_ROCK_LUGIA_1_MODEST_MINT                    0x498
 #define FLAG_ITEM_NAVEL_ROCK_LUGIA_2_RARE_CANDY                     0x499
 #define FLAG_ITEM_NAVEL_ROCK_LUGIA_3_TM60                           0x49A
-#define FLAG_ITEM_NAVEL_ROCK_HOOH_1_BOLD_MINT                       0x49B
+#define FLAG_ITEM_NAVEL_ROCK_HOOH_1_ADAMANT_MINT                    0x49B
 #define FLAG_ITEM_NAVEL_ROCK_HOOH_2_TM97                            0x49C
 #define FLAG_ITEM_NAVEL_ROCK_HOOH_3_MAX_REVIVE                      0x49D
 #define FLAG_ITEM_NAVEL_ROCK_TOP_RAINBOW_WING                       0x49E
@@ -1232,12 +1232,12 @@
 #define FLAG_ITEM_MAUVILLE_RIVERSIDE_FULL_RESTORE                   0x4A5
 #define FLAG_ITEM_SHOAL_CAVE_ENTRANCE_ROOM_TM48                     0x4A6
 #define FLAG_ITEM_VICTORY_ROAD_B2F_PROTECTOR                        0x4A7
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
+#define FLAG_ITEM_LITTLEROOT_BEACH_CALM_MINT                        0x4A8
+#define FLAG_ITEM_WILDWOODS_TIMID_MINT                              0x4A9
+#define FLAG_ITEM_FALLARBOR_WASTES_IMPISH_MINT                      0x4AA
+#define FLAG_ITEM_MAUVILLE_MEADOW_BOLD_MINT                         0x4AB
+#define FLAG_ITEM_FORTREE_JUNGLE_JOLLY_MINT                         0x4AC
+#define FLAG_ITEM_CRUMBLING_GORGE_CAREFUL_MINT                      0x4AD
 #define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
 #define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag

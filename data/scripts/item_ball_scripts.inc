@@ -686,6 +686,14 @@ LittlerootBeach_EventScript_ItemTM58::
 	finditem ITEM_TM58
 	end
 
+LittlerootBeach_EventScript_ItemCalmMint::
+	finditem ITEM_CALM_MINT
+	end
+
+Wildwoods_Area5_EventScript_ItemTimidMint::
+	finditem ITEM_TIMID_MINT
+	end
+
 Wildwoods_Area7_EventScript_ItemTM99::
 	finditem ITEM_TM99
 	end
@@ -694,23 +702,39 @@ FallarborWasteland_EventScript_ItemTM67::
 	finditem ITEM_TM67
 	end
 
+FallarborWasteland_EventScript_ItemImpishMint::
+	finditem ITEM_IMPISH_MINT
+	end
+
 MauvilleMeadow_EventScript_ItemTM93::
 	finditem ITEM_TM93
+	end
+
+MauvilleMeadow_EventScript_ItemBoldMint::
+	finditem ITEM_BOLD_MINT
 	end
 
 FortreeJungle_Area2_EventScript_ItemTM09::
 	finditem ITEM_TM09
 	end
 
+FortreeJungle_Area3_EventScript_ItemJollyMint::
+	finditem ITEM_JOLLY_MINT
+	end
+
 CrumblingGorge_EventScript_ItemTM86::
 	finditem ITEM_TM86
+	end
+
+CrumblingGorge_EventScript_ItemCarefulMint::
+	finditem ITEM_CAREFUL_MINT
 	end
 
 NavelRock_Entrance_Eventscript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
 
-NavelRock_Lugia1_Eventscript_ItemImpishMint::
+NavelRock_Lugia1_Eventscript_ItemModestMint::
 	finditem ITEM_MODEST_MINT
 	end
 
@@ -722,7 +746,7 @@ NavelRock_Lugia3_Eventscript_ItemTM60::
 	finditem ITEM_TM60
 	end
 
-NavelRock_Hooh1_Eventscript_ItemBoldMint::
+NavelRock_Hooh1_Eventscript_ItemAdamantMint::
 	finditem ITEM_ADAMANT_MINT
 	end
 
