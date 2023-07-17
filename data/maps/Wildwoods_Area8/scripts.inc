@@ -1,2 +1,7 @@
 Wildwoods_Area8_MapScripts::
 	.byte 0
+
+Wildwoods_Area8_EventScript_Marlene::
+	trainerbattle_single TRAINER_MARLENE, Wildwoods_Area8_Text_MarleneIntro, Wildwoods_Area8_Text_MarleneDefeat
+	msgbox Wildwoods_Area8_Text_MarlenePostBattle, MSGBOX_AUTOCLOSE
+	end

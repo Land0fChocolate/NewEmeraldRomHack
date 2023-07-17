@@ -25,6 +25,8 @@ v1.0.12 - 12/03/2023
 v1.0.13 - 15/03/2023
 v1.0.14 - 21/03/2023
 v1.0.15 - 28/03/2023
+v1.0.16 - 09/07/2023
+v1.0.17 - 18/07/2023
 
 # Changelog
 
@@ -46,6 +48,8 @@ v1.0.15 - 28/03/2023
 	- Pokemon will attempt to learn a new move upon evolution.
 	- Hoenn move tutors can now teach their moves endlessly.
 - New tutor moves added. The new tutor set is similar to what was available in future gens.
+- Egg move tutor added. She appears in the move relearner's house after beating the champion.
+- Pre evo move tutor added. He appears in the move relearner's house.
 - A few Pokemon have base stat buffs to better fit their theme and gameplay:
 	- Treecko, Spheal lines have Attack and Special Attack swapped.
 	- Numel and Camerupt have more HP.

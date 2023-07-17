@@ -26,6 +26,11 @@ MauvilleMeadow_EventScript_Sam::
 	msgbox MauvilleMeadow_Text_SamPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+MauvilleMeadow_EventScript_Jace::
+	trainerbattle_single TRAINER_JACE, MauvilleMeadow_Text_JaceIntro, MauvilleMeadow_Text_JaceDefeat
+	msgbox MauvilleMeadow_Text_JacePostBattle, MSGBOX_AUTOCLOSE
+	end
+
 MauvilleMeadow_Eventscript_Shelly::
 	msgbox MauvilleMeadow_Text_Shelly, MSGBOX_NPC
 	call_if_unset FLAG_MET_SHELLY_MAUVILLE_MEADOW, MauvilleMeadow_Eventscript_SetMeetFlag

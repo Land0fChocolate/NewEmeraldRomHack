@@ -8,6 +8,26 @@ CrumblingGorge_OnTransition:
 	setflag FLAG_LANDMARK_CRUMBLING_GORGE
 	end
 
+CrumblingGorge_EventScript_Camina::
+	trainerbattle_single TRAINER_CAMINA, CrumblingGorge_Text_CaminaIntro, CrumblingGorge_Text_CaminaDefeat
+	msgbox CrumblingGorge_Text_CaminaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+CrumblingGorge_EventScript_Holden::
+	trainerbattle_single TRAINER_HOLDEN, CrumblingGorge_Text_HoldenIntro, CrumblingGorge_Text_HoldenDefeat
+	msgbox CrumblingGorge_Text_HoldenPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+CrumblingGorge_EventScript_Nagata::
+	trainerbattle_single TRAINER_NAGATA, CrumblingGorge_Text_NagataIntro, CrumblingGorge_Text_NagataDefeat
+	msgbox CrumblingGorge_Text_NagataPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+CrumblingGorge_EventScript_Amos::
+	trainerbattle_single TRAINER_AMOS, CrumblingGorge_Text_AmosIntro, CrumblingGorge_Text_AmosDefeat
+	msgbox CrumblingGorge_Text_AmosPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 CrumblingGorge_EventScript_ZinniaTrigger::
 	lockall
 	setvar VAR_CRUMBLING_GORGE_TRIGGER_STATE, 1

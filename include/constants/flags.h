@@ -87,8 +87,8 @@
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
 #define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_PRE_EVO_TUTOR   0x4E
+#define FLAG_EGG_MOVE_TUTOR  0x4F
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
@@ -222,7 +222,7 @@
 #define FLAG_RECEIVED_GREEN_SCARF            0xCB
 #define FLAG_RECEIVED_YELLOW_SCARF           0xCC
 #define FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER    0xCD
-#define FLAG_ENCOUNTERED_LATIAS_OR_LATIOS    0xCE // unused
+#define FLAG_HIDE_EGG_MOVE_TUTOR             0xCE
 #define FLAG_MET_ARCHIE_METEOR_FALLS         0xCF
 #define FLAG_GOT_BASEMENT_KEY_FROM_WATTSON   0xD0
 #define FLAG_GOT_TM72_FROM_WATTSON           0xD1
@@ -378,7 +378,7 @@
 #define FLAG_REMATCH_LOLA                    0x160
 #define FLAG_REMATCH_RICKY                   0x161
 #define FLAG_REMATCH_LILA_AND_ROY            0x162
-#define FLAG_REMATCH_CRISTIN                 0x163
+#define FLAG_REMATCH_CRISTIN                 0x163 // unused
 #define FLAG_REMATCH_BROOKE                  0x164
 #define FLAG_REMATCH_WILTON                  0x165
 #define FLAG_REMATCH_VALERIE                 0x166
@@ -659,9 +659,9 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_113_BOTTLE_CAP                (FLAG_HIDDEN_ITEMS_START + 0x7A)
 #define FLAG_HIDDEN_ITEM_ROUTE_109_BOTTLE_CAP                (FLAG_HIDDEN_ITEMS_START + 0x7B)
 #define FLAG_HIDDEN_NAVEL_ROCK_HOOH_1_GOLD_BOTTLE_CAP        (FLAG_HIDDEN_ITEMS_START + 0x7C)
+#define FLAG_HIDDEN_LITTLEROOT_BEACH_HEART_SCALE             (FLAG_HIDDEN_ITEMS_START + 0x7D)
+#define FLAG_HIDDEN_MAUVILLE_MEADOW_HEART_SCALE              (FLAG_HIDDEN_ITEMS_START + 0x7E)
 
-#define FLAG_UNUSED_0x271                         0x271 // Unused Flag
-#define FLAG_UNUSED_0x272                         0x272 // Unused Flag
 #define FLAG_UNUSED_0x273                         0x273 // Unused Flag
 #define FLAG_FLANNERY_DAILY_LIMIT_LIFTED          0x274
 #define FLAG_TV_RARE_CANDY_ADVERT                 0x275
@@ -1216,10 +1216,10 @@
 #define FLAG_ITEM_FIERY_PATH_GREAT_BALL                             0x495
 #define FLAG_ITEM_FIERY_PATH_FRESH_WATER                            0x496
 #define FLAG_ITEM_NAVEL_ROCK_ENTRANCE_ESCAPE_ROPE                   0x497
-#define FLAG_ITEM_NAVEL_ROCK_LUGIA_1_IMPISH_MINT                    0x498
+#define FLAG_ITEM_NAVEL_ROCK_LUGIA_1_MODEST_MINT                    0x498
 #define FLAG_ITEM_NAVEL_ROCK_LUGIA_2_RARE_CANDY                     0x499
 #define FLAG_ITEM_NAVEL_ROCK_LUGIA_3_TM60                           0x49A
-#define FLAG_ITEM_NAVEL_ROCK_HOOH_1_BOLD_MINT                       0x49B
+#define FLAG_ITEM_NAVEL_ROCK_HOOH_1_ADAMANT_MINT                    0x49B
 #define FLAG_ITEM_NAVEL_ROCK_HOOH_2_TM97                            0x49C
 #define FLAG_ITEM_NAVEL_ROCK_HOOH_3_MAX_REVIVE                      0x49D
 #define FLAG_ITEM_NAVEL_ROCK_TOP_RAINBOW_WING                       0x49E
@@ -1232,12 +1232,12 @@
 #define FLAG_ITEM_MAUVILLE_RIVERSIDE_FULL_RESTORE                   0x4A5
 #define FLAG_ITEM_SHOAL_CAVE_ENTRANCE_ROOM_TM48                     0x4A6
 #define FLAG_ITEM_VICTORY_ROAD_B2F_PROTECTOR                        0x4A7
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
-#define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
-#define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
+#define FLAG_ITEM_LITTLEROOT_BEACH_CALM_MINT                        0x4A8
+#define FLAG_ITEM_WILDWOODS_TIMID_MINT                              0x4A9
+#define FLAG_ITEM_FALLARBOR_WASTES_IMPISH_MINT                      0x4AA
+#define FLAG_ITEM_MAUVILLE_MEADOW_BOLD_MINT                         0x4AB
+#define FLAG_ITEM_FORTREE_JUNGLE_JOLLY_MINT                         0x4AC
+#define FLAG_ITEM_CRUMBLING_GORGE_CAREFUL_MINT                      0x4AD
 #define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
 #define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
@@ -1313,7 +1313,7 @@
 #define FLAG_DEFEATED_FORTREE_GYM                                   0x4F5
 #define FLAG_DEFEATED_MOSSDEEP_GYM                                  0x4F6
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
-#define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
+#define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8 // unused
 
 #define FLAG_UNUSED_0x4F9                                           0x4F9 // Unused Flag
 #define FLAG_UNUSED_0x4FA                                           0x4FA // Unused Flag
