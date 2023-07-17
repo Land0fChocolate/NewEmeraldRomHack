@@ -225,11 +225,19 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 22,
-      "y": 17,
+      "x": 30,
+      "y": 24,
       "elevation": 3,
       "item": "ITEM_CALCIUM",
       "flag": "FLAG_HIDDEN_ITEM_MAUVILLE_MEADOW_SUPER_CALCIUM"
+    },
+    {
+      "type": "hidden_item",
+      "x": 10,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_MAUVILLE_MEADOW_HEART_SCALE"
     }
   ]
 }

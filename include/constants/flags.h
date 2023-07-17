@@ -659,9 +659,9 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_113_BOTTLE_CAP                (FLAG_HIDDEN_ITEMS_START + 0x7A)
 #define FLAG_HIDDEN_ITEM_ROUTE_109_BOTTLE_CAP                (FLAG_HIDDEN_ITEMS_START + 0x7B)
 #define FLAG_HIDDEN_NAVEL_ROCK_HOOH_1_GOLD_BOTTLE_CAP        (FLAG_HIDDEN_ITEMS_START + 0x7C)
+#define FLAG_HIDDEN_LITTLEROOT_BEACH_HEART_SCALE             (FLAG_HIDDEN_ITEMS_START + 0x7D)
+#define FLAG_HIDDEN_MAUVILLE_MEADOW_HEART_SCALE              (FLAG_HIDDEN_ITEMS_START + 0x7E)
 
-#define FLAG_UNUSED_0x271                         0x271 // Unused Flag
-#define FLAG_UNUSED_0x272                         0x272 // Unused Flag
 #define FLAG_UNUSED_0x273                         0x273 // Unused Flag
 #define FLAG_FLANNERY_DAILY_LIMIT_LIFTED          0x274
 #define FLAG_TV_RARE_CANDY_ADVERT                 0x275

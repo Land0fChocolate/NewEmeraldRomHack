@@ -222,6 +222,14 @@
       "elevation": 3,
       "item": "ITEM_HP_UP",
       "flag": "FLAG_HIDDEN_ITEM_LITTLEROOT_BEACH_SUPER_HP_UP"
+    },
+    {
+      "type": "hidden_item",
+      "x": 22,
+      "y": 26,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_LITTLEROOT_BEACH_HEART_SCALE"
     }
   ]
 }
