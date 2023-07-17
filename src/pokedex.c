@@ -2170,7 +2170,6 @@ static void FreeWindowAndBgBuffers(void)
         Free(tilemapBuffer);
 }
 
-// Use this in CreatePokedexList somehow
 bool8 MonIsEnergizedEmeraldAvailable(s32 mon)
 {
     if (mon <= SPECIES_DEOXYS
