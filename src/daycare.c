@@ -23,6 +23,8 @@
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/region_map_sections.h"
+#include "constants/species.h"
+#include "data/pokemon/egg_moves.h"
 
 extern const struct Evolution gEvolutionTable[][EVOS_PER_MON];
 
@@ -39,8 +41,6 @@ EWRAM_DATA static u16 sHatchedEggFatherMoves[MAX_MON_MOVES] = {0};
 EWRAM_DATA static u16 sHatchedEggFinalMoves[MAX_MON_MOVES] = {0};
 EWRAM_DATA static u16 sHatchedEggEggMoves[EGG_MOVES_ARRAY_COUNT] = {0};
 EWRAM_DATA static u16 sHatchedEggMotherMoves[MAX_MON_MOVES] = {0};
-
-#include "data/pokemon/egg_moves.h"
 
 static const struct WindowTemplate sDaycareLevelMenuWindowTemplate =
 {
@@ -390,7 +390,7 @@ static void ClearAllDaycareData(struct DayCare *daycare)
 // Determines what the species of an Egg would be based on the given species.
 // It determines this by working backwards through the evolution chain of the
 // given species.
-static u16 GetEggSpecies(u16 species)
+u16 GetEggSpecies(u16 species)
 {
     int i, j, k;
     bool8 found;
@@ -680,7 +680,7 @@ static void BuildEggMoveset(struct Pokemon *egg, struct BoxPokemon *father, stru
         sHatchedEggFatherMoves[i] = GetBoxMonData(father, MON_DATA_MOVE1 + i);
         sHatchedEggMotherMoves[i] = GetBoxMonData(mother, MON_DATA_MOVE1 + i);
     }
-//Inherit egg moves:
+    //Inherit egg moves:
     numEggMoves = GetEggMoves(egg, sHatchedEggEggMoves);
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
@@ -1398,3 +1398,93 @@ static u8 ModifyBreedingScoreForOvalCharm(u8 score)
     return score;
 }
 
+u16 GetEggMovesArraySize(void) 
+{
+	return ARRAY_COUNT(gEggMoves);
+}
+
+u8 GetEggTutorMoves(struct Pokemon *mon, u16 *moves)
+{
+    u16 learnedMoves[4];
+    u8 numMoves = 0;
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
+    u8 level = GetMonData(mon, MON_DATA_LEVEL, 0);
+    int i, j, k;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+    
+    // Species to pull egg moves from.
+	species = GetEggSpecies(species);
+
+	k = GetEggMovesArraySize() - 1;
+
+	// Here, j is being used as the offset into gEggMoves.
+	for (i = 0; i < k; i++)
+	{
+		if (gEggMoves[i] == species + EGG_MOVES_SPECIES_OFFSET)
+		{
+			j = i + 1;
+			break;
+		}
+	}
+
+    // Validates the move not being learned already, as normal.
+	for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
+	{
+		if (gEggMoves[j + i] > EGG_MOVES_SPECIES_OFFSET)
+			break;
+		for (k = 0; k < MAX_MON_MOVES && learnedMoves[k] != gEggMoves[j + i]; k++)
+					;
+
+    if (k == MAX_MON_MOVES)
+			moves[numMoves++] = gEggMoves[j + i];
+	}
+
+    return numMoves;
+}
+
+u8 GetNumberOfEggMoves(struct Pokemon *mon)
+{
+    u16 learnedMoves[MAX_MON_MOVES];
+    u16 moves[MAX_LEVEL_UP_MOVES];
+    u8 numMoves = 0;
+    u16 species = GetMonData(mon, MON_DATA_SPECIES2, 0);
+    u8 level = GetMonData(mon, MON_DATA_LEVEL, 0);
+    int i, j, k;
+
+    if (species == SPECIES_EGG)
+        return 0;
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        learnedMoves[i] = GetMonData(mon, MON_DATA_MOVE1 + i, 0);
+
+    // Species to pull egg moves from.
+	species = GetEggSpecies(species);
+		
+	k = GetEggMovesArraySize() - 1;
+		
+	// Here, j is being used as the offset into gEggMoves.
+	for (i = 0; i < k; i++)
+	{
+		if (gEggMoves[i] == species + EGG_MOVES_SPECIES_OFFSET)
+		{
+			j = i + 1;
+			break;
+		}
+	}
+
+	// Validates the move not being learned already, as normal.
+	for (i = 0; i < EGG_MOVES_ARRAY_COUNT; i++)
+	{
+		if (gEggMoves[j + i] > EGG_MOVES_SPECIES_OFFSET)
+			break;
+		for (k = 0; k < numMoves && learnedMoves[k] != gEggMoves[j + i]; k++)
+					;
+
+		if (k == numMoves)
+			moves[numMoves++] = gEggMoves[j + i];
+	}
+
+	return numMoves;
+}

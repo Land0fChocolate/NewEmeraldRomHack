@@ -10,6 +10,7 @@
 #include "battle_setup.h"
 #include "battle_tower.h"
 #include "data.h"
+#include "daycare.h"
 #include "event_data.h"
 #include "evolution_scene.h"
 #include "field_specials.h"
@@ -49,6 +50,8 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 #include "constants/battle_config.h"
+// const rom data
+#include "data/battle_moves.h"
 
 struct SpeciesItem
 {
@@ -76,9 +79,6 @@ EWRAM_DATA struct Pokemon gEnemyParty[PARTY_SIZE] = {0};
 EWRAM_DATA struct SpriteTemplate gMultiuseSpriteTemplate = {0};
 EWRAM_DATA struct Unknown_806F160_Struct *gUnknown_020249B4[2] = {NULL};
 EWRAM_DATA static u8 sTriedEvolving = 0;
-
-// const rom data
-#include "data/battle_moves.h"
 
 // Used in an unreferenced function in RS.
 // Unreferenced here and in FRLG.

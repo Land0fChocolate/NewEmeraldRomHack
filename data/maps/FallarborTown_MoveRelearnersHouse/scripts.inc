@@ -1,4 +1,5 @@
 .set LOCALID_MOVE_RELEARNER, 1
+.set LOCALID_EGG_MOVE_TUTOR, 3
 
 FallarborTown_MoveRelearnersHouse_MapScripts::
 	.byte 0
@@ -62,6 +63,76 @@ FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithHeartScale::
 	msgbox FallarborTown_MoveRelearnersHouse_Text_ComeBackWithHeartScale, MSGBOX_DEFAULT
 	releaseall
 	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_EggMoveTutor::
+	lockall
+	applymovement LOCALID_EGG_MOVE_TUTOR, Common_Movement_FacePlayer
+	waitmovement 0
+	goto_if_set FLAG_TEMP_2, FallarborTown_MoveRelearnersHouse_EventScript_AskEggTutorTeachMove
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheEggTutor, MSGBOX_DEFAULT
+	setflag FLAG_TEMP_2
+	goto FallarborTown_MoveRelearnersHouse_EventScript_AskEggTutorTeachMove
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_AskEggTutorTeachMove::
+	checkitem ITEM_HEART_SCALE, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_EggTutorComeBackWithHeartScale
+	msgbox FallarborTown_MoveRelearnersHouse_Text_EggTutorThatsAHeartScaleWantMeToTeachMove, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, FallarborTown_MoveRelearnersHouse_EventScript_EggTutorComeBackWithHeartScale
+	goto FallarborTown_MoveRelearnersHouse_EventScript_EggTutorChooseMon
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_EggTutorChooseMon::
+	msgbox FallarborTown_MoveRelearnersHouse_Text_EggTutorWhichMon, MSGBOX_DEFAULT
+	setflag FLAG_EGG_MOVE_TUTOR
+	special ChooseMonForMoveRelearner @ The list of moves is built here
+	waitstate
+	compare VAR_0x8004, 255
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_EggTutorComeBackWithHeartScale
+	special IsSelectedMonEgg
+	compare VAR_RESULT, TRUE
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_CantTeachEgg
+	compare VAR_0x8005, 0
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_NoMoveToTeachMon
+	goto FallarborTown_MoveRelearnersHouse_EventScript_EggTutorChooseMove
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_EggTutorChooseMove::
+	msgbox FallarborTown_MoveRelearnersHouse_Text_TeachWhichMove, MSGBOX_DEFAULT
+	special TeachMoveRelearnerMove
+	waitstate
+	compare VAR_0x8004, 0
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_ChooseMon
+	msgbox FallarborTown_MoveRelearnersHouse_Text_HandedOverHeartScale, MSGBOX_DEFAULT
+	removeitem ITEM_HEART_SCALE
+	goto FallarborTown_MoveRelearnersHouse_EventScript_EggTutorComeBackWithHeartScale
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_EggTutorComeBackWithHeartScale::
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ComeBackWithHeartScale, MSGBOX_DEFAULT
+	clearflag FLAG_EGG_MOVE_TUTOR
+	releaseall
+	end
+
+FallarborTown_MoveRelearnersHouse_Text_ImTheEggTutor:
+	.string "Hello, I'm the egg move tutor.\p"
+	.string "I know all the moves that Pokémon\n"
+	.string "can learn from birth, and I can teach\l"
+	.string "Pokémon those moves.\p"
+	.string "I can teach a move to a Pokémon\n"
+	.string "of yours if you'd like.\p"
+	.string "The payment is a Heart Scale.\n"
+	.string "I'm collecting those now.$"
+
+FallarborTown_MoveRelearnersHouse_Text_EggTutorThatsAHeartScaleWantMeToTeachMove:
+	.string "I see you have brought a Heart Scale.\p"
+	.string "Would you like me to teach your Pokémon\n"
+	.string "an egg move?$"
+
+FallarborTown_MoveRelearnersHouse_Text_EggTutorWhichMon:
+	.string "Which Pokémon needs an egg move?$"
 
 FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor:
 	.string "I'm the Move Tutor.\p"
