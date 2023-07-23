@@ -290,6 +290,7 @@ The fine people who worked on the pokeemerald and pokeemerald-expansion decompil
 - Pyredrid
 - ghoulslash
 - UltimaSoul
+- TheSlyphIsIn
 
 # Tools used
 

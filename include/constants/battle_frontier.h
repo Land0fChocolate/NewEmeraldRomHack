@@ -52,6 +52,7 @@
 
 #define MAX_BATTLE_FRONTIER_POINTS 9999
 #define MAX_STREAK 9999
+#define MAX_STREAK_UBER_DOUBLES 255 // TODO: will be no longer needed if implementing Ubers save data properly
 
 // These sets of facility ids would be redundant if the order was consistent
 // The order is important for this set so that all the non-link records can be continuous

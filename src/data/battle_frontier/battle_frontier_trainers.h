@@ -2424,60 +2424,60 @@ const struct BattleFrontierTrainer gBattleFrontierTrainers[FRONTIER_TRAINERS_PLU
         .speechLose = {EC_WORD_WHAT, EC_WORD_AN, EC_WORD_AWFUL, EC_WORD_STENCH, EC_WORD_EXCL, EC_EMPTY_WORD},
         .monSet = gBattleFrontierTrainerMons_Lalatina
     },
-    [FRONTIER_TRAINER_BRADEN2] = {
+    [FRONTIER_TRAINER_RAKSHA] = {
         .facilityClass = FACILITY_CLASS_COOLTRAINER_M,
         .trainerName = _("Raksha"),
         .speechBefore = {EC_WORD_I, EC_WORD_LIKE, EC_WORD_A, EC_WORD_TRAINER, EC_WORD_THAT_S, EC_WORD_REFRESHING},
         .speechWin = {EC_WORD_VICTORY, EC_WORD_HAS, EC_WORD_A, EC_MOVE(SWEET_SCENT), EC_WORD_EXCL, EC_EMPTY_WORD},
         .speechLose = {EC_WORD_WHAT, EC_WORD_AN, EC_WORD_AWFUL, EC_WORD_STENCH, EC_WORD_EXCL, EC_EMPTY_WORD},
-        .monSet = gBattleFrontierTrainerMons_Braden2
+        .monSet = gBattleFrontierTrainerMons_Raksha
     },
-    [FRONTIER_TRAINER_JULIA2] = {
+    [FRONTIER_TRAINER_KOBENI] = {
         .facilityClass = FACILITY_CLASS_COOLTRAINER_F,
         .trainerName = _("Kobeni"),
         .speechBefore = {EC_WORD_I, EC_WORD_LIKE, EC_WORD_A, EC_WORD_TRAINER, EC_WORD_THAT_S, EC_WORD_REFRESHING},
         .speechWin = {EC_WORD_VICTORY, EC_WORD_HAS, EC_WORD_A, EC_MOVE(SWEET_SCENT), EC_WORD_EXCL, EC_EMPTY_WORD},
         .speechLose = {EC_WORD_WHAT, EC_WORD_AN, EC_WORD_AWFUL, EC_WORD_STENCH, EC_WORD_EXCL, EC_EMPTY_WORD},
-        .monSet = gBattleFrontierTrainerMons_Julia2
+        .monSet = gBattleFrontierTrainerMons_Kobeni
     },
-    [FRONTIER_TRAINER_JALEN2] = {
+    [FRONTIER_TRAINER_DENJI] = {
         .facilityClass = FACILITY_CLASS_POKEMANIAC,
         .trainerName = _("Denji"),
         .speechBefore = {EC_WORD_I, EC_WORD_LIKE, EC_WORD_A, EC_WORD_TRAINER, EC_WORD_THAT_S, EC_WORD_REFRESHING},
         .speechWin = {EC_WORD_VICTORY, EC_WORD_HAS, EC_WORD_A, EC_MOVE(SWEET_SCENT), EC_WORD_EXCL, EC_EMPTY_WORD},
         .speechLose = {EC_WORD_WHAT, EC_WORD_AN, EC_WORD_AWFUL, EC_WORD_STENCH, EC_WORD_EXCL, EC_EMPTY_WORD},
-        .monSet = gBattleFrontierTrainerMons_Jalen2
+        .monSet = gBattleFrontierTrainerMons_Denji
     },
-    [FRONTIER_TRAINER_DAWN2] = {
+    [FRONTIER_TRAINER_MAKIMA] = {
         .facilityClass = FACILITY_CLASS_BEAUTY,
         .trainerName = _("Makima"),
         .speechBefore = {EC_WORD_I, EC_WORD_LIKE, EC_WORD_A, EC_WORD_TRAINER, EC_WORD_THAT_S, EC_WORD_REFRESHING},
         .speechWin = {EC_WORD_VICTORY, EC_WORD_HAS, EC_WORD_A, EC_MOVE(SWEET_SCENT), EC_WORD_EXCL, EC_EMPTY_WORD},
         .speechLose = {EC_WORD_WHAT, EC_WORD_AN, EC_WORD_AWFUL, EC_WORD_STENCH, EC_WORD_EXCL, EC_EMPTY_WORD},
-        .monSet = gBattleFrontierTrainerMons_Dawn2
+        .monSet = gBattleFrontierTrainerMons_Makima
     },
-    [FRONTIER_TRAINER_ROBERTO2] = {
+    [FRONTIER_TRAINER_KISHIBE] = {
         .facilityClass = FACILITY_CLASS_DRAGON_TAMER,
         .trainerName = _("Kishibe"),
         .speechBefore = {EC_WORD_I, EC_WORD_LIKE, EC_WORD_A, EC_WORD_TRAINER, EC_WORD_THAT_S, EC_WORD_REFRESHING},
         .speechWin = {EC_WORD_VICTORY, EC_WORD_HAS, EC_WORD_A, EC_MOVE(SWEET_SCENT), EC_WORD_EXCL, EC_EMPTY_WORD},
         .speechLose = {EC_WORD_WHAT, EC_WORD_AN, EC_WORD_AWFUL, EC_WORD_STENCH, EC_WORD_EXCL, EC_EMPTY_WORD},
-        .monSet = gBattleFrontierTrainerMons_Roberto2
+        .monSet = gBattleFrontierTrainerMons_Kishibe
     },
-    [FRONTIER_TRAINER_ADRIANA2] = {
+    [FRONTIER_TRAINER_AQUA] = {
         .facilityClass = FACILITY_CLASS_SWIMMING_TRIATHLETE_F,
         .trainerName = _("Aqua"),
         .speechBefore = {EC_WORD_I, EC_WORD_LIKE, EC_WORD_A, EC_WORD_TRAINER, EC_WORD_THAT_S, EC_WORD_REFRESHING},
         .speechWin = {EC_WORD_VICTORY, EC_WORD_HAS, EC_WORD_A, EC_MOVE(SWEET_SCENT), EC_WORD_EXCL, EC_EMPTY_WORD},
         .speechLose = {EC_WORD_WHAT, EC_WORD_AN, EC_WORD_AWFUL, EC_WORD_STENCH, EC_WORD_EXCL, EC_EMPTY_WORD},
-        .monSet = gBattleFrontierTrainerMons_Adriana2
+        .monSet = gBattleFrontierTrainerMons_Aqua
     },
-    [FRONTIER_TRAINER_ZACH2] = {
+    [FRONTIER_TRAINER_AKI] = {
         .facilityClass = FACILITY_CLASS_PSYCHIC_M,
         .trainerName = _("Aki"),
         .speechBefore = {EC_WORD_I, EC_WORD_LIKE, EC_WORD_A, EC_WORD_TRAINER, EC_WORD_THAT_S, EC_WORD_REFRESHING},
         .speechWin = {EC_WORD_VICTORY, EC_WORD_HAS, EC_WORD_A, EC_MOVE(SWEET_SCENT), EC_WORD_EXCL, EC_EMPTY_WORD},
         .speechLose = {EC_WORD_WHAT, EC_WORD_AN, EC_WORD_AWFUL, EC_WORD_STENCH, EC_WORD_EXCL, EC_EMPTY_WORD},
-        .monSet = gBattleFrontierTrainerMons_Zach2
+        .monSet = gBattleFrontierTrainerMons_Aki
     }
 };

@@ -9486,37 +9486,37 @@ const u16 gBattleFrontierTrainerMons_Lalatina[] =
     FRONTIER_MONS_DELINQUENT_1
 };
 
-const u16 gBattleFrontierTrainerMons_Braden2[] = 
+const u16 gBattleFrontierTrainerMons_Raksha[] = 
 {
     FRONTIER_MONS_COOLTRAINER_4A
 };
 
-const u16 gBattleFrontierTrainerMons_Julia2[] = 
+const u16 gBattleFrontierTrainerMons_Kobeni[] = 
 {
     FRONTIER_MONS_COOLTRAINER_4B
 };
 
-const u16 gBattleFrontierTrainerMons_Jalen2[] = 
+const u16 gBattleFrontierTrainerMons_Denji[] = 
 {
     FRONTIER_MONS_POKEMANIAC_3
 };
 
-const u16 gBattleFrontierTrainerMons_Dawn2[] = 
+const u16 gBattleFrontierTrainerMons_Makima[] = 
 {
     FRONTIER_MONS_BEAUTY_3
 };
 
-const u16 gBattleFrontierTrainerMons_Roberto2[] = 
+const u16 gBattleFrontierTrainerMons_Kishibe[] = 
 {
     FRONTIER_MONS_DRAGON_TAMER_3
 };
 
-const u16 gBattleFrontierTrainerMons_Adriana2[] = 
+const u16 gBattleFrontierTrainerMons_Aqua[] = 
 {
     FRONTIER_MONS_SWIMMING_TRIATHLETE_4
 };
 
-const u16 gBattleFrontierTrainerMons_Zach2[] = 
+const u16 gBattleFrontierTrainerMons_Aki[] = 
 {
     FRONTIER_MONS_PSYCHIC_3
 };

@@ -2066,11 +2066,6 @@ static void CheckPartyIneligibility(void)
                 if (heldItem == ITEM_NONE)
                     AppendIfValid(species, heldItem, hp, gSpecialVar_Result, level, speciesArray, itemArray, &numEligibleMons);
             }
-            else if (!uberFormat)
-            {
-                if (ItemId_GetHoldEffect(heldItem) != HOLD_EFFECT_MEGA_STONE)
-                    AppendIfValid(species, heldItem, hp, gSpecialVar_Result, level, speciesArray, itemArray, &numEligibleMons);
-            }
             else
             {
                 AppendIfValid(species, heldItem, hp, gSpecialVar_Result, level, speciesArray, itemArray, &numEligibleMons);
@@ -2083,7 +2078,7 @@ static void CheckPartyIneligibility(void)
         monIdLooper++;
     } while (monIdLooper < PARTY_SIZE && numEligibleMons < toChoose);
 
-    if (numEligibleMons < toChoose && !uberFormat)
+    if (numEligibleMons < toChoose && !uberFormat) // TODO: make an else for uber format
     {
         s32 i;
         s32 caughtBannedMons = 0;
@@ -2134,7 +2129,19 @@ static void IncrementWinStreak(void)
 
     if (VarGet(VAR_RESULT) == FRONTIER_LVL_UBER) // TODO: use something other than VAR_RESULT for getting format
     {
-        // TODO: set uber format win streak
+        if (battleMode == FRONTIER_MODE_SINGLES)
+        {
+            if (gSaveBlock2Ptr->frontier.towerUberSinglesStreak < MAX_STREAK)
+            {
+                gSaveBlock2Ptr->frontier.towerUberSinglesStreak++;
+                SetGameStat(GAME_STAT_BATTLE_TOWER_BEST_STREAK, gSaveBlock2Ptr->frontier.towerUberSinglesStreak);
+            }
+        }
+        else
+        {
+            if (gSaveBlock2Ptr->frontier.towerUberDoublesStreak < MAX_STREAK_UBER_DOUBLES)
+                gSaveBlock2Ptr->frontier.towerUberDoublesStreak++;
+        }
         return;
     }
 
