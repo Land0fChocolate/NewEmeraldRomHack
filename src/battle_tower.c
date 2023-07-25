@@ -1144,6 +1144,13 @@ u16 GetRandomScaledFrontierTrainerId(u8 challengeNum, u8 battleNum)
 {
     u16 trainerId;
 
+    if (FlagGet(FLAG_UBER_CHALLENGE))
+    {
+        trainerId = (sFrontierTrainerIdRangesUbers[0][1] - sFrontierTrainerIdRangesUbers[0][0]) + 1;
+        trainerId = sFrontierTrainerIdRangesUbers[0][0] + (Random() % trainerId);
+        return trainerId;
+    }
+
     if (challengeNum <= 7)
     {
         if (battleNum == 6)

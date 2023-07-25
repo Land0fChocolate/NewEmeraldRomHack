@@ -1978,7 +1978,7 @@ static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monL
     s32 i = 0;
     bool8 uberFormat;
 
-    if (VarGet(VAR_RESULT) == FRONTIER_LVL_UBER) // note: should change VAR_RESULT to something safer?
+    if (FlagGet(FLAG_UBER_CHALLENGE))
         uberFormat = TRUE;
 
     if (species == SPECIES_EGG || species == SPECIES_NONE)
@@ -2000,6 +2000,9 @@ static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monL
     if (heldItem != 0)
     {
         if (!uberFormat && ItemId_GetHoldEffect(heldItem) == HOLD_EFFECT_MEGA_STONE)
+            return;
+
+        if (heldItem == ITEM_MEWTWONITE_X || heldItem == ITEM_MEWTWONITE_Y)
             return;
         
         for (i = 0; i < *count && itemsArray[i] != heldItem; i++)
@@ -2078,7 +2081,7 @@ static void CheckPartyIneligibility(void)
         monIdLooper++;
     } while (monIdLooper < PARTY_SIZE && numEligibleMons < toChoose);
 
-    if (numEligibleMons < toChoose && !uberFormat) // TODO: make an else for uber format
+    if (numEligibleMons < toChoose && !uberFormat) // TODO: make an else for uber format (may not need to here.)
     {
         s32 i;
         s32 caughtBannedMons = 0;

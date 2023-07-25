@@ -10,6 +10,7 @@
 #include "battle_tv.h"
 #include "bg.h"
 #include "data.h"
+#include "event_data.h"
 #include "item.h"
 #include "item_menu.h"
 #include "link.h"
@@ -31,10 +32,12 @@
 #include "constants/abilities.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_config.h"
+#include "constants/flags.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/songs.h"
+#include "constants/species.h"
 #include "constants/trainers.h"
 #include "constants/rgb.h"
 
@@ -3001,7 +3004,8 @@ static void PlayerHandleChooseMove(void)
         gBattleStruct->mega.playerSelect = FALSE;
         if (!IsMegaTriggerSpriteActive())
             gBattleStruct->mega.triggerSpriteId = 0xFF;
-        if (CanMegaEvolve(gActiveBattler))
+        if (CanMegaEvolve(gActiveBattler)
+        && !(FlagGet(FLAG_UBER_CHALLENGE) && GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_SPECIES) == SPECIES_RAYQUAZA))
             CreateMegaTriggerSprite(gActiveBattler, 0);
         gBattlerControllerFuncs[gActiveBattler] = HandleChooseMoveAfterDma3;
     }
