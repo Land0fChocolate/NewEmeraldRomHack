@@ -69,6 +69,7 @@
 #include "constants/easy_chat.h"
 #include "constants/field_effects.h"
 #include "constants/item_effects.h"
+#include "constants/hold_effects.h"
 #include "constants/items.h"
 #include "constants/maps.h"
 #include "constants/map_types.h"
@@ -5822,7 +5823,7 @@ static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
     case FACILITY_UNION_ROOM:
         return TRUE;
     default: // Battle Frontier
-        if (VarGet(VAR_RESULT) == FRONTIER_LVL_UBER) // note: should change VAR_RESULT to something safer?
+        if (gSaveBlock2Ptr->frontier.lvlMode == FRONTIER_LVL_UBER)
             return TRUE;
 
         species = GetMonData(mon, MON_DATA_SPECIES);
@@ -5857,10 +5858,19 @@ static u8 CheckBattleEntriesAndGetMessage(void)
         return 0xFF;
 
     maxBattlers = GetMaxBattleEntries();
-    for (i = 0; i < maxBattlers - 1; i++)
+    for (i = 0; i < maxBattlers; i++)
     {
         u16 species = GetMonData(&party[order[i] - 1], MON_DATA_SPECIES);
         u16 item = GetMonData(&party[order[i] - 1], MON_DATA_HELD_ITEM);
+
+        if (!(gSaveBlock2Ptr->frontier.lvlMode == FRONTIER_LVL_UBER) && ItemId_GetHoldEffect(item) == HOLD_EFFECT_MEGA_STONE)
+            return PARTY_MSG_MEGA_STONES_BANNED;
+        if (item == ITEM_MEWTWONITE_X || item == ITEM_MEWTWONITE_Y)
+            return PARTY_MSG_MEWTWO_MEGA_STONES_BANNED;
+
+        if (i == maxBattlers - 1)
+            break;
+
         for (j = i + 1; j < maxBattlers; j++)
         {
             if (species == GetMonData(&party[order[j] - 1], MON_DATA_SPECIES))

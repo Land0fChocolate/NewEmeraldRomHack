@@ -255,7 +255,6 @@ LavaridgeTown_EventScript_OldMan::
 
 LavaridgeTown_EventScript_Twin::
 	msgbox LavaridgeTown_Text_BatheInHotSpringsEveryDay, MSGBOX_NPC
-	giveegg SPECIES_VULPIX_ALOLAN @ TODO: remove
 	end
 
 LavaridgeTown_EventScript_HotSpringsOldWoman1::

@@ -798,7 +798,8 @@ static void HandleInputChooseMove(void)
     }
     else if (gMain.newKeys & START_BUTTON)
     {
-        if (CanMegaEvolve(gActiveBattler))
+        if (CanMegaEvolve(gActiveBattler)
+        && !(FlagGet(FLAG_UBER_CHALLENGE) && GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_SPECIES) == SPECIES_RAYQUAZA))
         {
             gBattleStruct->mega.playerSelect ^= 1;
             ChangeMegaTriggerSprite(gBattleStruct->mega.triggerSpriteId, gBattleStruct->mega.playerSelect);

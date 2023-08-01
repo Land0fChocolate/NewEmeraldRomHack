@@ -206,10 +206,10 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterSinglesChallenge::
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	case FRONTIER_LVL_UBER, BattleFrontier_BattleTowerLobby_EventScript_SinglesUberChallenge
 BattleFrontier_BattleTowerLobby_EventScript_CheckingSinglesChallengeEligibility::
+	frontier_set FRONTIER_DATA_LVL_MODE, VAR_RESULT
 	frontier_checkineligible
 	compare VAR_0x8004, TRUE
 	goto_if_eq BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMons
-	frontier_set FRONTIER_DATA_LVL_MODE, VAR_RESULT
 	msgbox BattleFrontier_BattleTowerLobby_Text_SelectThreeMons, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	call BattleFrontier_EventScript_GetLvlMode
@@ -227,11 +227,7 @@ BattleFrontier_BattleTowerLobby_EventScript_CheckingSinglesChallengeEligibility:
 
 BattleFrontier_BattleTowerLobby_EventScript_SinglesUberChallenge::
 	setflag FLAG_UBER_CHALLENGE
-	message BattleFrontier_BattleTowerLobby_Text_Test
 	goto BattleFrontier_BattleTowerLobby_EventScript_CheckingSinglesChallengeEligibility
-
-BattleFrontier_BattleTowerLobby_Text_Test:
-	.string "Ubers challenge it is!$"
 
 BattleFrontier_BattleTowerLobby_EventScript_SaveBeforeSinglesChallenge::
 	frontier_set FRONTIER_DATA_SELECTED_MON_ORDER

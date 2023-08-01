@@ -2355,6 +2355,8 @@ extern const u8 gText_NotEnoughHp[];
 extern const u8 gText_PokemonAreNeeded[];
 extern const u8 gText_PokemonCantBeSame[];
 extern const u8 gText_NoIdenticalHoldItems[];
+extern const u8 gText_MegaStonesAreBanned[];
+extern const u8 gText_MewtwoMegaStonesAreBanned[];
 extern const u8 gText_DoWhatWithPokemon[];
 extern const u8 gText_RestoreWhichMove[];
 extern const u8 gText_BoostPp[];
