@@ -2122,7 +2122,7 @@
              ( 1, MOVE HYPNOSIS)
              ( 7, MOVE REFLECT)
              (11, MOVE LEECH SEED)
-             (17, MOVE BULLET SEED)
+             (17, MOVE MEGA DRAIN)
              (19, MOVE STUN SPORE)
              (21, MOVE POISON POWDER)
              (23, MOVE SLEEP POWDER)
@@ -3213,8 +3213,6 @@
 - Cyndaquil
              ( 1, MOVE TACKLE)
              ( 1, MOVE LEER)
-             ( 1, MOVE DISCHARGE)
-             ( 1, MOVE EXTRASENSORY)
              ( 6, MOVE SMOKESCREEN)
              (10, MOVE EMBER)
              (13, MOVE QUICK ATTACK)
