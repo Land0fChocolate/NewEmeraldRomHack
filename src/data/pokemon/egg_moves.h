@@ -1189,7 +1189,8 @@ const u16 gEggMoves[] = {
         MOVE_ROOST,
         MOVE_ASSURANCE,
         MOVE_FLATTER,
-        MOVE_PUNISHMENT),
+        MOVE_PUNISHMENT
+        MOVE_AIR_SLASH),
 
     egg_moves(MISDREAVUS,
         MOVE_SCREECH,
