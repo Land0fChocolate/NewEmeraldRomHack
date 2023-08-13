@@ -12901,11 +12901,18 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Red[] = {
 static const struct TrainerMonItemCustomMoves sParty_Leaf[] = {
     {
     .iv = 0,
-    .lvl = 75,
-    .species = SPECIES_CRAWDAUNT,
+    .lvl = 60,
+    .species = SPECIES_RHYDON,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE}
-    }
+    },
+    {
+    .iv = 0,
+    .lvl = 70,
+    .species = SPECIES_NIDOKING,
+    .heldItem = ITEM_SHELL_BELL,
+    .moves = {MOVE_EARTHQUAKE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
 };
 
 static const struct TrainerMonNoItemDefaultMoves sParty_BrendanLinkPlaceholder[] = {
