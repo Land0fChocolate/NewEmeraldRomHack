@@ -3503,10 +3503,10 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_TYPHLOSION_HISUIAN_1] = {
         .species = SPECIES_TYPHLOSION_HISUIAN,
-        .moves = {MOVE_ERUPTION, MOVE_SHADOW_BALL, MOVE_DISCHARGE, MOVE_FOCUS_BLAST},
-        .item = ITEM_EXPERT_BELT,
-        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
-        .nature = NATURE_JOLLY
+        .moves = {MOVE_BURN_UP, MOVE_HYPER_BEAM, MOVE_SHADOW_BALL, MOVE_ATTRACT},
+        .item = ITEM_FIRE_GEM,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_MODEST
     },
     [FRONTIER_MON_HOUNDOOM_1] = {
         .species = SPECIES_HOUNDOOM,
@@ -5283,14 +5283,14 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_TYPHLOSION_HISUIAN,
         .moves = {MOVE_FLAMETHROWER, MOVE_SHADOW_BALL, MOVE_DISCHARGE, MOVE_NASTY_PLOT},
         .item = ITEM_QUICK_CLAW,
-        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_HOUNDOOM_3] = {
         .species = SPECIES_HOUNDOOM,
         .moves = {MOVE_OVERHEAT, MOVE_FOUL_PLAY, MOVE_SLUDGE_BOMB, MOVE_WILL_O_WISP},
         .item = ITEM_WHITE_HERB,
-        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_SP_ATTACK,
         .nature = NATURE_MODEST
     },
     [FRONTIER_MON_DONPHAN_3] = {
@@ -6170,10 +6170,10 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_TYPHLOSION_HISUIAN_4] = {
         .species = SPECIES_TYPHLOSION_HISUIAN,
-        .moves = {MOVE_BURN_UP, MOVE_HYPER_BEAM, MOVE_SHADOW_BALL, MOVE_ATTRACT},
-        .item = ITEM_FIRE_GEM,
-        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
-        .nature = NATURE_MODEST
+        .moves = {MOVE_ERUPTION, MOVE_SHADOW_BALL, MOVE_DISCHARGE, MOVE_FOCUS_BLAST},
+        .item = ITEM_EXPERT_BELT,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_HOUNDOOM_4] = {
         .species = SPECIES_HOUNDOOM,
