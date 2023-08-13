@@ -79,7 +79,7 @@ static const u8 sFlashFireDescription[] = _(
 
 static const u8 sShieldDustDescription[] = _(
 	"Prevents additional move\n"
-	"effects like status and.\n"
+	"effects like status and\n"
 	"flinching.");
 
 static const u8 sOwnTempoDescription[] = _(
@@ -259,7 +259,7 @@ static const u8 sStickyHoldDescription[] = _(
 	"user's held item.");
 
 static const u8 sShedSkinDescription[] = _(
-	"Chance to heal status at.\n"
+	"Chance to heal status at\n"
 	"the end of turn of 33%.");
 
 static const u8 sGutsDescription[] = _(

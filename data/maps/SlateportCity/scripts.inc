@@ -1517,7 +1517,7 @@ SlateportCity_Text_YouDroveTeamAquaAway:
 	.string "Oh! I remember now!\n"
 	.string "I saw you at Petalburg Gym.\l"
 	.string "You're Norman's kid!\p"
-	.string "You see, I'm travelling arund looking\n"
+	.string "You see, I'm travelling around looking\n"
 	.string "for talented trainers for a particular\l"
 	.string "project of mine.\p"
 	.string "You're too juvenile as of now, but you\n"

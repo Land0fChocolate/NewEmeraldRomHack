@@ -600,7 +600,7 @@ Route119_WeatherInstitute_2F_Text_ZinniaWhatBringsYouHere:
 	.string "Not to worry though, there is a way you\n"
 	.string "can get their notice!\p"
 	.string "That would be to bring to each of them\n"
-	.string "a particular artefact that was from\l"
+	.string "a particular artifact that was from\l"
 	.string "another legendary Pokémon.\p"
 	.string "I know of two good choices, and they\n"
 	.string "both convieniently reside in one place.\p"

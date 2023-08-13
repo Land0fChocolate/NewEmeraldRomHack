@@ -227,7 +227,7 @@ RustboroCity_House4_Text_HandedOverBottleCap:
 
 RustboroCity_House4_Text_TimeToBuff:
 	.string "Alright! Watch as my secret recipe\n"
-	.string "takes affect!$"
+	.string "takes effect!$"
 
 RustboroCity_House4_Text_ComeBackWithBottleCap:
 	.string "If your Pokémon need an IV buff,\n"
