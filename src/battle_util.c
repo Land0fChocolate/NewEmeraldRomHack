@@ -247,7 +247,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_BAD_DREAMS] = 2,
     [ABILITY_BAD_LUCK] = 3,
     [ABILITY_BATTERY] = 2,
-    [ABILITY_BATTLE_ARMOR] = 1,
+    [ABILITY_BATTLE_ARMOR] = 3,
     [ABILITY_BATTLE_BOND] = 0,
     [ABILITY_BEAST_BOOST] = 4,
     [ABILITY_BERSERK] = 4,
@@ -419,7 +419,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SHADOW_TAG] = 5,
     [ABILITY_SHED_SKIN] = 3,
     [ABILITY_SHEER_FORCE] = 4,
-    [ABILITY_SHELL_ARMOR] = 1,
+    [ABILITY_SHELL_ARMOR] = 3,
     [ABILITY_SHIELD_DUST] = 2,
     [ABILITY_SHIELDS_DOWN] = 0,
     [ABILITY_SIMPLE] = 4,
@@ -10136,8 +10136,9 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
             break;
         case ABILITY_SHELL_ARMOR:
         case ABILITY_BATTLE_ARMOR:
-            if (!(typeEffectivenessModifier <= UQ_4_12(0.5) || typeEffectivenessModifier >= UQ_4_12(2.0)))
+            if (typeEffectivenessModifier == UQ_4_12(1.0))
                 MulModifier(&finalModifier, UQ_4_12(0.75));
+            break;
         case ABILITY_FILTER:
         case ABILITY_SOLID_ROCK:
         case ABILITY_PRISM_ARMOR:
