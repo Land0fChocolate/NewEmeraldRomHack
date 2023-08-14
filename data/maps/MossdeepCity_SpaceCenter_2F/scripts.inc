@@ -385,7 +385,7 @@ MossdeepCity_SpaceCenter_2F_Text_DisruptingScientificWork:
 
 MossdeepCity_SpaceCenter_2F_Text_CouldSheNotJustBuyTheSuits:
 	.string "Why is she stealing from the Space\n"
-	.string "Center.\l"
+	.string "Center?\l"
 	.string "Could she not just buy their tech?$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenLose:
@@ -433,7 +433,7 @@ MossdeepCity_SpaceCenter_2F_Text_MaxieConfrontingZinnia:
 	.string "It's rather impressive, though I don't\n"
 	.string "appreciate the fact that you allowed so\l"
 	.string "many people and Pokémon to be placed in\l"
-	.string "harms way.\p"
+	.string "harm's way.\p"
 	.string "That is why you must stop right here.\n"
 	.string "We cannot continue to allow you to\l"
 	.string "endanger the residents of Hoenn any\l"

@@ -2322,7 +2322,10 @@ static void Cmd_critmessage(void)
 {
     if (gBattleControllerExecFlags == 0)
     {
-        if (gIsCriticalHit == TRUE && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
+        if (gIsCriticalHit == TRUE 
+        && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+        && !HasAbility(ABILITY_BATTLE_ARMOR, GetBattlerAbilities(gBattlerTarget))
+        && !HasAbility(ABILITY_SHELL_ARMOR, GetBattlerAbilities(gBattlerTarget)))
         {
             PrepareStringBattle(STRINGID_CRITICALHIT, gBattlerAttacker);
             gBattleCommunication[MSG_DISPLAY] = 1;

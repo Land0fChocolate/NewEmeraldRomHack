@@ -201,6 +201,7 @@ Some of the Pokemon that use these aren't accessible in game, but will note thei
 - Charge Beam: Now 40 BP, 100% Acc with 100% chance for special attack boost.
 - Rock Smash: Now 50 BP with 100% chance for target defense drop.
 - Poison Fang: Now has a 100% chance to poison target.
+- Twineedle: Now has 40 BP and a 100% chance to poison target.
 - Cut: Now has 40 BP, 100% Acc and always crits.
 
 # Post Launch TODOs

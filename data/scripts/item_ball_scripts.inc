@@ -771,11 +771,11 @@ NavelRock_Hooh3_Eventscript_ItemRainbowWing::
 	end
 
 Text_FoundSilverWing:
-	.string "You have found a legendary artefact!\n"
+	.string "You have found a legendary artifact!\n"
 	.string "Kyogre should appear for you now.$"
 
 Text_FoundRainbowWing:
-	.string "You have found a legendary artefact!\n"
+	.string "You have found a legendary artifact!\n"
 	.string "Groudon should appear for you now.$"
 
 FarawayIsland_Ruin1_Eventscript_ItemHeartScale::
