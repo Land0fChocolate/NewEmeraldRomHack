@@ -1141,7 +1141,7 @@ BattleFrontier_BattleTowerLobby_Text_WhichLevelMode:
 BattleFrontier_BattleTowerLobby_Text_WhichLevelModeUbers:
 	.string "The Battle Room offers three levels\n"
 	.string "of challenge, Level 50, Open Level, and\l"
-	.string "Ubers.\l"
+	.string "Uber.\l"
 	.string "Which is your choice?$"
 
 @ Unused

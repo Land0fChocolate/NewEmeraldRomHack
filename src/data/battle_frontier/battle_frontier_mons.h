@@ -1,6 +1,5 @@
 const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
 {
-    
     [FRONTIER_MON_SUNKERN] = {
         .species = SPECIES_SUNKERN,
         .moves = {MOVE_MEGA_DRAIN, MOVE_INGRAIN, MOVE_GRASS_WHISTLE, MOVE_LIGHT_SCREEN},
@@ -8028,8 +8027,8 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_CELEBI,
         .moves = {MOVE_GIGA_DRAIN, MOVE_TOXIC, MOVE_LEECH_SEED, MOVE_RECOVER},
         .item = ITEM_BIG_ROOT,
-        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
-        .nature = NATURE_BOLD
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_DEFENSE,
+        .nature = NATURE_CALM
     },
     [FRONTIER_MON_CELEBI_2] = {
         .species = SPECIES_CELEBI,
@@ -8230,7 +8229,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_DEOXYS_DEFENSE_4] = {
         .species = SPECIES_DEOXYS_DEFENSE,
         .moves = {MOVE_PSYSHOCK, MOVE_THUNDERBOLT, MOVE_ICE_BEAM, MOVE_NASTY_PLOT},
-        .item = ITEM_MUSCLE_BAND,
+        .item = ITEM_SITRUS_BERRY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_CALM
     },

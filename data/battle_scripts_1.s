@@ -9834,7 +9834,7 @@ BattleScript_WishMaker::
 	trywish 0, BattleScript_ButItFailed
 	printstring STRINGID_PKMNMADEWISH
 	waitmessage B_WAIT_TIME_LONG
-	end3
+	end
 
 BattleScript_SuctionCupsActivates::
 	call BattleScript_AbilityPopUp

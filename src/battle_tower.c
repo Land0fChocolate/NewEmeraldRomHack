@@ -1771,10 +1771,7 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
     while (i != monCount)
     {
         u16 monId = monSet[Random() % bfMonCount];
-        if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_UBER && (level == 50 || level == 20) && monId > FRONTIER_MONS_HIGH_TIER)
-            continue;
 
-//TODO
         // Uber format cases
         if (gSaveBlock2Ptr->frontier.lvlMode == FRONTIER_LVL_UBER)
         {
@@ -1782,18 +1779,8 @@ static void FillTrainerParty(u16 trainerId, u8 firstMonId, u8 monCount)
             if (i == megaPos && ItemId_GetHoldEffect(gFacilityTrainerMons[monId].item) != HOLD_EFFECT_MEGA_STONE)
                 continue;
             
-            // Increase the chance of the opponent to have a non-Uber banned Pokemon.
-            if (i != megaPos && legendaryRerolls > 0)
-            {
-                legendaryRerolls--;
-                for (i = 0; gFrontierBannedSpecies[i] != 0xFFFF; i++)
-                {
-                    if (gFacilityTrainerMons[monId].species != gFrontierBannedSpecies[i])
-                    {
-                        continue;
-                    }
-                }
-            }
+            if (i != megaPos && ItemId_GetHoldEffect(gFacilityTrainerMons[monId].item) == HOLD_EFFECT_MEGA_STONE)
+                continue;
         }
 
         // Ensure this pokemon species isn't a duplicate.

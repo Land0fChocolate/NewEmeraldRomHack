@@ -1058,6 +1058,8 @@
 #define FRONTIER_MON_SUICUNE_5      	 1044
 #define FRONTIER_MON_SUICUNE_6      	 1045
 
+#define NUM_FRONTIER_MONS_NON_UBERS          1046
+
 // Uber format mons
 #define FRONTIER_MON_MEGA_VENUSAUR_1      	 1046
 #define FRONTIER_MON_MEGA_CHARIZARD_X_1      1047
