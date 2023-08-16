@@ -1601,7 +1601,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_MASQUERAIN,
         .moves = {MOVE_BUG_BUZZ, MOVE_SCALD, MOVE_ICE_BEAM, MOVE_STUN_SPORE},
         .item = ITEM_WATER_GEM,
-        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_SP_ATTACK,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_FURRET_1] = {
@@ -5499,7 +5499,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_LAPRAS_3] = {
         .species = SPECIES_LAPRAS,
         .moves = {MOVE_AQUA_TAIL, MOVE_ZEN_HEADBUTT, MOVE_CONFUSE_RAY, MOVE_ICE_SHARD},
-        .item = ITEM_PASSHO_BERRY,
+        .item = ITEM_WEAKNESS_POLICY,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_ADAMANT
     },
