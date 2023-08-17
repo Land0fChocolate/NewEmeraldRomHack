@@ -9631,7 +9631,6 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             && CanBattlerGetOrLoseItem(battlerDef, gBattleMons[battlerDef].item))
             MulModifier(&modifier, UQ_4_12(1.5));
         #endif
-            MulModifier(&modifier, UQ_4_12(1.5));
         break;
     }
 
