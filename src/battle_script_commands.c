@@ -8152,7 +8152,7 @@ static void Cmd_various(void)
         }
         else
         {
-            if (!BATTLER_MAX_HP(gActiveBattler))
+            if (!BATTLER_MAX_HP(gActiveBattler) && IsBattlerAlive(gActiveBattler))
             {
                 gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / 8;
                 if (gBattleMoveDamage == 0)

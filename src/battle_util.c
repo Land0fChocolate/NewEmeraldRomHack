@@ -5499,9 +5499,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                     break;
                 case ABILITY_MIRACLE_BLOSSOM:
-                    if ((gBattleMons[battler].hp != 0) 
-                        && (gBattleMons[battler].hp != gBattleMons[battler].maxHP 
-                            || gBattleMons[BATTLE_PARTNER(battler)].hp != gBattleMons[BATTLE_PARTNER(battler)].maxHP))
+                    if (((gBattleMons[battler].hp != 0) && (gBattleMons[battler].hp != gBattleMons[battler].maxHP))
+                    || ((gBattleMons[BATTLE_PARTNER(battler)].hp != 0) && gBattleMons[BATTLE_PARTNER(battler)].hp != gBattleMons[BATTLE_PARTNER(battler)].maxHP))
                     {
                         gLastUsedAbility = ABILITY_MIRACLE_BLOSSOM;
                         gBattleScripting.battler = gBattlerAttacker;
