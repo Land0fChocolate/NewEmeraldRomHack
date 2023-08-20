@@ -8144,7 +8144,7 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr += 7;
         }
         return;
-    case VARIOUS_CHECK_IF_MIRACLE_BLOSSOM_HEALS: // checkmiracleblossomheal
+    case VARIOUS_CHECK_IF_MIRACLE_BLOSSOM_HEALS:
         if ((gStatuses3[gActiveBattler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_HEAL_BLOCK))
             || (BATTLER_MAX_HP(gActiveBattler) && BATTLER_MAX_HP(BATTLE_PARTNER(gActiveBattler)))
             || !gBattleMons[gActiveBattler].hp)
@@ -8156,7 +8156,7 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr += 7;
         }
         return;
-    case VARIOUS_DO_MIRACLE_BLOSSOM_HEAL: // domiracleblossomheal
+    case VARIOUS_DO_MIRACLE_BLOSSOM_HEAL:
         if (!BATTLER_MAX_HP(gActiveBattler) && IsBattlerAlive(gActiveBattler) && !(gStatuses3[gActiveBattler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_HEAL_BLOCK)))
         {
             gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / 8;

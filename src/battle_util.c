@@ -171,6 +171,7 @@ static const u16 sWorrySeedBannedAbilities[] =
     ABILITY_TRUANT,
     ABILITY_ICE_FACE,
     ABILITY_GULP_MISSILE,
+    ABILITY_ORIGIN,
     ABILITY_TIME_TRAVELLER,
 };
 
@@ -190,6 +191,7 @@ static const u16 sGastroAcidBannedAbilities[] =
     ABILITY_SHIELDS_DOWN,
     ABILITY_STANCE_CHANGE,
     ABILITY_ZEN_MODE,
+    ABILITY_ORIGIN,
     ABILITY_TIME_TRAVELLER,
 };
 
@@ -6783,8 +6785,7 @@ bool32 IsNeutralizingGasOnField(u8 battlerId)
     for (i = 0; i < gBattlersCount; i++)
     {
         if (IsBattlerAlive(i) && HasAbility(ABILITY_NEUTRALIZING_GAS, gBattleMons[i].abilities) 
-            && !(gStatuses3[i] & STATUS3_GASTRO_ACID)
-            && i != battlerId) // neutralizing gas doesn't nullify abilities of the user
+            && !(gStatuses3[i] & STATUS3_GASTRO_ACID))
             return TRUE;
     }
 
@@ -6798,6 +6799,11 @@ u16 *GetBattlerAbilities(u8 battlerId)
     if (gBattleMoves[gCurrentMove].flags & FLAG_TARGET_ABILITY_IGNORED)
         return abilities;
 
+     // neutralizing gas users only have their abilities cancelled out by gastro acid status.
+    if (HasAbility(ABILITY_NEUTRALIZING_GAS, gBattleMons[battlerId].abilities)
+    && !(gStatuses3[battlerId] & STATUS3_GASTRO_ACID))
+        return gBattleMons[battlerId].abilities;
+
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {
         if ((gStatuses3[battlerId] & STATUS3_GASTRO_ACID) && !IsGastroAcidBannedAbility(gBattleMons[battlerId].abilities[x]))
@@ -6806,8 +6812,6 @@ u16 *GetBattlerAbilities(u8 battlerId)
         if (IsNeutralizingGasOnField(battlerId) 
             && !IsNeutralizingGasBannedAbility(gBattleMons[battlerId].abilities[x]))
             continue;
-
-        abilities[x] = gBattleMons[battlerId].abilities[x];
 
         for (y=0; y < NUM_ABILITY_SLOTS; y++)
         {
@@ -6821,9 +6825,10 @@ u16 *GetBattlerAbilities(u8 battlerId)
             && gBattlerByTurnOrder[gCurrentTurnActionNumber] == gBattlerAttacker
             && (gActionsByTurnOrder[gBattlerByTurnOrder[gBattlerAttacker]] == B_ACTION_USE_MOVE || gActionsByTurnOrder[gBattlerByTurnOrder[gBattlerAttacker]] == B_ACTION_USE_ORIGIN_MOVE)
             && gCurrentTurnActionNumber < gBattlersCount)
-                abilities[x] = ABILITY_NONE;
-                break; 
+                break;
         }
+
+        abilities[x] = gBattleMons[battlerId].abilities[x];
     }
 
     return abilities;
