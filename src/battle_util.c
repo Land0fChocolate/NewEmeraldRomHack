@@ -6825,10 +6825,14 @@ u16 *GetBattlerAbilities(u8 battlerId)
             && gBattlerByTurnOrder[gCurrentTurnActionNumber] == gBattlerAttacker
             && (gActionsByTurnOrder[gBattlerByTurnOrder[gBattlerAttacker]] == B_ACTION_USE_MOVE || gActionsByTurnOrder[gBattlerByTurnOrder[gBattlerAttacker]] == B_ACTION_USE_ORIGIN_MOVE)
             && gCurrentTurnActionNumber < gBattlersCount)
-                break;
+            {
+                abilities[x] = ABILITY_NONE;
+                goto END;
+            }
         }
 
         abilities[x] = gBattleMons[battlerId].abilities[x];
+        END:
     }
 
     return abilities;

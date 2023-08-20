@@ -441,8 +441,8 @@ static const u8 sKlutzDescription[] = _(
 	"held items.");
 
 static const u8 sMoldBreakerDescription[] = _(
-	"Moves hit through\n"
-	"abilities.");
+	"Moves ignore the effects\n"
+	"of abilities.");
 
 static const u8 sSuperLuckDescription[] = _(
 	"Critical hit ratio\n"
