@@ -3139,7 +3139,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_WEEZING_GALARIAN_1] = {
         .species = SPECIES_WEEZING_GALARIAN,
-        .moves = {MOVE_STRANGE_STEAM, MOVE_HEAT_WAVE, MOVE_PAIN_SPLIT, MOVE_WILL_O_WISP},
+        .moves = {MOVE_STRANGE_STEAM, MOVE_HEAT_WAVE, MOVE_PAIN_SPLIT, MOVE_SUBSTITUTE},
         .item = ITEM_BLACK_SLUDGE,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
         .nature = NATURE_BOLD
@@ -4917,7 +4917,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_WEEZING_GALARIAN_3] = {
         .species = SPECIES_WEEZING_GALARIAN,
-        .moves = {MOVE_STRANGE_STEAM, MOVE_FLAMETHROWER, MOVE_TAUNT, MOVE_TOXIC},
+        .moves = {MOVE_STRANGE_STEAM, MOVE_FLAMETHROWER, MOVE_TAUNT, MOVE_GASTRO_ACID},
         .item = ITEM_BLACK_SLUDGE,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
         .nature = NATURE_BOLD
@@ -5806,10 +5806,10 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_WEEZING_GALARIAN_4] = {
         .species = SPECIES_WEEZING_GALARIAN,
-        .moves = {MOVE_GUNK_SHOT, MOVE_PLAY_ROUGH, MOVE_OVERHEAT, MOVE_WILL_O_WISP},
+        .moves = {MOVE_SLUDGE_BOMB, MOVE_ATTRACT, MOVE_OVERHEAT, MOVE_MISTY_EXPLOSION},
         .item = ITEM_BLACK_SLUDGE,
-        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
-        .nature = NATURE_IMPISH
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_ATTACK,
+        .nature = NATURE_BOLD
     },
     [FRONTIER_MON_ARCANINE_HISUIAN_4] = {
         .species = SPECIES_ARCANINE_HISUIAN,

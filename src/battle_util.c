@@ -6813,6 +6813,8 @@ u16 *GetBattlerAbilities(u8 battlerId)
             && !IsNeutralizingGasBannedAbility(gBattleMons[battlerId].abilities[x]))
             continue;
 
+        abilities[x] = gBattleMons[battlerId].abilities[x];
+
         for (y=0; y < NUM_ABILITY_SLOTS; y++)
         {
             attackerAbility = gBattleMons[gBattlerAttacker].abilities[y];
@@ -6825,14 +6827,8 @@ u16 *GetBattlerAbilities(u8 battlerId)
             && gBattlerByTurnOrder[gCurrentTurnActionNumber] == gBattlerAttacker
             && (gActionsByTurnOrder[gBattlerByTurnOrder[gBattlerAttacker]] == B_ACTION_USE_MOVE || gActionsByTurnOrder[gBattlerByTurnOrder[gBattlerAttacker]] == B_ACTION_USE_ORIGIN_MOVE)
             && gCurrentTurnActionNumber < gBattlersCount)
-            {
                 abilities[x] = ABILITY_NONE;
-                goto END;
-            }
         }
-
-        abilities[x] = gBattleMons[battlerId].abilities[x];
-        END:
     }
 
     return abilities;
