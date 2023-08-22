@@ -2997,6 +2997,7 @@ static const struct LevelUpMove sArticunoLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sZapdosLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_HURRICANE),
     LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
     LEVEL_UP_MOVE( 1, MOVE_ZAP_CANNON),
     LEVEL_UP_MOVE( 1, MOVE_PECK),

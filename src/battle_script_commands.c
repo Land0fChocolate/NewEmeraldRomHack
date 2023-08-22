@@ -8145,31 +8145,30 @@ static void Cmd_various(void)
         }
         return;
     case VARIOUS_CHECK_IF_MIRACLE_BLOSSOM_HEALS:
-        if ((BATTLER_MAX_HP(gActiveBattler) && BATTLER_MAX_HP(BATTLE_PARTNER(gActiveBattler)))
+        if ((gStatuses3[gActiveBattler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_HEAL_BLOCK))
+            || (BATTLER_MAX_HP(gActiveBattler) && BATTLER_MAX_HP(BATTLE_PARTNER(gActiveBattler)))
             || !gBattleMons[gActiveBattler].hp)
         {
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 2);
         }
         else
         {
-            if (!BATTLER_MAX_HP(gActiveBattler))
-            {
-                gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / 8;
-                if (gBattleMoveDamage == 0)
-                    gBattleMoveDamage = 1;
-                gBattleMoveDamage *= -1;
-            }
-
-            if (!BATTLER_MAX_HP(BATTLE_PARTNER(gActiveBattler)) && IsBattlerAlive(BATTLE_PARTNER(gActiveBattler)))
-            {
-                gBattleMoveDamage = gBattleMons[BATTLE_PARTNER(gActiveBattler)].maxHP / 8;
-                if (gBattleMoveDamage == 0)
-                    gBattleMoveDamage = 1;
-                gBattleMoveDamage *= -1;
-            }
-
             gBattlescriptCurrInstr += 7;
         }
+        return;
+    case VARIOUS_DO_MIRACLE_BLOSSOM_HEAL:
+        if (!BATTLER_MAX_HP(gActiveBattler) && IsBattlerAlive(gActiveBattler) && !(gStatuses3[gActiveBattler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_HEAL_BLOCK)))
+        {
+            gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / 8;
+            if (gBattleMoveDamage == 0)
+                gBattleMoveDamage = 1;
+            gBattleMoveDamage *= -1;
+
+            BtlController_EmitHealthBarUpdate(0, gBattleMoveDamage);
+            MarkBattlerForControllerExec(gActiveBattler);
+        }
+
+        gBattlescriptCurrInstr += 3;
         return;
     case VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS:
         if (!gBattleMons[gActiveBattler].hp)

@@ -171,6 +171,7 @@ static const u16 sWorrySeedBannedAbilities[] =
     ABILITY_TRUANT,
     ABILITY_ICE_FACE,
     ABILITY_GULP_MISSILE,
+    ABILITY_ORIGIN,
     ABILITY_TIME_TRAVELLER,
 };
 
@@ -190,6 +191,7 @@ static const u16 sGastroAcidBannedAbilities[] =
     ABILITY_SHIELDS_DOWN,
     ABILITY_STANCE_CHANGE,
     ABILITY_ZEN_MODE,
+    ABILITY_ORIGIN,
     ABILITY_TIME_TRAVELLER,
 };
 
@@ -5499,9 +5501,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                     break;
                 case ABILITY_MIRACLE_BLOSSOM:
-                    if ((gBattleMons[battler].hp != 0) 
-                        && (gBattleMons[battler].hp != gBattleMons[battler].maxHP 
-                            || gBattleMons[BATTLE_PARTNER(battler)].hp != gBattleMons[BATTLE_PARTNER(battler)].maxHP))
+                    if (((gBattleMons[battler].hp != 0) && (gBattleMons[battler].hp != gBattleMons[battler].maxHP))
+                    || ((gBattleMons[BATTLE_PARTNER(battler)].hp != 0) && gBattleMons[BATTLE_PARTNER(battler)].hp != gBattleMons[BATTLE_PARTNER(battler)].maxHP))
                     {
                         gLastUsedAbility = ABILITY_MIRACLE_BLOSSOM;
                         gBattleScripting.battler = gBattlerAttacker;
@@ -6784,8 +6785,7 @@ bool32 IsNeutralizingGasOnField(u8 battlerId)
     for (i = 0; i < gBattlersCount; i++)
     {
         if (IsBattlerAlive(i) && HasAbility(ABILITY_NEUTRALIZING_GAS, gBattleMons[i].abilities) 
-            && !(gStatuses3[i] & STATUS3_GASTRO_ACID)
-            && i != battlerId) // neutralizing gas doesn't nullify abilities of the user
+            && !(gStatuses3[i] & STATUS3_GASTRO_ACID))
             return TRUE;
     }
 
@@ -6798,6 +6798,11 @@ u16 *GetBattlerAbilities(u8 battlerId)
 
     if (gBattleMoves[gCurrentMove].flags & FLAG_TARGET_ABILITY_IGNORED)
         return abilities;
+
+     // neutralizing gas users only have their abilities cancelled out by gastro acid status.
+    if (HasAbility(ABILITY_NEUTRALIZING_GAS, gBattleMons[battlerId].abilities)
+    && !(gStatuses3[battlerId] & STATUS3_GASTRO_ACID))
+        return gBattleMons[battlerId].abilities;
 
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {
@@ -6823,7 +6828,6 @@ u16 *GetBattlerAbilities(u8 battlerId)
             && (gActionsByTurnOrder[gBattlerByTurnOrder[gBattlerAttacker]] == B_ACTION_USE_MOVE || gActionsByTurnOrder[gBattlerByTurnOrder[gBattlerAttacker]] == B_ACTION_USE_ORIGIN_MOVE)
             && gCurrentTurnActionNumber < gBattlersCount)
                 abilities[x] = ABILITY_NONE;
-                break; 
         }
     }
 
@@ -9631,7 +9635,6 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             && CanBattlerGetOrLoseItem(battlerDef, gBattleMons[battlerDef].item))
             MulModifier(&modifier, UQ_4_12(1.5));
         #endif
-            MulModifier(&modifier, UQ_4_12(1.5));
         break;
     }
 

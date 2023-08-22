@@ -1677,6 +1677,10 @@
 	.4byte \ptr
 	.endm
 
+	.macro domiracleblossomheal battler:req
+	various \battler, VARIOUS_DO_MIRACLE_BLOSSOM_HEAL
+	.endm
+
 	.macro checksoulsiphonheal battler:req, ptr:req
 	various \battler, VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS
 	.4byte \ptr

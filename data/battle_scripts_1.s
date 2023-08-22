@@ -8701,15 +8701,15 @@ BattleScript_GrassyTerrainHealEnd:
 	end2
 
 BattleScript_MiracleBlossomHeals::
-	setbyte gBattleCommunication, 0
 	checkmiracleblossomheal BS_ATTACKER, BattleScript_MiracleBlossomHealEnd
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_MIRACLEBLOSSOMHEALS
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_MiracleBlossomHpChange:
 	orword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
-	healthbarupdate BS_ATTACKER
+	domiracleblossomheal BS_ATTACKER
 	datahpupdate BS_ATTACKER
+	domiracleblossomheal BS_ATTACKER_PARTNER
 BattleScript_MiracleBlossomHealEnd:
 	end2
 
@@ -9820,6 +9820,7 @@ BattleScript_SymbiosisActivates::
 	return
 
 BattleScript_TargetAbilityStatRaiseRet::
+	copybyte sSAVED_BATTLER, gBattlerAttacker
 	copybyte gBattlerAbility, gEffectBattler
 	copybyte gBattlerAttacker, gBattlerTarget
 	call BattleScript_AbilityPopUp
@@ -9827,6 +9828,7 @@ BattleScript_TargetAbilityStatRaiseRet::
 	setgraphicalstatchangevalues
 	call BattleScript_StatUp
 BattleScript_TargetAbilityStatRaiseRet_End:
+	copybyte gBattlerAttacker, sSAVED_BATTLER
 	return
 
 BattleScript_WishMaker::
