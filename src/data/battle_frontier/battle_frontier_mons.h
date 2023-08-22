@@ -1,6 +1,5 @@
 const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
 {
-    
     [FRONTIER_MON_SUNKERN] = {
         .species = SPECIES_SUNKERN,
         .moves = {MOVE_MEGA_DRAIN, MOVE_INGRAIN, MOVE_GRASS_WHISTLE, MOVE_LIGHT_SCREEN},
@@ -2355,7 +2354,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_PLUSLE_2] = {
         .species = SPECIES_PLUSLE,
-        .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDER_WAVE, MOVE_SEISMIC_TOSS, MOVE_ENTRAINMENT},
+        .moves = {MOVE_VOLT_SWITCH, MOVE_THUNDER_WAVE, MOVE_SEISMIC_TOSS, MOVE_LIGHT_SCREEN},
         .item = ITEM_SITRUS_BERRY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_MODEST
@@ -7322,5 +7321,944 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .item = ITEM_CHESTO_BERRY,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_MODEST
-    }
+    },
+    //The next Pokemon are uber format only
+    [FRONTIER_MON_MEGA_VENUSAUR_1] = {
+        .species = SPECIES_VENUSAUR,
+        .moves = {MOVE_GIGA_DRAIN, MOVE_TOXIC, MOVE_LEECH_SEED, MOVE_INGRAIN},
+        .item = ITEM_VENUSAURITE,
+        .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
+        .nature = NATURE_CALM
+    },
+    [FRONTIER_MON_MEGA_VENUSAUR_2] = {
+        .species = SPECIES_VENUSAUR,
+        .moves = {MOVE_ENERGY_BALL, MOVE_SLUDGE_BOMB, MOVE_EARTH_POWER, MOVE_STUN_SPORE},
+        .item = ITEM_VENUSAURITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_CHARIZARD_X_1] = {
+        .species = SPECIES_CHARIZARD,
+        .moves = {MOVE_BLAZE_IMPACT, MOVE_OUTRAGE, MOVE_EARTHQUAKE, MOVE_OVERHEAT},
+        .item = ITEM_CHARIZARDITE_X,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_CHARIZARD_X_2] = {
+        .species = SPECIES_CHARIZARD,
+        .moves = {MOVE_FLARE_BLITZ, MOVE_DRAGON_CLAW, MOVE_THUNDER_PUNCH, MOVE_DRAGON_DANCE},
+        .item = ITEM_CHARIZARDITE_X,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_CHARIZARD_Y_1] = {
+        .species = SPECIES_CHARIZARD,
+        .moves = {MOVE_HEAT_WAVE, MOVE_SOLAR_BEAM, MOVE_FOCUS_BLAST, MOVE_ROOST},
+        .item = ITEM_CHARIZARDITE_Y,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEGA_CHARIZARD_Y_2] = {
+        .species = SPECIES_CHARIZARD,
+        .moves = {MOVE_FLAMETHROWER, MOVE_AIR_SLASH, MOVE_SOLAR_BEAM, MOVE_DRAGON_PULSE},
+        .item = ITEM_CHARIZARDITE_Y,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_BLASTOISE_1] = {
+        .species = SPECIES_BLASTOISE,
+        .moves = {MOVE_WATER_PULSE, MOVE_ICE_BEAM, MOVE_FLASH_CANNON, MOVE_BODY_PRESS},
+        .item = ITEM_BLASTOISINITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
+        .nature = NATURE_BOLD
+    },
+    [FRONTIER_MON_MEGA_BLASTOISE_2] = {
+        .species = SPECIES_BLASTOISE,
+        .moves = {MOVE_WATER_PULSE, MOVE_ICE_BEAM, MOVE_DARK_PULSE, MOVE_DRAGON_PULSE},
+        .item = ITEM_BLASTOISINITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_BEEDRILL_1] = {
+        .species = SPECIES_BEEDRILL,
+        .moves = {MOVE_POISON_JAB, MOVE_U_TURN, MOVE_BRICK_BREAK, MOVE_DRILL_RUN},
+        .item = ITEM_BEEDRILLITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_BEEDRILL_2] = {
+        .species = SPECIES_BEEDRILL,
+        .moves = {MOVE_BUG_BITE, MOVE_POISON_JAB, MOVE_KNOCK_OFF, MOVE_DRILL_RUN},
+        .item = ITEM_BEEDRILLITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_PIDGEOT_1] = {
+        .species = SPECIES_PIDGEOT,
+        .moves = {MOVE_HURRICANE, MOVE_UPROAR, MOVE_HEAT_WAVE, MOVE_U_TURN},
+        .item = ITEM_PIDGEOTITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_PIDGEOT_2] = {
+        .species = SPECIES_PIDGEOT,
+        .moves = {MOVE_HURRICANE, MOVE_U_TURN, MOVE_HEAT_WAVE, MOVE_ROOST},
+        .item = ITEM_PIDGEOTITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEGA_ALAKAZAM_1] = {
+        .species = SPECIES_ALAKAZAM,
+        .moves = {MOVE_PSYCHIC, MOVE_FOCUS_BLAST, MOVE_SHADOW_BALL, MOVE_CALM_MIND},
+        .item = ITEM_ALAKAZITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEGA_ALAKAZAM_2] = {
+        .species = SPECIES_ALAKAZAM,
+        .moves = {MOVE_PSYSHOCK, MOVE_ENERGY_BALL, MOVE_SHADOW_BALL, MOVE_CHARGE_BEAM},
+        .item = ITEM_ALAKAZITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_SLOWBRO_1] = {
+        .species = SPECIES_SLOWBRO,
+        .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_PSYCHIC, MOVE_CALM_MIND},
+        .item = ITEM_SLOWBRONITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_SLOWBRO_2] = {
+        .species = SPECIES_SLOWBRO,
+        .moves = {MOVE_SCALD, MOVE_ICE_BEAM, MOVE_BODY_PRESS, MOVE_SLACK_OFF},
+        .item = ITEM_SLOWBRONITE,
+        .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
+        .nature = NATURE_BOLD
+    },
+    [FRONTIER_MON_MEGA_GENGAR_1] = {
+        .species = SPECIES_GENGAR,
+        .moves = {MOVE_SHADOW_BALL, MOVE_SLUDGE_BOMB, MOVE_ENERGY_BALL, MOVE_CALM_MIND},
+        .item = ITEM_GENGARITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_GENGAR_2] = {
+        .species = SPECIES_GENGAR,
+        .moves = {MOVE_SHADOW_BALL, MOVE_FOCUS_BLAST, MOVE_THUNDERBOLT, MOVE_NASTY_PLOT},
+        .item = ITEM_GENGARITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEGA_KANGASKHAN_1] = {
+        .species = SPECIES_KANGASKHAN,
+        .moves = {MOVE_RETURN, MOVE_CRUNCH, MOVE_FIRE_PUNCH, MOVE_AQUA_TAIL},
+        .item = ITEM_KANGASKHANITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_KANGASKHAN_2] = {
+        .species = SPECIES_KANGASKHAN,
+        .moves = {MOVE_FAKE_OUT, MOVE_SHADOW_CLAW, MOVE_THUNDER_PUNCH, MOVE_BRICK_BREAK},
+        .item = ITEM_KANGASKHANITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_PINSIR_1] = {
+        .species = SPECIES_PINSIR,
+        .moves = {MOVE_RETURN, MOVE_CLOSE_COMBAT, MOVE_BUG_BITE, MOVE_SWORDS_DANCE},
+        .item = ITEM_PINSIRITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_PINSIR_2] = {
+        .species = SPECIES_PINSIR,
+        .moves = {MOVE_QUICK_ATTACK, MOVE_X_SCISSOR, MOVE_CLOSE_COMBAT, MOVE_ROCK_SLIDE},
+        .item = ITEM_PINSIRITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_GYARADOS_1] = {
+        .species = SPECIES_GYARADOS,
+        .moves = {MOVE_WATERFALL, MOVE_CRUNCH, MOVE_ICE_FANG, MOVE_DRAGON_DANCE},
+        .item = ITEM_GYARADOSITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_IMPISH
+    },
+    [FRONTIER_MON_MEGA_GYARADOS_2] = {
+        .species = SPECIES_GYARADOS,
+        .moves = {MOVE_AQUA_TAIL, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_THUNDER_WAVE},
+        .item = ITEM_GYARADOSITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_AERODACTYL_1] = {
+        .species = SPECIES_AERODACTYL,
+        .moves = {MOVE_STONE_EDGE, MOVE_DOUBLE_EDGE, MOVE_ICE_FANG, MOVE_EARTHQUAKE},
+        .item = ITEM_AERODACTYLITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_AERODACTYL_2] = {
+        .species = SPECIES_AERODACTYL,
+        .moves = {MOVE_ROCK_SLIDE, MOVE_CRUNCH, MOVE_AQUA_TAIL, MOVE_IRON_HEAD},
+        .item = ITEM_AERODACTYLITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_AMPHAROS_1] = {
+        .species = SPECIES_AMPHAROS,
+        .moves = {MOVE_THUNDERBOLT, MOVE_DRAGON_PULSE, MOVE_SIGNAL_BEAM, MOVE_THUNDER_WAVE},
+        .item = ITEM_AMPHAROSITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
+        .nature = NATURE_BOLD
+    },
+    [FRONTIER_MON_MEGA_AMPHAROS_2] = {
+        .species = SPECIES_AMPHAROS,
+        .moves = {MOVE_THUNDERBOLT, MOVE_DRAGON_PULSE, MOVE_POWER_GEM, MOVE_FOCUS_BLAST},
+        .item = ITEM_AMPHAROSITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_STEELIX_1] = {
+        .species = SPECIES_STEELIX,
+        .moves = {MOVE_EARTHQUAKE, MOVE_CURSE, MOVE_BODY_PRESS, MOVE_GYRO_BALL},
+        .item = ITEM_STEELIXITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_BRAVE
+    },
+    [FRONTIER_MON_MEGA_STEELIX_2] = {
+        .species = SPECIES_STEELIX,
+        .moves = {MOVE_EARTHQUAKE, MOVE_HEAD_SMASH, MOVE_BODY_PRESS, MOVE_TOXIC},
+        .item = ITEM_STEELIXITE,
+        .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
+        .nature = NATURE_IMPISH
+    },
+    [FRONTIER_MON_MEGA_SCIZOR_1] = {
+        .species = SPECIES_SCIZOR,
+        .moves = {MOVE_BULLET_PUNCH, MOVE_BRICK_BREAK, MOVE_SWORDS_DANCE, MOVE_ROOST},
+        .item = ITEM_SCIZORITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_IMPISH
+    },
+    [FRONTIER_MON_MEGA_SCIZOR_2] = {
+        .species = SPECIES_SCIZOR,
+        .moves = {MOVE_BULLET_PUNCH, MOVE_U_TURN, MOVE_SUPERPOWER, MOVE_KNOCK_OFF},
+        .item = ITEM_SCIZORITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_HERACROSS_1] = {
+        .species = SPECIES_HERACROSS,
+        .moves = {MOVE_MEGAHORN, MOVE_ARM_THRUST, MOVE_ROCK_BLAST, MOVE_EARTHQUAKE},
+        .item = ITEM_HERACRONITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_HERACROSS_2] = {
+        .species = SPECIES_HERACROSS,
+        .moves = {MOVE_PIN_MISSILE, MOVE_CLOSE_COMBAT, MOVE_BULLET_SEED, MOVE_STONE_EDGE},
+        .item = ITEM_HERACRONITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_HOUNDOOM_1] = {
+        .species = SPECIES_HOUNDOOM,
+        .moves = {MOVE_FLAMETHROWER, MOVE_DARK_PULSE, MOVE_SLUDGE_BOMB, MOVE_NASTY_PLOT},
+        .item = ITEM_HOUNDOOMINITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEGA_HOUNDOOM_2] = {
+        .species = SPECIES_HOUNDOOM,
+        .moves = {MOVE_FLAMETHROWER, MOVE_SOLAR_BEAM, MOVE_DARK_PULSE, MOVE_SUNNY_DAY},
+        .item = ITEM_HOUNDOOMINITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_TYRANITAR_1] = {
+        .species = SPECIES_TYRANITAR,
+        .moves = {MOVE_CRUNCH, MOVE_ROCK_SLIDE, MOVE_BODY_PRESS, MOVE_FIRE_PUNCH},
+        .item = ITEM_TYRANITARITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_IMPISH
+    },
+    [FRONTIER_MON_MEGA_TYRANITAR_2] = {
+        .species = SPECIES_TYRANITAR,
+        .moves = {MOVE_CRUNCH, MOVE_STONE_EDGE, MOVE_EARTHQUAKE, MOVE_THUNDER_PUNCH},
+        .item = ITEM_TYRANITARITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_SCEPTILE_1] = {
+        .species = SPECIES_SCEPTILE,
+        .moves = {MOVE_LEAF_BLADE, MOVE_X_SCISSOR, MOVE_DRAGON_CLAW, MOVE_SWORDS_DANCE},
+        .item = ITEM_SCEPTILITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_SCEPTILE_2] = {
+        .species = SPECIES_SCEPTILE,
+        .moves = {MOVE_LEAF_BLADE, MOVE_AERIAL_ACE, MOVE_ROCK_SLIDE, MOVE_EARTHQUAKE},
+        .item = ITEM_SCEPTILITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_BLAZIKEN_1] = {
+        .species = SPECIES_BLAZIKEN,
+        .moves = {MOVE_BLAZE_KICK, MOVE_SKY_UPPERCUT, MOVE_STONE_EDGE, MOVE_THUNDER_PUNCH},
+        .item = ITEM_BLAZIKENITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_BLAZIKEN_2] = {
+        .species = SPECIES_BLAZIKEN,
+        .moves = {MOVE_FLARE_BLITZ, MOVE_HIGH_JUMP_KICK, MOVE_BRAVE_BIRD, MOVE_PROTECT},
+        .item = ITEM_BLAZIKENITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_SWAMPERT_1] = {
+        .species = SPECIES_SWAMPERT,
+        .moves = {MOVE_EARTHQUAKE, MOVE_WATERFALL, MOVE_ICE_PUNCH, MOVE_RAIN_DANCE},
+        .item = ITEM_SWAMPERTITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_SWAMPERT_2] = {
+        .species = SPECIES_SWAMPERT,
+        .moves = {MOVE_EARTHQUAKE, MOVE_AQUA_TAIL, MOVE_AVALANCHE, MOVE_SUPERPOWER},
+        .item = ITEM_SWAMPERTITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_GARDEVOIR_1] = {
+        .species = SPECIES_GARDEVOIR,
+        .moves = {MOVE_PSYCHIC, MOVE_MOONBLAST, MOVE_THUNDERBOLT, MOVE_CALM_MIND},
+        .item = ITEM_GARDEVOIRITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEGA_GARDEVOIR_2] = {
+        .species = SPECIES_GARDEVOIR,
+        .moves = {MOVE_PSYSHOCK, MOVE_MOONBLAST, MOVE_ENERGY_BALL, MOVE_SINGULARITY},
+        .item = ITEM_GARDEVOIRITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_SABLEYE_1] = {
+        .species = SPECIES_SABLEYE,
+        .moves = {MOVE_FOUL_PLAY, MOVE_CONFUSE_RAY, MOVE_TOXIC, MOVE_RECOVER},
+        .item = ITEM_SABLENITE,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_DEFENSE,
+        .nature = NATURE_CAREFUL
+    },
+    [FRONTIER_MON_MEGA_SABLEYE_2] = {
+        .species = SPECIES_SABLEYE,
+        .moves = {MOVE_KNOCK_OFF, MOVE_NIGHT_SHADE, MOVE_WILL_O_WISP, MOVE_RECOVER},
+        .item = ITEM_SABLENITE,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
+        .nature = NATURE_IMPISH
+    },
+    [FRONTIER_MON_MEGA_MAWILE_1] = {
+        .species = SPECIES_MAWILE,
+        .moves = {MOVE_PLAY_ROUGH, MOVE_BRICK_BREAK, MOVE_THUNDER_PUNCH, MOVE_SUCKER_PUNCH},
+        .item = ITEM_MAWILITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_MAWILE_2] = {
+        .species = SPECIES_MAWILE,
+        .moves = {MOVE_PLAY_ROUGH, MOVE_IRON_HEAD, MOVE_KNOCK_OFF, MOVE_SWORDS_DANCE},
+        .item = ITEM_MAWILITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_AGGRON_1] = {
+        .species = SPECIES_AGGRON,
+        .moves = {MOVE_HEAVY_SLAM, MOVE_HEAD_SMASH, MOVE_BODY_PRESS, MOVE_TOXIC},
+        .item = ITEM_AGGRONITE,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
+        .nature = NATURE_IMPISH
+    },
+    [FRONTIER_MON_MEGA_AGGRON_2] = {
+        .species = SPECIES_AGGRON,
+        .moves = {MOVE_HEAVY_SLAM, MOVE_HEAD_SMASH, MOVE_FIRE_PUNCH, MOVE_EARTHQUAKE},
+        .item = ITEM_AGGRONITE,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_ATTACK,
+        .nature = NATURE_IMPISH
+    },
+    [FRONTIER_MON_MEGA_MEDICHAM_1] = {
+        .species = SPECIES_MEDICHAM,
+        .moves = {MOVE_FAKE_OUT, MOVE_HIGH_JUMP_KICK, MOVE_ZEN_HEADBUTT, MOVE_ICE_PUNCH},
+        .item = ITEM_MEDICHAMITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_MEDICHAM_2] = {
+        .species = SPECIES_MEDICHAM,
+        .moves = {MOVE_ZEN_HEADBUTT, MOVE_DRAIN_PUNCH, MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH},
+        .item = ITEM_MEDICHAMITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_MANECTRIC_1] = {
+        .species = SPECIES_MANECTRIC,
+        .moves = {MOVE_THUNDERBOLT, MOVE_OVERHEAT, MOVE_LIGHT_SCREEN, MOVE_VOLT_SWITCH},
+        .item = ITEM_MANECTITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEGA_MANECTRIC_2] = {
+        .species = SPECIES_MANECTRIC,
+        .moves = {MOVE_THUNDERBOLT, MOVE_FLAMETHROWER, MOVE_SIGNAL_BEAM, MOVE_CHARGE_BEAM},
+        .item = ITEM_MANECTITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_SHARPEDO_1] = {
+        .species = SPECIES_SHARPEDO,
+        .moves = {MOVE_CRUNCH, MOVE_WATERFALL, MOVE_ICE_FANG, MOVE_PROTECT},
+        .item = ITEM_SHARPEDONITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_SHARPEDO_2] = {
+        .species = SPECIES_SHARPEDO,
+        .moves = {MOVE_CRUNCH, MOVE_WATERFALL, MOVE_PSYCHIC_FANGS, MOVE_POISON_FANG},
+        .item = ITEM_SHARPEDONITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_CAMERUPT_1] = {
+        .species = SPECIES_CAMERUPT,
+        .moves = {MOVE_ERUPTION, MOVE_EARTH_POWER, MOVE_REST, MOVE_SLEEP_TALK},
+        .item = ITEM_CAMERUPTITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_CALM
+    },
+    [FRONTIER_MON_MEGA_CAMERUPT_2] = {
+        .species = SPECIES_CAMERUPT,
+        .moves = {MOVE_FLAMETHROWER, MOVE_EARTH_POWER, MOVE_FLASH_CANNON, MOVE_YAWN},
+        .item = ITEM_CAMERUPTITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_ALTARIA_1] = {
+        .species = SPECIES_ALTARIA,
+        .moves = {MOVE_RETURN, MOVE_DRAGON_CLAW, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE},
+        .item = ITEM_ALTARIANITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_ALTARIA_2] = {
+        .species = SPECIES_ALTARIA,
+        .moves = {MOVE_HYPER_VOICE, MOVE_DRAGON_PULSE, MOVE_FLAMETHROWER, MOVE_ROOST},
+        .item = ITEM_ALTARIANITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_BANETTE_1] = {
+        .species = SPECIES_BANETTE,
+        .moves = {MOVE_SHADOW_CLAW, MOVE_SUCKER_PUNCH, MOVE_DESTINY_BOND, MOVE_THUNDER_WAVE},
+        .item = ITEM_BANETTITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_BANETTE_2] = {
+        .species = SPECIES_BANETTE,
+        .moves = {MOVE_PHANTOM_FORCE, MOVE_SHADOW_SNEAK, MOVE_KNOCK_OFF, MOVE_WILL_O_WISP},
+        .item = ITEM_BANETTITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_ABSOL_1] = {
+        .species = SPECIES_ABSOL,
+        .moves = {MOVE_SUCKER_PUNCH, MOVE_STONE_EDGE, MOVE_SUPERPOWER, MOVE_PLAY_ROUGH},
+        .item = ITEM_ABSOLITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_ABSOL_2] = {
+        .species = SPECIES_ABSOL,
+        .moves = {MOVE_NIGHT_SLASH, MOVE_PSYCHO_CUT, MOVE_FLINT_BLADE, MOVE_SWORDS_DANCE},
+        .item = ITEM_ABSOLITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_GLALIE_1] = {
+        .species = SPECIES_GLALIE,
+        .moves = {MOVE_ICE_SHARD, MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_EXPLOSION},
+        .item = ITEM_GLALITITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_GLALIE_2] = {
+        .species = SPECIES_GLALIE,
+        .moves = {MOVE_FREEZE_DRY, MOVE_DRAINING_KISS, MOVE_DARK_PULSE, MOVE_EXPLOSION},
+        .item = ITEM_GLALITITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEGA_SALAMENCE_1] = {
+        .species = SPECIES_SALAMENCE,
+        .moves = {MOVE_DOUBLE_EDGE, MOVE_FIRE_FANG, MOVE_EARTHQUAKE, MOVE_ROOST},
+        .item = ITEM_SALAMENCITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_SALAMENCE_2] = {
+        .species = SPECIES_SALAMENCE,
+        .moves = {MOVE_DRAGON_CLAW, MOVE_RETURN, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE},
+        .item = ITEM_SALAMENCITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_METAGROSS_1] = {
+        .species = SPECIES_METAGROSS,
+        .moves = {MOVE_METEOR_MASH, MOVE_ZEN_HEADBUTT, MOVE_EARTHQUAKE, MOVE_EXPLOSION},
+        .item = ITEM_METAGROSSITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_METAGROSS_2] = {
+        .species = SPECIES_METAGROSS,
+        .moves = {MOVE_BULLET_PUNCH, MOVE_ZEN_HEADBUTT, MOVE_THUNDER_PUNCH, MOVE_ICE_PUNCH},
+        .item = ITEM_METAGROSSITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEGA_LATIAS_1] = {
+        .species = SPECIES_LATIAS,
+        .moves = {MOVE_PSYSHOCK, MOVE_ICE_BEAM, MOVE_ENERGY_BALL, MOVE_RECOVER},
+        .item = ITEM_LATIASITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEGA_LATIAS_2] = {
+        .species = SPECIES_LATIAS,
+        .moves = {MOVE_MIST_BALL, MOVE_THUNDERBOLT, MOVE_ICE_BEAM, MOVE_CALM_MIND},
+        .item = ITEM_LATIASITE,
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
+        .nature = NATURE_CALM
+    },
+    [FRONTIER_MON_MEGA_LATIOS_1] = {
+        .species = SPECIES_LATIOS,
+        .moves = {MOVE_THUNDERBOLT, MOVE_ICE_BEAM, MOVE_CALM_MIND, MOVE_RECOVER},
+        .item = ITEM_LATIOSITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEGA_LATIOS_2] = {
+        .species = SPECIES_LATIOS,
+        .moves = {MOVE_LUSTER_PURGE, MOVE_THUNDERBOLT, MOVE_SURF, MOVE_DRACO_METEOR},
+        .item = ITEM_LATIOSITE,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEGA_GALLADE_1] = {
+        .species = SPECIES_GALLADE,
+        .moves = {MOVE_PSYCHO_CUT, MOVE_CLOSE_COMBAT, MOVE_FLINT_BLADE, MOVE_SWORDS_DANCE},
+        .item = ITEM_GALLADITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEGA_GALLADE_2] = {
+        .species = SPECIES_GALLADE,
+        .moves = {MOVE_ZEN_HEADBUTT, MOVE_CLOSE_COMBAT, MOVE_LEAF_BLADE, MOVE_THUNDER_PUNCH},
+        .item = ITEM_GALLADITE,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEWTWO_1] = {
+        .species = SPECIES_MEWTWO,
+        .moves = {MOVE_PSYCHIC, MOVE_AURA_SPHERE, MOVE_SHADOW_BALL, MOVE_FUTURE_SIGHT},
+        .item = ITEM_QUICK_CLAW,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEWTWO_2] = {
+        .species = SPECIES_MEWTWO,
+        .moves = {MOVE_PSYSTRIKE, MOVE_FLAMETHROWER, MOVE_ICE_BEAM, MOVE_NASTY_PLOT},
+        .item = ITEM_SALAC_BERRY,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEWTWO_3] = {
+        .species = SPECIES_MEWTWO,
+        .moves = {MOVE_PSYCHIC, MOVE_ENERGY_BALL, MOVE_THUNDERBOLT, MOVE_CALM_MIND},
+        .item = ITEM_WISE_GLASSES,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEWTWO_4] = {
+        .species = SPECIES_MEWTWO,
+        .moves = {MOVE_PSYSTRIKE, MOVE_AURA_SPHERE, MOVE_ICE_BEAM, MOVE_RECOVER},
+        .item = ITEM_LIFE_ORB,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEW_1] = {
+        .species = SPECIES_MEW,
+        .moves = {MOVE_PSYCHIC, MOVE_ROCK_POLISH, MOVE_NASTY_PLOT, MOVE_BATON_PASS},
+        .item = ITEM_LEFTOVERS,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MEW_2] = {
+        .species = SPECIES_MEW,
+        .moves = {MOVE_ZEN_HEADBUTT, MOVE_EARTHQUAKE, MOVE_FLINT_BLADE, MOVE_SWORDS_DANCE},
+        .item = ITEM_SALAC_BERRY,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEW_3] = {
+        .species = SPECIES_MEW,
+        .moves = {MOVE_PSYSHOCK, MOVE_ICE_BEAM, MOVE_THUNDERBOLT, MOVE_SERPENT_DANCE},
+        .item = ITEM_WISE_GLASSES,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MEW_4] = {
+        .species = SPECIES_MEW,
+        .moves = {MOVE_PLAY_ROUGH, MOVE_STONE_EDGE, MOVE_SEED_BOMB, MOVE_TAILWIND},
+        .item = ITEM_LIECHI_BERRY,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_MEW_5] = {
+        .species = SPECIES_MEW,
+        .moves = {MOVE_WILL_O_WISP, MOVE_TRANSFORM, MOVE_PAIN_SPLIT, MOVE_TRICK},
+        .item = ITEM_CHOICE_SCARF,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
+        .nature = NATURE_IMPISH
+    },
+    [FRONTIER_MON_MEW_6] = {
+        .species = SPECIES_MEW,
+        .moves = {MOVE_LIGHT_SCREEN, MOVE_TOXIC, MOVE_SEISMIC_TOSS, MOVE_SOFT_BOILED},
+        .item = ITEM_LEFTOVERS,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_DEFENSE,
+        .nature = NATURE_CALM
+    },
+    [FRONTIER_MON_MEW_7] = {
+        .species = SPECIES_MEW,
+        .moves = {MOVE_U_TURN, MOVE_VOLT_SWITCH, MOVE_DRACO_METEOR, MOVE_OVERHEAT},
+        .item = ITEM_CHOICE_SCARF,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MEW_8] = {
+        .species = SPECIES_MEW,
+        .moves = {MOVE_DRAINING_KISS, MOVE_DRAIN_PUNCH, MOVE_LEECH_LIFE, MOVE_GIGA_DRAIN},
+        .item = ITEM_BIG_ROOT,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_QUIET
+    },
+    [FRONTIER_MON_MEW_9] = {
+        .species = SPECIES_MEW,
+        .moves = {MOVE_STEALTH_ROCK, MOVE_DRAGON_TAIL, MOVE_ROOST, MOVE_THUNDER_WAVE},
+        .item = ITEM_LEFTOVERS,
+        .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
+        .nature = NATURE_IMPISH
+    },
+    [FRONTIER_MON_MEW_10] = {
+        .species = SPECIES_MEW,
+        .moves = {MOVE_PSYCHIC_FANGS, MOVE_FOCUS_PUNCH, MOVE_SUBSTITUTE, MOVE_SOFT_BOILED},
+        .item = ITEM_SITRUS_BERRY,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_LUGIA_1] = {
+        .species = SPECIES_LUGIA,
+        .moves = {MOVE_AEROBLAST, MOVE_EARTH_POWER, MOVE_ICE_BEAM, MOVE_THUNDERBOLT},
+        .item = ITEM_LUM_BERRY,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_LUGIA_2] = {
+        .species = SPECIES_LUGIA,
+        .moves = {MOVE_PSYCHIC, MOVE_WHIRLWIND, MOVE_TOXIC, MOVE_RECOVER},
+        .item = ITEM_LEFTOVERS,
+        .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
+        .nature = NATURE_CALM
+    },
+    [FRONTIER_MON_LUGIA_3] = {
+        .species = SPECIES_LUGIA,
+        .moves = {MOVE_ZEN_HEADBUTT, MOVE_EARTHQUAKE, MOVE_ROOST, MOVE_THUNDER_WAVE},
+        .item = ITEM_ROCKY_HELMET,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
+        .nature = NATURE_IMPISH
+    },
+    [FRONTIER_MON_LUGIA_4] = {
+        .species = SPECIES_LUGIA,
+        .moves = {MOVE_PSYCHIC, MOVE_SURF, MOVE_CALM_MIND, MOVE_RECOVER},
+        .item = ITEM_SHELL_BELL,
+        .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
+        .nature = NATURE_BOLD
+    },
+    [FRONTIER_MON_HO_OH_1] = {
+        .species = SPECIES_HO_OH,
+        .moves = {MOVE_SACRED_FIRE, MOVE_EARTHQUAKE, MOVE_FUTURE_SIGHT, MOVE_RECOVER},
+        .item = ITEM_LUM_BERRY,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_HO_OH_2] = {
+        .species = SPECIES_HO_OH,
+        .moves = {MOVE_SACRED_FIRE, MOVE_BRAVE_BIRD, MOVE_IRON_HEAD, MOVE_OVERHEAT},
+        .item = ITEM_WHITE_HERB,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_HO_OH_3] = {
+        .species = SPECIES_HO_OH,
+        .moves = {MOVE_SACRED_FIRE, MOVE_EARTHQUAKE, MOVE_ZEN_HEADBUTT, MOVE_THUNDER_WAVE},
+        .item = ITEM_EXPERT_BELT,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_CAREFUL
+    },
+    [FRONTIER_MON_HO_OH_4] = {
+        .species = SPECIES_HO_OH,
+        .moves = {MOVE_SACRED_FIRE, MOVE_BRAVE_BIRD, MOVE_ZEN_HEADBUTT, MOVE_TAILWIND},
+        .item = ITEM_LIFE_ORB,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_CELEBI_1] = {
+        .species = SPECIES_CELEBI,
+        .moves = {MOVE_GIGA_DRAIN, MOVE_TOXIC, MOVE_LEECH_SEED, MOVE_RECOVER},
+        .item = ITEM_BIG_ROOT,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_DEFENSE,
+        .nature = NATURE_CALM
+    },
+    [FRONTIER_MON_CELEBI_2] = {
+        .species = SPECIES_CELEBI,
+        .moves = {MOVE_ENERGY_BALL, MOVE_POLLEN_PUFF, MOVE_PSYCHIC, MOVE_NASTY_PLOT},
+        .item = ITEM_QUICK_CLAW,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_CELEBI_3] = {
+        .species = SPECIES_CELEBI,
+        .moves = {MOVE_GIGA_DRAIN, MOVE_EARTH_POWER, MOVE_DAZZLING_GLEAM, MOVE_THUNDER_WAVE},
+        .item = ITEM_WISE_GLASSES,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_CELEBI_4] = {
+        .species = SPECIES_CELEBI,
+        .moves = {MOVE_SEED_BOMB, MOVE_ZEN_HEADBUTT, MOVE_U_TURN, MOVE_LEAF_STORM},
+        .item = ITEM_LIFE_ORB,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_KYOGRE_1] = {
+        .species = SPECIES_KYOGRE,
+        .moves = {MOVE_WATER_SPOUT, MOVE_ICE_BEAM, MOVE_THUNDER, MOVE_CALM_MIND},
+        .item = ITEM_LIFE_ORB,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_KYOGRE_2] = {
+        .species = SPECIES_KYOGRE,
+        .moves = {MOVE_ORIGIN_PULSE, MOVE_ICE_BEAM, MOVE_THUNDER, MOVE_SIGNAL_BEAM},
+        .item = ITEM_QUICK_CLAW,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_KYOGRE_3] = {
+        .species = SPECIES_KYOGRE,
+        .moves = {MOVE_AQUA_TAIL, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_AVALANCHE},
+        .item = ITEM_WISE_GLASSES,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_KYOGRE_4] = {
+        .species = SPECIES_KYOGRE,
+        .moves = {MOVE_SCALD, MOVE_ICE_BEAM, MOVE_SLEEP_TALK, MOVE_REST},
+        .item = ITEM_LEFTOVERS,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_DEFENSE,
+        .nature = NATURE_CALM
+    },
+    [FRONTIER_MON_GROUDON_1] = {
+        .species = SPECIES_GROUDON,
+        .moves = {MOVE_EARTHQUAKE, MOVE_BLAZE_IMPACT, MOVE_STONE_EDGE, MOVE_ROCK_POLISH},
+        .item = ITEM_LIFE_ORB,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_GROUDON_2] = {
+        .species = SPECIES_GROUDON,
+        .moves = {MOVE_PRECIPICE_BLADES, MOVE_FIRE_PUNCH, MOVE_THUNDER_PUNCH, MOVE_SWORDS_DANCE},
+        .item = ITEM_QUICK_CLAW,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_GROUDON_3] = {
+        .species = SPECIES_GROUDON,
+        .moves = {MOVE_EARTH_POWER, MOVE_ERUPTION, MOVE_SOLAR_BEAM, MOVE_THUNDERBOLT},
+        .item = ITEM_WISE_GLASSES,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_GROUDON_4] = {
+        .species = SPECIES_GROUDON,
+        .moves = {MOVE_PRECIPICE_BLADES, MOVE_BODY_PRESS, MOVE_BULK_UP, MOVE_REST},
+        .item = ITEM_CHESTO_BERRY,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
+        .nature = NATURE_IMPISH
+    },
+    [FRONTIER_MON_RAYQUAZA_1] = {
+        .species = SPECIES_RAYQUAZA,
+        .moves = {MOVE_DRAGON_CLAW, MOVE_DRAGON_ASCENT, MOVE_EARTHQUAKE, MOVE_DRAGON_DANCE},
+        .item = ITEM_MUSCLE_BAND,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_RAYQUAZA_2] = {
+        .species = SPECIES_RAYQUAZA,
+        .moves = {MOVE_DRAGON_PULSE, MOVE_AIR_SLASH, MOVE_FLAMETHROWER, MOVE_SERPENT_DANCE},
+        .item = ITEM_WISE_GLASSES,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_RAYQUAZA_3] = {
+        .species = SPECIES_RAYQUAZA,
+        .moves = {MOVE_SURF, MOVE_THUNDERBOLT, MOVE_ICE_BEAM, MOVE_ENERGY_BALL},
+        .item = ITEM_EXPERT_BELT,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_RAYQUAZA_4] = {
+        .species = SPECIES_RAYQUAZA,
+        .moves = {MOVE_OUTRAGE, MOVE_EXTREME_SPEED, MOVE_IRON_HEAD, MOVE_EARTHQUAKE},
+        .item = ITEM_LIFE_ORB,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_JIRACHI_1] = {
+        .species = SPECIES_JIRACHI,
+        .moves = {MOVE_IRON_HEAD, MOVE_U_TURN, MOVE_BODY_SLAM, MOVE_FIRE_PUNCH},
+        .item = ITEM_CHOICE_SCARF,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_JIRACHI_2] = {
+        .species = SPECIES_JIRACHI,
+        .moves = {MOVE_FLASH_CANNON, MOVE_PSYSHOCK, MOVE_THUNDERBOLT, MOVE_SIGNAL_BEAM},
+        .item = ITEM_WISE_GLASSES,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_JIRACHI_3] = {
+        .species = SPECIES_JIRACHI,
+        .moves = {MOVE_ZEN_HEADBUTT, MOVE_PLAY_ROUGH, MOVE_ICE_PUNCH, MOVE_DOOM_DESIRE},
+        .item = ITEM_EXPERT_BELT,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_JIRACHI_4] = {
+        .species = SPECIES_JIRACHI,
+        .moves = {MOVE_IRON_HEAD, MOVE_FIRE_PUNCH, MOVE_COSMIC_POWER, MOVE_THUNDER_WAVE},
+        .item = ITEM_LEFTOVERS,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_DEOXYS_1] = {
+        .species = SPECIES_DEOXYS,
+        .moves = {MOVE_PSYCHO_BOOST, MOVE_DARK_PULSE, MOVE_ENERGY_BALL, MOVE_FLASH_CANNON},
+        .item = ITEM_CHOICE_SPECS,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_DEOXYS_2] = {
+        .species = SPECIES_DEOXYS,
+        .moves = {MOVE_ZEN_HEADBUTT, MOVE_POISON_JAB, MOVE_ROCK_SLIDE, MOVE_BRICK_BREAK},
+        .item = ITEM_SAFETY_GOGGLES,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_DEOXYS_ATTACK_1] = {
+        .species = SPECIES_DEOXYS_ATTACK,
+        .moves = {MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_ICE_BEAM, MOVE_GRASS_KNOT},
+        .item = ITEM_LIFE_ORB,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_DEOXYS_ATTACK_2] = {
+        .species = SPECIES_DEOXYS_ATTACK,
+        .moves = {MOVE_PSYCHO_BOOST, MOVE_ENERGY_BALL, MOVE_SHADOW_BALL, MOVE_CHARGE_BEAM},
+        .item = ITEM_WISE_GLASSES,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_DEOXYS_ATTACK_3] = {
+        .species = SPECIES_DEOXYS_ATTACK,
+        .moves = {MOVE_ZEN_HEADBUTT, MOVE_KNOCK_OFF, MOVE_ICE_PUNCH, MOVE_FIRE_PUNCH},
+        .item = ITEM_EXPERT_BELT,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_DEOXYS_ATTACK_4] = {
+        .species = SPECIES_DEOXYS_ATTACK,
+        .moves = {MOVE_ZEN_HEADBUTT, MOVE_THUNDER_PUNCH, MOVE_ROCK_SLIDE, MOVE_SUPERPOWER},
+        .item = ITEM_MUSCLE_BAND,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_DEOXYS_DEFENSE_1] = {
+        .species = SPECIES_DEOXYS_DEFENSE,
+        .moves = {MOVE_NIGHT_SHADE, MOVE_TOXIC, MOVE_COSMIC_POWER, MOVE_RECOVER},
+        .item = ITEM_UTILITY_UMBRELLA,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_DEFENSE,
+        .nature = NATURE_CAREFUL
+    },
+    [FRONTIER_MON_DEOXYS_DEFENSE_2] = {
+        .species = SPECIES_DEOXYS_DEFENSE,
+        .moves = {MOVE_STEALTH_ROCK, MOVE_COUNTER, MOVE_REFLECT, MOVE_RECOVER},
+        .item = ITEM_ROCKY_HELMET,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
+        .nature = NATURE_BOLD
+    },
+    [FRONTIER_MON_DEOXYS_DEFENSE_3] = {
+        .species = SPECIES_DEOXYS_DEFENSE,
+        .moves = {MOVE_TOXIC, MOVE_SKILL_SWAP, MOVE_SUBSTITUTE, MOVE_RECOVER},
+        .item = ITEM_ROCKY_HELMET,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SP_DEFENSE,
+        .nature = NATURE_IMPISH
+    },
+    [FRONTIER_MON_DEOXYS_DEFENSE_4] = {
+        .species = SPECIES_DEOXYS_DEFENSE,
+        .moves = {MOVE_PSYSHOCK, MOVE_THUNDERBOLT, MOVE_ICE_BEAM, MOVE_NASTY_PLOT},
+        .item = ITEM_SITRUS_BERRY,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_CALM
+    },
+    [FRONTIER_MON_DEOXYS_SPEED_1] = {
+        .species = SPECIES_DEOXYS_SPEED,
+        .moves = {MOVE_ZEN_HEADBUTT, MOVE_SUPERPOWER, MOVE_FIRE_PUNCH, MOVE_KNOCK_OFF},
+        .item = ITEM_PSYCHIC_GEM,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
+    [FRONTIER_MON_DEOXYS_SPEED_2] = {
+        .species = SPECIES_DEOXYS_SPEED,
+        .moves = {MOVE_PSYCHO_BOOST, MOVE_DARK_PULSE, MOVE_ENERGY_BALL, MOVE_CHARGE_BEAM},
+        .item = ITEM_WEAKNESS_POLICY,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_DEOXYS_SPEED_3] = {
+        .species = SPECIES_DEOXYS_SPEED,
+        .moves = {MOVE_PSYSHOCK, MOVE_ICE_BEAM, MOVE_LIGHT_SCREEN, MOVE_THUNDER_WAVE},
+        .item = ITEM_LUM_BERRY,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_BOLD
+    },
+    [FRONTIER_MON_DEOXYS_SPEED_4] = {
+        .species = SPECIES_DEOXYS_SPEED,
+        .moves = {MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_REFLECT, MOVE_TOPSY_TURVY},
+        .item = ITEM_LIGHT_CLAY,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
 };

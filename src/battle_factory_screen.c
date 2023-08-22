@@ -1289,10 +1289,7 @@ static void Select_InitMonsData(void)
     for (i = 0; i < SELECTABLE_MONS_COUNT; i++)
         sFactorySelectScreen->mons[i].selectedId = 0;
 
-    if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_TENT)
-        CreateFrontierFactorySelectableMons(0);
-    else
-        CreateSlateportTentSelectableMons(0);
+    CreateFrontierFactorySelectableMons(0);
 }
 
 static void Select_InitAllSprites(void)

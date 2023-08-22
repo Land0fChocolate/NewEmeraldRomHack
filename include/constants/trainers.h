@@ -6,7 +6,7 @@
 
 // Special Trainer Ids.
 //      0-299 are frontier trainers
-#define TRAINER_RECORD_MIXING_FRIEND        FRONTIER_TRAINERS_COUNT
+#define TRAINER_RECORD_MIXING_FRIEND        FRONTIER_TRAINERS_PLUS_UBERS_COUNT
 #define TRAINER_RECORD_MIXING_APPRENTICE    500
 #define TRAINER_EREADER                     600
 #define TRAINER_FRONTIER_BRAIN              1022

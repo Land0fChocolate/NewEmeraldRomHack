@@ -28,8 +28,10 @@
 #include "save.h"
 #include "load_save.h"
 #include "battle_dome.h"
+#include "item.h"
 #include "constants/battle_frontier.h"
 #include "constants/frontier_util.h"
+#include "constants/hold_effects.h"
 #include "constants/trainers.h"
 #include "constants/game_stat.h"
 #include "constants/moves.h"
@@ -1701,7 +1703,7 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
             FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.greeting);
         else if (trainerId == TRAINER_FRONTIER_BRAIN)
             CopyFrontierBrainText(FALSE);
-        else if (trainerId < FRONTIER_TRAINERS_COUNT)
+        else if (trainerId < FRONTIER_TRAINERS_PLUS_UBERS_COUNT)
             FrontierSpeechToString(gFacilityTrainers[trainerId].speechBefore);
         else if (trainerId < TRAINER_RECORD_MIXING_APPRENTICE)
             FrontierSpeechToString(gSaveBlock2Ptr->frontier.towerRecords[trainerId - TRAINER_RECORD_MIXING_FRIEND].greeting);
@@ -1717,7 +1719,7 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
         {
             CopyFrontierBrainText(FALSE);
         }
-        else if (trainerId < FRONTIER_TRAINERS_COUNT)
+        else if (trainerId < FRONTIER_TRAINERS_PLUS_UBERS_COUNT)
         {
             FrontierSpeechToString(gFacilityTrainers[trainerId].speechWin);
         }
@@ -1745,7 +1747,7 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
         {
             CopyFrontierBrainText(TRUE);
         }
-        else if (trainerId < FRONTIER_TRAINERS_COUNT)
+        else if (trainerId < FRONTIER_TRAINERS_PLUS_UBERS_COUNT)
         {
             FrontierSpeechToString(gFacilityTrainers[trainerId].speechLose);
         }
@@ -1780,7 +1782,7 @@ void ResetWinStreaks(void)
     gSaveBlock2Ptr->frontier.winStreakActiveFlags = 0;
     for (battleMode = 0; battleMode < FRONTIER_MODE_COUNT; battleMode++)
     {
-        for (lvlMode = 0; lvlMode < FRONTIER_LVL_TENT; lvlMode++)
+        for (lvlMode = 0; lvlMode < FRONTIER_LVL_UBER; lvlMode++)
         {
             gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode] = 0;
             if (battleMode < FRONTIER_MODE_MULTIS)
@@ -1891,6 +1893,8 @@ static void GiveBattlePoints(void)
     points = sBattlePointAwards[challengeNum][facility][battleMode];
     if (gTrainerBattleOpponent_A == TRAINER_FRONTIER_BRAIN)
         points += 20;
+    if ((lvlMode == FRONTIER_LVL_UBER))
+        points *= 2;
     gSaveBlock2Ptr->frontier.battlePoints += points;
     ConvertIntToDecimalStringN(gStringVar1, points, STR_CONV_MODE_LEFT_ALIGN, 2);
     if (gSaveBlock2Ptr->frontier.battlePoints > MAX_BATTLE_FRONTIER_POINTS)
@@ -1904,6 +1908,8 @@ static void GiveBattlePoints(void)
         points += 20;
         IncrementDailyBattlePoints(10);
     }
+    if ((lvlMode == FRONTIER_LVL_UBER))
+        points *= 2;
     if (points > 0xFFFF)
         points = 0xFFFF;
     gSaveBlock2Ptr->frontier.cardBattlePoints = points;
@@ -1981,7 +1987,7 @@ static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monL
     for (i = 0; gFrontierBannedSpecies[i] != 0xFFFF && gFrontierBannedSpecies[i] != species; i++)
         ;
 
-    if (gFrontierBannedSpecies[i] != 0xFFFF)
+    if (gFrontierBannedSpecies[i] != 0xFFFF && !(lvlMode == FRONTIER_LVL_UBER))
         return;
     if (lvlMode == FRONTIER_LVL_50 && monLevel > 50)
         return;
@@ -1993,6 +1999,12 @@ static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monL
 
     if (heldItem != 0)
     {
+        if (!(lvlMode == FRONTIER_LVL_UBER) && ItemId_GetHoldEffect(heldItem) == HOLD_EFFECT_MEGA_STONE)
+            return;
+
+        if (heldItem == ITEM_MEWTWONITE_X || heldItem == ITEM_MEWTWONITE_Y)
+            return;
+        
         for (i = 0; i < *count && itemsArray[i] != heldItem; i++)
             ;
         if (i != *count)
@@ -2065,7 +2077,7 @@ static void CheckPartyIneligibility(void)
         monIdLooper++;
     } while (monIdLooper < PARTY_SIZE && numEligibleMons < toChoose);
 
-    if (numEligibleMons < toChoose)
+    if (numEligibleMons < toChoose && !(gSaveBlock2Ptr->frontier.lvlMode == FRONTIER_LVL_UBER)) // TODO: make an else for uber format (may not need to here.)
     {
         s32 i;
         s32 caughtBannedMons = 0;
@@ -2114,6 +2126,24 @@ static void IncrementWinStreak(void)
     s32 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
     s32 facility = VarGet(VAR_FRONTIER_FACILITY);
 
+    if ((lvlMode == FRONTIER_LVL_UBER))
+    {
+        if (battleMode == FRONTIER_MODE_SINGLES)
+        {
+            if (gSaveBlock2Ptr->frontier.towerUberSinglesStreak < MAX_STREAK)
+            {
+                gSaveBlock2Ptr->frontier.towerUberSinglesStreak++;
+                SetGameStat(GAME_STAT_BATTLE_TOWER_BEST_STREAK, gSaveBlock2Ptr->frontier.towerUberSinglesStreak);
+            }
+        }
+        else
+        {
+            if (gSaveBlock2Ptr->frontier.towerUberDoublesStreak < MAX_STREAK_UBER_DOUBLES)
+                gSaveBlock2Ptr->frontier.towerUberDoublesStreak++;
+        }
+        return;
+    }
+
     switch (facility)
     {
     case FRONTIER_FACILITY_TOWER:
@@ -2121,10 +2151,7 @@ static void IncrementWinStreak(void)
         {
             gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode]++;
             if (battleMode == FRONTIER_MODE_SINGLES)
-            {
                 SetGameStat(GAME_STAT_BATTLE_TOWER_BEST_STREAK, gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode]);
-                gSaveBlock2Ptr->frontier.towerSinglesStreak = gSaveBlock2Ptr->frontier.towerWinStreaks[battleMode][lvlMode];
-            }
         }
         break;
     case FRONTIER_FACILITY_DOME:

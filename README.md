@@ -27,6 +27,7 @@ v1.0.14 - 21/03/2023
 v1.0.15 - 28/03/2023
 v1.0.16 - 09/07/2023
 v1.0.17 - 18/07/2023
+v1.0.18 - 13/08/2023
 
 # Changelog
 
@@ -216,6 +217,7 @@ Possible future additions/changes.
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
 - A contest side-quest with Lisia, much like in ORAS.
 - Perhaps a more interesting Tate & Liza event to get Jirachi?
+- Perhaps a side quest with a boss battle to acquire Mewtwo? Triggered after giving Mew DNA to the Devon researcher, Mewtwo breaks free.
 - Scott giving more interesting rewards to players who get all silver/gold symbols.
 - In-game resource that teaches the player braile. So that it isn't required to look out of the game to solve the braile puzzles.
 - Sort out the online/wireless features. Either find out how to make them work or remove them.
@@ -264,7 +266,6 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, Flygon, Salamence and more)
 - Move relearner doesn't list all of the possible moves to relearn, only the first ~15.
 
-
 # Credits
 
 The fine people who worked on the pokeemerald and pokeemerald-expansion decompilation projects and helped me with problems:
@@ -291,6 +292,7 @@ The fine people who worked on the pokeemerald and pokeemerald-expansion decompil
 - Pyredrid
 - ghoulslash
 - UltimaSoul
+- TheSlyphIsIn
 
 # Tools used
 

@@ -86,7 +86,7 @@
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
+#define FLAG_UBER_CHALLENGE  0x4D
 #define FLAG_PRE_EVO_TUTOR   0x4E
 #define FLAG_EGG_MOVE_TUTOR  0x4F
 

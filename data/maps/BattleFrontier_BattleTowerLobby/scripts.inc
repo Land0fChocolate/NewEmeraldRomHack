@@ -58,6 +58,7 @@ BattleFrontier_BattleTowerLobby_EventScript_QuitWithoutSaving::
 	faceplayer
 	msgbox BattleFrontier_BattleTowerLobby_Text_DidntSaveBeforeQuitting, MSGBOX_DEFAULT
 	closemessage
+	clearflag FLAG_UBER_CHALLENGE
 	tower_set TOWER_DATA_WIN_STREAK, 0
 	tower_set TOWER_DATA_WIN_STREAK_ACTIVE, FALSE
 	frontier_set FRONTIER_DATA_CHALLENGE_STATUS, 0
@@ -198,16 +199,17 @@ BattleFrontier_BattleTowerLobby_EventScript_AskEnterSinglesChallenge::
 
 BattleFrontier_BattleTowerLobby_EventScript_TryEnterSinglesChallenge::
 	setvar VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_SINGLES
-	message BattleFrontier_BattleTowerLobby_Text_WhichLevelMode
+	message BattleFrontier_BattleTowerLobby_Text_WhichLevelModeUbers
 	waitmessage
-	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
+	multichoice 17, 5, MULTI_LEVEL_MODE, FALSE
 	switch VAR_RESULT
-	case FRONTIER_LVL_TENT, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
+	case FRONTIER_LVL_UBER, BattleFrontier_BattleTowerLobby_EventScript_SinglesUberChallenge
+BattleFrontier_BattleTowerLobby_EventScript_CheckingSinglesChallengeEligibility::
+	frontier_set FRONTIER_DATA_LVL_MODE, VAR_RESULT
 	frontier_checkineligible
 	compare VAR_0x8004, TRUE
 	goto_if_eq BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMons
-	frontier_set FRONTIER_DATA_LVL_MODE, VAR_RESULT
 	msgbox BattleFrontier_BattleTowerLobby_Text_SelectThreeMons, MSGBOX_DEFAULT
 	fadescreen FADE_TO_BLACK
 	call BattleFrontier_EventScript_GetLvlMode
@@ -223,6 +225,10 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterSinglesChallenge::
 	case YES, BattleFrontier_BattleTowerLobby_EventScript_SaveBeforeSinglesChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_LoadPartyCancelChallenge
 
+BattleFrontier_BattleTowerLobby_EventScript_SinglesUberChallenge::
+	setflag FLAG_UBER_CHALLENGE
+	goto BattleFrontier_BattleTowerLobby_EventScript_CheckingSinglesChallengeEligibility
+
 BattleFrontier_BattleTowerLobby_EventScript_SaveBeforeSinglesChallenge::
 	frontier_set FRONTIER_DATA_SELECTED_MON_ORDER
 	setvar VAR_TEMP_0, 0
@@ -232,10 +238,10 @@ BattleFrontier_BattleTowerLobby_EventScript_SaveBeforeSinglesChallenge::
 	special LoadPlayerParty
 	closemessage
 	delay 2
-	call Common_EventScript_SaveGame
-	setvar VAR_TEMP_0, 255
-	compare VAR_RESULT, 0
-	goto_if_eq BattleFrontier_BattleTowerLobby_EventScript_CancelChallengeSaveFailed
+	@call Common_EventScript_SaveGame @TODO: uncomment this
+	@setvar VAR_TEMP_0, 255
+	@compare VAR_RESULT, 0
+	@goto_if_eq BattleFrontier_BattleTowerLobby_EventScript_CancelChallengeSaveFailed
 	incrementgamestat GAME_STAT_ENTERED_BATTLE_TOWER
 	setvar VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, TRUE
 	goto BattleFrontier_BattleTowerLobby_EventScript_EnterElevator
@@ -264,12 +270,13 @@ BattleFrontier_BattleTowerLobby_EventScript_AskEnterDoublesChallenge::
 
 BattleFrontier_BattleTowerLobby_EventScript_TryEnterDoublesChallenge::
 	setvar VAR_FRONTIER_BATTLE_MODE, FRONTIER_MODE_DOUBLES
-	message BattleFrontier_BattleTowerLobby_Text_WhichLevelMode
+	message BattleFrontier_BattleTowerLobby_Text_WhichLevelModeUbers
 	waitmessage
-	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
+	multichoice 17, 5, MULTI_LEVEL_MODE, FALSE
 	switch VAR_RESULT
-	case FRONTIER_LVL_TENT, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
+	case FRONTIER_LVL_UBER, BattleFrontier_BattleTowerLobby_EventScript_DoublesUberChallenge
+BattleFrontier_BattleTowerLobby_EventScript_CheckingDoublesChallengeEligibility::
 	frontier_checkineligible
 	compare VAR_0x8004, TRUE
 	goto_if_eq BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMons
@@ -288,6 +295,10 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterDoublesChallenge::
 	case NO, BattleFrontier_BattleTowerLobby_EventScript_LoadPartyCancelChallenge
 	case YES, BattleFrontier_BattleTowerLobby_EventScript_SaveBeforeDoublesChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_LoadPartyCancelChallenge
+
+BattleFrontier_BattleTowerLobby_EventScript_DoublesUberChallenge::
+	setflag FLAG_UBER_CHALLENGE
+	goto BattleFrontier_BattleTowerLobby_EventScript_CheckingDoublesChallengeEligibility
 
 BattleFrontier_BattleTowerLobby_EventScript_SaveBeforeDoublesChallenge::
 	frontier_set FRONTIER_DATA_SELECTED_MON_ORDER
@@ -335,7 +346,6 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterMultisChallenge::
 	waitmessage
 	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
 	switch VAR_RESULT
-	case FRONTIER_LVL_TENT, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	frontier_checkineligible
 	compare VAR_0x8004, TRUE
@@ -401,7 +411,6 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterLinkMultisChallenge::
 	waitmessage
 	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
 	switch VAR_RESULT
-	case FRONTIER_LVL_TENT, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
 	frontier_checkineligible
 	compare VAR_0x8004, TRUE
@@ -512,6 +521,7 @@ BattleFrontier_BattleTowerLobby_EventScript_Woman::
 	end
 
 BattleFrontier_BattleTowerLobby_EventScript_Boy::
+	clearflag FLAG_UBER_CHALLENGE @TODO: remove
 	msgbox BattleFrontier_BattleTowerLobby_Text_CanLeaveUntilLossOrSevenWins, MSGBOX_NPC
 	end
 
@@ -551,6 +561,7 @@ BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMons::
 	switch VAR_RESULT
 	case FRONTIER_LVL_50, BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLv50
 	case FRONTIER_LVL_OPEN, BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLvOpen
+	case FRONTIER_LVL_UBER, BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsUbers
 
 BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLv50::
 	switch VAR_FRONTIER_BATTLE_MODE
@@ -588,6 +599,24 @@ BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLvOpenDoubles::
 	goto BattleFrontier_BattleTowerLobby_EventScript_EndCancelChallenge
 	end
 
+BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsUbers::
+	clearflag FLAG_UBER_CHALLENGE
+	switch VAR_FRONTIER_BATTLE_MODE
+	case FRONTIER_MODE_SINGLES, BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsUbersSingles
+	case FRONTIER_MODE_DOUBLES, BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsUbersDoubles
+	goto BattleFrontier_BattleTowerLobby_EventScript_EndCancelChallenge
+	end
+
+BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsUbersSingles::
+	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsUbersSingles, MSGBOX_DEFAULT
+	goto BattleFrontier_BattleTowerLobby_EventScript_EndCancelChallenge
+	end
+
+BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsUbersDoubles::
+	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsUbersDoubles, MSGBOX_DEFAULT
+	goto BattleFrontier_BattleTowerLobby_EventScript_EndCancelChallenge
+	end
+
 BattleFrontier_BattleTowerLobby_EventScript_CancelChallengeSaveFailed::
 	frontier_set FRONTIER_DATA_CHALLENGE_STATUS  @ No status provided, so it relies on VAR_0x8006 being 0 already
 	goto BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge
@@ -596,6 +625,7 @@ BattleFrontier_BattleTowerLobby_EventScript_CancelChallengeSaveFailed::
 BattleFrontier_BattleTowerLobby_EventScript_LoadPartyCancelChallenge::
 	special LoadPlayerParty
 BattleFrontier_BattleTowerLobby_EventScript_CancelChallenge::
+	clearflag FLAG_UBER_CHALLENGE
 	special CloseLink
 	msgbox BattleFrontier_BattleTowerLobby_Text_LookForwardToAnotherChallenge, MSGBOX_DEFAULT
 BattleFrontier_BattleTowerLobby_EventScript_EndCancelChallenge::
@@ -1108,6 +1138,12 @@ BattleFrontier_BattleTowerLobby_Text_WhichLevelMode:
 	.string "of challenge, Level 50 and Open Level.\l"
 	.string "Which is your choice?$"
 
+BattleFrontier_BattleTowerLobby_Text_WhichLevelModeUbers:
+	.string "The Battle Room offers three levels\n"
+	.string "of challenge, Level 50, Open Level, and\l"
+	.string "Uber.\l"
+	.string "Which is your choice?$"
+
 @ Unused
 BattleFrontier_BattleTowerLobby_Text_PleaseSelectMons:
 	.string "Please select the Pokémon you wish\n"
@@ -1185,6 +1221,28 @@ BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpenDoubles:
 	.string "They also must be holding different\n"
 	.string "kinds of items.\p"
 	.string "Eggs{STR_VAR_1} ineligible.\p"
+	.string "Please come see me when you are ready.$"
+
+BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsUbersSingles:
+	.string "Excuse me!\p"
+	.string "You don't have three eligible Pokémon.\p"
+	.string "You must have three different Pokémon\n"
+	.string "of Level 50 or less to enter.\p"
+	.string "They also must be holding different\n"
+	.string "kinds of items.\p"
+	.string "Eggs and Mewtwo's mega stones are\n"
+	.string "ineligible.\p"
+	.string "Please come see me when you are ready.$"
+
+BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsUbersDoubles:
+	.string "Excuse me!\p"
+	.string "You don't have four eligible Pokémon.\p"
+	.string "You must have four different Pokémon\n"
+	.string "to enter.\p"
+	.string "They also must be holding different\n"
+	.string "kinds of items.\p"
+	.string "Eggs and Mewtwo's mega stones are\n"
+	.string "ineligible.\p"
 	.string "Please come see me when you are ready.$"
 
 BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLv50Multis:

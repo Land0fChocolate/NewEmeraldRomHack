@@ -364,8 +364,8 @@ struct BattleFrontier
     /*0xCE0*/ u16 towerWinStreaks[4][2];
     /*0xCF0*/ u16 towerRecordWinStreaks[4][2];
     /*0xD00*/ u16 battledBrainFlags;
-    /*0xD02*/ u16 towerSinglesStreak; // Never read
-    /*0xD04*/ u16 towerNumWins; // Increments to MAX_STREAK but never read otherwise
+    /*0xD02*/ u16 towerUberSinglesStreak;
+    /*0xD04*/ u16 towerUberSinglesNumWins;
     /*0xD06*/ u8 towerBattleOutcome;
     /*0xD07*/ u8 towerLvlMode;
     /*0xD08*/ u8 domeAttemptedSingles50:1;
@@ -423,8 +423,8 @@ struct BattleFrontier
     /*0xEF1*/ u8 opponentTrainerIds[2][TRAINER_ID_LENGTH];
     /*0xEF9*/ u8 unk_EF9:7; // Never read
     /*0xEF9*/ u8 savedGame:1;
-    /*0xEFA*/ u8 unused_EFA;
-    /*0xEFB*/ u8 unused_EFB;
+    /*0xEFA*/ u8 towerUberDoublesStreak;  // TODO: perhaps properly implement Uber streaks in the future when you can safely update save file format
+    /*0xEFB*/ u8 towerUberDoublesNumWins;
     /*0xEFC*/ struct DomeMonData domePlayerPartyData[FRONTIER_PARTY_SIZE];
 };
 

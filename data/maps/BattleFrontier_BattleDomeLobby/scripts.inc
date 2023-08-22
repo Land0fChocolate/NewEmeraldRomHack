@@ -159,7 +159,6 @@ BattleFrontier_BattleDomeLobby_EventScript_TryEnterChallenge::
 	waitmessage
 	multichoice 17, 6, MULTI_LEVEL_MODE, FALSE
 	switch VAR_RESULT
-	case FRONTIER_LVL_TENT, BattleFrontier_BattleDomeLobby_EventScript_CancelChallenge
 	case MULTI_B_PRESSED, BattleFrontier_BattleDomeLobby_EventScript_CancelChallenge
 	frontier_checkineligible
 	compare VAR_0x8004, TRUE

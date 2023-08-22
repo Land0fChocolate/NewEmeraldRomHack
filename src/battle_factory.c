@@ -184,24 +184,24 @@ static const u8 sFixedIVTable[][2] =
 static const u16 sInitialRentalMonRanges[][2] =
 {
     // Level 50
-    {FRONTIER_MON_PICHU,      FRONTIER_MON_YANMA},      // 10 - 178
-    {FRONTIER_MON_DELCATTY_1, FRONTIER_MON_CLOYSTER_1}, // 179 - 295
-    {FRONTIER_MON_DELCATTY_2, FRONTIER_MON_CLOYSTER_2}, // 296 - 412
-    {FRONTIER_MON_DUGTRIO_1,  FRONTIER_MON_SLAKING_1},  // 413 - 536
-    {FRONTIER_MON_DUGTRIO_2,  FRONTIER_MON_SLAKING_2},  // 537 - 660
-    {FRONTIER_MON_DUGTRIO_3,  FRONTIER_MON_SLAKING_3},  // 661 - 784
-    {FRONTIER_MON_DUGTRIO_4,  FRONTIER_MON_SLAKING_4},  // 785 - 908
-    {FRONTIER_MON_DUGTRIO_1,  FRONTIER_MONS_HIGH_TIER}, // 413 - 1002
+    {FRONTIER_MON_PICHU,      FRONTIER_MON_YANMA},
+    {FRONTIER_MON_DELCATTY_1, FRONTIER_MON_CLOYSTER_1},
+    {FRONTIER_MON_DELCATTY_2, FRONTIER_MON_CLOYSTER_2},
+    {FRONTIER_MON_DUGTRIO_1,  FRONTIER_MON_SLAKING_1},
+    {FRONTIER_MON_DUGTRIO_2,  FRONTIER_MON_SLAKING_2},
+    {FRONTIER_MON_DUGTRIO_3,  FRONTIER_MON_SLAKING_3},
+    {FRONTIER_MON_DUGTRIO_4,  FRONTIER_MON_SLAKING_4},
+    {FRONTIER_MON_DUGTRIO_1,  FRONTIER_MONS_HIGH_TIER},
 
     // Open level
-    {FRONTIER_MON_DUGTRIO_1, FRONTIER_MON_SLAKING_1}, // 413 - 536
-    {FRONTIER_MON_DUGTRIO_2, FRONTIER_MON_SLAKING_2}, // 537 - 660
-    {FRONTIER_MON_DUGTRIO_3, FRONTIER_MON_SLAKING_3}, // 661 - 784
-    {FRONTIER_MON_DUGTRIO_4, FRONTIER_MON_SLAKING_4}, // 785 - 908
-    {FRONTIER_MON_DUGTRIO_1, NUM_FRONTIER_MONS - 1},  // 413 - 1034
-    {FRONTIER_MON_DUGTRIO_1, NUM_FRONTIER_MONS - 1},  // 413 - 1034
-    {FRONTIER_MON_DUGTRIO_1, NUM_FRONTIER_MONS - 1},  // 413 - 1034
-    {FRONTIER_MON_DUGTRIO_1, NUM_FRONTIER_MONS - 1},  // 413 - 1034
+    {FRONTIER_MON_DUGTRIO_1, FRONTIER_MON_SLAKING_1},
+    {FRONTIER_MON_DUGTRIO_2, FRONTIER_MON_SLAKING_2},
+    {FRONTIER_MON_DUGTRIO_3, FRONTIER_MON_SLAKING_3},
+    {FRONTIER_MON_DUGTRIO_4, FRONTIER_MON_SLAKING_4},
+    {FRONTIER_MON_DUGTRIO_1, NUM_FRONTIER_MONS_NON_UBERS - 1},
+    {FRONTIER_MON_DUGTRIO_1, NUM_FRONTIER_MONS_NON_UBERS - 1},
+    {FRONTIER_MON_DUGTRIO_1, NUM_FRONTIER_MONS_NON_UBERS - 1},
+    {FRONTIER_MON_DUGTRIO_1, NUM_FRONTIER_MONS_NON_UBERS - 1},
 };
 
 // code
@@ -392,10 +392,7 @@ static void SetRentalsToOpponentParty(void)
 {
     u8 i;
 
-    if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_TENT)
-        gFacilityTrainerMons = gBattleFrontierMons;
-    else
-        gFacilityTrainerMons = gSlateportBattleTentMons;
+    gFacilityTrainerMons = gBattleFrontierMons;
 
     for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
     {
@@ -417,19 +414,11 @@ static void SetPlayerAndOpponentParties(void)
     u8 ivs;
     u8 friendship;
 
-    if (gSaveBlock2Ptr->frontier.lvlMode == FRONTIER_LVL_TENT)
-    {
-        gFacilityTrainerMons = gSlateportBattleTentMons;
-        monLevel = 30;
-    }
+    gFacilityTrainerMons = gBattleFrontierMons;
+    if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_50)
+        monLevel = 100;
     else
-    {
-        gFacilityTrainerMons = gBattleFrontierMons;
-        if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_50)
-            monLevel = 100;
-        else
-            monLevel = 50;
-    }
+        monLevel = 50;
 
     if (gSpecialVar_0x8005 < 2)
     {
@@ -720,10 +709,7 @@ static void RestorePlayerPartyHeldItems(void)
 {
     u8 i;
 
-    if (gSaveBlock2Ptr->frontier.lvlMode != FRONTIER_LVL_TENT)
-        gFacilityTrainerMons = gBattleFrontierMons;
-    else
-        gFacilityTrainerMons = gSlateportBattleTentMons;
+    gFacilityTrainerMons = gBattleFrontierMons;
 
     for (i = 0; i < FRONTIER_PARTY_SIZE; i++)
     {
@@ -880,20 +866,12 @@ u32 GetAiScriptsInBattleFactory(void)
 {
     int lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
 
-    if (lvlMode == FRONTIER_LVL_TENT)
-    {
-        return 0;
-    }
+    int battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
+    int challengeNum = gSaveBlock2Ptr->frontier.factoryWinStreaks[battleMode][lvlMode] / 7;
+    if (gTrainerBattleOpponent_A == TRAINER_FRONTIER_BRAIN)
+        return AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY;
     else
-    {
-        int battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
-        int challengeNum = gSaveBlock2Ptr->frontier.factoryWinStreaks[battleMode][lvlMode] / 7;
-
-        if (gTrainerBattleOpponent_A == TRAINER_FRONTIER_BRAIN)
-            return AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY;
-        else
-            return AI_FLAG_CHECK_BAD_MOVE;
-    }
+        return AI_FLAG_CHECK_BAD_MOVE;
 }
 
 void SetMonMoveAvoidReturn(struct Pokemon *mon, u16 moveArg, u8 moveSlot)

@@ -304,6 +304,19 @@
 
 #define FRONTIER_TRAINERS_COUNT         300
 
-// special trainer IDs begin at 300, see constants/trainers.h
+#define FRONTIER_TRAINER_MEGUMIN        300
+#define FRONTIER_TRAINER_KAZUMA         301
+#define FRONTIER_TRAINER_LALATINA       302
+#define FRONTIER_TRAINER_RAKSHA         303
+#define FRONTIER_TRAINER_KOBENI         304
+#define FRONTIER_TRAINER_DENJI          305
+#define FRONTIER_TRAINER_MAKIMA         306
+#define FRONTIER_TRAINER_KISHIBE        307
+#define FRONTIER_TRAINER_AQUA           308
+#define FRONTIER_TRAINER_AKI            309
+
+#define FRONTIER_TRAINERS_PLUS_UBERS_COUNT 310
+
+// special trainer IDs begin at 310, see constants/trainers.h
 
 #endif  // GUARD_CONSTANTS_BATTLE_FRONTIER_TRAINERS_H
