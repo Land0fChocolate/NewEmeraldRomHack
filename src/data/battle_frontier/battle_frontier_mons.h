@@ -941,8 +941,8 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_TEDDIURSA] = {
         .species = SPECIES_TEDDIURSA,
-        .moves = {MOVE_COVET, MOVE_FLING, MOVE_SHADOW_CLAW, MOVE_YAWN},
-        .item = ITEM_ROCKY_HELMET,
+        .moves = {MOVE_COVET, MOVE_FLING, MOVE_FAINT_ATTACK, MOVE_YAWN},
+        .item = ITEM_KINGS_ROCK,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
         .nature = NATURE_ADAMANT
     },
@@ -3716,7 +3716,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .moves = {MOVE_LAVA_PLUME, MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_DISCHARGE},
         .item = ITEM_SAFETY_GOGGLES,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
-        .nature = NATURE_JOLLY
+        .nature = NATURE_TIMID
     },
     [FRONTIER_MON_LAPRAS_1] = {
         .species = SPECIES_LAPRAS,
@@ -4605,7 +4605,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .moves = {MOVE_ERUPTION, MOVE_DISCHARGE, MOVE_FOCUS_BLAST, MOVE_OVERHEAT},
         .item = ITEM_CHOICE_SCARF,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
-        .nature = NATURE_JOLLY
+        .nature = NATURE_TIMID
     },
     [FRONTIER_MON_LAPRAS_2] = {
         .species = SPECIES_LAPRAS,
