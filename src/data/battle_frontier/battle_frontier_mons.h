@@ -941,7 +941,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_TEDDIURSA] = {
         .species = SPECIES_TEDDIURSA,
-        .moves = {MOVE_COVET, MOVE_FLING, MOVE_FAINT_ATTACK, MOVE_YAWN},
+        .moves = {MOVE_COVET, MOVE_FLING, MOVE_FEINT_ATTACK, MOVE_YAWN},
         .item = ITEM_KINGS_ROCK,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
         .nature = NATURE_ADAMANT
