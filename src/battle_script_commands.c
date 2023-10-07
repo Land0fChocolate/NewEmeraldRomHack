@@ -13845,6 +13845,23 @@ static void Cmd_handleballthrow(void)
             if (ballMultiplier > 40)
                 ballMultiplier = 40;
             break;
+        case ITEM_DUSK_BALL:
+            RtcCalcLocalTime();
+            if ((gLocalTime.hours >= 20 && gLocalTime.hours <= 3) || gMapHeader.cave || gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
+            #if B_DUSK_BALL_MODIFIER >= GEN_7
+                ballMultiplier = 30;
+            #else
+                ballMultiplier = 35;
+            #endif
+            break;
+        case ITEM_QUICK_BALL:
+            if (gBattleResults.battleTurnCounter == 0)
+            #if B_QUICK_BALL_MODIFIER >= GEN_5
+                ballMultiplier = 50;
+            #else
+                ballMultiplier = 40;
+            #endif
+            break;
         }
 
         odds = (catchRate * ballMultiplier / 10)

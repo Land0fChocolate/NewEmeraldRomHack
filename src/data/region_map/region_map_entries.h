@@ -239,7 +239,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_FIERY_PATH2]                = {7, 3, 1, 1, sMapName_FieryPath},
     [MAPSEC_FIERY_THRONE]               = {0, 1, 1, 1, sMapName_FieryThrone},
     [MAPSEC_FORTREE_CITY]               = {12, 0, 1, 1, sMapName_FortreeCity},
-    [MAPSEC_FORTREE_JUNGLE]             = {12, 3, 1, 1, sMapName_FortreeJungle},
+    [MAPSEC_FORTREE_JUNGLE]             = {12, 4, 1, 1, sMapName_FortreeJungle},
     [MAPSEC_GRANITE_CAVE]               = {1, 13, 1, 1, sMapName_GraniteCave},
     [MAPSEC_INSIDE_OF_TRUCK]            = {0, 0, 1, 1, sMapName_InsideOfTruck},
     [MAPSEC_ISLAND_CAVE]                = {0, 10, 1, 1, sMapName_IslandCave},
@@ -288,7 +288,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_ROUTE_117]                  = {5, 6, 3, 1, sMapName_Route117},
     [MAPSEC_ROUTE_118]                  = {10, 6, 2, 1, sMapName_Route118},
     [MAPSEC_ROUTE_119]                  = {11, 0, 1, 6, sMapName_Route119},
-    [MAPSEC_ROUTE_120]                  = {13, 0, 1, 4, sMapName_Route120},
+    [MAPSEC_ROUTE_120]                  = {13, 0, 1, 5, sMapName_Route120},
     [MAPSEC_ROUTE_121]                  = {14, 3, 4, 1, sMapName_Route121},
     [MAPSEC_ROUTE_122]                  = {16, 4, 1, 2, sMapName_Route122},
     [MAPSEC_ROUTE_123]                  = {12, 6, 5, 1, sMapName_Route123},
@@ -334,7 +334,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_UNDERWATER_SOOTOPOLIS]      = {21, 7, 1, 1, sMapName_Underwater},
     [MAPSEC_VERDANTURF_TOWN]            = {4, 6, 1, 1, sMapName_VerdanturfTown},
     [MAPSEC_VICTORY_ROAD]               = {27, 9, 1, 1, sMapName_VictoryRoad},
-    [MAPSEC_WILDWOODS]                  = {4, 7, 1, 1, sMapName_Wildwoods},
+    [MAPSEC_WILDWOODS]                  = {4, 8, 1, 1, sMapName_Wildwoods},
 };
 
 #endif // GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H

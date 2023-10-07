@@ -1495,7 +1495,7 @@
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_LANDMARK_CRUMBLING_GORGE               (SYSTEM_FLAGS + 0x85) // TODO: may not need these outdoor landmarks
+#define FLAG_LANDMARK_CRUMBLING_GORGE               (SYSTEM_FLAGS + 0x85)
 #define FLAG_LANDMARK_OLDALE_FARM                   (SYSTEM_FLAGS + 0x86)
 #define FLAG_LANDMARK_LITTLEROOT_BEACH              (SYSTEM_FLAGS + 0x87)
 #define FLAG_LANDMARK_FALLARBOR_WASTELAND           (SYSTEM_FLAGS + 0x88)

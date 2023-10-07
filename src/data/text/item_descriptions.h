@@ -881,8 +881,10 @@ static const u8 sFossilizedDinoDesc[] = _( // Todo
     "?????");
 
 // Mulch
-static const u8 sGrowthMulchDesc[] = _( // Todo
-    "?????");
+static const u8 sGrowthMulchDesc[] = _(
+    "A fertilizer that\n"
+    "accelerates the\n"
+    "growth of Berries.");
 
 static const u8 sDampMulchDesc[] = _( // Todo
     "?????");

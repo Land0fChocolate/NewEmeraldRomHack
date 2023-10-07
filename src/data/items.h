@@ -2468,10 +2468,10 @@ const struct Item gItems[] =
 
     [ITEM_GROWTH_MULCH] = // Todo
     {
-        .name = _("????????"),
+        .name = _("Growth Mulch"),
         .itemId = ITEM_NONE,
-        .price = 0,
-        .description = sDummyDesc,
+        .price = 200,
+        .description = sGrowthMulchDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

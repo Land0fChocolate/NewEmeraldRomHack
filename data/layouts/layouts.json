@@ -4654,7 +4654,7 @@
     {
       "id": "LAYOUT_FORTREE_JUNGLE_AREA1",
       "name": "FortreeJungle_Area1_Layout",
-      "width": 30,
+      "width": 33,
       "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fortree",

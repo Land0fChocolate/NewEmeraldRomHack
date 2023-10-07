@@ -7725,8 +7725,8 @@ extern const u32 gItemIconPalette_SailFossil[];
 //extern const u32 gItemIcon_FossilizedDino[];
 //extern const u32 gItemIconPalette_FossilizedDino[];
 // Mulch
-//extern const u32 gItemIcon_GrowthMulch[];
-//extern const u32 gItemIconPalette_GrowthMulch[];
+extern const u32 gItemIcon_Mulch[];
+extern const u32 gItemIconPalette_GrowthMulch[];
 //extern const u32 gItemIcon_DampMulch[];
 //extern const u32 gItemIconPalette_DampMulch[];
 //extern const u32 gItemIcon_StableMulch[];

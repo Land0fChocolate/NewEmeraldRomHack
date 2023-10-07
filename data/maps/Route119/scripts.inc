@@ -29,6 +29,7 @@ Route119_OnTransition:
 Route119_OnLoad:
 	call_if_set FLAG_SET_HIDE_BIRD_KEEPER_BIKE_QUEST, Route119_EventScript_HideBirdKeeperBikeQuest
 	call_if_unset FLAG_SYS_GAME_CLEAR, Route119_EventScript_CloseConquerorsCamp
+	call_if_unset FLAG_SYS_GAME_CLEAR, Route119_EventScript_CloseFortreeJungleEntrance
 	end
 
 Route119_EventScript_HideBirdKeeperBikeQuest::
@@ -70,6 +71,33 @@ Route119_EventScript_CloseConquerorsCamp::
 	setmetatile 19, 7, METATILE_Fortree_BigTreeBotLeft_SmallTreeTops, 1
 	setmetatile 19, 8, METATILE_Fortree_SmallTree_SmallTreeShadow, 1
 	setmetatile 19, 9, METATILE_General_SmallTree_GrassBase, 1
+	return
+
+Route119_EventScript_CloseFortreeJungleEntrance::
+	setmetatile 33, 102, METATILE_Fortree_CliffBotRight_SmallTree, 1
+	setmetatile 33, 103, METATILE_Fortree_BigTreeTopLeft_SmallTreeTops, 1
+	setmetatile 33, 104, METATILE_Fortree_BigTreeBotLeft_SmallTreeTops, 1
+	setmetatile 33, 105, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 33, 106, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 33, 107, METATILE_General_SmallTree_GrassBase, 1
+	setmetatile 34, 103, METATILE_Fortree_BigTreeTopMid_SmallTreeTops, 1
+	setmetatile 34, 104, METATILE_Fortree_BigTreeBotMid, 1
+	setmetatile 34, 105, METATILE_Fortree_BigTree_Trunk, 1
+	setmetatile 34, 106, METATILE_Fortree_BigTree_SmallTreeTop, 1
+	setmetatile 35, 103, METATILE_Fortree_BigTreeTopRight_SmallTreeTops, 1
+	setmetatile 35, 104, METATILE_Fortree_BigTreeBotRight_SmallTreeTops, 1
+	setmetatile 35, 105, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 35, 106, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 36, 103, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 36, 104, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 36, 105, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 36, 106, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 37, 103, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 37, 104, METATILE_Fortree_BigTreeTopLeft_SmallTreeTops, 1
+	setmetatile 37, 105, METATILE_Fortree_BigTreeBotLeft_SmallTreeTops, 1
+	setmetatile 37, 106, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 38, 103, METATILE_General_SmallTree_SmallTree, 1
+	setmetatile 38, 104, METATILE_Fortree_BigTreeTopMid_SmallTreeTops, 1
 	return
 	
 Route119_EventScript_Rival::

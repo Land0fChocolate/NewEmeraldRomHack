@@ -123,7 +123,8 @@ static const u32 sRegionMapCursorSmallGfxLZ[] = INCBIN_U32("graphics/pokenav/cur
 static const u32 sRegionMapCursorLargeGfxLZ[] = INCBIN_U32("graphics/pokenav/cursor_large.4bpp.lz");
 static const u16 sRegionMapBg_Pal[] = INCBIN_U16("graphics/pokenav/region_map.gbapal");
 static const u32 sRegionMapBg_GfxLZ[] = INCBIN_U32("graphics/pokenav/region_map.8bpp.lz");
-static const u32 sRegionMapBg_TilemapLZ[] = INCBIN_U32("graphics/pokenav/region_map_map.bin.lz");
+static const u32 sRegionMapBg_TilemapLZ_PostHoF[] = INCBIN_U32("graphics/pokenav/region_map_map.bin.lz");
+static const u32 sRegionMapBg_TilemapLZ_BeforeHoF[] = INCBIN_U32("graphics/pokenav/region_map_map_beforehof.bin.lz");
 static const u16 sRegionMapPlayerIcon_BrendanPal[] = INCBIN_U16("graphics/pokenav/brendan_icon.gbapal");
 static const u8 sRegionMapPlayerIcon_BrendanGfx[] = INCBIN_U8("graphics/pokenav/brendan_icon.4bpp");
 static const u16 sRegionMapPlayerIcon_MayPal[] = INCBIN_U16("graphics/pokenav/may_icon.gbapal");
@@ -565,11 +566,19 @@ bool8 LoadRegionMapGfx(void)
         if (gRegionMap->bgManaged)
         {
             if (!FreeTempTileDataBuffersIfPossible())
-                DecompressAndCopyTileDataToVram(gRegionMap->bgNum, sRegionMapBg_TilemapLZ, 0, 0, 1);
+            {
+                if (FlagGet(FLAG_SYS_GAME_CLEAR))
+                    DecompressAndCopyTileDataToVram(gRegionMap->bgNum, sRegionMapBg_TilemapLZ_PostHoF, 0, 0, 1);
+                else 
+                    DecompressAndCopyTileDataToVram(gRegionMap->bgNum, sRegionMapBg_TilemapLZ_BeforeHoF, 0, 0, 1);
+            }
         }
         else
         {
-            LZ77UnCompVram(sRegionMapBg_TilemapLZ, (u16 *)BG_SCREEN_ADDR(28));
+            if (FlagGet(FLAG_SYS_GAME_CLEAR))
+                LZ77UnCompVram(sRegionMapBg_TilemapLZ_PostHoF, (u16 *)BG_SCREEN_ADDR(28));
+            else
+                LZ77UnCompVram(sRegionMapBg_TilemapLZ_BeforeHoF, (u16 *)BG_SCREEN_ADDR(28));
         }
         break;
     case 2:
@@ -1232,6 +1241,8 @@ static u8 GetMapsecType(u16 mapSecId)
         return FlagGet(FLAG_LANDMARK_FALLARBOR_WASTELAND) ? MAPSECTYPE_ROUTE : MAPSECTYPE_NONE;
     case MAPSEC_MAUVILLE_MEADOW:
         return FlagGet(FLAG_LANDMARK_MAUVILLE_MEADOW) ? MAPSECTYPE_ROUTE : MAPSECTYPE_NONE;
+    case MAPSEC_FORTREE_JUNGLE:
+        return FlagGet(FLAG_LANDMARK_FORTREE_JUNGLE) ? MAPSECTYPE_ROUTE : MAPSECTYPE_NONE;
     default:
         return MAPSECTYPE_ROUTE;
     }
