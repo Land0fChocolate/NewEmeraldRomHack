@@ -157,6 +157,7 @@ static const u16 sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_TRAINER_HILL,               MAPSEC_ROUTE_111},
     {MAPSEC_DESERT_UNDERPASS,           MAPSEC_ROUTE_114},
     {MAPSEC_LUSTROUS_LAIR,              MAPSEC_ROUTE_124},
+    {MAPSEC_WILDWOODS,                  MAPSEC_ROUTE_103},
     {MAPSEC_DERELICT_DEN,               MAPSEC_ROUTE_103},
     {MAPSEC_FIERY_THRONE,               MAPSEC_FALLARBOR_WASTELAND},
     {MAPSEC_CONQUERORS_CAMP,            MAPSEC_ROUTE_119},
