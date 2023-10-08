@@ -199,8 +199,9 @@ MossdeepCity_EventScript_WinonaBerryGiven::
 	end
 
 MossdeepCity_Eventscript_RivalTrigger::
-	clearflag FLAG_HIDE_MOSSDEEP_CITY_RIVAL
 	setvar VAR_MOSSDEEP_CITY_RIVAL_STATE, 1
+	goto_if_set FLAG_SYS_GAME_CLEAR, MossdeepCity_EventScript_ChampionBeatenDoNothing
+	clearflag FLAG_HIDE_MOSSDEEP_CITY_RIVAL
 	opendoor 64, 15
 	waitdooranim
 	addobject LOCALID_RIVAL
@@ -211,6 +212,9 @@ MossdeepCity_Eventscript_RivalTrigger::
 	waitdooranim
 	delay 10
 	goto MossdeepCity_EventScript_RivalPart2
+
+MossdeepCity_EventScript_ChampionBeatenDoNothing::
+	end
 
 MossdeepCity_Movement_RivalExitsSpaceCenter:
 	walk_down
@@ -364,6 +368,7 @@ MossdeepCity_EventScript_DefeatedBrendan::
 	call_if_eq MossdeepCity_EventScript_BrendanPokemonLeague
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL
+	setflag FLAG_HIDE_MOSSDEEP_CITY_RIVAL
 	goto MossdeepCity_EventScript_RivalFlyAway
 	end
 

@@ -492,8 +492,8 @@ const u32 gItemIconPalette_SailFossil[] = INCBIN_U32("graphics/items/icon_palett
 
 // Mulch
 
-//const u32 gItemIcon_GrowthMulch[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
-//const u32 gItemIconPalette_GrowthMulch[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");
+const u32 gItemIcon_Mulch[] = INCBIN_U32("graphics/items/icons/mulch.4bpp.lz");
+const u32 gItemIconPalette_GrowthMulch[] = INCBIN_U32("graphics/items/icon_palettes/growth_mulch.gbapal.lz");
 
 //const u32 gItemIcon_DampMulch[] = INCBIN_U32("graphics/items/icons/question_mark.4bpp.lz");
 //const u32 gItemIconPalette_DampMulch[] = INCBIN_U32("graphics/items/icon_palettes/question_mark.gbapal.lz");

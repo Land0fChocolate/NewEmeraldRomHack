@@ -11260,7 +11260,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona5[] = {
     .iv = 255,
     .lvl = 59,
     .species = SPECIES_PIDGEOT,
-    .heldItem = ITEM_SITRUS_BERRY,
+    .heldItem = ITEM_PIDGEOTITE,
     .moves = {MOVE_AIR_SLASH, MOVE_UPROAR, MOVE_HEAT_WAVE, MOVE_MIRROR_MOVE}
     },
     {

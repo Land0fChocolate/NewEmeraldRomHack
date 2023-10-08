@@ -156,7 +156,7 @@ static const u8 sIlluminateDescription[] = _(
 	"evasion.");
 
 static const u8 sTraceDescription[] = _(
-	"Copies the opponents\n"
+	"Copies the opponent's\n"
 	"strongest ability.");
 
 static const u8 sHugePowerDescription[] = _(

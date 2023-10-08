@@ -201,7 +201,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_FOSSILIZED_DRAKE] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
     [ITEM_FOSSILIZED_DINO] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
     // Mulch
-    [ITEM_GROWTH_MULCH] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
+    [ITEM_GROWTH_MULCH] = {gItemIcon_Mulch, gItemIconPalette_GrowthMulch},
     [ITEM_DAMP_MULCH] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
     [ITEM_STABLE_MULCH] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo
     [ITEM_GOOEY_MULCH] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark}, // Todo

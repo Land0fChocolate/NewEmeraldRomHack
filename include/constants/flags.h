@@ -86,7 +86,7 @@
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
+#define FLAG_UNUSED_0x04D    0x4D // Unused Flag, probably set to true in current playthrough
 #define FLAG_PRE_EVO_TUTOR   0x4E
 #define FLAG_EGG_MOVE_TUTOR  0x4F
 
@@ -269,7 +269,7 @@
 #define FLAG_OBTAINED_ORIGIN_STRAND          0xF8
 #define FLAG_RECEIVED_TM_27_RETURN           0xF9
 #define FLAG_RECEIVED_TM_21_FRUSTRATION      0xFA
-#define FLAG_RECEIVED_DURIN_BERRY            0xFB // unused
+#define FLAG_TV_STATION_TRADE_DONE           0xFB
 #define FLAG_RECEIVED_BELUE_BERRY            0xFC // unused
 #define FLAG_ENABLE_RIVAL_MATCH_CALL         0xFD
 #define FLAG_RECEIVED_CHARCOAL               0xFE
@@ -1495,7 +1495,7 @@
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_LANDMARK_CRUMBLING_GORGE               (SYSTEM_FLAGS + 0x85) // TODO: may not need these outdoor landmarks
+#define FLAG_LANDMARK_CRUMBLING_GORGE               (SYSTEM_FLAGS + 0x85)
 #define FLAG_LANDMARK_OLDALE_FARM                   (SYSTEM_FLAGS + 0x86)
 #define FLAG_LANDMARK_LITTLEROOT_BEACH              (SYSTEM_FLAGS + 0x87)
 #define FLAG_LANDMARK_FALLARBOR_WASTELAND           (SYSTEM_FLAGS + 0x88)

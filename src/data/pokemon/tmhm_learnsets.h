@@ -3801,7 +3801,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM91_FLASH_CANNON)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(TM98_WATERFALL)
-                                            | TMHM2(TM99_DAZZLING_GLEAM)
                                             | TMHM2(HM03_SURF)
                                             | TMHM2(HM07_WATERFALL)
                                             | TMHM2(HM08_DIVE)),

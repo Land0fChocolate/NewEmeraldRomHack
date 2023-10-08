@@ -42,6 +42,85 @@ MauvilleCity_TVStation_EventScript_Triathlete::
 	msgbox MauvilleCity_TVStation_Text_Triathlete, MSGBOX_NPC
 	end
 
+MauvilleCity_TVStation_EventScript_Trader::
+	lock
+	faceplayer
+	goto_if_set FLAG_TV_STATION_TRADE_DONE, MauvilleCity_TVStation_EventScript_TradeCompleted
+	setvar VAR_0x8008, INGAME_TRADE_GEODUDE_ALOLAN
+	copyvar VAR_0x8004, VAR_0x8008
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+	copyvar VAR_0x8009, VAR_RESULT
+	msgbox MauvilleCity_TVStation_Text_WouldYouLikeToTrade, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq MauvilleCity_TVStation_EventScript_DeclineTrade
+	special ChoosePartyMon
+	waitstate
+	copyvar VAR_0x800A, VAR_0x8004
+	compare VAR_0x8004, 255
+	goto_if_eq MauvilleCity_TVStation_EventScript_DeclineTrade
+	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, GetTradeSpecies
+	copyvar VAR_0x800B, VAR_RESULT
+	compare VAR_RESULT, VAR_0x8009
+	goto_if_ne MauvilleCity_TVStation_EventScript_NotRequestedMon
+	copyvar VAR_0x8004, VAR_0x8008
+	copyvar VAR_0x8005, VAR_0x800A
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	waitstate
+	msgbox MauvilleCity_TVStation_Text_PromiseIllBeGoodToIt, MSGBOX_DEFAULT
+	setflag FLAG_TV_STATION_TRADE_DONE
+	release
+	end
+
+MauvilleCity_TVStation_EventScript_DeclineTrade::
+	msgbox MauvilleCity_TVStation_Text_WellThatsFineToo, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_TVStation_EventScript_NotRequestedMon::
+	bufferspeciesname 0, VAR_0x8009
+	msgbox MauvilleCity_TVStation_Text_DontTradeForAnythingButMon, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_TVStation_EventScript_TradeCompleted::
+	msgbox MauvilleCity_TVStation_Text_NosepassWonderful, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_TVStation_Text_WouldYouLikeToTrade:
+	.string "My work takes me chasing stories\n"
+	.string "around the world.\p"
+	.string "I visited Alola on my latest trip.\n"
+	.string "I found an unusual variety of Geodude\l"
+	.string "there.\p"
+	.string "I can see you eyeing it…\p"
+	.string "I'm willing to let it go, in exchange\n"
+	.string "for a {STR_VAR_1}.\l"
+	.string "Do you have one?$"
+
+MauvilleCity_TVStation_Text_PromiseIllBeGoodToIt:
+	.string "Oh, it's marvelous!\n"
+	.string "Thank you!\l"
+	.string "I promise I'll be good to it!\p"
+	.string "Oh! I hope you'll be good to\n"
+	.string "my {STR_VAR_2}, too!$"
+
+MauvilleCity_TVStation_Text_DontTradeForAnythingButMon:
+	.string "Oh, I'm sorry!\n"
+	.string "I don't intend to trade for anything\l"
+	.string "but a {STR_VAR_1}.$"
+
+MauvilleCity_TVStation_Text_WellThatsFineToo:
+	.string "Not for you, eh?\n"
+	.string "Each to their own.$"
+
+MauvilleCity_TVStation_Text_NosepassWonderful:
+	.string "The Nosepass you have given me has been\n"
+	.string "a wonderful companion.\l"
+	.string "Thank you, again!$"
+
 MauvilleCity_TVStation_Text_Receptionist:
 	.string "Hello, welcome to TV Mauville.\p"
 	.string "Many TV programs broadcast in the Hoenn\n"

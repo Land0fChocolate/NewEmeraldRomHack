@@ -593,6 +593,27 @@
       "elevation": 0,
       "dest_map": "MAP_CONQUERORS_CAMP",
       "dest_warp_id": 0
+    },
+    {
+      "x": 35,
+      "y": 104,
+      "elevation": 0,
+      "dest_map": "MAP_FORTREE_JUNGLE_AREA1",
+      "dest_warp_id": 5
+    },
+    {
+      "x": 35,
+      "y": 105,
+      "elevation": 0,
+      "dest_map": "MAP_FORTREE_JUNGLE_AREA1",
+      "dest_warp_id": 6
+    },
+    {
+      "x": 35,
+      "y": 106,
+      "elevation": 0,
+      "dest_map": "MAP_FORTREE_JUNGLE_AREA1",
+      "dest_warp_id": 7
     }
   ],
   "coord_events": [

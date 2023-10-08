@@ -1007,7 +1007,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("Hocus"), 
         .species = SPECIES_ABRA,
-        .ivs = {19, 4, 13, 22, 28, 22}, 
+        .ivs = {23, 4, 13, 22, 28, 22}, 
         .otId = 38726,
         .conditions = {30, 5, 5, 5, 5},
         .personality = 0x84,
@@ -1022,11 +1022,11 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("Wobby"), 
         .species = SPECIES_WOBBUFFET,
-        .ivs = {4, 4, 4, 5, 5, 4}, 
+        .ivs = {31, 4, 24, 15, 19, 14}, 
         .otId = 73996,
         .conditions = {5, 5, 30, 5, 5},
         .personality = 0x6F,
-        .heldItem = ITEM_WOOD_MAIL, 
+        .heldItem = ITEM_CHILAN_BERRY, 
         .mailNum = 0,
         .otName = _("Roman"), 
         .otGender = MALE, 
@@ -1037,31 +1037,46 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("Seasor"),
         .species = SPECIES_HORSEA,
-        .ivs = {31, 4, 17, 7, 13, 21}, 
+        .ivs = {31, 28, 17, 27, 13, 21}, 
         .otId = 46285,
         .conditions = {5, 5, 5, 5, 30},
         .personality = 0x7F,
-        .heldItem = ITEM_WAVE_MAIL, 
+        .heldItem = ITEM_SCOPE_LENS, 
         .mailNum = 1,
         .otName = _("Skylar"), 
         .otGender = MALE, 
         .sheen = 10,
         .requestedSpecies = SPECIES_BAGON
     }, 
-    [INGAME_TRADE_MEOWTH] = 
+    [INGAME_TRADE_HAPPINY] = 
     {
-        .nickname = _("Meowy"),
-        .species = SPECIES_MEOWTH,
-        .ivs = {4, 5, 4, 5, 4, 4}, 
+        .nickname = _("Joy"),
+        .species = SPECIES_HAPPINY,
+        .ivs = {23, 5, 31, 5, 31, 4}, 
         .otId = 91481,
         .conditions = {5, 5, 5, 30, 5},
         .personality = 0x8B,
-        .heldItem = ITEM_RETRO_MAIL, 
+        .heldItem = ITEM_LUCKY_EGG, 
         .mailNum = 2,
         .otName = _("Isis"), 
         .otGender = FEMALE, 
         .sheen = 10,
         .requestedSpecies = SPECIES_SKITTY
+    },
+    [INGAME_TRADE_GEODUDE_ALOLAN] = 
+    {
+        .nickname = _("Tesla"),
+        .species = SPECIES_GEODUDE_ALOLAN,
+        .ivs = {26, 28, 30, 11, 16, 10}, 
+        .otId = 74718,
+        .conditions = {30, 5, 5, 5, 5},
+        .personality = 0x8B,
+        .heldItem = ITEM_LIGHT_CLAY, 
+        .mailNum = 2,
+        .otName = _("Freddo"), 
+        .otGender = MALE, 
+        .sheen = 10,
+        .requestedSpecies = SPECIES_NOSEPASS
     }
 };
 

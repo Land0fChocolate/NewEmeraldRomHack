@@ -188,11 +188,19 @@
 
 // gTileset_Fortree
 #define METATILE_Fortree_BigTreeBotLeft_SmallTreeTops      0x250
-#define METATILE_Fortree_BigTreeTopLeft_SmallTreeTops      0x248
+#define METATILE_Fortree_BigTreeBotMid                     0x251
+#define METATILE_Fortree_BigTreeBotRight_SmallTreeTops     0x252
+#define METATILE_Fortree_BigTreeTopLeft_SmallTreeTops      0x318
+#define METATILE_Fortree_BigTreeTopMid_SmallTreeTops       0x319
+#define METATILE_Fortree_BigTreeTopRight_SmallTreeTops     0x24A
+#define METATILE_Fortree_BigTree_SmallTreeTop              0x25C
+#define METATILE_Fortree_BigTree_Trunk                     0x241
 #define METATILE_Fortree_BridgeOverGrass_Lowered           0x24F
 #define METATILE_Fortree_BridgeOverGrass_Raised            0x24E
 #define METATILE_Fortree_BridgeOverTrees_Lowered           0x257
 #define METATILE_Fortree_BridgeOverTrees_Raised            0x256
+#define METATILE_Fortree_CliffBotRight_SmallTree           0x223
+#define METATILE_Fortree_EastArrowWarp                     0x32F
 #define METATILE_Fortree_Grass_TreeUp_PuddleEdge           0x33D
 #define METATILE_Fortree_LongGrass_Root                    0x208
 #define METATILE_Fortree_OceanWater                        0x206
@@ -214,6 +222,7 @@
 #define METATILE_General_CalmWater                       0x170
 #define METATILE_General_CaveEntrance_Bottom             0x0A7
 #define METATILE_General_CaveEntrance_Top                0x09F
+#define METATILE_General_DarkGrass                       0x01C
 #define METATILE_General_Door                            0x021
 #define METATILE_General_Door_Contest                    0x1DB
 #define METATILE_General_Door_Gym                        0x1CD
