@@ -5069,7 +5069,7 @@ static void HandleEndTurn_BattleLost(void)
     }
     else
     {
-        VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 0)
+        VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 0);
         gBattlescriptCurrInstr = BattleScript_LocalBattleLost;
     }
 
