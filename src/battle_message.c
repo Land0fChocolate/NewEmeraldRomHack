@@ -755,6 +755,7 @@ static const u8 sText_CantThrowBall[] = _("The Poké Ball is inoperative!");
 static const u8 sText_OnlyPokeBallsCanBeUsed[] = _("Only Poké Balls can be used in battle!");
 static const u8 sText_AttackerSwitchedStatWithTarget[] = _("{B_ATK_NAME_WITH_PREFIX} switched {B_BUFF1}\nwith its target!");
 static const u8 sText_SharpThornsGrow[] =_("Sharp thorns grow\naround {B_DEF_TEAM2} team!");
+static const u8 sText_WishMakerFailed[] =_("{B_ATK_NAME_WITH_PREFIX} failed to make a wish!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1373,6 +1374,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_DEOXYSCHANGEDFORMCATCHABLE - 12] = sText_DeoxysChangedFormCatchable,
     [STRINGID_CANTTHROWBALL - 12] = sText_CantThrowBall,
     [STRINGID_SHARPTHORNSGROW - 12] = sText_SharpThornsGrow,
+    [STRINGID_WISHMAKERFAILED - 12] = sText_WishMakerFailed,
 };
 
 const u16 gMentalHerbCureStringIds[] = 

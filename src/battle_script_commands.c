@@ -12918,6 +12918,14 @@ static void Cmd_trywish(void)
             gBattlescriptCurrInstr += 6;
 
         break;
+    case 2: // wish maker ability
+        if (gWishFutureKnock.wishCounter[gBattlerAttacker] == 0)
+        {
+            gWishFutureKnock.wishCounter[gBattlerAttacker] = 2;
+            gWishFutureKnock.wishPartyId[gBattlerAttacker] = gBattlerPartyIndexes[gBattlerAttacker];
+            gBattlescriptCurrInstr += 6;
+        }
+        break;
     }
 }
 

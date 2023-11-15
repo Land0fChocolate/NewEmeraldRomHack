@@ -1076,7 +1076,7 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("Freddo"), 
         .otGender = MALE, 
         .sheen = 10,
-        .requestedSpecies = SPECIES_NOSEPASS
+        .requestedSpecies = SPECIES_ARON
     }
 };
 

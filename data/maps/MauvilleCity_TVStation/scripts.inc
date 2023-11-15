@@ -85,7 +85,7 @@ MauvilleCity_TVStation_EventScript_NotRequestedMon::
 	end
 
 MauvilleCity_TVStation_EventScript_TradeCompleted::
-	msgbox MauvilleCity_TVStation_Text_NosepassWonderful, MSGBOX_DEFAULT
+	msgbox MauvilleCity_TVStation_Text_AronWonderful, MSGBOX_DEFAULT
 	release
 	end
 
@@ -116,8 +116,8 @@ MauvilleCity_TVStation_Text_WellThatsFineToo:
 	.string "Not for you, eh?\n"
 	.string "Each to their own.$"
 
-MauvilleCity_TVStation_Text_NosepassWonderful:
-	.string "The Nosepass you have given me has been\n"
+MauvilleCity_TVStation_Text_AronWonderful:
+	.string "The Aron you have given me has been\n"
 	.string "a wonderful companion.\l"
 	.string "Thank you, again!$"
 
