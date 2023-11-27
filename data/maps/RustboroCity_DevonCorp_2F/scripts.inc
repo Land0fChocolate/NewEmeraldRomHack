@@ -639,7 +639,7 @@ RustboroCity_DevonCorp_2F_EventScript_NeedMewForClone::
 
 RustboroCity_DevonCorp_2F_Text_AcquiredCloningResearch:
 	.string "We've acquired some peculiar research\n"
-	.string "materials from a lab on Cinnabar island\l"
+	.string "materials from a lab on Cinnabar Island\l"
 	.string "in Kanto.\p"
 	.string "Among them are extensive Pokémon\n"
 	.string "cloning and bioengineering techniques.\p"

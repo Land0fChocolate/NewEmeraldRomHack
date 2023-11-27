@@ -5268,7 +5268,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     if (!gSpecialStatuses[battler].switchInAbilityDone)
                     {
                         gLastUsedAbility = ABILITY_WISH_MAKER;
-                        gLastUsedMove = MOVE_WISH;
+                        gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                         BattleScriptPushCursorAndCallback(BattleScript_WishMaker);
                         effect++;
                         break;

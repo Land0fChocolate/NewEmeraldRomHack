@@ -9833,9 +9833,14 @@ BattleScript_TargetAbilityStatRaiseRet_End:
 
 BattleScript_WishMaker::
 	call BattleScript_AbilityPopUp
-	trywish 0, BattleScript_ButItFailed
+	trywish 0, BattleScript_WishMakerFailed
 	printstring STRINGID_PKMNMADEWISH
 	waitmessage B_WAIT_TIME_LONG
+	end3
+
+BattleScript_WishMakerFailed::
+	printstring STRINGID_WISHMAKERFAILED
+	waitmessage B_WAIT_TIME_MED
 	end3
 
 BattleScript_SuctionCupsActivates::
