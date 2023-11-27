@@ -97,7 +97,7 @@ MauvilleCity_TVStation_Text_WouldYouLikeToTrade:
 	.string "there.\p"
 	.string "I can see you eyeing it…\p"
 	.string "I'm willing to let it go, in exchange\n"
-	.string "for a {STR_VAR_1}.\l"
+	.string "for an {STR_VAR_1}.\l"
 	.string "Do you have one?$"
 
 MauvilleCity_TVStation_Text_PromiseIllBeGoodToIt:
