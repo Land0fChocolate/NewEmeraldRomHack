@@ -14178,7 +14178,8 @@ SPECIES MAROWAK ALOLAN       | TM14 BLIZZARD
                              | HM04 STRENGTH
                              | HM06 ROCK SMASH
 
-SPECIES PONYTA GALARIAN      | TM45 ATTRACT
+SPECIES PONYTA GALARIAN      | TM06 TOXIC
+                             | TM45 ATTRACT
                              | TM04 CALM MIND
                              | TM10 HIDDEN POWER
                              | TM42 FACADE
@@ -14194,7 +14195,8 @@ SPECIES PONYTA GALARIAN      | TM45 ATTRACT
                              | TM93 WILD CHARGE
                              | TM99 DAZZLING GLEAM
 
-SPECIES RAPIDASH GALARIAN    | TM45 ATTRACT
+SPECIES RAPIDASH GALARIAN    
+                             | TM45 ATTRACT
                              | TM04 CALM MIND
                              | TM10 HIDDEN POWER
                              | TM42 FACADE
@@ -14308,7 +14310,8 @@ SPECIES WEEZING GALARIAN     | TM45 ATTRACT
                              | TM97 DARK PULSE
                              | TM99 DAZZLING GLEAM
 
-SPECIES SLOWKING GALARIAN    | TM45 ATTRACT
+SPECIES SLOWKING GALARIAN    | TM06 TOXIC
+                             | TM45 ATTRACT
                              | TM14 BLIZZARD
                              | TM31 BRICK BREAK
                              | TM04 CALM MIND

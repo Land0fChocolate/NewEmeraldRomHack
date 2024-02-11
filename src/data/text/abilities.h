@@ -541,8 +541,8 @@ static const u8 sUnnerveDescription[] = _(
 
 static const u8 sDefiantDescription[] = _(
 	"If user stats are reduced\n"
-	"attack stat rises one\n"
-	"stage.");
+	"attack stat rises two\n"
+	"stages.");
 
 static const u8 sDefeatistDescription[] = _(
 	"Atk and Sp. Atk halved\n"

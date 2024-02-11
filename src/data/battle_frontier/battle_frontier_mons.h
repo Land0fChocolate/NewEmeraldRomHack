@@ -4136,7 +4136,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .moves = {MOVE_AQUA_TAIL, MOVE_EARTHQUAKE, MOVE_SPARK, MOVE_ZEN_HEADBUTT},
         .item = ITEM_SHELL_BELL,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_ATTACK,
-        .nature = NATURE_HARDY
+        .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_XATU_2] = {
         .species = SPECIES_XATU,
@@ -5004,7 +5004,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .moves = {MOVE_SLEEP_TALK, MOVE_REST, MOVE_AQUA_TAIL, MOVE_AVALANCHE},
         .item = ITEM_RINDO_BERRY,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE,
-        .nature = NATURE_HARDY
+        .nature = NATURE_IMPISH
     },
     [FRONTIER_MON_XATU_3] = {
         .species = SPECIES_XATU,

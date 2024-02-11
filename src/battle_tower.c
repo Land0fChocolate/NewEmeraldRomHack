@@ -3074,6 +3074,7 @@ static void FillPartnerParty(u16 trainerId)
     u32 otID;
     u8 trainerName[(PLAYER_NAME_LENGTH * 3) + 1];
     u16 starter;
+    u8 playerGender = gSaveBlock2Ptr->playerGender;
     SetFacilityPtrsGetLevel();
 
     if (trainerId == TRAINER_STEVEN_PARTNER)
@@ -3133,8 +3134,16 @@ static void FillPartnerParty(u16 trainerId)
                     SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_HP_EV + j, &sRivalMonsTreecko[i].evs[j]);
                 for (j = 0; j < MAX_MON_MOVES; j++)
                     SetMonMoveSlot(&gPlayerParty[MULTI_PARTY_SIZE + i], sRivalMonsTreecko[i].moves[j], j);
-                SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_STEVEN].trainerName);
-                j = MALE;
+                if (playerGender == MALE)
+                {
+                    SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_MAY_ROUTE_119_TREECKO].trainerName);
+                    j = FEMALE;
+                }
+                else
+                {
+                    SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_BRENDAN_ROUTE_119_TREECKO].trainerName);
+                    j = MALE;
+                }
                 SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
                 CalculateMonStats(&gPlayerParty[MULTI_PARTY_SIZE + i]);
             }
@@ -3162,8 +3171,16 @@ static void FillPartnerParty(u16 trainerId)
                     SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_HP_EV + j, &sRivalMonsTorchic[i].evs[j]);
                 for (j = 0; j < MAX_MON_MOVES; j++)
                     SetMonMoveSlot(&gPlayerParty[MULTI_PARTY_SIZE + i], sRivalMonsTorchic[i].moves[j], j);
-                SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_STEVEN].trainerName);
-                j = MALE;
+                if (playerGender == MALE)
+                {
+                    SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_MAY_ROUTE_119_TORCHIC].trainerName);
+                    j = FEMALE;
+                }
+                else
+                {
+                    SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_BRENDAN_ROUTE_119_TORCHIC].trainerName);
+                    j = MALE;
+                }
                 SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
                 CalculateMonStats(&gPlayerParty[MULTI_PARTY_SIZE + i]);
             }
@@ -3191,8 +3208,16 @@ static void FillPartnerParty(u16 trainerId)
                     SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_HP_EV + j, &sRivalMonsMudkip[i].evs[j]);
                 for (j = 0; j < MAX_MON_MOVES; j++)
                     SetMonMoveSlot(&gPlayerParty[MULTI_PARTY_SIZE + i], sRivalMonsMudkip[i].moves[j], j);
-                SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_STEVEN].trainerName);
-                j = MALE;
+                if (playerGender == MALE)
+                {
+                    SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_MAY_ROUTE_119_MUDKIP].trainerName);
+                    j = FEMALE;
+                }
+                else
+                {
+                    SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_BRENDAN_ROUTE_119_MUDKIP].trainerName);
+                    j = MALE;
+                }
                 SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
                 CalculateMonStats(&gPlayerParty[MULTI_PARTY_SIZE + i]);
             }
