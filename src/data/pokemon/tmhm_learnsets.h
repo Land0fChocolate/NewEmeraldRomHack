@@ -23266,6 +23266,7 @@ const u32 gTMHMLearnsets[][4] =
                                                    | TMHM(TM27_RETURN)
                                                    | TMHM(TM21_FRUSTRATION)
                                                    | TMHM(TM06_TOXIC)
+                                                   | TMHM(TM51_LEECH_LIFE)
                                                    | TMHM(TM54_FALSE_SWIPE)
                                                    | TMHM(TM43_SECRET_POWER)
                                                    | TMHM(TM64_CUT),
@@ -23296,6 +23297,7 @@ const u32 gTMHMLearnsets[][4] =
                                                    | TMHM(TM27_RETURN)
                                                    | TMHM(TM21_FRUSTRATION)
                                                    | TMHM(TM06_TOXIC)
+                                                   | TMHM(TM51_LEECH_LIFE)
                                                    | TMHM(TM52_FOCUS_BLAST)
                                                    | TMHM(TM54_FALSE_SWIPE)
                                                    | TMHM(TM43_SECRET_POWER)
