@@ -2456,7 +2456,8 @@ SPECIES GOLEM                | TM45 ATTRACT
                              | HM04 STRENGTH
                              | HM06 ROCK SMASH
 
-SPECIES PONYTA               | TM45 ATTRACT
+SPECIES PONYTA               | TM06 TOXIC
+                             | TM45 ATTRACT
                              | TM32 DOUBLE TEAM
                              | TM42 FACADE
                              | TM38 FIRE BLAST
@@ -2479,7 +2480,8 @@ SPECIES PONYTA               | TM45 ATTRACT
                              | HM04 STRENGTH
                              | HM06 ROCK SMASH
 
-SPECIES RAPIDASH             | TM45 ATTRACT
+SPECIES RAPIDASH             | TM06 TOXIC
+                             | TM45 ATTRACT
                              | TM32 DOUBLE TEAM
                              | TM42 FACADE
                              | TM38 FIRE BLAST
