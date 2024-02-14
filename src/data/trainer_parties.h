@@ -10935,7 +10935,7 @@ static const struct TrainerMonItemCustomMoves sParty_Flannery5[] = {
     .iv = 255,
     .lvl = 59,
     .species = SPECIES_HOUNDOOM,
-    .heldItem = ITEM_HEAT_ROCK,
+    .heldItem = ITEM_LIFE_ORB,
     .moves = {MOVE_FLAMETHROWER, MOVE_SOLAR_BEAM, MOVE_DARK_PULSE, MOVE_NASTY_PLOT}
     },
     {
