@@ -34,7 +34,12 @@ FallarborWasteland_EventScript_Darius::
 FallarborWasteland_Eventscript_Tabitha::
 	msgbox FallarborWasteland_Text_TabithaFieldWork, MSGBOX_NPC
 	call_if_unset FLAG_MET_TABITHA_FALLARBOR_WASTES, FallarborWasteland_Eventscript_SetMeetFlag
+	goto_if_unset FLAG_MET_COURTNEY_WILDWOODS, FallarborWasteland_Eventscript_CheckOutWildwoods
 	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, Wildwoods_Area9_Eventscript_CheckForBirchReportCall
+	end
+
+FallarborWasteland_Eventscript_CheckOutWildwoods::
+	msgbox FallarborWasteland_Text_TabithaCheckOutWildWoods, MSGBOX_NPC
 	end
 
 FallarborWasteland_Eventscript_SetMeetFlag::
@@ -69,6 +74,13 @@ FallarborWasteland_Text_TabithaFieldWork:
 	.string "Here, we're performing an inspection\n"
 	.string "on a newly discovered area.\l"
 	.string "We already have some good findings.$"
+
+FallarborWasteland_Text_TabithaCheckOutWildWoods:
+	.string "Courtney, our other admin is\n"
+	.string "investigating the Wildwoods just north\l"
+	.string "of Oldale Town.\p"
+	.string "You should go find her and see how\n"
+	.string "she's doing.$"
 
 FallarborWasteland_Text_BridgeMagma:
 	.string "I was told that this area was recently\n"

@@ -9,7 +9,12 @@ FortreeJungle_Area3_Eventscript_Marcel::
 FortreeJungle_Area3_Eventscript_Matt::
 	msgbox FortreeJungle_Area3_Text_Matt, MSGBOX_NPC
 	call_if_unset FLAG_MET_MATT_FORTREE_JUNGLE, FortreeJungle_Area3_Eventscript_SetMeetFlag
+	call_if_unset FLAG_MET_SHELLY_MAUVILLE_MEADOW, FortreeJungle_Area3_Eventscript_CheckOutMeadow
 	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, Wildwoods_Area9_Eventscript_CheckForBirchReportCall
+	end
+
+FortreeJungle_Area3_Eventscript_CheckOutMeadow::
+	msgbox MauvilleMeadow_Text_MattCheckOutMeadow, MSGBOX_NPC
 	end
 
 FortreeJungle_Area3_Eventscript_SetMeetFlag::
@@ -35,6 +40,11 @@ FortreeJungle_Area3_Text_Matt:
 	.string "My buddies are surveying the wildlife\n"
 	.string "here. They seem pretty excited by what\l"
 	.string "they found already.$"
+
+MauvilleMeadow_Text_MattCheckOutMeadow:
+	.string "Oh yeah, you seen the flower meadow\n"
+	.string "over around Mauville, yet?\l"
+	.string "Shelly is working over there.$"
 
 FortreeJungle_Area3_Text_AquaMemberF:
 	.string "Tropical forests are known to have a\n"

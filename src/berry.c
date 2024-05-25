@@ -1591,14 +1591,20 @@ static u8 CalcBerryYield(struct BerryTree *tree)
 
 static u8 GetBerryCountByBerryTreeId(u8 id)
 {
+    u8 berryCount;
     struct BerryTree *tree = GetBerryTreeInfo(id);
     const struct Berry *berry = GetBerryInfo(tree->berry);
     u16 currentMap = gMapHeader.regionMapSectionId;
-
+    
     if (currentMap == MAPSEC_ROUTE_119 || currentMap == MAPSEC_ROUTE_120 || currentMap == MAPSEC_ROUTE_123)
-        return berry->maxYield;
+        berryCount = berry->maxYield;
     else
-        return gSaveBlock1Ptr->berryTrees[id].berryYield;
+        berryCount = gSaveBlock1Ptr->berryTrees[id].berryYield;
+
+    if (FLAG_SYS_GAME_CLEAR)
+        return berryCount*2;
+    else
+        return berryCount;
 }
 
 static u16 GetStageDurationByBerryType(u8 berry)
