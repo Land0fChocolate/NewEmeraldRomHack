@@ -3168,6 +3168,19 @@ if (HasAbility(ABILITY_MAGIC_GUARD, abilities)) \
     break;\
 }
 
+bool32 IsNeutralizingGasOnField()
+{
+    u32 i;
+
+    for (i = 0; i < gBattlersCount; i++)
+    {
+        if (IsBattlerAlive(i) && HasAbility(ABILITY_NEUTRALIZING_GAS, gBattleMons[i].abilities) 
+            && !(gStatuses3[i] & STATUS3_GASTRO_ACID))
+            return TRUE;
+    }
+
+    return FALSE;
+}
 
 u8 DoBattlerEndTurnEffects(void)
 {
@@ -3255,7 +3268,7 @@ u8 DoBattlerEndTurnEffects(void)
             {
                 MAGIC_GUARD_CHECK;
 
-                if (HasAbility(ABILITY_POISON_HEAL, abilities))
+                if (HasAbility(ABILITY_POISON_HEAL, abilities) && !IsNeutralizingGasOnField())
                 {
                     if (!BATTLER_MAX_HP(gActiveBattler) && !(gStatuses3[gActiveBattler] & STATUS3_HEAL_BLOCK))
                     {
@@ -3284,7 +3297,7 @@ u8 DoBattlerEndTurnEffects(void)
             {
                 MAGIC_GUARD_CHECK;
 
-                if (HasAbility(ABILITY_POISON_HEAL, abilities))
+                if (HasAbility(ABILITY_POISON_HEAL, abilities) && !IsNeutralizingGasOnField())
                 {
                     if (!BATTLER_MAX_HP(gActiveBattler) && !(gStatuses3[gActiveBattler] & STATUS3_HEAL_BLOCK))
                     {
@@ -6778,20 +6791,6 @@ bool32 IsNeutralizingGasBannedAbility(u16 ability)
     }
 }
 
-bool32 IsNeutralizingGasOnField(u8 battlerId)
-{
-    u32 i;
-
-    for (i = 0; i < gBattlersCount; i++)
-    {
-        if (IsBattlerAlive(i) && HasAbility(ABILITY_NEUTRALIZING_GAS, gBattleMons[i].abilities) 
-            && !(gStatuses3[i] & STATUS3_GASTRO_ACID))
-            return TRUE;
-    }
-
-    return FALSE;
-}
-
 u16 *GetBattlerAbilities(u8 battlerId)
 {
     static u16 abilities[NUM_ABILITY_SLOTS], attackerAbility, x, y;
@@ -6809,7 +6808,7 @@ u16 *GetBattlerAbilities(u8 battlerId)
         if ((gStatuses3[battlerId] & STATUS3_GASTRO_ACID) && !IsGastroAcidBannedAbility(gBattleMons[battlerId].abilities[x]))
             continue;
 
-        if (IsNeutralizingGasOnField(battlerId) 
+        if (IsNeutralizingGasOnField() 
             && !IsNeutralizingGasBannedAbility(gBattleMons[battlerId].abilities[x]))
             continue;
 
