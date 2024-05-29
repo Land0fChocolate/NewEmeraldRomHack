@@ -134,6 +134,11 @@ MagmaHideout_4F_EventScript_Courtney::
 	msgbox MagmaHideout_4F_Text_CourtneyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+MagmaHideout_4F_EventScript_Tabitha::
+	trainerbattle_single TRAINER_TABITHA_MAGMA_HIDEOUT, MagmaHideout_4F_Text_TabithaIntro, MagmaHideout_4F_Text_TabithaDefeat
+	msgbox MagmaHideout_4F_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 MagmaHideout_4F_Text_Grunt11Intro:
 	.string "Hey, you.\n"
 	.string "Could you cover my shift?\p"
@@ -189,6 +194,24 @@ MagmaHideout_4F_Text_CourtneyDefeat:
 MagmaHideout_4F_Text_CourtneyPostBattle:
 	.string "Target locked. Commencing… experiment.\n"
 	.string "You shall be observed.$"
+
+MagmaHideout_4F_Text_TabithaIntro:
+	.string "Ahya. It's you again!\p"
+	.string "I can't believe you're even following\n"
+	.string "us around all the way back here.\p"
+	.string "I should teach you not to stalk others,\n"
+	.string "by beating you to a pulp!$"
+
+MagmaHideout_4F_Text_TabithaDefeat:
+	.string "Ahyahya!$"
+
+MagmaHideout_4F_Text_TabithaPostBattle:
+	.string "You better listen, you stress-inducing\n"
+	.string "child.\p"
+	.string "Leader Maxie's plan is already underway\n"
+	.string "and you are too late to stop it!\p"
+	.string "You should start preparing to live in\n"
+	.string "our new world!$"
 
 MagmaHideout_4F_Text_MaxieAwakenGroudon:
 	.string "Maxie: Groudon…\p"
