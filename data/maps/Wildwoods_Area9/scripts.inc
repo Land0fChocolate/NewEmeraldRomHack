@@ -4,7 +4,12 @@ Wildwoods_Area9_MapScripts::
 Wildwoods_Area9_Eventscript_Courtney::
 	msgbox Wildwoods_Area9_Text_Courtney, MSGBOX_NPC
 	call_if_unset FLAG_MET_COURTNEY_WILDWOODS, Wildwoods_Area9_Eventscript_SetMeetFlag
+	goto_if_unset FLAG_MET_TABITHA_FALLARBOR_WASTES, Wildwoods_Area9_Eventscript_CheckOutWasteland
 	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, Wildwoods_Area9_Eventscript_CheckForBirchReportCall
+	end
+
+Wildwoods_Area9_Eventscript_CheckOutWasteland::
+	msgbox Wildwoods_Area9_Text_CourtneyCheckOutWastes, MSGBOX_NPC
 	end
 
 Wildwoods_Area9_Eventscript_SetMeetFlag::
@@ -50,8 +55,15 @@ Wildwoods_Area9_Text_Courtney:
 	.string "Pokémon species?\l"
 	.string "Requires further study…$"
 
+Wildwoods_Area9_Text_CourtneyCheckOutWastes:
+	.string "Data suggests that you, trainer, have\n"
+	.string "not visited the wasteland located\l"
+	.string "west of Fallarbor Town.\p"
+	.string "I would recommend you produce your\n"
+	.string "own analysis of the area.$"
+
 Wildwoods_Area9_Text_StudyingEnviroment:
-	.string "We're here just to study the\n"
+	.string "We're just here to study the strange\n"
 	.string "environment.\p"
 	.string "It's a little scary, but it's much more\n"
 	.string "preferable to bullying the locals for\l"

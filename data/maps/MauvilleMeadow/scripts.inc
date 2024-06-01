@@ -34,7 +34,12 @@ MauvilleMeadow_EventScript_Jace::
 MauvilleMeadow_Eventscript_Shelly::
 	msgbox MauvilleMeadow_Text_Shelly, MSGBOX_NPC
 	call_if_unset FLAG_MET_SHELLY_MAUVILLE_MEADOW, MauvilleMeadow_Eventscript_SetMeetFlag
+	goto_if_unset FLAG_MET_MATT_FORTREE_JUNGLE, MauvilleMeadow_Text_ShellyCheckOutJungle
 	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, Wildwoods_Area9_Eventscript_CheckForBirchReportCall
+	end
+
+MauvilleMeadow_Eventscript_CheckOutJungle::
+	msgbox MauvilleMeadow_Text_ShellyCheckOutJungle, MSGBOX_NPC
 	end
 
 MauvilleMeadow_Eventscript_SetMeetFlag::
@@ -59,15 +64,23 @@ MauvilleMeadow_Eventscript_WanderAqua::
 	end
 
 MauvilleMeadow_Text_Shelly:
-	.string "Team Aqua has taken a step in a new\n"
-	.string "direction. We're helping the natural\l"
-	.string "world propagate, though not at the\l"
-	.string "expense of human society or others.\p"
+	.string "Shelly: Team Aqua has taken a step in a\n"
+	.string "new direction.\p"
+	.string "We're helping the natural world\n"
+	.string "propagate, though not at the expense\l"
+	.string "of human society or others.\p"
 	.string "Our mission here is to analyze the\n"
 	.string "ecosystem of this newly discovered\l"
 	.string "habitat.\p"
 	.string "This area and its Pokémon are very\n"
 	.string "interesting. We'll be here for a while.$"
+
+MauvilleMeadow_Text_ShellyCheckOutJungle:
+	.string "There's a dense jungle that was just\n"
+	.string "discovered too, south of Fortree City.\p"
+	.string "Matt is leading the discovery team for\n"
+	.string "that area.\l"
+	.string "You should go say hello to him, too.$"
 
 MauvilleMeadow_Text_FlowerAqua:
 	.string "Huh?!\p"

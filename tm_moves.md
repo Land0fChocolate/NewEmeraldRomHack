@@ -11311,6 +11311,8 @@ SPECIES ANORITH              | TM40 AERIAL ACE
                              | TM80 ROCK SLIDE
                              | TM81 X SCISSOR
                              | TM90 ROCK SMASH
+                             | TM94 SURF
+                             | TM98 WATERFALL
                              | HM01 CUT
                              | HM03 SURF
                              | HM06 ROCK SMASH
@@ -11347,6 +11349,8 @@ SPECIES ARMALDO              | TM40 AERIAL ACE
                              | TM81 X SCISSOR
                              | TM90 ROCK SMASH
                              | TM91 FLASH CANNON
+                             | TM94 SURF
+                             | TM98 WATERFALL
                              | HM01 CUT
                              | HM03 SURF
                              | HM04 STRENGTH

@@ -475,7 +475,7 @@ DraconidArchives_EventScript_Kangaskhanite::
 	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
 
 DraconidArchives_EventScript_Pinsirite::
-	setvar VAR_TEMP_1, 5
+	setvar VAR_TEMP_1, 10
 	bufferitemname 0, ITEM_PINSIRITE
 	setvar VAR_0x8004, ITEM_PINSIRITE
 	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneTop
@@ -629,7 +629,7 @@ DraconidArchives_EventScript_Manectite::
 	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot
 
 DraconidArchives_EventScript_Sharpedonite::
-	setvar VAR_TEMP_1, 5
+	setvar VAR_TEMP_1, 10
 	bufferitemname 0, ITEM_SHARPEDONITE
 	setvar VAR_0x8004, ITEM_SHARPEDONITE
 	goto DraconidArchives_EventScript_ConfirmTakeMegaStoneBot

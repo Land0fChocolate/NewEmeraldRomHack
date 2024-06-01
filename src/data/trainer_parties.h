@@ -5216,17 +5216,17 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Natasha[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_Zuko[] = {
     {
     .iv = 100,
-    .lvl = 51,
+    .lvl = 52,
     .species = SPECIES_VENOMOTH,
     },
     {
     .iv = 100,
-    .lvl = 51,
+    .lvl = 52,
     .species = SPECIES_ARIADOS,
     },
     {
     .iv = 100,
-    .lvl = 51,
+    .lvl = 52,
     .species = SPECIES_SCYTHER,
     }
 };
@@ -6901,21 +6901,24 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Hector[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_TabithaMossdeep[] = {
+static const struct TrainerMonItemCustomMoves sParty_TabithaMagmaHideout[] = {
     {
-    .iv = 100,
-    .lvl = 38,
+    .iv = 160,
+    .lvl = 36,
     .species = SPECIES_BALTOY,
+    .moves = {MOVE_PSYBEAM, MOVE_DIG, MOVE_TOXIC, MOVE_POWER_SPLIT}
     },
     {
-    .iv = 100,
-    .lvl = 38,
+    .iv = 160,
+    .lvl = 36,
     .species = SPECIES_MIGHTYENA,
+    .moves = {MOVE_CRUNCH, MOVE_POISON_FANG, MOVE_SCARY_FACE, MOVE_SNARL}
     },
     {
-    .iv = 100,
-    .lvl = 40,
+    .iv = 190,
+    .lvl = 38,
     .species = SPECIES_CLAYDOL,
+    .moves = {MOVE_PSYSHOCK, MOVE_EARTH_POWER, MOVE_ROCK_SLIDE, MOVE_POWER_SPLIT}
     }
 };
 
