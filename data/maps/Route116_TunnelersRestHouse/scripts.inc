@@ -35,6 +35,9 @@ Route116_TunnelersRestHouse_Text_WeHadToStopBoring:
 	.string "It turns out that we would have had\n"
 	.string "a negative effect on wild Pokémon in\l"
 	.string "the area.\p"
+	.string "Even if we got the green light to dig,\n"
+	.string "some crooks called Team Magma stole our\l"
+	.string "equipment.\p"
 	.string "So, we've got nothing to do but loll\n"
 	.string "around here doing nothing.$"
 
