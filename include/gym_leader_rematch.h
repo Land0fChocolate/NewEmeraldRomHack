@@ -7,12 +7,10 @@ enum {
     REMATCH_LOLA,
     REMATCH_RICKY,
     REMATCH_LILA_AND_ROY,
-    REMATCH_CRISTIN,
     REMATCH_BROOKE,
     REMATCH_WILTON,
     REMATCH_VALERIE,
     REMATCH_CINDY,
-    REMATCH_THALIA, //TODO: unused, remove in future playthroughs
     REMATCH_JESSICA,
     REMATCH_WINSTON,
     REMATCH_STEVE,
@@ -77,6 +75,7 @@ enum {
     REMATCH_GLACIA,
     REMATCH_DRAKE,
     REMATCH_STEVEN,
+    REMATCH_ZINNIA,
     REMATCH_TABLE_ENTRIES // The total number of rematch entries. Must be last in enum
 };
 

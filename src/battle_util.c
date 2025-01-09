@@ -10337,7 +10337,7 @@ static void UpdateMoveResultFlags(u16 modifier)
     }
 }
 
-static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 battlerAtk, u8 battlerDef, bool32 recordAbilities, u16 modifier) //TODO: remove recordAbilities for multi ability?
+static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 battlerAtk, u8 battlerDef, bool32 recordAbilities, u16 modifier)
 {
     u16 abilities[NUM_ABILITY_SLOTS];
 
@@ -10353,7 +10353,7 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
     if (moveType == TYPE_GROUND && !IsBattlerGrounded2(battlerDef, TRUE) && !(gBattleMoves[move].flags & FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING))
     {
         modifier = UQ_4_12(0.0);
-        if (/*recordAbilities && */HasAbility(ABILITY_LEVITATE, abilities)) //TODO: probably don't need the recordAbilities check.
+        if (HasAbility(ABILITY_LEVITATE, abilities))
         {
             gLastUsedAbility = ABILITY_LEVITATE;
             gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
@@ -10362,7 +10362,7 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
         }
     }
 
-    if (moveType == TYPE_GRASS && HasAbility(ABILITY_SAP_SIPPER, abilities)) //TODO: this is new, double check that it works properly
+    if (moveType == TYPE_GRASS && HasAbility(ABILITY_SAP_SIPPER, abilities))
     {
         modifier = UQ_4_12(0.0);
         gLastUsedAbility = ABILITY_SAP_SIPPER;
@@ -10370,7 +10370,7 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
         gLastLandedMoves[battlerDef] = 0;
     }
 
-    if (moveType == TYPE_ELECTRIC && HasAbility(ABILITY_LIGHTNING_ROD, abilities)) //TODO: this is new, double check that it works properly
+    if (moveType == TYPE_ELECTRIC && HasAbility(ABILITY_LIGHTNING_ROD, abilities))
     {
         modifier = UQ_4_12(0.0);
         gLastUsedAbility = ABILITY_LIGHTNING_ROD;
@@ -10400,16 +10400,13 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
         && gBattleMoves[move].power)
     {
         modifier = UQ_4_12(0.0);
-        //if (recordAbilities) //TODO: probably don't need this.
-        //{
-            if (HasAbility(ABILITY_WONDER_GUARD, abilities))
-                gLastUsedAbility = ABILITY_WONDER_GUARD;
-            if (HasAbility(ABILITY_TELEPATHY, abilities))
-                gLastUsedAbility = ABILITY_TELEPATHY;
-            gMoveResultFlags |= MOVE_RESULT_MISSED;
-            gLastLandedMoves[battlerDef] = 0;
-            gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_DMG;
-        //}
+        if (HasAbility(ABILITY_WONDER_GUARD, abilities))
+            gLastUsedAbility = ABILITY_WONDER_GUARD;
+        if (HasAbility(ABILITY_TELEPATHY, abilities))
+            gLastUsedAbility = ABILITY_TELEPATHY;
+        gMoveResultFlags |= MOVE_RESULT_MISSED;
+        gLastLandedMoves[battlerDef] = 0;
+        gBattleCommunication[MISS_TYPE] = B_MSG_AVOIDED_DMG;
     }
 
     return modifier;

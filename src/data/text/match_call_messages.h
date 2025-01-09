@@ -23,11 +23,6 @@ const u8 gText_MatchCallSisAndBro_LilaAndRoy_Pokemon[] = _("We like friendly Pok
 const u8 gText_MatchCallSisAndBro_LilaAndRoy_Intro1[] = _("We enjoy Pokémon together");
 const u8 gText_MatchCallSisAndBro_LilaAndRoy_Intro2[] = _("as sister and brother.");
 
-const u8 gText_MatchCallCooltrainer_Cristin_Strategy[] = _("I finish with power moves!");
-const u8 gText_MatchCallCooltrainer_Cristin_Pokemon[] = _("A mix of different types.");
-const u8 gText_MatchCallCooltrainer_Cristin_Intro1[] = _("I aim to become the ultimate");
-const u8 gText_MatchCallCooltrainer_Cristin_Intro2[] = _("Trainer!");
-
 const u8 gText_MatchCallCooltrainer_Brooke_Strategy[] = _("Exploit the foe's weakness.");
 const u8 gText_MatchCallCooltrainer_Brooke_Pokemon[] = _("Balance is crucial.");
 const u8 gText_MatchCallCooltrainer_Brooke_Intro1[] = _("My goal is to become the");
@@ -47,11 +42,6 @@ const u8 gText_MatchCallLady_Cindy_Strategy[] = _("Anything to win.");
 const u8 gText_MatchCallLady_Cindy_Pokemon[] = _("Gorgeous type!");
 const u8 gText_MatchCallLady_Cindy_Intro1[] = _("I have a pool specially for");
 const u8 gText_MatchCallLady_Cindy_Intro2[] = _("my Pokémon at home.");
-
-const u8 gText_MatchCallBeauty_Thalia_Strategy[] = _("You'll fall under my spell!");
-const u8 gText_MatchCallBeauty_Thalia_Pokemon[] = _("Mature Water type.");
-const u8 gText_MatchCallBeauty_Thalia_Intro1[] = _("I dream of cruising around");
-const u8 gText_MatchCallBeauty_Thalia_Intro2[] = _("the world on a luxury liner.");
 
 const u8 gText_MatchCallBeauty_Jessica_Strategy[] = _("I'll lead you astray.");
 const u8 gText_MatchCallBeauty_Jessica_Pokemon[] = _("Cute, of course.");
@@ -303,11 +293,6 @@ const u8 gText_MatchCallPkmnTrainer_Wally_Pokemon[] = _("The 1st Pokémon I caug
 const u8 gText_MatchCallPkmnTrainer_Wally_Intro1[] = _("Pokémon and I have grown");
 const u8 gText_MatchCallPkmnTrainer_Wally_Intro2[] = _("stronger together.");
 
-const u8 gText_MatchCallLoreKeeper_Zinnia_Strategy[] = _("Power with knowledge!");
-const u8 gText_MatchCallLoreKeeper_Zinnia_Pokemon[] = _("Wicked draconic Pokémon!");
-const u8 gText_MatchCallLoreKeeper_Zinnia_Intro1[] = _("I've always turned my eyes");
-const u8 gText_MatchCallLoreKeeper_Zinnia_Intro2[] = _("to the sky and beyond.");
-
 const u8 gText_MatchCallRockinWhiz_Roxanne_Strategy[] = _("Rock-type power attack.");
 const u8 gText_MatchCallRockinWhiz_Roxanne_Pokemon[] = _("I prefer rock-hard Pokémon.");
 const u8 gText_MatchCallRockinWhiz_Roxanne_Intro1[] = _("A Leader of a big Gym bears");
@@ -378,6 +363,11 @@ const u8 gText_MatchCallChampion_Steven_Pokemon[] = _("Ultimate Steel Pokémon."
 const u8 gText_MatchCallChampion_Steven_Intro1[] = _("When it comes down to it,");
 const u8 gText_MatchCallChampion_Steven_Intro2[] = _("I'm still the strongest!");
 
+const u8 gText_MatchCallLoreKeeper_Zinnia_Strategy[] = _("Power and knowledge!");
+const u8 gText_MatchCallLoreKeeper_Zinnia_Pokemon[] = _("Legendary Dragon Pokémon.");
+const u8 gText_MatchCallLoreKeeper_Zinnia_Intro1[] = _("I've always turned my eyes");
+const u8 gText_MatchCallLoreKeeper_Zinnia_Intro2[] = _("to the sky and beyond.");
+
 const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_COUNT] = 
 {
     [REMATCH_ROSE] = MCFLAVOR(AromaLady_Rose),
@@ -385,12 +375,10 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_LOLA] = MCFLAVOR(Tuber_Lola),
     [REMATCH_RICKY] = MCFLAVOR(Tuber_Ricky),
     [REMATCH_LILA_AND_ROY] = MCFLAVOR(SisAndBro_LilaAndRoy),
-    [REMATCH_CRISTIN] = MCFLAVOR(Cooltrainer_Cristin),
     [REMATCH_BROOKE] = MCFLAVOR(Cooltrainer_Brooke),
     [REMATCH_WILTON] = MCFLAVOR(Cooltrainer_Wilton),
     [REMATCH_VALERIE] = MCFLAVOR(HexManiac_Valerie),
     [REMATCH_CINDY] = MCFLAVOR(Lady_Cindy),
-    [REMATCH_THALIA] = MCFLAVOR(Beauty_Thalia), //TODO: unused, remove in future playthroughs
     [REMATCH_JESSICA] = MCFLAVOR(Beauty_Jessica),
     [REMATCH_WINSTON] = MCFLAVOR(RichBoy_Winston),
     [REMATCH_STEVE] = MCFLAVOR(PokeManiac_Steve),
@@ -455,4 +443,5 @@ const u8 *const gMatchCallFlavorTexts[REMATCH_TABLE_ENTRIES][CHECK_PAGE_ENTRY_CO
     [REMATCH_GLACIA] = MCFLAVOR(EliteFour_Glacia),
     [REMATCH_DRAKE] = MCFLAVOR(EliteFour_Drake),
     [REMATCH_STEVEN] = MCFLAVOR(Champion_Steven),
+    [REMATCH_ZINNIA] = MCFLAVOR(LoreKeeper_Zinnia),
 };

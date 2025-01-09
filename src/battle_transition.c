@@ -81,6 +81,7 @@ static void Phase2Task_Phoebe(u8 taskId);
 static void Phase2Task_Glacia(u8 taskId);
 static void Phase2Task_Drake(u8 taskId);
 static void Phase2Task_Champion(u8 taskId);
+static void Phase2Task_Zinnia(u8 taskId);
 static void Phase2Task_Aqua(u8 taskId);
 static void Phase2Task_Magma(u8 taskId);
 static void Phase2Task_Regice(u8 taskId);
@@ -336,6 +337,7 @@ static const TaskFunc sPhase2_Tasks[B_TRANSITION_COUNT] =
     [B_TRANSITION_GLACIA] = Phase2Task_Glacia,
     [B_TRANSITION_DRAKE] = Phase2Task_Drake,
     [B_TRANSITION_CHAMPION] = Phase2Task_Champion,
+    [B_TRANSITION_ZINNIA] = Phase2Task_Zinnia,
     [B_TRANSITION_AQUA] = Phase2Task_Aqua,
     [B_TRANSITION_MAGMA] = Phase2Task_Magma,
     [B_TRANSITION_REGICE] = Phase2Task_Regice,
@@ -520,6 +522,7 @@ static const u8 sMugshotsTrainerPicIDsTable[MUGSHOTS_COUNT] =
     [MUGSHOT_GLACIA] = TRAINER_PIC_ELITE_FOUR_GLACIA,
     [MUGSHOT_DRAKE] = TRAINER_PIC_ELITE_FOUR_DRAKE,
     [MUGSHOT_CHAMPION] = TRAINER_PIC_STEVEN,
+    [MUGSHOT_ZINNIA] = TRAINER_PIC_ZINNIA,
 };
 static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
 {
@@ -528,6 +531,7 @@ static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
     [MUGSHOT_GLACIA] =   {0x1B0, 0x1B0},
     [MUGSHOT_DRAKE] =    {0x1A0, 0x1A0},
     [MUGSHOT_CHAMPION] = {0x188, 0x188},
+    [MUGSHOT_ZINNIA] =   {0x200, 0x200}, //TODO P4: this may need to be adjusted
 };
 static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
 {
@@ -536,6 +540,7 @@ static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
     [MUGSHOT_GLACIA] =   {-4,    4},
     [MUGSHOT_DRAKE] =    {0,     5},
     [MUGSHOT_CHAMPION] = {-8,    7},
+    [MUGSHOT_ZINNIA] =   {0,     0}, //TODO P4: this may need to be adjusted
 };
 
 static const TransitionSpriteCallback sTrainerPicSpriteCbs[] =
@@ -826,6 +831,7 @@ static const u16 sMugshotPal_Phoebe[] = INCBIN_U16("graphics/battle_transitions/
 static const u16 sMugshotPal_Glacia[] = INCBIN_U16("graphics/battle_transitions/glacia_bg.gbapal");
 static const u16 sMugshotPal_Drake[] = INCBIN_U16("graphics/battle_transitions/drake_bg.gbapal");
 static const u16 sMugshotPal_Champion[] = INCBIN_U16("graphics/battle_transitions/steven_bg.gbapal");
+static const u16 sMugshotPal_Zinnia[] = INCBIN_U16("graphics/battle_transitions/drake_bg.gbapal");
 static const u16 sMugshotPal_Brendan[] = INCBIN_U16("graphics/battle_transitions/brendan_bg.gbapal");
 static const u16 sMugshotPal_May[] = INCBIN_U16("graphics/battle_transitions/may_bg.gbapal");
 
@@ -835,7 +841,8 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
     [MUGSHOT_PHOEBE] = sMugshotPal_Phoebe,
     [MUGSHOT_GLACIA] = sMugshotPal_Glacia,
     [MUGSHOT_DRAKE] = sMugshotPal_Drake,
-    [MUGSHOT_CHAMPION] = sMugshotPal_Champion
+    [MUGSHOT_CHAMPION] = sMugshotPal_Champion,
+    [MUGSHOT_ZINNIA] = sMugshotPal_Zinnia
 };
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =
@@ -2092,6 +2099,12 @@ static void Phase2Task_Drake(u8 taskId)
 static void Phase2Task_Champion(u8 taskId)
 {
     gTasks[taskId].tMugshotId = MUGSHOT_CHAMPION;
+    Phase2Task_MugShotTransition(taskId);
+}
+
+static void Phase2Task_Zinnia(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_ZINNIA;
     Phase2Task_MugShotTransition(taskId);
 }
 

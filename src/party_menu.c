@@ -3729,7 +3729,7 @@ static void CursorCb_FieldMove(u8 taskId)
                 else
                 {
                     SetWarpDestination(MAP_GROUP(SPACE_AREA1), MAP_NUM(SPACE_AREA1), -1, 37, 35);
-                    //SetWarpDestination(MAP_GROUP(SPACE_AREA2), MAP_NUM(SPACE_AREA2), -1, 20, 12); //TODO: kept for testing
+                    //SetWarpDestination(MAP_GROUP(SPACE_AREA2), MAP_NUM(SPACE_AREA2), -1, 20, 12); //DEBUG: kept for testing
                 }
                 ReturnToFieldFromDragonAscentSelect();
                 
@@ -4459,7 +4459,7 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
 
 #define tState      data[0]
 #define tSpecies    data[1]
-#define tAbilityNum data[2] //TODO: unused
+#define tAbilityNum data[2] // unused
 #define tMonId      data[3]
 #define tOldFunc    4
 
@@ -4475,7 +4475,7 @@ void ItemUseCB_AbilityCapsule(u8 taskId, TaskFunc task)
 
 #undef tState
 #undef tSpecies
-#undef tAbilityNum //TODO: unused
+#undef tAbilityNum // unused
 #undef tMonId
 #undef tOldFunc
 

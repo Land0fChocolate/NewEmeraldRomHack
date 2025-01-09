@@ -52,7 +52,7 @@ static void ChooseTypeOfMoveUsedString(u8 *dst);
 static void ExpandBattleTextBuffPlaceholders(const u8 *src, u8 *dst);
 
 // EWRAM vars
-static EWRAM_DATA u16 sBattlerAbilities[MAX_BATTLERS_COUNT] = {0}; //TODO: update for multi ability? (I think this is abilities for multiple battlers)
+static EWRAM_DATA u16 sBattlerAbilities[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA struct BattleMsgData *gBattleMsgDataPtr = NULL;
 
 // const rom data

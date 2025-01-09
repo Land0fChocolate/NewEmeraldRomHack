@@ -287,8 +287,6 @@ void Ai_UpdateSwitchInData(u32 battler)
     // See if the switched-in mon has been already in battle
     if (aiMon->wasSentInBattle)
     {
-        if (aiMon->ability)
-            BATTLE_HISTORY->abilities[battler] = aiMon->ability;
         if (aiMon->heldEffect)
             BATTLE_HISTORY->itemEffects[battler] = aiMon->heldEffect;
         for (i = 0; i < MAX_MON_MOVES; i++)
@@ -302,7 +300,6 @@ void Ai_UpdateSwitchInData(u32 battler)
     else // If not, copy the newly switched-in mon in battle and clear battle history.
     {
         ClearBattlerMoveHistory(battler);
-        ClearBattlerAbilityHistory(battler);
         ClearBattlerItemEffectHistory(battler);
         CopyBattlerDataToAIParty(GetBattlerPosition(battler), side);
     }
@@ -312,7 +309,6 @@ void Ai_UpdateFaintData(u32 battler)
 {
     struct AiPartyMon *aiMon = &AI_PARTY->mons[GET_BATTLER_SIDE(battler)][gBattlerPartyIndexes[battler]];
     ClearBattlerMoveHistory(battler);
-    ClearBattlerAbilityHistory(battler);
     ClearBattlerItemEffectHistory(battler);
     aiMon->isFainted = TRUE;
 }

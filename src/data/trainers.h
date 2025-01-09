@@ -2085,7 +2085,7 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Steve1},
     },
 
-    [TRAINER_THALIA_1] =
+    [TRAINER_THALIA] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_BEAUTY,
@@ -2095,8 +2095,8 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Thalia1),
-        .party = {.NoItemDefaultMoves = sParty_Thalia1},
+        .partySize = ARRAY_COUNT(sParty_Thalia),
+        .party = {.NoItemDefaultMoves = sParty_Thalia},
     },
 
     [TRAINER_MARK] =
@@ -11421,62 +11421,6 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_Nagata),
         .party = {.NoItemDefaultMoves = sParty_Nagata},
-    },
-
-    [TRAINER_THALIA_2] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BEAUTY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_BEAUTY,
-        .trainerName = _("Thalia"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Thalia2),
-        .party = {.NoItemDefaultMoves = sParty_Thalia2},
-    },
-
-    [TRAINER_THALIA_3] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BEAUTY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_BEAUTY,
-        .trainerName = _("Thalia"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Thalia3),
-        .party = {.NoItemDefaultMoves = sParty_Thalia3},
-    },
-
-    [TRAINER_THALIA_4] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BEAUTY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_BEAUTY,
-        .trainerName = _("Thalia"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Thalia4),
-        .party = {.NoItemDefaultMoves = sParty_Thalia4},
-    },
-
-    [TRAINER_THALIA_5] =
-    {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_BEAUTY,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_BEAUTY,
-        .trainerName = _("Thalia"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .partySize = ARRAY_COUNT(sParty_Thalia5),
-        .party = {.NoItemDefaultMoves = sParty_Thalia5},
     },
 
     [TRAINER_MARIELA] =

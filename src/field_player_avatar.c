@@ -761,7 +761,7 @@ static bool8 TryPushBoulder(s16 x, s16 y, u8 direction)
             x = gObjectEvents[objectEventId].currentCoords.x;
             y = gObjectEvents[objectEventId].currentCoords.y;
             MoveCoords(direction, &x, &y);
-            if (MapGridGetMetatileBehaviorAt(x, y) == MB_MT_PYRE_HOLE
+            if (MapGridGetMetatileBehaviorAt(x, y) == MB_FALL_WARP
                 || (GetCollisionAtCoords(&gObjectEvents[objectEventId], x, y, direction) == COLLISION_NONE
                 && MetatileBehavior_IsNonAnimDoor(MapGridGetMetatileBehaviorAt(x, y)) == 0))
             {

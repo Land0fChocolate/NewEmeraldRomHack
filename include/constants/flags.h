@@ -383,7 +383,7 @@
 #define FLAG_REMATCH_WILTON                  0x165
 #define FLAG_REMATCH_VALERIE                 0x166
 #define FLAG_REMATCH_CINDY                   0x167
-#define FLAG_REMATCH_THALIA                  0x168 // unused (though set in the game in playthrough #3)
+#define FLAG_REMATCH_THALIA                  0x168 // unused
 #define FLAG_REMATCH_JESSICA                 0x169
 #define FLAG_REMATCH_WINSTON                 0x16A
 #define FLAG_REMATCH_STEVE                   0x16B
@@ -450,8 +450,8 @@
 #define FLAG_REMATCH_GLACIA                  0x1A7
 #define FLAG_REMATCH_DRAKE                   0x1A8
 #define FLAG_REMATCH_STEVEN                  0x1A9
+#define FLAG_REMATCH_ZINNIA                  0x1AA
 
-#define FLAG_UNUSED_0x1AA                    0x1AA // Unused Flag
 #define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
@@ -1559,7 +1559,7 @@
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
 #define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91F + (8 - FLAG_UNUSED_0x91F % 8))
-#define FLAG_DAILY_WINONA_RECEIVED_BERRY            (DAILY_FLAGS_START + 0x0)  // Unused Flag
+#define FLAG_DAILY_WINONA_RECEIVED_BERRY            (DAILY_FLAGS_START + 0x0)
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
 #define FLAG_DAILY_OLDALEFARM_POKEMON_GIVEN         (DAILY_FLAGS_START + 0x3)

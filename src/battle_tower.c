@@ -697,7 +697,6 @@ static const u8 *const *const sPartnerApprenticeTextTables[NUM_APPRENTICES] =
     sPartnerApprenticeTexts16
 };
 
-//TODO: clean up these TrainerMons consts
 struct
 {
     u16 species;

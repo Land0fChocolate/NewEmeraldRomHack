@@ -1922,7 +1922,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Steve1[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Thalia1[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Thalia[] = {
     {
     .iv = 0,
     .lvl = 26,
@@ -3382,7 +3382,7 @@ static const struct TrainerMonItemCustomMoves sParty_Sidney[] = {
     .lvl = 50,
     .species = SPECIES_MIGHTYENA,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SWAGGER, MOVE_DOUBLE_EDGE, MOVE_SUCKER_PUNCH, MOVE_CRUNCH}
+    .moves = {MOVE_SWAGGER, MOVE_DOUBLE_EDGE, MOVE_SUCKER_PUNCH, MOVE_POISON_FANG}
     },
     {
     .iv = 250,
@@ -3402,7 +3402,7 @@ static const struct TrainerMonItemCustomMoves sParty_Sidney[] = {
     .iv = 250,
     .lvl = 50,
     .species = SPECIES_CRAWDAUNT,
-    .heldItem = ITEM_NONE,
+    .heldItem = ITEM_LUM_BERRY,
     .moves = {MOVE_CRABHAMMER, MOVE_CRUNCH, MOVE_AVALANCHE, MOVE_SWORDS_DANCE}
     },
     {
@@ -3419,22 +3419,22 @@ static const struct TrainerMonItemCustomMoves sParty_Phoebe[] = {
     .iv = 250,
     .lvl = 51,
     .species = SPECIES_DUSCLOPS,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_PAIN_SPLIT, MOVE_CONFUSE_RAY, MOVE_CURSE, MOVE_NIGHT_SHADE}
+    .heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_SHADOW_SNEAK, MOVE_CONFUSE_RAY, MOVE_CURSE, MOVE_NIGHT_SHADE}
     },
     {
     .iv = 250,
     .lvl = 51,
     .species = SPECIES_BANETTE,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SHADOW_CLAW, MOVE_TRICK_ROOM, MOVE_WILL_O_WISP, MOVE_KNOCK_OFF}
+    .moves = {MOVE_PHANTOM_FORCE, MOVE_TRICK_ROOM, MOVE_WILL_O_WISP, MOVE_KNOCK_OFF}
     },
     {
     .iv = 250,
     .lvl = 51,
     .species = SPECIES_SABLEYE,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_ZEN_HEADBUTT, MOVE_FOUL_PLAY, MOVE_CONFUSE_RAY, MOVE_BRICK_BREAK}
+    .moves = {MOVE_PAIN_SPLIT, MOVE_FOUL_PLAY, MOVE_CONFUSE_RAY, MOVE_BRICK_BREAK}
     },
     {
     .iv = 250,
@@ -3458,7 +3458,7 @@ static const struct TrainerMonItemCustomMoves sParty_Glacia[] = {
     .lvl = 52,
     .species = SPECIES_SEALEO,
     .heldItem = ITEM_ICY_ROCK,
-    .moves = {MOVE_ENCORE, MOVE_BODY_SLAM, MOVE_HAIL, MOVE_LIQUIDATION}
+    .moves = {MOVE_ENCORE, MOVE_AVALANCHE, MOVE_HAIL, MOVE_LIQUIDATION}
     },
     {
     .iv = 250,
@@ -3478,7 +3478,7 @@ static const struct TrainerMonItemCustomMoves sParty_Glacia[] = {
     .iv = 250,
     .lvl = 52,
     .species = SPECIES_GLALIE,
-    .heldItem = ITEM_NONE,
+    .heldItem = ITEM_ICY_ROCK,
     .moves = {MOVE_FREEZE_DRY, MOVE_EARTHQUAKE, MOVE_HAIL, MOVE_SCARY_FACE}
     },
     {
@@ -3510,7 +3510,7 @@ static const struct TrainerMonItemCustomMoves sParty_Drake[] = {
     .lvl = 53,
     .species = SPECIES_KINGDRA,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_DRACO_METEOR, MOVE_FOCUS_ENERGY, MOVE_WATERFALL, MOVE_FLASH_CANNON}
+    .moves = {MOVE_DRACO_METEOR, MOVE_FOCUS_ENERGY, MOVE_WATERFALL, MOVE_ICE_BEAM}
     },
     {
     .iv = 250,
@@ -3540,7 +3540,7 @@ static const struct TrainerMonItemCustomMoves sParty_Steven[] = {
     .iv = 255,
     .lvl = 56,
     .species = SPECIES_MAGNEZONE,
-    .heldItem = ITEM_NONE,
+    .heldItem = ITEM_LIGHT_CLAY,
     .moves = {MOVE_THUNDERBOLT, MOVE_FLASH_CANNON, MOVE_LIGHT_SCREEN, MOVE_REFLECT}
     },
     {
@@ -3554,8 +3554,8 @@ static const struct TrainerMonItemCustomMoves sParty_Steven[] = {
     .iv = 255,
     .lvl = 56,
     .species = SPECIES_CRADILY,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_GIGA_DRAIN, MOVE_ROCK_SLIDE, MOVE_TOXIC, MOVE_LEECH_SEED}
+    .heldItem = ITEM_BIG_ROOT,
+    .moves = {MOVE_GIGA_DRAIN, MOVE_WRING_OUT, MOVE_TOXIC, MOVE_LEECH_SEED}
     },
     {
     .iv = 255,
@@ -12218,73 +12218,6 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Nagata[] = {
     .iv = 220,
     .lvl = 54,
     .species = SPECIES_SYLVEON,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Thalia2[] = {
-    {
-    .iv = 10,
-    .lvl = 34,
-    .species = SPECIES_WAILMER,
-    },
-    {
-    .iv = 10,
-    .lvl = 34,
-    .species = SPECIES_HORSEA,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Thalia3[] = {
-    {
-    .iv = 20,
-    .lvl = 36,
-    .species = SPECIES_LUVDISC,
-    },
-    {
-    .iv = 20,
-    .lvl = 36,
-    .species = SPECIES_WAILMER,
-    },
-    {
-    .iv = 20,
-    .lvl = 36,
-    .species = SPECIES_SEADRA,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Thalia4[] = {
-    {
-    .iv = 30,
-    .lvl = 38,
-    .species = SPECIES_LUVDISC,
-    },
-    {
-    .iv = 30,
-    .lvl = 38,
-    .species = SPECIES_WAILMER,
-    },
-    {
-    .iv = 30,
-    .lvl = 38,
-    .species = SPECIES_SEADRA,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Thalia5[] = {
-    {
-    .iv = 40,
-    .lvl = 40,
-    .species = SPECIES_LUVDISC,
-    },
-    {
-    .iv = 40,
-    .lvl = 40,
-    .species = SPECIES_WAILORD,
-    },
-    {
-    .iv = 40,
-    .lvl = 40,
-    .species = SPECIES_KINGDRA,
     }
 };
 

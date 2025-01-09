@@ -617,11 +617,6 @@ void RecordAbilityBattle(u8 battlerId, u16 abilityId)
     AI_PARTY->mons[GetBattlerSide(battlerId)][gBattlerPartyIndexes[battlerId]].ability = abilityId;
 }
 
-void ClearBattlerAbilityHistory(u8 battlerId) //TODO: this func may not be needed, if so remove usages.
-{
-    BATTLE_HISTORY->abilities[battlerId] = ABILITY_NONE;
-}
-
 void RecordItemEffectBattle(u8 battlerId, u8 itemEffect)
 {
     BATTLE_HISTORY->itemEffects[battlerId] = itemEffect;

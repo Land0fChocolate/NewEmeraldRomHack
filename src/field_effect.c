@@ -4379,11 +4379,8 @@ static void DragonAscentInFieldEffect_FieldMovePose(struct Task *task)
 
 static void DragonAscentInFieldEffect_RayquazaReturnToBall(struct Task *task)
 {
-    //if (ObjectEventClearHeldMovementIfFinished(&gObjectEvents[gPlayerAvatar.objectEventId])) //TODO: remove?
-    //{
-        task->tState++;
-        StartDragonAscentRayquazaReturnToBall(task->tRayquazaSpriteId);
-    //}
+    task->tState++;
+    StartDragonAscentRayquazaReturnToBall(task->tRayquazaSpriteId);
 }
 
 static void DragonAscentInFieldEffect_WaitRayquazaReturn(struct Task *task)

@@ -49,7 +49,7 @@ v1.0.22 - 13/02/2024
 	- The Pokemon summary screen has been updated to show all of a Pokemon's abilities and description with the A button prompt.
 - New moves and abilities (listed below).
 - Many gameplay adjustments to vanilla moves (Listed below). 
-	- Changes to level up, Egg learnsets, TM learnsets and Tutor learnsets of Pokemon. Full lists are provided.
+	- Changes to level up, Egg learnsets, TM learnsets and Tutor learnsets of Pokemon. Full lists are provided in the docs.
 	- Pokemon will attempt to learn a new move upon evolution.
 	- Hoenn move tutors can now teach their moves endlessly.
 - New tutor moves added. The new tutor set is similar to what was available in future gens.
@@ -64,16 +64,17 @@ v1.0.22 - 13/02/2024
 - Wild Encounters adjusted.
 	- There is a small chance for a wild encounter to be a double battle.
 	- There is a small chance to encounter a wild Pokemon a much higher level than others in the same area.
-	- Both Latias and Latios are available roaming at the same time.
+	- Both Latias and Latios are available roaming at the same time and flee away from their location less often.
 	- All Legendary and Mythical Pokemon can be repeatedly acquired.
+- Shiny chance has been improved to about 1 in 2000.
 - Repeatedly acquirable fossils.
-- Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Rufflet, Deino) evolve earlier.
+- Level up requirements of many Pokemon have been tweaked. Starters evolve a little later. Pokemon with unnecessarily late evolutions (like the fossils, Trapinch) evolve earlier.
 - Tradeback guy added. Provides a service for the player to trade Pokemon with themselves and trigger trade evolutions. He lives in Lilycove.
 - Some Emerald changes have been reverted to how they were in Ruby/Sapphire.
 	- Steven is back to being champion and Wallace back to being a gym leader.
 	- Prof Birch is chased by a Poochyena instead of a Zigzagoon.
 - Opponent Trainer parties have been updated.
-- New opponent Trainer classes.
+- New opponent Trainer classes like Street Thugs and Fairy Tale Girls.
 - Contests have been updated to take on the various changes.
 	- More Pokemon added to opponent lists, especially new Pokemon species.
 	- Opponents have updated movesets.
@@ -84,7 +85,7 @@ v1.0.22 - 13/02/2024
 	- Battle Palace is now inverse battle themed.
 	- Battle Dome has its move scores updated.
 	- Battle Factory has its opponent tips updated.
-	- Battle facilities give more Battle Points.
+	- Battle facilities give more Battle Points, especially if you beat a Frontier Brain.
 	- The exchange corner sells more stuff, like more battle items, bottle caps, PP Ups, heart scales, etc.
 - Map layout changes, including new areas to explore that have new Pokemon (post game).
 - New overworld sprites and graphics.
@@ -115,7 +116,7 @@ v1.0.22 - 13/02/2024
 - Groomer service to raise Pokemon friendship is added.
 - IV buffer service added. Bottle Caps are used to trade for this service. A Pokemon can gain 8 IVs per Bottle Cap, or have all their IVs set to max with a Gold Bottle Cap.
 - Better berry trees
-	- Yield rates have increased.
+	- Yield rates have increased, and are doubled after becoming champion.
 	- Interaction with berry trees and soil patches is quicker.
 	- Rain waters berry trees.
 - Ice types have their special defense boosted by 50% in hail.
@@ -123,7 +124,7 @@ v1.0.22 - 13/02/2024
 - Removed badge boosts
 - Doubled chance for special news bulletins, like sales, rooftop shop, etc.
 - EXP gain has been scaled to level difference, rather like in gen 5.
-- Mega Evolution is available after beating the post game and getting all gold Battle Frontier symbols.
+- Mega Evolution is available after beating the post game and getting all gold Battle Frontier symbols. 
 
 # New Abilities
 

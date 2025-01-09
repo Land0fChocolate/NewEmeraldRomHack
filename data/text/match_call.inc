@@ -2298,6 +2298,37 @@ MatchCall_Text_Steven::
 	.string "Depending on how you think, your\n"
 	.string "adventure's significance changes.$"
 
+MatchCall_Text_Zinnia1::
+	.string "Zinnia: Hey, what's up, {PLAYER}?\p"
+	.string "If you had to make a sacrifice to\n"
+	.string "protect something or someone, what\l"
+	.string "would you do, {PLAYER}?\p"
+	.string "Would you take a step back, and just\n"
+	.string "see what happens?\l"
+	.string "Let everything play out?\p"
+	.string "Or would you jump in and try to do\n"
+	.string "something about it, even if it meant\l"
+	.string "making a sacrifice?\p"
+	.string "You probably wouldn't settle for\n"
+	.string "either of those options, would you?\p"
+	.string "You'd probably try to figure out a\n"
+	.string "way to save everyone and everything\l"
+	.string "you could, huh?$"
+
+MatchCall_Text_Zinnia2::
+	.string "Zinnia: Hey, {PLAYER}!\p"
+	.string "While I was traveling a while back,\n"
+	.string "I had a Whismur as my partner.\l"
+	.string "Her name's Aster.\p"
+	.string "She's so darned adorable, especially the\n"
+	.string "way she likes to nuzzle up against me\l"
+	.string "and make the cutest little noises.\p"
+	.string "Aster and I were always together…\n"
+	.string "in good times and in bad.\p"
+	.string "If she hadn't stuck with me through that\n"
+	.string "journey, I don't know if I'd be where\l"
+	.string "I am today.$"
+
 MatchCall_Text_May1::
 	.string "May: Hi, {PLAYER}{KUN}!\p"
 	.string "Mr. Briney retired as a Sailor,\n"
@@ -2603,20 +2634,6 @@ MatchCall_Text_Wally7::
 	.string "{PLAYER}…\n"
 	.string "Thank you…$"
 
-MatchCall_Text_Zinnia::
-	.string "Zinnia: Hey, {PLAYER}!\p"
-	.string "While I was traveling a while back,\n"
-	.string "I had a Whismur as my partner.\l"
-	.string "Her name's Aster.\p"
-	.string "She's so darned adorable, especially the\n"
-	.string "way she likes to nuzzle up against me\l"
-	.string "and make the cutest little noises.\p"
-	.string "Aster and I were always together…\n"
-	.string "in good times and in bad.\p"
-	.string "If she hadn't stuck with me through that\n"
-	.string "journey, I don't know if I'd be where\l"
-	.string "I am today.$"
-
 MatchCall_Text_Scott1::
 	.string "Scott: Howdy, {PLAYER}{KUN}!\p"
 	.string "You know how Pokémon can be found\n"
@@ -2754,10 +2771,10 @@ MatchCall_Text_Steven1::
 	.string "Steven: Hi, {PLAYER}{KUN}!\p"
 	.string "Have you been to Mauville\n"
 	.string "already?\p"
-	.string "You should visit the BIKE SHOP\n"
-	.string "and get a MACH BIKE.\p"
-	.string "Then, try exploring the GRANITE\n"
-	.string "CAVE thoroughly.\p"
+	.string "You should visit the Bike Shop\n"
+	.string "and get a Mach Bike.\p"
+	.string "Then, try exploring the Granite\n"
+	.string "Cave thoroughly.\p"
 	.string "You may make a new discovery\n"
 	.string "there.$"
 
