@@ -2882,7 +2882,6 @@ const u32 gTMHMLearnsets[][4] =
                                             TMHM2(TM66_PAYBACK)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(HM03_SURF)
-                                            | TMHM2(HM07_WATERFALL)
                                             | TMHM2(HM08_DIVE)),
 
     [SPECIES_CLOYSTER]    = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -2911,7 +2910,6 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM84_POISON_JAB)
                                             | TMHM2(TM94_SURF)
                                             | TMHM2(HM03_SURF)
-                                            | TMHM2(HM07_WATERFALL)
                                             | TMHM2(HM08_DIVE)),
 
     [SPECIES_GASTLY]      = TMHM_LEARNSET(TMHM(TM45_ATTRACT)
@@ -5966,6 +5964,8 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM52_FOCUS_BLAST)
+                                            | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM56_DRAGON_PULSE)
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM63_ECHOED_VOICE),
                                             TMHM2(TM68_GIGA_IMPACT)
@@ -7916,6 +7916,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM25_THUNDER)
                                             | TMHM(TM24_THUNDERBOLT)
                                             | TMHM(TM06_TOXIC)
+                                            | TMHM(TM55_SCALD)
                                             | TMHM(TM57_CHARGE_BEAM)
                                             | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)
@@ -23632,6 +23633,7 @@ const u32 gTMHMLearnsets[][4] =
                                                    | TMHM(TM06_TOXIC)
                                                    | TMHM(TM43_SECRET_POWER)
                                                    | TMHM(TM53_ENERGY_BALL)
+                                                   | TMHM(TM56_DRAGON_PULSE)
                                                    | TMHM(TM64_CUT),
                                                    TMHM2(TM68_GIGA_IMPACT)
                                                    | TMHM2(TM78_BULLDOZE)

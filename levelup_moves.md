@@ -1861,7 +1861,7 @@
              (40, WHIRLPOOL)
              (44, BRINE)
              (49, IRON DEFENSE)
-             (52, ICE BEAM)
+             (52, LIQUIDATION)
              (56, SHELL SMASH)
              (61, HYDRO PUMP)
 
@@ -1887,7 +1887,7 @@
              (44, BRINE)
              (49, IRON DEFENSE)
              (50, ICICLE CRASH)
-             (52, ICE BEAM)
+             (52, LIQUIDATION)
              (56, SHELL SMASH)
              (61, HYDRO PUMP)
 
@@ -2675,7 +2675,8 @@
              (40, SWORDS DANCE)
              (43, THRASH)
              (47, SUPERPOWER)
-             (50, GUILLOTINE)
+             (50, FIRST IMPRESSION)
+             (54, GUILLOTINE)
 
 
 

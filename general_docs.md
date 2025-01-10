@@ -380,8 +380,8 @@ These Pokemon are available after beating the Pokemon League.
 - Upgrade -> Frontier exchange shop
 - Dubious Disc -> Frontier exchange shop
 - King's Rock -> Mossdeep City/Frontier exchange shop
-- Razor Claw -> Frontier exchange shop
-- Razor Fang -> Frontier exchange shop
+- Razor Claw -> Wild Sneasel/Frontier exchange shop
+- Razor Fang -> Wild Gligar/Frontier exchange shop
 - Metal Coat -> Wild Skarmory and Steelix/Frontier exchange shop
 - Galarica Cuff -> Frontier exchange shop
 - Galarica Wreath -> Frontier exchange shop
@@ -1011,9 +1011,9 @@ These Pokemon are available after beating the Pokemon League.
 
 # Wild Pokemon Held Items List
 
-Chance for no item: 20% (5% with Compound Eyes or Super Luck)
-Chance for normal item: 60% (55% with Compound Eyes or Super Luck)
-Chance for rare item: 20% (40% with Compound Eyes or Super Luck)
+Chance for no item: 50% (20% with Compound Eyes or Super Luck)
+Chance for normal item: 35% (40% with Compound Eyes or Super Luck)
+Chance for rare item: 15% (40% with Compound Eyes or Super Luck)
 
 - *Butterfree* (None, Silver Powder)
 - *Beedrill* (None, Poison Barb)

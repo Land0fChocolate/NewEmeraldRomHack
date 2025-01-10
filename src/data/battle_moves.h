@@ -11673,7 +11673,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_HEADLONG_RUSH] =
     {
         .effect = EFFECT_CLOSE_COMBAT,
-        .power = 100,
+        .power = 120,
         .type = TYPE_GROUND,
         .accuracy = 100,
         .pp = 5,

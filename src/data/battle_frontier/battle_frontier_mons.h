@@ -265,14 +265,14 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .moves = {MOVE_BITE, MOVE_COVET, MOVE_ROAR, MOVE_SCARY_FACE},
         .item = ITEM_LIECHI_BERRY,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
-        .nature = NATURE_RELAXED
+        .nature = NATURE_JOLLY
     },
     [FRONTIER_MON_SHEDINJA] = {
         .species = SPECIES_SHEDINJA,
         .moves = {MOVE_SHADOW_BALL, MOVE_CONFUSE_RAY, MOVE_SILVER_WIND, MOVE_GRUDGE},
         .item = ITEM_CHERI_BERRY,
-        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
-        .nature = NATURE_NAIVE
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
+        .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MAKUHITA] = {
         .species = SPECIES_MAKUHITA,
@@ -1000,7 +1000,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .moves = {MOVE_NEEDLE_ARM, MOVE_PIN_MISSILE, MOVE_COTTON_SPORE, MOVE_HIDDEN_THORNS},
         .item = ITEM_SILVER_POWDER,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
-        .nature = NATURE_MILD
+        .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_UNOWN] = {
         .species = SPECIES_UNOWN,
@@ -2062,7 +2062,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_PINSIR_1] = {
         .species = SPECIES_PINSIR,
         .moves = {MOVE_STORM_THROW, MOVE_X_SCISSOR, MOVE_KNOCK_OFF, MOVE_BULK_UP},
-        .item = ITEM_BLACK_BELT,
+        .item = ITEM_FIGHTING_GEM,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_JOLLY
     },
@@ -2075,7 +2075,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_CLOYSTER_1] = {
         .species = SPECIES_CLOYSTER,
-        .moves = {MOVE_ICICLE_SPEAR, MOVE_WATERFALL, MOVE_ROCK_BLAST, MOVE_TOXIC_SPIKES},
+        .moves = {MOVE_ICICLE_SPEAR, MOVE_LIQUIDATION, MOVE_ROCK_BLAST, MOVE_TOXIC_SPIKES},
         .item = ITEM_LEFTOVERS,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_IMPISH
@@ -2894,8 +2894,8 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_PINSIR_2] = {
         .species = SPECIES_PINSIR,
-        .moves = {MOVE_CLOSE_COMBAT, MOVE_BUG_BITE, MOVE_STONE_EDGE, MOVE_EARTHQUAKE},
-        .item = ITEM_CHOICE_SCARF,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_FIRST_IMPRESSION, MOVE_STONE_EDGE, MOVE_EARTHQUAKE},
+        .item = ITEM_LIFE_ORB,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT
     },
@@ -3882,7 +3882,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_ELECTIVIRE_2] = {
         .species = SPECIES_ELECTIVIRE,
         .moves = {MOVE_WILD_CHARGE, MOVE_EARTHQUAKE, MOVE_FIRE_PUNCH, MOVE_VOLT_SWITCH},
-        .item = ITEM_LIFE_ORB,
+        .item = ITEM_CHOICE_SCARF,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT
     },
@@ -4350,7 +4350,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_AMPHAROS_2] = {
         .species = SPECIES_AMPHAROS,
-        .moves = {MOVE_THUNDERBOLT, MOVE_POWER_GEM, MOVE_SIGNAL_BEAM, MOVE_VOLT_SWITCH},
+        .moves = {MOVE_THUNDERBOLT, MOVE_POWER_GEM, MOVE_FOCUS_BLAST, MOVE_VOLT_SWITCH},
         .item = ITEM_SHUCA_BERRY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_CALM
@@ -5239,7 +5239,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_AMPHAROS_3] = {
         .species = SPECIES_AMPHAROS,
-        .moves = {MOVE_THUNDERBOLT, MOVE_SIGNAL_BEAM, MOVE_THUNDER_WAVE, MOVE_LIGHT_SCREEN},
+        .moves = {MOVE_THUNDERBOLT, MOVE_ENERGY_BALL, MOVE_THUNDER_WAVE, MOVE_LIGHT_SCREEN},
         .item = ITEM_ROCKY_HELMET,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_BOLD
@@ -5284,7 +5284,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .moves = {MOVE_FLAMETHROWER, MOVE_SHADOW_BALL, MOVE_DISCHARGE, MOVE_NASTY_PLOT},
         .item = ITEM_QUICK_CLAW,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
-        .nature = NATURE_JOLLY
+        .nature = NATURE_TIMID
     },
     [FRONTIER_MON_HOUNDOOM_3] = {
         .species = SPECIES_HOUNDOOM,
@@ -5800,9 +5800,9 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_SLOWKING_GALARIAN_4] = {
         .species = SPECIES_SLOWKING_GALARIAN,
         .moves = {MOVE_EERIE_SPELL, MOVE_GRASS_KNOT, MOVE_THUNDER_WAVE, MOVE_CALM_MIND},
-        .item = ITEM_LIFE_ORB,
+        .item = ITEM_BLACK_SLUDGE,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_DEFENSE,
-        .nature = NATURE_IMPISH
+        .nature = NATURE_BOLD
     },
     [FRONTIER_MON_WEEZING_GALARIAN_4] = {
         .species = SPECIES_WEEZING_GALARIAN,
@@ -5893,7 +5893,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .moves = {MOVE_FUTURE_SIGHT, MOVE_SURF, MOVE_EARTH_POWER, MOVE_ICE_BEAM},
         .item = ITEM_EXPERT_BELT,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
-        .nature = NATURE_QUIET
+        .nature = NATURE_MODEST
     },
     [FRONTIER_MON_XATU_4] = {
         .species = SPECIES_XATU,
@@ -6107,9 +6107,9 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_RAPIDASH_4] = {
         .species = SPECIES_RAPIDASH,
-        .moves = {MOVE_BLAZE_IMPACT, MOVE_THROAT_CHOP, MOVE_REFLECT, MOVE_LOW_KICK},
-        .item = ITEM_WHITE_HERB,
-        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_ATTACK,
+        .moves = {MOVE_BLAZE_IMPACT, MOVE_THROAT_CHOP, MOVE_WILD_CHARGE, MOVE_LOW_KICK},
+        .item = ITEM_CHOICE_SCARF,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_ADAMANT
     },
     [FRONTIER_MON_MUK_4] = {
@@ -6128,7 +6128,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_AMPHAROS_4] = {
         .species = SPECIES_AMPHAROS,
-        .moves = {MOVE_THUNDERBOLT, MOVE_DRAGON_PULSE, MOVE_POWER_GEM, MOVE_TAIL_GLOW},
+        .moves = {MOVE_DISCHARGE, MOVE_DRAGON_PULSE, MOVE_POWER_GEM, MOVE_TAIL_GLOW},
         .item = ITEM_LUM_BERRY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_DEFENSE,
         .nature = NATURE_MODEST
@@ -6173,7 +6173,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .moves = {MOVE_ERUPTION, MOVE_SHADOW_BALL, MOVE_DISCHARGE, MOVE_FOCUS_BLAST},
         .item = ITEM_EXPERT_BELT,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
-        .nature = NATURE_JOLLY
+        .nature = NATURE_TIMID
     },
     [FRONTIER_MON_HOUNDOOM_4] = {
         .species = SPECIES_HOUNDOOM,
@@ -6492,7 +6492,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_RAIKOU_1] = {
         .species = SPECIES_RAIKOU,
-        .moves = {MOVE_THUNDERBOLT, MOVE_EXTRASENSORY, MOVE_CALM_MIND, MOVE_REST},
+        .moves = {MOVE_THUNDERBOLT, MOVE_SCALD, MOVE_CALM_MIND, MOVE_REST},
         .item = ITEM_CHESTO_BERRY,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SPEED,
         .nature = NATURE_MODEST
@@ -6569,7 +6569,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_RAIKOU_2] = {
         .species = SPECIES_RAIKOU,
-        .moves = {MOVE_THUNDER, MOVE_RAIN_DANCE, MOVE_SIGNAL_BEAM, MOVE_SHADOW_BALL},
+        .moves = {MOVE_THUNDER, MOVE_RAIN_DANCE, MOVE_SIGNAL_BEAM, MOVE_SCALD},
         .item = ITEM_LUM_BERRY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_MODEST
@@ -7082,7 +7082,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_LATIOS,
         .moves = {MOVE_LUSTER_PURGE, MOVE_SURF, MOVE_THUNDERBOLT, MOVE_RECOVER},
         .item = ITEM_SHELL_BELL,
-        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_ATTACK,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_TIMID
     },
     [FRONTIER_MON_LATIOS_7] = {
@@ -7122,10 +7122,10 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_DRAGONITE_4] = {
         .species = SPECIES_DRAGONITE,
-        .moves = {MOVE_DRAGON_PULSE, MOVE_HEAT_WAVE, MOVE_THUNDERBOLT, MOVE_SERPENT_DANCE},
-        .item = ITEM_DRAGON_GEM,
+        .moves = {MOVE_HURRICANE, MOVE_ICE_BEAM, MOVE_THUNDERBOLT, MOVE_SERPENT_DANCE},
+        .item = ITEM_FLYING_GEM,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
-        .nature = NATURE_ADAMANT
+        .nature = NATURE_MODEST
     },
     [FRONTIER_MON_DRAGONITE_5] = {
         .species = SPECIES_DRAGONITE,
@@ -7143,7 +7143,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_DRAGONITE_7] = {
         .species = SPECIES_DRAGONITE,
-        .moves = {MOVE_HURRICANE, MOVE_FIRE_BLAST, MOVE_SURF, MOVE_SERPENT_DANCE},
+        .moves = {MOVE_DRAGON_PULSE, MOVE_HEAT_WAVE, MOVE_SURF, MOVE_SERPENT_DANCE},
         .item = ITEM_SHELL_BELL,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_MODEST
@@ -7290,7 +7290,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_RAIKOU_6] = {
         .species = SPECIES_RAIKOU,
-        .moves = {MOVE_THUNDERBOLT, MOVE_SIGNAL_BEAM, MOVE_SHADOW_BALL, MOVE_LIGHT_SCREEN},
+        .moves = {MOVE_THUNDERBOLT, MOVE_SCALD, MOVE_SHADOW_BALL, MOVE_LIGHT_SCREEN},
         .item = ITEM_SAFETY_GOGGLES,
         .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_MODEST

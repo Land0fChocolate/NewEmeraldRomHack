@@ -5961,6 +5961,8 @@ SPECIES AMPHAROS             | TM45 ATTRACT
                              | TM24 THUNDERBOLT
                              | TM06 TOXIC
                              | TM52 FOCUS BLAST
+                             | TM53 ENERGY BALL
+                             | TM56 DRAGON_PULSE
                              | TM57 CHARGE BEAM
                              | TM63 ECHOED VOICE
                              | TM68 GIGA IMPACT
@@ -14143,6 +14145,7 @@ SPECIES EXEGGUTOR ALOLAN     | TM31 BRICK BREAK
                              | TM06 TOXIC
                              | TM43 SECRET POWER
                              | TM53 ENERGY BALL
+                             | TM56 DRAGON_PULSE
                              | TM64 CUT
                              | TM68 GIGA IMPACT
                              | TM78 BULLDOZE
