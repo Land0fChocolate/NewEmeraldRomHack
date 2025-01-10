@@ -459,7 +459,6 @@ LittlerootBeach_Text_BrendanGivesTM76:
 	.string "I got this a while ago. I don't need\l"
 	.string "it so you can have it.$"
 
-@TODO: Rival battle introduction could use more dialogue
 LittlerootBeach_Text_MayLetsBattle:
 	.string "May: Okay, {PLAYER}.\p"
 	.string "I'm ready. Give it all you've got!$"
@@ -493,7 +492,7 @@ LittlerootBeach_Text_BrendanDefeated:
 LittlerootBeach_Text_BrendanExit:
 	.string "Brendan: It feels like an age ago that\n"
 	.string "you moved into our town. Though it\l"
-	.string "actually wasn't that long ago.\p"
+	.string "actually wasn't that long.\p"
 	.string "So much has happened since then.\n"
 	.string "I travelled across Hoenn, trained and\l"
 	.string "caught many Pokémon.\p"

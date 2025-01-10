@@ -503,7 +503,6 @@ LilycoveCity_ContestLobby_EventScript_FatMan::
 	msgbox LilycoveCity_ContestLobby_Text_ToughContestIsExtreme, MSGBOX_NPC
 	end
 
-@TODO: perhaps check if player has Alolan Vulpix in party before giving Ice Stone?
 LilycoveCity_ContestLobby_EventScript_Fisherman::
 	lock
 	faceplayer

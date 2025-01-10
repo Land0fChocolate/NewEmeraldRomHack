@@ -130,7 +130,6 @@ LittlerootTown_ProfessorBirchsLab_OnFrame:
 	map_script_2 VAR_BIRCH_LAB_POSTGAME_STATE, 6, LittlerootTown_ProfessorBirchsLab_EventScript_LegendariesDefeatedEvent
 	map_script_2 VAR_BIRCH_LAB_STATE, 2, LittlerootTown_ProfessorBirchsLab_EventScript_GiveStarterEvent
 	map_script_2 VAR_BIRCH_LAB_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedexEvent
-	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 4, LittlerootTown_ProfessorBirchsLab_EventScript_ChooseJohtoStarter
 	.2byte 0
 
@@ -287,54 +286,6 @@ LittlerootTown_ProfessorBirchsLab_Movement_PlayerEnterLabForPokedex:
 	walk_up
 	walk_up
 	step_end
-
-LittlerootTown_ProfessorBirchsLab_EventScript_UpgradeToNationalDex:: @TODO: remove
-	lockall
-	delay 30
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_OtherRegionsUpgradeToNational, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_BIRCH, LittlerootTown_ProfessorBirchsLab_Movement_BirchRetrievePokedexes
-	waitmovement 0
-	delay 20
-	playse SE_CLICK
-	delay 10
-	playse SE_CLICK
-	delay 10
-	playse SE_CLICK
-	delay 10
-	playse SE_CLICK
-	delay 20
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceFastestRight
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
-	waitmovement 0
-	checkplayergender
-	compare VAR_RESULT, MALE
-	call_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_MayUpgradeComment
-	compare VAR_RESULT, FEMALE
-	call_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_BrendanUpgradeComment
-	playse SE_PC_ON
-	waitse
-	delay 20
-	applymovement LOCALID_BIRCH, LittlerootTown_ProfessorBirchsLab_Movement_BirchReturnPokedex
-	waitmovement 0
-	applymovement LOCALID_RIVAL, Common_Movement_WalkInPlaceFastestUp
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFastestUp
-	waitmovement 0
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_OkayAllDone, MSGBOX_DEFAULT
-	playfanfare MUS_OBTAIN_ITEM
-	message LittlerootTown_ProfessorBirchsLab_Text_PokedexUpgradedToNational
-	waitmessage
-	waitfanfare
-	setflag FLAG_SYS_NATIONAL_DEX
-	special EnableNationalPokedex
-	msgbox LittlerootTown_ProfessorBirchsLab_Text_GrassyPatchWaiting2, MSGBOX_DEFAULT
-	closemessage
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
-	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2
-	setvar VAR_SCOTT_BF_CALL_STEP_COUNTER, 0
-	setflag FLAG_SCOTT_CALL_BATTLE_FRONTIER
-	releaseall
-	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_MayUpgradeComment::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_MayUpgradeSoCool, MSGBOX_DEFAULT

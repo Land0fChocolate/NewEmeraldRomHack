@@ -2223,21 +2223,36 @@ MatchCall_Text_TateLiza4::
 	.string "Tate: It would be nice if…\n"
 	.string "Liza: We could all battle again!$"
 
-MatchCall_Text_Wallace1:: @TODO: 
-	.string "Wallace: \n"
-	.string "TODO$"
+MatchCall_Text_Wallace1:: 
+	.string "Wallace: Good day, {PLAYER}.\n"
+	.string "How is the day treating you so far?\p"
+	.string "My Pokémon and I are poised to\n"
+	.string "impress, as always.\p"
+	.string "Your future will shine with success.\n"
+	.string "Of that I am sure.$"
 
-MatchCall_Text_Wallace2:: @TODO:
-	.string "Wallace: \n"
-	.string "TODO$"
+MatchCall_Text_Wallace2::
+	.string "Wallace: {PLAYER},\n"
+	.string "You have even surpassed Steven…\p"
+	.string "I am disappointed at my inability to\n"
+	.string "find any fitting words to offer you.\p"
+	.string "I look forward to the day when we\n"
+	.string "battle once again.$"
 
-MatchCall_Text_Wallace3:: @TODO:
-	.string "Wallace: \n"
-	.string "TODO$"
+MatchCall_Text_Wallace3::
+	.string "Wallace: Good day, {PLAYER}.\p"
+	.string "You sound like you're in need of\n"
+	.string "some respite.\p"
+	.string "The quiet sounds of flowing water\n"
+	.string "always put my heart at ease.\p"
+	.string "What sort of sounds make you feel\n"
+	.string "most calm?$"
 
-MatchCall_Text_Wallace4:: @TODO:
-	.string "Wallace: \n"
-	.string "TODO$"
+MatchCall_Text_Wallace4::
+	.string "Wallace: Good day, {PLAYER}.\p"
+	.string "You and your Pokémon are even more\n"
+	.string "beautiful with the sun as your\l"
+	.string "spotlight!$"
 
 MatchCall_Text_Juan::
 	.string "Juan: Hmm…\n"
