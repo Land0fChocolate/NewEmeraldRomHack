@@ -114,36 +114,17 @@ static void SetupTrader(void)
 
 void SetMauvilleOldMan(void)
 {
-    u16 trainerId = (gSaveBlock2Ptr->playerTrainerId[1] << 8) | gSaveBlock2Ptr->playerTrainerId[0];
-
-
-    // Determine man based on the last digit of the player's trainer ID.
-    switch ((trainerId % 10) / 2)
-    {
-        case MAUVILLE_MAN_BARD:
-            SetupBard();
-            break;
-        case MAUVILLE_MAN_HIPSTER:
-            SetupHipster();
-            break;
-        case MAUVILLE_MAN_TRADER:
-            SetupTrader();
-            break;
-        case MAUVILLE_MAN_STORYTELLER:
-            SetupStoryteller();
-            break;
-        case MAUVILLE_MAN_GIDDY:
-            SetupGiddy();
-            break;
-    }
+    SetupBard();
+    SetupHipster();
+    SetupTrader();
+    SetupStoryteller();
+    SetupGiddy();
     ScrSpecial_SetMauvilleOldManObjEventGfx();
 }
 
 u8 GetCurrentMauvilleOldMan(void)
 {
-    struct MauvilleManCommon *common = &gSaveBlock1Ptr->oldMan.common;
-
-    return common->id;
+    return VarGet(VAR_MAUVILLE_MAN_VARIANT);
 }
 
 void ScrSpecial_GetCurrentMauvilleMan(void)

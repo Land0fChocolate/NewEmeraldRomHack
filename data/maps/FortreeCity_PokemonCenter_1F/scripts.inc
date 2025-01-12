@@ -29,6 +29,11 @@ FortreeCity_PokemonCenter_1F_EventScript_Boy::
 	msgbox FortreeCity_PokemonCenter_1F_Text_DoYouKnowAboutPokenav, MSGBOX_NPC
 	end
 
+FortreeCity_PokemonCenter_1F_EventScript_MauvilleOldManHipster::
+	setvar VAR_MAUVILLE_MAN_VARIANT, 1
+	goto MauvilleCity_PokemonCenter_1F_EventScript_MauvilleOldMan
+	end
+
 FortreeCity_PokemonCenter_1F_Text_GoToSafariZone:
 	.string "Listen, kid, are you working\n"
 	.string "on a Pokédex?\p"
