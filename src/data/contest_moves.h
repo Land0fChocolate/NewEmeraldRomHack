@@ -5924,7 +5924,13 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
 
     [MOVE_POWER_SHIFT] = {0}, // TODO
 
-    [MOVE_STONE_AXE] = {0}, // TODO
+    [MOVE_STONE_AXE] =
+    {
+        .effect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .comboStarterId = 0,
+        .comboMoves = {0}
+    },
 
     [MOVE_SPRINGTIDE_STORM] = {0}, // TODO
 
@@ -5940,7 +5946,12 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
 
     [MOVE_VICTORY_DANCE] = {0}, // TODO
 
-    [MOVE_HEADLONG_RUSH] = {0}, // TODO
+    [MOVE_HEADLONG_RUSH] = {
+        .effect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .comboStarterId = 0,
+        .comboMoves = {COMBO_STARTER_SCARY_FACE, COMBO_STARTER_LEER},
+    },
 
     [MOVE_BARB_BARRAGE] = {0}, // TODO
 

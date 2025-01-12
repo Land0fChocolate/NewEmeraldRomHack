@@ -3906,32 +3906,6 @@ void TryClearRageAndFuryCutter(void)
     }
 }
 
-enum
-{
-    CANCELLER_FLAGS,
-    CANCELLER_ASLEEP,
-    CANCELLER_FROZEN,
-    CANCELLER_TRUANT,
-    CANCELLER_RECHARGE,
-    CANCELLER_FLINCH,
-    CANCELLER_DISABLED,
-    CANCELLER_GRAVITY,
-    CANCELLER_HEAL_BLOCKED,
-    CANCELLER_TAUNTED,
-    CANCELLER_IMPRISONED,
-    CANCELLER_CONFUSED,
-    CANCELLER_PARALYSED,
-    CANCELLER_IN_LOVE,
-    CANCELLER_BIDE,
-    CANCELLER_THAW,
-    CANCELLER_POWDER_MOVE,
-    CANCELLER_POWDER_STATUS,
-    CANCELLER_THROAT_CHOP,
-    CANCELLER_END,
-    CANCELLER_PSYCHIC_TERRAIN,
-    CANCELLER_END2,
-};
-
 u8 AtkCanceller_UnableToUseMove(void)
 {
     u8 effect = 0;
@@ -4233,7 +4207,10 @@ u8 AtkCanceller_UnableToUseMove(void)
                 if (effect)
                     gBattlescriptCurrInstr = BattleScript_PowderMoveNoEffect;
             }
-            gBattleStruct->atkCancellerTracker++;
+            if (gProtectStructs[gBattlerAttacker].usesBouncedMove) // Edge case for bouncing a powder move against a grass type pokemon.
+                gBattleStruct->atkCancellerTracker = CANCELLER_END;
+            else
+                gBattleStruct->atkCancellerTracker++;
             break;
         case CANCELLER_POWDER_STATUS:
             if (gBattleMons[gBattlerAttacker].status2 & STATUS2_POWDER)
@@ -5630,7 +5607,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         }
                         break;
                     case ABILITY_FLASH_FIRE:
-                        if (moveType == TYPE_FIRE && !((gBattleMons[battler].status1 & STATUS1_FREEZE) && B_FLASH_FIRE_FROZEN <= GEN_4))
+                        if (moveType == TYPE_FIRE)
                         {
                             gLastUsedAbility = ABILITY_FLASH_FIRE;
                             if (!(gBattleResources->flags->flags[battler] & RESOURCE_FLAG_FLASH_FIRE))
@@ -10200,6 +10177,8 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
                 MulModifier(&finalModifier, UQ_4_12(0.5));
             if (updateFlags)
                 gSpecialStatuses[battlerDef].berryReduced = TRUE;
+            
+            gLastUsedItem = gBattleMons[battlerDef].item;
         }
         break;
     }

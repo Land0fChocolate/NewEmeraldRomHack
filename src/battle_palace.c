@@ -79,8 +79,6 @@ static const u16 sBattlePalaceLatePrizes[] =
     ITEM_RAZOR_CLAW,
     ITEM_RAZOR_FANG,
     ITEM_QUICK_CLAW,
-    ITEM_BRIGHT_POWDER,
-    ITEM_SCOPE_LENS,
     ITEM_LEFTOVERS,
     ITEM_FOCUS_SASH,
     ITEM_HEAT_ROCK,

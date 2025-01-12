@@ -1461,6 +1461,7 @@ static void Cmd_attackcanceler(void)
         PressurePPLose(gBattlerAttacker, gBattlerTarget, MOVE_MAGIC_COAT);
         gProtectStructs[gBattlerTarget].usesBouncedMove = TRUE;
         gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+        gBattleStruct->atkCancellerTracker = CANCELLER_POWDER_MOVE; // Edge case for bouncing a powder move against a grass type pokemon.
         if (BlocksPrankster(gCurrentMove, gBattlerTarget, gBattlerAttacker, TRUE))
         {
             // Opponent used a prankster'd magic coat -> reflected status move should fail against a dark-type attacker
@@ -1481,8 +1482,10 @@ static void Cmd_attackcanceler(void)
         gLastUsedAbility = ABILITY_MAGIC_BOUNCE;
         gProtectStructs[gBattlerTarget].usesBouncedMove = TRUE;
         gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+        gBattleStruct->atkCancellerTracker = CANCELLER_POWDER_MOVE; // Edge case for bouncing a powder move against a grass type pokemon.
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_MagicCoatBounce;
+        gBattlerAbility = gBattlerTarget;
         return;
     }
 
@@ -2667,8 +2670,10 @@ void SetMoveEffect(bool32 primary, u32 certain)
      // Just in case this flag is still set
     gBattleScripting.moveEffect &= ~MOVE_EFFECT_CERTAIN;
 
-    if (HasAbility(ABILITY_SHIELD_DUST, battlerAbilities) && !(gHitMarker & HITMARKER_IGNORE_SAFEGUARD)
-        && !primary && gBattleScripting.moveEffect <= 9)
+    if (HasAbility(ABILITY_SHIELD_DUST, battlerAbilities) 
+        && !(gHitMarker & HITMARKER_IGNORE_SAFEGUARD)
+        && !primary 
+        && affectsUser != MOVE_EFFECT_AFFECTS_USER)
         INCREMENT_RESET_RETURN
 
     if (gSideStatuses[GET_BATTLER_SIDE(gEffectBattler)] & SIDE_STATUS_SAFEGUARD && !(gHitMarker & HITMARKER_IGNORE_SAFEGUARD)
@@ -3687,6 +3692,8 @@ static void Cmd_tryfaintmon(void)
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 3);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+                        VarSet(gSpecialVar_0x8004, 2);
+                        SetTotemBoost();
                         break;
                     case 3: //transform to attack
                         gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_ATTACK;
@@ -3697,6 +3704,9 @@ static void Cmd_tryfaintmon(void)
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 4);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+                        VarSet(gSpecialVar_0x8002, 3);
+                        VarSet(gSpecialVar_0x8005, 3);
+                        SetTotemBoost();
                         break;
                     case 4: //transform to speed
                         gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_SPEED;
@@ -3707,6 +3717,8 @@ static void Cmd_tryfaintmon(void)
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 5);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+                        VarSet(gSpecialVar_0x8004, 2);
+                        SetTotemBoost();
                         break;
                     case 5: //transform back to normal form and be catchable
                         gBattleMons[gActiveBattler].species = SPECIES_DEOXYS;
@@ -10616,7 +10628,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             }
             return STAT_CHANGE_DIDNT_WORK;
         }
-        else if (HasAbility(ABILITY_SHIELD_DUST, battlerAbilities) && flags == 0)
+        else if (HasAbility(ABILITY_SHIELD_DUST, battlerAbilities) && flags == 0) //TOSO P4: may need to be removed, nonexistant in latest pokeemerald-expansion
         {
             return STAT_CHANGE_DIDNT_WORK;
         }

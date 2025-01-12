@@ -2091,7 +2091,8 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             return AI_CheckBadMove(battlerAtk, battlerDef, GetNaturePowerMove(), score);
         case EFFECT_TAUNT:
             if (gDisableStructs[battlerDef].tauntTimer > 0
-              || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove))
+              || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove)
+              || HasAbility(ABILITY_OBLIVIOUS, AI_DATA->abilities[battlerDef]))
                 score--;
             break;
         case EFFECT_BESTOW:
@@ -2824,6 +2825,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                     case ABILITY_FLASH_FIRE:
                         if (moveType == TYPE_FIRE
                           && HasMoveWithType(battlerAtkPartner, TYPE_FIRE)
+                          && (gBattleMoves[move].effect != EFFECT_WILL_O_WISP) // not checking for general status moves otherwise Sunny Day is considered bad.
                           && !(gBattleResources->flags->flags[battlerAtkPartner] & RESOURCE_FLAG_FLASH_FIRE))
                         {
                             RETURN_SCORE_PLUS(1);
@@ -2860,13 +2862,6 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                         if (IsStatLoweringEffect(effect))
                         {
                             RETURN_SCORE_PLUS(2);
-                        }
-                        break;
-                    case ABILITY_DEFIANT:
-                        if (IsStatLoweringEffect(effect)
-                          && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_ATK))
-                        {
-                            RETURN_SCORE_PLUS(1);
                         }
                         break;
                     case ABILITY_COMPETITIVE:

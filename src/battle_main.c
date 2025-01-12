@@ -5482,8 +5482,7 @@ void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
 
     // Check if a gem should activate.
     GET_MOVE_TYPE(move, moveType);
-    if (holdEffect == HOLD_EFFECT_GEMS
-        && moveType == ItemId_GetSecondaryId(gBattleMons[battlerAtk].item))
+    if (holdEffect == HOLD_EFFECT_GEMS && moveType == ItemId_GetSecondaryId(gBattleMons[battlerAtk].item))
     {
         gSpecialStatuses[battlerAtk].gemParam = GetBattlerHoldEffectParam(battlerAtk);
         gSpecialStatuses[battlerAtk].gemBoost = TRUE;

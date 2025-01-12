@@ -288,7 +288,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
             },
             {
                 .species = SPECIES_SHEDINJA,
-                .heldItem = ITEM_SCOPE_LENS,
+                .heldItem = ITEM_RAZOR_CLAW,
                 .fixedIV = 20,
                 .nature = NATURE_ADAMANT,
                 .evs = {0, 252, 6, 0, 0, 252},

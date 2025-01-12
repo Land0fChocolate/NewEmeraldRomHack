@@ -981,7 +981,7 @@ static void CB2_EndFirstBattle(void)
 
 static void TryUpdateGymLeaderRematchFromWild(void)
 {
-    if (GetGameStat(GAME_STAT_WILD_BATTLES) % 60 == 0)
+    if (GetGameStat(GAME_STAT_WILD_BATTLES) % 40 == 0)
         UpdateGymLeaderRematch();
 }
 

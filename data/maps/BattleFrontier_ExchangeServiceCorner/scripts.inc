@@ -641,7 +641,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem::
 	waitstate
 	special CloseFrontierExchangeCornerItemIconWindow
 	switch VAR_RESULT
-	case 0, BattleFrontier_ExchangeServiceCorner_EventScript_ScopeLens
+	case 0, BattleFrontier_ExchangeServiceCorner_EventScript_ZoomLens
 	case 1, BattleFrontier_ExchangeServiceCorner_EventScript_WideLens
 	case 2, BattleFrontier_ExchangeServiceCorner_EventScript_ToxicOrb
 	case 3, BattleFrontier_ExchangeServiceCorner_EventScript_FlameOrb
@@ -672,12 +672,12 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem::
 	case MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
-BattleFrontier_ExchangeServiceCorner_EventScript_ScopeLens::
-	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmScopeLens, MSGBOX_YESNO
+BattleFrontier_ExchangeServiceCorner_EventScript_ZoomLens::
+	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmZoomLens, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	setvar VAR_0x8008, 12
-	setvar VAR_0x8009, ITEM_SCOPE_LENS
+	setvar VAR_0x8009, ITEM_ZOOM_LENS
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -1136,8 +1136,8 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmHeartScale:
 	.string "You've chosen the Heart Scale.\n"
 	.string "Is that correct?$"
 
-BattleFrontier_ExchangeServiceCorner_Text_ConfirmScopeLens:
-	.string "You've chosen the Scope Lens.\n"
+BattleFrontier_ExchangeServiceCorner_Text_ConfirmZoomLens:
+	.string "You've chosen the Zoom Lens.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmWideLens:
@@ -1456,9 +1456,9 @@ BattleFrontier_ExchangeServiceCorner_Text_HeartScaleDesc::
 	.string "Can be traded for a Pokémon\n"
 	.string "move relearning service.$"
 
-BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc::
+BattleFrontier_ExchangeServiceCorner_Text_ZoomLensDesc::
 	.string "A hold item that raises the\n"
-	.string "critical-hit rate.$"
+	.string "critical-hit rate if faster.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_WideLensDesc::
 	.string "A hold item that raises user accuracy.$"

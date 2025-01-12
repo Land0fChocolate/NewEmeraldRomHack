@@ -725,7 +725,7 @@ extern const u8 gText_GalaricaWreath16BP[];
 extern const u8 gText_BlackAugurite16BP[];
 extern const u8 gText_PeatBlock16BP[];
 
-extern const u8 gText_ScopeLens12BP[];
+extern const u8 gText_ZoomLens12BP[];
 extern const u8 gText_WideLens12BP[];
 extern const u8 gText_ToxicOrb12BP[];
 extern const u8 gText_FlameOrb12BP[];
@@ -959,7 +959,7 @@ extern const u8 BattleFrontier_ExchangeServiceCorner_Text_PPMaxDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_BottleCapDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_GoldBottleCapDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_HeartScaleDesc[];
-extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc[];
+extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ZoomLensDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_WideLensDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_ToxicOrbDesc[];
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_FlameOrbDesc[];

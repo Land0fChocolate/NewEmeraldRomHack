@@ -2721,7 +2721,7 @@ BattleScript_EffectTelekinesis:
 	settelekinesis BattleScript_ButItFailed
 	attackanimation
 	waitanimation
-	printstring STRINGID_PKMNIDENTIFIED
+	printstring STRINGID_HURLEDINTOTHEAIR
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -7482,11 +7482,12 @@ BattleScript_MagicCoatBounce::
 	attackstring
 	ppreduce
 	pause B_WAIT_TIME_SHORT
-	printfromtable gMagicCoatBounceStringIds
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNMOVEBOUNCEDABILITY
 	waitmessage B_WAIT_TIME_LONG
+	setmagiccoattarget BS_ATTACKER
 	orword gHitMarker, HITMARKER_ATTACKSTRING_PRINTED | HITMARKER_NO_PPDEDUCT | HITMARKER_x800000
 	bicword gHitMarker, HITMARKER_NO_ATTACKSTRING
-	setmagiccoattarget BS_ATTACKER
 	return
 
 BattleScript_MagicCoatBouncePrankster::

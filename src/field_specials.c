@@ -2619,7 +2619,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
     {
-        gText_ScopeLens12BP,
+        gText_ZoomLens12BP,
         gText_WideLens12BP,
         gText_ToxicOrb12BP,
         gText_FlameOrb12BP,

@@ -976,7 +976,7 @@ static const struct TrainerMonItemCustomMoves sParty_Berke[] = {
     .iv = 255,
     .lvl = 28,
     .species = SPECIES_VIGOROTH,
-    .heldItem = ITEM_SCOPE_LENS,
+    .heldItem = ITEM_RAZOR_CLAW,
     .moves = {MOVE_FOCUS_ENERGY, MOVE_SLASH, MOVE_SHADOW_CLAW, MOVE_NONE}
     }
 };
@@ -5234,7 +5234,12 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Zuko[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_Ryu[] = {
     {
     .iv = 100,
-    .lvl = 53,
+    .lvl = 51,
+    .species = SPECIES_DRATINI,
+    },
+    {
+    .iv = 100,
+    .lvl = 52,
     .species = SPECIES_ARBOK,
     },
     {
@@ -11135,7 +11140,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona2[] = {
     .iv = 255,
     .lvl = 50,
     .species = SPECIES_TROPIUS,
-    .heldItem = ITEM_SCOPE_LENS,
+    .heldItem = ITEM_RAZOR_CLAW,
     .moves = {MOVE_DRAGON_DANCE, MOVE_LEAF_BLADE, MOVE_EARTHQUAKE, MOVE_AERIAL_ACE}
     },
     {
@@ -11180,7 +11185,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona3[] = {
     .iv = 255,
     .lvl = 53,
     .species = SPECIES_TROPIUS,
-    .heldItem = ITEM_SCOPE_LENS,
+    .heldItem = ITEM_RAZOR_CLAW,
     .moves = {MOVE_DRAGON_DANCE, MOVE_LEAF_BLADE, MOVE_EARTHQUAKE, MOVE_AERIAL_ACE}
     },
     {
@@ -11225,7 +11230,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona4[] = {
     .iv = 255,
     .lvl = 56,
     .species = SPECIES_TROPIUS,
-    .heldItem = ITEM_SCOPE_LENS,
+    .heldItem = ITEM_RAZOR_CLAW,
     .moves = {MOVE_DRAGON_DANCE, MOVE_LEAF_BLADE, MOVE_EARTHQUAKE, MOVE_AERIAL_ACE}
     },
     {
@@ -11270,7 +11275,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona5[] = {
     .iv = 255,
     .lvl = 59,
     .species = SPECIES_TROPIUS,
-    .heldItem = ITEM_SCOPE_LENS,
+    .heldItem = ITEM_RAZOR_CLAW,
     .moves = {MOVE_DRAGON_DANCE, MOVE_LEAF_BLADE, MOVE_EARTHQUAKE, MOVE_AERIAL_ACE}
     },
     {
