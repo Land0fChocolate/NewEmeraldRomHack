@@ -1157,12 +1157,11 @@ static const u16 sPickupItems[] =
     ITEM_GREAT_BALL,
     ITEM_REPEL,
     ITEM_ESCAPE_ROPE,
-    ITEM_BINDING_BAND,
+    ITEM_BOTTLE_CAP,
     ITEM_FULL_HEAL,
     ITEM_ULTRA_BALL,
     ITEM_HYPER_POTION,
     ITEM_RARE_CANDY,
-    ITEM_BOTTLE_CAP,
     ITEM_REVIVE,
     ITEM_PP_UP,
     ITEM_FULL_RESTORE,
@@ -1184,6 +1183,7 @@ static const u16 sRarePickupItems[] =
     ITEM_BLACK_SLUDGE,
     ITEM_LEFTOVERS,
     ITEM_FOCUS_SASH,
+    ITEM_GOLD_BOTTLE_CAP,
 };
 
 static const u8 sPickupProbabilities[] =

@@ -32,6 +32,8 @@ v1.0.19 - 21/08/2023
 v1.0.20 - 08/10/2023
 v1.0.21 - 27/11/2023
 v1.0.22 - 13/02/2024
+v1.0.23 - 01/06/2024
+v1.1.0 - tbc
 
 # Changelog
 
@@ -41,7 +43,7 @@ v1.0.22 - 13/02/2024
 	- Those Pokemon with post gen 3 evolutions and pre-evolutions have those available as well.
 	- Many regional variants of gen 1, 2 and 3 Pokemon are available.
 	- Non-Hoenn Pokemon are available after beating the Pokemon League.
-	- A total of 416 ordinary Pokemon species and 28 regional species are accessible.
+	- A total of 419 ordinary Pokemon species and 28 regional species are accessible.
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
 	- Many Pokemon have had their ability sets updated to better fit their theme and gameplay. Gulpin has Corrosion now, the Regis all get Filter and many more! A full list can be found in the docs.
 	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
@@ -115,6 +117,7 @@ v1.0.22 - 13/02/2024
 - Deoxys is able to change forms by interacting with meteorites in the overworld.
 - Groomer service to raise Pokemon friendship is added.
 - IV buffer service added. Bottle Caps are used to trade for this service. A Pokemon can gain 8 IVs per Bottle Cap, or have all their IVs set to max with a Gold Bottle Cap.
+- IV reducer service added.
 - Better berry trees
 	- Yield rates have increased, and are doubled after becoming champion.
 	- Interaction with berry trees and soil patches is quicker.
@@ -128,36 +131,28 @@ v1.0.22 - 13/02/2024
 
 # New Abilities
 
-Some of the Pokemon that use these aren't accessible in game, but will note their changes here anyway.
-
 - Volume Up: Power of sound based moves are increased by 30%. Used by Loudred/Exploud.
 - Lava Body: Attackers who make contact will always get inflicted with burn unless they have immunity. Used by Slugma/Magargo.
 - Wildfire: Sp.Atk raises one stage after fainting an opponent. Used by Moltres/Quilava/Typlosion.
-- Miracle Blossom: User and ally restore 1/8 HP at the end of every turn. Used by Bayleef/Meganium/Xerneas.
-- Scorching Heart: Power of Fire type moves increased by 50%. Used by Solrock/Groudon/Solgaleo.
-- Ice Affinity: Power of Ice type moves increased by 50%. Used by Lunatone/Kyogre/Piplup/Prinplup/Empoleon/Lunala.
-- Aquatic: Power of Water type moves increased by 50%. Used by Anorith/Armaldo/Dhelmise/Clobbopus/Grapploct.
-- Gardener: Power of Grass type moves increased by 50%. Used by Floette/Florges.
+- Miracle Blossom: User and ally restore 1/8 HP at the end of every turn. Used by Bayleef/Meganium.
+- Scorching Heart: Power of Fire type moves increased by 50%. Used by Solrock/Groudon.
+- Ice Affinity: Power of Ice type moves increased by 50%. Used by Lunatone/Kyogre.
+- Aquatic: Power of Water type moves increased by 50%. Used by Anorith/Armaldo.
 - Mystic Mind: Power of Psychic type moves increased by 50%. Used by Psyduck/Golduck.
 - Prickly Thorns: Effectively like Rough Skin. Used by Cacnea/Cacturne.
-- Aura Sense: User shudders if opponent has super-effective move. Also ignores evasive boosts from target. Used by Riolu/Lucario.
-- Soul Siphon: Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir/Palossand/Dhelmise/Corsola(Galarian).
-- Bad Luck: Opponent cannot land crits and less likely to land status moves against user. Used by Spiritomb/Cofagrigus.
-- Wickedness: User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius/Braixen/Delphox.
-- Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Solrock/Klink/Klang/Klinklang.
-- Evergreen: User takes half damage from Ice type moves and is immune to hail. Used by Grotle/Torterra/Skiddo/Gogoat.
-- Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat/Yveltal.
-- Swordmaster: Power of sword/blade moves increased by 25% (Cut/Aerial Ace/Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Grovyle/Sceptile/Gallade/Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian.
-- Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Articuno/Glaceon/Aurorus.
+- Soul Siphon: Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir.
+- Wickedness: User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius.
+- Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Solrock.
+- Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat.
+- Swordmaster: Power of sword/blade moves increased by 25% (Cut/Aerial Ace/Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Grovyle/Sceptile/Gallade/Leafeon.
+- Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Articuno/Glaceon.
 - Unsteady: User's evasion increases by one stage when hit. Used by Spinda.
-- Disarm: User's contact moves inflict the Embargo status (disable held items) on the target. Used by Meowth/Persian/Pawniard/Bisharp/Meowth(Galarian)
+- Disarm: User's contact moves inflict the Embargo status (disable held items) on the target. Used by Meowth/Persian/Meowth(Galarian)
 - Painful Burn: If the target is burned, the user's moves have triple the chance to flinch (capped at 60%). Used by Houndour/Houndoom.
 - King's Might: User doesn't need to recharge on moves like Hyper Beam and Giga Impact. Used by Slaking.
-- Pleasant Dreams: Heals sleeping Pokemon 1/4 HP every turn. Used by Cresselia.
 - Origin: User has 2 additional moveslots that has moves that can be interchangeable outside of battle via the Origin Strand item. Used by Mew.
 - Time Traveller: When user HP hits 0, they revert back to their previous HP. Used once per battle for all users, but reset if a user faints an opponent Pokemon. Used by Celebi.
 - Wish Maker: User creates a wish on entry. Used by Jirachi.
-- Heart Swap: If user makes contact with target, stat changes are swapped. Used by Manaphy.
 
 # Updated Abilities
 
@@ -187,10 +182,10 @@ Some of the Pokemon that use these aren't accessible in game, but will note thei
 
 # New Moves
 
-- Flint Blade: 80 BP, 100% Acc, Rock type, increased crit ratio. Boosted by Swordmaster ability. Added to Battle Frontier move tutor list. Learned by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian/Rockruff/Lycanroc/Gigalith/Onix/Steelix/Omanite/Omastar/Kabuto/Kabutops/Aerodactyl/Anorith/Armaldo/Shieldon/Bastiodon/Binacle/Barbaracle/Rhyhorn/Rhydon/Rhypherior/Aggron/Kleavor/Seviper.
-- Blaze Impact: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Added to Battle Frontier move tutor list. Learned by Growlith/Arcanine/Ponyta/Rapidash/Flareon/Quilava/Typhlosion/Entei/Torkoal/Tepig/Pignite/Emboar/Heatmor/Litten/Torracat/Incineroar/Scorbunny/Raboot/Cinderace/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Monferno/Infernape/Heatran/Litleo/Pyroar/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol/Skuntank/Zebstrika/Darmanitan/Solgaleo.
+- Flint Blade: 80 BP, 100% Acc, Rock type, increased crit ratio. Boosted by Swordmaster ability. Added to Battle Frontier move tutor list. Learned by Leafeon/Dewott/Samurott/Cobalion/Terrakion/Verizion/Keldeo/Fomantis/Lurantis/Zacian/Rockruff/Lycanroc/Gigalith/Onix/Steelix/Omanite/Omastar/Kabuto/Kabutops/Aerodactyl/Anorith/Armaldo/Rhyhorn/Rhydon/Rhypherior/Aggron/Kleavor/Seviper.
+- Blaze Impact: 100 BP, 100% Acc, Fire type, reduces user's speed by one stage. Added to Battle Frontier move tutor list. Learned by Growlith/Arcanine/Ponyta/Rapidash/Flareon/Quilava/Typhlosion/Entei/Torkoal/Charmander/Charmeleon/Charizard/Combusken/Blaziken/Numel/Camerupt/Vulpix/Ninetales/Houndour/Houndoom/Carkoal/Coalossal/Groudon/Luxio/Luxray/Phanpy/Donphan/Absol.
 - Singularity: A protect move that lowers the speed of foes who make contact by one stage. Learned by Gardevoir on evolution.
-- Serpent Dance: Increases the user's special attack and speed by one stage. Added to Battle Frontier move tutor list. Learned by Seviper/Milotic/Serperior/Dunsparce/Ekans/Arbok/Huntail/Gorebyss/Rayquaza/Silicobra/Sandaconda/Giratina/Gyarados/Furret.
+- Serpent Dance: Increases the user's special attack and speed by one stage. Added to Battle Frontier move tutor list. Learned by Seviper/Milotic/Serperior/Dunsparce/Ekans/Arbok/Huntail/Gorebyss/Rayquaza/Gyarados/Furret.
 -Ice Tusk: 100 BP, 95% Acc, Ice type, increased crit ratio. Learned by Walrein/Mamoswine.
 -Hidden Thorns. Grass type Stealth Rock. Will replace Stealth Rock if Stealth Rock is already on the field. Added to Frontier move tutor list. Learned naturally by Roselia/Roserade/Cacnea/Cacturne.
 
@@ -207,7 +202,7 @@ Some of the Pokemon that use these aren't accessible in game, but will note thei
 - Rock Smash: Now 50 BP with 100% chance for target defense drop.
 - Poison Fang: Now has a 100% chance to poison target.
 - Twineedle: Now has 40 BP and a 100% chance to poison target.
-- Cut: Now has 40 BP, 100% Acc and always crits.
+- Cut: Now has 50 BP, 100% Acc and always crits.
 
 # Post Launch TODOs
 
@@ -229,7 +224,6 @@ Possible future additions/changes.
 - Better Battle Frontier level scaling. Open level puts opponent Pokemon to your highest level Pokemon. Should scale all Pokemon to a certain level like the battle facilities in future gens.
 - Add an Anything Goes challenge to the Battle Tower, where even legendary Pokemon like Rayquaza are allowed.
 - Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
-- Increase number of PC Pokemon storage boxes (annoying to do late in development since changing the save data format will invalid previous save data).
 - Add another star to the Trainer Card for completing the National Dex. Create a platinum colour scheme to go along with it.
 - Named NPCs like Gym Leaders, Elite 4, Steven, etc to be possible partners in Battle Tower Multi challenge.
 - A better way for Mirage Island to trigger?
@@ -250,7 +244,6 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Damp battle message when it by powder move doesn't show the ability string.
 - When a Pokemon with Volt Absorb uses Ion Deluge, it triggers Volt Absorb.
 - Stench ability may activate for opponent and not user. Scenario: Weezing vs Altaria, Altaria (no King's Rock) used Ice Beam which flinched Weezing, could be a bad gBattlerAttacker assignment or similar.
-- When a grass type uses Stun Spore against an opponent with Magic Bounce, it bounces back and paralyzes the grass type.
 - Time Traveller ability ignores False Swipe effect of leaving the user with 1 HP.
 - Bug Bite/Pluck is not taking the effects of the opponent's berry.
 - Spinning Body activates on every hit for multi-hit moves (e.g. Hitmontop using Triple Kick). Would rather it takes affect on only the last hit.

@@ -354,16 +354,16 @@ GraniteCave_1F_EventScript_ItemTM69::
 	finditem ITEM_TM69
 	end
 
-GraniteCave_B1F_EventScript_ItemPokeBall::
-	finditem ITEM_POKE_BALL
+GraniteCave_B1F_EventScript_ItemDuskBall::
+	finditem ITEM_DUSK_BALL
 	end
 
 GraniteCave_B1F_EventScript_ItemHardStone::
 	finditem ITEM_HARD_STONE
 	end
 
-GraniteCave_B2F_EventScript_ItemRepel::
-	finditem ITEM_REPEL
+GraniteCave_B2F_EventScript_ItemMaxRepel::
+	finditem ITEM_MAX_REPEL
 	end
 
 GraniteCave_B2F_EventScript_ItemRareCandy::

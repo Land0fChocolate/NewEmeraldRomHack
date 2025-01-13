@@ -8,7 +8,8 @@ EventScript_TV::
 	compare VAR_RESULT, PLAYERS_HOUSE_TV_LATI
 	goto_if_eq EventScript_PlayersHouseLatiNewsFlash
 	goto_if_unset FLAG_SYS_TV_START, EventScript_MomDadMightLikeThis1
-	goto_if_set FLAG_SYS_TV_WATCH, EventScript_MomDadMightLikeThis1
+	goto_if_set FLAG_SYS_TV_WATCH, EventScript_MomDadMightLikeThis1 
+	goto_if_set FLAG_TV_STERN_ANNOUNCEMENT, EventScript_SternAnnouncement
 	goto_if_set FLAG_TV_RARE_CANDY_ADVERT, EventScript_RareCandyAdvert
 	specialvar VAR_RESULT, IsGabbyAndTyShowOnTheAir
 	compare VAR_RESULT, TRUE
@@ -33,6 +34,13 @@ EventScript_MomDadMightLikeThis1::
 	special GetMomOrDadStringForTVMessage
 	msgbox gText_MomOrDadMightLikeThisProgram, MSGBOX_DEFAULT
 	special TurnOffTVScreen
+	releaseall
+	end
+
+EventScript_SternAnnouncement::
+	msgbox gText_SternAnouncement, MSGBOX_DEFAULT
+	special TurnOffTVScreen
+	clearflag FLAG_TV_STERN_ANNOUNCEMENT
 	releaseall
 	end
 

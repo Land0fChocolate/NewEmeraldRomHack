@@ -83,15 +83,9 @@ static bool8 ShouldSwitchIfPerishSong(void)
 {
     if (gStatuses3[gActiveBattler] & STATUS3_PERISH_SONG
         && gDisableStructs[gActiveBattler].perishSongTimer == 0)
-    {
-        *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
-        BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
         return TRUE;
-    }
-    else
-    {
-        return FALSE;
-    }
+    
+    return FALSE;
 }
 
 static bool8 ShouldSwitchIfWonderGuard(void)

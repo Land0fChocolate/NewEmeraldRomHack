@@ -151,14 +151,14 @@
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY",
-      "dest_warp_id": 10
+      "dest_warp_id": "10"
     },
     {
       "x": 12,
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_MAUVILLE_CITY",
-      "dest_warp_id": 10
+      "dest_warp_id": "10"
     }
   ],
   "coord_events": [

@@ -60,63 +60,63 @@
       "y": 4,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_ENTRANCE",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 4,
       "y": 27,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH2",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 31,
       "y": 16,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH2",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 29,
       "y": 5,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH2",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 24,
       "y": 26,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH2",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 36,
       "y": 27,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH2",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     },
     {
       "x": 18,
       "y": 23,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH2",
-      "dest_warp_id": 5
+      "dest_warp_id": "5"
     },
     {
       "x": 4,
       "y": 5,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH2",
-      "dest_warp_id": 6
+      "dest_warp_id": "6"
     },
     {
       "x": 11,
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_NAVEL_ROCK_HOOH2",
-      "dest_warp_id": 12
+      "dest_warp_id": "12"
     }
   ],
   "coord_events": [
