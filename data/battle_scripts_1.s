@@ -8711,7 +8711,20 @@ BattleScript_MiracleBlossomHpChange:
 	domiracleblossomheal BS_ATTACKER
 	datahpupdate BS_ATTACKER
 	domiracleblossomheal BS_ATTACKER_PARTNER
+	datahpupdate BS_ATTACKER_PARTNER
 BattleScript_MiracleBlossomHealEnd:
+	end2
+
+BattleScript_DreamfeastHeals::
+	checkdreamfeastheal BS_ATTACKER, BattleScript_DreamfeastHealEnd
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_DREAMFEASTHEALS
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_DreamfeastHpChange:
+	orword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	dodreamfeastheal BS_ATTACKER
+	datahpupdate BS_ATTACKER
+BattleScript_DreamfeastHealEnd:
 	end2
 
 BattleScript_EffectSoulSiphon::

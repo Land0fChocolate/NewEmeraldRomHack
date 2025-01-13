@@ -253,7 +253,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_BATTLE_BOND] = 0,
     [ABILITY_BEAST_BOOST] = 4,
     [ABILITY_BERSERK] = 4,
-    [ABILITY_BIG_PECKS] = 1,
+    [ABILITY_BIG_PECKS] = 2,
     [ABILITY_BLAZE] = 2,
     [ABILITY_BULLETPROOF] = 4,
     [ABILITY_CHEEK_POUCH] = 2,
@@ -279,6 +279,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_DISARM] = 3,
     [ABILITY_DISGUISE] = 0,
     [ABILITY_DOWNLOAD] = 4,
+    [ABILITY_DREAMFEAST] = 2,
     [ABILITY_DRIZZLE] = 2,
     [ABILITY_DROUGHT] = 2,
     [ABILITY_DRY_SKIN] = 2,
@@ -452,7 +453,8 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_STURDY] = 5,
     [ABILITY_SUCTION_CUPS] = 1,
     [ABILITY_SUPER_LUCK] = 2,
-    [ABILITY_SUPERCOOLED] = 1,
+    [ABILITY_SUPERCOOLED] = 3,
+    [ABILITY_SUPERHEATED] = 1,
     [ABILITY_SURGE_SURFER] = 2,
     [ABILITY_SWARM] = 2,
     [ABILITY_SWEET_VEIL] = 3,
@@ -5500,7 +5502,19 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
 
                         effect++;
                     }
+                    break;
+                case ABILITY_DREAMFEAST:
+                    if (((gBattleMons[battler].hp != 0) && (gBattleMons[battler].hp != gBattleMons[battler].maxHP))
+                    && ((gBattleMons[BATTLE_PARTNER(battler)].status1 & STATUS1_SLEEP) 
+                        || gBattleMons[BATTLE_OPPOSITE(battler)].status1 & STATUS1_SLEEP
+                        || gBattleMons[BATTLE_PARTNER(BATTLE_OPPOSITE(battler))].status1 & STATUS1_SLEEP))
+                    {
+                        gLastUsedAbility = ABILITY_DREAMFEAST;
+                        gBattleScripting.battler = gBattlerAttacker;
+                        BattleScriptExecute(BattleScript_DreamfeastHeals);
 
+                        effect++;
+                    }
                     break;
                 }
             }
@@ -6300,7 +6314,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                  && gBattleMons[gBattlerTarget].hp != 0
                  && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-                 && (Random() % 10) == 0
+                 && (Random() % 9) == 0
                  && !IS_MOVE_STATUS(move)
                  && !sMovesNotAffectedByStench[gCurrentMove])
                 {
@@ -10277,6 +10291,8 @@ static void MulByTypeEffectiveness(u16 *modifier, u16 move, u8 moveType, u8 batt
     if (gBattleMoves[move].effect == EFFECT_FREEZE_DRY && defType == TYPE_WATER)
         mod = UQ_4_12(2.0);
     if (HasAbility(ABILITY_SUPERCOOLED, abilities) && (moveType == TYPE_ICE) && (defType == TYPE_WATER))
+        mod = UQ_4_12(2.0);
+        if (HasAbility(ABILITY_SUPERHEATED, abilities) && (moveType == TYPE_FIRE) && (defType == TYPE_ROCK))
         mod = UQ_4_12(2.0);
     if (moveType == TYPE_FIRE && gDisableStructs[battlerDef].tarShot)
         mod = UQ_4_12(2.0);

@@ -5004,7 +5004,8 @@ static void Cmd_playstatchangeanimation(void)
                         && !HasAbility(ABILITY_WHITE_SMOKE, abilities)
                         && !(HasAbility(ABILITY_KEEN_EYE, abilities) && currStat == STAT_ACC)
                         && !(HasAbility(ABILITY_HYPER_CUTTER, abilities) && currStat == STAT_ATK)
-                        && !(HasAbility(ABILITY_BIG_PECKS, abilities) && currStat == STAT_DEF))
+                        && !(HasAbility(ABILITY_BIG_PECKS, abilities) && currStat == STAT_DEF)
+                        && !(HasAbility(ABILITY_BIG_PECKS, abilities) && currStat == STAT_SPDEF))
                 {
                     if (gBattleMons[gActiveBattler].statStages[currStat] > MIN_STAT_STAGE)
                     {
@@ -8182,6 +8183,39 @@ static void Cmd_various(void)
 
         gBattlescriptCurrInstr += 3;
         return;
+    case VARIOUS_CHECK_IF_DREAMFEAST_HEALS:
+        if (((gStatuses3[gActiveBattler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_HEAL_BLOCK))
+            || (BATTLER_MAX_HP(gActiveBattler))
+            || (!gBattleMons[gActiveBattler].hp))
+            && !((gBattleMons[BATTLE_PARTNER(gActiveBattler)].status1 & STATUS1_SLEEP) 
+                || (gBattleMons[BATTLE_OPPOSITE(gActiveBattler)].status1 & STATUS1_SLEEP)
+                || (gBattleMons[BATTLE_PARTNER(BATTLE_OPPOSITE(gActiveBattler))].status1 & STATUS1_SLEEP)))
+        {
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 2);
+        }
+        else
+        {
+            gBattlescriptCurrInstr += 7;
+        }
+        return;
+    case VARIOUS_DO_DREAMFEAST_HEAL:
+        if (!BATTLER_MAX_HP(gActiveBattler) && IsBattlerAlive(gActiveBattler) && !(gStatuses3[gActiveBattler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_HEAL_BLOCK)))
+        {
+            u8 numSleepers =  ((gBattleMons[BATTLE_PARTNER(gActiveBattler)].status1 & STATUS1_SLEEP) 
+                                + (gBattleMons[BATTLE_OPPOSITE(gActiveBattler)].status1 & STATUS1_SLEEP)
+                                + (gBattleMons[BATTLE_PARTNER(BATTLE_OPPOSITE(gActiveBattler))].status1 & STATUS1_SLEEP));
+            
+            gBattleMoveDamage = (gBattleMons[gActiveBattler].maxHP / 8) * numSleepers;
+            if (gBattleMoveDamage == 0)
+                gBattleMoveDamage = 1;
+            gBattleMoveDamage *= -1;
+
+            BtlController_EmitHealthBarUpdate(0, gBattleMoveDamage);
+            MarkBattlerForControllerExec(gActiveBattler);
+        }
+
+        gBattlescriptCurrInstr += 3;
+        return;
     case VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS:
         if (!gBattleMons[gActiveBattler].hp)
         {
@@ -10599,7 +10633,8 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
         else if (!certain
           && ((HasAbility(ABILITY_KEEN_EYE, battlerAbilities) && statId == STAT_ACC)
                 || (HasAbility(ABILITY_HYPER_CUTTER, battlerAbilities) && statId == STAT_ATK)
-                || (HasAbility(ABILITY_BIG_PECKS, battlerAbilities) && statId == STAT_DEF)))
+                || (HasAbility(ABILITY_BIG_PECKS, battlerAbilities) && statId == STAT_DEF)
+                || (HasAbility(ABILITY_BIG_PECKS, battlerAbilities) && statId == STAT_SPDEF)))
         {
             if (flags == STAT_BUFF_ALLOW_PTR)
             {

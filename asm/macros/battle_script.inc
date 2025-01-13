@@ -1681,6 +1681,15 @@
 	various \battler, VARIOUS_DO_MIRACLE_BLOSSOM_HEAL
 	.endm
 
+	.macro checkdreamfeastheal battler:req, ptr:req
+	various \battler, VARIOUS_CHECK_IF_DREAMFEAST_HEALS
+	.4byte \ptr
+	.endm
+
+	.macro dodreamfeastheal battler:req
+	various \battler, VARIOUS_DO_DREAMFEAST_HEAL
+	.endm
+
 	.macro checksoulsiphonheal battler:req, ptr:req
 	various \battler, VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS
 	.4byte \ptr

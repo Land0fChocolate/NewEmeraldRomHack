@@ -2,8 +2,8 @@ Route102_EventScript_ItemPotion::
 	finditem ITEM_POTION
 	end
 
-Route103_EventScript_ItemGuardSpec::
-	finditem ITEM_GUARD_SPEC
+Route103_EventScript_ItemQuickBall::
+	finditem ITEM_QUICK_BALL
 	end
 
 Route103_EventScript_ItemPPUp::

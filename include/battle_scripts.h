@@ -438,5 +438,6 @@ extern const u8 BattleScript_DeoxysBossFormChange[];
 extern const u8 BattleScript_DeoxysBossFormChangeCatchable[];
 extern const u8 BattleScript_CantDoBallThrow[];
 extern const u8 BattleScript_StealthRockActivates[];
+extern const u8 BattleScript_DreamfeastHeals[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

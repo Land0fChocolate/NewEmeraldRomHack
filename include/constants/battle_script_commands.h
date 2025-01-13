@@ -234,7 +234,9 @@
 #define VARIOUS_MULTI_ABILITY_POPUP                 159
 #define VARIOUS_SET_LAST_USED_ABILITY               160
 #define VARIOUS_SWAP_STATS                          161
-#define VARIOUS_DO_MIRACLE_BLOSSOM_HEAL 162
+#define VARIOUS_DO_MIRACLE_BLOSSOM_HEAL             162
+#define VARIOUS_CHECK_IF_DREAMFEAST_HEALS           163
+#define VARIOUS_DO_DREAMFEAST_HEAL                  164
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

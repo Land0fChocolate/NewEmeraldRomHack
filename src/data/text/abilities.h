@@ -611,8 +611,9 @@ static const u8 sRegeneratorDescription[] = _(
 	"upon switching out.");
 
 static const u8 sBigPecksDescription[] = _(
-	"Prevents Defense stat\n"
-	"reduction.");
+	"Prevents Defense and\n"
+    "Special Defense\n"
+	"stat reduction.");
 
 static const u8 sSandRushDescription[] = _(
 	"Doubles Speed in sandstorm.");
@@ -1156,6 +1157,16 @@ static const u8 sSupercooledDescription[] = _(
 	"super-effective against\n"
 	"water types.");
 
+static const u8 sSuperheatedDescription[] = _(
+	"User's fire moves are\n"
+	"super-effective against\n"
+	"rock types.");
+
+static const u8 sDreamfeastDescription[] = _(
+	"User will heal 1/8 HP\n"
+	"every turn per sleeping\n"
+	"Pokémon on field.");
+
 static const u8 sKingsMightDescription[] = _(
 	"User doesn't need to\n"
 	"recharge on moves like\n"
@@ -1499,6 +1510,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_DISARM] = _("Disarm"),
     [ABILITY_PAINFUL_BURN] = _("Painful Burn"),
     [ABILITY_MYSTIC_MIND] = _("Mystic Mind"),
+    [ABILITY_SUPERHEATED] = _("Superheated"),
+    [ABILITY_DREAMFEAST] = _("Dreamfeast"),
 };
 #else   // 12 characters
 
@@ -1800,6 +1813,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_DISARM] = "Disarm",
     [ABILITY_PAINFUL_BURN] = "Painful Burn",
     [ABILITY_MYSTIC_MIND] = "Mystic Mind",
+    [ABILITY_SUPERHEATED] = _("Superheated"),
+    [ABILITY_DREAMFEAST] = _("Dreamfeast"),
 };
 #endif
 
@@ -2101,4 +2116,6 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_DISARM] = sDisarmDescription,
     [ABILITY_PAINFUL_BURN] = sPainfulBurnDescription,
     [ABILITY_MYSTIC_MIND] = sMysticMindDescription,
+    [ABILITY_SUPERHEATED] = sSuperheatedDescription,
+    [ABILITY_DREAMFEAST] = sDreamfeastDescription,
 };

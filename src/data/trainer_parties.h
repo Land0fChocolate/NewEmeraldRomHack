@@ -3734,7 +3734,7 @@ static const struct TrainerMonItemCustomMoves sParty_Winona1[] = {
     .lvl = 35,
     .species = SPECIES_SKARMORY,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_AUTOTOMIZE, MOVE_PAYBACK, MOVE_STEEL_WING, MOVE_AERIAL_ACE}
+    .moves = {MOVE_AUTOTOMIZE, MOVE_THIEF, MOVE_STEEL_WING, MOVE_AERIAL_ACE}
     },
     {
     .iv = 255,
@@ -3780,16 +3780,16 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace1[] = {
     {
     .iv = 250,
     .lvl = 45,
-    .species = SPECIES_SEAKING,
+    .species = SPECIES_PELIPPER,
     .heldItem = ITEM_DAMP_ROCK,
-    .moves = {MOVE_WATERFALL, MOVE_POISON_JAB, MOVE_RAIN_DANCE, MOVE_FLAIL}
+    .moves = {MOVE_SCALD, MOVE_HURRICANE, MOVE_ROOST, MOVE_TAILWIND}
     },
     {
     .iv = 250,
     .lvl = 46,
-    .species = SPECIES_SEALEO,
-    .heldItem = ITEM_RINDO_BERRY,
-    .moves = {MOVE_LIQUIDATION, MOVE_BODY_SLAM, MOVE_ICE_BEAM, MOVE_YAWN}
+    .species = SPECIES_STARMIE,
+    .heldItem = ITEM_WISE_GLASSES,
+    .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_THUNDERBOLT, MOVE_PSYCHIC}
     },
     {
     .iv = 250,
@@ -11485,9 +11485,9 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace2[] = {
     {
     .iv = 255,
     .lvl = 50,
-    .species = SPECIES_WALREIN,
-    .heldItem = ITEM_ICE_GEM,
-    .moves = {MOVE_LIQUIDATION, MOVE_ICE_TUSK, MOVE_CRUNCH, MOVE_ENCORE}
+    .species = SPECIES_STARMIE,
+    .heldItem = ITEM_WISE_GLASSES,
+    .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_THUNDERBOLT, MOVE_PSYCHIC}
     },
     {
     .iv = 255,
@@ -11523,9 +11523,9 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace3[] = {
     {
     .iv = 255,
     .lvl = 53,
-    .species = SPECIES_WALREIN,
-    .heldItem = ITEM_ICE_GEM,
-    .moves = {MOVE_LIQUIDATION, MOVE_ICE_TUSK, MOVE_CRUNCH, MOVE_ENCORE}
+    .species = SPECIES_STARMIE,
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_THUNDERBOLT, MOVE_PSYCHIC}
     },
     {
     .iv = 255,
@@ -11561,9 +11561,9 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace4[] = {
     {
     .iv = 255,
     .lvl = 56,
-    .species = SPECIES_WALREIN,
-    .heldItem = ITEM_ICE_GEM,
-    .moves = {MOVE_LIQUIDATION, MOVE_ICE_TUSK, MOVE_IRON_HEAD, MOVE_ENCORE}
+    .species = SPECIES_STARMIE,
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_THUNDERBOLT, MOVE_PSYCHIC}
     },
     {
     .iv = 255,
@@ -11606,9 +11606,9 @@ static const struct TrainerMonItemCustomMoves sParty_Wallace5[] = {
     {
     .iv = 255,
     .lvl = 59,
-    .species = SPECIES_WALREIN,
-    .heldItem = ITEM_ICE_GEM,
-    .moves = {MOVE_LIQUIDATION, MOVE_ICE_TUSK, MOVE_IRON_HEAD, MOVE_ENCORE}
+    .species = SPECIES_STARMIE,
+    .heldItem = ITEM_EXPERT_BELT,
+    .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_THUNDERBOLT, MOVE_PSYCHIC}
     },
     {
     .iv = 255,
