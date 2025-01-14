@@ -382,6 +382,10 @@ static const u8 sIronFistDescription[] = _(
 	"Power of punching moves\n"
 	"increased by 20%.");
 
+static const u8 sJeetKuneDoDescription[] = _(
+	"Power of kicking moves\n"
+	"increased by 20%.");
+
 static const u8 sPoisonHealDescription[] = _(
 	"Restores 1/8 HP per turn\n"
 	"if poisoned.");
@@ -1512,6 +1516,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_MYSTIC_MIND] = _("Mystic Mind"),
     [ABILITY_SUPERHEATED] = _("Superheated"),
     [ABILITY_DREAMFEAST] = _("Dreamfeast"),
+    [ABILITY_JEET_KUNE_DO] = _("Jeet Kune Do"),
 };
 #else   // 12 characters
 
@@ -1815,6 +1820,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_MYSTIC_MIND] = "Mystic Mind",
     [ABILITY_SUPERHEATED] = _("Superheated"),
     [ABILITY_DREAMFEAST] = _("Dreamfeast"),
+    [ABILITY_JEET_KUNE_DO] = _("Jeet Kune Do"),
 };
 #endif
 
@@ -2118,4 +2124,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_MYSTIC_MIND] = sMysticMindDescription,
     [ABILITY_SUPERHEATED] = sSuperheatedDescription,
     [ABILITY_DREAMFEAST] = sDreamfeastDescription,
+    [ABILITY_JEET_KUNE_DO] = sJeetKuneDoDescription,
 };

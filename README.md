@@ -146,9 +146,12 @@ v1.1.0 - tbc
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat.
 - Swordmaster: Power of sword/blade moves increased by 25% (Cut/Aerial Ace/Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Grovyle/Sceptile/Gallade/Leafeon.
 - Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Articuno/Glaceon.
+- Superheated: User's Fire type moves are super-effective against Rock types. Used by Charmeleon/Charizard/Flareon/Magmortar. 
 - Unsteady: User's evasion increases by one stage when hit. Used by Spinda.
-- Disarm: User's contact moves inflict the Embargo status (disable held items) on the target. Used by Meowth/Persian/Meowth(Galarian)
+- Disarm: User's contact moves inflict the Embargo status (disable held items) on the target. Used by Meowth/Persian
+- Dreamfeast: The user recovers 1/8 max HP per sleeping Pokemon on the field. Used by Drowzee/Hypno.
 - Painful Burn: If the target is burned, the user's moves have triple the chance to flinch (capped at 60%). Used by Houndour/Houndoom.
+- Jeet Kune Do: The user’s kicking moves deal 20% increased damage. Used by Hitmonlee. 
 - King's Might: User doesn't need to recharge on moves like Hyper Beam and Giga Impact. Used by Slaking.
 - Origin: User has 2 additional moveslots that has moves that can be interchangeable outside of battle via the Origin Strand item. Used by Mew.
 - Time Traveller: When user HP hits 0, they revert back to their previous HP. Used once per battle for all users, but reset if a user faints an opponent Pokemon. Used by Celebi.

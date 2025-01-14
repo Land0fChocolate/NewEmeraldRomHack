@@ -333,7 +333,8 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_INSOMNIA] = 2,
     [ABILITY_INTIMIDATE] = 4,
     [ABILITY_IRON_BARBS] = 3,
-    [ABILITY_IRON_FIST] = 2,
+    [ABILITY_IRON_FIST] = 3,
+    [ABILITY_JEET_KUNE_DO] = 2,
     [ABILITY_JUSTIFIED] = 4,
     [ABILITY_KEEN_EYE] = 1,
     [ABILITY_KINGS_MIGHT] = 1,
@@ -9327,6 +9328,10 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             if (gBattleMoves[move].flags & FLAG_IRON_FIST_BOOST)
                MulModifier(&modifier, UQ_4_12(1.2));
             break;
+        case ABILITY_JEET_KUNE_DO:
+            if (gBattleMoves[move].flags & FLAG_JEET_KUNE_DO_BOOST)
+               MulModifier(&modifier, UQ_4_12(1.2));
+            break;
         case ABILITY_SHEER_FORCE:
             if (gBattleMoves[move].flags & FLAG_SHEER_FORCE_BOOST)
                MulModifier(&modifier, UQ_4_12(1.3));
@@ -9939,7 +9944,7 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
         case ABILITY_FUR_COAT:
             if (usesDefStat)
             {
-                MulModifier(&modifier, UQ_4_12(1.5));
+                MulModifier(&modifier, UQ_4_12(2));
             }
             break;
         case ABILITY_GRASS_PELT:

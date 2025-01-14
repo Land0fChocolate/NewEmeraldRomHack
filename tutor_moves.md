@@ -7531,6 +7531,67 @@
                     | PLAY ROUGH
                     | STORED POWER
 
+    WYRDEER         | BODY SLAM
+                    | DOUBLE EDGE
+                    | DREAM EATER
+                    | ENDURE
+                    | MIMIC
+                    | PSYCH UP
+                    | SLEEP TALK
+                    | SNORE
+                    | SUBSTITUTE
+                    | SWAGGER
+                    | SWIFT
+                    | WORK UP
+                    | SIGNAL BEAM
+                    | ROLE PLAY
+                    | ZEN HEADBUTT
+
+    KLEAVOR         | COUNTER
+                    | DOUBLE_EDGE
+                    | ENDURE
+                    | FURY_CUTTER
+                    | MIMIC
+                    | SLEEP_TALK
+                    | SNORE
+                    | SUBSTITUTE
+                    | SWAGGER
+                    | SWIFT
+                    | SWORDS_DANCE
+                    | DEFOG
+                    | KNOCK_OFF
+                    | TAILWIND
+                    | BUG_BITE
+                    | FLINT_BLADE
+
+    URSALUNA        | BODY SLAM
+                    | COUNTER
+                    | DEFENSE CURL
+                    | DOUBLE EDGE
+                    | DYNAMIC PUNCH
+                    | ENDURE
+                    | FIRE PUNCH
+                    | FURY CUTTER
+                    | ICE PUNCH
+                    | METRONOME
+                    | MIMIC
+                    | ROLLOUT
+                    | SEISMIC TOSS
+                    | SLEEP TALK
+                    | SNORE
+                    | SUBSTITUTE
+                    | SWAGGER
+                    | SWIFT
+                    | SWORDS DANCE
+                    | SUPERPOWER
+                    | LOW KICK
+                    | SEED BOMB
+                    | THUNDER PUNCH
+                    | WORK UP
+                    | PLAY ROUGH
+                    | AVALANCHE
+                    | GUNK SHOT
+
     RATTATA ALOLAN    | SWORDS DANCE
                       | BODY SLAM
                       | DOUBLE EDGE
@@ -8032,66 +8093,6 @@
                       | SEED BOMB
                       | FOUL PLAY
 
-    WYRDEER         | BODY SLAM
-                    | DOUBLE EDGE
-                    | DREAM EATER
-                    | ENDURE
-                    | MIMIC
-                    | PSYCH UP
-                    | SLEEP TALK
-                    | SNORE
-                    | SUBSTITUTE
-                    | SWAGGER
-                    | SWIFT
-                    | WORK UP
-                    | SIGNAL BEAM
-                    | ROLE PLAY
-                    | ZEN HEADBUTT
-
-    KLEAVOR         | COUNTER
-                    | DOUBLE_EDGE
-                    | ENDURE
-                    | FURY_CUTTER
-                    | MIMIC
-                    | SLEEP_TALK
-                    | SNORE
-                    | SUBSTITUTE
-                    | SWAGGER
-                    | SWIFT
-                    | SWORDS_DANCE
-                    | DEFOG
-                    | KNOCK_OFF
-                    | TAILWIND
-                    | BUG_BITE
-                    | FLINT_BLADE
-
-    URSALUNA        | BODY SLAM
-                    | COUNTER
-                    | DEFENSE CURL
-                    | DOUBLE EDGE
-                    | DYNAMIC PUNCH
-                    | ENDURE
-                    | FIRE PUNCH
-                    | FURY CUTTER
-                    | ICE PUNCH
-                    | METRONOME
-                    | MIMIC
-                    | ROLLOUT
-                    | SEISMIC TOSS
-                    | SLEEP TALK
-                    | SNORE
-                    | SUBSTITUTE
-                    | SWAGGER
-                    | SWIFT
-                    | SWORDS DANCE
-                    | SUPERPOWER
-                    | LOW KICK
-                    | SEED BOMB
-                    | THUNDER PUNCH
-                    | WORK UP
-                    | PLAY ROUGH
-                    | AVALANCHE
-                    | GUNK SHOT
 
     TYPHLOSION HISUIAN  | BODY SLAM
                         | COUNTER

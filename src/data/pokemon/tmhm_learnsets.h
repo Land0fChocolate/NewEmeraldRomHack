@@ -7924,6 +7924,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM2(TM73_THUNDER_WAVE)
                                             | TMHM2(TM77_THROAT_CHOP)
                                             | TMHM2(TM78_BULLDOZE)
+                                            | TMHM2(TM85_ELECTROWEB)
                                             | TMHM2(TM90_ROCK_SMASH)
                                             | TMHM2(TM93_WILD_CHARGE)
                                             | TMHM2(TM95_SNARL)
