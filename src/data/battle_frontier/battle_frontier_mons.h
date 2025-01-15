@@ -1818,7 +1818,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .species = SPECIES_JUMPLUFF,
         .moves = {MOVE_LEECH_SEED, MOVE_WORRY_SEED, MOVE_TOXIC, MOVE_SYNTHESIS},
         .item = ITEM_LEFTOVERS,
-        .evSpread = F_EV_SPREAD_SP_DEF | F_EV_SPREAD_HP,
+        .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_CALM
     },
     [FRONTIER_MON_PILOSWINE_1] = {
