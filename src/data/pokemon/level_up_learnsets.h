@@ -19079,6 +19079,7 @@ static const struct LevelUpMove sMrMimeGalarianLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sArticunoGalarianLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_AIR_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_GUST),
     LEVEL_UP_MOVE( 1, MOVE_PSYCHO_SHIFT),
     LEVEL_UP_MOVE( 5, MOVE_CONFUSION),

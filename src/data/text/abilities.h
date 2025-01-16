@@ -104,7 +104,7 @@ static const u8 sShadowTagDescription[] = _(
 
 static const u8 sRoughSkinDescription[] = _(
 	"Damages attackers who\n"
-	"make contact for 1/8 HP.");
+	"make contact for 1/8 max HP.");
 
 static const u8 sWonderGuardDescription[] = _(
 	"User is only hurt from\n"
@@ -278,22 +278,22 @@ static const u8 sLiquidOozeDescription[] = _(
 static const u8 sOvergrowDescription[] = _(
 	"Grass moves power up by\n"
 	"50% if user has less than\n" 
-	"1/3 HP.");
+	"1/3 max HP.");
 
 static const u8 sBlazeDescription[] = _(
 	"Fire moves power up by 50%\n"
 	"if user has less than\n" 
-	"1/3 HP.");
+	"1/3 max HP.");
 
 static const u8 sTorrentDescription[] = _(
 	"Water moves power up by\n"
 	"50% if user has less than\n" 
-	"1/3 HP.");
+	"1/3 max HP.");
 
 static const u8 sSwarmDescription[] = _(
 	"Bug moves power up by 50%\n"
 	"if user has less than\n" 
-	"1/3 HP.");
+	"1/3 max HP.");
 
 static const u8 sRockHeadDescription[] = _(
 	"Prevents recoil damage.");
@@ -387,7 +387,7 @@ static const u8 sJeetKuneDoDescription[] = _(
 	"increased by 20%.");
 
 static const u8 sPoisonHealDescription[] = _(
-	"Restores 1/8 HP per turn\n"
+	"Restores 1/8 max HP per turn\n"
 	"if poisoned.");
 
 static const u8 sAdaptabilityDescription[] = _(
@@ -455,7 +455,7 @@ static const u8 sSuperLuckDescription[] = _(
 static const u8 sAftermathDescription[] = _(
 	"If user faints due to a\n"
 	"contact move, attacker\n"
-	"loses 1/4 HP.");
+	"loses 1/4 max HP.");
 
 static const u8 sAnticipationDescription[] = _(
 	"User shudders if opponent\n"
@@ -492,7 +492,7 @@ static const u8 sStormDrainDescription[] = _(
 	"boost when activated.");
 
 static const u8 sIceBodyDescription[] = _(
-	"Heals 1/16 HP every turn\n"
+	"Heals 1/16 max HP every turn\n"
 	"during hail.");
 
 static const u8 sSnowWarningDescription[] = _(
@@ -522,7 +522,7 @@ static const u8 sFlowerGiftDescription[] = _(
 
 static const u8 sBadDreamsDescription[] = _(
 	"Damages sleeping Pokémon\n"
-	"of 1/4 HP per turn.");
+	"of 1/4 max HP per turn.");
 
 static const u8 sPickpocketDescription[] = _(
 	"Steals the foe's held item\n"
@@ -701,7 +701,7 @@ static const u8 sFlowerVeilDescription[] = _(
 
 static const u8 sCheekPouchDescription[] = _(
 	"Eating Berries restores\n"
-	"1/3 HP.");
+	"1/3 max HP.");
 
 static const u8 sProteanDescription[] = _(
 	"Changes user type to that\n"
@@ -709,7 +709,7 @@ static const u8 sProteanDescription[] = _(
 
 static const u8 sFurCoatDescription[] = _(
 	"User defense stat is\n"
-	"increased by 50%.");
+	"doubled.");
 
 static const u8 sBulletproofDescription[] = _(
 	"Protects user from ball\n"
@@ -806,7 +806,7 @@ static const u8 sStaminaDescription[] = _(
 
 static const u8 sWimpOutDescription[] = _(
 	"Forces switch out at half\n"
-	"HP.");
+	"max HP.");
 
 static const u8 sWaterCompactionDescription[] = _(
 	"Defense rises 2 stages\n"
@@ -817,7 +817,7 @@ static const u8 sMercilessDescription[] = _(
 	"poisoned targets.");
 
 static const u8 sShieldsDownDescription[] = _(
-	"Shell breaks at half HP.");
+	"Shell breaks at half max HP.");
 
 static const u8 sStakeoutDescription[] = _(
 	"Damage against switched in\n"
@@ -834,7 +834,7 @@ static const u8 sSteelworkerDescription[] = _(
 
 static const u8 sBerserkDescription[] = _(
 	"Sp. Atk rises two stages\n"
-	"at half HP or less.");
+	"at half max HP or less.");
 
 static const u8 sSlushRushDescription[] = _(
 	"Doubles Speed in hail.");
@@ -1096,7 +1096,7 @@ static const u8 sWildFireDescription[] = _(
 	"one stage.");
 
 static const u8 sMiracleBlossomDescription[] = _(
-	"User and ally heals 1/8 HP\n"
+	"User and ally heals 1/8 max HP\n"
 	"at the end of every turn.");
 
 static const u8 sScorchingHeartDescription[] = _(
@@ -1117,7 +1117,7 @@ static const u8 sGardenerDescription[] = _(
 
 static const u8 sPricklyThornsDescription[] = _(
 	"Damages attackers who\n"
-	"make contact for 1/8 HP.");
+	"make contact for 1/8 max HP.");
 
 static const u8 sAuraSenseDescription[] = _(
 	"User shudders if opponent\n"
@@ -1126,7 +1126,7 @@ static const u8 sAuraSenseDescription[] = _(
 
 static const u8 sSoulSiphonDescription[] = _(
 	"Contact from user steals\n"
-	"1/8 HP from the target and\n"
+	"1/8 max HP from the target and\n"
 	"heals user the same amount.");
 
 static const u8 sBadLuckDescription[] = _(
@@ -1167,7 +1167,7 @@ static const u8 sSuperheatedDescription[] = _(
 	"rock types.");
 
 static const u8 sDreamfeastDescription[] = _(
-	"User will heal 1/8 HP\n"
+	"User will heal 1/8 max HP\n"
 	"every turn per sleeping\n"
 	"Pokémon on field.");
 
@@ -1178,7 +1178,7 @@ static const u8 sKingsMightDescription[] = _(
 
 static const u8 sPleasantDreamsDescription[] = _(
 	"Heals sleeping Pokémon\n"
-	"of 1/4 HP per turn.");
+	"of 1/4 max HP per turn.");
 
 static const u8 sOriginDescription[] = _(
 	"User has access to two\n"

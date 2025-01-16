@@ -492,6 +492,72 @@ These Pokemon are available after beating the Pokemon League.
 -TM98 Waterfall - Lilycove Store
 -TM99 Dazzling Gleam - Wildwoods area 7
 
+# Tutor Move List and locations
+
+-Swords Dance - Battle Frontier
+-Body Slam - Battle Frontier
+-Double Edge - Sootopolis City
+-Counter - Battle Frontier
+-Seismic Toss - Battle Frontier
+-Mimic - Lavaridge Town
+-Metronome - Fallarbor Town
+-Soft Boiled - Battle Frontier
+-Dream Eater - Battle Frontier
+-Gastro Acid - Battle Frontier
+-Explosion - Pacifidlog Town
+-Psychic Fangs - Battle Frontier
+-Substitute - Lilycove City
+-Dynamic Punch - Mossdeep City
+-Rollout - Mauville City
+-Psych Up - Battle Frontier
+-Snore - Battle Frontier
+-Icy Wind - Battle Frontier
+-Endure - Battle Frontier
+-Earth Power - Battle Frontier
+-Ice Punch - Battle Frontier
+-Swagger - Slateport City
+-Sleep Talk - Fortree City
+-Swift - Battle Frontier
+-Defense Curl - Battle Frontier
+-Thunder Punch - Battle Frontier
+-Fire Punch - Battle Frontier
+-Fury Cutter - Verdanturf Town
+-Serpent Dance - Battle Frontier
+-Flint Blade - Battle Frontier
+-Blaze Impact - Battle Frontier
+-Work Up - Battle Frontier
+-Low Sweep - Battle Frontier
+-Avalanche - Battle Frontier
+-Signal Beam - Battle Frontier
+-Nasty Plot - Battle Frontier
+-Superpower - Battle Frontier
+-Play Rough - Battle Frontier
+-Stored Power - Battle Frontier
+-Role Play - Battle Frontier
+-Defog - Battle Frontier
+-Trick - Battle Frontier
+-Knock Off - Battle Frontier
+-Stealth Rock - Battle Frontier
+-Tailwind - Battle Frontier
+-Breaking Swipe - Battle Frontier
+-Heat Wave - Battle Frontier
+-Gunk Shot - Battle Frontier
+-Zen Headbutt - Battle Frontier
+-Body Press - Battle Frontier
+-Worry Seed - Battle Frontier
+-Recycle - Battle Frontier
+-Low Kick - Battle Frontier
+-Magic Coat - Battle Frontier
+-Pain Split - Battle Frontier
+-Seed Bomb - Battle Frontier
+-Iron Head - Battle Frontier
+-Aqua Tail - Battle Frontier
+-Foul Play - Battle Frontier
+-Megahorn - Battle Frontier
+-Draco Meteor - Ever Grande City
+-Hidden Thorns - Battle Frontier
+-Bug Bite - Battle Frontier
+
 # Berry Handouts locations
 
 1 to 8 - Flower Shop Girl (Route 104 Flower Shop)
@@ -500,7 +566,7 @@ These Pokemon are available after beating the Pokemon League.
 16 to 20 - Berry Crush Man (Route 114)
 21 to 30 - Berry Master (Route 123)/Kiri (Sootopolis City)
 31 to 35 - Berry Master's Wife phrase (GREAT BATTLE, CHALLENGE CONTEST, OVERWHELMING LATIAS, COOL LATIOS, SUPER HUSTLE)
-36 to 53 - Glacia obsessed guitarist (Ever Grande City)
+36 to 53 - Glacia obsessed Guitarist (Ever Grande City)
 54 to 60 - Winona (Mossdeep City)
 
 # Useful Items Purchase Locations
@@ -1008,6 +1074,9 @@ These Pokemon are available after beating the Pokemon League.
 - *Hisuian Voltorb* (Soundroof, Static, Aftermath)
 - *Hisuian Electrode* (Soundroof, Static, Aftermath)
 - *Alolan Exeggutor* (Frisk, Solar Power, Harvest)
+- *Galarian Articuno* (Pressure, Competitive, Infiltrator)
+- *Galarian Zapdos* (Pressure, Defiant, Steadfast)
+- *Galarian Moltres* (Pressure, Own Tempo, Regenerator)
 - *Hisuian Typhlosion* (Blaze, Frisk, Wildfire)
 
 # Wild Pokemon Held Items List

@@ -3636,7 +3636,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_FLAREON_1] = {
         .species = SPECIES_FLAREON,
-        .moves = {MOVE_BLAZE_IMPACT, MOVE_BODY_SLAM, MOVE_IRON_TAIL, MOVE_WILL_O_WISP},
+        .moves = {MOVE_BLAZE_IMPACT, MOVE_SUPERPOWER, MOVE_IRON_TAIL, MOVE_WILL_O_WISP},
         .item = ITEM_SITRUS_BERRY,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_JOLLY
@@ -6476,6 +6476,13 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_MODEST
     },
+    [FRONTIER_MON_ARTICUNO_GALARIAN_1] = {
+        .species = SPECIES_ARTICUNO_GALARIAN,
+        .moves = {MOVE_PSYSHOCK, MOVE_HURRICANE, MOVE_SHADOW_BALL, MOVE_FUTURE_SIGHT},
+        .item = ITEM_WISE_GLASSES,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
     [FRONTIER_MON_ZAPDOS_1] = {
         .species = SPECIES_ZAPDOS,
         .moves = {MOVE_THUNDERBOLT, MOVE_HEAT_WAVE, MOVE_CHARGE_BEAM, MOVE_ROOST},
@@ -6483,12 +6490,26 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_MODEST
     },
+    [FRONTIER_MON_ZAPDOS_GALARIAN_1] = {
+        .species = SPECIES_ZAPDOS_GALARIAN,
+        .moves = {MOVE_THUNDEROUS_KICK, MOVE_DRILL_PECK, MOVE_U_TURN, MOVE_THROAT_CHOP},
+        .item = ITEM_CHOICE_SCARF,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_ADAMANT
+    },
     [FRONTIER_MON_MOLTRES_1] = {
         .species = SPECIES_MOLTRES,
         .moves = {MOVE_FIRE_BLAST, MOVE_HURRICANE, MOVE_ANCIENT_POWER, MOVE_ROOST},
         .item = ITEM_LUM_BERRY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MOLTRES_GALARIAN_1] = {
+        .species = SPECIES_MOLTRES_GALARIAN,
+        .moves = {MOVE_FIERY_WRATH, MOVE_AIR_SLASH, MOVE_ANCIENT_POWER, MOVE_NASTY_PLOT},
+        .item = ITEM_WISE_GLASSES,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
     },
     [FRONTIER_MON_RAIKOU_1] = {
         .species = SPECIES_RAIKOU,
@@ -6553,6 +6574,13 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_BOLD
     },
+    [FRONTIER_MON_ARTICUNO_GALARIAN_2] = {
+        .species = SPECIES_ARTICUNO_GALARIAN,
+        .moves = {MOVE_FREEZING_GLARE, MOVE_HURRICANE, MOVE_REFLECT, MOVE_RECOVER},
+        .item = ITEM_LEFTOVERS,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_CALM
+    },
     [FRONTIER_MON_ZAPDOS_2] = {
         .species = SPECIES_ZAPDOS,
         .moves = {MOVE_THUNDER, MOVE_CHARGE, MOVE_THUNDER_WAVE, MOVE_HURRICANE},
@@ -6560,12 +6588,26 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
         .nature = NATURE_CALM
     },
+    [FRONTIER_MON_ZAPDOS_GALARIAN_2] = {
+        .species = SPECIES_ZAPDOS_GALARIAN,
+        .moves = {MOVE_CLOSE_COMBAT, MOVE_DRILL_PECK, MOVE_LEECH_LIFE, MOVE_KNOCK_OFF},
+        .item = ITEM_LIFE_ORB,
+        .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_JOLLY
+    },
     [FRONTIER_MON_MOLTRES_2] = {
         .species = SPECIES_MOLTRES,
         .moves = {MOVE_OVERHEAT, MOVE_SKY_ATTACK, MOVE_U_TURN, MOVE_BLAZE_IMPACT},
         .item = ITEM_POWER_HERB,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_MOLTRES_GALARIAN_2] = {
+        .species = SPECIES_MOLTRES_GALARIAN,
+        .moves = {MOVE_FIERY_WRATH, MOVE_HURRICANE, MOVE_ANCIENT_POWER, MOVE_HYPER_BEAM},
+        .item = ITEM_CHOICE_SPECS,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
     },
     [FRONTIER_MON_RAIKOU_2] = {
         .species = SPECIES_RAIKOU,
@@ -6630,6 +6672,13 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_MODEST
     },
+    [FRONTIER_MON_ARTICUNO_GALARIAN_3] = {
+        .species = SPECIES_ARTICUNO_GALARIAN,
+        .moves = {MOVE_FREEZING_GLARE, MOVE_AIR_SLASH, MOVE_SIGNAL_BEAM, MOVE_CALM_MIND},
+        .item = ITEM_SAFETY_GOGGLES,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
     [FRONTIER_MON_ZAPDOS_3] = {
         .species = SPECIES_ZAPDOS,
         .moves = {MOVE_THUNDER, MOVE_HEAT_WAVE, MOVE_U_TURN, MOVE_TAILWIND},
@@ -6637,12 +6686,26 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_MODEST
     },
+    [FRONTIER_MON_ZAPDOS_GALARIAN_3] = {
+        .species = SPECIES_ZAPDOS_GALARIAN,
+        .moves = {MOVE_THUNDEROUS_KICK, MOVE_DRILL_PECK, MOVE_ROOST, MOVE_BULK_UP},
+        .item = ITEM_LEFTOVERS,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SPEED,
+        .nature = NATURE_IMPISH
+    },
     [FRONTIER_MON_MOLTRES_3] = {
         .species = SPECIES_MOLTRES,
         .moves = {MOVE_FLAMETHROWER, MOVE_HURRICANE, MOVE_REFLECT, MOVE_ROOST},
         .item = ITEM_SAFETY_GOGGLES,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_MOLTRES_GALARIAN_3] = {
+        .species = SPECIES_MOLTRES_GALARIAN,
+        .moves = {MOVE_FIERY_WRATH, MOVE_HURRICANE, MOVE_TOXIC, MOVE_ROOST},
+        .item = ITEM_SHELL_BELL,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_CALM
     },
     [FRONTIER_MON_RAIKOU_3] = {
         .species = SPECIES_RAIKOU,
@@ -6707,6 +6770,13 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_SPEED,
         .nature = NATURE_CALM
     },
+    [FRONTIER_MON_ARTICUNO_GALARIAN_4] = {
+        .species = SPECIES_ARTICUNO_GALARIAN,
+        .moves = {MOVE_PSYSHOCK, MOVE_AIR_SLASH, MOVE_SHADOW_BALL, MOVE_TAILWIND},
+        .item = ITEM_LUM_BERRY,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_MODEST
+    },
     [FRONTIER_MON_ZAPDOS_4] = {
         .species = SPECIES_ZAPDOS,
         .moves = {MOVE_DISCHARGE, MOVE_HEAT_WAVE, MOVE_HURRICANE, MOVE_LIGHT_SCREEN},
@@ -6714,12 +6784,26 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_BOLD
     },
+    [FRONTIER_MON_ZAPDOS_GALARIAN_4] = {
+        .species = SPECIES_ZAPDOS_GALARIAN,
+        .moves = {MOVE_THUNDEROUS_KICK, MOVE_ACROBATICS, MOVE_ROOST, MOVE_COUNTER},
+        .item = ITEM_PAYAPA_BERRY,
+        .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_ATTACK,
+        .nature = NATURE_ADAMANT
+    },
     [FRONTIER_MON_MOLTRES_4] = {
         .species = SPECIES_MOLTRES,
         .moves = {MOVE_AIR_SLASH, MOVE_FIRE_SPIN, MOVE_WILL_O_WISP, MOVE_ROOST},
         .item = ITEM_BINDING_BAND,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
         .nature = NATURE_TIMID
+    },
+    [FRONTIER_MON_MOLTRES_GALARIAN_4] = {
+        .species = SPECIES_MOLTRES_GALARIAN,
+        .moves = {MOVE_FIERY_WRATH, MOVE_HURRICANE, MOVE_ROOST, MOVE_AGILITY},
+        .item = ITEM_LIFE_ORB,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_MODEST
     },
     [FRONTIER_MON_RAIKOU_4] = {
         .species = SPECIES_RAIKOU,
@@ -7253,6 +7337,20 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_TIMID
     },
+    [FRONTIER_MON_ARTICUNO_GALARIAN_5] = {
+        .species = SPECIES_ARTICUNO_GALARIAN,
+        .moves = {MOVE_PSYSHOCK, MOVE_AIR_SLASH, MOVE_HYPNOSIS, MOVE_DREAM_EATER},
+        .item = ITEM_SHELL_BELL,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_MODEST
+    },
+    [FRONTIER_MON_ARTICUNO_GALARIAN_6] = {
+        .species = SPECIES_ARTICUNO_GALARIAN,
+        .moves = {MOVE_FREEZING_GLARE, MOVE_HURRICANE, MOVE_SIGNAL_BEAM, MOVE_TRICK},
+        .item = ITEM_CHOICE_SPECS,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
+        .nature = NATURE_TIMID
+    },
     [FRONTIER_MON_ZAPDOS_5] = {
         .species = SPECIES_ZAPDOS,
         .moves = {MOVE_DISCHARGE, MOVE_SIGNAL_BEAM, MOVE_ROOST, MOVE_HEAT_WAVE},
@@ -7267,6 +7365,20 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_TIMID
     },
+    [FRONTIER_MON_ZAPDOS_GALARIAN_5] = {
+        .species = SPECIES_ZAPDOS_GALARIAN,
+        .moves = {MOVE_SUPERPOWER, MOVE_ACROBATICS, MOVE_U_TURN, MOVE_LIGHT_SCREEN},
+        .item = ITEM_FLYING_GEM,
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
+        .nature = NATURE_JOLLY
+    },
+    [FRONTIER_MON_ZAPDOS_GALARIAN_6] = {
+        .species = SPECIES_ZAPDOS_GALARIAN,
+        .moves = {MOVE_THUNDEROUS_KICK, MOVE_DRILL_PECK, MOVE_KNOCK_OFF, MOVE_STEEL_WING},
+        .item = ITEM_MUSCLE_BAND,
+        .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
+        .nature = NATURE_ADAMANT
+    },
     [FRONTIER_MON_MOLTRES_5] = {
         .species = SPECIES_MOLTRES,
         .moves = {MOVE_FIRE_BLAST, MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM, MOVE_AIR_SLASH},
@@ -7280,6 +7392,20 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
         .item = ITEM_FLYING_GEM,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_ATTACK,
         .nature = NATURE_DOCILE
+    },
+    [FRONTIER_MON_MOLTRES_GALARIAN_5] = {
+        .species = SPECIES_MOLTRES_GALARIAN,
+        .moves = {MOVE_FIERY_WRATH, MOVE_AIR_SLASH, MOVE_TAUNT, MOVE_ROOST},
+        .item = ITEM_LEFTOVERS,
+        .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+        .nature = NATURE_CALM
+    },
+    [FRONTIER_MON_MOLTRES_GALARIAN_6] = {
+        .species = SPECIES_MOLTRES_GALARIAN,
+        .moves = {MOVE_FOUL_PLAY, MOVE_TAUNT, MOVE_TOXIC, MOVE_ROOST},
+        .item = ITEM_LEFTOVERS,
+        .evSpread = F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
+        .nature = NATURE_BOLD
     },
     [FRONTIER_MON_RAIKOU_5] = {
         .species = SPECIES_RAIKOU,

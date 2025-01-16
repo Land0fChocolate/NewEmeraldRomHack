@@ -11258,20 +11258,34 @@ static const u64 sTutorLearnsets[] =
                                             | TUTOR(MOVE_SLEEP_TALK)
                                             | TUTOR(MOVE_SNORE)
                                             | TUTOR(MOVE_SUBSTITUTE)
-                                            | TUTOR(MOVE_SWIFT)),
+                                            | TUTOR(MOVE_SWIFT)
+                                            | TUTOR(MOVE_SIGNAL_BEAM)
+                                            | TUTOR(MOVE_STORED_POWER)
+                                            | TUTOR(MOVE_DEFOG)
+                                            | TUTOR(MOVE_TRICK)
+                                            | TUTOR(MOVE_TAILWIND)),
 
     [SPECIES_ZAPDOS_GALARIAN]  = TUTOR_LEARNSET(TUTOR(MOVE_COUNTER)
                                             | TUTOR(MOVE_ENDURE)
                                             | TUTOR(MOVE_SLEEP_TALK)
                                             | TUTOR(MOVE_SNORE)
                                             | TUTOR(MOVE_SUBSTITUTE)
-                                            | TUTOR(MOVE_SWIFT)),
+                                            | TUTOR(MOVE_SWIFT)
+                                            | TUTOR(MOVE_SUPERPOWER)
+                                            | TUTOR(MOVE_DEFOG)
+                                            | TUTOR(MOVE_KNOCK_OFF)
+                                            | TUTOR(MOVE_TAILWIND)
+                                            | TUTOR(MOVE_LOW_KICK)),
 
     [SPECIES_MOLTRES_GALARIAN]  = TUTOR_LEARNSET(TUTOR(MOVE_ENDURE)
                                             | TUTOR(MOVE_SLEEP_TALK)
                                             | TUTOR(MOVE_SNORE)
                                             | TUTOR(MOVE_SUBSTITUTE)
-                                            | TUTOR(MOVE_SWIFT)),
+                                            | TUTOR(MOVE_SWIFT)
+                                            | TUTOR(MOVE_NASTY_PLOT)
+                                            | TUTOR(MOVE_DEFOG)
+                                            | TUTOR(MOVE_TAILWIND)
+                                            | TUTOR(MOVE_FOUL_PLAY)),
 
     [SPECIES_SLOWKING_GALARIAN]  = TUTOR_LEARNSET(TUTOR(MOVE_BODY_SLAM)
                                             | TUTOR(MOVE_ENDURE)

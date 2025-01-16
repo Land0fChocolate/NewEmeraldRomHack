@@ -298,20 +298,20 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Gold Symbol.
         {
             {
+                .species = SPECIES_GENGAR,
+                .heldItem = ITEM_SITRUS_BERRY,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_TIMID,
+                .evs = {6, 0, 0, 252, 0, 252},
+                .moves = {MOVE_SHADOW_BALL, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
+            },
+            {
                 .species = SPECIES_FLAREON,
                 .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_ADAMANT,
                 .evs = {252, 252, 0, 0, 0, 6},
-                .moves = {MOVE_BLAZE_IMPACT, MOVE_SUPERPOWER, MOVE_BODY_SLAM, MOVE_OVERHEAT},
-            },
-            {
-                .species = SPECIES_GENGAR,
-                .heldItem = ITEM_LUM_BERRY,
-                .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_TIMID,
-                .evs = {6, 0, 0, 252, 0, 252},
-                .moves = {MOVE_SHADOW_BALL, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
+                .moves = {MOVE_BLAZE_IMPACT, MOVE_SUPERPOWER, MOVE_WILL_O_WISP, MOVE_OVERHEAT},
             },
             {
                 .species = SPECIES_BRELOOM,
@@ -319,7 +319,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_JOLLY,
                 .evs = {0, 252, 6, 0, 0, 252},
-                .moves = {MOVE_SPORE, MOVE_FORCE_PALM, MOVE_SEED_BOMB, MOVE_ROCK_SLIDE},
+                .moves = {MOVE_SPORE, MOVE_FORCE_PALM, MOVE_BULLET_SEED, MOVE_ROCK_TOMB},
             },
         },
     },
