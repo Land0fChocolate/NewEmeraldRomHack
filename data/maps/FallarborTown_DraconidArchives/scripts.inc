@@ -218,8 +218,11 @@ DraconidArchives_EventScript_ZinniaResetsLegendaries::
 
 DraconidArchives_EventScript_ResetDefeatedLegendaries::
 	clearflag FLAG_DEFEATED_ARTICUNO
+	clearflag FLAG_GAVE_AWAY_GALARIAN_ARTICUNO
 	clearflag FLAG_DEFEATED_ZAPDOS
+	clearflag FLAG_GAVE_AWAY_GALARIAN_ZAPDOS
 	clearflag FLAG_DEFEATED_MOLTRES
+	clearflag FLAG_GAVE_AWAY_GALARIAN_MOLTRES
 	clearflag FLAG_DEFEATED_MEW
 	clearflag FLAG_HIDE_MEW
 	clearflag FLAG_DEFEATED_RAIKOU

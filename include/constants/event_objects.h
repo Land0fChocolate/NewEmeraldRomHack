@@ -323,6 +323,11 @@
 #define OBJ_EVENT_GFX_METEORITE                  319
 #define OBJ_EVENT_GFX_CELEBI                     320
 #define OBJ_EVENT_GFX_JIRACHI                    321
+#define OBJ_EVENT_GFX_NIDOKING                   322
+#define OBJ_EVENT_GFX_SCIZOR                     323
+#define OBJ_EVENT_GFX_WEAVILE                    324
+#define OBJ_EVENT_GFX_MAGMORTAR                  325
+#define OBJ_EVENT_GFX_GENGAR                     326
 
 #define NUM_OBJ_EVENT_GFX                        3252
 
