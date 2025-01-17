@@ -1,9 +1,18 @@
 # Pokémon Energized Emerald
 
-A revamp of Pokemon Emerald with the aim to expand and enhance the game. 
+Pokemon Energized Emerald is a revamp of Pokemon Emerald that offers an enhanced and expanded experience in gameplay, story, graphics and QoL whilst keeping with the themes of the original game. My changes aim to make the game more fun yet also providing a good fair challenge. It's intended to make an ultimate Pokemon Emerald experience and I've built it how I would want an ultimate Pokemon Emerald game to be. 
+
+The biggest gameplay change in Energized Emerald is that Pokemon can now have up to 3 abilities working at once, creating more dynamic and strategic battles. Players will have to consider more mechanics bouncing about in battles than in regular Pokemon games and will also find that game balance has shifted, as many Pokemon have strongly benefitted (or not) from the multiple ability change. Some Pokemon gain abilities they didn't have before, like Gulpin who now has Corrosion, which also by the way is upgraded to now make Poison moves be super effective against Steel types! New abilities and moves have also been added to further improve on Pokemon themes and battle performance, Whismur does more damage with sound based moves with its new Volume Up ability and Gardevoir can use the new move Singularity to protect with black holes!
+Outside of battles are many quality of life improvements. HMs are no longer required to teach to Pokemon to traverse obstacles, only the badge and a compatible Pokemon is required. Grinding has been significantly reduced with things like stronger vitamins, an IV buffing service, an EV maxing service, and buyable Rare Candies (for the post game), so making that perfect team takes much less time.
+See the lists below for more extensive details of gameplay additions and updates.
+
+The story has been revised with more ORAS elements, and it also continues after beating the Pokemon League with a brand new story! The overworld has been updated so players will see more bustling urban areas, more labyrinthian dungeons and also brand new areas containing Pokemon not found in the wild in vanilla Emerald which is tied to the post game story. Kyogre, Groudon and Rayquaza are tied to the post game story and can be encountered by following it.
+
+The players will encounter the standard Hoenn dex in their playthrough (with some post gen evolutions like Budew and Dusknoir). Non-Hoenn Pokemon are available in the post game and organically found in entirely new areas or in cases like artificial Pokemon such as Porygon are bought.
+All gen 1-3 Pokemon and their future evolutions and pre-evolutions are available in this game, for a total of 419 Pokemon. There are also 31 regional forms available, and some of them are accessible before post-game!
 
 This is a rom hack of Pokemon Emerald using the pokeemerald-expansion decompilation project as its base: https://github.com/rh-hideout/pokeemerald-expansion.
-The rom hack started in December 2021, using the version of pokeemerald-expansion at the time. Most updates to pokeemerald-expansion have been implemented in Energized Emerald.
+The rom hack started in December 2021, using the version of pokeemerald-expansion at the time. Most updates to pokeemerald-expansion since then have been implemented in Energized Emerald. The game will continue to be updated to add or improve features and fix bugs.
 
 Please leave feedback on the Pokemon Energized Emerald Discord channel: https://discord.gg/4ZF47gWd7K or in the pokecommunity thread: https://www.pokecommunity.com/showthread.php?t=491868.
 
@@ -33,7 +42,7 @@ v1.0.20 - 08/10/2023
 v1.0.21 - 27/11/2023
 v1.0.22 - 13/02/2024
 v1.0.23 - 01/06/2024
-v1.1.0 - tbc
+v1.1.0 - tbc/2025
 
 # Changelog
 
@@ -43,7 +52,7 @@ v1.1.0 - tbc
 	- Those Pokemon with post gen 3 evolutions and pre-evolutions have those available as well.
 	- Many regional variants of gen 1, 2 and 3 Pokemon are available.
 	- Non-Hoenn Pokemon are available after beating the Pokemon League.
-	- A total of 419 ordinary Pokemon species and 28 regional species are accessible.
+	- A total of 419 ordinary Pokemon species and 31 regional species are accessible.
 - Pokemon can have up to 3 active abilities at once, dependant on their species.
 	- Many Pokemon have had their ability sets updated to better fit their theme and gameplay. Gulpin has Corrosion now, the Regis all get Filter and many more! A full list can be found in the docs.
 	- Some vanilla abilities have been updated to make them more useful and compatible with the new multi ability change (listed below).
@@ -76,6 +85,7 @@ v1.1.0 - tbc
 	- Steven is back to being champion and Wallace back to being a gym leader.
 	- Prof Birch is chased by a Poochyena instead of a Zigzagoon.
 - Opponent Trainer parties have been updated.
+	- Gym Leaders have tougher teams, but are not unreasonale. You won't see them use Megas or legendaries or Roxanne using 6 Pokemon straight away.
 - New opponent Trainer classes like Street Thugs and Fairy Tale Girls.
 - Contests have been updated to take on the various changes.
 	- More Pokemon added to opponent lists, especially new Pokemon species.
@@ -265,6 +275,35 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Origin move selection has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
 - Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, Flygon, Salamence and more)
 - Move relearner doesn't list all of the possible moves to relearn, only the first ~15.
+
+# Frequently Asked Questions/Troubleshooting
+
+- The ROM doesn't patch
+There are other downloads on the Pokemon Energized Emerald Discord server to try. Make sure you're using a Trashman Pokemon Emerald ROM. 
+
+- The game crashes during the introduction
+This is an emulator issue and I don't know why this happens. Try a different core on your emulator or a different emulator. I've had success with mBGA, Virtual Boy Advance and Pizza Boy on Android.
+
+- How do I put the game onto a cartridge?
+I have absolutely no idea. I don't even know if it's possible for pokeemeerald-expansion projects. 
+
+- Cheats don't work!
+Yeah, not surprising. The format of the save file has been changed. Don't ask me to make cheats because I will not make them.
+
+- Will you add in more Pokemon?
+Nope. I feel 450 different species is enough and I don't want the game to get bogged down with bloat.
+
+- Will you make Mega Evolutions accessible earlier?
+Nope. The game is not designed for them in terms of difficulty curves and story themes. Besides, I feel like they don't add that much gameplay complexity to justify their inclusion and they can distract players from using new features like the multi ability system. 
+
+- Will you increase Pokemon Storage Box size?
+Nope. I can't increase the Storage Box size any more due to GBA limitations. I feel 450 spaces is just enough and can work for a living dex anyway. 
+
+- Is there any documentation?
+Yes. There are doc files included with the ROM download. 
+
+- I'm stuck in the post game!
+There's a post game story guide in the docs. I've tried to make it obvious to tell players where to go but I will keep trying to improve it.
 
 
 # Credits

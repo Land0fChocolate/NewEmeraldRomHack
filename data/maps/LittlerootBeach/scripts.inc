@@ -460,7 +460,10 @@ LittlerootBeach_Text_BrendanGivesTM76:
 	.string "it so you can have it.$"
 
 LittlerootBeach_Text_MayLetsBattle:
-	.string "May: Okay, {PLAYER}.\p"
+	.string "May: Okay, {PLAYER}.\n"
+	.string "I'm giving it one more try.\p"
+	.string "I've trained up a bunch of new\n"
+	.string "Pokémon just to face you.\p"
 	.string "I'm ready. Give it all you've got!$"
 
 LittlerootBeach_Text_MayDefeated:
@@ -477,12 +480,14 @@ LittlerootBeach_Text_MayExit:
 	.string "I've also had so much enjoyment\n"
 	.string "travelling, raising and catching\l"
 	.string "Pokémon.\p"
-	.string "So thank you for being here,\n"
+	.string "So thank you for coming here,\n"
 	.string "{PLAYER}.\p"
 	.string "Well then, see ya!$"
 
 LittlerootBeach_Text_BrendanLetsBattle:
 	.string "Brendan: Alright, {PLAYER}.\p"
+	.string "I've trained some new Pokémon I've\n"
+	.string "found just to see if I can beat you.\p"
 	.string "Lets go!$"
 
 LittlerootBeach_Text_BrendanDefeated:

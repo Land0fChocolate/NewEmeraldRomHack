@@ -35,6 +35,7 @@ OldaleTown_EventScript_CitySign::
 
 OldaleTown_EventScript_Girl::
 	msgbox OldaleTown_Text_SavingMyProgress, MSGBOX_NPC
+	waitstate
 	end
 
 OldaleTown_EventScript_MartEmployee::

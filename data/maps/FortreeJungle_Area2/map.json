@@ -86,28 +86,28 @@
       "y": 26,
       "elevation": 0,
       "dest_map": "MAP_FORTREE_JUNGLE_AREA1",
-      "dest_warp_id": "2"
+      "dest_warp_id": 2
     },
     {
       "x": 24,
       "y": 26,
       "elevation": 0,
       "dest_map": "MAP_FORTREE_JUNGLE_AREA1",
-      "dest_warp_id": "3"
+      "dest_warp_id": 3
     },
     {
       "x": 3,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_FORTREE_JUNGLE_AREA3",
-      "dest_warp_id": "0"
+      "dest_warp_id": 0
     },
     {
       "x": 4,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_FORTREE_JUNGLE_AREA3",
-      "dest_warp_id": "1"
+      "dest_warp_id": 1
     }
   ],
   "coord_events": [
