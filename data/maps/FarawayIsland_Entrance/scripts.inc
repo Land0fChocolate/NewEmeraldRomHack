@@ -19,7 +19,11 @@ FarawayIsland_Entrance_EventScript_ClearWeather::
 	doweather
 	end
 
-@the flag is not needed, but I'm keeping it as I'll likely change this event
+FarawayIsland_EventScript_Brice::
+	trainerbattle_single TRAINER_BRICE, FarawayIsland_Text_BriceIntro, FarawayIsland_Text_BriceDefeat
+	msgbox FarawayIsland_Text_BricePostBattle, MSGBOX_AUTOCLOSE
+	end
+
 FarawayIsland_Entrance_EventScript_TMCheckTrigger::
 	lock
 	goto_if_unset FLAG_OBTAINED_ALL_TMS_FOR_FARAWAY_ISLAND, FarawayIsland_Entrance_EventScript_CheckForEveryTM
