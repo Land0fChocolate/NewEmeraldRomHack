@@ -8,6 +8,7 @@
 #include "trig.h"
 
 static void AnimFireSpiralInward(struct Sprite *);
+static void AnimFireSpiralInward2(struct Sprite *);
 static void AnimFirePlume(struct Sprite *);
 static void AnimLargeFlame(struct Sprite *);
 static void AnimLargeFlame_Step(struct Sprite *);
@@ -72,6 +73,17 @@ const struct SpriteTemplate gFireSpiralInwardSpriteTemplate =
     .callback = AnimFireSpiralInward,
 };
 
+const struct SpriteTemplate gFireSpiralInwardSpriteTemplate2 =
+{
+    .tileTag = ANIM_TAG_SMALL_EMBER,
+    .paletteTag = ANIM_TAG_SMALL_EMBER,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_FireSpiralSpread,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimFireSpiralInward2,
+};
+
 const struct SpriteTemplate gFireSpreadSpriteTemplate =
 {
     .tileTag = ANIM_TAG_SMALL_EMBER,
@@ -81,6 +93,17 @@ const struct SpriteTemplate gFireSpreadSpriteTemplate =
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimFireSpread,
+};
+
+const struct SpriteTemplate gFireSpreadSpriteTemplate2 =
+{
+    .tileTag = ANIM_TAG_SMALL_EMBER,
+    .paletteTag = ANIM_TAG_SMALL_EMBER,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_FireSpiralSpread,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimFireSpread2,
 };
 
 static const union AnimCmd sAnim_LargeFlame[] =
@@ -357,6 +380,17 @@ const struct SpriteTemplate gFireSpiralOutwardSpriteTemplate =
     .callback = AnimFireSpiralOutward,
 };
 
+const struct SpriteTemplate gFireSpiralOutwardSpriteTemplate2 =
+{
+    .tileTag = ANIM_TAG_SMALL_EMBER,
+    .paletteTag = ANIM_TAG_SMALL_EMBER,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gAnims_BasicFire,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimFireSpiralOutward2,
+};
+
 const struct SpriteTemplate gWeatherBallFireDownSpriteTemplate =
 {
     .tileTag = ANIM_TAG_SMALL_EMBER,
@@ -550,6 +584,24 @@ static void AnimLavaPlumeOrbitScatterStep(struct Sprite *sprite)
 // For the first stage of Fire Punch
 static void AnimFireSpiralInward(struct Sprite *sprite)
 {
+    InitSpritePosToAnimTarget(sprite, 1);
+    
+    sprite->data[0] = gBattleAnimArgs[0];
+    sprite->data[1] = 0x3C;
+    sprite->data[2] = 0x9;
+    sprite->data[3] = 0x1E;
+    sprite->data[4] = 0xFE00;
+
+    StoreSpriteCallbackInData6(sprite, DestroyAnimSprite);
+
+    sprite->callback = TranslateSpriteInGrowingCircleOverDuration;
+    sprite->callback(sprite);
+}
+
+static void AnimFireSpiralInward2(struct Sprite *sprite)
+{
+    InitSpritePosToAnimAttacker(sprite, 1);
+    
     sprite->data[0] = gBattleAnimArgs[0];
     sprite->data[1] = 0x3C;
     sprite->data[2] = 0x9;
@@ -565,6 +617,20 @@ static void AnimFireSpiralInward(struct Sprite *sprite)
 // For the impact spread of fire sprites for moves like Blaze Kick or Fire Punch
 void AnimFireSpread(struct Sprite *sprite)
 {
+    SetAnimSpriteInitialXOffset(sprite, gBattleAnimArgs[0]);
+
+    sprite->y += gBattleAnimArgs[1];
+    sprite->data[0] = gBattleAnimArgs[4];
+    sprite->data[1] = gBattleAnimArgs[2];
+    sprite->data[2] = gBattleAnimArgs[3];
+
+    sprite->callback = TranslateSpriteLinearFixedPoint;
+    StoreSpriteCallbackInData6(sprite, DestroyAnimSprite);
+}
+
+void AnimFireSpread2(struct Sprite *sprite)
+{
+    InitSpritePosToAnimAttacker(sprite, 1);
     SetAnimSpriteInitialXOffset(sprite, gBattleAnimArgs[0]);
 
     sprite->y += gBattleAnimArgs[1];
@@ -823,6 +889,19 @@ static void AnimFireCross(struct Sprite *sprite)
 void AnimFireSpiralOutward(struct Sprite *sprite)
 {
     InitSpritePosToAnimAttacker(sprite, 1);
+
+    sprite->data[1] = gBattleAnimArgs[2];
+    sprite->data[0] = gBattleAnimArgs[3];
+
+    sprite->invisible = TRUE;
+    sprite->callback = WaitAnimForDuration;
+
+    StoreSpriteCallbackInData6(sprite, AnimFireSpiralOutward_Step1);
+}
+
+void AnimFireSpiralOutward2(struct Sprite *sprite)
+{
+    InitSpritePosToAnimTarget(sprite, 1);
 
     sprite->data[1] = gBattleAnimArgs[2];
     sprite->data[0] = gBattleAnimArgs[3];

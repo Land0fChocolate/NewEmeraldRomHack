@@ -478,7 +478,9 @@ extern const union AnimCmd *const gAnims_BlizzardIceCrystal[];
 
 // battle_anim_fire.c
 void AnimFireSpread(struct Sprite *sprite);
+void AnimFireSpread2(struct Sprite *sprite);
 void AnimFireSpiralOutward(struct Sprite *sprite);
+void AnimFireSpiralOutward2(struct Sprite *sprite);
 extern const union AnimCmd *const gAnims_FireBlastCross[];
 
 // battle_anim_dragon.c
