@@ -19,7 +19,7 @@ OldaleTown_PokemonCenter_1F_EventScript_Nurse::
 	end
 
 OldaleTown_PokemonCenter_1F_EventScript_Gentleman::
-	giveitem ITEM_RARE_CANDY, 5
+	givemon SPECIES_ARCANINE_HISUIAN, 50, ITEM_NONE
 	msgbox OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC, MSGBOX_NPC
 	end
 
