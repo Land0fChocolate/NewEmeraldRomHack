@@ -9043,6 +9043,20 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Johanna},
     },
 
+    [TRAINER_HIDEO] =
+    {
+        .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .trainerClass = TRAINER_CLASS_NINJA_BOY,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_NINJA_BOY,
+        .trainerName = _("Hideo"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
+        .partySize = ARRAY_COUNT(sParty_Hideo),
+        .party = {.NoItemCustomMoves = sParty_Hideo},
+    },
+
     [TRAINER_GERALD] =
     {
         .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET,

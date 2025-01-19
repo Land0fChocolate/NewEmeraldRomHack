@@ -768,7 +768,7 @@
 #define TRAINER_CALE                        764
 #define TRAINER_MYLES                       765
 #define TRAINER_PAT                         766
-#define TRAINER_CRISTIN_1                   767 //unused
+#define TRAINER_HIDEO                       767
 #define TRAINER_MAY_RUSTBORO_TREECKO        768
 #define TRAINER_MAY_RUSTBORO_TORCHIC        769
 #define TRAINER_ROXANNE_2                   770

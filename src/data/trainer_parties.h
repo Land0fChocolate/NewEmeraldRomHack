@@ -8931,7 +8931,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_Danielle[] = {
     }
 };
 
-static const struct TrainerMonNoItemCustomMoves sParty_Cobain[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Cobain[] = {
     {
     .iv = 100,
     .lvl = 53,
@@ -11853,6 +11853,21 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Pablo5[] = {
     .iv = 40,
     .lvl = 43,
     .species = SPECIES_STARMIE,
+    }
+};
+
+static const struct TrainerMonNoItemCustomMoves sParty_Hideo[] = {
+    {
+    .iv = 0,
+    .lvl = 28,
+    .species = SPECIES_KOFFING,
+    .moves = {MOVE_TACKLE, MOVE_SELF_DESTRUCT, MOVE_SLUDGE, MOVE_SMOKESCREEN}
+    },
+    {
+    .iv = 0,
+    .lvl = 28,
+    .species = SPECIES_KOFFING,
+    .moves = {MOVE_TACKLE, MOVE_POISON_GAS, MOVE_SLUDGE, MOVE_SMOKESCREEN}
     }
 };
 
