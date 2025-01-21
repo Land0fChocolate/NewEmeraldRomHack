@@ -478,7 +478,7 @@ These Pokemon are available after beating the Pokemon League.
 -TM84 Poison Jab - Lilycove Store
 -TM85 Electroweb - Lilycove Store
 -TM86 Grass Knot - Crumbling Gorge
--TM87 Swagger - Lilycove Store
+-TM87 Topsy Turvy - Lilycove Store
 -TM88 Drain Punch - Battle Frontier East
 -TM89 U-Turn - Slateport Market
 -TM90 Rock Smash - Slateport Market
@@ -515,7 +515,7 @@ These Pokemon are available after beating the Pokemon League.
 -Endure - Battle Frontier
 -Earth Power - Battle Frontier
 -Ice Punch - Battle Frontier
--Swagger - Slateport City
+-Swagger - Slateport City, Fan Club
 -Sleep Talk - Fortree City
 -Swift - Battle Frontier
 -Defense Curl - Battle Frontier

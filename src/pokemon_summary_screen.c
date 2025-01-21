@@ -95,6 +95,7 @@ enum {
 #define PSS_DATA_WINDOW_INFO_ID 1
 #define PSS_DATA_WINDOW_INFO_ABILITIES 2
 #define PSS_DATA_WINDOW_INFO_MEMO 3
+//#define PSS_DATA_WINDOW_INFO_ABILITY_DESCRIPTION 4
 
 // Dynamic fields for the Pokemon Skills page
 #define PSS_DATA_WINDOW_SKILLS_HELD_ITEM 0
@@ -619,6 +620,15 @@ static const struct WindowTemplate sPageInfoTemplate[] =
         .paletteNum = 6,
         .baseBlock = 625,
     },
+    //[PSS_DATA_WINDOW_INFO_ABILITY_DESCRIPTION] = {
+    //    .bg = 0,
+    //    .tilemapLeft = 11,
+    //    .tilemapTop = 14,
+    //    .width = 18,
+    //    .height = 6,
+    //    .paletteNum = 6,
+    //    .baseBlock = 625,
+    //},
 };
 static const struct WindowTemplate sPageSkillsTemplate[] =
 {
@@ -2651,8 +2661,9 @@ static void HandleAbilityDescriptionLabelTilemap(u16 a, s16 b)
     }
 }
 
-static void Task_ShowAbilityDescriptionLabelWindow(u8 taskId) //TODO: This will need to be figured out at some point
+static void Task_ShowAbilityDescriptionLabelWindow(u8 taskId) //TODO: This will need to be figured out at some point. Look at Task_ShowPowerAccWindow.
 {
+    //u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY_DESCRIPTION);
     u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO);
     s16 *data = gTasks[taskId].data;
     data[1] += data[0];

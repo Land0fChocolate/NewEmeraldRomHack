@@ -6837,13 +6837,13 @@
              (17, VISE GRIP)
              (21, FEINT ATTACK)
              (25, BATON PASS)
-             (29, CRUNCH)
+             (29, IRON HEAD)
              (33, IRON DEFENSE)
              (37, SUCKER PUNCH)
              (41, STOCKPILE)
              (41, SWALLOW)
              (41, SPIT UP)
-             (45, IRON HEAD)
+             (45, CRUNCH)
              (49, PLAY ROUGH)
 
 

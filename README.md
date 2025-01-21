@@ -225,8 +225,8 @@ Possible future additions/changes.
 - Pokedex to support regional variants.
 - Pokedex to have other data as well. Moves, base stats, evolution requirements, abilities?
 - Improve various art assets, mostly trainer pics.
-- The berry trees of the type resist berries should have their own colours.
-- Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Violin sound samples have been added as well just for this song.
+- The berry trees of the type resist berries to have their own colours.
+- Implement Zinnia's battle theme. Song is in game data, but not playing well. May be that I haven't figured out the right voicegroup or the song I chose isn't viable to use with GBA sound. Thing is, I know nothing about implementing music for the GBA. Violin sound samples have been added as well just for this song.
 - Implement the multi-ability pop-up box in battles. The code is there, I just can't configure it right.
 - A contest side-quest with Lisia, much like in ORAS.
 - Perhaps a more interesting Tate & Liza event to get Jirachi?
@@ -235,7 +235,7 @@ Possible future additions/changes.
 - Sort out the online/wireless features. Either find out how to make them work or remove them.
 - Better Game Corner games. May be a ton of work though. (Perhaps one could be a Battle Palace style battle where the Player places a bet?)
 - Better Battle Frontier level scaling. Open level puts opponent Pokemon to your highest level Pokemon. Should scale all Pokemon to a certain level like the battle facilities in future gens.
-- Add an Anything Goes challenge to the Battle Tower, where even legendary Pokemon like Rayquaza are allowed.
+- Add an Anything Goes challenge to the Battle Tower or as a new battle facility, where even legendary Pokemon like Rayquaza are allowed.
 - Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
 - Add another star to the Trainer Card for completing the National Dex. Create a platinum colour scheme to go along with it.
 - Named NPCs like Gym Leaders, Elite 4, Steven, etc to be possible partners in Battle Tower Multi challenge.

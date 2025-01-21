@@ -234,7 +234,7 @@ static const u16 sEntrainmentTargetSimpleBeamBannedAbilities[] =
 
 static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
 {
-    [ABILITY_ADAPTABILITY] = 4,
+    [ABILITY_ADAPTABILITY] = 5,
     [ABILITY_AFTERMATH] = 3,
     [ABILITY_AERILATE] = 3,
     [ABILITY_AIR_LOCK] = 3,
@@ -249,7 +249,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_BAD_DREAMS] = 2,
     [ABILITY_BAD_LUCK] = 3,
     [ABILITY_BATTERY] = 2,
-    [ABILITY_BATTLE_ARMOR] = 3,
+    [ABILITY_BATTLE_ARMOR] = 4,
     [ABILITY_BATTLE_BOND] = 0,
     [ABILITY_BEAST_BOOST] = 4,
     [ABILITY_BERSERK] = 4,
@@ -339,7 +339,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_KEEN_EYE] = 1,
     [ABILITY_KINGS_MIGHT] = 1,
     [ABILITY_KLUTZ] = 1,
-    [ABILITY_LAVA_BODY] = 4,
+    [ABILITY_LAVA_BODY] = 5,
     [ABILITY_LEAF_GUARD] = 2,
     [ABILITY_LEVITATE] = 5,
     [ABILITY_LIGHT_METAL] = 1,
@@ -386,7 +386,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_POISON_HEAL] = 3,
     [ABILITY_POISON_POINT] = 2,
     [ABILITY_POISON_TOUCH] = 2,
-    //[ABILITY_PORTAL_POWER] = 8,
+    //[ABILITY_PORTAL_POWER] = 1,
     [ABILITY_POWER_CONSTRUCT] = 0,
     [ABILITY_POWER_OF_ALCHEMY] = 0,
     [ABILITY_PRANKSTER] = 4,
@@ -414,7 +414,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SAND_RUSH] = 2,
     [ABILITY_SAND_STREAM] = 2,
     [ABILITY_SAND_VEIL] = 2,
-    [ABILITY_SAP_SIPPER] = 3,
+    [ABILITY_SAP_SIPPER] = 4,
     [ABILITY_SCHOOLING] = 0,
     [ABILITY_SCORCHING_HEART] = 1,
     [ABILITY_SCRAPPY] = 3,
@@ -423,7 +423,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SHADOW_TAG] = 5,
     [ABILITY_SHED_SKIN] = 3,
     [ABILITY_SHEER_FORCE] = 4,
-    [ABILITY_SHELL_ARMOR] = 3,
+    [ABILITY_SHELL_ARMOR] = 4,
     [ABILITY_SHIELD_DUST] = 2,
     [ABILITY_SHIELDS_DOWN] = 0,
     [ABILITY_SIMPLE] = 4,
@@ -2069,6 +2069,7 @@ void PrepareStringBattle(u16 stringId, u8 battler)
     else if (stringId == STRINGID_PKMNCUTSATTACKWITH && HasAbility(ABILITY_RATTLED, targetAbilities)
             && CompareStat(gBattlerTarget, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN))
     {
+        gLastUsedAbility = ABILITY_RATTLED;
         gBattlerAbility = gBattlerTarget;
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_AbilityRaisesDefenderStat;

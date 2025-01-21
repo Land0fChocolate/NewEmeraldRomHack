@@ -60,8 +60,8 @@ static bool32 ShouldSwitchIfAllMovesBad()
         for (moveIndex = 0; moveIndex < MAX_MON_MOVES; moveIndex++)
         {
             aiMove = gBattleMons[gActiveBattler].moves[moveIndex];
-            if ((AI_GetMoveEffectiveness(aiMove, gActiveBattler, opposingBattler) > AI_EFFECTIVENESS_x0_25
-                    || AI_GetMoveEffectiveness(aiMove, gActiveBattler, opposingPartner) > AI_EFFECTIVENESS_x0_25)
+            if ((AI_GetMoveEffectiveness(aiMove, gActiveBattler, opposingBattler) > AI_EFFECTIVENESS_x0
+                    || AI_GetMoveEffectiveness(aiMove, gActiveBattler, opposingPartner) > AI_EFFECTIVENESS_x0)
                     && aiMove != MOVE_NONE)
                 return FALSE;
         }
@@ -71,7 +71,7 @@ static bool32 ShouldSwitchIfAllMovesBad()
         for (moveIndex = 0; moveIndex < MAX_MON_MOVES; moveIndex++)
         {
             aiMove = gBattleMons[gActiveBattler].moves[moveIndex];
-            if (AI_GetMoveEffectiveness(aiMove, gActiveBattler, opposingBattler) > AI_EFFECTIVENESS_x0_25 && aiMove != MOVE_NONE)
+            if (AI_GetMoveEffectiveness(aiMove, gActiveBattler, opposingBattler) > AI_EFFECTIVENESS_x0 && aiMove != MOVE_NONE)
                 return FALSE;
         }
     }

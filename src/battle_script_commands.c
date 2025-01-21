@@ -7950,34 +7950,6 @@ static bool32 CourtChangeSwapSideStatuses(void)
     SWAP(sideTimerPlayer->stickyWebBattlerSide, sideTimerOpp->stickyWebBattlerSide, temp);
 }
 
-static bool32 CanTeleport(u8 battlerId)
-{
-    u8 side = GetBattlerSide(battlerId);
-    struct Pokemon *party = (side == B_SIDE_PLAYER) ? gPlayerParty : gEnemyParty;
-    u32 species, count, i;
-
-    for (i = 0; i < PARTY_SIZE; i++)
-    {
-        species = GetMonData(&party[i], MON_DATA_SPECIES2);
-        if (species != SPECIES_NONE && species != SPECIES_EGG && GetMonData(&party[i], MON_DATA_HP) != 0)
-            count++;
-    }
-
-    switch (GetBattlerSide(battlerId))
-    {
-    case B_SIDE_OPPONENT:
-        if (count == 1 || gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
-            return FALSE;
-        break;
-    case B_SIDE_PLAYER:
-        if (count == 1 || (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && count <= 2))
-            return FALSE;
-        break;
-    }
-
-    return TRUE;
-}
-
 static void Cmd_various(void)
 {
     struct Pokemon *mon;
@@ -9861,9 +9833,6 @@ static void Cmd_various(void)
         break;
     case VARIOUS_SET_LAST_USED_ABILITY:
         gLastUsedAbility = T1_READ_16(gBattlescriptCurrInstr + 3);
-        break;
-    case VARIOUS_CAN_TELEPORT:
-        gBattleCommunication[0] = CanTeleport(gActiveBattler);
         break;
     case VARIOUS_GET_BATTLER_SIDE:
         if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER)

@@ -1060,7 +1060,8 @@ Route104_Text_LikeFillingMouthWithSeedsTakeThis:
 	.string "Bugs!\p"
 	.string "Bugs everywhere!\p"
 	.string "They're crawling all over me!\p"
-	.string "You like bugs too? Take this.$"
+	.string "You like bugs too?\n"
+	.string "Take this.$"
 
 Route104_Text_TMDescription:
 	.string "That's a TM, a Technical Machine.\p"

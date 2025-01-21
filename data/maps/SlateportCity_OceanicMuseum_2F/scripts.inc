@@ -365,8 +365,8 @@ SlateportCity_OceanicMuseum_2F_Text_ArchieWarning:
 	.string "Never mind, little scamp…\l"
 	.string "I'll withdraw for now and leave you be.\p"
 	.string "But understand this… Get in my way\n"
-	.string "again, and you won't walk away unscathed\l"
-	.string "next time.\p"
+	.string "again, and you won't walk away\l"
+	.string "unscathed next time.\p"
 	.string "Remember that, at least!$"
 
 SlateportCity_OceanicMuseum_2F_Text_ArchieMovingOut:

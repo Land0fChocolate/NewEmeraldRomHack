@@ -1478,11 +1478,8 @@ FieryPath_Text_ShaylaDefeat:
 	.string "Figures.$"
 
 FieryPath_Text_ShaylaPostBattle:
-	.string "I needed some time away from the city\n"
-	.string "and I thought exploring a volcano would\l"
-	.string "be cool.\p"
-	.string "I guess it's not so bad. I don't mind\n"
-	.string "the heat and the geology is intriguing.$"
+	.string "The geology is pretty cool actually.\n"
+	.string "Think I'll stay a bit longer.$"
 
 Route113_Text_JaylenIntro:
 	.string "Can you guess why it's so cool\n"

@@ -158,7 +158,7 @@ MauvilleCity_TVStation_Text_Sidney:
 	.string "misconceptions of them.\p"
 	.string "If I can change the minds of even just\n"
 	.string "a few people through this interview,\l"
-	.string "then my job will be a success.\p"
+	.string "then it will be a success.\p"
 	.string "However my work won't be done until I\n"
 	.string "change all of public perception.$"
 

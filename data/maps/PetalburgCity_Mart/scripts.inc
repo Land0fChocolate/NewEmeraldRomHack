@@ -79,7 +79,8 @@ PetalburgCity_Mart_Text_RepelIsUseful:
 
 PetalburgCity_Mart_Text_StrongPokemonAbout:
 	.string "Occasionally, you may run into an\n"
-	.string "unusually high leveled Pokémon.\p"
+	.string "unusually high leveled Pokémon\l"
+	.string "in the wild.\p"
 	.string "It's always good to be well prepared\n"
 	.string "for any situation.$"
 
