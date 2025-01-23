@@ -18084,7 +18084,7 @@ Move_AIR_CUTTER:
 	setalpha 12, 8
 	delay 0
 	createvisualtask AnimTask_AirCutterProjectile, 2, 32, -24, 6 * 256, 2, 128  @ 6 * 256 == Q_8_8(6)
-	waitforvisualfinish
+	delay 10
 	playsewithpan SE_M_CUT, SOUND_PAN_TARGET
 	createsprite gAirCutterSliceSpriteTemplate, ANIM_ATTACKER, 2, 40, -32, 0, 2
 	delay 5

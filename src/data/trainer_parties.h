@@ -8153,17 +8153,17 @@ static const struct TrainerMonNoItemDefaultMoves sParty_TabithaMtChimney[] = {
     {
     .iv = 50,
     .lvl = 24,
-    .species = SPECIES_NUMEL,
+    .species = SPECIES_BALTOY,
     },
     {
     .iv = 50,
     .lvl = 24,
-    .species = SPECIES_BALTOY,
+    .species = SPECIES_POOCHYENA,
     },
     {
     .iv = 70,
     .lvl = 26,
-    .species = SPECIES_GOLBAT,
+    .species = SPECIES_BALTOY,
     }
 };
 

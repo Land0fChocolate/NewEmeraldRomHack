@@ -6268,7 +6268,7 @@ const struct Item gItems[] =
     {
         .name = _("Exp. Share"),
         .itemId = ITEM_EXP_SHARE,
-        .price = 3000,
+        .price = 8000,
         .holdEffect = HOLD_EFFECT_EXP_SHARE,
         .description = sExpShareDesc,
         .pocket = POCKET_ITEMS,

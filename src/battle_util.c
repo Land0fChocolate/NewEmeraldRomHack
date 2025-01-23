@@ -368,6 +368,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_MUMMY] = 2,
     [ABILITY_MYSTIC_MIND] = 3,
     [ABILITY_NATURAL_CURE] = 2,
+    [ABILITY_NEEDLE_MISSILES] = 3,
     [ABILITY_NEUROFORCE] = 5,
     [ABILITY_NO_GUARD] = 3,
     [ABILITY_NORMALIZE] = 1,
@@ -411,7 +412,7 @@ static const s8 sTraceAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_ROUGH_SKIN] = 3,
     [ABILITY_RUN_AWAY] = 1,
     [ABILITY_SAND_FORCE] = 2,
-    [ABILITY_SAND_RUSH] = 2,
+    [ABILITY_SAND_RUSH] = 3,
     [ABILITY_SAND_STREAM] = 2,
     [ABILITY_SAND_VEIL] = 2,
     [ABILITY_SAP_SIPPER] = 4,
@@ -3989,6 +3990,7 @@ u8 AtkCanceller_UnableToUseMove(void)
         case CANCELLER_TRUANT: // truant
             if (HasAbility(ABILITY_TRUANT, GetBattlerAbilities(gBattlerAttacker)) && gDisableStructs[gBattlerAttacker].truantCounter)
             {
+                gLastUsedAbility - ABILITY_TRUANT;
                 CancelMultiTurnMoves(gBattlerAttacker);
                 gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_LOAFING;
@@ -6417,6 +6419,19 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     gLastUsedAbility = ABILITY_DISARM;
                     BattleScriptPushCursor();
                     BattleScriptExecute(BattleScript_DisarmActivates);
+                    effect++;
+                }
+                break;
+            case ABILITY_NEEDLE_MISSILES:
+                if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                 && gBattleMons[gBattlerTarget].hp != 0
+                 && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && TARGET_TURN_DAMAGED)
+                {
+                    gLastUsedAbility = ABILITY_NEEDLE_MISSILES;
+                    gBattleMoveDamage = DoNeedleMissileDamageCalc(gBattlerAttacker, gBattlerTarget);
+                    BattleScriptPushCursor();
+                    BattleScriptExecute(BattleScript_EffectNeedleMissile);
                     effect++;
                 }
                 break;
@@ -9788,7 +9803,6 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
         }
     }
     
-
     // target's abilities
     memcpy(abilities, GetBattlerAbilities(battlerDef), sizeof(abilities));
 
@@ -9885,7 +9899,7 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
     bool32 usesDefStat;
     u8 defStage;
     u32 defStat, def, spDef;
-    u16 modifier, x, abilities[NUM_ABILITY_SLOTS];
+    u16 modifier, x, abilities[NUM_ABILITY_SLOTS], partnerAbilities[NUM_ABILITY_SLOTS];
 
     memcpy(abilities, GetBattlerAbilities(battlerAtk), sizeof(abilities));
 
@@ -9969,9 +9983,9 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
     // ally's abilities
     if (IsBattlerAlive(BATTLE_PARTNER(battlerDef)))
     {
-        memcpy(abilities, GetBattlerAbilities(BATTLE_PARTNER(battlerDef)), sizeof(abilities));
+        memcpy(partnerAbilities, GetBattlerAbilities(BATTLE_PARTNER(battlerDef)), sizeof(partnerAbilities));
 
-        switch (abilities[x])
+        switch (partnerAbilities[x])
         {
         case ABILITY_FLOWER_GIFT:
             if (gBattleMons[BATTLE_PARTNER(battlerDef)].species == SPECIES_CHERRIM && IsBattlerWeatherAffected(BATTLE_PARTNER(battlerDef), WEATHER_SUN_ANY) && !usesDefStat)
@@ -10010,7 +10024,7 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
     }
 
     // sandstorm sp.def boost for rock types and Sand Veil ability users
-    if ((IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK) || HasAbility(ABILITY_SAND_VEIL, GetBattlerAbilities(battlerDef)))
+    if ((IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK) || HasAbility(ABILITY_SAND_VEIL, abilities))
         && gBattleWeather & WEATHER_SANDSTORM && WEATHER_HAS_EFFECT && !usesDefStat)
         MulModifier(&modifier, UQ_4_12(1.5));
 
@@ -10020,7 +10034,7 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
         MulModifier(&modifier, UQ_4_12(1.5));
 
     // hail def boost for Snow Cloak ability users
-    if (HasAbility(ABILITY_SNOW_CLOAK, GetBattlerAbilities(battlerDef))
+    if (HasAbility(ABILITY_SNOW_CLOAK, abilities)
         && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_HAIL_ANY && usesDefStat)
         MulModifier(&modifier, UQ_4_12(1.5));
 
@@ -10249,6 +10263,26 @@ static s32 DoMoveDamageCalc(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType,
         dmg *= 100 - (Random() % 16);
         dmg /= 100;
     }
+
+    if (dmg == 0)
+        dmg = 1;
+
+    return dmg;
+}
+
+s32 DoNeedleMissileDamageCalc(u8 battlerAtk, u8 battlerDef)
+{
+    s32 dmg;
+
+    // long dmg basic formula
+    dmg = ((gBattleMons[battlerAtk].level * 2) / 5) + 2;
+    dmg *= CalcMoveBasePowerAfterModifiers(MOVE_NEEDLE_MISSILE, battlerAtk, battlerDef, TYPE_NONE, FALSE);;
+    dmg *= CalcAttackStat(MOVE_NEEDLE_MISSILE, battlerAtk, battlerDef, TYPE_NONE, FALSE, FALSE);
+    dmg /= CalcDefenseStat(MOVE_NEEDLE_MISSILE, battlerAtk, battlerDef, TYPE_NONE, FALSE, FALSE);
+    dmg = (dmg / 50) + 2;
+
+    // Calculate final modifiers.
+    dmg = CalcFinalDmg(dmg, MOVE_NEEDLE_MISSILE, battlerAtk, battlerDef, TYPE_NONE, UQ_4_12(1), FALSE, FALSE);
 
     if (dmg == 0)
         dmg = 1;

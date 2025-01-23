@@ -1129,6 +1129,10 @@ static const u8 sSoulSiphonDescription[] = _(
 	"1/8 max HP from the target and\n"
 	"heals user the same amount.");
 
+static const u8 sNeedleMissilesDescription[] = _(
+	"User attacks deal additional\n"
+	"10BP untyped special damage.");
+
 static const u8 sBadLuckDescription[] = _(
 	"Opponent cannot land crits\n"
 	"and less likely to land\n"
@@ -1517,6 +1521,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SUPERHEATED] = _("Superheated"),
     [ABILITY_DREAMFEAST] = _("Dreamfeast"),
     [ABILITY_JEET_KUNE_DO] = _("Jeet Kune Do"),
+    [ABILITY_NEEDLE_MISSILES] = _("Needle Missiles"),
 };
 #else   // 12 characters
 
@@ -1821,6 +1826,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SUPERHEATED] = _("Superheated"),
     [ABILITY_DREAMFEAST] = _("Dreamfeast"),
     [ABILITY_JEET_KUNE_DO] = _("Jeet Kune Do"),
+    [ABILITY_NEEDLE_MISSILES] = _("NeedleMissls"),
 };
 #endif
 
@@ -2125,4 +2131,5 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SUPERHEATED] = sSuperheatedDescription,
     [ABILITY_DREAMFEAST] = sDreamfeastDescription,
     [ABILITY_JEET_KUNE_DO] = sJeetKuneDoDescription,
+    [ABILITY_NEEDLE_MISSILES] = sNeedleMissilesDescription,
 };

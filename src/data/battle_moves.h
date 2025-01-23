@@ -11935,4 +11935,17 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .priority = 0,
         .split = SPLIT_STATUS,
     },
+
+    [MOVE_NEEDLE_MISSILE] =
+    {
+        .effect = EFFECT_HIT,
+        .power = 10,
+        .type = TYPE_NONE,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+    },
 };

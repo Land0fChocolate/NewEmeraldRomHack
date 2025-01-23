@@ -8716,6 +8716,15 @@ BattleScript_SoulSiphonEnd:
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+BattleScript_EffectNeedleMissile::
+	call BattleScript_AbilityPopUp
+	orword gHitMarker, HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	tryfaintmon BS_TARGET, FALSE, NULL
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_DisarmActivates::
 	call BattleScript_AbilityPopUp
 	setembargo BattleScript_ButItFailed
