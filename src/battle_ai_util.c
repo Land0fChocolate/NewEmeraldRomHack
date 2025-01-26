@@ -616,11 +616,6 @@ void RecordKnownMove(u8 battlerId, u32 move)
     }
 }
 
-void RecordAbilityBattle(u8 battlerId, u16 abilityId) 
-{
-    AI_PARTY->mons[GetBattlerSide(battlerId)][gBattlerPartyIndexes[battlerId]].ability = abilityId;
-}
-
 void RecordItemEffectBattle(u8 battlerId, u8 itemEffect)
 {
     BATTLE_HISTORY->itemEffects[battlerId] = itemEffect;
@@ -1633,19 +1628,12 @@ void ProtectChecks(u8 battlerAtk, u8 battlerDef, u16 move, u16 predictedMove, s1
 {
     // TODO more sophisticated logic
     u16 predictedEffect = gBattleMoves[predictedMove].effect;
-    //u8 defAbilities = AI_DATA->abilities[battlerDef]; //why are we declaring abilities here? It isn't being used.
     u32 uses = gDisableStructs[battlerAtk].protectUses;
-
-    /*if (GetMoveResultFlags(predictedMove) & (MOVE_RESULT_NO_EFFECT | MOVE_RESULT_MISSED))
-    {
-        (*score) -= 5;
-        return;
-    }*/
 
     if (uses == 0)
     {
         if (predictedMove != MOVE_NONE && predictedMove != 0xFFFF && !IS_MOVE_STATUS(predictedMove))
-            (*score) += 2;
+            (*score)++;
         else if (Random() % 256 < 100)
             (*score)++;
     }

@@ -1249,7 +1249,7 @@ static const struct TrainerMonItemCustomMoves sParty_Alexia[] = {
     .lvl = 28,
     .species = SPECIES_WIGGLYTUFF,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_STOCKPILE, MOVE_DOUBLE_EDGE, MOVE_SHADOW_BALL, MOVE_NONE}
+    .moves = {MOVE_STOCKPILE, MOVE_SHADOW_BALL, MOVE_DAZZLING_GLEAM, MOVE_NONE}
     }
 };
 
@@ -3710,17 +3710,17 @@ static const struct TrainerMonItemCustomMoves sParty_Norman1[] = {
 static const struct TrainerMonItemCustomMoves sParty_Winona1[] = {
     {
     .iv = 210,
-    .lvl = 34,
+    .lvl = 35,
     .species = SPECIES_SWELLOW,
     .heldItem = ITEM_QUICK_CLAW,
-    .moves = {MOVE_ENDEAVOR, MOVE_QUICK_ATTACK, MOVE_U_TURN, MOVE_AERIAL_ACE}
+    .moves = {MOVE_ENDEAVOR, MOVE_SECRET_POWER, MOVE_U_TURN, MOVE_AERIAL_ACE}
     },
     {
     .iv = 210,
     .lvl = 35,
     .species = SPECIES_TROPIUS,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_ROOST, MOVE_AERIAL_ACE, MOVE_MAGICAL_LEAF, MOVE_STOMP}
+    .heldItem = ITEM_LUM_BERRY,
+    .moves = {MOVE_SEED_BOMB, MOVE_AERIAL_ACE, MOVE_ROOST, MOVE_DRAGON_DANCE}
     },
     {
     .iv = 210,
@@ -8981,14 +8981,8 @@ static const struct TrainerMonNoItemCustomMoves sParty_Riley[] = {
     {
     .iv = 0,
     .lvl = 29,
-    .species = SPECIES_NINCADA,
-    .moves = {MOVE_LEECH_LIFE, MOVE_FURY_SWIPES, MOVE_MIND_READER, MOVE_DIG}
-    },
-    {
-    .iv = 0,
-    .lvl = 29,
-    .species = SPECIES_KOFFING,
-    .moves = {MOVE_TACKLE, MOVE_SELF_DESTRUCT, MOVE_SLUDGE, MOVE_SMOKESCREEN}
+    .species = SPECIES_SWALOT,
+    .moves = {MOVE_SLUDGE, MOVE_GIGA_DRAIN, MOVE_TOXIC, MOVE_ENCORE}
     }
 };
 

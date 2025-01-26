@@ -344,7 +344,7 @@ MtPyre_Summit_Text_Grunt4PostBattle:
 
 MtPyre_Summit_Text_ArchieWeGotTheOrb:
 	.string "Archie: The Blue Orb!\n"
-	.string "I knew the legend but I didn't know\l"
+	.string "I knew the legend, but I didn't know\l"
 	.string "where it was or if it really existed…\p"
 	.string "Thanks for the tip, Maxie!\n"
 	.string "Bwhahahaha!$"

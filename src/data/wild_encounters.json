@@ -2217,7 +2217,7 @@
           "map": "MAP_MT_PYRE_1F",
           "base_label": "gMtPyre_1F",
           "land_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 5,
             "mons": [
               {
                 "min_level": 27,
@@ -3640,8 +3640,8 @@
                 "species": "SPECIES_TROPIUS"
               },
               {
-                "min_level": 28,
-                "max_level": 29,
+                "min_level": 33,
+                "max_level": 33,
                 "species": "SPECIES_KECLEON"
               }
             ]
@@ -4672,7 +4672,7 @@
               {
                 "min_level": 25,
                 "max_level": 25,
-                "species": "SPECIES_VULPIX"
+                "species": "SPECIES_WINGULL"
               },
               {
                 "min_level": 27,

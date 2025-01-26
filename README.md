@@ -261,7 +261,7 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Bug Bite/Pluck is not taking the effects of the opponent's berry.
 - Spinning Body activates on every hit for multi-hit moves (e.g. Hitmontop using Triple Kick). Would rather it takes affect on only the last hit.
 - Backgrounds of some moves are glitched or have black boxes. (Shadow Bone, Gunk Shot, Hurricane, Focus Blast, Aura Sphere, Burn Up, Origin Pulse)
-- Cloud reflection can be seen in the long grass in Route 120.
+- Cloud reflection can be seen in the long grass and trees in Route 120.
 - Jumping into long grass from ledge and moving produces incorrect grass animation.
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.

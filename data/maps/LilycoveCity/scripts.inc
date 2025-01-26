@@ -397,6 +397,8 @@ LilycoveCity_EventScript_LisiaTalksToPlayer::
 
 LilycoveCity_Movement_CameramanStepsForward:
 	walk_right
+	walk_right
+	walk_right
 	step_end
 
 LilycoveCity_Text_LisiaIntro:

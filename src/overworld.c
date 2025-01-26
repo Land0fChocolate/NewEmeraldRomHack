@@ -61,6 +61,7 @@
 #include "wild_encounter.h"
 #include "frontier_util.h"
 #include "constants/abilities.h"
+#include "constants/flags.h"
 #include "constants/layouts.h"
 #include "constants/map_types.h"
 #include "constants/maps.h"
@@ -1057,15 +1058,14 @@ static bool16 NoMusicInSotopolisWithLegendaries(struct WarpData *warp)
 
 static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
 {
-    if (VarGet(VAR_WEATHER_INSTITUTE_STATE))
-        return FALSE;
-    else if (warp->mapGroup != MAP_GROUP(ROUTE119_WEATHER_INSTITUTE_1F))
-        return FALSE;
-    else if (warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_1F)
-     || warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_2F))
+    u16 WeatherInstituteState = VarGet(VAR_WEATHER_INSTITUTE_STATE);
+
+    if ((WeatherInstituteState == 0 || WeatherInstituteState == 6)
+    && (warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_1F)
+     || warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_2F)))
         return TRUE;
-    else
-        return FALSE;
+
+    return FALSE;
 }
 
 u16 GetLocationMusic(struct WarpData *warp)
@@ -1083,6 +1083,10 @@ u16 GetLocationMusic(struct WarpData *warp)
 u16 GetCurrLocationDefaultMusic(void)
 {
     u16 music;
+
+    // /if (gMapHeader.mapLayoutId == LAYOUT_ROUTE119_WEATHER_INSTITUTE_2F
+    // /&& GetFlag(FLAG_HIDE_ROUTE_119_TEAM_AQUA))
+    // /    return;
 
     // Play the desert music only when the sandstorm is active on Route 111.
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE111)

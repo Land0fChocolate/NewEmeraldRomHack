@@ -1530,6 +1530,22 @@ void SetRoute123Weather(void)
     }
 }
 
+void SetRoute114Weather(void)
+{
+    if (IsMapTypeOutdoors(GetLastUsedWarpMapType()) != TRUE)
+    {
+        SetSav1Weather(WEATHER_ROUTE114_CYCLE);
+    }
+}
+
+void SetFallarborWastesWeather(void)
+{
+    if (IsMapTypeOutdoors(GetLastUsedWarpMapType()) != TRUE)
+    {
+        SetSav1Weather(WEATHER_FALLARBOR_WASTES_CYCLE);
+    }
+}
+
 u8 GetLeadMonIndex(void)
 {
     u8 i;

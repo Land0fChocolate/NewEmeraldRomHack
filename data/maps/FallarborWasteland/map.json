@@ -322,7 +322,55 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "weather",
+      "x": 38,
+      "y": 39,
+      "elevation": 3,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 38,
+      "y": 40,
+      "elevation": 3,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 38,
+      "y": 41,
+      "elevation": 3,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 38,
+      "y": 42,
+      "elevation": 3,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 28,
+      "y": 38,
+      "elevation": 3,
+      "weather": "COORD_EVENT_WEATHER_FALLARBOR_WASTES_CYCLE"
+    },
+    {
+      "type": "weather",
+      "x": 27,
+      "y": 38,
+      "elevation": 3,
+      "weather": "COORD_EVENT_WEATHER_FALLARBOR_WASTES_CYCLE"
+    },
+    {
+      "type": "weather",
+      "x": 26,
+      "y": 38,
+      "elevation": 3,
+      "weather": "COORD_EVENT_WEATHER_FALLARBOR_WASTES_CYCLE"
+    }
   ],
   "bg_events": [
     {

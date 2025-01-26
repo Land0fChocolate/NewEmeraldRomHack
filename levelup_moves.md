@@ -5504,7 +5504,7 @@
 - Silcoon
              ( 0, HARDEN)
              ( 1, HARDEN)
-             (14, INFESTATION)
+             (12, INFESTATION)
 
 
 
@@ -5529,7 +5529,7 @@
 - Cascoon
              ( 0, HARDEN)
              ( 1, HARDEN)
-             (14, INFESTATION)
+             (12, INFESTATION)
 
 
 

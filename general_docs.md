@@ -1243,6 +1243,7 @@ Chance for rare item: 15% (40% with Compound Eyes or Super Luck)
            | Special Attack: 105 -> 85
 - Numel    | HP: 60 -> 70
 - Camerupt | HP: 70 -> 110
+- Tropius  | HP: 99 -> 114
 - Spheal   | Attack: 40 -> 55
            | Special Attack: 55 -> 40
 - Sealeo   | Attack: 60 -> 75
