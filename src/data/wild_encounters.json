@@ -2339,13 +2339,13 @@
                 "species": "SPECIES_RHYDON"
               },
               {
-                "min_level": 43,
-                "max_level": 44,
+                "min_level": 47,
+                "max_level": 47,
                 "species": "SPECIES_RHYDON"
               },
               {
-                "min_level": 48,
-                "max_level": 48,
+                "min_level": 47,
+                "max_level": 47,
                 "species": "SPECIES_PROBOPASS"
               }
             ]
@@ -7568,13 +7568,13 @@
                 "species": "SPECIES_MAWILE"
               },
               {
-                "min_level": 43,
-                "max_level": 44,
+                "min_level": 47,
+                "max_level": 47,
                 "species": "SPECIES_RHYDON"
               },
               {
-                "min_level": 48,
-                "max_level": 48,
+                "min_level": 47,
+                "max_level": 47,
                 "species": "SPECIES_PROBOPASS"
               }
             ]
@@ -7667,8 +7667,8 @@
                 "species": "SPECIES_MAWILE"
               },
               {
-                "min_level": 44,
-                "max_level": 45,
+                "min_level": 49,
+                "max_level": 49,
                 "species": "SPECIES_RHYDON"
               },
               {
@@ -8230,7 +8230,7 @@
           "map": "MAP_SHOAL_CAVE_LOW_TIDE_STAIRS_ROOM",
           "base_label": "gShoalCave_LowTideStairsRoom",
           "land_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 5,
             "mons": [
               {
                 "min_level": 26,
@@ -8299,7 +8299,7 @@
           "map": "MAP_SHOAL_CAVE_LOW_TIDE_LOWER_ROOM",
           "base_label": "gShoalCave_LowTideLowerRoom",
           "land_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 5,
             "mons": [
               {
                 "min_level": 26,
@@ -8368,7 +8368,7 @@
           "map": "MAP_SHOAL_CAVE_LOW_TIDE_INNER_ROOM",
           "base_label": "gShoalCave_LowTideInnerRoom",
           "land_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 5,
             "mons": [
               {
                 "min_level": 26,
@@ -8522,7 +8522,7 @@
           "map": "MAP_SHOAL_CAVE_LOW_TIDE_ENTRANCE_ROOM",
           "base_label": "gShoalCave_LowTideEntranceRoom",
           "land_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 5,
             "mons": [
               {
                 "min_level": 26,
@@ -9102,17 +9102,17 @@
               {
                 "min_level": 25,
                 "max_level": 30,
-                "species": "SPECIES_WAILMER"
+                "species": "SPECIES_CORSOLA"
               },
               {
                 "min_level": 35,
                 "max_level": 40,
-                "species": "SPECIES_WAILMER"
+                "species": "SPECIES_CORSOLA"
               },
               {
                 "min_level": 40,
                 "max_level": 45,
-                "species": "SPECIES_WAILMER"
+                "species": "SPECIES_CORSOLA"
               }
             ]
           }
@@ -9951,7 +9951,7 @@
           "map": "MAP_MAGMA_HIDEOUT_1F",
           "base_label": "gMagmaHideout_1F",
           "land_mons": {
-            "encounter_rate": 3,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 27,
@@ -10020,7 +10020,7 @@
           "map": "MAP_MAGMA_HIDEOUT_2F_1R",
           "base_label": "gMagmaHideout_2F_1R",
           "land_mons": {
-            "encounter_rate": 3,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 27,
@@ -10089,7 +10089,7 @@
           "map": "MAP_MAGMA_HIDEOUT_2F_2R",
           "base_label": "gMagmaHideout_2F_2R",
           "land_mons": {
-            "encounter_rate": 3,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 27,
@@ -10158,7 +10158,7 @@
           "map": "MAP_MAGMA_HIDEOUT_3F_1R",
           "base_label": "gMagmaHideout_3F_1R",
           "land_mons": {
-            "encounter_rate": 3,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 27,
@@ -10227,7 +10227,7 @@
           "map": "MAP_MAGMA_HIDEOUT_3F_2R",
           "base_label": "gMagmaHideout_3F_2R",
           "land_mons": {
-            "encounter_rate": 3,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 27,
@@ -10296,7 +10296,7 @@
           "map": "MAP_MAGMA_HIDEOUT_4F",
           "base_label": "gMagmaHideout_4F",
           "land_mons": {
-            "encounter_rate": 3,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 27,
@@ -10365,7 +10365,7 @@
           "map": "MAP_MAGMA_HIDEOUT_3F_3R",
           "base_label": "gMagmaHideout_3F_3R",
           "land_mons": {
-            "encounter_rate": 3,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 27,
@@ -10434,7 +10434,7 @@
           "map": "MAP_MAGMA_HIDEOUT_2F_3R",
           "base_label": "gMagmaHideout_2F_3R",
           "land_mons": {
-            "encounter_rate": 3,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 27,

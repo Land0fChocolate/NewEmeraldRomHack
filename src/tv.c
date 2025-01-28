@@ -845,7 +845,8 @@ void UpdateTVScreensOnMap(int width, int height)
         }
         else if (FlagGet(FLAG_SYS_TV_START) && (FindAnyTVShowOnTheAir() != 0xFF 
         || FindAnyPokeNewsOnTheAir() != 0xFF || IsGabbyAndTyShowOnTheAir() 
-        || FlagGet(FLAG_TV_RARE_CANDY_ADVERT)))
+        || FlagGet(FLAG_TV_RARE_CANDY_ADVERT)
+        || FlagGet(FLAG_TV_STERN_ANNOUNCEMENT)))
         {
             FlagClear(FLAG_SYS_TV_WATCH);
             SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);

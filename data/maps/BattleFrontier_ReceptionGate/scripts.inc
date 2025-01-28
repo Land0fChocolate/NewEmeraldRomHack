@@ -456,6 +456,8 @@ BattleFrontier_ReceptionGate_Text_MonEntryInfo:
 	.string "on the challenges at all facilities.\p"
 	.string "Eggs and certain kinds of Pokémon,\n"
 	.string "however, are not permitted.\p"
+	.string "We also do not allow Pokémon holding\n"
+	.string "Mega Stones.\p"
 	.string "The numbers of Pokémon required for\n"
 	.string "challenges will depend on the facility.\p"
 	.string "At all facilities, however, two or more\n"

@@ -1369,7 +1369,7 @@ SlateportCity_Text_OhPlayerWeMadeDiscovery:
 	.string "We found an underwater cavern on\n"
 	.string "Route 128.\p"
 	.string "We think it's the habitat of a Pokémon\n"
-	.string "that's said to have been long extinct.$"
+	.string "that's said to have expanded the sea.$"
 
 SlateportCity_Text_AquaWillAssumeControlOfSubmarine:
 	.string "Ahh… Ahh…\n"

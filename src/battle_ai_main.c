@@ -3219,10 +3219,12 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         else if (AI_DATA->hpPercents[battlerAtk] > 70 && AI_RandLessThan(200))
             break;
         else if (AI_DATA->hpPercents[battlerAtk] < 40)
-            score -= 5;
+            score -= 6;
         break;
 	case EFFECT_SPEED_UP:
     case EFFECT_SPEED_UP_2:
+        if (AI_DATA->hpPercents[battlerAtk] < 50)
+            score -= 4;
         if (WillAIStrikeFirst())
         {
             if (!AI_RandLessThan(70))
@@ -3266,7 +3268,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         else if (AI_DATA->hpPercents[battlerAtk] > 70 && AI_RandLessThan(200))
             break;
         else if (AI_DATA->hpPercents[battlerAtk] < 40)
-            score -= 5;
+            score -= 6;
         break;
 	case EFFECT_ACCURACY_UP:
     case EFFECT_ACCURACY_UP_2:
@@ -3309,8 +3311,8 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score--;
         if (gBattleMons[battlerDef].statStages[STAT_ATK] > 3 && !AI_RandLessThan(50))
             score -= 2;
-        else if (AI_DATA->hpPercents[battlerDef] < 40)
-            score -= 2;
+        if (AI_DATA->hpPercents[battlerDef] < 40)
+            score -= 3;
         if (gBaseStats[gBattleMons[battlerDef].species].baseAttack < gBaseStats[gBattleMons[battlerDef].species].baseSpAttack
         && gBattleMons[battlerDef].level >= 25)
             score -= 4;
@@ -3341,8 +3343,8 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score--;
         if (gBattleMons[battlerDef].statStages[STAT_SPATK] > 3 && !AI_RandLessThan(50))
             score -= 2;
-        else if (AI_DATA->hpPercents[battlerDef] < 40)
-            score -= 4;
+        if (AI_DATA->hpPercents[battlerDef] < 40)
+            score -= 3;
         if (gBaseStats[gBattleMons[battlerDef].species].baseAttack > gBaseStats[gBattleMons[battlerDef].species].baseSpAttack
         && gBattleMons[battlerDef].level >= 25)
             score -= 4;

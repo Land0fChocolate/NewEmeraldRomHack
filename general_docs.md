@@ -504,7 +504,7 @@ These Pokemon are available after beating the Pokemon League.
 -Soft Boiled - Battle Frontier
 -Dream Eater - Battle Frontier
 -Gastro Acid - Battle Frontier
--Explosion - Pacifidlog Town
+-Explosion - Pacifidlog Town, Pokemon Center
 -Psychic Fangs - Battle Frontier
 -Substitute - Lilycove City
 -Dynamic Punch - Mossdeep City

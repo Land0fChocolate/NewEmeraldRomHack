@@ -6,7 +6,6 @@
 .set LOCALID_CAMPER, 14
 .set LOCALID_FISHERMAN_2, 18
 .set LOCALID_MAN_4, 23
-.set LOCALID_ZINNIA, 27
 
 BattleFrontier_OutsideWest_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, BattleFrontier_OutsideWest_OnTransition
@@ -19,105 +18,7 @@ BattleFrontier_OutsideWest_OnTransition:
 	end
 
 BattleFrontier_OutsideWest_OnFrame:
-	map_script_2 VAR_BATTLE_FRONTIER_STATE, 1, BattleFrontier_OutsideWest_EventScript_Zinnia
 	.2byte 0
-
-BattleFrontier_OutsideWest_EventScript_Zinnia::
-	lock
-	applymovement LOCALID_ZINNIA, BattleFrontier_OutsideWest_Movement_ZinniaStroll
-	waitmovement 0
-	playse SE_PIN
-	applymovement LOCALID_ZINNIA, Common_Movement_ExclamationMark
-	waitmovement 0
-	delay 60
-	applymovement LOCALID_ZINNIA, BattleFrontier_OutsideWest_Movement_ZinniaWalkToPlayer
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
-	waitmovement 0
-	msgbox BattleFrontier_OutsideWest_Text_ExploringBattleFrontier, MSGBOX_DEFAULT
-	closemessage
-	playse SE_PIN
-	applymovement LOCALID_ZINNIA, Common_Movement_ExclamationMark
-	waitmovement 0
-	delay 30
-	msgbox BattleFrontier_OutsideWest_Text_GotGoldSymbolsAlready, MSGBOX_DEFAULT
-	giveitem ITEM_MEGA_RING
-	msgbox BattleFrontier_OutsideWest_Text_MakeHavocWithMegaEvo, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_ZINNIA, BattleFrontier_OutsideWest_Movement_ZinniaLeave
-	waitmovement 0
-	removeobject LOCALID_ZINNIA
-	setflag FLAG_HIDE_BATTLE_FRONTIER_ZINNIA
-	setvar VAR_BATTLE_FRONTIER_STATE, 2
-	release
-	end
-
-BattleFrontier_OutsideWest_Text_ExploringBattleFrontier:
-	.string "Zinnia: Hey, what's up {PLAYER}?\n"
-	.string "You got invited to the Battle Frontier\l"
-	.string "too, huh?\p"
-	.string "I was just exploring, having a look at\n"
-	.string "all the different facilities.\p"
-	.string "It does look like a lot of fun. I could\n"
-	.string "see myself getting addicted here.\l"
-	.string "Hehe…$"
-
-BattleFrontier_OutsideWest_Text_GotGoldSymbolsAlready:
-	.string "Zinnia: Wait, what!?\p"
-	.string "You've got all of the gold symbols\n"
-	.string "already!?\p"
-	.string "Hmm… … … … … … … … …\p"
-	.string "Ah, what the heck.\p"
-	.string "I was planning to show off and dominate\n"
-	.string "all the facilities myself but it looks\l"
-	.string "like you'll do a better job.\p"
-	.string "Here.$"
-
-BattleFrontier_OutsideWest_Text_MakeHavocWithMegaEvo:
-	.string "Zinnia: What I have given you is no\n"
-	.string "mere trinket. That is a Mega Ring.\p"
-	.string "With it, you can use Mega Evolution in\n"
-	.string "battles.\p"
-	.string "You'll need your Pokemon to hold a Mega\n"
-	.string "Stone as well.\p"
-	.string "You may borrow them from the display\n"
-	.string "case back at the Archive in Fallarbor.\p"
-	.string "Hoenn has a history of people abusing\n"
-	.string "the power of Mega Evolution, so these\l"
-	.string "things tend to be locked away, but I\l"
-	.string "think you'll be okay with having it.\p"
-	.string "My peers probably won't approve, but\n"
-	.string "oh well!\p"
-	.string "Wreak havoc in the Frontier with\n"
-	.string "Mega Evolution, {PLAYER}!$"
-
-BattleFrontier_OutsideWest_Movement_ZinniaStroll:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-BattleFrontier_OutsideWest_Movement_ZinniaWalkToPlayer:
-	walk_right
-	walk_right
-	walk_right
-	walk_up
-	face_right
-	step_end
-
-BattleFrontier_OutsideWest_Movement_ZinniaLeave:
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
 
 BattleFrontier_OutsideWest_EventScript_FerryAttendant::
 	lock

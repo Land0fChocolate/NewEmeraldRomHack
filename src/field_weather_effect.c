@@ -2578,9 +2578,9 @@ static const u8 sWeatherCycleRoute123[] =
 };
 static const u8 sWeatherCycleRoute114[] =
 {
+    WEATHER_SUNNY,
     WEATHER_DROUGHT,
-    WEATHER_DROUGHT,
-    WEATHER_DROUGHT,
+    WEATHER_SUNNY,
     WEATHER_DROUGHT,
 };
 static const u8 sWeatherCycleFallarborWastes[] =

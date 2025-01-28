@@ -173,7 +173,7 @@ v1.1.0 - tbc/2025
 - Receiver: copies fainted ally’s highest rated ability that the user doesn’t already have.
 - Mummy: replaces all the contact attacker’s abilities with just the Mummy ability.
 - Wandering Spirit: replaces each respective ability with the attacker if hit by a contact move unless it is a banned ability.
-- Neutralizing Gas: Nullifies other Pokemon abilities unless it is a banned ability like Stance Change. User abilities still active.
+- Neutralizing Gas: Nullifies other Pokemon abilities unless it is a banned ability like Forecast. User abilities still active.
 - Shell Armor/Battle Armor: Also reduces damage of neutral effective moves by 25%.
 - Sand Veil: Increases Sp.Def instead of evasion by one stage in Sandstorm.
 - Snow Cloak: Increases Defense instead of evasion by one stage in Hail.
@@ -204,12 +204,12 @@ v1.1.0 - tbc/2025
 
 # Updated Moves
 
-- Simple Beam: Replaces opponents abilities with the Simple ability. If opponent has a banned ability such as Stance Change, then they will still keep that ability but the others will be replaced with Simple.
-- Worry Seed: Replaces opponents abilities with just the Insomnia ability. If opponent has a banned ability such as Stance Change, then they will still keep that ability but the others will be replaced with Worry Seed.
-- Entrainment: Replaces opponents abilities with the user’s abilities. If opponent has a banned ability such as Stance Change, then they will still keep that ability but the others will be replaced with the user’s abilities in their respective slot.
-- Skill Swap: swaps the user abilities with the target abilities.  If opponent has a banned ability such as Stance Change, then they will still keep that ability but the others will be replaced with the user’s abilities in their respective slot.
-- Gastro Acid: Neutralises target abilities unless it is a banned ability like Stance Change.
-- Role Play: replaces the user’s abilities with the target’s abilities except for banned abilities like Stance Change.
+- Simple Beam: Replaces opponents abilities with the Simple ability. If opponent has a banned ability such as Forecast, then they will still keep that ability but the others will be replaced with Simple.
+- Worry Seed: Replaces opponents abilities with just the Insomnia ability. If opponent has a banned ability such as Forecast, then they will still keep that ability but the others will be replaced with Worry Seed.
+- Entrainment: Replaces opponents abilities with the user’s abilities. If opponent has a banned ability such as Forecast, then they will still keep that ability but the others will be replaced with the user’s abilities in their respective slot.
+- Skill Swap: swaps the user abilities with the target abilities.  If opponent has a banned ability such as Forecast, then they will still keep that ability but the others will be replaced with the user’s abilities in their respective slot.
+- Gastro Acid: Neutralises target abilities unless it is a banned ability like Forecast.
+- Role Play: replaces the user’s abilities with the target’s abilities except for banned abilities like Forecast.
 - Core Enforcer: Nullifies opponent’s abilities.
 - Charge Beam: Now 40 BP, 100% Acc with 100% chance for special attack boost.
 - Rock Smash: Now 50 BP with 100% chance for target defense drop.

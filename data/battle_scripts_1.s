@@ -8722,7 +8722,8 @@ BattleScript_EffectNeedleMissile::
 	healthbarupdate BS_TARGET
 	datahpupdate BS_TARGET
 	tryfaintmon BS_TARGET, FALSE, NULL
-	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_PKMNNEEDLEMISSILE
+	waitmessage B_WAIT_TIME_MED
 	return
 
 BattleScript_DisarmActivates::

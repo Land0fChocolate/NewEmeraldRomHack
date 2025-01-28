@@ -5802,13 +5802,15 @@ static u8 GetPartySlotEntryStatus(s8 slot)
 static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
 {
     u16 i = 0;
-    u16 species;
+    u16 species, heldItem;
+
+    heldItem = GetMonData(mon, MON_DATA_HELD_ITEM);
 
     if (GetMonData(mon, MON_DATA_IS_EGG)
         || GetMonData(mon, MON_DATA_LEVEL) > GetBattleEntryLevelCap()
         || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BATTLE_FRONTIER_BATTLE_PYRAMID_LOBBY)
             && gSaveBlock1Ptr->location.mapNum == MAP_NUM(BATTLE_FRONTIER_BATTLE_PYRAMID_LOBBY)
-            && GetMonData(mon, MON_DATA_HELD_ITEM) != ITEM_NONE))
+            && heldItem != ITEM_NONE))
     {
         return FALSE;
     }
@@ -5826,6 +5828,11 @@ static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
         for (; gFrontierBannedSpecies[i] != 0xFFFF; i++)
         {
             if (gFrontierBannedSpecies[i] == species)
+                return FALSE;
+        }
+        for (; gFrontierBannedItems[i] != 0xFFFF; i++)
+        {
+            if (gFrontierBannedItems[i] == heldItem)
                 return FALSE;
         }
         return TRUE;

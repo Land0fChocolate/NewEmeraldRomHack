@@ -87,6 +87,7 @@ MossdeepCity_StevensHouse_EventScript_Steven::
 	goto_if FALSE, MossdeepCity_StevensHouse_EventScript_StevenGreetingPlayer
 	msgbox MossdeepCity_StevensHouse_Text_UnderwateCavernBetweenMossdeepSootopolis, MSGBOX_DEFAULT
 	closemessage
+	releaseall
 	end
 
 MossdeepCity_StevensHouse_EventScript_StevenGreetingPlayer::

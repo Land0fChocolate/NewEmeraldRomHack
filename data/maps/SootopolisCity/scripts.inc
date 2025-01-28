@@ -786,7 +786,7 @@ SootopolisCity_EventScript_Woman2::
 	applymovement LOCALID_WOMAN_2, Common_Movement_FacePlayer
 	waitmovement 0
 	compare VAR_SOOTOPOLIS_CITY_STATE, 5
-	goto_if_eq SootopolisCity_EventScript_Woman2Rayquaza
+	goto_if_ge SootopolisCity_EventScript_Woman2Rayquaza
 	msgbox SootopolisCity_Text_WeatherWentWild, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_WOMAN_2, Common_Movement_FaceOriginalDirection
@@ -1316,7 +1316,7 @@ SootopolisCity_EventScript_Boy2::
 	applymovement LOCALID_BOY_2, Common_Movement_FacePlayer
 	waitmovement 0
 	compare VAR_SOOTOPOLIS_CITY_STATE, 5
-	goto_if_eq SootopolisCity_EventScript_Boy2Rayquaza
+	goto_if_ge SootopolisCity_EventScript_Boy2Rayquaza
 	msgbox SootopolisCity_Text_TwoPokemonArentAngry, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_BOY_2, Common_Movement_FaceOriginalDirection
@@ -1333,7 +1333,7 @@ SootopolisCity_EventScript_Boy2Rayquaza::
 SootopolisCity_EventScript_BlackBelt::
 	lockall
 	compare VAR_SOOTOPOLIS_CITY_STATE, 5
-	goto_if_eq SootopolisCity_EventScript_BlackBeltRayquaza
+	goto_if_ge SootopolisCity_EventScript_BlackBeltRayquaza
 	msgbox SootopolisCity_Text_GoRedAndBlueMon, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_BLACK_BELT, Common_Movement_FacePlayer
@@ -1357,7 +1357,7 @@ SootopolisCity_EventScript_Girl::
 	applymovement LOCALID_GIRL, Common_Movement_FacePlayer
 	waitmovement 0
 	compare VAR_SOOTOPOLIS_CITY_STATE, 5
-	goto_if_eq SootopolisCity_EventScript_GirlRayquaza
+	goto_if_ge SootopolisCity_EventScript_GirlRayquaza
 	msgbox SootopolisCity_Text_SootopolisWillBeWrecked, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_GIRL, Common_Movement_FaceOriginalDirection
@@ -1376,7 +1376,7 @@ SootopolisCity_EventScript_Maniac::
 	applymovement LOCALID_MANIAC, Common_Movement_FacePlayer
 	waitmovement 0
 	compare VAR_SOOTOPOLIS_CITY_STATE, 5
-	goto_if_eq SootopolisCity_EventScript_ManiacRayquaza
+	goto_if_ge SootopolisCity_EventScript_ManiacRayquaza
 	msgbox SootopolisCity_Text_SeeingLegendWithOwnEyes, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_MANIAC, Common_Movement_FaceOriginalDirection

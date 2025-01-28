@@ -630,8 +630,9 @@
 #define STRINGID_SHARPTHORNSGROW                      627
 #define STRINGID_WISHMAKERFAILED                      628
 #define STRINGID_DREAMFEASTHEALS                      629
+#define STRINGID_PKMNNEEDLEMISSILE                    630
 
-#define BATTLESTRINGS_COUNT                           630
+#define BATTLESTRINGS_COUNT                           631
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.

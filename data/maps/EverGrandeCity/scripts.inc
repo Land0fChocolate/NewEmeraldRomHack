@@ -183,7 +183,7 @@ EverGrandeCity_Text_HexManiac:
 
 EverGrandeCity_Text_Man:
 	.string "We get people coming in from all over\n"
-	.string "to test themselves here.\l"
+	.string "to test their Pokémon here.\l"
 	.string "The city practically never sleeps.$"
 
 EverGrandeCity_Text_Triathlete:

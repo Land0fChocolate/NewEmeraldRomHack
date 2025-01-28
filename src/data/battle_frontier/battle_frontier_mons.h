@@ -6996,8 +6996,8 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_STARMIE_8] = {
         .species = SPECIES_STARMIE,
-        .moves = {MOVE_SURF, MOVE_THUNDERBOLT, MOVE_PSYSHOCK, MOVE_RECOVER},
-        .item = ITEM_ABSORB_BULB,
+        .moves = {MOVE_SURF, MOVE_THUNDERBOLT, MOVE_PSYSHOCK, MOVE_REFLECT_TYPE},
+        .item = ITEM_WATER_GEM,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_MODEST
     },

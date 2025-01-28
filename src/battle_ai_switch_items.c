@@ -47,45 +47,34 @@ static inline bool32 SetSwitchinAndSwitch(u32 switchinId)
     return TRUE;
 }
 
-static bool32 ShouldSwitchIfAllMovesBad()
+static bool8 ShouldSwitchIfAllMovesBad(void)
 {
-    u32 moveIndex;
-    u32 opposingBattler = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler)));
-    u32 aiMove;
-
-    // Switch if no moves affect opponents
-    if (IsDoubleBattle())
+    if (gBattleResources->ai->switchMon)
     {
-        u32 opposingPartner = GetBattlerAtPosition(BATTLE_PARTNER(opposingBattler));
-        for (moveIndex = 0; moveIndex < MAX_MON_MOVES; moveIndex++)
-        {
-            aiMove = gBattleMons[gActiveBattler].moves[moveIndex];
-            if ((AI_GetMoveEffectiveness(aiMove, gActiveBattler, opposingBattler) > AI_EFFECTIVENESS_x0
-                    || AI_GetMoveEffectiveness(aiMove, gActiveBattler, opposingPartner) > AI_EFFECTIVENESS_x0)
-                    && aiMove != MOVE_NONE)
-                return FALSE;
-        }
+        gBattleResources->ai->switchMon = 0;
+        *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
+        BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
+        return TRUE;
     }
     else
     {
-        for (moveIndex = 0; moveIndex < MAX_MON_MOVES; moveIndex++)
-        {
-            aiMove = gBattleMons[gActiveBattler].moves[moveIndex];
-            if (AI_GetMoveEffectiveness(aiMove, gActiveBattler, opposingBattler) > AI_EFFECTIVENESS_x0 && aiMove != MOVE_NONE)
-                return FALSE;
-        }
+        return FALSE;
     }
-
-    return SetSwitchinAndSwitch(PARTY_SIZE);
 }
 
 static bool8 ShouldSwitchIfPerishSong(void)
 {
     if (gStatuses3[gActiveBattler] & STATUS3_PERISH_SONG
         && gDisableStructs[gActiveBattler].perishSongTimer == 0)
+    {
+        *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
+        BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
         return TRUE;
-    
-    return FALSE;
+    }
+    else
+    {
+        return FALSE;
+    }
 }
 
 static bool8 ShouldSwitchIfWonderGuard(void)
@@ -249,32 +238,55 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
 static bool8 ShouldSwitchIfAbilityBenefit(void)
 {
     u16 *abilities = AI_GetAbilities(gActiveBattler);
-    bool32 hasStatRaised = AnyStatIsRaised(gActiveBattler);
+    bool8 hasStatRaised = AnyStatIsRaised(gActiveBattler);
     u8 rnd;
-
-    //Check if ability is blocked
-    if (gStatuses3[gActiveBattler] & STATUS3_GASTRO_ACID
-        || IsNeutralizingGasOnField())
-        return FALSE;
 
     rnd = Random() % 100;
 
+    if (!(gBattleMons[gActiveBattler].status1 & STATUS1_SLEEP))
+        return FALSE;
     if (HasAbility(ABILITY_NATURAL_CURE, abilities)) {
         //Attempt to cure bad ailment
         if (gBattleMons[gActiveBattler].status1 & (STATUS1_SLEEP | STATUS1_FREEZE | STATUS1_TOXIC_POISON)
             && ((hasStatRaised && (rnd < 10)) || (!hasStatRaised && (rnd < 70))))
-            return SetSwitchinAndSwitch(PARTY_SIZE);
+            return TRUE;
         //Attempt to cure lesser ailment
         if ((gBattleMons[gActiveBattler].status1 & STATUS1_ANY)
             && (gBattleMons[gActiveBattler].hp >= gBattleMons[gActiveBattler].maxHP / 2)
             && ((hasStatRaised && (rnd < 10)) || (!hasStatRaised && (rnd < 25))))
-            return SetSwitchinAndSwitch(PARTY_SIZE);
+            return TRUE;
+    }
+    if (HasAbility(ABILITY_REGENERATOR, abilities)) {
+        if ((gBattleMons[gActiveBattler].hp <= (gBattleMons[gActiveBattler].maxHP / 2))
+             && ((hasStatRaised && (rnd < 20)) || (!hasStatRaised && (rnd < 50))))
+            return TRUE;
+    }
+    if (gBattleMons[gActiveBattler].hp < gBattleMons[gActiveBattler].maxHP / 2)
+        return FALSE;
+
+    if ((gLastLandedMoves[gActiveBattler] == 0 || gLastLandedMoves[gActiveBattler] == 0xFFFF) && Random() & 1)
+    {
+        *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
+        BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
+        return TRUE;
+    }
+    else if (gBattleMoves[gLastLandedMoves[gActiveBattler]].power == 0 && Random() & 1)
+    {
+        *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
+        BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
+        return TRUE;
     }
 
-    if (HasAbility(ABILITY_REGENERATOR, abilities)) {
-        if ((gBattleMons[gActiveBattler].hp <= ((gBattleMons[gActiveBattler].maxHP * 2) / 3))
-             && ((hasStatRaised && (rnd < 20)) || (!hasStatRaised && (rnd < 50))))
-            return SetSwitchinAndSwitch(PARTY_SIZE);
+    if (FindMonWithFlagsAndSuperEffective(MOVE_RESULT_DOESNT_AFFECT_FOE, 1))
+        return TRUE;
+    if (FindMonWithFlagsAndSuperEffective(MOVE_RESULT_NOT_VERY_EFFECTIVE, 1))
+        return TRUE;
+
+    if (Random() & 1)
+    {
+        *(gBattleStruct->AI_monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
+        BtlController_EmitTwoReturnValues(1, B_ACTION_SWITCH, 0);
+        return TRUE;
     }
 
     return FALSE;

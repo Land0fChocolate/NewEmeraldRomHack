@@ -274,8 +274,12 @@ DraconidArchives_EventScript_ResetJirachi::
 	return
 
 DraconidArchives_EventScript_ZinniaDeoxysBeaten::
-	msgbox DraconidArchives_Text_BeatingDeoxys, MSGBOX_DEFAULT
+	msgbox DraconidArchives_Text_BeatenDeoxys, MSGBOX_DEFAULT
 	release
+	giveitem ITEM_MEGA_RING
+	msgbox DraconidArchives_Text_MegaEvolutionDescription, MSGBOX_DEFAULT
+	closemessage
+	delay 5
 	applymovement LOCALID_WHISMUR, Common_Movement_FaceLeft
 	waitmovement 0
 	playmoncry SPECIES_WHISMUR, 0
@@ -996,13 +1000,26 @@ DraconidArchives_Text_BotHalfDisplayCase:
 DraconidArchives_Text_TakeTheMegaStone:
 	.string "Take the {STR_VAR_1}?$"
 
-DraconidArchives_Text_BeatingDeoxys:
+DraconidArchives_Text_BeatenDeoxys:
 	.string "Zinnia: {PLAYER}!\p"
 	.string "I can tell from the way you strode in\n"
 	.string "here that you beat Deoxys.\p"
 	.string "It looks like everything has finally\n"
 	.string "been brought to an end.\l"
 	.string "I thank you for that.\p"
+	.string "As part of my appreciation, please\n"
+	.string "be the proud owner of one of our\l"
+	.string "treasured artifacts, the Mega Ring.$"
+
+DraconidArchives_Text_MegaEvolutionDescription:
+	.string "Certain species of Pokémon are able to\n"
+	.string "temporarily transform into much\l"
+	.string "stronger forms with the Mega Ring.\p"
+	.string "They will also need to hold a\n"
+	.string "Mega Stone to do it.\p"
+	.string "You can find two sets of Mega Stones\n"
+	.string "in that case over there.\l"
+	.string "Feel free to borrow them.\p"
 	.string "I've returned to my duties as\n"
 	.string "Lorekeeper, here in Fallarbor.\l"
 	.string "You are welcome to see me anytime!$"
@@ -1022,7 +1039,7 @@ DraconidArchives_Text_BringSnacksForAster:
 	.string "If you can get me some tasty treats for\n"
 	.string "my Aster here, I can call any and all\l"
 	.string "legendary Pokémon back to their lairs.\p"
-	.string "Aster has a rather expensive taste.\n"
+	.string "Aster has rather expensive taste.\n"
 	.string "She'll only eat very rare berries, like\l"
 	.string "the ones that reduce damage taken.\p"
 	.string "Come back when you have 5 of a kind.$"
@@ -1099,8 +1116,8 @@ DraconidArchives_Text_DisplayCaseInstrument:
 	.string "elegant looking stringed instrument.$"
 
 DraconidArchives_Text_Scroll:
-	.string "A scroll written in a primitive language\n"
-	.string "you don't understand.\p"
+	.string "A scroll written in an ancient\n"
+	.string "language you don't understand.\p"
 	.string "The illustration depicts some monstrous\n"
 	.string "looking Pokémon engaged in an epic\l"
 	.string "battle.$"
