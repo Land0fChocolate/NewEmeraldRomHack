@@ -12640,12 +12640,12 @@
               },
               {
                 "min_level": 13,
-                "max_level": 16,
+                "max_level": 17,
                 "species": "SPECIES_MAREEP"
               },
               {
                 "min_level": 18,
-                "max_level": 21,
+                "max_level": 22,
                 "species": "SPECIES_FLAAFFY"
               },
               {
@@ -12872,8 +12872,8 @@
                 "species": "SPECIES_MANKEY"
               },
               {
-                "min_level": 28,
-                "max_level": 30,
+                "min_level": 29,
+                "max_level": 31,
                 "species": "SPECIES_ARBOK"
               },
               {
@@ -12887,8 +12887,8 @@
                 "species": "SPECIES_WEEPINBELL"
               },
               {
-                "min_level": 28,
-                "max_level": 30,
+                "min_level": 30,
+                "max_level": 33,
                 "species": "SPECIES_EXEGGUTOR"
               },
               {
@@ -12897,8 +12897,8 @@
                 "species": "SPECIES_MANKEY"
               },
               {
-                "min_level": 27,
-                "max_level": 30,
+                "min_level": 29,
+                "max_level": 31,
                 "species": "SPECIES_PRIMEAPE"
               },
               {
@@ -13021,8 +13021,8 @@
                 "species": "SPECIES_YANMA"
               },
               {
-                "min_level": 26,
-                "max_level": 29,
+                "min_level": 27,
+                "max_level": 30,
                 "species": "SPECIES_VENOMOTH"
               },
               {
@@ -13036,13 +13036,13 @@
                 "species": "SPECIES_WEEPINBELL"
               },
               {
-                "min_level": 27,
-                "max_level": 30,
+                "min_level": 31,
+                "max_level": 34,
                 "species": "SPECIES_SCYTHER"
               },
               {
-                "min_level": 29,
-                "max_level": 31,
+                "min_level": 34,
+                "max_level": 37,
                 "species": "SPECIES_TANGROWTH"
               },
               {
@@ -13056,8 +13056,8 @@
                 "species": "SPECIES_LICKITUNG"
               },
               {
-                "min_level": 30,
-                "max_level": 32,
+                "min_level": 37,
+                "max_level": 40,
                 "species": "SPECIES_VICTREEBEL"
               },
               {

@@ -34,10 +34,11 @@ CrumblingGorge_EventScript_ZinniaTrigger::
 	msgbox CrumblingGorge_Text_NotAppearing, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	playse SE_PIN
 	applymovement LOCALID_ZINNIA, Common_Movement_FaceUp
+	waitmovement 0
 	applymovement LOCALID_ZINNIA, Common_Movement_ExclamationMark
 	waitmovement 0
+	playse SE_PIN
 	delay 60
 	getplayerxy VAR_0x8004, VAR_0x8005
 	compare VAR_0x8004, 10

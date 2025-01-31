@@ -5147,7 +5147,7 @@ CrumblingGorge_Text_HoldenPostBattle:
 
 CrumblingGorge_Text_NagataIntro:
 	.string "Oh this is good timing, our Pokémon\n"
-	.string "were in need of some excercise.$"
+	.string "were in need of some exercise.$"
 
 CrumblingGorge_Text_NagataDefeat:
 	.string "Tired out!$"

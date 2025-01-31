@@ -14,9 +14,9 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
+      "direction": "right",
       "offset": 0,
-      "direction": "right"
+      "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST"
     }
   ],
   "object_events": [
@@ -362,7 +362,7 @@
       "graphics_id": "OBJ_EVENT_GFX_SCIZOR",
       "x": 32,
       "y": 40,
-      "elevation": 0,
+      "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,

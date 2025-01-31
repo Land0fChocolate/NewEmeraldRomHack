@@ -67,6 +67,7 @@ BattleFrontier_Lounge6_EventScript_Psychic::
 	goto_if_ne BattleFrontier_Lounge6_EventScript_PsychicNotArticuno
 BattleFrontier_Lounge6_EventScript_PsychicSeeArticuno::
 	msgbox BattleFrontier_Lounge6_Text_PsychicHaveGalarianArticuno, MSGBOX_DEFAULT
+	setvar VAR_TEMP_1, SPECIES_ARTICUNO_GALARIAN
 	givemon SPECIES_ARTICUNO_GALARIAN, 50, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq BattleFrontier_Lounge6_EventScript_SendGalarianArticunoToParty
@@ -126,10 +127,12 @@ BattleFrontier_Lounge6_EventScript_ReceivedGalarianArticuno::
 	message BattleFrontier_Lounge6_Text_ReceivedGalarianArticuno
 	waitmessage
 	waitfanfare
+	bufferspeciesname 0, SPECIES_ARTICUNO_GALARIAN
 	return
 
 BattleFrontier_Lounge6_EventScript_PsychicGiveAwayCompleted::
 	msgbox BattleFrontier_Lounge6_Text_ThanksForSeeingOriginalArticuno, MSGBOX_DEFAULT
+	closemessage
 	end
 
 BattleFrontier_Lounge6_EventScript_BlackBelt::
@@ -151,6 +154,7 @@ BattleFrontier_Lounge6_EventScript_BlackBelt::
 	goto_if_ne BattleFrontier_Lounge6_EventScript_BlackBeltNotZapdos
 BattleFrontier_Lounge6_EventScript_BlackBeltSeeZapdos::
 	msgbox BattleFrontier_Lounge6_Text_BlackBeltHaveGalarianZapdos, MSGBOX_DEFAULT
+	setvar VAR_TEMP_1, SPECIES_ZAPDOS_GALARIAN
 	givemon SPECIES_ZAPDOS_GALARIAN, 50, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq BattleFrontier_Lounge6_EventScript_SendGalarianZapdosToParty
@@ -210,10 +214,12 @@ BattleFrontier_Lounge6_EventScript_ReceivedGalarianZapdos::
 	message BattleFrontier_Lounge6_Text_ReceivedGalarianZapdos
 	waitmessage
 	waitfanfare
+	bufferspeciesname 0, SPECIES_ZAPDOS_GALARIAN
 	return
 
 BattleFrontier_Lounge6_EventScript_BlackBeltGiveAwayCompleted::
 	msgbox BattleFrontier_Lounge6_Text_ThanksForSeeingOriginalZapdos, MSGBOX_DEFAULT
+	closemessage
 	end
 
 BattleFrontier_Lounge6_EventScript_StreetThug::
@@ -235,6 +241,7 @@ BattleFrontier_Lounge6_EventScript_StreetThug::
 	goto_if_ne BattleFrontier_Lounge6_EventScript_StreetThugNotMoltres
 BattleFrontier_Lounge6_EventScript_StreetThugSeeMoltres::
 	msgbox BattleFrontier_Lounge6_Text_StreetThugHaveGalarianMoltres, MSGBOX_DEFAULT
+	setvar VAR_TEMP_1, SPECIES_MOLTRES_GALARIAN
 	givemon SPECIES_MOLTRES_GALARIAN, 50, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq BattleFrontier_Lounge6_EventScript_SendGalarianMoltresToParty
@@ -294,10 +301,12 @@ BattleFrontier_Lounge6_EventScript_ReceivedGalarianMoltres::
 	message BattleFrontier_Lounge6_Text_ReceivedGalarianMoltres
 	waitmessage
 	waitfanfare
+	bufferspeciesname 0, SPECIES_MOLTRES_GALARIAN
 	return
 
 BattleFrontier_Lounge6_EventScript_StreetThugGiveAwayCompleted::
 	msgbox BattleFrontier_Lounge6_Text_ThanksForSeeingOriginalMoltres, MSGBOX_DEFAULT
+	closemessage
 	end
 
 BattleFrontier_Lounge6_Text_ReceivedGalarianArticuno:
@@ -314,9 +323,9 @@ BattleFrontier_Lounge6_Text_ReceivedGalarianMoltres:
 
 BattleFrontier_Lounge6_Text_WouldLikeToSeeOriginalArticuno:
 	.string "I travel with my Articuno everywhere,\n"
-	.string "but I heard the Articuno where I come\l"
-	.string "from are way different to the Articuno\l"
-	.string "in this part of the world.\p"
+	.string "but I heard that my Articuno is way\l"
+	.string "different to the Articuno around this\l"
+	.string "part of the world.\p"
 	.string "I want to see one from here.\n"
 	.string "You got an Articuno?$"
 
@@ -383,7 +392,7 @@ BattleFrontier_Lounge6_Text_ThanksForSeeingOriginalZapdos:
 	.string "curry here.$"
 
 BattleFrontier_Lounge6_Text_WouldLikeToSeeOriginalMoltres:
-	.string "I'm pounding all the deadbeats here\l"
+	.string "I'm pounding all the deadbeats here\n"
 	.string "with my Moltres!\p"
 	.string "Though people say my Moltres looks\n"
 	.string "funny. Like, not fiery enough.\p"

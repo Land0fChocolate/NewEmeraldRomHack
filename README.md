@@ -151,6 +151,7 @@ v1.1.0 - tbc/2025
 - Mystic Mind: Power of Psychic type moves increased by 50%. Used by Psyduck/Golduck.
 - Prickly Thorns: Effectively like Rough Skin. Used by Cacnea/Cacturne.
 - Soul Siphon: Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir.
+- Needle Missile: User attacks deals additional 15BP untyped special damage. Used by Jolteon/Qwilfish.
 - Wickedness: User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius.
 - Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Solrock.
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat.
@@ -235,11 +236,11 @@ Possible future additions/changes.
 - Sort out the online/wireless features. Either find out how to make them work or remove them.
 - Better Game Corner games. May be a ton of work though. (Perhaps one could be a Battle Palace style battle where the Player places a bet?)
 - Better Battle Frontier level scaling. Open level puts opponent Pokemon to your highest level Pokemon. Should scale all Pokemon to a certain level like the battle facilities in future gens.
-- Add an Anything Goes challenge to the Battle Tower or as a new battle facility, where even legendary Pokemon like Rayquaza are allowed.
 - Make Origin moves use their own PP. PP reduction is done in Battle Script Commands and I currently can't think of a way to differentiate Origin moves and normal moves in `Cmd_ppreduce`. Origin moves not using their own PP is currently a "feature" until this problem can be solved.
 - Add another star to the Trainer Card for completing the National Dex. Create a platinum colour scheme to go along with it.
 - Named NPCs like Gym Leaders, Elite 4, Steven, etc to be possible partners in Battle Tower Multi challenge.
 - A better way for Mirage Island to trigger?
+- Add an Anything Goes challenge to the Battle Tower or as a new battle facility, where even Mega Evolutions and legendary Pokemon like Rayquaza are allowed.
 - Obligatory beach episode.
 
 # Known Bugs
@@ -261,7 +262,7 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Bug Bite/Pluck is not taking the effects of the opponent's berry.
 - Spinning Body activates on every hit for multi-hit moves (e.g. Hitmontop using Triple Kick). Would rather it takes affect on only the last hit.
 - Backgrounds of some moves are glitched or have black boxes. (Shadow Bone, Gunk Shot, Hurricane, Focus Blast, Aura Sphere, Burn Up, Origin Pulse)
-- Cloud reflection can be seen in the long grass and trees in Route 120.
+- Cloud reflection can be seen in the long grass and trees in Route 120, as well as rocks in Crumbling Gorge.
 - Jumping into long grass from ledge and moving produces incorrect grass animation.
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
 - Shop tiles change colour when in shop mode in Mauville sweet shop. Palette bug.
@@ -289,6 +290,12 @@ I have absolutely no idea. I don't even know if it's possible for pokeemeerald-e
 - Cheats don't work!
 Yeah, not surprising. The format of the save file has been changed. Don't ask me to make cheats because I will not make them.
 
+- Is there any documentation?
+Yes. There are doc files included with the ROM download. 
+
+- I'm stuck in the post game!
+There's a post game story guide in the docs. I've tried to make it obvious to tell players where to go but I will keep trying to improve it.
+
 - Will you add in more Pokemon?
 Nope. I feel 450 different species is enough and I don't want the game to get bogged down with bloat.
 
@@ -297,12 +304,6 @@ Nope. The game is not designed for them in terms of difficulty curves and story 
 
 - Will you increase Pokemon Storage Box size?
 Nope. I can't increase the Storage Box size any more due to GBA limitations. I feel 450 spaces is just enough and can work for a living dex anyway. 
-
-- Is there any documentation?
-Yes. There are doc files included with the ROM download. 
-
-- I'm stuck in the post game!
-There's a post game story guide in the docs. I've tried to make it obvious to tell players where to go but I will keep trying to improve it.
 
 
 # Credits

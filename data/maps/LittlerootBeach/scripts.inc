@@ -408,7 +408,7 @@ LittlerootBeach_Text_BrendanIntro:
 	.string "the rocks as well!$"
 
 LittlerootBeach_Text_ZinniaIntro:
-	.string "Whoa!\n"
+	.string "???: Whoa!\n"
 	.string "It's great to meet you!\p"
 	.string "…It is our first real meeting, right?\n"
 	.string "Yeah. That's right. Of course it is!\p"

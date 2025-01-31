@@ -329,7 +329,7 @@
 #define OBJ_EVENT_GFX_MAGMORTAR                  325
 #define OBJ_EVENT_GFX_GENGAR                     326
 
-#define NUM_OBJ_EVENT_GFX                        3252
+#define NUM_OBJ_EVENT_GFX                        327
 
 
 // These are dynamic object gfx ids.

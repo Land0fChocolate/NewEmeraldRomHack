@@ -7290,7 +7290,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_BrendanRoute103Mudkip),
-        .party = {.NoItemDefaultMoves = sParty_BrendanRoute103Mudkip},
+        .party = {.NoItemDefaultMoves = sParty_BrendanRoute103Mudkip}, // TODO: since the rivals have the same Pokemon teams now, merge them together as sParty_RivalRoute103Mudkip and so forth
     },
 
     [TRAINER_BRENDAN_ROUTE_110_MUDKIP] =

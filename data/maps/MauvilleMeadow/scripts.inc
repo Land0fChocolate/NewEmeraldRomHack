@@ -39,7 +39,7 @@ MauvilleMeadow_EventScript_Cobain::
 MauvilleMeadow_Eventscript_Shelly::
 	msgbox MauvilleMeadow_Text_Shelly, MSGBOX_NPC
 	call_if_unset FLAG_MET_SHELLY_MAUVILLE_MEADOW, MauvilleMeadow_Eventscript_SetMeetFlag
-	goto_if_unset FLAG_MET_MATT_FORTREE_JUNGLE, MauvilleMeadow_Text_ShellyCheckOutJungle
+	goto_if_unset FLAG_MET_MATT_FORTREE_JUNGLE, MauvilleMeadow_Eventscript_CheckOutJungle
 	goto_if_unset FLAG_BIRCH_CALLED_PLAYER, Wildwoods_Area9_Eventscript_CheckForBirchReportCall
 	end
 

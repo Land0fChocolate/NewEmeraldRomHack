@@ -208,7 +208,7 @@ Mauville_Riverside_Text_BeGoingNow:
 	.string "Team Magma have been instigating\l"
 	.string "trouble everywhere!\p"
 	.string "I shall be heading home immediately.\n"
-	.string "You may visit me at your convienience\l"
+	.string "You may visit me at your convenience\l"
 	.string "by my residence in Mauville.\p"
 	.string "I shall happily groom your Pokémon who\n"
 	.string "fought for my safety.\p"

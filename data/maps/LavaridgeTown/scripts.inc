@@ -20,8 +20,7 @@ LavaridgeTown_OnTransition:
 	end
 
 LavaridgeTown_Eventscript_SetUpFlannery::
-	goto_if_unset FLAG_BADGE04_GET, LavaridgeTown_Eventscript_FlanneryRematch
-	goto_if_unset FLAG_BADGE05_GET, LavaridgeTown_Eventscript_FlanneryRematch
+	goto_if_unset FLAG_SYS_GAME_CLEAR, LavaridgeTown_Eventscript_FlanneryRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_FLANNERY_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE

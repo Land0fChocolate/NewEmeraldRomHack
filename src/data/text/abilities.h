@@ -1130,8 +1130,9 @@ static const u8 sSoulSiphonDescription[] = _(
 	"heals user the same amount.");
 
 static const u8 sNeedleMissilesDescription[] = _(
-	"User attacks deal additional\n"
-	"10BP untyped special damage.");
+	"User attacks deal bonus\n"
+	"15BP untyped special\n"
+    "damage.");
 
 static const u8 sBadLuckDescription[] = _(
 	"Opponent cannot land crits\n"

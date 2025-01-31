@@ -1061,6 +1061,7 @@ static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
     u16 WeatherInstituteState = VarGet(VAR_WEATHER_INSTITUTE_STATE);
 
     if ((WeatherInstituteState == 0 || WeatherInstituteState == 6)
+    && warp->mapGroup == MAP_GROUP(ROUTE119_WEATHER_INSTITUTE_1F)
     && (warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_1F)
      || warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_2F)))
         return TRUE;

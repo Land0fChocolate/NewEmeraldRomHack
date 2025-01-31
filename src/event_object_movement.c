@@ -688,6 +688,11 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Regirock,              OBJ_EVENT_PAL_TAG_REGIROCK},
     {gObjectEventPal_Regice,                OBJ_EVENT_PAL_TAG_REGICE},
     {gObjectEventPal_Registeel,             OBJ_EVENT_PAL_TAG_REGISTEEL},
+    {gObjectEventPal_Nidoking,              OBJ_EVENT_PAL_TAG_NIDOKING},
+    {gObjectEventPal_Scizor,                OBJ_EVENT_PAL_TAG_SCIZOR},
+    {gObjectEventPal_Weavile,               OBJ_EVENT_PAL_TAG_WEAVILE},
+    {gObjectEventPal_Magmortar,             OBJ_EVENT_PAL_TAG_MAGMORTAR},
+    {gObjectEventPal_Gengar,                OBJ_EVENT_PAL_TAG_GENGAR},
     {NULL,                                  0x0000},
 };
 

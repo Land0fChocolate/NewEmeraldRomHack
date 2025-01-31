@@ -1018,7 +1018,7 @@ DraconidArchives_Text_MegaEvolutionDescription:
 	.string "They will also need to hold a\n"
 	.string "Mega Stone to do it.\p"
 	.string "You can find two sets of Mega Stones\n"
-	.string "in that case over there.\l"
+	.string "in those cases over there.\l"
 	.string "Feel free to borrow them.\p"
 	.string "I've returned to my duties as\n"
 	.string "Lorekeeper, here in Fallarbor.\l"

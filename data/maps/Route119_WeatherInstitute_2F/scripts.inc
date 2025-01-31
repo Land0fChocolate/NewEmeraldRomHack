@@ -603,7 +603,7 @@ Route119_WeatherInstitute_2F_Text_ZinniaWhatBringsYouHere:
 	.string "a particular artifact that was from\l"
 	.string "another legendary Pokémon.\p"
 	.string "I know of two good choices, and they\n"
-	.string "both convieniently reside in one place.\p"
+	.string "both conveniently reside in one place.\p"
 	.string "That place is called Navel Rock.\p"
 	.string "Why do I know all this?\n"
 	.string "Well… I do a lot of reading.\p"

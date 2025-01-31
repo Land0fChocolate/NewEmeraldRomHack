@@ -3613,14 +3613,17 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
           || gStatuses3[battlerDef] & STATUS3_LEECHSEED
           || HasMoveEffect(battlerDef, EFFECT_RAPID_SPIN)
           || HasAbility(ABILITY_LIQUID_OOZE, AI_DATA->abilities[battlerDef])
-          || HasAbility(ABILITY_MAGIC_GUARD, AI_DATA->abilities[battlerDef]))
+          || HasAbility(ABILITY_MAGIC_GUARD, AI_DATA->abilities[battlerDef])) {
+            score -= 6;
             break;
+          }
+            
         score += 3;
         if (!HasDamagingMove(battlerDef) || IsBattlerTrapped(battlerDef, FALSE))
             score += 2;
         break;
     case EFFECT_DO_NOTHING:
-        //todo - check z splash, z celebrate, z happy hour (lol)
+        score -= 2;
         break;
     case EFFECT_TELEPORT:
         if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || GetBattlerSide(battlerAtk) != B_SIDE_PLAYER)
@@ -3878,8 +3881,10 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
     case EFFECT_HIDDEN_THORNS:
     case EFFECT_STICKY_WEB:
     case EFFECT_TOXIC_SPIKES:
-        if (HasAbility(ABILITY_MAGIC_BOUNCE, AI_DATA->abilities[battlerDef]) || CountUsablePartyMons(battlerDef) == 0)
+        if (HasAbility(ABILITY_MAGIC_BOUNCE, AI_DATA->abilities[battlerDef]) || CountUsablePartyMons(battlerDef) == 0) {
+            score -= 10;
             break;
+        }
         if (gDisableStructs[battlerAtk].isFirstTurn)
             score += 2;        
         //TODO - track entire opponent party data to determine hazard effectiveness 
@@ -4279,10 +4284,11 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         else
             score++;
         break;
+    case EFFECT_HAMMER_ARM:
     case EFFECT_SUPERPOWER:
     case EFFECT_OVERHEAT:
         if (HasAbility(ABILITY_CONTRARY, AI_DATA->abilities[battlerAtk]))
-            score += 10;
+            score += 6;
         break;
     case EFFECT_MAGIC_COAT:
         if (IS_MOVE_STATUS(predictedMove) && AI_GetBattlerMoveTargetType(battlerDef, predictedMove) & (MOVE_TARGET_SELECTED | MOVE_TARGET_OPPONENTS_FIELD | MOVE_TARGET_BOTH))
@@ -4666,7 +4672,7 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         break;
     case EFFECT_TOPSY_TURVY:
         if (CountPositiveStatStages(battlerDef) > CountNegativeStatStages(battlerDef))
-            score++;
+            score += 2;
         break;
     case EFFECT_FAIRY_LOCK:
         if (!IsBattlerTrapped(battlerDef, TRUE))
@@ -4809,14 +4815,6 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             score++;
         }
         break;
-    //case EFFECT_EXTREME_EVOBOOST: // TODO
-        //break;
-    //case EFFECT_CLANGOROUS_SOUL:  // TODO
-        //break;
-    //case EFFECT_NO_RETREAT:       // TODO
-        //break;
-    //case EFFECT_SKY_DROP
-        //break;
     } // move effect checks
     
     return score;
@@ -5086,8 +5084,7 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case EFFECT_ROOST:
             case EFFECT_MEMENTO:
             case EFFECT_GRUDGE:
-            case EFFECT_OVERHEAT:
-                score -= 2;
+                score -= 4;
                 break;
             default:
                 break;
@@ -5104,13 +5101,12 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case EFFECT_EXPLOSION:
             case EFFECT_BIDE:
             case EFFECT_CONVERSION:
-            case EFFECT_LIGHT_SCREEN:
             case EFFECT_MIST:
             case EFFECT_FOCUS_ENERGY:
             case EFFECT_CONVERSION_2:
             case EFFECT_SAFEGUARD:
             case EFFECT_BELLY_DRUM:
-                score -= 2;
+                score -= 4;
                 break;
             default:
                 break;
@@ -5120,7 +5116,7 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         {
             // low hp
             if (IsStatRaisingEffect(effect) || IsStatLoweringEffect(effect))
-                score -= 2;
+                score -= 4;
             
             // check other discouraged low hp effects
             switch (effect)
@@ -5147,7 +5143,7 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             case EFFECT_SANDSTORM:
             case EFFECT_HAIL:
             case EFFECT_RAIN_DANCE:
-                score -= 2;
+                score -= 4;
                 break;
             default:
                 break;
@@ -5225,7 +5221,7 @@ static s16 AI_HPAware(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         {
             // low HP
             if (IS_MOVE_STATUS(move))
-                score -= 2; // don't use status moves if target is at low health
+                score -= 4; // don't use status moves if target is at low health
         }
     }
     
