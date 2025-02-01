@@ -1060,8 +1060,10 @@ static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
 {
     u16 WeatherInstituteState = VarGet(VAR_WEATHER_INSTITUTE_STATE);
 
+    if (warp->mapGroup != MAP_GROUP(ROUTE119_WEATHER_INSTITUTE_1F))
+        return FALSE;
+
     if ((WeatherInstituteState == 0 || WeatherInstituteState == 6)
-    && warp->mapGroup == MAP_GROUP(ROUTE119_WEATHER_INSTITUTE_1F)
     && (warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_1F)
      || warp->mapNum == MAP_NUM(ROUTE119_WEATHER_INSTITUTE_2F)))
         return TRUE;
@@ -1075,8 +1077,8 @@ u16 GetLocationMusic(struct WarpData *warp)
         return 0xFFFF;
     else if (ShouldLegendaryMusicPlayAtLocation(warp) == TRUE)
         return MUS_ABNORMAL_WEATHER;
-    else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
-        return MUS_MT_CHIMNEY;
+    //else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
+    //    return MUS_MT_CHIMNEY;
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }
