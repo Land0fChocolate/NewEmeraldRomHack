@@ -2158,3 +2158,7 @@
 	various 0, VARIOUS_SET_LAST_USED_ABILITY
 	.2byte \ability
 	.endm
+
+	.macro setmoveset battler:req
+	various \battler, VARIOUS_SET_MOVESET
+	.endm

@@ -9876,6 +9876,7 @@ BattleScript_DeoxysStrangeAura::
 	datahpupdate BS_TARGET
 	printstring STRINGID_DEOXYSSTRANGEAURA
 	waitmessage B_WAIT_TIME_LONG
+	@setmoveset BS_ATTACKER @TODO: figure out how to set Deoxys moveset before first turn. 
 	end
 
 BattleScript_DeoxysBossFormChange::

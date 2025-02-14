@@ -9869,6 +9869,14 @@ static void Cmd_various(void)
             PREPARE_STAT_BUFFER(gBattleTextBuff1, statId);
         }
         break;
+    case VARIOUS_SET_MOVESET: // intended to be used to set boss Deoxys moveset on first turn
+        if (GetBattlerSide(gActiveBattler) == B_SIDE_OPPONENT) {
+            SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHO_BOOST, 0);
+            SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_FIRE_PUNCH, 1);
+            SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICE_PUNCH, 2);
+            SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_DRAIN_PUNCH, 3);
+        }
+        break;
     } // End of switch (gBattlescriptCurrInstr[2])
 
     gBattlescriptCurrInstr += 3;

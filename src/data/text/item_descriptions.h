@@ -3288,9 +3288,9 @@ static const u8 sTM84Desc[] = _(
     "poison.");
 
 static const u8 sTM85Desc[] = _(
-    "Lays down a trap\n"
-    "that inflicts\n"
-    "paralysis.");
+    "Lowers foe speed\n"
+    "with an\n"
+    "electrifying web.");
 
 static const u8 sTM86Desc[] = _(
     "Trips the target\n"
