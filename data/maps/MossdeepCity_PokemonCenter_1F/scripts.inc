@@ -25,6 +25,11 @@ MossdeepCity_PokemonCenter_1F_EventScript_Girl::
 	msgbox MossdeepCity_PokemonCenter_1F_Text_AbilitiesMightChangeMoves, MSGBOX_NPC
 	end
 
+MossdeepCity_PokemonCenter_1F_EventScript_MauvilleOldManStoryTeller::
+	setvar VAR_MAUVILLE_MAN_VARIANT, 3
+	goto MauvilleCity_PokemonCenter_1F_EventScript_MauvilleOldMan
+	end
+
 MossdeepCity_PokemonCenter_1F_Text_GymLeaderDuoFormidable:
 	.string "The Gym Leaders in this town are\n"
 	.string "a formidable duo.\p"

@@ -1601,10 +1601,7 @@ static u8 GetBerryCountByBerryTreeId(u8 id)
     else
         berryCount = gSaveBlock1Ptr->berryTrees[id].berryYield;
 
-    if (FLAG_SYS_GAME_CLEAR)
-        return berryCount*2;
-    else
-        return berryCount;
+    return berryCount;
 }
 
 static u16 GetStageDurationByBerryType(u8 berry)

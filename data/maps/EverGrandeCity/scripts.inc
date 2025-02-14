@@ -37,7 +37,11 @@ EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
 	@giveitem ITEM_RARE_CANDY, 99
-	@givemon SPECIES_NINCADA, 19, ITEM_NONE
+	givemon SPECIES_BULBASAUR, 10, ITEM_NONE
+	givemon SPECIES_CHARMANDER, 10, ITEM_NONE
+	givemon SPECIES_SQUIRTLE, 10, ITEM_NONE
+	givemon SPECIES_PIKACHU, 10, ITEM_NONE
+	givemon SPECIES_EEVEE, 10, ITEM_NONE
 	closemessage
 	end
 
@@ -179,7 +183,7 @@ EverGrandeCity_Text_HexManiac:
 
 EverGrandeCity_Text_Man:
 	.string "We get people coming in from all over\n"
-	.string "to test themselves here.\l"
+	.string "to test their Pokémon here.\l"
 	.string "The city practically never sleeps.$"
 
 EverGrandeCity_Text_Triathlete:

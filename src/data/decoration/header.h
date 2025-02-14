@@ -1450,5 +1450,65 @@ const struct Decoration gDecorations[] =
         .price = 10000,
         .description = DecorDesc_REGISTEEL_DOLL,
         .tiles = DecorGfx_REGISTEEL_DOLL,
+    },
+
+    [DECOR_NATU_DOLL] =
+    {
+        .id = DECOR_NATU_DOLL,
+        .name = _("Natu Doll"),
+        .permission = DECORPERM_SPRITE,
+        .shape = DECORSHAPE_1x1,
+        .category = DECORCAT_DOLL,
+        .price = 4000,
+        .description = DecorDesc_NATU_DOLL,
+        .tiles = DecorGfx_NATU_DOLL,
+    },
+
+    [DECOR_MAGNEMITE_DOLL] =
+    {
+        .id = DECOR_MAGNEMITE_DOLL,
+        .name = _("Magnemite Doll"),
+        .permission = DECORPERM_SPRITE,
+        .shape = DECORSHAPE_1x1,
+        .category = DECORCAT_DOLL,
+        .price = 4000,
+        .description = DecorDesc_MAGNEMITE_DOLL,
+        .tiles = DecorGfx_MAGNEMITE_DOLL,
+    },
+
+    [DECOR_SQUIRTLE_DOLL] =
+    {
+        .id = DECOR_SQUIRTLE_DOLL,
+        .name = _("Squirtle Doll"),
+        .permission = DECORPERM_SPRITE,
+        .shape = DECORSHAPE_1x1,
+        .category = DECORCAT_DOLL,
+        .price = 4000,
+        .description = DecorDesc_SQUIRTLE_DOLL,
+        .tiles = DecorGfx_SQUIRTLE_DOLL,
+    },
+
+    [DECOR_WOOPER_DOLL] =
+    {
+        .id = DECOR_WOOPER_DOLL,
+        .name = _("Wooper Doll"),
+        .permission = DECORPERM_SPRITE,
+        .shape = DECORSHAPE_1x1,
+        .category = DECORCAT_DOLL,
+        .price = 4000,
+        .description = DecorDesc_WOOPER_DOLL,
+        .tiles = DecorGfx_WOOPER_DOLL,
+    },
+
+    [DECOR_PORYGON2_DOLL] =
+    {
+        .id = DECOR_PORYGON2_DOLL,
+        .name = _("Porygon2 Doll"),
+        .permission = DECORPERM_SPRITE,
+        .shape = DECORSHAPE_1x1,
+        .category = DECORCAT_DOLL,
+        .price = 5000,
+        .description = DecorDesc_PORYGON2_DOLL,
+        .tiles = DecorGfx_PORYGON2_DOLL,
     }
 };

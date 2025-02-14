@@ -301,7 +301,7 @@ MauvilleCity_BikeShop_Text_GiveSecondBike:
 
 MauvilleCity_BikeShop_Text_SwitchBetweenBikesButton:
 	.string "Rydel: You can switch between bikes by\n"
-	.string "pressing “R” for great convienience!$"
+	.string "pressing “R” for great convenience!$"
 
 MauvilleCity_BikeShop_Text_BestWishes:
 	.string "Rydel: May the winds be always on your\n"

@@ -1157,12 +1157,11 @@ static const u16 sPickupItems[] =
     ITEM_GREAT_BALL,
     ITEM_REPEL,
     ITEM_ESCAPE_ROPE,
-    ITEM_BINDING_BAND,
+    ITEM_BOTTLE_CAP,
     ITEM_FULL_HEAL,
     ITEM_ULTRA_BALL,
     ITEM_HYPER_POTION,
     ITEM_RARE_CANDY,
-    ITEM_BOTTLE_CAP,
     ITEM_REVIVE,
     ITEM_PP_UP,
     ITEM_FULL_RESTORE,
@@ -1184,6 +1183,7 @@ static const u16 sRarePickupItems[] =
     ITEM_BLACK_SLUDGE,
     ITEM_LEFTOVERS,
     ITEM_FOCUS_SASH,
+    ITEM_GOLD_BOTTLE_CAP,
 };
 
 static const u8 sPickupProbabilities[] =
@@ -1461,6 +1461,7 @@ static void Cmd_attackcanceler(void)
         PressurePPLose(gBattlerAttacker, gBattlerTarget, MOVE_MAGIC_COAT);
         gProtectStructs[gBattlerTarget].usesBouncedMove = TRUE;
         gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+        gBattleStruct->atkCancellerTracker = CANCELLER_POWDER_MOVE; // Edge case for bouncing a powder move against a grass type pokemon.
         if (BlocksPrankster(gCurrentMove, gBattlerTarget, gBattlerAttacker, TRUE))
         {
             // Opponent used a prankster'd magic coat -> reflected status move should fail against a dark-type attacker
@@ -1481,8 +1482,10 @@ static void Cmd_attackcanceler(void)
         gLastUsedAbility = ABILITY_MAGIC_BOUNCE;
         gProtectStructs[gBattlerTarget].usesBouncedMove = TRUE;
         gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+        gBattleStruct->atkCancellerTracker = CANCELLER_POWDER_MOVE; // Edge case for bouncing a powder move against a grass type pokemon.
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_MagicCoatBounce;
+        gBattlerAbility = gBattlerTarget;
         return;
     }
 
@@ -2667,8 +2670,10 @@ void SetMoveEffect(bool32 primary, u32 certain)
      // Just in case this flag is still set
     gBattleScripting.moveEffect &= ~MOVE_EFFECT_CERTAIN;
 
-    if (HasAbility(ABILITY_SHIELD_DUST, battlerAbilities) && !(gHitMarker & HITMARKER_IGNORE_SAFEGUARD)
-        && !primary && gBattleScripting.moveEffect <= 9)
+    if (HasAbility(ABILITY_SHIELD_DUST, battlerAbilities) 
+        && !(gHitMarker & HITMARKER_IGNORE_SAFEGUARD)
+        && !primary 
+        && affectsUser != MOVE_EFFECT_AFFECTS_USER)
         INCREMENT_RESET_RETURN
 
     if (gSideStatuses[GET_BATTLER_SIDE(gEffectBattler)] & SIDE_STATUS_SAFEGUARD && !(gHitMarker & HITMARKER_IGNORE_SAFEGUARD)
@@ -3687,6 +3692,8 @@ static void Cmd_tryfaintmon(void)
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 3);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+                        VarSet(gSpecialVar_0x8004, 2);
+                        SetTotemBoost();
                         break;
                     case 3: //transform to attack
                         gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_ATTACK;
@@ -3697,6 +3704,9 @@ static void Cmd_tryfaintmon(void)
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 4);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+                        VarSet(gSpecialVar_0x8002, 3);
+                        VarSet(gSpecialVar_0x8005, 3);
+                        SetTotemBoost();
                         break;
                     case 4: //transform to speed
                         gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_SPEED;
@@ -3707,6 +3717,8 @@ static void Cmd_tryfaintmon(void)
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 5);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
+                        VarSet(gSpecialVar_0x8004, 2);
+                        SetTotemBoost();
                         break;
                     case 5: //transform back to normal form and be catchable
                         gBattleMons[gActiveBattler].species = SPECIES_DEOXYS;
@@ -4992,7 +5004,8 @@ static void Cmd_playstatchangeanimation(void)
                         && !HasAbility(ABILITY_WHITE_SMOKE, abilities)
                         && !(HasAbility(ABILITY_KEEN_EYE, abilities) && currStat == STAT_ACC)
                         && !(HasAbility(ABILITY_HYPER_CUTTER, abilities) && currStat == STAT_ATK)
-                        && !(HasAbility(ABILITY_BIG_PECKS, abilities) && currStat == STAT_DEF))
+                        && !(HasAbility(ABILITY_BIG_PECKS, abilities) && currStat == STAT_DEF)
+                        && !(HasAbility(ABILITY_BIG_PECKS, abilities) && currStat == STAT_SPDEF))
                 {
                     if (gBattleMons[gActiveBattler].statStages[currStat] > MIN_STAT_STAGE)
                     {
@@ -7937,34 +7950,6 @@ static bool32 CourtChangeSwapSideStatuses(void)
     SWAP(sideTimerPlayer->stickyWebBattlerSide, sideTimerOpp->stickyWebBattlerSide, temp);
 }
 
-static bool32 CanTeleport(u8 battlerId)
-{
-    u8 side = GetBattlerSide(battlerId);
-    struct Pokemon *party = (side == B_SIDE_PLAYER) ? gPlayerParty : gEnemyParty;
-    u32 species, count, i;
-
-    for (i = 0; i < PARTY_SIZE; i++)
-    {
-        species = GetMonData(&party[i], MON_DATA_SPECIES2);
-        if (species != SPECIES_NONE && species != SPECIES_EGG && GetMonData(&party[i], MON_DATA_HP) != 0)
-            count++;
-    }
-
-    switch (GetBattlerSide(battlerId))
-    {
-    case B_SIDE_OPPONENT:
-        if (count == 1 || gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
-            return FALSE;
-        break;
-    case B_SIDE_PLAYER:
-        if (count == 1 || (gBattleTypeFlags & BATTLE_TYPE_DOUBLE && count <= 2))
-            return FALSE;
-        break;
-    }
-
-    return TRUE;
-}
-
 static void Cmd_various(void)
 {
     struct Pokemon *mon;
@@ -8160,6 +8145,39 @@ static void Cmd_various(void)
         if (!BATTLER_MAX_HP(gActiveBattler) && IsBattlerAlive(gActiveBattler) && !(gStatuses3[gActiveBattler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_HEAL_BLOCK)))
         {
             gBattleMoveDamage = gBattleMons[gActiveBattler].maxHP / 8;
+            if (gBattleMoveDamage == 0)
+                gBattleMoveDamage = 1;
+            gBattleMoveDamage *= -1;
+
+            BtlController_EmitHealthBarUpdate(0, gBattleMoveDamage);
+            MarkBattlerForControllerExec(gActiveBattler);
+        }
+
+        gBattlescriptCurrInstr += 3;
+        return;
+    case VARIOUS_CHECK_IF_DREAMFEAST_HEALS:
+        if (((gStatuses3[gActiveBattler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_HEAL_BLOCK))
+            || (BATTLER_MAX_HP(gActiveBattler))
+            || (!gBattleMons[gActiveBattler].hp))
+            && !((gBattleMons[BATTLE_PARTNER(gActiveBattler)].status1 & STATUS1_SLEEP) 
+                || (gBattleMons[BATTLE_OPPOSITE(gActiveBattler)].status1 & STATUS1_SLEEP)
+                || (gBattleMons[BATTLE_PARTNER(BATTLE_OPPOSITE(gActiveBattler))].status1 & STATUS1_SLEEP)))
+        {
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 2);
+        }
+        else
+        {
+            gBattlescriptCurrInstr += 7;
+        }
+        return;
+    case VARIOUS_DO_DREAMFEAST_HEAL:
+        if (!BATTLER_MAX_HP(gActiveBattler) && IsBattlerAlive(gActiveBattler) && !(gStatuses3[gActiveBattler] & (STATUS3_SEMI_INVULNERABLE | STATUS3_HEAL_BLOCK)))
+        {
+            u8 numSleepers =  ((gBattleMons[BATTLE_PARTNER(gActiveBattler)].status1 & STATUS1_SLEEP) 
+                                + (gBattleMons[BATTLE_OPPOSITE(gActiveBattler)].status1 & STATUS1_SLEEP)
+                                + (gBattleMons[BATTLE_PARTNER(BATTLE_OPPOSITE(gActiveBattler))].status1 & STATUS1_SLEEP));
+            
+            gBattleMoveDamage = (gBattleMons[gActiveBattler].maxHP / 8) * numSleepers;
             if (gBattleMoveDamage == 0)
                 gBattleMoveDamage = 1;
             gBattleMoveDamage *= -1;
@@ -9816,9 +9834,6 @@ static void Cmd_various(void)
     case VARIOUS_SET_LAST_USED_ABILITY:
         gLastUsedAbility = T1_READ_16(gBattlescriptCurrInstr + 3);
         break;
-    case VARIOUS_CAN_TELEPORT:
-        gBattleCommunication[0] = CanTeleport(gActiveBattler);
-        break;
     case VARIOUS_GET_BATTLER_SIDE:
         if (GetBattlerSide(gActiveBattler) == B_SIDE_PLAYER)
             gBattleCommunication[0] = B_SIDE_PLAYER;
@@ -10587,7 +10602,8 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
         else if (!certain
           && ((HasAbility(ABILITY_KEEN_EYE, battlerAbilities) && statId == STAT_ACC)
                 || (HasAbility(ABILITY_HYPER_CUTTER, battlerAbilities) && statId == STAT_ATK)
-                || (HasAbility(ABILITY_BIG_PECKS, battlerAbilities) && statId == STAT_DEF)))
+                || (HasAbility(ABILITY_BIG_PECKS, battlerAbilities) && statId == STAT_DEF)
+                || (HasAbility(ABILITY_BIG_PECKS, battlerAbilities) && statId == STAT_SPDEF)))
         {
             if (flags == STAT_BUFF_ALLOW_PTR)
             {
@@ -10616,7 +10632,7 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             }
             return STAT_CHANGE_DIDNT_WORK;
         }
-        else if (HasAbility(ABILITY_SHIELD_DUST, battlerAbilities) && flags == 0)
+        else if (HasAbility(ABILITY_SHIELD_DUST, battlerAbilities) && flags == 0) //TOSO P4: may need to be removed, nonexistant in latest pokeemerald-expansion
         {
             return STAT_CHANGE_DIDNT_WORK;
         }

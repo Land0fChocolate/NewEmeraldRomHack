@@ -327,6 +327,11 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Suicune;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Meteorite;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Celebi;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jirachi;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Nidoking;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scizor;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Weavile;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Magmortar;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gengar;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -651,6 +656,11 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
 	[OBJ_EVENT_GFX_METEORITE] =                &gObjectEventGraphicsInfo_Meteorite,
 	[OBJ_EVENT_GFX_CELEBI] =                   &gObjectEventGraphicsInfo_Celebi,
 	[OBJ_EVENT_GFX_JIRACHI] =                  &gObjectEventGraphicsInfo_Jirachi,
+    [OBJ_EVENT_GFX_NIDOKING] =                 &gObjectEventGraphicsInfo_Nidoking,
+    [OBJ_EVENT_GFX_SCIZOR] =                   &gObjectEventGraphicsInfo_Scizor,
+    [OBJ_EVENT_GFX_WEAVILE] =                  &gObjectEventGraphicsInfo_Weavile,
+    [OBJ_EVENT_GFX_MAGMORTAR] =                &gObjectEventGraphicsInfo_Magmortar,
+    [OBJ_EVENT_GFX_GENGAR] =                   &gObjectEventGraphicsInfo_Gengar,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

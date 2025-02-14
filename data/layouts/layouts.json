@@ -3794,8 +3794,8 @@
     {
       "id": "LAYOUT_MAGMA_HIDEOUT_2F_3R",
       "name": "MagmaHideout_2F_3R_Layout",
-      "width": 60,
-      "height": 19,
+      "width": 33,
+      "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/MagmaHideout_2F_3R/border.bin",
@@ -4424,7 +4424,7 @@
     {
       "id": "LAYOUT_EVER_GRANDE_CITY_DEVELOPERS_HOUSE",
       "name": "EverGrandeCity_DevelopersHouse_Layout",
-      "width": 12,
+      "width": 14,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",

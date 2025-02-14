@@ -20,8 +20,7 @@ LavaridgeTown_OnTransition:
 	end
 
 LavaridgeTown_Eventscript_SetUpFlannery::
-	goto_if_unset FLAG_BADGE04_GET, LavaridgeTown_Eventscript_FlanneryRematch
-	goto_if_unset FLAG_BADGE05_GET, LavaridgeTown_Eventscript_FlanneryRematch
+	goto_if_unset FLAG_SYS_GAME_CLEAR, LavaridgeTown_Eventscript_FlanneryRematch
 	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_FLANNERY_1
     specialvar VAR_RESULT, IsTrainerReadyForRematch
     compare VAR_RESULT, TRUE
@@ -446,8 +445,8 @@ LavaridgeTown_Text_FlanneryNoLimits:
 
 LavaridgeTown_Text_WouldYouLikeTraining:
 	.string "Flannery: So… how about it,\n"
-	.string "would you like me to train one of your\l"
-	.string "Pokémon's effort values?$"
+	.string "would you like me to max out one of\l"
+	.string "your Pokémon's effort values?$"
 
 LavaridgeTown_Text_FlanneryChoosePokemon:
 	.string "All right!\n"
@@ -468,7 +467,7 @@ LavaridgeTown_Text_FlanneryDeclined:
 
 LavaridgeTown_Text_CantTrainEgg:
 	.string "Umm… this is an egg.\n"
-	.string "I can't train it.$"
+	.string "I can't do anything with it.$"
 
 LavaridgeTown_Text_EVsAreMaxedOut:
 	.string "This Pokémon is maxed out in EVs\n"
@@ -603,16 +602,6 @@ LavaridgeTown_Text_HotSpringsClaims:
 	.string "relieving aching muscles, solving\l"
 	.string "romantic problems, and attracting\l"
 	.string "money…$"
-
-LavaridgeTown_Text_Flannery: @TODO: change this text, avoid hinting at other hot springs
-	.string "Oh, {PLAYER}!\n"
-	.string "You like the hot springs too, huh?\p"
-	.string "There are all kinds of different hot\n"
-	.string "springs, and they can be really good for\l"
-	.string "you.\p"
-	.string "I should travel around a bit and see if\n"
-	.string "there are any others. There's bound to\l"
-	.string "be more somewhere in Hoenn.$"
 
 LavaridgeTown_Text_TownSign:
 	.string "LAVARIDGE TOWN\p"

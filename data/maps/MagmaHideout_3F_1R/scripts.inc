@@ -19,9 +19,9 @@ MagmaHideout_3F_1R_EventScript_Zinnia_Trigger::
 	applymovement LOCALID_ZINNIA, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 60
-	applymovement LOCALID_ZINNIA, MagmaHideout_3F_1R_Movement_ZinniaWalkToPlayer
-	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	applymovement LOCALID_ZINNIA, MagmaHideout_3F_1R_Movement_ZinniaWalkToPlayer
 	waitmovement 0
 	msgbox MagmaHideout_3F_1R_Text_ZinniaMeetsPlayer, MSGBOX_DEFAULT
 	closemessage
@@ -62,7 +62,7 @@ MagmaHideout_3F_1R_Text_ZinniaMeetsPlayer:
 	.string "incident.\p"
 	.string "You have business with Maxie, that's\n"
 	.string "why you've come all the way here?\p"
-	.string "Hmm…\p"
+	.string "Hmm… … … … … … … … … … … … …\p"
 	.string "Yeah, this can work out.\p"
 	.string "It's an unscheduled meeting, but you\n"
 	.string "can go on through.$"

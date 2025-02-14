@@ -216,7 +216,7 @@ struct BattleMsgData
     u16 currentMove;
     u16 originallyUsedMove;
     u16 lastItem;
-    u16 lastAbility; //TODO: check if need update for multi ability
+    u16 lastAbility;
     u8 scrActive;
     u8 unk1605E;
     u8 hpScale;

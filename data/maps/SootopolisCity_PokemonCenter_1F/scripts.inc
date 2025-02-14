@@ -47,6 +47,11 @@ SootopolisCity_PokemonCenter_1F_EventScript_WomanNoLegendaries::
 	release
 	end
 
+SootopolisCity_PokemonCenter_1F_EventScript_MauvilleOldManTrader::
+	setvar VAR_MAUVILLE_MAN_VARIANT, 2
+	goto MauvilleCity_PokemonCenter_1F_EventScript_MauvilleOldMan
+	end
+
 SootopolisCity_PokemonCenter_1F_Text_WallaceMentor:
 	.string "Wallace was taught by a man named Juan.\p"
 	.string "Juan is somewhat like the mayor of this\n"

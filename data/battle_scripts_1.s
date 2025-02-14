@@ -2721,7 +2721,7 @@ BattleScript_EffectTelekinesis:
 	settelekinesis BattleScript_ButItFailed
 	attackanimation
 	waitanimation
-	printstring STRINGID_PKMNIDENTIFIED
+	printstring STRINGID_HURLEDINTOTHEAIR
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -5187,15 +5187,9 @@ BattleScript_EffectHurricane:
 BattleScript_EffectTeleport:
 	attackcanceler
 	attackstring
-	ppreduce
-.if B_TELEPORT_BEHAVIOR >= GEN_7
-	canteleport BS_ATTACKER
-	jumpifbyte CMP_EQUAL, gBattleCommunication, TRUE, BattleScript_EffectTeleportNew
-	goto BattleScript_ButItFailed
-.else
 	jumpifbattletype BATTLE_TYPE_TRAINER, BattleScript_ButItFailed
-.endif
 BattleScript_EffectTeleportTryToRunAway:
+	ppreduce
 	getifcantrunfrombattle BS_ATTACKER
 	jumpifbyte CMP_EQUAL, gBattleCommunication, 1, BattleScript_ButItFailed
 	jumpifbyte CMP_EQUAL, gBattleCommunication, 2, BattleScript_PrintAbilityMadeIneffective
@@ -5204,29 +5198,6 @@ BattleScript_EffectTeleportTryToRunAway:
 	printstring STRINGID_PKMNFLEDFROMBATTLE
 	waitmessage B_WAIT_TIME_LONG
 	setoutcomeonteleport BS_ATTACKER
-	goto BattleScript_MoveEnd
-
-BattleScript_EffectTeleportNew:
-	getbattlerside BS_ATTACKER
-	jumpifbyte CMP_EQUAL, gBattleCommunication, B_SIDE_OPPONENT, BattleScript_EffectTeleportTryToRunAway
-	attackanimation
-	waitanimation
-	openpartyscreen BS_ATTACKER, BattleScript_EffectTeleportNewEnd
-	switchoutabilities BS_ATTACKER
-	waitstate
-	switchhandleorder BS_ATTACKER, 2
-	returntoball BS_ATTACKER
-	getswitchedmondata BS_ATTACKER
-	switchindataupdate BS_ATTACKER
-	hpthresholds BS_ATTACKER
-	trytoclearprimalweather
-	printstring STRINGID_EMPTYSTRING3
-	waitmessage 1
-	printstring STRINGID_SWITCHINMON
-	switchinanim BS_ATTACKER, TRUE
-	waitstate
-	switchineffects BS_ATTACKER
-BattleScript_EffectTeleportNewEnd:
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectBeatUp::
@@ -7482,11 +7453,12 @@ BattleScript_MagicCoatBounce::
 	attackstring
 	ppreduce
 	pause B_WAIT_TIME_SHORT
-	printfromtable gMagicCoatBounceStringIds
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNMOVEBOUNCEDABILITY
 	waitmessage B_WAIT_TIME_LONG
+	setmagiccoattarget BS_ATTACKER
 	orword gHitMarker, HITMARKER_ATTACKSTRING_PRINTED | HITMARKER_NO_PPDEDUCT | HITMARKER_x800000
 	bicword gHitMarker, HITMARKER_NO_ATTACKSTRING
-	setmagiccoattarget BS_ATTACKER
 	return
 
 BattleScript_MagicCoatBouncePrankster::
@@ -7811,6 +7783,7 @@ BattleScript_PowderMoveNoEffect::
 	pause B_WAIT_TIME_SHORT
 	jumpiftype BS_TARGET, TYPE_GRASS, BattleScript_PowderMoveNoEffectPrint
 	jumpifability BS_TARGET, ABILITY_OVERCOAT, BattleScript_PowderMoveNoEffectOvercoat
+	jumpifability BS_TARGET, ABILITY_DAMP, BattleScript_PowderMoveNoEffectOvercoat
 	printstring STRINGID_SAFETYGOGGLESPROTECTED
 	goto BattleScript_PowderMoveNoEffectWaitMsg
 BattleScript_PowderMoveNoEffectOvercoat:
@@ -8710,7 +8683,20 @@ BattleScript_MiracleBlossomHpChange:
 	domiracleblossomheal BS_ATTACKER
 	datahpupdate BS_ATTACKER
 	domiracleblossomheal BS_ATTACKER_PARTNER
+	datahpupdate BS_ATTACKER_PARTNER
 BattleScript_MiracleBlossomHealEnd:
+	end2
+
+BattleScript_DreamfeastHeals::
+	checkdreamfeastheal BS_ATTACKER, BattleScript_DreamfeastHealEnd
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_DREAMFEASTHEALS
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_DreamfeastHpChange:
+	orword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	dodreamfeastheal BS_ATTACKER
+	datahpupdate BS_ATTACKER
+BattleScript_DreamfeastHealEnd:
 	end2
 
 BattleScript_EffectSoulSiphon::
@@ -8728,6 +8714,16 @@ BattleScript_SoulSiphonHeal:
 	datahpupdate BS_ATTACKER
 BattleScript_SoulSiphonEnd:
 	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_EffectNeedleMissile::
+	call BattleScript_AbilityPopUp
+	orword gHitMarker, HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	printstring STRINGID_PKMNNEEDLEMISSILE
+	waitmessage B_WAIT_TIME_MED
+	tryfaintmon BS_TARGET, FALSE, NULL
 	return
 
 BattleScript_DisarmActivates::

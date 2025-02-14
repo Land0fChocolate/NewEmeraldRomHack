@@ -90,17 +90,17 @@ FallarborTown_CozmosHouse_Text_Journal:
 	.string "This journal is covered in notes with\n"
 	.string "scientific terms and math equations.\p"
 	.string "There is also a map of Hoenn with impact\n"
-	.string "locations. Cozmo has noted that they are\l"
-	.string "unusually positioned in an exact\l"
-	.string "triangle pattern.$"
+	.string "locations.\p"
+	.string "Cozmo has noted that they are unusually\n"
+	.string "positioned in an exact triangle pattern.$"
 
 FallarborTown_CozmosHouse_Text_MeteoriteWillNeverBeMineNow:
 	.string "Prof. Cozmo: Oh…\n"
 	.string "I never should have let myself be\l"
 	.string "conned into telling Team Magma where\l"
 	.string "you can find Meteorites…\p"
-	.string "That Meteorite from Meteor Falls…\n"
-	.string "It's never going to be mine now…$"
+	.string "That special Meteorite I discovered…\n"
+	.string "I'm never going to get it back now…$"
 
 FallarborTown_CozmosHouse_Text_IsThatMeteoriteMayIHaveIt:
 	.string "Oh!\n"
@@ -108,8 +108,8 @@ FallarborTown_CozmosHouse_Text_IsThatMeteoriteMayIHaveIt:
 	.string "That item…\p"
 	.string "Could it be?\p"
 	.string "Is it the Meteorite that Team Magma\n"
-	.string "took from Meteor Falls?\p"
-	.string "Please, may I have it?\p"
+	.string "stole from me in Meteor Falls?\p"
+	.string "Thank you so much for bringing it back!\p"
 	.string "I'm not asking for it for free.\n"
 	.string "How about in exchange for this TM?$"
 

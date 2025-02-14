@@ -25,7 +25,7 @@ static const u8 sTileBitAttributes[] =
     [MB_MOUNTAIN_TOP] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
     [MB_BATTLE_PYRAMID_WARP] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
     [MB_MOSSDEEP_GYM_WARP] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
-    [MB_MT_PYRE_HOLE] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
+    [MB_FALL_WARP] = TILE_ATTRIBUTES(TRUE, FALSE, FALSE),
     [MB_POND_WATER] = TILE_ATTRIBUTES(TRUE, TRUE, TRUE),
     [MB_SEMI_DEEP_WATER] = TILE_ATTRIBUTES(TRUE, TRUE, TRUE),
     [MB_DEEP_WATER] = TILE_ATTRIBUTES(TRUE, TRUE, TRUE),
@@ -1276,7 +1276,7 @@ bool8 MetatileBehavior_IsSurfableFishableWater(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsMtPyreHole(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_MT_PYRE_HOLE)
+    if (metatileBehavior == MB_FALL_WARP)
         return TRUE;
     else
         return FALSE;

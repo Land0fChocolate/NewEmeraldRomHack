@@ -31,6 +31,11 @@ FallarborWasteland_EventScript_Darius::
 	msgbox FallarborWasteland_Text_DariusPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+FallarborWasteland_EventScript_Ripley::
+	trainerbattle_single TRAINER_RIPLEY, FallarborWasteland_Text_RipleyIntro, FallarborWasteland_Text_RipleyDefeat
+	msgbox FallarborWasteland_Text_RipleyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 FallarborWasteland_Eventscript_Tabitha::
 	msgbox FallarborWasteland_Text_TabithaFieldWork, MSGBOX_NPC
 	call_if_unset FLAG_MET_TABITHA_FALLARBOR_WASTES, FallarborWasteland_Eventscript_SetMeetFlag

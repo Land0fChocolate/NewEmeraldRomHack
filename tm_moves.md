@@ -5961,6 +5961,8 @@ SPECIES AMPHAROS             | TM45 ATTRACT
                              | TM24 THUNDERBOLT
                              | TM06 TOXIC
                              | TM52 FOCUS BLAST
+                             | TM53 ENERGY BALL
+                             | TM56 DRAGON_PULSE
                              | TM57 CHARGE BEAM
                              | TM63 ECHOED VOICE
                              | TM68 GIGA IMPACT
@@ -13728,6 +13730,114 @@ SPECIES SYLVEON              | TM45 ATTRACT
                              | HM05 FLASH
                              | HM06 ROCK SMASH
 
+SPECIES WYRDEER              | TM45 ATTRACT
+                             | TM04 CALM MIND
+                             | TM32 DOUBLE TEAM
+                             | TM26 EARTHQUAKE
+                             | TM42 FACADE
+                             | TM21 FRUSTRATION
+                             | TM10 HIDDEN POWER
+                             | TM23 IRON TAIL
+                             | TM16 LIGHT SCREEN
+                             | TM17 PROTECT
+                             | TM29 PSYCHIC
+                             | TM18 RAIN DANCE
+                             | TM33 REFLECT
+                             | TM44 REST
+                             | TM27 RETURN
+                             | TM05 ROAR
+                             | TM43 SECRET POWER
+                             | TM30 SHADOW BALL
+                             | TM34 SHOCK WAVE
+                             | TM48 SKILL SWAP
+                             | TM22 SOLARBEAM
+                             | TM11 SUNNY DAY
+                             | TM46 THIEF
+                             | TM25 THUNDER
+                             | TM24 THUNDERBOLT
+                             | TM06 TOXIC
+                             | TM53 ENERGY BALL
+                             | TM57 CHARGE BEAM
+                             | TM60 PSYSHOCK
+                             | TM68 GIGA IMPACT
+                             | TM73 THUNDER WAVE
+                             | TM78 BULLDOZE
+                             | TM92 TRICK ROOM
+                             | TM93 WILD CHARGE
+                             | HM04 STRENGTH
+                             | HM05 FLASH
+
+SPECIES KLEAVOR              | TM40 AERIAL ACE
+                             | TM45 ATTRACT
+                             | TM31 BRICK BREAK
+                             | TM32 DOUBLE TEAM
+                             | TM42 FACADE
+                             | TM21 FRUSTRATION
+                             | TM10 HIDDEN POWER
+                             | TM15 HYPER BEAM
+                             | TM16 LIGHT SCREEN
+                             | TM17 PROTECT
+                             | TM18 RAIN DANCE
+                             | TM37 SANDSTORM
+                             | TM39 ROCK TOMB
+                             | TM44 REST
+                             | TM27 RETURN
+                             | TM20 SAFEGUARD
+                             | TM43 SECRET POWER
+                             | TM47 STEEL WING
+                             | TM11 SUNNY DAY
+                             | TM46 THIEF
+                             | TM06 TOXIC
+                             | TM54 FALSE SWIPE
+                             | TM58 ROOST
+                             | TM62 ACROBATICS
+                             | TM64 CUT
+                             | TM68 GIGA IMPACT
+                             | TM71 STONE EDGE
+                             | TM80 ROCK SLIDE
+                             | TM81 X SCISSOR
+                             | TM89 U TURN
+                             | TM90 ROCK SMASH
+                             | HM01 CUT
+                             | HM06 ROCK_SMASH
+
+SPECIES URSALUNA             | TM40 AERIAL ACE
+                             | TM45 ATTRACT
+                             | TM31 BRICK BREAK
+                             | TM08 BULK UP
+                             | TM28 DIG
+                             | TM32 DOUBLE TEAM
+                             | TM26 EARTHQUAKE
+                             | TM42 FACADE
+                             | TM01 FOCUS PUNCH
+                             | TM21 FRUSTRATION
+                             | TM10 HIDDEN POWER
+                             | TM15 HYPER BEAM
+                             | TM17 PROTECT
+                             | TM18 RAIN DANCE
+                             | TM44 REST
+                             | TM27 RETURN
+                             | TM05 ROAR
+                             | TM39 ROCK TOMB
+                             | TM43 SECRET POWER
+                             | TM11 SUNNY DAY
+                             | TM12 TAUNT
+                             | TM46 THIEF
+                             | TM41 TORMENT
+                             | TM06 TOXIC
+                             | TM52 FOCUS BLAST
+                             | TM64 CUT
+                             | TM65 SHADOW CLAW
+                             | TM66 PAYBACK
+                             | TM68 GIGA IMPACT
+                             | TM71 STONE EDGE
+                             | TM78 BULLDOZE
+                             | TM80 ROCK SLIDE
+                             | TM90 ROCK SMASH
+                             | HM01 CUT
+                             | HM04 STRENGTH
+                             | HM06 ROCK SMASH
+
 SPECIES RATTATA ALOLAN       | TM14 BLIZZARD
                              | TM28 DIG
                              | TM10 HIDDEN POWER
@@ -14143,6 +14253,7 @@ SPECIES EXEGGUTOR ALOLAN     | TM31 BRICK BREAK
                              | TM06 TOXIC
                              | TM43 SECRET POWER
                              | TM53 ENERGY BALL
+                             | TM56 DRAGON_PULSE
                              | TM64 CUT
                              | TM68 GIGA IMPACT
                              | TM78 BULLDOZE
@@ -14488,113 +14599,6 @@ SPECIES ELECTRODE HISUIAN            | TM32 DOUBLE TEAM
                              | TM96 NATURE POWER
                              | HM05 FLASH
 
-SPECIES WYRDEER              | TM45 ATTRACT
-                             | TM04 CALM MIND
-                             | TM32 DOUBLE TEAM
-                             | TM26 EARTHQUAKE
-                             | TM42 FACADE
-                             | TM21 FRUSTRATION
-                             | TM10 HIDDEN POWER
-                             | TM23 IRON TAIL
-                             | TM16 LIGHT SCREEN
-                             | TM17 PROTECT
-                             | TM29 PSYCHIC
-                             | TM18 RAIN DANCE
-                             | TM33 REFLECT
-                             | TM44 REST
-                             | TM27 RETURN
-                             | TM05 ROAR
-                             | TM43 SECRET POWER
-                             | TM30 SHADOW BALL
-                             | TM34 SHOCK WAVE
-                             | TM48 SKILL SWAP
-                             | TM22 SOLARBEAM
-                             | TM11 SUNNY DAY
-                             | TM46 THIEF
-                             | TM25 THUNDER
-                             | TM24 THUNDERBOLT
-                             | TM06 TOXIC
-                             | TM53 ENERGY BALL
-                             | TM57 CHARGE BEAM
-                             | TM60 PSYSHOCK
-                             | TM68 GIGA IMPACT
-                             | TM73 THUNDER WAVE
-                             | TM78 BULLDOZE
-                             | TM92 TRICK ROOM
-                             | TM93 WILD CHARGE
-                             | HM04 STRENGTH
-                             | HM05 FLASH
-
-SPECIES KLEAVOR              | TM40 AERIAL ACE
-                             | TM45 ATTRACT
-                             | TM31 BRICK BREAK
-                             | TM32 DOUBLE TEAM
-                             | TM42 FACADE
-                             | TM21 FRUSTRATION
-                             | TM10 HIDDEN POWER
-                             | TM15 HYPER BEAM
-                             | TM16 LIGHT SCREEN
-                             | TM17 PROTECT
-                             | TM18 RAIN DANCE
-                             | TM37 SANDSTORM
-                             | TM39 ROCK TOMB
-                             | TM44 REST
-                             | TM27 RETURN
-                             | TM20 SAFEGUARD
-                             | TM43 SECRET POWER
-                             | TM47 STEEL WING
-                             | TM11 SUNNY DAY
-                             | TM46 THIEF
-                             | TM06 TOXIC
-                             | TM54 FALSE SWIPE
-                             | TM58 ROOST
-                             | TM62 ACROBATICS
-                             | TM64 CUT
-                             | TM68 GIGA IMPACT
-                             | TM71 STONE EDGE
-                             | TM80 ROCK SLIDE
-                             | TM81 X SCISSOR
-                             | TM89 U TURN
-                             | TM90 ROCK SMASH
-                             | HM01 CUT
-                             | HM06 ROCK_SMASH
-
-SPECIES URSALUNA             | TM40 AERIAL ACE
-                             | TM45 ATTRACT
-                             | TM31 BRICK BREAK
-                             | TM08 BULK UP
-                             | TM28 DIG
-                             | TM32 DOUBLE TEAM
-                             | TM26 EARTHQUAKE
-                             | TM42 FACADE
-                             | TM01 FOCUS PUNCH
-                             | TM21 FRUSTRATION
-                             | TM10 HIDDEN POWER
-                             | TM15 HYPER BEAM
-                             | TM17 PROTECT
-                             | TM18 RAIN DANCE
-                             | TM44 REST
-                             | TM27 RETURN
-                             | TM05 ROAR
-                             | TM39 ROCK TOMB
-                             | TM43 SECRET POWER
-                             | TM11 SUNNY DAY
-                             | TM12 TAUNT
-                             | TM46 THIEF
-                             | TM41 TORMENT
-                             | TM06 TOXIC
-                             | TM52 FOCUS BLAST
-                             | TM64 CUT
-                             | TM65 SHADOW CLAW
-                             | TM66 PAYBACK
-                             | TM68 GIGA IMPACT
-                             | TM71 STONE EDGE
-                             | TM78 BULLDOZE
-                             | TM80 ROCK SLIDE
-                             | TM90 ROCK SMASH
-                             | HM01 CUT
-                             | HM04 STRENGTH
-                             | HM06 ROCK SMASH
 
 SPECIES TYPHLOSION HISUIAN   | TM40 AERIAL ACE
                              | TM45 ATTRACT

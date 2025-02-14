@@ -911,8 +911,9 @@ MauvilleCity_GameCorner_Text_DescribePrizes:
 	.string "I just want the prizes.\l"
 	.string "They're all really good TMs.\p"
 	.string "TM29 is Psychic, TM53 is Energy Ball,\n"
-	.string "TM56 is Dragon Pulse, TM35 is\l"
-	.string "Flamethrower and TM94 is Surf.$"
+	.string "TM56 is Dragon Pulse, TM13 is\l"
+	.string "Ice Beam, TM24 is Thunderbolt, TM35\l"
+	.string "is Flamethrower and TM94 is Surf.$"
 
 MauvilleCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins:
 	.string "My luck can only last so long.\n"

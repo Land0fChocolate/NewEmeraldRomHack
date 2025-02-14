@@ -95,6 +95,7 @@ enum {
 #define PSS_DATA_WINDOW_INFO_ID 1
 #define PSS_DATA_WINDOW_INFO_ABILITIES 2
 #define PSS_DATA_WINDOW_INFO_MEMO 3
+//#define PSS_DATA_WINDOW_INFO_ABILITY_DESCRIPTION 4
 
 // Dynamic fields for the Pokemon Skills page
 #define PSS_DATA_WINDOW_SKILLS_HELD_ITEM 0
@@ -249,8 +250,6 @@ static void HandlePowerAccTilemap(u16 a, s16 b);
 static void Task_ShowPowerAccWindow(u8 taskId);
 static void HandleAppealJamTilemap(u16 a, s16 b, u16 c);
 static void Task_ShowAppealJamWindow(u8 taskId);
-static void HandleStatusTilemap(u16 a, s16 b);
-static void Task_ShowStatusWindow(u8 taskId);
 static void TilemapFiveMovesDisplay(u16 *dst, u16 palette, bool8 remove);
 static void DrawPokerusCuredSymbol(struct Pokemon* mon);
 static void DrawExperienceProgressBar(struct Pokemon* mon);
@@ -386,15 +385,6 @@ struct TilemapCtrl
     u8 field_9;
 };
 
-static const u16 sStatusTilemap[] = INCBIN_U16("graphics/interface/status_tilemap.bin"); //TODO: no longer used, remove
-static const struct TilemapCtrl sStatusTilemapCtrl1 = //TODO: no longer used, remove
-{
-    sStatusTilemap, 1, 10, 2, 0, 18
-};
-static const struct TilemapCtrl sStatusTilemapCtrl2 = //TODO: no longer used, remove
-{
-    sStatusTilemap, 1, 10, 2, 0, 50
-};
 static const struct TilemapCtrl sAbilityDescriptionLabelTilemapCtrl =
 {
     gSummaryScreenWindow_Tilemap, 1, 10, 2, 0, 50
@@ -630,6 +620,15 @@ static const struct WindowTemplate sPageInfoTemplate[] =
         .paletteNum = 6,
         .baseBlock = 625,
     },
+    //[PSS_DATA_WINDOW_INFO_ABILITY_DESCRIPTION] = {
+    //    .bg = 0,
+    //    .tilemapLeft = 11,
+    //    .tilemapTop = 14,
+    //    .width = 18,
+    //    .height = 6,
+    //    .paletteNum = 6,
+    //    .baseBlock = 625,
+    //},
 };
 static const struct WindowTemplate sPageSkillsTemplate[] =
 {
@@ -1584,11 +1583,6 @@ static void SetDefaultTilemaps(void)
         //ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS);
     }
 
-    if (sMonSummaryScreen->summary.ailment == AILMENT_NONE)
-        HandleStatusTilemap(0, 0xFF);
-    //else if (sMonSummaryScreen->currPageIndex != PSS_PAGE_BATTLE_MOVES && sMonSummaryScreen->currPageIndex != PSS_PAGE_CONTEST_MOVES)
-        //PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS);
-
     LimitEggSummaryPageDisplay();
     DrawPokerusCuredSymbol(&sMonSummaryScreen->currentMon);
 }
@@ -1729,10 +1723,7 @@ static void ChangeSummaryPokemon(u8 taskId, s8 delta)
             if (sMonSummaryScreen->summary.ailment != AILMENT_NONE)
             {
                 SetSpriteInvisibility(SPRITE_ARR_ID_STATUS, TRUE);
-                //ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS);
-                //TODO: clear status sprite here?
                 ScheduleBgCopyTilemapToVram(0);
-                HandleStatusTilemap(0, 2);
             }
             sMonSummaryScreen->curMonIndex = monId;
             gTasks[taskId].data[0] = 0;
@@ -1773,7 +1764,6 @@ static void Task_ChangeSummaryMon(u8 taskId)
         break;
     case 7:
         if (sMonSummaryScreen->summary.ailment != AILMENT_NONE)
-            HandleStatusTilemap(10, -2);
         DrawPokerusCuredSymbol(&sMonSummaryScreen->currentMon);
         data[1] = 0;
         break;
@@ -1800,7 +1790,7 @@ static void Task_ChangeSummaryMon(u8 taskId)
         gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]].data[2] = 0;
         break;
     default:
-        if (MenuHelpers_CallLinkSomething() == 0 && FuncIsActiveTask(Task_ShowStatusWindow) == 0)
+        if (MenuHelpers_CallLinkSomething() == 0)
         {
             data[0] = 0;
             gTasks[taskId].func = Task_HandleInput;
@@ -2671,8 +2661,9 @@ static void HandleAbilityDescriptionLabelTilemap(u16 a, s16 b)
     }
 }
 
-static void Task_ShowAbilityDescriptionLabelWindow(u8 taskId) //TODO: This will need to be figured out at some point
+static void Task_ShowAbilityDescriptionLabelWindow(u8 taskId) //TODO: This will need to be figured out at some point. Look at Task_ShowPowerAccWindow.
 {
+    //u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ABILITY_DESCRIPTION);
     u8 windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO);
     s16 *data = gTasks[taskId].data;
     data[1] += data[0];
@@ -2811,46 +2802,6 @@ static void Task_ShowAppealJamWindow(u8 taskId)
     }
     ScheduleBgCopyTilemapToVram(1);
     ScheduleBgCopyTilemapToVram(2);
-}
-
-static void HandleStatusTilemap(u16 a, s16 b) //TODO: probably remove
-{
-    // if (b > sStatusTilemapCtrl1.field_6)
-    //     b = sStatusTilemapCtrl1.field_6;
-    // if (b == 0 || b == sStatusTilemapCtrl1.field_6)
-    // {
-    //     ChangeTilemap(&sStatusTilemapCtrl1, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0], b, FALSE);
-    //     ChangeTilemap(&sStatusTilemapCtrl2, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0], b, FALSE);
-    // }
-    // else
-    // {
-    //     u8 taskId = CreateTask(Task_ShowStatusWindow, 8);
-    //     gTasks[taskId].data[0] = b;
-    //     gTasks[taskId].data[1] = a;
-    // }
-}
-
-static void Task_ShowStatusWindow(u8 taskId) //TODO: probably remove
-{
-    // s16 *data = gTasks[taskId].data;
-    // data[1] += data[0];
-    // if (data[1] < 0)
-    //     data[1] = 0;
-    // else if (data[1] > sStatusTilemapCtrl1.field_6)
-    //     data[1] = sStatusTilemapCtrl1.field_6;
-    // ChangeTilemap(&sStatusTilemapCtrl1, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0], data[1], FALSE);
-    // ChangeTilemap(&sStatusTilemapCtrl2, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][0], data[1], FALSE);
-    // ScheduleBgCopyTilemapToVram(3);
-    // if (data[1] <= 0 || data[1] >= sStatusTilemapCtrl1.field_6)
-    // {
-    //     if (data[0] < 0)
-    //     {
-    //         CreateSetStatusSprite();
-    //         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS);
-    //         ScheduleBgCopyTilemapToVram(0);
-    //     }
-    //     DestroyTask(taskId);
-    // }
 }
 
 static void TilemapFiveMovesDisplay(u16 *dst, u16 palette, bool8 remove)

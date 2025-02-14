@@ -145,7 +145,7 @@
 #define TRAINER_WINSTON_4                   141
 #define TRAINER_WINSTON_5                   142
 #define TRAINER_STEVE_1                     143
-#define TRAINER_THALIA_1                    144
+#define TRAINER_THALIA                      144
 #define TRAINER_MARK                        145
 #define TRAINER_GRUNT_MT_CHIMNEY_1          146
 #define TRAINER_STEVE_2                     147
@@ -627,7 +627,7 @@
 #define TRAINER_JAMES_3                     623
 #define TRAINER_JAMES_4                     624
 #define TRAINER_JAMES_5                     625
-#define TRAINER_BRICE                       626 //unused, but data remains
+#define TRAINER_BRICE                       626
 #define TRAINER_TRENT_1                     627
 #define TRAINER_LENNY                       628
 #define TRAINER_LUCAS_1                     629
@@ -652,7 +652,7 @@
 #define TRAINER_GERALD                      648
 #define TRAINER_VIVIAN                      649
 #define TRAINER_DANIELLE                    650
-#define TRAINER_HIDEO                       651 //unused, though data remains
+#define TRAINER_COBAIN                      651
 #define TRAINER_KEIGO                       652
 #define TRAINER_RILEY                       653
 #define TRAINER_FLINT                       654
@@ -768,7 +768,7 @@
 #define TRAINER_CALE                        764
 #define TRAINER_MYLES                       765
 #define TRAINER_PAT                         766
-#define TRAINER_CRISTIN_1                   767
+#define TRAINER_HIDEO                       767
 #define TRAINER_MAY_RUSTBORO_TREECKO        768
 #define TRAINER_MAY_RUSTBORO_TORCHIC        769
 #define TRAINER_ROXANNE_2                   770
@@ -829,10 +829,10 @@
 #define TRAINER_WILSON                      825
 #define TRAINER_GABRIELLE                   826
 #define TRAINER_CAMINA                      827
-#define TRAINER_CRISTIN_2                   828
-#define TRAINER_CRISTIN_3                   829
-#define TRAINER_CRISTIN_4                   830
-#define TRAINER_CRISTIN_5                   831
+#define TRAINER_CRISTIN_2                   828 //unused
+#define TRAINER_CRISTIN_3                   829 //unused
+#define TRAINER_CRISTIN_4                   830 //unused
+#define TRAINER_CRISTIN_5                   831 //unused
 #define TRAINER_MAY_POST_GAME_TREECKO       832
 #define TRAINER_MAY_POST_GAME_TORCHIC       833
 #define TRAINER_MAY_POST_GAME_MUDKIP        834
@@ -845,7 +845,7 @@
 #define TRAINER_GOMEZ_3                     841
 #define TRAINER_GOMEZ_4                     842
 #define TRAINER_GOMEZ_5                     843
-#define TRAINER_THALIA_2                    844 //unused
+#define TRAINER_RIPLEY                      844
 #define TRAINER_THALIA_3                    845 //unused
 #define TRAINER_THALIA_4                    846 //unused
 #define TRAINER_THALIA_5                    847 //unused
@@ -854,8 +854,8 @@
 #define TRAINER_EVERETT                     850
 #define TRAINER_RED                         851 //unused
 #define TRAINER_LEAF                        852 //unused, except for testing
-#define TRAINER_BRENDAN_PLACEHOLDER         853 //unused
-#define TRAINER_MAY_PLACEHOLDER             854 //unused
+#define TRAINER_BRENDAN_PLACEHOLDER         853
+#define TRAINER_MAY_PLACEHOLDER             854
 #define TRAINER_CECE                        855
 #define TRAINER_FRANNY                      856
 #define TRAINER_MEGGI                       857
@@ -863,13 +863,14 @@
 #define TRAINER_NELLIE                      859
 #define TRAINER_ARCHIE_WEATHER_INSTITUTE    860
 #define TRAINER_CRISTIN                     861
-#define TRAINER_ZINNIA                      862
+#define TRAINER_FREESPACE                   862 //unused
+#define TRAINER_ZINNIA                      863
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 // NOTE: DO NOT CHANGE THESE VALUES
-#define TRAINERS_COUNT                      863
+#define TRAINERS_COUNT                      864
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

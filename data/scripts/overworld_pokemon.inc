@@ -518,3 +518,43 @@ OverworldPokemon_EventScript_Seedot::
 	waitmoncry
 	release
 	end
+
+OverworldPokemon_EventScript_Nidoking::
+	locktarget
+	faceplayer
+	playmoncry SPECIES_NIDOKING, 0
+	waitmoncry
+	release
+	end
+
+OverworldPokemon_EventScript_Scizor::
+	locktarget
+	faceplayer
+	playmoncry SPECIES_SCIZOR, 0
+	waitmoncry
+	release
+	end
+
+OverworldPokemon_EventScript_Weavile::
+	locktarget
+	faceplayer
+	playmoncry SPECIES_WEAVILE, 0
+	waitmoncry
+	release
+	end
+
+OverworldPokemon_EventScript_Magmortar::
+	locktarget
+	faceplayer
+	playmoncry SPECIES_MAGMORTAR, 0
+	waitmoncry
+	release
+	end
+
+OverworldPokemon_EventScript_Gengar::
+	locktarget
+	faceplayer
+	playmoncry SPECIES_GENGAR, 0
+	waitmoncry
+	release
+	end

@@ -1,69 +1,3 @@
-# Tutor Move List and locations
-
--Swords Dance - Battle Frontier
--Body Slam - Battle Frontier
--Double Edge - Sootopolis City
--Counter - Battle Frontier
--Seismic Toss - Battle Frontier
--Mimic - Lavaridge Town
--Metronome - Fallarbor Town
--Soft Boiled - Battle Frontier
--Dream Eater - Battle Frontier
--Gastro Acid - Battle Frontier
--Explosion - Pacifidlog Town
--Psychic Fangs - Battle Frontier
--Substitute - Lilycove City
--Dynamic Punch - Mossdeep City
--Rollout - Mauville City
--Psych Up - Battle Frontier
--Snore - Battle Frontier
--Icy Wind - Battle Frontier
--Endure - Battle Frontier
--Earth Power - Battle Frontier
--Ice Punch - Battle Frontier
--Swagger - Slateport City
--Sleep Talk - Fortree City
--Swift - Battle Frontier
--Defense Curl - Battle Frontier
--Thunder Punch - Battle Frontier
--Fire Punch - Battle Frontier
--Fury Cutter - Verdanturf Town
--Serpent Dance - Battle Frontier
--Flint Blade - Battle Frontier
--Blaze Impact - Battle Frontier
--Work Up - Battle Frontier
--Low Sweep - Battle Frontier
--Avalanche - Battle Frontier
--Signal Beam - Battle Frontier
--Nasty Plot - Battle Frontier
--Superpower - Battle Frontier
--Play Rough - Battle Frontier
--Stored Power - Battle Frontier
--Role Play - Battle Frontier
--Defog - Battle Frontier
--Trick - Battle Frontier
--Knock Off - Battle Frontier
--Stealth Rock - Battle Frontier
--Tailwind - Battle Frontier
--Breaking Swipe - Battle Frontier
--Heat Wave - Battle Frontier
--Gunk Shot - Battle Frontier
--Zen Headbutt - Battle Frontier
--Body Press - Battle Frontier
--Worry Seed - Battle Frontier
--Recycle - Battle Frontier
--Low Kick - Battle Frontier
--Magic Coat - Battle Frontier
--Pain Split - Battle Frontier
--Seed Bomb - Battle Frontier
--Iron Head - Battle Frontier
--Aqua Tail - Battle Frontier
--Foul Play - Battle Frontier
--Megahorn - Battle Frontier
--Draco Meteor - Ever Grande City
--Hidden Thorns - Battle Frontier
--Bug Bite - Battle Frontier
-
 # Tutor Move Learnsets
 
     BULBASAUR   	| BODY SLAM
@@ -7531,6 +7465,67 @@
                     | PLAY ROUGH
                     | STORED POWER
 
+    WYRDEER         | BODY SLAM
+                    | DOUBLE EDGE
+                    | DREAM EATER
+                    | ENDURE
+                    | MIMIC
+                    | PSYCH UP
+                    | SLEEP TALK
+                    | SNORE
+                    | SUBSTITUTE
+                    | SWAGGER
+                    | SWIFT
+                    | WORK UP
+                    | SIGNAL BEAM
+                    | ROLE PLAY
+                    | ZEN HEADBUTT
+
+    KLEAVOR         | COUNTER
+                    | DOUBLE_EDGE
+                    | ENDURE
+                    | FURY_CUTTER
+                    | MIMIC
+                    | SLEEP_TALK
+                    | SNORE
+                    | SUBSTITUTE
+                    | SWAGGER
+                    | SWIFT
+                    | SWORDS_DANCE
+                    | DEFOG
+                    | KNOCK_OFF
+                    | TAILWIND
+                    | BUG_BITE
+                    | FLINT_BLADE
+
+    URSALUNA        | BODY SLAM
+                    | COUNTER
+                    | DEFENSE CURL
+                    | DOUBLE EDGE
+                    | DYNAMIC PUNCH
+                    | ENDURE
+                    | FIRE PUNCH
+                    | FURY CUTTER
+                    | ICE PUNCH
+                    | METRONOME
+                    | MIMIC
+                    | ROLLOUT
+                    | SEISMIC TOSS
+                    | SLEEP TALK
+                    | SNORE
+                    | SUBSTITUTE
+                    | SWAGGER
+                    | SWIFT
+                    | SWORDS DANCE
+                    | SUPERPOWER
+                    | LOW KICK
+                    | SEED BOMB
+                    | THUNDER PUNCH
+                    | WORK UP
+                    | PLAY ROUGH
+                    | AVALANCHE
+                    | GUNK SHOT
+
     RATTATA ALOLAN    | SWORDS DANCE
                       | BODY SLAM
                       | DOUBLE EDGE
@@ -8032,66 +8027,6 @@
                       | SEED BOMB
                       | FOUL PLAY
 
-    WYRDEER         | BODY SLAM
-                    | DOUBLE EDGE
-                    | DREAM EATER
-                    | ENDURE
-                    | MIMIC
-                    | PSYCH UP
-                    | SLEEP TALK
-                    | SNORE
-                    | SUBSTITUTE
-                    | SWAGGER
-                    | SWIFT
-                    | WORK UP
-                    | SIGNAL BEAM
-                    | ROLE PLAY
-                    | ZEN HEADBUTT
-
-    KLEAVOR         | COUNTER
-                    | DOUBLE_EDGE
-                    | ENDURE
-                    | FURY_CUTTER
-                    | MIMIC
-                    | SLEEP_TALK
-                    | SNORE
-                    | SUBSTITUTE
-                    | SWAGGER
-                    | SWIFT
-                    | SWORDS_DANCE
-                    | DEFOG
-                    | KNOCK_OFF
-                    | TAILWIND
-                    | BUG_BITE
-                    | FLINT_BLADE
-
-    URSALUNA        | BODY SLAM
-                    | COUNTER
-                    | DEFENSE CURL
-                    | DOUBLE EDGE
-                    | DYNAMIC PUNCH
-                    | ENDURE
-                    | FIRE PUNCH
-                    | FURY CUTTER
-                    | ICE PUNCH
-                    | METRONOME
-                    | MIMIC
-                    | ROLLOUT
-                    | SEISMIC TOSS
-                    | SLEEP TALK
-                    | SNORE
-                    | SUBSTITUTE
-                    | SWAGGER
-                    | SWIFT
-                    | SWORDS DANCE
-                    | SUPERPOWER
-                    | LOW KICK
-                    | SEED BOMB
-                    | THUNDER PUNCH
-                    | WORK UP
-                    | PLAY ROUGH
-                    | AVALANCHE
-                    | GUNK SHOT
 
     TYPHLOSION HISUIAN  | BODY SLAM
                         | COUNTER

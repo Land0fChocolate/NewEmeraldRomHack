@@ -1105,7 +1105,7 @@ void BtlController_EmitPrintString(u8 bufferId, u16 stringID)
     stringInfo->moveType = gBattleMoves[gCurrentMove].type;
 
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
-        stringInfo->abilities[i] = gLastUsedAbility; //TODO: check this works properly for multi ability
+        stringInfo->abilities[i] = gLastUsedAbility;
     for (i = 0; i < TEXT_BUFF_ARRAY_COUNT; i++)
     {
         stringInfo->textBuffs[0][i] = gBattleTextBuff1[i];
@@ -1134,7 +1134,7 @@ void BtlController_EmitPrintSelectionString(u8 bufferId, u16 stringID)
     stringInfo->unk1605E = gBattleStruct->field_52;
 
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
-        stringInfo->abilities[i] = gLastUsedAbility; //TODO: check this works properly for multi ability
+        stringInfo->abilities[i] = gLastUsedAbility;
     for (i = 0; i < TEXT_BUFF_ARRAY_COUNT; i++)
     {
         stringInfo->textBuffs[0][i] = gBattleTextBuff1[i];
@@ -1200,7 +1200,7 @@ void BtlController_EmitChooseItem(u8 bufferId, u8 *arg1)
     PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 4);
 }
 
-void BtlController_EmitChoosePokemon(u8 bufferId, u8 caseId, u8 slotId, u8 *data) //TODO: make sure this works properly for multi ability
+void BtlController_EmitChoosePokemon(u8 bufferId, u8 caseId, u8 slotId, u8 *data)
 {
     s32 i;
     u16 ability = ABILITY_NONE; // we are using this dummy so the game doesn't get screwed up. 

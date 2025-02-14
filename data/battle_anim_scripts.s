@@ -18084,7 +18084,7 @@ Move_AIR_CUTTER:
 	setalpha 12, 8
 	delay 0
 	createvisualtask AnimTask_AirCutterProjectile, 2, 32, -24, 6 * 256, 2, 128  @ 6 * 256 == Q_8_8(6)
-	waitforvisualfinish
+	delay 20
 	playsewithpan SE_M_CUT, SOUND_PAN_TARGET
 	createsprite gAirCutterSliceSpriteTemplate, ANIM_ATTACKER, 2, 40, -32, 0, 2
 	delay 5
@@ -23856,6 +23856,12 @@ Move_FLINT_BLADE:
 	blendoff
 	end
 
+@ gFireSpreadSpriteTemplate args
+@ x pos | lower values go more to the right
+@ y pos | higher values go more down
+@ x move | higher values move right faster
+@ y move | higher values move down faster
+
 Move_BLAZE_IMPACT:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_SMALL_EMBER
@@ -23863,40 +23869,39 @@ Move_BLAZE_IMPACT:
 	setalpha 12, 8
 	createvisualtask AnimTask_WindUpLunge, 5, ANIM_ATTACKER, -24, 8, 23, 10, 40, 10
 	playsewithpan SE_M_FLAME_WHEEL2, SOUND_PAN_ATTACKER
-	createsprite gFireSpreadSpriteTemplate, 0x81, 0, -106, 62, 176, 40
+	createsprite gFireSpreadSpriteTemplate2, 0x81, 0, 0, 2, -15, 80
 	delay 5
-	createsprite gFireSpreadSpriteTemplate, 0x81, 0, -122, 52, 176, 40
-	createsprite gFireSpreadSpriteTemplate, 0x81, 0, -114, 60, 176, 40
+	createsprite gFireSpreadSpriteTemplate2, 0x81, 0, -8, -4, -15, 80
+	createsprite gFireSpreadSpriteTemplate2, 0x81, 0, -4, 0, -15, 80
 	delay 5
-	createsprite gFireSpreadSpriteTemplate, 0x81, 0, -128, 50, 176, 40
+	createsprite gFireSpreadSpriteTemplate2, 0x81, 0, -11, -5, -15, 80
 	delay 3
-	createsprite gFireSpreadSpriteTemplate, 0x81, 0, -136, 58, 176, 40
+	createsprite gFireSpreadSpriteTemplate2, 0x81, 0, -15, -1, -15, 80
 	delay 1
-	createsprite gFireSpreadSpriteTemplate, 0x81, 0, -132, 48, 176, 40
-	createsprite gFireSpreadSpriteTemplate, 0x81, 0, -148, 58, 176, 40
+	createsprite gFireSpreadSpriteTemplate2, 0x81, 0, -19, 2, -15, 80
 	delay 1
-	createsprite gFireSpreadSpriteTemplate, 0x81, 0, -142, 42, 176, 40
+	createsprite gFireSpreadSpriteTemplate2, 0x81, 0, -23, 0, -15, 80
 	delay 30
 	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 31, 3, 1, RGB_BLACK, 10, 0, 0
 	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 4, -10, 0, ANIM_TARGET, 0
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 95, -50, 12, 0
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 85, -40, 6, 2
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 85, -50, 8, 0
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 85, -60, 8, 6
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 105, -40, 8, 8
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 105, -50, 14, 6
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 105, -60, 10, 4
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, 0, 270, 15, 0
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, -15, 240, 9, -2
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, -10, 280, 11, 0
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, -20, 260, 11, -6
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, 20, 250, 11, -8
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, 7, 245, 17, -6
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, 15, 260, 13, -4
 	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_ATTACKER
 	delay 2
 	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
 	delay 1
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 105, -40, 12, 0
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 95, -30, 6, 2
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 95, -40, 8, 0
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 95, -50, 8, 6
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 115, -30, 8, 8
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 115, -40, 14, 6
-	createsprite gFireSpiralOutwardSpriteTemplate, 0x81, 0, 115, -50, 10, 4
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, 10, 230, 15, 0
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, 0, 260, 9, -2
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, 0, 240, 11, 0
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, 5, 270, 11, -6
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, 18, 252, 11, -8
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, 15, 240, 17, -6
+	createsprite gFireSpiralOutwardSpriteTemplate2, 0x81, 0, 20, 270, 13, -4
 	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, 1, -16, 0, 0, 4
 	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_TARGET, 4, 0, 12, 1
 	waitforvisualfinish

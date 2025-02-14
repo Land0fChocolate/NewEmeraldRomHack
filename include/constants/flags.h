@@ -86,7 +86,7 @@
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag, probably set to true in current playthrough
+#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
 #define FLAG_PRE_EVO_TUTOR   0x4E
 #define FLAG_EGG_MOVE_TUTOR  0x4F
 
@@ -317,7 +317,7 @@
 #define FLAG_PETALBURG_MART_EXPANDED_ITEMS   0x128
 #define FLAG_RECEIVED_MIRACLE_SEED           0x129
 #define FLAG_RECEIVED_BELDUM                 0x12A
-#define FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK   0x12B // unused
+#define FLAG_TV_STERN_ANNOUNCEMENT           0x12B
 #define FLAG_MET_FANCLUB_YOUNGER_BROTHER     0x12C
 #define FLAG_RIVAL_LEFT_FOR_ROUTE103         0x12D
 #define FLAG_OMIT_DIVE_FROM_STEVEN_LETTER    0x12E
@@ -325,7 +325,7 @@
 #define FLAG_ADDED_MATCH_CALL_TO_POKENAV     0x130
 #define FLAG_REGISTERED_STEVEN_POKENAV       0x131
 #define FLAG_ENABLE_NORMAN_MATCH_CALL        0x132
-#define FLAG_UNUSED_0X133                    0x133
+#define FLAG_UNUSED_0X133                    0x133 // unused
 #define FLAG_MET_ARCHIE_SOOTOPOLIS           0x134
 #define FLAG_MET_MAXIE_SOOTOPOLIS            0x135
 #define FLAG_HIDE_MAUVILLE_RIVERSIDE_NPCS    0x136
@@ -349,10 +349,10 @@
 #define FLAG_UNUSED_MYSTERY_GIFT_0x148       0x148
 #define FLAG_UNUSED_MYSTERY_GIFT_0x149       0x149
 #define FLAG_UNUSED_MYSTERY_GIFT_0x14A       0x14A
-#define FLAG_UNUSED_MYSTERY_GIFT_0x14B       0x14B
-#define FLAG_UNUSED_MYSTERY_GIFT_0x14C       0x14C
-#define FLAG_UNUSED_MYSTERY_GIFT_0x14D       0x14D
 
+#define FLAG_GAVE_AWAY_GALARIAN_ARTICUNO     0x14B
+#define FLAG_GAVE_AWAY_GALARIAN_ZAPDOS       0x14C
+#define FLAG_GAVE_AWAY_GALARIAN_MOLTRES      0x14D
 #define FLAG_MIRAGE_TOWER_VISIBLE            0x14E
 #define FLAG_CHOSE_ROOT_FOSSIL               0x14F
 #define FLAG_CHOSE_CLAW_FOSSIL               0x150
@@ -383,7 +383,7 @@
 #define FLAG_REMATCH_WILTON                  0x165
 #define FLAG_REMATCH_VALERIE                 0x166
 #define FLAG_REMATCH_CINDY                   0x167
-#define FLAG_REMATCH_THALIA                  0x168 // unused (though set in the game in playthrough #3)
+#define FLAG_REMATCH_THALIA                  0x168 // unused
 #define FLAG_REMATCH_JESSICA                 0x169
 #define FLAG_REMATCH_WINSTON                 0x16A
 #define FLAG_REMATCH_STEVE                   0x16B
@@ -450,8 +450,8 @@
 #define FLAG_REMATCH_GLACIA                  0x1A7
 #define FLAG_REMATCH_DRAKE                   0x1A8
 #define FLAG_REMATCH_STEVEN                  0x1A9
+#define FLAG_REMATCH_ZINNIA                  0x1AA
 
-#define FLAG_UNUSED_0x1AA                    0x1AA // Unused Flag
 #define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
@@ -661,8 +661,8 @@
 #define FLAG_HIDDEN_NAVEL_ROCK_HOOH_1_GOLD_BOTTLE_CAP        (FLAG_HIDDEN_ITEMS_START + 0x7C)
 #define FLAG_HIDDEN_LITTLEROOT_BEACH_HEART_SCALE             (FLAG_HIDDEN_ITEMS_START + 0x7D)
 #define FLAG_HIDDEN_MAUVILLE_MEADOW_HEART_SCALE              (FLAG_HIDDEN_ITEMS_START + 0x7E)
+#define FLAG_HIDDEN_ITEM_PETALBURG_CITY_BOTTLE_CAP           (FLAG_HIDDEN_ITEMS_START + 0x273)
 
-#define FLAG_UNUSED_0x273                         0x273 // Unused Flag
 #define FLAG_FLANNERY_DAILY_LIMIT_LIFTED          0x274
 #define FLAG_TV_RARE_CANDY_ADVERT                 0x275
 #define FLAG_HIDE_BATTLE_FRONTIER_ZINNIA          0x276
@@ -1090,9 +1090,9 @@
 #define FLAG_ITEM_RUSTURF_TUNNEL_TM63                               0x418
 #define FLAG_ITEM_RUSTURF_TUNNEL_MAX_ETHER                          0x419
 #define FLAG_ITEM_GRANITE_CAVE_1F_TM69                              0x41A
-#define FLAG_ITEM_GRANITE_CAVE_B1F_POKE_BALL                        0x41B
+#define FLAG_ITEM_GRANITE_CAVE_B1F_DUSK_BALL                        0x41B
 #define FLAG_ITEM_MT_PYRE_5F_REAPER_CLOTH                           0x41C
-#define FLAG_ITEM_GRANITE_CAVE_B2F_REPEL                            0x41D
+#define FLAG_ITEM_GRANITE_CAVE_B2F_MAX_REPEL                        0x41D
 #define FLAG_ITEM_GRANITE_CAVE_B2F_RARE_CANDY                       0x41E
 #define FLAG_ITEM_PETALBURG_WOODS_BIG_ROOT                          0x41F
 #define FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL                        0x420
@@ -1153,7 +1153,7 @@
 #define FLAG_ITEM_FIERY_PATH_FIRE_STONE                             0x457
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_07                         0x458
 #define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_NEVER_MELT_ICE                0x459
-#define FLAG_ITEM_ROUTE_103_GUARD_SPEC                              0x45A
+#define FLAG_ITEM_ROUTE_103_QUICK_BALL                              0x45A
 #define FLAG_ITEM_ROUTE_104_X_ACCURACY                              0x45B
 #define FLAG_ITEM_MAUVILLE_CITY_X_SPEED                             0x45C
 #define FLAG_ITEM_PETALBURD_WOODS_PARALYZE_HEAL                     0x45D
@@ -1559,7 +1559,7 @@
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
 #define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91F + (8 - FLAG_UNUSED_0x91F % 8))
-#define FLAG_DAILY_WINONA_RECEIVED_BERRY            (DAILY_FLAGS_START + 0x0)  // Unused Flag
+#define FLAG_DAILY_WINONA_RECEIVED_BERRY            (DAILY_FLAGS_START + 0x0)
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
 #define FLAG_DAILY_OLDALEFARM_POKEMON_GIVEN         (DAILY_FLAGS_START + 0x3)

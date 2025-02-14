@@ -39,6 +39,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 21,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "FarawayIsland_EventScript_Brice",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -95,8 +108,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 9,
-      "y": 10,
+      "x": 15,
+      "y": 12,
       "elevation": 3,
       "var": "0",
       "var_value": "0",
@@ -113,8 +126,8 @@
     },
     {
       "type": "trigger",
-      "x": 9,
-      "y": 11,
+      "x": 15,
+      "y": 13,
       "elevation": 3,
       "var": "0",
       "var_value": "0",
@@ -122,8 +135,8 @@
     },
     {
       "type": "trigger",
-      "x": 15,
-      "y": 12,
+      "x": 9,
+      "y": 16,
       "elevation": 3,
       "var": "VAR_FARAWAY_ISLAND_TRIGGER",
       "var_value": "0",

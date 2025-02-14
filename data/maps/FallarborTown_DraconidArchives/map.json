@@ -128,7 +128,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 10,
+      "x": 11,
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -178,6 +178,22 @@
       "type": "sign",
       "x": 10,
       "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DraconidArchives_Eventscript_DisplayCaseStonesBot"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DraconidArchives_Eventscript_DisplayCaseStonesTop"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "DraconidArchives_Eventscript_DisplayCaseStonesBot"

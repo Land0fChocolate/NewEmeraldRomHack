@@ -197,8 +197,8 @@ static const struct {
     u8 location;
 } sPokeOutbreakSpeciesList[] = {
     {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_BIDE, MOVE_HARDEN, MOVE_LEECH_SEED},
+        .species = SPECIES_SURSKIT,
+        .moves = {MOVE_BUBBLE, MOVE_HYDRO_PUMP, MOVE_POWER_SPLIT, MOVE_PSYBEAM},
         .level = 3, 
         .location = MAP_NUM(ROUTE102)
     },
@@ -843,7 +843,10 @@ void UpdateTVScreensOnMap(int width, int height)
             // NPC in Lilycove Hotel is always watching TV
             SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);
         }
-        else if (FlagGet(FLAG_SYS_TV_START) && (FindAnyTVShowOnTheAir() != 0xFF || FindAnyPokeNewsOnTheAir() != 0xFF || IsGabbyAndTyShowOnTheAir() || FlagGet(FLAG_TV_RARE_CANDY_ADVERT)))
+        else if (FlagGet(FLAG_SYS_TV_START) && (FindAnyTVShowOnTheAir() != 0xFF 
+        || FindAnyPokeNewsOnTheAir() != 0xFF || IsGabbyAndTyShowOnTheAir() 
+        || FlagGet(FLAG_TV_RARE_CANDY_ADVERT)
+        || FlagGet(FLAG_TV_STERN_ANNOUNCEMENT)))
         {
             FlagClear(FLAG_SYS_TV_WATCH);
             SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);

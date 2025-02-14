@@ -2576,6 +2576,20 @@ static const u8 sWeatherCycleRoute123[] =
     WEATHER_RAIN,
     WEATHER_SUNNY,
 };
+static const u8 sWeatherCycleRoute114[] =
+{
+    WEATHER_SUNNY,
+    WEATHER_DROUGHT,
+    WEATHER_SUNNY,
+    WEATHER_DROUGHT,
+};
+static const u8 sWeatherCycleFallarborWastes[] =
+{
+    WEATHER_SUNNY,
+    WEATHER_DROUGHT,
+    WEATHER_DROUGHT,
+    WEATHER_DROUGHT,
+};
 
 static u8 TranslateWeatherNum(u8 weather)
 {
@@ -2599,6 +2613,8 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_ABNORMAL:           return WEATHER_ABNORMAL;
     case WEATHER_ROUTE119_CYCLE:     return sWeatherCycleRoute119[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_ROUTE123_CYCLE:     return sWeatherCycleRoute123[gSaveBlock1Ptr->weatherCycleStage];
+    case WEATHER_ROUTE114_CYCLE:     return sWeatherCycleRoute114[gSaveBlock1Ptr->weatherCycleStage];
+    case WEATHER_FALLARBOR_WASTES_CYCLE:     return sWeatherCycleFallarborWastes[gSaveBlock1Ptr->weatherCycleStage];
     default:                         return WEATHER_NONE;
     }
 }

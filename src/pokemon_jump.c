@@ -181,14 +181,12 @@ struct PokemonJumpGfx
     bool32 funcFinished;
     u16 mainState;
     u8 taskId;
-    u8 unused1[3];
     u8 resetVineState;
     u8 resetVineTimer;
     u8 vineState;
     u8 msgWindowState;
     u8 vinePalNumDownswing;
     u8 vinePalNumUpswing;
-    u16 unused2;
     u16 msgWindowId;
     u16 fanfare;
     u32 bonusTimer;
@@ -235,8 +233,6 @@ struct PokemonJump
     u32 linkTimerLimit;
     u16 vineStateTimer;
     bool16 ignoreJumpInput;
-    u16 unused1;
-    u16 unused2; // Set to 0, never read
     u16 timer;
     u16 prizeItemId;
     u16 prizeItemQuantity;
@@ -769,7 +765,6 @@ static void ResetForNewGame(struct PokemonJump *jump)
     jump->excellentsInRow = 0;
     jump->excellentsInRowRecord = 0;
     jump->initScoreUpdate = FALSE;
-    jump->unused2 = 0;
     jump->unused3 = 0;
     jump->numPlayersAtPeak = 0;
     jump->allowVineUpdates = FALSE;
@@ -4286,8 +4281,6 @@ void ResetPokemonJumpRecords(void)
     records->bestJumpScore = 0;
     records->excellentsInRow = 0;
     records->gamesWithMaxPlayers = 0;
-    records->unused2 = 0;
-    records->unused1 = 0;
 }
 
 static bool32 TryUpdateRecords(u32 jumpScore, u16 jumpsInRow, u16 excellentsInRow)

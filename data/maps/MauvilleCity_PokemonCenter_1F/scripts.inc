@@ -35,6 +35,11 @@ MauvilleCity_PokemonCenter_1F_EventScript_Youngster::
 	msgbox MauvilleCity_PokemonCenter_1F_Text_RecordCornerSoundsFun, MSGBOX_NPC
 	end
 
+MauvilleCity_PokemonCenter_1F_EventScript_MauvilleOldManGiddy::
+	setvar VAR_MAUVILLE_MAN_VARIANT, 4
+	goto MauvilleCity_PokemonCenter_1F_EventScript_MauvilleOldMan
+	end
+
 MauvilleCity_PokemonCenter_1F_Text_ManOverThereSaysWeirdThings:
 	.string "That man over there, he says weird\n"
 	.string "things!\p"

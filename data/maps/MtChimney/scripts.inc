@@ -595,7 +595,8 @@ MtChimney_Text_MaxieYouHaventSeenLastOfMagma:
 	.string "battle!$"
 
 MtChimney_Text_TabithaIntro:
-	.string "Hyahyahya?! It's you!\p"
+	.string "Hyahyahya?!\n"
+	.string "It's you!\p"
 	.string "You're the one who tried to interrupt\n"
 	.string "me, Tabitha, at Meteor Falls!\p"
 	.string "Do you intend to get in my way?\n"

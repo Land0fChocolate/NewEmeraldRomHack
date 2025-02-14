@@ -1478,11 +1478,8 @@ FieryPath_Text_ShaylaDefeat:
 	.string "Figures.$"
 
 FieryPath_Text_ShaylaPostBattle:
-	.string "I needed some time away from the city\n"
-	.string "and I thought exploring a volcano would\l"
-	.string "be cool.\p"
-	.string "I guess it's not so bad. I don't mind\n"
-	.string "the heat and the geology is intriguing.$"
+	.string "The geology is pretty cool actually.\n"
+	.string "Think I'll stay a bit longer.$"
 
 Route113_Text_JaylenIntro:
 	.string "Can you guess why it's so cool\n"
@@ -4978,6 +4975,19 @@ FallarborWasteland_Text_DariusPostBattle:
 	.string "I should propose this idea to Devon\n"
 	.string "Corp.$"
 
+FallarborWasteland_Text_RipleyIntro:
+	.string "Out in the wastes,\n"
+	.string "it's beat or be beaten!$"
+
+FallarborWasteland_Text_RipleyDefeat:
+	.string "Curse the natural order!$"
+
+FallarborWasteland_Text_RipleyPostBattle:
+	.string "Well, back to training.\n"
+	.string "I'll smash some more of those rocks.\p"
+	.string "Sometimes a weird tree Pokémon comes\n"
+	.string "out of them.$"
+
 MauvilleMeadow_Text_RitaIntro:
 	.string "Excuse me. You're in the way of our\n"
 	.string "swimming lessons.$"
@@ -5044,6 +5054,18 @@ MauvilleMeadow_Text_JacePostBattle:
 	.string "Use my Pokémon?\n"
 	.string "Are you nuts!?\l"
 	.string "That could be a fire hazard!$"
+
+MauvilleMeadow_Text_CobainIntro:
+	.string "Yo, bro.\n"
+	.string "You, like, enjoying the weather?$"
+
+MauvilleMeadow_Text_CobainDefeat:
+	.string "Woah, dude.$"
+
+MauvilleMeadow_Text_CobainPostBattle:
+	.string "I don't know why that chick over\n"
+	.string "there is spinning in the flowers,\l"
+	.string "but I can vibe with her, man.$"
 
 FortreeJungle_Area1_Text_ZukoIntro:
 	.string "Yahaha!\n"
@@ -5125,7 +5147,7 @@ CrumblingGorge_Text_HoldenPostBattle:
 
 CrumblingGorge_Text_NagataIntro:
 	.string "Oh this is good timing, our Pokémon\n"
-	.string "were in need of some excercise.$"
+	.string "were in need of some exercise.$"
 
 CrumblingGorge_Text_NagataDefeat:
 	.string "Tired out!$"
@@ -5146,3 +5168,17 @@ CrumblingGorge_Text_AmosPostBattle:
 	.string "I've heard of a fossil expert to the\n"
 	.string "north that digs for fossils.\l"
 	.string "Maybe I'll try to get one from him.$"
+
+FarawayIsland_Text_BriceIntro:
+	.string "Hey you!\p"
+	.string "Treat these ruins with respect!$"
+
+FarawayIsland_Text_BriceDefeat:
+	.string "You don't seem like a hooligan.$"
+
+FarawayIsland_Text_BricePostBattle:
+	.string "Take nothing but pictures.\n"
+	.string "Leave nothing but footprints.\p"
+	.string "Well… nobody will mind if you catch\n"
+	.string "some Unown.\l"
+	.string "There's no end to them.$"

@@ -354,6 +354,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PetalburgCity_EventScript_Shrine"
+    },
+    {
+      "type": "hidden_item",
+      "x": 21,
+      "y": 2,
+      "elevation": 3,
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_HIDDEN_ITEM_PETALBURG_CITY_BOTTLE_CAP"
     }
   ]
 }

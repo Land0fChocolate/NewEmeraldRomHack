@@ -6,7 +6,6 @@ BattleFrontier_ScottsHouse_MapScripts::
 BattleFrontier_ScottsHouse_EventScript_Scott::
 	lock
 	faceplayer
-	call_if_set FLAG_COLLECTED_ALL_GOLD_SYMBOLS, BattleFrontier_ScottsHouse_EventScript_CheckPostGameComplete
 	goto_if_set FLAG_TEMP_4, BattleFrontier_ScottsHouse_EventScript_GivenBerry
 	goto_if_set FLAG_TEMP_3, BattleFrontier_ScottsHouse_EventScript_GivenShield
 	goto_if_set FLAG_TEMP_2, BattleFrontier_ScottsHouse_EventScript_GivenBattlePoints
@@ -56,23 +55,9 @@ BattleFrontier_ScottsHouse_EventScript_CheckGoldSymbols::
 	compare VAR_RESULT, FALSE
 	goto_if_eq BattleFrontier_ScottsHouse_EventScript_BerryPocketFull
 	setflag FLAG_COLLECTED_ALL_GOLD_SYMBOLS
-	call_if_set FLAG_POST_GAME_COMPLETE, BattleFrontier_ScottsHouse_EventScript_SetUpZinniaEvent
 	setflag FLAG_TEMP_4
 	release
 	end
-
-BattleFrontier_ScottsHouse_EventScript_SetUpZinniaEvent::
-	clearflag FLAG_HIDE_BATTLE_FRONTIER_ZINNIA
-	setvar VAR_BATTLE_FRONTIER_STATE, 1
-	return
-
-BattleFrontier_ScottsHouse_EventScript_CheckPostGameComplete::
-	compare VAR_BATTLE_FRONTIER_STATE, 0
-	goto_if_eq Common_EventScript_NopReturn
-	compare VAR_BATTLE_FRONTIER_STATE, 2
-	goto_if_ge Common_EventScript_NopReturn
-	call_if_set FLAG_POST_GAME_COMPLETE, BattleFrontier_ScottsHouse_EventScript_SetUpZinniaEvent
-	return
 
 BattleFrontier_ScottsHouse_EventScript_BerryPocketFull::
 	msgbox BattleFrontier_ScottsHouse_Text_BerryPocketStuffed, MSGBOX_DEFAULT

@@ -364,7 +364,7 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {TRAINER_CLASS_POKEFAN, 20},
     {TRAINER_CLASS_EXPERT, 10},
     {TRAINER_CLASS_YOUNGSTER, 4},
-    {TRAINER_CLASS_CHAMPION, 50},
+    {TRAINER_CLASS_CHAMPION, 65},
     {TRAINER_CLASS_FISHERMAN, 10},
     {TRAINER_CLASS_TRIATHLETE, 10},
     {TRAINER_CLASS_DRAGON_TAMER, 12},
@@ -391,7 +391,7 @@ const struct TrainerMoney gTrainerMoneyTable[] =
     {TRAINER_CLASS_FAIRY_TALE_GIRL, 4},
     {TRAINER_CLASS_DELINQUENT, 6},
     {TRAINER_CLASS_STREET_THUG, 6},
-    {TRAINER_CLASS_LOREKEEPER, 50},
+    {TRAINER_CLASS_LOREKEEPER, 60},
     {0xFF, 5},
 };
 
@@ -3655,10 +3655,14 @@ static void TryDoEventsBeforeFirstTurn(void)
         if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, gBattlerAttacker, 0, 0) != 0)
             return;
     }
-    if (AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE1, 0, 0, 0) != 0)
+    if (AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE1, 0, 0, 0) != 0) {
+        gLastUsedAbility = ABILITY_INTIMIDATE;
         return;
-    if (AbilityBattleEffects(ABILITYEFFECT_TRACE1, 0, 0, 0) != 0)
+    }
+    if (AbilityBattleEffects(ABILITYEFFECT_TRACE1, 0, 0, 0) != 0) {
+        gLastUsedAbility = ABILITY_TRACE;
         return;
+    }
     // Check all switch in items having effect from the fastest mon to slowest.
     while (gBattleStruct->switchInItemsCounter < gBattlersCount)
     {
@@ -4077,7 +4081,8 @@ static void HandleTurnActionSelectionState(void)
                         BtlController_EmitChoosePokemon(0, PARTY_ACTION_CANT_SWITCH, PARTY_SIZE, gBattleStruct->field_60[gActiveBattler]);
                     }
                     else if (ItemId_GetHoldEffect(gBattleMons[gActiveBattler].item) != HOLD_EFFECT_SHED_SHELL
-                      && (i = IsAbilityPreventingEscape(gActiveBattler)))   // must be last to keep i value integrity
+                        && (!HasAbility(ABILITY_RUN_AWAY, gBattleMons[gActiveBattler].abilities))
+                        && (i = IsAbilityPreventingEscape(gActiveBattler)))   // must be last to keep i value integrity
                     {
                         BtlController_EmitChoosePokemon(0, ((i - 1) << 4) | PARTY_ACTION_ABILITY_PREVENTS, PARTY_SIZE, gBattleStruct->field_60[gActiveBattler]);
                     }
@@ -5013,6 +5018,7 @@ static void HandleEndTurn_BattleWon(void)
         {
         case TRAINER_CLASS_ELITE_FOUR:
         case TRAINER_CLASS_CHAMPION:
+        case TRAINER_CLASS_LOREKEEPER:
             PlayBGM(MUS_VICTORY_LEAGUE);
             break;
         case TRAINER_CLASS_TEAM_AQUA:
@@ -5481,8 +5487,7 @@ void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
 
     // Check if a gem should activate.
     GET_MOVE_TYPE(move, moveType);
-    if (holdEffect == HOLD_EFFECT_GEMS
-        && moveType == ItemId_GetSecondaryId(gBattleMons[battlerAtk].item))
+    if (holdEffect == HOLD_EFFECT_GEMS && moveType == ItemId_GetSecondaryId(gBattleMons[battlerAtk].item))
     {
         gSpecialStatuses[battlerAtk].gemParam = GetBattlerHoldEffectParam(battlerAtk);
         gSpecialStatuses[battlerAtk].gemBoost = TRUE;

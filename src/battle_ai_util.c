@@ -44,7 +44,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_BATTLE_BOND] = 6,
     [ABILITY_BEAST_BOOST] = 7,
     [ABILITY_BERSERK] = 5,
-    [ABILITY_BIG_PECKS] = 1,
+    [ABILITY_BIG_PECKS] = 2,
     [ABILITY_BLAZE] = 5,
     [ABILITY_BULLETPROOF] = 7,
     [ABILITY_CHEEK_POUCH] = 4,
@@ -70,6 +70,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_DISARM] = 4,
     [ABILITY_DISGUISE] = 8,
     [ABILITY_DOWNLOAD] = 7,
+    [ABILITY_DREAMFEAST] = 4,
     [ABILITY_DRIZZLE] = 9,
     [ABILITY_DROUGHT] = 9,
     [ABILITY_DRY_SKIN] = 6,
@@ -124,6 +125,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_INTIMIDATE] = 7,
     [ABILITY_IRON_BARBS] = 6,
     [ABILITY_IRON_FIST] = 6,
+    [ABILITY_JEET_KUNE_DO] = 6,
     [ABILITY_JUSTIFIED] = 4,
     [ABILITY_KEEN_EYE] = 1,
     [ABILITY_KINGS_MIGHT] = 4,
@@ -157,6 +159,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_MUMMY] = 5,
     [ABILITY_MYSTIC_MIND] = 6,
     [ABILITY_NATURAL_CURE] = 7,
+    [ABILITY_NEEDLE_MISSILES] = 6,
     [ABILITY_NEUROFORCE] = 6,
     [ABILITY_NO_GUARD] = 8,
     [ABILITY_NORMALIZE] = 0,
@@ -244,6 +247,7 @@ static const s8 sAiAbilityRatings[ABILITIES_COUNT] =
     [ABILITY_SUCTION_CUPS] = 2,
     [ABILITY_SUPER_LUCK] = 3,
     [ABILITY_SUPERCOOLED] = 5,
+    [ABILITY_SUPERHEATED] = 5,
     [ABILITY_SURGE_SURFER] = 4,
     [ABILITY_SWARM] = 5,
     [ABILITY_SWEET_VEIL] = 4,
@@ -610,16 +614,6 @@ void RecordKnownMove(u8 battlerId, u32 move)
             break;
         }
     }
-}
-
-void RecordAbilityBattle(u8 battlerId, u16 abilityId) 
-{
-    AI_PARTY->mons[GetBattlerSide(battlerId)][gBattlerPartyIndexes[battlerId]].ability = abilityId;
-}
-
-void ClearBattlerAbilityHistory(u8 battlerId) //TODO: this func may not be needed, if so remove usages.
-{
-    BATTLE_HISTORY->abilities[battlerId] = ABILITY_NONE;
 }
 
 void RecordItemEffectBattle(u8 battlerId, u8 itemEffect)
@@ -1634,19 +1628,12 @@ void ProtectChecks(u8 battlerAtk, u8 battlerDef, u16 move, u16 predictedMove, s1
 {
     // TODO more sophisticated logic
     u16 predictedEffect = gBattleMoves[predictedMove].effect;
-    //u8 defAbilities = AI_DATA->abilities[battlerDef]; //why are we declaring abilities here? It isn't being used.
     u32 uses = gDisableStructs[battlerAtk].protectUses;
-
-    /*if (GetMoveResultFlags(predictedMove) & (MOVE_RESULT_NO_EFFECT | MOVE_RESULT_MISSED))
-    {
-        (*score) -= 5;
-        return;
-    }*/
 
     if (uses == 0)
     {
         if (predictedMove != MOVE_NONE && predictedMove != 0xFFFF && !IS_MOVE_STATUS(predictedMove))
-            (*score) += 2;
+            (*score)++;
         else if (Random() % 256 < 100)
             (*score)++;
     }

@@ -317,6 +317,7 @@
 #define FLAG_HIT_IN_SUBSTITUTE                    (1 << 26) // Hyperspace Fury
 #define FLAG_TWO_STRIKES                          (1 << 27) // A move with this flag will strike twice, and may apply its effect on each hit
 #define FLAG_SWORDMASTER_BOOST                    (1 << 28)
+#define FLAG_JEET_KUNE_DO_BOOST                   (1 << 29)
 
 // Split defines.
 #define SPLIT_PHYSICAL  0x0

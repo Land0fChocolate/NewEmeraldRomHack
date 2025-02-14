@@ -72,7 +72,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle1::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle2::
-	msgbox Route110_TrickHouseEnd_Text_AllNightToMakeMaze, MSGBOX_DEFAULT
+	msgbox Route110_TrickHouseEnd_Text_AllNightToInstallDoors, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
 	giveitem ITEM_TIMER_BALL
@@ -124,7 +124,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle5::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle6::
-	msgbox Route110_TrickHouseEnd_Text_AllNightToInstallDoors, MSGBOX_DEFAULT
+	msgbox Route110_TrickHouseEnd_Text_AllNightToMakeMaze, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
 	giveitem ITEM_MAGNET
@@ -167,8 +167,10 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle8::
 	waitmovement 0
 	delay 30
 	msgbox Route110_TrickHouseEnd_Text_DefeatedMePreferWhichTent, MSGBOX_DEFAULT
-	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
-	call Route110_TrickHouseEnd_EventScript_ChooseTent
+	givedecoration DECOR_RED_TENT
+	compare VAR_RESULT, FALSE
+	call_if_eq Route110_TrickHouseEnd_EventScript_NoRoomForTent
+	givedecoration DECOR_BLUE_TENT
 	compare VAR_RESULT, FALSE
 	call_if_eq Route110_TrickHouseEnd_EventScript_NoRoomForTent
 	msgbox Route110_TrickHouseEnd_Text_LeavingOnJourney, MSGBOX_DEFAULT
@@ -176,20 +178,6 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle8::
 	special ResetTrickHouseNuggetFlag
 	release
 	end
-
-Route110_TrickHouseEnd_EventScript_ChooseTent::
-	multichoice 0, 0, MULTI_TENT, TRUE
-	switch VAR_RESULT
-	case 0, Route110_TrickHouseEnd_EventScript_GiveRedTent
-	goto Route110_TrickHouseEnd_EventScript_GiveBlueTent
-
-Route110_TrickHouseEnd_EventScript_GiveRedTent::
-	givedecoration DECOR_RED_TENT
-	return
-
-Route110_TrickHouseEnd_EventScript_GiveBlueTent::
-	givedecoration DECOR_BLUE_TENT
-	return
 
 Route110_TrickHouseEnd_EventScript_TrickMasterExit::
 	applymovement LOCALID_TRICK_MASTER, Route110_TrickHouse_Movement_TrickMasterSpin
@@ -328,10 +316,7 @@ Route110_TrickHouseEnd_Text_DefeatedMePreferWhichTent:
 	.string "In recognition of the friendship\n"
 	.string "between you, the driven, and the genius\l"
 	.string "that is myself, I demand that you take\l"
-	.string "this keepsake!\p"
-	.string "Actually there are two--\n"
-	.string "a Red Tent and a Blue Tent.\l"
-	.string "Which do you prefer?$"
+	.string "these keepsakes!$"
 
 Route110_TrickHouseEnd_Text_NoRoomInPC:
 	.string "What? No room in your PC?\n"

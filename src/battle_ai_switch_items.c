@@ -1,10 +1,12 @@
 #include "global.h"
 #include "battle.h"
+#include "constants/battle_ai.h"
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
 #include "battle_setup.h"
+#include "battle_util.h"
 #include "pokemon.h"
 #include "random.h"
 #include "util.h"
@@ -39,7 +41,13 @@ void GetAIPartyIndexes(u32 battlerId, s32 *firstId, s32 *lastId)
     }
 }
 
-static bool8 ShouldSwitchIfAllBadMoves(void)
+static inline bool32 SetSwitchinAndSwitch(u32 switchinId)
+{
+    gBattleStruct->AI_monToSwitchIntoId[gActiveBattler] = switchinId;
+    return TRUE;
+}
+
+static bool8 ShouldSwitchIfAllMovesBad(void)
 {
     if (gBattleResources->ai->switchMon)
     {
@@ -227,14 +235,32 @@ static bool8 FindMonThatAbsorbsOpponentsMove(void)
     return FALSE;
 }
 
-static bool8 ShouldSwitchIfNaturalCure(void)
+static bool8 ShouldSwitchIfAbilityBenefit(void)
 {
     u16 *abilities = AI_GetAbilities(gActiveBattler);
+    bool8 hasStatRaised = AnyStatIsRaised(gActiveBattler);
+    u8 rnd;
+
+    rnd = Random() % 100;
 
     if (!(gBattleMons[gActiveBattler].status1 & STATUS1_SLEEP))
         return FALSE;
-    if (!HasAbility(ABILITY_NATURAL_CURE, abilities))
-        return FALSE;
+    if (HasAbility(ABILITY_NATURAL_CURE, abilities)) {
+        //Attempt to cure bad ailment
+        if (gBattleMons[gActiveBattler].status1 & (STATUS1_SLEEP | STATUS1_FREEZE | STATUS1_TOXIC_POISON)
+            && ((hasStatRaised && (rnd < 10)) || (!hasStatRaised && (rnd < 70))))
+            return TRUE;
+        //Attempt to cure lesser ailment
+        if ((gBattleMons[gActiveBattler].status1 & STATUS1_ANY)
+            && (gBattleMons[gActiveBattler].hp >= gBattleMons[gActiveBattler].maxHP / 2)
+            && ((hasStatRaised && (rnd < 10)) || (!hasStatRaised && (rnd < 25))))
+            return TRUE;
+    }
+    if (HasAbility(ABILITY_REGENERATOR, abilities)) {
+        if ((gBattleMons[gActiveBattler].hp <= (gBattleMons[gActiveBattler].maxHP / 2))
+             && ((hasStatRaised && (rnd < 20)) || (!hasStatRaised && (rnd < 50))))
+            return TRUE;
+    }
     if (gBattleMons[gActiveBattler].hp < gBattleMons[gActiveBattler].maxHP / 2)
         return FALSE;
 
@@ -481,7 +507,7 @@ bool32 ShouldSwitch(void)
 
     if (availableToSwitch == 0)
         return FALSE;
-    if (ShouldSwitchIfAllBadMoves())
+    if (ShouldSwitchIfAllMovesBad())
         return TRUE;
     if (ShouldSwitchIfPerishSong())
         return TRUE;
@@ -489,7 +515,7 @@ bool32 ShouldSwitch(void)
         return TRUE;
     if (FindMonThatAbsorbsOpponentsMove())
         return TRUE;
-    if (ShouldSwitchIfNaturalCure())
+    if (ShouldSwitchIfAbilityBenefit())
         return TRUE;
     if (HasSuperEffectiveMoveAgainstOpponents(FALSE))
         return FALSE;

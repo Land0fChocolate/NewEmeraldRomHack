@@ -1009,7 +1009,7 @@ PetalburgCity_Gym_Text_DadYoureHereWithYourPokemon:
 	.string "I'm surprised that you managed to\n"
 	.string "get here by yourself.\p"
 	.string "Oh, I see.\n"
-	.string "You're with your Pokémon.\p"
+	.string "You've got yourself some Pokémon.\p"
 	.string "Hm… Then I guess you're going to\n"
 	.string "become a Trainer like me, {PLAYER}.\p"
 	.string "That's great news!\n"

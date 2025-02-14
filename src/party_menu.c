@@ -3729,7 +3729,7 @@ static void CursorCb_FieldMove(u8 taskId)
                 else
                 {
                     SetWarpDestination(MAP_GROUP(SPACE_AREA1), MAP_NUM(SPACE_AREA1), -1, 37, 35);
-                    //SetWarpDestination(MAP_GROUP(SPACE_AREA2), MAP_NUM(SPACE_AREA2), -1, 20, 12); //TODO: kept for testing
+                    //SetWarpDestination(MAP_GROUP(SPACE_AREA2), MAP_NUM(SPACE_AREA2), -1, 20, 12); //DEBUG: kept for testing
                 }
                 ReturnToFieldFromDragonAscentSelect();
                 
@@ -4459,7 +4459,7 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
 
 #define tState      data[0]
 #define tSpecies    data[1]
-#define tAbilityNum data[2] //TODO: unused
+#define tAbilityNum data[2] // unused
 #define tMonId      data[3]
 #define tOldFunc    4
 
@@ -4475,7 +4475,7 @@ void ItemUseCB_AbilityCapsule(u8 taskId, TaskFunc task)
 
 #undef tState
 #undef tSpecies
-#undef tAbilityNum //TODO: unused
+#undef tAbilityNum // unused
 #undef tMonId
 #undef tOldFunc
 
@@ -5802,13 +5802,15 @@ static u8 GetPartySlotEntryStatus(s8 slot)
 static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
 {
     u16 i = 0;
-    u16 species;
+    u16 species, heldItem;
+
+    heldItem = GetMonData(mon, MON_DATA_HELD_ITEM);
 
     if (GetMonData(mon, MON_DATA_IS_EGG)
         || GetMonData(mon, MON_DATA_LEVEL) > GetBattleEntryLevelCap()
         || (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BATTLE_FRONTIER_BATTLE_PYRAMID_LOBBY)
             && gSaveBlock1Ptr->location.mapNum == MAP_NUM(BATTLE_FRONTIER_BATTLE_PYRAMID_LOBBY)
-            && GetMonData(mon, MON_DATA_HELD_ITEM) != ITEM_NONE))
+            && heldItem != ITEM_NONE))
     {
         return FALSE;
     }
@@ -5826,6 +5828,11 @@ static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
         for (; gFrontierBannedSpecies[i] != 0xFFFF; i++)
         {
             if (gFrontierBannedSpecies[i] == species)
+                return FALSE;
+        }
+        for (; gFrontierBannedItems[i] != 0xFFFF; i++)
+        {
+            if (gFrontierBannedItems[i] == heldItem)
                 return FALSE;
         }
         return TRUE;

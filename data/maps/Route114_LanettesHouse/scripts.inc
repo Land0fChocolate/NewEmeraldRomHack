@@ -68,7 +68,7 @@ Route114_LanettesHouse_Text_ResearchNotesPage1:
 	.string "There's information about boxes.\p"
 	.string "Design boxes to hold 30 Pokémon each.\p"
 	.string "Each Trainer should be able to store\n"
-	.string "420 Pokémon on the PC system.\p"
+	.string "450 Pokémon on the PC system.\p"
 	.string "Keep reading?$"
 
 Route114_LanettesHouse_Text_ResearchNotesPage2:

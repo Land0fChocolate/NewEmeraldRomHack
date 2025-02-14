@@ -380,8 +380,8 @@ These Pokemon are available after beating the Pokemon League.
 - Upgrade -> Frontier exchange shop
 - Dubious Disc -> Frontier exchange shop
 - King's Rock -> Mossdeep City/Frontier exchange shop
-- Razor Claw -> Frontier exchange shop
-- Razor Fang -> Frontier exchange shop
+- Razor Claw -> Wild Sneasel/Frontier exchange shop
+- Razor Fang -> Wild Gligar/Frontier exchange shop
 - Metal Coat -> Wild Skarmory and Steelix/Frontier exchange shop
 - Galarica Cuff -> Frontier exchange shop
 - Galarica Wreath -> Frontier exchange shop
@@ -478,7 +478,7 @@ These Pokemon are available after beating the Pokemon League.
 -TM84 Poison Jab - Lilycove Store
 -TM85 Electroweb - Lilycove Store
 -TM86 Grass Knot - Crumbling Gorge
--TM87 Swagger - Lilycove Store
+-TM87 Topsy Turvy - Lilycove Store
 -TM88 Drain Punch - Battle Frontier East
 -TM89 U-Turn - Slateport Market
 -TM90 Rock Smash - Slateport Market
@@ -492,6 +492,72 @@ These Pokemon are available after beating the Pokemon League.
 -TM98 Waterfall - Lilycove Store
 -TM99 Dazzling Gleam - Wildwoods area 7
 
+# Tutor Move List and locations
+
+-Swords Dance - Battle Frontier
+-Body Slam - Battle Frontier
+-Double Edge - Sootopolis City
+-Counter - Battle Frontier
+-Seismic Toss - Battle Frontier
+-Mimic - Lavaridge Town
+-Metronome - Fallarbor Town
+-Soft Boiled - Battle Frontier
+-Dream Eater - Battle Frontier
+-Gastro Acid - Battle Frontier
+-Explosion - Pacifidlog Town, Pokemon Center
+-Psychic Fangs - Battle Frontier
+-Substitute - Lilycove City
+-Dynamic Punch - Mossdeep City
+-Rollout - Mauville City
+-Psych Up - Battle Frontier
+-Snore - Battle Frontier
+-Icy Wind - Battle Frontier
+-Endure - Battle Frontier
+-Earth Power - Battle Frontier
+-Ice Punch - Battle Frontier
+-Swagger - Slateport City, Fan Club
+-Sleep Talk - Fortree City
+-Swift - Battle Frontier
+-Defense Curl - Battle Frontier
+-Thunder Punch - Battle Frontier
+-Fire Punch - Battle Frontier
+-Fury Cutter - Verdanturf Town
+-Serpent Dance - Battle Frontier
+-Flint Blade - Battle Frontier
+-Blaze Impact - Battle Frontier
+-Work Up - Battle Frontier
+-Low Sweep - Battle Frontier
+-Avalanche - Battle Frontier
+-Signal Beam - Battle Frontier
+-Nasty Plot - Battle Frontier
+-Superpower - Battle Frontier
+-Play Rough - Battle Frontier
+-Stored Power - Battle Frontier
+-Role Play - Battle Frontier
+-Defog - Battle Frontier
+-Trick - Battle Frontier
+-Knock Off - Battle Frontier
+-Stealth Rock - Battle Frontier
+-Tailwind - Battle Frontier
+-Breaking Swipe - Battle Frontier
+-Heat Wave - Battle Frontier
+-Gunk Shot - Battle Frontier
+-Zen Headbutt - Battle Frontier
+-Body Press - Battle Frontier
+-Worry Seed - Battle Frontier
+-Recycle - Battle Frontier
+-Low Kick - Battle Frontier
+-Magic Coat - Battle Frontier
+-Pain Split - Battle Frontier
+-Seed Bomb - Battle Frontier
+-Iron Head - Battle Frontier
+-Aqua Tail - Battle Frontier
+-Foul Play - Battle Frontier
+-Megahorn - Battle Frontier
+-Draco Meteor - Ever Grande City
+-Hidden Thorns - Battle Frontier
+-Bug Bite - Battle Frontier
+
 # Berry Handouts locations
 
 1 to 8 - Flower Shop Girl (Route 104 Flower Shop)
@@ -500,7 +566,7 @@ These Pokemon are available after beating the Pokemon League.
 16 to 20 - Berry Crush Man (Route 114)
 21 to 30 - Berry Master (Route 123)/Kiri (Sootopolis City)
 31 to 35 - Berry Master's Wife phrase (GREAT BATTLE, CHALLENGE CONTEST, OVERWHELMING LATIAS, COOL LATIOS, SUPER HUSTLE)
-36 to 53 - Glacia obsessed guitarist (Ever Grande City)
+36 to 53 - Glacia obsessed Guitarist (Ever Grande City)
 54 to 60 - Winona (Mossdeep City)
 
 # Useful Items Purchase Locations
@@ -564,9 +630,9 @@ These Pokemon are available after beating the Pokemon League.
 - *Bulbasaur* (Overgrow, Chlorophyll, None)
 - *Ivysaur* (Overgrow, Chlorophyll, Thick Fat)
 - *Venusaur* (Overgrow, Chlorophyll, Thick Fat)
-- *Charmander* (Blaze, Solar Power, None)
-- *Charmeleon* (Blaze, Solar Power, Tough Claws)
-- *Charizard* (Blaze, Solar Power, Tough Claws)
+- *Charmander* (Blaze, Tough Claws, None)
+- *Charmeleon* (Blaze, Tough Claws, Superheated)
+- *Charizard* (Blaze, Tough Claws, Superheated)
 - *Squirtle* (Torrent, Shell Armor, None)
 - *Wartortle* (Torrent, Shell Armor, Mega Launcher)
 - *Blastoise* (Torrent, Shell Armor, Mega Launcher)
@@ -696,7 +762,7 @@ These Pokemon are available after beating the Pokemon League.
 - *Eevee* (Run Away, Adaptability, Anticipation)
 - *Vaporeon* (Water Absorb, Damp, Hydration)
 - *Jolteon* (Volt Absorb, Unburden, Quick Feet)
-- *Flareon* (Flash Fire, Fur Coat, Contrary)
+- *Flareon* (Flash Fire, Superheated, Contrary)
 - *Porygon* (Trace, Download, Analytic)
 - *Omanyte* (Swift Swim, Shell Armor, Overcoat)
 - *Omastar* (Swift Swim, Shell Armor, Overcoat)
@@ -803,9 +869,9 @@ These Pokemon are available after beating the Pokemon League.
 - *Magby* (Flame Body, Vital Spirit, None)
 - *Miltank* (Thick Fat, Scrappy, Sap Sipper)
 - *Blissey* (Natural Cure, Serene Grace, Healer)
-- *Raikou* (Pressure, Inner Focus, Volt Absorb)
-- *Entei* (Pressure, Inner Focus, Flash Fire)
-- *Suicune* (Pressure, Inner Focus, Water Absorb)
+- *Raikou* (Pressure, Technician, Volt Absorb)
+- *Entei* (Pressure, Technician, Flash Fire)
+- *Suicune* (Pressure, Technician, Water Absorb)
 - *Larvitar* (Guts, Battle Armor, None)
 - *Pupitar* (Shed Skin, Battle Armor, None)
 - *Tyranitar* (Unnerve, Sand Stream, None)
@@ -963,8 +1029,8 @@ These Pokemon are available after beating the Pokemon League.
 - *Lickilicky* (Own Tempo, Oblivious, Cloud Nine)
 - *Rhyperior* (Solid Rock, Rock Head, Reckless)
 - *Tangrowth* (Chlorophyll, Leaf Guard, Regenerator)
-- *Electivire* (Static, Vital Spirit, Motor Drive)
-- *Magmortar* (Flame Body, Vital Spirit, Flash Fire)
+- *Electivire* (Static, Adaptability, Motor Drive)
+- *Magmortar* (Flame Body, Superheated, Flash Fire)
 - *Togekiss* (Hustle, Serene Grace, Super Luck)
 - *Yanmega* (Speed Boost, Tinted Lens, Frisk)
 - *Leafeon* (Swordmaster, Leaf Guard, Chlorophyll)
@@ -1008,12 +1074,16 @@ These Pokemon are available after beating the Pokemon League.
 - *Hisuian Voltorb* (Soundroof, Static, Aftermath)
 - *Hisuian Electrode* (Soundroof, Static, Aftermath)
 - *Alolan Exeggutor* (Frisk, Solar Power, Harvest)
+- *Galarian Articuno* (Pressure, Competitive, Infiltrator)
+- *Galarian Zapdos* (Pressure, Defiant, Steadfast)
+- *Galarian Moltres* (Pressure, Own Tempo, Regenerator)
+- *Hisuian Typhlosion* (Blaze, Frisk, Wildfire)
 
 # Wild Pokemon Held Items List
 
-Chance for no item: 20% (5% with Compound Eyes or Super Luck)
-Chance for normal item: 60% (55% with Compound Eyes or Super Luck)
-Chance for rare item: 20% (40% with Compound Eyes or Super Luck)
+Chance for no item: 50% (20% with Compound Eyes or Super Luck)
+Chance for normal item: 35% (40% with Compound Eyes or Super Luck)
+Chance for rare item: 15% (40% with Compound Eyes or Super Luck)
 
 - *Butterfree* (None, Silver Powder)
 - *Beedrill* (None, Poison Barb)
@@ -1173,6 +1243,7 @@ Chance for rare item: 20% (40% with Compound Eyes or Super Luck)
            | Special Attack: 105 -> 85
 - Numel    | HP: 60 -> 70
 - Camerupt | HP: 70 -> 110
+- Tropius  | HP: 99 -> 114
 - Spheal   | Attack: 40 -> 55
            | Special Attack: 55 -> 40
 - Sealeo   | Attack: 60 -> 75

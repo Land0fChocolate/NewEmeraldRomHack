@@ -1187,6 +1187,7 @@ MURKROW
             | ASSURANCE
             | FLATTER
             | PUNISHMENT
+            | AIR SLASH
 
 MISDREAVUS
             | SCREECH

@@ -59,7 +59,7 @@ LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
 	.2byte ITEM_TM70  @ Aurora Veil
 	.2byte ITEM_TM73  @ Thunder Wave
 	.2byte ITEM_TM85  @ Electro Web
-	.2byte ITEM_TM87  @ Swagger
+	.2byte ITEM_TM87  @ Topsy Turvy
 	.2byte ITEM_TM92  @ Trick Room
 	.2byte ITEM_NONE
 	release

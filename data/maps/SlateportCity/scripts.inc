@@ -712,6 +712,7 @@ SlateportCity_EventScript_CaptStern::
 	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SUBMARINE_SHADOW
 	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_AQUA_GRUNT
 	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_ARCHIE
+	clearflag FLAG_TV_STERN_ANNOUNCEMENT
 	setvar VAR_SLATEPORT_CITY_STATE, 2
 	warp MAP_SLATEPORT_CITY_HARBOR, 255, 11, 14
 	waitstate
@@ -1368,7 +1369,7 @@ SlateportCity_Text_OhPlayerWeMadeDiscovery:
 	.string "We found an underwater cavern on\n"
 	.string "Route 128.\p"
 	.string "We think it's the habitat of a Pokémon\n"
-	.string "that's said to have been long extinct.$"
+	.string "that's said to have expanded the sea.$"
 
 SlateportCity_Text_AquaWillAssumeControlOfSubmarine:
 	.string "Ahh… Ahh…\n"

@@ -17,7 +17,7 @@ RustboroCity_DevonCorp_2F_EventScript_SetFossilReady::
 	return
 
 RustboroCity_DevonCorp_2F_EventScript_SetMewtwoReady::
-	setvar VAR_MEW_CLONING_STATE, 3 @TODO: Do this via steps instead?
+	setvar VAR_MEW_CLONING_STATE, 3
 	return
 
 RustboroCity_DevonCorp_2F_EventScript_TalkToPokemonScientist::

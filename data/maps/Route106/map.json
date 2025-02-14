@@ -14,31 +14,31 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "up",
+      "map": "MAP_ROUTE105",
       "offset": 0,
-      "map": "MAP_ROUTE105"
+      "direction": "up"
     },
     {
-      "direction": "down",
+      "map": "MAP_DEWFORD_TOWN",
       "offset": 60,
-      "map": "MAP_DEWFORD_TOWN"
+      "direction": "down"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE107",
       "offset": 10,
-      "map": "MAP_ROUTE107"
+      "direction": "right"
     },
     {
-      "direction": "right",
+      "map": "MAP_FILLER_SEA_PATCH",
       "offset": 0,
-      "map": "MAP_FILLER_SEA_PATCH"
+      "direction": "right"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
       "x": 21,
-      "y": 5,
+      "y": 6,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 5,

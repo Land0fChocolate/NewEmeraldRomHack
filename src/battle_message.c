@@ -52,7 +52,7 @@ static void ChooseTypeOfMoveUsedString(u8 *dst);
 static void ExpandBattleTextBuffPlaceholders(const u8 *src, u8 *dst);
 
 // EWRAM vars
-static EWRAM_DATA u16 sBattlerAbilities[MAX_BATTLERS_COUNT] = {0}; //TODO: update for multi ability? (I think this is abilities for multiple battlers)
+static EWRAM_DATA u16 sBattlerAbilities[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA struct BattleMsgData *gBattleMsgDataPtr = NULL;
 
 // const rom data
@@ -756,6 +756,8 @@ static const u8 sText_OnlyPokeBallsCanBeUsed[] = _("Only Poké Balls can be used
 static const u8 sText_AttackerSwitchedStatWithTarget[] = _("{B_ATK_NAME_WITH_PREFIX} switched {B_BUFF1}\nwith its target!");
 static const u8 sText_SharpThornsGrow[] =_("Sharp thorns grow\naround {B_DEF_TEAM2} team!");
 static const u8 sText_WishMakerFailed[] =_("{B_ATK_NAME_WITH_PREFIX} failed to make a wish!");
+static const u8 sText_DreamfeastHeals[] = _("{B_ATK_NAME_WITH_PREFIX} heals\nfrom sleeping Pokémon!");
+static const u8 sText_PkmnNeedleMissile[] = _("{B_ATK_NAME_WITH_PREFIX} deals extra\ndamage with needle missiles!");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1375,6 +1377,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_CANTTHROWBALL - 12] = sText_CantThrowBall,
     [STRINGID_SHARPTHORNSGROW - 12] = sText_SharpThornsGrow,
     [STRINGID_WISHMAKERFAILED - 12] = sText_WishMakerFailed,
+    [STRINGID_DREAMFEASTHEALS - 12] = sText_DreamfeastHeals,
+    [STRINGID_PKMNNEEDLEMISSILE - 12] = sText_PkmnNeedleMissile,
 };
 
 const u16 gMentalHerbCureStringIds[] = 

@@ -288,7 +288,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
             },
             {
                 .species = SPECIES_SHEDINJA,
-                .heldItem = ITEM_SCOPE_LENS,
+                .heldItem = ITEM_RAZOR_CLAW,
                 .fixedIV = 20,
                 .nature = NATURE_ADAMANT,
                 .evs = {0, 252, 6, 0, 0, 252},
@@ -298,20 +298,20 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
         // Gold Symbol.
         {
             {
+                .species = SPECIES_GENGAR,
+                .heldItem = ITEM_SITRUS_BERRY,
+                .fixedIV = MAX_PER_STAT_IVS,
+                .nature = NATURE_TIMID,
+                .evs = {6, 0, 0, 252, 0, 252},
+                .moves = {MOVE_SHADOW_BALL, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
+            },
+            {
                 .species = SPECIES_FLAREON,
                 .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_ADAMANT,
                 .evs = {252, 252, 0, 0, 0, 6},
-                .moves = {MOVE_BLAZE_IMPACT, MOVE_SUPERPOWER, MOVE_BODY_SLAM, MOVE_OVERHEAT},
-            },
-            {
-                .species = SPECIES_GENGAR,
-                .heldItem = ITEM_LUM_BERRY,
-                .fixedIV = MAX_PER_STAT_IVS,
-                .nature = NATURE_TIMID,
-                .evs = {6, 0, 0, 252, 0, 252},
-                .moves = {MOVE_SHADOW_BALL, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
+                .moves = {MOVE_BLAZE_IMPACT, MOVE_SUPERPOWER, MOVE_WILL_O_WISP, MOVE_OVERHEAT},
             },
             {
                 .species = SPECIES_BRELOOM,
@@ -319,7 +319,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][FRONTIER_PARTY_SIZ
                 .fixedIV = MAX_PER_STAT_IVS,
                 .nature = NATURE_JOLLY,
                 .evs = {0, 252, 6, 0, 0, 252},
-                .moves = {MOVE_SPORE, MOVE_FORCE_PALM, MOVE_SEED_BOMB, MOVE_ROCK_SLIDE},
+                .moves = {MOVE_SPORE, MOVE_FORCE_PALM, MOVE_BULLET_SEED, MOVE_ROCK_TOMB},
             },
         },
     },
@@ -680,6 +680,18 @@ const u16 gFrontierBannedSpecies[] =
     SPECIES_MEW, SPECIES_MEWTWO, SPECIES_HO_OH, SPECIES_LUGIA, SPECIES_CELEBI,
     SPECIES_KYOGRE, SPECIES_GROUDON, SPECIES_RAYQUAZA, SPECIES_JIRACHI, SPECIES_DEOXYS, 
     SPECIES_DEOXYS_ATTACK, SPECIES_DEOXYS_DEFENSE, SPECIES_DEOXYS_SPEED, 0xFFFF
+};
+
+const u16 gFrontierBannedItems[] =
+{
+    ITEM_VENUSAURITE, ITEM_CHARIZARDITE_X, ITEM_CHARIZARDITE_Y, ITEM_BLASTOISINITE, ITEM_BEEDRILLITE,
+    ITEM_PIDGEOTITE, ITEM_ALAKAZITE, ITEM_SLOWBRONITE, ITEM_GENGARITE, ITEM_KANGASKHANITE,
+    ITEM_PINSIRITE, ITEM_GYARADOSITE, ITEM_AERODACTYLITE, ITEM_MEWTWONITE_X, ITEM_MEWTWONITE_Y,
+    ITEM_AMPHAROSITE, ITEM_STEELIXITE, ITEM_SCIZORITE, ITEM_HERACRONITE, ITEM_HOUNDOOMINITE, 
+    ITEM_TYRANITARITE, ITEM_SCEPTILITE, ITEM_BLAZIKENITE, ITEM_SWAMPERTITE, ITEM_GARDEVOIRITE,
+    ITEM_GALLADITE, ITEM_SABLENITE, ITEM_MAWILITE, ITEM_AGGRONITE, ITEM_MEDICHAMITE,
+    ITEM_MANECTITE, ITEM_SHARPEDONITE, ITEM_CAMERUPTITE, ITEM_ALTARIANITE, ITEM_BANETTITE,
+    ITEM_ABSOLITE, ITEM_GLALITITE, ITEM_SALAMENCITE, ITEM_METAGROSSITE, ITEM_LATIASITE, ITEM_LATIOSITE, 0xFFFF
 };
 
 static const u8 *const sRecordsWindowChallengeTexts[][2] =

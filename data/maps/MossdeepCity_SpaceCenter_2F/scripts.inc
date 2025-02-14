@@ -417,7 +417,7 @@ MossdeepCity_SpaceCenter_2F_Text_ArchieConfrontingZinnia:
 	.string "Our movement was just a little…\n"
 	.string "too successful.\p"
 	.string "Our info was just a little too\n"
-	.string "convienient.\p"
+	.string "convenient.\p"
 	.string "And it was peculiar how we were making\n"
 	.string "similar progress with our goals as our\l"
 	.string "rivals, Team Magma.\p"

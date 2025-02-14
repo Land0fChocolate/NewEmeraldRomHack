@@ -669,7 +669,7 @@
     {
       "type": "weather",
       "x": 18,
-      "y": 135,
+      "y": 136,
       "elevation": 3,
       "weather": "COORD_EVENT_WEATHER_ROUTE119_CYCLE"
     },

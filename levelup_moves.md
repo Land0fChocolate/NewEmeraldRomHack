@@ -845,7 +845,7 @@
              (23, LUCKY CHANT)
              (27, MOONLIGHT)
              (31, GIGA DRAIN)
-             (35, TOXIC)
+             (35, SLUDGE BOMB)
              (39, NATURAL GIFT)
              (43, MOONBLAST)
              (47, GRASSY TERRAIN)
@@ -867,7 +867,7 @@
              (24, LUCKY CHANT)
              (29, MOONLIGHT)
              (34, GIGA DRAIN)
-             (39, TOXIC)
+             (39, SLUDGE BOMB)
              (44, NATURAL GIFT)
              (49, PETAL BLIZZARD)
              (54, GRASSY TERRAIN)
@@ -891,7 +891,7 @@
              (24, LUCKY CHANT)
              (29, MOONLIGHT)
              (34, GIGA DRAIN)
-             (39, TOXIC)
+             (39, SLUDGE BOMB)
              (44, NATURAL GIFT)
              (49, PETAL BLIZZARD)
              (54, GRASSY TERRAIN)
@@ -1861,7 +1861,7 @@
              (40, WHIRLPOOL)
              (44, BRINE)
              (49, IRON DEFENSE)
-             (52, ICE BEAM)
+             (52, LIQUIDATION)
              (56, SHELL SMASH)
              (61, HYDRO PUMP)
 
@@ -1887,7 +1887,7 @@
              (44, BRINE)
              (49, IRON DEFENSE)
              (50, ICICLE CRASH)
-             (52, ICE BEAM)
+             (52, LIQUIDATION)
              (56, SHELL SMASH)
              (61, HYDRO PUMP)
 
@@ -2675,7 +2675,8 @@
              (40, SWORDS DANCE)
              (43, THRASH)
              (47, SUPERPOWER)
-             (50, GUILLOTINE)
+             (50, FIRST IMPRESSION)
+             (54, GUILLOTINE)
 
 
 
@@ -5060,7 +5061,7 @@
              (29, STOMP)
              (36, FLAMETHROWER)
              (43, SWAGGER)
-             (50, BLAZE IMPACT)
+             (50, FLAME CHARGE)
              (57, FIRE SPIN)
              (64, EXTRASENSORY)
              (71, FIRE BLAST)
@@ -5503,7 +5504,7 @@
 - Silcoon
              ( 0, HARDEN)
              ( 1, HARDEN)
-             (14, INFESTATION)
+             (12, INFESTATION)
 
 
 
@@ -5528,7 +5529,7 @@
 - Cascoon
              ( 0, HARDEN)
              ( 1, HARDEN)
-             (14, INFESTATION)
+             (12, INFESTATION)
 
 
 
@@ -6836,13 +6837,13 @@
              (17, VISE GRIP)
              (21, FEINT ATTACK)
              (25, BATON PASS)
-             (29, CRUNCH)
+             (29, IRON HEAD)
              (33, IRON DEFENSE)
              (37, SUCKER PUNCH)
              (41, STOCKPILE)
              (41, SWALLOW)
              (41, SPIT UP)
-             (45, IRON HEAD)
+             (45, CRUNCH)
              (49, PLAY ROUGH)
 
 
@@ -8456,7 +8457,7 @@
 
 - Leafeon
              ( 0, RAZOR LEAF)
-             ( 1, HIDDEN THORNS)
+             ( 1, SOLAR BLADE)
              ( 1, RAZOR LEAF)
              ( 1, HELPING HAND)
              ( 1, TACKLE)
@@ -8704,644 +8705,6 @@
 
 
 
-- RattataAlolan
-             ( 1, TACKLE)
-             ( 1, TAIL WHIP)
-             ( 4, QUICK ATTACK)
-             ( 7, FOCUS ENERGY)
-             (10, BITE)
-             (13, PURSUIT)
-             (16, HYPER FANG)
-             (19, ASSURANCE)
-             (22, CRUNCH)
-             (25, SUCKER PUNCH)
-             (28, SUPER FANG)
-             (31, DOUBLE EDGE)
-             (34, ENDEAVOR)
-
-
-
-- RaticateAlolan
-             ( 0, SCARY FACE)
-             ( 1, SCARY FACE)
-             ( 1, SWORDS DANCE)
-             ( 1, TACKLE)
-             ( 1, TAIL WHIP)
-             ( 1, QUICK ATTACK)
-             ( 1, FOCUS ENERGY)
-             ( 4, QUICK ATTACK)
-             ( 7, FOCUS ENERGY)
-             (10, BITE)
-             (13, PURSUIT)
-             (16, HYPER FANG)
-             (19, ASSURANCE)
-             (24, CRUNCH)
-             (29, SUCKER PUNCH)
-             (34, SUPER FANG)
-             (39, DOUBLE EDGE)
-             (44, ENDEAVOR)
-
-
-
-- RaichuAlolan
-             ( 0, PSYCHIC)
-             ( 1, PSYCHIC)
-             ( 1, SPEED SWAP)
-             ( 1, THUNDER SHOCK)
-             ( 1, TAIL WHIP)
-             ( 1, QUICK ATTACK)
-             ( 1, THUNDERBOLT)
-             ( 1, ELECTRIC TERRAIN)
-
-
-
-- SandshrewAlolan
-             ( 1, SCRATCH)
-             ( 1, DEFENSE CURL)
-             ( 3, BIDE)
-             ( 5, POWDER SNOW)
-             ( 7, ICE BALL)
-             ( 9, RAPID SPIN)
-             (11, FURY CUTTER)
-             (14, METAL CLAW)
-             (17, SWIFT)
-             (20, FURY SWIPES)
-             (23, IRON DEFENSE)
-             (26, SLASH)
-             (30, IRON HEAD)
-             (34, GYRO BALL)
-             (38, SWORDS DANCE)
-             (42, HAIL)
-             (46, BLIZZARD)
-
-
-
-- SandslashAlolan
-             ( 0, ICICLE SPEAR),
-             ( 1, ICICLE SPEAR),
-             ( 1, METAL BURST),
-             ( 1, ICICLE CRASH),
-             ( 1, SCRATCH),
-             ( 1, DEFENSE CURL),
-             ( 3, BIDE),
-             ( 5, POWDER SNOW),
-             ( 7, ICE BALL),
-             ( 9, RAPID SPIN),
-             (11, FURY CUTTER),
-             (14, METAL CLAW),
-             (17, SWIFT),
-             (20, FURY SWIPES),
-             (23, IRON DEFENSE),
-             (26, SLASH),
-             (30, IRON HEAD),
-             (34, GYRO BALL),
-             (38, SWORDS DANCE),
-             (42, HAIL),
-             (46, BLIZZARD),
-
-
-
-- VulpixAlolan
-             ( 1, POWDER SNOW)
-             ( 4, TAIL WHIP)
-             ( 7, ROAR)
-             ( 9, BABY DOLL EYES)
-             (10, ICE SHARD)
-             (12, CONFUSE RAY)
-             (15, ICY WIND)
-             (18, PAYBACK)
-             (20, MIST)
-             (23, FEINT ATTACK)
-             (26, HEX)
-             (28, AURORA BEAM)
-             (31, EXTRASENSORY)
-             (34, SAFEGUARD)
-             (36, FREEZE DRY)
-             (39, IMPRISON)
-             (42, GRUDGE)
-             (44, BLIZZARD)
-             (47, CAPTIVATE)
-             (50, SHEER COLD)
-
-
-
-- NinetalesAlolan
-             ( 0, DAZZLING GLEAM)
-             ( 1, DAZZLING GLEAM)
-             ( 1, NASTY PLOT)
-             ( 1, POWDER SNOW)
-             ( 4, TAIL WHIP)
-             ( 7, ROAR)
-             ( 9, BABY DOLL EYES)
-             (10, ICE SHARD)
-             (12, CONFUSE RAY)
-             (15, ICY WIND)
-             (18, PAYBACK)
-             (20, MIST)
-             (23, FEINT ATTACK)
-             (26, HEX)
-             (28, AURORA BEAM)
-             (31, EXTRASENSORY)
-             (34, SAFEGUARD)
-             (36, FREEZE DRY)
-             (39, IMPRISON)
-             (42, GRUDGE)
-             (44, BLIZZARD)
-             (47, CAPTIVATE)
-             (50, SHEER COLD)
-             (53, NASTY PLOT)
-
-
-
-- DiglettAlolan
-             ( 1, SAND ATTACK)
-             ( 1, METAL CLAW)
-             ( 4, GROWL)
-             ( 7, ASTONISH)
-             (10, MUD SLAP)
-             (14, MAGNITUDE)
-             (18, BULLDOZE)
-             (22, SUCKER PUNCH)
-             (25, MUD BOMB)
-             (28, EARTH POWER)
-             (31, DIG)
-             (35, IRON HEAD)
-             (39, EARTHQUAKE)
-             (43, FISSURE)
-
-
-
-- DugtrioAlolan
-             ( 0, SAND TOMB)
-             ( 1, SAND TOMB)
-             ( 1, ROTOTILLER)
-             ( 1, NIGHT SLASH)
-             ( 1, TRI ATTACK)
-             ( 1, SAND ATTACK)
-             ( 1, METAL CLAW)
-             ( 1, GROWL)
-             ( 4, GROWL)
-             ( 7, ASTONISH)
-             (10, MUD SLAP)
-             (14, MAGNITUDE)
-             (18, BULLDOZE)
-             (22, SUCKER PUNCH)
-             (25, MUD BOMB)
-             (30, EARTH POWER)
-             (35, DIG)
-             (41, IRON HEAD)
-             (47, EARTHQUAKE)
-             (53, FISSURE)
-
-
-
-- MeowthAlolan
-             ( 1, SCRATCH)
-             ( 1, GROWL)
-             ( 6, BITE)
-             ( 9, FAKE OUT)
-             (14, FURY SWIPES)
-             (17, SCREECH)
-             (22, FEINT ATTACK)
-             (25, TAUNT)
-             (30, PAY DAY)
-             (33, SLASH)
-             (38, NASTY PLOT)
-             (41, ASSURANCE)
-             (46, CAPTIVATE)
-             (49, NIGHT SLASH)
-             (50, FEINT)
-             (55, DARK PULSE)
-
-
-
-- PersianAlolan
-             ( 0, SWIFT)
-             ( 1, SWIFT)
-             ( 1, HYPER VOICE)
-             ( 1, QUASH)
-             ( 1, PLAY ROUGH)
-             ( 1, SWITCHEROO)
-             ( 1, SCRATCH)
-             ( 1, GROWL)
-             ( 1, BITE)
-             ( 1, FAKE OUT)
-             ( 6, BITE)
-             ( 9, FAKE OUT)
-             (14, FURY SWIPES)
-             (17, SCREECH)
-             (22, FEINT ATTACK)
-             (25, TAUNT)
-             (32, POWER GEM)
-             (37, SLASH)
-             (44, NASTY PLOT)
-             (49, ASSURANCE)
-             (56, CAPTIVATE)
-             (61, NIGHT SLASH)
-             (65, FEINT)
-             (69, DARK PULSE)
-
-
-
-- GeodudeAlolan
-             ( 1, TACKLE)
-             ( 1, DEFENSE CURL)
-             ( 4, CHARGE)
-             ( 6, ROCK POLISH)
-             (10, ROLLOUT)
-             (12, SPARK)
-             (16, ROCK THROW)
-             (18, SMACK DOWN)
-             (22, THUNDER PUNCH)
-             (24, SELF DESTRUCT)
-             (28, STEALTH ROCK)
-             (30, ROCK BLAST)
-             (34, DISCHARGE)
-             (36, EXPLOSION)
-             (40, DOUBLE EDGE)
-             (42, STONE EDGE)
-
-
-
-- GravelerAlolan
-             ( 1, TACKLE)
-             ( 1, DEFENSE CURL)
-             ( 1, CHARGE)
-             ( 1, ROCK POLISH)
-             ( 4, CHARGE)
-             ( 6, ROCK POLISH)
-             (10, ROLLOUT)
-             (12, SPARK)
-             (16, ROCK THROW)
-             (18, SMACK DOWN)
-             (22, THUNDER PUNCH)
-             (24, SELF DESTRUCT)
-             (30, STEALTH ROCK)
-             (34, ROCK BLAST)
-             (40, DISCHARGE)
-             (44, EXPLOSION)
-             (50, DOUBLE EDGE)
-             (54, STONE EDGE)
-
-
-
-- GolemAlolan
-             ( 1, HEAVY SLAM)
-             ( 1, TACKLE)
-             ( 1, DEFENSE CURL)
-             ( 1, CHARGE)
-             ( 1, ROCK POLISH)
-             ( 4, CHARGE)
-             ( 6, ROCK POLISH)
-             (10, STEAMROLLER)
-             (12, SPARK)
-             (16, ROCK THROW)
-             (18, SMACK DOWN)
-             (22, THUNDER PUNCH)
-             (24, SELF DESTRUCT)
-             (30, STEALTH ROCK)
-             (34, ROCK BLAST)
-             (40, DISCHARGE)
-             (44, EXPLOSION)
-             (50, DOUBLE EDGE)
-             (54, STONE EDGE)
-             (60, HEAVY SLAM)
-
-
-
-- GrimerAlolan
-             ( 1, POUND)
-             ( 1, POISON GAS)
-             ( 4, HARDEN)
-             ( 7, BITE)
-             (12, DISABLE)
-             (15, ACID SPRAY)
-             (18, POISON FANG)
-             (21, MINIMIZE)
-             (26, FLING)
-             (29, KNOCK OFF)
-             (32, CRUNCH)
-             (37, SCREECH)
-             (40, GUNK SHOT)
-             (43, ACID ARMOR)
-             (46, BELCH)
-             (48, MEMENTO)
-
-
-
-- MukAlolan
-             ( 0, VENOM DRENCH)
-             ( 1, VENOM DRENCH)
-             ( 1, POUND)
-             ( 1, POISON GAS)
-             ( 1, HARDEN)
-             ( 1, BITE)
-             ( 4, HARDEN)
-             ( 7, BITE)
-             (12, DISABLE)
-             (15, ACID SPRAY)
-             (18, POISON FANG)
-             (21, MINIMIZE)
-             (26, FLING)
-             (29, KNOCK OFF)
-             (32, CRUNCH)
-             (37, SCREECH)
-             (40, GUNK SHOT)
-             (46, ACID ARMOR)
-             (52, BELCH)
-             (57, MEMENTO)
-
-
-
-- ExeggutorAlolan
-             ( 0, DRAGON HAMMER)
-             ( 1, DRAGON HAMMER)
-             ( 1, SEED BOMB)
-             ( 1, BARRAGE)
-             ( 1, HYPNOSIS)
-             ( 1, CONFUSION)
-             (11, LEECH SEED)
-             (17, PSYSHOCK)
-             (19, STUN SPORE)
-             (21, POISON POWDER)
-             (23, SLEEP POWDER)
-             (27, EGG BOMB)
-             (37, WOOD HAMMER)
-             (47, LEAF STORM)
-
-
-
-- MarowakAlolan
-             ( 1, GROWL)
-             ( 1, TAIL WHIP)
-             ( 1, BONE CLUB)
-             ( 1, FLAME WHEEL)
-             ( 3, TAIL WHIP)
-             ( 7, BONE CLUB)
-             (11, FLAME WHEEL)
-             (13, LEER)
-             (17, HEX)
-             (21, BONEMERANG)
-             (23, WILL O WISP)
-             (27, SHADOW BONE)
-             (33, THRASH)
-             (37, FLING)
-             (43, STOMPING TANTRUM)
-             (49, ENDEAVOR)
-             (53, FLARE BLITZ)
-             (59, RETALIATE)
-             (65, BONE RUSH)
-
-
-
-- PonytaGalarian
-             ( 1, TACKLE)
-             ( 1, GROWL)
-             ( 5, TAIL WHIP)
-             (10, CONFUSION)
-             (15, FAIRY WIND)
-             (20, AGILITY)
-             (25, PSYBEAM)
-             (30, STOMP)
-             (35, HEAL PULSE)
-             (41, TAKE DOWN)
-             (45, DAZZLING GLEAM)
-             (50, PSYCHIC)
-             (55, HEALING WISH)
-
-
-
-- RapidashGalarian
-             ( 0, PSYCHO CUT)
-             ( 1, PSYCHO CUT)
-             ( 1, HIGH HORSEPOWER)
-             ( 1, MEGAHORN)
-             ( 1, TACKLE)
-             ( 1, QUICK ATTACK)
-             ( 1, GROWL)
-             ( 1, TAIL WHIP)
-             ( 1, CONFUSION)
-             (15, FAIRY WIND)
-             (20, AGILITY)
-             (25, PSYBEAM)
-             (30, STOMP)
-             (35, HEAL PULSE)
-             (43, TAKE DOWN)
-             (49, DAZZLING GLEAM)
-             (56, PSYCHIC)
-             (63, HEALING WISH)
-
-
-
-- SlowpokeGalarian
-             ( 1, TACKLE)
-             ( 1, CURSE)
-             ( 3, GROWL)
-             ( 6, ACID)
-             ( 9, YAWN)
-             (12, CONFUSION)
-             (15, DISABLE)
-             (18, WATER PULSE)
-             (21, HEADBUTT)
-             (24, ZEN HEADBUTT)
-             (27, AMNESIA)
-             (30, SURF)
-             (33, SLACK OFF)
-             (36, PSYCHIC)
-             (39, PSYCH UP)
-             (42, RAIN DANCE)
-             (45, HEAL PULSE)
-
-
-
-- SlowbroGalarian
-             ( 0, SHELL SIDE ARM)
-             ( 1, SHELL SIDE ARM)
-             ( 1, WITHDRAW)
-             ( 1, TACKLE)
-             ( 1, CURSE)
-             ( 1, GROWL)
-             ( 1, ACID)
-             ( 9, YAWN)
-             (12, CONFUSION)
-             (15, DISABLE)
-             (18, WATER PULSE)
-             (21, HEADBUTT)
-             (24, ZEN HEADBUTT)
-             (27, AMNESIA)
-             (30, SURF)
-             (33, SLACK OFF)
-             (36, PSYCHIC)
-             (39, PSYCH UP)
-             (42, RAIN DANCE)
-             (45, HEAL PULSE)
-
-
-
-- WeezingGalarian
-             ( 0, DOUBLE HIT)
-             ( 1, DOUBLE HIT)
-             ( 1, STRANGE STEAM)
-             ( 1, DEFOG)
-             ( 1, HEAT WAVE)
-             ( 1, SMOG)
-             ( 1, SMOKESCREEN)
-             ( 1, HAZE)
-             ( 1, POISON GAS)
-             ( 1, TACKLE)
-             ( 1, FAIRY WIND)
-             ( 1, AROMATIC MIST)
-             (12, CLEAR SMOG)
-             (16, ASSURANCE)
-             (20, SLUDGE)
-             (24, AROMATHERAPY)
-             (28, SELF DESTRUCT)
-             (32, SLUDGE BOMB)
-             (38, TOXIC)
-             (44, BELCH)
-             (50, EXPLOSION)
-             (56, MEMENTO)
-             (62, DESTINY BOND)
-             (68, MISTY TERRAIN)
-
-
-
-- SlowkingGalarian
-             ( 0, EERIE SPELL)
-             ( 1, EERIE SPELL)
-             ( 1, POWER GEM)
-             ( 1, NASTY PLOT)
-             ( 1, SWAGGER)
-             ( 1, TACKLE)
-             ( 1, CURSE)
-             ( 1, GROWL)
-             ( 1, ACID)
-             ( 9, YAWN)
-             (12, CONFUSION)
-             (15, DISABLE)
-             (18, WATER PULSE)
-             (21, HEADBUTT)
-             (24, ZEN HEADBUTT)
-             (27, AMNESIA)
-             (30, SURF)
-             (33, SLACK OFF)
-             (36, PSYCHIC)
-             (39, PSYCH UP)
-             (42, RAIN DANCE)
-             (45, HEAL PULSE)
-
-
-
-- GrowlitheHisuian
-             ( 1, TACKLE)
-             ( 1, ROAR)
-             ( 5, EMBER)
-             ( 8, LEER)
-             ( 9, BITE)
-             (10, ODOR SLEUTH)
-             (12, HELPING HAND)
-             (15, FIRE FANG)
-             (19, REVERSAL)
-             (21, ROCK SLIDE)
-             (23, TAKE DOWN)
-             (28, FLAME BURST)
-             (29, CRUNCH)
-             (30, AGILITY)
-             (32, RETALIATE)
-             (34, FLAMETHROWER)
-             (37, DOUBLE EDGE)
-             (41, HEAT WAVE)
-             (43, OUTRAGE)
-             (47, FLARE BLITZ)
-
-
-
-- ArcanineHisuian
-             ( 1, TACKLE)
-             ( 1, ROAR)
-             ( 5, EMBER)
-             ( 8, LEER)
-             ( 9, BITE)
-             (10, ODOR SLEUTH)
-             (12, HELPING HAND)
-             (15, FIRE FANG)
-             (19, REVERSAL)
-             (21, ROCK SLIDE)
-             (23, TAKE DOWN)
-             (28, FLAME BURST)
-             (29, CRUNCH)
-             (30, AGILITY)
-             (32, RETALIATE)
-             (34, FLAMETHROWER)
-             (37, DOUBLE EDGE)
-             (41, HEAT WAVE)
-             (43, OUTRAGE)
-             (47, FLARE BLITZ)
-
-
-
-- VoltorbHisuian
-             ( 1, THUNDER SHOCK)
-             ( 1, CHARGE)
-             ( 4, SONIC BOOM)
-             ( 6, EERIE IMPULSE)
-             ( 9, THUNDER WAVE)
-             (11, ROLLOUT)
-             (15, SPARK)
-             (21, ENERGY BALL)
-             (25, ELECTRO BALL)
-             (26, SELF DESTRUCT)
-             (29, DISCHARGE)
-             (31, LIGHT SCREEN)
-             (34, MAGNET RISE)
-             (37, THUNDER)
-             (41, GYRO BALL)
-             (43, MIRROR COAT)
-             (47, EXPLOSION)
-
-
-
-- ElectrodeHisuian
-             ( 1, THUNDER SHOCK)
-             ( 1, CHARGE)
-             ( 4, SONIC BOOM)
-             ( 6, EERIE IMPULSE)
-             ( 9, THUNDER WAVE)
-             (11, ROLLOUT)
-             (15, SPARK)
-             (21, ENERGY BALL)
-             (25, ELECTRO BALL)
-             (26, SELF DESTRUCT)
-             (30, DISCHARGE)
-             (33, LIGHT SCREEN)
-             (37, MAGNET RISE)
-             (40, THUNDER)
-             (44, GYRO BALL)
-             (48, MIRROR COAT)
-             (52, EXPLOSION)
-
-- Typhlosion Hisuian
-             ( 0, MOVE_HEX)
-             ( 1, MOVE_BURN_UP)
-             ( 1, MOVE_ERUPTION)
-             ( 1, MOVE_GYRO_BALL)
-             ( 1, MOVE_TACKLE)
-             ( 1, MOVE_LEER)
-             ( 1, MOVE_EMBER)
-             ( 6, MOVE_SMOKESCREEN)
-             (10, MOVE_EMBER)
-             (13, MOVE_QUICK_ATTACK)
-             (19, MOVE_FLAME_WHEEL)
-             (24, MOVE_DEFENSE_CURL)
-             (31, MOVE_SWIFT)
-             (35, MOVE_FLAME_CHARGE)
-             (43, MOVE_LAVA_PLUME)
-             (48, MOVE_FLAMETHROWER)
-             (56, MOVE_INFERNO)
-             (61, MOVE_ROLLOUT)
-             (65, MOVE_BURN_UP)
-             (74, MOVE_ERUPTION)
-
 - Wyrdeer
              ( 0, MOVE_EXTRASENSORY)
              ( 1, MOVE_PSYSHIELD_BASH)
@@ -9403,3 +8766,642 @@
              (49, MOVE_SNORE)
              (58, MOVE_THRASH)
              (67, MOVE_HAMMER_ARM)
+
+
+- Rattata Alolan
+             ( 1, TACKLE)
+             ( 1, TAIL WHIP)
+             ( 4, QUICK ATTACK)
+             ( 7, FOCUS ENERGY)
+             (10, BITE)
+             (13, PURSUIT)
+             (16, HYPER FANG)
+             (19, ASSURANCE)
+             (22, CRUNCH)
+             (25, SUCKER PUNCH)
+             (28, SUPER FANG)
+             (31, DOUBLE EDGE)
+             (34, ENDEAVOR)
+
+
+
+- Raticate Alolan
+             ( 0, SCARY FACE)
+             ( 1, SCARY FACE)
+             ( 1, SWORDS DANCE)
+             ( 1, TACKLE)
+             ( 1, TAIL WHIP)
+             ( 1, QUICK ATTACK)
+             ( 1, FOCUS ENERGY)
+             ( 4, QUICK ATTACK)
+             ( 7, FOCUS ENERGY)
+             (10, BITE)
+             (13, PURSUIT)
+             (16, HYPER FANG)
+             (19, ASSURANCE)
+             (24, CRUNCH)
+             (29, SUCKER PUNCH)
+             (34, SUPER FANG)
+             (39, DOUBLE EDGE)
+             (44, ENDEAVOR)
+
+
+
+- Raichu Alolan
+             ( 0, PSYCHIC)
+             ( 1, PSYCHIC)
+             ( 1, SPEED SWAP)
+             ( 1, THUNDER SHOCK)
+             ( 1, TAIL WHIP)
+             ( 1, QUICK ATTACK)
+             ( 1, THUNDERBOLT)
+             ( 1, ELECTRIC TERRAIN)
+
+
+
+- Sandshrew Alolan
+             ( 1, SCRATCH)
+             ( 1, DEFENSE CURL)
+             ( 3, BIDE)
+             ( 5, POWDER SNOW)
+             ( 7, ICE BALL)
+             ( 9, RAPID SPIN)
+             (11, FURY CUTTER)
+             (14, METAL CLAW)
+             (17, SWIFT)
+             (20, FURY SWIPES)
+             (23, IRON DEFENSE)
+             (26, SLASH)
+             (30, IRON HEAD)
+             (34, GYRO BALL)
+             (38, SWORDS DANCE)
+             (42, HAIL)
+             (46, BLIZZARD)
+
+
+
+- Sandslash Alolan
+             ( 0, ICICLE SPEAR),
+             ( 1, ICICLE SPEAR),
+             ( 1, METAL BURST),
+             ( 1, ICICLE CRASH),
+             ( 1, SCRATCH),
+             ( 1, DEFENSE CURL),
+             ( 3, BIDE),
+             ( 5, POWDER SNOW),
+             ( 7, ICE BALL),
+             ( 9, RAPID SPIN),
+             (11, FURY CUTTER),
+             (14, METAL CLAW),
+             (17, SWIFT),
+             (20, FURY SWIPES),
+             (23, IRON DEFENSE),
+             (26, SLASH),
+             (30, IRON HEAD),
+             (34, GYRO BALL),
+             (38, SWORDS DANCE),
+             (42, HAIL),
+             (46, BLIZZARD),
+
+
+
+- Vulpix Alolan
+             ( 1, POWDER SNOW)
+             ( 4, TAIL WHIP)
+             ( 7, ROAR)
+             ( 9, BABY DOLL EYES)
+             (10, ICE SHARD)
+             (12, CONFUSE RAY)
+             (15, ICY WIND)
+             (18, PAYBACK)
+             (20, MIST)
+             (23, FEINT ATTACK)
+             (26, HEX)
+             (28, AURORA BEAM)
+             (31, EXTRASENSORY)
+             (34, SAFEGUARD)
+             (36, FREEZE DRY)
+             (39, IMPRISON)
+             (42, GRUDGE)
+             (44, BLIZZARD)
+             (47, CAPTIVATE)
+             (50, SHEER COLD)
+
+
+
+- Ninetales Alolan
+             ( 0, DAZZLING GLEAM)
+             ( 1, DAZZLING GLEAM)
+             ( 1, NASTY PLOT)
+             ( 1, POWDER SNOW)
+             ( 4, TAIL WHIP)
+             ( 7, ROAR)
+             ( 9, BABY DOLL EYES)
+             (10, ICE SHARD)
+             (12, CONFUSE RAY)
+             (15, ICY WIND)
+             (18, PAYBACK)
+             (20, MIST)
+             (23, FEINT ATTACK)
+             (26, HEX)
+             (28, AURORA BEAM)
+             (31, EXTRASENSORY)
+             (34, SAFEGUARD)
+             (36, FREEZE DRY)
+             (39, IMPRISON)
+             (42, GRUDGE)
+             (44, BLIZZARD)
+             (47, CAPTIVATE)
+             (50, SHEER COLD)
+             (53, NASTY PLOT)
+
+
+
+- Diglett Alolan
+             ( 1, SAND ATTACK)
+             ( 1, METAL CLAW)
+             ( 4, GROWL)
+             ( 7, ASTONISH)
+             (10, MUD SLAP)
+             (14, MAGNITUDE)
+             (18, BULLDOZE)
+             (22, SUCKER PUNCH)
+             (25, MUD BOMB)
+             (28, EARTH POWER)
+             (31, DIG)
+             (35, IRON HEAD)
+             (39, EARTHQUAKE)
+             (43, FISSURE)
+
+
+
+- Dugtrio Alolan
+             ( 0, SAND TOMB)
+             ( 1, SAND TOMB)
+             ( 1, ROTOTILLER)
+             ( 1, NIGHT SLASH)
+             ( 1, TRI ATTACK)
+             ( 1, SAND ATTACK)
+             ( 1, METAL CLAW)
+             ( 1, GROWL)
+             ( 4, GROWL)
+             ( 7, ASTONISH)
+             (10, MUD SLAP)
+             (14, MAGNITUDE)
+             (18, BULLDOZE)
+             (22, SUCKER PUNCH)
+             (25, MUD BOMB)
+             (30, EARTH POWER)
+             (35, DIG)
+             (41, IRON HEAD)
+             (47, EARTHQUAKE)
+             (53, FISSURE)
+
+
+
+- Meowth Alolan
+             ( 1, SCRATCH)
+             ( 1, GROWL)
+             ( 6, BITE)
+             ( 9, FAKE OUT)
+             (14, FURY SWIPES)
+             (17, SCREECH)
+             (22, FEINT ATTACK)
+             (25, TAUNT)
+             (30, PAY DAY)
+             (33, SLASH)
+             (38, NASTY PLOT)
+             (41, ASSURANCE)
+             (46, CAPTIVATE)
+             (49, NIGHT SLASH)
+             (50, FEINT)
+             (55, DARK PULSE)
+
+
+
+- Persian Alolan
+             ( 0, SWIFT)
+             ( 1, SWIFT)
+             ( 1, HYPER VOICE)
+             ( 1, QUASH)
+             ( 1, PLAY ROUGH)
+             ( 1, SWITCHEROO)
+             ( 1, SCRATCH)
+             ( 1, GROWL)
+             ( 1, BITE)
+             ( 1, FAKE OUT)
+             ( 6, BITE)
+             ( 9, FAKE OUT)
+             (14, FURY SWIPES)
+             (17, SCREECH)
+             (22, FEINT ATTACK)
+             (25, TAUNT)
+             (32, POWER GEM)
+             (37, SLASH)
+             (44, NASTY PLOT)
+             (49, ASSURANCE)
+             (56, CAPTIVATE)
+             (61, NIGHT SLASH)
+             (65, FEINT)
+             (69, DARK PULSE)
+
+
+
+- Geodude Alolan
+             ( 1, TACKLE)
+             ( 1, DEFENSE CURL)
+             ( 4, CHARGE)
+             ( 6, ROCK POLISH)
+             (10, ROLLOUT)
+             (12, SPARK)
+             (16, ROCK THROW)
+             (18, SMACK DOWN)
+             (22, THUNDER PUNCH)
+             (24, SELF DESTRUCT)
+             (28, STEALTH ROCK)
+             (30, ROCK BLAST)
+             (34, DISCHARGE)
+             (36, EXPLOSION)
+             (40, DOUBLE EDGE)
+             (42, STONE EDGE)
+
+
+
+- Graveler Alolan
+             ( 1, TACKLE)
+             ( 1, DEFENSE CURL)
+             ( 1, CHARGE)
+             ( 1, ROCK POLISH)
+             ( 4, CHARGE)
+             ( 6, ROCK POLISH)
+             (10, ROLLOUT)
+             (12, SPARK)
+             (16, ROCK THROW)
+             (18, SMACK DOWN)
+             (22, THUNDER PUNCH)
+             (24, SELF DESTRUCT)
+             (30, STEALTH ROCK)
+             (34, ROCK BLAST)
+             (40, DISCHARGE)
+             (44, EXPLOSION)
+             (50, DOUBLE EDGE)
+             (54, STONE EDGE)
+
+
+
+- Golem Alolan
+             ( 1, HEAVY SLAM)
+             ( 1, TACKLE)
+             ( 1, DEFENSE CURL)
+             ( 1, CHARGE)
+             ( 1, ROCK POLISH)
+             ( 4, CHARGE)
+             ( 6, ROCK POLISH)
+             (10, STEAMROLLER)
+             (12, SPARK)
+             (16, ROCK THROW)
+             (18, SMACK DOWN)
+             (22, THUNDER PUNCH)
+             (24, SELF DESTRUCT)
+             (30, STEALTH ROCK)
+             (34, ROCK BLAST)
+             (40, DISCHARGE)
+             (44, EXPLOSION)
+             (50, DOUBLE EDGE)
+             (54, STONE EDGE)
+             (60, HEAVY SLAM)
+
+
+
+- Grimer Alolan
+             ( 1, POUND)
+             ( 1, POISON GAS)
+             ( 4, HARDEN)
+             ( 7, BITE)
+             (12, DISABLE)
+             (15, ACID SPRAY)
+             (18, POISON FANG)
+             (21, MINIMIZE)
+             (26, FLING)
+             (29, KNOCK OFF)
+             (32, CRUNCH)
+             (37, SCREECH)
+             (40, GUNK SHOT)
+             (43, ACID ARMOR)
+             (46, BELCH)
+             (48, MEMENTO)
+
+
+
+- Muk Alolan
+             ( 0, VENOM DRENCH)
+             ( 1, VENOM DRENCH)
+             ( 1, POUND)
+             ( 1, POISON GAS)
+             ( 1, HARDEN)
+             ( 1, BITE)
+             ( 4, HARDEN)
+             ( 7, BITE)
+             (12, DISABLE)
+             (15, ACID SPRAY)
+             (18, POISON FANG)
+             (21, MINIMIZE)
+             (26, FLING)
+             (29, KNOCK OFF)
+             (32, CRUNCH)
+             (37, SCREECH)
+             (40, GUNK SHOT)
+             (46, ACID ARMOR)
+             (52, BELCH)
+             (57, MEMENTO)
+
+
+
+- Exeggutor Alolan
+             ( 0, DRAGON HAMMER)
+             ( 1, DRAGON HAMMER)
+             ( 1, SEED BOMB)
+             ( 1, BARRAGE)
+             ( 1, HYPNOSIS)
+             ( 1, CONFUSION)
+             (11, LEECH SEED)
+             (17, PSYSHOCK)
+             (19, STUN SPORE)
+             (21, POISON POWDER)
+             (23, SLEEP POWDER)
+             (27, EGG BOMB)
+             (37, WOOD HAMMER)
+             (47, LEAF STORM)
+
+
+
+- Marowak Alolan
+             ( 1, GROWL)
+             ( 1, TAIL WHIP)
+             ( 1, BONE CLUB)
+             ( 1, FLAME WHEEL)
+             ( 3, TAIL WHIP)
+             ( 7, BONE CLUB)
+             (11, FLAME WHEEL)
+             (13, LEER)
+             (17, HEX)
+             (21, BONEMERANG)
+             (23, WILL O WISP)
+             (27, SHADOW BONE)
+             (33, THRASH)
+             (37, FLING)
+             (43, STOMPING TANTRUM)
+             (49, ENDEAVOR)
+             (53, FLARE BLITZ)
+             (59, RETALIATE)
+             (65, BONE RUSH)
+
+
+
+- Ponyta Galarian
+             ( 1, TACKLE)
+             ( 1, GROWL)
+             ( 5, TAIL WHIP)
+             (10, CONFUSION)
+             (15, FAIRY WIND)
+             (20, AGILITY)
+             (25, PSYBEAM)
+             (30, STOMP)
+             (35, HEAL PULSE)
+             (41, TAKE DOWN)
+             (45, DAZZLING GLEAM)
+             (50, PSYCHIC)
+             (55, HEALING WISH)
+
+
+
+- Rapidash Galarian
+             ( 0, PSYCHO CUT)
+             ( 1, PSYCHO CUT)
+             ( 1, HIGH HORSEPOWER)
+             ( 1, MEGAHORN)
+             ( 1, TACKLE)
+             ( 1, QUICK ATTACK)
+             ( 1, GROWL)
+             ( 1, TAIL WHIP)
+             ( 1, CONFUSION)
+             (15, FAIRY WIND)
+             (20, AGILITY)
+             (25, PSYBEAM)
+             (30, STOMP)
+             (35, HEAL PULSE)
+             (43, TAKE DOWN)
+             (49, DAZZLING GLEAM)
+             (56, PSYCHIC)
+             (63, HEALING WISH)
+
+
+
+- Slowpoke Galarian
+             ( 1, TACKLE)
+             ( 1, CURSE)
+             ( 3, GROWL)
+             ( 6, ACID)
+             ( 9, YAWN)
+             (12, CONFUSION)
+             (15, DISABLE)
+             (18, WATER PULSE)
+             (21, HEADBUTT)
+             (24, ZEN HEADBUTT)
+             (27, AMNESIA)
+             (30, SURF)
+             (33, SLACK OFF)
+             (36, PSYCHIC)
+             (39, PSYCH UP)
+             (42, RAIN DANCE)
+             (45, HEAL PULSE)
+
+
+
+- Slowbro Galarian
+             ( 0, SHELL SIDE ARM)
+             ( 1, SHELL SIDE ARM)
+             ( 1, WITHDRAW)
+             ( 1, TACKLE)
+             ( 1, CURSE)
+             ( 1, GROWL)
+             ( 1, ACID)
+             ( 9, YAWN)
+             (12, CONFUSION)
+             (15, DISABLE)
+             (18, WATER PULSE)
+             (21, HEADBUTT)
+             (24, ZEN HEADBUTT)
+             (27, AMNESIA)
+             (30, SURF)
+             (33, SLACK OFF)
+             (36, PSYCHIC)
+             (39, PSYCH UP)
+             (42, RAIN DANCE)
+             (45, HEAL PULSE)
+
+
+
+- Weezing Galarian
+             ( 0, DOUBLE HIT)
+             ( 1, DOUBLE HIT)
+             ( 1, STRANGE STEAM)
+             ( 1, DEFOG)
+             ( 1, HEAT WAVE)
+             ( 1, SMOG)
+             ( 1, SMOKESCREEN)
+             ( 1, HAZE)
+             ( 1, POISON GAS)
+             ( 1, TACKLE)
+             ( 1, FAIRY WIND)
+             ( 1, AROMATIC MIST)
+             (12, CLEAR SMOG)
+             (16, ASSURANCE)
+             (20, SLUDGE)
+             (24, AROMATHERAPY)
+             (28, SELF DESTRUCT)
+             (32, SLUDGE BOMB)
+             (38, TOXIC)
+             (44, BELCH)
+             (50, EXPLOSION)
+             (56, MEMENTO)
+             (62, DESTINY BOND)
+             (68, MISTY TERRAIN)
+
+
+
+- Slowking Galarian
+             ( 0, EERIE SPELL)
+             ( 1, EERIE SPELL)
+             ( 1, POWER GEM)
+             ( 1, NASTY PLOT)
+             ( 1, SWAGGER)
+             ( 1, TACKLE)
+             ( 1, CURSE)
+             ( 1, GROWL)
+             ( 1, ACID)
+             ( 9, YAWN)
+             (12, CONFUSION)
+             (15, DISABLE)
+             (18, WATER PULSE)
+             (21, HEADBUTT)
+             (24, ZEN HEADBUTT)
+             (27, AMNESIA)
+             (30, SURF)
+             (33, SLACK OFF)
+             (36, PSYCHIC)
+             (39, PSYCH UP)
+             (42, RAIN DANCE)
+             (45, HEAL PULSE)
+
+
+
+- Growlithe Hisuian
+             ( 1, TACKLE)
+             ( 1, ROAR)
+             ( 5, EMBER)
+             ( 8, LEER)
+             ( 9, BITE)
+             (10, ODOR SLEUTH)
+             (12, HELPING HAND)
+             (15, FIRE FANG)
+             (19, REVERSAL)
+             (21, ROCK SLIDE)
+             (23, TAKE DOWN)
+             (28, FLAME BURST)
+             (29, CRUNCH)
+             (30, AGILITY)
+             (32, RETALIATE)
+             (34, FLAMETHROWER)
+             (37, DOUBLE EDGE)
+             (41, HEAT WAVE)
+             (43, OUTRAGE)
+             (47, FLARE BLITZ)
+
+
+
+- Arcanine Hisuian
+             ( 1, TACKLE)
+             ( 1, ROAR)
+             ( 5, EMBER)
+             ( 8, LEER)
+             ( 9, BITE)
+             (10, ODOR SLEUTH)
+             (12, HELPING HAND)
+             (15, FIRE FANG)
+             (19, REVERSAL)
+             (21, ROCK SLIDE)
+             (23, TAKE DOWN)
+             (28, FLAME BURST)
+             (29, CRUNCH)
+             (30, AGILITY)
+             (32, RETALIATE)
+             (34, FLAMETHROWER)
+             (37, DOUBLE EDGE)
+             (41, HEAT WAVE)
+             (43, OUTRAGE)
+             (47, FLARE BLITZ)
+
+
+
+- Voltorb Hisuian
+             ( 1, THUNDER SHOCK)
+             ( 1, CHARGE)
+             ( 4, SONIC BOOM)
+             ( 6, EERIE IMPULSE)
+             ( 9, THUNDER WAVE)
+             (11, ROLLOUT)
+             (15, SPARK)
+             (21, ENERGY BALL)
+             (25, ELECTRO BALL)
+             (26, SELF DESTRUCT)
+             (29, DISCHARGE)
+             (31, LIGHT SCREEN)
+             (34, MAGNET RISE)
+             (37, THUNDER)
+             (41, GYRO BALL)
+             (43, MIRROR COAT)
+             (47, EXPLOSION)
+
+
+
+- Electrode Hisuian
+             ( 1, THUNDER SHOCK)
+             ( 1, CHARGE)
+             ( 4, SONIC BOOM)
+             ( 6, EERIE IMPULSE)
+             ( 9, THUNDER WAVE)
+             (11, ROLLOUT)
+             (15, SPARK)
+             (21, ENERGY BALL)
+             (25, ELECTRO BALL)
+             (26, SELF DESTRUCT)
+             (30, DISCHARGE)
+             (33, LIGHT SCREEN)
+             (37, MAGNET RISE)
+             (40, THUNDER)
+             (44, GYRO BALL)
+             (48, MIRROR COAT)
+             (52, EXPLOSION)
+
+- Typhlosion Hisuian
+             ( 0, MOVE_HEX)
+             ( 1, MOVE_BURN_UP)
+             ( 1, MOVE_ERUPTION)
+             ( 1, MOVE_GYRO_BALL)
+             ( 1, MOVE_TACKLE)
+             ( 1, MOVE_LEER)
+             ( 1, MOVE_EMBER)
+             ( 6, MOVE_SMOKESCREEN)
+             (10, MOVE_EMBER)
+             (13, MOVE_QUICK_ATTACK)
+             (19, MOVE_FLAME_WHEEL)
+             (24, MOVE_DEFENSE_CURL)
+             (31, MOVE_SWIFT)
+             (35, MOVE_FLAME_CHARGE)
+             (43, MOVE_LAVA_PLUME)
+             (48, MOVE_FLAMETHROWER)
+             (56, MOVE_INFERNO)
+             (61, MOVE_ROLLOUT)
+             (65, MOVE_BURN_UP)
+             (74, MOVE_ERUPTION)

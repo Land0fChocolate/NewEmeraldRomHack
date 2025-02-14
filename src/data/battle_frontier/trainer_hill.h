@@ -3227,7 +3227,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                     [0] =
                                         {
                                             .species = SPECIES_SMEARGLE,
-                                            .heldItem = ITEM_SCOPE_LENS,
+                                            .heldItem = ITEM_RAZOR_CLAW,
                                             .moves = {MOVE_EARTHQUAKE, MOVE_SHADOW_BALL, MOVE_AERIAL_ACE, MOVE_IMPRISON},
                                             .level = 0,
                                             .ppBonuses = 0,
@@ -3290,7 +3290,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                     [3] =
                                         {
                                             .species = SPECIES_SMEARGLE,
-                                            .heldItem = ITEM_SCOPE_LENS,
+                                            .heldItem = ITEM_RAZOR_CLAW,
                                             .moves = {MOVE_PSYCHIC, MOVE_SURF, MOVE_THUNDERBOLT, MOVE_IMPRISON},
                                             .level = 0,
                                             .ppBonuses = 0,
@@ -3779,7 +3779,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                     [5] =
                                         {
                                             .species = SPECIES_MAGBY,
-                                            .heldItem = ITEM_SCOPE_LENS,
+                                            .heldItem = ITEM_RAZOR_CLAW,
                                             .moves = {MOVE_FIRE_BLAST, MOVE_CONFUSE_RAY, MOVE_THUNDER_PUNCH, MOVE_BARRIER},
                                             .level = 0,
                                             .ppBonuses = 0,
@@ -3866,7 +3866,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                     [1] =
                                         {
                                             .species = SPECIES_SLOWKING,
-                                            .heldItem = ITEM_SCOPE_LENS,
+                                            .heldItem = ITEM_RAZOR_CLAW,
                                             .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_BLIZZARD, MOVE_DISABLE},
                                             .level = 0,
                                             .ppBonuses = 0,
@@ -3999,7 +3999,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                     [1] =
                                         {
                                             .species = SPECIES_PORYGON2,
-                                            .heldItem = ITEM_SCOPE_LENS,
+                                            .heldItem = ITEM_RAZOR_CLAW,
                                             .moves = {MOVE_LOCK_ON, MOVE_BLIZZARD, MOVE_CONVERSION_2, MOVE_PSYCHIC},
                                             .level = 0,
                                             .ppBonuses = 0,
@@ -4260,7 +4260,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                     [5] =
                                         {
                                             .species = SPECIES_ZANGOOSE,
-                                            .heldItem = ITEM_SCOPE_LENS,
+                                            .heldItem = ITEM_RAZOR_CLAW,
                                             .moves = {MOVE_CRUSH_CLAW, MOVE_SHADOW_BALL, MOVE_BRICK_BREAK, MOVE_ROAR},
                                             .level = 0,
                                             .ppBonuses = 0,
@@ -4646,7 +4646,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                     [2] =
                                         {
                                             .species = SPECIES_STARMIE,
-                                            .heldItem = ITEM_SCOPE_LENS,
+                                            .heldItem = ITEM_RAZOR_CLAW,
                                             .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_CONFUSE_RAY, MOVE_SWAGGER},
                                             .level = 0,
                                             .ppBonuses = 0,

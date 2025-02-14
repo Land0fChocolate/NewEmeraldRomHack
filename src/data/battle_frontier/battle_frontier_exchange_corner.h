@@ -67,7 +67,7 @@ static const u16 sFrontierExchangeCorner_Vitamins[] =
 
 static const u16 sFrontierExchangeCorner_HoldItems[] =
 { 
-    ITEM_SCOPE_LENS,
+    ITEM_ZOOM_LENS,
     ITEM_WIDE_LENS,
     ITEM_TOXIC_ORB,
     ITEM_FLAME_ORB,
@@ -166,14 +166,11 @@ static const u8 *const sFrontierExchangeCorner_VitaminsDescriptions[] =
 
 static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] = 
 {
-    BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_WideLensDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ToxicOrbDesc,
     BattleFrontier_ExchangeServiceCorner_Text_FlameOrbDesc,
     BattleFrontier_ExchangeServiceCorner_Text_AdrenalineOrbDesc,
     BattleFrontier_ExchangeServiceCorner_Text_RedCardDesc,
     BattleFrontier_ExchangeServiceCorner_Text_DestinyKnotDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_MetronomeDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ShedShellDesc,
     BattleFrontier_ExchangeServiceCorner_Text_StickyBarbDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ExpertBeltDesc,

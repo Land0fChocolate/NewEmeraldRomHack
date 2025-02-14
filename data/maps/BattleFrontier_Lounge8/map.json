@@ -20,8 +20,8 @@
       "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 2,
-      "movement_range_y": 2,
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BattleFrontier_Lounge8_EventScript_NinjaBoy",
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_DELCATTY",
+      "graphics_id": "OBJ_EVENT_GFX_NIDOKING",
       "x": 6,
       "y": 3,
       "elevation": 3,
@@ -63,7 +63,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "OverworldPokemon_EventScript_Delcatty",
+      "script": "OverworldPokemon_EventScript_Nidoking",
       "flag": "0"
     }
   ],

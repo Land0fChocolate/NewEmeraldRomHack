@@ -641,53 +641,32 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem::
 	waitstate
 	special CloseFrontierExchangeCornerItemIconWindow
 	switch VAR_RESULT
-	case 0, BattleFrontier_ExchangeServiceCorner_EventScript_ScopeLens
-	case 1, BattleFrontier_ExchangeServiceCorner_EventScript_WideLens
-	case 2, BattleFrontier_ExchangeServiceCorner_EventScript_ToxicOrb
-	case 3, BattleFrontier_ExchangeServiceCorner_EventScript_FlameOrb
-	case 4, BattleFrontier_ExchangeServiceCorner_EventScript_AdrenalineOrb
-	case 5, BattleFrontier_ExchangeServiceCorner_EventScript_RedCard
-	case 6, BattleFrontier_ExchangeServiceCorner_EventScript_DestinyKnot
-	case 7, BattleFrontier_ExchangeServiceCorner_EventScript_Metronome
-	case 8, BattleFrontier_ExchangeServiceCorner_EventScript_ShedShell
-	case 9, BattleFrontier_ExchangeServiceCorner_EventScript_StickyBarb
-	case 10, BattleFrontier_ExchangeServiceCorner_EventScript_ExpertBelt
-	case 11, BattleFrontier_ExchangeServiceCorner_EventScript_QuickClaw
-	case 12, BattleFrontier_ExchangeServiceCorner_EventScript_Snowball
-	case 13, BattleFrontier_ExchangeServiceCorner_EventScript_LightClay
-	case 14, BattleFrontier_ExchangeServiceCorner_EventScript_BlackSludge
-	case 15, BattleFrontier_ExchangeServiceCorner_EventScript_WiseGlasses
-	case 16, BattleFrontier_ExchangeServiceCorner_EventScript_MuscleBand
-	case 17, BattleFrontier_ExchangeServiceCorner_EventScript_Eviolite
-	case 18, BattleFrontier_ExchangeServiceCorner_EventScript_WeaknessPolicy
-	case 19, BattleFrontier_ExchangeServiceCorner_EventScript_BlunderPolicy
-	case 20, BattleFrontier_ExchangeServiceCorner_EventScript_Leftovers
-	case 21, BattleFrontier_ExchangeServiceCorner_EventScript_AirBalloon
-	case 22, BattleFrontier_ExchangeServiceCorner_EventScript_ChoiceBand
-	case 23, BattleFrontier_ExchangeServiceCorner_EventScript_ChoiceSpecs
-	case 24, BattleFrontier_ExchangeServiceCorner_EventScript_ChoiceScarf
-	case 25, BattleFrontier_ExchangeServiceCorner_EventScript_FocusSash
-	case 26, BattleFrontier_ExchangeServiceCorner_EventScript_LifeOrb
-	case 27, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 0, BattleFrontier_ExchangeServiceCorner_EventScript_ToxicOrb
+	case 1, BattleFrontier_ExchangeServiceCorner_EventScript_FlameOrb
+	case 2, BattleFrontier_ExchangeServiceCorner_EventScript_AdrenalineOrb
+	case 3, BattleFrontier_ExchangeServiceCorner_EventScript_RedCard
+	case 4, BattleFrontier_ExchangeServiceCorner_EventScript_DestinyKnot
+	case 5, BattleFrontier_ExchangeServiceCorner_EventScript_ShedShell
+	case 6, BattleFrontier_ExchangeServiceCorner_EventScript_StickyBarb
+	case 7, BattleFrontier_ExchangeServiceCorner_EventScript_ExpertBelt
+	case 8, BattleFrontier_ExchangeServiceCorner_EventScript_QuickClaw
+	case 9, BattleFrontier_ExchangeServiceCorner_EventScript_Snowball
+	case 10, BattleFrontier_ExchangeServiceCorner_EventScript_LightClay
+	case 11, BattleFrontier_ExchangeServiceCorner_EventScript_BlackSludge
+	case 12, BattleFrontier_ExchangeServiceCorner_EventScript_WiseGlasses
+	case 13, BattleFrontier_ExchangeServiceCorner_EventScript_MuscleBand
+	case 14, BattleFrontier_ExchangeServiceCorner_EventScript_Eviolite
+	case 15, BattleFrontier_ExchangeServiceCorner_EventScript_WeaknessPolicy
+	case 16, BattleFrontier_ExchangeServiceCorner_EventScript_BlunderPolicy
+	case 17, BattleFrontier_ExchangeServiceCorner_EventScript_Leftovers
+	case 18, BattleFrontier_ExchangeServiceCorner_EventScript_AirBalloon
+	case 19, BattleFrontier_ExchangeServiceCorner_EventScript_ChoiceBand
+	case 20, BattleFrontier_ExchangeServiceCorner_EventScript_ChoiceSpecs
+	case 21, BattleFrontier_ExchangeServiceCorner_EventScript_ChoiceScarf
+	case 22, BattleFrontier_ExchangeServiceCorner_EventScript_FocusSash
+	case 23, BattleFrontier_ExchangeServiceCorner_EventScript_LifeOrb
+	case 24, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, BattleFrontier_ExchangeServiceCorner_EventScript_ClerkGoodbye
-	end
-
-BattleFrontier_ExchangeServiceCorner_EventScript_ScopeLens::
-	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmScopeLens, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setvar VAR_0x8008, 12
-	setvar VAR_0x8009, ITEM_SCOPE_LENS
-	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
-	end
-
-BattleFrontier_ExchangeServiceCorner_EventScript_WideLens::
-	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmWideLens, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setvar VAR_0x8008, 12
-	setvar VAR_0x8009, ITEM_WIDE_LENS
-	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
 BattleFrontier_ExchangeServiceCorner_EventScript_ToxicOrb::
@@ -732,15 +711,6 @@ BattleFrontier_ExchangeServiceCorner_EventScript_DestinyKnot::
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	setvar VAR_0x8008, 12
 	setvar VAR_0x8009, ITEM_DESTINY_KNOT
-	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
-	end
-
-BattleFrontier_ExchangeServiceCorner_EventScript_Metronome::
-	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmMetronome, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setvar VAR_0x8008, 12
-	setvar VAR_0x8009, ITEM_METRONOME
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -1136,14 +1106,6 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmHeartScale:
 	.string "You've chosen the Heart Scale.\n"
 	.string "Is that correct?$"
 
-BattleFrontier_ExchangeServiceCorner_Text_ConfirmScopeLens:
-	.string "You've chosen the Scope Lens.\n"
-	.string "Is that correct?$"
-
-BattleFrontier_ExchangeServiceCorner_Text_ConfirmWideLens:
-	.string "You've chosen the Wide Lens.\n"
-	.string "Is that correct?$"
-
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmToxicOrb:
 	.string "You've chosen the Toxic Orb.\n"
 	.string "Is that correct?$"
@@ -1162,10 +1124,6 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmRedCard:
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmDestinyKnot:
 	.string "You've chosen the Destiny Knot.\n"
-	.string "Is that correct?$"
-
-BattleFrontier_ExchangeServiceCorner_Text_ConfirmMetronome:
-	.string "You've chosen the Metronome.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmShedShell:
@@ -1456,13 +1414,6 @@ BattleFrontier_ExchangeServiceCorner_Text_HeartScaleDesc::
 	.string "Can be traded for a Pokémon\n"
 	.string "move relearning service.$"
 
-BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc::
-	.string "A hold item that raises the\n"
-	.string "critical-hit rate.$"
-
-BattleFrontier_ExchangeServiceCorner_Text_WideLensDesc::
-	.string "A hold item that raises user accuracy.$"
-
 BattleFrontier_ExchangeServiceCorner_Text_ToxicOrbDesc::
 	.string "A hold item that poisons the holder.$"
 
@@ -1480,10 +1431,6 @@ BattleFrontier_ExchangeServiceCorner_Text_RedCardDesc::
 BattleFrontier_ExchangeServiceCorner_Text_DestinyKnotDesc::
 	.string "A hold item. If the holder becomes\n"
 	.string "infatuated, the target does too.$"
-
-BattleFrontier_ExchangeServiceCorner_Text_MetronomeDesc::
-	.string "A hold item that raises power of\n"
-	.string "a move used consecutively.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ShedShellDesc::
 	.string "A hold item that enables the user to\n"

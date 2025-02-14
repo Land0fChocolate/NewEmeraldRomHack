@@ -1681,6 +1681,15 @@
 	various \battler, VARIOUS_DO_MIRACLE_BLOSSOM_HEAL
 	.endm
 
+	.macro checkdreamfeastheal battler:req, ptr:req
+	various \battler, VARIOUS_CHECK_IF_DREAMFEAST_HEALS
+	.4byte \ptr
+	.endm
+
+	.macro dodreamfeastheal battler:req
+	various \battler, VARIOUS_DO_DREAMFEAST_HEAL
+	.endm
+
 	.macro checksoulsiphonheal battler:req, ptr:req
 	various \battler, VARIOUS_CHECK_IF_SOUL_SIPHON_HEALS
 	.4byte \ptr
@@ -1958,10 +1967,6 @@
 	various BS_ATTACKER, VARIOUS_SWAP_SIDE_STATUSES
 	.endm
 
-	.macro canteleport battler:req
-	various \battler, VARIOUS_CAN_TELEPORT
-	.endm
-
 	.macro getbattlerside battler:req
 	various \battler, VARIOUS_GET_BATTLER_SIDE
 	.endm
@@ -2073,6 +2078,11 @@
 
 	.macro jumpifmovehadnoeffect jumpptr:req
 	jumpifbyte CMP_COMMON_BITS, gMoveResultFlags, MOVE_RESULT_NO_EFFECT, \jumpptr
+	.endm
+
+	.macro jumpifside battler:req, side:req, equalJumpInstr:req
+	getbattlerside \battler
+	jumpifbyte CMP_EQUAL, gBattleCommunication, \side, \equalJumpInstr
 	.endm
 
 	.macro jumpifbattletype flags:req, jumpptr:req

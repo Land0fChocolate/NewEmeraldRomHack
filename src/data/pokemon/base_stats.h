@@ -99,7 +99,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        .abilities = {ABILITY_BLAZE, ABILITY_SOLAR_POWER, ABILITY_NONE},
+        .abilities = {ABILITY_BLAZE, ABILITY_TOUGH_CLAWS, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -124,7 +124,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        .abilities = {ABILITY_BLAZE, ABILITY_SOLAR_POWER, ABILITY_TOUGH_CLAWS},
+        .abilities = {ABILITY_BLAZE, ABILITY_TOUGH_CLAWS, ABILITY_SUPERHEATED},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -148,7 +148,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        .abilities = {ABILITY_BLAZE, ABILITY_SOLAR_POWER, ABILITY_TOUGH_CLAWS},
+        .abilities = {ABILITY_BLAZE, ABILITY_TOUGH_CLAWS, ABILITY_SUPERHEATED},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -2302,7 +2302,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_LEVITATE, ABILITY_CURSED_BODY, ABILITY_NONE},
+        .abilities = {ABILITY_LEVITATE, ABILITY_CURSED_BODY, ABILITY_SOUL_SIPHON},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
     },
@@ -2326,7 +2326,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_LEVITATE, ABILITY_CURSED_BODY, ABILITY_NONE},
+        .abilities = {ABILITY_LEVITATE, ABILITY_CURSED_BODY, ABILITY_SOUL_SIPHON},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
     },
@@ -2374,7 +2374,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_INSOMNIA, ABILITY_FOREWARN, ABILITY_INNER_FOCUS},
+        .abilities = {ABILITY_INSOMNIA, ABILITY_FOREWARN, ABILITY_DREAMFEAST},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },
@@ -2398,7 +2398,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_INSOMNIA, ABILITY_FOREWARN, ABILITY_INNER_FOCUS},
+        .abilities = {ABILITY_INSOMNIA, ABILITY_FOREWARN, ABILITY_DREAMFEAST},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },
@@ -2519,7 +2519,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_GRASS,
         .eggGroup2 = EGG_GROUP_GRASS,
-        .abilities = {ABILITY_CHLOROPHYLL, ABILITY_HARVEST, ABILITY_NONE},
+        .abilities = {ABILITY_CHLOROPHYLL, ABILITY_HARVEST, ABILITY_TELEPATHY},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
     },
@@ -2617,7 +2617,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_LIMBER, ABILITY_RECKLESS, ABILITY_UNBURDEN},
+        .abilities = {ABILITY_LIMBER, ABILITY_JEET_KUNE_DO, ABILITY_UNBURDEN},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
     },
@@ -3336,7 +3336,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_VOLT_ABSORB, ABILITY_UNBURDEN, ABILITY_QUICK_FEET},
+        .abilities = {ABILITY_VOLT_ABSORB, ABILITY_NEEDLE_MISSILES, ABILITY_QUICK_FEET},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },
@@ -3360,7 +3360,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_FLASH_FIRE, ABILITY_FUR_COAT, ABILITY_CONTRARY},
+        .abilities = {ABILITY_FLASH_FIRE, ABILITY_SUPERHEATED, ABILITY_CONTRARY},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -4097,7 +4097,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
-        .abilities = {ABILITY_SWARM, ABILITY_EARLY_BIRD, ABILITY_IRON_FIST},
+        .abilities = {ABILITY_SWARM, ABILITY_EARLY_BIRD, ABILITY_INNER_FOCUS},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -5191,7 +5191,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_WATER_2,
         .eggGroup2 = EGG_GROUP_WATER_2,
-        .abilities = {ABILITY_POISON_POINT, ABILITY_SWIFT_SWIM, ABILITY_INTIMIDATE},
+        .abilities = {ABILITY_POISON_POINT, ABILITY_NEEDLE_MISSILES, ABILITY_INTIMIDATE},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
     },
@@ -5978,7 +5978,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_INNER_FOCUS, ABILITY_VOLT_ABSORB},
+        .abilities = {ABILITY_PRESSURE, ABILITY_TECHNICIAN, ABILITY_VOLT_ABSORB},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
@@ -6004,7 +6004,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_INNER_FOCUS, ABILITY_FLASH_FIRE},
+        .abilities = {ABILITY_PRESSURE, ABILITY_TECHNICIAN, ABILITY_FLASH_FIRE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
@@ -6030,7 +6030,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_INNER_FOCUS, ABILITY_WATER_ABSORB},
+        .abilities = {ABILITY_PRESSURE, ABILITY_TECHNICIAN, ABILITY_WATER_ABSORB},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
@@ -9535,7 +9535,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_NONE},
+        .abilities = {ABILITY_PRESSURE, ABILITY_REGENERATOR, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
         .flags = FLAG_MYTHICAL,
@@ -10011,7 +10011,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_BUDEW] =
+    [SPECIES_BUDEW] = // post original Hoenn dex
     {
         .baseHP        = 40,
         .baseAttack    = 30,
@@ -10036,7 +10036,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = TRUE,
     },
 
-    [SPECIES_ROSERADE] =
+    [SPECIES_ROSERADE] = // post original Hoenn dex
     {
         .baseHP        = 60,
         .baseAttack    = 70,
@@ -10454,7 +10454,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_AMBIPOM] =
+    [SPECIES_AMBIPOM] = // post original Hoenn dex
     {
         .baseHP        = 75,
         .baseAttack    = 100,
@@ -10574,7 +10574,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_MISMAGIUS] =
+    [SPECIES_MISMAGIUS] = // post original Hoenn dex
     {
         .baseHP        = 60,
         .baseAttack    = 60,
@@ -10599,7 +10599,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_HONCHKROW] =
+    [SPECIES_HONCHKROW] = // post original Hoenn dex
     {
         .baseHP        = 100,
         .baseAttack    = 125,
@@ -10671,7 +10671,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_CHINGLING] =
+    [SPECIES_CHINGLING] = // post original Hoenn dex
     {
         .baseHP        = 45,
         .baseAttack    = 30,
@@ -10795,7 +10795,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_BONSLY] =
+    [SPECIES_BONSLY] = // post original Hoenn dex
     {
         .baseHP        = 50,
         .baseAttack    = 80,
@@ -10819,7 +10819,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_MIME_JR] =
+    [SPECIES_MIME_JR] = // post original Hoenn dex
     {
         .baseHP        = 20,
         .baseAttack    = 25,
@@ -10843,7 +10843,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_HAPPINY] =
+    [SPECIES_HAPPINY] = // post original Hoenn dex
     {
         .baseHP        = 100,
         .baseAttack    = 5,
@@ -10990,7 +10990,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_MUNCHLAX] =
+    [SPECIES_MUNCHLAX] = // post original Hoenn dex
     {
         .baseHP        = 135,
         .baseAttack    = 85,
@@ -11287,7 +11287,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_MANTYKE] =
+    [SPECIES_MANTYKE] = // post original Hoenn dex
     {
         .baseHP        = 45,
         .baseAttack    = 20,
@@ -11362,7 +11362,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_WEAVILE] =
+    [SPECIES_WEAVILE] = // post original Hoenn dex
     {
         .baseHP        = 70,
         .baseAttack    = 120,
@@ -11388,7 +11388,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_MAGNEZONE] =
+    [SPECIES_MAGNEZONE] = // post original Hoenn dex
     {
         .baseHP        = 70,
         .baseAttack    = 70,
@@ -11413,7 +11413,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_LICKILICKY] =
+    [SPECIES_LICKILICKY] = // post original Hoenn dex
     {
         .baseHP        = 110,
         .baseAttack    = 85,
@@ -11438,7 +11438,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_RHYPERIOR] =
+    [SPECIES_RHYPERIOR] = // post original Hoenn dex
     {
         .baseHP        = 115,
         .baseAttack    = 140,
@@ -11462,7 +11462,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_TANGROWTH] =
+    [SPECIES_TANGROWTH] = // post original Hoenn dex
     {
         .baseHP        = 100,
         .baseAttack    = 100,
@@ -11486,7 +11486,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_ELECTIVIRE] =
+    [SPECIES_ELECTIVIRE] = // post original Hoenn dex
     {
         .baseHP        = 75,
         .baseAttack    = 123,
@@ -11506,12 +11506,12 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_STATIC, ABILITY_VITAL_SPIRIT, ABILITY_MOTOR_DRIVE},
+        .abilities = {ABILITY_STATIC, ABILITY_ADAPTABILITY, ABILITY_MOTOR_DRIVE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
     },
 
-    [SPECIES_MAGMORTAR] =
+    [SPECIES_MAGMORTAR] = // post original Hoenn dex
     {
         .baseHP        = 75,
         .baseAttack    = 95,
@@ -11531,12 +11531,12 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_FLAME_BODY, ABILITY_VITAL_SPIRIT, ABILITY_FLASH_FIRE},
+        .abilities = {ABILITY_FLAME_BODY, ABILITY_SUPERHEATED, ABILITY_FLASH_FIRE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = TRUE,
     },
 
-    [SPECIES_TOGEKISS] =
+    [SPECIES_TOGEKISS] = // post original Hoenn dex
     {
         .baseHP        = 85,
         .baseAttack    = 50,
@@ -11561,7 +11561,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = TRUE,
     },
 
-    [SPECIES_YANMEGA] =
+    [SPECIES_YANMEGA] = // post original Hoenn dex
     {
         .baseHP        = 86,
         .baseAttack    = 76,
@@ -11586,7 +11586,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_LEAFEON] =
+    [SPECIES_LEAFEON] = // post original Hoenn dex
     {
         .baseHP        = 65,
         .baseAttack    = 110,
@@ -11610,7 +11610,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_GLACEON] =
+    [SPECIES_GLACEON] = // post original Hoenn dex
     {
         .baseHP        = 65,
         .baseAttack    = 60,
@@ -11634,7 +11634,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_GLISCOR] =
+    [SPECIES_GLISCOR] = // post original Hoenn dex
     {
         .baseHP        = 75,
         .baseAttack    = 95,
@@ -11658,7 +11658,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_MAMOSWINE] =
+    [SPECIES_MAMOSWINE] = // post original Hoenn dex
     {
         .baseHP        = 110,
         .baseAttack    = 130,
@@ -11682,7 +11682,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_PORYGON_Z] =
+    [SPECIES_PORYGON_Z] = // post original Hoenn dex
     {
         .baseHP        = 85,
         .baseAttack    = 80,
@@ -11706,7 +11706,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_GALLADE] =
+    [SPECIES_GALLADE] = // post original Hoenn dex
     {
         .baseHP        = 68,
         .baseAttack    = 125,
@@ -11730,7 +11730,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_PROBOPASS] =
+    [SPECIES_PROBOPASS] = // post original Hoenn dex
     {
         .baseHP        = 60,
         .baseAttack    = 55,
@@ -11756,7 +11756,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_DUSKNOIR] =
+    [SPECIES_DUSKNOIR] = // post original Hoenn dex
     {
         .baseHP        = 45,
         .baseAttack    = 100,
@@ -11782,7 +11782,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_FROSLASS] =
+    [SPECIES_FROSLASS] = // post original Hoenn dex
     {
         .baseHP        = 70,
         .baseAttack    = 80,
@@ -12157,7 +12157,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_NATURAL_CURE, ABILITY_NONE, ABILITY_NONE}, //TODO: create new ability for Shaymin
+        .abilities = {ABILITY_NATURAL_CURE, ABILITY_NONE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
         .flags = FLAG_MYTHICAL,
@@ -17215,7 +17215,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_SYLVEON] =
+    [SPECIES_SYLVEON] = // post original Hoenn dex
     {
         .baseHP        = 95,
         .baseAttack    = 65,
@@ -22097,7 +22097,7 @@ const struct BaseStats gBaseStats[] =
         .flags = FLAG_LEGENDARY,
     },
 
-    [SPECIES_WYRDEER] =
+    [SPECIES_WYRDEER] = // post original Hoenn dex
     {
         .baseHP        = 103,
         .baseAttack    = 105,
@@ -22121,7 +22121,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_KLEAVOR] =
+    [SPECIES_KLEAVOR] = // post original Hoenn dex
     {
         .baseHP        = 70,
         .baseAttack    = 135,
@@ -22145,7 +22145,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_URSALUNA] =
+    [SPECIES_URSALUNA] = // post original Hoenn dex
     {
         .baseHP        = 130,
         .baseAttack    = 140,
@@ -22312,7 +22312,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        .abilities = {ABILITY_BLAZE, ABILITY_SOLAR_POWER, ABILITY_TOUGH_CLAWS},
+        .abilities = {ABILITY_BLAZE, ABILITY_TOUGH_CLAWS, ABILITY_SUPERHEATED},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
     },
@@ -22336,7 +22336,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        .abilities = {ABILITY_BLAZE, ABILITY_DROUGHT, ABILITY_TOUGH_CLAWS},
+        .abilities = {ABILITY_BLAZE, ABILITY_DROUGHT, ABILITY_SUPERHEATED},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -25994,7 +25994,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_NONE},
+        .abilities = {ABILITY_PRESSURE, ABILITY_REGENERATOR, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -26019,7 +26019,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_NONE},
+        .abilities = {ABILITY_PRESSURE, ABILITY_REGENERATOR, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
     },
@@ -26043,7 +26043,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_NONE},
+        .abilities = {ABILITY_PRESSURE, ABILITY_REGENERATOR, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = TRUE,
     },

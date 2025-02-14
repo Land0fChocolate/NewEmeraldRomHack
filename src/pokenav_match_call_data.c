@@ -321,22 +321,6 @@ static const struct MatchCallWally sWallyMatchCallHeader =
     .locationData = sWallyLocationData
 };
 
-
-static const match_call_text_data_t sZinniaTextScripts[] = {
-    { MatchCall_Text_Zinnia, 0xFFFF,                              0xFFFF },
-    { NULL,                  0xFFFF,                              0xFFFF }
-};
-
-static const struct MatchCallStructNPC sZinniaMatchCallHeader =
-{
-    .type = 0,
-    .mapSec = MAPSEC_FALLARBOR_TOWN,
-    .flag = FLAG_ENABLE_ZINNIA_MATCH_CALL,
-    .desc = gText_ZinniaMatchCallDesc,
-    .name = gText_ZinniaMatchCallName,
-    .textData = sZinniaTextScripts
-};
-
 static const match_call_text_data_t sScottTextScripts[] = {
     { MatchCall_Text_Scott1, 0xFFFF,                              0xFFFF },
     { MatchCall_Text_Scott2, FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY,  0xFFFF },
@@ -594,6 +578,23 @@ static const struct MatchCallStructTrainer sStevenMatchCallHeader =
     .textData = sStevenTextScripts
 };
 
+static const match_call_text_data_t sZinniaTextScripts[] = {
+    { MatchCall_Text_Zinnia1, 0xFFFF, 0xFFFF },
+    { MatchCall_Text_Zinnia2, FLAG_DAILY_GROOM_DONE, 0xFFFF },
+    { NULL,                  0xFFFF, 0xFFFF }
+};
+
+static const struct MatchCallStructTrainer sZinniaMatchCallHeader =
+{
+    .type = 0,
+    .mapSec = MAPSEC_FALLARBOR_TOWN,
+    .flag = FLAG_ENABLE_ZINNIA_MATCH_CALL,
+    .rematchTableIdx = REMATCH_ZINNIA,
+    .desc = gText_ZinniaMatchCallDesc,
+    .name = gText_ZinniaMatchCallName,
+    .textData = sZinniaTextScripts
+};
+
 // static const struct MatchCallStructNPC sStevenMatchCallHeader = // old code here. Keeping this around in case I need something from it.
 // {
 //     .type = MC_TYPE_NPC,
@@ -610,7 +611,6 @@ static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_BRENDAN]    = {.rival  = &sBrendanMatchCallHeader},
     [MC_HEADER_MAY]        = {.rival  = &sMayMatchCallHeader},
     [MC_HEADER_WALLY]      = {.wally  = &sWallyMatchCallHeader},
-    [MC_HEADER_ZINNIA]     = {.npc    = &sZinniaMatchCallHeader},
     [MC_HEADER_NORMAN]     = {.leader = &sNormanMatchCallHeader},
     [MC_HEADER_MOM]        = {.npc    = &sMomMatchCallHeader},
     [MC_HEADER_SCOTT]      = {.npc    = &sScottMatchCallHeader},
@@ -626,7 +626,8 @@ static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_PHOEBE]     = {.leader = &sPhoebeMatchCallHeader},
     [MC_HEADER_GLACIA]     = {.leader = &sGlaciaMatchCallHeader},
     [MC_HEADER_DRAKE]      = {.leader = &sDrakeMatchCallHeader},
-    [MC_HEADER_STEVEN]     = {.leader = &sStevenMatchCallHeader}
+    [MC_HEADER_STEVEN]     = {.leader = &sStevenMatchCallHeader},
+    [MC_HEADER_ZINNIA]     = {.leader = &sZinniaMatchCallHeader}
 };
 
 static bool32 (*const sMatchCallGetEnabledFuncs[])(match_call_t) = {

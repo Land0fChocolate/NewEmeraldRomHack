@@ -1007,7 +1007,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("Hocus"), 
         .species = SPECIES_ABRA,
-        .ivs = {23, 4, 13, 22, 28, 22}, 
+        .ivs = {24, 4, 13, 24, 28, 24}, 
         .otId = 38726,
         .conditions = {30, 5, 5, 5, 5},
         .personality = 0x84,
@@ -1037,11 +1037,11 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("Seasor"),
         .species = SPECIES_HORSEA,
-        .ivs = {31, 28, 17, 27, 13, 21}, 
+        .ivs = {31, 28, 17, 27, 24, 24}, 
         .otId = 46285,
         .conditions = {5, 5, 5, 5, 30},
         .personality = 0x7F,
-        .heldItem = ITEM_SCOPE_LENS, 
+        .heldItem = ITEM_RAZOR_CLAW, 
         .mailNum = 1,
         .otName = _("Skylar"), 
         .otGender = MALE, 
@@ -1052,7 +1052,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("Joy"),
         .species = SPECIES_HAPPINY,
-        .ivs = {23, 5, 31, 5, 31, 4}, 
+        .ivs = {31, 5, 31, 5, 31, 4}, 
         .otId = 91481,
         .conditions = {5, 5, 5, 30, 5},
         .personality = 0x8B,
@@ -1067,7 +1067,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("Tesla"),
         .species = SPECIES_GEODUDE_ALOLAN,
-        .ivs = {26, 28, 30, 11, 16, 10}, 
+        .ivs = {30, 24, 30, 11, 24, 24}, 
         .otId = 74718,
         .conditions = {30, 5, 5, 5, 5},
         .personality = 0x8B,

@@ -72,6 +72,7 @@ MtPyre_Summit_EventScript_TeamAquaExits::
 	call_if_eq MtPyre_Summit_EventScript_OldLadyApproachPlayer2
 	msgbox MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis, MSGBOX_DEFAULT
 	giveitem ITEM_MAGMA_EMBLEM
+	msgbox MtPyre_Summit_Text_LeaderMentionedMtChimney, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_RECEIVED_RED_OR_BLUE_ORB
 	setflag FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD
@@ -344,7 +345,7 @@ MtPyre_Summit_Text_Grunt4PostBattle:
 
 MtPyre_Summit_Text_ArchieWeGotTheOrb:
 	.string "Archie: The Blue Orb!\n"
-	.string "I knew the legend but I didn't know\l"
+	.string "I knew the legend, but I didn't know\l"
 	.string "where it was or if it really existed…\p"
 	.string "Thanks for the tip, Maxie!\n"
 	.string "Bwhahahaha!$"
@@ -376,6 +377,12 @@ MtPyre_Summit_Text_BothOrbsTakenMagmaLeftThis:
 	.string "could be.\p"
 	.string "Are you going after them?\n"
 	.string "Perhaps it will be useful in some way.$"
+
+MtPyre_Summit_Text_LeaderMentionedMtChimney:
+	.string "I've heard their leader say that\n"
+	.string "they were “returning to Mt. Chimney”.\p"
+	.string "Perhaps their base is located around\n"
+	.string "that area?$"
 
 MtPyre_Summit_Text_PhoebeIntro:
 	.string "Grandma! Are you alright?\n"

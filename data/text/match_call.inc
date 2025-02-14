@@ -2223,21 +2223,36 @@ MatchCall_Text_TateLiza4::
 	.string "Tate: It would be nice if…\n"
 	.string "Liza: We could all battle again!$"
 
-MatchCall_Text_Wallace1:: @TODO: 
-	.string "Wallace: \n"
-	.string "TODO$"
+MatchCall_Text_Wallace1:: 
+	.string "Wallace: Good day, {PLAYER}.\n"
+	.string "How is the day treating you so far?\p"
+	.string "My Pokémon and I are poised to\n"
+	.string "impress, as always.\p"
+	.string "Your future will shine with success.\n"
+	.string "Of that I am sure.$"
 
-MatchCall_Text_Wallace2:: @TODO:
-	.string "Wallace: \n"
-	.string "TODO$"
+MatchCall_Text_Wallace2::
+	.string "Wallace: {PLAYER},\n"
+	.string "You have even surpassed Steven…\p"
+	.string "I am disappointed at my inability to\n"
+	.string "find any fitting words to offer you.\p"
+	.string "I look forward to the day when we\n"
+	.string "battle once again.$"
 
-MatchCall_Text_Wallace3:: @TODO:
-	.string "Wallace: \n"
-	.string "TODO$"
+MatchCall_Text_Wallace3::
+	.string "Wallace: Good day, {PLAYER}.\p"
+	.string "You sound like you're in need of\n"
+	.string "some respite.\p"
+	.string "The quiet sounds of flowing water\n"
+	.string "always put my heart at ease.\p"
+	.string "What sort of sounds make you feel\n"
+	.string "most calm?$"
 
-MatchCall_Text_Wallace4:: @TODO:
-	.string "Wallace: \n"
-	.string "TODO$"
+MatchCall_Text_Wallace4::
+	.string "Wallace: Good day, {PLAYER}.\p"
+	.string "You and your Pokémon are even more\n"
+	.string "beautiful with the sun as your\l"
+	.string "spotlight!$"
 
 MatchCall_Text_Juan::
 	.string "Juan: Hmm…\n"
@@ -2297,6 +2312,37 @@ MatchCall_Text_Steven::
 	.string "companions?\p"
 	.string "Depending on how you think, your\n"
 	.string "adventure's significance changes.$"
+
+MatchCall_Text_Zinnia1::
+	.string "Zinnia: Hey, what's up, {PLAYER}?\p"
+	.string "If you had to make a sacrifice to\n"
+	.string "protect something or someone, what\l"
+	.string "would you do, {PLAYER}?\p"
+	.string "Would you take a step back, and just\n"
+	.string "see what happens?\l"
+	.string "Let everything play out?\p"
+	.string "Or would you jump in and try to do\n"
+	.string "something about it, even if it meant\l"
+	.string "making a sacrifice?\p"
+	.string "You probably wouldn't settle for\n"
+	.string "either of those options, would you?\p"
+	.string "You'd probably try to figure out a\n"
+	.string "way to save everyone and everything\l"
+	.string "you could, huh?$"
+
+MatchCall_Text_Zinnia2::
+	.string "Zinnia: Hey, {PLAYER}!\p"
+	.string "While I was traveling a while back,\n"
+	.string "I had a Whismur as my partner.\l"
+	.string "Her name's Aster.\p"
+	.string "She's so darned adorable, especially the\n"
+	.string "way she likes to nuzzle up against me\l"
+	.string "and make the cutest little noises.\p"
+	.string "Aster and I were always together…\n"
+	.string "in good times and in bad.\p"
+	.string "If she hadn't stuck with me through that\n"
+	.string "journey, I don't know if I'd be where\l"
+	.string "I am today.$"
 
 MatchCall_Text_May1::
 	.string "May: Hi, {PLAYER}{KUN}!\p"
@@ -2603,20 +2649,6 @@ MatchCall_Text_Wally7::
 	.string "{PLAYER}…\n"
 	.string "Thank you…$"
 
-MatchCall_Text_Zinnia::
-	.string "Zinnia: Hey, {PLAYER}!\p"
-	.string "While I was traveling a while back,\n"
-	.string "I had a Whismur as my partner.\l"
-	.string "Her name's Aster.\p"
-	.string "She's so darned adorable, especially the\n"
-	.string "way she likes to nuzzle up against me\l"
-	.string "and make the cutest little noises.\p"
-	.string "Aster and I were always together…\n"
-	.string "in good times and in bad.\p"
-	.string "If she hadn't stuck with me through that\n"
-	.string "journey, I don't know if I'd be where\l"
-	.string "I am today.$"
-
 MatchCall_Text_Scott1::
 	.string "Scott: Howdy, {PLAYER}{KUN}!\p"
 	.string "You know how Pokémon can be found\n"
@@ -2754,10 +2786,10 @@ MatchCall_Text_Steven1::
 	.string "Steven: Hi, {PLAYER}{KUN}!\p"
 	.string "Have you been to Mauville\n"
 	.string "already?\p"
-	.string "You should visit the BIKE SHOP\n"
-	.string "and get a MACH BIKE.\p"
-	.string "Then, try exploring the GRANITE\n"
-	.string "CAVE thoroughly.\p"
+	.string "You should visit the Bike Shop\n"
+	.string "and get a Mach Bike.\p"
+	.string "Then, try exploring the Granite\n"
+	.string "Cave thoroughly.\p"
 	.string "You may make a new discovery\n"
 	.string "there.$"
 

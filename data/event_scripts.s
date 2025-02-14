@@ -826,10 +826,24 @@ gText_MomOrDadMightLikeThisProgram::
 	.string "… … … … … … … … … … … … … … … …\p"
 	.string "Better get going!$"
 
+gText_SternAnouncement::
+	.string "Coming live from Slateport City!\p"
+	.string "Hoenn's most esteemed seafarer,\n"
+	.string "Captain Stern has revealed a great\l"
+	.string "discovery!\p"
+	.string "According to early reports from his\n"
+	.string "latest expedition, an enormous chasm\l"
+	.string "exists below the waves near Sootopolis\l"
+	.string "and could be home to an ancient\l"
+	.string "legendary Pokémon!\p"
+	.string "We'll be sure to interview Captain\n"
+	.string "Stern for more delicious details on\l"
+	.string "the discovery, after the break!$"
+
 gText_RareCandyAdvert::
-	.string "Hey Trainers!\p"
-	.string "Are you struggling to beat that Gym\n"
-	.string "Leader?\p"
+	.string "Hey Pokémon Trainers!\p"
+	.string "Are you struggling to beat that\n"
+	.string "pesky Gym Leader?\p"
 	.string "Not enough time to train?\p"
 	.string "Make your team strong with Rare Candy!\n"
 	.string "Only sold at the Mauville Sweet Shop!$"

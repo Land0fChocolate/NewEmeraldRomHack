@@ -468,7 +468,9 @@ BattleFrontier_ReceptionGate_Text_HoldItemsInfo:
 	.string "be holding the same kind of item.\p"
 	.string "Please make sure that all Pokémon\n"
 	.string "entering a challenge are holding\l"
-	.string "different items.$"
+	.string "different items.\p"
+	.string "Pokémon also may not be holding\n"
+	.string "Mega Stones.$"
 
 BattleFrontier_ReceptionGate_Text_YourGuideToFrontierPass:
 	.string "I'm your guide to the Frontier Pass.$"

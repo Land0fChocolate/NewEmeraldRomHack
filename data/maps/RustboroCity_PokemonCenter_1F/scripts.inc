@@ -30,6 +30,11 @@ RustboroCity_PokemonCenter_1F_EventScript_Girl::
 	msgbox RustboroCity_PokemonCenter_1F_Text_TMCutNextDoor, MSGBOX_NPC
 	end
 
+RustboroCity_PokemonCenter_1F_EventScript_MauvilleOldManBard::
+	setvar VAR_MAUVILLE_MAN_VARIANT, 0
+	goto MauvilleCity_PokemonCenter_1F_EventScript_MauvilleOldMan
+	end
+
 RustboroCity_PokemonCenter_1F_Text_PokemonHavePersonalities:
 	.string "My Pokémon has a naive nature, and my\n"
 	.string "friend's has a jolly nature.\p"

@@ -19,7 +19,7 @@ SeafloorCavern_Room3_EventScript_Zinnia::
 	end
 
 SeafloorCavern_Room3_Text_Zinnia:
-	.string "Ah, you!\n"
+	.string "Ah, you!\p"
 	.string "Well, of course it's you!\p"
 	.string "You don't know me.\n"
 	.string "Nope!\p"

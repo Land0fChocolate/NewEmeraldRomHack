@@ -4,9 +4,6 @@ PacifidlogTown_House2_MapScripts::
 PacifidlogTown_House2_EventScript_FanClubYoungerBrother::
 	lock
 	faceplayer
-	dotimebasedevents @remove
-	call PacifidlogTown_House2_EventScript_UpdateFanClubTMFlag @remove
-	goto_if_set FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK, PacifidlogTown_House2_EventScript_ComeBackInXDays @remove
 	call_if_set FLAG_MET_FANCLUB_YOUNGER_BROTHER, PacifidlogTown_House2_EventScript_MonAssessment
 	call_if_unset FLAG_MET_FANCLUB_YOUNGER_BROTHER, PacifidlogTown_House2_EventScript_FirstMonAssessment
 	setflag FLAG_MET_FANCLUB_YOUNGER_BROTHER
@@ -19,13 +16,6 @@ PacifidlogTown_House2_EventScript_FanClubYoungerBrother::
 	goto PacifidlogTown_House2_EventScript_GiveFrustration
 	end
 
-PacifidlogTown_House2_EventScript_UpdateFanClubTMFlag::
-	goto_if_unset FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK, Common_EventScript_NopReturn
-	specialvar VAR_RESULT, GetDaysUntilPacifidlogTMAvailable
-	compare VAR_RESULT, 0
-	call_if_eq PacifidlogTown_House2_EventScript_ClearReceivedFanClubTM
-	return
-
 PacifidlogTown_House2_EventScript_MonAssessment::
 	msgbox PacifidlogTown_House2_Text_AhYourPokemon, MSGBOX_DEFAULT
 	return
@@ -33,10 +23,6 @@ PacifidlogTown_House2_EventScript_MonAssessment::
 PacifidlogTown_House2_EventScript_FirstMonAssessment::
 	msgbox PacifidlogTown_House2_Text_ChairmansYoungerBrotherOnVacation, MSGBOX_DEFAULT
 	msgbox PacifidlogTown_House2_Text_AhYourPokemon, MSGBOX_DEFAULT
-	return
-
-PacifidlogTown_House2_EventScript_ClearReceivedFanClubTM::
-	clearflag FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK
 	return
 
 PacifidlogTown_House2_EventScript_GiveReturn::

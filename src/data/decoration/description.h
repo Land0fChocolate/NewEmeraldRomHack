@@ -571,3 +571,28 @@ const u8 DecorDesc_REGISTEEL_DOLL[] = _(
     "A Registeel doll.\n"
         "Place it on a mat\n"
         "or a desk.");
+
+const u8 DecorDesc_NATU_DOLL[] = _(
+    "A Natu doll.\n"
+        "Place it on a mat\n"
+        "or a desk.");
+
+const u8 DecorDesc_MAGNEMITE_DOLL[] = _(
+    "A Magnemite doll.\n"
+        "Place it on a mat\n"
+        "or a desk.");
+
+const u8 DecorDesc_SQUIRTLE_DOLL[] = _(
+    "A Squirtle doll.\n"
+        "Place it on a mat\n"
+        "or a desk.");
+
+const u8 DecorDesc_WOOPER_DOLL[] = _(
+    "A Wooper doll.\n"
+        "Place it on a mat\n"
+        "or a desk.");
+
+const u8 DecorDesc_PORYGON2_DOLL[] = _(
+    "A Porygon2 doll.\n"
+        "Place it on a mat\n"
+        "or a desk.");

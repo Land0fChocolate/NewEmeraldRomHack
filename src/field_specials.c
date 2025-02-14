@@ -1530,6 +1530,22 @@ void SetRoute123Weather(void)
     }
 }
 
+void SetRoute114Weather(void)
+{
+    if (IsMapTypeOutdoors(GetLastUsedWarpMapType()) != TRUE)
+    {
+        SetSav1Weather(WEATHER_ROUTE114_CYCLE);
+    }
+}
+
+void SetFallarborWastesWeather(void)
+{
+    if (IsMapTypeOutdoors(GetLastUsedWarpMapType()) != TRUE)
+    {
+        SetSav1Weather(WEATHER_FALLARBOR_WASTES_CYCLE);
+    }
+}
+
 u8 GetLeadMonIndex(void)
 {
     u8 i;
@@ -2364,7 +2380,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 28;
+            task->tNumItems = 25;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2619,14 +2635,11 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR] =
     {
-        gText_ScopeLens12BP,
-        gText_WideLens12BP,
         gText_ToxicOrb12BP,
         gText_FlameOrb12BP,
         gText_AdrenalineOrb12BP,
         gText_RedCard12BP,
         gText_DestinyKnot12BP,
-        gText_Metronome12BP,
         gText_ShedShell12BP,
         gText_StickyBarb12BP,
         gText_ExpertBelt20BP,
