@@ -8674,15 +8674,18 @@ BattleScript_GrassyTerrainHealEnd:
 	end2
 
 BattleScript_MiracleBlossomHeals::
-	checkmiracleblossomheal BS_ATTACKER, BattleScript_MiracleBlossomHealEnd
+	checkmiracleblossomheal BS_ATTACKER, BattleScript_MiracleBlossomHealPartner
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_MIRACLEBLOSSOMHEALS
 	waitmessage B_WAIT_TIME_LONG
-BattleScript_MiracleBlossomHpChange:
 	orword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
-	domiracleblossomheal BS_ATTACKER
 	datahpupdate BS_ATTACKER
-	domiracleblossomheal BS_ATTACKER_PARTNER
+BattleScript_MiracleBlossomHealPartner::
+	checkmiracleblossomheal BS_ATTACKER_PARTNER, BattleScript_MiracleBlossomHealEnd
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_MIRACLEBLOSSOMHEALS
+	waitmessage B_WAIT_TIME_LONG
+	orword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
 	datahpupdate BS_ATTACKER_PARTNER
 BattleScript_MiracleBlossomHealEnd:
 	end2
