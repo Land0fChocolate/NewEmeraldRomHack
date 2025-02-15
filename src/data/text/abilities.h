@@ -387,8 +387,8 @@ static const u8 sJeetKuneDoDescription[] = _(
 	"increased by 20%.");
 
 static const u8 sPoisonHealDescription[] = _(
-	"Restores 1/8 max HP per turn\n"
-	"if poisoned.");
+	"Restores 1/8 max HP per\n"
+	"turn if poisoned.");
 
 static const u8 sAdaptabilityDescription[] = _(
 	"Moves same type as user\n"
