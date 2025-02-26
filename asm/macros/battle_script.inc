@@ -1677,10 +1677,6 @@
 	.4byte \ptr
 	.endm
 
-	.macro domiracleblossomheal battler:req
-	various \battler, VARIOUS_DO_MIRACLE_BLOSSOM_HEAL
-	.endm
-
 	.macro checkdreamfeastheal battler:req, ptr:req
 	various \battler, VARIOUS_CHECK_IF_DREAMFEAST_HEALS
 	.4byte \ptr
@@ -2157,4 +2153,8 @@
 	.macro setlastusedability ability:req
 	various 0, VARIOUS_SET_LAST_USED_ABILITY
 	.2byte \ability
+	.endm
+
+	.macro setmoveset battler:req
+	various \battler, VARIOUS_SET_MOVESET
 	.endm

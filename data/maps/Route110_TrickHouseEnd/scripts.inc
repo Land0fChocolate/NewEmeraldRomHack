@@ -72,7 +72,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle1::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle2::
-	msgbox Route110_TrickHouseEnd_Text_AllNightToInstallDoors, MSGBOX_DEFAULT
+	msgbox Route110_TrickHouseEnd_Text_AllNightToMakeMaze, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
 	giveitem ITEM_TIMER_BALL
@@ -124,7 +124,7 @@ Route110_TrickHouseEnd_EventScript_CompletedPuzzle5::
 	end
 
 Route110_TrickHouseEnd_EventScript_CompletedPuzzle6::
-	msgbox Route110_TrickHouseEnd_Text_AllNightToMakeMaze, MSGBOX_DEFAULT
+	msgbox Route110_TrickHouseEnd_Text_AllNightToInstallDoors, MSGBOX_DEFAULT
 	msgbox Route110_TrickHouseEnd_Text_YouHaveEarnedThisReward, MSGBOX_DEFAULT
 	setvar VAR_TRICK_HOUSE_PRIZE_PICKUP, 0
 	giveitem ITEM_MAGNET

@@ -112,6 +112,7 @@ Space_Area2_EventScript_Deoxys::
 	end
 
 Space_Area2_EventScript_DefeatedDeoxys::
+	setvar VAR_DEOXYS_BOSS_BATTLE_STATE, 0 @safety net, since apparently this wasn't set after Deoxys battle
 	setflag FLAG_DEFEATED_DEOXYS
 	compare VAR_DRACONID_ARCHIVES_STATE, 0
 	call_if_eq Space_Area2_EventScript_DraconidArchivesState
@@ -120,12 +121,14 @@ Space_Area2_EventScript_DefeatedDeoxys::
 	end
 
 Space_Area2_EventScript_CaughtDeoxys::
+	setvar VAR_DEOXYS_BOSS_BATTLE_STATE, 0 @safety net, since apparently this wasn't set after Deoxys battle
 	setflag FLAG_DEFEATED_DEOXYS
 	compare VAR_DRACONID_ARCHIVES_STATE, 0
 	call_if_eq Space_Area2_EventScript_DraconidArchivesState
 	end
 
 Space_Area2_EventScript_RanFromDeoxys::
+	setvar VAR_DEOXYS_BOSS_BATTLE_STATE, 0 @safety net, since apparently this wasn't set after Deoxys battle
 	setvar VAR_0x8004, SPECIES_DEOXYS
 	goto Common_EventScript_LegendaryFlewAway
 	end

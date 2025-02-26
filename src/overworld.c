@@ -1077,8 +1077,8 @@ u16 GetLocationMusic(struct WarpData *warp)
         return 0xFFFF;
     else if (ShouldLegendaryMusicPlayAtLocation(warp) == TRUE)
         return MUS_ABNORMAL_WEATHER;
-    //else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
-    //    return MUS_MT_CHIMNEY;
+    else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
+        return MUS_MT_CHIMNEY;
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }
