@@ -3195,7 +3195,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_FEAROW_1] = {
         .species = SPECIES_FEAROW,
-        .moves = {MOVE_AIR_CUTTER, MOVE_DRILL_RUN, MOVE_MIRROR_MOVE, MOVE_ROOST},
+        .moves = {MOVE_FLY, MOVE_DRILL_RUN, MOVE_MIRROR_MOVE, MOVE_ROOST},
         .item = ITEM_RAZOR_CLAW,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT
@@ -4350,7 +4350,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_ARMALDO_2] = {
         .species = SPECIES_ARMALDO,
-        .moves = {MOVE_LIQUIDATION, MOVE_FLINT_BLADE, MOVE_SUPERPOWER, MOVE_KNOCK_OFF},
+        .moves = {MOVE_WATERFALL, MOVE_FLINT_BLADE, MOVE_SUPERPOWER, MOVE_KNOCK_OFF},
         .item = ITEM_LUMINOUS_MOSS,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_ADAMANT
@@ -5730,7 +5730,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     [FRONTIER_MON_TOGEKISS_4] = {
         .species = SPECIES_TOGEKISS,
         .moves = {MOVE_DAZZLING_GLEAM, MOVE_AIR_SLASH, MOVE_AURA_SPHERE, MOVE_NASTY_PLOT},
-        .item = ITEM_QUICK_CLAW,
+        .item = ITEM_KINGS_ROCK,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_TIMID
     },
