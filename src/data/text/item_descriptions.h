@@ -290,7 +290,7 @@ static const u8 sLavaCookieDesc[] = _(
 static const u8 sOldGateauDesc[] = _(
     "Heals the HP\n"
     "of a Pokémon by\n"
-    "60 points.");
+    "70 points.");
 
 static const u8 sCasteliaconeDesc[] = _(
     "Restores the PP\n"

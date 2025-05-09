@@ -11658,6 +11658,7 @@ const u32 gTMHMLearnsets[][4] =
                                             | TMHM(TM11_SUNNY_DAY)
                                             | TMHM(TM06_TOXIC)
                                             | TMHM(TM53_ENERGY_BALL)
+                                            | TMHM(TM56_DRAGON_PULSE)
                                             | TMHM(TM58_ROOST)
                                             | TMHM(TM64_CUT),
                                             TMHM2(TM68_GIGA_IMPACT)

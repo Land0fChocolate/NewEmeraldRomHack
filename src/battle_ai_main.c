@@ -2863,6 +2863,7 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                             RETURN_SCORE_PLUS(2);
                         }
                         break;
+                    }
                 }
             } // ability checks
         } // move power check

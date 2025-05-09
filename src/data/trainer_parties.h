@@ -7000,7 +7000,7 @@ static const struct TrainerMonItemCustomMoves sParty_WallyVR1[] = {
     .lvl = 48,
     .species = SPECIES_DELCATTY,
     .heldItem = ITEM_SILK_SCARF,
-    .moves = {MOVE_SING, MOVE_RETURN, MOVE_ATTRACT, MOVE_FAKE_OUT}
+    .moves = {MOVE_SING, MOVE_PLAY_ROUGH, MOVE_ATTRACT, MOVE_FAKE_OUT}
     },
     {
     .iv = 200,
@@ -9061,7 +9061,7 @@ static const struct TrainerMonItemCustomMoves sParty_WallyVR2[] = {
     .lvl = 52,
     .species = SPECIES_DELCATTY,
     .heldItem = ITEM_SILK_SCARF,
-    .moves = {MOVE_SING, MOVE_RETURN, MOVE_ATTRACT, MOVE_FAKE_OUT}
+    .moves = {MOVE_SING, MOVE_PLAY_ROUGH, MOVE_ATTRACT, MOVE_FAKE_OUT}
     },
     {
     .iv = 200,
@@ -9106,7 +9106,7 @@ static const struct TrainerMonItemCustomMoves sParty_WallyVR3[] = {
     .lvl = 54,
     .species = SPECIES_DELCATTY,
     .heldItem = ITEM_SILK_SCARF,
-    .moves = {MOVE_SING, MOVE_RETURN, MOVE_ATTRACT, MOVE_FAKE_OUT}
+    .moves = {MOVE_SING, MOVE_PLAY_ROUGH, MOVE_ATTRACT, MOVE_FAKE_OUT}
     },
     {
     .iv = 200,
@@ -9151,7 +9151,7 @@ static const struct TrainerMonItemCustomMoves sParty_WallyVR4[] = {
     .lvl = 56,
     .species = SPECIES_DELCATTY,
     .heldItem = ITEM_SILK_SCARF,
-    .moves = {MOVE_SING, MOVE_RETURN, MOVE_ATTRACT, MOVE_FAKE_OUT}
+    .moves = {MOVE_SING, MOVE_PLAY_ROUGH, MOVE_ATTRACT, MOVE_FAKE_OUT}
     },
     {
     .iv = 200,
@@ -9196,7 +9196,7 @@ static const struct TrainerMonItemCustomMoves sParty_WallyVR5[] = {
     .lvl = 58,
     .species = SPECIES_DELCATTY,
     .heldItem = ITEM_SILK_SCARF,
-    .moves = {MOVE_SING, MOVE_RETURN, MOVE_ATTRACT, MOVE_FAKE_OUT}
+    .moves = {MOVE_SING, MOVE_PLAY_ROUGH, MOVE_ATTRACT, MOVE_FAKE_OUT}
     },
     {
     .iv = 200,
