@@ -37,11 +37,7 @@ EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
 	@giveitem ITEM_RARE_CANDY, 99
-	givemon SPECIES_BULBASAUR, 10, ITEM_NONE
-	givemon SPECIES_CHARMANDER, 10, ITEM_NONE
-	givemon SPECIES_SQUIRTLE, 10, ITEM_NONE
-	givemon SPECIES_PIKACHU, 10, ITEM_NONE
-	givemon SPECIES_EEVEE, 10, ITEM_NONE
+	givemon SPECIES_WEEZING_GALARIAN, 20, ITEM_NONE
 	closemessage
 	end
 

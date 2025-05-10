@@ -3557,12 +3557,21 @@ static void Cmd_seteffectwithchance(void)
     if (HasAbility(ABILITY_SERENE_GRACE, GetBattlerAbilities(gBattlerAttacker)))
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance * 2;
     else if (HasAbility(ABILITY_PAINFUL_BURN, GetBattlerAbilities(gBattlerAttacker))
-            && gBattleScripting.moveEffect & MOVE_EFFECT_FLINCH
-            && gBattleMons[gBattlerTarget].status1 == STATUS1_BURN)
+        && gBattleScripting.moveEffect & MOVE_EFFECT_FLINCH
+        && gBattleMons[gBattlerTarget].status1 == STATUS1_BURN)
     {
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance * 3;
         if (percentChance > 60)
             percentChance = 60; //capping the flinch chance. Otherwise Houndoom's Bite will have a 90% chance to flinch!
+    }
+    else if ((gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
+        && (gBattleMoves[gCurrentMove].effect == EFFECT_BURN_HIT
+        || gBattleMoves[gCurrentMove].effect == EFFECT_POISON_HIT
+        || gBattleMoves[gCurrentMove].effect == EFFECT_PARALYZE_HIT
+        || gBattleMoves[gCurrentMove].effect == EFFECT_FREEZE_HIT
+        || gBattleMoves[gCurrentMove].effect == EFFECT_CONFUSE_HIT))
+    {
+        percentChance = 0;
     }
     else
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance;

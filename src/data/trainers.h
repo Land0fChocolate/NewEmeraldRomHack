@@ -11977,7 +11977,7 @@ const struct Trainer gTrainers[] = {
         .trainerPic = TRAINER_PIC_LEAF,
         .trainerName = _("Leaf"),
         .items = {},
-        .doubleBattle = TRUE,
+        .doubleBattle = FALSE,
         .aiFlags = 0,
         .partySize = ARRAY_COUNT(sParty_Leaf),
         .party = {.ItemCustomMoves = sParty_Leaf},
