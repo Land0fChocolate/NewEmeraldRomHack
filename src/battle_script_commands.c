@@ -1854,16 +1854,18 @@ static void Cmd_ppreduce(void)
 s32 CalcCritChanceStage(u8 battlerAtk, u8 battlerDef, u32 move)
 {
     s32 critChance = 0;
-    u16 *atkAbilities = GetBattlerAbilities(gBattlerAttacker);
-    u16 *defAbilities = GetBattlerAbilities(gBattlerTarget);
+    u16 atkAbilities[NUM_ABILITY_SLOTS];
+    u16 defAbilities[NUM_ABILITY_SLOTS];
     u32 holdEffectAtk = GetBattlerHoldEffect(battlerAtk, TRUE);
 
+    memcpy(atkAbilities, GetBattlerAbilities(gBattlerAttacker), sizeof(atkAbilities));
+    memcpy(defAbilities, GetBattlerAbilities(gBattlerTarget), sizeof(defAbilities));
+
     if (gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT
-        || gStatuses3[gBattlerAttacker] & STATUS3_CANT_SCORE_A_CRIT)
-    {
-        critChance = -1;
-    }
-    else if (HasAbility(ABILITY_BATTLE_ARMOR, defAbilities) || HasAbility(ABILITY_SHELL_ARMOR, defAbilities) || HasAbility(ABILITY_BAD_LUCK, defAbilities))
+        || gStatuses3[gBattlerAttacker] & STATUS3_CANT_SCORE_A_CRIT
+        || HasAbility(ABILITY_BATTLE_ARMOR, defAbilities) 
+        || HasAbility(ABILITY_SHELL_ARMOR, defAbilities) 
+        || HasAbility(ABILITY_BAD_LUCK, defAbilities))
     {
         critChance = -1;
     }
