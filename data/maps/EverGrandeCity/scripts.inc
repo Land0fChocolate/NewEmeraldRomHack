@@ -37,7 +37,7 @@ EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
 	@giveitem ITEM_RARE_CANDY, 99
-	givemon SPECIES_WEEZING_GALARIAN, 20, ITEM_NONE
+	givemon SPECIES_ARBOK, 20, ITEM_NONE
 	closemessage
 	end
 

@@ -758,6 +758,7 @@ static const u8 sText_SharpThornsGrow[] =_("Sharp thorns grow\naround {B_DEF_TEA
 static const u8 sText_WishMakerFailed[] =_("{B_ATK_NAME_WITH_PREFIX} failed to make a wish!");
 static const u8 sText_DreamfeastHeals[] = _("{B_ATK_NAME_WITH_PREFIX} heals\nfrom sleeping Pokémon!");
 static const u8 sText_PkmnNeedleMissile[] = _("{B_ATK_NAME_WITH_PREFIX} deals extra\ndamage with needle missiles!");
+static const u8 sText_ItemWasUsedUp[] = _("The {B_LAST_ITEM} was used up…");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1379,6 +1380,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_WISHMAKERFAILED - 12] = sText_WishMakerFailed,
     [STRINGID_DREAMFEASTHEALS - 12] = sText_DreamfeastHeals,
     [STRINGID_PKMNNEEDLEMISSILE - 12] = sText_PkmnNeedleMissile,
+    [STRINGID_ITEMWASUSEDUP - 12] = sText_ItemWasUsedUp,
 };
 
 const u16 gMentalHerbCureStringIds[] = 
