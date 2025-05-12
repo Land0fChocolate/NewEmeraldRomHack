@@ -6991,6 +6991,7 @@
                     | MAGIC COAT
 
     BUDEW           | ENDURE
+                    | MIMIC
                     | PSYCH UP
                     | SLEEP TALK
                     | SNORE
@@ -7002,24 +7003,36 @@
                     | SEED BOMB
                     | HIDDEN THORNS
 
-    ROSERADE        | ENDURE
-                    | FURY CUTTER
-                    | PSYCH UP
-                    | SLEEP TALK
-                    | SNORE
-                    | SUBSTITUTE
-                    | SWAGGER
-                    | SWIFT
-                    | SWORDS DANCE
-                    | WORRY SEED
-                    | SEED BOMB
-                    | HIDDEN THORNS
-
-    AMBIPOM         | DREAM EATER
+    ROSERADE        | BODY SLAM
+                    | DOUBLE EDGE
                     | ENDURE
+                    | FURY CUTTER
+                    | MIMIC
+                    | PSYCH UP
+                    | SLEEP TALK
+                    | SNORE
+                    | SUBSTITUTE
+                    | SWAGGER
+                    | SWIFT
+                    | SWORDS DANCE
+                    | WORRY SEED
+                    | SEED BOMB
+                    | HIDDEN THORNS
+
+    AMBIPOM         | BODY SLAM
+                    | COUNTER
+                    | DEFENSE CURL
+                    | DOUBLE EDGE
+                    | DREAM EATER
+                    | DYNAMIC PUNCH
+                    | ENDURE
+                    | MIMIC
                     | FIRE PUNCH
                     | FURY CUTTER
                     | ICE PUNCH
+                    | METRONOME
+                    | MIMIC
+                    | SEISMIC TOSS
                     | SLEEP TALK
                     | SNORE
                     | SUBSTITUTE
@@ -7031,24 +7044,29 @@
                     | NASTY PLOT
                     | ROLE PLAY
                     | KNOCK OFF
+                    | GUNK SHOT
 
-    MISMAGIUS       | DREAM EATER
+    MISMAGIUS       | DEFENSE CURL
+                    | DOUBLE EDGE
+                    | DREAM EATER
                     | ENDURE
                     | ICY WIND
+                    | MIMIC
                     | PSYCH UP
                     | SLEEP TALK
                     | SNORE
                     | SUBSTITUTE
                     | SWAGGER
+                    | FOUL PLAY
                     | SWIFT
                     | NASTY PLOT
-                    | FOUL PLAY
                     | MAGIC COAT
-                    | NASTY PLOT
                     | PAIN SPLIT
 
-    HONCHKROW       | DREAM EATER
+    HONCHKROW       | DOUBLE EDGE
+                    | DREAM EATER
                     | ENDURE
+                    | MIMIC
                     | ICY WIND
                     | PSYCH UP
                     | SLEEP TALK
@@ -7057,15 +7075,16 @@
                     | SWAGGER
                     | SWIFT
                     | NASTY PLOT
-                    | FOUL PLAY
                     | DEFOG
                     | TAILWIND
                     | NASTY PLOT
                     | SUPERPOWER
                     | HEAT WAVE
+                    | FOUL PLAY
 
     CHINGLING       | DREAM EATER
                     | ENDURE
+                    | MIMIC
                     | ICY WIND
                     | PSYCH UP
                     | ROLLOUT
@@ -7114,6 +7133,7 @@
     HAPPINY         | COUNTER
                     | DREAM EATER
                     | ENDURE
+                    | MIMIC
                     | ICY WIND
                     | METRONOME
                     | PSYCH UP
@@ -7132,6 +7152,7 @@
                     | DEFENSE CURL
                     | DOUBLE EDGE
                     | ENDURE
+                    | MIMIC
                     | FIRE PUNCH
                     | ICE PUNCH
                     | ICY WIND
@@ -7151,6 +7172,7 @@
 
     MANTYKE         | ENDURE
                     | ICY WIND
+                    | MIMIC
                     | SLEEP TALK
                     | SNORE
                     | SUBSTITUTE
@@ -7159,11 +7181,16 @@
                     | SIGNAL BEAM
                     | TAILWIND
 
-    WEAVILE         | DREAM EATER
+    WEAVILE         | COUNTER
+                    | DEFENSE CURL
+                    | DOUBLE EDGE
+                    | DREAM EATER
+                    | DYNAMIC PUNCH
                     | ENDURE
                     | FURY CUTTER
                     | ICE PUNCH
                     | ICY WIND
+                    | MIMIC
                     | PSYCH UP
                     | SLEEP TALK
                     | SNORE
@@ -7173,12 +7200,14 @@
                     | SWORDS DANCE
                     | LOW SWEEP
                     | AVALANCHE
-                    | NASTY PLOT
                     | KNOCK OFF
                     | LOW KICK
+                    | NASTY PLOT
                     | FOUL PLAY
 
-    MAGNEZONE       | ENDURE
+    MAGNEZONE       | DOUBLE EDGE
+                    | ENDURE
+                    | MIMIC
                     | EXPLOSION
                     | PSYCH UP
                     | ROLLOUT
@@ -7193,15 +7222,20 @@
                     | MAGIC COAT
                     | IRON HEAD
 
-    LICKILICKY      | DEFENSE CURL
+    LICKILICKY      | BODY SLAM
+                    | COUNTER
+                    | DEFENSE CURL
+                    | DOUBLE EDGE
                     | DREAM EATER
+                    | DYNAMIC PUNCH
                     | ENDURE
-                    | EXPLOSION
                     | FIRE PUNCH
                     | ICE PUNCH
                     | ICY WIND
+                    | MIMIC
                     | PSYCH UP
                     | ROLLOUT
+                    | SEISMIC TOSS
                     | SLEEP TALK
                     | SNORE
                     | SUBSTITUTE
@@ -7214,12 +7248,18 @@
                     | BODY PRESS
                     | AQUA TAIL
 
-    RHYPERIOR       | ENDURE
+    RHYPERIOR       | BODY SLAM
+                    | COUNTER
+                    | DOUBLE EDGE
+                    | DYNAMIC PUNCH
+                    | ENDURE
                     | FIRE PUNCH
                     | FURY CUTTER
                     | ICE PUNCH
                     | ICY WIND
+                    | MIMIC
                     | ROLLOUT
+                    | SEISMIC TOSS
                     | SLEEP TALK
                     | SNORE
                     | SUBSTITUTE
@@ -7232,11 +7272,13 @@
                     | SUPERPOWER
                     | STEALTH ROCK
                     | BODY PRESS
-                    | IRON HEAD
                     | AQUA TAIL
                     | MEGAHORN
 
-    TANGROWTH       | ENDURE
+    TANGROWTH       | BODY SLAM
+                    | DOUBLE EDGE               
+                    | ENDURE
+                    | MIMIC
                     | PSYCH UP
                     | SLEEP TALK
                     | SNORE
@@ -7250,9 +7292,16 @@
                     | SEED BOMB
                     | HIDDEN THORNS
 
-    ELECTIVIRE      | ENDURE
+    ELECTIVIRE      | BODY SLAM
+                    | COUNTER
+                    | DOUBLE EDGE
+                    | DYNAMIC PUNCH
+                    | ENDURE
                     | FIRE PUNCH
                     | ICE PUNCH
+                    | METRONOME
+                    | MIMIC
+                    | SEISMIC TOSS
                     | SLEEP TALK
                     | SNORE
                     | SUBSTITUTE
@@ -7263,8 +7312,15 @@
                     | SIGNAL BEAM
                     | LOW KICK
 
-    MAGMORTAR       | ENDURE
+    MAGMORTAR       | BODY SLAM
+                    | COUNTER
+                    | DOUBLE EDGE
+                    | DYNAMIC PUNCH
+                    | ENDURE
                     | FIRE PUNCH
+                    | METRONOME
+                    | MIMIC
+                    | SEISMIC TOSS
                     | SLEEP TALK
                     | SNORE
                     | SUBSTITUTE
@@ -7274,12 +7330,20 @@
                     | HEAT WAVE
                     | LOW KICK
 
-    TOGEKISS        | DREAM EATER
+    TOGEKISS        | BODY SLAM
+                    | COUNTER
+                    | DEFENSE CURL
+                    | DOUBLE EDGE
+                    | DREAM EATER
                     | ENDURE
+                    | METRONOME
+                    | MIMIC
                     | PSYCH UP
                     | ROLLOUT
+                    | SEISMIC TOSS
                     | SLEEP TALK
                     | SNORE
+                    | SOFT BOILED
                     | SUBSTITUTE
                     | SWAGGER
                     | SWIFT
@@ -7297,6 +7361,7 @@
 
     YANMEGA         | DREAM EATER
                     | ENDURE
+                    | MIMIC
                     | PSYCH UP
                     | SLEEP TALK
                     | SNORE
@@ -7308,7 +7373,10 @@
                     | TAILWIND
                     | BUG BITE
 
-    LEAFEON         | ENDURE
+    LEAFEON         | BODY SLAM
+                    | DOUBLE EDGE
+                    | ENDURE
+                    | MIMIC
                     | FURY CUTTER
                     | SLEEP TALK
                     | SNORE
@@ -7324,7 +7392,10 @@
                     | SEED BOMB
                     | HIDDEN THORNS
 
-    GLACEON         | ENDURE
+    GLACEON         | BODY SLAM
+                    | DOUBLE EDGE
+                    | ENDURE
+                    | MIMIC
                     | ICY WIND
                     | SLEEP TALK
                     | SNORE
@@ -7337,8 +7408,12 @@
                     | STORED POWER
                     | AQUA TAIL
 
-    GLISCOR         | ENDURE
+    GLISCOR         | COUNTER
+                    | DOUBLE EDGE
+                    | DREAM EATER
+                    | ENDURE
                     | FURY CUTTER
+                    | MIMIC
                     | SLEEP TALK
                     | SNORE
                     | SUBSTITUTE
@@ -7352,8 +7427,12 @@
                     | AQUA TAIL
                     | BUG BITE
 
-    MAMOSWINE       | ENDURE
+    MAMOSWINE       | BODY SLAM
+                    | DEFENSE CURL
+                    | DOUBLE EDGE
+                    | ENDURE
                     | ICY WIND
+                    | MIMIC
                     | SLEEP TALK
                     | SNORE
                     | SUBSTITUTE
@@ -7367,8 +7446,11 @@
                     | BODY PRESS
                     | IRON HEAD
 
-    PORYGON Z       | DREAM EATER
+    PORYGON Z       | DEFENSE CURL
+                    | DOUBLE EDGE
+                    | DREAM EATER
                     | ENDURE
+                    | MIMIC
                     | ICY WIND
                     | PSYCH UP
                     | SLEEP TALK
@@ -7385,11 +7467,15 @@
                     | PAIN SPLIT
                     | FOUL PLAY
 
-    GALLADE         | DREAM EATER
+    GALLADE         | BODY SLAM
+                    | DEFENSE CURL
+                    | DOUBLE EDGE
+                    | DREAM EATER
                     | ENDURE
                     | FIRE PUNCH
                     | FURY CUTTER
                     | ICE PUNCH
+                    | MIMIC
                     | PSYCH UP
                     | SLEEP TALK
                     | SNORE
@@ -7410,10 +7496,15 @@
                     | PAIN SPLIT
                     | FLINT BLADE
 
-    PROBOPASS       | ENDURE
+    PROBOPASS       | BODY SLAM
+                    | DEFENSE CURL
+                    | DOUBLE EDGE
+                    | DYNAMIC PUNCH
+                    | ENDURE
                     | EXPLOSION
                     | FIRE PUNCH
                     | ICE PUNCH
+                    | MIMIC
                     | ROLLOUT
                     | SLEEP TALK
                     | SNORE
@@ -7426,12 +7517,19 @@
                     | MAGIC COAT
                     | PAIN SPLIT
 
-    DUSKNOIR        | DREAM EATER
+    DUSKNOIR        | BODY SLAM
+                    | COUNTER
+                    | DOUBLE EDGE
+                    | DREAM EATER
+                    | DYNAMIC PUNCH
                     | ENDURE
                     | FIRE PUNCH
                     | ICE PUNCH
                     | ICY WIND
+                    | METRONOME
+                    | MIMIC
                     | PSYCH UP
+                    | SEISMIC TOSS
                     | SLEEP TALK
                     | SNORE
                     | SUBSTITUTE
@@ -7440,10 +7538,13 @@
                     | TRICK
                     | PAIN SPLIT
 
-    FROSLASS        | DREAM EATER
+    FROSLASS        | BODY SLAM
+                    | DOUBLE EDGE
+                    | DREAM EATER
                     | ENDURE
                     | ICE PUNCH
                     | ICY WIND
+                    | MIMIC
                     | PSYCH UP
                     | ROLLOUT
                     | SLEEP TALK
@@ -7457,6 +7558,7 @@
 
     SYLVEON         | PSYCH UP
                     | SLEEP TALK
+                    | MIMIC
                     | SNORE
                     | SUBSTITUTE
                     | SWAGGER
@@ -7482,11 +7584,11 @@
                     | ZEN HEADBUTT
 
     KLEAVOR         | COUNTER
-                    | DOUBLE_EDGE
+                    | DOUBLE EDGE
                     | ENDURE
-                    | FURY_CUTTER
+                    | FURY CUTTER
                     | MIMIC
-                    | SLEEP_TALK
+                    | SLEEP TALK
                     | SNORE
                     | SUBSTITUTE
                     | SWAGGER
@@ -7935,6 +8037,40 @@
                       | DEFOG
                       | GASTRO ACID
                       | GUNK SHOT
+
+    ARTICUNO GALARIAN   | DREAM EATER
+                        | ENDURE
+                        | SLEEP TALK
+                        | SNORE
+                        | SUBSTITUTE
+                        | SWIFT
+                        | SIGNAL BEAM
+                        | STORED POWER
+                        | DEFOG
+                        | TRICK
+                        | TAILWIND
+
+    ZAPDOS GALARIAN     | COUNTER
+                        | ENDURE
+                        | SLEEP_TALK
+                        | SNORE
+                        | SUBSTITUTE
+                        | SWIFT
+                        | SUPERPOWER
+                        | DEFOG
+                        | KNOCK OFF
+                        | TAILWIND
+                        | LOW KICK
+
+    MOLTRES GALARIAN    | ENDURE
+                        | SLEEP_TALK
+                        | SNORE
+                        | SUBSTITUTE
+                        | SWIFT
+                        | NASTY PLOT
+                        | DEFOG
+                        | TAILWIND
+                        | FOUL PLAY
 
     SLOWKING GALARIAN | BODY SLAM
                       | ENDURE

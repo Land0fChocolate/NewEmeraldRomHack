@@ -11653,6 +11653,7 @@ SPECIES TROPIUS              | TM40 AERIAL ACE
                              | TM11 SUNNY DAY
                              | TM06 TOXIC
                              | TM53 ENERGY BALL
+                             | TM56 DRAGON PULSE
                              | TM58 ROOST
                              | TM64 CUT
                              | TM68 GIGA IMPACT
@@ -14426,6 +14427,104 @@ SPECIES WEEZING GALARIAN     | TM45 ATTRACT
                              | TM83 INFESTATION
                              | TM97 DARK PULSE
                              | TM99 DAZZLING GLEAM
+
+SPECIES ARTICUNO GALARIAN    | TM04 CALM MIND
+                             | TM32 DOUBLE TEAM
+                             | TM42 FACADE
+                             | TM21 FRUSTRATION
+                             | TM10 HIDDEN POWER
+                             | TM15 HYPER BEAM
+                             | TM16 LIGHT SCREEN
+                             | TM17 PROTECT
+                             | TM29 PSYCHIC
+                             | TM33 REFLECT
+                             | TM44 REST
+                             | TM27 RETURN
+                             | TM05 ROAR
+                             | TM20 SAFEGUARD
+                             | TM43 SECRET POWER
+                             | TM30 SHADOW BALL
+                             | TM48 SKILL SWAP
+                             | TM47 STEEL WING
+                             | TM11 SUNNY DAY
+                             | TM18 RAIN DANCE
+                             | TM06 TOXIC
+                             | TM58 ROOST
+                             | TM60 PSYSHOCK
+                             | TM68 GIGA IMPACT
+                             | TM76 FLY
+                             | TM89 U TURN
+                             | TM90 ROCK SMASH
+                             | TM92 TRICK ROOM
+                             | HM02 FLY
+                             | HM06 ROCK SMASH
+
+SPECIES ZAPDOS GALARIAN      | TM40 AERIAL ACE
+                             | TM31 BRICK BREAK
+                             | TM08 BULK UP
+                             | TM32 DOUBLE TEAM
+                             | TM42 FACADE
+                             | TM21 FRUSTRATION
+                             | TM10 HIDDEN POWER
+                             | TM15 HYPER BEAM
+                             | TM16 LIGHT SCREEN
+                             | TM17 PROTECT
+                             | TM44 REST
+                             | TM27 RETURN
+                             | TM05 ROAR
+                             | TM20 SAFEGUARD
+                             | TM43 SECRET POWER
+                             | TM47 STEEL WING
+                             | TM11 SUNNY DAY
+                             | TM18 RAIN DANCE
+                             | TM12 TAUNT
+                             | TM41 TORMENT
+                             | TM06 TOXIC
+                             | TM51 LEECH LIFE
+                             | TM58 ROOST
+                             | TM62 ACROBATICS
+                             | TM66 PAYBACK
+                             | TM68 GIGA IMPACT
+                             | TM76 FLY
+                             | TM77 THROAT CHOP
+                             | TM89 U TURN
+                             | TM90 ROCK SMASH
+                             | HM02 FLY
+                             | HM06 ROCK SMASH
+
+SPECIES MOLTRES GALARIAN     | TM40_AERIAL ACE
+                             | TM32 DOUBLE TEAM
+                             | TM42 FACADE
+                             | TM21 FRUSTRATION
+                             | TM10 HIDDEN POWER
+                             | TM15 HYPER BEAM
+                             | TM17 PROTECT
+                             | TM44 REST
+                             | TM27 RETURN
+                             | TM05 ROAR
+                             | TM20 SAFEGUARD
+                             | TM43 SECRET POWER
+                             | TM30 SHADOW BALL
+                             | TM49 SNATCH
+                             | TM47 STEEL WING
+                             | TM11 SUNNY DAY
+                             | TM18 RAIN DANCE
+                             | TM12 TAUNT
+                             | TM46 THIEF
+                             | TM41 TORMENT
+                             | TM06 TOXIC
+                             | TM51 LEECH LIFE
+                             | TM58 ROOST
+                             | TM62 ACROBATICS
+                             | TM66 PAYBACK
+                             | TM68 GIGA IMPACT
+                             | TM76 FLY
+                             | TM89 U TURN
+                             | TM90 ROCK SMASH
+                             | TM95 SNARL
+                             | TM97 DARK PULSE
+                             | HM02 FLY
+                             | HM06 ROCK SMASH
 
 SPECIES SLOWKING GALARIAN    | TM06 TOXIC
                              | TM45 ATTRACT
