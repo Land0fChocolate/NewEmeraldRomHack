@@ -8836,6 +8836,32 @@ bool32 IsBattlerProtected(u8 battlerId, u16 move)
     return FALSE;
 }
 
+static bool32 IsBattlerGrounded3(u8 battlerId, bool32 considerInverse)
+{
+    u16 abilities[NUM_ABILITY_SLOTS];
+
+    memcpy(abilities, GetBattlerAbilities(battlerId), sizeof(abilities));
+
+    if (GetBattlerHoldEffect(battlerId, TRUE) == HOLD_EFFECT_IRON_BALL)
+        return TRUE;
+    if (gFieldStatuses & STATUS_FIELD_GRAVITY)
+        return TRUE;
+    if (gStatuses3[battlerId] & STATUS3_ROOTED)
+        return TRUE;
+    if (gStatuses3[battlerId] & STATUS3_SMACKED_DOWN)
+        return TRUE;
+    if (gStatuses3[battlerId] & STATUS3_TELEKINESIS)
+        return FALSE;
+    if (gStatuses3[battlerId] & STATUS3_MAGNET_RISE)
+        return FALSE;
+    if (GetBattlerHoldEffect(battlerId, TRUE) == HOLD_EFFECT_AIR_BALLOON)
+        return FALSE;
+    if ((IS_BATTLER_OF_TYPE(battlerId, TYPE_FLYING)) && (!considerInverse || !FlagGet(B_FLAG_INVERSE_BATTLE)))
+        return FALSE;
+
+    return TRUE;
+}
+
 // Only called directly when calculating damage type effectiveness
 static bool32 IsBattlerGrounded2(u8 battlerId, bool32 considerInverse)
 {
@@ -10374,9 +10400,9 @@ static void UpdateMoveResultFlags(u16 modifier)
 
 static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 battlerAtk, u8 battlerDef, bool32 recordAbilities, u16 modifier)
 {
-    u16 abilities[NUM_ABILITY_SLOTS];
-
-    memcpy(abilities, GetBattlerAbilities(battlerDef), sizeof(abilities));
+    u16 atkAbilities[NUM_ABILITY_SLOTS], defAbilities[NUM_ABILITY_SLOTS];
+    memcpy(atkAbilities, GetBattlerAbilities(battlerAtk), sizeof(atkAbilities));
+    memcpy(defAbilities, GetBattlerAbilities(battlerDef), sizeof(defAbilities));
 
     MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, gBattleMons[battlerDef].type1, battlerAtk, recordAbilities);
     if (gBattleMons[battlerDef].type2 != gBattleMons[battlerDef].type1)
@@ -10385,19 +10411,20 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
         && gBattleMons[battlerDef].type3 != gBattleMons[battlerDef].type1)
         MulByTypeEffectiveness(&modifier, move, moveType, battlerDef, gBattleMons[battlerDef].type3, battlerAtk, recordAbilities);
 
-    if (moveType == TYPE_GROUND && !IsBattlerGrounded2(battlerDef, TRUE) && !(gBattleMoves[move].flags & FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING))
+    // checks for effects like Magnet Rise but not Levitate
+    if (moveType == TYPE_GROUND && !IsBattlerGrounded3(battlerDef, TRUE) && !(gBattleMoves[move].flags & FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING))
+        modifier = UQ_4_12(0.0);
+
+    if (moveType == TYPE_GROUND && HasAbility(ABILITY_LEVITATE, defAbilities) && !HasAbility(ABILITY_MOLD_BREAKER, atkAbilities))
     {
         modifier = UQ_4_12(0.0);
-        if (HasAbility(ABILITY_LEVITATE, abilities))
-        {
-            gLastUsedAbility = ABILITY_LEVITATE;
-            gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
-            gLastLandedMoves[battlerDef] = 0;
-            gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
-        }
+        gLastUsedAbility = ABILITY_LEVITATE;
+        gMoveResultFlags |= (MOVE_RESULT_MISSED | MOVE_RESULT_DOESNT_AFFECT_FOE);
+        gLastLandedMoves[battlerDef] = 0;
+        gBattleCommunication[MISS_TYPE] = B_MSG_GROUND_MISS;
     }
 
-    if (moveType == TYPE_GRASS && HasAbility(ABILITY_SAP_SIPPER, abilities))
+    if (moveType == TYPE_GRASS && HasAbility(ABILITY_SAP_SIPPER, defAbilities) && !HasAbility(ABILITY_MOLD_BREAKER, atkAbilities))
     {
         modifier = UQ_4_12(0.0);
         gLastUsedAbility = ABILITY_SAP_SIPPER;
@@ -10405,7 +10432,7 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
         gLastLandedMoves[battlerDef] = 0;
     }
 
-    if (moveType == TYPE_ELECTRIC && HasAbility(ABILITY_LIGHTNING_ROD, abilities))
+    if (moveType == TYPE_ELECTRIC && HasAbility(ABILITY_LIGHTNING_ROD, defAbilities) && !HasAbility(ABILITY_MOLD_BREAKER, atkAbilities))
     {
         modifier = UQ_4_12(0.0);
         gLastUsedAbility = ABILITY_LIGHTNING_ROD;
@@ -10430,14 +10457,14 @@ static u16 CalcTypeEffectivenessMultiplierInternal(u16 move, u8 moveType, u8 bat
         modifier = UQ_4_12(1.0);
     }
 
-    if (((HasAbility(ABILITY_WONDER_GUARD, abilities) && modifier <= UQ_4_12(1.0))
-        || (HasAbility(ABILITY_TELEPATHY, abilities) && battlerDef == BATTLE_PARTNER(battlerAtk)))
+    if (((HasAbility(ABILITY_WONDER_GUARD, defAbilities) && modifier <= UQ_4_12(1.0))
+        || (HasAbility(ABILITY_TELEPATHY, defAbilities) && battlerDef == BATTLE_PARTNER(battlerAtk)))
         && gBattleMoves[move].power)
     {
         modifier = UQ_4_12(0.0);
-        if (HasAbility(ABILITY_WONDER_GUARD, abilities))
+        if (HasAbility(ABILITY_WONDER_GUARD, defAbilities))
             gLastUsedAbility = ABILITY_WONDER_GUARD;
-        if (HasAbility(ABILITY_TELEPATHY, abilities))
+        if (HasAbility(ABILITY_TELEPATHY, defAbilities))
             gLastUsedAbility = ABILITY_TELEPATHY;
         gMoveResultFlags |= MOVE_RESULT_MISSED;
         gLastLandedMoves[battlerDef] = 0;

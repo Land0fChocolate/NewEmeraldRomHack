@@ -986,13 +986,13 @@ DraconidArchives_Eventscript_Book::
 	end
 
 DraconidArchives_Text_TopHalfDisplayCase:
-	.string "The top half of the display case\n"
+	.string "The display case on the right\n"
 	.string "displays a wide variety of Mega Stones.\p"
 	.string "They are labelled “Kanto” and “Johto”.\n"
 	.string "Pick one?$"
 
 DraconidArchives_Text_BotHalfDisplayCase:
-	.string "The bottom half of the display case\n"
+	.string "The display case on the left\n"
 	.string "displays a wide variety of Mega Stones.\p"
 	.string "They are labelled “Hoenn”.\n"
 	.string "Pick one?$"

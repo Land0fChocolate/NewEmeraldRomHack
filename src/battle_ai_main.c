@@ -686,10 +686,9 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         // check ground immunities
         if (moveType == TYPE_GROUND
           && !IsBattlerGrounded(battlerDef)
-          && ((HasAbility(ABILITY_LEVITATE, AI_DATA->abilities[battlerDef])
-          && DoesBattlerIgnoreAbilityChecks(AI_DATA->abilities[battlerAtk], move))
-          || AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_AIR_BALLOON
-          || (gStatuses3[battlerDef] & (STATUS3_MAGNET_RISE | STATUS3_TELEKINESIS)))
+          && ((HasAbility(ABILITY_LEVITATE, AI_DATA->abilities[battlerDef]) && !DoesBattlerIgnoreAbilityChecks(AI_DATA->abilities[battlerAtk], move))
+            || AI_DATA->holdEffects[battlerDef] == HOLD_EFFECT_AIR_BALLOON
+            || (gStatuses3[battlerDef] & (STATUS3_MAGNET_RISE | STATUS3_TELEKINESIS)))
           && move != MOVE_THOUSAND_ARROWS)
         {
             RETURN_SCORE_MINUS(20);
@@ -1445,7 +1444,7 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                 score -= 10;    // if mon will wake up, is not asleep, or is not comatose
             break;
         case EFFECT_MEAN_LOOK:
-            if (IsBattlerTrapped(battlerDef, TRUE) || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove))
+            if (IsBattlerTrapped(battlerDef, TRUE) || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove) || (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GHOST)))
                 score -= 10;
             break;
         case EFFECT_NIGHTMARE:
@@ -2864,13 +2863,6 @@ static s16 AI_DoubleBattle(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                             RETURN_SCORE_PLUS(2);
                         }
                         break;
-                    case ABILITY_COMPETITIVE:
-                        if (IsStatLoweringEffect(effect)
-                          && BattlerStatCanRise(battlerAtkPartner, atkPartnerAbilities, STAT_SPATK))
-                        {
-                            RETURN_SCORE_PLUS(1);
-                        }
-                        break;            
                     }
                 }
             } // ability checks
@@ -4034,9 +4026,26 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_DEF, &score);
         break;
     case EFFECT_FAKE_OUT:
-        if (move == MOVE_FAKE_OUT    // filter out first impression
-          && ShouldFakeOut(battlerAtk, battlerDef, move))
-            score += 8;
+        if (gDisableStructs[battlerAtk].isFirstTurn) {
+            score += 3;
+        }
+        if ((AI_DATA->holdEffects[battlerAtk] == HOLD_EFFECT_CHOICE_BAND || HasAbility(ABILITY_GORILLA_TACTICS, AI_DATA->abilities[battlerAtk]))
+            && (CountUsablePartyMons(battlerDef) > 0 || !CanIndexMoveFaintTarget(battlerAtk, battlerDef, AI_THINKING_STRUCT->movesetIndex, 0))
+            && CountUsablePartyMons(battlerAtk) == 0) {
+                score -= 10;
+                break;
+            }
+
+        switch (move) {
+            case MOVE_FAKE_OUT:
+            if (ShouldTryToFlinch(battlerAtk, battlerDef, AI_DATA->abilities[battlerAtk], AI_DATA->abilities[battlerDef], move)
+                && !DoesSubstituteBlockMove(battlerAtk, battlerDef, move))
+                    score += 5;
+                break;
+            case MOVE_FIRST_IMPRESSION:
+                score += 3;
+                break;
+        }
         break;
     case EFFECT_STOCKPILE:
         if (HasAbility(ABILITY_CONTRARY, AI_DATA->abilities[battlerAtk]))

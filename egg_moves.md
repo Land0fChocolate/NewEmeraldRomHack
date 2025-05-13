@@ -2125,6 +2125,7 @@ SWABLU
             | HYPER VOICE
             | STEEL WING
             | PLAY ROUGH
+            | HURRICANE
 
 ZANGOOSE
             | FLAIL

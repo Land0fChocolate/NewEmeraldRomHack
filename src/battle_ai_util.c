@@ -1402,6 +1402,7 @@ bool32 IsStatLoweringMoveEffect(u16 moveEffect)
     case EFFECT_SPECIAL_DEFENSE_DOWN_2:
     case EFFECT_ACCURACY_DOWN_2:
     case EFFECT_EVASION_DOWN_2:
+    case EFFECT_CAPTIVATE:
         return TRUE;
     default:
         return FALSE;
@@ -2920,19 +2921,6 @@ bool32 ShouldTrap(u8 battlerAtk, u8 battlerDef, u16 move)
     return FALSE;
 }
 
-bool32 ShouldFakeOut(u8 battlerAtk, u8 battlerDef, u16 move)
-{
-    if (AI_DATA->holdEffects[battlerAtk] == HOLD_EFFECT_CHOICE_BAND && CountUsablePartyMons(battlerAtk) == 0)
-        return FALSE;   // don't lock attacker into fake out if can't switch out
-
-    if (gDisableStructs[battlerAtk].isFirstTurn
-      && ShouldTryToFlinch(battlerAtk, battlerDef, AI_DATA->abilities[battlerAtk], AI_DATA->abilities[battlerDef], move)
-      && !DoesSubstituteBlockMove(battlerAtk, battlerDef, move))
-        return TRUE;
-
-    return FALSE;
-}
-
 static u32 FindMoveUsedXTurnsAgo(u32 battlerId, u32 x)
 {
     s32 i, index = BATTLE_HISTORY->moveHistoryIndex[battlerId];
@@ -3064,7 +3052,9 @@ bool32 ShouldSetScreen(u8 battlerAtk, u8 battlerDef, u16 moveEffect)
     case EFFECT_AURORA_VEIL:
         // Use only in Hail and only if AI doesn't already have Reflect, Light Screen or Aurora Veil itself active.
         if (gBattleWeather & WEATHER_HAIL_ANY
-            && !(gSideStatuses[atkSide] & (SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN | SIDE_STATUS_AURORA_VEIL)))
+            && !(gSideStatuses[atkSide] & (SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN | SIDE_STATUS_AURORA_VEIL))
+            && !AI_IsAbilityOnSide(battlerAtk, ABILITY_CLOUD_NINE) && !AI_IsAbilityOnSide(battlerDef, ABILITY_CLOUD_NINE)
+            && !AI_IsAbilityOnSide(battlerAtk, ABILITY_AIR_LOCK) && !AI_IsAbilityOnSide(battlerDef, ABILITY_AIR_LOCK))
             return TRUE;
         break;
     case EFFECT_REFLECT:

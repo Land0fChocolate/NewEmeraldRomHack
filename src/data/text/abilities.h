@@ -104,7 +104,8 @@ static const u8 sShadowTagDescription[] = _(
 
 static const u8 sRoughSkinDescription[] = _(
 	"Damages attackers who\n"
-	"make contact for 1/8 max HP.");
+	"make contact for 1/8\n"
+    "max HP.");
 
 static const u8 sWonderGuardDescription[] = _(
 	"User is only hurt from\n"
@@ -259,8 +260,8 @@ static const u8 sStickyHoldDescription[] = _(
 	"user's held item.");
 
 static const u8 sShedSkinDescription[] = _(
-	"Chance to heal status at\n"
-	"the end of turn of 33%.");
+	"33% chance to heal status\n"
+	"at the end of the turn.");
 
 static const u8 sGutsDescription[] = _(
 	"Attack stat raised by 50%\n"
@@ -492,8 +493,8 @@ static const u8 sStormDrainDescription[] = _(
 	"boost when activated.");
 
 static const u8 sIceBodyDescription[] = _(
-	"Heals 1/16 max HP every turn\n"
-	"during hail.");
+	"Heals 1/16 max HP every\n"
+	"turn during hail.");
 
 static const u8 sSnowWarningDescription[] = _(
 	"Summons hail in battle\n"
@@ -667,7 +668,7 @@ static const u8 sRattledDescription[] = _(
 static const u8 sMagicBounceDescription[] = _(
 	"Reflects non-damaging\n"
 	"sabotaging moves back at\n"
-	"the attcker.");
+	"the attacker.");
 
 static const u8 sSapSipperDescription[] = _(
 	"Raises attack by one stage\n"

@@ -2127,7 +2127,8 @@ const u16 gEggMoves[] = {
         MOVE_ROOST,
         MOVE_HYPER_VOICE,
         MOVE_STEEL_WING,
-        MOVE_PLAY_ROUGH),
+        MOVE_PLAY_ROUGH,
+        MOVE_HURRICANE),
 
     egg_moves(ZANGOOSE,
         MOVE_FLAIL,

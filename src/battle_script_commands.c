@@ -1854,16 +1854,18 @@ static void Cmd_ppreduce(void)
 s32 CalcCritChanceStage(u8 battlerAtk, u8 battlerDef, u32 move)
 {
     s32 critChance = 0;
-    u16 *atkAbilities = GetBattlerAbilities(gBattlerAttacker);
-    u16 *defAbilities = GetBattlerAbilities(gBattlerTarget);
+    u16 atkAbilities[NUM_ABILITY_SLOTS];
+    u16 defAbilities[NUM_ABILITY_SLOTS];
     u32 holdEffectAtk = GetBattlerHoldEffect(battlerAtk, TRUE);
 
+    memcpy(atkAbilities, GetBattlerAbilities(gBattlerAttacker), sizeof(atkAbilities));
+    memcpy(defAbilities, GetBattlerAbilities(gBattlerTarget), sizeof(defAbilities));
+
     if (gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT
-        || gStatuses3[gBattlerAttacker] & STATUS3_CANT_SCORE_A_CRIT)
-    {
-        critChance = -1;
-    }
-    else if (HasAbility(ABILITY_BATTLE_ARMOR, defAbilities) || HasAbility(ABILITY_SHELL_ARMOR, defAbilities) || HasAbility(ABILITY_BAD_LUCK, defAbilities))
+        || gStatuses3[gBattlerAttacker] & STATUS3_CANT_SCORE_A_CRIT
+        || HasAbility(ABILITY_BATTLE_ARMOR, defAbilities) 
+        || HasAbility(ABILITY_SHELL_ARMOR, defAbilities) 
+        || HasAbility(ABILITY_BAD_LUCK, defAbilities))
     {
         critChance = -1;
     }
@@ -3557,12 +3559,21 @@ static void Cmd_seteffectwithchance(void)
     if (HasAbility(ABILITY_SERENE_GRACE, GetBattlerAbilities(gBattlerAttacker)))
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance * 2;
     else if (HasAbility(ABILITY_PAINFUL_BURN, GetBattlerAbilities(gBattlerAttacker))
-            && gBattleScripting.moveEffect & MOVE_EFFECT_FLINCH
-            && gBattleMons[gBattlerTarget].status1 == STATUS1_BURN)
+        && gBattleScripting.moveEffect & MOVE_EFFECT_FLINCH
+        && gBattleMons[gBattlerTarget].status1 == STATUS1_BURN)
     {
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance * 3;
         if (percentChance > 60)
             percentChance = 60; //capping the flinch chance. Otherwise Houndoom's Bite will have a 90% chance to flinch!
+    }
+    else if ((gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
+        && (gBattleMoves[gCurrentMove].effect == EFFECT_BURN_HIT
+        || gBattleMoves[gCurrentMove].effect == EFFECT_POISON_HIT
+        || gBattleMoves[gCurrentMove].effect == EFFECT_PARALYZE_HIT
+        || gBattleMoves[gCurrentMove].effect == EFFECT_FREEZE_HIT
+        || gBattleMoves[gCurrentMove].effect == EFFECT_CONFUSE_HIT))
+    {
+        percentChance = 0;
     }
     else
         percentChance = gBattleMoves[gCurrentMove].secondaryEffectChance;
@@ -5579,6 +5590,7 @@ static void Cmd_moveend(void)
         case MOVEEND_RED_CARD:
             if (gCurrentMove != MOVE_DRAGON_TAIL
               && gCurrentMove != MOVE_CIRCLE_THROW
+              && !(gBattleTypeFlags & BATTLE_TYPE_ARENA)
               && IsBattlerAlive(gBattlerAttacker)
               && !TestSheerForceFlag(gBattlerAttacker, gCurrentMove))
             {
@@ -11631,7 +11643,11 @@ static void Cmd_trysetencore(void)
     {
         gDisableStructs[gBattlerTarget].encoredMove = gBattleMons[gBattlerTarget].moves[i];
         gDisableStructs[gBattlerTarget].encoredMovePos = i;
-        gDisableStructs[gBattlerTarget].encoreTimer = 3;
+        // Encore always lasts 3 turns, but we need to account for a scenario where Encore changes the move during the same turn.
+        if (GetBattlerTurnOrderNum(gBattlerAttacker) > GetBattlerTurnOrderNum(gBattlerTarget))
+            gDisableStructs[gBattlerTarget].encoreTimer = 4;
+        else
+            gDisableStructs[gBattlerTarget].encoreTimer = 3;
         gDisableStructs[gBattlerTarget].encoreTimerStartValue = gDisableStructs[gBattlerTarget].encoreTimer;
         gBattlescriptCurrInstr += 5;
     }
