@@ -3331,7 +3331,7 @@ Route123_Text_AlbertoDefeat:
 	.string "Even in defeat, Bird Pokémon are cool!$"
 
 Route123_Text_AlbertoPostBattle:
-	.string "I complemented another Trainer for a\n"
+	.string "I complimented another Trainer for a\n"
 	.string "“Great Battle” the other day.\p"
 	.string "The old lady that lives in the house\n"
 	.string "down there gave me a cool berry for my\l"

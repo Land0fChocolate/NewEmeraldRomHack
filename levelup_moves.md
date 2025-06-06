@@ -100,8 +100,6 @@
              ( 1, WING ATTACK)
              ( 1, FLARE BLITZ)
              ( 1, HEAT WAVE)
-             ( 1, DRAGON CLAW)
-             ( 1, SHADOW CLAW)
              ( 1, AIR SLASH)
              ( 1, SCRATCH)
              ( 1, GROWL)

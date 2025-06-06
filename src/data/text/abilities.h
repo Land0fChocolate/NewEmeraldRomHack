@@ -676,7 +676,8 @@ static const u8 sSapSipperDescription[] = _(
 	"Grants grass immunity.");
 
 static const u8 sPranksterDescription[] = _(
-	"Status moves have priority.");
+	"User's non-damaging moves\n"
+    "have priority.");
 
 static const u8 sSandForceDescription[] = _(
 	"Rock, Ground and Steel\n"
@@ -756,7 +757,7 @@ static const u8 sSymbiosisDescription[] = _(
 
 static const u8 sToughClawsDescription[] = _(
 	"Power of contact moves is\n"
-	"increased by 50%.");
+	"increased by 30%.");
 
 static const u8 sPixilateDescription[] = _(
 	"Normal moves become Fairy\n"
@@ -1097,8 +1098,8 @@ static const u8 sWildFireDescription[] = _(
 	"one stage.");
 
 static const u8 sMiracleBlossomDescription[] = _(
-	"User and ally heals 1/8 max HP\n"
-	"at the end of every turn.");
+	"User and ally heals 1/8 max\n"
+	"HP at the end of every turn.");
 
 static const u8 sScorchingHeartDescription[] = _(
 	"Fire moves increase in\n"
@@ -1126,8 +1127,8 @@ static const u8 sAuraSenseDescription[] = _(
 	"Also ignores evasiveness.");
 
 static const u8 sSoulSiphonDescription[] = _(
-	"Contact from user steals\n"
-	"1/8 max HP from the target and\n"
+	"User contact steals 1/8\n"
+	"max HP from the target and\n"
 	"heals user the same amount.");
 
 static const u8 sNeedleMissilesDescription[] = _(

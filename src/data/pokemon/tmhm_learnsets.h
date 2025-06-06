@@ -23233,6 +23233,7 @@ const u32 gTMHMLearnsets[][4] =
                                                    | TMHM(TM29_PSYCHIC)
                                                    | TMHM(TM33_REFLECT)
                                                    | TMHM(TM44_REST)
+                                                   | TMHM(TM46_THIEF)
                                                    | TMHM(TM27_RETURN)
                                                    | TMHM(TM21_FRUSTRATION)
                                                    | TMHM(TM24_THUNDERBOLT)
