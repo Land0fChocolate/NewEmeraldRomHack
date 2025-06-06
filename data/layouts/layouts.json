@@ -4365,7 +4365,7 @@
       "id": "LAYOUT_CRUMBLING_GORGE",
       "name": "CrumblingGorge_Layout",
       "width": 28,
-      "height": 60,
+      "height": 61,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_CrumblingGorge",
       "border_filepath": "data/layouts/CrumblingGorge/border.bin",

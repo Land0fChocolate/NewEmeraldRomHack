@@ -1179,7 +1179,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_CORSOLA] = {
         .species = SPECIES_CORSOLA,
-        .moves = {MOVE_POWER_GEM, MOVE_BRINE, MOVE_MIRROR_COAT, MOVE_RECOVER},
+        .moves = {MOVE_ANCIENT_POWER, MOVE_BRINE, MOVE_MIRROR_COAT, MOVE_RECOVER},
         .item = ITEM_LUM_BERRY,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
         .nature = NATURE_BOLD
@@ -1214,7 +1214,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_YANMA] = {
         .species = SPECIES_YANMA,
-        .moves = {MOVE_AIR_SLASH, MOVE_ANCIENT_POWER, MOVE_UPROAR, MOVE_U_TURN},
+        .moves = {MOVE_AIR_SLASH, MOVE_ANCIENT_POWER, MOVE_SCREECH, MOVE_U_TURN},
         .item = ITEM_ROCK_GEM,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_TIMID
