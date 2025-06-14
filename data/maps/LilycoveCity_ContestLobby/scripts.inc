@@ -22,6 +22,7 @@ LilycoveCity_ContestLobby_EventScript_TryShowBlendMaster::
 	getpricereduction POKENEWS_BLENDMASTER
 	compare VAR_RESULT, TRUE
 	goto_if_eq LilycoveCity_ContestLobby_EventScript_ShowBlendMaster
+	@goto LilycoveCity_ContestLobby_EventScript_ShowBlendMaster
 	clearflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER_REPLACEMENT
 	setflag FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER
 	return
