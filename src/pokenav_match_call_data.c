@@ -595,16 +595,6 @@ static const struct MatchCallStructTrainer sZinniaMatchCallHeader =
     .textData = sZinniaTextScripts
 };
 
-// static const struct MatchCallStructNPC sStevenMatchCallHeader = // old code here. Keeping this around in case I need something from it.
-// {
-//     .type = MC_TYPE_NPC,
-//     .mapSec = MAPSEC_NONE,
-//     .flag = FLAG_REGISTERED_STEVEN_POKENAV,
-//     .desc = gText_StevenMatchCallDesc,
-//     .name = gText_StevenMatchCallName,
-//     .textData = sStevenTextScripts
-// };
-
 static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_MR_STONE]   = {.npc    = &sMrStoneMatchCallHeader},
     [MC_HEADER_PROF_BIRCH] = {.birch  = &sProfBirchMatchCallHeader},
