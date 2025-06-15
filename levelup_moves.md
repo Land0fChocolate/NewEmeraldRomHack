@@ -8593,7 +8593,7 @@
              (31, PSYCHO CUT)
              (35, HELPING HAND)
              (40, FEINT)
-             (44, FALSE SWIPE)
+             (44, SACRED SWORD)
              (49, PROTECT)
              (53, CLOSE COMBAT)
              (58, STORED POWER)

@@ -5624,7 +5624,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_GALLADE_4] = {
         .species = SPECIES_GALLADE,
-        .moves = {MOVE_CLOSE_COMBAT, MOVE_LEAF_BLADE, MOVE_ICE_PUNCH, MOVE_THUNDER_WAVE},
+        .moves = {MOVE_SACRED_SWORD, MOVE_LEAF_BLADE, MOVE_ICE_PUNCH, MOVE_THUNDER_WAVE},
         .item = ITEM_EXPERT_BELT,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_SPEED,
         .nature = NATURE_JOLLY
