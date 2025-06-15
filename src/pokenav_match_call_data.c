@@ -586,12 +586,12 @@ static const match_call_text_data_t sZinniaTextScripts[] = {
 
 static const struct MatchCallStructTrainer sZinniaMatchCallHeader =
 {
-    .type = 0,
+    .type = MC_TYPE_LEADER,
     .mapSec = MAPSEC_FALLARBOR_TOWN,
-    .flag = FLAG_ENABLE_ZINNIA_MATCH_CALL,
+    .flag = FLAG_REMATCH_ZINNIA,
     .rematchTableIdx = REMATCH_ZINNIA,
     .desc = gText_ZinniaMatchCallDesc,
-    .name = gText_ZinniaMatchCallName,
+    .name = NULL,
     .textData = sZinniaTextScripts
 };
 
