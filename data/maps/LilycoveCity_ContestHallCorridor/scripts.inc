@@ -62,13 +62,17 @@ LilycoveCity_ContestHallCorridor_EventScript_WallaceFan3::
 	release
 	end
 
+LilycoveCity_ContestHallCorridor_EventScript_Woman::
+	msgbox LilycoveCity_ContestHallCorridor_Text_Woman, MSGBOX_NPC
+	end
+
 LilycoveCity_ContestHallCorridor_Text_IsntThisPlaceHumongous:
 	.string "Whoa, isn't this place humongous!\p"
-	.string "The tension in the air… It's not\n"
-	.string "like a Contest hall in the sticks.$"
+	.string "The tension in the air… It's got\n"
+	.string "a different vibe to the gyms.$"
 
 LilycoveCity_ContestHallCorridor_Text_Delinquent:
-	.string "One day, I'm going to be up on that\n"
+	.string "One day, I'm going to be up on the\n"
 	.string "stage and be a contest superstar.\p"
 	.string "Until then, I'll need to grow lots of\n"
 	.string "berries for {POKEBLOCK}s.\p"
@@ -101,3 +105,9 @@ LilycoveCity_ContestHallCorridor_Text_WallaceFan2:
 LilycoveCity_ContestHallCorridor_Text_WallaceFan3:
 	.string "Mr. Wallace! I'm your biggest fan!\n"
 	.string "Could you sign my Pikachu?$"
+
+LilycoveCity_ContestHallCorridor_Text_Woman::
+	.string "See!\n"
+	.string "My Pokémon won all these ribbons!\p"
+	.string "Have your Pokémon earned any ribbons?\n"
+	.string "You can check them on your Pokénav.$"
