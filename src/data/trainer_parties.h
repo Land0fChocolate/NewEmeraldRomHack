@@ -7035,7 +7035,7 @@ static const struct TrainerMonItemCustomMoves sParty_WallyVR1[] = {
     .lvl = 50,
     .species = SPECIES_GALLADE,
     .heldItem = ITEM_RAZOR_CLAW,
-    .moves = {MOVE_PSYCHO_CUT, MOVE_BRICK_BREAK, MOVE_NIGHT_SLASH, MOVE_SWORDS_DANCE}
+    .moves = {MOVE_PSYCHO_CUT, MOVE_SACRED_SWORD, MOVE_NIGHT_SLASH, MOVE_SWORDS_DANCE}
     }
 };
 
@@ -9096,7 +9096,7 @@ static const struct TrainerMonItemCustomMoves sParty_WallyVR2[] = {
     .lvl = 54,
     .species = SPECIES_GALLADE,
     .heldItem = ITEM_RAZOR_CLAW,
-    .moves = {MOVE_PSYCHO_CUT, MOVE_CLOSE_COMBAT, MOVE_NIGHT_SLASH, MOVE_SWORDS_DANCE}
+    .moves = {MOVE_PSYCHO_CUT, MOVE_SACRED_SWORD, MOVE_NIGHT_SLASH, MOVE_SWORDS_DANCE}
     }
 };
 
@@ -9141,7 +9141,7 @@ static const struct TrainerMonItemCustomMoves sParty_WallyVR3[] = {
     .lvl = 56,
     .species = SPECIES_GALLADE,
     .heldItem = ITEM_RAZOR_CLAW,
-    .moves = {MOVE_PSYCHO_CUT, MOVE_CLOSE_COMBAT, MOVE_NIGHT_SLASH, MOVE_SWORDS_DANCE}
+    .moves = {MOVE_PSYCHO_CUT, MOVE_SACRED_SWORD, MOVE_NIGHT_SLASH, MOVE_SWORDS_DANCE}
     }
 };
 
@@ -9186,7 +9186,7 @@ static const struct TrainerMonItemCustomMoves sParty_WallyVR4[] = {
     .lvl = 58,
     .species = SPECIES_GALLADE,
     .heldItem = ITEM_RAZOR_CLAW,
-    .moves = {MOVE_PSYCHO_CUT, MOVE_CLOSE_COMBAT, MOVE_NIGHT_SLASH, MOVE_SWORDS_DANCE}
+    .moves = {MOVE_PSYCHO_CUT, MOVE_SACRED_SWORD, MOVE_NIGHT_SLASH, MOVE_SWORDS_DANCE}
     }
 };
 
@@ -9231,7 +9231,7 @@ static const struct TrainerMonItemCustomMoves sParty_WallyVR5[] = {
     .lvl = 60,
     .species = SPECIES_GALLADE,
     .heldItem = ITEM_RAZOR_CLAW,
-    .moves = {MOVE_PSYCHO_CUT, MOVE_CLOSE_COMBAT, MOVE_NIGHT_SLASH, MOVE_SWORDS_DANCE}
+    .moves = {MOVE_PSYCHO_CUT, MOVE_SACRED_SWORD, MOVE_NIGHT_SLASH, MOVE_SWORDS_DANCE}
     }
 };
 

@@ -4365,7 +4365,7 @@
       "id": "LAYOUT_CRUMBLING_GORGE",
       "name": "CrumblingGorge_Layout",
       "width": 28,
-      "height": 60,
+      "height": 61,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_CrumblingGorge",
       "border_filepath": "data/layouts/CrumblingGorge/border.bin",
@@ -4910,6 +4910,66 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/LilycoveCity_House5/border.bin",
       "blockdata_filepath": "data/layouts/LilycoveCity_House5/map.bin"
+    },
+    {
+      "id": "LAYOUT_LILYCOVE_CITY_CONTEST_HALL_CORRIDOR",
+      "name": "LilycoveCity_ContestHallCorridor_Layout",
+      "width": 51,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Contest",
+      "border_filepath": "data/layouts/LilycoveCity_ContestHallCorridor/border.bin",
+      "blockdata_filepath": "data/layouts/LilycoveCity_ContestHallCorridor/map.bin"
+    },
+    {
+      "id": "LAYOUT_LILYCOVE_CITY_CONTEST_HALL_COOL",
+      "name": "LilycoveCity_ContestHall_Cool_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Contest",
+      "border_filepath": "data/layouts/LilycoveCity_ContestHall_Cool/border.bin",
+      "blockdata_filepath": "data/layouts/LilycoveCity_ContestHall_Cool/map.bin"
+    },
+    {
+      "id": "LAYOUT_LILYCOVE_CITY_CONTEST_HALL_BEAUTY",
+      "name": "LilycoveCity_ContestHall_Beauty_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Contest",
+      "border_filepath": "data/layouts/LilycoveCity_ContestHall_Beauty/border.bin",
+      "blockdata_filepath": "data/layouts/LilycoveCity_ContestHall_Beauty/map.bin"
+    },
+    {
+      "id": "LAYOUT_LILYCOVE_CITY_CONTEST_HALL_CUTE",
+      "name": "LilycoveCity_ContestHall_Cute_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Contest",
+      "border_filepath": "data/layouts/LilycoveCity_ContestHall_Cute/border.bin",
+      "blockdata_filepath": "data/layouts/LilycoveCity_ContestHall_Cute/map.bin"
+    },
+    {
+      "id": "LAYOUT_LILYCOVE_CITY_CONTEST_HALL_SMART",
+      "name": "LilycoveCity_ContestHall_Smart_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Contest",
+      "border_filepath": "data/layouts/LilycoveCity_ContestHall_Smart/border.bin",
+      "blockdata_filepath": "data/layouts/LilycoveCity_ContestHall_Smart/map.bin"
+    },
+    {
+      "id": "LAYOUT_LILYCOVE_CITY_CONTEST_HALL_TOUGH",
+      "name": "LilycoveCity_ContestHall_Tough_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Contest",
+      "border_filepath": "data/layouts/LilycoveCity_ContestHall_Tough/border.bin",
+      "blockdata_filepath": "data/layouts/LilycoveCity_ContestHall_Tough/map.bin"
     }
   ]
 }

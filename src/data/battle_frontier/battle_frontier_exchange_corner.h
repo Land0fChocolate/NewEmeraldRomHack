@@ -67,14 +67,11 @@ static const u16 sFrontierExchangeCorner_Vitamins[] =
 
 static const u16 sFrontierExchangeCorner_HoldItems[] =
 { 
-    ITEM_ZOOM_LENS,
-    ITEM_WIDE_LENS,
     ITEM_TOXIC_ORB,
     ITEM_FLAME_ORB,
     ITEM_ADRENALINE_ORB,
     ITEM_RED_CARD,
     ITEM_DESTINY_KNOT,
-    ITEM_METRONOME,
     ITEM_SHED_SHELL,
     ITEM_STICKY_BARB,
     ITEM_EXPERT_BELT,

@@ -19,6 +19,7 @@ FallarborTown_DraconidArchives_EventScript_SetPostDeoxysScene:
 DraconidArchives_Eventscript_Zinnia::
 	lock
 	faceplayer
+	setflag FLAG_REMATCH_ZINNIA @TODO: remove this line
 	compare VAR_DRACONID_ARCHIVES_STATE, 2
 	goto_if_ge DraconidArchives_EventScript_HaveYouBroughtSnacks
 	compare VAR_DRACONID_ARCHIVES_STATE, 1
@@ -298,6 +299,7 @@ DraconidArchives_EventScript_ZinniaDeoxysBeaten::
 	clearflag FLAG_HIDE_SOOTOPOLIS_CITY_JUAN
 	setflag FLAG_POST_GAME_COMPLETE
 	setflag FLAG_TV_RARE_CANDY_ADVERT
+	@ setflag FLAG_REMATCH_ZINNIA @TODO: uncomment this
 	release
 	end
 

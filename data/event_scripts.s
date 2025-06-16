@@ -1168,3 +1168,15 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/RustboroCity_House4/scripts.inc"
 
 	.include "data/maps/LilycoveCity_House5/scripts.inc"
+
+	.include "data/maps/LilycoveCity_ContestHallCorridor/scripts.inc"
+
+	.include "data/maps/LilycoveCity_ContestHall_Cool/scripts.inc"
+
+	.include "data/maps/LilycoveCity_ContestHall_Beauty/scripts.inc"
+
+	.include "data/maps/LilycoveCity_ContestHall_Cute/scripts.inc"
+
+	.include "data/maps/LilycoveCity_ContestHall_Smart/scripts.inc"
+
+	.include "data/maps/LilycoveCity_ContestHall_Tough/scripts.inc"

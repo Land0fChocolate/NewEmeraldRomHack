@@ -157,7 +157,7 @@ v1.1.2 - 12/05/2025
 - Wickedness: User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius.
 - Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Solrock.
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat.
-- Swordmaster: Power of sword/blade moves increased by 25% (Cut/Aerial Ace/Leaf Blade/X-Scissor/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Behemoth Blade). Used by Grovyle/Sceptile/Gallade/Leafeon.
+- Swordmaster: Power of sword/blade moves increased by 25% (Cut/Aerial Ace/Leaf Blade/X-Scissor/Psycho Cut/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Flint Blade). Used by Grovyle/Sceptile/Gallade/Leafeon.
 - Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Articuno/Glaceon.
 - Superheated: User's Fire type moves are super-effective against Rock types. Used by Charmeleon/Charizard/Flareon/Magmortar. 
 - Unsteady: User's evasion increases by one stage when hit. Used by Spinda.

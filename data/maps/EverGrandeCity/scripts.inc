@@ -35,9 +35,14 @@ EverGrandeCity_EventScript_TestAbra1::
 
 EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
+	setflag FLAG_REMATCH_PHOEBE
+	setflag FLAG_REMATCH_GLACIA
+	setflag FLAG_REMATCH_DRAKE
+	setflag FLAG_REMATCH_STEVEN
+	setflag FLAG_REMATCH_ZINNIA
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
 	@giveitem ITEM_RARE_CANDY, 99
-	givemon SPECIES_GENGAR, 20, ITEM_NONE
+	@givemon SPECIES_GENGAR, 20, ITEM_NONE
 	closemessage
 	end
 
@@ -64,7 +69,7 @@ EverGrandeCity_Text_LeafPostBattle:
     @  "movement_range_y": 0,
     @  "trainer_type": "TRAINER_TYPE_NONE",
     @  "trainer_sight_or_berry_tree_id": "0",
-    @  "script": "EverGrandeCity_EventScript_TestAbra1",
+    @  "script": "EverGrandeCity_EventScript_TestAbra2",
     @  "flag": "0"
     @}
 
