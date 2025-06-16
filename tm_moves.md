@@ -13904,6 +13904,7 @@ SPECIES RAICHU ALOLAN        | TM31 BRICK BREAK
                              | TM29 PSYCHIC
                              | TM33 REFLECT
                              | TM44 REST
+                             | TM46 THIEF
                              | TM24 THUNDERBOLT
                              | TM25 THUNDER
                              | TM06 TOXIC

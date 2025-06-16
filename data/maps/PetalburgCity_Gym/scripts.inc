@@ -46,6 +46,7 @@ PetalburgCity_Gym_OnTransition:
 	compare VAR_PETALBURG_GYM_STATE, 6
 	call_if_lt PetalburgCity_Gym_EventScript_MoveNormanToEntrance
 	call_if_set FLAG_SYS_GAME_CLEAR, PetalburgCity_Gym_EventScript_CheckNormanForRematch
+	call_if_set FLAG_POST_GAME_COMPLETE LittlerootTown_BrendansHouse_1F_Eventscript_SetUpNormanRematch
 	end
 
 PetalburgCity_Gym_EventScript_MoveWallyToEntrance::

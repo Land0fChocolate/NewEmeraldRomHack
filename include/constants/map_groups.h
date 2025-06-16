@@ -215,6 +215,12 @@
 #define MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP  (21 | (13 << 8))
 #define MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR (22 | (13 << 8))
 #define MAP_LILYCOVE_CITY_HOUSE5                    (23 | (13 << 8))
+#define MAP_LILYCOVE_CITY_CONTEST_HALL_CORRIDOR     (24 | (13 << 8))
+#define MAP_LILYCOVE_CITY_CONTEST_HALL_COOL         (25 | (13 << 8))
+#define MAP_LILYCOVE_CITY_CONTEST_HALL_BEAUTY       (26 | (13 << 8))
+#define MAP_LILYCOVE_CITY_CONTEST_HALL_CUTE         (27 | (13 << 8))
+#define MAP_LILYCOVE_CITY_CONTEST_HALL_SMART        (28 | (13 << 8))
+#define MAP_LILYCOVE_CITY_CONTEST_HALL_TOUGH        (29 | (13 << 8))
 
 // gMapGroup_IndoorMossdeep
 #define MAP_MOSSDEEP_CITY_GYM               (0 | (14 << 8))

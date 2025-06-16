@@ -143,6 +143,7 @@ These Pokemon are available after beating the Pokemon League.
     - SPEAROW -> Level Up to 22 -> FEAROW
     - EKANS -> Level Up to 22 -> ARBOK
     - PIKACHU -> Item Thunder Stone -> RAICHU
+    -         -> Trade with hold item Big Malasada -> RAICHU ALOLAN
     - SANDSHREW -> Level Up to 22 -> SANDSLASH
     - NIDORAN_F -> Level Up to 18 -> NIDORINA
     - NIDORINA -> Item Moon Stone -> NIDOQUEEN
@@ -191,9 +192,12 @@ These Pokemon are available after beating the Pokemon League.
     - KRABBY -> Level Up to 28 -> KINGLER
     - VOLTORB -> Level Up to 26 -> ELECTRODE
     - EXEGGCUTE -> Item Leaf Stone -> EXEGGUTOR
+    -           -> Trade with hold item Big Malasada -> EXEGGUTOR GALARIAN
     - CUBONE -> Level Up to 26 -> MAROWAK
+    -        -> Trade with hold item Big Malasada -> MAROWAK GALARIAN
     - LICKITUNG -> Have move Rollout -> LICKILICKY
     - KOFFING -> Level Up to 28 -> WEEZING
+    -         -> Trade with hold item Galarian Curry -> -> WEEZING GALARIAN
     - RHYHORN -> Level Up to 30 -> RHYDON
     - RHYDON -> Trade with hold item Protector -> RHYPERIOR
     - CHANSEY -> High friendship -> BLISSEY
@@ -203,7 +207,7 @@ These Pokemon are available after beating the Pokemon League.
     - GOLDEEN -> Level Up to 24 -> SEAKING
     - STARYU -> Item Water Stone -> STARMIE
     - SCYTHER -> Trade with hold item Metal Coat -> SCIZOR
-    - SCYTHER -> Trade with hold item Black Augurite -> KLEAVOR
+    -         -> Trade with hold item Black Augurite -> KLEAVOR
     - ELECTABUZZ -> Trade with hold item Electirizer -> ELECTIVIRE
     - MAGMAR -> Trade with hold item Magmarizer -> MAGMORTAR
     - MAGIKARP -> Level Up to 20 -> GYARADOS
@@ -226,7 +230,7 @@ These Pokemon are available after beating the Pokemon League.
     - BAYLEEF -> Level Up to 40 -> MEGANIUM
     - CYNDAQUIL -> Level Up to 20 -> QUILAVA
     - QUILAVA -> Level Up to 40 -> TYPHLOSION
-    - QUILAVA -> Trade with hold item Old Gateau -> TYPHLOSION HISUIAN
+    -         -> Trade with hold item Old Gateau -> TYPHLOSION HISUIAN
     - TOTODILE -> Level Up to 20 -> CROCONAW
     - CROCONAW -> Level Up to 40 -> FERALIGATR
     - SENTRET -> Level Up to 15 -> FURRET
@@ -719,8 +723,8 @@ These Pokemon are available after beating the Pokemon League.
 - *Shellder* (Shell Armor, Skill Link, Overcoat)
 - *Cloyster* (Shell Armor, Skill Link, Overcoat)
 - *Gastly* (Levitate, Cursed Body, None)
-- *Haunter* (Levitate, Cursed Body, None)
-- *Gengar* (Levitate, Cursed Body, None)
+- *Haunter* (Levitate, Cursed Body, Soul Siphon)
+- *Gengar* (Levitate, Cursed Body, Soul Siphon)
 - *Onix* (Rock Head, Sturdy, Shed Skin)
 - *Drowzee* (Insomnia, Forwarn, Inner Focus)
 - *Hypno* (Insomnia, Forwarn, Inner Focus)
@@ -732,7 +736,7 @@ These Pokemon are available after beating the Pokemon League.
 - *Exeggutor* (Chlorophyll, Harvest, Telepathy)
 - *Cubone* (Rock Head, Lightning Rod, Battle Armor)
 - *Marowak* (Rock Head, Lightning Rod, Battle Armor)
-- *Hitmonlee* (Limber, Reckless, Unburden)
+- *Hitmonlee* (Limber, Jeet Kune Do, Unburden)
 - *Hitmonchan* (Keen Eye, Iron Fist, Wickedness)
 - *Lickitung* (Own Tempo, Oblivious, Cloud Nine)
 - *Koffing* (Levitate, Neutralizing Gas, Stench)
@@ -761,7 +765,7 @@ These Pokemon are available after beating the Pokemon League.
 - *Ditto* (Imposter, Limber, None)
 - *Eevee* (Run Away, Adaptability, Anticipation)
 - *Vaporeon* (Water Absorb, Damp, Hydration)
-- *Jolteon* (Volt Absorb, Unburden, Quick Feet)
+- *Jolteon* (Volt Absorb, Needle Missiles, Quick Feet)
 - *Flareon* (Flash Fire, Superheated, Contrary)
 - *Porygon* (Trace, Download, Analytic)
 - *Omanyte* (Swift Swim, Shell Armor, Overcoat)
@@ -837,7 +841,7 @@ These Pokemon are available after beating the Pokemon League.
 - *Steelix* (Rock Head, Sturdy, Sheer Force)
 - *Snubbull* (Intimidate, Run Away, Rattled)
 - *Granbull* (Intimidate, Quick Feet, Rattled)
-- *Qwilfish* (Poison Point, Swift Swim, Intimidate)
+- *Qwilfish* (Poison Point, Needle Missiles, Intimidate)
 - *Scizor* (Swarm, Technician, Light Metal)
 - *Shuckle* (Sturdy, Gluttony, Contrary)
 - *Heracross* (Swarm, Guts, Moxie)

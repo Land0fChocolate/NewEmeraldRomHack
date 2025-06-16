@@ -36,6 +36,9 @@ LittlerootTown_BrendansHouse_1F_OnTransition:
 	call_if_eq LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs
 	compare VAR_LITTLEROOT_INTRO_STATE, 6
 	call_if_eq LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToTV
+	call_if_unset FLAG_SYS_GAME_CLEAR, LittlerootTown_BrendansHouse_1F_Eventscript_NormanAtGym @TODO: should be removed, only here for current playthroughs
+	call_if_set FLAG_RECEIVED_SS_TICKET, LittlerootTown_BrendansHouse_1F_Eventscript_NormanAtGym @TODO: should be removed, only here for current playthroughs
+	call_if_set FLAG_POST_GAME_COMPLETE, LittlerootTown_BrendansHouse_1F_Eventscript_SetUpNormanRematch
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs::
@@ -52,6 +55,44 @@ LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor::
 	setobjectxyperm LOCALID_MOM, 9, 8
 	setobjectmovementtype LOCALID_MOM, MOVEMENT_TYPE_FACE_UP
 	return
+
+LittlerootTown_BrendansHouse_1F_Eventscript_SetUpNormanRematch::
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_NORMAN_1
+    specialvar VAR_RESULT, IsTrainerReadyForRematch
+    compare VAR_RESULT, TRUE
+    goto_if_eq LittlerootTown_BrendansHouse_1F_Eventscript_NormanAtGym
+    compare VAR_RESULT, FALSE
+    goto_if_eq LittlerootTown_BrendansHouse_1F_Eventscript_NormanAtHome
+    return
+
+LittlerootTown_BrendansHouse_1F_Eventscript_NormanAtGym::
+	clearflag FLAG_HIDE_PETALBURG_GYM_NORMAN
+	setflag FLAG_HIDE_BRENDANS_HOUSE_DAD
+	setflag FLAG_HIDE_MAYS_HOUSE_DAD
+	return
+
+LittlerootTown_BrendansHouse_1F_Eventscript_NormanAtHome::
+	setflag FLAG_HIDE_PETALBURG_GYM_NORMAN
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq LittlerootTown_BrendansHouse_1F_EventScript_NormanInBrendansHouse
+	compare VAR_RESULT, FEMALE
+	goto_if_eq LittlerootTown_BrendansHouse_1F_EventScript_NormanInMaysHouse
+	return
+
+LittlerootTown_BrendansHouse_1F_EventScript_NormanInBrendansHouse::
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DAD
+	setflag FLAG_HIDE_MAYS_HOUSE_DAD
+	return
+
+LittlerootTown_BrendansHouse_1F_EventScript_NormanInMaysHouse::
+	clearflag FLAG_HIDE_MAYS_HOUSE_DAD
+	setflag FLAG_HIDE_BRENDANS_HOUSE_DAD
+	return
+
+LittlerootTown_BrendansHouse_1F_Eventscript_Norman::
+	msgbox LittlerootTown_BrendansHouse_1F_Norman, MSGBOX_NPC
+	end
 
 @ Many of the below scripts have no gender check because they assume youre in the correct house
 @ The below SS Ticket script uses Mays house state by accident(?), but theyre both set identically after the intro
@@ -438,3 +479,15 @@ PlayersHouse_1F_Text_LatiEmergencyNewsFlash:
 PlayersHouse_1F_Text_StillUnknownPokemon:
 	.string "Mom: Well, isn't that something!\n"
 	.string "There are still unknown Pokémon.$"
+
+LittlerootTown_BrendansHouse_1F_Norman:
+	.string "Dad: Hey, {PLAYER}!\p"
+	.string "I've been hearing many tales of your\n"
+	.string "adventures; protecting people from\l"
+	.string "gangs, beating the champion,\l"
+	.string "meeting legendary Pokémon…\p"
+	.string "It feels like it was only a short\n"
+	.string "time ago we moved here, but you've\l"
+	.string "already settled in and become a star!\p"
+	.string "You've grown up before I knew it.\n"
+	.string "I'm proud of you, {PLAYER}.$"

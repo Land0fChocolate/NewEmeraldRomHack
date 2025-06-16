@@ -586,24 +586,14 @@ static const match_call_text_data_t sZinniaTextScripts[] = {
 
 static const struct MatchCallStructTrainer sZinniaMatchCallHeader =
 {
-    .type = 0,
+    .type = MC_TYPE_LEADER,
     .mapSec = MAPSEC_FALLARBOR_TOWN,
-    .flag = FLAG_ENABLE_ZINNIA_MATCH_CALL,
+    .flag = FLAG_REMATCH_ZINNIA,
     .rematchTableIdx = REMATCH_ZINNIA,
     .desc = gText_ZinniaMatchCallDesc,
-    .name = gText_ZinniaMatchCallName,
+    .name = NULL,
     .textData = sZinniaTextScripts
 };
-
-// static const struct MatchCallStructNPC sStevenMatchCallHeader = // old code here. Keeping this around in case I need something from it.
-// {
-//     .type = MC_TYPE_NPC,
-//     .mapSec = MAPSEC_NONE,
-//     .flag = FLAG_REGISTERED_STEVEN_POKENAV,
-//     .desc = gText_StevenMatchCallDesc,
-//     .name = gText_StevenMatchCallName,
-//     .textData = sStevenTextScripts
-// };
 
 static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_MR_STONE]   = {.npc    = &sMrStoneMatchCallHeader},

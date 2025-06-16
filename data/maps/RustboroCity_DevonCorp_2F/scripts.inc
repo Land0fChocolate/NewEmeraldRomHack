@@ -36,6 +36,11 @@ RustboroCity_DevonCorp_2F_EventScript_BallScientist::
 	call_if_eq RustboroCity_DevonCorp_2F_EventScript_SetFossilReady
 	goto_if_set FLAG_MET_DEVON_EMPLOYEE, RustboroCity_DevonCorp_2F_EventScript_DevelopedBalls
 	msgbox RustboroCity_DevonCorp_2F_Text_DevelopingNewBalls, MSGBOX_DEFAULT
+	giveitem ITEM_ROOT_FOSSIL, 1
+	giveitem ITEM_CLAW_FOSSIL, 1
+	giveitem ITEM_DOME_FOSSIL, 1
+	giveitem ITEM_HELIX_FOSSIL, 1
+	giveitem ITEM_OLD_AMBER, 1
 	release
 	end
 
@@ -102,6 +107,7 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeRootFossil::
 	waitmovement 0
 	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48
 	waitmovement 0
+	bufferitemname 0, ITEM_ROOT_FOSSIL
 	msgbox RustboroCity_DevonCorp_2F_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_DeclineGiveFossil
@@ -112,7 +118,6 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeRootFossil::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_GiveRootFossil::
-	bufferitemname 0, ITEM_ROOT_FOSSIL
 	msgbox RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher, MSGBOX_DEFAULT
 	removeitem ITEM_ROOT_FOSSIL
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 1
@@ -127,6 +132,7 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeClawFossil::
 	waitmovement 0
 	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48
 	waitmovement 0
+	bufferitemname 0, ITEM_CLAW_FOSSIL
 	msgbox RustboroCity_DevonCorp_2F_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_DeclineGiveFossil
@@ -137,7 +143,6 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeClawFossil::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_GiveClawFossil::
-	bufferitemname 0, ITEM_CLAW_FOSSIL
 	msgbox RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher, MSGBOX_DEFAULT
 	removeitem ITEM_CLAW_FOSSIL
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 1
@@ -152,6 +157,7 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeHelixFossil::
 	waitmovement 0
 	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48
 	waitmovement 0
+	bufferitemname 0, ITEM_HELIX_FOSSIL
 	msgbox RustboroCity_DevonCorp_2F_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_DeclineGiveFossil
@@ -159,7 +165,6 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeHelixFossil::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_GiveHelixFossil::
-	bufferitemname 0, ITEM_HELIX_FOSSIL
 	msgbox RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher, MSGBOX_DEFAULT
 	removeitem ITEM_HELIX_FOSSIL
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 1
@@ -174,6 +179,7 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeDomeFossil::
 	waitmovement 0
 	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48
 	waitmovement 0
+	bufferitemname 0, ITEM_DOME_FOSSIL
 	msgbox RustboroCity_DevonCorp_2F_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_DeclineGiveFossil
@@ -181,7 +187,6 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeDomeFossil::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_GiveDomeFossil::
-	bufferitemname 0, ITEM_DOME_FOSSIL
 	msgbox RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher, MSGBOX_DEFAULT
 	removeitem ITEM_DOME_FOSSIL
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 1
@@ -196,6 +201,7 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeOldAmber::
 	waitmovement 0
 	applymovement LOCALID_FOSSIL_SCIENTIST, Common_Movement_Delay48
 	waitmovement 0
+	bufferitemname 0, ITEM_OLD_AMBER
 	msgbox RustboroCity_DevonCorp_2F_Text_WantToBringFossilBackToLife, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq RustboroCity_DevonCorp_2F_EventScript_DeclineGiveFossil
@@ -203,7 +209,6 @@ RustboroCity_DevonCorp_2F_EventScript_NoticeOldAmber::
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_GiveOldAmber::
-	bufferitemname 0, ITEM_OLD_AMBER
 	msgbox RustboroCity_DevonCorp_2F_Text_HandedFossilToResearcher, MSGBOX_DEFAULT
 	removeitem ITEM_OLD_AMBER
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 1
@@ -761,7 +766,7 @@ RustboroCity_DevonCorp_2F_Text_DevelopDeviceToResurrectFossils:
 
 RustboroCity_DevonCorp_2F_Text_WantToBringFossilBackToLife:
 	.string "Wait! That thing you have there…\n"
-	.string "Is that a Pokémon fossil?\p"
+	.string "Is that a {STR_VAR_1}?\p"
 	.string "Would you like to bring that Pokémon\n"
 	.string "back to life?\p"
 	.string "I can with my newly developed\n"

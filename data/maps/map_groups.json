@@ -245,7 +245,13 @@
     "LilycoveCity_DepartmentStore_5F",
     "LilycoveCity_DepartmentStoreRooftop",
     "LilycoveCity_DepartmentStoreElevator",
-    "LilycoveCity_House5"
+    "LilycoveCity_House5",
+    "LilycoveCity_ContestHallCorridor",
+    "LilycoveCity_ContestHall_Cool",
+    "LilycoveCity_ContestHall_Beauty",
+    "LilycoveCity_ContestHall_Cute",
+    "LilycoveCity_ContestHall_Smart",
+    "LilycoveCity_ContestHall_Tough"
   ],
   "gMapGroup_IndoorMossdeep": [
     "MossdeepCity_Gym",

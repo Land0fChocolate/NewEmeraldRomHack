@@ -363,7 +363,7 @@ const u8 gText_MatchCallChampion_Steven_Pokemon[] = _("Ultimate Steel Pokémon."
 const u8 gText_MatchCallChampion_Steven_Intro1[] = _("When it comes down to it,");
 const u8 gText_MatchCallChampion_Steven_Intro2[] = _("I'm still the strongest!");
 
-const u8 gText_MatchCallLoreKeeper_Zinnia_Strategy[] = _("Power and knowledge!");
+const u8 gText_MatchCallLoreKeeper_Zinnia_Strategy[] = _("Knowledge is power!");
 const u8 gText_MatchCallLoreKeeper_Zinnia_Pokemon[] = _("Legendary Dragon Pokémon.");
 const u8 gText_MatchCallLoreKeeper_Zinnia_Intro1[] = _("I've always turned my eyes");
 const u8 gText_MatchCallLoreKeeper_Zinnia_Intro2[] = _("to the sky and beyond.");

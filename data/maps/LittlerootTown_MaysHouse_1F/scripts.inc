@@ -36,6 +36,9 @@ LittlerootTown_MaysHouse_1F_OnTransition:
 	call_if_eq LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs
 	compare VAR_LITTLEROOT_INTRO_STATE, 6
 	call_if_eq LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV
+	call_if_unset FLAG_SYS_GAME_CLEAR, LittlerootTown_BrendansHouse_1F_Eventscript_NormanAtGym @TODO: should be removed, only here for current playthroughs
+	call_if_set FLAG_RECEIVED_SS_TICKET, LittlerootTown_BrendansHouse_1F_Eventscript_NormanAtGym @TODO: should be removed, only here for current playthroughs
+	call_if_set FLAG_POST_GAME_COMPLETE, LittlerootTown_BrendansHouse_1F_Eventscript_SetUpNormanRematch
 	end
 
 LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs::

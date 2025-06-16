@@ -4930,6 +4930,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     {
                         gLastUsedAbility = ABILITY_FRISK;
                         gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                        //gBattleScripting.battler = battler;
+                        gBattlerAttacker = battler;
                         BattleScriptPushCursorAndCallback(BattleScript_FriskActivates); // Try activate
                         effect++;
                     }

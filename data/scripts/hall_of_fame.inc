@@ -25,6 +25,11 @@ EverGrandeCity_HallOfFame_EventScript_SetGameClearFlags::
 	call_if_unset FLAG_RECEIVED_BELDUM, EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
+	setflag FLAG_REMATCH_SIDNEY
+	setflag FLAG_REMATCH_PHOEBE
+	setflag FLAG_REMATCH_GLACIA
+	setflag FLAG_REMATCH_DRAKE
+	setflag FLAG_REMATCH_STEVEN
 	setvar VAR_PETALBURG_SHRINE_TRIGGER_STATE, 1
 	compare VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 0
 	call_if_eq EverGrandeCity_HallOfFame_EventScript_ReadyDexUpgradeEvent
@@ -41,7 +46,19 @@ EverGrandeCity_HallOfFame_EventScript_ShowStevensHouseBeldum::
 EverGrandeCity_HallOfFame_EventScript_ReadyReceiveSSTicketEvent::
 	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 3
 	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 3
-	clearflag FLAG_HIDE_PLAYERS_HOUSE_DAD
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq EverGrandeCity_HallOfFame_EventScript_NormanInBrendansHouse
+	compare VAR_RESULT, FEMALE
+	goto_if_eq EverGrandeCity_HallOfFame_EventScript_NormanInMaysHouse
+	return
+
+EverGrandeCity_HallOfFame_EventScript_NormanInBrendansHouse::
+	clearflag FLAG_HIDE_BRENDANS_HOUSE_DAD
+	return
+
+EverGrandeCity_HallOfFame_EventScript_NormanInMaysHouse::
+	clearflag FLAG_HIDE_MAYS_HOUSE_DAD
 	return
 
 EverGrandeCity_HallOfFame_EventScript_ReadyDexUpgradeEvent::
