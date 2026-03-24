@@ -3601,7 +3601,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_AERODACTYL_1] = {
         .species = SPECIES_AERODACTYL,
-        .moves = {MOVE_ROCK_SLIDE, MOVE_FIRE_FANG, MOVE_AERIAL_ACE, MOVE_AQUA_TAIL},
+        .moves = {MOVE_ROCK_SLIDE, MOVE_FIRE_FANG, MOVE_FLY, MOVE_AQUA_TAIL},
         .item = ITEM_LIFE_ORB,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
         .nature = NATURE_ADAMANT
@@ -5379,7 +5379,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_AERODACTYL_3] = {
         .species = SPECIES_AERODACTYL,
-        .moves = {MOVE_DOUBLE_EDGE, MOVE_FLINT_BLADE, MOVE_THUNDER_FANG, MOVE_DRAGON_CLAW},
+        .moves = {MOVE_BRAVE_BIRD, MOVE_FLINT_BLADE, MOVE_THUNDER_FANG, MOVE_CRUNCH},
         .item = ITEM_LIFE_ORB,
         .evSpread = F_EV_SPREAD_HP | F_EV_SPREAD_ATTACK,
         .nature = NATURE_ADAMANT
@@ -6268,7 +6268,7 @@ const struct FacilityMon gBattleFrontierMons[NUM_FRONTIER_MONS] =
     },
     [FRONTIER_MON_AERODACTYL_4] = {
         .species = SPECIES_AERODACTYL,
-        .moves = {MOVE_CRUNCH, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_ICE_FANG},
+        .moves = {MOVE_BRAVE_BIRD, MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_ICE_FANG},
         .item = ITEM_MUSCLE_BAND,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
         .nature = NATURE_JOLLY
