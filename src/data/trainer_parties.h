@@ -8003,7 +8003,7 @@ static const struct TrainerMonItemCustomMoves sParty_Athena[] = {
     .lvl = 37,
     .species = SPECIES_LINOONE,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_SURF, MOVE_THIEF, MOVE_COUNTER, MOVE_TAKE_DOWN}
+    .moves = {MOVE_SURF, MOVE_THIEF, MOVE_GRASS_KNOT, MOVE_TAKE_DOWN}
     }
 };
 
@@ -10070,7 +10070,7 @@ static const struct TrainerMonItemCustomMoves sParty_CourtneyMagmaHideout[] = {
     .lvl = 36,
     .species = SPECIES_VULPIX,
     .heldItem = ITEM_EVIOLITE,
-    .moves = {MOVE_FLAMETHROWER, MOVE_SOLAR_BEAM, MOVE_WILL_O_WISP, MOVE_CONFUSE_RAY}
+    .moves = {MOVE_FLAMETHROWER, MOVE_HEX, MOVE_WILL_O_WISP, MOVE_CONFUSE_RAY}
     },
     {
     .iv = 160,
@@ -10615,7 +10615,7 @@ static const struct TrainerMonItemCustomMoves sParty_Brawly2[] = {
     .lvl = 50,
     .species = SPECIES_MACHOKE,
     .heldItem = ITEM_SITRUS_BERRY,
-    .moves = {MOVE_STRENGTH, MOVE_ROCK_SLIDE, MOVE_CROSS_CHOP, MOVE_BULK_UP}
+    .moves = {MOVE_DUAL_CHOP, MOVE_ROCK_SLIDE, MOVE_CROSS_CHOP, MOVE_BULK_UP}
     },
     {
     .iv = 255,
