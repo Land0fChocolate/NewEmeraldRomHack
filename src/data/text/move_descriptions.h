@@ -1667,7 +1667,7 @@ static const u8 sBULLET_PUNCHDescription[] = _(
 
 static const u8 sICE_SHARDDescription[] = _(
     "Hurls a chunk of ice that\n"
-    "always strike first.");
+    "always strikes first.");
 
 static const u8 sSHADOW_CLAWDescription[] = _(
     "Strikes with a shadow claw.\n"

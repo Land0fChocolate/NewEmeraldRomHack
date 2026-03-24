@@ -3165,9 +3165,9 @@ static const u8 sTM59Desc[] = _(
     "poisoned foes.");
 
 static const u8 sTM60Desc[] = _(
-    "A burning tackle\n"
-    "that raises user\n"
-    "Speed.");
+    "An odd psychic\n"
+    "wave that deals\n"
+    "physical damage.");
 
 static const u8 sTM61Desc[] = _(
     "User shoots a\n"
@@ -3222,7 +3222,7 @@ static const u8 sTM70Desc[] = _(
 static const u8 sTM71Desc[] = _(
     "A sharp stone\n"
     "with an increased\n"
-    "crit ration.");
+    "crit ratio.");
 
 static const u8 sTM72Desc[] = _(
     "User switches out\n"
