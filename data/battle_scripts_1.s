@@ -7149,6 +7149,11 @@ BattleScript_RapidSpinAway::
 	rapidspinfree
 	return
 
+BattleScript_SpinningBody::
+	call BattleScript_AbilityPopUp
+	rapidspinfree
+	return
+
 BattleScript_WrapFree::
 	printstring STRINGID_PKMNGOTFREE
 	waitmessage B_WAIT_TIME_LONG
