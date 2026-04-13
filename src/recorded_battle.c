@@ -16,6 +16,8 @@
 #include "text.h"
 #include "battle_setup.h"
 #include "frontier_util.h"
+#include "constants/battle_frontier.h"
+#include "constants/flags.h"
 #include "constants/trainers.h"
 #include "constants/rgb.h"
 
