@@ -7757,8 +7757,7 @@ static void HandleTerrainMove(u32 moveEffect)
 
 bool32 CanPoisonType(u8 battlerAttacker, u8 battlerTarget)
 {
-    return ((HasAbility(ABILITY_CORROSION, GetBattlerAbilities(battlerAttacker)) && gBattleMoves[gCurrentMove].split == SPLIT_STATUS)
-            || !(IS_BATTLER_OF_TYPE(battlerTarget, TYPE_POISON) || IS_BATTLER_OF_TYPE(battlerTarget, TYPE_STEEL)));
+    return (!((IS_BATTLER_OF_TYPE(battlerTarget, TYPE_POISON) || IS_BATTLER_OF_TYPE(battlerTarget, TYPE_STEEL)) && !(HasAbility(ABILITY_CORROSION, GetBattlerAbilities(battlerAttacker)))));
 }
 
 bool32 CanParalyzeType(u8 battlerAttacker, u8 battlerTarget)

@@ -1842,6 +1842,7 @@
                     | EARTH POWER
                     | KNOCK OFF
                     | STEALTH ROCK
+                    | LOW KICK
                     | IRON HEAD
 
     HITMONLEE   	| BODY SLAM
@@ -2084,7 +2085,8 @@
                     | AQUA TAIL
                     | MEGAHORN
 
-    SEAKING     	| DOUBLE EDGE
+    SEAKING     	| BODY SLAM
+                    | DOUBLE EDGE
                     | ENDURE
                     | FURY CUTTER
                     | ICY WIND
@@ -2192,6 +2194,7 @@
                     | SEISMIC TOSS
                     | SLEEP TALK
                     | SNORE
+                    | TRICK
                     | SUBSTITUTE
                     | SWAGGER
                     | AVALANCHE
@@ -2484,6 +2487,7 @@
                     | SNORE
                     | SUBSTITUTE
                     | SWAGGER
+                    | RECYCLE
                     | THUNDER PUNCH
                     | GASTRO ACID
                     | WORK UP
@@ -2704,6 +2708,7 @@
                     | MAGIC COAT
                     | SEED BOMB
                     | HIDDEN THORNS
+                    | BODY PRESS
 
     BAYLEEF     	| BODY SLAM
                     | COUNTER
@@ -2721,6 +2726,7 @@
                     | MAGIC COAT
                     | SEED BOMB
                     | HIDDEN THORNS
+                    | BODY PRESS
 
     MEGANIUM    	| BODY SLAM
                     | COUNTER
@@ -2951,7 +2957,8 @@
                     | TAILWIND
                     | BUG BITE
 
-    LEDIAN      	| DOUBLE EDGE
+    LEDIAN      	| COUNTER
+                    | DOUBLE EDGE
                     | DYNAMIC PUNCH
                     | ENDURE
                     | ICE PUNCH
@@ -3631,10 +3638,12 @@
                     | SNORE
                     | SUBSTITUTE
                     | SWAGGER
+                    | SWIFT
                     | EARTH POWER
                     | SIGNAL BEAM
                     | STEALTH ROCK
                     | BODY PRESS
+                    | IRON HEAD
                     | SEED BOMB
                     | PAIN SPLIT
                     | BUG BITE
@@ -4789,6 +4798,7 @@
                     | SEED BOMB
 
     LOMBRE      	| BODY SLAM
+                    | COUNTER
                     | DOUBLE EDGE
                     | DYNAMIC PUNCH
                     | ENDURE
@@ -6473,6 +6483,7 @@
                     | ROLLOUT
                     | SLEEP TALK
                     | SNORE
+                    | SWIFT
                     | SUBSTITUTE
                     | SWAGGER
                     | SIGNAL BEAM
@@ -7031,7 +7042,6 @@
                     | FURY CUTTER
                     | ICE PUNCH
                     | METRONOME
-                    | MIMIC
                     | SEISMIC TOSS
                     | SLEEP TALK
                     | SNORE
@@ -7074,7 +7084,6 @@
                     | SUBSTITUTE
                     | SWAGGER
                     | SWIFT
-                    | NASTY PLOT
                     | DEFOG
                     | TAILWIND
                     | NASTY PLOT
@@ -7236,6 +7245,7 @@
                     | PSYCH UP
                     | ROLLOUT
                     | SEISMIC TOSS
+                    | EXPLOSION
                     | SLEEP TALK
                     | SNORE
                     | SUBSTITUTE
@@ -7439,7 +7449,6 @@
                     | SWAGGER
                     | EARTH POWER
                     | AVALANCHE
-                    | SUPERPOWER
                     | KNOCK OFF
                     | STEALTH ROCK
                     | SUPERPOWER
@@ -7486,6 +7495,8 @@
                     | THUNDER PUNCH
                     | WORK UP
                     | LOW SWEEP
+                    | ICY WIND
+                    | TRICK
                     | SIGNAL BEAM
                     | STORED POWER
                     | KNOCK OFF
@@ -7559,6 +7570,9 @@
     SYLVEON         | PSYCH UP
                     | SLEEP TALK
                     | MIMIC
+                    | BODY SLAM
+                    | DOUBLE EDGE
+                    | ENDURE
                     | SNORE
                     | SUBSTITUTE
                     | SWAGGER
@@ -7638,6 +7652,7 @@
                       | ICY WIND
                       | SWAGGER
                       | SLEEP TALK
+                      | ENDURE
                       | ZEN HEADBUTT
 
     RATICATE ALOLAN   | SWORDS DANCE
@@ -7650,25 +7665,32 @@
                       | ICY WIND
                       | SWAGGER
                       | SLEEP TALK
+                      | ENDURE
                       | KNOCK OFF
                       | ZEN HEADBUTT
 
-    RAICHU ALOLAN     | BODY SLAM
-                      | SEISMIC TOSS
-                      | MIMIC
-                      | SUBSTITUTE
-                      | DYNAMIC PUNCH
-                      | SNORE
-                      | SLEEP TALK
-                      | SWIFT
-                      | THUNDER PUNCH
-                      | SIGNAL BEAM
-                      | NASTY PLOT
-                      | PLAY ROUGH
-                      | STORED POWER
-                      | KNOCK OFF
-                      | RECYCLE
-                      | MAGIC COAT
+    RAICHU ALOLAN     | MOVE_BODY_SLAM
+                      | MOVE_DOUBLE_EDGE
+                      | MOVE_SEISMIC_TOSS
+                      | MOVE_COUNTER
+                      | MOVE_MIMIC
+                      | MOVE_SUBSTITUTE
+                      | MOVE_DYNAMIC_PUNCH
+                      | MOVE_SNORE
+                      | MOVE_SLEEP_TALK
+                      | MOVE_ENDURE
+                      | MOVE_ROLLOUT
+                      | MOVE_SWAGGER
+                      | MOVE_SWIFT
+                      | MOVE_DEFENSE_CURL
+                      | MOVE_THUNDER_PUNCH
+                      | MOVE_SIGNAL_BEAM
+                      | MOVE_NASTY_PLOT
+                      | MOVE_PLAY_ROUGH
+                      | MOVE_STORED_POWER
+                      | MOVE_KNOCK_OFF
+                      | MOVE_RECYCLE
+                      | MOVE_MAGIC_COAT
 
     SANDSHREW ALOLAN  | SWORDS DANCE
                       | BODY SLAM
@@ -7678,6 +7700,7 @@
                       | SUBSTITUTE
                       | DYNAMIC PUNCH
                       | ROLLOUT
+                      | SWAGGER
                       | SNORE
                       | ICY WIND
                       | ENDURE
@@ -7701,6 +7724,7 @@
                       | SUBSTITUTE
                       | DYNAMIC PUNCH
                       | ROLLOUT
+                      | SWAGGER
                       | SNORE
                       | ICY WIND
                       | ENDURE
@@ -7770,6 +7794,7 @@
                       | EARTH POWER
                       | SLEEP TALK
                       | DEFENSE CURL
+                      | SWAGGER
                       | THUNDER PUNCH
                       | FIRE PUNCH
                       | SUPERPOWER
@@ -7790,6 +7815,7 @@
                       | EARTH POWER
                       | SLEEP TALK
                       | DEFENSE CURL
+                      | SWAGGER
                       | THUNDER PUNCH
                       | FIRE PUNCH
                       | SUPERPOWER
@@ -7810,6 +7836,7 @@
                       | EARTH POWER
                       | SLEEP TALK
                       | DEFENSE CURL
+                      | SWAGGER
                       | THUNDER PUNCH
                       | FIRE PUNCH
                       | SUPERPOWER
@@ -7823,8 +7850,10 @@
                       | SUBSTITUTE
                       | DYNAMIC PUNCH
                       | SNORE
+                      | ENDURE
                       | ICE PUNCH
                       | SLEEP TALK
+                      | SWAGGER
                       | THUNDER PUNCH
                       | FIRE PUNCH
                       | KNOCK OFF
@@ -7840,8 +7869,10 @@
                       | SUBSTITUTE
                       | DYNAMIC PUNCH
                       | SNORE
+                      | ENDURE
                       | ICE PUNCH
                       | SLEEP TALK
+                      | SWAGGER
                       | THUNDER PUNCH
                       | FIRE PUNCH
                       | KNOCK OFF
@@ -7855,6 +7886,7 @@
                       | SUBSTITUTE
                       | SNORE
                       | ENDURE
+                      | SWAGGER
                       | EARTH POWER
                       | FOUL PLAY
                       | SLEEP TALK
@@ -7867,6 +7899,7 @@
                       | SUBSTITUTE
                       | SNORE
                       | ENDURE
+                      | SWAGGER
                       | EARTH POWER
                       | FOUL PLAY
                       | SLEEP TALK
@@ -7899,6 +7932,7 @@
                       | PSYCH UP
                       | ICY WIND
                       | SNORE
+                      | ENDURE
                       | SWAGGER
                       | SLEEP TALK
                       | SWIFT
@@ -7912,6 +7946,10 @@
 
     EXEGGUTOR ALOLAN  | SWORDS DANCE
                       | MIMIC
+                      | DOUBLE_EDGE
+                      | ENDURE
+                      | ROLLOUT
+                      | SWAGGER
                       | DREAM EATER
                       | EXPLOSION
                       | SUBSTITUTE
@@ -7934,6 +7972,10 @@
                       | DOUBLE EDGE
                       | SEISMIC TOSS
                       | MIMIC
+                      | COUNTER
+                      | ENDURE
+                      | FURY CUTTER
+                      | SWAGGER
                       | SUBSTITUTE
                       | DYNAMIC PUNCH
                       | ICY WIND
@@ -7987,6 +8029,7 @@
                       | SUBSTITUTE
                       | SWIFT
                       | MIMIC
+                      | SWAGGER
                       | MAGIC COAT
                       | AVALANCHE
                       | SIGNAL BEAM
@@ -8006,6 +8049,7 @@
                       | SUBSTITUTE
                       | SWIFT
                       | MIMIC
+                      | SWAGGER
                       | MAGIC COAT
                       | SIGNAL BEAM
                       | TRICK
@@ -8034,6 +8078,7 @@
                       | SWAGGER
                       | PAIN SPLIT
                       | MIMIC
+                      | ROLLOUT
                       | DEFOG
                       | GASTRO ACID
                       | GUNK SHOT
@@ -8047,6 +8092,7 @@
                         | SIGNAL BEAM
                         | STORED POWER
                         | DEFOG
+                        | SWAGGER
                         | TRICK
                         | TAILWIND
 
@@ -8058,6 +8104,7 @@
                         | SWIFT
                         | SUPERPOWER
                         | DEFOG
+                        | SWAGGER
                         | KNOCK OFF
                         | TAILWIND
                         | LOW KICK
@@ -8069,6 +8116,7 @@
                         | SWIFT
                         | NASTY PLOT
                         | DEFOG
+                        | SWAGGER
                         | TAILWIND
                         | FOUL PLAY
 

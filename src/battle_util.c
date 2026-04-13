@@ -6363,22 +6363,16 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                  && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
                  && IS_MOVE_PHYSICAL(gCurrentMove)
-                 && IsMoveMakingContact(move, gBattlerAttacker)
                  && !(gSideStatuses[gBattlerTarget] & SIDE_STATUS_SAFEGUARD)
-                 && TARGET_TURN_DAMAGED)
+                 && TARGET_TURN_DAMAGED
+                 && (gSideStatuses[gBattlerAttacker] & SIDE_STATUS_HAZARDS_ANY
+                    || gStatuses3[gBattlerAttacker] & STATUS3_LEECHSEED
+                    || gBattleMons[gBattlerAttacker].status2 & STATUS2_WRAPPED))
                 {
+                    gLastUsedAbility = ABILITY_SPINNING_BODY;
                     BattleScriptPushCursor();
-                    BattleScriptExecute(BattleScript_RapidSpinAway);
-                    if (CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN) && gDisableStructs[battler].isFirstTurn != 2)
-                    {
-                        gLastUsedAbility = ABILITY_SPINNING_BODY;
-                        gBattleMons[battler].statStages[STAT_SPEED]++;
-                        gBattleScripting.animArg1 = 14 + STAT_SPEED;
-                        gBattleScripting.animArg2 = 0;
-                        BattleScriptExecute(BattleScript_SpeedBoostActivates);
-                        gBattleScripting.battler = battler;
-                        effect++;
-                    }
+                    BattleScriptExecute(BattleScript_SpinningBody);
+                    effect++;
                 }
                 break;
             case ABILITY_HEART_SWAP:

@@ -2945,7 +2945,7 @@
              (25, ANCIENT POWER)
              (33, CRUNCH)
              (41, TAKE DOWN)
-             (49, FLY)
+             (49, BRAVE BIRD)
              (57, IRON HEAD)
              (65, HYPER BEAM)
              (73, ROCK SLIDE)

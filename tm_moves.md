@@ -2476,6 +2476,7 @@ SPECIES PONYTA               | TM06 TOXIC
                              | TM06 TOXIC
                              | TM61 WILL O WISP
                              | TM63 ECHOED VOICE
+                             | TM90 ROCK SMASH
                              | TM93 WILD CHARGE
                              | HM04 STRENGTH
                              | HM06 ROCK SMASH
@@ -2505,6 +2506,7 @@ SPECIES RAPIDASH             | TM06 TOXIC
                              | TM68 GIGA IMPACT
                              | TM77 THROAT CHOP
                              | TM84 POISON JAB
+                             | TM90 ROCK SMASH
                              | TM93 WILD CHARGE
                              | HM04 STRENGTH
                              | HM06 ROCK SMASH
@@ -3873,6 +3875,7 @@ SPECIES STARYU               | TM45 ATTRACT
                              | TM06 TOXIC
                              | TM03 WATER PULSE
                              | TM55 SCALD
+                             | TM73 THUNDER WAVE
                              | TM74 GYRO BALL
                              | TM91 FLASH CANNON
                              | TM94 SURF
@@ -4840,6 +4843,7 @@ SPECIES DRAGONITE            | TM40 AERIAL ACE
                              | TM58 ROOST
                              | TM64 CUT
                              | TM68 GIGA IMPACT
+                             | TM74 THUNDER WAVE
                              | TM76 FLY
                              | TM78 BULLDOZE
                              | TM80 ROCK SLIDE
@@ -5921,6 +5925,7 @@ SPECIES FLAAFFY              | TM45 ATTRACT
                              | TM16 LIGHT SCREEN
                              | TM17 PROTECT
                              | TM18 RAIN DANCE
+                             | TM33 REFLECT
                              | TM44 REST
                              | TM27 RETURN
                              | TM20 SAFEGUARD
@@ -5952,6 +5957,7 @@ SPECIES AMPHAROS             | TM45 ATTRACT
                              | TM16 LIGHT SCREEN
                              | TM17 PROTECT
                              | TM18 RAIN DANCE
+                             | TM33 REFLECT
                              | TM44 REST
                              | TM27 RETURN
                              | TM20 SAFEGUARD
@@ -5990,10 +5996,12 @@ SPECIES BELLOSSOM            | TM45 ATTRACT
                              | TM20 SAFEGUARD
                              | TM43 SECRET POWER
                              | TM36 SLUDGE BOMB
+                             | TM33 REFLECT
                              | TM22 SOLARBEAM
                              | TM11 SUNNY DAY
                              | TM06 TOXIC
                              | TM53 ENERGY BALL
+                             | TM59 VENOSHOCK
                              | TM64 CUT
                              | TM68 GIGA IMPACT
                              | TM83 INFESTATION
@@ -6440,6 +6448,7 @@ SPECIES UMBREON              | TM45 ATTRACT
                              | TM42 FACADE
                              | TM21 FRUSTRATION
                              | TM10 HIDDEN POWER
+                             | TM33 REFLECT
                              | TM15 HYPER BEAM
                              | TM23 IRON TAIL
                              | TM17 PROTECT
@@ -6500,6 +6509,7 @@ SPECIES SLOWKING             | TM45 ATTRACT
                              | TM04 CALM MIND
                              | TM28 DIG
                              | TM32 DOUBLE TEAM
+                             | TM33 REFLECT
                              | TM26 EARTHQUAKE
                              | TM42 FACADE
                              | TM38 FIRE BLAST
@@ -6674,6 +6684,7 @@ SPECIES FORRETRESS           | TM45 ATTRACT
                              | TM11 SUNNY DAY
                              | TM06 TOXIC
                              | TM59 VENOSHOCK
+                             | TM66 PAYBACK
                              | TM68 GIGA IMPACT
                              | TM69 ROCK POLISH
                              | TM72 VOLT SWITCH
@@ -7595,6 +7606,7 @@ SPECIES DONPHAN              | TM45 ATTRACT
 SPECIES PORYGON2             | TM40 AERIAL ACE
                              | TM14 BLIZZARD
                              | TM32 DOUBLE TEAM
+                             | TM33 REFLECT
                              | TM42 FACADE
                              | TM21 FRUSTRATION
                              | TM10 HIDDEN POWER
@@ -7841,6 +7853,7 @@ SPECIES BLISSEY              | TM45 ATTRACT
                              | TM31 BRICK BREAK
                              | TM04 CALM MIND
                              | TM32 DOUBLE TEAM
+                             | TM33 REFLECT
                              | TM26 EARTHQUAKE
                              | TM42 FACADE
                              | TM38 FIRE BLAST
@@ -13215,6 +13228,7 @@ SPECIES ELECTIVIRE           | TM45 ATTRACT
                              | TM31 BRICK BREAK
                              | TM28 DIG
                              | TM32 DOUBLE TEAM
+                             | TM33 REFLECT
                              | TM26 EARTHQUAKE
                              | TM42 FACADE
                              | TM35 FLAMETHROWER
@@ -13363,6 +13377,7 @@ SPECIES LEAFEON              | TM40 AERIAL ACE
                              | TM21 FRUSTRATION
                              | TM19 GIGA DRAIN
                              | TM10 HIDDEN POWER
+                             | TM33 REFLECT
                              | TM15 HYPER BEAM
                              | TM23 IRON TAIL
                              | TM17 PROTECT
@@ -13397,6 +13412,7 @@ SPECIES GLACEON              | TM45 ATTRACT
                              | TM21 FRUSTRATION
                              | TM07 HAIL
                              | TM10 HIDDEN POWER
+                             | TM33 REFLECT
                              | TM15 HYPER BEAM
                              | TM13 ICE BEAM
                              | TM23 IRON TAIL
@@ -13448,6 +13464,7 @@ SPECIES GLISCOR              | TM40 AERIAL ACE
                              | TM06 TOXIC
                              | TM54 FALSE SWIPE
                              | TM58 ROOST
+                             | TM59 VENOSHOCK
                              | TM62 ACROBATICS
                              | TM64 CUT
                              | TM66 PAYBACK
@@ -13498,6 +13515,7 @@ SPECIES MAMOSWINE            | TM45 ATTRACT
 SPECIES PORYGON Z            | TM40 AERIAL ACE
                              | TM14 BLIZZARD
                              | TM32 DOUBLE TEAM
+                             | TM33 REFLECT
                              | TM42 FACADE
                              | TM21 FRUSTRATION
                              | TM10 HIDDEN POWER
@@ -13894,6 +13912,11 @@ SPECIES RATICATE ALOLAN      | TM14 BLIZZARD
 
 SPECIES RAICHU ALOLAN        | TM31 BRICK BREAK
                              | TM04 CALM MIND
+                             | TM45_ATTRACT
+                             | TM32_DOUBLE_TEAM
+                             | TM01_FOCUS_PUNCH
+                             | TM18_RAIN_DANCE
+                             | TM34_SHOCK_WAVE
                              | TM28 DIG
                              | TM10 HIDDEN POWER
                              | TM42 FACADE
@@ -13920,6 +13943,7 @@ SPECIES RAICHU ALOLAN        | TM31 BRICK BREAK
                              | TM85 ELECTROWEB
                              | TM86 GRASS KNOT
                              | TM87 TOPSY TURVY
+                             | TM90 ROCK SMASH
                              | TM92 TRICK ROOM
                              | TM93 WILD CHARGE
                              | TM94 SURF
@@ -13931,6 +13955,9 @@ SPECIES RAICHU ALOLAN        | TM31 BRICK BREAK
 
 SPECIES SANDSHREW ALOLAN     | TM14 BLIZZARD
                              | TM31 BRICK BREAK
+                             | TM45 ATTRACT
+                             | TM32 DOUBLE_TEAM
+                             | TM01 FOCUS_PUNCH
                              | TM28 DIG
                              | TM10 HIDDEN POWER
                              | TM26 EARTHQUAKE
@@ -13957,6 +13984,9 @@ SPECIES SANDSHREW ALOLAN     | TM14 BLIZZARD
 
 SPECIES SANDSLASH ALOLAN     | TM14 BLIZZARD
                              | TM31 BRICK BREAK
+                             | TM45 ATTRACT
+                             | TM32 DOUBLE_TEAM
+                             | TM01 FOCUS_PUNCH
                              | TM28 DIG
                              | TM10 HIDDEN POWER
                              | TM26 EARTHQUAKE
@@ -13987,6 +14017,8 @@ SPECIES SANDSLASH ALOLAN     | TM14 BLIZZARD
 
 SPECIES VULPIX ALOLAN        | TM14 BLIZZARD
                              | TM28 DIG
+                             | TM45 ATTRACT
+                             | TM32 DOUBLE_TEAM
                              | TM10 HIDDEN POWER
                              | TM42 FACADE
                              | TM13 ICE BEAM
@@ -14005,6 +14037,8 @@ SPECIES VULPIX ALOLAN        | TM14 BLIZZARD
 SPECIES NINETALES ALOLAN     | TM14 BLIZZARD
                              | TM04 CALM MIND
                              | TM28 DIG
+                             | TM45 ATTRACT
+                             | TM32 DOUBLE_TEAM
                              | TM10 HIDDEN POWER
                              | TM42 FACADE
                              | TM15 HYPER BEAM
@@ -14066,6 +14100,16 @@ SPECIES DUGTRIO ALOLAN       | TM28 DIG
                              | HM06 ROCK SMASH
 
 SPECIES MEOWTH ALOLAN        | TM42 FACADE
+                             | TM40 AERIAL_ACE
+                             | TM45 ATTRACT
+                             | TM32 DOUBLE_TEAM
+                             | TM18 RAIN_DANCE
+                             | TM34 SHOCK_WAVE
+                             | TM49 SNATCH
+                             | TM11 SUNNY_DAY
+                             | TM46 THIEF
+                             | TM41 TORMENT
+                             | TM03 WATER_PULSE
                              | TM23 IRON TAIL
                              | TM10 HIDDEN POWER
                              | TM17 PROTECT
@@ -14081,6 +14125,7 @@ SPECIES MEOWTH ALOLAN        | TM42 FACADE
                              | TM64 CUT
                              | TM65 SHADOW CLAW
                              | TM66 PAYBACK
+                             | TM77 THROAT CHOP
                              | TM87 TOPSY TURVY
                              | TM89 U TURN
                              | TM97 DARK PULSE
@@ -14088,6 +14133,16 @@ SPECIES MEOWTH ALOLAN        | TM42 FACADE
                              | HM05 FLASH
 
 SPECIES PERSIAN ALOLAN       | TM42 FACADE
+                             | TM40 AERIAL_ACE
+                             | TM45 ATTRACT
+                             | TM32 DOUBLE_TEAM
+                             | TM18 RAIN_DANCE
+                             | TM34 SHOCK_WAVE
+                             | TM49 SNATCH
+                             | TM11 SUNNY_DAY
+                             | TM46 THIEF
+                             | TM41 TORMENT
+                             | TM03 WATER_PULSE
                              | TM15 HYPER BEAM
                              | TM23 IRON TAIL
                              | TM10 HIDDEN POWER
@@ -14115,6 +14170,11 @@ SPECIES PERSIAN ALOLAN       | TM42 FACADE
 
 SPECIES GEODUDE ALOLAN       | TM31 BRICK BREAK
                              | TM28 DIG
+                             | TM45 ATTRACT
+                             | TM32 DOUBLE_TEAM
+                             | TM01 FOCUS_PUNCH
+                             | TM39 ROCK_TOMB
+                             | TM37 SANDSTORM
                              | TM10 HIDDEN POWER
                              | TM42 FACADE
                              | TM38 FIRE BLAST
@@ -14128,10 +14188,12 @@ SPECIES GEODUDE ALOLAN       | TM31 BRICK BREAK
                              | TM43 SECRET POWER
                              | TM57 CHARGE BEAM
                              | TM69 ROCK POLISH
+                             | TM71 STONE_EDGE
                              | TM72 VOLT SWITCH
                              | TM74 GYRO BALL
                              | TM78 BULLDOZE
                              | TM80 ROCK SLIDE
+                             | TM90 ROCK SMASH
                              | TM96 NATURE POWER
                              | HM04 STRENGTH
                              | HM05 FLASH
@@ -14139,6 +14201,11 @@ SPECIES GEODUDE ALOLAN       | TM31 BRICK BREAK
 
 SPECIES GRAVELER ALOLAN      | TM31 BRICK BREAK
                              | TM28 DIG
+                             | TM45 ATTRACT
+                             | TM32 DOUBLE_TEAM
+                             | TM01 FOCUS_PUNCH
+                             | TM39 ROCK_TOMB
+                             | TM37 SANDSTORM
                              | TM10 HIDDEN POWER
                              | TM26 EARTHQUAKE
                              | TM42 FACADE
@@ -14152,10 +14219,12 @@ SPECIES GRAVELER ALOLAN      | TM31 BRICK BREAK
                              | TM43 SECRET POWER
                              | TM57 CHARGE BEAM
                              | TM69 ROCK POLISH
+                             | TM71 STONE_EDGE
                              | TM72 VOLT SWITCH
                              | TM74 GYRO BALL
                              | TM78 BULLDOZE
                              | TM80 ROCK SLIDE
+                             | TM90 ROCK SMASH
                              | TM96 NATURE POWER
                              | HM04 STRENGTH
                              | HM05 FLASH
@@ -14163,6 +14232,11 @@ SPECIES GRAVELER ALOLAN      | TM31 BRICK BREAK
 
 SPECIES GOLEM ALOLAN         | TM31 BRICK BREAK
                              | TM28 DIG
+                             | TM45 ATTRACT
+                             | TM32 DOUBLE_TEAM
+                             | TM01 FOCUS_PUNCH
+                             | TM39 ROCK_TOMB
+                             | TM37 SANDSTORM
                              | TM10 HIDDEN POWER
                              | TM26 EARTHQUAKE
                              | TM42 FACADE
@@ -14184,6 +14258,7 @@ SPECIES GOLEM ALOLAN         | TM31 BRICK BREAK
                              | TM74 GYRO BALL
                              | TM78 BULLDOZE
                              | TM80 ROCK SLIDE
+                             | TM90 ROCK SMASH
                              | TM93 WILD CHARGE
                              | TM96 NATURE POWER
                              | HM04 STRENGTH
@@ -14191,6 +14266,15 @@ SPECIES GOLEM ALOLAN         | TM31 BRICK BREAK
                              | HM06 ROCK SMASH
 
 SPECIES GRIMER ALOLAN        | TM28 DIG
+                             | TM44 ATTRACT
+                             | TM32 DOUBLE_TEAM
+                             | TM19 GIGA_DRAIN
+                             | TM18 RAIN_DANCE
+                             | TM39 ROCK_TOMB
+                             | TM34 SHOCK_WAVE
+                             | TM11 SUNNY_DAY
+                             | TM46 THIEF
+                             | TM59 VENOSHOCK
                              | TM42 FACADE
                              | TM10 HIDDEN POWER
                              | TM38 FIRE BLAST
@@ -14213,6 +14297,16 @@ SPECIES GRIMER ALOLAN        | TM28 DIG
 
 SPECIES MUK ALOLAN           | TM31 BRICK BREAK
                              | TM28 DIG
+                             | TM01 FOCUS PUNCH
+                             | TM44 ATTRACT
+                             | TM32 DOUBLE_TEAM
+                             | TM19 GIGA_DRAIN
+                             | TM18 RAIN_DANCE
+                             | TM39 ROCK_TOMB
+                             | TM34 SHOCK_WAVE
+                             | TM11 SUNNY_DAY
+                             | TM46 THIEF
+                             | TM59 VENOSHOCK
                              | TM10 HIDDEN POWER
                              | TM42 FACADE
                              | TM38 FIRE BLAST
@@ -14242,6 +14336,14 @@ SPECIES EXEGGUTOR ALOLAN     | TM31 BRICK BREAK
                              | TM26 EARTHQUAKE
                              | TM10 HIDDEN POWER
                              | TM42 FACADE
+                             | TM44 ATTRACT
+                             | TM09 BULLET_SEED
+                             | TM32 DOUBLE_TEAM
+                             | TM19 GIGA_DRAIN
+                             | TM48 SKILL_SWAP
+                             | TM11 SUNNY_DAY
+                             | TM46 THIEF
+                             | TM60 PSYSHOCK
                              | TM35 FLAMETHROWER
                              | TM15 HYPER BEAM
                              | TM23 IRON TAIL
@@ -14270,6 +14372,14 @@ SPECIES EXEGGUTOR ALOLAN     | TM31 BRICK BREAK
 
 SPECIES MAROWAK ALOLAN       | TM14 BLIZZARD
                              | TM31 BRICK BREAK
+                             | TM40 AERIAL ACE
+                             | TM45 ATTRACT
+                             | TM01 FOCUS PUNCH
+                             | TM39 ROCK TOMB
+                             | TM37 SANDSTORM
+                             | TM11 SUNNY DAY
+                             | TM46 THIEF
+                             | TM63 ECHOED VOICE
                              | TM28 DIG
                              | TM10 HIDDEN POWER
                              | TM26 EARTHQUAKE
@@ -14293,12 +14403,14 @@ SPECIES MAROWAK ALOLAN       | TM14 BLIZZARD
                              | TM71 STONE EDGE
                              | TM78 BULLDOZE
                              | TM80 ROCK SLIDE
+                             | TM90 ROCK SMASH
                              | TM97 DARK PULSE
                              | HM04 STRENGTH
                              | HM06 ROCK SMASH
 
 SPECIES PONYTA GALARIAN      | TM06 TOXIC
                              | TM45 ATTRACT
+                             | TM32 DOUBLE TEAM
                              | TM04 CALM MIND
                              | TM10 HIDDEN POWER
                              | TM42 FACADE
@@ -14315,7 +14427,9 @@ SPECIES PONYTA GALARIAN      | TM06 TOXIC
                              | TM99 DAZZLING GLEAM
 
 SPECIES RAPIDASH GALARIAN    
+                             | TM06 TOXIC
                              | TM45 ATTRACT
+                             | TM32 DOUBLE TEAM
                              | TM04 CALM MIND
                              | TM10 HIDDEN POWER
                              | TM42 FACADE
@@ -14333,7 +14447,9 @@ SPECIES RAPIDASH GALARIAN
                              | TM93 WILD CHARGE
                              | TM99 DAZZLING GLEAM
 
-SPECIES SLOWPOKE GALARIAN    | TM45 ATTRACT
+SPECIES SLOWPOKE GALARIAN    | TM06 TOXIC
+                             | TM45 ATTRACT
+                             | TM32 DOUBLE TEAM
                              | TM14 BLIZZARD
                              | TM04 CALM MIND
                              | TM28 DIG
@@ -14364,7 +14480,9 @@ SPECIES SLOWPOKE GALARIAN    | TM45 ATTRACT
                              | TM92 TRICK ROOM
                              | TM94 SURF
 
-SPECIES SLOWBRO GALARIAN     | TM45 ATTRACT
+SPECIES SLOWBRO GALARIAN     | TM06 TOXIC
+                             | TM45 ATTRACT
+                             | TM32 DOUBLE TEAM
                              | TM14 BLIZZARD
                              | TM10 HIDDEN POWER
                              | TM31 BRICK BREAK
@@ -14405,6 +14523,10 @@ SPECIES SLOWBRO GALARIAN     | TM45 ATTRACT
 
 SPECIES WEEZING GALARIAN     | TM45 ATTRACT
                              | TM42 FACADE
+                             | TM32 DOUBLE TEAM
+                             | TM34 SHOCK WAVE
+                             | TM41 TORMENT
+                             | TM59 VENOSHOCK
                              | TM10 HIDDEN POWER
                              | TM38 FIRE BLAST
                              | TM35 FLAMETHROWER
@@ -14413,6 +14535,8 @@ SPECIES WEEZING GALARIAN     | TM45 ATTRACT
                              | TM17 PROTECT
                              | TM18 RAIN DANCE
                              | TM44 REST
+                             | TM27 RETURN
+                             | TM21 FRUSTRATION
                              | TM30 SHADOW BALL
                              | TM36 SLUDGE BOMB
                              | TM11 SUNNY DAY
@@ -14423,11 +14547,13 @@ SPECIES WEEZING GALARIAN     | TM45 ATTRACT
                              | TM06 TOXIC
                              | TM43 SECRET POWER
                              | TM61 WILL O WISP
+                             | TM66 PAYBACK
                              | TM68 GIGA IMPACT
                              | TM74 GYRO BALL
                              | TM83 INFESTATION
                              | TM97 DARK PULSE
                              | TM99 DAZZLING GLEAM
+                             | HM05 FLASH
 
 SPECIES ARTICUNO GALARIAN    | TM04 CALM MIND
                              | TM32 DOUBLE TEAM

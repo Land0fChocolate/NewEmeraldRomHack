@@ -1148,9 +1148,8 @@ static const u8 sWickednessDescription[] = _(
 	"do 25% more damage.");
 
 static const u8 sSpinningBodyDescription[] = _(
-	"User's contact moves\n"
-	"remove field hazards and\n"
-	"increase speed one stage.");
+	"User's physical moves\n"
+	"remove field hazards.");
 
 static const u8 sEvergreenDescription[] = _(
 	"User take half damage from\n"

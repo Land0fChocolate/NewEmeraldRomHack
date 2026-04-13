@@ -46,7 +46,8 @@ v1.1.0 - 30/01/2025
 v1.1.1 - 21/02/2025
 v1.1.2 - 12/05/2025
 v1.1.3 - 16/06/2025
-v1.1.4 - xx/09/2025
+v1.1.4 - 28/10/2025
+v1.1.5 - xx/04/2026
 
 # Changelog
 
@@ -157,7 +158,7 @@ v1.1.4 - xx/09/2025
 - Soul Siphon: Contact from user steals 1/8 HP from target and heals for the same amount. Used by Duskull/Dusclops/Dusknoir.
 - Needle Missile: User attacks deals additional 15BP untyped special damage. Used by Jolteon/Qwilfish.
 - Wickedness: User super-effective moves do 25% more damage. Used by Hitmonchan/Mismagius.
-- Spinning Body: User's physical contact moves remove field hazards and raise speed one stage. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Solrock.
+- Spinning Body: User's physical moves remove field hazards. Used by Pineco/Forretress/Hitmontop/Donphan/Baltoy/Claydol/Solrock.
 - Hematophagy: Healing effects from drain moves increased by 50%. Used by Zubat/Golbat/Crobat.
 - Swordmaster: Power of sword/blade moves increased by 25% (Cut/Aerial Ace/Leaf Blade/X-Scissor/Psycho Cut/Sacred Sword/Razor Shell/Secret Sword/Solar Blade/Flint Blade). Used by Grovyle/Sceptile/Gallade/Leafeon.
 - Supercooled: User's Ice type moves are super-effective against Water types. Used by Lapras/Articuno/Glaceon.
@@ -264,7 +265,6 @@ Some of these may have been carried over from pokeemerald-expansion.
 - Stench ability may activate for opponent and not user. Scenario: Weezing vs Altaria, Altaria (no King's Rock) used Ice Beam which flinched Weezing, could be a bad gBattlerAttacker assignment or similar.
 - Time Traveller ability ignores False Swipe effect of leaving the user with 1 HP.
 - Bug Bite/Pluck is not taking the effects of the opponent's berry.
-- Spinning Body activates on every hit for multi-hit moves (e.g. Hitmontop using Triple Kick). Would rather it takes affect on only the last hit.
 - Backgrounds of some moves are glitched or have black boxes. (Shadow Bone, Gunk Shot, Hurricane, Focus Blast, Aura Sphere, Burn Up, Origin Pulse)
 - Cloud reflection can be seen in the long grass and trees in Route 120, as well as rocks in Crumbling Gorge.
 - Jumping into long grass from ledge and moving produces incorrect grass animation.
