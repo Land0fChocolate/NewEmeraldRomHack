@@ -142,7 +142,7 @@ v1.1.5 - xx/04/2026
 - Removed badge boosts
 - Doubled chance for special news bulletins, like sales, rooftop shop, etc.
 - EXP gain has been scaled to level difference, rather like in gen 5.
-- Mega Evolution is available after beating the post game and getting all gold Battle Frontier symbols. 
+- Mega Evolution is available after beating the post game. 
 
 # New Abilities
 
