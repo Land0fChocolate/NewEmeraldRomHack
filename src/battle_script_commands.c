@@ -1942,6 +1942,10 @@ static void Cmd_typecalc(void)
     u8 moveType;
 
     GET_MOVE_TYPE(gCurrentMove, moveType);
+
+    if (AbilityBattleEffects(ABILITYEFFECT_ABSORBING, gBattlerTarget, 0, gCurrentMove))
+        return;
+
     CalcTypeEffectivenessMultiplier(gCurrentMove, moveType, gBattlerAttacker, gBattlerTarget, TRUE);
 
     gBattlescriptCurrInstr++;

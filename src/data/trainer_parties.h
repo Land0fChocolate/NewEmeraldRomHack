@@ -12967,14 +12967,14 @@ static const struct TrainerMonItemCustomMoves sParty_Leaf[] = {
     {
         .iv = 0,
         .lvl = 10,
-        .species = SPECIES_MAGIKARP,
+        .species = SPECIES_GLOOM,
         .heldItem = ITEM_NONE,
-        .moves = {MOVE_DESTINY_BOND, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+        .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     },
     {
         .iv = 0,
         .lvl = 15,
-        .species = SPECIES_CHINCHOU,
+        .species = SPECIES_MAGIKARP,
         .heldItem = ITEM_NONE,
         .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     }

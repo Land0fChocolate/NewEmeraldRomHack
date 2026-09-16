@@ -4191,7 +4191,17 @@ u8 AtkCanceller_UnableToUseMove(void)
         case CANCELLER_POWDER_MOVE:
             if ((gBattleMoves[gCurrentMove].flags & FLAG_POWDER) && (gBattlerAttacker != gBattlerTarget))
             {
-                if ((B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS))
+                u32 moveType;
+                GET_MOVE_TYPE(gCurrentMove, moveType);
+
+                if (moveType == TYPE_GRASS
+                    && HasAbility(ABILITY_SAP_SIPPER, GetBattlerAbilities(gBattlerTarget))
+                    && !HasAbility(ABILITY_MOLD_BREAKER, GetBattlerAbilities(gBattlerAttacker))
+                    && AbilityBattleEffects(ABILITYEFFECT_ABSORBING, gBattlerTarget, 0, gCurrentMove))
+                {
+                    effect = 1;
+                }
+                else if ((B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS))
                     || HasAbility(ABILITY_OVERCOAT, GetBattlerAbilities(gBattlerTarget))
                     || HasAbility(ABILITY_DAMP, GetBattlerAbilities(gBattlerTarget)))
                 {
@@ -4202,16 +4212,15 @@ u8 AtkCanceller_UnableToUseMove(void)
 
                     gBattlerAbility = gBattlerTarget;
                     effect = 1;
+                    gBattlescriptCurrInstr = BattleScript_PowderMoveNoEffect;
                 }
                 else if (GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_SAFETY_GOGGLES)
                 {
                     RecordItemEffectBattle(gBattlerTarget, HOLD_EFFECT_SAFETY_GOGGLES);
                     gLastUsedItem = gBattleMons[gBattlerTarget].item;
                     effect = 1;
-                }
-
-                if (effect)
                     gBattlescriptCurrInstr = BattleScript_PowderMoveNoEffect;
+                }
             }
             if (gProtectStructs[gBattlerAttacker].usesBouncedMove) // Edge case for bouncing a powder move against a grass type pokemon.
                 gBattleStruct->atkCancellerTracker = CANCELLER_END;
