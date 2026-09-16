@@ -43,6 +43,10 @@
 #define BIT_SIDE        1
 #define BIT_FLANK       2
 
+#define PARENTAL_BOND_OFF     0
+#define PARENTAL_BOND_2ND_HIT 1
+#define PARENTAL_BOND_1ST_HIT 2
+
 // Battle Type Flags
 #define BATTLE_TYPE_DOUBLE             (1 << 0)
 #define BATTLE_TYPE_LINK               (1 << 1)

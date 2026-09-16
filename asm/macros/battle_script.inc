@@ -1691,6 +1691,11 @@
 	.4byte \ptr
 	.endm
 
+	.macro tryparentalbond battler:req, ptr:req
+	various \battler, VARIOUS_TRY_PARENTAL_BOND
+	.4byte \ptr
+	.endm
+
 	.macro jumpifnotberry battler:req, ptr:req
 	various \battler, VARIOUS_JUMP_IF_NOT_BERRY
 	.4byte \ptr

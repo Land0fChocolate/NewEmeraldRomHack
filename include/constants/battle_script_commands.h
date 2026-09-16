@@ -238,6 +238,7 @@
 #define VARIOUS_CHECK_IF_DREAMFEAST_HEALS           163
 #define VARIOUS_DO_DREAMFEAST_HEAL                  164
 #define VARIOUS_SET_MOVESET                         165
+#define VARIOUS_TRY_PARENTAL_BOND                   166
 
 // Cmd_manipulatedamage
 #define DMG_CHANGE_SIGN            0

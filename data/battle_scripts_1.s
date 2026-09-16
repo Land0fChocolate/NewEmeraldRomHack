@@ -3008,6 +3008,7 @@ BattleScript_HitFromAccCheck::
 BattleScript_HitFromAtkString::
 	attackstring
 	ppreduce
+	copyhword sMULTIHIT_EFFECT, sMOVE_EFFECT
 BattleScript_HitFromCritCalc::
 	critcalc
 	damagecalc
@@ -3026,6 +3027,14 @@ BattleScript_HitFromAtkAnimation::
 	waitmessage B_WAIT_TIME_LONG
 	seteffectwithchance
 	tryfaintmon BS_TARGET, FALSE, NULL
+	moveendto MOVEEND_NEXT_TARGET
+	tryparentalbond BS_ATTACKER, BattleScript_EffectHit_ParentalBondRetry
+	moveendcase MOVEEND_SYNCHRONIZE_TARGET
+	moveendfrom MOVEEND_MAGICIAN
+	end
+BattleScript_EffectHit_ParentalBondRetry:
+	copyhword sMOVE_EFFECT, sMULTIHIT_EFFECT
+	goto BattleScript_HitFromCritCalc
 BattleScript_MoveEnd::
 	moveendall
 	end

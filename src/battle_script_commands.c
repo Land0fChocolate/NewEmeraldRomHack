@@ -9903,6 +9903,20 @@ static void Cmd_various(void)
             SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_DRAIN_PUNCH, 3);
         }
         break;
+    case VARIOUS_TRY_PARENTAL_BOND:
+        if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_OFF
+            && CanParentalBond(gBattlerAttacker, gCurrentMove)
+            && IsBattlerAlive(gBattlerTarget))
+        {
+            gSpecialStatuses[gBattlerAttacker].parentalBondState = PARENTAL_BOND_2ND_HIT;
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
+        }
+        else
+        {
+            gSpecialStatuses[gBattlerAttacker].parentalBondState = PARENTAL_BOND_OFF;
+            gBattlescriptCurrInstr += 7;
+        }
+        return;
     } // End of switch (gBattlescriptCurrInstr[2])
 
     gBattlescriptCurrInstr += 3;

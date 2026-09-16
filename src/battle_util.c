@@ -7046,6 +7046,40 @@ bool32 CanBeBurned(u8 battlerId)
     return TRUE;
 }
 
+bool32 CanParentalBond(u8 battlerAtk, u16 move)
+{
+    if (!HasAbility(ABILITY_PARENTAL_BOND, GetBattlerAbilities(battlerAtk)))
+        return FALSE;
+    if (IS_MOVE_STATUS(move))
+        return FALSE;
+    if (GetMoveTargetCount(move, battlerAtk, gBattlerTarget) >= 2)
+        return FALSE;
+
+    switch (gBattleMoves[move].effect)
+    {
+    case EFFECT_OHKO:
+    case EFFECT_EXPLOSION:
+    case EFFECT_FINAL_GAMBIT:
+    case EFFECT_ENDEAVOR:
+    case EFFECT_UPROAR:
+    case EFFECT_ROLLOUT:
+    case EFFECT_FLING:
+    case EFFECT_MULTI_HIT:
+    case EFFECT_DOUBLE_HIT:
+    case EFFECT_TWINEEDLE:
+    case EFFECT_TRIPLE_KICK:
+    case EFFECT_BEAT_UP:
+    case EFFECT_SCALE_SHOT:
+    case EFFECT_SKULL_BASH:
+    case EFFECT_TWO_TURNS_ATTACK:
+    case EFFECT_SOLARBEAM:
+    case EFFECT_SEMI_INVULNERABLE:
+    case EFFECT_BIDE:
+        return FALSE;
+    }
+    return TRUE;
+}
+
 bool32 CanBeParalyzed(u8 battlerId)
 {
     u16 abilities[NUM_ABILITY_SLOTS];
@@ -10106,6 +10140,10 @@ static u32 CalcFinalDmg(u32 dmg, u16 move, u8 battlerAtk, u8 battlerDef, u8 move
     // check multiple targets in double battle
     if (GetMoveTargetCount(move, battlerAtk, battlerDef) >= 2)
         MulModifier(&finalModifier, UQ_4_12(0.75));
+
+    // Parental Bond's second strike deals reduced damage (25% from Gen 7 onward)
+    if (gSpecialStatuses[battlerAtk].parentalBondState == PARENTAL_BOND_2ND_HIT)
+        MulModifier(&finalModifier, UQ_4_12(0.25));
 
     // take type effectiveness
     MulModifier(&finalModifier, typeEffectivenessModifier);
