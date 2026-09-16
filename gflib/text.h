@@ -268,6 +268,7 @@
 #define NUM_TEXT_PRINTERS 32
 
 #define TEXT_SPEED_FF 0xFF
+#define TEXT_SPEED_INSTANT 0xFE
 
 enum
 {
@@ -323,6 +324,7 @@ struct TextPrinter
     u8 scrollDistance;
     u8 minLetterSpacing;  // 0x20
     u8 japanese;
+    u8 instantText;
 };
 
 struct FontInfo

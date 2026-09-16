@@ -174,6 +174,7 @@ bool16 AddTextPrinter(struct TextPrinterTemplate *printerTemplate, u8 speed, voi
     gTempTextPrinter.textSpeed = speed;
     gTempTextPrinter.delayCounter = 0;
     gTempTextPrinter.scrollDistance = 0;
+    gTempTextPrinter.instantText = FALSE;
 
     for (i = 0; i < 7; i++)
     {
@@ -188,7 +189,15 @@ bool16 AddTextPrinter(struct TextPrinterTemplate *printerTemplate, u8 speed, voi
     GenerateFontHalfRowLookupTable(printerTemplate->fgColor, printerTemplate->bgColor, printerTemplate->shadowColor);
     if (speed != TEXT_SPEED_FF && speed != 0)
     {
-        --gTempTextPrinter.textSpeed;
+        if (speed == TEXT_SPEED_INSTANT)
+        {
+            gTempTextPrinter.textSpeed = 0;
+            gTempTextPrinter.instantText = TRUE;
+        }
+        else
+        {
+            --gTempTextPrinter.textSpeed;
+        }
         gTextPrinters[printerTemplate->windowId] = gTempTextPrinter;
     }
     else
@@ -219,6 +228,8 @@ void RunTextPrinters(void)
             if (gTextPrinters[i].active)
             {
                 u16 temp = RenderFont(&gTextPrinters[i]);
+                if (gTextPrinters[i].instantText && temp != 0)
+                    CopyWindowToVram(gTextPrinters[i].printerTemplate.windowId, 2);
                 switch (temp)
                 {
                 case 0:
@@ -247,6 +258,8 @@ u32 RenderFont(struct TextPrinter *textPrinter)
     while (TRUE)
     {
         ret = gFonts[textPrinter->printerTemplate.fontId].fontFunction(textPrinter);
+        if (ret == 0 && textPrinter->instantText)
+            continue;
         if (ret != 2)
             return ret;
     }
@@ -1093,7 +1106,7 @@ u16 RenderText(struct TextPrinter *textPrinter)
         if (textPrinter->scrollDistance)
         {
             int scrollSpeed = GetPlayerTextSpeed();
-            int speed = gWindowVerticalScrollSpeeds[scrollSpeed];
+            int speed = textPrinter->instantText ? textPrinter->scrollDistance : gWindowVerticalScrollSpeeds[scrollSpeed];
             if (textPrinter->scrollDistance < speed)
             {
                 ScrollWindow(textPrinter->printerTemplate.windowId, 0, textPrinter->scrollDistance, PIXEL_FILL(textPrinter->printerTemplate.bgColor));
