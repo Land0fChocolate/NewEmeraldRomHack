@@ -241,7 +241,7 @@ void CB2_InitOptionMenu(void)
 
         gTasks[taskId].data[TD_MENUSELECTION] = 0;
         gTasks[taskId].data[TD_TEXTSPEED] = gSaveBlock2Ptr->optionsTextSpeed;
-        if (gTasks[taskId].data[TD_TEXTSPEED] < OPTIONS_TEXT_SPEED_MID || gTasks[taskId].data[TD_TEXTSPEED] > OPTIONS_TEXT_SPEED_INSTANT)
+        if (gTasks[taskId].data[TD_TEXTSPEED] < OPTIONS_TEXT_SPEED_MID || gTasks[taskId].data[TD_TEXTSPEED] > OPTIONS_TEXT_SPEED_VFAST)
             gTasks[taskId].data[TD_TEXTSPEED] = OPTIONS_TEXT_SPEED_FAST;
         gTasks[taskId].data[TD_BATTLESCENE] = gSaveBlock2Ptr->optionsBattleSceneOff;
         gTasks[taskId].data[TD_BATTLESTYLE] = gSaveBlock2Ptr->optionsBattleStyle;
@@ -418,7 +418,7 @@ static u8 TextSpeed_ProcessInput(u8 selection)
 {
     if (JOY_NEW(DPAD_RIGHT))
     {
-        if (selection < OPTIONS_TEXT_SPEED_INSTANT)
+        if (selection < OPTIONS_TEXT_SPEED_VFAST)
             selection++;
         else
             selection = OPTIONS_TEXT_SPEED_MID;
@@ -430,7 +430,7 @@ static u8 TextSpeed_ProcessInput(u8 selection)
         if (selection > OPTIONS_TEXT_SPEED_MID)
             selection--;
         else
-            selection = OPTIONS_TEXT_SPEED_INSTANT;
+            selection = OPTIONS_TEXT_SPEED_VFAST;
 
         sArrowPressed = TRUE;
     }
@@ -451,12 +451,12 @@ static void TextSpeed_DrawChoices(u8 selection)
 
     widthMid = GetStringWidth(1, gText_TextSpeedMid, 0);
     widthFast = GetStringWidth(1, gText_TextSpeedFast, 0);
-    rightX = GetStringRightAlignXOffset(1, gText_TextSpeedInstant, 198);
+    rightX = GetStringRightAlignXOffset(1, gText_TextSpeedVFast, 198);
 
     xFast = 104 + widthMid + (rightX - (104 + widthMid) - widthFast) / 2;
     DrawOptionMenuChoice(gText_TextSpeedFast, xFast, YPOS_TEXTSPEED, styles[1]);
 
-    DrawOptionMenuChoice(gText_TextSpeedInstant, rightX, YPOS_TEXTSPEED, styles[2]);
+    DrawOptionMenuChoice(gText_TextSpeedVFast, rightX, YPOS_TEXTSPEED, styles[2]);
 }
 
 static u8 BattleScene_ProcessInput(u8 selection)

@@ -64,10 +64,10 @@ const u16 gUnknown_0860F074[] = INCBIN_U16("graphics/interface/860F074.gbapal");
 
 static const u8 sTextSpeedFrameDelays[] =
 {
-    [OPTIONS_TEXT_SPEED_SLOW]    = 4,
-    [OPTIONS_TEXT_SPEED_MID]     = 2,
-    [OPTIONS_TEXT_SPEED_FAST]    = 1,
-    [OPTIONS_TEXT_SPEED_INSTANT] = TEXT_SPEED_INSTANT
+    [OPTIONS_TEXT_SPEED_SLOW]  = 4,
+    [OPTIONS_TEXT_SPEED_MID]   = 2,
+    [OPTIONS_TEXT_SPEED_FAST]  = 1,
+    [OPTIONS_TEXT_SPEED_VFAST] = TEXT_SPEED_VFAST
 };
 
 static const struct WindowTemplate sStandardTextBox_WindowTemplates[] =
@@ -484,7 +484,7 @@ u32 GetPlayerTextSpeed(void)
 u8 GetPlayerTextSpeedDelay(void)
 {
     u32 speed;
-    if (gSaveBlock2Ptr->optionsTextSpeed > OPTIONS_TEXT_SPEED_INSTANT)
+    if (gSaveBlock2Ptr->optionsTextSpeed > OPTIONS_TEXT_SPEED_VFAST)
         gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
     speed = GetPlayerTextSpeed();
     return sTextSpeedFrameDelays[speed];

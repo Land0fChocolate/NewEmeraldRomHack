@@ -50,7 +50,7 @@ const u8 gDarkDownArrowTiles[] = INCBIN_U8("graphics/fonts/down_arrow_RS.4bpp");
 const u8 gUnusedFRLGBlankedDownArrow[] = INCBIN_U8("graphics/fonts/unused_frlg_blanked_down_arrow.4bpp");
 const u8 gUnusedFRLGDownArrow[] = INCBIN_U8("graphics/fonts/unused_frlg_down_arrow.4bpp");
 const u8 gDownArrowYCoords[] = { 0x0, 0x1, 0x2, 0x1 };
-const u8 gWindowVerticalScrollSpeeds[] = { 0x1, 0x2, 0x4, 0x0 };
+const u8 gWindowVerticalScrollSpeeds[] = { 0x1, 0x2, 0x4, 0x8 };
 
 const struct GlyphWidthFunc gGlyphWidthFuncs[] =
 {
@@ -174,7 +174,7 @@ bool16 AddTextPrinter(struct TextPrinterTemplate *printerTemplate, u8 speed, voi
     gTempTextPrinter.textSpeed = speed;
     gTempTextPrinter.delayCounter = 0;
     gTempTextPrinter.scrollDistance = 0;
-    gTempTextPrinter.instantText = FALSE;
+    gTempTextPrinter.vfast = FALSE;
 
     for (i = 0; i < 7; i++)
     {
@@ -189,10 +189,10 @@ bool16 AddTextPrinter(struct TextPrinterTemplate *printerTemplate, u8 speed, voi
     GenerateFontHalfRowLookupTable(printerTemplate->fgColor, printerTemplate->bgColor, printerTemplate->shadowColor);
     if (speed != TEXT_SPEED_FF && speed != 0)
     {
-        if (speed == TEXT_SPEED_INSTANT)
+        if (speed == TEXT_SPEED_VFAST)
         {
             gTempTextPrinter.textSpeed = 0;
-            gTempTextPrinter.instantText = TRUE;
+            gTempTextPrinter.vfast = TRUE;
         }
         else
         {
@@ -228,7 +228,9 @@ void RunTextPrinters(void)
             if (gTextPrinters[i].active)
             {
                 u16 temp = RenderFont(&gTextPrinters[i]);
-                if (gTextPrinters[i].instantText && temp != 0)
+                // vfast can draw its bonus glyph right before a wait/EOS state, which
+                // wouldn't otherwise flush that glyph to VRAM (only case 0 does below).
+                if (gTextPrinters[i].vfast && temp != 0)
                     CopyWindowToVram(gTextPrinters[i].printerTemplate.windowId, 2);
                 switch (temp)
                 {
@@ -255,11 +257,15 @@ bool16 IsTextPrinterActive(u8 id)
 u32 RenderFont(struct TextPrinter *textPrinter)
 {
     u32 ret;
+    bool8 usedBonusChar = FALSE;
     while (TRUE)
     {
         ret = gFonts[textPrinter->printerTemplate.fontId].fontFunction(textPrinter);
-        if (ret == 0 && textPrinter->instantText)
+        if (ret == 0 && textPrinter->vfast && !usedBonusChar)
+        {
+            usedBonusChar = TRUE;
             continue;
+        }
         if (ret != 2)
             return ret;
     }
@@ -1106,7 +1112,7 @@ u16 RenderText(struct TextPrinter *textPrinter)
         if (textPrinter->scrollDistance)
         {
             int scrollSpeed = GetPlayerTextSpeed();
-            int speed = textPrinter->instantText ? textPrinter->scrollDistance : gWindowVerticalScrollSpeeds[scrollSpeed];
+            int speed = gWindowVerticalScrollSpeeds[scrollSpeed];
             if (textPrinter->scrollDistance < speed)
             {
                 ScrollWindow(textPrinter->printerTemplate.windowId, 0, textPrinter->scrollDistance, PIXEL_FILL(textPrinter->printerTemplate.bgColor));
