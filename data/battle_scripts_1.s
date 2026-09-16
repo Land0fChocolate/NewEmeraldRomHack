@@ -596,6 +596,7 @@ BattleScript_ScaleShotLoop::
 	jumpifstatus BS_ATTACKER, STATUS1_SLEEP, BattleScript_ScaleShotPrintStrings
 BattleScript_ScaleShotDoMultiHit::
 	movevaluescleanup
+	trysetdestinybondtohappen	@ movevaluescleanup clears the destiny bond flag every hit; restore it so a later hit in this same sequence can still trigger it
 	copyhword sMOVE_EFFECT, sMULTIHIT_EFFECT
 	critcalc
 	damagecalc
@@ -632,7 +633,10 @@ BattleScript_ScaleShotEnd::
 	seteffectwithchance
 	tryfaintmon BS_TARGET, FALSE, NULL
 	moveendcase MOVEEND_SYNCHRONIZE_TARGET
-	moveendfrom MOVEEND_STATUS_IMMUNITY_ABILITIES
+	@ States below MOVEEND_MAGICIAN (through MOVEEND_NEXT_TARGET) are already run once per strike
+	@ via moveendto MOVEEND_NEXT_TARGET in the loop above; starting from MOVEEND_STATUS_IMMUNITY_ABILITIES
+	@ here re-ran them an extra time after the last hit (e.g. Rocky Helmet firing one time too many).
+	moveendfrom MOVEEND_MAGICIAN
 	end
 
 @Sky Drop functionality not coded in
@@ -3189,6 +3193,9 @@ BattleScript_WasntAffected::
 
 BattleScript_CantMakeAsleep::
 	pause B_WAIT_TIME_SHORT
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAYED_AWAKE_USING, BattleScript_CantMakeAsleepPrintMessage
+	call BattleScript_AbilityPopUp
+BattleScript_CantMakeAsleepPrintMessage:
 	printfromtable gUproarAwakeStringIds
 	waitmessage B_WAIT_TIME_LONG
 	orhalfword gMoveResultFlags, MOVE_RESULT_FAILED
@@ -3564,6 +3571,7 @@ BattleScript_MultiHitLoop::
 	jumpifstatus BS_ATTACKER, STATUS1_SLEEP, BattleScript_MultiHitPrintStrings
 BattleScript_DoMultiHit::
 	movevaluescleanup
+	trysetdestinybondtohappen	@ movevaluescleanup clears the destiny bond flag every hit; restore it so a later hit in this same sequence can still trigger it
 	copyhword sMOVE_EFFECT, sMULTIHIT_EFFECT
 	critcalc
 	damagecalc
@@ -3599,7 +3607,7 @@ BattleScript_MultiHitEnd::
 	seteffectwithchance
 	tryfaintmon BS_TARGET, FALSE, NULL
 	moveendcase MOVEEND_SYNCHRONIZE_TARGET
-	moveendfrom MOVEEND_STATUS_IMMUNITY_ABILITIES
+	moveendfrom MOVEEND_MAGICIAN
 	end
 
 BattleScript_EffectConversion::
@@ -4556,6 +4564,7 @@ BattleScript_TripleKickLoop::
 BattleScript_DoTripleKickAttack::
 	accuracycheck BattleScript_TripleKickNoMoreHits, ACC_CURR_MOVE
 	movevaluescleanup
+	trysetdestinybondtohappen	@ movevaluescleanup clears the destiny bond flag every hit; restore it so a later hit in this same sequence can still trigger it
 	jumpifmove MOVE_SURGING_STRIKES, EffectTripleKick_DoDmgCalcs	@ no power boost each hit
 	jumpifmove MOVE_TRIPLE_AXEL, EffectTripleKick_TripleAxelBoost	@ triple axel gets +20 power
 	addbyte sTRIPLE_KICK_POWER, 10									@ triple kick gets +10 power
@@ -5217,6 +5226,7 @@ BattleScript_EffectBeatUp::
 	setbyte gBattleCommunication, 0
 BattleScript_BeatUpLoop::
 	movevaluescleanup
+	trysetdestinybondtohappen	@ movevaluescleanup clears the destiny bond flag every hit; restore it so a later hit in this same sequence can still trigger it
 	trydobeatup BattleScript_BeatUpEnd, BattleScript_ButItFailed
 	printstring STRINGID_PKMNATTACK
 	critcalc
@@ -6580,6 +6590,7 @@ BattleScript_RainContinuesOrEnds::
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_RAIN_STOPPED, BattleScript_RainContinuesOrEndsEnd
 	playanimation BS_ATTACKER, B_ANIM_RAIN_CONTINUES, NULL
 BattleScript_RainContinuesOrEndsEnd::
+	call BattleScript_WeatherFormChanges
 	end2
 
 BattleScript_DamagingWeatherContinues::
@@ -6618,6 +6629,7 @@ BattleScript_DamagingWeatherContinuesEnd::
 BattleScript_SandStormHailEnds::
 	printfromtable gSandStormHailEndStringIds
 	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_WeatherFormChanges
 	end2
 
 BattleScript_SunlightContinues::
@@ -6629,6 +6641,7 @@ BattleScript_SunlightContinues::
 BattleScript_SunlightFaded::
 	printstring STRINGID_SUNLIGHTFADED
 	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_WeatherFormChanges
 	end2
 
 BattleScript_OverworldWeatherStarts::
@@ -7683,7 +7696,7 @@ BattleScript_CottonDownLoop:
 	jumpifbyte CMP_EQUAL, gBattleCommunication, TRUE, BattleScript_CottonDownLoopIncrement
 	setstatchanger STAT_SPEED, 1, TRUE
 	jumpifbyteequal gBattlerTarget, gEffectBattler, BattleScript_CottonDownLoopIncrement
-	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED, BattleScript_CottonDownTargetSpeedCantGoLower
+	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED | STAT_BUFF_ALLOW_PTR, BattleScript_CottonDownTargetSpeedCantGoLower
 	setgraphicalstatchangevalues
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	printfromtable gStatDownStringIds
@@ -8692,6 +8705,7 @@ BattleScript_MiracleBlossomHeals::
 	printstring STRINGID_MIRACLEBLOSSOMHEALS
 	waitmessage B_WAIT_TIME_LONG
 	orword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 BattleScript_MiracleBlossomHealPartner::
 	checkmiracleblossomheal BS_ATTACKER_PARTNER, BattleScript_MiracleBlossomHealEnd
@@ -8699,6 +8713,7 @@ BattleScript_MiracleBlossomHealPartner::
 	printstring STRINGID_MIRACLEBLOSSOMHEALS
 	waitmessage B_WAIT_TIME_LONG
 	orword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_ATTACKER_PARTNER
 	datahpupdate BS_ATTACKER_PARTNER
 BattleScript_MiracleBlossomHealEnd:
 	end2
@@ -9211,6 +9226,7 @@ BattleScript_BerryCureSlpRet::
 BattleScript_GemActivates::
 	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT, NULL
 	waitanimation
+	setlastuseditem BS_ATTACKER	@ a chained BattleScript_BerryReduceDmg (see Cmd_adjustdamage) can clobber gLastUsedItem before this runs
 	printstring STRINGID_GEMACTIVATES
 	waitmessage B_WAIT_TIME_LONG
 	removeitem BS_ATTACKER
@@ -9219,6 +9235,7 @@ BattleScript_GemActivates::
 BattleScript_BerryReduceDmg::
 	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT, NULL
 	waitanimation
+	setlastuseditem BS_TARGET	@ a chained BattleScript_GemActivates (see Cmd_adjustdamage) can clobber gLastUsedItem before this runs
 	printstring STRINGID_TARGETATEITEM
 	waitmessage B_WAIT_TIME_LONG
 	removeitem BS_TARGET

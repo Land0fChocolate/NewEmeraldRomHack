@@ -3134,6 +3134,7 @@ void SwitchInClearSetData(void)
     // Reset damage to prevent things like red card activating if the switched-in mon is holding it
     gSpecialStatuses[gActiveBattler].physicalDmg = 0;
     gSpecialStatuses[gActiveBattler].specialDmg = 0;
+    gSpecialStatuses[gActiveBattler].damagedMons = 0;
 
     Ai_UpdateSwitchInData(gActiveBattler);
 }

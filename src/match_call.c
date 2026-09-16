@@ -1677,19 +1677,36 @@ static u8 GetWaterEncounterSlot(void)
         return 4;
 }
 
+static int GetRematchTableIdForTrainer(u16 trainerId)
+{
+    int i, j;
+
+    for (i = 0; i < REMATCH_TABLE_ENTRIES; i++)
+    {
+        for (j = 0; j < REMATCHES_COUNT; j++)
+        {
+            if (gRematchTable[i].trainerIds[j] == trainerId)
+                return i;
+        }
+    }
+
+    return -1;
+}
+
 static void PopulateSpeciesFromTrainerLocation(int matchCallId, u8 *destStr)
 {
     u16 species[2];
     int numSpecies;
     u8 slot;
     int i = 0;
+    int rematchId = GetRematchTableIdForTrainer(sMatchCallTrainers[matchCallId].trainerId);
 
-    if (gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED)) // ??? This check is nonsense.
+    if (rematchId != -1 && gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED)) // ??? This check is nonsense.
     {
         while (gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED))
         {
-            if (gWildMonHeaders[i].mapGroup == gRematchTable[matchCallId].mapGroup
-             && gWildMonHeaders[i].mapNum == gRematchTable[matchCallId].mapNum)
+            if (gWildMonHeaders[i].mapGroup == gRematchTable[rematchId].mapGroup
+             && gWildMonHeaders[i].mapNum == gRematchTable[rematchId].mapNum)
                 break;
 
             i++;

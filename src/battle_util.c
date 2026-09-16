@@ -6311,6 +6311,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                  && gBattleMons[gBattlerTarget].hp != 0
                  && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && !HasAbility(ABILITY_SHIELD_DUST, GetBattlerAbilities(gBattlerTarget))
                  && CanBePoisoned(gBattlerAttacker, gBattlerTarget)
                  && IsMoveMakingContact(move, gBattlerAttacker)
                  && TARGET_TURN_DAMAGED // Need to actually hit the target
@@ -6329,6 +6330,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                  && gBattleMons[gBattlerTarget].hp != 0
                  && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && !HasAbility(ABILITY_SHIELD_DUST, GetBattlerAbilities(gBattlerTarget))
+                 && TARGET_TURN_DAMAGED
                  && (Random() % 9) == 0
                  && !IS_MOVE_STATUS(move)
                  && !sMovesNotAffectedByStench[gCurrentMove])
@@ -6355,6 +6358,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                  && gBattleMons[gBattlerTarget].hp != 0
                  && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && !HasAbility(ABILITY_SHIELD_DUST, GetBattlerAbilities(gBattlerTarget))
                  && IsMoveMakingContact(move, gBattlerAttacker)
                  && !(gSideStatuses[gBattlerTarget] & SIDE_STATUS_SAFEGUARD)
                  && TARGET_TURN_DAMAGED) // Need to actually hit the target
@@ -6388,6 +6392,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                  && gBattleMons[gBattlerTarget].hp != 0
                  && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+                 && !HasAbility(ABILITY_SHIELD_DUST, GetBattlerAbilities(gBattlerTarget))
                  && IsMoveMakingContact(move, gBattlerAttacker)
                  && !(gSideStatuses[gBattlerTarget] & SIDE_STATUS_SAFEGUARD)
                  && TARGET_TURN_DAMAGED) // Need to actually hit the target
@@ -6667,7 +6672,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_IntimidateActivates;
                 }
-                battler = gBattlerAbility = gBattleStruct->intimidateBattler = i;
+                gBattlerAttacker = battler = gBattlerAbility = gBattleStruct->intimidateBattler = i;
                 effect++;
                 break;
             }
@@ -6677,7 +6682,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
     case ABILITYEFFECT_TRACE2:
         for (i = 0; i < gBattlersCount; i++)
         {
-            if (HasAbility(ABILITY_TRACE, gBattleMons[i].abilities) && (gBattleResources->flags->flags[i] & RESOURCE_FLAG_TRACED)
+            if (HasAbility(ABILITY_TRACE, GetBattlerAbilities(i)) && (gBattleResources->flags->flags[i] & RESOURCE_FLAG_TRACED)
                 && (IsBattlerAlive(BATTLE_OPPOSITE(i)) || IsBattlerAlive(BATTLE_PARTNER(BATTLE_OPPOSITE(i)))))
             {
                 u8 side = (GetBattlerPosition(i) ^ BIT_SIDE) & BIT_SIDE; // side of the opposing pokemon
@@ -6808,7 +6813,10 @@ u16 *GetBattlerAbilities(u8 battlerId)
 {
     static u16 abilities[NUM_ABILITY_SLOTS], attackerAbility, x, y;
 
-    if (gBattleMoves[gCurrentMove].flags & FLAG_TARGET_ABILITY_IGNORED)
+    for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+        abilities[x] = ABILITY_NONE;
+
+    if (battlerId == gBattlerTarget && gBattleMoves[gCurrentMove].flags & FLAG_TARGET_ABILITY_IGNORED)
         return abilities;
 
      // neutralizing gas users only have their abilities cancelled out by gastro acid status.
@@ -6852,7 +6860,7 @@ u32 IsAbilityOnSide(u32 battlerId, u16 ability) // Check that a Pokemon on one s
     u8 x;
 
     memcpy(abilities, GetBattlerAbilities(battlerId), sizeof(abilities));
-    memcpy(partnerAbilities, GetBattlerAbilities(battlerId), sizeof(partnerAbilities));
+    memcpy(partnerAbilities, GetBattlerAbilities(BATTLE_PARTNER(battlerId)), sizeof(partnerAbilities));
 
     for (x = 0; x < NUM_ABILITY_SLOTS; x++)
     {
@@ -8175,6 +8183,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
             if (gBattleMoveDamage != 0  // Need to have done damage
                 && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                 && TARGET_TURN_DAMAGED
+                && !HasAbility(ABILITY_SHIELD_DUST, GetBattlerAbilities(gBattlerTarget))
                 && (Random() % 100) < atkHoldEffectParam
                 && gBattleMoves[gCurrentMove].flags & FLAG_KINGS_ROCK_AFFECTED
                 && gBattleMons[gBattlerTarget].hp)
@@ -8213,6 +8222,8 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 gLastUsedItem = atkItem;
                 gPotentialItemEffectBattler = gBattlerAttacker;
                 gBattleScripting.battler = gBattlerAttacker;
+                if (gSpecialStatuses[gBattlerTarget].dmg == 0xFFFF)
+                    gSpecialStatuses[gBattlerTarget].dmg = 0;
                 gBattleMoveDamage = (gSpecialStatuses[gBattlerTarget].dmg / atkHoldEffectParam) * -1;
                 if (gBattleMoveDamage == 0)
                     gBattleMoveDamage = -1;
@@ -8898,7 +8909,7 @@ static bool32 IsBattlerGrounded2(u8 battlerId, bool32 considerInverse)
 
 bool32 IsBattlerGrounded(u8 battlerId)
 {
-    IsBattlerGrounded2(battlerId, FALSE);
+    return IsBattlerGrounded2(battlerId, FALSE);
 }
 
 bool32 IsBattlerAlive(u8 battlerId)

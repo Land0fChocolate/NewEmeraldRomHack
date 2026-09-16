@@ -1390,6 +1390,8 @@ static void Cmd_attackcanceler(void)
     if (TryAegiFormChange())
         return;
     #endif
+    if (gBattleStruct->atkCancellerTracker == CANCELLER_END)
+        gBattleStruct->atkCancellerTracker = 0;
     if (AtkCanceller_UnableToUseMove())
         return;
 
@@ -1732,7 +1734,13 @@ static void Cmd_accuracycheck(void)
         if (gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
             gBattlescriptCurrInstr += 7;
         else if (gStatuses3[gBattlerTarget] & (STATUS3_SEMI_INVULNERABLE))
+        {
+            // Without this, whatever script this jumps to (e.g. BattleScript_PrintMoveMissed)
+            // has no indication a miss happened, so it plays the wrong sound and skips the message.
+            gMoveResultFlags |= MOVE_RESULT_MISSED;
+            gBattleCommunication[MISS_TYPE] = B_MSG_MISSED;
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+        }
         else if (!JumpIfMoveAffectedByProtect(0))
             gBattlescriptCurrInstr += 7;
     }
@@ -2037,6 +2045,7 @@ END:
     }
     if (gSpecialStatuses[gBattlerAttacker].gemBoost
         && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+        && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
         && gBattleMons[gBattlerAttacker].item)
     {
         BattleScriptPushCursor();
@@ -6485,9 +6494,9 @@ static void Cmd_switchineffects(void)
 {
     s32 i;
     u16 abilities[NUM_ABILITY_SLOTS];
-    memcpy(abilities, GetBattlerAbilities(gActiveBattler), sizeof(abilities));
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
+    memcpy(abilities, GetBattlerAbilities(gActiveBattler), sizeof(abilities));
     UpdateSentPokesToOpponentValue(gActiveBattler);
 
     gHitMarker &= ~(HITMARKER_FAINTED(gActiveBattler));
@@ -8158,9 +8167,6 @@ static void Cmd_various(void)
                 gBattleMoveDamage = 1;
             gBattleMoveDamage *= -1;
 
-            BtlController_EmitHealthBarUpdate(0, gBattleMoveDamage);
-            MarkBattlerForControllerExec(gActiveBattler);
-
             gBattlescriptCurrInstr += 7;
         }
         return;
@@ -8445,6 +8451,10 @@ static void Cmd_various(void)
         break;
     case VARIOUS_SWITCHIN_ABILITIES:
         gBattlescriptCurrInstr += 3;
+        if (gBattleStruct->mega.alreadyEvolved[GetBattlerPosition(gActiveBattler)]
+            && HasAbility(ABILITY_INTIMIDATE, gBattleMons[gActiveBattler].abilities)
+            && HasAbility(ABILITY_INTIMIDATE, GetAbilitiesBySpecies(gBattleStruct->mega.evolvedSpecies[gActiveBattler])))
+            gSpecialStatuses[gActiveBattler].intimidatedMon = TRUE;
         AbilityBattleEffects(ABILITYEFFECT_NEUTRALIZINGGAS, gActiveBattler, 0, 0);
         AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, gActiveBattler, 0, 0);
         AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE2, gActiveBattler, 0, 0);
@@ -8527,7 +8537,7 @@ static void Cmd_various(void)
         if (IsBattlerAlive(gBattlerAbility)
             && (HasAbility(ABILITY_RECEIVER, battlerAbilities) || HasAbility(ABILITY_POWER_OF_ALCHEMY, battlerAbilities)))
         {
-            u16 ability, battlerAbility;
+            u16 battlerAbility;
             for (x = 0; x < NUM_ABILITY_SLOTS; x++)
             {
                 battlerAbility = gBattleMons[gActiveBattler].abilities[x];
@@ -8545,7 +8555,14 @@ static void Cmd_various(void)
                 case ABILITY_TIME_TRAVELLER:    case ABILITY_ORIGIN:
                     break;
                 default:
-                    gBattleStruct->tracedAbilities[x] = ability; // As I cannot bring in sTraceAbilityRatings to this file, we'll just take the first viable ability.
+                    for (j = 0; j < NUM_ABILITY_SLOTS; j++)
+                    {
+                        if (gBattleMons[gBattlerAbility].abilities[j] == ABILITY_RECEIVER
+                            || gBattleMons[gBattlerAbility].abilities[j] == ABILITY_POWER_OF_ALCHEMY)
+                            gBattleStruct->tracedAbilities[j] = battlerAbility;
+                        else
+                            gBattleStruct->tracedAbilities[j] = gBattleMons[gBattlerAbility].abilities[j];
+                    }
                     gBattleScripting.battler = gActiveBattler;
                     BattleScriptPush(gBattlescriptCurrInstr + 3);
                     gBattlescriptCurrInstr = BattleScript_ReceiverActivates;
@@ -10312,12 +10329,14 @@ static void Cmd_jumpifcantmakeasleep(void)
     else if (HasAbility(ABILITY_INSOMNIA, abilities))
     {
         gLastUsedAbility = ABILITY_INSOMNIA;
+        gBattlerAbility = gBattlerTarget;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STAYED_AWAKE_USING;
         gBattlescriptCurrInstr = jumpPtr;
     }
     else if (HasAbility(ABILITY_VITAL_SPIRIT, abilities))
     {
         gLastUsedAbility = ABILITY_VITAL_SPIRIT;
+        gBattlerAbility = gBattlerTarget;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STAYED_AWAKE_USING;
         gBattlescriptCurrInstr = jumpPtr;
     }
@@ -10893,15 +10912,10 @@ static void Cmd_forcerandomswitch(void)
         }
     }
 
-    // Swapping pokemon happens in:
-    // trainer battles
-    // wild double battles when an opposing pokemon uses it against one of the two alive player mons
-    // wild double battle when a player pokemon uses it against its partner
     if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER)
         || (WILD_DOUBLE_BATTLE
             && GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT
-            && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER
-            && IS_WHOLE_SIDE_ALIVE(gBattlerTarget))
+            && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER)
         || (WILD_DOUBLE_BATTLE
             && GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER
             && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER)

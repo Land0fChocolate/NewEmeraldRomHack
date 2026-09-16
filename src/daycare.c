@@ -680,39 +680,6 @@ static void BuildEggMoveset(struct Pokemon *egg, struct BoxPokemon *father, stru
         sHatchedEggFatherMoves[i] = GetBoxMonData(father, MON_DATA_MOVE1 + i);
         sHatchedEggMotherMoves[i] = GetBoxMonData(mother, MON_DATA_MOVE1 + i);
     }
-    //Inherit egg moves:
-    numEggMoves = GetEggMoves(egg, sHatchedEggEggMoves);
-    for (i = 0; i < MAX_MON_MOVES; i++)
-    {
-        if (sHatchedEggFatherMoves[i] != MOVE_NONE)
-        {
-            for (j = 0; j < numEggMoves; j++)
-            {
-                if (sHatchedEggFatherMoves[i] == sHatchedEggEggMoves[j])
-                {
-                    if (GiveMoveToMon(egg, sHatchedEggFatherMoves[i]) == MON_HAS_MAX_MOVES)
-                        DeleteFirstMoveAndGiveMoveToMon(egg, sHatchedEggFatherMoves[i]);
-                    break;
-                }
-            }
-        }
-        if (sHatchedEggMotherMoves[i] != MOVE_NONE)
-        {
-            for (j = 0; j < numEggMoves; j++)
-            {
-                if (sHatchedEggMotherMoves[i] == sHatchedEggEggMoves[j])
-                {
-                    if (GiveMoveToMon(egg, sHatchedEggMotherMoves[i]) == MON_HAS_MAX_MOVES)
-                        DeleteFirstMoveAndGiveMoveToMon(egg, sHatchedEggMotherMoves[i]);
-                    break;
-                }
-            }
-        }
-        else
-        {
-            break;
-        }
-    }
 //Inherit TM/HM moves:
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
@@ -763,6 +730,40 @@ static void BuildEggMoveset(struct Pokemon *egg, struct BoxPokemon *father, stru
                     DeleteFirstMoveAndGiveMoveToMon(egg, sHatchedEggFinalMoves[i]);
                 break;
             }
+        }
+    }
+//Inherit egg moves last, so a full moveset from the earlier passes evicts a redundant/lower-priority
+//move (e.g. a natural level-up move) rather than bumping off an egg move that was just granted above.
+    numEggMoves = GetEggMoves(egg, sHatchedEggEggMoves);
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (sHatchedEggFatherMoves[i] != MOVE_NONE)
+        {
+            for (j = 0; j < numEggMoves; j++)
+            {
+                if (sHatchedEggFatherMoves[i] == sHatchedEggEggMoves[j])
+                {
+                    if (GiveMoveToMon(egg, sHatchedEggFatherMoves[i]) == MON_HAS_MAX_MOVES)
+                        DeleteFirstMoveAndGiveMoveToMon(egg, sHatchedEggFatherMoves[i]);
+                    break;
+                }
+            }
+        }
+        if (sHatchedEggMotherMoves[i] != MOVE_NONE)
+        {
+            for (j = 0; j < numEggMoves; j++)
+            {
+                if (sHatchedEggMotherMoves[i] == sHatchedEggEggMoves[j])
+                {
+                    if (GiveMoveToMon(egg, sHatchedEggMotherMoves[i]) == MON_HAS_MAX_MOVES)
+                        DeleteFirstMoveAndGiveMoveToMon(egg, sHatchedEggMotherMoves[i]);
+                    break;
+                }
+            }
+        }
+        else
+        {
+            break;
         }
     }
 }
