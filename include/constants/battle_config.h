@@ -193,7 +193,7 @@
 // To use the following features in scripting, replace the 0s with the var ID you're assigning it to.
 // Eg: Replace with VAR_UNUSED_0x40F7 so you can use VAR_TERRAIN for that feature.
 #define VAR_TERRAIN                    0      // If this var has a value, assigning a STATUS_FIELD_xx_TERRAIN to it before battle causes the battle to start with that terrain active
-#define B_VAR_WILD_AI_FLAGS            0      // If not 0, you can use this var to add to default wild AI flags. NOT usable with flags above (1 << 15)
+#define B_VAR_WILD_AI_FLAGS            VAR_WILD_AI_FLAGS      // If not 0, you can use this var to add to default wild AI flags. NOT usable with flags above (1 << 15)
 #define B_VAR_DEOXYS_BOSS_BATTLE_STATE VAR_DEOXYS_BOSS_BATTLE_STATE // 0 = No boss/normal Deoxys, 1 = start of boss battle, 2 = boss Deoxys neutral form, 3 = boss Deoxys defense form, 4 = boss Deoxys attack form, 5 = boss Deoxys speed form
 
 // Terrain settings

@@ -49,6 +49,7 @@
 #include "battle_arena.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
+#include "battle_gfx_sfx_util.h"
 #include "field_specials.h"
 #include "pokemon_summary_screen.h"
 #include "pokenav.h"
@@ -1735,8 +1736,6 @@ static void Cmd_accuracycheck(void)
             gBattlescriptCurrInstr += 7;
         else if (gStatuses3[gBattlerTarget] & (STATUS3_SEMI_INVULNERABLE))
         {
-            // Without this, whatever script this jumps to (e.g. BattleScript_PrintMoveMissed)
-            // has no indication a miss happened, so it plays the wrong sound and skips the message.
             gMoveResultFlags |= MOVE_RESULT_MISSED;
             gBattleCommunication[MISS_TYPE] = B_MSG_MISSED;
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
@@ -3698,25 +3697,37 @@ static void Cmd_tryfaintmon(void)
             if (DeoxysBossBattleState > 0 && GetBattlerSide(gActiveBattler) == B_SIDE_OPPONENT)
             {
                 //reset stats and status for each form
-                gBattleMoveDamage *= -gBattleMons[gActiveBattler].maxHP;
+                gBattleMoveDamage = -gBattleMons[gActiveBattler].maxHP;
                 gBattleMons[gActiveBattler].status1 = STATUS1_NONE;
                 gBattleMons[gActiveBattler].status2 = 0;
                 for (i = 0; i < NUM_BATTLE_STATS; i++)
                     gBattleMons[gActiveBattler].statStages[i] = DEFAULT_STAT_STAGE;
+
+                BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gActiveBattler].status1);
+                MarkBattlerForControllerExec(gActiveBattler);
+
+                memset(&gDisableStructs[gActiveBattler], 0, sizeof(struct DisableStruct));
+                gStatuses3[gActiveBattler] = 0;
+                gStatuses4[gActiveBattler] = 0;
+                ClearBehindSubstituteBit(gActiveBattler);
+
+                gBattleScripting.battler = gActiveBattler;
 
                 // changing forms and movesets
                 switch (DeoxysBossBattleState)
                 {
                     case 2: //transform to defense
                         gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_DEFENSE;
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_CHARGE_BEAM, 0);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICY_WIND, 1);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 2);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_COSMIC_POWER, 3);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICY_WIND, 0);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_CHARGE_BEAM, 1);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_TOXIC, 2);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 3);
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 3);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
-                        VarSet(gSpecialVar_0x8004, 2);
+                        gSpecialVar_0x8000 = gActiveBattler;
+                        gSpecialVar_0x8002 = 2;
+                        gSpecialVar_0x8005 = 2;
                         SetTotemBoost();
                         break;
                     case 3: //transform to attack
@@ -3728,8 +3739,9 @@ static void Cmd_tryfaintmon(void)
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 4);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
-                        VarSet(gSpecialVar_0x8002, 3);
-                        VarSet(gSpecialVar_0x8005, 3);
+                        gSpecialVar_0x8000 = gActiveBattler;
+                        gSpecialVar_0x8002 = 2;
+                        gSpecialVar_0x8005 = 2;
                         SetTotemBoost();
                         break;
                     case 4: //transform to speed
@@ -3737,11 +3749,13 @@ static void Cmd_tryfaintmon(void)
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHIC, 0);
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_THUNDERBOLT, 1);
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICE_BEAM, 2);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_NASTY_PLOT, 3);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_SUPERPOWER, 3);
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 5);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
-                        VarSet(gSpecialVar_0x8004, 2);
+                        gSpecialVar_0x8000 = gActiveBattler;
+                        gSpecialVar_0x8002 = 2;
+                        gSpecialVar_0x8005 = 2;
                         SetTotemBoost();
                         break;
                     case 5: //transform back to normal form and be catchable
@@ -4355,6 +4369,9 @@ static bool32 NoAliveMonsForOpponent(void)
 {
     u32 i;
     u32 HP_count = 0;
+
+    if (VarGet(VAR_DEOXYS_BOSS_BATTLE_STATE) > 0)
+        return FALSE;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -9262,10 +9279,9 @@ static void Cmd_various(void)
         DestroyAbilityPopUp(gActiveBattler);
         break;
     case VARIOUS_TOTEM_BOOST:
-        gActiveBattler = gBattlerAttacker;
         if (gTotemBoosts[gActiveBattler].stats == 0)
         {
-            gBattlescriptCurrInstr += 7;    // stats done, exit
+            gBattlescriptCurrInstr += 11;    // stats done, exit
         }
         else
         {
@@ -9284,7 +9300,7 @@ static void Cmd_various(void)
                     if (gTotemBoosts[gActiveBattler].stats & 0x80)
                     {
                         gTotemBoosts[gActiveBattler].stats &= ~0x80; // set 'aura flared to life' flag
-                        gBattlescriptCurrInstr = BattleScript_TotemFlaredToLife;
+                        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 7);   // flared to life
                     }
                     else
                     {
@@ -9293,7 +9309,7 @@ static void Cmd_various(void)
                     return;
                 }
             }
-            gBattlescriptCurrInstr += 7;    // exit if loop failed (failsafe)
+            gBattlescriptCurrInstr += 11;    // exit if loop failed (failsafe)
         }
         return;
     case VARIOUS_MOVEEND_ITEM_EFFECTS:

@@ -1798,9 +1798,10 @@
 	various BS_ABILITY_BATTLER, VARIOUS_DESTROY_ABILITY_POPUP
 	.endm
 
-	.macro gettotemboost ptr:req
-	various BS_ATTACKER, VARIOUS_TOTEM_BOOST
+	.macro gettotemboost battler:req, ptr:req, flaredptr:req
+	various \battler, VARIOUS_TOTEM_BOOST
 	.4byte \ptr
+	.4byte \flaredptr
 	.endm
 
 	.macro tryactivategrimneigh, battler:req

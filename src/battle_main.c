@@ -3590,10 +3590,12 @@ static void TryDoEventsBeforeFirstTurn(void)
     }
 
     // set up Deoxys boss battle
-    if (VarGet(VAR_DEOXYS_BOSS_BATTLE_STATE) == 1 && GetBattlerSide(gActiveBattler) == B_SIDE_OPPONENT)
+    if (VarGet(VAR_DEOXYS_BOSS_BATTLE_STATE) == 1)
     {
+           u8 deoxysBattler = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
            FlagSet(FLAG_DISABLE_CATCHING);
            VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 2);
+           gBattleScripting.battler = deoxysBattler;
            BattleScriptExecute(BattleScript_DeoxysStrangeAura);
            return;
     }

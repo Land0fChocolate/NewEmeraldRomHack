@@ -633,9 +633,6 @@ BattleScript_ScaleShotEnd::
 	seteffectwithchance
 	tryfaintmon BS_TARGET, FALSE, NULL
 	moveendcase MOVEEND_SYNCHRONIZE_TARGET
-	@ States below MOVEEND_MAGICIAN (through MOVEEND_NEXT_TARGET) are already run once per strike
-	@ via moveendto MOVEEND_NEXT_TARGET in the loop above; starting from MOVEEND_STATUS_IMMUNITY_ABILITIES
-	@ here re-ran them an extra time after the last hit (e.g. Rocky Helmet firing one time too many).
 	moveendfrom MOVEEND_MAGICIAN
 	end
 
@@ -9628,7 +9625,7 @@ BattleScript_TotemFlaredToLife::
 	goto BattleScript_ApplyTotemVarBoost
 
 BattleScript_TotemVar::
-	gettotemboost BattleScript_ApplyTotemVarBoost
+	gettotemboost BS_ATTACKER, BattleScript_ApplyTotemVarBoost, BattleScript_TotemFlaredToLife
 BattleScript_TotemVarEnd:
 	end2
 BattleScript_ApplyTotemVarBoost:
@@ -9915,36 +9912,60 @@ BattleScript_SerpentDanceEnd::
 	goto BattleScript_MoveEnd
 
 BattleScript_DeoxysStrangeAura::
-	datahpupdate BS_TARGET
+	datahpupdate BS_SCRIPTING
 	printstring STRINGID_DEOXYSSTRANGEAURA
 	waitmessage B_WAIT_TIME_LONG
-	@setmoveset BS_ATTACKER @TODO: figure out how to set Deoxys moveset before first turn. 
+	@setmoveset BS_ATTACKER @TODO: figure out how to set Deoxys moveset before first turn.
 	end
 
 BattleScript_DeoxysBossFormChange::
-	copybyte gBattlerAbility, gBattlerTarget
+	copybyte gBattlerAbility, sBATTLER
 	pause 5
-	handleformchange BS_TARGET, 0
-	handleformchange BS_TARGET, 1
-	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	handleformchange BS_SCRIPTING, 0
+	handleformchange BS_SCRIPTING, 1
+	spriteignore0hp TRUE
+	playanimation BS_SCRIPTING, B_ANIM_FORM_CHANGE, NULL
 	waitanimation
-	handleformchange BS_TARGET, 2 
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
+	spriteignore0hp FALSE
+	handleformchange BS_SCRIPTING, 2
+	healthbarupdate BS_SCRIPTING
+	datahpupdate BS_SCRIPTING
+	updatestatusicon BS_SCRIPTING
 	printstring STRINGID_DEOXYSCHANGEDFORM
 	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_DeoxysApplyTotemBoost
 	return
 
 BattleScript_DeoxysBossFormChangeCatchable::
-	copybyte gBattlerAbility, gBattlerTarget
+	copybyte gBattlerAbility, sBATTLER
 	pause 5
-	handleformchange BS_TARGET, 0
-	handleformchange BS_TARGET, 1
-	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	handleformchange BS_SCRIPTING, 0
+	handleformchange BS_SCRIPTING, 1
+	spriteignore0hp TRUE
+	playanimation BS_SCRIPTING, B_ANIM_FORM_CHANGE, NULL
 	waitanimation
-	handleformchange BS_TARGET, 2 
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
+	spriteignore0hp FALSE
+	handleformchange BS_SCRIPTING, 2
+	healthbarupdate BS_SCRIPTING
+	datahpupdate BS_SCRIPTING
+	updatestatusicon BS_SCRIPTING
 	printstring STRINGID_DEOXYSCHANGEDFORMCATCHABLE
 	waitmessage B_WAIT_TIME_LONG
 	return
+
+BattleScript_DeoxysApplyTotemBoost::
+	gettotemboost BS_SCRIPTING, BattleScript_DeoxysApplyTotemBoostDo, BattleScript_DeoxysTotemFlaredToLife
+	return
+BattleScript_DeoxysApplyTotemBoostDo:
+	statbuffchange STAT_BUFF_ALLOW_PTR, BattleScript_DeoxysApplyTotemBoost
+	setgraphicalstatchangevalues
+	playanimation BS_SCRIPTING, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_DeoxysApplyTotemBoost @ loop until stats bitfield is empty
+
+BattleScript_DeoxysTotemFlaredToLife:
+	playanimation BS_SCRIPTING, B_ANIM_TOTEM_FLARE, NULL
+	printstring STRINGID_AURAFLAREDTOLIFE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_DeoxysApplyTotemBoostDo
