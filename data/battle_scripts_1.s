@@ -3026,8 +3026,7 @@ BattleScript_HitFromAtkAnimation::
 	tryfaintmon BS_TARGET, FALSE, NULL
 	moveendto MOVEEND_NEXT_TARGET
 	tryparentalbond BS_ATTACKER, BattleScript_EffectHit_ParentalBondRetry
-	moveendcase MOVEEND_SYNCHRONIZE_TARGET
-	moveendfrom MOVEEND_MAGICIAN
+	moveendfrom MOVEEND_NEXT_TARGET
 	end
 BattleScript_EffectHit_ParentalBondRetry:
 	copyhword sMOVE_EFFECT, sMULTIHIT_EFFECT
@@ -5680,14 +5679,12 @@ BattleScript_EffectRolePlay::
 	attackanimation
 	waitanimation
 .if B_ABILITY_POP_UP == TRUE
-	@setbyte sFIXED_ABILITY_POPUP, TRUE
-	@showmultiabilitypopup BS_ATTACKER
-	@pause 60
-	@sethword sABILITY_OVERWRITE, 0
-	@updateabilitypopup BS_ATTACKER
-	@pause 20
-	@destroyabilitypopup
-	@pause 40
+	copybyte gBattlerAbility, gBattlerAttacker
+	call BattleScript_MultiAbilityPopUp
+	setbyte sFIXED_ABILITY_POPUP, TRUE
+	pause 90
+	destroyabilitypopup
+	pause 40
 .endif
 	printstring STRINGID_PKMNCOPIEDFOE
 	waitmessage B_WAIT_TIME_LONG
@@ -5842,10 +5839,17 @@ BattleScript_EffectSkillSwap:
 	waitanimation
 .if B_ABILITY_POP_UP == TRUE
 	copybyte gBattlerAbility, gBattlerTarget
-	@call BattleScript_MultiAbilityPopUp
-	pause 20
+	call BattleScript_MultiAbilityPopUp
+	setbyte sFIXED_ABILITY_POPUP, TRUE
+	pause 60
+	destroyabilitypopup
+	pause 25
 	copybyte gBattlerAbility, gBattlerAttacker
-	@call BattleScript_MultiAbilityPopUp
+	call BattleScript_MultiAbilityPopUp
+	setbyte sFIXED_ABILITY_POPUP, TRUE
+	pause 60
+	destroyabilitypopup
+	pause 40
 .endif
 	printstring STRINGID_PKMNSWAPPEDABILITIES
 	waitmessage B_WAIT_TIME_LONG
@@ -9915,7 +9919,6 @@ BattleScript_DeoxysStrangeAura::
 	datahpupdate BS_SCRIPTING
 	printstring STRINGID_DEOXYSSTRANGEAURA
 	waitmessage B_WAIT_TIME_LONG
-	@setmoveset BS_ATTACKER @TODO: figure out how to set Deoxys moveset before first turn.
 	end
 
 BattleScript_DeoxysBossFormChange::

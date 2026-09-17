@@ -3220,6 +3220,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_NoItemSteal;
 
+                        gBattleScripting.battler = gBattlerAbility = gBattlerTarget;
                         gLastUsedAbility = ABILITY_STICKY_HOLD;
                     }
                     else if (gBattleMons[gBattlerAttacker].item != 0
@@ -5118,7 +5119,7 @@ static bool32 TryKnockOffBattleScript(u32 battlerDef)
     {
         if (HasAbility(ABILITY_STICKY_HOLD, GetBattlerAbilities(battlerDef)) && IsBattlerAlive(battlerDef))
         {
-            gBattlerAbility = battlerDef;
+            gBattleScripting.battler = gBattlerAbility = battlerDef;
             BattleScriptPushCursor();
             gBattlescriptCurrInstr = BattleScript_StickyHoldActivates;
         }
@@ -6136,7 +6137,7 @@ static void ChooseMonToSendOut(u8 slotId)
     *(gBattleStruct->monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
     gBattleStruct->field_93 &= ~(gBitTable[gActiveBattler]);
 
-    BtlController_EmitChoosePokemon(0, PARTY_ACTION_SEND_OUT, slotId, gBattleStruct->field_60[gActiveBattler]);
+    BtlController_EmitChoosePokemon(0, PARTY_ACTION_SEND_OUT, slotId, ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
     MarkBattlerForControllerExec(gActiveBattler);
 }
 
@@ -6393,7 +6394,7 @@ static void Cmd_openpartyscreen(void)
             *(gBattleStruct->monToSwitchIntoId + gActiveBattler) = 6;
             gBattleStruct->field_93 &= ~(gBitTable[gActiveBattler]);
 
-            BtlController_EmitChoosePokemon(0, hitmarkerFaintBits, *(gBattleStruct->monToSwitchIntoId + (gActiveBattler ^ 2)), gBattleStruct->field_60[gActiveBattler]);
+            BtlController_EmitChoosePokemon(0, hitmarkerFaintBits, *(gBattleStruct->monToSwitchIntoId + (gActiveBattler ^ 2)), ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
             MarkBattlerForControllerExec(gActiveBattler);
 
             gBattlescriptCurrInstr += 6;
@@ -12878,6 +12879,7 @@ static void Cmd_tryswapitems(void) // trick
         else if (HasAbility(ABILITY_STICKY_HOLD, GetBattlerAbilities(gBattlerTarget)))
         {
             gBattlescriptCurrInstr = BattleScript_StickyHoldActivates;
+            gBattleScripting.battler = gBattlerAbility = gBattlerTarget;
             gLastUsedAbility = ABILITY_STICKY_HOLD;
         }
         // took a while, but all checks passed and items can be safely swapped

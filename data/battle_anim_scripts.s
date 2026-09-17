@@ -23964,19 +23964,19 @@ Move_HIDDEN_THORNS:
 	monbg ANIM_DEF_PARTNER
 	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
 	waitplaysewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET, 28
-	createsprite gIngrainRootSpriteTemplate, ANIM_TARGET, 2, 100, -24, -1, 2, 150
+	createsprite gFrenzyPlantRootSpriteTemplate, ANIM_TARGET, 2, 100, 16, 20, -1, 2, 150
 	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
 	delay 10
 	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
 	waitplaysewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET, 28
 	createsprite gThornsSpriteTemplate, ANIM_TARGET, 2, 0, 12, 5, 24, 80
-	createsprite gIngrainRootSpriteTemplate, ANIM_TARGET, 2, 110, -24, 1, 1, 140
+	createsprite gFrenzyPlantRootSpriteTemplate, ANIM_TARGET, 2, 100, -24, 18, 1, 1, 140
 	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
 	delay 10
 	waitplaysewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET, 28
 	createsprite gThornsSpriteTemplate, ANIM_TARGET, 2, 24, 10, 5, 24, 65
-	createsprite gIngrainRootSpriteTemplate, ANIM_TARGET, 2, 85, -24, 1, 0, 130
-	createsprite gIngrainRootSpriteTemplate, ANIM_TARGET, 2, 125, -24, -1, 3, 120
+	createsprite gFrenzyPlantRootSpriteTemplate, ANIM_TARGET, 2, 100, 24, 22, 1, 0, 130
+	createsprite gFrenzyPlantRootSpriteTemplate, ANIM_TARGET, 2, 100, -16, 16, -1, 3, 120
 	delay 10
 	createsprite gThornsSpriteTemplate, ANIM_TARGET, 2, -24, 14, 5, 24, 50
 	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
