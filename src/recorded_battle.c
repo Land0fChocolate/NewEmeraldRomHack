@@ -61,6 +61,7 @@ struct RecordedBattleSave
     u8 frontierBrainSymbol;
     u8 battleScene:1;
     u8 textSpeed:3;
+    u8 inverseBattle:1;
     u32 AI_scripts;
     u8 recordMixFriendName[PLAYER_NAME_LENGTH + 1];
     u8 recordMixFriendClass;
@@ -90,6 +91,7 @@ EWRAM_DATA u8 gRecordedBattleMultiplayerId = 0;
 EWRAM_DATA static u8 sFrontierPassFlag = 0;
 EWRAM_DATA static u8 sBattleScene = 0;
 EWRAM_DATA static u8 sTextSpeed = 0;
+EWRAM_DATA static u8 sInverseBattle = 0;
 EWRAM_DATA static u32 sBattleFlags = 0;
 EWRAM_DATA static u32 sAI_Scripts = 0;
 EWRAM_DATA static struct Pokemon sSavedPlayerParty[PARTY_SIZE] = {0};
@@ -405,6 +407,7 @@ bool32 MoveRecordedBattleToSaveData(void)
     battleSave->frontierBrainSymbol = sFrontierBrainSymbol;
     battleSave->battleScene = gSaveBlock2Ptr->optionsBattleSceneOff;
     battleSave->textSpeed = gSaveBlock2Ptr->optionsTextSpeed;
+    battleSave->inverseBattle = FlagGet(FLAG_INVERSE_BATTLE);
     battleSave->AI_scripts = sAI_Scripts;
 
     if (gTrainerBattleOpponent_A >= TRAINER_RECORD_MIXING_FRIEND && gTrainerBattleOpponent_A < TRAINER_RECORD_MIXING_APPRENTICE)
@@ -521,6 +524,10 @@ static bool32 CopyRecordedBattleFromSave(struct RecordedBattleSave *dst)
 static void CB2_RecordedBattleEnd(void)
 {
     gSaveBlock2Ptr->frontier.lvlMode = sLvlMode;
+    if (sInverseBattle)
+        FlagSet(FLAG_INVERSE_BATTLE);
+    else
+        FlagClear(FLAG_INVERSE_BATTLE);
     gBattleOutcome = 0;
     gBattleTypeFlags = 0;
     gTrainerBattleOpponent_A = 0;
@@ -581,6 +588,7 @@ static void SetVariablesForRecordedBattle(struct RecordedBattleSave *src)
     gPartnerTrainerId = src->partnerId;
     gRecordedBattleMultiplayerId = src->multiplayerId;
     sLvlMode = gSaveBlock2Ptr->frontier.lvlMode;
+    sInverseBattle = FlagGet(FLAG_INVERSE_BATTLE);
     sFrontierFacility = src->frontierFacility;
     sFrontierBrainSymbol = src->frontierBrainSymbol;
     sBattleScene = src->battleScene;
@@ -603,6 +611,11 @@ static void SetVariablesForRecordedBattle(struct RecordedBattleSave *src)
     }
 
     gSaveBlock2Ptr->frontier.lvlMode = src->lvlMode;
+
+    if (src->inverseBattle)
+        FlagSet(FLAG_INVERSE_BATTLE);
+    else
+        FlagClear(FLAG_INVERSE_BATTLE);
 
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
     {

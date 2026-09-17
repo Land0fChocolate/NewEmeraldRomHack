@@ -242,7 +242,7 @@
 #define VAR_PETALBURG_SHRINE_TRIGGER_STATE   0x40DF
 #define VAR_BATTLE_FRONTIER_STATE            0x40E0
 #define VAR_MAUVILLE_MAN_VARIANT             0x40E1 // 0 = Bard, 1 = Hipster, 2 = Trader, 3 = Storyteller, 4 = Giddy. 
-#define VAR_NEVER_READ_0x40E2                0x40E2 // unused
+#define VAR_WILD_AI_FLAGS                    0x40E2 // battle config var, see B_VAR_WILD_AI_FLAGS
 #define VAR_NEVER_READ_0x40E3                0x40E3 // unused
 #define VAR_NEVER_READ_0x40E4                0x40E4 // unused
 #define VAR_DEOXYS_BOSS_BATTLE_STATE         0x40E5 // battle config var

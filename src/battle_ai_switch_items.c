@@ -366,7 +366,7 @@ static bool8 FindMonWithFlagsAndSuperEffective(u16 flags, u8 moduloPercent)
     s32 lastId; // + 1
     struct Pokemon *party;
     s32 i, j;
-    u16 move, *abilities;
+    u16 move, abilities[NUM_ABILITY_SLOTS];
 
     if (gLastLandedMoves[gActiveBattler] == 0)
         return FALSE;
@@ -731,7 +731,6 @@ u8 GetMostSuitableMonToSwitchInto(void)
     struct Pokemon *party;
     s32 i, j, aliveCount = 0;
     u8 invalidMons = 0;
-    u16 *abilities = GetMonAbilities(&party[i]);
 
     if (*(gBattleStruct->monToSwitchIntoId + gActiveBattler) != PARTY_SIZE)
         return *(gBattleStruct->monToSwitchIntoId + gActiveBattler);
@@ -767,6 +766,8 @@ u8 GetMostSuitableMonToSwitchInto(void)
     // Get invalid slots ids.
     for (i = firstId; i < lastId; i++)
     {
+        u16 *abilities = GetMonAbilities(&party[i]);
+
         if (GetMonData(&party[i], MON_DATA_SPECIES) == SPECIES_NONE
             || GetMonData(&party[i], MON_DATA_HP) == 0
             || gBattlerPartyIndexes[battlerIn1] == i

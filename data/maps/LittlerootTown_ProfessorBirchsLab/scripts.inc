@@ -694,6 +694,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReviewBeachFindings::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ReviewingBeachFindings, MSGBOX_DEFAULT
 	setvar VAR_BIRCH_LAB_POSTGAME_STATE, 3
 	clearflag FLAG_HIDE_MAGMA_AQUA_MEMBERS_NEW_AREAS
+	clearflag FLAG_HIDE_ZINNIA_CRUMBLING_GORGE
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_NewAreas
 	release
 	end

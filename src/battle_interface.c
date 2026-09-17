@@ -2889,6 +2889,17 @@ static const struct SpriteTemplate sSpriteTemplate_MultiAbilityPopUp1 =
     .callback = SpriteCb_AbilityPopUp
 };
 
+static const union AnimCmd sSpriteAnim_MultiAbilityPopUp2[] =
+{
+    ANIMCMD_FRAME(64, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd *const sSpriteAnimTable_MultiAbilityPopUp2[] =
+{
+    sSpriteAnim_MultiAbilityPopUp2
+};
+
 static const union AnimCmd sSpriteAnim_AbilityPopUp2[] =
 {
     ANIMCMD_FRAME(32, 0),
@@ -2916,7 +2927,7 @@ static const struct SpriteTemplate sSpriteTemplate_MultiAbilityPopUp2 =
     .tileTag = MULTI_ABILITY_POP_UP_TAG,
     .paletteTag = ABILITY_POP_UP_TAG,
     .oam = &sOamData_MultiAbilityPopUp,
-    .anims = sSpriteAnimTable_AbilityPopUp2,
+    .anims = sSpriteAnimTable_MultiAbilityPopUp2,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCb_AbilityPopUp
@@ -3114,6 +3125,13 @@ static void PrintAbilitiesOnAbilityPopUp(u16 abilities[], u8 spriteId1, u8 sprit
 /*Add pixels by X*/                                \
 + ((((x) - ((x / 8) * 8)) / 2)))
 
+// The multi ability pop up's two sprite halves aren't contiguous in the same 64x64-tile space that
+// PIXEL_COORDS_TO_OFFSET assumes (sprite2's own 64 tiles start right after sprite1's 64 tiles, i.e.
+// +2048 bytes, within the combined buffer RestoreOverwrittenMultiPixels operates on), so any table
+// entry meant to patch sprite2's graphic needs that extra offset added in.
+#define SPRITE2_TILE_OFFSET (64 * 32)
+#define PIXEL_COORDS_TO_OFFSET_S2(x, y) (PIXEL_COORDS_TO_OFFSET(x, y) + SPRITE2_TILE_OFFSET)
+
 static const u16 sOverwrittenPixelsTable[][2] =
 {
     {PIXEL_COORDS_TO_OFFSET(0, 0), 5},
@@ -3160,20 +3178,269 @@ static const u16 sOverwrittenPixelsTable[][2] =
     {PIXEL_COORDS_TO_OFFSET(0, 24), 3},
     {PIXEL_COORDS_TO_OFFSET(0, 25), 3},
     {PIXEL_COORDS_TO_OFFSET(0, 26), 3},
+};
 
-    //Second Row Of Image
-    {PIXEL_COORDS_TO_OFFSET(0, 45), 8},
-    {PIXEL_COORDS_TO_OFFSET(0, 46), 8},
-    {PIXEL_COORDS_TO_OFFSET(0, 47), 8},
-    //{PIXEL_COORDS_TO_OFFSET(0, 48), 8}, // cuts off the top of the 'G' in Neutralizing Gas
-    {PIXEL_COORDS_TO_OFFSET(8, 45), 8},
-    {PIXEL_COORDS_TO_OFFSET(8, 46), 8},
-    {PIXEL_COORDS_TO_OFFSET(8, 47), 8},
-    {PIXEL_COORDS_TO_OFFSET(8, 48), 8},
-    {PIXEL_COORDS_TO_OFFSET(16, 45), 8},
-    {PIXEL_COORDS_TO_OFFSET(16, 46), 8},
-    {PIXEL_COORDS_TO_OFFSET(16, 47), 8},
-    {PIXEL_COORDS_TO_OFFSET(16, 48), 8},
+// The multi ability pop up (src/battle_interface.c: CreateMultiAbilityPopUp) uses a taller (64x64)
+// graphic with a header row plus three ability rows separated by two full-width divider lines,
+// instead of the single pop up's one header + one ability row. The left-edge border pattern
+// (widths 5/3, rows 0-26) is identical to the single pop up's own header/body border above, since
+// both graphics share the same header design; it's simply repeated here for each of the two extra
+// divider lines (at rows 26-27 and 40-41) that the single pop up doesn't have.
+static const u16 sOverwrittenPixelsTableMulti[][2] =
+{
+    {PIXEL_COORDS_TO_OFFSET(0, 0), 5},
+    {PIXEL_COORDS_TO_OFFSET(0, 1), 5},
+    {PIXEL_COORDS_TO_OFFSET(0, 2), 5},
+    {PIXEL_COORDS_TO_OFFSET(0, 3), 5},
+    {PIXEL_COORDS_TO_OFFSET(0, 4), 5},
+    {PIXEL_COORDS_TO_OFFSET(0, 5), 5},
+    {PIXEL_COORDS_TO_OFFSET(0, 6), 5},
+    {PIXEL_COORDS_TO_OFFSET(0, 7), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 8), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 9), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 10), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 11), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 12), 3},
+
+    // header -> first ability row transition (full width)
+    {PIXEL_COORDS_TO_OFFSET(0, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET(8, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET(24, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET(32, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET(40, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET(48, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET(56, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET(0, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET(8, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET(24, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET(32, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET(40, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET(48, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET(56, 14), 8},
+
+    {PIXEL_COORDS_TO_OFFSET(0, 15), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 16), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 17), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 18), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 19), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 20), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 21), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 22), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 23), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 24), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 25), 3},
+
+    // divider between ability row 1 and ability row 2 (full width)
+    {PIXEL_COORDS_TO_OFFSET(0, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET(8, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET(24, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET(32, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET(40, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET(48, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET(56, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET(0, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET(8, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET(24, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET(32, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET(40, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET(48, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET(56, 27), 8},
+
+    {PIXEL_COORDS_TO_OFFSET(0, 28), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 29), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 30), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 31), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 32), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 33), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 34), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 35), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 36), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 37), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 38), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 39), 3},
+
+    // divider between ability row 2 and ability row 3 (full width)
+    {PIXEL_COORDS_TO_OFFSET(0, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET(8, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET(24, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET(32, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET(40, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET(48, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET(56, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET(0, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET(8, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET(24, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET(32, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET(40, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET(48, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET(56, 41), 8},
+
+    {PIXEL_COORDS_TO_OFFSET(0, 42), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 43), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 44), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 45), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 46), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 47), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 48), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 49), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 50), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 51), 3},
+    {PIXEL_COORDS_TO_OFFSET(0, 52), 3},
+
+    // bottom border (full width)
+    {PIXEL_COORDS_TO_OFFSET(0, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET(8, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET(24, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET(32, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET(40, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET(48, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET(56, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET(0, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET(8, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET(24, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET(32, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET(40, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET(48, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET(56, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET(0, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET(8, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET(16, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET(24, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET(32, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET(40, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET(48, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET(56, 55), 8},
+
+    // Sprite2's own copy of the same header/divider/border pattern (see PIXEL_COORDS_TO_OFFSET_S2
+    // above) - without these, any ability name long enough to spill into the second window left
+    // sprite2's right-hand border unrestored, showing as white space after the text.
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 0), 5},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 1), 5},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 2), 5},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 3), 5},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 4), 5},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 5), 5},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 6), 5},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 7), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 8), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 9), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 10), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 11), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 12), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(8, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(16, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(24, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(32, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(40, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(48, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(56, 13), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(8, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(16, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(24, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(32, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(40, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(48, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(56, 14), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 15), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 16), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 17), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 18), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 19), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 20), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 21), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 22), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 23), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 24), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 25), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(8, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(16, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(24, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(32, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(40, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(48, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(56, 26), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(8, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(16, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(24, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(32, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(40, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(48, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(56, 27), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 28), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 29), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 30), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 31), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 32), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 33), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 34), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 35), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 36), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 37), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 38), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 39), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(8, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(16, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(24, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(32, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(40, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(48, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(56, 40), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(8, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(16, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(24, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(32, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(40, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(48, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(56, 41), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 42), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 43), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 44), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 45), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 46), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 47), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 48), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 49), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 50), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 51), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 52), 3},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(8, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(16, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(24, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(32, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(40, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(48, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(56, 53), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(8, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(16, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(24, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(32, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(40, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(48, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(56, 54), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(0, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(8, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(16, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(24, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(32, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(40, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(48, 55), 8},
+    {PIXEL_COORDS_TO_OFFSET_S2(56, 55), 8},
 };
 
 static inline void CopyPixels(u8 *dest, const u8 *src, u32 pixelCount)
@@ -3220,18 +3487,33 @@ static void RestoreOverwrittenPixels(u8 *tiles)
     Free(buffer);
 }
 
+static void RestoreOverwrittenMultiPixels(u8 *tiles)
+{
+    u32 i;
+    const u8 *refGfx = (const u8 *)sMultiAbilityPopUpGfx;
+    u8 *buffer = Alloc(sizeof(sMultiAbilityPopUpGfx) * 2);
+
+    CpuCopy32(tiles, buffer, sizeof(sMultiAbilityPopUpGfx));
+
+    for (i = 0; i < ARRAY_COUNT(sOverwrittenPixelsTableMulti); i++)
+    {
+        CopyPixels(buffer + sOverwrittenPixelsTableMulti[i][0],
+                   refGfx + sOverwrittenPixelsTableMulti[i][0],
+                   sOverwrittenPixelsTableMulti[i][1]);
+    }
+
+    CpuCopy32(buffer, tiles, sizeof(sMultiAbilityPopUpGfx));
+    Free(buffer);
+}
+
 void CreateAbilityPopUp(u8 battlerId, bool32 isDoubleBattle)
 {
     const s16 (*coords)[2];
     u8 spriteId1, spriteId2, battlerPosition, taskId;
-    u16 ability = gLastUsedAbility; //make sure gLastUsedAbility is set whenever an ability triggers an ability pop-up
+    u16 ability = gLastUsedAbility;
 
     if (!B_ABILITY_POP_UP)
         return;
-
-    //TODO: do I need this check?
-    //if (gBattleScripting.abilityPopupOverwrite[0] != 0)
-    //    ability = gBattleScripting.abilityPopupOverwrite[0];
 
     if (!gBattleStruct->activeAbilityPopUps)
     {
@@ -3307,7 +3589,6 @@ void UpdateAbilityPopup(u8 battlerId)
     RestoreOverwrittenPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
 }
 
-//TODO: struggling to get this to work. Sprite is incorrectly cut up and text VRAM allocation needs to be figured out.
 void CreateMultiAbilityPopUp(u8 battlerId, bool32 isDoubleBattle)
 {
     const s16 (*coords)[2];
@@ -3385,7 +3666,7 @@ void CreateMultiAbilityPopUp(u8 battlerId, bool32 isDoubleBattle)
 
     PrintBattlerOnAbilityPopUp(battlerId, spriteId1, spriteId2);
     PrintAbilitiesOnAbilityPopUp(abilities, spriteId1, spriteId2);
-    RestoreOverwrittenPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
+    RestoreOverwrittenMultiPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
 }
 
 void UpdateMultiAbilityPopup(u8 battlerId)
@@ -3396,7 +3677,7 @@ void UpdateMultiAbilityPopup(u8 battlerId)
     memcpy(abilities, GetBattlerAbilities(battlerId) ,sizeof(abilities));
 
     PrintAbilitiesOnAbilityPopUp(abilities, spriteId1, spriteId2);
-    RestoreOverwrittenPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
+    RestoreOverwrittenMultiPixels((void*)(OBJ_VRAM0) + (gSprites[spriteId1].oam.tileNum * 32));
 }
 
 #define FRAMES_TO_WAIT 48

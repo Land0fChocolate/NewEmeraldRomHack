@@ -49,6 +49,7 @@
 #include "battle_arena.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
+#include "battle_gfx_sfx_util.h"
 #include "field_specials.h"
 #include "pokemon_summary_screen.h"
 #include "pokenav.h"
@@ -1390,6 +1391,8 @@ static void Cmd_attackcanceler(void)
     if (TryAegiFormChange())
         return;
     #endif
+    if (gBattleStruct->atkCancellerTracker == CANCELLER_END)
+        gBattleStruct->atkCancellerTracker = 0;
     if (AtkCanceller_UnableToUseMove())
         return;
 
@@ -1732,7 +1735,11 @@ static void Cmd_accuracycheck(void)
         if (gStatuses3[gBattlerTarget] & STATUS3_ALWAYS_HITS && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
             gBattlescriptCurrInstr += 7;
         else if (gStatuses3[gBattlerTarget] & (STATUS3_SEMI_INVULNERABLE))
+        {
+            gMoveResultFlags |= MOVE_RESULT_MISSED;
+            gBattleCommunication[MISS_TYPE] = B_MSG_MISSED;
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+        }
         else if (!JumpIfMoveAffectedByProtect(0))
             gBattlescriptCurrInstr += 7;
     }
@@ -1942,6 +1949,10 @@ static void Cmd_typecalc(void)
     u8 moveType;
 
     GET_MOVE_TYPE(gCurrentMove, moveType);
+
+    if (AbilityBattleEffects(ABILITYEFFECT_ABSORBING, gBattlerTarget, 0, gCurrentMove))
+        return;
+
     CalcTypeEffectivenessMultiplier(gCurrentMove, moveType, gBattlerAttacker, gBattlerTarget, TRUE);
 
     gBattlescriptCurrInstr++;
@@ -2033,6 +2044,7 @@ END:
     }
     if (gSpecialStatuses[gBattlerAttacker].gemBoost
         && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+        && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
         && gBattleMons[gBattlerAttacker].item)
     {
         BattleScriptPushCursor();
@@ -3208,6 +3220,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_NoItemSteal;
 
+                        gBattleScripting.battler = gBattlerAbility = gBattlerTarget;
                         gLastUsedAbility = ABILITY_STICKY_HOLD;
                     }
                     else if (gBattleMons[gBattlerAttacker].item != 0
@@ -3685,25 +3698,37 @@ static void Cmd_tryfaintmon(void)
             if (DeoxysBossBattleState > 0 && GetBattlerSide(gActiveBattler) == B_SIDE_OPPONENT)
             {
                 //reset stats and status for each form
-                gBattleMoveDamage *= -gBattleMons[gActiveBattler].maxHP;
+                gBattleMoveDamage = -gBattleMons[gActiveBattler].maxHP;
                 gBattleMons[gActiveBattler].status1 = STATUS1_NONE;
                 gBattleMons[gActiveBattler].status2 = 0;
                 for (i = 0; i < NUM_BATTLE_STATS; i++)
                     gBattleMons[gActiveBattler].statStages[i] = DEFAULT_STAT_STAGE;
+
+                BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gActiveBattler].status1);
+                MarkBattlerForControllerExec(gActiveBattler);
+
+                memset(&gDisableStructs[gActiveBattler], 0, sizeof(struct DisableStruct));
+                gStatuses3[gActiveBattler] = 0;
+                gStatuses4[gActiveBattler] = 0;
+                ClearBehindSubstituteBit(gActiveBattler);
+
+                gBattleScripting.battler = gActiveBattler;
 
                 // changing forms and movesets
                 switch (DeoxysBossBattleState)
                 {
                     case 2: //transform to defense
                         gBattleMons[gActiveBattler].species = SPECIES_DEOXYS_DEFENSE;
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_CHARGE_BEAM, 0);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICY_WIND, 1);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 2);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_COSMIC_POWER, 3);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICY_WIND, 0);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_CHARGE_BEAM, 1);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_TOXIC, 2);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_RECOVER, 3);
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 3);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
-                        VarSet(gSpecialVar_0x8004, 2);
+                        gSpecialVar_0x8000 = gActiveBattler;
+                        gSpecialVar_0x8002 = 2;
+                        gSpecialVar_0x8005 = 2;
                         SetTotemBoost();
                         break;
                     case 3: //transform to attack
@@ -3715,8 +3740,9 @@ static void Cmd_tryfaintmon(void)
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 4);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
-                        VarSet(gSpecialVar_0x8002, 3);
-                        VarSet(gSpecialVar_0x8005, 3);
+                        gSpecialVar_0x8000 = gActiveBattler;
+                        gSpecialVar_0x8002 = 2;
+                        gSpecialVar_0x8005 = 2;
                         SetTotemBoost();
                         break;
                     case 4: //transform to speed
@@ -3724,11 +3750,13 @@ static void Cmd_tryfaintmon(void)
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_PSYCHIC, 0);
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_THUNDERBOLT, 1);
                         SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_ICE_BEAM, 2);
-                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_NASTY_PLOT, 3);
+                        SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_SUPERPOWER, 3);
                         VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 5);
                         BattleScriptPushCursor();
                         gBattlescriptCurrInstr = BattleScript_DeoxysBossFormChange;
-                        VarSet(gSpecialVar_0x8004, 2);
+                        gSpecialVar_0x8000 = gActiveBattler;
+                        gSpecialVar_0x8002 = 2;
+                        gSpecialVar_0x8005 = 2;
                         SetTotemBoost();
                         break;
                     case 5: //transform back to normal form and be catchable
@@ -4342,6 +4370,9 @@ static bool32 NoAliveMonsForOpponent(void)
 {
     u32 i;
     u32 HP_count = 0;
+
+    if (VarGet(VAR_DEOXYS_BOSS_BATTLE_STATE) > 0)
+        return FALSE;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -5088,7 +5119,7 @@ static bool32 TryKnockOffBattleScript(u32 battlerDef)
     {
         if (HasAbility(ABILITY_STICKY_HOLD, GetBattlerAbilities(battlerDef)) && IsBattlerAlive(battlerDef))
         {
-            gBattlerAbility = battlerDef;
+            gBattleScripting.battler = gBattlerAbility = battlerDef;
             BattleScriptPushCursor();
             gBattlescriptCurrInstr = BattleScript_StickyHoldActivates;
         }
@@ -6106,7 +6137,7 @@ static void ChooseMonToSendOut(u8 slotId)
     *(gBattleStruct->monToSwitchIntoId + gActiveBattler) = PARTY_SIZE;
     gBattleStruct->field_93 &= ~(gBitTable[gActiveBattler]);
 
-    BtlController_EmitChoosePokemon(0, PARTY_ACTION_SEND_OUT, slotId, gBattleStruct->field_60[gActiveBattler]);
+    BtlController_EmitChoosePokemon(0, PARTY_ACTION_SEND_OUT, slotId, ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
     MarkBattlerForControllerExec(gActiveBattler);
 }
 
@@ -6363,7 +6394,7 @@ static void Cmd_openpartyscreen(void)
             *(gBattleStruct->monToSwitchIntoId + gActiveBattler) = 6;
             gBattleStruct->field_93 &= ~(gBitTable[gActiveBattler]);
 
-            BtlController_EmitChoosePokemon(0, hitmarkerFaintBits, *(gBattleStruct->monToSwitchIntoId + (gActiveBattler ^ 2)), gBattleStruct->field_60[gActiveBattler]);
+            BtlController_EmitChoosePokemon(0, hitmarkerFaintBits, *(gBattleStruct->monToSwitchIntoId + (gActiveBattler ^ 2)), ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
             MarkBattlerForControllerExec(gActiveBattler);
 
             gBattlescriptCurrInstr += 6;
@@ -6481,9 +6512,9 @@ static void Cmd_switchineffects(void)
 {
     s32 i;
     u16 abilities[NUM_ABILITY_SLOTS];
-    memcpy(abilities, GetBattlerAbilities(gActiveBattler), sizeof(abilities));
 
     gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
+    memcpy(abilities, GetBattlerAbilities(gActiveBattler), sizeof(abilities));
     UpdateSentPokesToOpponentValue(gActiveBattler);
 
     gHitMarker &= ~(HITMARKER_FAINTED(gActiveBattler));
@@ -8154,9 +8185,6 @@ static void Cmd_various(void)
                 gBattleMoveDamage = 1;
             gBattleMoveDamage *= -1;
 
-            BtlController_EmitHealthBarUpdate(0, gBattleMoveDamage);
-            MarkBattlerForControllerExec(gActiveBattler);
-
             gBattlescriptCurrInstr += 7;
         }
         return;
@@ -8441,6 +8469,10 @@ static void Cmd_various(void)
         break;
     case VARIOUS_SWITCHIN_ABILITIES:
         gBattlescriptCurrInstr += 3;
+        if (gBattleStruct->mega.alreadyEvolved[GetBattlerPosition(gActiveBattler)]
+            && HasAbility(ABILITY_INTIMIDATE, gBattleMons[gActiveBattler].abilities)
+            && HasAbility(ABILITY_INTIMIDATE, GetAbilitiesBySpecies(gBattleStruct->mega.evolvedSpecies[gActiveBattler])))
+            gSpecialStatuses[gActiveBattler].intimidatedMon = TRUE;
         AbilityBattleEffects(ABILITYEFFECT_NEUTRALIZINGGAS, gActiveBattler, 0, 0);
         AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, gActiveBattler, 0, 0);
         AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE2, gActiveBattler, 0, 0);
@@ -8523,7 +8555,7 @@ static void Cmd_various(void)
         if (IsBattlerAlive(gBattlerAbility)
             && (HasAbility(ABILITY_RECEIVER, battlerAbilities) || HasAbility(ABILITY_POWER_OF_ALCHEMY, battlerAbilities)))
         {
-            u16 ability, battlerAbility;
+            u16 battlerAbility;
             for (x = 0; x < NUM_ABILITY_SLOTS; x++)
             {
                 battlerAbility = gBattleMons[gActiveBattler].abilities[x];
@@ -8541,7 +8573,14 @@ static void Cmd_various(void)
                 case ABILITY_TIME_TRAVELLER:    case ABILITY_ORIGIN:
                     break;
                 default:
-                    gBattleStruct->tracedAbilities[x] = ability; // As I cannot bring in sTraceAbilityRatings to this file, we'll just take the first viable ability.
+                    for (j = 0; j < NUM_ABILITY_SLOTS; j++)
+                    {
+                        if (gBattleMons[gBattlerAbility].abilities[j] == ABILITY_RECEIVER
+                            || gBattleMons[gBattlerAbility].abilities[j] == ABILITY_POWER_OF_ALCHEMY)
+                            gBattleStruct->tracedAbilities[j] = battlerAbility;
+                        else
+                            gBattleStruct->tracedAbilities[j] = gBattleMons[gBattlerAbility].abilities[j];
+                    }
                     gBattleScripting.battler = gActiveBattler;
                     BattleScriptPush(gBattlescriptCurrInstr + 3);
                     gBattlescriptCurrInstr = BattleScript_ReceiverActivates;
@@ -9241,10 +9280,9 @@ static void Cmd_various(void)
         DestroyAbilityPopUp(gActiveBattler);
         break;
     case VARIOUS_TOTEM_BOOST:
-        gActiveBattler = gBattlerAttacker;
         if (gTotemBoosts[gActiveBattler].stats == 0)
         {
-            gBattlescriptCurrInstr += 7;    // stats done, exit
+            gBattlescriptCurrInstr += 11;    // stats done, exit
         }
         else
         {
@@ -9263,7 +9301,7 @@ static void Cmd_various(void)
                     if (gTotemBoosts[gActiveBattler].stats & 0x80)
                     {
                         gTotemBoosts[gActiveBattler].stats &= ~0x80; // set 'aura flared to life' flag
-                        gBattlescriptCurrInstr = BattleScript_TotemFlaredToLife;
+                        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 7);   // flared to life
                     }
                     else
                     {
@@ -9272,7 +9310,7 @@ static void Cmd_various(void)
                     return;
                 }
             }
-            gBattlescriptCurrInstr += 7;    // exit if loop failed (failsafe)
+            gBattlescriptCurrInstr += 11;    // exit if loop failed (failsafe)
         }
         return;
     case VARIOUS_MOVEEND_ITEM_EFFECTS:
@@ -9882,6 +9920,20 @@ static void Cmd_various(void)
             SetBattleMonMoveSlot(&gBattleMons[gActiveBattler], MOVE_DRAIN_PUNCH, 3);
         }
         break;
+    case VARIOUS_TRY_PARENTAL_BOND:
+        if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_OFF
+            && CanParentalBond(gBattlerAttacker, gCurrentMove)
+            && IsBattlerAlive(gBattlerTarget))
+        {
+            gSpecialStatuses[gBattlerAttacker].parentalBondState = PARENTAL_BOND_2ND_HIT;
+            gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 3);
+        }
+        else
+        {
+            gSpecialStatuses[gBattlerAttacker].parentalBondState = PARENTAL_BOND_OFF;
+            gBattlescriptCurrInstr += 7;
+        }
+        return;
     } // End of switch (gBattlescriptCurrInstr[2])
 
     gBattlescriptCurrInstr += 3;
@@ -10308,12 +10360,14 @@ static void Cmd_jumpifcantmakeasleep(void)
     else if (HasAbility(ABILITY_INSOMNIA, abilities))
     {
         gLastUsedAbility = ABILITY_INSOMNIA;
+        gBattlerAbility = gBattlerTarget;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STAYED_AWAKE_USING;
         gBattlescriptCurrInstr = jumpPtr;
     }
     else if (HasAbility(ABILITY_VITAL_SPIRIT, abilities))
     {
         gLastUsedAbility = ABILITY_VITAL_SPIRIT;
+        gBattlerAbility = gBattlerTarget;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STAYED_AWAKE_USING;
         gBattlescriptCurrInstr = jumpPtr;
     }
@@ -10889,15 +10943,10 @@ static void Cmd_forcerandomswitch(void)
         }
     }
 
-    // Swapping pokemon happens in:
-    // trainer battles
-    // wild double battles when an opposing pokemon uses it against one of the two alive player mons
-    // wild double battle when a player pokemon uses it against its partner
     if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER)
         || (WILD_DOUBLE_BATTLE
             && GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT
-            && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER
-            && IS_WHOLE_SIDE_ALIVE(gBattlerTarget))
+            && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER)
         || (WILD_DOUBLE_BATTLE
             && GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER
             && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER)
@@ -12830,6 +12879,7 @@ static void Cmd_tryswapitems(void) // trick
         else if (HasAbility(ABILITY_STICKY_HOLD, GetBattlerAbilities(gBattlerTarget)))
         {
             gBattlescriptCurrInstr = BattleScript_StickyHoldActivates;
+            gBattleScripting.battler = gBattlerAbility = gBattlerTarget;
             gLastUsedAbility = ABILITY_STICKY_HOLD;
         }
         // took a while, but all checks passed and items can be safely swapped

@@ -596,6 +596,7 @@ BattleScript_ScaleShotLoop::
 	jumpifstatus BS_ATTACKER, STATUS1_SLEEP, BattleScript_ScaleShotPrintStrings
 BattleScript_ScaleShotDoMultiHit::
 	movevaluescleanup
+	trysetdestinybondtohappen	@ movevaluescleanup clears the destiny bond flag every hit; restore it so a later hit in this same sequence can still trigger it
 	copyhword sMOVE_EFFECT, sMULTIHIT_EFFECT
 	critcalc
 	damagecalc
@@ -632,7 +633,7 @@ BattleScript_ScaleShotEnd::
 	seteffectwithchance
 	tryfaintmon BS_TARGET, FALSE, NULL
 	moveendcase MOVEEND_SYNCHRONIZE_TARGET
-	moveendfrom MOVEEND_STATUS_IMMUNITY_ABILITIES
+	moveendfrom MOVEEND_MAGICIAN
 	end
 
 @Sky Drop functionality not coded in
@@ -3004,6 +3005,7 @@ BattleScript_HitFromAccCheck::
 BattleScript_HitFromAtkString::
 	attackstring
 	ppreduce
+	copyhword sMULTIHIT_EFFECT, sMOVE_EFFECT
 BattleScript_HitFromCritCalc::
 	critcalc
 	damagecalc
@@ -3022,6 +3024,13 @@ BattleScript_HitFromAtkAnimation::
 	waitmessage B_WAIT_TIME_LONG
 	seteffectwithchance
 	tryfaintmon BS_TARGET, FALSE, NULL
+	moveendto MOVEEND_NEXT_TARGET
+	tryparentalbond BS_ATTACKER, BattleScript_EffectHit_ParentalBondRetry
+	moveendfrom MOVEEND_NEXT_TARGET
+	end
+BattleScript_EffectHit_ParentalBondRetry:
+	copyhword sMOVE_EFFECT, sMULTIHIT_EFFECT
+	goto BattleScript_HitFromCritCalc
 BattleScript_MoveEnd::
 	moveendall
 	end
@@ -3189,6 +3198,9 @@ BattleScript_WasntAffected::
 
 BattleScript_CantMakeAsleep::
 	pause B_WAIT_TIME_SHORT
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAYED_AWAKE_USING, BattleScript_CantMakeAsleepPrintMessage
+	call BattleScript_AbilityPopUp
+BattleScript_CantMakeAsleepPrintMessage:
 	printfromtable gUproarAwakeStringIds
 	waitmessage B_WAIT_TIME_LONG
 	orhalfword gMoveResultFlags, MOVE_RESULT_FAILED
@@ -3564,6 +3576,7 @@ BattleScript_MultiHitLoop::
 	jumpifstatus BS_ATTACKER, STATUS1_SLEEP, BattleScript_MultiHitPrintStrings
 BattleScript_DoMultiHit::
 	movevaluescleanup
+	trysetdestinybondtohappen	@ movevaluescleanup clears the destiny bond flag every hit; restore it so a later hit in this same sequence can still trigger it
 	copyhword sMOVE_EFFECT, sMULTIHIT_EFFECT
 	critcalc
 	damagecalc
@@ -3599,7 +3612,7 @@ BattleScript_MultiHitEnd::
 	seteffectwithchance
 	tryfaintmon BS_TARGET, FALSE, NULL
 	moveendcase MOVEEND_SYNCHRONIZE_TARGET
-	moveendfrom MOVEEND_STATUS_IMMUNITY_ABILITIES
+	moveendfrom MOVEEND_MAGICIAN
 	end
 
 BattleScript_EffectConversion::
@@ -4556,6 +4569,7 @@ BattleScript_TripleKickLoop::
 BattleScript_DoTripleKickAttack::
 	accuracycheck BattleScript_TripleKickNoMoreHits, ACC_CURR_MOVE
 	movevaluescleanup
+	trysetdestinybondtohappen	@ movevaluescleanup clears the destiny bond flag every hit; restore it so a later hit in this same sequence can still trigger it
 	jumpifmove MOVE_SURGING_STRIKES, EffectTripleKick_DoDmgCalcs	@ no power boost each hit
 	jumpifmove MOVE_TRIPLE_AXEL, EffectTripleKick_TripleAxelBoost	@ triple axel gets +20 power
 	addbyte sTRIPLE_KICK_POWER, 10									@ triple kick gets +10 power
@@ -5217,6 +5231,7 @@ BattleScript_EffectBeatUp::
 	setbyte gBattleCommunication, 0
 BattleScript_BeatUpLoop::
 	movevaluescleanup
+	trysetdestinybondtohappen	@ movevaluescleanup clears the destiny bond flag every hit; restore it so a later hit in this same sequence can still trigger it
 	trydobeatup BattleScript_BeatUpEnd, BattleScript_ButItFailed
 	printstring STRINGID_PKMNATTACK
 	critcalc
@@ -5664,14 +5679,12 @@ BattleScript_EffectRolePlay::
 	attackanimation
 	waitanimation
 .if B_ABILITY_POP_UP == TRUE
-	@setbyte sFIXED_ABILITY_POPUP, TRUE
-	@showmultiabilitypopup BS_ATTACKER
-	@pause 60
-	@sethword sABILITY_OVERWRITE, 0
-	@updateabilitypopup BS_ATTACKER
-	@pause 20
-	@destroyabilitypopup
-	@pause 40
+	copybyte gBattlerAbility, gBattlerAttacker
+	call BattleScript_MultiAbilityPopUp
+	setbyte sFIXED_ABILITY_POPUP, TRUE
+	pause 90
+	destroyabilitypopup
+	pause 40
 .endif
 	printstring STRINGID_PKMNCOPIEDFOE
 	waitmessage B_WAIT_TIME_LONG
@@ -5826,10 +5839,17 @@ BattleScript_EffectSkillSwap:
 	waitanimation
 .if B_ABILITY_POP_UP == TRUE
 	copybyte gBattlerAbility, gBattlerTarget
-	@call BattleScript_MultiAbilityPopUp
-	pause 20
+	call BattleScript_MultiAbilityPopUp
+	setbyte sFIXED_ABILITY_POPUP, TRUE
+	pause 60
+	destroyabilitypopup
+	pause 25
 	copybyte gBattlerAbility, gBattlerAttacker
-	@call BattleScript_MultiAbilityPopUp
+	call BattleScript_MultiAbilityPopUp
+	setbyte sFIXED_ABILITY_POPUP, TRUE
+	pause 60
+	destroyabilitypopup
+	pause 40
 .endif
 	printstring STRINGID_PKMNSWAPPEDABILITIES
 	waitmessage B_WAIT_TIME_LONG
@@ -6580,6 +6600,7 @@ BattleScript_RainContinuesOrEnds::
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_RAIN_STOPPED, BattleScript_RainContinuesOrEndsEnd
 	playanimation BS_ATTACKER, B_ANIM_RAIN_CONTINUES, NULL
 BattleScript_RainContinuesOrEndsEnd::
+	call BattleScript_WeatherFormChanges
 	end2
 
 BattleScript_DamagingWeatherContinues::
@@ -6618,6 +6639,7 @@ BattleScript_DamagingWeatherContinuesEnd::
 BattleScript_SandStormHailEnds::
 	printfromtable gSandStormHailEndStringIds
 	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_WeatherFormChanges
 	end2
 
 BattleScript_SunlightContinues::
@@ -6629,6 +6651,7 @@ BattleScript_SunlightContinues::
 BattleScript_SunlightFaded::
 	printstring STRINGID_SUNLIGHTFADED
 	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_WeatherFormChanges
 	end2
 
 BattleScript_OverworldWeatherStarts::
@@ -7683,7 +7706,7 @@ BattleScript_CottonDownLoop:
 	jumpifbyte CMP_EQUAL, gBattleCommunication, TRUE, BattleScript_CottonDownLoopIncrement
 	setstatchanger STAT_SPEED, 1, TRUE
 	jumpifbyteequal gBattlerTarget, gEffectBattler, BattleScript_CottonDownLoopIncrement
-	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED, BattleScript_CottonDownTargetSpeedCantGoLower
+	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED | STAT_BUFF_ALLOW_PTR, BattleScript_CottonDownTargetSpeedCantGoLower
 	setgraphicalstatchangevalues
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	printfromtable gStatDownStringIds
@@ -8692,6 +8715,7 @@ BattleScript_MiracleBlossomHeals::
 	printstring STRINGID_MIRACLEBLOSSOMHEALS
 	waitmessage B_WAIT_TIME_LONG
 	orword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER
 BattleScript_MiracleBlossomHealPartner::
 	checkmiracleblossomheal BS_ATTACKER_PARTNER, BattleScript_MiracleBlossomHealEnd
@@ -8699,6 +8723,7 @@ BattleScript_MiracleBlossomHealPartner::
 	printstring STRINGID_MIRACLEBLOSSOMHEALS
 	waitmessage B_WAIT_TIME_LONG
 	orword gHitMarker, HITMARKER_SKIP_DMG_TRACK | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE
+	healthbarupdate BS_ATTACKER_PARTNER
 	datahpupdate BS_ATTACKER_PARTNER
 BattleScript_MiracleBlossomHealEnd:
 	end2
@@ -9211,6 +9236,7 @@ BattleScript_BerryCureSlpRet::
 BattleScript_GemActivates::
 	playanimation BS_ATTACKER, B_ANIM_HELD_ITEM_EFFECT, NULL
 	waitanimation
+	setlastuseditem BS_ATTACKER	@ a chained BattleScript_BerryReduceDmg (see Cmd_adjustdamage) can clobber gLastUsedItem before this runs
 	printstring STRINGID_GEMACTIVATES
 	waitmessage B_WAIT_TIME_LONG
 	removeitem BS_ATTACKER
@@ -9219,6 +9245,7 @@ BattleScript_GemActivates::
 BattleScript_BerryReduceDmg::
 	playanimation BS_TARGET, B_ANIM_HELD_ITEM_EFFECT, NULL
 	waitanimation
+	setlastuseditem BS_TARGET	@ a chained BattleScript_GemActivates (see Cmd_adjustdamage) can clobber gLastUsedItem before this runs
 	printstring STRINGID_TARGETATEITEM
 	waitmessage B_WAIT_TIME_LONG
 	removeitem BS_TARGET
@@ -9602,7 +9629,7 @@ BattleScript_TotemFlaredToLife::
 	goto BattleScript_ApplyTotemVarBoost
 
 BattleScript_TotemVar::
-	gettotemboost BattleScript_ApplyTotemVarBoost
+	gettotemboost BS_ATTACKER, BattleScript_ApplyTotemVarBoost, BattleScript_TotemFlaredToLife
 BattleScript_TotemVarEnd:
 	end2
 BattleScript_ApplyTotemVarBoost:
@@ -9889,36 +9916,59 @@ BattleScript_SerpentDanceEnd::
 	goto BattleScript_MoveEnd
 
 BattleScript_DeoxysStrangeAura::
-	datahpupdate BS_TARGET
+	datahpupdate BS_SCRIPTING
 	printstring STRINGID_DEOXYSSTRANGEAURA
 	waitmessage B_WAIT_TIME_LONG
-	@setmoveset BS_ATTACKER @TODO: figure out how to set Deoxys moveset before first turn. 
 	end
 
 BattleScript_DeoxysBossFormChange::
-	copybyte gBattlerAbility, gBattlerTarget
+	copybyte gBattlerAbility, sBATTLER
 	pause 5
-	handleformchange BS_TARGET, 0
-	handleformchange BS_TARGET, 1
-	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	handleformchange BS_SCRIPTING, 0
+	handleformchange BS_SCRIPTING, 1
+	spriteignore0hp TRUE
+	playanimation BS_SCRIPTING, B_ANIM_FORM_CHANGE, NULL
 	waitanimation
-	handleformchange BS_TARGET, 2 
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
+	spriteignore0hp FALSE
+	handleformchange BS_SCRIPTING, 2
+	healthbarupdate BS_SCRIPTING
+	datahpupdate BS_SCRIPTING
+	updatestatusicon BS_SCRIPTING
 	printstring STRINGID_DEOXYSCHANGEDFORM
 	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_DeoxysApplyTotemBoost
 	return
 
 BattleScript_DeoxysBossFormChangeCatchable::
-	copybyte gBattlerAbility, gBattlerTarget
+	copybyte gBattlerAbility, sBATTLER
 	pause 5
-	handleformchange BS_TARGET, 0
-	handleformchange BS_TARGET, 1
-	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
+	handleformchange BS_SCRIPTING, 0
+	handleformchange BS_SCRIPTING, 1
+	spriteignore0hp TRUE
+	playanimation BS_SCRIPTING, B_ANIM_FORM_CHANGE, NULL
 	waitanimation
-	handleformchange BS_TARGET, 2 
-	healthbarupdate BS_TARGET
-	datahpupdate BS_TARGET
+	spriteignore0hp FALSE
+	handleformchange BS_SCRIPTING, 2
+	healthbarupdate BS_SCRIPTING
+	datahpupdate BS_SCRIPTING
+	updatestatusicon BS_SCRIPTING
 	printstring STRINGID_DEOXYSCHANGEDFORMCATCHABLE
 	waitmessage B_WAIT_TIME_LONG
 	return
+
+BattleScript_DeoxysApplyTotemBoost::
+	gettotemboost BS_SCRIPTING, BattleScript_DeoxysApplyTotemBoostDo, BattleScript_DeoxysTotemFlaredToLife
+	return
+BattleScript_DeoxysApplyTotemBoostDo:
+	statbuffchange STAT_BUFF_ALLOW_PTR, BattleScript_DeoxysApplyTotemBoost
+	setgraphicalstatchangevalues
+	playanimation BS_SCRIPTING, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_DeoxysApplyTotemBoost @ loop until stats bitfield is empty
+
+BattleScript_DeoxysTotemFlaredToLife:
+	playanimation BS_SCRIPTING, B_ANIM_TOTEM_FLARE, NULL
+	printstring STRINGID_AURAFLAREDTOLIFE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_DeoxysApplyTotemBoostDo

@@ -22,7 +22,6 @@ struct FlashType {
     struct FlashSector sector;
     u16 wait[2]; // game pak bus read/write wait
 
-    // TODO: add support for anonymous unions/structs if possible
     union {
         struct {
         u8 makerId;

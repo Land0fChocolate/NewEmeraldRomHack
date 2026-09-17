@@ -1938,7 +1938,8 @@ Move_AURA_SPHERE:
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 8, 0, 16, 1
 	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
 	waitforvisualfinish
-	call UnsetHighSpeedBg
+	restorebg
+	waitbgfadein
 	clearmonbg ANIM_ATK_PARTNER
 	blendoff
 	delay 1
@@ -1946,7 +1947,8 @@ Move_AURA_SPHERE:
 
 SetAuraSphereBG:
 	fadetobg BG_AURA_SPHERE
-	goto SetHighSpeedBgFade
+	waitbgfadein
+	return
 
 Move_ROCK_POLISH:
 	loadspritegfx ANIM_TAG_WHITE_STREAK
@@ -2425,7 +2427,8 @@ Move_FOCUS_BLAST:
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 8, 0, 16, 1
 	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
 	waitforvisualfinish
-	call UnsetHighSpeedBg
+	restorebg
+	waitbgfadein
 	clearmonbg ANIM_ATK_PARTNER
 	blendoff
 	delay 1
@@ -2433,7 +2436,8 @@ Move_FOCUS_BLAST:
 
 SetFocusBlastBG:
 	fadetobg BG_FOCUS_BLAST
-	goto SetHighSpeedBgFade
+	waitbgfadein
+	return
 
 Move_ENERGY_BALL:
 	loadspritegfx ANIM_TAG_ENERGY_BALL
@@ -3519,7 +3523,8 @@ Move_GUNK_SHOT:
 	call GunkShotImpact
 	call PoisonBubblesEffect
 	waitforvisualfinish
-	call UnsetHighSpeedBg
+	restorebg
+	waitbgfadein
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
 	end
@@ -3537,7 +3542,8 @@ GunkShotImpact:
 	return
 SetGunkShotBG:
 	fadetobg BG_GUNK_SHOT
-	goto SetHighSpeedBgFade
+	waitbgfadein
+	return
 
 Move_IRON_HEAD:
 	loadspritegfx ANIM_TAG_GUST
@@ -6700,10 +6706,7 @@ Move_HURRICANE:
 	monbg ANIM_DEF_PARTNER
 	monbgprio_28 ANIM_TARGET
 	setalpha 12, 8
-	fadetobg BG_HIGH_SPEED
-	waitbgfadeout
-	launchtask AnimTask_StartSlidingBg 0x5 0x4 0x1000 0x0 0x1 0xffff
-	waitbgfadein
+	call SetHighSpeedBg
 	playsewithpan SE_M_GUST, SOUND_PAN_TARGET
 	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x3 0x40 0x1
 	call HurricaneGust
@@ -6721,7 +6724,7 @@ Move_HURRICANE:
 	stopsound
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
-	call UnsetPsychicBg
+	call UnsetHighSpeedBg
 	end
 HurricaneGust:
 	createsprite gEllipticalGustSpriteTemplate, ANIM_ATTACKER, 2, 0, -16
@@ -23961,19 +23964,19 @@ Move_HIDDEN_THORNS:
 	monbg ANIM_DEF_PARTNER
 	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
 	waitplaysewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET, 28
-	createsprite gIngrainRootSpriteTemplate, ANIM_TARGET, 2, 100, -24, -1, 2, 150
+	createsprite gFrenzyPlantRootSpriteTemplate, ANIM_TARGET, 2, 100, 16, 20, -1, 2, 150
 	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
 	delay 10
 	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
 	waitplaysewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET, 28
 	createsprite gThornsSpriteTemplate, ANIM_TARGET, 2, 0, 12, 5, 24, 80
-	createsprite gIngrainRootSpriteTemplate, ANIM_TARGET, 2, 110, -24, 1, 1, 140
+	createsprite gFrenzyPlantRootSpriteTemplate, ANIM_TARGET, 2, 100, -24, 18, 1, 1, 140
 	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
 	delay 10
 	waitplaysewithpan SE_M_HORN_ATTACK, SOUND_PAN_TARGET, 28
 	createsprite gThornsSpriteTemplate, ANIM_TARGET, 2, 24, 10, 5, 24, 65
-	createsprite gIngrainRootSpriteTemplate, ANIM_TARGET, 2, 85, -24, 1, 0, 130
-	createsprite gIngrainRootSpriteTemplate, ANIM_TARGET, 2, 125, -24, -1, 3, 120
+	createsprite gFrenzyPlantRootSpriteTemplate, ANIM_TARGET, 2, 100, 24, 22, 1, 0, 130
+	createsprite gFrenzyPlantRootSpriteTemplate, ANIM_TARGET, 2, 100, -16, 16, -1, 3, 120
 	delay 10
 	createsprite gThornsSpriteTemplate, ANIM_TARGET, 2, -24, 14, 5, 24, 50
 	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER

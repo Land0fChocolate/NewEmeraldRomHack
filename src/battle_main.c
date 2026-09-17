@@ -3134,6 +3134,7 @@ void SwitchInClearSetData(void)
     // Reset damage to prevent things like red card activating if the switched-in mon is holding it
     gSpecialStatuses[gActiveBattler].physicalDmg = 0;
     gSpecialStatuses[gActiveBattler].specialDmg = 0;
+    gSpecialStatuses[gActiveBattler].damagedMons = 0;
 
     Ai_UpdateSwitchInData(gActiveBattler);
 }
@@ -3589,10 +3590,12 @@ static void TryDoEventsBeforeFirstTurn(void)
     }
 
     // set up Deoxys boss battle
-    if (VarGet(VAR_DEOXYS_BOSS_BATTLE_STATE) == 1 && GetBattlerSide(gActiveBattler) == B_SIDE_OPPONENT)
+    if (VarGet(VAR_DEOXYS_BOSS_BATTLE_STATE) == 1)
     {
+           u8 deoxysBattler = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
            FlagSet(FLAG_DISABLE_CATCHING);
            VarSet(VAR_DEOXYS_BOSS_BATTLE_STATE, 2);
+           gBattleScripting.battler = deoxysBattler;
            BattleScriptExecute(BattleScript_DeoxysStrangeAura);
            return;
     }
@@ -3901,6 +3904,7 @@ enum
 static void HandleTurnActionSelectionState(void)
 {
     s32 i;
+    u16 ability = ABILITY_NONE;
 
     gBattleCommunication[ACTIONS_CONFIRMED_COUNT] = 0;
     for (gActiveBattler = 0; gActiveBattler < gBattlersCount; gActiveBattler++)
@@ -4074,22 +4078,28 @@ static void HandleTurnActionSelectionState(void)
                     if (gBattleTypeFlags & BATTLE_TYPE_ARENA
                         || !CanBattlerEscape(gActiveBattler))
                     {
-                        BtlController_EmitChoosePokemon(0, PARTY_ACTION_CANT_SWITCH, PARTY_SIZE, gBattleStruct->field_60[gActiveBattler]);
+                        BtlController_EmitChoosePokemon(0, PARTY_ACTION_CANT_SWITCH, PARTY_SIZE, ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
                     }
                     else if (ItemId_GetHoldEffect(gBattleMons[gActiveBattler].item) != HOLD_EFFECT_SHED_SHELL
                         && (!HasAbility(ABILITY_RUN_AWAY, gBattleMons[gActiveBattler].abilities))
                         && (i = IsAbilityPreventingEscape(gActiveBattler)))   // must be last to keep i value integrity
                     {
-                        BtlController_EmitChoosePokemon(0, ((i - 1) << 4) | PARTY_ACTION_ABILITY_PREVENTS, PARTY_SIZE, gBattleStruct->field_60[gActiveBattler]);
+                        if (HasAbility(ABILITY_ARENA_TRAP, gBattleMons[i - 1].abilities))
+                            ability = ABILITY_ARENA_TRAP;
+                        else if (HasAbility(ABILITY_SHADOW_TAG, gBattleMons[i - 1].abilities))
+                            ability = ABILITY_SHADOW_TAG;
+                        else if (HasAbility(ABILITY_MAGNET_PULL, gBattleMons[i - 1].abilities))
+                            ability = ABILITY_MAGNET_PULL;
+                        BtlController_EmitChoosePokemon(0, ((i - 1) << 4) | PARTY_ACTION_ABILITY_PREVENTS, PARTY_SIZE, ability, gBattleStruct->field_60[gActiveBattler]);
                     }
                     else
                     {
                         if (gActiveBattler == 2 && gChosenActionByBattler[0] == B_ACTION_SWITCH)
-                            BtlController_EmitChoosePokemon(0, PARTY_ACTION_CHOOSE_MON, *(gBattleStruct->monToSwitchIntoId + 0), gBattleStruct->field_60[gActiveBattler]);
+                            BtlController_EmitChoosePokemon(0, PARTY_ACTION_CHOOSE_MON, *(gBattleStruct->monToSwitchIntoId + 0), ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
                         else if (gActiveBattler == 3 && gChosenActionByBattler[1] == B_ACTION_SWITCH)
-                            BtlController_EmitChoosePokemon(0, PARTY_ACTION_CHOOSE_MON, *(gBattleStruct->monToSwitchIntoId + 1), gBattleStruct->field_60[gActiveBattler]);
+                            BtlController_EmitChoosePokemon(0, PARTY_ACTION_CHOOSE_MON, *(gBattleStruct->monToSwitchIntoId + 1), ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
                         else
-                            BtlController_EmitChoosePokemon(0, PARTY_ACTION_CHOOSE_MON, PARTY_SIZE, gBattleStruct->field_60[gActiveBattler]);
+                            BtlController_EmitChoosePokemon(0, PARTY_ACTION_CHOOSE_MON, PARTY_SIZE, ABILITY_NONE, gBattleStruct->field_60[gActiveBattler]);
                     }
                     MarkBattlerForControllerExec(gActiveBattler);
                     break;

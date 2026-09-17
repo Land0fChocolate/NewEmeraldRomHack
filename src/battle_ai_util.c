@@ -1802,7 +1802,8 @@ bool32 ShouldLowerSpDef(u8 battlerAtk, u8 battlerDef, u16 defAbilities[])
       && !HasAbility(ABILITY_CONTRARY, defAbilities)
       && !HasAbility(ABILITY_CLEAR_BODY, defAbilities)
       && !HasAbility(ABILITY_FULL_METAL_BODY, defAbilities)
-      && !HasAbility(ABILITY_WHITE_SMOKE, defAbilities))
+      && !HasAbility(ABILITY_WHITE_SMOKE, defAbilities)
+      && !HasAbility(ABILITY_BIG_PECKS, defAbilities))
         return TRUE;
     return FALSE;
 }

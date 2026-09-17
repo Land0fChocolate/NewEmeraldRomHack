@@ -128,7 +128,7 @@ void BattleAI_SetupItems(void)
 static u32 GetWildAiFlags(void)
 {
     u8 avgLevel = GetMonData(&gEnemyParty[0], MON_DATA_LEVEL);
-    u32 flags;
+    u32 flags = 0;
 
     if (IsDoubleBattle())
         avgLevel = (GetMonData(&gEnemyParty[0], MON_DATA_LEVEL) + GetMonData(&gEnemyParty[1], MON_DATA_LEVEL)) / 2;
@@ -814,7 +814,8 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
                         RETURN_SCORE_MINUS(10);
                     break;
                 case ABILITY_BIG_PECKS:
-                    if (moveEffect == EFFECT_DEFENSE_DOWN || moveEffect == EFFECT_DEFENSE_DOWN_2)
+                    if (moveEffect == EFFECT_DEFENSE_DOWN || moveEffect == EFFECT_DEFENSE_DOWN_2
+                      || moveEffect == EFFECT_SPECIAL_DEFENSE_DOWN || moveEffect == EFFECT_SPECIAL_DEFENSE_DOWN_2)
                         RETURN_SCORE_MINUS(10);
                     break;
                 case ABILITY_DEFIANT:
@@ -2090,8 +2091,9 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
             return AI_CheckBadMove(battlerAtk, battlerDef, GetNaturePowerMove(), score);
         case EFFECT_TAUNT:
             if (gDisableStructs[battlerDef].tauntTimer > 0
-              || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove)
               || HasAbility(ABILITY_OBLIVIOUS, AI_DATA->abilities[battlerDef]))
+                score -= 10;
+            else if (DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, AI_DATA->partnerMove))
                 score--;
             break;
         case EFFECT_BESTOW:
@@ -2398,6 +2400,24 @@ static s16 AI_CheckBadMove(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
               && gBattleMons[battlerDef].type2 == TYPE_WATER
               && gBattleMons[battlerDef].type3 == TYPE_MYSTERY))
                 score -= 10;    // target is already water-only
+            break;
+        case EFFECT_REFLECT_TYPE:
+            if (gBattleMons[battlerDef].species == SPECIES_ARCEUS || gBattleMons[battlerDef].species == SPECIES_SILVALLY)
+                score -= 10;    // move would fail against these
+            else if (gBattleMons[battlerDef].type1 == TYPE_MYSTERY && gBattleMons[battlerDef].type2 == TYPE_MYSTERY)
+                score -= 10;    // move would fail, target has no type to reflect
+            else
+            {
+                u8 newType1 = gBattleMons[battlerDef].type1;
+                u8 newType2 = gBattleMons[battlerDef].type2;
+                if (newType1 == TYPE_MYSTERY)
+                    newType1 = newType2;
+                else if (newType2 == TYPE_MYSTERY)
+                    newType2 = newType1;
+
+                if (gBattleMons[battlerAtk].type1 == newType1 && gBattleMons[battlerAtk].type2 == newType2)
+                    score -= 10;    // attacker would already have this exact typing
+            }
             break;
         case EFFECT_THIRD_TYPE:
             switch (move)
@@ -4184,10 +4204,13 @@ static s16 AI_CheckViability(u8 battlerAtk, u8 battlerDef, u16 move, s16 score)
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPDEF, &score);
         break;
     case EFFECT_TAUNT:
-        if (IS_MOVE_STATUS(predictedMove))
-            score += 3;
-        else if (HasMoveWithSplit(battlerDef, SPLIT_STATUS))
-            score += 2;
+        if (gDisableStructs[battlerDef].tauntTimer == 0)
+        {
+            if (IS_MOVE_STATUS(predictedMove))
+                score += 3;
+            else if (HasMoveWithSplit(battlerDef, SPLIT_STATUS))
+                score += 2;
+        }
         break;
     case EFFECT_TRICK:
     case EFFECT_BESTOW:
