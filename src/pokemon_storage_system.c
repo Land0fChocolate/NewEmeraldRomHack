@@ -544,9 +544,21 @@ struct PokemonStorageSystemData
     u16 displayMonPalOffset;
     u16 *displayMonTilePtr;
     struct Sprite *displayMonSprite;
-    u16 displayMonPalBuffer[0x40];
-    u8 tileBuffer[0x800];
-    u8 unusedBuffer[0x1800]; // Unused
+    // Most species' normal.gbapal(.lz) decompresses to a single 0x20-byte (16-color) palette, which
+    // fits fine here. But a handful of species (Xatu, Girafarig, Flygon, Salamence, Armaldo, Leafeon)
+    // have a normal.gbapal that decompresses to a full 0x200-byte, 16-palette bank instead (almost
+    // certainly an asset-export mistake upstream, dumping all of palette RAM instead of just this
+    // mon's 16 colors). LZ77UnCompWram() in LoadDisplayMonGfx() below writes however many bytes the
+    // compressed stream declares regardless of this buffer's size, so for those species it overflowed
+    // by up to 0x1C0 bytes directly into the start of tileBuffer, immediately after that same function
+    // decompressed the actual sprite there - corrupting the first several tiles (the sprite's
+    // top-left) with palette data. This is what caused the missing-corner bug in the PC box side panel
+    // specifically (the only place this buffer is used); other screens source palettes differently and
+    // don't share it. Widened to fit the largest case and shrank unusedBuffer by the same amount so
+    // the struct's total size is unchanged.
+    u16 displayMonPalBuffer[0x100];
+    u8 tileBuffer[0x1000];
+    u8 unusedBuffer[0xE80]; // Unused
     u8 itemIconBuffer[0x800];
     u8 wallpaperBgTilemapBuffer[0x1000];
     u8 displayMenuTilemapBuffer[0x800];
