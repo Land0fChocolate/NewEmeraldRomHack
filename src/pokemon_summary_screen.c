@@ -189,7 +189,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
     u8 secondMoveIndex;
     bool8 lockMovesFlag; // This is used to prevent the player from changing position of moves in a battle or when trading.
     u8 bgDisplayOrder; // Determines the order page backgrounds are loaded while scrolling between them
-    u8 filler40CA;
+    u8 statsDisplayMode; // Tracks which of IV(0)/EV(1)/full stats(2) the Skills page is currently showing, so pressing R/L again while already showing that one toggles back to full stats instead of doing nothing.
     u8 windowIds[8];
     u8 spriteIds[SPRITE_ARR_ID_COUNT];
     bool8 unk40EF;
@@ -1659,26 +1659,31 @@ static void Task_HandleInput(u8 taskId)
             PlaySE(SE_SELECT);
             BeginCloseSummaryScreen(taskId);
         }
-        // show IVs/EVs/stats on button presses
         else if (gMain.newKeys & R_BUTTON)
         {
             if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
             {
-                BufferIvOrEvStats(0);
+                if (sMonSummaryScreen->statsDisplayMode == 0)
+                    BufferIvOrEvStats(sMonSummaryScreen->statsDisplayMode = 2);
+                else
+                    BufferIvOrEvStats(sMonSummaryScreen->statsDisplayMode = 0);
             }
         }
         else if (gMain.newKeys & L_BUTTON)
         {
             if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
             {
-                BufferIvOrEvStats(1);
+                if (sMonSummaryScreen->statsDisplayMode == 1)
+                    BufferIvOrEvStats(sMonSummaryScreen->statsDisplayMode = 2);
+                else
+                    BufferIvOrEvStats(sMonSummaryScreen->statsDisplayMode = 1);
             }
         }
         else if (gMain.newKeys & START_BUTTON)
         {
             if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
             {
-                BufferIvOrEvStats(2);
+                BufferIvOrEvStats(sMonSummaryScreen->statsDisplayMode = 2);
             }
         }
     }
@@ -3526,6 +3531,7 @@ static void PrintEggMemo(void)
 
 static void PrintSkillsPageText(void)
 {
+    sMonSummaryScreen->statsDisplayMode = 2;
     PrintHeldItemName();
     PrintRibbonCount();
     BufferLeftColumnStats();
@@ -3542,6 +3548,7 @@ static void Task_PrintSkillsPage(u8 taskId)
     switch (data[0])
     {
     case 1:
+        sMonSummaryScreen->statsDisplayMode = 2;
         PrintHeldItemName();
         break;
     case 2:

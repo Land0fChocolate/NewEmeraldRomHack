@@ -2029,6 +2029,7 @@ void PrepareStringBattle(u16 stringId, u8 battler)
 {
     u32 targetSide = GetBattlerSide(gBattlerTarget);
     u16 battlerAbilities[NUM_ABILITY_SLOTS], targetAbilities[NUM_ABILITY_SLOTS];
+    u16 savedLastUsedAbility = gLastUsedAbility;
     memcpy(battlerAbilities, GetBattlerAbilities(battler), sizeof(battlerAbilities));
     memcpy(targetAbilities, GetBattlerAbilities(gBattlerTarget), sizeof(targetAbilities));
     // Support for Contrary ability.
@@ -2066,11 +2067,13 @@ void PrepareStringBattle(u16 stringId, u8 battler)
             gLastUsedAbility = ABILITY_COMPETITIVE;
             SET_STATCHANGER(STAT_SPATK, 2, FALSE);
         }
+        gBattleScripting.abilityPopupOverwrite[0] = gLastUsedAbility;
     }
     else if (stringId == STRINGID_PKMNCUTSATTACKWITH && HasAbility(ABILITY_RATTLED, targetAbilities)
             && CompareStat(gBattlerTarget, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN))
     {
         gLastUsedAbility = ABILITY_RATTLED;
+        gBattleScripting.abilityPopupOverwrite[0] = ABILITY_RATTLED;
         gBattlerAbility = gBattlerTarget;
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_AbilityRaisesDefenderStat;
@@ -2078,7 +2081,12 @@ void PrepareStringBattle(u16 stringId, u8 battler)
     }
 
     gActiveBattler = battler;
-    BtlController_EmitPrintString(0, stringId);
+    {
+        u16 abilityForPushedScript = gLastUsedAbility;
+        gLastUsedAbility = savedLastUsedAbility;
+        BtlController_EmitPrintString(0, stringId);
+        gLastUsedAbility = abilityForPushedScript;
+    }
     MarkBattlerForControllerExec(gActiveBattler);
 }
 
@@ -3231,7 +3239,11 @@ u8 DoBattlerEndTurnEffects(void)
             break;
         case ENDTURN_ABILITIES:  // end turn abilities
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, gActiveBattler, 0, 0))
+            {
                 effect++;
+                break;
+            }
+            gSpecialStatuses[gActiveBattler].endTurnAbilitySlot = 0;
             gBattleStruct->turnEffectsTracker++;
             break;
         case ENDTURN_ITEMS1:  // item effects
@@ -3990,7 +4002,7 @@ u8 AtkCanceller_UnableToUseMove(void)
         case CANCELLER_TRUANT: // truant
             if (HasAbility(ABILITY_TRUANT, GetBattlerAbilities(gBattlerAttacker)) && gDisableStructs[gBattlerAttacker].truantCounter)
             {
-                gLastUsedAbility - ABILITY_TRUANT;
+                gLastUsedAbility = ABILITY_TRUANT;
                 CancelMultiTurnMoves(gBattlerAttacker);
                 gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_LOAFING;
@@ -4703,7 +4715,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
     case ABILITYEFFECT_ON_SWITCHIN: // 0
         gBattleScripting.battler = battler;
 
-        for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+        for (x = gSpecialStatuses[battler].switchInAbilitySlot; x < NUM_ABILITY_SLOTS; x++)
         {
             switch (gLastUsedAbilities[x])
             {
@@ -5281,13 +5293,19 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                         break;
                     }
             }
+            if (effect)
+            {
+                gSpecialStatuses[battler].switchInAbilitySlot = x + 1;
+                gSpecialStatuses[battler].switchInAbilityDone = FALSE;
+                break;
+            }
         }
         break;
     case ABILITYEFFECT_ENDTURN: // 1
         if (gBattleMons[battler].hp != 0)
         {
             gBattlerAttacker = battler;
-            for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+            for (x = gSpecialStatuses[battler].endTurnAbilitySlot; x < NUM_ABILITY_SLOTS; x++)
             {
                 switch (gLastUsedAbilities[x])
                 {
@@ -5532,6 +5550,11 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                     }
                     break;
                 }
+                if (effect)
+                {
+                    gSpecialStatuses[battler].endTurnAbilitySlot = x + 1;
+                    break;
+                }
             }
         }
         break;
@@ -5711,7 +5734,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
         }
         break;
     case ABILITYEFFECT_MOVE_END: // Think contact abilities.
-        for (x = 0; x < NUM_ABILITY_SLOTS; x++)
+        for (x = gSpecialStatuses[battler].moveEndAbilitySlot; x < NUM_ABILITY_SLOTS; x++)
         {
             switch (gLastUsedAbilities[x])
             {
@@ -6300,6 +6323,11 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 }
                 break;
             }
+            if (effect)
+            {
+                gSpecialStatuses[battler].moveEndAbilitySlot = x + 1;
+                break;
+            }
         }
         break;
     case ABILITYEFFECT_MOVE_END_ATTACKER: // Same as above, but for attacker
@@ -6659,6 +6687,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
         for (i = 0; i < gBattlersCount; i++)
         {
             if (HasAbility(ABILITY_INTIMIDATE, GetBattlerAbilities(i)) && gBattleResources->flags->flags[i] & RESOURCE_FLAG_INTIMIDATED
+                && IsBattlerAlive(i) // The Pokemon with Intimidate may have since fainted (e.g. to an entry hazard) before this runs.
                 && (IsBattlerAlive(BATTLE_OPPOSITE(i)) || IsBattlerAlive(BATTLE_PARTNER(BATTLE_OPPOSITE(i))))) // At least one opposing mon has to be alive.
             {
                 gLastUsedAbility = ABILITY_INTIMIDATE;
