@@ -1973,8 +1973,10 @@ static void Cmd_adjustdamage(void)
         goto END;
 
     // recalculate damage so Time Traveller can replenish it back later in tryfaintmon
+    // (unless it's False Swipe, which must always leave the target at 1 HP instead of fainting)
     if (HasAbility(ABILITY_TIME_TRAVELLER, GetBattlerAbilities(gBattlerTarget))
-        && gBattleMons[gBattlerTarget].hp < gBattleMoveDamage)
+        && gBattleMons[gBattlerTarget].hp < gBattleMoveDamage
+        && gBattleMoves[gCurrentMove].effect != EFFECT_FALSE_SWIPE)
     {
         gBattleMoveDamage = gBattleMons[gBattlerTarget].hp;
         goto END;

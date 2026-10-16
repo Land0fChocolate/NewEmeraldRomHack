@@ -37,7 +37,7 @@ EverGrandeCity_EventScript_TestAbra2::
 	faceplayer
 	msgbox EverGrandeCity_Text_LeafPostBattle, MSGBOX_NPC
 	@giveitem ITEM_RAZOR_CLAW, 1
-	givemon SPECIES_SPINDA, 32, ITEM_NONE
+	givemon SPECIES_CELEBI, 32, ITEM_NONE
 	closemessage
 	end
 

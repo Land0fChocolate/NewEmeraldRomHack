@@ -251,20 +251,13 @@ Possible future additions/changes.
 
 # Known Bugs
 
-Some of these may have been carried over from pokeemerald-expansion.
+Some of these may have been carried over from pokeemerald-expansion or fixed already.
 
 - Many switch-in abilities (like Frisk and Imposter) don’t activate when both Player Pokemon and opponent Pokemon fainted previous turn (e.g. Destiny Bond) and the Player sends out a Pokemon before the opponent sends out theirs. Solving this will probably involve having to rewrite the code that deals with switch-in abilities. This is probably the same behavior as in vanilla Pokemon Emerald, but I don't see why Trace and Intimidate are allowed to activate whilst others don't, so I'm considering this a bug.
-- When Rattled is activated, the wrong ability is shown on the pop-up.
-- Sometimes when Truant triggers, the wrong ability is shown on the pop-up.
-- Intimidate may trigger on fainted Pokemon.
 - Frisk may trigger on the wrong Pokemon. Often occurs in Battle Frontier.
 - Arena Trap battle message when trying to switch doesn't show the ability string.
 - Damp battle message when it by powder move doesn't show the ability string.
 - When a Pokemon with Volt Absorb uses Ion Deluge, it triggers Volt Absorb.
-- Stench ability may activate for opponent and not user. Scenario: Weezing vs Altaria, Altaria (no King's Rock) used Ice Beam which flinched Weezing, could be a bad gBattlerAttacker assignment or similar.
-- Time Traveller ability ignores False Swipe effect of leaving the user with 1 HP.
-- Bug Bite/Pluck is not taking the effects of the opponent's berry.
-- Backgrounds of some moves are glitched or have black boxes. (Shadow Bone, Gunk Shot, Hurricane, Focus Blast, Aura Sphere, Burn Up, Origin Pulse)
 - Cloud reflection can be seen in the long grass and trees in Route 120, as well as rocks in Crumbling Gorge.
 - Jumping into long grass from ledge and moving produces incorrect grass animation.
 - NPCs can change colour when picking items at BP exchange corner. Palette bug.
@@ -272,11 +265,7 @@ Some of these may have been carried over from pokeemerald-expansion.
 - In Contests of super rank and above, Pokemon sprites and NPC overworld sprites can get weird colours. Palette bug linked to too many NPCs on screen.
 - When a Pokemon evolves by trading, an exp gain sound plays over the Pokemon's cry.
 - When trading with the tradeback guy and you use a Pokemon with a different ID than your own (from in-game trade), the trade screen says you are trading with the Pokemon's previous owner.
-- Wild Deoxys may not regenerate HP bar properly in battle. This is just visual, actual HP values are there. Repeatedly occurs when KOing it from 100% HP.
-- Deoxys is also supposed to use a form change animation when changing forms, but it isn't working at all.
-- Deoxys may also skip a form change. Repeatedly occurs with Draining Kiss.
 - Origin move selection has a visual cursor bug when normal moves are selected, cursor selects 3rd or 4th move, return to main fight menu and then choose Origin move.
-- Some Pokemon in PC boxes have the top left corner of their front sprite snipped off. (Dodrio, Alakazam, Kyogre, Lanturn, Aerodactyl, Flygon, Salamence and more)
 - Move relearner doesn't list all of the possible moves to relearn, only the first ~15.
 
 # Frequently Asked Questions/Troubleshooting

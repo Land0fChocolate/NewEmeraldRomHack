@@ -4021,7 +4021,7 @@ u8 AtkCanceller_UnableToUseMove(void)
         case CANCELLER_TRUANT: // truant
             if (HasAbility(ABILITY_TRUANT, GetBattlerAbilities(gBattlerAttacker)) && gDisableStructs[gBattlerAttacker].truantCounter)
             {
-                gLastUsedAbility - ABILITY_TRUANT;
+                gLastUsedAbility = ABILITY_TRUANT;
                 CancelMultiTurnMoves(gBattlerAttacker);
                 gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_LOAFING;
@@ -6723,6 +6723,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
         for (i = 0; i < gBattlersCount; i++)
         {
             if (HasAbility(ABILITY_INTIMIDATE, GetBattlerAbilities(i)) && gBattleResources->flags->flags[i] & RESOURCE_FLAG_INTIMIDATED
+                && IsBattlerAlive(i) // The Pokemon with Intimidate may have since fainted (e.g. to an entry hazard) before this runs.
                 && (IsBattlerAlive(BATTLE_OPPOSITE(i)) || IsBattlerAlive(BATTLE_PARTNER(BATTLE_OPPOSITE(i))))) // At least one opposing mon has to be alive.
             {
                 gLastUsedAbility = ABILITY_INTIMIDATE;

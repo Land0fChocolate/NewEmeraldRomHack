@@ -37,9 +37,13 @@
 #define sILLUSION_NICK_HACK gBattleScripting + 0x32
 #define sFIXED_ABILITY_POPUP gBattleScripting + 0x33
 #define sABILITY_OVERWRITE gBattleScripting + 0x34
-#define sSWITCH_CASE gBattleScripting + 0x36
-#define sBERRY_OVERRIDE (gBattleScripting + 0x37)
-#define sSTICKY_WEB_STAT_DROP (gBattleScripting + 0x38) // stickyWebStatDrop
+// abilityPopupOverwrite is a u16[NUM_ABILITY_SLOTS] (6 bytes) here, vs a single u16 (2 bytes)
+// upstream, so switchCase/overrideBerryRequirements/stickyWebStatDrop all sit 4 bytes later
+// than their upstream offsets below would otherwise suggest - verified against the actual
+// struct BattleScripting layout via offsetof().
+#define sSWITCH_CASE gBattleScripting + 0x3A
+#define sBERRY_OVERRIDE (gBattleScripting + 0x3B)
+#define sSTICKY_WEB_STAT_DROP (gBattleScripting + 0x3C) // stickyWebStatDrop
 
 #define cMULTISTRING_CHOOSER gBattleCommunication + 5
 #define cMISS_TYPE gBattleCommunication + 6
