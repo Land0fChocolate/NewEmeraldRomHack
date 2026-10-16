@@ -206,6 +206,9 @@ struct SpecialStatus
     u8 dancerUsedMove:1;
     u8 dancerOriginalTarget:3;
     // End of byte
+    u8 switchInAbilitySlot; // Next ability slot (of NUM_ABILITY_SLOTS) to check in AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, ...), so multiple simultaneously-active abilities on the same battler activate one at a time instead of overwriting each other.
+    u8 endTurnAbilitySlot; // Same as switchInAbilitySlot, but for AbilityBattleEffects(ABILITYEFFECT_ENDTURN, ...).
+    u8 moveEndAbilitySlot; // Same as switchInAbilitySlot, but for AbilityBattleEffects(ABILITYEFFECT_MOVE_END, ...).
 };
 
 struct SideTimer

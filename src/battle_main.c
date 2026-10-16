@@ -3648,11 +3648,15 @@ static void TryDoEventsBeforeFirstTurn(void)
         return;
 
     // Check all switch in abilities happening from the fastest mon to slowest.
+    // Don't advance to the next battler until AbilityBattleEffects reports no more of this
+    // battler's ability slots are left to check, so a battler with multiple simultaneously-active
+    // abilities gets each one run in its own turn instead of only the first (or a colliding pair).
     while (gBattleStruct->switchInAbilitiesCounter < gBattlersCount)
     {
-        gBattlerAttacker = gBattlerByTurnOrder[gBattleStruct->switchInAbilitiesCounter++];
+        gBattlerAttacker = gBattlerByTurnOrder[gBattleStruct->switchInAbilitiesCounter];
         if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, gBattlerAttacker, 0, 0) != 0)
             return;
+        gBattleStruct->switchInAbilitiesCounter++;
     }
     if (AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE1, 0, 0, 0) != 0) {
         gLastUsedAbility = ABILITY_INTIMIDATE;

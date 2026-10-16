@@ -5296,8 +5296,15 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_ABILITIES: // Such as abilities activating on contact(Poison Spore, Rough Skin, etc.).
+            // Don't advance until the target has no more ability slots left to check (see
+            // moveEndAbilitySlot), so multiple simultaneously-active abilities on the same
+            // battler each get to run in their own turn instead of colliding.
             if (AbilityBattleEffects(ABILITYEFFECT_MOVE_END, gBattlerTarget, 0, 0))
+            {
                 effect = TRUE;
+                break;
+            }
+            gSpecialStatuses[gBattlerTarget].moveEndAbilitySlot = 0;
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_ABILITIES_ATTACKER: // Poison Touch, possibly other in the future
@@ -8313,6 +8320,7 @@ static void Cmd_various(void)
         gSpecialStatuses[gActiveBattler].intimidatedMon = FALSE;
         gSpecialStatuses[gActiveBattler].traced = FALSE;
         gSpecialStatuses[gActiveBattler].switchInAbilityDone = FALSE;
+        gSpecialStatuses[gActiveBattler].switchInAbilitySlot = 0;
         break;
     case VARIOUS_UPDATE_CHOICE_MOVE_ON_LVL_UP:
         if (gBattlerPartyIndexes[0] == gBattleStruct->expGetterMonId || gBattlerPartyIndexes[2] == gBattleStruct->expGetterMonId)

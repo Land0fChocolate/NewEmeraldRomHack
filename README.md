@@ -254,8 +254,6 @@ Possible future additions/changes.
 Some of these may have been carried over from pokeemerald-expansion.
 
 - Many switch-in abilities (like Frisk and Imposter) don’t activate when both Player Pokemon and opponent Pokemon fainted previous turn (e.g. Destiny Bond) and the Player sends out a Pokemon before the opponent sends out theirs. Solving this will probably involve having to rewrite the code that deals with switch-in abilities. This is probably the same behavior as in vanilla Pokemon Emerald, but I don't see why Trace and Intimidate are allowed to activate whilst others don't, so I'm considering this a bug.
-- Abilities that activate at the same time as other abilities on the same Pokemon can have their names in the ability pop-up overwritten. (e.g. Tyranitar with Sand Stream and Unnerve). This is due to how switch-in (and other types) abilities are handled. This could be fixed by setting gLastUsedAbility during the ability battle script with the new setlastusedability command, but this freezes the game when used before calling the ability pop-up. Why? Have no fucking clue.
-- Abilities that activate at the same time as other abilities can use wrong strings in the battle message.
 - When Rattled is activated, the wrong ability is shown on the pop-up.
 - Sometimes when Truant triggers, the wrong ability is shown on the pop-up.
 - Intimidate may trigger on fainted Pokemon.
@@ -284,10 +282,7 @@ Some of these may have been carried over from pokeemerald-expansion.
 # Frequently Asked Questions/Troubleshooting
 
 - The ROM doesn't patch
-There are other downloads on the Pokemon Energized Emerald Discord server to try. Make sure you're using a Trashman Pokemon Emerald ROM. 
-
-- The game crashes during the introduction
-This is an emulator issue and I don't know why this happens. Try a different core on your emulator or a different emulator. I've had success with mBGA, Virtual Boy Advance and Pizza Boy on Android.
+There are other downloads on the Pokemon Energized Emerald Discord server to try. 
 
 - How do I put the game onto a cartridge?
 I have absolutely no idea. I don't even know if it's possible for pokeemeerald-expansion projects. 
@@ -343,3 +338,4 @@ The fine people who worked on the pokeemerald and pokeemerald-expansion decompil
 - Porymap
 - Graphics Gale
 - ROM Patcher JS
+- Claude (used to assist with writing code and finding bugs)
