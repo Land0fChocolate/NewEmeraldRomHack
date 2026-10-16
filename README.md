@@ -50,6 +50,8 @@ v1.1.4 - 28/10/2025
 v1.1.5 - 11/04/2026
 v1.1.6 - 17/09/2026
 
+Patches have been made for the (USA, Europe)/pokeemerald ROMs and the Trashman ROMs. Use for whichever ROM you have.
+
 # Changelog
 
 - Many post gen 3 features from pokeemerald-expansion are in this ROM.
