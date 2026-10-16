@@ -1973,8 +1973,10 @@ static void Cmd_adjustdamage(void)
         goto END;
 
     // recalculate damage so Time Traveller can replenish it back later in tryfaintmon
+    // (unless it's False Swipe, which must always leave the target at 1 HP instead of fainting)
     if (HasAbility(ABILITY_TIME_TRAVELLER, GetBattlerAbilities(gBattlerTarget))
-        && gBattleMons[gBattlerTarget].hp < gBattleMoveDamage)
+        && gBattleMons[gBattlerTarget].hp < gBattleMoveDamage
+        && gBattleMoves[gCurrentMove].effect != EFFECT_FALSE_SWIPE)
     {
         gBattleMoveDamage = gBattleMons[gBattlerTarget].hp;
         goto END;
@@ -5297,7 +5299,11 @@ static void Cmd_moveend(void)
             break;
         case MOVEEND_ABILITIES: // Such as abilities activating on contact(Poison Spore, Rough Skin, etc.).
             if (AbilityBattleEffects(ABILITYEFFECT_MOVE_END, gBattlerTarget, 0, 0))
+            {
                 effect = TRUE;
+                break;
+            }
+            gSpecialStatuses[gBattlerTarget].moveEndAbilitySlot = 0;
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_ABILITIES_ATTACKER: // Poison Touch, possibly other in the future
@@ -8313,6 +8319,7 @@ static void Cmd_various(void)
         gSpecialStatuses[gActiveBattler].intimidatedMon = FALSE;
         gSpecialStatuses[gActiveBattler].traced = FALSE;
         gSpecialStatuses[gActiveBattler].switchInAbilityDone = FALSE;
+        gSpecialStatuses[gActiveBattler].switchInAbilitySlot = 0;
         break;
     case VARIOUS_UPDATE_CHOICE_MOVE_ON_LVL_UP:
         if (gBattlerPartyIndexes[0] == gBattleStruct->expGetterMonId || gBattlerPartyIndexes[2] == gBattleStruct->expGetterMonId)

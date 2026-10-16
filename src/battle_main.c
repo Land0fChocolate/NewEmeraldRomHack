@@ -3647,12 +3647,12 @@ static void TryDoEventsBeforeFirstTurn(void)
     if (AbilityBattleEffects(ABILITYEFFECT_NEUTRALIZINGGAS, 0, 0, 0) != 0)
         return;
 
-    // Check all switch in abilities happening from the fastest mon to slowest.
     while (gBattleStruct->switchInAbilitiesCounter < gBattlersCount)
     {
-        gBattlerAttacker = gBattlerByTurnOrder[gBattleStruct->switchInAbilitiesCounter++];
+        gBattlerAttacker = gBattlerByTurnOrder[gBattleStruct->switchInAbilitiesCounter];
         if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, gBattlerAttacker, 0, 0) != 0)
             return;
+        gBattleStruct->switchInAbilitiesCounter++;
     }
     if (AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE1, 0, 0, 0) != 0) {
         gLastUsedAbility = ABILITY_INTIMIDATE;

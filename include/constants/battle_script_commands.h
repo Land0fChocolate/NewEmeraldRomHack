@@ -37,9 +37,9 @@
 #define sILLUSION_NICK_HACK gBattleScripting + 0x32
 #define sFIXED_ABILITY_POPUP gBattleScripting + 0x33
 #define sABILITY_OVERWRITE gBattleScripting + 0x34
-#define sSWITCH_CASE gBattleScripting + 0x36
-#define sBERRY_OVERRIDE (gBattleScripting + 0x37)
-#define sSTICKY_WEB_STAT_DROP (gBattleScripting + 0x38) // stickyWebStatDrop
+#define sSWITCH_CASE gBattleScripting + 0x3A
+#define sBERRY_OVERRIDE (gBattleScripting + 0x3B)
+#define sSTICKY_WEB_STAT_DROP (gBattleScripting + 0x3C) // stickyWebStatDrop
 
 #define cMULTISTRING_CHOOSER gBattleCommunication + 5
 #define cMISS_TYPE gBattleCommunication + 6

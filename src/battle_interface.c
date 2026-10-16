@@ -3510,7 +3510,7 @@ void CreateAbilityPopUp(u8 battlerId, bool32 isDoubleBattle)
 {
     const s16 (*coords)[2];
     u8 spriteId1, spriteId2, battlerPosition, taskId;
-    u16 ability = gLastUsedAbility;
+    u16 ability = gBattleScripting.abilityPopupOverwrite[0] != ABILITY_NONE ? gBattleScripting.abilityPopupOverwrite[0] : gLastUsedAbility;
 
     if (!B_ABILITY_POP_UP)
         return;
