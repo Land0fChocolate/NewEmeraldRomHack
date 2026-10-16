@@ -2029,11 +2029,6 @@ void PrepareStringBattle(u16 stringId, u8 battler)
 {
     u32 targetSide = GetBattlerSide(gBattlerTarget);
     u16 battlerAbilities[NUM_ABILITY_SLOTS], targetAbilities[NUM_ABILITY_SLOTS];
-    // Saved before the Defiant/Competitive/Rattled checks below can reassign gLastUsedAbility
-    // for their own pushed script's later use. EmitPrintString snapshots gLastUsedAbility
-    // synchronously for THIS stringId's own ability-name placeholder (if it has one, e.g.
-    // STRINGID_PKMNCUTSATTACKWITH's {B_SCR_ACTIVE_ABILITY}), so without this it would
-    // incorrectly pick up Defiant/Competitive/Rattled's ability instead of this message's own.
     u16 savedLastUsedAbility = gLastUsedAbility;
     memcpy(battlerAbilities, GetBattlerAbilities(battler), sizeof(battlerAbilities));
     memcpy(targetAbilities, GetBattlerAbilities(gBattlerTarget), sizeof(targetAbilities));
@@ -2072,11 +2067,6 @@ void PrepareStringBattle(u16 stringId, u8 battler)
             gLastUsedAbility = ABILITY_COMPETITIVE;
             SET_STATCHANGER(STAT_SPATK, 2, FALSE);
         }
-        // Printing stringId below (still the original message, e.g. STRINGID_PKMNCUTSATTACKWITH)
-        // will clobber gLastUsedAbility back to whatever that message buffers via
-        // BufferStringBattle, before BattleScript_AbilityRaisesDefenderStat's pop-up actually
-        // runs. abilityPopupOverwrite isn't affected by that, so use it to carry the correct
-        // ability through to CreateAbilityPopUp.
         gBattleScripting.abilityPopupOverwrite[0] = gLastUsedAbility;
     }
     else if (stringId == STRINGID_PKMNCUTSATTACKWITH && HasAbility(ABILITY_RATTLED, targetAbilities)
@@ -2091,10 +2081,6 @@ void PrepareStringBattle(u16 stringId, u8 battler)
     }
 
     gActiveBattler = battler;
-    // Use this message's own ability (e.g. Intimidate) for its placeholder, not whatever
-    // Defiant/Competitive/Rattled may have just set gLastUsedAbility to above - then restore
-    // that value afterward so BattleScript_AbilityRaisesDefenderStat's own later pop-up/message
-    // (which reads gLastUsedAbility when it actually executes) still shows the right ability.
     {
         u16 abilityForPushedScript = gLastUsedAbility;
         gLastUsedAbility = savedLastUsedAbility;
@@ -3252,16 +3238,11 @@ u8 DoBattlerEndTurnEffects(void)
             gBattleStruct->turnEffectsTracker++;
             break;
         case ENDTURN_ABILITIES:  // end turn abilities
-            // Don't advance to the next end-turn effect until this battler has no more
-            // ability slots left to check (see endTurnAbilitySlot), so a battler with multiple
-            // simultaneously-active end-turn abilities gets each one run in its own turn.
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, gActiveBattler, 0, 0))
             {
                 effect++;
                 break;
             }
-            // Fully done checking this battler's ability slots for this turn - reset so next
-            // turn's end-turn check starts from slot 0 again instead of staying stuck past it.
             gSpecialStatuses[gActiveBattler].endTurnAbilitySlot = 0;
             gBattleStruct->turnEffectsTracker++;
             break;
@@ -5314,13 +5295,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
             }
             if (effect)
             {
-                // Only let one ability activate per call, so that multiple simultaneously-active
-                // abilities on the same battler (NUM_ABILITY_SLOTS) each get to run their own
-                // script in turn - via the battler-by-battler switch-in re-entry in
-                // TryDoEventsBeforeFirstTurn - instead of a later ability silently overwriting
-                // an earlier one's script/pop-up within the same call (or being skipped outright
-                // by switchInAbilityDone). Resume from the next slot next time this battler's
-                // switch-in abilities are checked.
                 gSpecialStatuses[battler].switchInAbilitySlot = x + 1;
                 gSpecialStatuses[battler].switchInAbilityDone = FALSE;
                 break;
@@ -5578,11 +5552,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
                 }
                 if (effect)
                 {
-                    // Only let one ability activate per call, same reasoning/mechanism as the
-                    // switchInAbilitySlot fix above - resume from the next slot next time this
-                    // battler's end-of-turn abilities are checked (DoBattlerEndTurnEffects's
-                    // ENDTURN_ABILITIES case re-enters this on the next call without advancing
-                    // turnEffectsTracker as long as this keeps returning nonzero).
                     gSpecialStatuses[battler].endTurnAbilitySlot = x + 1;
                     break;
                 }
@@ -6356,11 +6325,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 special, u16 moveArg)
             }
             if (effect)
             {
-                // Only let one ability activate per call, same reasoning/mechanism as
-                // switchInAbilitySlot/endTurnAbilitySlot above - resume from the next slot
-                // next time this battler's contact-type abilities are checked (MOVEEND_ABILITIES
-                // re-enters this on the next moveend pass without advancing moveendState as long
-                // as this keeps returning nonzero).
                 gSpecialStatuses[battler].moveEndAbilitySlot = x + 1;
                 break;
             }

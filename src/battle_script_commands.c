@@ -5298,9 +5298,6 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_ABILITIES: // Such as abilities activating on contact(Poison Spore, Rough Skin, etc.).
-            // Don't advance until the target has no more ability slots left to check (see
-            // moveEndAbilitySlot), so multiple simultaneously-active abilities on the same
-            // battler each get to run in their own turn instead of colliding.
             if (AbilityBattleEffects(ABILITYEFFECT_MOVE_END, gBattlerTarget, 0, 0))
             {
                 effect = TRUE;

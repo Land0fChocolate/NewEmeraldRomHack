@@ -3647,10 +3647,6 @@ static void TryDoEventsBeforeFirstTurn(void)
     if (AbilityBattleEffects(ABILITYEFFECT_NEUTRALIZINGGAS, 0, 0, 0) != 0)
         return;
 
-    // Check all switch in abilities happening from the fastest mon to slowest.
-    // Don't advance to the next battler until AbilityBattleEffects reports no more of this
-    // battler's ability slots are left to check, so a battler with multiple simultaneously-active
-    // abilities gets each one run in its own turn instead of only the first (or a colliding pair).
     while (gBattleStruct->switchInAbilitiesCounter < gBattlersCount)
     {
         gBattlerAttacker = gBattlerByTurnOrder[gBattleStruct->switchInAbilitiesCounter];

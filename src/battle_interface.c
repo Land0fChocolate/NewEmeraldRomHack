@@ -3510,11 +3510,6 @@ void CreateAbilityPopUp(u8 battlerId, bool32 isDoubleBattle)
 {
     const s16 (*coords)[2];
     u8 spriteId1, spriteId2, battlerPosition, taskId;
-    // Printing a battle message between setting gLastUsedAbility and this pop-up actually
-    // running (e.g. the move message that triggers a reactive ability like Defiant/Rattled)
-    // clobbers gLastUsedAbility back to whatever ability that earlier message buffered, via
-    // BufferStringBattle. abilityPopupOverwrite isn't touched by that, so prefer it when set
-    // (battle scripts already set/clear it via sABILITY_OVERWRITE, e.g. for Wandering Spirit).
     u16 ability = gBattleScripting.abilityPopupOverwrite[0] != ABILITY_NONE ? gBattleScripting.abilityPopupOverwrite[0] : gLastUsedAbility;
 
     if (!B_ABILITY_POP_UP)
