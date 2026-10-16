@@ -226,18 +226,17 @@ static const u8 sUnusedData[] = {0x00, 0xFF, 0xFE, 0xFF, 0x00};
 
 bool8 IsWirelessAdapterConnected(void)
 {
-    // No emulator (including mGBA, as of this writing) fully emulates the GBA Wireless
-    // Adapter's serial handshake, and essentially no players have the real hardware. On
-    // mGBA specifically, the probe below can come back with a false positive: it sets
-    // gWirelessCommType to 1 *before* checking the adapter's ID, and if the ID check
-    // spuriously matches (or the handshake otherwise misbehaves under mGBA's SIO timing),
-    // gWirelessCommType is left stuck at 1 instead of being reset to 0. That silently turns
-    // on RfuVSync() every VBlank from then on (see VBlankIntr in main.c), which runs the RFU
-    // link library's state machine with no real adapter on the other end - it corrupts
-    // memory over time and eventually crashes with an illegal-opcode freeze, reproducibly
-    // triggered by pressing A on the main menu (e.g. starting a New Game), regardless of
-    // what happens afterwards. Skipping the hardware probe entirely avoids this with no
-    // real-world downside.
+    SetWirelessCommType1();
+    InitRFUAPI();
+    if (rfu_LMAN_REQBN_softReset_and_checkID() == RFU_ID)
+    {
+        rfu_REQ_stopMode();
+        rfu_waitREQComplete();
+        return TRUE;
+    }
+    SetWirelessCommType0_Internal();
+    CloseLink();
+    RestoreSerialTimer3IntrHandlers();
     return FALSE;
 }
 

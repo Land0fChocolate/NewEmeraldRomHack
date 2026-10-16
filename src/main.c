@@ -98,15 +98,7 @@ void AgbMain()
     InitIntrHandlers();
     m4aSoundInit();
     EnableVCountIntrAtLine150();
-    // InitRFU() is skipped here. Its only purpose is a defensive SIO handshake at boot,
-    // telling a real GBA Wireless Adapter (if one happens to be attached) to power down.
-    // No emulator - mGBA included - fully emulates that handshake, and it runs
-    // unconditionally on every boot regardless of IsWirelessAdapterConnected() (see link.c),
-    // so it was a second, independent source of the same mGBA-only memory corruption /
-    // illegal-opcode freeze fixed there: InitRFUAPI() installs RFU-specific Serial/Timer3
-    // interrupt handlers and rfu_waitREQComplete() blocks on a reply from hardware that
-    // isn't really there. Skipping it has no effect for the overwhelming majority of
-    // players who don't own the real adapter.
+    InitRFU();
     RtcInit();
     CheckForFlashMemory();
     InitMainCallbacks();
