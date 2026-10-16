@@ -24,9 +24,16 @@ static void sub_801BA8C(u32 a0, u32 a1, u32 *a2, int a3);
 
 void sub_801AFD8(void)
 {
-    //CpuFill32(0, &gSaveBlock1Ptr->unk_322C, sizeof(gSaveBlock1Ptr->unk_322C));
-    sub_801B180();
-    InitQuestionnaireWords();
+    // gSaveBlock1Ptr->unk_322C (the Mystery Event/Wonder News/Easy Chat questionnaire buffers)
+    // was removed from SaveBlock1 to save 876 bytes (see the commented-out unk_322C field in
+    // global.h). sub_801B180() and InitQuestionnaireWords() below both still called into
+    // GetQuestionnaireWordsPtr()/sub_801B044(), whose own `return &gSaveBlock1Ptr->unk_322C...`
+    // lines were commented out at the same time but never replaced - leaving them to return
+    // whatever garbage value happened to be left in a register, and callers then wrote through
+    // that garbage pointer. Called unconditionally from NewGameInitData() on every new game, this
+    // was the actual cause of the freeze right after the "shrink into overworld sprite" animation
+    // (and silently corrupting memory even on runs where it didn't visibly crash). Since the
+    // buffers these used to initialize no longer exist, there is nothing left to reset here.
 }
 
 struct WonderNews *GetSavedWonderNews(void)
