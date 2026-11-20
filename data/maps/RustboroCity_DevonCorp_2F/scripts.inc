@@ -36,11 +36,6 @@ RustboroCity_DevonCorp_2F_EventScript_BallScientist::
 	call_if_eq RustboroCity_DevonCorp_2F_EventScript_SetFossilReady
 	goto_if_set FLAG_MET_DEVON_EMPLOYEE, RustboroCity_DevonCorp_2F_EventScript_DevelopedBalls
 	msgbox RustboroCity_DevonCorp_2F_Text_DevelopingNewBalls, MSGBOX_DEFAULT
-	giveitem ITEM_ROOT_FOSSIL, 1
-	giveitem ITEM_CLAW_FOSSIL, 1
-	giveitem ITEM_DOME_FOSSIL, 1
-	giveitem ITEM_HELIX_FOSSIL, 1
-	giveitem ITEM_OLD_AMBER, 1
 	release
 	end
 
