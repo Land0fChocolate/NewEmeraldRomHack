@@ -50,6 +50,7 @@ v1.1.4 - 28/10/2025
 v1.1.5 - 11/04/2026
 v1.1.6 - 17/09/2026
 v1.1.7 - 16/10/2026
+v1.1.8 - 20/11/2026
 
 Patches have been made for the (USA, Europe)/pokeemerald ROMs and the Trashman ROMs. Use for whichever ROM you have.
 
